@@ -1,7 +1,0 @@
-C:\Users\Parisa\Documents\Interviews-2019\CSFundamentalAlgorithms\CSFundamentalAlgorithms\bin\Debug\CSFundamentalAlgorithms.dll.config
-C:\Users\Parisa\Documents\Interviews-2019\CSFundamentalAlgorithms\CSFundamentalAlgorithms\bin\Debug\CSFundamentalAlgorithms.dll
-C:\Users\Parisa\Documents\Interviews-2019\CSFundamentalAlgorithms\CSFundamentalAlgorithms\bin\Debug\CSFundamentalAlgorithms.pdb
-C:\Users\Parisa\Documents\Interviews-2019\CSFundamentalAlgorithms\CSFundamentalAlgorithms\obj\Debug\CSFundamentalAlgorithms.csprojResolveAssemblyReference.cache
-C:\Users\Parisa\Documents\Interviews-2019\CSFundamentalAlgorithms\CSFundamentalAlgorithms\obj\Debug\CSFundamentalAlgorithms.csproj.CoreCompileInputs.cache
-C:\Users\Parisa\Documents\Interviews-2019\CSFundamentalAlgorithms\CSFundamentalAlgorithms\obj\Debug\CSFundamentalAlgorithms.dll
-C:\Users\Parisa\Documents\Interviews-2019\CSFundamentalAlgorithms\CSFundamentalAlgorithms\obj\Debug\CSFundamentalAlgorithms.pdb
