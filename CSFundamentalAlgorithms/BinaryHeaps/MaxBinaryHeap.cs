@@ -17,105 +17,144 @@
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System.Collections.Generic;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
-/* Similar to MinHeapBinary. Refer to that class for explanations. */
+/* Similar to MinBinaryHeap. Refer to that class for missing explanations. */
 
 namespace CSFundamentalAlgorithms.BinaryHeaps
 {
-    public class MaxBinaryHeap
+    /// <summary>
+    /// Implements a Max Binary Heap, and its main operations.
+    /// </summary>
+    public class MaxBinaryHeap : BinaryHeapBase
     {
-        public static void Insert(int value, List<int> heapArray)
+        public MaxBinaryHeap(List<int> array) : base(array)
         {
-            heapArray.Add(value);
+
+        }
+
+        /// <summary>
+        /// Builds an in-place max heap on the given array. 
+        /// </summary>
+        public override void BuildHeap_Recursively()
+        {
+            for (int i = HeapArray.Count / 2; i >= 0; i--)
+            {
+                Heapify_Recursively(i);
+            }
+        }
+
+        /// <summary>
+        /// Is the iterative version of BuildHeap_Recursively. Expect to see exact same results for these two methods. 
+        /// </summary>
+        public override void BuildHeap_Iteratively()
+        {
+            for (int i = HeapArray.Count / 2; i >= 0; i--)
+            {
+                Heapify_Iteratively(i);
+            }
+        }
+
+        /// <summary>
+        /// Inserts a new value into the Max Heap. 
+        /// </summary>
+        /// <param name="newValue">Specifies the new value to be inserted in the tree.</param>
+        public override void Insert(int value)
+        {
+            HeapArray.Add(value);
 
             // Bubble up this element
-            int nodeIndex = heapArray.Count - 1;
+            int nodeIndex = HeapArray.Count - 1;
             int parentIndex = GetParentIndex(nodeIndex);
-            while (nodeIndex != 0 && heapArray[parentIndex] < heapArray[nodeIndex])
+            while (nodeIndex != 0 && HeapArray[parentIndex] < HeapArray[nodeIndex])
             {
-                Swap(heapArray, parentIndex, nodeIndex);
+                Swap(HeapArray, parentIndex, nodeIndex);
                 nodeIndex = parentIndex;
             }
         }
 
-        public static bool TryRemoveMax(List<int> heapArray, out int maxValue)
+        /// <summary>
+        /// Removes the max element from the heap.
+        /// </summary>
+        /// <param name="rootValue">If the operation is successful, contains the maximum element in the array.</param>
+        /// <returns>True in case of success, and false otherwise</returns>
+        public override bool TryRemoveRoot(out int rootValue)
         {
-            maxValue = Int32.MaxValue;
+            rootValue = Int32.MaxValue;
 
-            if (!heapArray.Any())
+            if (!HeapArray.Any())
             {
                 return false;
             }
-            if (heapArray.Count == 1)
+            if (HeapArray.Count == 1)
             {
-                maxValue = heapArray[0];
-                heapArray.Clear();
+                rootValue = HeapArray[0];
+                HeapArray.Clear();
                 return true;
             }
 
-            maxValue = heapArray[0];
-            heapArray[0] = heapArray[heapArray.Count - 1];
-            heapArray.RemoveAt(heapArray.Count - 1);
-            MaxHeapify_Recursive(0, heapArray);
+            rootValue = HeapArray[0];
+            HeapArray[0] = HeapArray[HeapArray.Count - 1];
+            HeapArray.RemoveAt(HeapArray.Count - 1);
+            Heapify_Recursively(0);
 
             return true;
-
         }
 
-        public static void MaxHeapify_Recursive(int rootIndex, List<int> heapArray)
+        public override void Heapify_Recursively(int rootIndex)
         {
-            int leftChildIndex = GetLeftChildIndex(rootIndex);
-            int rightChildIndex = GetRightChildIndex(rootIndex);
+            int leftChildIndex = GetLeftChildIndexInHeapArray(rootIndex);
+            int rightChildIndex = GetRightChildIndexInHeapArray(rootIndex);
             int maxElementIndex = rootIndex;
 
-            if (leftChildIndex < heapArray.Count && heapArray[leftChildIndex] > heapArray[maxElementIndex])
+            if (TryFindMaxIndex(HeapArray, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[maxElementIndex], out int maxIndex))
             {
-                maxElementIndex = leftChildIndex;
-            }
-            if (rightChildIndex < heapArray.Count && heapArray[rightChildIndex] > heapArray[maxElementIndex])
-            {
-                maxElementIndex = rightChildIndex;
+                maxElementIndex = maxIndex;
             }
 
             if (maxElementIndex != rootIndex)
             {
-                Swap(heapArray, maxElementIndex, rootIndex);
-                MaxHeapify_Recursive(maxElementIndex, heapArray);
+                Swap(HeapArray, maxElementIndex, rootIndex);
+
+                if (GetLeftChildIndexInHeapArray(maxElementIndex) < HeapArray.Count)
+                {
+                    Heapify_Recursively(maxElementIndex);
+                }
             }
         }
 
-        public static void BuildMaxHeap_Recursive(List<int> heapArray)
+        public override void Heapify_Iteratively(int rootIndex)
         {
-            for (int i = heapArray.Count / 2; i >= 0; i--)
+            while (GetLeftChildIndexInHeapArray(rootIndex) < HeapArray.Count)
             {
-                MaxHeapify_Recursive(i, heapArray);
+                int leftChildIndex = GetLeftChildIndexInHeapArray(rootIndex);
+                int rightChildIndex = GetRightChildIndexInHeapArray(rootIndex);
+                int maxElementIndex = rootIndex;
+
+                if (TryFindMaxIndex(HeapArray, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[rootIndex], out int maxIndex))
+                {
+                    maxElementIndex = maxIndex;
+                }
+
+                if (maxElementIndex != rootIndex)
+                {
+                    Swap(HeapArray, maxElementIndex, rootIndex);
+                    Heapify_Iteratively(maxElementIndex);
+                }
+                else
+                {
+                    if (TryFindMaxIndex(HeapArray, new List<int> { leftChildIndex, rightChildIndex }, Int32.MinValue, out int maxChildIndex))
+                    {
+                        Heapify_Iteratively(maxChildIndex);
+                    }
+                    else
+                    {
+                        break; // This branch of the code is not expected to be executed.
+                    }
+                }
             }
-        }
-
-        public static int GetLeftChildIndex(int index)
-        {
-            return 2 * index + 1;
-        }
-
-        public static int GetRightChildIndex(int index)
-        {
-            return 2 * index + 2;
-        }
-
-        public static int GetParentIndex(int index)
-        {
-            double parentindex = (index - 1) / 2;
-            return Convert.ToInt32(Math.Floor(parentindex));
-        }
-
-        public static void Swap(List<int> array, int index1, int index2)
-        {
-            int temp = array[index1];
-            array[index1] = array[index2];
-            array[index2] = temp;
         }
     }
 }

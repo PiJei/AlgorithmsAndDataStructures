@@ -48,6 +48,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BinaryHeaps\BinatyHeapBaseTests.cs" />
+    <Compile Include="BinaryHeaps\MinMaxBinaryHeapTests.cs" />
     <Compile Include="Graphs\TraversalAlgorithmsTests.cs" />
     <Compile Include="BinaryHeaps\MaxBinaryHeapTests.cs" />
     <Compile Include="BinaryHeaps\MinBinaryHeapTests.cs" />

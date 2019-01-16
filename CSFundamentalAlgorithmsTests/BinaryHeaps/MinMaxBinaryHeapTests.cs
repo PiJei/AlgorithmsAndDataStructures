@@ -17,31 +17,13 @@
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace CSFundamentalAlgorithms.BinaryHeaps
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace CSFundamentalAlgorithmsTests.BinaryHeaps
 {
-    /// <summary>
-    /// Implements a MinMaxBinaryHeap and its main operations.
-    /// </summary>
-    public class MinMaxBinaryHeap
+    [TestClass]
+    public class MinMaxBinaryHeapTests
     {
-        public void BuildMinMaxHeap_Recursively()
-        {
 
-        }
-
-        public void MinMaxHeapify_Recursively()
-        {
-
-        }
-
-        public void TrickleDownMin_Recursively()
-        {
-
-        }
-
-        public void TrickleDownMax_Recursively()
-        {
-
-        }
     }
 }
