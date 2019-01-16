@@ -81,7 +81,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         }
 
         /// <summary>
-        /// Recursively MinHeapifies (bubbles down) the given rootIndex.
+        /// Recursively MinHeapifies (bubbles down/trickles down) the given rootIndex.
         /// </summary>
         /// <param name="rootIndex">Specifies the index of the node for which bubble down starts. </param>
         /// <param name="heapArray">Specifies the heap represented in an array.</param>
