@@ -49,7 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Graphs\TraversalAlgorithmsTests.cs" />
-    <Compile Include="BinaryHeaps\MaxHeapBinaryTests.cs" />
+    <Compile Include="BinaryHeaps\MaxBinaryHeapTests.cs" />
     <Compile Include="BinaryHeaps\MinBinaryHeapTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

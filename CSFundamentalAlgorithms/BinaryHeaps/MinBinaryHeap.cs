@@ -154,7 +154,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         /// <param name="heapArray">Specifies the array that we be shuffled to be a min heap. </param>
         public static void BuildMinHeap_Recursive(List<int> heapArray)
         {
-            for (int i = heapArray.Count / 2 + 1; i >= 0; i--) /* Why to start from half of the array? for bigger elements, left and right children will be out of range, due to the formula by which left and right children are found. */
+            for (int i = heapArray.Count / 2; i >= 0; i--) /* Why to start from half of the array? for bigger elements, left and right children will be out of range, due to the formula by which left and right children are found. */
             {
                 MinHeapify_Recursive(i, heapArray);
             }
@@ -166,7 +166,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         /// <param name="heapArray">Specifies the array that we be shuffled to be a min heap. </param>
         public static void BuildMinHeap_Iterative(List<int> heapArray)
         {
-            for (int i = heapArray.Count / 2 + 1; i >= 0; i--)
+            for (int i = heapArray.Count / 2; i >= 0; i--)
             {
                 MinHeapify_Iterative(i, heapArray);
             }

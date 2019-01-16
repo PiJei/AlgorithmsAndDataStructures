@@ -25,7 +25,7 @@ using System.Linq;
 
 namespace CSFundamentalAlgorithms.BinaryHeaps
 {
-    public class MaxHeapBinary
+    public class MaxBinaryHeap
     {
         public static void Insert(int value, List<int> heapArray)
         {
@@ -89,7 +89,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
 
         public static void BuildMaxHeap_Recursive(List<int> heapArray)
         {
-            for (int i = heapArray.Count / 2 + 1; i >= 0; i--)
+            for (int i = heapArray.Count / 2; i >= 0; i--)
             {
                 MaxHeapify_Recursive(i, heapArray);
             }
