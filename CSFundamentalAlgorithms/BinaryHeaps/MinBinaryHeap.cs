@@ -92,7 +92,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
             int minElementIndex = rootIndex;
 
             /* Find the minimum value's index (among 3 values: root, and its left and right children). */
-            if (TryFindMinIndex(heapArray, leftChildIndex, rightChildIndex, heapArray[minElementIndex], out int minIndex))
+            if (TryFindMinIndex(heapArray, new List<int> { leftChildIndex, rightChildIndex }, heapArray[minElementIndex], out int minIndex))
             {
                 minElementIndex = minIndex;
             }
@@ -122,7 +122,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
                 int rightChildIndex = GetRightChildIndexInHeapArray(rootIndex);
                 int minElementIndex = rootIndex;
 
-                if (TryFindMinIndex(heapArray, leftChildIndex, rightChildIndex, heapArray[minElementIndex], out int minIndex))
+                if (TryFindMinIndex(heapArray, new List<int> { leftChildIndex, rightChildIndex }, heapArray[minElementIndex], out int minIndex))
                 {
                     minElementIndex = minIndex;
                 }
@@ -135,7 +135,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
                 else
                 {
                     /* Continue with the index of the smallest child. */
-                    if (TryFindMinIndex(heapArray, leftChildIndex, rightChildIndex, Int32.MaxValue, out int minChildIndex))
+                    if (TryFindMinIndex(heapArray, new List<int> { leftChildIndex, rightChildIndex }, Int32.MaxValue, out int minChildIndex))
                     {
                         rootIndex = minChildIndex;
                     }
@@ -218,38 +218,35 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         /// <summary>
         /// Finds the minimum element in the array, among the given indexes, with respect to minValueReference, and returns the index of the min value. 
         /// </summary>
-        /// <returns></returns>
-        public static bool TryFindMinIndex(List<int> array, int index1, int index2, int minValueReference, out int minValueIndex)
+        /// <param name="values">Specifies the list of values. </param>
+        /// <param name="indexes">Specifies the list of indexes among which we want to find the minimum value. </param>
+        /// <param name="minValueReference">Specifies the reference for the minimum value.  </param>
+        /// <param name="minValueIndex">Specifies the index of the minimum value among the specifies indexes. </param>
+        /// <returns>True in case of success, and false in case of failure. </returns>
+        public static bool TryFindMinIndex(List<int> values, List<int> indexes, int minValueReference, out int minValueIndex)
         {
             minValueIndex = Int32.MinValue;
 
             /* Expects the given minValueReference value to be an item in the array.  */
-            if (!array.Contains(minValueReference))
+            if (!values.Contains(minValueReference))
             {
                 return false;
             }
 
-            /* If both of the indexes exceed the range of the array, return false, and leave minValueReference as it was */
-            if (index1 > array.Count && index2 > array.Count)
+            /* If all of the indexes exceed the range of the array, return false, and leave minValueReference as it was */
+            if (indexes.All(index => index >= values.Count))
             {
                 return false;
             }
 
-            /* If the value at index1 is smaller than the minValueReference, update. */
-            if (index1 < array.Count && array[index1] < minValueReference)
+            /* Find the minimum value.*/
+            foreach (int index in indexes.Where(index => index < values.Count && values[index] < minValueReference))
             {
-                minValueReference = array[index1];
-                minValueIndex = index1;
+                minValueReference = values[index];
+                minValueIndex = index;
             }
 
-            /* If the value at index2 is smaller than the minValueReference, update. */
-            if (index2 < array.Count && array[index2] < minValueReference)
-            {
-                minValueReference = array[index2];
-                minValueIndex = index2;
-            }
-
-            /* If the minValueReference is smallest, nothing changes. */
+            /* In the case that minValueReference is smallest, nothing changes, and minValueIndex remains as initiated at the beginning of the method. */
             if (minValueIndex == Int32.MinValue)
             {
                 return false; /* meaning none of the elements in the index1 and index2, were smaller than the reference value. */

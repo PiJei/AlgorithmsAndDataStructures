@@ -257,24 +257,21 @@ namespace CSFundamentalAlgorithmsTests.BinaryHeapsTests
         {
             List<int> values = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
 
-            bool result1 = MinBinaryHeap.TryFindMinIndex(values, 1, 2, 150, out int minValueIndex1);
+            bool result1 = MinBinaryHeap.TryFindMinIndex(values, new List<int> { 1, 2 }, 150, out int minValueIndex1);
             Assert.IsTrue(result1);
             Assert.AreEqual(1, minValueIndex1);
 
-            bool result2 = MinBinaryHeap.TryFindMinIndex(values, 1, 2, Int32.MinValue, out int minValueIndex2);
+            bool result2 = MinBinaryHeap.TryFindMinIndex(values, new List<int> { 1, 2 }, Int32.MinValue, out int minValueIndex2);
             Assert.IsFalse(result2);
             Assert.AreEqual(int.MinValue, minValueIndex2);
 
-            bool result3 = MinBinaryHeap.TryFindMinIndex(values, 1, 120, 21, out int minValueIndex3);
+            bool result3 = MinBinaryHeap.TryFindMinIndex(values, new List<int> { 1, 120 }, 21, out int minValueIndex3);
             Assert.IsFalse(result3);
             Assert.AreEqual(int.MinValue, minValueIndex3);
 
-            bool result4 = MinBinaryHeap.TryFindMinIndex(values, 1, 3, 21, out int minValueIndex4);
+            bool result4 = MinBinaryHeap.TryFindMinIndex(values, new List<int> { 1, 3 }, 21, out int minValueIndex4);
             Assert.IsFalse(result4);
             Assert.AreEqual(int.MinValue, minValueIndex4);
         }
-
-
-        // Also test the out put of the iterative and recursive methods are equal!
     }
 }
