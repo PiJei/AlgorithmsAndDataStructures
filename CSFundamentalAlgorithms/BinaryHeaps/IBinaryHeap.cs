@@ -40,22 +40,35 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         void Insert(int value);
 
         /// <summary>
-        /// This method is for removing the root of the heap.In a MinHeap and MinMaxHeap this is the min, and in a MaxHeap and MaxMinHeap this is the max. 
+        /// This method is for removing the root of the heap. In a MinHeap and MinMaxHeap this is the min, and in a MaxHeap and MaxMinHeap this is the max. 
         /// </summary>
         /// <returns>True in case of success, and false otherwise.</returns>
         bool TryRemoveRoot(out int rootValue);
 
         /// <summary>
+        /// This method is for finding the root of the heap, without removing it. 
+        /// </summary>
+        /// <param name="rootValue"></param>
+        /// <returns>True in case of success, and false in case of failure.</returns>
+        bool TryFindRoot(out int rootValue);
+
+        /// <summary>
         /// This method implements the bubble down/trickle down operation using recursion.
         /// </summary>
         /// <param name="rootIndex">Specifies the index of the root element, the element for which the trickle down should be performed.</param>
-        void Heapify_Recursively(int rootIndex);
+        void BubbleDown_Recursively(int rootIndex);
 
         /// <summary>
         /// This method implements the bubble down/trickle down operation using iteration.
         /// </summary>
         /// <param name="rootIndex">Specifies the index of the root element, the element for which the trickle down should be performed.</param>
-        void Heapify_Iteratively(int rootIndex);
+        void BubbleDown_Iteratively(int rootIndex);
+
+        /// <summary>
+        /// Moves the value in the given index, up in the heap till its position is found. The position is defined such to respect heap ordering property.
+        /// </summary>
+        /// <param name="index">Specifies the index of the element that should be bubbled up.</param>
+        void BubbleUp_Iteratively(int index);
 
         /// <summary>
         /// Returns the index of the left child for the given index in a heap array.

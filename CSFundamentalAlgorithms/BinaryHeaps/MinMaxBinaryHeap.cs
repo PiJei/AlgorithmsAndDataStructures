@@ -17,31 +17,87 @@
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System.Collections.Generic;
+using System.Linq;
+
 namespace CSFundamentalAlgorithms.BinaryHeaps
 {
     /// <summary>
     /// Implements a MinMaxBinaryHeap and its main operations.
     /// </summary>
-    public class MinMaxBinaryHeap
+    public class MinMaxBinaryHeap : BinaryHeapBase
     {
-        public void BuildMinMaxHeap_Recursively()
+        public MinMaxBinaryHeap(List<int> array) : base(array)
         {
 
         }
 
-        public void MinMaxHeapify_Recursively()
+        public override void Insert(int value)
         {
 
         }
 
-        public void TrickleDownMin_Recursively()
+        public override bool TryRemoveRoot(out int rootValue)
+        {
+            if (HeapArray.Any())
+            {
+
+            }
+
+            rootValue = int.MaxValue;
+            return false;
+        }
+
+        public override bool TryFindRoot(out int rootValue)
+        {
+            if (HeapArray.Any())
+            {
+                rootValue = HeapArray[0];
+                return true;
+            }
+            rootValue = int.MaxValue;
+            return false;
+        }
+
+        public override void BuildHeap_Recursively()
         {
 
         }
 
-        public void TrickleDownMax_Recursively()
+        public override void BuildHeap_Iteratively()
         {
 
         }
+
+        public override void BubbleUp_Iteratively(int index)
+        {
+            
+        }
+
+        public override void BubbleDown_Recursively(int rootIndex)
+        {
+
+        }
+
+        public override void BubbleDown_Iteratively(int rootIndex)
+        {
+
+        }
+
+        public void BubbleDownMin_Recursively()
+        {
+
+        }
+
+        public void BubbleDownMax_Recursively()
+        {
+
+        }
+
+        public void TryRemoveMax()
+        {
+
+        }
+
     }
 }

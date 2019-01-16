@@ -42,7 +42,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         {
             for (int i = HeapArray.Count / 2; i >= 0; i--)
             {
-                Heapify_Recursively(i);
+                BubbleDown_Recursively(i);
             }
         }
 
@@ -53,7 +53,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         {
             for (int i = HeapArray.Count / 2; i >= 0; i--)
             {
-                Heapify_Iteratively(i);
+                BubbleDown_Iteratively(i);
             }
         }
 
@@ -67,11 +67,17 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
 
             // Bubble up this element
             int nodeIndex = HeapArray.Count - 1;
-            int parentIndex = GetParentIndex(nodeIndex);
-            while (nodeIndex != 0 && HeapArray[parentIndex] < HeapArray[nodeIndex])
+            BubbleUp_Iteratively(nodeIndex);
+        }
+
+        public override void BubbleUp_Iteratively(int index)
+        {
+            int parentIndex = GetParentIndex(index);
+            while (index != 0 && HeapArray[parentIndex] < HeapArray[index])
             {
-                Swap(HeapArray, parentIndex, nodeIndex);
-                nodeIndex = parentIndex;
+                Swap(HeapArray, parentIndex, index);
+                index = parentIndex;
+                parentIndex = GetParentIndex(index);
             }
         }
 
@@ -98,12 +104,23 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
             rootValue = HeapArray[0];
             HeapArray[0] = HeapArray[HeapArray.Count - 1];
             HeapArray.RemoveAt(HeapArray.Count - 1);
-            Heapify_Recursively(0);
+            BubbleDown_Recursively(0);
 
             return true;
         }
 
-        public override void Heapify_Recursively(int rootIndex)
+        public override bool TryFindRoot(out int rootValue)
+        {
+            if (HeapArray.Any())
+            {
+                rootValue = HeapArray[0];
+                return true;
+            }
+            rootValue = int.MinValue;
+            return false;
+        }
+
+        public override void BubbleDown_Recursively(int rootIndex)
         {
             int leftChildIndex = GetLeftChildIndexInHeapArray(rootIndex);
             int rightChildIndex = GetRightChildIndexInHeapArray(rootIndex);
@@ -120,12 +137,12 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
 
                 if (GetLeftChildIndexInHeapArray(maxElementIndex) < HeapArray.Count)
                 {
-                    Heapify_Recursively(maxElementIndex);
+                    BubbleDown_Recursively(maxElementIndex);
                 }
             }
         }
 
-        public override void Heapify_Iteratively(int rootIndex)
+        public override void BubbleDown_Iteratively(int rootIndex)
         {
             while (GetLeftChildIndexInHeapArray(rootIndex) < HeapArray.Count)
             {
@@ -141,13 +158,13 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
                 if (maxElementIndex != rootIndex)
                 {
                     Swap(HeapArray, maxElementIndex, rootIndex);
-                    Heapify_Iteratively(maxElementIndex);
+                    BubbleDown_Iteratively(maxElementIndex);
                 }
                 else
                 {
                     if (TryFindMaxIndex(HeapArray, new List<int> { leftChildIndex, rightChildIndex }, Int32.MinValue, out int maxChildIndex))
                     {
-                        Heapify_Iteratively(maxChildIndex);
+                        BubbleDown_Iteratively(maxChildIndex);
                     }
                     else
                     {
