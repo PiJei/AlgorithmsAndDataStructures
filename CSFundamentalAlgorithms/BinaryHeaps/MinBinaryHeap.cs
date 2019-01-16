@@ -97,11 +97,12 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
                 minElementIndex = minIndex;
             }
 
-            /* If root is not the minimum value, then bubble down the root via the smallest child. */
+            /* If root is not the minimum value, then bubble/trickle down the root via the smallest child. */
             if (minElementIndex != rootIndex)
             {
                 Swap(heapArray, minElementIndex, rootIndex);
-                /* At this point, the value that was at rootIndex, is now at index: minElementIndex, and the bubble down shall continue. */
+
+                /* At this point, the value that was at rootIndex, is now at index minElementIndex, and the bubble/trickle down shall continue. */
                 if (GetLeftChildIndexInHeapArray(minElementIndex) < heapArray.Count) /* To avoid unnecessary recursion : notice that there is no need to check for the right child's index, as if left child index already is out of range so is right child index, since right child index = left child index +1. */
                 {
                     MinHeapify_Recursive(minElementIndex, heapArray);
