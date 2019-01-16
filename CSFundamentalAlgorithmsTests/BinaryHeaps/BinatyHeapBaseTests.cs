@@ -60,5 +60,28 @@ namespace CSFundamentalAlgorithmsTests.BinaryHeaps
             Assert.IsFalse(result4);
             Assert.AreEqual(int.MinValue, minValueIndex4);
         }
+
+        [TestMethod]
+        public void MinBinaryHeap_TryFindMaxIndex_Test()
+        {
+            List<int> values = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
+            var heap = new MinBinaryHeap(values);
+
+            bool result1 = heap.TryFindMaxIndex(values, new List<int> { 1, 2 }, 150, out int maxValueIndex1);
+            Assert.IsTrue(result1);
+            Assert.AreEqual(2, maxValueIndex1);
+
+            bool result2 = heap.TryFindMaxIndex(values, new List<int> { 1, 2 }, Int32.MaxValue, out int maxValueIndex2);
+            Assert.IsFalse(result2);
+            Assert.AreEqual(int.MaxValue, maxValueIndex2);
+
+            bool result3 = heap.TryFindMaxIndex(values, new List<int> { 1, 120 }, 21, out int maxValueIndex3);
+            Assert.IsTrue(result3);
+            Assert.AreEqual(1, maxValueIndex3);
+
+            bool result4 = heap.TryFindMaxIndex(values, new List<int> { 1, 3 }, 21, out int maxValueIndex4);
+            Assert.IsTrue(result4);
+            Assert.AreEqual(1, maxValueIndex4);
+        }
     }
 }
