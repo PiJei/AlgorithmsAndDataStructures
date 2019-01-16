@@ -92,6 +92,12 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
             array[index2] = temp;
         }
 
+        public int GetNodeLevel(int index)
+        {
+            double level = Math.Floor(Math.Log(index + 1, 2));
+            return Convert.ToInt32(level);
+        }
+
         /// <summary>
         /// Finds the minimum element in the array, among the given indexes, with respect to minValueReference, and returns the index of the min value. 
         /// </summary>
@@ -170,6 +176,12 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
             }
 
             return true;
+        }
+
+        private bool IsMinLevel(int level)
+        {
+            /* In a Min-Max heap nodes at even levels (0,2,4,...) are at Min Levels. */
+            return level % 2 == 0;
         }
     }
 }

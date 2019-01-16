@@ -92,6 +92,13 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         int GetParentIndex(int index);
 
         /// <summary>
+        /// Returns the level of a node in the heap, given the node's index in the heap array.
+        /// </summary>
+        /// <param name="index">Specifies the index of a node in an array. </param>
+        /// <returns>Returns the level of the node. </returns>
+        int GetNodeLevel(int index);
+
+        /// <summary>
         /// Swaps the values at the given two indexes in the given array.
         /// </summary>
         /// <param name="array">Specifies an array.</param>

@@ -32,6 +32,11 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
 
         }
 
+        public override void BuildHeap_Recursively()
+        {
+
+        }
+
         public override void Insert(int value)
         {
 
@@ -41,7 +46,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         {
             if (HeapArray.Any())
             {
-
+                // TODO
             }
 
             rootValue = int.MaxValue;
@@ -59,29 +64,14 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
             return false;
         }
 
-        public override void BuildHeap_Recursively()
-        {
-
-        }
-
-        public override void BuildHeap_Iteratively()
-        {
-
-        }
-
         public override void BubbleUp_Iteratively(int index)
         {
-            
+
         }
 
         public override void BubbleDown_Recursively(int rootIndex)
         {
-
-        }
-
-        public override void BubbleDown_Iteratively(int rootIndex)
-        {
-
+            // TODO NEXT
         }
 
         public void BubbleDownMin_Recursively()
@@ -99,5 +89,19 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
 
         }
 
+        public void TryFindMax()
+        {
+
+        }
+
+        public override void BuildHeap_Iteratively()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override void BubbleDown_Iteratively(int rootIndex)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

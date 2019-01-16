@@ -22,13 +22,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 
-namespace CSFundamentalAlgorithmsTests.BinaryHeaps
+namespace CSFundamentalAlgorithmsTests.BinaryHeapsTests
 {
     [TestClass]
-    public class BinatyHeapBaseTests
+    public class BinaryHeapBaseTests
     {
         [TestMethod]
-        public void MinBinaryHeap_Swap_Test()
+        public void BinaryHeap_Swap_Test()
         {
             List<int> values = new List<int> { 10, 34, 56, 2, 12, 1 };
             var heap = new MinBinaryHeap(values);
@@ -39,7 +39,7 @@ namespace CSFundamentalAlgorithmsTests.BinaryHeaps
         }
 
         [TestMethod]
-        public void MinBinaryHeap_TryFindMinIndex_Test()
+        public void BinaryHeap_TryFindMinIndex_Test()
         {
             List<int> values = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
             var heap = new MinBinaryHeap(values);
@@ -62,7 +62,7 @@ namespace CSFundamentalAlgorithmsTests.BinaryHeaps
         }
 
         [TestMethod]
-        public void MinBinaryHeap_TryFindMaxIndex_Test()
+        public void BinaryHeap_TryFindMaxIndex_Test()
         {
             List<int> values = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
             var heap = new MinBinaryHeap(values);
@@ -82,6 +82,39 @@ namespace CSFundamentalAlgorithmsTests.BinaryHeaps
             bool result4 = heap.TryFindMaxIndex(values, new List<int> { 1, 3 }, 21, out int maxValueIndex4);
             Assert.IsTrue(result4);
             Assert.AreEqual(1, maxValueIndex4);
+        }
+
+        [TestMethod]
+        public void BinaryHeap_GetNodeLevel_Test()
+        {
+            List<int> values = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
+            var heap = new MinBinaryHeap(values);
+            heap.BuildHeap_Recursively();
+
+            for (int index = 0; index < values.Count; index++)
+            {
+                MinBinaryHeapTests.CheckMinHeapOrderingPropertyForNode(heap, index);
+            }
+
+            Assert.AreEqual(0, values.IndexOf(1));
+            Assert.AreEqual(1, values.IndexOf(10));
+            Assert.AreEqual(2, values.IndexOf(3));
+            Assert.AreEqual(3, values.IndexOf(21));
+            Assert.AreEqual(4, values.IndexOf(42));
+            Assert.AreEqual(5, values.IndexOf(202));
+            Assert.AreEqual(6, values.IndexOf(150));
+            Assert.AreEqual(7, values.IndexOf(34));
+            Assert.AreEqual(8, values.IndexOf(70));
+
+            Assert.AreEqual(2, heap.GetNodeLevel(values.IndexOf(150)));
+            Assert.AreEqual(3, heap.GetNodeLevel(values.IndexOf(70)));
+            Assert.AreEqual(2, heap.GetNodeLevel(values.IndexOf(202)));
+            Assert.AreEqual(3, heap.GetNodeLevel(values.IndexOf(34)));
+            Assert.AreEqual(2, heap.GetNodeLevel(values.IndexOf(42)));
+            Assert.AreEqual(0, heap.GetNodeLevel(values.IndexOf(1)));
+            Assert.AreEqual(1, heap.GetNodeLevel(values.IndexOf(3)));
+            Assert.AreEqual(1, heap.GetNodeLevel(values.IndexOf(10)));
+            Assert.AreEqual(2, heap.GetNodeLevel(values.IndexOf(21)));
         }
     }
 }
