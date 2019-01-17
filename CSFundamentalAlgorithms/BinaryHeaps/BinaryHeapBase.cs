@@ -117,13 +117,13 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
             }
 
             /* If all of the indexes exceed the range of the array, return false, and leave minValueReference as it was */
-            if (indexes.All(index => index >= values.Count))
+            if (indexes.All(index => index >= values.Count || index < 0))
             {
                 return false;
             }
 
             /* Find the minimum value.*/
-            foreach (int index in indexes.Where(index => index < values.Count && values[index] < minValueReference))
+            foreach (int index in indexes.Where(index => index < values.Count && index >= 0 && values[index] < minValueReference))
             {
                 minValueReference = values[index];
                 minValueIndex = index;
@@ -176,12 +176,6 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
             }
 
             return true;
-        }
-
-        private bool IsMinLevel(int level)
-        {
-            /* In a Min-Max heap nodes at even levels (0,2,4,...) are at Min Levels. */
-            return level % 2 == 0;
         }
     }
 }

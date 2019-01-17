@@ -17,10 +17,12 @@
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalAlgorithms.BinaryHeaps
 {
-    class MaxHeapBinaryTests
+    [TestClass]
+    public class MaxHeapBinaryTests
     {
         // TODO
     }

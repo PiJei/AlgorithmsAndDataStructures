@@ -73,6 +73,12 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         public override void BubbleUp_Iteratively(int index)
         {
             int parentIndex = GetParentIndex(index);
+
+            if (parentIndex < 0 || parentIndex >= HeapArray.Count) /* Checks for corner cases. */
+            {
+                return;
+            }
+
             while (index != 0 && HeapArray[parentIndex] < HeapArray[index])
             {
                 Swap(HeapArray, parentIndex, index);
