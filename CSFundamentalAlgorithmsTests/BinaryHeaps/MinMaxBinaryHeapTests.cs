@@ -18,12 +18,30 @@
  */
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+using CSFundamentalAlgorithms.BinaryHeaps;
 
 namespace CSFundamentalAlgorithmsTests.BinaryHeaps
 {
     [TestClass]
     public class MinMaxBinaryHeapTests
     {
+        [TestMethod]
+        public void MinMaxBinaryHeap_BuildHeapRecursively_Test1()
+        {
+            List<int> values = new List<int> { 70, 21, 220, 10, 1, 34, 3, 150, 85 };
+            var heap = new MinMaxBinaryHeap(values);
+            heap.BuildHeap_Recursively();
 
+            Assert.IsTrue(heap.IsMinLevel(heap.GetNodeLevel(values.IndexOf(70))));
+            Assert.IsFalse(heap.IsMinLevel(heap.GetNodeLevel(values.IndexOf(21))));
+            Assert.IsFalse(heap.IsMinLevel(heap.GetNodeLevel(values.IndexOf(220))));
+            Assert.IsTrue(heap.IsMinLevel(heap.GetNodeLevel(values.IndexOf(10))));
+            Assert.IsTrue(heap.IsMinLevel(heap.GetNodeLevel(values.IndexOf(1))));
+            Assert.IsTrue(heap.IsMinLevel(heap.GetNodeLevel(values.IndexOf(34))));
+            Assert.IsTrue(heap.IsMinLevel(heap.GetNodeLevel(values.IndexOf(3))));
+            Assert.IsFalse(heap.IsMinLevel(heap.GetNodeLevel(values.IndexOf(150))));
+            Assert.IsFalse(heap.IsMinLevel(heap.GetNodeLevel(values.IndexOf(85))));
+        }
     }
 }

@@ -32,22 +32,22 @@ namespace CSFundamentalAlgorithmsTests.BinaryHeapsTests
         private List<int> arrayHeap2RecursivelyBuilt = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
         private List<int> arrayHeap2IterativelyBuilt = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
 
-        // Checking the MinHeap properties (node relations) for each value, to make sure the correct relations between the node and its parent and children holds. 
+        // Checking the MinHeap ordering (node relations) for the node at the given index, to make sure the correct relations between the node and its parent and children holds. 
         public static void CheckMinHeapOrderingPropertyForNode(MinBinaryHeap heap, int nodeIndex)
         {
             int leftChildIndex = heap.GetLeftChildIndexInHeapArray(nodeIndex);
             int rightChildIndex = heap.GetRightChildIndexInHeapArray(nodeIndex);
             int parentindex = heap.GetParentIndex(nodeIndex);
 
-            if (leftChildIndex < heap.HeapArray.Count)
+            if (leftChildIndex >= 0 && leftChildIndex < heap.HeapArray.Count)
             {
                 Assert.IsTrue(heap.HeapArray[nodeIndex] <= heap.HeapArray[leftChildIndex]);
             }
-            if (rightChildIndex < heap.HeapArray.Count)
+            if (rightChildIndex >= 0 && rightChildIndex < heap.HeapArray.Count)
             {
                 Assert.IsTrue(heap.HeapArray[nodeIndex] <= heap.HeapArray[rightChildIndex]);
             }
-            if (parentindex < heap.HeapArray.Count)
+            if (parentindex >= 0 && parentindex < heap.HeapArray.Count)
             {
                 Assert.IsTrue(heap.HeapArray[nodeIndex] >= heap.HeapArray[parentindex]);
             }

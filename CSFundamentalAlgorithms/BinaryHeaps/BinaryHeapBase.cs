@@ -110,12 +110,6 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         {
             minValueIndex = Int32.MinValue;
 
-            /* Expects the given minValueReference value to be an item in the array.  */
-            if (!values.Contains(minValueReference))
-            {
-                return false;
-            }
-
             /* If all of the indexes exceed the range of the array, return false, and leave minValueReference as it was */
             if (indexes.All(index => index >= values.Count || index < 0))
             {
@@ -149,12 +143,6 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         public bool TryFindMaxIndex(List<int> values, List<int> indexes, int maxValueReference, out int maxValueIndex)
         {
             maxValueIndex = Int32.MaxValue;
-
-            /* Expects the given minValueReference value to be an item in the array.  */
-            if (!values.Contains(maxValueReference))
-            {
-                return false;
-            }
 
             /* If all of the indexes exceed the range of the array, return false, and leave maxValueReference as it was */
             if (indexes.All(index => index >= values.Count))

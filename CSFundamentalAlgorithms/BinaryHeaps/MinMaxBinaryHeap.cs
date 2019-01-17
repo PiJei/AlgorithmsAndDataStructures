@@ -243,7 +243,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         /// </summary>
         /// <param name="level">Specifies the level of a node in a MinMax heap.</param>
         /// <returns>True in case of success, and false otherwise. </returns>
-        private bool IsMinLevel(int level)
+        public bool IsMinLevel(int level)
         {
             /* In a Min-Max heap nodes at even levels (0,2,4,...) are at Min Levels. */
             return level % 2 == 0;
@@ -259,19 +259,18 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
             var childrenIndexes = new List<int>();
             foreach (int index in indexes.Where(index => index < HeapArray.Count))
             {
-                if (index < HeapArray.Count)
+                int leftChildIndex = GetLeftChildIndexInHeapArray(index);
+                int rightChildIndex = GetRightChildIndexInHeapArray(index);
+
+                if (leftChildIndex < HeapArray.Count)
                 {
-                    int leftChildIndex = GetLeftChildIndexInHeapArray(index);
-                    int rightChildIndex = GetRightChildIndexInHeapArray(index);
-                    if (leftChildIndex < HeapArray.Count)
-                    {
-                        childrenIndexes.Add(leftChildIndex);
-                    }
-                    if (rightChildIndex < HeapArray.Count)
-                    {
-                        childrenIndexes.Add(rightChildIndex);
-                    }
+                    childrenIndexes.Add(leftChildIndex);
                 }
+                if (rightChildIndex < HeapArray.Count)
+                {
+                    childrenIndexes.Add(rightChildIndex);
+                }
+
             }
             return childrenIndexes;
         }

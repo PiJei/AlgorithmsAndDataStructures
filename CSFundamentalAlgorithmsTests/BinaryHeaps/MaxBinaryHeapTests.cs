@@ -24,6 +24,27 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
     [TestClass]
     public class MaxHeapBinaryTests
     {
+        // Checking the MaxHeap ordering (node relations) for the node at the given index, to make sure the correct relations between the node and its parent and children holds. 
+        public static void CheckMaxHeapOrderingPropertyForNode(MinBinaryHeap heap, int nodeIndex)
+        {
+            int leftChildIndex = heap.GetLeftChildIndexInHeapArray(nodeIndex);
+            int rightChildIndex = heap.GetRightChildIndexInHeapArray(nodeIndex);
+            int parentindex = heap.GetParentIndex(nodeIndex);
+
+            if (leftChildIndex >= 0 && leftChildIndex < heap.HeapArray.Count)
+            {
+                Assert.IsTrue(heap.HeapArray[nodeIndex] >= heap.HeapArray[leftChildIndex]);
+            }
+            if (rightChildIndex >= 0 && rightChildIndex < heap.HeapArray.Count)
+            {
+                Assert.IsTrue(heap.HeapArray[nodeIndex] >= heap.HeapArray[rightChildIndex]);
+            }
+            if (parentindex >= 0 && parentindex < heap.HeapArray.Count)
+            {
+                Assert.IsTrue(heap.HeapArray[nodeIndex] <= heap.HeapArray[parentindex]);
+            }
+        }
+
         // TODO
     }
 }
