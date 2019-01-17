@@ -33,7 +33,7 @@ namespace CSFundamentalAlgorithmsTests.BinaryHeapsTests
         private List<int> arrayHeap2IterativelyBuilt = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
 
         // Checking the MinHeap ordering (node relations) for the node at the given index, to make sure the correct relations between the node and its parent and children holds. 
-        public static void CheckMinHeapOrderingPropertyForNode(MinBinaryHeap heap, int nodeIndex)
+        public static void CheckMinHeapOrderingPropertyForNode(BinaryHeapBase heap, int nodeIndex)
         {
             int leftChildIndex = heap.GetLeftChildIndexInHeapArray(nodeIndex);
             int rightChildIndex = heap.GetRightChildIndexInHeapArray(nodeIndex);

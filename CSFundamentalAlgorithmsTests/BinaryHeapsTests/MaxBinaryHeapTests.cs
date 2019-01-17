@@ -18,14 +18,15 @@
  */
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using CSFundamentalAlgorithms.BinaryHeaps;
 
-namespace CSFundamentalAlgorithms.BinaryHeaps
+namespace CSFundamentalAlgorithmsTests.BinaryHeapsTests
 {
     [TestClass]
-    public class MaxHeapBinaryTests
+    public class MaxBinaryHeapTests
     {
         // Checking the MaxHeap ordering (node relations) for the node at the given index, to make sure the correct relations between the node and its parent and children holds. 
-        public static void CheckMaxHeapOrderingPropertyForNode(MinBinaryHeap heap, int nodeIndex)
+        public static void CheckMaxHeapOrderingPropertyForNode(BinaryHeapBase heap, int nodeIndex)
         {
             int leftChildIndex = heap.GetLeftChildIndexInHeapArray(nodeIndex);
             int rightChildIndex = heap.GetRightChildIndexInHeapArray(nodeIndex);
