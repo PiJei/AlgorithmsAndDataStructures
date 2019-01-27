@@ -123,5 +123,37 @@ namespace CSFundamentalAlgorithmsTests.BinaryHeapsTests
             Assert.AreEqual(1, maxValue9);
             CheckMaxHeapOrderingPropertyForHeap(values.Count, heap);
         }
+
+        [TestMethod]
+        public void MaxBinaryHeap_Insert_Test()
+        {
+            MaxBinaryHeap heap = new MaxBinaryHeap(new List<int> { });
+            heap.Insert(1);
+            CheckMaxHeapOrderingPropertyForHeap(heap.HeapArray.Count, heap);
+
+            heap.Insert(20);
+            CheckMaxHeapOrderingPropertyForHeap(heap.HeapArray.Count, heap);
+
+            heap.Insert(32);
+            CheckMaxHeapOrderingPropertyForHeap(heap.HeapArray.Count, heap);
+
+            heap.Insert(56);
+            CheckMaxHeapOrderingPropertyForHeap(heap.HeapArray.Count, heap);
+
+            heap.Insert(5);
+            CheckMaxHeapOrderingPropertyForHeap(heap.HeapArray.Count, heap);
+
+            heap.Insert(3);
+            CheckMaxHeapOrderingPropertyForHeap(heap.HeapArray.Count, heap);
+
+            heap.Insert(10);
+            CheckMaxHeapOrderingPropertyForHeap(heap.HeapArray.Count, heap);
+
+            heap.Insert(100);
+            CheckMaxHeapOrderingPropertyForHeap(heap.HeapArray.Count, heap);
+
+            heap.Insert(72);
+            CheckMaxHeapOrderingPropertyForHeap(heap.HeapArray.Count, heap);
+        }
     }
 }
