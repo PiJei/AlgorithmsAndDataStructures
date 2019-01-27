@@ -19,7 +19,8 @@
 
 namespace CSFundamentalAlgorithms.SortingAlgs
 {
-    class QuickSort
+    public class QuickSort
     {
+        // TODO
     }
 }

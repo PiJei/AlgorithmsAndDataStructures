@@ -17,9 +17,13 @@
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 namespace CSFundamentalAlgorithmsTests.SortingAlgsTests
 {
-    class QuickSortTests
+    [TestClass]
+    public class QuickSortTests
     {
+        // TODO
     }
 }
