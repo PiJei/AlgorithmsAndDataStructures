@@ -164,13 +164,13 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
                 if (maxElementIndex != rootIndex)
                 {
                     Swap(HeapArray, maxElementIndex, rootIndex);
-                    BubbleDown_Iteratively(maxElementIndex);
+                    rootIndex = maxElementIndex;
                 }
                 else
                 {
                     if (TryFindMaxIndex(HeapArray, new List<int> { leftChildIndex, rightChildIndex }, Int32.MinValue, out int maxChildIndex))
                     {
-                        BubbleDown_Iteratively(maxChildIndex);
+                        rootIndex = maxChildIndex;
                     }
                     else
                     {
