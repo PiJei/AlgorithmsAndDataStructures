@@ -54,6 +54,7 @@
     <Compile Include="BinaryHeapsTests\MaxBinaryHeapTests.cs" />
     <Compile Include="BinaryHeapsTests\MinBinaryHeapTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SortingAlgsTests\QuickSortTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
