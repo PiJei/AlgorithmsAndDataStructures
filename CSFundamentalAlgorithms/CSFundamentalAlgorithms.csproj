@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BinaryHeaps\BinaryHeapBase.cs" />
+    <Compile Include="BinaryHeaps\IBinaryHeap.cs" />
     <Compile Include="BinaryHeaps\MinMaxBinaryHeap.cs" />
     <Compile Include="Graphs\GraphNode.cs" />
     <Compile Include="Graphs\TraversalAlgorithms.cs" />
