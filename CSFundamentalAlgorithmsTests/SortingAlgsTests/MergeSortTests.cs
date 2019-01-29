@@ -32,10 +32,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgsTests
             List<int> values = new List<int> { 5, 3, 7, 1, 100 };
             MergeSort.MergeSort_Recursively(values, 0, 4);
 
-            for (int i = 0; i <= values.Count - 1; i++)
-            {
-                Assert.IsTrue(values[i] <= values[i + 1]);
-            }
+            SortingTestsCommon.CheckIfListIsSortedAscendingly(values);
         }
     }
 }
