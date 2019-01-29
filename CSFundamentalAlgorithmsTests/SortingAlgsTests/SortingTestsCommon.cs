@@ -31,7 +31,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgsTests
         {
             for (int i = 0; i < values.Count - 1; i++)
             {
-                Assert.IsTrue(values[i] < values[i + 1]);
+                Assert.IsTrue(values[i] <= values[i + 1]);
             }
         }
     }

@@ -27,12 +27,39 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgsTests
     public class MergeSortTests
     {
         [TestMethod]
-        public void MergeSort_MergeSort_Recursively_Test()
+        public void MergeSort_MergeSort_Recursively_Test_withDistinctValues()
         {
             List<int> values = new List<int> { 5, 3, 7, 1, 100 };
             MergeSort.MergeSort_Recursively(values, 0, 4);
 
             SortingTestsCommon.CheckIfListIsSortedAscendingly(values);
+        }
+
+        [TestMethod]
+        public void MergeSort_MergeSort_Recursively_Test_withRedundantValues()
+        {
+            List<int> values = new List<int> { 100, 2, 3, 1, 56, 78, 209, 46, 78, 10, 12, 1, 51, 15 };
+            MergeSort.MergeSort_Recursively(values, 0, values.Count - 1);
+
+            SortingTestsCommon.CheckIfListIsSortedAscendingly(values);
+        }
+
+        [TestMethod]
+        public void MergeSort_Merge_Test()
+        {
+            List<int> values1 = new List<int> { 10, 1 };
+            MergeSort.Merge(values1, 0, 0, 1);
+            SortingTestsCommon.CheckIfListIsSortedAscendingly(values1);
+
+            List<int> values2 = new List<int> { 10, 1 };
+            // Indices are such that the list will not get sorted, 
+            MergeSort.Merge(values2, 0, 1, 1);
+            Assert.IsTrue(values2[0] == 10);
+            Assert.IsTrue(values2[1] == 1);
+
+            List<int> values3 = new List<int> { 10, 41, 3, 10 };
+            MergeSort.Merge(values3, 0, 1, 3);
+            SortingTestsCommon.CheckIfListIsSortedAscendingly(values3);
         }
     }
 }

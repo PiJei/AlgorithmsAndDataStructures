@@ -27,9 +27,18 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgsTests
     public class QuickSortTests
     {
         [TestMethod]
-        public void QuickSort_QuickSort_Recursively_Test()
+        public void QuickSort_QuickSort_Recursively_Test1()
         {
             List<int> values = new List<int> { 100, 2, 3, 1, 56, 78, 209, 46, 21, 10, 12, 15, 51 };
+            QuickSort.QuickSort_Recursively(values, 0, values.Count - 1);
+
+            SortingTestsCommon.CheckIfListIsSortedAscendingly(values);
+        }
+
+        [TestMethod]
+        public void QuickSort_QuickSort_Recursively_Test2()
+        {
+            List<int> values = new List<int> { 100, 2, 3, 1, 56, 78, 209, 46, 78, 10, 12, 1, 51, 15 };
             QuickSort.QuickSort_Recursively(values, 0, values.Count - 1);
 
             SortingTestsCommon.CheckIfListIsSortedAscendingly(values);

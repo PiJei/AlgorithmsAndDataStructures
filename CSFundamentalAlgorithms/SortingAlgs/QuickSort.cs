@@ -56,15 +56,15 @@ namespace CSFundamentalAlgorithms.SortingAlgs
 
             while (true)
             {
-                while(values[leftIndex] < pivotValue)
+                while (values[leftIndex] < pivotValue)
                 {
                     leftIndex++;
                 }
-                while(values[rightIndex]> pivotValue)
+                while (values[rightIndex] > pivotValue)
                 {
                     rightIndex--;
                 }
-                if(rightIndex <= leftIndex)
+                if (rightIndex <= leftIndex)
                 {
                     return rightIndex;
                 }
