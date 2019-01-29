@@ -71,12 +71,12 @@ namespace CSFundamentalAlgorithms.SortingAlgs
 
             while (leftHalfCounter <= high1 && rightHalfCounter <= high2)
             {
-                if (valuesOriginal[leftHalfCounter] < valuesOriginal[rightHalfCounter])
+                if (valuesOriginal[leftHalfCounter] <= valuesOriginal[rightHalfCounter])
                 {
                     values[mainArrayCounter] = valuesOriginal[leftHalfCounter];
                     leftHalfCounter++;
                 }
-                if (valuesOriginal[leftHalfCounter] > valuesOriginal[rightHalfCounter])
+                else if (valuesOriginal[leftHalfCounter] > valuesOriginal[rightHalfCounter])
                 {
                     values[mainArrayCounter] = valuesOriginal[rightHalfCounter];
                     rightHalfCounter++;

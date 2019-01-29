@@ -56,11 +56,11 @@ namespace CSFundamentalAlgorithms.SortingAlgs
 
             while (true)
             {
-                while (values[leftIndex] < pivotValue)
+                while (leftIndex <= highIndex && values[leftIndex] < pivotValue)
                 {
                     leftIndex++;
                 }
-                while (values[rightIndex] > pivotValue)
+                while (rightIndex <= highIndex && values[rightIndex] > pivotValue)
                 {
                     rightIndex--;
                 }
@@ -69,6 +69,11 @@ namespace CSFundamentalAlgorithms.SortingAlgs
                     return rightIndex;
                 }
                 Swap(values, leftIndex, rightIndex);
+
+                // These increments are needed, as otherwise there will be issues with duplicate values in the array.
+                // Notice an alternative would be to remove thesetwo increments, and make the loops do-while, in which case leftIndex = currentLeftIndex-1, and rightIndex = currentRightIndex+1
+                leftIndex++;
+                rightIndex--;
             }
         }
 
