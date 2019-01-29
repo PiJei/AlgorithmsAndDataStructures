@@ -72,6 +72,12 @@ namespace CSFundamentalAlgorithms.SortingAlgs
             }
         }
 
+        /// <summary>
+        /// This algorithm uses the middle element of the array as pivot. Other mechanisms exist also. 
+        /// </summary>
+        /// <param name="lowIndex"></param>
+        /// <param name="highIndex"></param>
+        /// <returns></returns>
         public static int GetPivotIndex(int lowIndex, int highIndex)
         {
             return (lowIndex + highIndex) / 2;
