@@ -98,5 +98,16 @@ namespace CSFundamentalAlgorithms.SortingAlgs
                 mainArrayCounter++;
             }
         }
+
+        /// <summary>
+        /// Provides an iterative version for MergeSort. 
+        /// </summary>
+        /// <param name="values"></param>
+        /// <param name="lowIndex"></param>
+        /// <param name="highIndex"></param>
+        public static void MergeSort_Iteratively(List<int> values, int lowIndex, int highIndex)
+        {
+            // TODO 
+        }
     }
 }

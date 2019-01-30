@@ -94,5 +94,16 @@ namespace CSFundamentalAlgorithms.SortingAlgs
             values[index1] = values[index2];
             values[index2] = temp;
         }
+
+        /// <summary>
+        /// Provides an iterative version of QuickSort.
+        /// </summary>
+        /// <param name="values"></param>
+        /// <param name="lowIndex"></param>
+        /// <param name="highIndex"></param>
+        public static void QuickSort_Iteratively(List<int> values, int lowIndex, int highIndex)
+        {
+            // TODO
+        }
     }
 }
