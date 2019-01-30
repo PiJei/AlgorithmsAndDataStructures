@@ -68,7 +68,7 @@ namespace CSFundamentalAlgorithms.SortingAlgs
                 {
                     return rightIndex;
                 }
-                Swap(values, leftIndex, rightIndex);
+                SortingCommon.Swap(values, leftIndex, rightIndex);
 
                 // These increments are needed, as otherwise there will be issues with duplicate values in the array.
                 // Notice an alternative would be to remove thesetwo increments, and make the loops do-while, in which case leftIndex = currentLeftIndex-1, and rightIndex = currentRightIndex+1
@@ -86,13 +86,6 @@ namespace CSFundamentalAlgorithms.SortingAlgs
         public static int GetPivotIndex(int lowIndex, int highIndex)
         {
             return (lowIndex + highIndex) / 2;
-        }
-
-        public static void Swap(List<int> values, int index1, int index2)
-        {
-            int temp = values[index1];
-            values[index1] = values[index2];
-            values[index2] = temp;
         }
 
         /// <summary>

@@ -119,7 +119,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
             rootValue = HeapArray[0];
             HeapArray[0] = HeapArray[heapArrayLength - 1];
             HeapArray.RemoveAt(heapArrayLength - 1);
-            BubbleDown_Recursively(0, heapArrayLength);
+            BubbleDown_Recursively(0, heapArrayLength - 1); /* notice that the array is shorter by one value now, thus the new arraylength is one smaller. */
 
             return true;
         }
@@ -152,7 +152,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
             int rightChildIndex = GetRightChildIndexInHeapArray(rootIndex);
             int maxElementIndex = rootIndex;
 
-            if (TryFindMaxIndex(HeapArray, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[maxElementIndex], out int maxIndex))
+            if (TryFindMaxIndex(HeapArray, heapArrayLength, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[maxElementIndex], out int maxIndex))
             {
                 maxElementIndex = maxIndex;
             }
@@ -181,7 +181,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
                 int rightChildIndex = GetRightChildIndexInHeapArray(rootIndex);
                 int maxElementIndex = rootIndex;
 
-                if (TryFindMaxIndex(HeapArray, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[rootIndex], out int maxIndex))
+                if (TryFindMaxIndex(HeapArray, heapArrayLength, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[rootIndex], out int maxIndex))
                 {
                     maxElementIndex = maxIndex;
                 }
@@ -193,7 +193,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
                 }
                 else
                 {
-                    if (TryFindMaxIndex(HeapArray, new List<int> { leftChildIndex, rightChildIndex }, Int32.MinValue, out int maxChildIndex))
+                    if (TryFindMaxIndex(HeapArray, heapArrayLength, new List<int> { leftChildIndex, rightChildIndex }, Int32.MinValue, out int maxChildIndex))
                     {
                         rootIndex = maxChildIndex;
                     }

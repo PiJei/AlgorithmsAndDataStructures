@@ -158,7 +158,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
             rootValue = HeapArray[0];
             HeapArray[0] = HeapArray[heapArrayLength - 1];
             HeapArray.RemoveAt(heapArrayLength - 1);
-            BubbleDownMin_Recursively(0, heapArrayLength); /* Calling this method, because this is a min-max heap and 0 is expected to be on a min level.*/
+            BubbleDownMin_Recursively(0, heapArrayLength - 1); /* Calling this method, because this is a min-max heap and 0 is expected to be on a min level.*/ /* Also notice that the array is shorter by one value now, thus the new arraylength is one smaller. */
             return true;
         }
 
@@ -246,7 +246,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
             List<int> grandChildrenIndexes = GetChildrenIndexes(childrenIndexes, heapArrayLength);
 
             int maxDescendentIndex = int.MinValue;
-            if (!TryFindMaxIndex(HeapArray, childrenIndexes.Union(grandChildrenIndexes).ToList(), int.MinValue, out int maxIndex))
+            if (!TryFindMaxIndex(HeapArray, heapArrayLength, childrenIndexes.Union(grandChildrenIndexes).ToList(), int.MinValue, out int maxIndex))
             {
                 return;
             }

@@ -17,13 +17,31 @@
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+ using Microsoft.VisualStudio.TestTools.UnitTesting;
+using CSFundamentalAlgorithms.SortingAlgs;
 
 namespace CSFundamentalAlgorithmsTests.SortingAlgsTests
 {
     [TestClass]
     public class HeapSortTests
     {
-        // TODO
+        [TestMethod]
+        public void HeapSort_HeapSortAscending_Test_WithDistinctValues()
+        {
+            List<int> values = new List<int> { 100, 2, 3, 1, 56, 78, 209, 46, 21, 10, 12, 15, 51 };
+            HeapSort.HeapSort_Ascending(values);
+
+            SortingTestsCommon.CheckIfListIsSortedAscendingly(values);
+        }
+
+        [TestMethod]
+        public void HeapSort_HeapSortAscending_Test_WithDuplicateValues()
+        {
+            List<int> values = new List<int> { 100, 2, 3, 1, 56, 78, 209, 46, 78, 10, 12, 1, 51, 15 };
+            HeapSort.HeapSort_Ascending(values);
+
+            SortingTestsCommon.CheckIfListIsSortedAscendingly(values);
+        }
     }
 }

@@ -140,22 +140,23 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         /// Finds the maximum element in the array, among the given indexes, with respect to maxValueReference, and returns the index of the max value. 
         /// </summary>
         /// <param name="values">Specifies the list of values. </param>
+        /// <param name="valuesCount">Specifies the length of values array, which based on the usage, might be less than values.Count. For example when called via Heap-Sort. </param>
         /// <param name="indexes">Specifies the list of indexes among which we want to find the maximum value. </param>
         /// <param name="maxValueReference">Specifies the reference for the maximum value.  </param>
         /// <param name="maxValueIndex">Specifies the index of the maximum value among the specifies indexes. </param>
         /// <returns>True in case of success, and false in case of failure. </returns>
-        public bool TryFindMaxIndex(List<int> values, List<int> indexes, int maxValueReference, out int maxValueIndex)
+        public bool TryFindMaxIndex(List<int> values, int valuesCount, List<int> indexes, int maxValueReference, out int maxValueIndex)
         {
             maxValueIndex = Int32.MaxValue;
 
             /* If all of the indexes exceed the range of the array, return false, and leave maxValueReference as it was */
-            if (indexes.All(index => index >= values.Count))
+            if (indexes.All(index => index >= valuesCount))
             {
                 return false;
             }
 
             /* Find the minimum value.*/
-            foreach (int index in indexes.Where(index => index < values.Count && values[index] > maxValueReference))
+            foreach (int index in indexes.Where(index => index < valuesCount && values[index] > maxValueReference))
             {
                 maxValueReference = values[index];
                 maxValueIndex = index;
