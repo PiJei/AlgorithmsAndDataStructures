@@ -3,6 +3,9 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:2.4.1
+    environment:
+      TEST_REPORTS: /tmp/test-reports
+    working_directory: ~/CSFundamentalAlgorithms/  
     steps:
       - checkout
       - run: echo "A first hello"
