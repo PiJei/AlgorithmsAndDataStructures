@@ -57,7 +57,7 @@ namespace CSFundamentalAlgorithmsTests.BinaryHeapsTests
         public void MinBinaryHeap_BuildHeapRecursive_Test1()
         {
             var heap = new MinBinaryHeap(arrayHeap1RecursivelyBuilt);
-            heap.BuildHeap_Recursively();
+            heap.BuildHeap_Recursively(heap.HeapArray.Count);
 
             Assert.AreEqual(6, arrayHeap1RecursivelyBuilt.Count);
 
@@ -71,7 +71,7 @@ namespace CSFundamentalAlgorithmsTests.BinaryHeapsTests
         public void MinBinaryHeap_BuildHeapRecursive_Test2()
         {
             var heap = new MinBinaryHeap(arrayHeap2RecursivelyBuilt);
-            heap.BuildHeap_Recursively();
+            heap.BuildHeap_Recursively(heap.HeapArray.Count);
 
             Assert.AreEqual(9, arrayHeap2RecursivelyBuilt.Count);
 
@@ -85,7 +85,7 @@ namespace CSFundamentalAlgorithmsTests.BinaryHeapsTests
         public void MinBinaryHeap_BuildHeapIterative_Test1()
         {
             var heap = new MinBinaryHeap(arrayHeap1IterativelyBuilt);
-            heap.BuildHeap_Iteratively();
+            heap.BuildHeap_Iteratively(heap.HeapArray.Count);
 
             Assert.AreEqual(6, arrayHeap1IterativelyBuilt.Count);
 
@@ -99,7 +99,7 @@ namespace CSFundamentalAlgorithmsTests.BinaryHeapsTests
         public void MinBinaryHeap_BuildHeapIterative_Test2()
         {
             var heap = new MinBinaryHeap(arrayHeap2IterativelyBuilt);
-            heap.BuildHeap_Iteratively();
+            heap.BuildHeap_Iteratively(heap.HeapArray.Count);
 
             Assert.AreEqual(9, arrayHeap2IterativelyBuilt.Count);
 
@@ -113,10 +113,10 @@ namespace CSFundamentalAlgorithmsTests.BinaryHeapsTests
         [TestMethod]
         public void CompareEqualityOfRecursiveAndIterativeMinHeapConstruction()
         {
-            var heap1 = new MinBinaryHeap(arrayHeap1IterativelyBuilt); heap1.BuildHeap_Iteratively();
-            var heap2 = new MinBinaryHeap(arrayHeap2IterativelyBuilt); heap2.BuildHeap_Iteratively();
-            var heap3 = new MinBinaryHeap(arrayHeap1RecursivelyBuilt); heap3.BuildHeap_Recursively();
-            var heap4 = new MinBinaryHeap(arrayHeap2RecursivelyBuilt); heap4.BuildHeap_Recursively();
+            var heap1 = new MinBinaryHeap(arrayHeap1IterativelyBuilt); heap1.BuildHeap_Iteratively(heap1.HeapArray.Count);
+            var heap2 = new MinBinaryHeap(arrayHeap2IterativelyBuilt); heap2.BuildHeap_Iteratively(heap1.HeapArray.Count);
+            var heap3 = new MinBinaryHeap(arrayHeap1RecursivelyBuilt); heap3.BuildHeap_Recursively(heap1.HeapArray.Count);
+            var heap4 = new MinBinaryHeap(arrayHeap2RecursivelyBuilt); heap4.BuildHeap_Recursively(heap1.HeapArray.Count);
 
             for (int i = 0; i < arrayHeap1IterativelyBuilt.Count; i++)
             {
@@ -135,7 +135,7 @@ namespace CSFundamentalAlgorithmsTests.BinaryHeapsTests
             List<int> values = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
 
             var heap = new MinBinaryHeap(values);
-            heap.BuildHeap_Iteratively();
+            heap.BuildHeap_Iteratively(heap.HeapArray.Count);
 
             // The values in the array are expected to be removed in ascending order. 
             bool result1 = heap.TryRemoveRoot(out int min1);

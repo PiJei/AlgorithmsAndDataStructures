@@ -33,11 +33,15 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
 
         }
 
-        public override void BuildHeap_Recursively()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        public override void BuildHeap_Recursively(int heapArrayLength)
         {
-            for (int i = HeapArray.Count / 2; i >= 0; i--)
+            for (int i = heapArrayLength / 2; i >= 0; i--)
             {
-                BubbleDown_Recursively(i);
+                BubbleDown_Recursively(i, heapArrayLength);
             }
         }
 
@@ -151,8 +155,12 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
             return false;
         }
 
-
-        public override void BubbleDown_Recursively(int rootIndex)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="rootIndex"></param>
+        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        public override void BubbleDown_Recursively(int rootIndex, int heapArrayLength)
         {
             int level = GetNodeLevel(rootIndex);
             if (IsMinLevel(level))
@@ -275,12 +283,12 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
             return childrenIndexes;
         }
 
-        public override void BuildHeap_Iteratively()
+        public override void BuildHeap_Iteratively(int heapArrayLength)
         {
             throw new System.NotImplementedException();
         }
 
-        public override void BubbleDown_Iteratively(int rootIndex)
+        public override void BubbleDown_Iteratively(int rootIndex, int heapArrayLength)
         {
             throw new System.NotImplementedException();
         }

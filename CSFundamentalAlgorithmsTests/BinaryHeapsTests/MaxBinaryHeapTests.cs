@@ -61,7 +61,7 @@ namespace CSFundamentalAlgorithmsTests.BinaryHeapsTests
             List<int> values = new List<int> { 1, 20, 32, 56, 5, 3, 10, 100, 72 };
 
             MaxBinaryHeap heap = new MaxBinaryHeap(values);
-            heap.BuildHeap_Recursively();
+            heap.BuildHeap_Recursively(heap.HeapArray.Count);
 
             Assert.AreEqual(9, heap.HeapArray.Count);
             CheckMaxHeapOrderingPropertyForHeap(values.Count, heap);
@@ -73,7 +73,7 @@ namespace CSFundamentalAlgorithmsTests.BinaryHeapsTests
             List<int> values = new List<int> { 1, 20, 32, 56, 5, 3, 10, 100, 72 };
 
             MaxBinaryHeap heap = new MaxBinaryHeap(values);
-            heap.BuildHeap_Iteratively();
+            heap.BuildHeap_Iteratively(heap.HeapArray.Count);
 
             Assert.AreEqual(9, heap.HeapArray.Count);
             CheckMaxHeapOrderingPropertyForHeap(values.Count, heap);
@@ -85,7 +85,7 @@ namespace CSFundamentalAlgorithmsTests.BinaryHeapsTests
             List<int> values = new List<int> { 1, 20, 32, 56, 5, 3, 10, 100, 72 };
 
             MaxBinaryHeap heap = new MaxBinaryHeap(values);
-            heap.BuildHeap_Recursively();
+            heap.BuildHeap_Recursively(heap.HeapArray.Count);
 
             Assert.IsTrue(heap.TryRemoveRoot(out int maxValue1));
             Assert.AreEqual(100, maxValue1);

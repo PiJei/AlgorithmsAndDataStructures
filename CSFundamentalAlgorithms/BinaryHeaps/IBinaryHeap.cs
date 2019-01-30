@@ -26,12 +26,14 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         /// <summary>
         /// Builds a heap using recursion, and does so in situ.
         /// </summary>
-        void BuildHeap_Recursively();
+        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        void BuildHeap_Recursively(int heapArrayLength);
 
         /// <summary>
         /// Builds a heap iteratively, and does so in situ.
         /// </summary>
-        void BuildHeap_Iteratively();
+        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        void BuildHeap_Iteratively(int heapArrayLength);
 
         /// <summary>
         /// This method is for inserting a new value into heap.
@@ -56,13 +58,15 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         /// This method implements the bubble down/trickle down operation using recursion.
         /// </summary>
         /// <param name="rootIndex">Specifies the index of the root element, the element for which the trickle down should be performed.</param>
-        void BubbleDown_Recursively(int rootIndex);
+        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        void BubbleDown_Recursively(int rootIndex, int heapArrayLength);
 
         /// <summary>
         /// This method implements the bubble down/trickle down operation using iteration.
         /// </summary>
         /// <param name="rootIndex">Specifies the index of the root element, the element for which the trickle down should be performed.</param>
-        void BubbleDown_Iteratively(int rootIndex);
+        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        void BubbleDown_Iteratively(int rootIndex, int heapArrayLength);
 
         /// <summary>
         /// Moves the value in the given index, up in the heap till its position is found. The position is defined such to respect heap ordering property.

@@ -25,9 +25,13 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
 {
     public abstract class BinaryHeapBase : IBinaryHeap
     {
-        public abstract void BuildHeap_Iteratively();
+        /// <summary>
+        /// Note that passing the array size is not a must, as the class itself contains the array and has access to its size. However some algorithms such as HeapSort which rely on a heap to perform sorting, are better implemented, if we have the length of the array passed to these methods. 
+        /// </summary>
+        /// <param name="heapArrayLength"></param>
+        public abstract void BuildHeap_Iteratively(int heapArrayLength);
 
-        public abstract void BuildHeap_Recursively();
+        public abstract void BuildHeap_Recursively(int heapArrayLength);
 
         public abstract void Insert(int value);
 
@@ -35,9 +39,9 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
 
         public abstract bool TryFindRoot(out int rootValue);
 
-        public abstract void BubbleDown_Recursively(int rootIndex);
+        public abstract void BubbleDown_Recursively(int rootIndex, int heapArrayLength);
 
-        public abstract void BubbleDown_Iteratively(int rootIndex);
+        public abstract void BubbleDown_Iteratively(int rootIndex, int heapArrayLength);
 
         public abstract void BubbleUp_Iteratively(int index);
 

@@ -38,22 +38,23 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         /// <summary>
         /// Builds an in-place max heap on the given array. 
         /// </summary>
-        public override void BuildHeap_Recursively()
+        public override void BuildHeap_Recursively(int heapArrayLength)
         {
-            for (int i = HeapArray.Count / 2; i >= 0; i--)
+            for (int i = heapArrayLength / 2; i >= 0; i--)
             {
-                BubbleDown_Recursively(i);
+                BubbleDown_Recursively(i, heapArrayLength);
             }
         }
 
         /// <summary>
         /// Is the iterative version of BuildHeap_Recursively. Expect to see exact same results for these two methods. 
         /// </summary>
-        public override void BuildHeap_Iteratively()
+        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        public override void BuildHeap_Iteratively(int heapArrayLength)
         {
-            for (int i = HeapArray.Count / 2; i >= 0; i--)
+            for (int i = heapArrayLength / 2; i >= 0; i--)
             {
-                BubbleDown_Iteratively(i);
+                BubbleDown_Iteratively(i, heapArrayLength);
             }
         }
 
@@ -110,7 +111,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
             rootValue = HeapArray[0];
             HeapArray[0] = HeapArray[HeapArray.Count - 1];
             HeapArray.RemoveAt(HeapArray.Count - 1);
-            BubbleDown_Recursively(0);
+            BubbleDown_Recursively(0, HeapArray.Count);
 
             return true;
         }
@@ -126,7 +127,12 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
             return false;
         }
 
-        public override void BubbleDown_Recursively(int rootIndex)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="rootIndex"></param>
+        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        public override void BubbleDown_Recursively(int rootIndex, int heapArrayLength)
         {
             int leftChildIndex = GetLeftChildIndexInHeapArray(rootIndex);
             int rightChildIndex = GetRightChildIndexInHeapArray(rootIndex);
@@ -143,12 +149,17 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
 
                 if (GetLeftChildIndexInHeapArray(maxElementIndex) < HeapArray.Count)
                 {
-                    BubbleDown_Recursively(maxElementIndex);
+                    BubbleDown_Recursively(maxElementIndex, heapArrayLength);
                 }
             }
         }
 
-        public override void BubbleDown_Iteratively(int rootIndex)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="rootIndex"></param>
+        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        public override void BubbleDown_Iteratively(int rootIndex, int heapArrayLength)
         {
             while (GetLeftChildIndexInHeapArray(rootIndex) < HeapArray.Count)
             {

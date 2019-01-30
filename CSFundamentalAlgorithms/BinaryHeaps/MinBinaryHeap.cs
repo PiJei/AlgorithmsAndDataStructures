@@ -36,22 +36,24 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         /// <summary>
         /// Builds an in-place min heap on the given array. 
         /// </summary>
-        public override void BuildHeap_Recursively()
+        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        public override void BuildHeap_Recursively(int heapArrayLength)
         {
-            for (int i = HeapArray.Count / 2; i >= 0; i--) /* Why to start from half of the array? for bigger elements, left and right children will be out of range, due to the formula by which left and right children are found. */
+            for (int i = heapArrayLength / 2; i >= 0; i--) /* Why to start from half of the array? for bigger elements, left and right children will be out of range, due to the formula by which left and right children are found. */
             {
-                BubbleDown_Recursively(i);
+                BubbleDown_Recursively(i, heapArrayLength);
             }
         }
 
         /// <summary>
         /// Is the iterative version of BuildMinHeap_Recursive. Expect to see exact same results for these two methods. 
         /// </summary>
-        public override void BuildHeap_Iteratively()
+        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        public override void BuildHeap_Iteratively(int heapArrayLength)
         {
-            for (int i = HeapArray.Count / 2; i >= 0; i--)
+            for (int i = heapArrayLength / 2; i >= 0; i--)
             {
-                BubbleDown_Iteratively(i);
+                BubbleDown_Iteratively(i, heapArrayLength);
             }
         }
 
@@ -113,7 +115,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
             rootValue = HeapArray[0]; /* In a minHeap the minimum value is always in the root, which is at index 0.*/
             HeapArray[0] = HeapArray[HeapArray.Count - 1]; /* Move the last element to the place of root, and then bubble down. */
             HeapArray.RemoveAt(HeapArray.Count - 1); /* Removing the last element, as it is now placed in the root's position, and needs to be bubbled down.*/
-            BubbleDown_Recursively(0); /* Call this method to bubble down the (new) root.*/
+            BubbleDown_Recursively(0, HeapArray.Count); /* Call this method to bubble down the (new) root.*/
             return true;
         }
 
@@ -133,8 +135,8 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         /// Recursively MinHeapifies (bubbles down/trickles down) the given rootIndex.
         /// </summary>
         /// <param name="rootIndex">Specifies the index of the node for which bubble down starts. </param>
-        /// <param name="HeapArray">Specifies the heap represented in an array.</param>
-        public override void BubbleDown_Recursively(int rootIndex)
+        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        public override void BubbleDown_Recursively(int rootIndex, int heapArrayLength)
         {
             int leftChildIndex = GetLeftChildIndexInHeapArray(rootIndex);
             int rightChildIndex = GetRightChildIndexInHeapArray(rootIndex);
@@ -154,7 +156,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
                 /* At this point, the value that was at rootIndex, is now at index minElementIndex, and the bubble/trickle down shall continue. */
                 if (GetLeftChildIndexInHeapArray(minElementIndex) < HeapArray.Count) /* To avoid unnecessary recursion : notice that there is no need to check for the right child's index, as if left child index already is out of range so is right child index, since right child index = left child index +1. */
                 {
-                    BubbleDown_Recursively(minElementIndex);
+                    BubbleDown_Recursively(minElementIndex, heapArrayLength);
                 }
             }
         }
@@ -163,8 +165,8 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         /// Is the iterative version of MinHeapify_Recursive method. 
         /// </summary>
         /// <param name="rootIndex">Specifies the index of the node for which bubble down starts. </param>
-        /// <param name="HeapArray">Specifies the heap represented in an array.</param>
-        public override void BubbleDown_Iteratively(int rootIndex)
+        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        public override void BubbleDown_Iteratively(int rootIndex, int heapArrayLength)
         {
             while (GetLeftChildIndexInHeapArray(rootIndex) < HeapArray.Count)
             {

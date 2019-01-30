@@ -89,7 +89,7 @@ namespace CSFundamentalAlgorithmsTests.BinaryHeapsTests
         {
             List<int> values = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
             var heap = new MinBinaryHeap(values);
-            heap.BuildHeap_Recursively();
+            heap.BuildHeap_Recursively(heap.HeapArray.Count);
 
             for (int index = 0; index < values.Count; index++)
             {
