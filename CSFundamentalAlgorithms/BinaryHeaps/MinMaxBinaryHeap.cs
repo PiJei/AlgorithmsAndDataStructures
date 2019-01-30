@@ -144,7 +144,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         {
             rootValue = int.MinValue;
 
-            if (!HeapArray.Any())
+            if (heapArrayLength == 0)
             {
                 return false;
             }

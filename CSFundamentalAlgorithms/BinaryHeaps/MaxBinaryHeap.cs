@@ -105,7 +105,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         {
             rootValue = Int32.MaxValue;
 
-            if (!HeapArray.Any())
+            if (heapArrayLength == 0)
             {
                 return false;
             }

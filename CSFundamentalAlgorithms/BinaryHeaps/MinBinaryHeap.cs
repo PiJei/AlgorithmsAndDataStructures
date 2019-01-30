@@ -105,7 +105,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
             rootValue = Int32.MinValue;
 
             /* If array is empty, returns false. */
-            if (!HeapArray.Any())
+            if (heapArrayLength == 0)
             {
                 return false;
             }
