@@ -2,10 +2,12 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.4.1
-    environment:
-      TEST_REPORTS: /tmp/test-reports
-    working_directory: ~/CSFundamentalAlgorithms/  
+      - image: microsoft/dotnet:2.2-sdk
     steps:
       - checkout
-      - run: echo "A first hello"
+      - run:
+          name: build
+          command: dotnet build docker/CSFundamentalAlgorithms/CSFundamentalAlgorithms.sln
+      - run:
+          name: tests
+          command: dotnet test docker/CSFundamentalAlgorithms/CSFundamentalAlgorithmsTests/CSFundamentalAlgorithmsTests.csproj
