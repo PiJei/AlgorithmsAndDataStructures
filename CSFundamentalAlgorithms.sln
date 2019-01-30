@@ -7,10 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSFundamentalAlgorithms", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSFundamentalAlgorithmsTests", "CSFundamentalAlgorithmsTests\CSFundamentalAlgorithmsTests.csproj", "{B214E5F0-2C65-4780-8B81-44C1598AEA76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCodeExamplesTests", "LeetCodeExamplesTests\LeetCodeExamplesTests.csproj", "{329B6F9E-4309-467D-8E25-D13204AF4452}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCodeExamples", "LeetCodeExamples\LeetCodeExamples.csproj", "{10E03E22-1C04-4419-8003-12F994238BE7}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
