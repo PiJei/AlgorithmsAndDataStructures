@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: build
-          command: dotnet build docker/CSFundamentalAlgorithms/CSFundamentalAlgorithms.sln
+          command: dotnet build CSFundamentalAlgorithms/CSFundamentalAlgorithms.sln
       - run:
           name: tests
-          command: dotnet test docker/CSFundamentalAlgorithms/CSFundamentalAlgorithmsTests/CSFundamentalAlgorithmsTests.csproj
+          command: dotnet test CSFundamentalAlgorithms/CSFundamentalAlgorithmsTests/CSFundamentalAlgorithmsTests.csproj
