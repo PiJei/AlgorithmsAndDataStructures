@@ -53,6 +53,7 @@
     <Compile Include="BinaryHeaps\MaxBinaryHeap.cs" />
     <Compile Include="BinaryHeaps\MinBinaryHeap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SortingAlgs\HeapSort.cs" />
     <Compile Include="SortingAlgs\MergeSort.cs" />
     <Compile Include="SortingAlgs\QuickSort.cs" />
   </ItemGroup>
