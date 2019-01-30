@@ -33,17 +33,17 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
 
         public abstract void BuildHeap_Recursively(int heapArrayLength);
 
-        public abstract void Insert(int value);
+        public abstract void Insert(int value, int heapArrayLength);
 
-        public abstract bool TryRemoveRoot(out int rootValue);
+        public abstract bool TryRemoveRoot(out int rootValue, int heapArrayLength);
 
-        public abstract bool TryFindRoot(out int rootValue);
+        public abstract bool TryFindRoot(out int rootValue, int heapArrayLength);
 
         public abstract void BubbleDown_Recursively(int rootIndex, int heapArrayLength);
 
         public abstract void BubbleDown_Iteratively(int rootIndex, int heapArrayLength);
 
-        public abstract void BubbleUp_Iteratively(int index);
+        public abstract void BubbleUp_Iteratively(int index, int heapArrayLength);
 
         public List<int> HeapArray;
 

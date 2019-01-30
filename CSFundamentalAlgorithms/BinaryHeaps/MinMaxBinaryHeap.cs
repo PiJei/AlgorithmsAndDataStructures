@@ -45,30 +45,40 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
             }
         }
 
-        public override void Insert(int value)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        public override void Insert(int value, int heapArrayLength)
         {
             HeapArray.Add(value);
-            int index = HeapArray.Count - 1;
-            BubbleUp_Recursively(index);
+            int index = heapArrayLength;
+            BubbleUp_Recursively(index, heapArrayLength + 1);
         }
 
-        public void BubbleUp_Recursively(int index)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="index"></param>
+        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        public void BubbleUp_Recursively(int index, int heapArrayLength)
         {
             int level = GetNodeLevel(index);
             int parentIndex = GetParentIndex(index);
 
-            if (parentIndex < HeapArray.Count && parentIndex >= 0 && parentIndex != index) /* Bubble up only makes sense, if the node has a parent.*/
+            if (parentIndex < heapArrayLength && parentIndex >= 0 && parentIndex != index) /* Bubble up only makes sense, if the node has a parent.*/
             {
                 if (IsMinLevel(level))
                 {
                     if (HeapArray[index] > HeapArray[parentIndex]) /* Parent is in a max level, and if its child is larger than it, then a swap should happen.*/
                     {
                         Swap(HeapArray, index, parentIndex);
-                        BubbleUpMax_Recursively(parentIndex); /* At this point, the value is pushed to a max level, and the next bubble up shall happen via max level, which at any point can again switch the bubble up to a min level.*/
+                        BubbleUpMax_Recursively(parentIndex, heapArrayLength); /* At this point, the value is pushed to a max level, and the next bubble up shall happen via max level, which at any point can again switch the bubble up to a min level.*/
                     }
                     else
                     {
-                        BubbleUpMin_Recursively(index); /* If the value at index on a min level is smaller than its parent, then compare to the next min level, by calling this method recursively.*/
+                        BubbleUpMin_Recursively(index, heapArrayLength); /* If the value at index on a min level is smaller than its parent, then compare to the next min level, by calling this method recursively.*/
                     }
                 }
                 else /* meaning the node is located on a max / odd level. */
@@ -76,11 +86,11 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
                     if (HeapArray[index] < HeapArray[parentIndex]) /* Parent is in a min level, and if its child is smaller than it, then a swap should happen.*/
                     {
                         Swap(HeapArray, index, parentIndex);
-                        BubbleUpMin_Recursively(parentIndex); /* At this point, the value is pushed to a min level, and the next bubble up shall happen via min level, whih at any point can again switch the bubble up to a max level. */
+                        BubbleUpMin_Recursively(parentIndex, heapArrayLength); /* At this point, the value is pushed to a min level, and the next bubble up shall happen via min level, whih at any point can again switch the bubble up to a max level. */
                     }
                     else
                     {
-                        BubbleUpMax_Recursively(index); /* if the value at index on a max level is bigger than its parent, then compare to the next max level.*/
+                        BubbleUpMax_Recursively(index, heapArrayLength); /* if the value at index on a max level is bigger than its parent, then compare to the next max level.*/
                     }
                 }
             }
@@ -90,16 +100,17 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         /// Bubbles up the node at the given index which is assumed to be on a min/even level. 
         /// </summary>
         /// <param name="index">Specifies the index of a node in the heap array.</param>
-        public void BubbleUpMin_Recursively(int index)
+        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        public void BubbleUpMin_Recursively(int index, int heapArrayLength)
         {
             int parentIndex = GetParentIndex(index);
             int grandParentindex = GetParentIndex(parentIndex);
-            if (grandParentindex >= 0 && grandParentindex < HeapArray.Count)
+            if (grandParentindex >= 0 && grandParentindex < heapArrayLength)
             {
                 if (HeapArray[index] < HeapArray[grandParentindex])
                 {
                     Swap(HeapArray, index, grandParentindex);
-                    BubbleUpMin_Recursively(grandParentindex);
+                    BubbleUpMin_Recursively(grandParentindex, heapArrayLength);
                 }
             }
         }
@@ -108,21 +119,28 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         /// Bubbles up the node at the given index which is assumed to be on a max/odd level.
         /// </summary>
         /// <param name="index">Specifies the index of a node in the heap array.</param>
-        public void BubbleUpMax_Recursively(int index)
+        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        public void BubbleUpMax_Recursively(int index, int heapArrayLength)
         {
             int parentIndex = GetParentIndex(index);
             int grandParentIndex = GetParentIndex(parentIndex);
-            if (grandParentIndex >= 0 && grandParentIndex < HeapArray.Count)
+            if (grandParentIndex >= 0 && grandParentIndex < heapArrayLength)
             {
                 if (HeapArray[index] > HeapArray[grandParentIndex])
                 {
                     Swap(HeapArray, index, grandParentIndex);
-                    BubbleUpMax_Recursively(grandParentIndex);
+                    BubbleUpMax_Recursively(grandParentIndex, heapArrayLength);
                 }
             }
         }
 
-        public override bool TryRemoveRoot(out int rootValue)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="rootValue"></param>
+        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        /// <returns></returns>
+        public override bool TryRemoveRoot(out int rootValue, int heapArrayLength)
         {
             rootValue = int.MinValue;
 
@@ -130,7 +148,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
             {
                 return false;
             }
-            if (HeapArray.Count == 1)
+            if (heapArrayLength == 1)
             {
                 rootValue = HeapArray[0];
                 HeapArray.Clear();
@@ -138,13 +156,18 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
             }
 
             rootValue = HeapArray[0];
-            HeapArray[0] = HeapArray[HeapArray.Count - 1];
-            HeapArray.RemoveAt(HeapArray.Count - 1);
-            BubbleDownMin_Recursively(0); /* Calling this method, because this is a min-max heap and 0 is expected to be on a min level.*/
+            HeapArray[0] = HeapArray[heapArrayLength - 1];
+            HeapArray.RemoveAt(heapArrayLength - 1);
+            BubbleDownMin_Recursively(0, heapArrayLength); /* Calling this method, because this is a min-max heap and 0 is expected to be on a min level.*/
             return true;
         }
 
-        public override bool TryFindRoot(out int rootValue)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="rootValue"></param>
+        /// <returns></returns>
+        public override bool TryFindRoot(out int rootValue, int heapArrayLength)
         {
             if (HeapArray.Any())
             {
@@ -165,11 +188,11 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
             int level = GetNodeLevel(rootIndex);
             if (IsMinLevel(level))
             {
-                BubbleDownMin_Recursively(rootIndex);
+                BubbleDownMin_Recursively(rootIndex, heapArrayLength);
             }
             else
             {
-                BubbleDownMax_Recursively(rootIndex);
+                BubbleDownMax_Recursively(rootIndex, heapArrayLength);
             }
         }
 
@@ -177,10 +200,10 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         /// Bubbles/trickles down the node at the given index, which is on a min/even level. 
         /// </summary>
         /// <param name="rootIndex">Specifies the index of a node at a min level, from which bubble down starts recursively.</param>
-        public void BubbleDownMin_Recursively(int rootIndex)
+        public void BubbleDownMin_Recursively(int rootIndex, int heapArrayLength)
         {
-            List<int> childrenIndexes = GetChildrenIndexes(new List<int> { rootIndex });
-            List<int> grandChildrenIndexes = GetChildrenIndexes(childrenIndexes);
+            List<int> childrenIndexes = GetChildrenIndexes(new List<int> { rootIndex }, heapArrayLength);
+            List<int> grandChildrenIndexes = GetChildrenIndexes(childrenIndexes, heapArrayLength);
 
             /* Find the index of the descendents of rootIndex that has the minimum value */
             int minDescendentIndex = int.MaxValue;
@@ -203,11 +226,11 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
                 if (grandChildrenIndexes.Contains(minDescendentIndex))
                 {
                     int parentIndex = GetParentIndex(minDescendentIndex);
-                    if (parentIndex >= 0 && parentIndex < HeapArray.Count && HeapArray[minDescendentIndex] > HeapArray[parentIndex])
+                    if (parentIndex >= 0 && parentIndex < heapArrayLength && HeapArray[minDescendentIndex] > HeapArray[parentIndex])
                     {
                         Swap(HeapArray, minDescendentIndex, parentIndex);
                     }
-                    BubbleDownMin_Recursively(minDescendentIndex);
+                    BubbleDownMin_Recursively(minDescendentIndex, heapArrayLength);
                 }
             }
         }
@@ -216,10 +239,11 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         /// Bubbles/trickles down the node at the given index, which is on a max/even level. 
         /// </summary>
         /// <param name="rootIndex">Specifies the index of the node at a max level, from which bubble down starts recursively.</param>
-        public void BubbleDownMax_Recursively(int rootIndex)
+        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        public void BubbleDownMax_Recursively(int rootIndex, int heapArrayLength)
         {
-            List<int> childrenIndexes = GetChildrenIndexes(new List<int> { rootIndex });
-            List<int> grandChildrenIndexes = GetChildrenIndexes(childrenIndexes);
+            List<int> childrenIndexes = GetChildrenIndexes(new List<int> { rootIndex }, heapArrayLength);
+            List<int> grandChildrenIndexes = GetChildrenIndexes(childrenIndexes, heapArrayLength);
 
             int maxDescendentIndex = int.MinValue;
             if (!TryFindMaxIndex(HeapArray, childrenIndexes.Union(grandChildrenIndexes).ToList(), int.MinValue, out int maxIndex))
@@ -237,11 +261,11 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
                 if (grandChildrenIndexes.Contains(maxDescendentIndex))
                 {
                     int parentIndex = GetParentIndex(maxDescendentIndex);
-                    if (parentIndex >= 0 && parentIndex < HeapArray.Count && HeapArray[maxDescendentIndex] < HeapArray[parentIndex])
+                    if (parentIndex >= 0 && parentIndex < heapArrayLength && HeapArray[maxDescendentIndex] < HeapArray[parentIndex])
                     {
                         Swap(HeapArray, maxDescendentIndex, parentIndex);
                     }
-                    BubbleDownMax_Recursively(maxDescendentIndex);
+                    BubbleDownMax_Recursively(maxDescendentIndex, heapArrayLength);
                 }
             }
         }
@@ -262,19 +286,19 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         /// </summary>
         /// <param name="indexes">Specifies the indexes of the nodes for which their children's indexes shall be computed. </param>
         /// <returns>List of all the children of all the indexes. </returns>
-        private List<int> GetChildrenIndexes(List<int> indexes)
+        private List<int> GetChildrenIndexes(List<int> indexes, int heapArrayLength)
         {
             var childrenIndexes = new List<int>();
-            foreach (int index in indexes.Where(index => index < HeapArray.Count))
+            foreach (int index in indexes.Where(index => index < heapArrayLength))
             {
                 int leftChildIndex = GetLeftChildIndexInHeapArray(index);
                 int rightChildIndex = GetRightChildIndexInHeapArray(index);
 
-                if (leftChildIndex < HeapArray.Count)
+                if (leftChildIndex < heapArrayLength)
                 {
                     childrenIndexes.Add(leftChildIndex);
                 }
-                if (rightChildIndex < HeapArray.Count)
+                if (rightChildIndex < heapArrayLength)
                 {
                     childrenIndexes.Add(rightChildIndex);
                 }
@@ -293,7 +317,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
             throw new System.NotImplementedException();
         }
 
-        public override void BubbleUp_Iteratively(int index)
+        public override void BubbleUp_Iteratively(int index, int heapArrayLength)
         {
             throw new System.NotImplementedException();
         }

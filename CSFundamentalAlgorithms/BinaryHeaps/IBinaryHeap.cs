@@ -39,20 +39,22 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         /// This method is for inserting a new value into heap.
         /// </summary>
         /// <param name="value">Specifies the value to be inserted into the heap.</param>
-        void Insert(int value);
+        void Insert(int value, int heapArrayLength);
 
         /// <summary>
         /// This method is for removing the root of the heap. In a MinHeap and MinMaxHeap this is the min, and in a MaxHeap and MaxMinHeap this is the max. 
         /// </summary>
+        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
         /// <returns>True in case of success, and false otherwise.</returns>
-        bool TryRemoveRoot(out int rootValue);
+        bool TryRemoveRoot(out int rootValue, int heapArrayLength);
 
         /// <summary>
         /// This method is for finding the root of the heap, without removing it. 
         /// </summary>
         /// <param name="rootValue"></param>
+        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
         /// <returns>True in case of success, and false in case of failure.</returns>
-        bool TryFindRoot(out int rootValue);
+        bool TryFindRoot(out int rootValue, int heapArrayLength);
 
         /// <summary>
         /// This method implements the bubble down/trickle down operation using recursion.
@@ -72,7 +74,8 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         /// Moves the value in the given index, up in the heap till its position is found. The position is defined such to respect heap ordering property.
         /// </summary>
         /// <param name="index">Specifies the index of the element that should be bubbled up.</param>
-        void BubbleUp_Iteratively(int index);
+        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        void BubbleUp_Iteratively(int index, int heapArrayLength);
 
         /// <summary>
         /// Returns the index of the left child for the given index in a heap array.
