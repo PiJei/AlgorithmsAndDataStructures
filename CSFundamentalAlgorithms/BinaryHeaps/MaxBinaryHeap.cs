@@ -38,22 +38,24 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         /// <summary>
         /// Builds an in-place max heap on the given array. 
         /// </summary>
-        public override void BuildHeap_Recursively()
+        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        public override void BuildHeap_Recursively(int heapArrayLength)
         {
-            for (int i = HeapArray.Count / 2; i >= 0; i--)
+            for (int i = heapArrayLength / 2; i >= 0; i--)
             {
-                BubbleDown_Recursively(i);
+                BubbleDown_Recursively(i, heapArrayLength);
             }
         }
 
         /// <summary>
         /// Is the iterative version of BuildHeap_Recursively. Expect to see exact same results for these two methods. 
         /// </summary>
-        public override void BuildHeap_Iteratively()
+        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        public override void BuildHeap_Iteratively(int heapArrayLength)
         {
-            for (int i = HeapArray.Count / 2; i >= 0; i--)
+            for (int i = heapArrayLength / 2; i >= 0; i--)
             {
-                BubbleDown_Iteratively(i);
+                BubbleDown_Iteratively(i, heapArrayLength);
             }
         }
 
@@ -61,20 +63,26 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         /// Inserts a new value into the Max Heap. 
         /// </summary>
         /// <param name="newValue">Specifies the new value to be inserted in the tree.</param>
-        public override void Insert(int value)
+        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        public override void Insert(int value, int heapArrayLength)
         {
-            HeapArray.Add(value);
+            HeapArray.Add(value);// means gets added to the end of the list. 
 
-            // Bubble up this element
-            int nodeIndex = HeapArray.Count - 1;
-            BubbleUp_Iteratively(nodeIndex);
+            // Bubble up this element/node
+            int nodeIndex = heapArrayLength;
+            BubbleUp_Iteratively(nodeIndex, heapArrayLength + 1); // Notice that the size of the array is grown by one now. 
         }
 
-        public override void BubbleUp_Iteratively(int index)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="index"></param>
+        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        public override void BubbleUp_Iteratively(int index, int heapArrayLength)
         {
             int parentIndex = GetParentIndex(index);
 
-            if (parentIndex < 0 || parentIndex >= HeapArray.Count) /* Checks for corner cases. */
+            if (parentIndex < 0 || parentIndex >= heapArrayLength) /* Checks for corner cases. */
             {
                 return;
             }
@@ -91,16 +99,17 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         /// Removes the max element from the heap.
         /// </summary>
         /// <param name="rootValue">If the operation is successful, contains the maximum element in the array.</param>
+        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
         /// <returns>True in case of success, and false otherwise</returns>
-        public override bool TryRemoveRoot(out int rootValue)
+        public override bool TryRemoveRoot(out int rootValue, int heapArrayLength)
         {
             rootValue = Int32.MaxValue;
 
-            if (!HeapArray.Any())
+            if (heapArrayLength == 0)
             {
                 return false;
             }
-            if (HeapArray.Count == 1)
+            if (heapArrayLength == 1)
             {
                 rootValue = HeapArray[0];
                 HeapArray.Clear();
@@ -108,14 +117,20 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
             }
 
             rootValue = HeapArray[0];
-            HeapArray[0] = HeapArray[HeapArray.Count - 1];
-            HeapArray.RemoveAt(HeapArray.Count - 1);
-            BubbleDown_Recursively(0);
+            HeapArray[0] = HeapArray[heapArrayLength - 1];
+            HeapArray.RemoveAt(heapArrayLength - 1);
+            BubbleDown_Recursively(0, heapArrayLength - 1); /* notice that the array is shorter by one value now, thus the new arraylength is one smaller. */
 
             return true;
         }
 
-        public override bool TryFindRoot(out int rootValue)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="rootValue"></param>
+        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        /// <returns></returns>
+        public override bool TryFindRoot(out int rootValue, int heapArrayLength)
         {
             if (HeapArray.Any())
             {
@@ -126,13 +141,18 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
             return false;
         }
 
-        public override void BubbleDown_Recursively(int rootIndex)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="rootIndex"></param>
+        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        public override void BubbleDown_Recursively(int rootIndex, int heapArrayLength)
         {
             int leftChildIndex = GetLeftChildIndexInHeapArray(rootIndex);
             int rightChildIndex = GetRightChildIndexInHeapArray(rootIndex);
             int maxElementIndex = rootIndex;
 
-            if (TryFindMaxIndex(HeapArray, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[maxElementIndex], out int maxIndex))
+            if (TryFindMaxIndex(HeapArray, heapArrayLength, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[maxElementIndex], out int maxIndex))
             {
                 maxElementIndex = maxIndex;
             }
@@ -141,22 +161,27 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
             {
                 Swap(HeapArray, maxElementIndex, rootIndex);
 
-                if (GetLeftChildIndexInHeapArray(maxElementIndex) < HeapArray.Count)
+                if (GetLeftChildIndexInHeapArray(maxElementIndex) < heapArrayLength)
                 {
-                    BubbleDown_Recursively(maxElementIndex);
+                    BubbleDown_Recursively(maxElementIndex, heapArrayLength);
                 }
             }
         }
 
-        public override void BubbleDown_Iteratively(int rootIndex)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="rootIndex"></param>
+        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        public override void BubbleDown_Iteratively(int rootIndex, int heapArrayLength)
         {
-            while (GetLeftChildIndexInHeapArray(rootIndex) < HeapArray.Count)
+            while (GetLeftChildIndexInHeapArray(rootIndex) < heapArrayLength)
             {
                 int leftChildIndex = GetLeftChildIndexInHeapArray(rootIndex);
                 int rightChildIndex = GetRightChildIndexInHeapArray(rootIndex);
                 int maxElementIndex = rootIndex;
 
-                if (TryFindMaxIndex(HeapArray, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[rootIndex], out int maxIndex))
+                if (TryFindMaxIndex(HeapArray, heapArrayLength, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[rootIndex], out int maxIndex))
                 {
                     maxElementIndex = maxIndex;
                 }
@@ -168,7 +193,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
                 }
                 else
                 {
-                    if (TryFindMaxIndex(HeapArray, new List<int> { leftChildIndex, rightChildIndex }, Int32.MinValue, out int maxChildIndex))
+                    if (TryFindMaxIndex(HeapArray, heapArrayLength, new List<int> { leftChildIndex, rightChildIndex }, Int32.MinValue, out int maxChildIndex))
                     {
                         rootIndex = maxChildIndex;
                     }

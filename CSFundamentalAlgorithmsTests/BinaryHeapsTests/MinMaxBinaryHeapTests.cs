@@ -73,7 +73,7 @@ namespace CSFundamentalAlgorithmsTests.BinaryHeapsTests
         {
             List<int> values = new List<int> { 70, 21, 220, 10, 1, 34, 3, 150, 85 };
             var heap = new MinMaxBinaryHeap(values);
-            heap.BuildHeap_Recursively();
+            heap.BuildHeap_Recursively(heap.HeapArray.Count);
 
             for (int i = 0; i < values.Count; i++)
             {
@@ -104,7 +104,7 @@ namespace CSFundamentalAlgorithmsTests.BinaryHeapsTests
         {
             List<int> values = new List<int> { 39, 45, 37, 45, 38, 50, 59, 65, 27, 25, 36, 30, 57, 28 };
             var heap = new MinMaxBinaryHeap(values);
-            heap.BuildHeap_Recursively();
+            heap.BuildHeap_Recursively(heap.HeapArray.Count);
 
             for (int i = 0; i < values.Count; i++)
             {

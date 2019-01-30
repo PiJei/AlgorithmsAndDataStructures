@@ -61,7 +61,7 @@ namespace CSFundamentalAlgorithmsTests.BinaryHeapsTests
             List<int> values = new List<int> { 1, 20, 32, 56, 5, 3, 10, 100, 72 };
 
             MaxBinaryHeap heap = new MaxBinaryHeap(values);
-            heap.BuildHeap_Recursively();
+            heap.BuildHeap_Recursively(heap.HeapArray.Count);
 
             Assert.AreEqual(9, heap.HeapArray.Count);
             CheckMaxHeapOrderingPropertyForHeap(values.Count, heap);
@@ -73,7 +73,7 @@ namespace CSFundamentalAlgorithmsTests.BinaryHeapsTests
             List<int> values = new List<int> { 1, 20, 32, 56, 5, 3, 10, 100, 72 };
 
             MaxBinaryHeap heap = new MaxBinaryHeap(values);
-            heap.BuildHeap_Iteratively();
+            heap.BuildHeap_Iteratively(heap.HeapArray.Count);
 
             Assert.AreEqual(9, heap.HeapArray.Count);
             CheckMaxHeapOrderingPropertyForHeap(values.Count, heap);
@@ -85,41 +85,41 @@ namespace CSFundamentalAlgorithmsTests.BinaryHeapsTests
             List<int> values = new List<int> { 1, 20, 32, 56, 5, 3, 10, 100, 72 };
 
             MaxBinaryHeap heap = new MaxBinaryHeap(values);
-            heap.BuildHeap_Recursively();
+            heap.BuildHeap_Recursively(heap.HeapArray.Count);
 
-            Assert.IsTrue(heap.TryRemoveRoot(out int maxValue1));
+            Assert.IsTrue(heap.TryRemoveRoot(out int maxValue1, heap.HeapArray.Count));
             Assert.AreEqual(100, maxValue1);
             CheckMaxHeapOrderingPropertyForHeap(values.Count, heap);
 
-            Assert.IsTrue(heap.TryRemoveRoot(out int maxValue2));
+            Assert.IsTrue(heap.TryRemoveRoot(out int maxValue2, heap.HeapArray.Count));
             Assert.AreEqual(72, maxValue2);
             CheckMaxHeapOrderingPropertyForHeap(values.Count, heap);
 
-            Assert.IsTrue(heap.TryRemoveRoot(out int maxValue3));
+            Assert.IsTrue(heap.TryRemoveRoot(out int maxValue3, heap.HeapArray.Count));
             Assert.AreEqual(56, maxValue3);
             CheckMaxHeapOrderingPropertyForHeap(values.Count, heap);
 
-            Assert.IsTrue(heap.TryRemoveRoot(out int maxValue4));
+            Assert.IsTrue(heap.TryRemoveRoot(out int maxValue4, heap.HeapArray.Count));
             Assert.AreEqual(32, maxValue4);
             CheckMaxHeapOrderingPropertyForHeap(values.Count, heap);
 
-            Assert.IsTrue(heap.TryRemoveRoot(out int maxValue5));
+            Assert.IsTrue(heap.TryRemoveRoot(out int maxValue5, heap.HeapArray.Count));
             Assert.AreEqual(20, maxValue5);
             CheckMaxHeapOrderingPropertyForHeap(values.Count, heap);
 
-            Assert.IsTrue(heap.TryRemoveRoot(out int maxValue6));
+            Assert.IsTrue(heap.TryRemoveRoot(out int maxValue6, heap.HeapArray.Count));
             Assert.AreEqual(10, maxValue6);
             CheckMaxHeapOrderingPropertyForHeap(values.Count, heap);
 
-            Assert.IsTrue(heap.TryRemoveRoot(out int maxValue7));
+            Assert.IsTrue(heap.TryRemoveRoot(out int maxValue7, heap.HeapArray.Count));
             Assert.AreEqual(5, maxValue7);
             CheckMaxHeapOrderingPropertyForHeap(values.Count, heap);
 
-            Assert.IsTrue(heap.TryRemoveRoot(out int maxValue8));
+            Assert.IsTrue(heap.TryRemoveRoot(out int maxValue8, heap.HeapArray.Count));
             Assert.AreEqual(3, maxValue8);
             CheckMaxHeapOrderingPropertyForHeap(values.Count, heap);
 
-            Assert.IsTrue(heap.TryRemoveRoot(out int maxValue9));
+            Assert.IsTrue(heap.TryRemoveRoot(out int maxValue9, heap.HeapArray.Count));
             Assert.AreEqual(1, maxValue9);
             CheckMaxHeapOrderingPropertyForHeap(values.Count, heap);
         }
@@ -128,31 +128,31 @@ namespace CSFundamentalAlgorithmsTests.BinaryHeapsTests
         public void MaxBinaryHeap_Insert_Test()
         {
             MaxBinaryHeap heap = new MaxBinaryHeap(new List<int> { });
-            heap.Insert(1);
+            heap.Insert(1, heap.HeapArray.Count);
             CheckMaxHeapOrderingPropertyForHeap(heap.HeapArray.Count, heap);
 
-            heap.Insert(20);
+            heap.Insert(20, heap.HeapArray.Count);
             CheckMaxHeapOrderingPropertyForHeap(heap.HeapArray.Count, heap);
 
-            heap.Insert(32);
+            heap.Insert(32, heap.HeapArray.Count);
             CheckMaxHeapOrderingPropertyForHeap(heap.HeapArray.Count, heap);
 
-            heap.Insert(56);
+            heap.Insert(56, heap.HeapArray.Count);
             CheckMaxHeapOrderingPropertyForHeap(heap.HeapArray.Count, heap);
 
-            heap.Insert(5);
+            heap.Insert(5, heap.HeapArray.Count);
             CheckMaxHeapOrderingPropertyForHeap(heap.HeapArray.Count, heap);
 
-            heap.Insert(3);
+            heap.Insert(3, heap.HeapArray.Count);
             CheckMaxHeapOrderingPropertyForHeap(heap.HeapArray.Count, heap);
 
-            heap.Insert(10);
+            heap.Insert(10, heap.HeapArray.Count);
             CheckMaxHeapOrderingPropertyForHeap(heap.HeapArray.Count, heap);
 
-            heap.Insert(100);
+            heap.Insert(100, heap.HeapArray.Count);
             CheckMaxHeapOrderingPropertyForHeap(heap.HeapArray.Count, heap);
 
-            heap.Insert(72);
+            heap.Insert(72, heap.HeapArray.Count);
             CheckMaxHeapOrderingPropertyForHeap(heap.HeapArray.Count, heap);
         }
     }
