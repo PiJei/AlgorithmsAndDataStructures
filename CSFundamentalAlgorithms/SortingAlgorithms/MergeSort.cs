@@ -19,7 +19,7 @@
 
 using System.Collections.Generic;
 
-namespace CSFundamentalAlgorithms.SortingAlgs
+namespace CSFundamentalAlgorithms.SortingAlgorithms
 {
     public class MergeSort
     {

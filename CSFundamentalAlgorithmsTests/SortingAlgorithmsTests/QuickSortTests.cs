@@ -18,30 +18,30 @@
  */
 
 using System.Collections.Generic;
- using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CSFundamentalAlgorithms.SortingAlgs;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using CSFundamentalAlgorithms.SortingAlgorithms;
 
-namespace CSFundamentalAlgorithmsTests.SortingAlgsTests
+namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
 {
     [TestClass]
-    public class HeapSortTests
+    public class QuickSortTests
     {
         [TestMethod]
-        public void HeapSort_HeapSortAscending_Test_WithDistinctValues()
+        public void QuickSort_QuickSort_Recursively_Test_WithDistinctValues()
         {
             List<int> values = new List<int> { 100, 2, 3, 1, 56, 78, 209, 46, 21, 10, 12, 15, 51 };
-            HeapSort.HeapSort_Ascending(values);
+            QuickSort.QuickSort_Recursively(values, 0, values.Count - 1);
 
-            SortingTestsCommon.CheckIfListIsSortedAscendingly(values);
+            Common.CheckIfListIsSortedAscendingly(values);
         }
 
         [TestMethod]
-        public void HeapSort_HeapSortAscending_Test_WithDuplicateValues()
+        public void QuickSort_QuickSort_Recursively_Test_WithDuplicateValues()
         {
             List<int> values = new List<int> { 100, 2, 3, 1, 56, 78, 209, 46, 78, 10, 12, 1, 51, 15 };
-            HeapSort.HeapSort_Ascending(values);
+            QuickSort.QuickSort_Recursively(values, 0, values.Count - 1);
 
-            SortingTestsCommon.CheckIfListIsSortedAscendingly(values);
+            Common.CheckIfListIsSortedAscendingly(values);
         }
     }
 }

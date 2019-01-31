@@ -177,7 +177,7 @@ namespace CSFundamentalAlgorithmsTests.Graphs
         [TestMethod]
         public void BFS_Recursive_StartFromA()
         {
-            Queue<GraphNode> queue = new Queue<GraphNode> ();
+            Queue<GraphNode> queue = new Queue<GraphNode>();
             A.IsInserted = true;
             queue.Enqueue(A);
             List<GraphNode> bfsOrdering = new List<GraphNode>();

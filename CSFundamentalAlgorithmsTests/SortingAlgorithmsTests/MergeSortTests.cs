@@ -19,9 +19,9 @@
 
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CSFundamentalAlgorithms.SortingAlgs;
+using CSFundamentalAlgorithms.SortingAlgorithms;
 
-namespace CSFundamentalAlgorithmsTests.SortingAlgsTests
+namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
 {
     [TestClass]
     public class MergeSortTests
@@ -32,7 +32,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgsTests
             List<int> values = new List<int> { 5, 3, 7, 1, 100 };
             MergeSort.MergeSort_Recursively(values, 0, 4);
 
-            SortingTestsCommon.CheckIfListIsSortedAscendingly(values);
+            Common.CheckIfListIsSortedAscendingly(values);
         }
 
         [TestMethod]
@@ -41,7 +41,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgsTests
             List<int> values = new List<int> { 100, 2, 3, 1, 56, 78, 209, 46, 78, 10, 12, 1, 51, 15 };
             MergeSort.MergeSort_Recursively(values, 0, values.Count - 1);
 
-            SortingTestsCommon.CheckIfListIsSortedAscendingly(values);
+            Common.CheckIfListIsSortedAscendingly(values);
         }
 
         [TestMethod]
@@ -49,7 +49,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgsTests
         {
             List<int> values1 = new List<int> { 10, 1 };
             MergeSort.Merge(values1, 0, 0, 1);
-            SortingTestsCommon.CheckIfListIsSortedAscendingly(values1);
+            Common.CheckIfListIsSortedAscendingly(values1);
 
             List<int> values2 = new List<int> { 10, 1 };
             // Indices are such that the list will not get sorted, 
@@ -59,7 +59,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgsTests
 
             List<int> values3 = new List<int> { 10, 41, 3, 10 };
             MergeSort.Merge(values3, 0, 1, 3);
-            SortingTestsCommon.CheckIfListIsSortedAscendingly(values3);
+            Common.CheckIfListIsSortedAscendingly(values3);
         }
     }
 }

@@ -20,7 +20,7 @@
 using System.Collections.Generic;
 using CSFundamentalAlgorithms.BinaryHeaps;
 
-namespace CSFundamentalAlgorithms.SortingAlgs
+namespace CSFundamentalAlgorithms.SortingAlgorithms
 {
     public class HeapSort
     {
@@ -38,7 +38,7 @@ namespace CSFundamentalAlgorithms.SortingAlgs
             for (int i = values.Count - 1; i >= 0; i--)
             {
                 // Since the root element/node in a max heap, is the most maximum value in the array, putting it to the last element of the unsorted part of the array, will determine its right position in an array that is eventually ordered ascendingly
-                SortingCommon.Swap(values, 0, i);
+                Common.Swap(values, 0, i);
                 // Since the new value in the root position of the heap (index :0) may not be in its correct position, heap-order wise, then bubble it down, until it reaches its correct position.
                 maxHeap.BubbleDown_Recursively(0, i);
             }

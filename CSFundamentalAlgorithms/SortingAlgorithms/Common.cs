@@ -18,21 +18,16 @@
  */
 
 using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSFundamentalAlgorithmsTests.SortingAlgsTests
+namespace CSFundamentalAlgorithms.SortingAlgorithms
 {
-    public class SortingTestsCommon
+    public class Common
     {
-        /// <summary>
-        /// Checkes whether the given integer list is sorted in ascending order. 
-        /// </summary>
-        public static void CheckIfListIsSortedAscendingly(List<int> values)
+        public static void Swap(List<int> values, int index1, int index2)
         {
-            for (int i = 0; i < values.Count - 1; i++)
-            {
-                Assert.IsTrue(values[i] <= values[i + 1]);
-            }
+            int temp = values[index1];
+            values[index1] = values[index2];
+            values[index2] = temp;
         }
     }
 }

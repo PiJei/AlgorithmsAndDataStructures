@@ -18,16 +18,30 @@
  */
 
 using System.Collections.Generic;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using CSFundamentalAlgorithms.SortingAlgorithms;
 
-namespace CSFundamentalAlgorithms.SortingAlgs
+namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
 {
-    public class SortingCommon
+    [TestClass]
+    public class HeapSortTests
     {
-        public static void Swap(List<int> values, int index1, int index2)
+        [TestMethod]
+        public void HeapSort_HeapSortAscending_Test_WithDistinctValues()
         {
-            int temp = values[index1];
-            values[index1] = values[index2];
-            values[index2] = temp;
+            List<int> values = new List<int> { 100, 2, 3, 1, 56, 78, 209, 46, 21, 10, 12, 15, 51 };
+            HeapSort.HeapSort_Ascending(values);
+
+            Common.CheckIfListIsSortedAscendingly(values);
+        }
+
+        [TestMethod]
+        public void HeapSort_HeapSortAscending_Test_WithDuplicateValues()
+        {
+            List<int> values = new List<int> { 100, 2, 3, 1, 56, 78, 209, 46, 78, 10, 12, 1, 51, 15 };
+            HeapSort.HeapSort_Ascending(values);
+
+            Common.CheckIfListIsSortedAscendingly(values);
         }
     }
 }
