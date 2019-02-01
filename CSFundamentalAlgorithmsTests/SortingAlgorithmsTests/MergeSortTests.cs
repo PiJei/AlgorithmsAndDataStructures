@@ -16,7 +16,6 @@
  * You should have received a copy of the GNU General Public License
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentalAlgorithms.SortingAlgorithms;
@@ -27,20 +26,18 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
     public class MergeSortTests
     {
         [TestMethod]
-        public void MergeSort_MergeSort_Recursively_Test_withDistinctValues()
+        public void MergeSort_MergeSort_Recursively_Test_WithDistinctValues()
         {
-            List<int> values = new List<int> { 5, 3, 7, 1, 100 };
-            MergeSort.MergeSort_Recursively(values, 0, 4);
-
+            var values = new List<int>(Common.ArrayWithDistinctValues);
+            MergeSort.MergeSort_Recursively(values, 0, values.Count - 1);
             Common.CheckIfListIsSortedAscendingly(values);
         }
 
         [TestMethod]
-        public void MergeSort_MergeSort_Recursively_Test_withRedundantValues()
+        public void MergeSort_MergeSort_Recursively_Test_WithDuplicateValues()
         {
-            List<int> values = new List<int> { 100, 2, 3, 1, 56, 78, 209, 46, 78, 10, 12, 1, 51, 15 };
+            var values = new List<int>(Common.ArrayWithDuplicateValues);
             MergeSort.MergeSort_Recursively(values, 0, values.Count - 1);
-
             Common.CheckIfListIsSortedAscendingly(values);
         }
 
