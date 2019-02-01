@@ -22,24 +22,24 @@ using System.Collections.Generic;
 namespace CSFundamentalAlgorithms.SortingAlgorithms
 {
     /// <summary>
-    /// This class contains 3 different implementations of Insertion Sort. 
+    /// This class contains 3 different implementations of Insertion Sort. The sort is called insertion, as at each iteration, it finds the correct position of an element, and "inserts" it in that position. 
     /// </summary>
     public class InsertionSort
     {
         /// <summary>
-        /// Implements insertion sort iteratively, and in-situ, meaning no auxiliary memory is required.
+        /// Implements insertion sort iteratively, and in-situ, using many Swaps.
         /// </summary>
         /// <param name="values">Specifies the list of integers to be sorted. </param>
-        public void InsertionSort_Iterative_InSitu(List<int> values)
+        public void InsertionSort_Iterative_V1(List<int> values)
         {
 
         }
 
         /// <summary>
-        /// Implements insertion sort iteratively, and using auxiliary memory.
+        /// Implements insertion sort iteratively, and in-situ, using only one swap per element.
         /// </summary>
         /// <param name="values">Specifies the list of integers to be sorted. </param>
-        public void InsertionSort_Iterative_AuxiliaryMemory(List<int> values)
+        public void InsertionSort_Iterative_V2(List<int> values)
         {
 
         }
