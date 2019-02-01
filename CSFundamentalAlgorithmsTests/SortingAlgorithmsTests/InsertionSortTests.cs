@@ -18,28 +18,16 @@
  */
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CSFundamentalAlgorithms.SortingAlgorithms;
-using System.Collections.Generic;
 
 namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
 {
     [TestClass]
-    public class QuickSortTests
+    public class InsertionSortTests
     {
         [TestMethod]
-        public void QuickSort_QuickSort_Recursively_Test_WithDistinctValues()
+        public void InsertionSort_InsertionSort_Test_WithDistinctValues()
         {
-            var values = new List<int>(Common.ArrayWithDistinctValues);
-            QuickSort.QuickSort_Recursively(values, 0, values.Count - 1);
-            Common.CheckIfListIsSortedAscendingly(values);
-        }
-
-        [TestMethod]
-        public void QuickSort_QuickSort_Recursively_Test_WithDuplicateValues()
-        {
-            var values = new List<int>(Common.ArrayWithDuplicateValues);
-            QuickSort.QuickSort_Recursively(values, 0, values.Count - 1);
-            Common.CheckIfListIsSortedAscendingly(values);
+            // TODO
         }
     }
 }

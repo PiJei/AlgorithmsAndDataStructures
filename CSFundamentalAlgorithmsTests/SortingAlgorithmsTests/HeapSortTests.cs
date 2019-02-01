@@ -17,9 +17,9 @@
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentalAlgorithms.SortingAlgorithms;
+using System.Collections.Generic;
 
 namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
 {
@@ -29,18 +29,16 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         [TestMethod]
         public void HeapSort_HeapSortAscending_Test_WithDistinctValues()
         {
-            List<int> values = new List<int> { 100, 2, 3, 1, 56, 78, 209, 46, 21, 10, 12, 15, 51 };
+            var values = new List<int>(Common.ArrayWithDistinctValues);
             HeapSort.HeapSort_Ascending(values);
-
             Common.CheckIfListIsSortedAscendingly(values);
         }
 
         [TestMethod]
         public void HeapSort_HeapSortAscending_Test_WithDuplicateValues()
         {
-            List<int> values = new List<int> { 100, 2, 3, 1, 56, 78, 209, 46, 78, 10, 12, 1, 51, 15 };
+            var values = new List<int>(Common.ArrayWithDuplicateValues);
             HeapSort.HeapSort_Ascending(values);
-
             Common.CheckIfListIsSortedAscendingly(values);
         }
     }

@@ -29,7 +29,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         [TestMethod]
         public void SelectionSort_SelectionSortIteratively_Test_WithDistnctValues()
         {
-            List<int> values = new List<int> { 100, 2, 3, 1, 56, 78, 209, 46, 21, 10, 12, 15, 51 };
+            var values = new List<int>(Common.ArrayWithDistinctValues);
             SelectionSort.SelectionSort_Iteratively(values);
             Common.CheckIfListIsSortedAscendingly(values);
         }
@@ -37,7 +37,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         [TestMethod]
         public void SelectionSort_SelectionSortIteratively_Test_WithDuplicateValues()
         {
-            List<int> values = new List<int> { 100, 2, 3, 1, 56, 78, 209, 46, 78, 10, 12, 1, 51, 15 };
+            var values = new List<int>(Common.ArrayWithDuplicateValues);
             SelectionSort.SelectionSort_Iteratively(values);
             Common.CheckIfListIsSortedAscendingly(values);
         }

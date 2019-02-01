@@ -24,6 +24,14 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
 {
     public class Common
     {
+        public static List<int> ArrayWithDistinctValues = new List<int> { 100, 2, 3, 1, 56, 78, 209, 46, 21, 10, 12, 15, 51 };
+
+        public static List<int> ArrayWithDuplicateValues = new List<int> { 100, 2, 3, 1, 56, 78, 209, 46, 78, 10, 12, 1, 51, 15 };
+
+        // TODO: Add arrays already sorted. 
+        // TODO: Add arrays sorted reversly
+        // TODO: Measure the timing for each case, ... 
+
         /// <summary>
         /// Checkes whether the given integer list is sorted in ascending order. 
         /// </summary>
