@@ -17,11 +17,40 @@
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System.Collections.Generic;
 
 namespace CSFundamentalAlgorithms.SortingAlgorithms
 {
+    /// <summary>
+    /// This class contains 3 different implementations of Insertion Sort. 
+    /// </summary>
     public class InsertionSort
     {
-        // TODO 
+        /// <summary>
+        /// Implements insertion sort iteratively, and in-situ, meaning no auxiliary memory is required.
+        /// </summary>
+        /// <param name="values">Specifies the list of integers to be sorted. </param>
+        public void InsertionSort_Iterative_InSitu(List<int> values)
+        {
+
+        }
+
+        /// <summary>
+        /// Implements insertion sort iteratively, and using auxiliary memory.
+        /// </summary>
+        /// <param name="values">Specifies the list of integers to be sorted. </param>
+        public void InsertionSort_Iterative_AuxiliaryMemory(List<int> values)
+        {
+
+        }
+
+        /// <summary>
+        /// Implements insertion sort recursively. 
+        /// </summary>
+        /// <param name="values">Specifies the list of integers to be sorted. </param>
+        public void InsertionSort_Recursive(List<int> values)
+        {
+
+        }
     }
 }
