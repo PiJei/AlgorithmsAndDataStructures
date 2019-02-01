@@ -76,9 +76,10 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// <param name="values">Specifies the list of integers to be sorted. </param>
         public static void InsertionSort_Recursive(List<int> values, int n)
         {
-            if (n > 0)
+            if (n >= 1) // Similar to iterative versions that we start from 1st helement, and not the one at 0th, as always need to compare to the left. 
             {
                 InsertionSort_Recursive(values, n - 1);
+                // The rest is exactly the same code in method InsertionSort_Iterative_V2() inside the first for loop. 
                 int valueAtPositionN = values[n];
                 int correctIndex = n;
                 for (int j = n - 1; j >= 0; j--)
