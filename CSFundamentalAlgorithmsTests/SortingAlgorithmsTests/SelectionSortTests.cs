@@ -73,5 +73,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
             SelectionSort.SelectionSort_Iteratively(values);
             Common.CheckIfListIsSortedAscendingly(values);
         }
+
+        // TODO: Add tests with other arrays as well. 
     }
 }
