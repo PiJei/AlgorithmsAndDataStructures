@@ -76,13 +76,10 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
                 // The rest is exactly the same code in method InsertionSort_Iterative_V2() inside the first for loop. 
                 int valueAtPositionN = values[n];
                 int correctIndex = n;
-                for (int j = n - 1; j >= 0; j--)
+                for (int j = n - 1; j >= 0 && values[j] > valueAtPositionN; j--)
                 {
-                    if (values[j] > valueAtPositionN)
-                    {
-                        values[j + 1] = values[j];
-                        correctIndex = j;
-                    }
+                    values[j + 1] = values[j];
+                    correctIndex = j;
                 }
                 values[correctIndex] = valueAtPositionN;
             }
