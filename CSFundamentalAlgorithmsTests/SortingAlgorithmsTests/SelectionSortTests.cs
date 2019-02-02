@@ -41,5 +41,37 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
             SelectionSort.SelectionSort_Iteratively(values);
             Common.CheckIfListIsSortedAscendingly(values);
         }
+
+        [TestMethod]
+        public void SelectionSort_SelectionSortIteratively_Test_WithSortedDistinctValues()
+        {
+            var values = new List<int>(Common.ArrayWithSortedDistinctValues);
+            SelectionSort.SelectionSort_Iteratively(values);
+            Common.CheckIfListIsSortedAscendingly(values);
+        }
+
+        [TestMethod]
+        public void SelectionSort_SelectionSortIteratively_Test_WithSortedDuplicateValues()
+        {
+            var values = new List<int>(Common.ArrayWithSortedDuplicateValues);
+            SelectionSort.SelectionSort_Iteratively(values);
+            Common.CheckIfListIsSortedAscendingly(values);
+        }
+
+        [TestMethod]
+        public void SelectionSort_SelectionSortIteratively_Test_WithReverselySortedDistinctValues()
+        {
+            var values = new List<int>(Common.ArrayWithReverselySortedDistinctValues);
+            SelectionSort.SelectionSort_Iteratively(values);
+            Common.CheckIfListIsSortedAscendingly(values);
+        }
+
+        [TestMethod]
+        public void SelectionSort_SelectionSortIteratively_Test_WithReverselySortedDuplicateValues()
+        {
+            var values = new List<int>(Common.ArrayWithReverselySortedDuplicateValues);
+            SelectionSort.SelectionSort_Iteratively(values);
+            Common.CheckIfListIsSortedAscendingly(values);
+        }
     }
 }
