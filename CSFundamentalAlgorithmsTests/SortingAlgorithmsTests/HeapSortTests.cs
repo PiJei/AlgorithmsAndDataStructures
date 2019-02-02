@@ -41,5 +41,37 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
             HeapSort.HeapSort_Ascending(values);
             Common.CheckIfListIsSortedAscendingly(values);
         }
+
+        [TestMethod]
+        public void HeapSort_HeapSortAscending_Test_WithSortedDistinctValues()
+        {
+            var values = new List<int>(Common.ArrayWithSortedDistinctValues);
+            HeapSort.HeapSort_Ascending(values);
+            Common.CheckIfListIsSortedAscendingly(values);
+        }
+
+        [TestMethod]
+        public void HeapSort_HeapSortAscending_Test_WithSortedDuplicateValues()
+        {
+            var values = new List<int>(Common.ArrayWithSortedDuplicateValues);
+            HeapSort.HeapSort_Ascending(values);
+            Common.CheckIfListIsSortedAscendingly(values);
+        }
+
+        [TestMethod]
+        public void HeapSort_HeapSortAscending_Test_WithReverselySortedDistinctValues()
+        {
+            var values = new List<int>(Common.ArrayWithReverselySortedDistinctValues);
+            HeapSort.HeapSort_Ascending(values);
+            Common.CheckIfListIsSortedAscendingly(values);
+        }
+
+        [TestMethod]
+        public void HeapSort_HeapSortAscending_Test_WithRevereselySortedDuplicateValues()
+        {
+            var values = new List<int>(Common.ArrayWithReverselySortedDuplicateValues);
+            HeapSort.HeapSort_Ascending(values);
+            Common.CheckIfListIsSortedAscendingly(values);
+        }
     }
 }

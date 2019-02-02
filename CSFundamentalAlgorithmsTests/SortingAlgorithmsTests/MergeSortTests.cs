@@ -42,6 +42,38 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         }
 
         [TestMethod]
+        public void MergeSort_MergeSort_Recursively_Test_WithSortedDistinctValues()
+        {
+            var values = new List<int>(Common.ArrayWithSortedDistinctValues);
+            MergeSort.MergeSort_Recursively(values, 0, values.Count - 1);
+            Common.CheckIfListIsSortedAscendingly(values);
+        }
+
+        [TestMethod]
+        public void MergeSort_MergeSort_Recursively_Test_WithSortedDuplicateValues()
+        {
+            var values = new List<int>(Common.ArrayWithSortedDuplicateValues);
+            MergeSort.MergeSort_Recursively(values, 0, values.Count - 1);
+            Common.CheckIfListIsSortedAscendingly(values);
+        }
+
+        [TestMethod]
+        public void MergeSort_MergeSort_Recursively_Test_WithReverselySortedDistinctValues()
+        {
+            var values = new List<int>(Common.ArrayWithReverselySortedDistinctValues);
+            MergeSort.MergeSort_Recursively(values, 0, values.Count - 1);
+            Common.CheckIfListIsSortedAscendingly(values);
+        }
+
+        [TestMethod]
+        public void MergeSort_MergeSort_Recursively_Test_WithReverselySortedDuplicateValues()
+        {
+            var values = new List<int>(Common.ArrayWithReverselySortedDuplicateValues);
+            MergeSort.MergeSort_Recursively(values, 0, values.Count - 1);
+            Common.CheckIfListIsSortedAscendingly(values);
+        }
+
+        [TestMethod]
         public void MergeSort_Merge_Test()
         {
             List<int> values1 = new List<int> { 10, 1 };

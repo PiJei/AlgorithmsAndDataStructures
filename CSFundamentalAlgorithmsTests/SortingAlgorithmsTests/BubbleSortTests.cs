@@ -42,5 +42,39 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
             BubbleSort.BubbleSort_Iterative(values);
             Common.CheckIfListIsSortedAscendingly(values);
         }
+
+        [TestMethod]
+        public void BubbleSort_BubbleSort_Iterative_Test_WithSortedDistinctValues()
+        {
+            List<int> values = new List<int>(Common.ArrayWithSortedDistinctValues);
+            BubbleSort.BubbleSort_Iterative(values);
+            Common.CheckIfListIsSortedAscendingly(values);
+        }
+
+        [TestMethod]
+        public void BubbleSort_BubbleSort_Iterative_Test_WithSortedDuplicateValues()
+        {
+            List<int> values = new List<int>(Common.ArrayWithSortedDuplicateValues);
+            BubbleSort.BubbleSort_Iterative(values);
+            Common.CheckIfListIsSortedAscendingly(values);
+        }
+
+        [TestMethod]
+        public void BubbleSort_BubbleSort_Iterative_Test_WithReverselySortedDistinctValues()
+        {
+            List<int> values = new List<int>(Common.ArrayWithReverselySortedDistinctValues);
+            BubbleSort.BubbleSort_Iterative(values);
+            Common.CheckIfListIsSortedAscendingly(values);
+        }
+
+        [TestMethod]
+        public void BubbleSort_BubbleSort_Iterative_Test_WithReverselySortedDuplicateValues()
+        {
+            List<int> values = new List<int>(Common.ArrayWithReverselySortedDuplicateValues);
+            BubbleSort.BubbleSort_Iterative(values);
+            Common.CheckIfListIsSortedAscendingly(values);
+        }
+
+
     }
 }

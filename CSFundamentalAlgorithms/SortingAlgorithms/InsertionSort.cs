@@ -60,6 +60,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
                     values[j + 1] = values[j];
                     correctIndex = j;
                 }
+                
                 values[correctIndex] = arrayValueAtIndexI;
             }
         }
