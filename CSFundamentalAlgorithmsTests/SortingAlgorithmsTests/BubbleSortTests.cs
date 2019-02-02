@@ -18,11 +18,29 @@
  */
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+using CSFundamentalAlgorithms.SortingAlgorithms;
 
 namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
 {
     [TestClass]
     public class BubbleSortTests
     {
+
+        [TestMethod]
+        public void BubbleSort_BubbleSort_Iterative_Test_WithDistinctValues()
+        {
+            List<int> values = new List<int>(Common.ArrayWithDistinctValues);
+            BubbleSort.BubbleSort_Iterative(values);
+            Common.CheckIfListIsSortedAscendingly(values);
+        }
+
+        [TestMethod]
+        public void BubbleSort_BubbleSort_Iterative_Test_WithDuplicateValues()
+        {
+            List<int> values = new List<int>(Common.ArrayWithDuplicateValues);
+            BubbleSort.BubbleSort_Iterative(values);
+            Common.CheckIfListIsSortedAscendingly(values);
+        }
     }
 }

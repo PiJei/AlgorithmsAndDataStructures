@@ -23,6 +23,34 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
 {
     public class BubbleSort
     {
-        // TODO
+        /// <summary>
+        /// Implements bubble sort iteraively, elements are bubbled down or up the array till they are at their final correct positions. 
+        /// </summary>
+        /// <param name="values"></param>
+        public static void BubbleSort_Iterative(List<int> values)
+        {
+            /* Bubble sort iterates many times over an array, and stops iterating when no swap happens any more. */
+            while (true)
+            {
+                bool swapHappened = false;
+                for (int i = 0; i < values.Count - 1; i++)
+                {
+                    if (values[i + 1] < values[i])
+                    {
+                        Common.Swap(values, i + 1, i);
+                        swapHappened = true;
+                    }
+                }
+                if (!swapHappened) /* If no swap happened in this pass, then the array is sorted. break out of the loop. */
+                {
+                    break;
+                }
+            }
+        }
+
+        public static void BubbleSort_Recursive(List<int> values)
+        {
+            // TODO
+        }
     }
 }
