@@ -36,12 +36,9 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
             {
                 // At each iteration finding the correct position of element (i) and inserting it in the correct position. 
                 // Will do so by moving element i, to the left of the array until there is no element to the left of i that is bigger than i
-                for (int j = i - 1; j >= 0; j--)
+                for (int j = i - 1; j >= 0 && values[j] > values[j + 1]; j--) /* Having the second condition in the code, speeds up the algorithm, as it stops immediately as soon as reaching a point in th graph that element in [j-1] is no longer bigger than element in [j]*/
                 {
-                    if (values[j] > values[j + 1])
-                    {
-                        Common.Swap(values, j, j + 1); // meaning that we are moving element at (i) to the left at each step.
-                    }
+                    Common.Swap(values, j, j + 1); // meaning that we are moving element at (i) to the left at each step.
                 }
             }
         }
@@ -58,13 +55,10 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
                 int arrayValueAtIndexI = values[i];
                 int correctIndex = i;
 
-                for (int j = i - 1; j >= 0; j--)
+                for (int j = i - 1; j >= 0 && values[j] > arrayValueAtIndexI; j--)
                 {
-                    if (values[j] > arrayValueAtIndexI)
-                    {
-                        values[j + 1] = values[j];
-                        correctIndex = j;
-                    }
+                    values[j + 1] = values[j];
+                    correctIndex = j;
                 }
                 values[correctIndex] = arrayValueAtIndexI;
             }
@@ -82,13 +76,10 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
                 // The rest is exactly the same code in method InsertionSort_Iterative_V2() inside the first for loop. 
                 int valueAtPositionN = values[n];
                 int correctIndex = n;
-                for (int j = n - 1; j >= 0; j--)
+                for (int j = n - 1; j >= 0 && values[j] > valueAtPositionN; j--)
                 {
-                    if (values[j] > valueAtPositionN)
-                    {
-                        values[j + 1] = values[j];
-                        correctIndex = j;
-                    }
+                    values[j + 1] = values[j];
+                    correctIndex = j;
                 }
                 values[correctIndex] = valueAtPositionN;
             }
