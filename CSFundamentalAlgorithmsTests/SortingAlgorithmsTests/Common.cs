@@ -19,9 +19,11 @@
 
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using CSFundamentalAlgorithms;
 
 namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
 {
+    [TestClass]
     public class Common
     {
         /// <summary>
@@ -65,6 +67,36 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
             {
                 Assert.IsTrue(values[i] <= values[i + 1]);
             }
+        }
+
+        [TestMethod]
+        public void Common_GetDigitsCount_Test()
+        {
+            Assert.AreEqual(3, CSFundamentalAlgorithms.SortingAlgorithms.Common.GetDigitsCount(123));
+            Assert.AreEqual(1, CSFundamentalAlgorithms.SortingAlgorithms.Common.GetDigitsCount(9));
+            Assert.AreEqual(1, CSFundamentalAlgorithms.SortingAlgorithms.Common.GetDigitsCount(0));
+            Assert.AreEqual(6, CSFundamentalAlgorithms.SortingAlgorithms.Common.GetDigitsCount(456123));
+            Assert.AreEqual(7, CSFundamentalAlgorithms.SortingAlgorithms.Common.GetDigitsCount(1230000));
+            Assert.AreEqual(2, CSFundamentalAlgorithms.SortingAlgorithms.Common.GetDigitsCount(45));
+        }
+
+        [TestMethod]
+        public void Common_GetNthDigitFromRight_Test()
+        {
+            Assert.AreEqual(3, CSFundamentalAlgorithms.SortingAlgorithms.Common.GetNthDigitFromRight(123, 1));
+            Assert.AreEqual(2, CSFundamentalAlgorithms.SortingAlgorithms.Common.GetNthDigitFromRight(123, 2));
+            Assert.AreEqual(1, CSFundamentalAlgorithms.SortingAlgorithms.Common.GetNthDigitFromRight(123, 3));
+            Assert.AreEqual(0, CSFundamentalAlgorithms.SortingAlgorithms.Common.GetNthDigitFromRight(123, 4));
+
+            Assert.AreEqual(9, CSFundamentalAlgorithms.SortingAlgorithms.Common.GetNthDigitFromRight(9, 1));
+            Assert.AreEqual(0, CSFundamentalAlgorithms.SortingAlgorithms.Common.GetNthDigitFromRight(9, 2));
+            Assert.AreEqual(0, CSFundamentalAlgorithms.SortingAlgorithms.Common.GetNthDigitFromRight(9, 3));
+            Assert.AreEqual(0, CSFundamentalAlgorithms.SortingAlgorithms.Common.GetNthDigitFromRight(9, 0));
+
+            Assert.AreEqual(0, CSFundamentalAlgorithms.SortingAlgorithms.Common.GetNthDigitFromRight(0, 1));
+            Assert.AreEqual(0, CSFundamentalAlgorithms.SortingAlgorithms.Common.GetNthDigitFromRight(0, 0));
+
+            Assert.AreEqual(4, CSFundamentalAlgorithms.SortingAlgorithms.Common.GetNthDigitFromRight(-456123, 6));
         }
     }
 }
