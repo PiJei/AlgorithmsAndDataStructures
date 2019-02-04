@@ -73,5 +73,21 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
             HeapSort.HeapSort_Ascending(values);
             Common.CheckIfListIsSortedAscendingly(values);
         }
+
+
+        /// <summary>
+        /// Tests if heap sort is stable or not. Heapsort by design is not stable. 
+        /// </summary>
+        [TestMethod]
+        public void HeapSort_IsStable_Test()
+        {
+            /* All we need to do is to find "a" list with a particular arrangements of duplicate values and other distnct values, such that breaks isStable sort question for heap sort.. 
+             * Meaning that not finding this list, does not prove that the sort method is stable.
+             * This also means that there might be lots of lists with duplicate values, for which heap sort acts as stable. 
+             */
+            List<int> duplicateValues1 = new List<int> { 4, 2, 3, 1, 4 };
+            bool isStable = CSFundamentalAlgorithms.SortingAlgorithms.Common.IsSortMethodStable(HeapSort.HeapSort_Ascending, duplicateValues1);
+            Assert.IsFalse(isStable);
+        }
     }
 }

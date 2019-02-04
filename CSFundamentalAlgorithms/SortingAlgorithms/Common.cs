@@ -81,5 +81,96 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
             int digit = (int)((Math.Abs(number) / Math.Pow(10, whichDigit - 1)) % 10);
             return digit;
         }
+
+        /// <summary>
+        /// Detects whether the given sort method is stable. A sort method is stable, if it preserves the ordering of duplicate values in the original array. 
+        /// </summary>
+        /// <param name="sortMethod"></param>
+        /// <returns>True in case the method is stable, and false otherwise. </returns>
+        public static bool IsSortMethodStable(Action<List<int>> sortMethod, List<int> values)
+        {
+            var positionsBeforeSort = HashListToIndexes(values);
+            sortMethod(values);
+            var positionsAfterSort = HashListToIndexes(values);
+
+            return AreMapsEqual(positionsBeforeSort, positionsAfterSort);
+        }
+
+        /// <summary>
+        /// Per each value in the array, makes a list of their indexes in the array. 
+        /// Notice that the array may include duplicate values, thus a list of indexes rather than one index.
+        /// </summary>
+        /// <param name="values">An array of integers. </param>
+        /// <returns>A hashtable/dictionary mapping each value to the list of its indixes in the array. </returns>
+        public static Dictionary<int, List<int>> HashListToIndexes(List<int> values)
+        {
+            /* Such that the keyes in the dictionary are the values in the array, and the values in the dictionary are the list of indexes for each value in the array. */
+            Dictionary<int, List<int>> positions = new Dictionary<int, List<int>>();
+            if(values == null)
+            {
+                return positions;
+            }
+
+            for (int index = 0; index < values.Count; index++)
+            {
+                if (positions.TryGetValue(values[index], out List<int> indexes))
+                {
+                    positions[values[index]].Add(index);
+                }
+                else
+                {
+                    positions.Add(values[index], new List<int> { index});
+                }
+            }
+            return positions;
+        }
+
+        // TODO: What is the better way to implement this method. 
+        /// <summary>
+        /// Giveb the two dictionaries compares them to see if they are equal, in terms of the values per key. It is very important to compare the values (lists) in their original order and expect the same position for each element. 
+        /// </summary>
+        /// <param name="map1">Specifies the first map. </param>
+        /// <param name="map2">Specifies the second map. </param>
+        /// <returns>True in case the maps are equal, false otherwise. </returns>
+        public static bool AreMapsEqual(Dictionary<int, List<int>> map1, Dictionary<int, List<int>> map2)
+        {
+            if (map1 == null && map2 == null)
+            {
+                return true;
+            }
+
+            if (map1 == null || map2 == null)
+            {
+                return false;
+            }
+
+            if (map1.Keys.Count != map2.Keys.Count)
+            {
+                return false;
+            }
+
+            foreach (int key in map1.Keys)
+            {
+                if (map2.TryGetValue(key, out List<int> value2))
+                {
+                    if (map1[key].Count != map2[key].Count)
+                    {
+                        return false;
+                    }
+                    for (int index = 0; index < map1[key].Count; index++)
+                    {
+                        if (map1[key][index] != map2[key][index])
+                        {
+                            return false;
+                        }
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }

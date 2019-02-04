@@ -73,5 +73,16 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
             QuickSort.QuickSort_Recursively(values, 0, values.Count - 1);
             Common.CheckIfListIsSortedAscendingly(values);
         }
+
+        [TestMethod]
+        public void QuickSort_IsStable_Test()
+        {
+            /* We need to find "a" list with duplicate values, such that shows Quick sort is not stable. 
+             * This does not mean that Quick sort is unstable for all arrays with duplicate values. */
+            List<int> duplicateValues1 = new List<int> { 4, 2, 3, 4, 1 };
+            bool isStable = CSFundamentalAlgorithms.SortingAlgorithms.Common.IsSortMethodStable(QuickSortWrapper.QuickSort_Recursively_Wrapper, duplicateValues1);
+            Assert.IsFalse(isStable);
+        }
+
     }
 }

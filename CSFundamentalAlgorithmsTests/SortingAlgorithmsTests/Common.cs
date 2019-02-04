@@ -68,5 +68,50 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
 
             Assert.AreEqual(4, CSFundamentalAlgorithms.SortingAlgorithms.Common.GetNthDigitFromRight(-456123, 6));
         }
+
+        [TestMethod]
+        public void Common_AreMapsEqual_Test()
+        {
+            Assert.IsTrue(CSFundamentalAlgorithms.SortingAlgorithms.Common.AreMapsEqual(null, null));
+            Assert.IsFalse(CSFundamentalAlgorithms.SortingAlgorithms.Common.AreMapsEqual(new Dictionary<int, List<int>>(), null));
+            Assert.IsFalse(CSFundamentalAlgorithms.SortingAlgorithms.Common.AreMapsEqual(null, new Dictionary<int, List<int>>()));
+
+            Dictionary<int, List<int>> map1 = new Dictionary<int, List<int>>();
+            map1.Add(1, new List<int> { 0 });
+            Dictionary<int, List<int>> map2 = new Dictionary<int, List<int>>();
+            map2.Add(1, new List<int> { 0 });
+            Assert.IsTrue(CSFundamentalAlgorithms.SortingAlgorithms.Common.AreMapsEqual(map1, map2));
+
+            map1[1].Add(2);
+            Assert.IsFalse(CSFundamentalAlgorithms.SortingAlgorithms.Common.AreMapsEqual(map1, map2));
+            Assert.IsFalse(CSFundamentalAlgorithms.SortingAlgorithms.Common.AreMapsEqual(map2, map1));
+
+            map2[1].Add(2);
+            Assert.IsTrue(CSFundamentalAlgorithms.SortingAlgorithms.Common.AreMapsEqual(map1, map2));
+            Assert.IsTrue(CSFundamentalAlgorithms.SortingAlgorithms.Common.AreMapsEqual(map2, map1));
+
+            map1.Add(3, new List<int> { 5, 8 });
+            map2.Add(3, new List<int> { 8, 5 });
+            Assert.IsFalse(CSFundamentalAlgorithms.SortingAlgorithms.Common.AreMapsEqual(map1, map2));
+            Assert.IsFalse(CSFundamentalAlgorithms.SortingAlgorithms.Common.AreMapsEqual(map2, map1));
+        }
+
+        [TestMethod]
+        public void Common_HashListToIndexes_Test()
+        {
+            Dictionary<int, List<int>> map = CSFundamentalAlgorithms.SortingAlgorithms.Common.HashListToIndexes(null);
+            Assert.AreEqual(0, map.Keys.Count);
+
+            List<int> values1 = new List<int> { 4, 2, 3, 4, 1 };
+            Dictionary<int, List<int>> map1 = CSFundamentalAlgorithms.SortingAlgorithms.Common.HashListToIndexes(values1);
+            Assert.AreEqual(4, map1.Keys.Count);
+            Assert.AreEqual(2, map1[4].Count);
+            Assert.AreEqual(0, map1[4][0]);
+            Assert.AreEqual(3, map1[4][1]);
+
+            Assert.AreEqual(1, map1[2][0]);
+            Assert.AreEqual(2, map1[3][0]);
+            Assert.AreEqual(4, map1[1][0]);
+        }
     }
 }

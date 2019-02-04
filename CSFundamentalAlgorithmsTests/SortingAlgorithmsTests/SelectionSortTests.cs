@@ -74,6 +74,14 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
             Common.CheckIfListIsSortedAscendingly(values);
         }
 
-        // TODO: Add tests with other arrays as well. 
+        [TestMethod]
+        public void SelectionSort_IsStable_Test()
+        {
+            /* We need to find "a" list with duplicate values, such that shows Selection sort is not stable. 
+             * This does not mean that Selection sort is unstable for all arrays with duplicate values. */
+            List<int> duplicateValues1 = new List<int> { 4, 2, 3, 4, 1 };
+            bool isStable = CSFundamentalAlgorithms.SortingAlgorithms.Common.IsSortMethodStable(SelectionSort.SelectionSort_Iteratively, duplicateValues1);
+            Assert.IsFalse(isStable);
+        }
     }
 }
