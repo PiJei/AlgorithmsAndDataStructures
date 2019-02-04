@@ -28,7 +28,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         [TestMethod]
         public void MergeSort_MergeSort_Recursively_Test_WithDistinctValues()
         {
-            var values = new List<int>(Common.ArrayWithDistinctValues);
+            var values = new List<int>(Constants.ArrayWithDistinctValues);
             MergeSort.MergeSort_Recursively(values, 0, values.Count - 1);
             Common.CheckIfListIsSortedAscendingly(values);
         }
@@ -36,7 +36,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         [TestMethod]
         public void MergeSort_MergeSort_Recursively_Test_WithDuplicateValues()
         {
-            var values = new List<int>(Common.ArrayWithDuplicateValues);
+            var values = new List<int>(Constants.ArrayWithDuplicateValues);
             MergeSort.MergeSort_Recursively(values, 0, values.Count - 1);
             Common.CheckIfListIsSortedAscendingly(values);
         }
@@ -44,7 +44,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         [TestMethod]
         public void MergeSort_MergeSort_Recursively_Test_WithSortedDistinctValues()
         {
-            var values = new List<int>(Common.ArrayWithSortedDistinctValues);
+            var values = new List<int>(Constants.ArrayWithSortedDistinctValues);
             MergeSort.MergeSort_Recursively(values, 0, values.Count - 1);
             Common.CheckIfListIsSortedAscendingly(values);
         }
@@ -52,7 +52,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         [TestMethod]
         public void MergeSort_MergeSort_Recursively_Test_WithSortedDuplicateValues()
         {
-            var values = new List<int>(Common.ArrayWithSortedDuplicateValues);
+            var values = new List<int>(Constants.ArrayWithSortedDuplicateValues);
             MergeSort.MergeSort_Recursively(values, 0, values.Count - 1);
             Common.CheckIfListIsSortedAscendingly(values);
         }
@@ -60,7 +60,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         [TestMethod]
         public void MergeSort_MergeSort_Recursively_Test_WithReverselySortedDistinctValues()
         {
-            var values = new List<int>(Common.ArrayWithReverselySortedDistinctValues);
+            var values = new List<int>(Constants.ArrayWithReverselySortedDistinctValues);
             MergeSort.MergeSort_Recursively(values, 0, values.Count - 1);
             Common.CheckIfListIsSortedAscendingly(values);
         }
@@ -68,7 +68,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         [TestMethod]
         public void MergeSort_MergeSort_Recursively_Test_WithReverselySortedDuplicateValues()
         {
-            var values = new List<int>(Common.ArrayWithReverselySortedDuplicateValues);
+            var values = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
             MergeSort.MergeSort_Recursively(values, 0, values.Count - 1);
             Common.CheckIfListIsSortedAscendingly(values);
         }
