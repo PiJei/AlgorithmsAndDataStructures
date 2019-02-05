@@ -18,6 +18,7 @@
  */
 
 using System.Collections.Generic;
+using CSFundamentalAlgorithms.SortingAlgorithms.Helpers;
 
 namespace CSFundamentalAlgorithms.SortingAlgorithms
 {
@@ -37,7 +38,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
                 {
                     if (values[i + 1] < values[i])
                     {
-                        Common.Swap(values, i + 1, i);
+                        Utils.Swap(values, i + 1, i);
                         swapHappened = true;
                     }
                 }

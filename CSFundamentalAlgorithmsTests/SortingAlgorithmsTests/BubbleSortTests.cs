@@ -32,7 +32,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         {
             List<int> values = new List<int>(Constants.ArrayWithDistinctValues);
             BubbleSort.BubbleSort_Iterative(values);
-            Common.CheckIfListIsSortedAscendingly(values);
+            UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
         [TestMethod]
@@ -40,7 +40,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         {
             List<int> values = new List<int>(Constants.ArrayWithDuplicateValues);
             BubbleSort.BubbleSort_Iterative(values);
-            Common.CheckIfListIsSortedAscendingly(values);
+            UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
         [TestMethod]
@@ -48,7 +48,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         {
             List<int> values = new List<int>(Constants.ArrayWithSortedDistinctValues);
             BubbleSort.BubbleSort_Iterative(values);
-            Common.CheckIfListIsSortedAscendingly(values);
+            UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
         [TestMethod]
@@ -56,7 +56,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         {
             List<int> values = new List<int>(Constants.ArrayWithSortedDuplicateValues);
             BubbleSort.BubbleSort_Iterative(values);
-            Common.CheckIfListIsSortedAscendingly(values);
+            UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
         [TestMethod]
@@ -64,7 +64,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         {
             List<int> values = new List<int>(Constants.ArrayWithReverselySortedDistinctValues);
             BubbleSort.BubbleSort_Iterative(values);
-            Common.CheckIfListIsSortedAscendingly(values);
+            UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
         [TestMethod]
@@ -72,7 +72,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         {
             List<int> values = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
             BubbleSort.BubbleSort_Iterative(values);
-            Common.CheckIfListIsSortedAscendingly(values);
+            UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
 

@@ -31,7 +31,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         {
             var values = new List<int>(Constants.ArrayWithDistinctValues);
             InsertionSort.InsertionSort_Iterative_V1(values);
-            Common.CheckIfListIsSortedAscendingly(values);
+            UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
         [TestMethod]
@@ -39,7 +39,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         {
             var values = new List<int>(Constants.ArrayWithDuplicateValues);
             InsertionSort.InsertionSort_Iterative_V1(values);
-            Common.CheckIfListIsSortedAscendingly(values);
+            UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
         [TestMethod]
@@ -47,7 +47,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         {
             var values = new List<int>(Constants.ArrayWithDistinctValues);
             InsertionSort.InsertionSort_Iterative_V2(values);
-            Common.CheckIfListIsSortedAscendingly(values);
+            UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
         [TestMethod]
@@ -55,7 +55,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         {
             var values = new List<int>(Constants.ArrayWithDuplicateValues);
             InsertionSort.InsertionSort_Iterative_V2(values);
-            Common.CheckIfListIsSortedAscendingly(values);
+            UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
         [TestMethod]
@@ -63,7 +63,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         {
             var values = new List<int>(Constants.ArrayWithDistinctValues);
             InsertionSort.InsertionSort_Recursive(values, values.Count - 1);
-            Common.CheckIfListIsSortedAscendingly(values);
+            UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
         [TestMethod]
@@ -71,7 +71,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         {
             var values = new List<int>(Constants.ArrayWithDuplicateValues);
             InsertionSort.InsertionSort_Recursive(values, values.Count - 1);
-            Common.CheckIfListIsSortedAscendingly(values);
+            UtilsTests.CheckIfListIsSortedAscendingly(values);
 
         }
 

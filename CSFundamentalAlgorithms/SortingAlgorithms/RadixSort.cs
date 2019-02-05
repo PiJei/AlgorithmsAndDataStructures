@@ -18,6 +18,8 @@
  */
 
 using System.Collections.Generic;
+using CSFundamentalAlgorithms.SortingAlgorithms.Helpers;
+
 namespace CSFundamentalAlgorithms.SortingAlgorithms
 {
     public class RadixSort
@@ -27,8 +29,8 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// </summary>
         public static void RadixSort_Iterative_V1(List<int> values)
         {
-            int maxElement = Common.GetMaxElement(values);
-            int digitsCountForMaxElement = Common.GetDigitsCount(maxElement);
+            int maxElement = Utils.GetMaxElement(values);
+            int digitsCountForMaxElement = Utils.GetDigitsCount(maxElement);
 
             /* Creating an array of 10 queues. One queue per each possible digit in base 10 (decimal) numbers: (0, 1, 2, ..., 9)*/
             Queue<int>[] queues = new Queue<int>[10];
@@ -43,7 +45,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
                 for (int i = 0; i < values.Count; i++)
                 {
                     /* Get the d(th) least significant digit of element i in the array.  */
-                    int digit = Common.GetNthDigitFromRight(values[i], d);
+                    int digit = Utils.GetNthDigitFromRight(values[i], d);
                     queues[digit].Enqueue(values[i]);
                 }
 

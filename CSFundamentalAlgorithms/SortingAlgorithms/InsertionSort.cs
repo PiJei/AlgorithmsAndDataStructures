@@ -18,6 +18,7 @@
  */
 
 using System.Collections.Generic;
+using CSFundamentalAlgorithms.SortingAlgorithms.Helpers;
 
 namespace CSFundamentalAlgorithms.SortingAlgorithms
 {
@@ -38,7 +39,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
                 // Will do so by moving element i, to the left of the array until there is no element to the left of i that is bigger than i
                 for (int j = i - 1; j >= 0 && values[j] > values[j + 1]; j--) /* Having the second condition in the code, speeds up the algorithm, as it stops immediately as soon as reaching a point in th graph that element in [j-1] is no longer bigger than element in [j]*/
                 {
-                    Common.Swap(values, j, j + 1); // meaning that we are moving element at (i) to the left at each step.
+                    Utils.Swap(values, j, j + 1); // meaning that we are moving element at (i) to the left at each step.
                 }
             }
         }

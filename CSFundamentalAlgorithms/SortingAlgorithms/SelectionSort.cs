@@ -18,6 +18,7 @@
  */
 
 using System.Collections.Generic;
+using CSFundamentalAlgorithms.SortingAlgorithms.Helpers;
 
 namespace CSFundamentalAlgorithms.SortingAlgorithms
 {
@@ -40,7 +41,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
                         minIndex = j;
                     }
                 }
-                Common.Swap(values, i, minIndex); /* Eventhough if minIndex has not changed, the swap happens. Can be made efficient by adding an if check. */
+                Utils.Swap(values, i, minIndex); /* Eventhough if minIndex has not changed, the swap happens. Can be made efficient by adding an if check. */
             }
         }
     }

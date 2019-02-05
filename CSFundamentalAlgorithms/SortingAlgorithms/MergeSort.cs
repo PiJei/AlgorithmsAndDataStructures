@@ -71,7 +71,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
 
             while (leftHalfCounter <= high1 && rightHalfCounter <= high2)
             {
-                if (valuesOriginal[leftHalfCounter] <= valuesOriginal[rightHalfCounter])
+                if (valuesOriginal[leftHalfCounter] <= valuesOriginal[rightHalfCounter]) /* Favors left half values over right half values when there are duplicates. */
                 {
                     values[mainArrayCounter] = valuesOriginal[leftHalfCounter];
                     leftHalfCounter++;

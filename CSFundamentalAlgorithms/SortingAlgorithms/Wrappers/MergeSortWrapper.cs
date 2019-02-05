@@ -21,7 +21,7 @@
 
 using System.Collections.Generic;
 
-namespace CSFundamentalAlgorithms.SortingAlgorithms
+namespace CSFundamentalAlgorithms.SortingAlgorithms.Wrappers
 {
     /// <summary>
     /// Provides some wrappers for methods in MergeSort class. 
