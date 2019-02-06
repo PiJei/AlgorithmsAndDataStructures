@@ -24,13 +24,25 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms.StabilityCheckableVersions
     public class Element : IEquatable<Element>, IComparable<Element>
     {
         public int Value { get; private set; }
-        public int OldArrayIndex { get; private set; }
-        public int NewArrayIndex { get; set; } = -1;
+        public int FirstArrayIndex { get; private set; }
+        public int LatestArrayIndex { get; private set; } = -1;
 
-        public Element(int value, int oldArrayIndex)
+        public Element(int value, int firstArrayIndex)
         {
             Value = value;
-            OldArrayIndex = oldArrayIndex;
+            FirstArrayIndex = firstArrayIndex;
+        }
+
+        public Element(Element e)
+        {
+            Value = e.Value;
+            FirstArrayIndex = e.FirstArrayIndex;
+            LatestArrayIndex = e.LatestArrayIndex;
+        }
+
+        public void Move(int newIndex)
+        {
+            LatestArrayIndex = newIndex;
         }
 
         public bool Equals(Element other)
@@ -53,10 +65,10 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms.StabilityCheckableVersions
         public bool IsStable(Element other)
         {
             if (!Equals(other)) { return false; }
-            if (NewArrayIndex == -1 || other.NewArrayIndex == -1) { return false; }
-            if (OldArrayIndex == other.OldArrayIndex) { return NewArrayIndex == other.NewArrayIndex; }
-            if (OldArrayIndex < other.OldArrayIndex) { return NewArrayIndex < other.NewArrayIndex; }
-            if (OldArrayIndex > other.OldArrayIndex) { return NewArrayIndex > other.NewArrayIndex; }
+            if (LatestArrayIndex == -1 || other.LatestArrayIndex == -1) { return false; }
+            if (FirstArrayIndex == other.FirstArrayIndex) { return LatestArrayIndex == other.LatestArrayIndex; }
+            if (FirstArrayIndex < other.FirstArrayIndex) { return LatestArrayIndex < other.LatestArrayIndex; }
+            if (FirstArrayIndex > other.FirstArrayIndex) { return LatestArrayIndex > other.LatestArrayIndex; }
             return false;
         }
 

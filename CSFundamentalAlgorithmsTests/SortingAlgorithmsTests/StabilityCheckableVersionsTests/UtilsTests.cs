@@ -17,10 +17,10 @@
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentalAlgorithms.SortingAlgorithms.StabilityCheckableVersions;
-using CSFundamentalAlgorithms.SortingAlgorithms.StabilityCheckableVersions.Helpers;
-using System.Collections.Generic;
+using CSFundamentalAlgorithms.SortingAlgorithms;
 
 namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests.StabilityCheckableVersionsTests.HelpersTests
 {
@@ -36,8 +36,8 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests.StabilityCheckable
             for (int i = 0; i < values.Count; i++)
             {
                 Assert.AreEqual(values[i], newValues[i].Value);
-                Assert.AreEqual(i, newValues[i].OldArrayIndex);
-                Assert.AreEqual(-1, newValues[i].NewArrayIndex);
+                Assert.AreEqual(i, newValues[i].FirstArrayIndex);
+                Assert.AreEqual(-1, newValues[i].LatestArrayIndex);
             }
         }
 
@@ -45,19 +45,19 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests.StabilityCheckable
         public void Utils_IsMapStable_Test()
         {
             var element1 = new Element(4, 0);
-            element1.NewArrayIndex = 4;
+            element1.Move(4);
 
             var element2 = new Element(4, 3);
-            element2.NewArrayIndex = 3;
+            element2.Move(3);
 
             Dictionary<Element, List<Element>> map = new Dictionary<Element, List<Element>>();
 
             map.Add(element1, new List<Element> { element1, element2 });
             Assert.IsFalse(Utils.IsMapStable(map));
 
-            element1.NewArrayIndex = 3;
-            element2.NewArrayIndex = 4;
-            
+            element1.Move(3);
+            element2.Move(4);
+
             Assert.IsTrue(Utils.IsMapStable(map));
         }
 
@@ -85,12 +85,47 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests.StabilityCheckable
 
             Assert.AreEqual(4, map1.Keys.Count);
             Assert.AreEqual(2, map1[element1].Count);
-            Assert.AreEqual(0, map1[element1][0].OldArrayIndex);
-            Assert.AreEqual(3, map1[element1][1].OldArrayIndex);
+            Assert.AreEqual(0, map1[element1][0].FirstArrayIndex);
+            Assert.AreEqual(3, map1[element1][1].FirstArrayIndex);
 
-            Assert.AreEqual(1, map1[element2][0].OldArrayIndex);
-            Assert.AreEqual(2, map1[element3][0].OldArrayIndex);
-            Assert.AreEqual(4, map1[element5][0].OldArrayIndex);
+            Assert.AreEqual(1, map1[element2][0].FirstArrayIndex);
+            Assert.AreEqual(2, map1[element3][0].FirstArrayIndex);
+            Assert.AreEqual(4, map1[element5][0].FirstArrayIndex);
+        }
+
+        [TestMethod]
+        public void Utils_Swap_Test()
+        {
+            List<Element> values = new List<Element>();
+            var element1 = new Element(10, 0);
+            var element2 = new Element(5, 1);
+            var element3 = new Element(16, 2);
+            var element4 = new Element(3, 3);
+            values.Add(element1);
+            values.Add(element2);
+            values.Add(element3);
+            values.Add(element4);
+
+            Utils.Swap(values, 0, 2);
+
+            Assert.AreEqual(10, values[2].Value);
+            Assert.AreEqual(0, values[2].FirstArrayIndex);
+            Assert.AreEqual(2, values[2].LatestArrayIndex);
+
+            Assert.AreEqual(16, values[0].Value);
+            Assert.AreEqual(2, values[0].FirstArrayIndex);
+            Assert.AreEqual(0, values[0].LatestArrayIndex);
+
+            Utils.Swap(values, 0, 3);
+
+            Assert.AreEqual(3, values[0].Value);
+            Assert.AreEqual(3, values[0].FirstArrayIndex);
+            Assert.AreEqual(0, values[0].LatestArrayIndex);
+
+            Assert.AreEqual(16, values[3].Value);
+            Assert.AreEqual(2, values[3].FirstArrayIndex);
+            Assert.AreEqual(3, values[3].LatestArrayIndex);
+
         }
     }
 }

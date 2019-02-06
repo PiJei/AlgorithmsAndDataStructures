@@ -18,7 +18,6 @@
  */
 
 using System.Collections.Generic;
-using CSFundamentalAlgorithms.SortingAlgorithms.Helpers;
 
 namespace CSFundamentalAlgorithms.SortingAlgorithms
 {

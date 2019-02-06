@@ -46,11 +46,11 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests.StabilityCheckable
             Element element3 = new Element(1, 2); // Element3 : 1, 2, -1 
             Assert.IsFalse(element1.IsStable(element3)); /* Expects false, as newIndex is not decided yet. */
 
-            element1.NewArrayIndex = 5; // Element1: 1, 0, 5
-            element3.NewArrayIndex = 3; // Element3 : 1, 2, 3 
+            element1.Move(5); // Element1: 1, 0, 5
+            element3.Move(3); // Element3 : 1, 2, 3 
             Assert.IsFalse(element1.IsStable(element3)); /* Expects false, as element3 's old index is bigger but new index is smaller*/
 
-            element3.NewArrayIndex = 8; // Element3: 1, 2, 8 
+            element3.Move(8); // Element3: 1, 2, 8 
             Assert.IsTrue(element1.IsStable(element3));
         }
 

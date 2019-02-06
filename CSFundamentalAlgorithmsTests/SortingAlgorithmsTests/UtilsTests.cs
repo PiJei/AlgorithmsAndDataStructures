@@ -19,7 +19,7 @@
 
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CSFundamentalAlgorithms.SortingAlgorithms.Helpers;
+using CSFundamentalAlgorithms.SortingAlgorithms;
 
 // TODO: Rename this class, 
 

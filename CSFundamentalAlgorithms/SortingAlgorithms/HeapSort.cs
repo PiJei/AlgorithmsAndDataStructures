@@ -19,7 +19,6 @@
 
 using System.Collections.Generic;
 using CSFundamentalAlgorithms.BinaryHeaps;
-using CSFundamentalAlgorithms.SortingAlgorithms.Helpers;
 
 namespace CSFundamentalAlgorithms.SortingAlgorithms
 {

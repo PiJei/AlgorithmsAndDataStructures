@@ -20,10 +20,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using CSFundamentalAlgorithms.SortingAlgorithms.StabilityCheckableVersions;
 
-namespace CSFundamentalAlgorithms.SortingAlgorithms.StabilityCheckableVersions.Helpers
+namespace CSFundamentalAlgorithms.SortingAlgorithms
 {
-    public class Utils
+    public partial class Utils
     {
         public static List<Element> Convert(List<int> values)
         {
@@ -35,7 +36,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms.StabilityCheckableVersions.H
             return newValues;
         }
 
-        // TODO: Correct the comments of the next 3 methods
+        // TODO: Correct the summaries of the next 3 methods
 
         /// <summary>
         /// Detects whether the given sort method is stable. A sort method is stable, if it preserves the ordering of duplicate values in the original array. 
@@ -100,6 +101,17 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms.StabilityCheckableVersions.H
 
             }
             return true;
+        }
+
+        public static void Swap(List<Element> values, int index1, int index2)
+        {
+            Element temp = new Element(values[index1]);
+
+            values[index2].Move(index1);
+            values[index1] = values[index2];
+
+            temp.Move(index2);
+            values[index2] = temp;
         }
     }
 }
