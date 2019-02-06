@@ -22,7 +22,7 @@ using System.Collections.Generic;
 
 namespace CSFundamentalAlgorithms.SortingAlgorithms
 {
-    public class Common
+    public partial class Utils
     {
         public static void Swap(List<int> values, int index1, int index2)
         {

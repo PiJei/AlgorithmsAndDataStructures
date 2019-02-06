@@ -18,22 +18,17 @@
  */
 
 using System.Collections.Generic;
+using CSFundamentalAlgorithms.SortingAlgorithms.StabilityCheckableVersions;
 
 namespace CSFundamentalAlgorithms.SortingAlgorithms
 {
     public partial class QuickSort
     {
-        /// <summary>
-        /// Implements quick sort to sort integer values in an array, ascendingly, 
-        /// </summary>
-        /// <param name="values">Specifies the list of integer values to be sorted. </param>
-        /// <param name="lowIndex">Specifies the lower index in the array, inclusive. </param>
-        /// <param name="highIndex">Specifies the higher index in the array, inclusive. </param>
-        public static void QuickSort_Recursively(List<int> values, int lowIndex, int highIndex)
+        public static void QuickSort_Recursively(List<Element> values, int lowIndex, int highIndex)
         {
             if (lowIndex < highIndex)
             {
-                int partitionIndex = PartitionArray(values, lowIndex, highIndex);
+                int partitionIndex = PartitionArray_StabilityCheckableVersion(values, lowIndex, highIndex);
                 QuickSort_Recursively(values, lowIndex, partitionIndex);
                 QuickSort_Recursively(values, partitionIndex + 1, highIndex);
             }
@@ -46,21 +41,21 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// <param name="lowIndex">Specifies the lower index in the array, inclusive. </param>
         /// <param name="highIndex">Specifies the higher index in the array, inclusive. </param>
         /// <returns>The next partitioning index. </returns>
-        public static int PartitionArray(List<int> values, int lowIndex, int highIndex)
+        public static int PartitionArray_StabilityCheckableVersion(List<Element> values, int lowIndex, int highIndex)
         {
             int pivotIndex = GetPivotIndex(lowIndex, highIndex);
-            int pivotValue = values[pivotIndex];
+            int pivotValue = values[pivotIndex].Value;
 
             int leftIndex = lowIndex;
             int rightIndex = highIndex;
 
             while (true)
             {
-                while (leftIndex <= highIndex && values[leftIndex] < pivotValue)
+                while (leftIndex <= highIndex && values[leftIndex].Value < pivotValue)
                 {
                     leftIndex++;
                 }
-                while (rightIndex <= highIndex && values[rightIndex] > pivotValue)
+                while (rightIndex <= highIndex && values[rightIndex].Value > pivotValue)
                 {
                     rightIndex--;
                 }
@@ -68,6 +63,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
                 {
                     return rightIndex;
                 }
+
                 Utils.Swap(values, leftIndex, rightIndex);
 
                 /* The next two increments are needed, as otherwise there will be issues with duplicate values in the array.
@@ -79,25 +75,14 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         }
 
         /// <summary>
-        /// This algorithm uses the middle element of the array as pivot. Other mechanisms exist also. 
+        /// This is to be able to call QuickSort sort methods with only the list that needs to be sorted, and independet of the indexes. 
+        /// This is needed for methods that receive other sort methods as parameters, and would ideally like to have similar signature for all the methods that are passed as parameters, 
+        /// In sort methods the signature is: void SortMethod(List<int> values); 
         /// </summary>
-        /// <param name="lowIndex"></param>
-        /// <param name="highIndex"></param>
-        /// <returns></returns>
-        public static int GetPivotIndex(int lowIndex, int highIndex)
+        /// <param name="values">Specifies the list of integers to be sorted. </param>
+        public static void QuickSort_Recursively_Wrapper(List<Element> values)
         {
-            return (lowIndex + highIndex) / 2;
-        }
-
-        /// <summary>
-        /// Provides an iterative version of QuickSort.
-        /// </summary>
-        /// <param name="values"></param>
-        /// <param name="lowIndex"></param>
-        /// <param name="highIndex"></param>
-        public static void QuickSort_Iteratively(List<int> values, int lowIndex, int highIndex)
-        {
-            // TODO
+            QuickSort_Recursively(values, 0, values.Count - 1);
         }
     }
 }

@@ -24,56 +24,54 @@ using CSFundamentalAlgorithms.SortingAlgorithms;
 namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
 {
     [TestClass]
-    public class SelectionSortTests
+    public partial class SelectionSortTests
     {
         [TestMethod]
         public void SelectionSort_SelectionSortIteratively_Test_WithDistnctValues()
         {
-            var values = new List<int>(Common.ArrayWithDistinctValues);
+            var values = new List<int>(Constants.ArrayWithDistinctValues);
             SelectionSort.SelectionSort_Iteratively(values);
-            Common.CheckIfListIsSortedAscendingly(values);
+            UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
         [TestMethod]
         public void SelectionSort_SelectionSortIteratively_Test_WithDuplicateValues()
         {
-            var values = new List<int>(Common.ArrayWithDuplicateValues);
+            var values = new List<int>(Constants.ArrayWithDuplicateValues);
             SelectionSort.SelectionSort_Iteratively(values);
-            Common.CheckIfListIsSortedAscendingly(values);
+            UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
         [TestMethod]
         public void SelectionSort_SelectionSortIteratively_Test_WithSortedDistinctValues()
         {
-            var values = new List<int>(Common.ArrayWithSortedDistinctValues);
+            var values = new List<int>(Constants.ArrayWithSortedDistinctValues);
             SelectionSort.SelectionSort_Iteratively(values);
-            Common.CheckIfListIsSortedAscendingly(values);
+            UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
         [TestMethod]
         public void SelectionSort_SelectionSortIteratively_Test_WithSortedDuplicateValues()
         {
-            var values = new List<int>(Common.ArrayWithSortedDuplicateValues);
+            var values = new List<int>(Constants.ArrayWithSortedDuplicateValues);
             SelectionSort.SelectionSort_Iteratively(values);
-            Common.CheckIfListIsSortedAscendingly(values);
+            UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
         [TestMethod]
         public void SelectionSort_SelectionSortIteratively_Test_WithReverselySortedDistinctValues()
         {
-            var values = new List<int>(Common.ArrayWithReverselySortedDistinctValues);
+            var values = new List<int>(Constants.ArrayWithReverselySortedDistinctValues);
             SelectionSort.SelectionSort_Iteratively(values);
-            Common.CheckIfListIsSortedAscendingly(values);
+            UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
         [TestMethod]
         public void SelectionSort_SelectionSortIteratively_Test_WithReverselySortedDuplicateValues()
         {
-            var values = new List<int>(Common.ArrayWithReverselySortedDuplicateValues);
+            var values = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
             SelectionSort.SelectionSort_Iteratively(values);
-            Common.CheckIfListIsSortedAscendingly(values);
+            UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
-
-        // TODO: Add tests with other arrays as well. 
     }
 }

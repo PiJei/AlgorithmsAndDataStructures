@@ -29,49 +29,49 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         [TestMethod]
         public void HeapSort_HeapSortAscending_Test_WithDistinctValues()
         {
-            var values = new List<int>(Common.ArrayWithDistinctValues);
+            var values = new List<int>(Constants.ArrayWithDistinctValues);
             HeapSort.HeapSort_Ascending(values);
-            Common.CheckIfListIsSortedAscendingly(values);
+            UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
         [TestMethod]
         public void HeapSort_HeapSortAscending_Test_WithDuplicateValues()
         {
-            var values = new List<int>(Common.ArrayWithDuplicateValues);
+            var values = new List<int>(Constants.ArrayWithDuplicateValues);
             HeapSort.HeapSort_Ascending(values);
-            Common.CheckIfListIsSortedAscendingly(values);
+            UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
         [TestMethod]
         public void HeapSort_HeapSortAscending_Test_WithSortedDistinctValues()
         {
-            var values = new List<int>(Common.ArrayWithSortedDistinctValues);
+            var values = new List<int>(Constants.ArrayWithSortedDistinctValues);
             HeapSort.HeapSort_Ascending(values);
-            Common.CheckIfListIsSortedAscendingly(values);
+            UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
         [TestMethod]
         public void HeapSort_HeapSortAscending_Test_WithSortedDuplicateValues()
         {
-            var values = new List<int>(Common.ArrayWithSortedDuplicateValues);
+            var values = new List<int>(Constants.ArrayWithSortedDuplicateValues);
             HeapSort.HeapSort_Ascending(values);
-            Common.CheckIfListIsSortedAscendingly(values);
+            UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
         [TestMethod]
         public void HeapSort_HeapSortAscending_Test_WithReverselySortedDistinctValues()
         {
-            var values = new List<int>(Common.ArrayWithReverselySortedDistinctValues);
+            var values = new List<int>(Constants.ArrayWithReverselySortedDistinctValues);
             HeapSort.HeapSort_Ascending(values);
-            Common.CheckIfListIsSortedAscendingly(values);
+            UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
         [TestMethod]
         public void HeapSort_HeapSortAscending_Test_WithRevereselySortedDuplicateValues()
         {
-            var values = new List<int>(Common.ArrayWithReverselySortedDuplicateValues);
+            var values = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
             HeapSort.HeapSort_Ascending(values);
-            Common.CheckIfListIsSortedAscendingly(values);
+            UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
     }
 }

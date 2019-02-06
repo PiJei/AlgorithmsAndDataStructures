@@ -18,24 +18,25 @@
  */
 
 using System.Collections.Generic;
+using CSFundamentalAlgorithms.SortingAlgorithms.StabilityCheckableVersions;
 
-namespace CSFundamentalAlgorithms.SortingAlgorithms
+ namespace CSFundamentalAlgorithms.SortingAlgorithms
 {
     public partial class RadixSort
     {
         /// <summary>
         /// Implements Radix sort for base 10 (decimal integers) using queues. 
         /// </summary>
-        public static void RadixSort_Iterative_V1(List<int> values)
+        public static void RadixSort_Iterative_V1(List<Element> values)
         {
-            int maxElement = Utils.GetMaxElement(values);
-            int digitsCountForMaxElement = Utils.GetDigitsCount(maxElement);
+            Element maxElement = Utils.GetMaxElement(values);
+            int digitsCountForMaxElement = Utils.GetDigitsCount(maxElement.Value);
 
             /* Creating an array of 10 queues. One queue per each possible digit in base 10 (decimal) numbers: (0, 1, 2, ..., 9)*/
-            Queue<int>[] queues = new Queue<int>[10];
+            Queue<Element>[] queues = new Queue<Element>[10];
             for (int j = 0; j < 10; j++)
             {
-                queues[j] = new Queue<int>();
+                queues[j] = new Queue<Element>();
             }
 
             for (int d = 1; d <= digitsCountForMaxElement; d++) /* the sorting should happen as many as digitsCount of the max element times. */
@@ -44,7 +45,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
                 for (int i = 0; i < values.Count; i++)
                 {
                     /* Get the d(th) least significant digit of element i in the array.  */
-                    int digit = Utils.GetNthDigitFromRight(values[i], d);
+                    int digit = Utils.GetNthDigitFromRight(values[i].Value, d);
                     queues[digit].Enqueue(values[i]);
                 }
 
@@ -54,27 +55,13 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
                 {
                     while (queues[i].Count > 0)
                     {
-                        values[nextIndex] = queues[i].Dequeue();
+                        Element element = queues[i].Dequeue();
+                        element.Move(nextIndex);
+                        values[nextIndex] = element;
                         nextIndex++;
                     }
                 }
             }
-        }
-
-        /// <summary>
-        /// Implements Radix Sort based on count sort.
-        /// </summary>
-        public static void RadixSort_Iterative_V2(List<int> values)
-        {
-            // TODO
-        }
-
-        /// <summary>
-        /// Implements a recursive version of Radix Sort. 
-        /// </summary>
-        public static void RadixSort_Recursive(List<int> values)
-        {
-            // TODO
         }
     }
 }
