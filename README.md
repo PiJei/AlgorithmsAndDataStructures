@@ -25,9 +25,9 @@ Content:
   
   
  - Graphs:
-  - Traversal Algorithms:
-    - DFS (Depth First Search)
-    - BFS (Breadth First Search)
+   - Traversal Algorithms:
+      - DFS (Depth First Search)
+      - BFS (Breadth First Search)
     
   
 
