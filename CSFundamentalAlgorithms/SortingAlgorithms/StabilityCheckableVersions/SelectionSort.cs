@@ -18,16 +18,13 @@
  */
 
 using System.Collections.Generic;
+using CSFundamentalAlgorithms.SortingAlgorithms.StabilityCheckableVersions;
 
 namespace CSFundamentalAlgorithms.SortingAlgorithms
 {
     public partial class SelectionSort
     {
-        /// <summary>
-        /// Implements selection sort, which is in-situ and unstable, and at each step, the array would look as one sorted part, and one unsorted part. 
-        /// </summary>
-        /// <param name="values">Specifies the list of integers that are to be sorted.</param>
-        public static void SelectionSort_Iteratively(List<int> values)
+        public static void SelectionSort_Iteratively(List<Element> values)
         {
             /*Notice that the loop does not have to repeat over the last element of the array, as by then the last element is already the largest element in the array.*/
             for (int i = 0; i < values.Count - 1; i++) /* Iteration i, determines the ith smallest/min value. */
@@ -35,7 +32,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
                 int minIndex = i;
                 for (int j = i; j < values.Count; j++) /* This loop finds an element in the un-sorted part of the array that is smaller than the current value at index i. */
                 {
-                    if (values[j] < values[minIndex])
+                    if (values[j].Value < values[minIndex].Value)
                     {
                         minIndex = j;
                     }

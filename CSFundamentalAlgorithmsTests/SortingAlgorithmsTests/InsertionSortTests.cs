@@ -24,7 +24,7 @@ using System.Collections.Generic;
 namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
 {
     [TestClass]
-    public class InsertionSortTests
+    public partial class InsertionSortTests
     {
         [TestMethod]
         public void InsertionSort_InsertionSort_Iterative_V1_Test_WithDistinctValues()

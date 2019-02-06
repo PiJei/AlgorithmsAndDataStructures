@@ -54,43 +54,9 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests.StabilityCheckable
             Assert.IsTrue(element1.IsStable(element3));
         }
 
-        /* We need to find "a" list with duplicate values, such that shows Quick sort is not stable. 
-             * This does not mean that Quick sort is unstable for all arrays with duplicate values. */
-        /*
-        [TestMethod]
-        public void QuickSort_IsStable_Test()
-        {
-            
-            List<int> duplicateValues1 = new List<int> { 4, 2, 3, 4, 1 };
-            bool isStable = CSFundamentalAlgorithms.SortingAlgorithms.Common.IsSortMethodStable(QuickSortWrapper.QuickSort_Recursively_Wrapper, duplicateValues1);
-            Assert.IsFalse(isStable);
-        }
+        /* 
     
-        [TestMethod]
-        public void MergeSort_IsStable_Test()
-        {
-            List<int> duplicateValues1 = new List<int> { 4, 3, 2, 4, 1 };
-            bool isStable1 = Utils.IsSortMethodStable(MergeSortWrapper.MergeSort_Recursively_Wrapper, duplicateValues1);
-            Assert.IsTrue(isStable1);
-
-            List<int> duplicateValues2 = new List<int> (Constants.ArrayWithDuplicateValues);
-            bool isStable2 = Utils.IsSortMethodStable(MergeSortWrapper.MergeSort_Recursively_Wrapper, duplicateValues2);
-            Assert.IsTrue(isStable2);
-
-            List<int> duplicateValues3 = new List<int>(Constants.ArrayWithSortedDuplicateValues);
-            bool isStable3 = Utils.IsSortMethodStable(MergeSortWrapper.MergeSort_Recursively_Wrapper, duplicateValues3);
-            Assert.IsTrue(isStable3);
-
-            List<int> duplicateValues4 = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
-            bool isStable4 = Utils.IsSortMethodStable(MergeSortWrapper.MergeSort_Recursively_Wrapper, duplicateValues4);
-            Assert.IsTrue(isStable4);
-
-            List<int> duplicateValues5 = new List<int> { 3, 1, 1, 2, 2, 4, 1, 1, 2, 2 };
-            bool isStable5 = Utils.IsSortMethodStable(MergeSortWrapper.MergeSort_Recursively_Wrapper, duplicateValues5);
-            Assert.IsTrue(isStable5);
-
-        }
-    
+        
         /// <summary>
         /// Tests if heap sort is stable or not. Heapsort by design is not stable. 
         /// </summary>
@@ -104,20 +70,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests.StabilityCheckable
         }
     */
 
-        /* All we need to do is to find "a" list with a particular arrangements of duplicate values and other distnct values, such that breaks isStable sort question for heap sort.. 
-          * Meaning that not finding this list, does not prove that the sort method is stable.
-          * This also means that there might be lots of lists with duplicate values, for which heap sort acts as stable. 
-          */
 
-        /*
-    [TestMethod]
-    public void SelectionSort_IsStable_Test()
-    {
-        List<int> duplicateValues1 = new List<int> { 4, 2, 3, 4, 1 };
-        bool isStable = CSFundamentalAlgorithms.SortingAlgorithms.Common.IsSortMethodStable(SelectionSort.SelectionSort_Iteratively, duplicateValues1);
-        Assert.IsFalse(isStable);
-    }
-    */
 
         /* We need to find "a" list with duplicate values, such that shows Selection sort is not stable. 
  * This does not mean that Selection sort is unstable for all arrays with duplicate values. */

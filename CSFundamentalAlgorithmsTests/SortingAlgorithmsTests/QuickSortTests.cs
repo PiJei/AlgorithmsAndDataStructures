@@ -24,7 +24,7 @@ using System.Collections.Generic;
 namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
 {
     [TestClass]
-    public class QuickSortTests
+    public partial class QuickSortTests
     {
         [TestMethod]
         public void QuickSort_QuickSort_Recursively_Test_WithDistinctValues()

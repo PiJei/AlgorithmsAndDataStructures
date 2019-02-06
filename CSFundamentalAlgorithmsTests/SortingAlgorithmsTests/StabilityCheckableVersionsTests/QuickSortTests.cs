@@ -16,15 +16,15 @@
  * You should have received a copy of the GNU General Public License
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentalAlgorithms.SortingAlgorithms;
 using CSFundamentalAlgorithms.SortingAlgorithms.StabilityCheckableVersions;
 
-namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests.StabilityCheckableVersionsTests
+namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
 {
-    [TestClass]
-    public class QuickSortTests
+    public partial class QuickSortTests
     {
         [TestMethod]
         public void QuickSort_IsStable_Test()

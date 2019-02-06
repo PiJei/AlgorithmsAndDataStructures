@@ -113,5 +113,25 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
             temp.Move(index2);
             values[index2] = temp;
         }
+
+        /// <summary>
+        /// Gets the max element in the array. Alternatively we could use Linq.Max operator. However using this version so that the time complexity is obvious.
+        /// </summary>
+        /// <param name="values">Specifies a list of integers. </param>
+        /// <returns>maximum element in the array. </returns>
+        public static Element GetMaxElement(List<Element> values)
+        {
+            /* This method assumes values has at least one member. Otherwise this will throw a null reference exception . */
+            Element max = values[0];
+            for (int i = 0; i < values.Count; i++)
+            {
+                if (values[i].Value > max.Value)
+                {
+                    max = values[i];
+                }
+            }
+            return max;
+        }
+
     }
 }

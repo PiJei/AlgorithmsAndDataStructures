@@ -18,6 +18,7 @@
  */
 
 using System.Collections.Generic;
+using CSFundamentalAlgorithms.SortingAlgorithms.StabilityCheckableVersions;
 
 namespace CSFundamentalAlgorithms.SortingAlgorithms
 {
@@ -29,7 +30,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// <param name="values">Specifies the list of integer values to be sorted. </param>
         /// <param name="lowIndex">Specifies the lower index in the array, inclusive. </param>
         /// <param name="highIndex">Specifies the higher index in the array, inclusive. </param>
-        public static void MergeSort_Recursively(List<int> values, int lowIndex, int highIndex)
+        public static void MergeSort_Recursively(List<Element> values, int lowIndex, int highIndex)
         {
             if (lowIndex < highIndex)
             {
@@ -47,10 +48,14 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// <param name="lowIndex">Specifies the lower index in the array, inclusive. </param>
         /// <param name="middleIndex">Specifies the middle index of the array. </param>
         /// <param name="highIndex">Specifies the higher index in the array, inclusive. </param>
-        public static void Merge(List<int> values, int lowIndex, int middleIndex, int highIndex)
+        public static void Merge(List<Element> values, int lowIndex, int middleIndex, int highIndex)
         {
             //Making a copy of the values
-            List<int> valuesOriginal = new List<int>(values);
+            List<Element> valuesOriginal = new List<Element>(values.Count);
+            for (int i = 0; i < values.Count; i++)
+            {
+                valuesOriginal.Add(new Element(values[i]));
+            }
 
             //Inclusive boundries of the first sub-array
             int low1 = lowIndex;
@@ -71,13 +76,15 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
 
             while (leftHalfCounter <= high1 && rightHalfCounter <= high2)
             {
-                if (valuesOriginal[leftHalfCounter] <= valuesOriginal[rightHalfCounter]) /* Favors left half values over right half values when there are duplicates. */
+                if (valuesOriginal[leftHalfCounter].Value <= valuesOriginal[rightHalfCounter].Value) /* Favors left half values over right half values when there are duplicates. */
                 {
+                    valuesOriginal[leftHalfCounter].Move(mainArrayCounter);
                     values[mainArrayCounter] = valuesOriginal[leftHalfCounter];
                     leftHalfCounter++;
                 }
-                else if (valuesOriginal[leftHalfCounter] > valuesOriginal[rightHalfCounter])
+                else if (valuesOriginal[leftHalfCounter].Value > valuesOriginal[rightHalfCounter].Value)
                 {
+                    valuesOriginal[rightHalfCounter].Move(mainArrayCounter);
                     values[mainArrayCounter] = valuesOriginal[rightHalfCounter];
                     rightHalfCounter++;
                 }
@@ -86,6 +93,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
 
             while (leftHalfCounter <= high1)
             {
+                valuesOriginal[leftHalfCounter].Move(mainArrayCounter);
                 values[mainArrayCounter] = valuesOriginal[leftHalfCounter];
                 leftHalfCounter++;
                 mainArrayCounter++;
@@ -93,6 +101,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
 
             while (rightHalfCounter <= high2)
             {
+                valuesOriginal[rightHalfCounter].Move(mainArrayCounter);
                 values[mainArrayCounter] = valuesOriginal[rightHalfCounter];
                 rightHalfCounter++;
                 mainArrayCounter++;
@@ -100,14 +109,14 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         }
 
         /// <summary>
-        /// Provides an iterative version for MergeSort. 
+        /// This is to be able to call MergeSort sort methods with only the list that needs to be sorted, and independet of the indexes. 
+        /// This is needed for methods that receive other sort methods as parameters, and would ideally like to have similar signature for all the methods that are passed as parameters, 
+        /// In sort methods the signature is: void SortMethod(List<int> values); 
         /// </summary>
-        /// <param name="values"></param>
-        /// <param name="lowIndex"></param>
-        /// <param name="highIndex"></param>
-        public static void MergeSort_Iteratively(List<int> values, int lowIndex, int highIndex)
+        /// <param name="values">Specifies the list of integers to be sorted. </param>
+        public static void MergeSort_Recursively_Wrapper(List<Element> values)
         {
-            // TODO 
+            MergeSort_Recursively(values, 0, values.Count - 1);
         }
     }
 }

@@ -24,13 +24,13 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
 {
     public partial class QuickSort
     {
-        public static void QuickSort_StabilityCheckableVersion_Recursively(List<Element> values, int lowIndex, int highIndex)
+        public static void QuickSort_Recursively(List<Element> values, int lowIndex, int highIndex)
         {
             if (lowIndex < highIndex)
             {
                 int partitionIndex = PartitionArray_StabilityCheckableVersion(values, lowIndex, highIndex);
-                QuickSort_StabilityCheckableVersion_Recursively(values, lowIndex, partitionIndex);
-                QuickSort_StabilityCheckableVersion_Recursively(values, partitionIndex + 1, highIndex);
+                QuickSort_Recursively(values, lowIndex, partitionIndex);
+                QuickSort_Recursively(values, partitionIndex + 1, highIndex);
             }
         }
 
@@ -82,7 +82,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// <param name="values">Specifies the list of integers to be sorted. </param>
         public static void QuickSort_Recursively_Wrapper(List<Element> values)
         {
-            QuickSort_StabilityCheckableVersion_Recursively(values, 0, values.Count - 1);
+            QuickSort_Recursively(values, 0, values.Count - 1);
         }
     }
 }

@@ -18,6 +18,7 @@
  */
 
 using System.Collections.Generic;
+using CSFundamentalAlgorithms.SortingAlgorithms.StabilityCheckableVersions;
 
 namespace CSFundamentalAlgorithms.SortingAlgorithms
 {
@@ -27,7 +28,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// Implements bubble sort iteraively, elements are bubbled down or up the array till they are at their final correct positions. 
         /// </summary>
         /// <param name="values"></param>
-        public static void BubbleSort_Iterative(List<int> values)
+        public static void BubbleSort_Iterative(List<Element> values)
         {
             /* Bubble sort iterates many times over an array, and stops iterating when no swap happens any more. */
             while (true)
@@ -35,22 +36,18 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
                 bool swapHappened = false;
                 for (int i = 0; i < values.Count - 1; i++)
                 {
-                    if (values[i + 1] < values[i])
+                    if (values[i + 1].Value < values[i].Value)
                     {
                         Utils.Swap(values, i + 1, i);
                         swapHappened = true;
                     }
+                    values[i].Move(i);
                 }
                 if (!swapHappened) /* If no swap happened in this pass, then the array is sorted. break out of the loop. */
                 {
                     break;
                 }
             }
-        }
-
-        public static void BubbleSort_Recursive(List<int> values)
-        {
-            // TODO
         }
     }
 }

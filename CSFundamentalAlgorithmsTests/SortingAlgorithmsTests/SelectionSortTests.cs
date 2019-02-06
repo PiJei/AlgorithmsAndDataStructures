@@ -24,7 +24,7 @@ using CSFundamentalAlgorithms.SortingAlgorithms;
 namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
 {
     [TestClass]
-    public class SelectionSortTests
+    public partial class SelectionSortTests
     {
         [TestMethod]
         public void SelectionSort_SelectionSortIteratively_Test_WithDistnctValues()

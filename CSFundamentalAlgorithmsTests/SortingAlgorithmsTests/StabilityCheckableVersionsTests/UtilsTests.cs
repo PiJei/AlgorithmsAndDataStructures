@@ -22,7 +22,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentalAlgorithms.SortingAlgorithms.StabilityCheckableVersions;
 using CSFundamentalAlgorithms.SortingAlgorithms;
 
-namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests.StabilityCheckableVersionsTests.HelpersTests
+namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests.StabilityCheckableVersionsTests
 {
     [TestClass]
     public class UtilsTests

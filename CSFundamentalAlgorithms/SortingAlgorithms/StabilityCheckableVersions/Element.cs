@@ -84,6 +84,5 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms.StabilityCheckableVersions
             if (Value < other.Value) return -1;
             return 1;
         }
-
     }
 }

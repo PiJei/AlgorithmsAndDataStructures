@@ -24,7 +24,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
     /// <summary>
     /// This class contains 3 different implementations of Insertion Sort. The sort is called insertion, as at each iteration, it finds the correct position of an element, and "inserts" it in that position. 
     /// </summary>
-    public class InsertionSort
+    public partial class InsertionSort
     {
         /// <summary>
         /// Implements insertion sort iteratively, and in-situ, using many Swaps.

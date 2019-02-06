@@ -23,7 +23,7 @@ using CSFundamentalAlgorithms.SortingAlgorithms;
 namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
 {
     [TestClass]
-    public class MergeSortTests
+    public partial class MergeSortTests
     {
         [TestMethod]
         public void MergeSort_MergeSort_Recursively_Test_WithDistinctValues()

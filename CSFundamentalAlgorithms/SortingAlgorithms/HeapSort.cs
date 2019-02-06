@@ -22,7 +22,7 @@ using CSFundamentalAlgorithms.BinaryHeaps;
 
 namespace CSFundamentalAlgorithms.SortingAlgorithms
 {
-    public class HeapSort
+    public partial class HeapSort
     {
         /// <summary>
         /// Sorts the elements in an integer array using heap sort algorithm in to an ascending order. 

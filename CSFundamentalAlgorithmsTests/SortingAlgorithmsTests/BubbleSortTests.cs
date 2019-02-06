@@ -24,9 +24,8 @@ using CSFundamentalAlgorithms.SortingAlgorithms;
 namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
 {
     [TestClass]
-    public class BubbleSortTests
+    public partial class BubbleSortTests
     {
-
         [TestMethod]
         public void BubbleSort_BubbleSort_Iterative_Test_WithDistinctValues()
         {

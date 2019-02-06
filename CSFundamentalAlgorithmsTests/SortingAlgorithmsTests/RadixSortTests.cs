@@ -24,7 +24,7 @@ using System.Collections.Generic;
 namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
 {
     [TestClass]
-    public class RadixSortTests
+    public partial class RadixSortTests
     {
         [TestMethod]
         public void RadixSort_RadixSort_Iterative_V1_Test_WithDistinctValues()
