@@ -17,9 +17,9 @@ Content:
   - RadixSort
   
  - Heaps:
-  - MinHeap
-  - MaxHeap
-  - MinMaxHeap
+   - MinHeap
+   - MaxHeap
+   - MinMaxHeap
   
  - Searching Algorithms:
   
