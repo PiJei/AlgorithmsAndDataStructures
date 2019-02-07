@@ -38,18 +38,18 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms
             int nextIndex = 0;
             while (values[nextIndex] < searchValue)
             {
-                nextIndex += jumpStepLength;
+                nextIndex += jumpStepLength; // Jump forward
                 if (nextIndex >= values.Count) { return -1; }
             }
 
-            int linearSearchStartIndex = nextIndex - jumpStepLength;
+            int linearSearchStartIndex = nextIndex - jumpStepLength; // Jump backward. 
             if (linearSearchStartIndex < 0)
             {
                 return -1;
             }
             return LinearSearch.Search(values.GetRange(linearSearchStartIndex, nextIndex), searchValue);
         }
-        
+
         // TODO: Write a recursive version as well. 
     }
 }
