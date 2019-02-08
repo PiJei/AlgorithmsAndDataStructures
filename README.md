@@ -22,7 +22,11 @@ Content:
    - MinMaxHeap
   
  - Searching Algorithms:
-  
+    - LinearSearch
+    - BinarySearch
+    - JumpSearch
+    - InterpolationSearch
+    
   
  - Graphs:
    - Traversal Algorithms:
