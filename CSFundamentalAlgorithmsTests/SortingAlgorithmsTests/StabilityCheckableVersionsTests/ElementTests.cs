@@ -65,7 +65,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests.StabilityCheckable
         {
          
         List<int> duplicateValues1 = new List<int> { 4, 2, 3, 1, 4 };
-        bool isStable = CSFundamentalAlgorithms.SortingAlgorithms.Common.IsSortMethodStable(HeapSort.HeapSort_Ascending, duplicateValues1);
+        bool isStable = CSFundamentalAlgorithms.SortingAlgorithms.Common.IsSortMethodStable(HeapSort.Sort_Ascending, duplicateValues1);
         Assert.IsFalse(isStable);
         }
     */

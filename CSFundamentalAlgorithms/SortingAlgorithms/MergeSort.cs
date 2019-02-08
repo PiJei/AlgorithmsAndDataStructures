@@ -29,13 +29,13 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// <param name="values">Specifies the list of integer values to be sorted. </param>
         /// <param name="lowIndex">Specifies the lower index in the array, inclusive. </param>
         /// <param name="highIndex">Specifies the higher index in the array, inclusive. </param>
-        public static void MergeSort_Recursively(List<int> values, int lowIndex, int highIndex)
+        public static void Sort_Recursively(List<int> values, int lowIndex, int highIndex)
         {
             if (lowIndex < highIndex)
             {
                 int middleIndex = (lowIndex + highIndex) / 2;
-                MergeSort_Recursively(values, lowIndex, middleIndex);
-                MergeSort_Recursively(values, middleIndex + 1, highIndex);
+                Sort_Recursively(values, lowIndex, middleIndex);
+                Sort_Recursively(values, middleIndex + 1, highIndex);
                 Merge(values, lowIndex, middleIndex, highIndex);
             }
         }
@@ -105,7 +105,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// <param name="values"></param>
         /// <param name="lowIndex"></param>
         /// <param name="highIndex"></param>
-        public static void MergeSort_Iteratively(List<int> values, int lowIndex, int highIndex)
+        public static void Sort_Iteratively(List<int> values, int lowIndex, int highIndex)
         {
             // TODO 
         }

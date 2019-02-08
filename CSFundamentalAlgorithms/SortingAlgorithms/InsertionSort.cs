@@ -30,7 +30,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// Implements insertion sort iteratively, and in-situ, using many Swaps.
         /// </summary>
         /// <param name="values">Specifies the list of integers to be sorted. </param>
-        public static void InsertionSort_Iterative_V1(List<int> values)
+        public static void Sort_Iterative_V1(List<int> values)
         {
             for (int i = 1; i < values.Count; i++)
             {
@@ -47,7 +47,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// Implements insertion sort iteratively, and in-situ, using only one swap per element.
         /// </summary>
         /// <param name="values">Specifies the list of integers to be sorted. </param>
-        public static void InsertionSort_Iterative_V2(List<int> values)
+        public static void Sort_Iterative_V2(List<int> values)
         {
             // In this version, we will overwite the array location for element (i) by shifting each element to the right if bigger than (i) till finding its correct position
             for (int i = 1; i < values.Count; i++)
@@ -66,15 +66,15 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         }
 
         /// <summary>
-        /// Implements insertion sort recursively. Iniial call shall be InsertionSort_Recursive(values, values.Count-1);
+        /// Implements insertion sort recursively. Iniial call shall be Sort_Recursive(values, values.Count-1);
         /// </summary>
         /// <param name="values">Specifies the list of integers to be sorted. </param>
-        public static void InsertionSort_Recursive(List<int> values, int n)
+        public static void Sort_Recursive(List<int> values, int n)
         {
             if (n >= 1) // Similar to iterative versions that we start from 1st helement, and not the one at 0th, as always need to compare to the left. 
             {
-                InsertionSort_Recursive(values, n - 1);
-                // The rest is exactly the same code in method InsertionSort_Iterative_V2() inside the first for loop. 
+                Sort_Recursive(values, n - 1);
+                // The rest is exactly the same code in method Sort_Iterative_V2() inside the first for loop. 
                 int valueAtPositionN = values[n];
                 int correctIndex = n;
                 for (int j = n - 1; j >= 0 && values[j] > valueAtPositionN; j--)

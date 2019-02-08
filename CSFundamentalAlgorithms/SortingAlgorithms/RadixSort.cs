@@ -26,7 +26,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// <summary>
         /// Implements Radix sort for base 10 (decimal integers) using queues. 
         /// </summary>
-        public static void RadixSort_Iterative_V1(List<int> values)
+        public static void Sort_Iterative_V1(List<int> values)
         {
             int maxElement = Utils.GetMaxElement(values);
             int digitsCountForMaxElement = Utils.GetDigitsCount(maxElement);
@@ -64,7 +64,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// <summary>
         /// Implements Radix Sort based on count sort.
         /// </summary>
-        public static void RadixSort_Iterative_V2(List<int> values)
+        public static void Sort_Iterative_V2(List<int> values)
         {
             // TODO
         }
@@ -72,7 +72,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// <summary>
         /// Implements a recursive version of Radix Sort. 
         /// </summary>
-        public static void RadixSort_Recursive(List<int> values)
+        public static void Sort_Recursive(List<int> values)
         {
             // TODO
         }

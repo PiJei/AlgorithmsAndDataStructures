@@ -33,7 +33,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
                This does not mean that Quick sort is unstable for all arrays with duplicate values. */
             List<int> duplicateValues = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
             List<Element> duplicateValuesElements = Utils.Convert(duplicateValues);
-            bool isStable = Utils.IsSortMethodStable(QuickSort.QuickSort_Recursively_Wrapper, duplicateValuesElements);
+            bool isStable = Utils.IsSortMethodStable(QuickSort.Wrapper, duplicateValuesElements);
             Assert.IsFalse(isStable);
         }
     }

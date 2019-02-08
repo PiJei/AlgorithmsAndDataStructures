@@ -27,7 +27,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// Implements selection sort, which is in-situ and unstable, and at each step, the array would look as one sorted part, and one unsorted part. 
         /// </summary>
         /// <param name="values">Specifies the list of integers that are to be sorted.</param>
-        public static void SelectionSort_Iteratively(List<int> values)
+        public static void Sort_Iteratively(List<int> values)
         {
             /*Notice that the loop does not have to repeat over the last element of the array, as by then the last element is already the largest element in the array.*/
             for (int i = 0; i < values.Count - 1; i++) /* Iteration i, determines the ith smallest/min value. */
