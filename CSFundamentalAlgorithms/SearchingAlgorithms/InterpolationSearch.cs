@@ -25,6 +25,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms
     {
         /// <summary>
         /// Searches in a sorted list of integeres where values have a uniform distribution. Is an improvement over binary search, and has a very similar implementation, the only main difference is where (which index in the array) the search starts at.
+        /// The search is named inter-polation, as it always has two main poles that it moves back and forth between them, these poles are the start index and the end index of the array. 
         /// </summary>
         /// <param name="values">A sorted list of integeres that are also uniformly distributed. </param>
         /// <param name="lowIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>
