@@ -28,7 +28,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// Sorts the elements in an integer array using heap sort algorithm in to an ascending order. 
         /// </summary>
         /// <param name="values"></param>
-        public static void HeapSort_Ascending(List<int> values)
+        public static void Sort_Ascending(List<int> values)
         {
             // 1- re-arrange the elements in the integer array into a max heap. 
             var maxHeap = new MaxBinaryHeap(values);
@@ -43,6 +43,5 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
                 maxHeap.BubbleDown_Recursively(0, i);
             }
         }
-
     }
 }

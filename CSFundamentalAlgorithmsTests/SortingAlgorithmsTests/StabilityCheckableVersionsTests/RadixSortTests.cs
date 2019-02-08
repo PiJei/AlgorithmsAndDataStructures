@@ -33,27 +33,27 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
 
             List<int> duplicateValues1 = new List<int> { 4, 3, 2, 4, 1 };
             List<Element> duplicateValuesElements1 = Utils.Convert(duplicateValues1);
-            bool isStable1 = Utils.IsSortMethodStable(RadixSort.RadixSort_Iterative_V1, duplicateValuesElements1);
+            bool isStable1 = Utils.IsSortMethodStable(RadixSort.Sort_Iterative_V1, duplicateValuesElements1);
             Assert.IsTrue(isStable1);
 
             List<int> duplicateValues2 = new List<int>(Constants.ArrayWithDuplicateValues);
             List<Element> duplicateValuesElements2 = Utils.Convert(duplicateValues2);
-            bool isStable2 = Utils.IsSortMethodStable(RadixSort.RadixSort_Iterative_V1, duplicateValuesElements2);
+            bool isStable2 = Utils.IsSortMethodStable(RadixSort.Sort_Iterative_V1, duplicateValuesElements2);
             Assert.IsTrue(isStable2);
 
             List<int> duplicateValues3 = new List<int>(Constants.ArrayWithSortedDuplicateValues);
             List<Element> duplicateValuesElements3 = Utils.Convert(duplicateValues3);
-            bool isStable3 = Utils.IsSortMethodStable(RadixSort.RadixSort_Iterative_V1, duplicateValuesElements3);
+            bool isStable3 = Utils.IsSortMethodStable(RadixSort.Sort_Iterative_V1, duplicateValuesElements3);
             Assert.IsTrue(isStable3);
 
             List<int> duplicateValues4 = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
             List<Element> duplicateValuesElements4 = Utils.Convert(duplicateValues4);
-            bool isStable4 = Utils.IsSortMethodStable(RadixSort.RadixSort_Iterative_V1, duplicateValuesElements4);
+            bool isStable4 = Utils.IsSortMethodStable(RadixSort.Sort_Iterative_V1, duplicateValuesElements4);
             Assert.IsTrue(isStable4);
 
             List<int> duplicateValues5 = new List<int> { 3, 1, 1, 2, 2, 4, 1, 1, 2, 2 };
             List<Element> duplicateValuesElements5 = Utils.Convert(duplicateValues5);
-            bool isStable5 = Utils.IsSortMethodStable(RadixSort.RadixSort_Iterative_V1, duplicateValuesElements5);
+            bool isStable5 = Utils.IsSortMethodStable(RadixSort.Sort_Iterative_V1, duplicateValuesElements5);
             Assert.IsTrue(isStable5);
         }
     }

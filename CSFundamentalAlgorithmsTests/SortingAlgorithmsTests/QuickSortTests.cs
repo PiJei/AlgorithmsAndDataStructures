@@ -30,7 +30,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         public void QuickSort_QuickSort_Recursively_Test_WithDistinctValues()
         {
             var values = new List<int>(Constants.ArrayWithDistinctValues);
-            QuickSort.QuickSort_Recursively(values, 0, values.Count - 1);
+            QuickSort.Sort_Recursively(values, 0, values.Count - 1);
             UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
@@ -38,7 +38,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         public void QuickSort_QuickSort_Recursively_Test_WithDuplicateValues()
         {
             var values = new List<int>(Constants.ArrayWithDuplicateValues);
-            QuickSort.QuickSort_Recursively(values, 0, values.Count - 1);
+            QuickSort.Sort_Recursively(values, 0, values.Count - 1);
             UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
@@ -46,7 +46,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         public void QuickSort_QuickSort_Recursively_Test_WithSortedDistinctValues()
         {
             var values = new List<int>(Constants.ArrayWithSortedDistinctValues);
-            QuickSort.QuickSort_Recursively(values, 0, values.Count - 1);
+            QuickSort.Sort_Recursively(values, 0, values.Count - 1);
             UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
@@ -54,7 +54,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         public void QuickSort_QuickSort_Recursively_Test_WithSortedDuplicateValues()
         {
             var values = new List<int>(Constants.ArrayWithSortedDuplicateValues);
-            QuickSort.QuickSort_Recursively(values, 0, values.Count - 1);
+            QuickSort.Sort_Recursively(values, 0, values.Count - 1);
             UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
@@ -62,7 +62,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         public void QuickSort_QuickSort_Recursively_Test_WithReverselySortedDistinctValues()
         {
             var values = new List<int>(Constants.ArrayWithReverselySortedDistinctValues);
-            QuickSort.QuickSort_Recursively(values, 0, values.Count - 1);
+            QuickSort.Sort_Recursively(values, 0, values.Count - 1);
             UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
@@ -70,7 +70,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         public void QuickSort_QuickSort_Recursively_Test_WithReverselySortedDuplicateValues()
         {
             var values = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
-            QuickSort.QuickSort_Recursively(values, 0, values.Count - 1);
+            QuickSort.Sort_Recursively(values, 0, values.Count - 1);
             UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
     }

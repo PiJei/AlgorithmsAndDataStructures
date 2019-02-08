@@ -29,13 +29,13 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// <param name="values">Specifies the list of integer values to be sorted. </param>
         /// <param name="lowIndex">Specifies the lower index in the array, inclusive. </param>
         /// <param name="highIndex">Specifies the higher index in the array, inclusive. </param>
-        public static void QuickSort_Recursively(List<int> values, int lowIndex, int highIndex)
+        public static void Sort_Recursively(List<int> values, int lowIndex, int highIndex)
         {
             if (lowIndex < highIndex)
             {
                 int partitionIndex = PartitionArray(values, lowIndex, highIndex);
-                QuickSort_Recursively(values, lowIndex, partitionIndex);
-                QuickSort_Recursively(values, partitionIndex + 1, highIndex);
+                Sort_Recursively(values, lowIndex, partitionIndex);
+                Sort_Recursively(values, partitionIndex + 1, highIndex);
             }
         }
 
@@ -95,7 +95,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// <param name="values"></param>
         /// <param name="lowIndex"></param>
         /// <param name="highIndex"></param>
-        public static void QuickSort_Iteratively(List<int> values, int lowIndex, int highIndex)
+        public static void Sort_Iteratively(List<int> values, int lowIndex, int highIndex)
         {
             // TODO
         }

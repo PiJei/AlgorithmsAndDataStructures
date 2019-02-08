@@ -30,7 +30,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         public void RadixSort_RadixSort_Iterative_V1_Test_WithDistinctValues()
         {
             List<int> values = new List<int>(Constants.ArrayWithDistinctValues);
-            RadixSort.RadixSort_Iterative_V1(values);
+            RadixSort.Sort_Iterative_V1(values);
             UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
@@ -38,7 +38,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         public void RadixSort_RadixSort_Iterative_V1_Test_WithDuplicateValues()
         {
             List<int> values = new List<int>(Constants.ArrayWithDuplicateValues);
-            RadixSort.RadixSort_Iterative_V1(values);
+            RadixSort.Sort_Iterative_V1(values);
             UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
@@ -46,7 +46,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         public void RadixSort_RadixSort_Iterative_V1_Test_WithSortedDistinctValues()
         {
             List<int> values = new List<int>(Constants.ArrayWithSortedDistinctValues);
-            RadixSort.RadixSort_Iterative_V1(values);
+            RadixSort.Sort_Iterative_V1(values);
             UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
@@ -54,7 +54,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         public void RadixSort_RadixSort_Iterative_V1_Test_WithSortedDuplicateValues()
         {
             List<int> values = new List<int>(Constants.ArrayWithSortedDuplicateValues);
-            RadixSort.RadixSort_Iterative_V1(values);
+            RadixSort.Sort_Iterative_V1(values);
             UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
@@ -62,7 +62,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         public void RadixSort_RadixSort_Iterative_V1_Test_WithReverselySortedDistinctValues()
         {
             List<int> values = new List<int>(Constants.ArrayWithReverselySortedDistinctValues);
-            RadixSort.RadixSort_Iterative_V1(values);
+            RadixSort.Sort_Iterative_V1(values);
             UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
 
@@ -70,7 +70,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         public void RadixSort_RadixSort_Iterative_V1_Test_WithReverselyDuplicateValues()
         {
             List<int> values = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
-            RadixSort.RadixSort_Iterative_V1(values);
+            RadixSort.Sort_Iterative_V1(values);
             UtilsTests.CheckIfListIsSortedAscendingly(values);
         }
     }

@@ -27,7 +27,7 @@ using CSFundamentalAlgorithms.SortingAlgorithms.StabilityCheckableVersions;
         /// <summary>
         /// Implements Radix sort for base 10 (decimal integers) using queues. 
         /// </summary>
-        public static void RadixSort_Iterative_V1(List<Element> values)
+        public static void Sort_Iterative_V1(List<Element> values)
         {
             Element maxElement = Utils.GetMaxElement(values);
             int digitsCountForMaxElement = Utils.GetDigitsCount(maxElement.Value);
