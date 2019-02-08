@@ -17,6 +17,7 @@
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System.Collections.Generic;
 using CSFundamentalAlgorithms.SearchingAlgorithms;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -28,7 +29,22 @@ namespace CSFundamentalAlgorithmsTests.SearchingAlgorithmsTests
         [TestMethod]
         public void ExponentialSearch_Search_Test()
         {
-            // TODO
+            List<int> values = new List<int> { 1, 3, 10, 14, 25, 27, 34, 78, 90, 90, 120 };
+
+            Assert.AreEqual(0, ExponentialSearch.Search(values, 1));
+            Assert.AreEqual(1, ExponentialSearch.Search(values, 3));
+            Assert.AreEqual(2, ExponentialSearch.Search(values, 10));
+            Assert.AreEqual(3, ExponentialSearch.Search(values, 14));
+            Assert.AreEqual(4, ExponentialSearch.Search(values, 25));
+            Assert.AreEqual(5, ExponentialSearch.Search(values, 27));
+            Assert.AreEqual(6, ExponentialSearch.Search(values, 34));
+            Assert.AreEqual(7, ExponentialSearch.Search(values, 78));
+            Assert.AreEqual(8, ExponentialSearch.Search(values, 90));
+            Assert.AreEqual(8, ExponentialSearch.Search(values, 90));
+            Assert.AreEqual(10, ExponentialSearch.Search(values, 120));
+            Assert.AreEqual(-1, ExponentialSearch.Search(values, -20));
+            Assert.AreEqual(-1, ExponentialSearch.Search(values, 15));
+            Assert.AreEqual(-1, ExponentialSearch.Search(values, 456));
         }
     }
 }

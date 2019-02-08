@@ -16,8 +16,8 @@
  * You should have received a copy of the GNU General Public License
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
-
- using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 
 namespace CSFundamentalAlgorithms.SearchingAlgorithms
 {
@@ -25,8 +25,22 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms
     {
         public static int Search(List<int> values, int searchValue)
         {
-            // TODO
-        }
+            if (searchValue >= values[0] && searchValue <= values[values.Count - 1])
+            {
+                if(values[0] == searchValue)
+                {
+                    return 0;
+                }
 
+                int nextIndex = 1; /* Ideally should start from index 1, however that would make the while loop indexing complex, thus treating index 0 differenly, and then continuing with the rest. */
+                while (nextIndex < values.Count && values[nextIndex] < searchValue)
+                {
+                    nextIndex = nextIndex * 2;
+                }
+
+                return BinarySearch.Search(values, nextIndex / 2, Math.Min(nextIndex, values.Count - 1), searchValue);
+            }
+            return -1;
+        }
     }
 }
