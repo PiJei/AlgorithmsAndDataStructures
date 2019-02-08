@@ -24,7 +24,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
 {
     public partial class SelectionSort
     {
-        public static void SelectionSort_Iteratively(List<Element> values)
+        public static void Sort_Iteratively(List<Element> values)
         {
             /*Notice that the loop does not have to repeat over the last element of the array, as by then the last element is already the largest element in the array.*/
             for (int i = 0; i < values.Count - 1; i++) /* Iteration i, determines the ith smallest/min value. */

@@ -24,13 +24,13 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
 {
     public partial class QuickSort
     {
-        public static void QuickSort_Recursively(List<Element> values, int lowIndex, int highIndex)
+        public static void Sort_Recursively(List<Element> values, int lowIndex, int highIndex)
         {
             if (lowIndex < highIndex)
             {
                 int partitionIndex = PartitionArray_StabilityCheckableVersion(values, lowIndex, highIndex);
-                QuickSort_Recursively(values, lowIndex, partitionIndex);
-                QuickSort_Recursively(values, partitionIndex + 1, highIndex);
+                Sort_Recursively(values, lowIndex, partitionIndex);
+                Sort_Recursively(values, partitionIndex + 1, highIndex);
             }
         }
 
@@ -80,9 +80,9 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// In sort methods the signature is: void SortMethod(List<int> values); 
         /// </summary>
         /// <param name="values">Specifies the list of integers to be sorted. </param>
-        public static void QuickSort_Recursively_Wrapper(List<Element> values)
+        public static void Wrapper(List<Element> values)
         {
-            QuickSort_Recursively(values, 0, values.Count - 1);
+            Sort_Recursively(values, 0, values.Count - 1);
         }
     }
 }

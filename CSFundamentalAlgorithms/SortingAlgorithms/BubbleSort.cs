@@ -27,7 +27,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// Implements bubble sort iteraively, elements are bubbled down or up the array till they are at their final correct positions. 
         /// </summary>
         /// <param name="values"></param>
-        public static void BubbleSort_Iterative(List<int> values)
+        public static void Sort_Iterative(List<int> values)
         {
             /* Bubble sort iterates many times over an array, and stops iterating when no swap happens any more. */
             while (true)
@@ -48,7 +48,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
             }
         }
 
-        public static void BubbleSort_Recursive(List<int> values)
+        public static void Sort_Recursive(List<int> values)
         {
             // TODO
         }
