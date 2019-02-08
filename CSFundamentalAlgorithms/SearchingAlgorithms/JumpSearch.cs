@@ -33,6 +33,11 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms
         /// <returns>The index of the searchValue in the array values, and -1 if it does not exist in the array, </returns>
         public static int Search(List<int> values, int searchValue)
         {
+            if (searchValue < values[0] || searchValue > values[values.Count - 1]) // We can perform this check as the array is expected to be sorted. 
+            {
+                return -1;
+            }
+
             int jumpStepLength = (int)Math.Floor(Math.Sqrt(values.Count));
 
             int nextIndex = 0;

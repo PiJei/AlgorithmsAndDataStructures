@@ -1,0 +1,46 @@
+﻿/* 
+ * Copyright (c) 2019 (PiJei) 
+ * 
+ * This file is part of CSFundamentalAlgorithms project.
+ *
+ * CSFundamentalAlgorithms is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * CSFundamentalAlgorithms is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
+ */
+using System;
+using System.Collections.Generic;
+
+namespace CSFundamentalAlgorithms.SearchingAlgorithms
+{
+    public class ExponentialSearch
+    {
+        public static int Search(List<int> values, int searchValue)
+        {
+            if (searchValue >= values[0] && searchValue <= values[values.Count - 1])
+            {
+                if(values[0] == searchValue)
+                {
+                    return 0;
+                }
+
+                int nextIndex = 1; /* Ideally should start from index 1, however that would make the while loop indexing complex, thus treating index 0 differenly, and then continuing with the rest. */
+                while (nextIndex < values.Count && values[nextIndex] < searchValue)
+                {
+                    nextIndex = nextIndex * 2;
+                }
+
+                return BinarySearch.Search(values, nextIndex / 2, Math.Min(nextIndex, values.Count - 1), searchValue);
+            }
+            return -1;
+        }
+    }
+}
