@@ -26,7 +26,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms
     {
         /// <summary>
         /// Performs a jumpSearch on a list of integers, to find the specified value. 
-        /// JumpSort expects a sorted array. 
+        /// Notice that only works if the given array is sorted. 
         /// </summary>
         /// <param name="values">Specifies a sorted list of integers.</param>
         /// <param name="searchValue">Specifies the value the method is searching for. </param>
