@@ -55,26 +55,6 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.ArraySearch
                 }
             }
             return false;
-            /*
-            for (int i = 0; i < child.Count; i++)
-            {
-                bool found = false;
-                for (int j = prevIndex + 1; j < parent.Count; j++)
-                {
-                    if (parent[j] == child[i])
-                    {
-                        found = true;
-                        prevIndex = j;
-                        break;
-                    }
-                }
-                if (!found)
-                {
-                    return false;
-                }
-            }
-            return true;
-            */
         }
 
         public static bool Search_UnContiguousChild(List<int> parent, List<int> child)
