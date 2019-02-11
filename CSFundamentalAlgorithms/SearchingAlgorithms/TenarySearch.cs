@@ -17,9 +17,7 @@
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CSFundamentalAlgorithms.SearchingAlgorithms
 {
@@ -29,6 +27,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms
         /// Implements tenary search recursively on a list of integeres. 
         /// This search is inspired by binary search (hence the naming, 3 versus 2).
         /// The difference being that rather than dividing the array into 2 sections, divides it into 3 equal sections and performs the search inside each one of those separately.
+        /// Notice that only works if the given array is sorted. 
         /// </summary>
         /// <param name="values">A sorted list of integeres. </param>
         /// <param name="lowIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>
@@ -37,7 +36,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms
         /// <returns>The index of the searchValue in the array values, and -1 if it does not exist in the array. </returns>
         public static int Search(List<int> values, int lowIndex, int highIndex, int searchValue)
         {
-            if (lowIndex <= highIndex)
+            if (lowIndex <= highIndex && searchValue >= values[lowIndex] && searchValue <= values[highIndex]) /* the latter two comparisons only make sense because the array is sorted. */
             {
                 /* Dividing array by ((highIndex - lowIndex) / 3) size in2o 3 sections. */
                 int middleIndex1 = lowIndex + (highIndex - lowIndex) / 3;

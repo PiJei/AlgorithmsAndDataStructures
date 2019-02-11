@@ -23,6 +23,13 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms
 {
     public class ExponentialSearch
     {
+        /// <summary>
+        /// Implements exponential search, where the search step is a multiple of 2, hence the naming. 
+        /// Notice that only works if the given array is sorted. 
+        /// </summary>
+        /// <param name="values">A sorted list of integeres. </param>
+        /// <param name="searchValue">Specifies the value that is being searched for. </param>
+        /// <returns>The index of the searchValue in the array values, and -1 if it does not exist in the array. </returns>
         public static int Search(List<int> values, int searchValue)
         {
             if (searchValue >= values[0] && searchValue <= values[values.Count - 1])
