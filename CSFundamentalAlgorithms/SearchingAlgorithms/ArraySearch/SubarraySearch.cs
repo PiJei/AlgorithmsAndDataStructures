@@ -24,22 +24,22 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.ArraySearch
     public class SubarraySearch
     {
         /// <summary>
-        /// Detects whether parent list contains child list contiguously 
+        /// Detects whether parent list contains child list contiguously. For example list {1, 3, 7, 2, 10} contains sublist {7,2}, but does not contain {7,10}.
         /// Easier to implement this with linked lists due to the contiguous search. 
         /// </summary>
-        /// <param name="parent"></param>
-        /// <param name="child"></param>
-        /// <returns></returns>
-        public static bool Search_ContiguousChild(List<int> parent, List<int> child)
+        /// <param name="list">The list in which we are searching for a sublist.</param>
+        /// <param name="subList">The sublist</param>
+        /// <returns>True if the list contains the sublist, and false otherwise. </returns>
+        public static bool Search_ContiguousSublist(List<int> list, List<int> subList)
         {
-            for (int i = 0; i < parent.Count; i++) /* this specifies at which point we are starting the search. As many indexes in the parent might match the starting element of the child. we should look for all of these until we find atleast one, from which we can find a match. */
+            for (int i = 0; i < list.Count; i++) /* this specifies at which point we are starting the search. As many indexes in the parent might match the starting element of the child. we should look for all of these until we find atleast one, from which we can find a match. */
             {
                 int parentStartIndex = i;
                 bool childFullyMatched = true;
 
-                for (int j = 0; j < child.Count; j++)
+                for (int j = 0; j < subList.Count; j++)
                 {
-                    if (parent[parentStartIndex] == child[j])
+                    if (list[parentStartIndex] == subList[j])
                     {
                         parentStartIndex += 1; /* Since elements should match consecutively. */
                     }

@@ -28,12 +28,12 @@ namespace CSFundamentalAlgorithmsTests.SearchingAlgorithmsTests.ArraySearchTests
         [TestMethod]
         public void SubarraySearch_Search_Test()
         {
-            Assert.IsTrue(SubarraySearch.Search_ContiguousChild(new List<int> { 10, 3, 4, 1, 7, 8 }, new List<int> { 1, 7 }));
-            Assert.IsFalse(SubarraySearch.Search_ContiguousChild(new List<int> { 10, 3, 4, 1, 7, 8 }, new List<int> { 1, 8 }));
-            Assert.IsFalse(SubarraySearch.Search_ContiguousChild(new List<int> { 10, 3, 4, 1, 7, 8 }, new List<int> { 1, 80 }));
-            Assert.IsTrue(SubarraySearch.Search_ContiguousChild(new List<int> { 1, 10, 3, 4, 1, 7, 8 }, new List<int> { 1, 7 }));
-            Assert.IsTrue(SubarraySearch.Search_ContiguousChild(new List<int> { 10, 3, 4, 1, 7, 8 }, new List<int> { }));
-            Assert.IsFalse(SubarraySearch.Search_ContiguousChild(new List<int> { }, new List<int> { }));
+            Assert.IsTrue(SubarraySearch.Search_ContiguousSublist(new List<int> { 10, 3, 4, 1, 7, 8 }, new List<int> { 1, 7 }));
+            Assert.IsFalse(SubarraySearch.Search_ContiguousSublist(new List<int> { 10, 3, 4, 1, 7, 8 }, new List<int> { 1, 8 }));
+            Assert.IsFalse(SubarraySearch.Search_ContiguousSublist(new List<int> { 10, 3, 4, 1, 7, 8 }, new List<int> { 1, 80 }));
+            Assert.IsTrue(SubarraySearch.Search_ContiguousSublist(new List<int> { 1, 10, 3, 4, 1, 7, 8 }, new List<int> { 1, 7 }));
+            Assert.IsTrue(SubarraySearch.Search_ContiguousSublist(new List<int> { 10, 3, 4, 1, 7, 8 }, new List<int> { }));
+            Assert.IsFalse(SubarraySearch.Search_ContiguousSublist(new List<int> { }, new List<int> { }));
         }
     }
 }
