@@ -68,8 +68,36 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.ArraySearch
         /// <returns>True if the list contains the sublist, and false otherwise. </returns>
         public static bool Search_UnContiguousSublist(List<int> list, List<int> subList)
         {
-            // TODO
-            return true;
+            // using elements in the list as the columns, and elements in the sublist as the rows
+            int[,] possibilities = new int[subList.Count, list.Count]; /* the first row is for empty subList, and the first column is for empty list. */
+
+            // Initializing the first row and first columns.
+            for (int i = 0; i < subList.Count; i++)
+            {
+                possibilities[i, 0] = 0; // meaning the number of times each element appears in a empty list is 0
+            }
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                possibilities[0, i] = 1;
+            }
+
+            for (int i = 1; i < subList.Count; i++)
+            {
+                for (int j = 1; j < list.Count; j++)
+                {
+                    if (list[j - 1] == subList[i - 1])
+                    {
+                        possibilities[i, j] = possibilities[i, j - 1] + possibilities[i - 1, j - 1];
+                    }
+                    else
+                    {
+                        possibilities[i, j] = possibilities[i, j - 1];
+                    }
+                }
+            }
+
+            return possibilities[subList.Count, list.Count] > 0 ? true : false;
         }
     }
 }
