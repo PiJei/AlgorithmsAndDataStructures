@@ -57,7 +57,16 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.ArraySearch
             return false;
         }
 
-        public static bool Search_UnContiguousChild(List<int> parent, List<int> child)
+        /// <summary>
+        /// Searches whether subList can be built from the elements in list, while respecting the order at which elements appear in list. 
+        /// For example given list {3, 4, 1, 6, 7, 1, 8, 7}, can we build subList{1, 7}?
+        /// Yes, in several ways, indexes {2, 4} or {2, 7} or {5, 7}, we can build it in 3 different ways. 
+        /// The approach this algorithm takes is to find the number of times the sublist can be built and returns true if this number higher than 0.
+        /// </summary>
+        /// <param name="list">The list in which we are searching for a sublist.</param>
+        /// <param name="subList">The sublist</param>
+        /// <returns>True if the list contains the sublist, and false otherwise. </returns>
+        public static bool Search_UnContiguousSublist(List<int> list, List<int> subList)
         {
             // TODO
             return true;
