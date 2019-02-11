@@ -25,14 +25,37 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.ArraySearch
     {
         /// <summary>
         /// Detects whether parent list contains child list contiguously 
+        /// Easier to implement this with linked lists due to the contiguous search. 
         /// </summary>
         /// <param name="parent"></param>
         /// <param name="child"></param>
         /// <returns></returns>
         public static bool Search_ContiguousChild(List<int> parent, List<int> child)
         {
-            int prevIndex = -1;
-            // I am not even able to write the brute force yet for this simple algorithm, ... 
+            for (int i = 0; i < parent.Count; i++) /* this specifies at which point we are starting the search. As many indexes in the parent might match the starting element of the child. we should look for all of these until we find atleast one, from which we can find a match. */
+            {
+                int parentStartIndex = i;
+                bool childFullyMatched = true;
+
+                for (int j = 0; j < child.Count; j++)
+                {
+                    if (parent[parentStartIndex] == child[j])
+                    {
+                        parentStartIndex += 1;
+                    }
+                    else
+                    {
+                        childFullyMatched = false;
+                        break;
+                    }
+                }
+                if (childFullyMatched)
+                {
+                    return true;
+                }
+            }
+            return false;
+            /*
             for (int i = 0; i < child.Count; i++)
             {
                 bool found = false;
@@ -51,6 +74,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.ArraySearch
                 }
             }
             return true;
+            */
         }
 
         public static bool Search_UnContiguousChild(List<int> parent, List<int> child)
