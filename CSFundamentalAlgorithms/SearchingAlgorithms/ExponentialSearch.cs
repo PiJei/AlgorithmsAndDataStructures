@@ -40,11 +40,12 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms
                 }
 
                 int nextIndex = 1; /* Ideally should start from index 1, however that would make the while loop indexing complex, thus treating index 0 differenly, and then continuing with the rest. */
-                while (nextIndex < values.Count && values[nextIndex] < searchValue)
+                while (nextIndex < values.Count && values[nextIndex] < searchValue) /* multiple the search step by 2, until encountering an elemenet that is bigger than the searchValue*/
                 {
                     nextIndex = nextIndex * 2;
                 }
 
+                /* The range at which the searchValue is expected to be is thus [nextIndex/2, nextIndex] - perform a binary search in this range. */
                 return BinarySearch.Search(values, nextIndex / 2, Math.Min(nextIndex, values.Count - 1), searchValue);
             }
             return -1;
