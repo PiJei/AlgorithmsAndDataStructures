@@ -24,8 +24,10 @@ Content:
  - Searching Algorithms:
     - LinearSearch
     - BinarySearch
+    - TenarySearch
     - JumpSearch
     - InterpolationSearch
+    - ExponentialSearch
     
   
  - Graphs:
