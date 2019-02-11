@@ -69,22 +69,22 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.ArraySearch
         public static bool Search_UnContiguousSublist(List<int> list, List<int> subList)
         {
             // using elements in the list as the columns, and elements in the sublist as the rows
-            int[,] possibilities = new int[subList.Count, list.Count]; /* the first row is for empty subList, and the first column is for empty list. */
+            int[,] possibilities = new int[subList.Count + 1, list.Count + 1]; /* the first row is for empty subList, and the first column is for empty list. */
 
             // Initializing the first row and first columns.
-            for (int i = 0; i < subList.Count; i++)
+            for (int i = 0; i <= subList.Count; i++)
             {
                 possibilities[i, 0] = 0; // meaning the number of times each element appears in a empty list is 0
             }
 
-            for (int i = 0; i < list.Count; i++)
+            for (int i = 0; i <= list.Count; i++)
             {
                 possibilities[0, i] = 1;
             }
 
-            for (int i = 1; i < subList.Count; i++)
+            for (int i = 1; i <= subList.Count; i++)
             {
-                for (int j = 1; j < list.Count; j++)
+                for (int j = 1; j <= list.Count; j++)
                 {
                     if (list[j - 1] == subList[i - 1])
                     {
