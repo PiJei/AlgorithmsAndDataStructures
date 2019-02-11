@@ -41,7 +41,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.ArraySearch
                 {
                     if (parent[parentStartIndex] == child[j])
                     {
-                        parentStartIndex += 1;
+                        parentStartIndex += 1; /* Since elements should match consecutively. */
                     }
                     else
                     {
