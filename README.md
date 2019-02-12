@@ -28,6 +28,7 @@ Content:
     - JumpSearch
     - InterpolationSearch
     - ExponentialSearch
+    - FibonacciSearch
     
   
  - Graphs:
