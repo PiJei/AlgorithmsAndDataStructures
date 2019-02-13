@@ -30,26 +30,26 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.ArraySearch
         /// <param name="list">The list in which we are searching for a sublist.</param>
         /// <param name="subList">The sublist</param>
         /// <returns>True if the list contains the sublist, and false otherwise. </returns>
-        public static bool Search_ContiguousSublist(List<int> list, List<int> subList)
+        public static bool Search_NaiveContiguousSublist(List<int> list, List<int> subList)
         {
-            for (int i = 0; i < list.Count; i++) /* this specifies at which point we are starting the search. As many indexes in the parent might match the starting element of the child. we should look for all of these until we find atleast one, from which we can find a match. */
+            /* Each iteration of this loop specifies at which index in list we are starting the search. 
+             * Since list may contain duplicates, we should check matching starting at any index in list. 
+             * Also we just look upto list.Count - subList.Count +1, as after this value, the list is short and sublist can not be found in it.
+             */
+            for (int i = 0; i < list.Count; i++)
             {
                 int parentStartIndex = i;
-                bool childFullyMatched = true;
+                bool found = true;
 
                 for (int j = 0; j < subList.Count; j++)
                 {
-                    if (list[parentStartIndex] == subList[j])
+                    if (list[parentStartIndex + j] != subList[j])
                     {
-                        parentStartIndex += 1; /* Since elements should match consecutively. */
-                    }
-                    else
-                    {
-                        childFullyMatched = false;
+                        found = false;
                         break;
                     }
                 }
-                if (childFullyMatched)
+                if (found)
                 {
                     return true;
                 }

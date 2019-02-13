@@ -16,8 +16,4 @@
     <ProjectReference Include="..\CSFundamentalAlgorithms\CSFundamentalAlgorithms.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="SearchingAlgorithmsTests\StringSearchTests\" />
-  </ItemGroup>
-
 </Project>
