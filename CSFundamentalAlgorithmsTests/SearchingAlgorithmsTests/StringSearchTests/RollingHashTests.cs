@@ -16,25 +16,32 @@
  * You should have received a copy of the GNU General Public License
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch;
-using System.Collections.Generic;
 
 namespace CSFundamentalAlgorithmsTests.SearchingAlgorithmsTests.StringSearchTests
 {
     [TestClass]
-    public class RabinKarpSearchTests
+    public class RollingHashTests
     {
+        private const int NumCharactersInAlphabet = 256;
+        private const int Prime = 101;
+
         [TestMethod]
-        public void RabinKarpSearch_Search_Test()
+        public void RollingHash_Hash_Test()
         {
-            Assert.AreEqual(1, RabinKarpSearch.Search("abcd", "bc"));
-            Assert.AreEqual(2, RabinKarpSearch.Search("abcd", "cd"));
-            Assert.AreEqual(12, RabinKarpSearch.Search("aaaaaakcdkaaaabcd", "aab"));
-            Assert.IsTrue(new List<int> { 0, 3, 4 }.Contains(RabinKarpSearch.Search("abcaab", "a")));
-            Assert.IsTrue(new List<int> { 0 }.Contains(RabinKarpSearch.Search("abcaab", "abc")));
-            Assert.AreEqual(-1, RabinKarpSearch.Search("aaabbbdaacbb", "kjh"));
+            string s1 = "abc";
+            Assert.AreEqual(90, RollingHash.GetHash(s1, Prime, NumCharactersInAlphabet));
+
+            string s2 = "bcd";
+            Assert.AreEqual(31, RollingHash.GetHash(s2, Prime, NumCharactersInAlphabet));
+
+            string s = "abcd"; /* Hash(bcd) = Hash(abc)- hash (a) + hash(d) */
+
+            int hashConstant = RollingHash.ComputeHashConstantForRollingHash(3, Prime, NumCharactersInAlphabet);
+
+            // Assuming we are rolling the hash window over string s above. 
+            Assert.AreEqual(31, RollingHash.GetHashRollingForward(90, 'a', 'd', 3, hashConstant, Prime, NumCharactersInAlphabet));
         }
     }
 }
