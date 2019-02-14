@@ -19,6 +19,7 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch;
+using System.Collections.Generic;
 
 namespace CSFundamentalAlgorithmsTests.SearchingAlgorithmsTests.StringSearchTests
 {
@@ -26,30 +27,14 @@ namespace CSFundamentalAlgorithmsTests.SearchingAlgorithmsTests.StringSearchTest
     public class RabinKarpSearchTests
     {
         [TestMethod]
-        public void RabinKarpSearch_GetHash_Test()
-        {
-            RabinKarpSearch search = new RabinKarpSearch();
-
-            string s1 = "abc";
-            Assert.AreEqual(90, search.GetHash(s1));
-            string s2 = "bcd";
-            Assert.AreEqual(31, search.GetHash(s2));
-
-            string s = "abcd"; /* Hash(bcd) = Hash(abc)- hash (a) + hash(d) */
-
-            Assert.AreEqual(31, search.GetHashRollingForward(90, 'a', 'd', 3));
-        }
-
-        [TestMethod]
         public void RabinKarpSearch_Search_Test()
         {
-            RabinKarpSearch search1 = new RabinKarpSearch("abcd", "bc");
-            Assert.AreEqual(1, search1.Search());
-
-            RabinKarpSearch search2 = new RabinKarpSearch("abcd", "cd");
-            Assert.AreEqual(2, search2.Search());
-            RabinKarpSearch search3 = new RabinKarpSearch("aaaaaakcdkaaaabcd", "aab");
-            Assert.AreEqual(12, search3.Search());
+            Assert.AreEqual(1, RabinKarpSearch.Search("abcd", "bc"));
+            Assert.AreEqual(2, RabinKarpSearch.Search("abcd", "cd"));
+            Assert.AreEqual(12, RabinKarpSearch.Search("aaaaaakcdkaaaabcd", "aab"));
+            Assert.IsTrue(new List<int> { 0, 3, 4 }.Contains(RabinKarpSearch.Search("abcaab", "a")));
+            Assert.IsTrue(new List<int> { 0 }.Contains(RabinKarpSearch.Search("abcaab", "abc")));
+            Assert.AreEqual(-1, RabinKarpSearch.Search("aaabbbdaacbb", "kjh"));
         }
     }
 }

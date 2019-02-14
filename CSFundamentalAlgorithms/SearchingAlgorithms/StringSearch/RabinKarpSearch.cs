@@ -17,7 +17,7 @@
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
 
- // TODO: Shall make all the search classes have the same style: eithe rbe instantiated, or not, or provide good reasons why each design choice
+// TODO: Shall make all the search classes have the same style: eithe rbe instantiated, or not, or provide good reasons why each design choice
 
 namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
 {
@@ -26,51 +26,38 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
         private const int NumCharacters = 256;
         private const int PrimeNumber = 101;
 
-        private int HashConstant = 1;
-
-        /// <summary>
-        /// The parent string in which we are searching for a subString.
-        /// </summary>
-        private string _text;
-
-        /// <summary>
-        /// The string we want to find in parent string (text).
-        /// </summary>
-        private string _subString;
-
-        public RabinKarpSearch(string text, string subString)
-        {
-            _text = text;
-            _subString = subString;
-            ComputeHashConstantForRollingHash(subString.Length);
-        }
-
         /// <summary>
         /// Implements RabinKarp search algorithm, which is an improvement on NaiveSearch, using hashing.
         /// Hashing plays a crucial role in optimizing search time. Rolling hash methods are preferred, and the ones with the minimum collision. 
         /// </summary>
+        /// <param name= "text">The parent string in which we are searching for a subString.</param>
+        /// <param name= "subString">The string we want to find in parent string (text).</param>param>
         /// <returns>The starting index in text at which subString is found.</returns>
-        public int Search()
+        public static int Search(string text, string subString)
         {
-            int subStringHash = GetHash(_subString); /* This hash is computed only once. Complexity : O(subString.Length)*/
+            int n = text.Length;
+            int m = subString.Length;
 
-            string subStringInText = _text.Substring(0, _subString.Length);
-            int subStringInTextHash = GetHash(subStringInText);
+            int hashConstant = RollingHash.ComputeHashConstantForRollingHash(subString.Length, PrimeNumber, NumCharacters);
+            int subStringHash = RollingHash.GetHash(subString, PrimeNumber, NumCharacters); /* This hash is computed only once. Complexity : O(subString.Length)*/
 
-            for (int i = 0; i < _text.Length - 1; i++) /* O(text.Length) */
+            string subStringInText = text.Substring(0, m);
+            int subStringInTextHash = RollingHash.GetHash(subStringInText, PrimeNumber, NumCharacters);
+
+            for (int i = 0; i < n - 1; i++) /* O(text.Length) */
             {
                 if (subStringHash == subStringInTextHash)
                 {
-                    if (_subString == subStringInText) /* This check is necessary as the hash function may have collisions.*/
+                    if (subString == subStringInText) /* This check is necessary as the hash function may have collisions.*/
                     {
                         return i;
                     }
                 }
 
-                if (i < _text.Length - _subString.Length)
+                if (i < n - m)
                 {
-                    subStringInText = _text.Substring(i + 1, _subString.Length); /* a substring in text, size of subString, starting at index i;*/
-                    subStringInTextHash = GetHashRollingForward(subStringInTextHash, _text[i], _text[i + _subString.Length], subString.Length); /* O(1) with a rolling hash, otherwise: O(subString.Length) */
+                    subStringInText = text.Substring(i + 1, m); /* a substring in text, size of subString, starting at index i;*/
+                    subStringInTextHash = RollingHash.GetHashRollingForward(subStringInTextHash, text[i], text[i + m], m, hashConstant, PrimeNumber, NumCharacters); /* O(1) with a rolling hash, otherwise: O(subString.Length) */
                 }
                 else
                 {
