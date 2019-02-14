@@ -57,7 +57,7 @@ namespace CSFundamentalAlgorithmsTests.Graphs
             E.Adjacents.Add(B);
         }
 
-        public void ResetGraph() // It seems that this step is unnecessary. Eventhough the same instance is used across all the test methods. 
+        public void ResetGraph() // It seems that this step is unnecessary. Even though the same instance is used across all the test methods. 
         {
             A.IsInserted = false;
             B.IsInserted = false;

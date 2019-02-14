@@ -71,11 +71,11 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         }
 
         /// <summary>
-        /// Gets the i(th) = whichDigit of the given integer number. For example in number 145, second digit is 4, and the thris is 1, and th first is 5. 
+        /// Gets the i(th) = whichDigit of the given integer number. For example in number 145, second digit is 4, and the third is 1, and th first is 5. 
         /// </summary>
         /// <param name="number"></param>
         /// <param name="whichDigit"></param>
-        /// <returns>The i(th) = whichDigit(th) digit from th eright, or the least significant digit. </returns>
+        /// <returns>The i(th) = whichDigit(th) digit from the right, or the least significant digit. </returns>
         public static int GetNthDigitFromRight(int number, int whichDigit)
         {
             int digit = (int)((Math.Abs(number) / Math.Pow(10, whichDigit - 1)) % 10);

@@ -54,10 +54,10 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// Notice that the array may include duplicate values, thus a list of indexes rather than one index.
         /// </summary>
         /// <param name="values">An array of integers. </param>
-        /// <returns>A hashtable/dictionary mapping each value to the list of its indixes in the array. </returns>
+        /// <returns>A hash table/dictionary mapping each value to the list of its indexes in the array. </returns>
         public static Dictionary<Element, List<Element>> HashListToIndexes(List<Element> values)
         {
-            /* Such that the keyes in the dictionary are the values in the array, and the values in the dictionary are the list of indexes for each value in the array. */
+            /* Such that the keys in the dictionary are the values in the array, and the values in the dictionary are the list of indexes for each value in the array. */
             Dictionary<Element, List<Element>> positions = new Dictionary<Element, List<Element>>();
             if (values == null)
             {
@@ -80,7 +80,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
 
         // TODO: What is the better way to implement this method. 
         /// <summary>
-        /// Giveb the two dictionaries compares them to see if they are equal, in terms of the values per key. It is very important to compare the values (lists) in their original order and expect the same position for each element. 
+        /// Given the two dictionaries compares them to see if they are equal, in terms of the values per key. It is very important to compare the values (lists) in their original order and expect the same position for each element. 
         /// </summary>
         /// <param name="map1">Specifies the first map. </param>
         /// <returns>True in case the maps are equal, false otherwise. </returns>

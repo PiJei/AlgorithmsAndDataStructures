@@ -34,7 +34,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.ArraySearch
         {
             /* Each iteration of this loop specifies at which index in list we are starting the search. 
              * Since list may contain duplicates, we should check matching starting at any index in list. 
-             * Also we just look upto list.Count - subList.Count +1, as after this value, the list is short and sublist can not be found in it.
+             * Also we just look up to list.Count - subList.Count +1, as after this value, the list is short and sublist can not be found in it.
              */
             for (int i = 0; i < list.Count; i++)
             {

@@ -17,7 +17,7 @@
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// TODO: Shall make all the search classes have the same style: eithe rbe instantiated, or not, or provide good reasons why each design choice
+// TODO: Shall make all the search classes have the same style: either be instantiated, or not, or provide good reasons why each design choice
 
 namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
 {
@@ -31,7 +31,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
         /// Hashing plays a crucial role in optimizing search time. Rolling hash methods are preferred, and the ones with the minimum collision. 
         /// </summary>
         /// <param name= "text">The parent string in which we are searching for a subString.</param>
-        /// <param name= "subString">The string we want to find in parent string (text).</param>param>
+        /// <param name= "subString">The string we want to find in parent string (text).</param>
         /// <returns>The starting index in text at which subString is found.</returns>
         public static int Search(string text, string subString)
         {

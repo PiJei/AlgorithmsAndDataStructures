@@ -29,7 +29,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
         [TestMethod]
         public void SelectionSort_IsStable_Test()
         {
-            /* All we need to do is to find "a" list with a particular arrangements of duplicate values and other distnct values, such that breaks isStable sort question for heap sort.. 
+            /* All we need to do is to find "a" list with a particular arrangements of duplicate values and other distinct values, such that breaks isStable sort question for heap sort.. 
              * Meaning that not finding this list, does not prove that the sort method is stable.
              * This also means that there might be lots of lists with duplicate values, for which heap sort acts as stable. 
              */

@@ -26,7 +26,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
     {
         public static void Sort_Iterative_V2(List<Element> values)
         {
-            // In this version, we will overwite the array location for element (i) by shifting each element to the right if bigger than (i) till finding its correct position
+            // In this version, we will overwrite the array location for element (i) by shifting each element to the right if bigger than (i) till finding its correct position
             for (int i = 1; i < values.Count; i++)
             {
                 Element arrayValueAtIndexI = values[i];

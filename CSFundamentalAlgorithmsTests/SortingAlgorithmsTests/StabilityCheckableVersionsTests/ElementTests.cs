@@ -53,27 +53,5 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests.StabilityCheckable
             element3.Move(8); // Element3: 1, 2, 8 
             Assert.IsTrue(element1.IsStable(element3));
         }
-
-        /* 
-    
-        
-        /// <summary>
-        /// Tests if heap sort is stable or not. Heapsort by design is not stable. 
-        /// </summary>
-        [TestMethod]
-        public void HeapSort_IsStable_Test()
-        {
-         
-        List<int> duplicateValues1 = new List<int> { 4, 2, 3, 1, 4 };
-        bool isStable = CSFundamentalAlgorithms.SortingAlgorithms.Common.IsSortMethodStable(HeapSort.Sort_Ascending, duplicateValues1);
-        Assert.IsFalse(isStable);
-        }
-    */
-
-
-
-        /* We need to find "a" list with duplicate values, such that shows Selection sort is not stable. 
- * This does not mean that Selection sort is unstable for all arrays with duplicate values. */
-
     }
 }

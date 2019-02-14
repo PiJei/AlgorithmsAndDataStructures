@@ -31,7 +31,7 @@ namespace CSFundamentalAlgorithms.Graphs
         /// Implements an iterative, recursion-free version of Breadth First Search algorithm for a graph (that can well have cycles);
         /// </summary>
         /// <param name="root">Specifies a node in the graph from which the search starts. </param>
-        /// <returns>A bfs ordering of the graph's nodes.</returns>
+        /// <returns>A BFS ordering of the graph's nodes.</returns>
         public static List<GraphNode> BFS_Iterative(GraphNode root) /* Root is the node from which the search starts.*/
         {
             Queue<GraphNode> queue = new Queue<GraphNode>();
@@ -40,7 +40,7 @@ namespace CSFundamentalAlgorithms.Graphs
             root.DistanceFromRoot = 0;
             queue.Enqueue(root);
 
-            /* To store a bfs ordering of the nodes, starting from root. */
+            /* To store a BFS ordering of the nodes, starting from root. */
             List<GraphNode> bfsOrdering = new List<GraphNode>();
 
             while (queue.Count > 0) /* While queue is not empty.*/
@@ -92,7 +92,7 @@ namespace CSFundamentalAlgorithms.Graphs
         /// Implements an iterative, recursion-free version of Depth First Search algorithm for a graph (that can well have cycles);
         /// </summary>
         /// <param name="root">Specifies a node in the graph from which the search starts. </param>
-        /// <returns>A dfs ordering of the graph's nodes.</returns>
+        /// <returns>A DFS ordering of the graph's nodes.</returns>
         public static List<GraphNode> DFS_Iterative(GraphNode root)
         {
             Stack<GraphNode> stack = new Stack<GraphNode>();
@@ -101,7 +101,7 @@ namespace CSFundamentalAlgorithms.Graphs
             root.DistanceFromRoot = 0;
             stack.Push(root);
 
-            /* To store a dfs ordering of the nodes, starting from root. */
+            /* To store a DFS ordering of the nodes, starting from root. */
             List<GraphNode> dfsOrdering = new List<GraphNode>();
             while (stack.Count > 0) /* while stack is not empty. */
             {
@@ -122,10 +122,10 @@ namespace CSFundamentalAlgorithms.Graphs
         }
 
         /// <summary>
-        /// Implements a recursive version of DFS, for returning a dfs ordering of the nodes. 
+        /// Implements a recursive version of DFS, for returning a DFS ordering of the nodes. 
         /// </summary>
         /// <param name="root"> Specifies the node to start the search from.</param>
-        /// <param name="dfsOrdering">Contains a serialization of the graph, with a dfs ordering.</param>
+        /// <param name="dfsOrdering">Contains a serialization of the graph, with a DFS ordering.</param>
         public static void DFS_Recursive(GraphNode root, List<GraphNode> dfsOrdering)
         {
             root.IsInserted = true;

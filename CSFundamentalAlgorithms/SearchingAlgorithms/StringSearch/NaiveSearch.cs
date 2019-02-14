@@ -22,7 +22,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
     public class NaiveSearch
     {
         /// <summary>
-        /// Implements a naive-bruteforce algorithm for finding subString in text.
+        /// Implements a naive- brute force algorithm for finding subString in text.
         /// Note: Any optimization, should try to reduce either the size of the outer loop or the inner loop.
         /// </summary>
         /// <param name="text">The parent string in which we are searching for a subString.</param>

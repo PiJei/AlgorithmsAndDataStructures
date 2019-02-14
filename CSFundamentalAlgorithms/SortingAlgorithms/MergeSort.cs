@@ -52,7 +52,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
             //Making a copy of the values
             List<int> valuesOriginal = new List<int>(values);
 
-            //Inclusive boundries of the first sub-array
+            //Inclusive boundaries of the first sub-array
             int low1 = lowIndex;
             int high1 = middleIndex;
 

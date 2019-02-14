@@ -61,11 +61,11 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms
         }
 
         /// <summary>
-        /// Computes the smallest fibonacci number that is greater than number. 
+        /// Computes the smallest Fibonacci number that is greater than number. 
         /// Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...
         /// </summary>
-        /// <param name="number">The integer we want to compute the closest fibonacci to it that is bigger than or equal to it. </param>
-        /// <returns>The fibonacci number.</returns>
+        /// <param name="number">The integer we want to compute the closest Fibonacci to it that is bigger than or equal to it. </param>
+        /// <returns>The Fibonacci number.</returns>
         public static FibonacciElement GetSmallestFibonacciBiggerThanNumber(int number)
         {
             var fib = new FibonacciElement(0, 1);
@@ -78,7 +78,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms
     }
 
     /// <summary>
-    /// Represents a fibonacci number at index n, and the two fibonacci numbers at two preceeding indexes, which are necessary for calculating this element's value.  
+    /// Represents a Fibonacci number at index n, and the two Fibonacci numbers at two preceding indexes, which are necessary for calculating this element's value.  
     /// </summary>
     public class FibonacciElement
     {
