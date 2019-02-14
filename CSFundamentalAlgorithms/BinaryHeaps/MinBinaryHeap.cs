@@ -118,11 +118,11 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
                 return true;
             }
 
-            /* If array has more than 1 element, the next instructions are exeuted. */
+            /* If array has more than 1 element, the next instructions are executed. */
             rootValue = HeapArray[0]; /* In a minHeap the minimum value is always in the root, which is at index 0.*/
             HeapArray[0] = HeapArray[heapArrayLength - 1]; /* Move the last element to the place of root, and then bubble down. */
             HeapArray.RemoveAt(heapArrayLength - 1); /* Removing the last element, as it is now placed in the root's position, and needs to be bubbled down.*/
-            BubbleDown_Recursively(0, heapArrayLength - 1); /* Call this method to bubble down the (new) root.*/ /* Also notice that the array is shorter by one value now, thus the new arraylength is one smaller. */
+            BubbleDown_Recursively(0, heapArrayLength - 1); /* Call this method to bubble down the (new) root.*/ /* Also notice that the array is shorter by one value now, thus the new array length is one smaller. */
             return true;
         }
 

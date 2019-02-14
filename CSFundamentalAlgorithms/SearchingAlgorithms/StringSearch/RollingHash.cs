@@ -23,14 +23,14 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
     {
         /// <summary>
         /// Implements a rolling hash function. 
-        /// A usecase is Rabin-Karp search algorithm. 
+        /// A use-case is Rabin-Karp search algorithm. 
         /// </summary>
         /// <param name="previousHashValue">Specifies the previous hash value, using which the new hash value will be computed.</param>
         /// <param name="oldCharToLeft">Specifies the character that will be omitted from the hash, and thus the rolling window. </param>
         /// <param name="newCharToRight">Specifies the new character that will be included in the hash and thus in the rolling window. </param>
         /// <param name="rollingWindowLength">Specifies the size of the rolling window. </param>
         /// <param name="hashConstant">Specifies the hash constant that is computed using ComputeHashConstantForRollingHash() method</param>
-        /// <param name="prime">Specifies a prime number for the modula operation in the hash function.</param>
+        /// <param name="prime">Specifies a prime number for the modulo operation in the hash function.</param>
         /// <param name="numCharsInAlphabet">Specifies the number of characters in alphabet needed by the hash function in the multiplication operation. </param>
         /// <returns>The hash value. </returns>
         public static int GetHashRollingForward(int previousHashValue, char oldCharToLeft, char newCharToRight, int rollingWindowLength, int hashConstant, int prime, int numCharsInAlphabet)
@@ -41,12 +41,12 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
         }
 
         /// <summary>
-        /// Cmputes the hash constant needed for the rolling hash. 
+        /// Computes the hash constant needed for the rolling hash. 
         /// </summary>
         /// <param name="rollingWindowLength">Specifies the size of the rolling window. </param>
-        /// <param name="prime">Specifies a prime number for the modula operation</param>
+        /// <param name="prime">Specifies a prime number for the modulo operation</param>
         /// <param name="numCharsInAlphabet">Specifies the number of characters in alphabet for the multiply operation. </param>
-        /// <returns>Hashing constant based on the given prime number, window size, and num chars in the alphabet. </returns>
+        /// <returns>Hashing constant based on the given prime number, window size, and numCharsInAlphabet. </returns>
         public static int ComputeHashConstantForRollingHash(int rollingWindowLength, int prime, int numCharsInAlphabet)
         {
             int HashConstant = 1;
@@ -61,7 +61,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
         /// Computes hash value for a string
         /// </summary>
         /// <param name="s">Specifies a string. </param>
-        /// <param name="prime">Specifies a prime number for the modula operation</param>
+        /// <param name="prime">Specifies a prime number for the modulo operation</param>
         /// <param name="numCharsInAlphabet">Specifies the number of characters in alphabet for the multiply operation. </param>
         /// <returns>Hash value of the string. </returns>
         public static int GetHash(string s, int prime, int numCharsInAlphabet)
@@ -69,7 +69,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
             int hash = 0;
             for (int i = 0; i < s.Length; i++)
             {
-                hash = (hash * numCharsInAlphabet + s[i]) % prime; /* The modula is for the numbers to fit in an integer.*/
+                hash = (hash * numCharsInAlphabet + s[i]) % prime; /* The modulo is for the numbers to fit in an integer.*/
             }
             return hash;
         }

@@ -119,7 +119,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
             rootValue = HeapArray[0];
             HeapArray[0] = HeapArray[heapArrayLength - 1];
             HeapArray.RemoveAt(heapArrayLength - 1);
-            BubbleDown_Recursively(0, heapArrayLength - 1); /* notice that the array is shorter by one value now, thus the new arraylength is one smaller. */
+            BubbleDown_Recursively(0, heapArrayLength - 1); /* notice that the array is shorter by one value now, thus the new array length is one smaller. */
 
             return true;
         }

@@ -24,7 +24,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
     public partial class BubbleSort
     {
         /// <summary>
-        /// Implements bubble sort iteraively, elements are bubbled down or up the array till they are at their final correct positions. 
+        /// Implements bubble sort iteratively, elements are bubbled down or up the array till they are at their final correct positions. 
         /// </summary>
         /// <param name="values"></param>
         public static void Sort_Iterative(List<int> values)

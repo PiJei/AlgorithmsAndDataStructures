@@ -29,6 +29,9 @@ Content:
     - InterpolationSearch
     - ExponentialSearch
     - FibonacciSearch
+ 
+ - String Search Algorithms   
+    - RabinKarpSearch
     
   
  - Graphs:

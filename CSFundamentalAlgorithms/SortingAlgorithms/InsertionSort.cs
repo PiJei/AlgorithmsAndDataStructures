@@ -49,7 +49,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// <param name="values">Specifies the list of integers to be sorted. </param>
         public static void Sort_Iterative_V2(List<int> values)
         {
-            // In this version, we will overwite the array location for element (i) by shifting each element to the right if bigger than (i) till finding its correct position
+            // In this version, we will overwrite the array location for element (i) by shifting each element to the right if bigger than (i) till finding its correct position
             for (int i = 1; i < values.Count; i++)
             {
                 int arrayValueAtIndexI = values[i];
@@ -66,12 +66,12 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         }
 
         /// <summary>
-        /// Implements insertion sort recursively. Iniial call shall be Sort_Recursive(values, values.Count-1);
+        /// Implements insertion sort recursively. Initial call shall be Sort_Recursive(values, values.Count-1);
         /// </summary>
         /// <param name="values">Specifies the list of integers to be sorted. </param>
         public static void Sort_Recursive(List<int> values, int n)
         {
-            if (n >= 1) // Similar to iterative versions that we start from 1st helement, and not the one at 0th, as always need to compare to the left. 
+            if (n >= 1) // Similar to iterative versions that we start from 1st element, and not the one at 0th, as always need to compare to the left. 
             {
                 Sort_Recursive(values, n - 1);
                 // The rest is exactly the same code in method Sort_Iterative_V2() inside the first for loop. 

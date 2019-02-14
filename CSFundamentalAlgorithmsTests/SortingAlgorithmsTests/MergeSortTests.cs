@@ -81,7 +81,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
             UtilsTests.CheckIfListIsSortedAscendingly(values1);
 
             List<int> values2 = new List<int> { 10, 1 };
-            // Indices are such that the list will not get sorted, 
+            // Indexes are such that the list will not get sorted, 
             MergeSort.Merge(values2, 0, 1, 1);
             Assert.IsTrue(values2[0] == 10);
             Assert.IsTrue(values2[1] == 1);

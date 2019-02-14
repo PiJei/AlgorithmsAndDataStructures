@@ -37,7 +37,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
             // 2- repeat the following 2 steps for all the elements in the array. 
             for (int i = values.Count - 1; i >= 0; i--)
             {
-                // Since the root element/node in a max heap, is the most maximum value in the array, putting it to the last element of the unsorted part of the array, will determine its right position in an array that is eventually ordered ascendingly
+                // Since the root element/node in a max heap, is the most maximum value in the array, putting it to the last element of the unsorted part of the array, will determine its right position in an array that is eventually ordered ascending
                 Utils.Swap(values, 0, i);
                 // Since the new value in the root position of the heap (index :0) may not be in its correct position, heap-order wise, then bubble it down, until it reaches its correct position.
                 maxHeap.BubbleDown_Recursively(0, i);

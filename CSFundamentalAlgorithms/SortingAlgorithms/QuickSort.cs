@@ -24,7 +24,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
     public partial class QuickSort
     {
         /// <summary>
-        /// Implements quick sort to sort integer values in an array, ascendingly, 
+        /// Implements quick sort to sort integer values in an array, ascending. 
         /// </summary>
         /// <param name="values">Specifies the list of integer values to be sorted. </param>
         /// <param name="lowIndex">Specifies the lower index in the array, inclusive. </param>
