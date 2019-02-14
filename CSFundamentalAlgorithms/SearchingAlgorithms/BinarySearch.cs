@@ -29,7 +29,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms
         /// <summary>
         /// Searches in a sorted list of integers, and returns the index of the searchValue using binary search, and -1 if it is not found. 
         /// </summary>
-        /// <param name="values">A sorted list of integeres. </param>
+        /// <param name="values">A sorted list of integers. </param>
         /// <param name="lowIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>
         /// <param name="highIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
         /// <param name="searchValue">Specifies the value that is being searched for. </param>

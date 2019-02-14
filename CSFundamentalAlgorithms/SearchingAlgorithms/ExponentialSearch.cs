@@ -27,7 +27,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms
         /// Implements exponential search, where the search step is a multiple of 2, hence the naming. 
         /// Notice that only works if the given array is sorted. 
         /// </summary>
-        /// <param name="values">A sorted list of integeres. </param>
+        /// <param name="values">A sorted list of integers. </param>
         /// <param name="searchValue">Specifies the value that is being searched for. </param>
         /// <returns>The index of the searchValue in the array values, and -1 if it does not exist in the array. </returns>
         public static int Search(List<int> values, int searchValue)
@@ -39,8 +39,8 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms
                     return 0;
                 }
 
-                int nextIndex = 1; /* Ideally should start from index 1, however that would make the while loop indexing complex, thus treating index 0 differenly, and then continuing with the rest. */
-                while (nextIndex < values.Count && values[nextIndex] < searchValue) /* multiple the search step by 2, until encountering an elemenet that is bigger than the searchValue*/
+                int nextIndex = 1; /* Ideally should start from index 1, however that would make the while loop indexing complex, thus treating index 0 differently, and then continuing with the rest. */
+                while (nextIndex < values.Count && values[nextIndex] < searchValue) /* multiple the search step by 2, until encountering an element that is bigger than the searchValue*/
                 {
                     nextIndex = nextIndex * 2;
                 }

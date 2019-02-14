@@ -21,15 +21,15 @@ using System.Collections.Generic;
 
 namespace CSFundamentalAlgorithms.SearchingAlgorithms
 {
-    public class TenarySearch
+    public class TernarySearch
     {
         /// <summary>
-        /// Implements tenary search recursively on a list of integeres. 
+        /// Implements ternary search recursively on a list of integers. 
         /// This search is inspired by binary search (hence the naming, 3 versus 2).
         /// The difference being that rather than dividing the array into 2 sections, divides it into 3 equal sections and performs the search inside each one of those separately.
         /// Notice that only works if the given array is sorted. 
         /// </summary>
-        /// <param name="values">A sorted list of integeres. </param>
+        /// <param name="values">A sorted list of integers. </param>
         /// <param name="lowIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>
         /// <param name="highIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
         /// <param name="searchValue">Specifies the value that is being searched for. </param>

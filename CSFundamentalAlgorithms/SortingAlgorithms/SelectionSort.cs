@@ -30,17 +30,17 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         public static void Sort_Iteratively(List<int> values)
         {
             /*Notice that the loop does not have to repeat over the last element of the array, as by then the last element is already the largest element in the array.*/
-            for (int i = 0; i < values.Count - 1; i++) /* Iteration i, determines the ith smallest/min value. */
+            for (int i = 0; i < values.Count - 1; i++) /* Iteration i, determines the i-th smallest/min value. */
             {
                 int minIndex = i;
-                for (int j = i; j < values.Count; j++) /* This loop finds an element in the un-sorted part of the array that is smaller than the current value at index i. */
+                for (int j = i; j < values.Count; j++) /* This loop finds an element in the unsorted part of the array that is smaller than the current value at index i. */
                 {
                     if (values[j] < values[minIndex])
                     {
                         minIndex = j;
                     }
                 }
-                Utils.Swap(values, i, minIndex); /* Eventhough if minIndex has not changed, the swap happens. Can be made efficient by adding an if check. */
+                Utils.Swap(values, i, minIndex); /* Even though if minIndex has not changed, the swap happens. Can be made efficient by adding an if check. */
             }
         }
     }

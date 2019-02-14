@@ -29,7 +29,7 @@ namespace CSFundamentalAlgorithmsTests.SortingAlgorithmsTests
     public class UtilsTests
     {
         /// <summary>
-        /// Checkes whether the given integer list is sorted in ascending order. 
+        /// Checks whether the given integer list is sorted in ascending order. 
         /// </summary>
         public static void CheckIfListIsSortedAscendingly(List<int> values)
         {

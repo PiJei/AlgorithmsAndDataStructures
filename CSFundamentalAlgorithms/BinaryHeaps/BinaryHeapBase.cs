@@ -87,7 +87,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
         /// Swaps the values at the two given indexes. 
         /// </summary>
         /// <param name="array">Specifies the heap represented in an array.</param>
-        /// <param name="index1">Speficies the index of the first element. </param>
+        /// <param name="index1">Specifies the index of the first element. </param>
         /// <param name="index2">Specifies the index of the second element. </param>
         public void Swap(List<int> array, int index1, int index2)
         {

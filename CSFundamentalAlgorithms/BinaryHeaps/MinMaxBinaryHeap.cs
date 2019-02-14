@@ -86,7 +86,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
                     if (HeapArray[index] < HeapArray[parentIndex]) /* Parent is in a min level, and if its child is smaller than it, then a swap should happen.*/
                     {
                         Swap(HeapArray, index, parentIndex);
-                        BubbleUpMin_Recursively(parentIndex, heapArrayLength); /* At this point, the value is pushed to a min level, and the next bubble up shall happen via min level, whih at any point can again switch the bubble up to a max level. */
+                        BubbleUpMin_Recursively(parentIndex, heapArrayLength); /* At this point, the value is pushed to a min level, and the next bubble up shall happen via min level, which at any point can again switch the bubble up to a max level. */
                     }
                     else
                     {
@@ -158,7 +158,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
             rootValue = HeapArray[0];
             HeapArray[0] = HeapArray[heapArrayLength - 1];
             HeapArray.RemoveAt(heapArrayLength - 1);
-            BubbleDownMin_Recursively(0, heapArrayLength - 1); /* Calling this method, because this is a min-max heap and 0 is expected to be on a min level.*/ /* Also notice that the array is shorter by one value now, thus the new arraylength is one smaller. */
+            BubbleDownMin_Recursively(0, heapArrayLength - 1); /* Calling this method, because this is a min-max heap and 0 is expected to be on a min level.*/ /* Also notice that the array is shorter by one value now, thus the new array length is one smaller. */
             return true;
         }
 
@@ -205,7 +205,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
             List<int> childrenIndexes = GetChildrenIndexes(new List<int> { rootIndex }, heapArrayLength);
             List<int> grandChildrenIndexes = GetChildrenIndexes(childrenIndexes, heapArrayLength);
 
-            /* Find the index of the descendents of rootIndex that has the minimum value */
+            /* Find the index of the descendants of rootIndex that has the minimum value */
             int minDescendentIndex = int.MaxValue;
             if (!TryFindMinIndex(HeapArray, childrenIndexes.Union(grandChildrenIndexes).ToList(), int.MaxValue, out int minIndex))
             {
@@ -216,13 +216,13 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
             Contract.Assert(minDescendentIndex != int.MaxValue);
             Contract.Assert(minDescendentIndex != int.MinValue);
 
-            /* If rootIndex has a descendent that has a value lower than itself, then shall swap the root with its descendent, as the nodes in min levels should be the smallest in their subtrees, rooted at them.*/
+            /* If rootIndex has a descendant that has a value lower than itself, then shall swap the root with its descendant, as the nodes in min levels should be the smallest in their subtrees, rooted at them.*/
             if (HeapArray[minDescendentIndex] < HeapArray[rootIndex])
             {
                 Swap(HeapArray, minDescendentIndex, rootIndex);
 
-                /* If the descendent was a direct child, meaning it is located in a max/odd layer, there is no need for further action, as where it was before (in the child index) it was for sure larger than all the elements in the subtree rooted at it. */
-                /* However, if the descendent was a grand child, now we shall compare the root which is now located in the former grand child's index, with its parent, and if larger than the parent, shall swap to position it in a max level. and then Shall bubble down the former parent, who is now located on a min level, to find its correct position.*/
+                /* If the descendant was a direct child, meaning it is located in a max/odd layer, there is no need for further action, as where it was before (in the child index) it was for sure larger than all the elements in the subtree rooted at it. */
+                /* However, if the descendant was a grand child, now we shall compare the root which is now located in the former grand child's index, with its parent, and if larger than the parent, shall swap to position it in a max level. and then Shall bubble down the former parent, who is now located on a min level, to find its correct position.*/
                 if (grandChildrenIndexes.Contains(minDescendentIndex))
                 {
                     int parentIndex = GetParentIndex(minDescendentIndex);

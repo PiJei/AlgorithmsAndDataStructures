@@ -24,11 +24,11 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms
     public class InterpolationSearch
     {
         /// <summary>
-        /// Searches in a sorted list of integeres where values have a uniform distribution. Is an improvement over binary search, and has a very similar implementation, the only main difference is where (which index in the array) the search starts at.
+        /// Searches in a sorted list of integers where values have a uniform distribution. Is an improvement over binary search, and has a very similar implementation, the only main difference is where (which index in the array) the search starts at.
         /// The search is named inter-polation, as it always has two main poles that it moves back and forth between them, these poles are the start index and the end index of the array. 
         /// Notice that only works if the given array is sorted. 
         /// </summary>
-        /// <param name="values">A sorted list of integeres that are also uniformly distributed. </param>
+        /// <param name="values">A sorted list of integers that are also uniformly distributed. </param>
         /// <param name="lowIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>
         /// <param name="highIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
         /// <param name="searchValue">Specifies the value that is being searched for. </param>
@@ -68,7 +68,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms
         /// Computes an index to start the search from. Dependent on the value we are after. 
         /// This formula is such that if the search value is closer to the value in the lower index, the search start point will be chosen closer to the lowIndex, and if the search value is closer to the value in the high index, the search start point will be chosen closer to the highIndex.
         /// </summary>
-        /// <param name="values">A sorted list of integeres that are also uniformly distributed. </param>
+        /// <param name="values">A sorted list of integers that are also uniformly distributed. </param>
         /// <param name="lowIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>
         /// <param name="highIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
         /// <param name="searchValue">Specifies the value that is being searched for. </param>
@@ -82,7 +82,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms
         }
 
         // TODO: Implement using binary search, ... where the location of the array is computed by a method, which I will pass here: 
-        // also means that I can make a parent class for all the search algorithms, and enforce them to implment their own find the next search position
+        // also means that I can make a parent class for all the search algorithms, and enforce them to implement their own find the next search position
 
         // TODO: Implement iterative versions and recursive versions for each search algorithm.. 
 
