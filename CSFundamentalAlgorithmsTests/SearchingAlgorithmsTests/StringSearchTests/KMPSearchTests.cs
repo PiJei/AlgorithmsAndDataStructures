@@ -24,16 +24,15 @@ using System.Collections.Generic;
 namespace CSFundamentalAlgorithmsTests.SearchingAlgorithmsTests.StringSearchTests
 {
     [TestClass]
-    public class NaiveSearchTests
+    public class KMPSearchTests
     {
         [TestMethod]
-        public void NaiveSearch_Search()
+        public void KMPSearch_GetLongestProperPrefixWhichIsAlsoSuffix_Test()
         {
-            Assert.AreEqual(-1, NaiveSearch.Search(string.Empty, string.Empty));
-            Assert.AreEqual(0, NaiveSearch.Search("a", string.Empty));
-            Assert.IsTrue(new List<int> { 0, 3, 4 }.Contains(NaiveSearch.Search("abcaab", "a")));
-            Assert.IsTrue(new List<int> { 0 }.Contains(NaiveSearch.Search("abcaab", "abc")));
-            Assert.AreEqual(-1, NaiveSearch.Search("aaabbbdaacbb", "kjh"));
+            List<int> longestProperPrefixes1 = KMPSearch.GetLongestProperPrefixWhichIsAlsoSuffix("aa");
+            Assert.AreEqual(0, longestProperPrefixes1[0]);
+            Assert.AreEqual(1, longestProperPrefixes1[1]);
+
         }
     }
 }
