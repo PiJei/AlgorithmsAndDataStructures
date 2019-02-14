@@ -43,12 +43,13 @@ namespace CSFundamentalAlgorithmsTests.SearchingAlgorithmsTests.StringSearchTest
         [TestMethod]
         public void RabinKarpSearch_Search_Test()
         {
-            RabinKarpSearch search1 = new RabinKarpSearch();
-            Assert.AreEqual(1, search1.Search("abcd", "bc"));
-            RabinKarpSearch search2 = new RabinKarpSearch();
-            Assert.AreEqual(2, search2.Search("abcd", "cd"));
-            RabinKarpSearch search3 = new RabinKarpSearch();
-            Assert.AreEqual(12, search3.Search("aaaaaakcdkaaaabcd", "aab"));
+            RabinKarpSearch search1 = new RabinKarpSearch("abcd", "bc");
+            Assert.AreEqual(1, search1.Search());
+
+            RabinKarpSearch search2 = new RabinKarpSearch("abcd", "cd");
+            Assert.AreEqual(2, search2.Search());
+            RabinKarpSearch search3 = new RabinKarpSearch("aaaaaakcdkaaaabcd", "aab");
+            Assert.AreEqual(12, search3.Search());
         }
     }
 }

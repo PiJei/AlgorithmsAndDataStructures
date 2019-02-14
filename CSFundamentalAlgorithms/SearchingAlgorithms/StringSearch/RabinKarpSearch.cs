@@ -17,6 +17,8 @@
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+ // TODO: Shall make all the search classes have the same style: eithe rbe instantiated, or not, or provide good reasons why each design choice
+
 namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
 {
     public class RabinKarpSearch
@@ -27,38 +29,48 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
         private int HashConstant = 1;
 
         /// <summary>
+        /// The parent string in which we are searching for a subString.
+        /// </summary>
+        private string _text;
+
+        /// <summary>
+        /// The string we want to find in parent string (text).
+        /// </summary>
+        private string _subString;
+
+        public RabinKarpSearch(string text, string subString)
+        {
+            _text = text;
+            _subString = subString;
+            ComputeHashConstantForRollingHash(subString.Length);
+        }
+
+        /// <summary>
         /// Implements RabinKarp search algorithm, which is an improvement on NaiveSearch, using hashing.
         /// Hashing plays a crucial role in optimizing search time. Rolling hash methods are preferred, and the ones with the minimum collision. 
         /// </summary>
-        /// <param name="text">The parent string in which we are searching for a subString.</param>
-        /// <param name="subString">The string we want to find in parent string (text).</param>
         /// <returns>The starting index in text at which subString is found.</returns>
-        public int Search(string text, string subString)
+        public int Search()
         {
-            if (HashConstant == 1)
-            {
-                ComputeHashConstant(subString.Length);
-            }
+            int subStringHash = GetHash(_subString); /* This hash is computed only once. Complexity : O(subString.Length)*/
 
-            int subStringHash = GetHash(subString); /* This hash is computed only once. Complexity : O(subString.Length)*/
-
-            string subStringInText = text.Substring(0, subString.Length);
+            string subStringInText = _text.Substring(0, _subString.Length);
             int subStringInTextHash = GetHash(subStringInText);
 
-            for (int i = 0; i < text.Length - 1; i++) /* O(text.Length) */
+            for (int i = 0; i < _text.Length - 1; i++) /* O(text.Length) */
             {
                 if (subStringHash == subStringInTextHash)
                 {
-                    if (subString == subStringInText) /* This check is necessary as the hash function may have collisions.*/
+                    if (_subString == subStringInText) /* This check is necessary as the hash function may have collisions.*/
                     {
                         return i;
                     }
                 }
 
-                if (i < text.Length - subString.Length)
+                if (i < _text.Length - _subString.Length)
                 {
-                    subStringInText = text.Substring(i + 1, subString.Length); /* a substring in text, size of subString, starting at index i;*/
-                    subStringInTextHash = GetHashRollingForward(subStringInTextHash, text[i], text[i + subString.Length], subString.Length); /* O(1) with a rolling hash, otherwise: O(subString.Length) */
+                    subStringInText = _text.Substring(i + 1, _subString.Length); /* a substring in text, size of subString, starting at index i;*/
+                    subStringInTextHash = GetHashRollingForward(subStringInTextHash, _text[i], _text[i + _subString.Length], subString.Length); /* O(1) with a rolling hash, otherwise: O(subString.Length) */
                 }
                 else
                 {
@@ -67,51 +79,6 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
             }
 
             return -1;
-        }
-
-        /// <summary>
-        /// Implements a rolling hash function. 
-        /// </summary>
-        public int GetHashRollingForward(int previousHash, char oldCharToLeft, char newCharToRight, int windowLength)
-        {
-            if (HashConstant == 1)
-            {
-                ComputeHashConstant(windowLength);
-            }
-
-            int hashValue = ((previousHash - oldCharToLeft * HashConstant) * NumCharacters + newCharToRight) % PrimeNumber;
-            if (hashValue < 0)
-                hashValue += PrimeNumber;
-            return hashValue;
-        }
-
-        /// <summary>
-        /// Cmputes the hash constant needed for the rolling hash
-        /// </summary>
-        /// <param name="windowLength">Length of the window in rolling hash. </param>
-        /// <returns></returns>
-        public int ComputeHashConstant(int windowLength)
-        {
-            for (int i = 0; i < windowLength - 1; i++)
-            {
-                HashConstant = (HashConstant * NumCharacters) % PrimeNumber;
-            }
-            return HashConstant;
-        }
-
-        /// <summary>
-        /// Computes hash value for a string
-        /// </summary>
-        /// <param name="s">Specifies a string. </param>
-        /// <returns>Hash value of the string. </returns>
-        public int GetHash(string s)
-        {
-            int hash = 0;
-            for (int i = 0; i < s.Length; i++)
-            {
-                hash = (hash * NumCharacters + s[i]) % PrimeNumber; // The modula is for the numbers to fit in an integer.
-            }
-            return hash;
         }
     }
 }
