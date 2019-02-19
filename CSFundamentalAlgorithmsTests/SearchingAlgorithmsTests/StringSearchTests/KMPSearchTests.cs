@@ -20,12 +20,25 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CSFundamentalAlgorithmsTests.SearchingAlgorithmsTests.StringSearchTests
 {
     [TestClass]
     public class KMPSearchTests
     {
+        [TestMethod]
+        public void KMPSearch_Search_Test()
+        {
+            Assert.AreEqual(1, KMPSearch.Search("abcd", "bc")[0]);
+            Assert.AreEqual(2, KMPSearch.Search("abcd", "cd")[0]);
+            Assert.AreEqual(12, KMPSearch.Search("aaaaaakcdkaaaabcd", "aab")[0]);
+            Assert.IsTrue(KMPSearch.Search("abcaab", "a").SequenceEqual(new List<int> { 0, 3, 4 }));
+            Assert.IsTrue(KMPSearch.Search("abcaab", "abc").SequenceEqual(new List<int> { 0 }));
+            Assert.AreEqual(0, KMPSearch.Search("aaabbbdaacbb", "kjh").Count);
+        }
+
+
         [TestMethod]
         public void KMPSearch_GetLongestProperPrefixWhichIsAlsoSuffix_Test1()
         {

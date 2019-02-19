@@ -25,15 +25,51 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
     public class KMPSearch
     {
         /// <summary>
-        /// Implements KMP search = Knuth-Morris-Pratt algorithm for searching a substring in a string. 
+        /// Implements KMP search = Knuth-Morris-Pratt algorithm for searching a substring in a string, using proper prefixes, and pre processing of the subString.. 
+        /// The idea: while searching for the subString in text, we already 'have seen' some characters in text, so shall not re-check if they match with parts of the subString.
         /// </summary>
         /// <param name= "text">The parent string in which we are searching for a subString.</param>
-        /// <param name= "subString">The string we want to find in parent string (text).</param>param>
-        /// <returns>The starting index in text at which subString is found.</returns>
-        /*public static int Search(string text, string subString)
+        /// <param name= "subString">The string we want to find in parent string (text).</param>
+        /// <returns>All the starting index in text at which subString is found [in other words looks for all the occurrences of the subString in text, and does not stop by finding the first one.].</returns>
+        public static List<int> Search(string text, string subString)
         {
+            /* Starts with a preprocessing step.*/
+            List<int> longestProperPrefixLengths = GetLongestProperPrefixWhichIsAlsoSuffix(subString);
 
-        }*/
+            List<int> indexes = new List<int>();
+
+            int i = 0; /* Index to navigate over text */
+            int j = 0; /* Index to navigate over subString*/
+
+            while (i < text.Length)
+            {
+                if (text[i] == subString[j])
+                {
+                    i++;
+                    j++;
+                }
+
+                if (j == subString.Length)
+                {
+                    indexes.Add(i - subString.Length);
+                    j = longestProperPrefixLengths[j - 1];
+                }
+
+                else if (i < text.Length && text[i] != subString[j])
+                {
+                    if (j != 0)
+                    {
+                        j = longestProperPrefixLengths[j - 1];
+                    }
+                    else /* j is reset to zero at this stage, and a one-to-one sequential search of subString in text, starting at index i, starts again. */
+                    {
+                        i++;
+                    }
+                }
+            }
+
+            return indexes;
+        }
 
         /// <summary>
         /// For each sub pattern in text, ending at position (i)-0-based, computes the length of the longest proper prefix of text[0:i] such that it is also a suffix of text[0:i]
@@ -46,7 +82,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
         /// <returns> An array of longest proper prefixes</returns>
         public static List<int> GetLongestProperPrefixWhichIsAlsoSuffix(string text)
         {
-            List<int> longestProperPrexiLengths = Enumerable.Repeat(0, text.Length).ToList();
+            List<int> longestProperPrexiLengths = Enumerable.Repeat(0, text.Length).ToList(); /* Note that the values in this list, are < text.Length always. */
 
             int lengthOfPreviousProperPrefixThatIsAlsoSuffix = 0;
 

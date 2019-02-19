@@ -27,7 +27,7 @@ namespace CSFundamentalAlgorithmsTests.SearchingAlgorithmsTests.StringSearchTest
     public class NaiveSearchTests
     {
         [TestMethod]
-        public void NaiveSearch_Search()
+        public void NaiveSearch_Search_Test()
         {
             Assert.AreEqual(-1, NaiveSearch.Search(string.Empty, string.Empty));
             Assert.AreEqual(0, NaiveSearch.Search("a", string.Empty));
