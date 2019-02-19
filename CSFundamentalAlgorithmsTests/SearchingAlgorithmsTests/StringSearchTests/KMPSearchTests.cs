@@ -27,7 +27,7 @@ namespace CSFundamentalAlgorithmsTests.SearchingAlgorithmsTests.StringSearchTest
     public class KMPSearchTests
     {
         [TestMethod]
-        public void KMPSearch_GetLongestProperPrefixWhichIsAlsoSuffix_Test()
+        public void KMPSearch_GetLongestProperPrefixWhichIsAlsoSuffix_Test1()
         {
             List<int> longestProperPrefixes1 = KMPSearch.GetLongestProperPrefixWhichIsAlsoSuffix("aaaabcbaab");
             Assert.AreEqual(0, longestProperPrefixes1[0]);
@@ -40,6 +40,35 @@ namespace CSFundamentalAlgorithmsTests.SearchingAlgorithmsTests.StringSearchTest
             Assert.AreEqual(1, longestProperPrefixes1[7]);
             Assert.AreEqual(2, longestProperPrefixes1[8]);
             Assert.AreEqual(0, longestProperPrefixes1[9]);
+        }
+
+        [TestMethod]
+        public void KMPSearch_GetLongestProperPrefixWhichIsAlsoSuffix_Test2()
+        {
+            List<int> longestProperPrefixes1 = KMPSearch.GetLongestProperPrefixWhichIsAlsoSuffix("abcdef");
+            Assert.AreEqual(0, longestProperPrefixes1[0]);
+            Assert.AreEqual(0, longestProperPrefixes1[1]);
+            Assert.AreEqual(0, longestProperPrefixes1[2]);
+            Assert.AreEqual(0, longestProperPrefixes1[3]);
+            Assert.AreEqual(0, longestProperPrefixes1[4]);
+            Assert.AreEqual(0, longestProperPrefixes1[5]);
+        }
+
+        [TestMethod]
+        public void KMPSearch_GetLongestProperPrefixWhichIsAlsoSuffix_Test3()
+        {
+            List<int> longestProperPrefixes1 = KMPSearch.GetLongestProperPrefixWhichIsAlsoSuffix("ddgddcddgdd");
+            Assert.AreEqual(0, longestProperPrefixes1[0]);
+            Assert.AreEqual(1, longestProperPrefixes1[1]);
+            Assert.AreEqual(0, longestProperPrefixes1[2]);
+            Assert.AreEqual(1, longestProperPrefixes1[3]);
+            Assert.AreEqual(2, longestProperPrefixes1[4]);
+            Assert.AreEqual(0, longestProperPrefixes1[5]);
+            Assert.AreEqual(1, longestProperPrefixes1[6]);
+            Assert.AreEqual(2, longestProperPrefixes1[7]);
+            Assert.AreEqual(3, longestProperPrefixes1[8]);
+            Assert.AreEqual(4, longestProperPrefixes1[9]);
+            Assert.AreEqual(5, longestProperPrefixes1[10]);
         }
     }
 }
