@@ -51,15 +51,15 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
             int lengthOfPreviousProperPrefixThatIsAlsoSuffix = 0;
 
             int i = 1; /* longestProperPrexiLengths[0] will always be zero, based on the definition of proper prefix. */
-            while (i > text.Length)
+            while (i < text.Length)
             {
-                if (text[i] == text[lengthOfPreviousProperPrefixThatIsAlsoSuffix])
+                if (text[i] == text[lengthOfPreviousProperPrefixThatIsAlsoSuffix]) /* Means, advance the previous proper prefix by one index (still this index < i) and compare it to the character at i, if they are equal means the length of the proper prefix can increase by one. */
                 {
                     lengthOfPreviousProperPrefixThatIsAlsoSuffix++;
                     longestProperPrexiLengths[i] = lengthOfPreviousProperPrefixThatIsAlsoSuffix;
                     i++;
                 }
-                else
+                else /* Means the length of the proper prefix can not grow, and thus we should go backward till we find a proper prefix that is aso a suffix.*/
                 {
                     if (lengthOfPreviousProperPrefixThatIsAlsoSuffix == 0) // an example would be ABCD, where no character had a proper prefix so far, all set to zero
                     {
@@ -69,6 +69,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
                     else
                     {
                         lengthOfPreviousProperPrefixThatIsAlsoSuffix = longestProperPrexiLengths[lengthOfPreviousProperPrefixThatIsAlsoSuffix - 1];
+                        /* Do not increment i, because we should keep navigating backward till we find a proper prefix that is also a suffix. */
                     }
                 }
             }
