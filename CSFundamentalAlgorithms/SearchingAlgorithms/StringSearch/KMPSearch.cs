@@ -69,7 +69,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
                     else
                     {
                         lengthOfPreviousProperPrefixThatIsAlsoSuffix = longestProperPrexiLengths[lengthOfPreviousProperPrefixThatIsAlsoSuffix - 1];
-                        /* Do not increment i, because we should keep navigating backward till we find a proper prefix that is also a suffix. */
+                        /* Do not increment i, because we should keep navigating backward till we find a proper prefix that is also a suffix. or get to a point where the length reaches 0, and then we set the length of proper prefix for a text ending at i, also to zero, which means we could not find any sub pattern starting at index 0, that could also be a suffix for text ending at i.*/
                     }
                 }
             }
