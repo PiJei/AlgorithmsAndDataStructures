@@ -29,10 +29,18 @@ namespace CSFundamentalAlgorithmsTests.SearchingAlgorithmsTests.StringSearchTest
         [TestMethod]
         public void KMPSearch_GetLongestProperPrefixWhichIsAlsoSuffix_Test()
         {
-            List<int> longestProperPrefixes1 = KMPSearch.GetLongestProperPrefixWhichIsAlsoSuffix("aa");
+            List<int> longestProperPrefixes1 = KMPSearch.GetLongestProperPrefixWhichIsAlsoSuffix("aaaabcbaab");
             Assert.AreEqual(0, longestProperPrefixes1[0]);
             Assert.AreEqual(1, longestProperPrefixes1[1]);
-
+            Assert.AreEqual(2, longestProperPrefixes1[2]);
+            Assert.AreEqual(3, longestProperPrefixes1[3]);
+            Assert.AreEqual(0, longestProperPrefixes1[4]);
+            Assert.AreEqual(0, longestProperPrefixes1[5]);
+            Assert.AreEqual(0, longestProperPrefixes1[6]);
+            Assert.AreEqual(1, longestProperPrefixes1[7]);
+            Assert.AreEqual(2, longestProperPrefixes1[8]);
+            Assert.AreEqual(0, longestProperPrefixes1[9]);
         }
     }
 }
+
