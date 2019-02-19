@@ -36,7 +36,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
         }*/
 
         /// <summary>
-        /// For each subpattern in text, ending at position (i)-0-based, computes the length of the longest proper prefix of text[0:i] such that it is also a suffix of text[0:i]
+        /// For each sub pattern in text, ending at position (i)-0-based, computes the length of the longest proper prefix of text[0:i] such that it is also a suffix of text[0:i]
         /// A proper prefix of a string is any prefix that is not equal to the string itself. for example for string = kmp: '', k, km are 3 proper prefixes. Note that they all start at index 0 
         /// A suffix of a string is any suffix. for example for string kmp: p, mp, kmp, '' are 4 suffixes.all end at index 2 . m is not a suffix. 
         /// </summary>
@@ -59,7 +59,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
                 }
                 else
                 {
-                    if (lengthOfPreviousProperPrefixThatIsAlsoSuffix == 0) // an example would be ABCD, where no charater had a proper prefix so far, all set to zero
+                    if (lengthOfPreviousProperPrefixThatIsAlsoSuffix == 0) // an example would be ABCD, where no character had a proper prefix so far, all set to zero
                     {
                         longestProperPrexiLengths[i] = 0;
                         i++;
