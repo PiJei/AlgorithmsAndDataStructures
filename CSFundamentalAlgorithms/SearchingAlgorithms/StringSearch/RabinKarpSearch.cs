@@ -17,8 +17,6 @@
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// TODO: Shall make all the search classes have the same style: either be instantiated, or not, or provide good reasons why each design choice
-
 namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
 {
     public class RabinKarpSearch

@@ -16,6 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch;
 using System.Collections.Generic;
@@ -26,7 +27,7 @@ namespace CSFundamentalAlgorithmsTests.SearchingAlgorithmsTests.StringSearchTest
     public class NaiveSearchTests
     {
         [TestMethod]
-        public void NaiveSearch_Search()
+        public void NaiveSearch_Search_Test()
         {
             Assert.AreEqual(-1, NaiveSearch.Search(string.Empty, string.Empty));
             Assert.AreEqual(0, NaiveSearch.Search("a", string.Empty));
