@@ -98,7 +98,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
                     longestProperPrexiLengths[i] = lengthOfPreviousProperPrefixThatIsAlsoSuffix;
                     i++;
                 }
-                else /* Means the length of the proper prefix can not grow, and thus we should go backward till we find a proper prefix that is aso a suffix.*/
+                else /* Means the length of the proper prefix can not grow, and thus we should go backward till we find a proper prefix that is also a suffix.*/
                 {
                     if (lengthOfPreviousProperPrefixThatIsAlsoSuffix == 0) // an example would be ABCD, where no character had a proper prefix so far, all set to zero
                     {
