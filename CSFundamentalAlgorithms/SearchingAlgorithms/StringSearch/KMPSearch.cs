@@ -25,8 +25,9 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
     public class KMPSearch
     {
         /// <summary>
-        /// Implements KMP search = Knuth-Morris-Pratt algorithm for searching a substring in a string, using proper prefixes, and pre processing of the subString.. 
+        /// Implements KMP search = Knuth-Morris-Pratt algorithm for searching a substring in a string, using proper prefixes, and preprocessing of the subString.. 
         /// The idea: while searching for the subString in text, we already 'have seen' some characters in text, so shall not re-check if they match with parts of the subString.
+        /// When compared to Naive algorithm, whereas at each internal iteration, we rest j to zero, here we do not always reset j to zero, the value j gets set to depends on its prefixes. 
         /// </summary>
         /// <param name= "text">The parent string in which we are searching for a subString.</param>
         /// <param name= "subString">The string we want to find in parent string (text).</param>
@@ -45,21 +46,23 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
             {
                 if (text[i] == subString[j])
                 {
-                    i++;
+                    i++; /* Continue incrementing i and j as long as characters match. */
                     j++;
                 }
 
-                if (j == subString.Length)
+                if (j == subString.Length) /* Means subString is matched with text [i-subString.Length, i-1]*/
                 {
                     indexes.Add(i - subString.Length);
-                    j = longestProperPrefixLengths[j - 1];
+
+                    /* Since we are after all occurrences of subString continue by changing j (in naive approach after each match, this would be set to zero. )*/
+                    j = longestProperPrefixLengths[j - 1]; /* Label (A) */
                 }
 
-                else if (i < text.Length && text[i] != subString[j])
+                else if (text[i] != subString[j] && i < text.Length) /* When there is a mismatch stop and go backward in subString. */
                 {
                     if (j != 0)
                     {
-                        j = longestProperPrefixLengths[j - 1];
+                        j = longestProperPrefixLengths[j - 1]; /* Label (B)  == Label (A) */
                     }
                     else /* j is reset to zero at this stage, and a one-to-one sequential search of subString in text, starting at index i, starts again. */
                     {
