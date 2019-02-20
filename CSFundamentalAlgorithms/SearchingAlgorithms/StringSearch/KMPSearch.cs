@@ -48,17 +48,16 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
                 {
                     i++; /* Continue incrementing i and j as long as characters match. */
                     j++;
+
+                    if (j == subString.Length) /* Means subString is matched with text [i-subString.Length, i-1]*/
+                    {
+                        indexes.Add(i - subString.Length);
+
+                        /* Since we are after all occurrences of subString continue by changing j (in naive approach after each match, this would be set to zero. )*/
+                        j = longestProperPrefixLengths[j - 1]; /* Label (A) */
+                    }
                 }
-
-                if (j == subString.Length) /* Means subString is matched with text [i-subString.Length, i-1]*/
-                {
-                    indexes.Add(i - subString.Length);
-
-                    /* Since we are after all occurrences of subString continue by changing j (in naive approach after each match, this would be set to zero. )*/
-                    j = longestProperPrefixLengths[j - 1]; /* Label (A) */
-                }
-
-                else if (text[i] != subString[j] && i < text.Length) /* When there is a mismatch stop and go backward in subString. */
+                else if (text[i] != subString[j]) /* When there is a mismatch stop and go backward in subString. */
                 {
                     if (j != 0)
                     {
