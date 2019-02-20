@@ -26,7 +26,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
 
         /// <summary>
         /// Maps every character in the given string to its last index in the string. 
-        /// An example use is for bad character lookup in Boyer-Moore search algorithm.
+        /// An example use is Boyer-Moore search algorithm for re-alignment of the pattern being searched for when a bad character is found in in the string that is being searched in.
         /// </summary>
         /// <returns>A mapping of all the characters in the given string to their last index in the string. </returns>
         public static Dictionary<char, int> MapCharToLastIndex(string text)
