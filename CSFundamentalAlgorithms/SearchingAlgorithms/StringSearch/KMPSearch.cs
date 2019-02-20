@@ -57,15 +57,15 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
                         j = longestProperPrefixLengths[j - 1]; /* Label (A) */
                     }
                 }
-                else if (text[i] != subString[j]) /* When there is a mismatch, stop and go backward in subString. Note: always going forward in the text (main string) */
+                else  /* When there is a mismatch, stop and go backward in subString. Note: always going forward in the text (main string) */
                 {
-                    if (j != 0)
-                    {
-                        j = longestProperPrefixLengths[j - 1]; /* Label (B)  == Label (A) */
-                    }
-                    else /* j is reset to zero at this stage, and a one-to-one sequential search of subString in text, starting at index i, starts again. */
+                    if (j == 0) /* means we have navigated backward so much that j is reset to zero at this stage [reset to naive approach], and a one-to-one sequential search of subString in text, starting at index i, starts again. */
                     {
                         i++;
+                    }
+                    else
+                    {
+                        j = longestProperPrefixLengths[j - 1]; /* Label (B)  == Label (A) */
                     }
                 }
             }
