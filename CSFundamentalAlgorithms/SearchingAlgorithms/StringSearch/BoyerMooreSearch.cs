@@ -34,13 +34,17 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
         {
             List<int> indexes = new List<int>();
 
+            /* For readability in the code: */
+            int n = text.Length;
+            int m = subString.Length;
+
             /* Preprocessing step for subString */
             Dictionary<char, int> subStringMap = MapCharToLastIndex(subString);
 
             int i = 0;  /* Is the index over text. */
-            while (i <= text.Length - subString.Length)
+            while (i <= n - m)
             {
-                int j = subString.Length - 1; /* Starting index over subString - notice that we match the string backwards.*/
+                int j = m - 1; /* Starting index over subString - notice that we match the string backwards.*/
                 while (j >= 0 && text[i + j] == subString[j]) /* Continue moving backward on subString as long as it matches the text.*/
                 {
                     j--;
@@ -50,11 +54,11 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
                 {
                     indexes.Add(i); /* Add the starting index of the text, from which a match for subString is found. */
 
-                    if (i + subString.Length < text.Length) /* Get the next character in text*/
+                    if (i + m < n) /* Get the next character in text*/
                     {
-                        char nextChar = text[i + subString.Length]; /* This can also be a bad character, if it does not exist in the map, and we should skip it. */
+                        char nextChar = text[i + m]; /* This can also be a bad character, if it does not exist in the map, and we should skip it. */
                         int lastIndexOfNextCharInSubString = subStringMap.ContainsKey(nextChar) ? subStringMap[nextChar] : -1;
-                        i = i + subString.Length - lastIndexOfNextCharInSubString;
+                        i = i + m - lastIndexOfNextCharInSubString;
                     }
                     else
                     {
