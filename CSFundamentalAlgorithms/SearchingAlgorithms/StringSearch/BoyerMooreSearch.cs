@@ -42,10 +42,11 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
             /* Preprocessing step for subString */
             Dictionary<char, int> subStringMap = MapCharToLastIndex(subString); /* Last index is needed, because otherwise if shifted the pattern along the text to right a lot (with the first index) we could miss some potential matches. */
 
-            int i = m - 1;  /* Is the index over text. Setting to (m-1) because BoyerMoore is tail-based search*/
-            while (i < n) /* Since this is a tail-based search, i can even be n-1, hence the loop condition.*/
+            int i = m - 1;  /* Is the index over text. Setting to (m-1) because BoyerMoore is tail-based search. */
+
+            while (i < n) /* Since this is a tail-based search, i can even be (n-1), hence the loop condition.*/
             {
-                int j = m - 1; /* Starting index over subString - notice that we match the string backwards.*/
+                int j = m - 1; /* Starting index over subString, notice that we match the string backwards.*/
                 while (j >= 0 && i >= 0 && text[i] == subString[j]) /* Continue moving backward on subString and text as long as the characters match.*/
                 {
                     j--;
@@ -54,20 +55,26 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
 
                 if (j < 0) /* this means a match is found. */
                 {
-                    /*At this point i is set to the (matched-index - 1), so adjust it */
+                    /*At this point i has gone backward such that it is set to the (matched-index - 1), so adjust it to point to matched-index. */
                     i = i + 1;
 
-                    /* Add the index at text, starting from which a match for subString is found. */
+                    /* Store i, as one of the answers, starting from which a match for subString is found. */
                     indexes.Add(i);
 
+                    /* Compute the potential new tail index on text.*/
                     int indexOfNextUnVisitedCharOnText = i + m;
-                    if (indexOfNextUnVisitedCharOnText < n) /* Get the next unseen character in text*/
+
+                    /* Shift i forward. */
+                    i = indexOfNextUnVisitedCharOnText;
+
+                    /* See if index i can be shifted forward even more, meaning we can skip some characters over text. */
+                    if (i < n) /* Get the next unseen character in text*/
                     {
-                        char nextUnVisitedCharOnText = text[indexOfNextUnVisitedCharOnText]; /* This can also be a bad character, if it does not exist in the map, and we should skip it. */
+                        char nextUnVisitedCharOnText = text[i]; /* This can also be a bad character, if it does not exist in the map, and we should skip it. */
                         int lastIndexOfNextCharInSubString = subStringMap.ContainsKey(nextUnVisitedCharOnText) ? subStringMap[nextUnVisitedCharOnText] : -1;
 
-                        /* Shift i by length of subString, as the search is tail based. */
-                        i = indexOfNextUnVisitedCharOnText + ((m - 1) - lastIndexOfNextCharInSubString);
+                        /* Shift i further by length of subString, as the search is tail based. */
+                        i = i + ((m - 1) - lastIndexOfNextCharInSubString);
                     }
                     else
                     {
@@ -79,7 +86,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
                     // text[i] is the bad character.
                     char badChar = text[i];
                     int lastIndexOfBadCharInSubString = subStringMap.ContainsKey(badChar) ? subStringMap[badChar] : -1;
-                    i = i + ((m - 1) - lastIndexOfBadCharInSubString); /* Notice that the text[i] in the next round will be compared to subString[m-1], that is why we need to slide i by this m uch*/
+                    i = i + ((m - 1) - lastIndexOfBadCharInSubString); /* Notice that the text[i] in the next round will be compared to subString[m-1], that is why we need to slide i by this much to point to tail of the substring in text. */
                 }
             }
 
