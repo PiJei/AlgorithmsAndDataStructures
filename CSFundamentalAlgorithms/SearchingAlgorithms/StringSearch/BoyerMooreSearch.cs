@@ -18,11 +18,54 @@
  */
 
 using System.Collections.Generic;
+using System;
 
 namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
 {
     public class BoyerMooreSearch
     {
+        List<int> Search_BasedOnBadCharacterShiftOnly(string text, string subString)
+        {
+            List<int> indexes = new List<int>();
+
+            /* Preprocessing step for subString */
+            Dictionary<char, int> subStringMap = MapCharToLastIndex(subString);
+
+            int i = 0;  /* Is the index over text. */
+            while (i < text.Length - subString.Length)
+            {
+                int j = subString.Length - 1; /* Starting index over subString - notice that we match the string backwards.*/
+                while (text[i + j] == subString[j]) /* Continue moving backward on subString as long as it matches the text.*/
+                {
+                    j--;
+                }
+
+                if (j < 0) /* this means a match is found. */
+                {
+                    indexes.Add(i); /* Add the starting index of the text, from which a match for subString is found. */
+
+                    if (i + subString.Length < text.Length) /* Get the next character in text*/
+                    {
+                        char nextChar = text[i + subString.Length];
+                        int lastIndexOfNextCharInSubString = subStringMap.ContainsKey(nextChar) ? subStringMap[nextChar] : -1;
+                        i = i + subString.Length - lastIndexOfNextCharInSubString;
+                    }
+                    else
+                    {
+                        i++;
+                    }
+                    break;
+                }
+                else /* this means a mis match is observed. The mismatched character in text is called a BadCharacter */
+                {
+                    char nextChar = text[i + j];
+                    int lastIndexOfNextCharInSubString = subStringMap.ContainsKey(nextChar) ? subStringMap[nextChar] : -1;
+                    i = Math.Max(j - lastIndexOfNextCharInSubString, 1);
+                }
+            }
+
+            return indexes;
+        }
 
         /// <summary>
         /// Maps every character in the given string to its last index in the string. 
