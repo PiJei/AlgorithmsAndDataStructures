@@ -17,15 +17,27 @@
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CSFundamentalAlgorithmsTests.SearchingAlgorithmsTests.StringSearchTests
 {
     [TestClass]
     public class BoyerMooreSearchTests
     {
+        [TestMethod]
+        public void BoyerMooreSearch_Search_Test()
+        {
+            Assert.AreEqual(1, BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly("abcd", "bc")[0]);
+            Assert.AreEqual(2, BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly("abcd", "cd")[0]);
+            Assert.AreEqual(12, BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly("aaaaaakcdkaaaabcd", "aab")[0]);
+            Assert.IsTrue(BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly("abcaab", "a").SequenceEqual(new List<int> { 0, 3, 4 }));
+            Assert.IsTrue(BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly("abcaab", "abc").SequenceEqual(new List<int> { 0 }));
+            Assert.AreEqual(0, BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly("aaabbbdaacbb", "kjh").Count);
+        }
+
         [TestMethod]
         public void BoyerMooreSearch_MapCharToLastIndex_Test()
         {
