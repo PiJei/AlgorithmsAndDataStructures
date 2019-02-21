@@ -30,6 +30,9 @@ namespace CSFundamentalAlgorithmsTests.SearchingAlgorithmsTests.StringSearchTest
         [TestMethod]
         public void BoyerMooreSearch_Search_Test()
         {
+            Assert.IsTrue(BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly("abd", "abdfgh").SequenceEqual(new List<int> {})); /* Testing the case where substring is longer than string. */
+            Assert.IsTrue(BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly("gcaatgcctatgtgacc", "tatgtg").SequenceEqual(new List<int> { 8 })); /* Example taken from geeks for geeks. */
+            Assert.IsTrue(BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly("aaaa", "aa").SequenceEqual(new List<int> { 0, 1, 2 }));
             Assert.AreEqual(1, BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly("abcd", "bc")[0]);
             Assert.AreEqual(2, BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly("abcd", "cd")[0]);
             Assert.AreEqual(12, BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly("aaaaaakcdkaaaabcd", "aab")[0]);

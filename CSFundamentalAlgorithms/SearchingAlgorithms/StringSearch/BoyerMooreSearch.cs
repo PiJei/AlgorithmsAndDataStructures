@@ -26,6 +26,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
     {
         /// <summary>
         /// Implements BoyerMoore search algorithm using only the bad character heuristic (in the main version  both bad character and good suffix are used to skip over text.)
+        /// The idea is to do tail based search, and skip over indexes in text to a proper tail, at which there is a chance of match. 
         /// </summary>
         /// <param name= "text">The parent string in which we are searching for a subString.</param>
         /// <param name= "subString">The string we want to find in parent string (text).</param>
@@ -39,37 +40,46 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
             int m = subString.Length;
 
             /* Preprocessing step for subString */
-            Dictionary<char, int> subStringMap = MapCharToLastIndex(subString);
+            Dictionary<char, int> subStringMap = MapCharToLastIndex(subString); /* Last index is needed, because otherwise if shifted the pattern along the text to right a lot (with the first index) we could miss some potential matches. */
 
-            int i = 0;  /* Is the index over text. */
-            while (i <= n - m)
+            int i = m - 1;  /* Is the index over text. Setting to (m-1) because BoyerMoore is tail-based search*/
+            while (i < n) /* Since this is a tail-based search, i can even be n-1, hence the loop condition.*/
             {
                 int j = m - 1; /* Starting index over subString - notice that we match the string backwards.*/
-                while (j >= 0 && text[i + j] == subString[j]) /* Continue moving backward on subString as long as it matches the text.*/
+                while (j >= 0 && i >= 0 && text[i] == subString[j]) /* Continue moving backward on subString and text as long as the characters match.*/
                 {
                     j--;
+                    i--;
                 }
 
                 if (j < 0) /* this means a match is found. */
                 {
-                    indexes.Add(i); /* Add the starting index of the text, from which a match for subString is found. */
+                    /*At this point i is set to the (matched-index - 1), so adjust it */
+                    i = i + 1;
 
-                    if (i + m < n) /* Get the next character in text*/
+                    /* Add the index at text, starting from which a match for subString is found. */
+                    indexes.Add(i);
+
+                    int indexOfNextUnVisitedCharOnText = i + m;
+                    if (indexOfNextUnVisitedCharOnText < n) /* Get the next unseen character in text*/
                     {
-                        char nextChar = text[i + m]; /* This can also be a bad character, if it does not exist in the map, and we should skip it. */
-                        int lastIndexOfNextCharInSubString = subStringMap.ContainsKey(nextChar) ? subStringMap[nextChar] : -1;
-                        i = i + m - lastIndexOfNextCharInSubString;
+                        char nextUnVisitedCharOnText = text[indexOfNextUnVisitedCharOnText]; /* This can also be a bad character, if it does not exist in the map, and we should skip it. */
+                        int lastIndexOfNextCharInSubString = subStringMap.ContainsKey(nextUnVisitedCharOnText) ? subStringMap[nextUnVisitedCharOnText] : -1;
+
+                        /* Shift i by length of subString, as the search is tail based. */
+                        i = indexOfNextUnVisitedCharOnText + ((m - 1) - lastIndexOfNextCharInSubString);
                     }
                     else
                     {
-                        i = i + 1;
+                        break;
                     }
                 }
-                else /* this means a mis match is observed. The mismatched character in text is called a BadCharacter */
+                else /* this means a bad character is observed in text. The mismatched character in text is called a BadCharacter */
                 {
-                    char nextChar = text[i + j];
-                    int lastIndexOfNextCharInSubString = subStringMap.ContainsKey(nextChar) ? subStringMap[nextChar] : -1;
-                    i = i + Math.Max(j - lastIndexOfNextCharInSubString, 1);
+                    // text[i] is the bad character.
+                    char badChar = text[i];
+                    int lastIndexOfBadCharInSubString = subStringMap.ContainsKey(badChar) ? subStringMap[badChar] : -1;
+                    i = i + ((m - 1) - lastIndexOfBadCharInSubString); /* Notice that the text[i] in the next round will be compared to subString[m-1], that is why we need to slide i by this m uch*/
                 }
             }
 
