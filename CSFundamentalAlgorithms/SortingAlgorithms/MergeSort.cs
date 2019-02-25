@@ -31,6 +31,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// <param name="values">Specifies the list of integer values to be sorted. </param>
         /// <param name="lowIndex">Specifies the lower index in the array, inclusive. </param>
         /// <param name="highIndex">Specifies the higher index in the array, inclusive. </param>
+        [Algorithm("Sort", "MergeSort")]
         public static void Sort_Recursively<T>(List<T> values, int lowIndex, int highIndex) where T : IComparable<T>
         {
             if (lowIndex < highIndex)

@@ -28,6 +28,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// Sorts the elements in an integer array using heap sort algorithm in to an ascending order. 
         /// </summary>
         /// <param name="values"></param>
+        [Algorithm("Sort", "HeapSort")]
         public static void Sort_Ascending(List<int> values)
         {
             // 1- re-arrange the elements in the integer array into a max heap. 
