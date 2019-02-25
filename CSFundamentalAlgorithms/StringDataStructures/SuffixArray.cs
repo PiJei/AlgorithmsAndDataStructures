@@ -43,7 +43,9 @@ namespace CSFundamentalAlgorithms.StringDataStructures
                 suffixes.Add(new StringSuffix(i, firstChar, secondChar));
             }
 
+            /* Sort suffixes using the first 2 characters. */
             SortSuffixes(suffixes, 0, suffixes.Count);
+
 
             return suffixArray;
         }
@@ -57,7 +59,7 @@ namespace CSFundamentalAlgorithms.StringDataStructures
         /// <param name="highIndex"></param>
         public static void SortSuffixes(List<StringSuffix> array, int lowIndex, int highIndex)
         {
-            if (lowIndex <= highIndex)
+            if (lowIndex < highIndex)
             {
                 int middleIndex = (lowIndex + highIndex) / 2;
                 SortSuffixes(array, lowIndex, middleIndex);
