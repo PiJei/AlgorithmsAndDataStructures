@@ -32,6 +32,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms
         /// <param name="values">Specifies a list of integers.</param>
         /// <param name="searchValue">Specifies the value the method is searching for. </param>
         /// <returns>The index of the searchValue in the array values, and -1 if it does not exist in the array, </returns>
+        [Algorithm("Search", "LinearSearch")]
         public static int Search(List<int> values, int searchValue)
         {
             for (int i = 0; i < values.Count; i++)

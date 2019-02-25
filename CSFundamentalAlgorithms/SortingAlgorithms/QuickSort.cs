@@ -29,6 +29,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// <param name="values">Specifies the list of integer values to be sorted. </param>
         /// <param name="lowIndex">Specifies the lower index in the array, inclusive. </param>
         /// <param name="highIndex">Specifies the higher index in the array, inclusive. </param>
+        [Algorithm("Sort", "QuickSort")]
         public static void Sort_Recursively(List<int> values, int lowIndex, int highIndex)
         {
             if (lowIndex < highIndex)
