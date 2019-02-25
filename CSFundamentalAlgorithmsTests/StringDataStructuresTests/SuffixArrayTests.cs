@@ -19,7 +19,6 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentalAlgorithms.StringDataStructures;
-using System.Collections.Generic;
 
 namespace CSFundamentalAlgorithmsTests.StringDataStructuresTests
 {
@@ -29,14 +28,13 @@ namespace CSFundamentalAlgorithmsTests.StringDataStructuresTests
         [TestMethod]
         public void StringSuffix_SortSuffixes_Test()
         {
-            List<StringSuffix> suffixes = new List<StringSuffix>();
-            suffixes.Add(new StringSuffix(0, 'b', 'a'));
-            suffixes.Add(new StringSuffix(1, 'a', 'n'));
-            suffixes.Add(new StringSuffix(2, 'n', 'a'));
-            suffixes.Add(new StringSuffix(3, 'a', 'n'));
-            suffixes.Add(new StringSuffix(4, 'n', 'a'));
-            suffixes.Add(new StringSuffix(5, 'a', '\0'));
-
+            int[] suffixArray = SuffixArray.Build("banana");
+            Assert.AreEqual(5, suffixArray[0]);
+            Assert.AreEqual(3, suffixArray[1]);
+            Assert.AreEqual(1, suffixArray[2]);
+            Assert.AreEqual(0, suffixArray[3]);
+            Assert.AreEqual(4, suffixArray[4]);
+            Assert.AreEqual(2, suffixArray[5]);
         }
     }
 }

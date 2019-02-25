@@ -31,10 +31,13 @@ namespace CSFundamentalAlgorithms.StringDataStructures
     [DataStructure("SuffixArray")]
     public class SuffixArray
     {
-        public List<int> Build(string text)
+        /// <summary>
+        /// TODO: Provide an intuitive description for this algorithm. 
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        public static int[] Build(string text)
         {
-            List<int> suffixArray = new List<int>(); // length is text.Length
-
             List<StringSuffix> suffixes = new List<StringSuffix>();
             for (int i = 0; i < text.Length; i++)
             {
@@ -44,11 +47,56 @@ namespace CSFundamentalAlgorithms.StringDataStructures
             }
 
             /* Sort suffixes using the first 2 characters. */
-            MergeSort.Sort_Recursively(suffixes, 0, suffixes.Count);
+            MergeSort.Sort_Recursively(suffixes, 0, suffixes.Count - 1);
 
+            int[] indexes = new int[text.Length];
+            /* Comparing suffixes based on the 4, 8, ... characters, ... */
+            for (int k = 4; k < 2 * text.Length; k = k * 2)
+            {
+                int rank = suffixes[0].RankPair[0];
+                suffixes[0].RankPair[0] = 0; /* reset the first rank of the first suffix in the list to zero. */
+                indexes[suffixes[0].StartIndex] = 0;
 
+                /* Update the first rank of all the suffixes, which depends on the ranks of their immediately preceding suffix. */
+                for (int i = 1; i < text.Length; i++)
+                {
+                    
+                    if (suffixes[i].RankPair[0] == rank && suffixes[i].RankPair[1] == suffixes[i - 1].RankPair[1])
+                    {
+                        rank = suffixes[i].RankPair[0];
+                        suffixes[i].RankPair[0] = suffixes[i - 1].RankPair[0];
+                    }
+                    else
+                    {
+                        rank = suffixes[i].RankPair[0];
+                        suffixes[i].RankPair[0] = suffixes[i - 1].RankPair[0] + 1;
+                    }
 
+                    indexes[suffixes[i].StartIndex] = i;
+                }
 
+                /* Update the second rank of all the suffixes. */
+                for (int i = 0; i < text.Length; i++)
+                {
+                    int nextIndex = k / 2 + suffixes[i].StartIndex;
+                    if (nextIndex < text.Length)
+                    {
+                        suffixes[i].RankPair[1] = suffixes[indexes[nextIndex]].RankPair[0];
+                    }
+                    else
+                    {
+                        suffixes[i].RankPair[1] = -1;
+                    }
+                }
+
+                MergeSort.Sort_Recursively(suffixes, 0, suffixes.Count - 1);
+            }
+
+            int[] suffixArray = new int[text.Length];
+            for (int i = 0; i < text.Length; i++)
+            {
+                suffixArray[i] = suffixes[i].StartIndex;
+            }
 
             return suffixArray;
         }
