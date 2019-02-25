@@ -26,6 +26,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
     /// <summary>
     /// Implements a Min Binary Heap, and its main operations.
     /// </summary>
+    [DataStructure("MinBinaryHeap")]
     public class MinBinaryHeap : BinaryHeapBase
     {
         public MinBinaryHeap(List<int> array) : base(array)

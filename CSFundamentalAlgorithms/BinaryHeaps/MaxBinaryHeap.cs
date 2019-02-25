@@ -28,6 +28,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
     /// <summary>
     /// Implements a Max Binary Heap, and its main operations.
     /// </summary>
+    [DataStructure("MaxBinaryHeap")]
     public class MaxBinaryHeap : BinaryHeapBase
     {
         public MaxBinaryHeap(List<int> array) : base(array)

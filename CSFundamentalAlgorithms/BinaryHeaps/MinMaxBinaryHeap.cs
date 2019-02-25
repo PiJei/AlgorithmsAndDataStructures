@@ -26,6 +26,7 @@ namespace CSFundamentalAlgorithms.BinaryHeaps
     /// <summary>
     /// Implements a MinMaxBinaryHeap and its main operations. Notice that a MaxMinHeapBinaryHeap can be implemented in a very similar way.
     /// </summary>
+    [DataStructure("MinMaxBinaryHeap")]
     public class MinMaxBinaryHeap : BinaryHeapBase
     {
         public MinMaxBinaryHeap(List<int> array) : base(array)
