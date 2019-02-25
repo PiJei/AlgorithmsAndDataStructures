@@ -19,7 +19,6 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentalAlgorithms.StringDataStructures;
-using System;
 
 namespace CSFundamentalAlgorithmsTests.StringDataStructuresTests
 {
@@ -27,7 +26,7 @@ namespace CSFundamentalAlgorithmsTests.StringDataStructuresTests
     public class StringSuffixTests
     {
         [TestMethod]
-        public void StringSuffix_Compare_Test()
+        public void StringSuffix_Comparison_Test()
         {
             var suffix1 = new StringSuffix(0, 'a', 'b');
             var suffix2 = new StringSuffix(0, 'a', 'b');
@@ -46,6 +45,16 @@ namespace CSFundamentalAlgorithmsTests.StringDataStructuresTests
             Assert.AreEqual(-1, suffix1.CompareTo(suffix4));
             Assert.AreEqual(-1, suffix2.CompareTo(suffix4));
             Assert.AreEqual(-1, suffix3.CompareTo(suffix4));
+
+            Assert.IsTrue(suffix1 == suffix2);
+            Assert.IsTrue(suffix1 != suffix3);
+            Assert.IsTrue(suffix1 != suffix4);
+
+            Assert.IsTrue(suffix1 < suffix3);
+            Assert.IsTrue(suffix1 <= suffix3);
+
+            Assert.IsTrue(suffix4 > suffix3);
+            Assert.IsTrue(suffix4 >= suffix3);
         }
     }
 }
