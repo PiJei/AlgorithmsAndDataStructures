@@ -19,6 +19,8 @@
 using System;
 using System.Collections.Generic;
 
+// TODO Make all sorting algorithms generic
+
 namespace CSFundamentalAlgorithms.SortingAlgorithms
 {
     public partial class MergeSort

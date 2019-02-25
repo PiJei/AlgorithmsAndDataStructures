@@ -37,13 +37,6 @@ namespace CSFundamentalAlgorithmsTests.StringDataStructuresTests
             suffixes.Add(new StringSuffix(4, 'n', 'a'));
             suffixes.Add(new StringSuffix(5, 'a', '\0'));
 
-            SuffixArray.SortSuffixes(suffixes, 0, 5);
-            Assert.AreEqual(5, suffixes[0].StartIndex);
-            Assert.AreEqual(1, suffixes[1].StartIndex);
-            Assert.AreEqual(3, suffixes[2].StartIndex);
-            Assert.AreEqual(0, suffixes[3].StartIndex);
-            Assert.AreEqual(2, suffixes[4].StartIndex);
-            Assert.AreEqual(4, suffixes[5].StartIndex);
         }
     }
 }
