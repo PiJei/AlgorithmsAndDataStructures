@@ -32,6 +32,8 @@ Content:
  
  - String Search Algorithms   
     - RabinKarpSearch
+    - KMPSearch
+    - BoyerMooreSearch
     
   
  - Graphs:
