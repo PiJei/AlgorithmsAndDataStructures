@@ -22,12 +22,12 @@ using System;
 namespace CSFundamentalAlgorithms
 {
     [AttributeUsage(AttributeTargets.Class| AttributeTargets.Method, AllowMultiple = true )]
-    public class TopicAttribute : Attribute
+    public class DataStructureAttribute : Attribute
     {
-        public string Topic { get; private set; }
-        public TopicAttribute(string topic)
+        public string Name { get; private set; }
+        public DataStructureAttribute(string name)
         {
-            Topic = topic;
+            Name = name;
         }
     }
 }

@@ -23,8 +23,7 @@ namespace CSFundamentalAlgorithms
     /// Implements SuffixArray data structure. A suffix array of an string is an array of integers that contains the starting index of all suffixes of the string in alphabetically sorted order. 
     /// For example for string 'data' , where suffixes are : 'data', 'ata', 'ta', 'a' the suffix array is [3, 1, 0, 2]
     /// </summary>
-    [Topic("DataStructures")]
-    [Topic("SuffixArray")]
+    [DataStructure("SuffixArray")]
     public class SuffixArray
     {
 
