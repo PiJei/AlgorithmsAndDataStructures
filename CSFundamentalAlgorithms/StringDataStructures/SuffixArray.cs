@@ -18,7 +18,7 @@
  */
 
 using System.Collections.Generic;
-using System;
+using CSFundamentalAlgorithms.SortingAlgorithms;
 
 // TODO: Add a linear-time implementation of suffix array. 
 
@@ -44,72 +44,13 @@ namespace CSFundamentalAlgorithms.StringDataStructures
             }
 
             /* Sort suffixes using the first 2 characters. */
-            SortSuffixes(suffixes, 0, suffixes.Count);
+            MergeSort.Sort_Recursively(suffixes, 0, suffixes.Count);
+
+
+
 
 
             return suffixArray;
-        }
-
-        /// <summary>
-        /// Implementing a sort using mergeSort.
-        /// TODO: [technical debt] - MergeSort shall be modified to be generic, and operational on all types. 
-        /// </summary>
-        /// <param name="array"></param>
-        /// <param name="lowIndex"></param>
-        /// <param name="highIndex"></param>
-        public static void SortSuffixes(List<StringSuffix> array, int lowIndex, int highIndex)
-        {
-            if (lowIndex < highIndex)
-            {
-                int middleIndex = (lowIndex + highIndex) / 2;
-                SortSuffixes(array, lowIndex, middleIndex);
-                SortSuffixes(array, middleIndex + 1, highIndex);
-                Merge(array, lowIndex, middleIndex, highIndex);
-            }
-        }
-
-        public static void Merge(List<StringSuffix> array, int lowIndex, int middleIndex, int highIndex)
-        {
-            List<StringSuffix> coppyArray = new List<StringSuffix>(array);
-
-            int leftLowIndex = lowIndex;
-            int leftHighIndex = middleIndex;
-
-            int rightLowIndex = middleIndex + 1;
-            int rightHighIndex = highIndex;
-
-            int arraylowIndex = lowIndex;
-
-            int leftHalfCounter = leftLowIndex;
-            int rightHalfCounter = rightLowIndex;
-
-            while(leftHalfCounter <= leftHighIndex && rightHalfCounter <= rightHighIndex)
-            {
-                if(coppyArray[leftHalfCounter] <= coppyArray[rightHalfCounter])
-                {
-                    array[arraylowIndex] = coppyArray[leftHalfCounter];
-                    leftHalfCounter++;
-                }
-                else
-                {
-                    array[arraylowIndex] = coppyArray[rightHalfCounter];
-                    rightHalfCounter++;
-                }
-                arraylowIndex++;
-            }
-
-            while(leftHalfCounter <= leftHighIndex)
-            {
-                array[arraylowIndex] = coppyArray[leftHalfCounter];
-                leftHalfCounter++;
-                arraylowIndex++;
-            }
-            while(rightHalfCounter <= rightHighIndex)
-            {
-                array[arraylowIndex] = coppyArray[rightHalfCounter];
-                rightHalfCounter++;
-                arraylowIndex++;
-            }
         }
     }
 }
