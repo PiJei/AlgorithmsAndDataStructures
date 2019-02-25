@@ -16,8 +16,10 @@
  * You should have received a copy of the GNU General Public License
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+using System;
 using System.Collections.Generic;
+
+// TODO Make all sorting algorithms generic
 
 namespace CSFundamentalAlgorithms.SortingAlgorithms
 {
@@ -29,7 +31,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// <param name="values">Specifies the list of integer values to be sorted. </param>
         /// <param name="lowIndex">Specifies the lower index in the array, inclusive. </param>
         /// <param name="highIndex">Specifies the higher index in the array, inclusive. </param>
-        public static void Sort_Recursively(List<int> values, int lowIndex, int highIndex)
+        public static void Sort_Recursively<T>(List<T> values, int lowIndex, int highIndex) where T : IComparable<T>
         {
             if (lowIndex < highIndex)
             {
@@ -47,10 +49,10 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// <param name="lowIndex">Specifies the lower index in the array, inclusive. </param>
         /// <param name="middleIndex">Specifies the middle index of the array. </param>
         /// <param name="highIndex">Specifies the higher index in the array, inclusive. </param>
-        public static void Merge(List<int> values, int lowIndex, int middleIndex, int highIndex)
+        public static void Merge<T>(List<T> values, int lowIndex, int middleIndex, int highIndex) where T : IComparable<T>
         {
             //Making a copy of the values
-            List<int> valuesOriginal = new List<int>(values);
+            List<T> valuesOriginal = new List<T>(values);
 
             //Inclusive boundaries of the first sub-array
             int low1 = lowIndex;
@@ -71,12 +73,12 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
 
             while (leftHalfCounter <= high1 && rightHalfCounter <= high2)
             {
-                if (valuesOriginal[leftHalfCounter] <= valuesOriginal[rightHalfCounter]) /* Favors left half values over right half values when there are duplicates. */
+                if (valuesOriginal[leftHalfCounter].CompareTo(valuesOriginal[rightHalfCounter]) <= 0) /* Favors left half values over right half values when there are duplicates thus checking for equality as well. */
                 {
                     values[mainArrayCounter] = valuesOriginal[leftHalfCounter];
                     leftHalfCounter++;
                 }
-                else if (valuesOriginal[leftHalfCounter] > valuesOriginal[rightHalfCounter])
+                else
                 {
                     values[mainArrayCounter] = valuesOriginal[rightHalfCounter];
                     rightHalfCounter++;

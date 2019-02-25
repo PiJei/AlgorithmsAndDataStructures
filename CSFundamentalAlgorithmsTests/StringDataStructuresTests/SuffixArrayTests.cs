@@ -18,25 +18,23 @@
  */
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch;
-using System.Collections.Generic;
-using System.Linq;
+using CSFundamentalAlgorithms.StringDataStructures;
 
-namespace CSFundamentalAlgorithmsTests.SearchingAlgorithmsTests.StringSearchTests
+namespace CSFundamentalAlgorithmsTests.StringDataStructuresTests
 {
     [TestClass]
-    public class KMPSearchTests
+    public class SuffixArrayTests
     {
         [TestMethod]
-        public void KMPSearch_Search_Test()
+        public void StringSuffix_SortSuffixes_Test()
         {
-            Assert.AreEqual(1, KMPSearch.Search("abcd", "bc")[0]);
-            Assert.AreEqual(2, KMPSearch.Search("abcd", "cd")[0]);
-            Assert.AreEqual(12, KMPSearch.Search("aaaaaakcdkaaaabcd", "aab")[0]);
-            Assert.IsTrue(KMPSearch.Search("abcaab", "a").SequenceEqual(new List<int> { 0, 3, 4 }));
-            Assert.IsTrue(KMPSearch.Search("abcaab", "abc").SequenceEqual(new List<int> { 0 }));
-            Assert.AreEqual(0, KMPSearch.Search("aaabbbdaacbb", "kjh").Count);
+            int[] suffixArray = SuffixArray.Build("banana");
+            Assert.AreEqual(5, suffixArray[0]);
+            Assert.AreEqual(3, suffixArray[1]);
+            Assert.AreEqual(1, suffixArray[2]);
+            Assert.AreEqual(0, suffixArray[3]);
+            Assert.AreEqual(4, suffixArray[4]);
+            Assert.AreEqual(2, suffixArray[5]);
         }
     }
 }
-
