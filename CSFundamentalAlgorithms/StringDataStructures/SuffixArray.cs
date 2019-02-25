@@ -52,7 +52,7 @@ namespace CSFundamentalAlgorithms.StringDataStructures
 
         /// <summary>
         /// Implementing a sort using mergeSort.
-        /// TODO: MergeSort shall be modified to be generic, and operational on all types. 
+        /// TODO: [technical debt] - MergeSort shall be modified to be generic, and operational on all types. 
         /// </summary>
         /// <param name="array"></param>
         /// <param name="lowIndex"></param>
