@@ -21,8 +21,8 @@ using System.Linq;
 
 namespace CSFundamentalAlgorithms.StringDataStructures
 {
-    [DataStructure("LongestProperPrefixWhichIsAlsoSuffix")]
-    public class LPPS
+    [DataStructure("LengthOfTheLongestProperPrefixWhichIsAlsoSuffix")]
+    public class LLPPS
     {
         /// <summary>
         /// For each sub pattern in text, ending at position (i)-0-based, computes the length of the longest proper prefix of text[0:i] such that it is also a suffix of text[0:i]

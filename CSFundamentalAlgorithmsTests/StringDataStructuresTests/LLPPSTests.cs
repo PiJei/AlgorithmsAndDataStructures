@@ -24,12 +24,12 @@ using System.Collections.Generic;
 namespace CSFundamentalAlgorithmsTests.StringDataStructuresTests
 {
     [TestClass]
-    public class LPPSTests
+    public class LLPPSTests
     {
         [TestMethod]
-        public void LPPS_Build_Test1()
+        public void LLPPS_Build_Test1()
         {
-            List<int> longestProperPrefixes1 = LPPS.Build("aaaabcbaab");
+            List<int> longestProperPrefixes1 = LLPPS.Build("aaaabcbaab");
             Assert.AreEqual(0, longestProperPrefixes1[0]);
             Assert.AreEqual(1, longestProperPrefixes1[1]);
             Assert.AreEqual(2, longestProperPrefixes1[2]);
@@ -43,9 +43,9 @@ namespace CSFundamentalAlgorithmsTests.StringDataStructuresTests
         }
 
         [TestMethod]
-        public void LPPS_Build_Test2()
+        public void LLPPS_Build_Test2()
         {
-            List<int> longestProperPrefixes1 = LPPS.Build("abcdef");
+            List<int> longestProperPrefixes1 = LLPPS.Build("abcdef");
             Assert.AreEqual(0, longestProperPrefixes1[0]);
             Assert.AreEqual(0, longestProperPrefixes1[1]);
             Assert.AreEqual(0, longestProperPrefixes1[2]);
@@ -55,9 +55,9 @@ namespace CSFundamentalAlgorithmsTests.StringDataStructuresTests
         }
 
         [TestMethod]
-        public void LPPS_Build_Test3()
+        public void LLPPS_Build_Test3()
         {
-            List<int> longestProperPrefixes1 = LPPS.Build("ddgddcddgdd");
+            List<int> longestProperPrefixes1 = LLPPS.Build("ddgddcddgdd");
             Assert.AreEqual(0, longestProperPrefixes1[0]);
             Assert.AreEqual(1, longestProperPrefixes1[1]);
             Assert.AreEqual(0, longestProperPrefixes1[2]);

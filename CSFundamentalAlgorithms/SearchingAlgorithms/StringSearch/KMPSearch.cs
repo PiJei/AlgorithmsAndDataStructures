@@ -35,7 +35,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
         public static List<int> Search(string text, string subString)
         {
             /* Starts with a preprocessing step. Get the data structure for longest proper prefix that is also a suffix. */
-            List<int> longestProperPrefixLengths = LPPS.Build(subString);
+            List<int> longestProperPrefixLengths = LLPPS.Build(subString);
 
             List<int> indexes = new List<int>();
 
