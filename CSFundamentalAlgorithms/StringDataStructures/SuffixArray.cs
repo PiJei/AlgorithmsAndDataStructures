@@ -17,17 +17,25 @@
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 
-namespace CSFundamentalAlgorithmsTests
+// TODO: Add a linear implementation of suffix array. 
+
+namespace CSFundamentalAlgorithms.StringDataStructures
 {
-    [TestClass]
-    public class SuffixArrayTests
+    /// <summary>
+    /// Implements SuffixArray data structure. A suffix array of an string is an array of integers that contains the starting index of all suffixes of the string in alphabetically sorted order. 
+    /// For example for string 'data' , where suffixes are : 'data', 'ata', 'ta', 'a' the suffix array is [3, 1, 0, 2]
+    /// </summary>
+    [DataStructure("SuffixArray")]
+    public class SuffixArray
     {
-        [TestMethod]
-        public void test()
+        public List<int> Build(string text)
         {
+            List<int> suffixArray = new List<int>(); // length is text.Length
 
+
+            return suffixArray;
         }
     }
 }

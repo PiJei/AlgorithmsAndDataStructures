@@ -17,15 +17,18 @@
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace CSFundamentalAlgorithms
-{
-    /// <summary>
-    /// Implements SuffixArray data structure. A suffix array of an string is an array of integers that contains the starting index of all suffixes of the string in alphabetically sorted order. 
-    /// For example for string 'data' , where suffixes are : 'data', 'ata', 'ta', 'a' the suffix array is [3, 1, 0, 2]
-    /// </summary>
-    [DataStructure("SuffixArray")]
-    public class SuffixArray
-    {
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using CSFundamentalAlgorithms.StringDataStructures;
 
+namespace CSFundamentalAlgorithmsTests.StringDataStructuresTests
+{
+    [TestClass]
+    public class SuffixArrayTests
+    {
+        [TestMethod]
+        public void test()
+        {
+
+        }
     }
 }

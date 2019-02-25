@@ -25,6 +25,7 @@ namespace CSFundamentalAlgorithms
     public class DataStructureAttribute : Attribute
     {
         public string Name { get; private set; }
+
         public DataStructureAttribute(string name)
         {
             Name = name;
