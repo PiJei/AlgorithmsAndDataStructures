@@ -34,6 +34,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms
         /// <param name="highIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
         /// <param name="searchValue">Specifies the value that is being searched for. </param>
         /// <returns>The index of the searchValue in the array values, and -1 if it does not exist in the array. </returns>
+        [Algorithm("Search", "TernarySearch")]
         public static int Search(List<int> values, int lowIndex, int highIndex, int searchValue)
         {
             if (lowIndex <= highIndex && searchValue >= values[lowIndex] && searchValue <= values[highIndex]) /* the latter two comparisons only make sense because the array is sorted. */

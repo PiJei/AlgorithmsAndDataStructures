@@ -21,6 +21,7 @@ using System.Collections.Generic;
 
 namespace CSFundamentalAlgorithms.SearchingAlgorithms
 {
+    [Algorithm("Search", "InterpolationSearch")]
     public class InterpolationSearch
     {
         /// <summary>

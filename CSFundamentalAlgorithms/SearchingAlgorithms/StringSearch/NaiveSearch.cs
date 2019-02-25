@@ -27,6 +27,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
         /// </summary>
         /// <param name="text">The parent string in which we are searching for a subString.</param>
         /// <param name="subString">The string we want to find in parent string (text).</param>
+        [Algorithm("PatternSearch", "Naive")]
         public static int Search(string text, string subString)
         {
             for (int i = 0; i < text.Length; i++)
