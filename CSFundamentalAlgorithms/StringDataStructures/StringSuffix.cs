@@ -73,5 +73,31 @@ namespace CSFundamentalAlgorithms.StringDataStructures
             }
             return RankPair[0].CompareTo(other.RankPair[0]);
         }
+
+        public static bool operator <=(StringSuffix current, StringSuffix other)
+        {
+            return current.CompareTo(other) <= 0;
+        }
+        public static bool operator >=(StringSuffix current, StringSuffix other)
+        {
+            return current.CompareTo(other) >= 0;
+        }
+
+        public static bool operator <(StringSuffix current, StringSuffix other)
+        {
+            return current.CompareTo(other) < 0;
+        }
+        public static bool operator >(StringSuffix current, StringSuffix other)
+        {
+            return current.CompareTo(other) > 0;
+        }
+        public static bool operator ==(StringSuffix current, StringSuffix other)
+        {
+            return current.CompareTo(other) == 0;
+        }
+        public static bool operator !=(StringSuffix current, StringSuffix other)
+        {
+            return current.CompareTo(other) != 0;
+        }
     }
 }
