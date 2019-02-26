@@ -18,10 +18,10 @@
  */
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch;
+using CSFundamentalAlgorithms.PatternSearch;
 using System.Collections.Generic;
 
-namespace CSFundamentalAlgorithmsTests.SearchingAlgorithmsTests.StringSearchTests
+namespace CSFundamentalAlgorithmsTests.PatternSearchTests
 {
     [TestClass]
     public class RabinKarpSearchTests

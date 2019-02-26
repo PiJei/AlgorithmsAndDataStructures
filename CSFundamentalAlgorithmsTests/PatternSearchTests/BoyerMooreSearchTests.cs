@@ -17,12 +17,12 @@
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch;
+using CSFundamentalAlgorithms.PatternSearch;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CSFundamentalAlgorithmsTests.SearchingAlgorithmsTests.StringSearchTests
+namespace CSFundamentalAlgorithmsTests.PatternSearchTests
 {
     [TestClass]
     public class BoyerMooreSearchTests

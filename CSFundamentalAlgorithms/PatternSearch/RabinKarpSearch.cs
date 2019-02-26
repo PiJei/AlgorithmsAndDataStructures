@@ -16,8 +16,9 @@
  * You should have received a copy of the GNU General Public License
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
+using CSFundamentalAlgorithms.Hashing;
 
-namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
+namespace CSFundamentalAlgorithms.PatternSearch
 {
     public class RabinKarpSearch
     {
@@ -29,16 +30,16 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
         /// Hashing plays a crucial role in optimizing search time. Rolling hash methods are preferred, and the ones with the minimum collision. 
         /// </summary>
         /// <param name= "text">The parent string in which we are searching for a subString.</param>
-        /// <param name= "subString">The string we want to find in parent string (text).</param>
+        /// <param name= "pattern">The string we want to find in parent string (text).</param>
         /// <returns>The starting index in text at which subString is found.</returns>
         [Algorithm("PatternSearch", "RabinKarp")]
-        public static int Search(string text, string subString)
+        public static int Search(string text, string pattern)
         {
             int n = text.Length;
-            int m = subString.Length;
+            int m = pattern.Length;
 
-            int hashConstant = RollingHash.ComputeHashConstantForRollingHash(subString.Length, PrimeNumber, NumCharacters);
-            int subStringHash = RollingHash.GetHash(subString, PrimeNumber, NumCharacters); /* This hash is computed only once. Complexity : O(subString.Length)*/
+            int hashConstant = RollingHash.ComputeHashConstantForRollingHash(m, PrimeNumber, NumCharacters);
+            int subStringHash = RollingHash.GetHash(pattern, PrimeNumber, NumCharacters); /* This hash is computed only once. Complexity : O(subString.Length)*/
 
             string subStringInText = text.Substring(0, m);
             int subStringInTextHash = RollingHash.GetHash(subStringInText, PrimeNumber, NumCharacters);
@@ -47,7 +48,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
             {
                 if (subStringHash == subStringInTextHash)
                 {
-                    if (subString == subStringInText) /* This check is necessary as the hash function may have collisions.*/
+                    if (pattern == subStringInText) /* This check is necessary as the hash function may have collisions.*/
                     {
                         return i;
                     }
