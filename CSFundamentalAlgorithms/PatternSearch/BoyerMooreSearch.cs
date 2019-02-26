@@ -28,26 +28,26 @@ namespace CSFundamentalAlgorithms.PatternSearch
         /// The idea is to do tail based search, and skip over indexes in text to a proper tail, at which there is a chance of match. 
         /// </summary>
         /// <param name= "text">The parent string in which we are searching for a subString.</param>
-        /// <param name= "subString">The string we want to find in parent string (text).</param>
+        /// <param name= "pattern">The string we want to find in parent string (text).</param>
         /// <returns>All the starting index in text at which subString is found [in other words looks for all the occurrences of the subString in text, and does not stop by finding the first one.].</returns>
         [Algorithm("PatternSearch", "BoyerMoore")]
-        public static List<int> Search_BasedOnBadCharacterShiftOnly(string text, string subString)
+        public static List<int> Search_BasedOnBadCharacterShiftOnly(string text, string pattern)
         {
             List<int> indexes = new List<int>();
 
             /* For readability in the code: */
             int n = text.Length;
-            int m = subString.Length;
+            int m = pattern.Length;
 
             /* Preprocessing step for subString */
-            Dictionary<char, int> subStringMap = MapCharToLastIndex(subString); /* Last index is needed, because otherwise if shifted the pattern along the text to right a lot (with the first index) we could miss some potential matches. */
+            Dictionary<char, int> subStringMap = MapCharToLastIndex(pattern); /* Last index is needed, because otherwise if shifted the pattern along the text to right a lot (with the first index) we could miss some potential matches. */
 
             int i = m - 1;  /* Is the index over text. Setting to (m-1) because BoyerMoore is tail-based search. */
 
             while (i < n) /* Since this is a tail-based search, i can even be (n-1), hence the loop condition.*/
             {
                 int j = m - 1; /* Starting index over subString, notice that we match the string backwards.*/
-                while (j >= 0 && i >= 0 && text[i] == subString[j]) /* Continue moving backward on subString and text as long as the characters match.*/
+                while (j >= 0 && i >= 0 && text[i] == pattern[j]) /* Continue moving backward on subString and text as long as the characters match.*/
                 {
                     j--;
                     i--;

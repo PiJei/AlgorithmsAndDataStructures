@@ -30,13 +30,13 @@ namespace CSFundamentalAlgorithms.PatternSearch
         /// When compared to Naive algorithm, whereas at each internal iteration, we rest j to zero, here we do not always reset j to zero, the value j gets set to depends on its prefixes. 
         /// </summary>
         /// <param name= "text">The parent string in which we are searching for a subString.</param>
-        /// <param name= "subString">The string we want to find in parent string (text).</param>
+        /// <param name= "pattern">The string we want to find in parent string (text).</param>
         /// <returns>All the starting index in text at which subString is found [in other words looks for all the occurrences of the subString in text, and does not stop by finding the first one.].</returns>
         [Algorithm("PatternSearch", "KMP-KnuthMorrisPratt")]
-        public static List<int> Search(string text, string subString)
+        public static List<int> Search(string text, string pattern)
         {
             /* Starts with a preprocessing step. Get the data structure for longest proper prefix that is also a suffix. */
-            List<int> longestProperPrefixLengths = LLPPS.Build(subString);
+            List<int> longestProperPrefixLengths = LLPPS.Build(pattern);
 
             List<int> indexes = new List<int>();
 
@@ -45,14 +45,14 @@ namespace CSFundamentalAlgorithms.PatternSearch
 
             while (i < text.Length)
             {
-                if (text[i] == subString[j]) /* When there is a match*/
+                if (text[i] == pattern[j]) /* When there is a match*/
                 {
                     i++; /* Continue incrementing i and j as long as characters match. */
                     j++;
 
-                    if (j == subString.Length) /* Means subString is matched with text [i-subString.Length, i-1]*/
+                    if (j == pattern.Length) /* Means subString is matched with text [i-subString.Length, i-1]*/
                     {
-                        indexes.Add(i - subString.Length);
+                        indexes.Add(i - pattern.Length);
 
                         /* Since we are after all occurrences of subString continue by changing j (in naive approach after each match, this would be set to zero. )*/
                         j = longestProperPrefixLengths[j - 1]; /* Label (A) */
