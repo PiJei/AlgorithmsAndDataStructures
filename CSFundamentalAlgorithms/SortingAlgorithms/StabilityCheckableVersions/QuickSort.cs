@@ -24,13 +24,13 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
 {
     public partial class QuickSort
     {
-        public static void Sort_Recursively(List<Element> values, int lowIndex, int highIndex)
+        public static void Sort_Recursively(List<Element> values, int startIndex, int endIndex)
         {
-            if (lowIndex < highIndex)
+            if (startIndex < endIndex)
             {
-                int partitionIndex = PartitionArray_StabilityCheckableVersion(values, lowIndex, highIndex);
-                Sort_Recursively(values, lowIndex, partitionIndex);
-                Sort_Recursively(values, partitionIndex + 1, highIndex);
+                int partitionIndex = PartitionArray_StabilityCheckableVersion(values, startIndex, endIndex);
+                Sort_Recursively(values, startIndex, partitionIndex);
+                Sort_Recursively(values, partitionIndex + 1, endIndex);
             }
         }
 
@@ -38,24 +38,24 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// Partitions the given array, with respect to the computed pivot, such that elements to the left of the pivot are smaller than the pivot, and elements to the right of the pivot are bigger than the pivot. 
         /// </summary>
         /// <param name="values">Specifies the list of integer values to be sorted. </param>
-        /// <param name="lowIndex">Specifies the lower index in the array, inclusive. </param>
-        /// <param name="highIndex">Specifies the higher index in the array, inclusive. </param>
+        /// <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
+        /// <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
         /// <returns>The next partitioning index. </returns>
-        public static int PartitionArray_StabilityCheckableVersion(List<Element> values, int lowIndex, int highIndex)
+        public static int PartitionArray_StabilityCheckableVersion(List<Element> values, int startIndex, int endIndex)
         {
-            int pivotIndex = GetPivotIndex(lowIndex, highIndex);
+            int pivotIndex = GetPivotIndex(startIndex, endIndex);
             int pivotValue = values[pivotIndex].Value;
 
-            int leftIndex = lowIndex;
-            int rightIndex = highIndex;
+            int leftIndex = startIndex;
+            int rightIndex = endIndex;
 
             while (true)
             {
-                while (leftIndex <= highIndex && values[leftIndex].Value < pivotValue)
+                while (leftIndex <= endIndex && values[leftIndex].Value < pivotValue)
                 {
                     leftIndex++;
                 }
-                while (rightIndex <= highIndex && values[rightIndex].Value > pivotValue)
+                while (rightIndex <= endIndex && values[rightIndex].Value > pivotValue)
                 {
                     rightIndex--;
                 }

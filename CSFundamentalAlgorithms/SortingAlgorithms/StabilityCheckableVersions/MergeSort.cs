@@ -28,27 +28,27 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// Implements a basic version of merge sort recursively. 
         /// </summary>
         /// <param name="values">Specifies the list of integer values to be sorted. </param>
-        /// <param name="lowIndex">Specifies the lower index in the array, inclusive. </param>
-        /// <param name="highIndex">Specifies the higher index in the array, inclusive. </param>
-        public static void Sort_Recursively(List<Element> values, int lowIndex, int highIndex)
+        /// <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
+        /// <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
+        public static void Sort_Recursively(List<Element> values, int startIndex, int endIndex)
         {
-            if (lowIndex < highIndex)
+            if (startIndex < endIndex)
             {
-                int middleIndex = (lowIndex + highIndex) / 2;
-                Sort_Recursively(values, lowIndex, middleIndex);
-                Sort_Recursively(values, middleIndex + 1, highIndex);
-                Merge(values, lowIndex, middleIndex, highIndex);
+                int middleIndex = (startIndex + endIndex) / 2;
+                Sort_Recursively(values, startIndex, middleIndex);
+                Sort_Recursively(values, middleIndex + 1, endIndex);
+                Merge(values, startIndex, middleIndex, endIndex);
             }
         }
 
         /// <summary>
-        /// Merges two sub arrays [lowIndex, middleIndex], [middleIndex+1, highIndex] such to end up with a sorted list. 
+        /// Merges two sub arrays [startIndex, middleIndex], [middleIndex+1, endIndex] such to end up with a sorted list. 
         /// </summary>
         /// <param name="values">Specifies the list of integer values to be sorted. </param>
-        /// <param name="lowIndex">Specifies the lower index in the array, inclusive. </param>
+        /// <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
         /// <param name="middleIndex">Specifies the middle index of the array. </param>
-        /// <param name="highIndex">Specifies the higher index in the array, inclusive. </param>
-        public static void Merge(List<Element> values, int lowIndex, int middleIndex, int highIndex)
+        /// <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
+        public static void Merge(List<Element> values, int startIndex, int middleIndex, int endIndex)
         {
             //Making a copy of the values
             List<Element> valuesOriginal = new List<Element>(values.Count);
@@ -58,23 +58,23 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
             }
 
             //Inclusive boundaries of the first sub-array
-            int low1 = lowIndex;
-            int high1 = middleIndex;
+            int start1 = startIndex;
+            int end1 = middleIndex;
 
             //Inclusive boundaries of the second sub-array
-            int low2 = middleIndex + 1;
-            int high2 = highIndex;
+            int start2 = middleIndex + 1;
+            int end2 = endIndex;
 
             // Pointer on the first (left) sub-array
-            int leftHalfCounter = low1;
+            int leftHalfCounter = start1;
 
             // Pointer on the second (right) sub-array
-            int rightHalfCounter = low2;
+            int rightHalfCounter = start2;
 
             // Pointer on the Values array.
-            int mainArrayCounter = low1;
+            int mainArrayCounter = start1;
 
-            while (leftHalfCounter <= high1 && rightHalfCounter <= high2)
+            while (leftHalfCounter <= end1 && rightHalfCounter <= end2)
             {
                 if (valuesOriginal[leftHalfCounter].Value <= valuesOriginal[rightHalfCounter].Value) /* Favors left half values over right half values when there are duplicates. */
                 {
@@ -91,7 +91,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
                 mainArrayCounter++;
             }
 
-            while (leftHalfCounter <= high1)
+            while (leftHalfCounter <= end1)
             {
                 valuesOriginal[leftHalfCounter].Move(mainArrayCounter);
                 values[mainArrayCounter] = valuesOriginal[leftHalfCounter];
@@ -99,7 +99,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
                 mainArrayCounter++;
             }
 
-            while (rightHalfCounter <= high2)
+            while (rightHalfCounter <= end2)
             {
                 valuesOriginal[rightHalfCounter].Move(mainArrayCounter);
                 values[mainArrayCounter] = valuesOriginal[rightHalfCounter];

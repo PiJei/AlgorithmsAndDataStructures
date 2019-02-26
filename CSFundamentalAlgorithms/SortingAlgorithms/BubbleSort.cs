@@ -17,6 +17,7 @@
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System;
 using System.Collections.Generic;
 
 namespace CSFundamentalAlgorithms.SortingAlgorithms
@@ -51,7 +52,7 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
 
         public static void Sort_Recursive(List<int> values)
         {
-            // TODO
+            throw new NotImplementedException();
         }
     }
 }

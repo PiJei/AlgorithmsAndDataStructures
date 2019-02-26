@@ -29,50 +29,50 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// Implements a basic version of merge sort recursively. 
         /// </summary>
         /// <param name="values">Specifies the list of integer values to be sorted. </param>
-        /// <param name="lowIndex">Specifies the lower index in the array, inclusive. </param>
-        /// <param name="highIndex">Specifies the higher index in the array, inclusive. </param>
+        /// <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
+        /// <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
         [Algorithm("Sort", "MergeSort")]
-        public static void Sort_Recursively<T>(List<T> values, int lowIndex, int highIndex) where T : IComparable<T>
+        public static void Sort_Recursively<T>(List<T> values, int startIndex, int endIndex) where T : IComparable<T>
         {
-            if (lowIndex < highIndex)
+            if (startIndex < endIndex)
             {
-                int middleIndex = (lowIndex + highIndex) / 2;
-                Sort_Recursively(values, lowIndex, middleIndex);
-                Sort_Recursively(values, middleIndex + 1, highIndex);
-                Merge(values, lowIndex, middleIndex, highIndex);
+                int middleIndex = (startIndex + endIndex) / 2;
+                Sort_Recursively(values, startIndex, middleIndex);
+                Sort_Recursively(values, middleIndex + 1, endIndex);
+                Merge(values, startIndex, middleIndex, endIndex);
             }
         }
 
         /// <summary>
-        /// Merges two sub arrays [lowIndex, middleIndex], [middleIndex+1, highIndex] such to end up with a sorted list. 
+        /// Merges two sub arrays [startIndex, middleIndex], [middleIndex+1, endIndex] such to end up with a sorted list. 
         /// </summary>
         /// <param name="values">Specifies the list of integer values to be sorted. </param>
-        /// <param name="lowIndex">Specifies the lower index in the array, inclusive. </param>
+        /// <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
         /// <param name="middleIndex">Specifies the middle index of the array. </param>
-        /// <param name="highIndex">Specifies the higher index in the array, inclusive. </param>
-        public static void Merge<T>(List<T> values, int lowIndex, int middleIndex, int highIndex) where T : IComparable<T>
+        /// <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
+        public static void Merge<T>(List<T> values, int startIndex, int middleIndex, int endIndex) where T : IComparable<T>
         {
             //Making a copy of the values
             List<T> valuesOriginal = new List<T>(values);
 
             //Inclusive boundaries of the first sub-array
-            int low1 = lowIndex;
-            int high1 = middleIndex;
+            int start1 = startIndex;
+            int end1 = middleIndex;
 
             //Inclusive boundaries of the second sub-array
-            int low2 = middleIndex + 1;
-            int high2 = highIndex;
+            int start2 = middleIndex + 1;
+            int end2 = endIndex;
 
             // Pointer on the first (left) sub-array
-            int leftHalfCounter = low1;
+            int leftHalfCounter = start1;
 
             // Pointer on the second (right) sub-array
-            int rightHalfCounter = low2;
+            int rightHalfCounter = start2;
 
             // Pointer on the Values array.
-            int mainArrayCounter = low1;
+            int mainArrayCounter = start1;
 
-            while (leftHalfCounter <= high1 && rightHalfCounter <= high2)
+            while (leftHalfCounter <= end1 && rightHalfCounter <= end2)
             {
                 if (valuesOriginal[leftHalfCounter].CompareTo(valuesOriginal[rightHalfCounter]) <= 0) /* Favors left half values over right half values when there are duplicates thus checking for equality as well. */
                 {
@@ -87,14 +87,14 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
                 mainArrayCounter++;
             }
 
-            while (leftHalfCounter <= high1)
+            while (leftHalfCounter <= end1)
             {
                 values[mainArrayCounter] = valuesOriginal[leftHalfCounter];
                 leftHalfCounter++;
                 mainArrayCounter++;
             }
 
-            while (rightHalfCounter <= high2)
+            while (rightHalfCounter <= end2)
             {
                 values[mainArrayCounter] = valuesOriginal[rightHalfCounter];
                 rightHalfCounter++;
@@ -106,11 +106,11 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// Provides an iterative version for MergeSort. 
         /// </summary>
         /// <param name="values"></param>
-        /// <param name="lowIndex"></param>
-        /// <param name="highIndex"></param>
-        public static void Sort_Iteratively(List<int> values, int lowIndex, int highIndex)
+        /// <param name="startIndex"></param>
+        /// <param name="endIndex"></param>
+        public static void Sort_Iteratively(List<int> values, int startIndex, int endIndex)
         {
-            // TODO 
+            throw new NotImplementedException();
         }
     }
 }

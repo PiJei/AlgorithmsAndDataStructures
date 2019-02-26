@@ -30,16 +30,16 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms
         /// Searches in a sorted list of integers, and returns the index of the searchValue using binary search, and -1 if it is not found. 
         /// </summary>
         /// <param name="values">A sorted list of integers. </param>
-        /// <param name="lowIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>
-        /// <param name="highIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
+        /// <param name="startIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>
+        /// <param name="endIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
         /// <param name="searchValue">Specifies the value that is being searched for. </param>
         /// <returns>The index of the searchValue in the array values, and -1 if it does not exist in the array. </returns>
         [Algorithm("Search", "BinarySearch")]
-        public static int Search(List<int> values, int lowIndex, int highIndex, int searchValue)
+        public static int Search(List<int> values, int startIndex, int endIndex, int searchValue)
         {
-            if (lowIndex <= highIndex && searchValue >= values[lowIndex] && searchValue <= values[highIndex])
+            if (startIndex <= endIndex && searchValue >= values[startIndex] && searchValue <= values[endIndex])
             {
-                int middleIndex = (lowIndex + highIndex) / 2;
+                int middleIndex = (startIndex + endIndex) / 2;
                 int middleValue = values[middleIndex];
 
                 if (searchValue == middleValue)
@@ -48,11 +48,11 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms
                 }
                 if (searchValue < middleValue)
                 {
-                    return Search(values, lowIndex, middleIndex - 1, searchValue);
+                    return Search(values, startIndex, middleIndex - 1, searchValue);
                 }
                 if (searchValue > middleValue)
                 {
-                    return Search(values, middleIndex + 1, highIndex, searchValue);
+                    return Search(values, middleIndex + 1, endIndex, searchValue);
                 }
             }
             return -1;
