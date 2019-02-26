@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+using System;
 using System.Collections.Generic;
 
 namespace CSFundamentalAlgorithms.SortingAlgorithms
@@ -27,16 +27,16 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// Implements quick sort to sort integer values in an array, ascending. 
         /// </summary>
         /// <param name="values">Specifies the list of integer values to be sorted. </param>
-        /// <param name="lowIndex">Specifies the lower index in the array, inclusive. </param>
-        /// <param name="highIndex">Specifies the higher index in the array, inclusive. </param>
+        /// <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
+        /// <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
         [Algorithm("Sort", "QuickSort")]
-        public static void Sort_Recursively(List<int> values, int lowIndex, int highIndex)
+        public static void Sort_Recursively(List<int> values, int startIndex, int endIndex)
         {
-            if (lowIndex < highIndex)
+            if (startIndex < endIndex)
             {
-                int partitionIndex = PartitionArray(values, lowIndex, highIndex);
-                Sort_Recursively(values, lowIndex, partitionIndex);
-                Sort_Recursively(values, partitionIndex + 1, highIndex);
+                int partitionIndex = PartitionArray(values, startIndex, endIndex);
+                Sort_Recursively(values, startIndex, partitionIndex);
+                Sort_Recursively(values, partitionIndex + 1, endIndex);
             }
         }
 
@@ -44,24 +44,24 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// Partitions the given array, with respect to the computed pivot, such that elements to the left of the pivot are smaller than the pivot, and elements to the right of the pivot are bigger than the pivot. 
         /// </summary>
         /// <param name="values">Specifies the list of integer values to be sorted. </param>
-        /// <param name="lowIndex">Specifies the lower index in the array, inclusive. </param>
-        /// <param name="highIndex">Specifies the higher index in the array, inclusive. </param>
+        /// <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
+        /// <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
         /// <returns>The next partitioning index. </returns>
-        public static int PartitionArray(List<int> values, int lowIndex, int highIndex)
+        public static int PartitionArray(List<int> values, int startIndex, int endIndex)
         {
-            int pivotIndex = GetPivotIndex(lowIndex, highIndex);
+            int pivotIndex = GetPivotIndex(startIndex, endIndex);
             int pivotValue = values[pivotIndex];
 
-            int leftIndex = lowIndex;
-            int rightIndex = highIndex;
+            int leftIndex = startIndex;
+            int rightIndex = endIndex;
 
             while (true)
             {
-                while (leftIndex <= highIndex && values[leftIndex] < pivotValue)
+                while (leftIndex <= endIndex && values[leftIndex] < pivotValue)
                 {
                     leftIndex++;
                 }
-                while (rightIndex <= highIndex && values[rightIndex] > pivotValue)
+                while (rightIndex <= endIndex && values[rightIndex] > pivotValue)
                 {
                     rightIndex--;
                 }
@@ -82,23 +82,23 @@ namespace CSFundamentalAlgorithms.SortingAlgorithms
         /// <summary>
         /// This algorithm uses the middle element of the array as pivot. Other mechanisms exist also. 
         /// </summary>
-        /// <param name="lowIndex"></param>
-        /// <param name="highIndex"></param>
+        /// <param name="startIndex"></param>
+        /// <param name="endIndex"></param>
         /// <returns></returns>
-        public static int GetPivotIndex(int lowIndex, int highIndex)
+        public static int GetPivotIndex(int startIndex, int endIndex)
         {
-            return (lowIndex + highIndex) / 2;
+            return (startIndex + endIndex) / 2;
         }
 
         /// <summary>
         /// Provides an iterative version of QuickSort.
         /// </summary>
         /// <param name="values"></param>
-        /// <param name="lowIndex"></param>
-        /// <param name="highIndex"></param>
-        public static void Sort_Iteratively(List<int> values, int lowIndex, int highIndex)
+        /// <param name="startIndex"></param>
+        /// <param name="endIndex"></param>
+        public static void Sort_Iteratively(List<int> values, int startIndex, int endIndex)
         {
-            // TODO
+            throw new NotImplementedException();
         }
     }
 }

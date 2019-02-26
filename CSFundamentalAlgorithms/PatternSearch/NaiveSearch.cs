@@ -17,7 +17,7 @@
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
+namespace CSFundamentalAlgorithms.PatternSearch
 {
     public class NaiveSearch
     {
@@ -26,17 +26,17 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
         /// Note: Any optimization, should try to reduce either the size of the outer loop or the inner loop.
         /// </summary>
         /// <param name="text">The parent string in which we are searching for a subString.</param>
-        /// <param name="subString">The string we want to find in parent string (text).</param>
+        /// <param name="pattern">The string we want to find in parent string (text).</param>
         [Algorithm("PatternSearch", "Naive")]
-        public static int Search(string text, string subString)
+        public static int Search(string text, string pattern)
         {
             for (int i = 0; i < text.Length; i++)
             {
                 int searchStartIndex = i;
                 bool found = true;
-                for (int j = 0; j < subString.Length; j++)
+                for (int j = 0; j < pattern.Length; j++)
                 {
-                    if (text[searchStartIndex + j] != subString[j])
+                    if (text[searchStartIndex + j] != pattern[j])
                     {
                         found = false;
                         break;

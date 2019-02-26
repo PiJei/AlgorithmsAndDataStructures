@@ -30,18 +30,18 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms
         /// Notice that only works if the given array is sorted. 
         /// </summary>
         /// <param name="values">A sorted list of integers. </param>
-        /// <param name="lowIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>
-        /// <param name="highIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
+        /// <param name="startIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>
+        /// <param name="endIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
         /// <param name="searchValue">Specifies the value that is being searched for. </param>
         /// <returns>The index of the searchValue in the array values, and -1 if it does not exist in the array. </returns>
         [Algorithm("Search", "TernarySearch")]
-        public static int Search(List<int> values, int lowIndex, int highIndex, int searchValue)
+        public static int Search(List<int> values, int startIndex, int endIndex, int searchValue)
         {
-            if (lowIndex <= highIndex && searchValue >= values[lowIndex] && searchValue <= values[highIndex]) /* the latter two comparisons only make sense because the array is sorted. */
+            if (startIndex <= endIndex && searchValue >= values[startIndex] && searchValue <= values[endIndex]) /* the latter two comparisons only make sense because the array is sorted. */
             {
-                /* Dividing array by ((highIndex - lowIndex) / 3) size in2o 3 sections. */
-                int middleIndex1 = lowIndex + (highIndex - lowIndex) / 3;
-                int middleIndex2 = middleIndex1 + (highIndex - lowIndex) / 3;
+                /* Dividing array by ((endIndex - startIndex) / 3) size in2o 3 sections. */
+                int middleIndex1 = startIndex + (endIndex - startIndex) / 3;
+                int middleIndex2 = middleIndex1 + (endIndex - startIndex) / 3;
 
                 int middleValue1 = values[middleIndex1];
                 int middleValue2 = values[middleIndex2];
@@ -58,7 +58,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms
 
                 if (searchValue < middleValue1)
                 {
-                    return Search(values, lowIndex, middleIndex1 - 1, searchValue);
+                    return Search(values, startIndex, middleIndex1 - 1, searchValue);
                 }
 
                 if (searchValue > middleValue1 && searchValue < middleValue2)
@@ -68,7 +68,7 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms
 
                 if (searchValue > middleValue2)
                 {
-                    return Search(values, middleIndex2 + 1, highIndex, searchValue);
+                    return Search(values, middleIndex2 + 1, endIndex, searchValue);
                 }
             }
             return -1;

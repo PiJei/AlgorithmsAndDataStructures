@@ -30,16 +30,16 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms
         /// Notice that only works if the given array is sorted. 
         /// </summary>
         /// <param name="values">A sorted list of integers that are also uniformly distributed. </param>
-        /// <param name="lowIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>
-        /// <param name="highIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
+        /// <param name="startIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>
+        /// <param name="endIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
         /// <param name="searchValue">Specifies the value that is being searched for. </param>
         /// <returns>The index of the searchValue in the array values, and -1 if it does not exist in the array. </returns>
-        public static int Search(List<int> values, int lowIndex, int highIndex, int searchValue)
+        public static int Search(List<int> values, int startIndex, int endIndex, int searchValue)
         {
-            if (lowIndex <= highIndex && searchValue >= values[lowIndex] && searchValue <= values[highIndex])
+            if (startIndex <= endIndex && searchValue >= values[startIndex] && searchValue <= values[endIndex])
             {
-                int searchStartIndex = GetSearchStartingIndex(values, lowIndex, highIndex, searchValue);
-                if (!(searchStartIndex >= lowIndex && searchStartIndex <= highIndex))
+                int searchStartIndex = GetSearchStartingIndex(values, startIndex, endIndex, searchValue);
+                if (!(searchStartIndex >= startIndex && searchStartIndex <= endIndex))
                 {
                     return -1;
                 }
@@ -53,12 +53,12 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms
 
                 if (searchValue < searchStartValue)
                 {
-                    return Search(values, lowIndex, searchStartIndex - 1, searchValue);
+                    return Search(values, startIndex, searchStartIndex - 1, searchValue);
                 }
 
                 if (searchValue > searchStartValue)
                 {
-                    return Search(values, searchStartIndex + 1, highIndex, searchValue);
+                    return Search(values, searchStartIndex + 1, endIndex, searchValue);
                 }
             }
 
@@ -67,18 +67,18 @@ namespace CSFundamentalAlgorithms.SearchingAlgorithms
 
         /// <summary>
         /// Computes an index to start the search from. Dependent on the value we are after. 
-        /// This formula is such that if the search value is closer to the value in the lower index, the search start point will be chosen closer to the lowIndex, and if the search value is closer to the value in the high index, the search start point will be chosen closer to the highIndex.
+        /// This formula is such that if the search value is closer to the value in the startIndex, the search start point will be chosen closer to the startIndex, and if the search value is closer to the value in the endIndex, the search start point will be chosen closer to the endIndex.
         /// </summary>
         /// <param name="values">A sorted list of integers that are also uniformly distributed. </param>
-        /// <param name="lowIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>
-        /// <param name="highIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
+        /// <param name="startIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>
+        /// <param name="endIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
         /// <param name="searchValue">Specifies the value that is being searched for. </param>
         /// <returns>The index in the array at which to start the search. </returns>
-        public static int GetSearchStartingIndex(List<int> values, int lowIndex, int highIndex, int searchValue)
+        public static int GetSearchStartingIndex(List<int> values, int startIndex, int endIndex, int searchValue)
         {
-            double distanceFromLowIndex = (double)(searchValue - values[lowIndex]) / (double)(values[highIndex] - values[lowIndex]);
-            distanceFromLowIndex = distanceFromLowIndex * (highIndex - lowIndex);
-            int index = (int)(lowIndex + distanceFromLowIndex);
+            double distanceFromStartIndex = (double)(searchValue - values[startIndex]) / (double)(values[endIndex] - values[startIndex]);
+            distanceFromStartIndex = distanceFromStartIndex * (endIndex - startIndex);
+            int index = (int)(startIndex + distanceFromStartIndex);
             return index;
         }
 

@@ -17,9 +17,9 @@
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch;
+using CSFundamentalAlgorithms.Hashing;
 
-namespace CSFundamentalAlgorithmsTests.SearchingAlgorithmsTests.StringSearchTests
+namespace CSFundamentalAlgorithmsTests.HashingTests
 {
     [TestClass]
     public class RollingHashTests
