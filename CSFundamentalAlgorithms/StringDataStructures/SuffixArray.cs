@@ -18,7 +18,7 @@
  */
 
 using System.Collections.Generic;
-using CSFundamentalAlgorithms.SortingAlgorithms;
+using CSFundamentalAlgorithms.Sort;
 
 // TODO: Add a linear-time implementation of suffix array. 
 
