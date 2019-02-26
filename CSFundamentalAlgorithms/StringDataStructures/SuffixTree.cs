@@ -20,8 +20,9 @@
 
 namespace CSFundamentalAlgorithms.StringDataStructures
 {
+    [DataStructure("SuffixTree(aka. PAT)")]
     public class SuffixTree
     {
-        
+
     }
 }
