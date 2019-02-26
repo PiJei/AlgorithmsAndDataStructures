@@ -16,8 +16,9 @@
  * You should have received a copy of the GNU General Public License
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
+using CSFundamentalAlgorithms.Hashing;
 
-namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
+namespace CSFundamentalAlgorithms.PatternSearch
 {
     public class RabinKarpSearch
     {

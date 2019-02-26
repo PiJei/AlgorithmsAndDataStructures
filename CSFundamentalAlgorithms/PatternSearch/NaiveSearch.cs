@@ -17,7 +17,7 @@
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
+namespace CSFundamentalAlgorithms.PatternSearch
 {
     public class NaiveSearch
     {

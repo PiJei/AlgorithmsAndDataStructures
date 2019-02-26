@@ -20,7 +20,7 @@
 using System.Collections.Generic;
 using CSFundamentalAlgorithms.StringDataStructures;
 
-namespace CSFundamentalAlgorithms.SearchingAlgorithms.StringSearch
+namespace CSFundamentalAlgorithms.PatternSearch
 {
     public class KMPSearch
     {
