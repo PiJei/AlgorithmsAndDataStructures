@@ -56,17 +56,14 @@ namespace CSFundamentalAlgorithms.StringDataStructures
         public static void Insert(SuffixTreeNode root, string suffix, int startIndex)
         {
             SuffixTreeNode node = null;
-            if (root.Children.Any(c => c.StringValue.StartsWith(suffix[0])))
-            {
-                node = root.Children.Where(c => c.StringValue.StartsWith(suffix[0]))?.ToList()?[0];
-            }
-            
-            if (node == null)
+            var nodes = root.Children.Where(c => c.StringValue.StartsWith(suffix[0]));
+            if (!nodes.Any())
             {
                 root.Children.Add(new SuffixTreeNode { IsLeaf = true, StringValue = suffix, StartIndex = startIndex });
                 return;
             }
 
+            node = nodes.ToList()?[0];
             int indexOverSuffix = 1;
             while (true)
             {
@@ -91,12 +88,13 @@ namespace CSFundamentalAlgorithms.StringDataStructures
                 }
                 else if (j == node.StringValue.Length && indexOverSuffix < suffix.Length)
                 {
-                    if (!node.Children.Any(c => c.StringValue.StartsWith(suffix[indexOverSuffix])))
+                    nodes = node.Children.Where(c => c.StringValue.StartsWith(suffix[indexOverSuffix]));
+                    if (!nodes.Any())
                     {
                         node.Children.Add(new SuffixTreeNode { IsLeaf = true, StringValue = suffix.Substring(indexOverSuffix), StartIndex = startIndex });
                         break;
                     }
-                    node = node.Children.Where(c => c.StringValue.StartsWith(suffix[indexOverSuffix]))?.ToList()[0];
+                    node = nodes.ToList()[0];
                     indexOverSuffix++;
                 }
             }
