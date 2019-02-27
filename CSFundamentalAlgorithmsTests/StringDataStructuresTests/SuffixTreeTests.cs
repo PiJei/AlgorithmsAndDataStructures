@@ -17,9 +17,9 @@
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CSFundamentalAlgorithms.StringDataStructures;
 using System.Collections.Generic;
+using CSFundamentalAlgorithms.StringDataStructures;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 // TODO: Add more tests with other strings. 
 
