@@ -63,8 +63,7 @@ namespace CSFundamentalAlgorithms.StringDataStructures
             
             if (node == null)
             {
-                var newNode = new SuffixTreeNode { IsLeaf = true, StringValue = suffix, StartIndex = startIndex };
-                root.Children.Add(newNode);
+                root.Children.Add(new SuffixTreeNode { IsLeaf = true, StringValue = suffix, StartIndex = startIndex });
                 return;
             }
 
@@ -94,8 +93,7 @@ namespace CSFundamentalAlgorithms.StringDataStructures
                 {
                     if (!node.Children.Any(c => c.StringValue.StartsWith(suffix[indexOverSuffix])))
                     {
-                        var child = new SuffixTreeNode { IsLeaf = true, StringValue = suffix.Substring(indexOverSuffix), StartIndex = startIndex };
-                        node.Children.Add(child);
+                        node.Children.Add(new SuffixTreeNode { IsLeaf = true, StringValue = suffix.Substring(indexOverSuffix), StartIndex = startIndex });
                         break;
                     }
                     node = node.Children.Where(c => c.StringValue.StartsWith(suffix[indexOverSuffix]))?.ToList()[0];
