@@ -140,14 +140,14 @@ namespace CSFundamentalAlgorithmsTests.StringDataStructuresTests
             /* Property1: the suffix tree must contain exactly 'text.Length' leaf nodes. */
             Assert.AreEqual(text.Length, leafCounter);
 
-            /* Property2: The tree must have exactly one root. */
+            /* Property2: The tree must have exactly one root node. */
             Assert.AreEqual(1, rootCounter);
             Assert.IsTrue(ReferenceEquals(rootNode, root));
 
-            /* Property3: Root's number of children is >=0 */
+            /* Property3: Root's childrenCount is >= 0 */
             Assert.IsTrue(root.Children.Count >= 0);
 
-            /* Property4: All intermediate nodes number of children >=2 */
+            /* Property4: All intermediate nodes' childrenCount >= 2 */
             foreach(SuffixTreeNode node in intermediateNodes)
             {
                 Assert.IsTrue(node.Children.Count >= 2);
