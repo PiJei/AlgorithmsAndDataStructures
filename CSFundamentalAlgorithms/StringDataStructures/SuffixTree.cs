@@ -31,75 +31,77 @@ namespace CSFundamentalAlgorithms.StringDataStructures
     {
         public static SuffixTreeNode Build(string text)
         {
-            /*Assuming text does not contain $, appending a $ to it. Without this, some suffixes will be implicit in the tree.  */
+            /*Assuming text does not contain $, appending $. Without this, some suffixes will be implicit in the tree.  */
             string extendedText = text + "$";
             int n = extendedText.Length;
 
             SuffixTreeNode root = null;
             for (int i = n - 2; i >= 0; i--)
             {
-                string suffix = extendedText.Substring(i, n - i);
-
+                string suffix = extendedText.Substring(i);
                 if (root == null)
                 {
-                    var newNode = new SuffixTreeNode { StringValue = suffix, StartIndex = i, IsLeaf = true };
                     root = new SuffixTreeNode { IsRoot = true };
-                    root.Children.Add(newNode);
+                    root.Children.Add(new SuffixTreeNode { IsLeaf = true, StringValue = suffix, StartIndex = i });
                 }
-                else /* Should find the proper location in tree for adding this suffix. */
+                else
                 {
-                    SuffixTreeNode node = null;
-                    if (root.Children.Any(c => c.StringValue.StartsWith(suffix[0])))
-                    {
-                        node = root.Children.Where(c => c.StringValue.StartsWith(suffix[0]))?.ToList()?[0];
-                    }
-                    /* start the search from root based on the first character of this suffix. If a child is not found that starts with the first character of this suffix, then create a new child for the root. */
-                    if (node == null)
-                    {
-                        var newNode = new SuffixTreeNode { StringValue = suffix, StartIndex = i, IsLeaf = true };
-                        root.Children.Add(newNode);
-                    }
-                    else
-                    {
-                        int indexOverSuffix = 1;
-                        while (true)
-                        {
-                            int j = 1; 
-                            while (j < node.StringValue.Length && indexOverSuffix < suffix.Length && node.StringValue[j] == suffix[indexOverSuffix])
-                            {
-                                j++;
-                                indexOverSuffix++;
-                            }
-                            if (j <= node.StringValue.Length - 1) /* This means node should be converted to a intermediate node, with two children, and new suffix string */
-                            {
-                                var child1 = new SuffixTreeNode { IsLeaf = true, StringValue = node.StringValue.Substring(j), StartIndex = node.StartIndex };
-                                var child2 = new SuffixTreeNode { IsLeaf = true, StringValue = suffix.Substring(indexOverSuffix), StartIndex = i };
-                                node.IsLeaf = false;
-                                node.IsRoot = false;
-                                node.IsIntermediate = true;
-                                node.StartIndex = -1;
-                                node.StringValue = node.StringValue.Substring(0, node.StringValue.Length - 1);
-                                node.Children.Add(child1);
-                                node.Children.Add(child2);
-                                break;
-                            }
-                            else if (j == node.StringValue.Length && indexOverSuffix < suffix.Length)
-                            {
-                                if (!node.Children.Any(c => c.StringValue.StartsWith(suffix[indexOverSuffix])))
-                                {
-                                    var child = new SuffixTreeNode { IsLeaf = true, StringValue = suffix.Substring(indexOverSuffix), StartIndex = i };
-                                    node.Children.Add(child);
-                                    break;
-                                }
-                                node = node.Children.Where(c => c.StringValue.StartsWith(suffix[indexOverSuffix]))?.ToList()[0];
-                                indexOverSuffix++;
-                            }
-                        }
-                    }
+                    Insert(root, suffix, i);
                 }
             }
 
             return root;
+        }
+
+        public static void Insert(SuffixTreeNode root, string suffix, int startIndex)
+        {
+            SuffixTreeNode node = null;
+            if (root.Children.Any(c => c.StringValue.StartsWith(suffix[0])))
+            {
+                node = root.Children.Where(c => c.StringValue.StartsWith(suffix[0]))?.ToList()?[0];
+            }
+            
+            if (node == null)
+            {
+                var newNode = new SuffixTreeNode { IsLeaf = true, StringValue = suffix, StartIndex = startIndex };
+                root.Children.Add(newNode);
+                return;
+            }
+
+            int indexOverSuffix = 1;
+            while (true)
+            {
+                int j = 1;
+                while (j < node.StringValue.Length && indexOverSuffix < suffix.Length && node.StringValue[j] == suffix[indexOverSuffix])
+                {
+                    j++;
+                    indexOverSuffix++;
+                }
+                if (j <= node.StringValue.Length - 1) /* This means node should be converted to a intermediate node, with two children, and new suffix string */
+                {
+                    var child1 = new SuffixTreeNode { IsLeaf = true, StringValue = node.StringValue.Substring(j), StartIndex = node.StartIndex };
+                    var child2 = new SuffixTreeNode { IsLeaf = true, StringValue = suffix.Substring(indexOverSuffix), StartIndex = startIndex };
+                    node.IsLeaf = false;
+                    node.IsRoot = false;
+                    node.IsIntermediate = true;
+                    node.StartIndex = -1;
+                    node.StringValue = node.StringValue.Substring(0, node.StringValue.Length - 1);
+                    node.Children.Add(child1);
+                    node.Children.Add(child2);
+                    break;
+                }
+                else if (j == node.StringValue.Length && indexOverSuffix < suffix.Length)
+                {
+                    if (!node.Children.Any(c => c.StringValue.StartsWith(suffix[indexOverSuffix])))
+                    {
+                        var child = new SuffixTreeNode { IsLeaf = true, StringValue = suffix.Substring(indexOverSuffix), StartIndex = startIndex };
+                        node.Children.Add(child);
+                        break;
+                    }
+                    node = node.Children.Where(c => c.StringValue.StartsWith(suffix[indexOverSuffix]))?.ToList()[0];
+                    indexOverSuffix++;
+                }
+            }
         }
     }
 }
