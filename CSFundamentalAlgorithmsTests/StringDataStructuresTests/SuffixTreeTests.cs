@@ -19,6 +19,7 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentalAlgorithms.StringDataStructures;
+using System.Collections.Generic;
 
 // TODO: Add more tests with other strings. 
 
@@ -30,7 +31,9 @@ namespace CSFundamentalAlgorithmsTests.StringDataStructuresTests
         [TestMethod]
         public void Test1()
         {
-            SuffixTreeNode root = SuffixTree.Build("banana");
+            string text = "banana";
+            SuffixTreeNode root = SuffixTree.Build(text);
+            CheckSuffixTreeProperties(root, text);
 
             Assert.IsTrue(root.IsRoot);
             Assert.IsFalse(root.IsLeaf);
@@ -108,8 +111,57 @@ namespace CSFundamentalAlgorithmsTests.StringDataStructuresTests
             Assert.AreEqual("banana$", rootChild3.StringValue);
             Assert.AreEqual(0, rootChild3.StartIndex);
             Assert.AreEqual(0, rootChild3.Children.Count);
-
-
         }
+
+        public void CheckSuffixTreeProperties(SuffixTreeNode root, string text)
+        {
+            List<SuffixTreeNode> nodes = new List<SuffixTreeNode>();
+            GetNodes(root, nodes);
+            
+            int leafCounter = 0;
+            int rootCounter = 0;
+            SuffixTreeNode rootNode = null;
+            List<SuffixTreeNode> intermediateNodes = new List<SuffixTreeNode>();
+            foreach (SuffixTreeNode node in nodes)
+            {
+                if (node.IsLeaf)
+                    leafCounter++;
+                if (node.IsRoot)
+                {
+                    rootCounter++;
+                    rootNode = node;
+                }
+                if (node.IsIntermediate)
+                {
+                    intermediateNodes.Add(node);
+                }
+            }
+            
+            /* Property1: the suffix tree must contain exactly 'text.Length' leaf nodes. */
+            Assert.AreEqual(text.Length, leafCounter);
+
+            /* Property2: The tree must have exactly one root. */
+            Assert.AreEqual(1, rootCounter);
+            Assert.IsTrue(ReferenceEquals(rootNode, root));
+
+            /* Property3: Root's number of children is >=0 */
+            Assert.IsTrue(root.Children.Count >= 0);
+
+            /* Property4: All intermediate nodes number of children >=2 */
+            foreach(SuffixTreeNode node in intermediateNodes)
+            {
+                Assert.IsTrue(node.Children.Count >= 2);
+            }
+        }
+
+        public void GetNodes(SuffixTreeNode root, List<SuffixTreeNode> nodes)
+        {
+            nodes.Add(root);
+            foreach (SuffixTreeNode node in root.Children)
+            {
+                GetNodes(node, nodes);
+            }
+        }
+
     }
 }

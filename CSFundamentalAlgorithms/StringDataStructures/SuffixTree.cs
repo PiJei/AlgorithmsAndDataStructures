@@ -17,7 +17,8 @@
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// TODO: Implement UKKONEN's algorithm as well, which is on line. 
+// TODO: As an alternative implement UKKONEN's algorithm as well, which is on line. 
+using System.Diagnostics.Contracts;
 using System.Linq;
 
 namespace CSFundamentalAlgorithms.StringDataStructures
@@ -29,6 +30,11 @@ namespace CSFundamentalAlgorithms.StringDataStructures
     [DataStructure("SuffixTree(aka. PAT)")]
     public class SuffixTree
     {
+        /// <summary>
+        /// Given a string, builds its suffix tree. 
+        /// </summary>
+        /// <param name="text">Specifies the string for which the suffix tree is being built. </param>
+        /// <returns>The root of the suffix tree. </returns>
         public static SuffixTreeNode Build(string text)
         {
             /*Assuming text does not contain $, appending $. Without this, some suffixes will be implicit in the tree.  */
@@ -36,15 +42,15 @@ namespace CSFundamentalAlgorithms.StringDataStructures
             int n = extendedText.Length;
 
             SuffixTreeNode root = null;
-            for (int i = n - 2; i >= 0; i--)
+            for (int i = n - 2; i >= 0; i--) /* Start building the Suffix tree by the shortest suffix. For example in string 'data$', the shortest suffix is 'a$'.  */
             {
                 string suffix = extendedText.Substring(i);
-                if (root == null)
+                if (root == null) /* If root is null, create a root node, and make the current suffix its only child. */
                 {
                     root = new SuffixTreeNode { IsRoot = true };
                     root.Children.Add(new SuffixTreeNode { IsLeaf = true, StringValue = suffix, StartIndex = i });
                 }
-                else
+                else /* Otherwise traverse the tree starting from root to find the right position for the current suffix. */
                 {
                     Insert(root, suffix, i);
                 }
@@ -53,17 +59,24 @@ namespace CSFundamentalAlgorithms.StringDataStructures
             return root;
         }
 
+        /// <summary>
+        /// Inserts the given suffix in the tree. Notice that the suffix is not necessarily inserted as a while. On the traversal of the tree, the intermediate nodes that have common prefixes with these suffix, make the suffix to break down. 
+        /// </summary>
+        /// <param name="root">Specifies the root node of a suffix tree. </param>
+        /// <param name="suffix">Specifies the suffix string that should be inserted in the suffix tree. </param>
+        /// <param name="startIndex">Specifies the start index of the suffix in its container string. </param>
         public static void Insert(SuffixTreeNode root, string suffix, int startIndex)
         {
             SuffixTreeNode node = null;
-            var nodes = root.Children.Where(c => c.StringValue.StartsWith(suffix[0]));
-            if (!nodes.Any())
+            var nodes = root.Children.Where(c => c.StringValue.StartsWith(suffix[0])); /* Before creating a new branch in the tree, look for a branch of the root that has a common starting character with the current suffix. */
+            if (!nodes.Any()) /* If no child of the root has a common starting character with suffix, create a new child. */
             {
                 root.Children.Add(new SuffixTreeNode { IsLeaf = true, StringValue = suffix, StartIndex = startIndex });
                 return;
             }
 
-            node = nodes.ToList()?[0];
+            Contract.Assert(nodes.ToList().Count == 1); /* It is expected that all the branches (children) of a node start with distinct characters. */
+            node = nodes.ToList()?[0]; /* Take the only child that has the same starting character as the suffix and continue traversing down its children.  */
             int indexOverSuffix = 1;
             while (true)
             {
@@ -94,6 +107,8 @@ namespace CSFundamentalAlgorithms.StringDataStructures
                         node.Children.Add(new SuffixTreeNode { IsLeaf = true, StringValue = suffix.Substring(indexOverSuffix), StartIndex = startIndex });
                         break;
                     }
+
+                    Contract.Assert(nodes.ToList().Count == 1); /* It is expected that all the branches (children) of a node start with distinct characters. */
                     node = nodes.ToList()[0];
                     indexOverSuffix++;
                 }
