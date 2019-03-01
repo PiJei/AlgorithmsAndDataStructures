@@ -34,6 +34,10 @@ namespace CSFundamentalAlgorithms.Search
         /// <param name="searchValue">Specifies the value that is being searched for. </param>
         /// <returns>The index of the searchValue in the array values, and -1 if it does not exist in the array. </returns>
         [Algorithm(AlgorithmType.Search, "InterpolationSearch")]
+        [SpaceComplexity("O(1)", InPlace = true)]
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "O(n)")]
+        [TimeComplexity(Case.Average, "O(Log(Log(n)))")]
         public static int Search(List<int> values, int startIndex, int endIndex, int searchValue)
         {
             if (startIndex <= endIndex && searchValue >= values[startIndex] && searchValue <= values[endIndex])

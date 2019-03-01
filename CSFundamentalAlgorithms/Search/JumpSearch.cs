@@ -25,13 +25,17 @@ namespace CSFundamentalAlgorithms.Search
     public class JumpSearch
     {
         /// <summary>
-        /// Performs a jumpSearch on a list of integers, to find the specified value. 
+        /// Performs a jumpSearch on a list of integers to find the searchValue. 
         /// Notice that only works if the given array is sorted. 
         /// </summary>
         /// <param name="values">Specifies a sorted list of integers.</param>
         /// <param name="searchValue">Specifies the value the method is searching for. </param>
         /// <returns>The index of the searchValue in the array values, and -1 if it does not exist in the array, </returns>
         [Algorithm(AlgorithmType.Search, "JumpSearch")]
+        [SpaceComplexity("O(1)", InPlace = true)]
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "o(√n)")]
+        [TimeComplexity(Case.Average, "O(√n)")]
         public static int Search(List<int> values, int searchValue)
         {
             if (searchValue < values[0] || searchValue > values[values.Count - 1]) // We can perform this check as the array is expected to be sorted. 
