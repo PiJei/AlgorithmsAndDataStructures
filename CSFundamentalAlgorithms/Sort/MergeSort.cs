@@ -32,6 +32,10 @@ namespace CSFundamentalAlgorithms.Sort
         /// <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
         /// <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
         [Algorithm("Sort", "MergeSort")]
+        [TimeComplexity(Case.Average, "O(nLog(n))")]
+        [TimeComplexity(Case.Best, "O(nLog(n))")]
+        [TimeComplexity(Case.Worst, "O(nLog(n))")]
+        [SpaceComplexity("O(n)")]
         public static void Sort_Recursively<T>(List<T> values, int startIndex, int endIndex) where T : IComparable<T>
         {
             if (startIndex < endIndex)
@@ -53,7 +57,7 @@ namespace CSFundamentalAlgorithms.Sort
         public static void Merge<T>(List<T> values, int startIndex, int middleIndex, int endIndex) where T : IComparable<T>
         {
             //Making a copy of the values
-            List<T> valuesOriginal = new List<T>(values);
+            List<T> valuesOriginal = new List<T>(values); /* This is where the extra space complexity of O(n) for merge sort comes from. */
 
             //Inclusive boundaries of the first sub-array
             int start1 = startIndex;
