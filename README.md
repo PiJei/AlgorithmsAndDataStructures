@@ -1,6 +1,6 @@
 # CSFundamentalAlgorithms
 
-- CS stands for ComputerScience, and C Sharp. 
+- CS: (C)omputer(S)cience, & (CS)harp. 
 
 - Contains C# code for fundamental and basic algorithms and data structures in computer science. 
 
@@ -15,11 +15,6 @@ Content:
   - MergeSort
   - HeapSort
   - RadixSort
-  
- - Heaps:
-   - MinHeap
-   - MaxHeap
-   - MinMaxHeap
   
  - Searching Algorithms:
     - LinearSearch
@@ -41,5 +36,16 @@ Content:
       - DFS (Depth First Search)
       - BFS (Breadth First Search)
     
+  - String DataStructures:
+    - SuffixTree
+    - SuffixArray
+    - LLPPS (LengthLongestProperPrefixSuffix)
+    
+    
+  - Heaps:
+   - MinHeap
+   - MaxHeap
+   - MinMaxHeap
   
 
+- Hashing
