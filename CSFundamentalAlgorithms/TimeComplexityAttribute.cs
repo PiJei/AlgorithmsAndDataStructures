@@ -21,25 +21,29 @@ using System;
 
 namespace CSFundamentalAlgorithms
 {
-    [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
-    public class AlgorithmAttribute : Attribute
+    //TODO: Very similar to space complexity, ideally unify
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
+    public class TimeComplexityAttribute : Attribute
     {
-        public AlgorithmType Type { get; private set; }
+        public string Complexity { get; private set; }
+        public Case ExecutionCase { get; private set; }
 
-        public string Name { get; private set; }
+        /// <summary>
+        /// Describes when the given ExecutionCase takes place, for example what conditions should the input have for the algorithm to be operating at the given ExecutionCase
+        /// </summary>
+        public string When { get; set; }
 
-        public AlgorithmAttribute(AlgorithmType type, string name)
+        public TimeComplexityAttribute(Case executionCase, string complexity)
         {
-            Type = type;
-            Name = name;
+            ExecutionCase = executionCase;
+            Complexity = complexity;
         }
     }
 
-    public enum AlgorithmType
+    public enum Case
     {
-        Sort = 1,
-        Search = 2,
-        PatternSearch = 3,
-        Hash = 4
+        Average,
+        Best,
+        Worst
     }
 }

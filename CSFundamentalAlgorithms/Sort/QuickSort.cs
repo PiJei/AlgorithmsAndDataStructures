@@ -18,6 +18,9 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("CSFundamentalAlgorithmsTests")]
 
 namespace CSFundamentalAlgorithms.Sort
 {
@@ -29,7 +32,11 @@ namespace CSFundamentalAlgorithms.Sort
         /// <param name="values">Specifies the list of integer values to be sorted. </param>
         /// <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
         /// <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
-        [Algorithm("Sort", "QuickSort")]
+        [Algorithm(AlgorithmType.Sort, "QuickSort")]
+        [SpaceComplexity("O(1)", InPlace = true)]
+        [TimeComplexity(Case.Best, "O(nLog(n))")]
+        [TimeComplexity(Case.Worst, "O(n²)", When = "Minimum or maximum element in the array is chosen as the pivot.")]
+        [TimeComplexity(Case.Average, "O(nLog(n))")]
         public static void Sort_Recursively(List<int> values, int startIndex, int endIndex)
         {
             if (startIndex < endIndex)
@@ -40,6 +47,7 @@ namespace CSFundamentalAlgorithms.Sort
             }
         }
 
+        //TODO: Write a unit test for this 
         /// <summary>
         /// Partitions the given array, with respect to the computed pivot, such that elements to the left of the pivot are smaller than the pivot, and elements to the right of the pivot are bigger than the pivot. 
         /// </summary>
@@ -47,7 +55,7 @@ namespace CSFundamentalAlgorithms.Sort
         /// <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
         /// <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
         /// <returns>The next partitioning index. </returns>
-        public static int PartitionArray(List<int> values, int startIndex, int endIndex)
+        internal static int PartitionArray(List<int> values, int startIndex, int endIndex)
         {
             int pivotIndex = GetPivotIndex(startIndex, endIndex);
             int pivotValue = values[pivotIndex];
@@ -82,8 +90,8 @@ namespace CSFundamentalAlgorithms.Sort
         /// <summary>
         /// This algorithm uses the middle element of the array as pivot. Other mechanisms exist also. 
         /// </summary>
-        /// <param name="startIndex"></param>
-        /// <param name="endIndex"></param>
+        /// <param name="startIndex">Specifies the startIndex of an array.</param>
+        /// <param name="endIndex">Specifies the endIndex of an array. </param>
         /// <returns></returns>
         public static int GetPivotIndex(int startIndex, int endIndex)
         {

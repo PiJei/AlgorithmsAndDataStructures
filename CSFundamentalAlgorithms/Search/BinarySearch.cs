@@ -21,9 +21,6 @@ using System.Collections.Generic;
 
 namespace CSFundamentalAlgorithms.Search
 {
-    /// <summary>
-    /// 
-    /// </summary>
     public class BinarySearch
     {
         /// <summary>
@@ -34,7 +31,11 @@ namespace CSFundamentalAlgorithms.Search
         /// <param name="endIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
         /// <param name="searchValue">Specifies the value that is being searched for. </param>
         /// <returns>The index of the searchValue in the array values, and -1 if it does not exist in the array. </returns>
-        [Algorithm("Search", "BinarySearch")]
+        [Algorithm(AlgorithmType.Search, "BinarySearch")]
+        [SpaceComplexity("O(1)", InPlace = true)]
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "O(n)", When = "Tree is imbalanced such that it is one sequential branch, every node except the leaf having exactly one child.")]
+        [TimeComplexity(Case.Average, "O(Log(n))")]
         public static int Search(List<int> values, int startIndex, int endIndex, int searchValue)
         {
             if (startIndex <= endIndex && searchValue >= values[startIndex] && searchValue <= values[endIndex])

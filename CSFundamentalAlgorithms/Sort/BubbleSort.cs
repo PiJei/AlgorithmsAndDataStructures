@@ -28,7 +28,11 @@ namespace CSFundamentalAlgorithms.Sort
         /// Implements bubble sort iteratively, elements are bubbled down or up the array till they are at their final correct positions. 
         /// </summary>
         /// <param name="values"></param>
-        [Algorithm("Sort", "BubbleSort")]
+        [Algorithm(AlgorithmType.Sort, "BubbleSort")]
+        [SpaceComplexity("O(1)", InPlace = true)]
+        [TimeComplexity(Case.Best, "O(n)", When = "Input array is already sorted.")]
+        [TimeComplexity(Case.Worst, "O(n²)")]
+        [TimeComplexity(Case.Average, "O(n²)")]
         public static void Sort_Iterative(List<int> values)
         {
             /* Bubble sort iterates many times over an array, and stops iterating when no swap happens any more. */

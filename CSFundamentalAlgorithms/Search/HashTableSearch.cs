@@ -16,37 +16,21 @@
  * You should have received a copy of the GNU General Public License
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+using System;
 using System.Collections.Generic;
-
 namespace CSFundamentalAlgorithms.Search
 {
-    /// <summary>
-    /// Implements linear search, time complexity is O(N)
-    /// </summary>
-    public class LinearSearch
+    public class HashTableSearch
     {
-        /// <summary>
-        /// Searches for a given value in a list. 
-        /// </summary>
-        /// <param name="values">Specifies a list of integers.</param>
-        /// <param name="searchValue">Specifies the value the method is searching for. </param>
-        /// <returns>The index of the searchValue in the array values, and -1 if it does not exist in the array, </returns>
-        [Algorithm(AlgorithmType.Search, "LinearSearch")]
-        [SpaceComplexity("O(1)", InPlace = true)]
+        // TODO: Implement 
+        [Algorithm(AlgorithmType.Search, "HashTable")]
+        [SpaceComplexity("O(n)", InPlace = false)]
         [TimeComplexity(Case.Best, "O(1)")]
-        [TimeComplexity(Case.Worst, "O(n)")]
-        [TimeComplexity(Case.Average, "O(n)")]
+        [TimeComplexity(Case.Worst, "O(n)", When = "All the elements are mapped to the same key (for example due to lots of conflicts in the hashing method).")]
+        [TimeComplexity(Case.Average, "O(1)")]
         public static int Search(List<int> values, int searchValue)
         {
-            for (int i = 0; i < values.Count; i++)
-            {
-                if (values[i] == searchValue)
-                {
-                    return i;
-                }
-            }
-            return -1;
+            throw new NotImplementedException();
         }
     }
 }

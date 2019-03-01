@@ -23,7 +23,8 @@ namespace CSFundamentalAlgorithms.Search
 {
     public class FibonacciSearch
     {
-        [Algorithm("Search", "FibonacciSearch")]
+        [Algorithm(AlgorithmType.Search, "FibonacciSearch")]
+        //todo: specify time and space complexity.
         public static int Search(List<int> values, int searchValue)
         {
             FibonacciElement fib = GetSmallestFibonacciBiggerThanNumber(values.Count);

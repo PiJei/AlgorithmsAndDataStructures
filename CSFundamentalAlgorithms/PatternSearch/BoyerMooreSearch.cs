@@ -30,7 +30,7 @@ namespace CSFundamentalAlgorithms.PatternSearch
         /// <param name= "text">The parent string in which we are searching for a subString.</param>
         /// <param name= "pattern">The string we want to find in parent string (text).</param>
         /// <returns>All the starting index in text at which subString is found [in other words looks for all the occurrences of the subString in text, and does not stop by finding the first one.].</returns>
-        [Algorithm("PatternSearch", "BoyerMoore")]
+        [Algorithm(AlgorithmType.PatternSearch, "BoyerMoore")]
         public static List<int> Search_BasedOnBadCharacterShiftOnly(string text, string pattern)
         {
             List<int> indexes = new List<int>();

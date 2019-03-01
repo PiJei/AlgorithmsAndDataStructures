@@ -32,7 +32,7 @@ namespace CSFundamentalAlgorithms.PatternSearch
         /// <param name= "text">The parent string in which we are searching for a subString.</param>
         /// <param name= "pattern">The string we want to find in parent string (text).</param>
         /// <returns>All the starting index in text at which subString is found [in other words looks for all the occurrences of the subString in text, and does not stop by finding the first one.].</returns>
-        [Algorithm("PatternSearch", "KMP-KnuthMorrisPratt")]
+        [Algorithm(AlgorithmType.PatternSearch, "KMP-KnuthMorrisPratt")]
         public static List<int> Search(string text, string pattern)
         {
             /* Starts with a preprocessing step. Get the data structure for longest proper prefix that is also a suffix. */

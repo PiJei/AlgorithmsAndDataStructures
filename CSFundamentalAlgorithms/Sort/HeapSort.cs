@@ -28,7 +28,11 @@ namespace CSFundamentalAlgorithms.Sort
         /// Sorts the elements in an integer array using heap sort algorithm in to an ascending order. 
         /// </summary>
         /// <param name="values"></param>
-        [Algorithm("Sort", "HeapSort")]
+        [Algorithm(AlgorithmType.Sort, "HeapSort")]
+        [SpaceComplexity("O(1)", InPlace = true)]
+        [TimeComplexity(Case.Best, "O(nLog(n))")]
+        [TimeComplexity(Case.Worst, "O(nLog(n))")]
+        [TimeComplexity(Case.Average, "O(nLog(n))")]
         public static void Sort_Ascending(List<int> values)
         {
             // 1- re-arrange the elements in the integer array into a max heap. 
@@ -40,7 +44,7 @@ namespace CSFundamentalAlgorithms.Sort
             {
                 // Since the root element/node in a max heap, is the most maximum value in the array, putting it to the last element of the unsorted part of the array, will determine its right position in an array that is eventually ordered ascending
                 Utils.Swap(values, 0, i);
-                // Since the new value in the root position of the heap (index :0) may not be in its correct position, heap-order wise, then bubble it down, until it reaches its correct position.
+                // Since the new value in the root position of the heap (index :0) may not be in its correct position, heap-order-wise, then bubble it down, until it reaches its correct position.
                 maxHeap.BubbleDown_Recursively(0, i);
             }
         }
