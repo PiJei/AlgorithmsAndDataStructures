@@ -86,8 +86,8 @@ namespace CSFundamentalAlgorithms.Sort
         /// <summary>
         /// This algorithm uses the middle element of the array as pivot. Other mechanisms exist also. 
         /// </summary>
-        /// <param name="startIndex"></param>
-        /// <param name="endIndex"></param>
+        /// <param name="startIndex">Specifies the startIndex of an array.</param>
+        /// <param name="endIndex">Specifies the endIndex of an array. </param>
         /// <returns></returns>
         public static int GetPivotIndex(int startIndex, int endIndex)
         {
