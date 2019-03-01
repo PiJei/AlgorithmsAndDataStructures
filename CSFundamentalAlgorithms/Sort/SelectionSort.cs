@@ -28,6 +28,10 @@ namespace CSFundamentalAlgorithms.Sort
         /// </summary>
         /// <param name="values">Specifies the list of integers that are to be sorted.</param>
         [Algorithm("Sort", "SelectionSort")]
+        [SpaceComplexity("O(1)", InPlace = true)]
+        [TimeComplexity(Case.Best, "O(n²)")]
+        [TimeComplexity(Case.Worst, "O(n²)")]
+        [TimeComplexity(Case.Average, "O(n²)")]
         public static void Sort_Iteratively(List<int> values)
         {
             /*Notice that the loop does not have to repeat over the last element of the array, as by then the last element is already the largest element in the array.*/
