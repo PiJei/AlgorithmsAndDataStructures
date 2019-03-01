@@ -32,10 +32,10 @@ namespace CSFundamentalAlgorithms.Sort
         /// <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
         /// <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
         [Algorithm("Sort", "MergeSort")]
-        [TimeComplexity(Case.Average, "O(nLog(n))")]
+        [SpaceComplexity("O(n)", InPlace = false)]
         [TimeComplexity(Case.Best, "O(nLog(n))")]
         [TimeComplexity(Case.Worst, "O(nLog(n))")]
-        [SpaceComplexity("O(n)")]
+        [TimeComplexity(Case.Average, "O(nLog(n))")]
         public static void Sort_Recursively<T>(List<T> values, int startIndex, int endIndex) where T : IComparable<T>
         {
             if (startIndex < endIndex)

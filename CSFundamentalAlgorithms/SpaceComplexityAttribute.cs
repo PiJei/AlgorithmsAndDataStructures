@@ -25,9 +25,13 @@ namespace CSFundamentalAlgorithms
     public class SpaceComplexityAttribute : Attribute
     {
         public string Complexity { get; private set; }
-        public SpaceComplexityAttribute(string complexity)
+
+        public bool InPlace { get; set; }
+
+        public SpaceComplexityAttribute(string complexity, bool inPlace = false)
         {
             Complexity = complexity;
+           InPlace = inPlace;
         }
     }
 }

@@ -31,6 +31,10 @@ namespace CSFundamentalAlgorithms.Sort
         /// </summary>
         /// <param name="values">Specifies the list of integers to be sorted. </param>
         [Algorithm("Sort", "InsertionSort")]
+        [SpaceComplexity("O(1)", InPlace = true)]
+        [TimeComplexity(Case.Best, "O(n)", When = "Input array is already sorted.")]
+        [TimeComplexity(Case.Worst, "O(n²)")]
+        [TimeComplexity(Case.Average, "O(n²)")]
         public static void Sort_Iterative_V1(List<int> values)
         {
             for (int i = 1; i < values.Count; i++)
@@ -61,7 +65,7 @@ namespace CSFundamentalAlgorithms.Sort
                     values[j + 1] = values[j];
                     correctIndex = j;
                 }
-                
+
                 values[correctIndex] = arrayValueAtIndexI;
             }
         }

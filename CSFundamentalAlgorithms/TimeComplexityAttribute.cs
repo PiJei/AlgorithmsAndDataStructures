@@ -28,6 +28,11 @@ namespace CSFundamentalAlgorithms
         public string Complexity { get; private set; }
         public Case ExecutionCase { get; private set; }
 
+        /// <summary>
+        /// Describes when the given ExecutionCase takes place, for example what conditions should the input have for the algorithm to be operating at the given ExecutionCase
+        /// </summary>
+        public string When { get; set; }
+
         public TimeComplexityAttribute(Case executionCase, string complexity)
         {
             ExecutionCase = executionCase;
