@@ -21,17 +21,25 @@ using System;
 
 namespace CSFundamentalAlgorithms
 {
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
+    [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
     public class AlgorithmAttribute : Attribute
     {
-        public string Category { get; private set; }
+        public AlgorithmType Type { get; private set; }
 
         public string Name { get; private set; }
 
-        public AlgorithmAttribute(string category, string name)
+        public AlgorithmAttribute(AlgorithmType type, string name)
         {
-            Category = category;
+            Type = type;
             Name = name;
         }
+    }
+
+    public enum AlgorithmType
+    {
+        Sort = 1,
+        Search = 2,
+        PatternSearch = 3,
+        Hash = 4
     }
 }

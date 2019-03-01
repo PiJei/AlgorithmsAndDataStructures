@@ -27,7 +27,7 @@ namespace CSFundamentalAlgorithms.Sort
         /// <summary>
         /// Implements Radix sort for base 10 (decimal integers) using queues. 
         /// </summary>
-        [Algorithm("Sort", "RadixSort")]
+        [Algorithm(AlgorithmType.Sort, "RadixSort")]
         // TODO: Specify the time and space complexities
         public static void Sort_Iterative_V1(List<int> values)
         {

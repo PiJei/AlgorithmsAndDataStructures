@@ -32,7 +32,7 @@ namespace CSFundamentalAlgorithms.Sort
         /// <param name="values">Specifies the list of integer values to be sorted. </param>
         /// <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
         /// <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
-        [Algorithm("Sort", "QuickSort")]
+        [Algorithm(AlgorithmType.Sort, "QuickSort")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(nLog(n))")]
         [TimeComplexity(Case.Worst, "O(n²)", When = "Minimum or maximum element in the array is chosen as the pivot.")]

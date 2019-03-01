@@ -32,7 +32,7 @@ namespace CSFundamentalAlgorithms.PatternSearch
         /// <param name= "text">The parent string in which we are searching for a subString.</param>
         /// <param name= "pattern">The string we want to find in parent string (text).</param>
         /// <returns>The starting index in text at which subString is found.</returns>
-        [Algorithm("PatternSearch", "RabinKarp")]
+        [Algorithm(AlgorithmType.PatternSearch, "RabinKarp")]
         public static int Search(string text, string pattern)
         {
             int n = text.Length;

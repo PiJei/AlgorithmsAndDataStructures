@@ -28,7 +28,7 @@ namespace CSFundamentalAlgorithms.Sort
         /// Sorts the elements in an integer array using heap sort algorithm in to an ascending order. 
         /// </summary>
         /// <param name="values"></param>
-        [Algorithm("Sort", "HeapSort")]
+        [Algorithm(AlgorithmType.Sort, "HeapSort")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(nLog(n))")]
         [TimeComplexity(Case.Worst, "O(nLog(n))")]

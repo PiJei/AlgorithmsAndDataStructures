@@ -30,7 +30,7 @@ namespace CSFundamentalAlgorithms.Search
         /// <param name="values">A sorted list of integers. </param>
         /// <param name="searchValue">Specifies the value that is being searched for. </param>
         /// <returns>The index of the searchValue in the array values, and -1 if it does not exist in the array. </returns>
-        [Algorithm("Search", "ExponentialSearch")]
+        [Algorithm(AlgorithmType.Search, "ExponentialSearch")]
         public static int Search(List<int> values, int searchValue)
         {
             if (searchValue >= values[0] && searchValue <= values[values.Count - 1])

@@ -30,7 +30,7 @@ namespace CSFundamentalAlgorithms.Sort
         /// Implements insertion sort iteratively, and in-situ, using many Swaps.
         /// </summary>
         /// <param name="values">Specifies the list of integers to be sorted. </param>
-        [Algorithm("Sort", "InsertionSort")]
+        [Algorithm(AlgorithmType.Sort, "InsertionSort")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(n)", When = "Input array is already sorted.")]
         [TimeComplexity(Case.Worst, "O(n²)")]
