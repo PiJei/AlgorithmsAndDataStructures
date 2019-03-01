@@ -18,6 +18,9 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("CSFundamentalAlgorithmsTests")]
 
 namespace CSFundamentalAlgorithms.Sort
 {
@@ -44,6 +47,7 @@ namespace CSFundamentalAlgorithms.Sort
             }
         }
 
+        //TODO: Write a unit test for this 
         /// <summary>
         /// Partitions the given array, with respect to the computed pivot, such that elements to the left of the pivot are smaller than the pivot, and elements to the right of the pivot are bigger than the pivot. 
         /// </summary>
@@ -51,7 +55,7 @@ namespace CSFundamentalAlgorithms.Sort
         /// <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
         /// <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
         /// <returns>The next partitioning index. </returns>
-        public static int PartitionArray(List<int> values, int startIndex, int endIndex)
+        internal static int PartitionArray(List<int> values, int startIndex, int endIndex)
         {
             int pivotIndex = GetPivotIndex(startIndex, endIndex);
             int pivotValue = values[pivotIndex];
