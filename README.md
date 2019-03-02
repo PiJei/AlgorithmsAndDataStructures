@@ -2,12 +2,8 @@
 
 (C)omputer(S)cience fundamentals in (CS)harp. 
 
-- Contains C# code for fundamental and basic algorithms and data structures in computer science. 
-
-- When internally implemented methods exist for a desired functionality, they are not used in favor of implementing them from scratch.
-
 Content: 
-- Sorting Algorithms [besides basic version, implementations are available for checking whether the sort method is stable or not]
+- Sorting Algorithms 
   - BubbleSort
   - InsertionSort
   - SelectionSort
