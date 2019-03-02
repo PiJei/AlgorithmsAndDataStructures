@@ -10,4 +10,4 @@ jobs:
           command: dotnet build CSFundamentalAlgorithms.sln
       - run:
           name: tests
-          command: dotnet test CSFundamentalAlgorithmsTests/CSFundamentalAlgorithmsTests.csproj
+          command: dotnet test Tests/CSFundamentalAlgorithmsTests.csproj
