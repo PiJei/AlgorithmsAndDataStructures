@@ -19,31 +19,27 @@
 
 using System;
 
-namespace CSFundamentals
+namespace CSFundamentals.Styling
 {
-    //TODO: Very similar to space complexity, ideally unify
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
-    public class TimeComplexityAttribute : Attribute
+    [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
+    public class AlgorithmAttribute : Attribute
     {
-        public string Complexity { get; private set; }
-        public Case ExecutionCase { get; private set; }
+        public AlgorithmType Type { get; private set; }
 
-        /// <summary>
-        /// Describes when the given ExecutionCase takes place, for example what conditions should the input have for the algorithm to be operating at the given ExecutionCase
-        /// </summary>
-        public string When { get; set; }
+        public string Name { get; private set; }
 
-        public TimeComplexityAttribute(Case executionCase, string complexity)
+        public AlgorithmAttribute(AlgorithmType type, string name)
         {
-            ExecutionCase = executionCase;
-            Complexity = complexity;
+            Type = type;
+            Name = name;
         }
     }
 
-    public enum Case
+    public enum AlgorithmType
     {
-        Average,
-        Best,
-        Worst
+        Sort = 1,
+        Search = 2,
+        PatternSearch = 3,
+        Hash = 4
     }
 }

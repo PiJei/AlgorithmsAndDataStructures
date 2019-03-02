@@ -18,6 +18,7 @@
  */
 
 using System.Collections.Generic;
+using CSFundamentals.Styling;
 
 namespace CSFundamentals.Algorithms.PatternSearch
 {

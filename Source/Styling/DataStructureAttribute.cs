@@ -19,7 +19,7 @@
 
 using System;
 
-namespace CSFundamentals
+namespace CSFundamentals.Styling
 {
     [AttributeUsage(AttributeTargets.Class| AttributeTargets.Method, AllowMultiple = true )]
     public class DataStructureAttribute : Attribute

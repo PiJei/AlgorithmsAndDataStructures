@@ -20,6 +20,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics.Contracts;
+using CSFundamentals.Styling;
 
 namespace CSFundamentals.DataStructures.BinaryHeaps
 {

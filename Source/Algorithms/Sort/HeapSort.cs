@@ -21,6 +21,7 @@
 
 using System.Collections.Generic;
 using CSFundamentals.DataStructures.BinaryHeaps;
+using CSFundamentals.Styling;
 
 namespace CSFundamentals.Algorithms.Sort
 {

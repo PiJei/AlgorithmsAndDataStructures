@@ -17,29 +17,22 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+//TODO: Specify the time and space complexity of all the code in this project
 using System;
 
-namespace CSFundamentals
+namespace CSFundamentals.Styling
 {
-    [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
-    public class AlgorithmAttribute : Attribute
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false)]
+    public class SpaceComplexityAttribute : Attribute
     {
-        public AlgorithmType Type { get; private set; }
+        public string Complexity { get; private set; }
 
-        public string Name { get; private set; }
+        public bool InPlace { get; set; }
 
-        public AlgorithmAttribute(AlgorithmType type, string name)
+        public SpaceComplexityAttribute(string complexity, bool inPlace = false)
         {
-            Type = type;
-            Name = name;
+            Complexity = complexity;
+           InPlace = inPlace;
         }
-    }
-
-    public enum AlgorithmType
-    {
-        Sort = 1,
-        Search = 2,
-        PatternSearch = 3,
-        Hash = 4
     }
 }

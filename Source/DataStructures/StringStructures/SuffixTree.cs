@@ -20,6 +20,7 @@
 // TODO: As an alternative implement UKKONEN's algorithm as well, which is on line. 
 using System.Diagnostics.Contracts;
 using System.Linq;
+using CSFundamentals.Styling;
 
 namespace CSFundamentals.DataStructures.StringStructures
 {
