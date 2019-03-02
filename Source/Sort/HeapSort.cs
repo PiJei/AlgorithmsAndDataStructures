@@ -17,6 +17,8 @@
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+// TODO: make generic
+
 using System.Collections.Generic;
 using CSFundamentalAlgorithms.BinaryHeaps;
 
@@ -24,10 +26,11 @@ namespace CSFundamentalAlgorithms.Sort
 {
     public partial class HeapSort
     {
+        // TODO: Make generic
         /// <summary>
         /// Sorts the elements in an integer array using heap sort algorithm in to an ascending order. 
         /// </summary>
-        /// <param name="values"></param>
+        /// <param name="values">Specifies the list of values (of type T, e.g., int) to be sorted.</param>
         [Algorithm(AlgorithmType.Sort, "HeapSort")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(nLog(n))")]

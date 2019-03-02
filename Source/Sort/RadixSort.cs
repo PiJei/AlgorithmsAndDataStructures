@@ -18,7 +18,7 @@
  */
 
 using System;
- using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace CSFundamentalAlgorithms.Sort
 {
@@ -29,6 +29,7 @@ namespace CSFundamentalAlgorithms.Sort
         /// </summary>
         [Algorithm(AlgorithmType.Sort, "RadixSort")]
         // TODO: Specify the time and space complexities
+        // todo: explain why is not generic: due to get the max digits of
         public static void Sort_Iterative_V1(List<int> values)
         {
             int maxElement = Utils.GetMaxElement(values);

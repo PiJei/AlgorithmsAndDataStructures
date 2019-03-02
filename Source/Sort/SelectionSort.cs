@@ -17,6 +17,7 @@
  * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System;
 using System.Collections.Generic;
 
 namespace CSFundamentalAlgorithms.Sort
@@ -26,13 +27,13 @@ namespace CSFundamentalAlgorithms.Sort
         /// <summary>
         /// Implements selection sort, which is in-situ and unstable, and at each step, the array would look as one sorted part, and one unsorted part. 
         /// </summary>
-        /// <param name="values">Specifies the list of integers that are to be sorted.</param>
+        /// <param name="values">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
         [Algorithm(AlgorithmType.Sort, "SelectionSort")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(n²)")]
         [TimeComplexity(Case.Worst, "O(n²)")]
         [TimeComplexity(Case.Average, "O(n²)")]
-        public static void Sort_Iteratively(List<int> values)
+        public static void Sort_Iteratively<T>(List<T> values) where T : IComparable<T>
         {
             /*Notice that the loop does not have to repeat over the last element of the array, as by then the last element is already the largest element in the array.*/
             for (int i = 0; i < values.Count - 1; i++) /* Iteration i, determines the i-th smallest/min value. */
@@ -40,7 +41,7 @@ namespace CSFundamentalAlgorithms.Sort
                 int minIndex = i;
                 for (int j = i; j < values.Count; j++) /* This loop finds an element in the unsorted part of the array that is smaller than the current value at index i. */
                 {
-                    if (values[j] < values[minIndex])
+                    if (values[j].CompareTo(values[minIndex]) < 0)
                     {
                         minIndex = j;
                     }
