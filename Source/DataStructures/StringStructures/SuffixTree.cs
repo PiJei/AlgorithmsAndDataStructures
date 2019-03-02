@@ -14,14 +14,14 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
+ * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 // TODO: As an alternative implement UKKONEN's algorithm as well, which is on line. 
 using System.Diagnostics.Contracts;
 using System.Linq;
 
-namespace CSFundamentalAlgorithms.DataStructures.StringDataStructures
+namespace CSFundamentals.DataStructures.StringStructures
 {
     /// <summary>
     /// Implements a SuffixTree also known as a PAT. A DFS search of the tree should give the collection of all the suffixes of the string. 

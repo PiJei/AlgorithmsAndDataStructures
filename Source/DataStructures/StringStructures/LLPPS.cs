@@ -14,13 +14,13 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
+ * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CSFundamentalAlgorithms.DataStructures.StringDataStructures
+namespace CSFundamentals.DataStructures.StringStructures
 {
     [DataStructure("LengthOfTheLongestProperPrefixWhichIsAlsoSuffix")]
     public class LLPPS

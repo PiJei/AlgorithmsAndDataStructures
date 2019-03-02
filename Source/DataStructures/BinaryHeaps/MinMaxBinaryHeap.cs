@@ -14,14 +14,14 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
+ * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics.Contracts;
 
-namespace CSFundamentalAlgorithms.DataStructures.BinaryHeaps
+namespace CSFundamentals.DataStructures.BinaryHeaps
 {
     /// <summary>
     /// Implements a MinMaxBinaryHeap and its main operations. Notice that a MaxMinHeapBinaryHeap can be implemented in a very similar way.

@@ -14,10 +14,10 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
+ * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using CSFundamentalAlgorithms.BinaryHeaps;
+using CSFundamentals.BinaryHeaps;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;

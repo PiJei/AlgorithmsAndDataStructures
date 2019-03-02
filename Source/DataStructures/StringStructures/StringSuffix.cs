@@ -14,11 +14,11 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
+ * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 using System;
 
-namespace CSFundamentalAlgorithms.DataStructures.StringDataStructures
+namespace CSFundamentals.DataStructures.StringStructures
 {
     /// <summary>
     /// Stores information about a suffix of a string. 

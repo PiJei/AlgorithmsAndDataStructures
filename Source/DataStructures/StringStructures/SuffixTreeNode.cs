@@ -14,13 +14,13 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
+ * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 using System.Collections.Generic;
 
 // TODO: Can the class be modified to be usable by DFS and BFS?
 
-namespace CSFundamentalAlgorithms.DataStructures.StringDataStructures
+namespace CSFundamentals.DataStructures.StringStructures
 {
     // Contract: All the nodes except the root node contain a value for Suffix String. That value is the edge value from the parent of the node to this node. 
     // Contract: Intermediate nodes' startIndex is set to -1

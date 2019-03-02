@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Source\CSFundamentalAlgorithms.csproj" />
+    <ProjectReference Include="..\Source\CSFundamentals.csproj" />
   </ItemGroup>
 
 </Project>

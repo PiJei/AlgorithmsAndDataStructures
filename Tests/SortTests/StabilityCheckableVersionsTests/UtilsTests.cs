@@ -14,13 +14,13 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentalAlgorithms.  If not, see <http://www.gnu.org/licenses/>.
+ * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CSFundamentalAlgorithms.Sort.StabilityCheckableVersions;
-using CSFundamentalAlgorithms.Sort;
+using CSFundamentals.Sort.StabilityCheckableVersions;
+using CSFundamentals.Sort;
 
 namespace CSFundamentalAlgorithmsTests.SortTests.StabilityCheckableVersionsTests
 {
