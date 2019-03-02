@@ -18,7 +18,7 @@
  */
 
 using System.Collections.Generic;
-using CSFundamentals.StringDataStructures;
+using CSFundamentals.DataStructures.StringStructures;
 
 namespace CSFundamentals.Algorithms.PatternSearch
 {

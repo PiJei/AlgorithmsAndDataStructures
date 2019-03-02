@@ -20,7 +20,7 @@
 // TODO: make generic
 
 using System.Collections.Generic;
-using CSFundamentals.BinaryHeaps;
+using CSFundamentals.DataStructures.BinaryHeaps;
 
 namespace CSFundamentals.Algorithms.Sort
 {
