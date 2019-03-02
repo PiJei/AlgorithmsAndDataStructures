@@ -1,6 +1,6 @@
 # CSFundamentalAlgorithms
 
-- CS: (C)omputer(S)cience, & (CS)harp. 
+(C)omputer(S)cience fundamentals in (CS)harp. 
 
 - Contains C# code for fundamental and basic algorithms and data structures in computer science. 
 
