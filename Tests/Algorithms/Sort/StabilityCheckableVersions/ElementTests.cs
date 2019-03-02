@@ -20,7 +20,7 @@
 using CSFundamentals.Algorithms.Sort.StabilityCheckableVersions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSFundamentalsTests.Algorithms.Sort.StabilityCheckableVersions
+namespace CSFundamentalsTests.Algorithms.Sort
 {
     [TestClass]
     public class ElementTests

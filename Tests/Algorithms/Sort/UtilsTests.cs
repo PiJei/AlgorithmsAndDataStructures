@@ -25,8 +25,7 @@ using CSFundamentals.Algorithms.Sort;
 
 namespace CSFundamentalsTests.Algorithms.Sort
 {
-    [TestClass]
-    public class UtilsTests
+    public partial class UtilsTests
     {
         /// <summary>
         /// Checks whether the given integer list is sorted in ascending order. 

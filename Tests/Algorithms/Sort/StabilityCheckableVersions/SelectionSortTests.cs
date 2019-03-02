@@ -22,7 +22,7 @@ using CSFundamentals.Algorithms.Sort.StabilityCheckableVersions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentals.Algorithms.Sort;
 
-namespace CSFundamentalsTests.Algorithms.Sort.StabilityCheckableVersions
+namespace CSFundamentalsTests.Algorithms.Sort
 {
     public partial class SelectionSortTests
     {

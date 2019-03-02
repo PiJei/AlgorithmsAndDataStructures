@@ -22,10 +22,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentals.Algorithms.Sort.StabilityCheckableVersions;
 using CSFundamentals.Algorithms.Sort;
 
-namespace CSFundamentalsTests.Algorithms.Sort.StabilityCheckableVersions
+namespace CSFundamentalsTests.Algorithms.Sort
 {
     [TestClass]
-    public class UtilsTests
+    public partial class UtilsTests
     {
         [TestMethod]
         public void Utils_Convert_Test()
@@ -125,7 +125,6 @@ namespace CSFundamentalsTests.Algorithms.Sort.StabilityCheckableVersions
             Assert.AreEqual(16, values[3].Value);
             Assert.AreEqual(2, values[3].FirstArrayIndex);
             Assert.AreEqual(3, values[3].LatestArrayIndex);
-
         }
     }
 }
