@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27421.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSFundamentalAlgorithms", "CSFundamentalAlgorithms\CSFundamentalAlgorithms.csproj", "{76A3602A-2BA6-4FB1-BB81-28C2D3518C47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSFundamentalAlgorithms", "Source\CSFundamentalAlgorithms.csproj", "{76A3602A-2BA6-4FB1-BB81-28C2D3518C47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSFundamentalAlgorithmsTests", "CSFundamentalAlgorithmsTests\CSFundamentalAlgorithmsTests.csproj", "{5665D954-94FD-4666-8D92-6058696ACEAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSFundamentalAlgorithmsTests", "Tests\CSFundamentalAlgorithmsTests.csproj", "{5665D954-94FD-4666-8D92-6058696ACEAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
