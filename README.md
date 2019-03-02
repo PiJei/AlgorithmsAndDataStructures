@@ -15,7 +15,7 @@ Content:
  - Searching Algorithms:
     - LinearSearch
     - BinarySearch
-    - TenarySearch
+    - TernarySearch
     - JumpSearch
     - InterpolationSearch
     - ExponentialSearch
