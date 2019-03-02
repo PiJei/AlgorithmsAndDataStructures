@@ -27,13 +27,13 @@ namespace CSFundamentalAlgorithms.Sort
         /// <summary>
         /// Implements bubble sort iteratively, elements are bubbled down or up the array till they are at their final correct positions. 
         /// </summary>
-        /// <param name="values"></param>
+        /// <param name="values">Specifies the list of values (of type T, e.g., int) to be sorted.</param>
         [Algorithm(AlgorithmType.Sort, "BubbleSort")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(n)", When = "Input array is already sorted.")]
         [TimeComplexity(Case.Worst, "O(n²)")]
         [TimeComplexity(Case.Average, "O(n²)")]
-        public static void Sort_Iterative(List<int> values)
+        public static void Sort_Iterative<T>(List<T> values) where T : IComparable<T>
         {
             /* Bubble sort iterates many times over an array, and stops iterating when no swap happens any more. */
             while (true)
@@ -41,13 +41,13 @@ namespace CSFundamentalAlgorithms.Sort
                 bool swapHappened = false;
                 for (int i = 0; i < values.Count - 1; i++)
                 {
-                    if (values[i + 1] < values[i])
+                    if (values[i + 1].CompareTo(values[i]) < 0)
                     {
                         Utils.Swap(values, i + 1, i);
                         swapHappened = true;
                     }
                 }
-                if (!swapHappened) /* If no swap happened in this pass, then the array is sorted. break out of the loop. */
+                if (!swapHappened) /* If no swap happened in this pass, then the array is sorted. Break out of the loop. */
                 {
                     break;
                 }

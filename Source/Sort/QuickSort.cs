@@ -37,13 +37,13 @@ namespace CSFundamentalAlgorithms.Sort
         [TimeComplexity(Case.Best, "O(nLog(n))")]
         [TimeComplexity(Case.Worst, "O(n²)", When = "Minimum or maximum element in the array is chosen as the pivot.")]
         [TimeComplexity(Case.Average, "O(nLog(n))")]
-        public static void Sort<T>(List<T> values, int startIndex, int endIndex) where T : IComparable<T>
+        public static void Sort_Recursively<T>(List<T> values, int startIndex, int endIndex) where T : IComparable<T>
         {
             if (startIndex < endIndex)
             {
                 int partitionIndex = PartitionArray(values, startIndex, endIndex);
-                Sort(values, startIndex, partitionIndex);
-                Sort(values, partitionIndex + 1, endIndex);
+                Sort_Recursively(values, startIndex, partitionIndex);
+                Sort_Recursively(values, partitionIndex + 1, endIndex);
             }
         }
 

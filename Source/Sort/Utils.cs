@@ -34,15 +34,15 @@ namespace CSFundamentalAlgorithms.Sort
         /// <summary>
         /// Gets the max element in the array. Alternatively we could use Linq.Max operator. However using this version so that the time complexity is obvious.
         /// </summary>
-        /// <param name="values">Specifies a list of integers. </param>
+        /// <param name="values">Specifies a list of values (of type T, e.g., int). </param>
         /// <returns>maximum element in the array. </returns>
-        public static int GetMaxElement(List<int> values)
+        public static T GetMaxElement<T>(List<T> values) where T : IComparable<T>
         {
             /* This method assumes values has at least one member. Otherwise this will throw a null reference exception . */
-            int max = values[0];
+            T max = values[0];
             for (int i = 0; i < values.Count; i++)
             {
-                if (values[i] > max)
+                if (values[i].CompareTo(max) > 0)
                 {
                     max = values[i];
                 }
