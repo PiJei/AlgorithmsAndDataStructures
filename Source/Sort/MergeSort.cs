@@ -26,9 +26,9 @@ namespace CSFundamentalAlgorithms.Sort
     public partial class MergeSort
     {
         /// <summary>
-        /// Implements a basic version of merge sort recursively. 
+        /// Implements merge sort recursively. 
         /// </summary>
-        /// <param name="values">Specifies the list of integer values to be sorted. </param>
+        /// <param name="values">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
         /// <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
         /// <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
         [Algorithm(AlgorithmType.Sort, "MergeSort")]
@@ -50,7 +50,7 @@ namespace CSFundamentalAlgorithms.Sort
         /// <summary>
         /// Merges two sub arrays [startIndex, middleIndex], [middleIndex+1, endIndex] such to end up with a sorted list. 
         /// </summary>
-        /// <param name="values">Specifies the list of integer values to be sorted. </param>
+        /// <param name="values">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
         /// <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
         /// <param name="middleIndex">Specifies the middle index of the array. </param>
         /// <param name="endIndex">Specifies the higher index in the array, inclusive. </param>

@@ -24,9 +24,9 @@ namespace CSFundamentalAlgorithms.Sort
 {
     public partial class Utils
     {
-        public static void Swap(List<int> values, int index1, int index2)
+        public static void Swap<T>(List<T> values, int index1, int index2)
         {
-            int temp = values[index1];
+            T temp = values[index1];
             values[index1] = values[index2];
             values[index2] = temp;
         }
