@@ -29,6 +29,7 @@ namespace CSFundamentalAlgorithmsTests.PatternSearchTests
         [TestMethod]
         public void RabinKarpSearch_Search_Test()
         {
+            Assert.AreEqual(-1, RabinKarpSearch.Search("abd", "abdfgh")); /* Testing the case where substring is longer than string. */
             Assert.AreEqual(1, RabinKarpSearch.Search("abcd", "bc"));
             Assert.AreEqual(2, RabinKarpSearch.Search("abcd", "cd"));
             Assert.AreEqual(12, RabinKarpSearch.Search("aaaaaakcdkaaaabcd", "aab"));

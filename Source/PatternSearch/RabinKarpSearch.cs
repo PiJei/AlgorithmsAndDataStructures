@@ -41,6 +41,11 @@ namespace CSFundamentalAlgorithms.PatternSearch
             int hashConstant = RollingHash.ComputeHashConstantForRollingHash(m, PrimeNumber, NumCharacters);
             int subStringHash = RollingHash.GetHash(pattern, PrimeNumber, NumCharacters); /* This hash is computed only once. Complexity : O(subString.Length)*/
 
+            if (m > text.Length)
+            {
+                return -1;
+            }
+
             string subStringInText = text.Substring(0, m);
             int subStringInTextHash = RollingHash.GetHash(subStringInText, PrimeNumber, NumCharacters);
 

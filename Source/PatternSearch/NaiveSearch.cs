@@ -36,6 +36,11 @@ namespace CSFundamentalAlgorithms.PatternSearch
                 bool found = true;
                 for (int j = 0; j < pattern.Length; j++)
                 {
+                    if ((searchStartIndex + j) >= text.Length)
+                    {
+                        found = false;
+                        break;
+                    }
                     if (text[searchStartIndex + j] != pattern[j])
                     {
                         found = false;
