@@ -16,23 +16,22 @@
  * You should have received a copy of the GNU General Public License
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
-
-//TODO: Specify the time and space complexity of all the code in this project
 using System;
+using System.Collections.Generic;
 
-namespace CSFundamentals
+namespace CSFundamentals.Algorithms.Search
 {
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false)]
-    public class SpaceComplexityAttribute : Attribute
+    public class HashTableSearch
     {
-        public string Complexity { get; private set; }
-
-        public bool InPlace { get; set; }
-
-        public SpaceComplexityAttribute(string complexity, bool inPlace = false)
+        // TODO: Implement 
+        [Algorithm(AlgorithmType.Search, "HashTable")]
+        [SpaceComplexity("O(n)", InPlace = false)]
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "O(n)", When = "All the elements are mapped to the same key (for example due to lots of conflicts in the hashing method).")]
+        [TimeComplexity(Case.Average, "O(1)")]
+        public static int Search(List<int> values, int searchValue)
         {
-            Complexity = complexity;
-           InPlace = inPlace;
+            throw new NotImplementedException();
         }
     }
 }

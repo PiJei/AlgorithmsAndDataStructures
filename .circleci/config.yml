@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: build
-          command: dotnet build CSFundamentalAlgorithms.sln
+          command: dotnet build CSFundamentals.sln
       - run:
           name: tests
-          command: dotnet test Tests/CSFundamentalAlgorithmsTests.csproj
+          command: dotnet test Tests/CSFundamentalsTests.csproj

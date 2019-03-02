@@ -17,22 +17,11 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-//TODO: Specify the time and space complexity of all the code in this project
-using System;
 
-namespace CSFundamentals
+namespace CSFundamentals.Algorithms.Sort
 {
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false)]
-    public class SpaceComplexityAttribute : Attribute
+    public partial class HeapSort
     {
-        public string Complexity { get; private set; }
-
-        public bool InPlace { get; set; }
-
-        public SpaceComplexityAttribute(string complexity, bool inPlace = false)
-        {
-            Complexity = complexity;
-           InPlace = inPlace;
-        }
+        // TODO : write the stability checkable version. 
     }
 }

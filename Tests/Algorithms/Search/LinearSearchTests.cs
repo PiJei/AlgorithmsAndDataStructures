@@ -17,22 +17,23 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-//TODO: Specify the time and space complexity of all the code in this project
-using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using CSFundamentals.Algorithms.Search;
+using System.Collections.Generic;
 
-namespace CSFundamentals
+namespace CSFundamentalsTests.Search
 {
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false)]
-    public class SpaceComplexityAttribute : Attribute
+    [TestClass]
+    public class LinearSearchTests
     {
-        public string Complexity { get; private set; }
-
-        public bool InPlace { get; set; }
-
-        public SpaceComplexityAttribute(string complexity, bool inPlace = false)
+        [TestMethod]
+        public void LinearSearch_Search_Test()
         {
-            Complexity = complexity;
-           InPlace = inPlace;
+            List<int> values = new List<int> { 4, 1, 9, 100, 3, 2, 45, 37, 3 };
+            Assert.AreEqual(-1, LinearSearch.Search(values, 200));
+            Assert.AreEqual(4, LinearSearch.Search(values, 3));
+            Assert.AreEqual(0, LinearSearch.Search(values, 4));
+            Assert.AreEqual(7, LinearSearch.Search(values, 37));
         }
     }
 }

@@ -17,22 +17,24 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-//TODO: Specify the time and space complexity of all the code in this project
-using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using CSFundamentals.DataStructures.StringStructures;
 
-namespace CSFundamentals
+namespace CSFundamentalsTests.StringStructures
 {
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false)]
-    public class SpaceComplexityAttribute : Attribute
+    [TestClass]
+    public class SuffixArrayTests
     {
-        public string Complexity { get; private set; }
-
-        public bool InPlace { get; set; }
-
-        public SpaceComplexityAttribute(string complexity, bool inPlace = false)
+        [TestMethod]
+        public void StringSuffix_SortSuffixes_Test()
         {
-            Complexity = complexity;
-           InPlace = inPlace;
+            int[] suffixArray = SuffixArray.Build("banana");
+            Assert.AreEqual(5, suffixArray[0]);
+            Assert.AreEqual(3, suffixArray[1]);
+            Assert.AreEqual(1, suffixArray[2]);
+            Assert.AreEqual(0, suffixArray[3]);
+            Assert.AreEqual(4, suffixArray[4]);
+            Assert.AreEqual(2, suffixArray[5]);
         }
     }
 }

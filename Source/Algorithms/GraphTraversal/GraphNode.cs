@@ -17,22 +17,23 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-//TODO: Specify the time and space complexity of all the code in this project
-using System;
+using System.Collections.Generic;
 
-namespace CSFundamentals
+namespace CSFundamentals.Algorithms.GraphTraversal
 {
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false)]
-    public class SpaceComplexityAttribute : Attribute
+    public class GraphNode
     {
-        public string Complexity { get; private set; }
+        public int Value { get; set; }
+        public List<GraphNode> Adjacents { get; set; } = new List<GraphNode>();
+        public int DistanceFromRoot { get; set; }
 
-        public bool InPlace { get; set; }
-
-        public SpaceComplexityAttribute(string complexity, bool inPlace = false)
+        /// <summary>
+        /// Determines whether this node, in a particular instance of a traversal algorithm has been already inserted in the queue/stack. 
+        /// </summary>
+        public bool IsInserted { get; set; }
+        public GraphNode(int value)
         {
-            Complexity = complexity;
-           InPlace = inPlace;
+            Value = value;
         }
     }
 }
