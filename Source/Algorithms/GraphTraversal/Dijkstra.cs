@@ -17,7 +17,10 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace CSFundamentals.Algorithms
+using System.Collections.Generic;
+using CSFundamentals.DataStructures.BinaryHeaps;
+
+namespace CSFundamentals.Algorithms.GraphTraversal
 {
     /// <summary>
     /// Problem: Given a 'connected directed graph', and a start node (called root (note it does not have the same meaning as in a tree, since this is a graph)), find the shortest paths from this node to all the other nodes in the graph. 
@@ -26,5 +29,56 @@ namespace CSFundamentals.Algorithms
     public class Dijkstra
     {
         // Traverse all vertices using BFS , and use a min heap to store vertices not yet included in SPT array (meaning shortest path is not finalized yet)
+        public static List<GraphNode> GetShortestDistancesFromRoot(GraphNode root)
+        {
+            //1- Get the list of all vertices in the graph .
+            List<GraphNode> bfsOrdering = BFS.BFS_Iterative(root);
+
+            //2- Set the distance of all the nodes from the root node to infinite. 
+            foreach (GraphNode node in bfsOrdering)
+            {
+                node.DistanceFromRoot = int.MaxValue; // aka. Infinite. 
+            }
+            //3- Set the distance of the root node from the root node to zero. 
+            root.DistanceFromRoot = 0;
+
+            //4- Build a MinHeap over all the nodes in the array.
+            var minHeap = new MinBinaryHeap<GraphNode>(bfsOrdering);
+
+            List<GraphNode> shortestDistanceFromRoot = new List<GraphNode>();
+
+            while (true) // Repeat until minHeap is empty. 
+            {
+                //5- Update the distance of all the adjacent nodes of the current minimum node. 
+                if (minHeap.TryFindRoot(out GraphNode currentMinNode, minHeap.HeapArray.Count))
+                {
+                    foreach (GraphEdge edge in currentMinNode.Adjacents)
+                    {
+                        if (!shortestDistanceFromRoot.Contains(edge.Node))
+                        {
+                            if (edge.Node.DistanceFromRoot > currentMinNode.DistanceFromRoot + edge.Weight)
+                            {
+                                edge.Node.DistanceFromRoot = currentMinNode.DistanceFromRoot + edge.Weight;
+                            }
+                        }
+                    }
+                    if (minHeap.TryRemoveRoot(out currentMinNode, minHeap.HeapArray.Count))
+                    {
+                        shortestDistanceFromRoot.Add(currentMinNode);
+                    }
+                    else
+                    {
+                        break;
+                    }
+
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            return shortestDistanceFromRoot;
+        }
     }
 }

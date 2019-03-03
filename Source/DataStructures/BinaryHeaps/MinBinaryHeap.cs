@@ -104,7 +104,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <returns>True in case of success, and false otherwise</returns>
         public override bool TryRemoveRoot(out T rootValue, int heapArrayLength)
         {
-            rootValue = (T)typeof(T).GetField("MinValue").GetValue(null);// T.MinValue;
+            rootValue = (T)typeof(T).GetField("MinValue").GetValue(null); // T.MinValue;
 
             /* If array is empty, returns false. */
             if (heapArrayLength == 0)

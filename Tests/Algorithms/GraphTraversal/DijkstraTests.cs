@@ -1,0 +1,95 @@
+﻿/* 
+ * Copyright (c) 2019 (PiJei) 
+ * 
+ * This file is part of CSFundamentalAlgorithms project.
+ *
+ * CSFundamentalAlgorithms is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * CSFundamentalAlgorithms is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+using System.Collections.Generic;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using CSFundamentals.Algorithms.GraphTraversal;
+
+namespace CSFundamentalsTests.Algorithms.GraphTraversal
+{
+    [TestClass]
+    public class DijkstraTests
+    {
+        [TestMethod]
+        public void Dijkstra_GetShortestDistancesFromRoot_Test()
+        {
+            var node1 = new GraphNode(0);
+            var node2 = new GraphNode(1);
+            var node3 = new GraphNode(7);
+            var node4 = new GraphNode(2);
+            var node5 = new GraphNode(8);
+            var node6 = new GraphNode(6);
+            var node7 = new GraphNode(3);
+            var node8 = new GraphNode(5);
+            var node9 = new GraphNode(4);
+
+            node1.Adjacents.Add(new GraphEdge(node2, 4));
+            node1.Adjacents.Add(new GraphEdge(node3, 8));
+
+            node2.Adjacents.Add(new GraphEdge(node1, 4));
+            node2.Adjacents.Add(new GraphEdge(node3, 11));
+            node2.Adjacents.Add(new GraphEdge(node4, 8));
+
+            node3.Adjacents.Add(new GraphEdge(node1, 8));
+            node3.Adjacents.Add(new GraphEdge(node2, 11));
+            node3.Adjacents.Add(new GraphEdge(node5, 7));
+            node3.Adjacents.Add(new GraphEdge(node6, 1));
+
+            node4.Adjacents.Add(new GraphEdge(node2, 8));
+            node4.Adjacents.Add(new GraphEdge(node5, 2));
+            node4.Adjacents.Add(new GraphEdge(node7, 7));
+            node4.Adjacents.Add(new GraphEdge(node8, 4));
+
+            node5.Adjacents.Add(new GraphEdge(node4, 2));
+            node5.Adjacents.Add(new GraphEdge(node3, 7));
+            node5.Adjacents.Add(new GraphEdge(node6, 6));
+
+            node6.Adjacents.Add(new GraphEdge(node3, 1));
+            node6.Adjacents.Add(new GraphEdge(node5, 6));
+            node6.Adjacents.Add(new GraphEdge(node8, 2));
+
+            node7.Adjacents.Add(new GraphEdge(node4, 7));
+            node7.Adjacents.Add(new GraphEdge(node8, 14));
+            node7.Adjacents.Add(new GraphEdge(node9, 9));
+
+            node8.Adjacents.Add(new GraphEdge(node6, 2));
+            node8.Adjacents.Add(new GraphEdge(node4, 4));
+            node8.Adjacents.Add(new GraphEdge(node7, 14));
+            node8.Adjacents.Add(new GraphEdge(node4, 10));
+
+            node9.Adjacents.Add(new GraphEdge(node7, 9));
+            node9.Adjacents.Add(new GraphEdge(node8, 10));
+
+            List<GraphNode> distancesFromRoot = Dijkstra.GetShortestDistancesFromRoot(node1);
+
+            Assert.AreEqual(0, distancesFromRoot[0].Value);
+            Assert.AreEqual(0, distancesFromRoot[0].DistanceFromRoot);
+
+            Assert.AreEqual(1, distancesFromRoot[1].Value);
+            Assert.AreEqual(4, distancesFromRoot[1].DistanceFromRoot);
+
+            Assert.AreEqual(7, distancesFromRoot[2].Value);
+            Assert.AreEqual(8, distancesFromRoot[2].DistanceFromRoot);
+
+            Assert.AreEqual(6, distancesFromRoot[3].Value);
+            Assert.AreEqual(9, distancesFromRoot[3].DistanceFromRoot);
+
+        }
+    }
+}

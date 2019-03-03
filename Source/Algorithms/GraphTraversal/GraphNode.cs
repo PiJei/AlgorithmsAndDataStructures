@@ -48,9 +48,9 @@ namespace CSFundamentals.Algorithms.GraphTraversal
             return 0;
         }
 
-        public static readonly int MinValue = int.MinValue;
+        public static readonly GraphNode MinValue = new GraphNode(int.MinValue);
 
-        public static readonly int MaxValue = int.MaxValue;
+        public static readonly GraphNode MaxValue = new GraphNode(int.MaxValue);
 
     }
 }

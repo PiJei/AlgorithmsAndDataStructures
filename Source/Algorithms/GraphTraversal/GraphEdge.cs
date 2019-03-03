@@ -28,12 +28,13 @@ namespace CSFundamentals.Algorithms.GraphTraversal
         /// Is the GraphNode on the other side of the edge. 
         /// </summary>
         public GraphNode Node { get; set; }
-        /// <summary>
-        /// Represents a positive weight for edge 
-        /// </summary>
-        public uint Weight { get; set; }
 
-        public GraphEdge(GraphNode node, uint weight)
+        /// <summary>
+        /// Represents an integer value for the weight for edge .
+        /// </summary>
+        public int Weight { get; set; }
+
+        public GraphEdge(GraphNode node, int weight)
         {
             Node = node;
             Weight = weight;
