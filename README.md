@@ -31,6 +31,7 @@ Content:
    - Traversal Algorithms:
       - DFS (Depth First Search)
       - BFS (Breadth First Search)
+      - Dijkstra
     
   - String DataStructures:
     - SuffixTree
@@ -46,4 +47,6 @@ Content:
 
 - Hashing
 
-References : www.geeksforgeeks.org, www.wikipedia.com
+References : 
+- www.geeksforgeeks.org
+- www.wikipedia.org
