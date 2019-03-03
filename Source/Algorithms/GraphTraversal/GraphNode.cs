@@ -18,11 +18,12 @@
  */
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace CSFundamentals.Algorithms.GraphTraversal
 {
-    public class GraphNode : IComparable<GraphNode>
+    public class GraphNode : IComparable<GraphNode>, IEquatable<GraphNode>
     {
         public int Value { get; set; }
         public List<GraphEdge> Adjacents { get; set; } = new List<GraphEdge>();
@@ -46,6 +47,28 @@ namespace CSFundamentals.Algorithms.GraphTraversal
             if (DistanceFromRoot == other.DistanceFromRoot) return 0;
             if (DistanceFromRoot > other.DistanceFromRoot) return 1;
             return 0;
+        }
+
+        public bool Equals(GraphNode other)
+        {
+            if (other == null) return false;
+            if (ReferenceEquals(this, other)) return true;
+            if (DistanceFromRoot == other.DistanceFromRoot) return true;
+            return false;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (GetType() != obj.GetType()) return false;
+            if (Equals(this, (GraphNode)obj)) return true;
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return DistanceFromRoot.GetHashCode();
         }
 
         public static readonly GraphNode MinValue = new GraphNode(int.MinValue);

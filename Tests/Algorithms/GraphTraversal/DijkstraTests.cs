@@ -90,6 +90,20 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
             Assert.AreEqual(6, distancesFromRoot[3].Value);
             Assert.AreEqual(9, distancesFromRoot[3].DistanceFromRoot);
 
+            Assert.AreEqual(5, distancesFromRoot[4].Value);
+            Assert.AreEqual(11, distancesFromRoot[4].DistanceFromRoot);
+
+            Assert.AreEqual(2, distancesFromRoot[5].Value);
+            Assert.AreEqual(12, distancesFromRoot[5].DistanceFromRoot);
+
+            Assert.AreEqual(8, distancesFromRoot[6].Value);
+            Assert.AreEqual(14, distancesFromRoot[6].DistanceFromRoot);
+
+            Assert.AreEqual(3, distancesFromRoot[7].Value);
+            Assert.AreEqual(19, distancesFromRoot[7].DistanceFromRoot);
+
+            Assert.AreEqual(4, distancesFromRoot[8].Value);
+            Assert.AreEqual(21, distancesFromRoot[8].DistanceFromRoot);
         }
     }
 }

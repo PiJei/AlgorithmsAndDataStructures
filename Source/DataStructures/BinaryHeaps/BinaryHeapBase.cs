@@ -91,7 +91,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <param name="index2">Specifies the index of the second element. </param>
         public void Swap(List<T> array, int index1, int index2)
         {
-            T temp = array[index1];
+            var temp = array[index1];
             array[index1] = array[index2];
             array[index2] = temp;
         }

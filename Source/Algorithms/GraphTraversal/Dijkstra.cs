@@ -59,6 +59,19 @@ namespace CSFundamentals.Algorithms.GraphTraversal
                             if (edge.Node.DistanceFromRoot > currentMinNode.DistanceFromRoot + edge.Weight)
                             {
                                 edge.Node.DistanceFromRoot = currentMinNode.DistanceFromRoot + edge.Weight;
+
+                                // Find index in the array
+                                int index = 0;
+                                for (int i = 0; i < minHeap.HeapArray.Count; i++)
+                                {
+                                    if (minHeap.HeapArray[i].Equals(edge.Node))
+                                    {
+                                        index = i;
+                                        break;
+                                    }
+                                }
+                                minHeap.BubbleUp_Iteratively(index, minHeap.HeapArray.Count);
+
                             }
                         }
                     }
@@ -70,7 +83,6 @@ namespace CSFundamentals.Algorithms.GraphTraversal
                     {
                         break;
                     }
-
                 }
                 else
                 {
