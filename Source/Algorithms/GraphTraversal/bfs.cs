@@ -45,13 +45,13 @@ namespace CSFundamentals.Algorithms.GraphTraversal
                 bfsOrdering.Add(nextNode); /* Appending the queue head to bfsOrdering.*/
 
                 /* Enqueue all the adjacent neighbors of nextNode. */
-                foreach (GraphNode node in nextNode.Adjacents)
+                foreach (GraphEdge edge in nextNode.Adjacents)
                 {
-                    if (!node.IsInserted) /* Without this, and in the presence of cycles, the loop will be endless, the program can get out of memory exceptions. */
+                    if (!edge.Node.IsInserted) /* Without this, and in the presence of cycles, the loop will be endless, the program can get out of memory exceptions. */
                     {
-                        node.IsInserted = true;
-                        node.DistanceFromRoot = nextNode.DistanceFromRoot + 1;
-                        queue.Enqueue(node);
+                        edge.Node.IsInserted = true;
+                        edge.Node.DistanceFromRoot = nextNode.DistanceFromRoot + 1;
+                        queue.Enqueue(edge.Node);
                     }
                 }
             }
@@ -73,12 +73,12 @@ namespace CSFundamentals.Algorithms.GraphTraversal
             GraphNode node = queue.Dequeue();
             bfsOrdering.Add(node);
 
-            foreach (GraphNode adjacentNode in node.Adjacents)
+            foreach (GraphEdge edge in node.Adjacents)
             {
-                if (!adjacentNode.IsInserted) /* To prevent endless recursion in case graph has cycles. */
+                if (!edge.Node.IsInserted) /* To prevent endless recursion in case graph has cycles. */
                 {
-                    adjacentNode.IsInserted = true;
-                    queue.Enqueue(adjacentNode);
+                    edge.Node.IsInserted = true;
+                    queue.Enqueue(edge.Node);
                 }
             }
             BFS_Recursive(queue, bfsOrdering);
@@ -86,3 +86,4 @@ namespace CSFundamentals.Algorithms.GraphTraversal
 
     }
 }
+// TODO: In recursive versions of bfs and dfs also compute distance from root. 

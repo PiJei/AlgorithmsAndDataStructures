@@ -37,24 +37,24 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
         [TestInitialize]
         public void Init()
         {
-            A.Adjacents.Add(B);
-            A.Adjacents.Add(C);
-            A.Adjacents.Add(D);
+            A.Adjacents.Add(new GraphEdge(B, 0));
+            A.Adjacents.Add(new GraphEdge(C, 0));
+            A.Adjacents.Add(new GraphEdge(D, 0));
 
-            B.Adjacents.Add(E);
-            B.Adjacents.Add(F);
-            B.Adjacents.Add(A);
+            B.Adjacents.Add(new GraphEdge(E, 0));
+            B.Adjacents.Add(new GraphEdge(F, 0));
+            B.Adjacents.Add(new GraphEdge(A, 0));
 
-            C.Adjacents.Add(G);
-            C.Adjacents.Add(A);
+            C.Adjacents.Add(new GraphEdge(G, 0));
+            C.Adjacents.Add(new GraphEdge(A, 0));
 
-            D.Adjacents.Add(F);
-            D.Adjacents.Add(A);
+            D.Adjacents.Add(new GraphEdge(F, 0));
+            D.Adjacents.Add(new GraphEdge(A, 0));
 
-            F.Adjacents.Add(D);
-            F.Adjacents.Add(B);
+            F.Adjacents.Add(new GraphEdge(D, 0));
+            F.Adjacents.Add(new GraphEdge(B, 0));
 
-            E.Adjacents.Add(B);
+            E.Adjacents.Add(new GraphEdge(B, 0));
         }
 
         public void ResetGraph() // It seems that this step is unnecessary. Even though the same instance is used across all the test methods. 
