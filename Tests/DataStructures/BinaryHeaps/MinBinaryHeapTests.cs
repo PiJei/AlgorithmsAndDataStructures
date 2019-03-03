@@ -33,7 +33,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         private List<int> arrayHeap2IterativelyBuilt = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
 
         // Checking the MinHeap ordering (node relations) for the node at the given index, to make sure the correct relations between the node and its parent and children holds. 
-        public static void CheckMinHeapOrderingPropertyForNode(BinaryHeapBase heap, int nodeIndex)
+        public static void CheckMinHeapOrderingPropertyForNode(BinaryHeapBase<int> heap, int nodeIndex)
         {
             int leftChildIndex = heap.GetLeftChildIndexInHeapArray(nodeIndex);
             int rightChildIndex = heap.GetRightChildIndexInHeapArray(nodeIndex);
@@ -56,7 +56,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         [TestMethod]
         public void MinBinaryHeap_BuildHeapRecursive_Test1()
         {
-            var heap = new MinBinaryHeap(arrayHeap1RecursivelyBuilt);
+            var heap = new MinBinaryHeap<int>(arrayHeap1RecursivelyBuilt);
             heap.BuildHeap_Recursively(heap.HeapArray.Count);
 
             Assert.AreEqual(6, arrayHeap1RecursivelyBuilt.Count);
@@ -70,7 +70,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         [TestMethod]
         public void MinBinaryHeap_BuildHeapRecursive_Test2()
         {
-            var heap = new MinBinaryHeap(arrayHeap2RecursivelyBuilt);
+            var heap = new MinBinaryHeap<int>(arrayHeap2RecursivelyBuilt);
             heap.BuildHeap_Recursively(heap.HeapArray.Count);
 
             Assert.AreEqual(9, arrayHeap2RecursivelyBuilt.Count);
@@ -84,7 +84,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         [TestMethod]
         public void MinBinaryHeap_BuildHeapIterative_Test1()
         {
-            var heap = new MinBinaryHeap(arrayHeap1IterativelyBuilt);
+            var heap = new MinBinaryHeap<int>(arrayHeap1IterativelyBuilt);
             heap.BuildHeap_Iteratively(heap.HeapArray.Count);
 
             Assert.AreEqual(6, arrayHeap1IterativelyBuilt.Count);
@@ -98,7 +98,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         [TestMethod]
         public void MinBinaryHeap_BuildHeapIterative_Test2()
         {
-            var heap = new MinBinaryHeap(arrayHeap2IterativelyBuilt);
+            var heap = new MinBinaryHeap<int>(arrayHeap2IterativelyBuilt);
             heap.BuildHeap_Iteratively(heap.HeapArray.Count);
 
             Assert.AreEqual(9, arrayHeap2IterativelyBuilt.Count);
@@ -113,10 +113,10 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         [TestMethod]
         public void CompareEqualityOfRecursiveAndIterativeMinHeapConstruction()
         {
-            var heap1 = new MinBinaryHeap(arrayHeap1IterativelyBuilt); heap1.BuildHeap_Iteratively(heap1.HeapArray.Count);
-            var heap2 = new MinBinaryHeap(arrayHeap2IterativelyBuilt); heap2.BuildHeap_Iteratively(heap2.HeapArray.Count);
-            var heap3 = new MinBinaryHeap(arrayHeap1RecursivelyBuilt); heap3.BuildHeap_Recursively(heap3.HeapArray.Count);
-            var heap4 = new MinBinaryHeap(arrayHeap2RecursivelyBuilt); heap4.BuildHeap_Recursively(heap4.HeapArray.Count);
+            var heap1 = new MinBinaryHeap<int>(arrayHeap1IterativelyBuilt); heap1.BuildHeap_Iteratively(heap1.HeapArray.Count);
+            var heap2 = new MinBinaryHeap<int>(arrayHeap2IterativelyBuilt); heap2.BuildHeap_Iteratively(heap2.HeapArray.Count);
+            var heap3 = new MinBinaryHeap<int>(arrayHeap1RecursivelyBuilt); heap3.BuildHeap_Recursively(heap3.HeapArray.Count);
+            var heap4 = new MinBinaryHeap<int>(arrayHeap2RecursivelyBuilt); heap4.BuildHeap_Recursively(heap4.HeapArray.Count);
 
             for (int i = 0; i < arrayHeap1IterativelyBuilt.Count; i++)
             {
@@ -134,7 +134,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         {
             List<int> values = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
 
-            var heap = new MinBinaryHeap(values);
+            var heap = new MinBinaryHeap<int>(values);
             heap.BuildHeap_Iteratively(heap.HeapArray.Count);
 
             // The values in the array are expected to be removed in ascending order. 
@@ -179,7 +179,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         public void MinBinaryHeap_Insert_Test()
         {
             List<int> values = new List<int>();
-            var heap = new MinBinaryHeap(values);
+            var heap = new MinBinaryHeap<int>(values);
 
             // Inserting these values: { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
 

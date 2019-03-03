@@ -40,7 +40,7 @@ namespace CSFundamentals.Algorithms.Sort
         public static void Sort_Ascending(List<int> values)
         {
             // 1- re-arrange the elements in the integer array into a max heap. 
-            var maxHeap = new MaxBinaryHeap(values);
+            var maxHeap = new MaxBinaryHeap<int>(values);
             maxHeap.BuildHeap_Recursively(values.Count);
 
             // 2- repeat the following 2 steps for all the elements in the array. 

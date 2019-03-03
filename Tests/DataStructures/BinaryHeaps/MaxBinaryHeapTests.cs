@@ -27,7 +27,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
     public class MaxBinaryHeapTests
     {
         // Checking the MaxHeap ordering (node relations) for the node at the given index, to make sure the correct relations between the node and its parent and children holds. 
-        public static void CheckMaxHeapOrderingPropertyForNode(BinaryHeapBase heap, int nodeIndex)
+        public static void CheckMaxHeapOrderingPropertyForNode(BinaryHeapBase<int> heap, int nodeIndex)
         {
             int leftChildIndex = heap.GetLeftChildIndexInHeapArray(nodeIndex);
             int rightChildIndex = heap.GetRightChildIndexInHeapArray(nodeIndex);
@@ -47,7 +47,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
             }
         }
 
-        public static void CheckMaxHeapOrderingPropertyForHeap(int arraySize, MaxBinaryHeap heap)
+        public static void CheckMaxHeapOrderingPropertyForHeap(int arraySize, MaxBinaryHeap<int> heap)
         {
             for (int i = 0; i < arraySize; i++)
             {
@@ -60,7 +60,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         {
             List<int> values = new List<int> { 1, 20, 32, 56, 5, 3, 10, 100, 72 };
 
-            MaxBinaryHeap heap = new MaxBinaryHeap(values);
+            MaxBinaryHeap<int> heap = new MaxBinaryHeap<int>(values);
             heap.BuildHeap_Recursively(heap.HeapArray.Count);
 
             Assert.AreEqual(9, heap.HeapArray.Count);
@@ -72,7 +72,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         {
             List<int> values = new List<int> { 1, 20, 32, 56, 5, 3, 10, 100, 72 };
 
-            MaxBinaryHeap heap = new MaxBinaryHeap(values);
+            MaxBinaryHeap<int> heap = new MaxBinaryHeap<int>(values);
             heap.BuildHeap_Iteratively(heap.HeapArray.Count);
 
             Assert.AreEqual(9, heap.HeapArray.Count);
@@ -84,7 +84,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         {
             List<int> values = new List<int> { 1, 20, 32, 56, 5, 3, 10, 100, 72 };
 
-            MaxBinaryHeap heap = new MaxBinaryHeap(values);
+            MaxBinaryHeap<int> heap = new MaxBinaryHeap<int>(values);
             heap.BuildHeap_Recursively(heap.HeapArray.Count);
 
             Assert.IsTrue(heap.TryRemoveRoot(out int maxValue1, heap.HeapArray.Count));
@@ -127,7 +127,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         [TestMethod]
         public void MaxBinaryHeap_Insert_Test()
         {
-            MaxBinaryHeap heap = new MaxBinaryHeap(new List<int> { });
+            MaxBinaryHeap<int> heap = new MaxBinaryHeap<int>(new List<int> { });
             heap.Insert(1, heap.HeapArray.Count);
             CheckMaxHeapOrderingPropertyForHeap(heap.HeapArray.Count, heap);
 

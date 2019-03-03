@@ -47,5 +47,10 @@ namespace CSFundamentals.Algorithms.GraphTraversal
             if (DistanceFromRoot > other.DistanceFromRoot) return 1;
             return 0;
         }
+
+        public static readonly int MinValue = int.MinValue;
+
+        public static readonly int MaxValue = int.MaxValue;
+
     }
 }
