@@ -46,4 +46,4 @@ Content:
 
 - Hashing
 
-References : www.geeksforgeeks.com, www.wikipedia.com
+References : www.geeksforgeeks.org, www.wikipedia.com
