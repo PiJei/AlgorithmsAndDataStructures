@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
-using System;
+
 using System.Collections.Generic;
 using CSFundamentals.Styling;
 
@@ -30,9 +30,31 @@ namespace CSFundamentals.Algorithms.Search
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(n)", When = "All the elements are mapped to the same key (for example due to lots of conflicts in the hashing method).")]
         [TimeComplexity(Case.Average, "O(1)")]
-        public static int Search(List<int> values, int searchValue)
+        public static List<int> Search(List<int> values, int searchValue)
         {
-            throw new NotImplementedException();
+            Dictionary<int, List<int>> hashTable = ConvertList2HashTable(values);
+            if (hashTable.ContainsKey(searchValue))
+            {
+                return hashTable[searchValue];
+            }
+            return new List<int> { };
+        }
+
+        private static Dictionary<int, List<int>> ConvertList2HashTable(List<int> values)
+        {
+            Dictionary<int, List<int>> hashTable = new Dictionary<int, List<int>>();
+            for (int i = 0; i < values.Count; i++)
+            {
+                if (!hashTable.ContainsKey(values[i]))
+                {
+                    hashTable.Add(values[i], new List<int> { i });
+                }
+                else
+                {
+                    hashTable[values[i]].Add(i);
+                }
+            }
+            return hashTable;
         }
     }
 }
