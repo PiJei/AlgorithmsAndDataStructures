@@ -1,7 +1,6 @@
-# CSFundamentalAlgorithms
+# (C)omputer(S)cience Fundamental Algorithms & Data Structures in (CS)harp
 
-(C)omputer(S)cience fundamentals in (CS)harp. 
-
+ 
 Content: 
 - Sorting Algorithms 
   - BubbleSort
