@@ -24,6 +24,12 @@ namespace CSFundamentals.Algorithms.Search
 {
     public class HashTableSearch
     {
+        /// <summary>
+        /// Implements search using a hash table. 
+        /// </summary>
+        /// <param name="values"></param>
+        /// <param name="searchValue"></param>
+        /// <returns></returns>
         [Algorithm(AlgorithmType.Search, "HashTable")]
         [SpaceComplexity("O(n)", InPlace = false)]
         [TimeComplexity(Case.Best, "O(1)")]
