@@ -17,7 +17,7 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
- // TODO: Specify time and space complexity for bfs and dfs. 
+// TODO: Specify time and space complexity for bfs and dfs. 
 using System.Collections.Generic;
 
 namespace CSFundamentals.Algorithms.GraphTraversal
@@ -84,7 +84,6 @@ namespace CSFundamentals.Algorithms.GraphTraversal
             }
             BFS_Recursive(queue, bfsOrdering);
         }
-
     }
 }
 // TODO: In recursive versions of bfs and dfs also compute distance from root. 
