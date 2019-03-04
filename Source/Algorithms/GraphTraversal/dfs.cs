@@ -42,13 +42,13 @@ namespace CSFundamentals.Algorithms.GraphTraversal
             {
                 GraphNode nextNode = stack.Pop();
                 dfsOrdering.Add(nextNode);
-                foreach (GraphNode node in nextNode.Adjacents)
+                foreach (GraphEdge edge in nextNode.Adjacents)
                 {
-                    if (!node.IsInserted) /* Without this check, while loop could never terminate in case graph contains cycles.*/
+                    if (!edge.Node.IsInserted) /* Without this check, while loop could never terminate in case graph contains cycles.*/
                     {
-                        node.IsInserted = true;
-                        node.DistanceFromRoot = nextNode.DistanceFromRoot + 1;
-                        stack.Push(node);
+                        edge.Node.IsInserted = true;
+                        edge.Node.DistanceFromRoot = nextNode.DistanceFromRoot + 1;
+                        stack.Push(edge.Node);
                     }
                 }
 
@@ -66,11 +66,11 @@ namespace CSFundamentals.Algorithms.GraphTraversal
             root.IsInserted = true;
             dfsOrdering.Add(root);
 
-            foreach (GraphNode node in root.Adjacents)
+            foreach (GraphEdge edge in root.Adjacents)
             {
-                if (!node.IsInserted)
+                if (!edge.Node.IsInserted)
                 {
-                    DFS_Recursive(node, dfsOrdering);
+                    DFS_Recursive(edge.Node, dfsOrdering);
                 }
             }
         }

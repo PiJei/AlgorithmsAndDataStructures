@@ -17,32 +17,27 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System;
-
-namespace CSFundamentals.Styling
+namespace CSFundamentals.Algorithms.GraphTraversal
 {
-    [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
-    public class AlgorithmAttribute : Attribute
+    /// <summary>
+    /// Represents an edge in a graph. 
+    /// </summary>
+    public class GraphEdge
     {
-        public AlgorithmType Type { get; private set; }
+        /// <summary>
+        /// Is the GraphNode on the other side of the edge. 
+        /// </summary>
+        public GraphNode Node { get; set; }
 
-        public string Name { get; private set; }
+        /// <summary>
+        /// Represents an integer value for the weight for edge .
+        /// </summary>
+        public int Weight { get; set; }
 
-        public bool IsGreedy { get; set; }
-
-        public AlgorithmAttribute(AlgorithmType type, string name)
+        public GraphEdge(GraphNode node, int weight)
         {
-            Type = type;
-            Name = name;
+            Node = node;
+            Weight = weight;
         }
-    }
-
-    public enum AlgorithmType
-    {
-        Sort = 1,
-        Search = 2,
-        PatternSearch = 3,
-        Hash = 4,
-        GraphRouteSearch = 5
     }
 }

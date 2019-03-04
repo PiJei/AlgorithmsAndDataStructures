@@ -23,7 +23,7 @@ using System.Collections.Generic;
 
 namespace CSFundamentals.DataStructures.BinaryHeaps
 {
-    public abstract class BinaryHeapBase : IBinaryHeap
+    public abstract class BinaryHeapBase<T> : IBinaryHeap<T> where T : IComparable<T>
     {
         /// <summary>
         /// Note that passing the array size is not a must, as the class itself contains the array and has access to its size. However some algorithms such as HeapSort which rely on a heap to perform sorting, are better implemented, if we have the length of the array passed to these methods. 
@@ -33,11 +33,11 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
 
         public abstract void BuildHeap_Recursively(int heapArrayLength);
 
-        public abstract void Insert(int value, int heapArrayLength);
+        public abstract void Insert(T value, int heapArrayLength);
 
-        public abstract bool TryRemoveRoot(out int rootValue, int heapArrayLength);
+        public abstract bool TryRemoveRoot(out T rootValue, int heapArrayLength);
 
-        public abstract bool TryFindRoot(out int rootValue, int heapArrayLength);
+        public abstract bool TryFindRoot(out T rootValue, int heapArrayLength);
 
         public abstract void BubbleDown_Recursively(int rootIndex, int heapArrayLength);
 
@@ -45,9 +45,9 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
 
         public abstract void BubbleUp_Iteratively(int index, int heapArrayLength);
 
-        public List<int> HeapArray;
+        public List<T> HeapArray;
 
-        public BinaryHeapBase(List<int> array)
+        public BinaryHeapBase(List<T> array)
         {
             HeapArray = array;
         }
@@ -89,9 +89,9 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <param name="array">Specifies the heap represented in an array.</param>
         /// <param name="index1">Specifies the index of the first element. </param>
         /// <param name="index2">Specifies the index of the second element. </param>
-        public void Swap(List<int> array, int index1, int index2)
+        public void Swap(List<T> array, int index1, int index2)
         {
-            int temp = array[index1];
+            var temp = array[index1];
             array[index1] = array[index2];
             array[index2] = temp;
         }
@@ -110,7 +110,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <param name="minValueReference">Specifies the reference for the minimum value.  </param>
         /// <param name="minValueIndex">Specifies the index of the minimum value among the specifies indexes. </param>
         /// <returns>True in case of success, and false in case of failure. </returns>
-        public bool TryFindMinIndex(List<int> values, List<int> indexes, int minValueReference, out int minValueIndex)
+        public bool TryFindMinIndex(List<T> values, List<int> indexes, T minValueReference, out int minValueIndex)
         {
             minValueIndex = Int32.MinValue;
 
@@ -121,7 +121,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
             }
 
             /* Find the minimum value.*/
-            foreach (int index in indexes.Where(index => index < values.Count && index >= 0 && values[index] < minValueReference))
+            foreach (int index in indexes.Where(index => index < values.Count && index >= 0 && values[index].CompareTo(minValueReference) < 0))
             {
                 minValueReference = values[index];
                 minValueIndex = index;
@@ -145,7 +145,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <param name="maxValueReference">Specifies the reference for the maximum value.  </param>
         /// <param name="maxValueIndex">Specifies the index of the maximum value among the specifies indexes. </param>
         /// <returns>True in case of success, and false in case of failure. </returns>
-        public bool TryFindMaxIndex(List<int> values, int valuesCount, List<int> indexes, int maxValueReference, out int maxValueIndex)
+        public bool TryFindMaxIndex(List<T> values, int valuesCount, List<int> indexes, T maxValueReference, out int maxValueIndex)
         {
             maxValueIndex = Int32.MaxValue;
 
@@ -156,7 +156,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
             }
 
             /* Find the minimum value.*/
-            foreach (int index in indexes.Where(index => index < valuesCount && values[index] > maxValueReference))
+            foreach (int index in indexes.Where(index => index < valuesCount && values[index].CompareTo(maxValueReference) > 0))
             {
                 maxValueReference = values[index];
                 maxValueIndex = index;
@@ -169,6 +169,18 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
             }
 
             return true;
+        }
+
+        public int FindIndex(T value)
+        {
+            for (int i = 0; i < HeapArray.Count; i++)
+            {
+                if (HeapArray[i].Equals(value))
+                {
+                    return i;
+                }
+            }
+            return -1;
         }
     }
 }

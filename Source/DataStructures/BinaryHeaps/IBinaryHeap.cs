@@ -17,11 +17,12 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System.Collections.Generic;
+using System;
+ using System.Collections.Generic;
 
 namespace CSFundamentals.DataStructures.BinaryHeaps
 {
-    public interface IBinaryHeap
+    public interface IBinaryHeap<T> where T:IComparable<T>
     {
         /// <summary>
         /// Builds a heap using recursion, and does so in situ.
@@ -39,14 +40,14 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// This method is for inserting a new value into heap.
         /// </summary>
         /// <param name="value">Specifies the value to be inserted into the heap.</param>
-        void Insert(int value, int heapArrayLength);
+        void Insert(T value, int heapArrayLength);
 
         /// <summary>
         /// This method is for removing the root of the heap. In a MinHeap and MinMaxHeap this is the min, and in a MaxHeap and MaxMinHeap this is the max. 
         /// </summary>
         /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
         /// <returns>True in case of success, and false otherwise.</returns>
-        bool TryRemoveRoot(out int rootValue, int heapArrayLength);
+        bool TryRemoveRoot(out T rootValue, int heapArrayLength);
 
         /// <summary>
         /// This method is for finding the root of the heap, without removing it. 
@@ -54,7 +55,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <param name="rootValue"></param>
         /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
         /// <returns>True in case of success, and false in case of failure.</returns>
-        bool TryFindRoot(out int rootValue, int heapArrayLength);
+        bool TryFindRoot(out T rootValue, int heapArrayLength);
 
         /// <summary>
         /// This method implements the bubble down/trickle down operation using recursion.
@@ -111,6 +112,8 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <param name="array">Specifies an array.</param>
         /// <param name="index1">Specifies the first index. </param>
         /// <param name="index2">Specifies the second index.</param>
-        void Swap(List<int> array, int index1, int index2);
+        void Swap(List<T> array, int index1, int index2);
     }
 }
+
+//TODO: search all the swap implementations and have only one!

@@ -31,7 +31,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         public void BinaryHeap_Swap_Test()
         {
             List<int> values = new List<int> { 10, 34, 56, 2, 12, 1 };
-            var heap = new MinBinaryHeap(values);
+            var heap = new MinBinaryHeap<int>(values);
             heap.Swap(values, 1, 2);
             Assert.AreEqual(6, values.Count);
             Assert.AreEqual(56, values[1]);
@@ -42,7 +42,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         public void BinaryHeap_TryFindMinIndex_Test()
         {
             List<int> values = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
-            var heap = new MinBinaryHeap(values);
+            var heap = new MinBinaryHeap<int>(values);
 
             bool result1 = heap.TryFindMinIndex(values, new List<int> { 1, 2 }, 150, out int minValueIndex1);
             Assert.IsTrue(result1);
@@ -65,7 +65,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         public void BinaryHeap_TryFindMaxIndex_Test()
         {
             List<int> values = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
-            var heap = new MinBinaryHeap(values);
+            var heap = new MinBinaryHeap<int>(values);
 
             bool result1 = heap.TryFindMaxIndex(values, values.Count, new List<int> { 1, 2 }, 150, out int maxValueIndex1);
             Assert.IsTrue(result1);
@@ -88,7 +88,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         public void BinaryHeap_GetNodeLevel_Test()
         {
             List<int> values = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
-            var heap = new MinBinaryHeap(values);
+            var heap = new MinBinaryHeap<int>(values);
             heap.BuildHeap_Recursively(heap.HeapArray.Count);
 
             for (int index = 0; index < values.Count; index++)

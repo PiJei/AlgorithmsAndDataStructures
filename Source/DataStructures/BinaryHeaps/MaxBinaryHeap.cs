@@ -30,9 +30,9 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
     /// Implements a Max Binary Heap, and its main operations.
     /// </summary>
     [DataStructure("MaxBinaryHeap")]
-    public class MaxBinaryHeap : BinaryHeapBase
+    public class MaxBinaryHeap<T> : BinaryHeapBase<T> where T : IComparable<T>
     {
-        public MaxBinaryHeap(List<int> array) : base(array)
+        public MaxBinaryHeap(List<T> array) : base(array)
         {
 
         }
@@ -66,7 +66,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// </summary>
         /// <param name="newValue">Specifies the new value to be inserted in the tree.</param>
         /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
-        public override void Insert(int value, int heapArrayLength)
+        public override void Insert(T value, int heapArrayLength)
         {
             HeapArray.Add(value);// means gets added to the end of the list. 
 
@@ -89,7 +89,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
                 return;
             }
 
-            while (index != 0 && HeapArray[parentIndex] < HeapArray[index])
+            while (index != 0 && HeapArray[parentIndex].CompareTo(HeapArray[index]) < 0)
             {
                 Swap(HeapArray, parentIndex, index);
                 index = parentIndex;
@@ -103,9 +103,9 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <param name="rootValue">If the operation is successful, contains the maximum element in the array.</param>
         /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
         /// <returns>True in case of success, and false otherwise</returns>
-        public override bool TryRemoveRoot(out int rootValue, int heapArrayLength)
+        public override bool TryRemoveRoot(out T rootValue, int heapArrayLength)
         {
-            rootValue = Int32.MaxValue;
+            rootValue = (T)typeof(T).GetField("MaxValue").GetValue(null);
 
             if (heapArrayLength == 0)
             {
@@ -132,14 +132,14 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <param name="rootValue"></param>
         /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
         /// <returns></returns>
-        public override bool TryFindRoot(out int rootValue, int heapArrayLength)
+        public override bool TryFindRoot(out T rootValue, int heapArrayLength)
         {
             if (HeapArray.Any())
             {
                 rootValue = HeapArray[0];
                 return true;
             }
-            rootValue = int.MinValue;
+            rootValue = (T)typeof(T).GetField("MinValue").GetValue(null);
             return false;
         }
 
@@ -195,7 +195,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
                 }
                 else
                 {
-                    if (TryFindMaxIndex(HeapArray, heapArrayLength, new List<int> { leftChildIndex, rightChildIndex }, Int32.MinValue, out int maxChildIndex))
+                    if (TryFindMaxIndex(HeapArray, heapArrayLength, new List<int> { leftChildIndex, rightChildIndex }, (T)typeof(T).GetField("MinValue").GetValue(null), out int maxChildIndex))
                     {
                         rootIndex = maxChildIndex;
                     }

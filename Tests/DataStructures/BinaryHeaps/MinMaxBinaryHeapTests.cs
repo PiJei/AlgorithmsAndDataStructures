@@ -28,7 +28,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
     public class MinMaxBinaryHeapTests
     {
 
-        public static void CheckMinMaxOrdering_ForMinLevel(BinaryHeapBase heap, int index)
+        public static void CheckMinMaxOrdering_ForMinLevel(BinaryHeapBase<int> heap, int index)
         {
             int leftChildIndex = heap.GetLeftChildIndexInHeapArray(index);
             int rightChildIndex = heap.GetRightChildIndexInHeapArray(index);
@@ -48,7 +48,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
             }
         }
 
-        public static void CheckMinMaxOrdering_ForMaxLevel(BinaryHeapBase heap, int index)
+        public static void CheckMinMaxOrdering_ForMaxLevel(BinaryHeapBase<int> heap, int index)
         {
             int leftChildIndex = heap.GetLeftChildIndexInHeapArray(index);
             int rightChildIndex = heap.GetRightChildIndexInHeapArray(index);
@@ -72,7 +72,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         public void MinMaxBinaryHeap_BuildHeapRecursively_Test1()
         {
             List<int> values = new List<int> { 70, 21, 220, 10, 1, 34, 3, 150, 85 };
-            var heap = new MinMaxBinaryHeap(values);
+            var heap = new MinMaxBinaryHeap<int>(values);
             heap.BuildHeap_Recursively(heap.HeapArray.Count);
 
             for (int i = 0; i < values.Count; i++)
@@ -103,7 +103,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         public void MinMaxBinaryHeap_BuildHeapRecursively_Test2()
         {
             List<int> values = new List<int> { 39, 45, 37, 45, 38, 50, 59, 65, 27, 25, 36, 30, 57, 28 };
-            var heap = new MinMaxBinaryHeap(values);
+            var heap = new MinMaxBinaryHeap<int>(values);
             heap.BuildHeap_Recursively(heap.HeapArray.Count);
 
             for (int i = 0; i < values.Count; i++)
