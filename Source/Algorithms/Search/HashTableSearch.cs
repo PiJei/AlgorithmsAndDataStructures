@@ -24,7 +24,6 @@ namespace CSFundamentals.Algorithms.Search
 {
     public class HashTableSearch
     {
-        // TODO: Implement 
         [Algorithm(AlgorithmType.Search, "HashTable")]
         [SpaceComplexity("O(n)", InPlace = false)]
         [TimeComplexity(Case.Best, "O(1)")]
