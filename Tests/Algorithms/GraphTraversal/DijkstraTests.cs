@@ -71,7 +71,7 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
             node8.Adjacents.Add(new GraphEdge(node6, 2));
             node8.Adjacents.Add(new GraphEdge(node4, 4));
             node8.Adjacents.Add(new GraphEdge(node7, 14));
-            node8.Adjacents.Add(new GraphEdge(node4, 10));
+            node8.Adjacents.Add(new GraphEdge(node9, 10));
 
             node9.Adjacents.Add(new GraphEdge(node7, 9));
             node9.Adjacents.Add(new GraphEdge(node8, 10));

@@ -70,8 +70,8 @@ namespace CSFundamentals.Algorithms.GraphTraversal
                                         break;
                                     }
                                 }
+                                // bubble up the node. 
                                 minHeap.BubbleUp_Iteratively(index, minHeap.HeapArray.Count);
-
                             }
                         }
                     }
