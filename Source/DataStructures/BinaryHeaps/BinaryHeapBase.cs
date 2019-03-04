@@ -170,5 +170,17 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
 
             return true;
         }
+
+        public int FindIndex(T value)
+        {
+            for (int i = 0; i < HeapArray.Count; i++)
+            {
+                if (HeapArray[i].Equals(value))
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
     }
 }

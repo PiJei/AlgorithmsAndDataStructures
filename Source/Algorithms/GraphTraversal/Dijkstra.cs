@@ -19,20 +19,24 @@
 
 using System.Collections.Generic;
 using CSFundamentals.DataStructures.BinaryHeaps;
+using CSFundamentals.Styling;
 
 namespace CSFundamentals.Algorithms.GraphTraversal
 {
-    /// <summary>
-    /// Problem: Given a 'connected directed graph', and a start node (called root (note it does not have the same meaning as in a tree, since this is a graph)), find the shortest paths from this node to all the other nodes in the graph. 
-    /// TODO: Revisit the summary: is the graph undirected and connected?
-    /// </summary>
     public class Dijkstra
     {
-        // Traverse all vertices using BFS , and use a min heap to store vertices not yet included in SPT array (meaning shortest path is not finalized yet)
+        /// <summary>
+        /// Implements Dijkstra's ShortestPath algorithm using MinBinaryHeap
+        /// </summary>
+        /// <param name="root">Specifies </param>
+        /// <returns>All the nodes in the graph, in the order that they were visited with their shortest distance from the root computed. </returns>
+        [Algorithm(AlgorithmType.GraphRouteSearch, "Dijkstra's shortest path", IsGreedy = true)]
+        [SpaceComplexity("O(3V)", InPlace = false)]
+        [TimeComplexity(Case.Average, "O((E+V)Log(V))")]
         public static List<GraphNode> GetShortestDistancesFromRoot(GraphNode root)
         {
             //1- Get the list of all vertices in the graph .
-            List<GraphNode> bfsOrdering = BFS.BFS_Iterative(root);
+            List<GraphNode> bfsOrdering = BFS.BFS_Iterative(root); /* Extra space usage O(V) for bfsOrdering. */
 
             //2- Set the distance of all the nodes from the root node to infinite. 
             foreach (GraphNode node in bfsOrdering)
@@ -43,9 +47,9 @@ namespace CSFundamentals.Algorithms.GraphTraversal
             root.DistanceFromRoot = 0;
 
             //4- Build a MinHeap over all the nodes in the array.
-            var minHeap = new MinBinaryHeap<GraphNode>(bfsOrdering);
+            var minHeap = new MinBinaryHeap<GraphNode>(bfsOrdering); /* Extra space usage O(V) for heapArray. */
 
-            List<GraphNode> shortestDistanceFromRoot = new List<GraphNode>();
+            List<GraphNode> shortestDistanceFromRoot = new List<GraphNode>(); /* Extra space usage O(V) for tracking shortest distances of all the nodes from the root node. */
 
             while (true) // Repeat until minHeap is empty. 
             {
@@ -59,19 +63,9 @@ namespace CSFundamentals.Algorithms.GraphTraversal
                             if (edge.Node.DistanceFromRoot > currentMinNode.DistanceFromRoot + edge.Weight)
                             {
                                 edge.Node.DistanceFromRoot = currentMinNode.DistanceFromRoot + edge.Weight;
-
-                                // Find index in the array
-                                int index = 0;
-                                for (int i = 0; i < minHeap.HeapArray.Count; i++)
-                                {
-                                    if (minHeap.HeapArray[i].Equals(edge.Node))
-                                    {
-                                        index = i;
-                                        break;
-                                    }
-                                }
-                                // bubble up the node. 
-                                minHeap.BubbleUp_Iteratively(index, minHeap.HeapArray.Count);
+                                int index = minHeap.FindIndex(edge.Node); /* Can be O(1) if the index of each element is stored with the element. */
+                                if (index >= 0)
+                                    minHeap.BubbleUp_Iteratively(index, minHeap.HeapArray.Count);
                             }
                         }
                     }

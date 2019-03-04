@@ -17,8 +17,7 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// TODO: make generic
-
+using System;
 using System.Collections.Generic;
 using CSFundamentals.DataStructures.BinaryHeaps;
 using CSFundamentals.Styling;
@@ -27,9 +26,8 @@ namespace CSFundamentals.Algorithms.Sort
 {
     public partial class HeapSort
     {
-        // TODO: Make generic
         /// <summary>
-        /// Sorts the elements in an integer array using heap sort algorithm in to an ascending order. 
+        /// Sorts the elements in an array using heap sort algorithm into an ascending order. 
         /// </summary>
         /// <param name="values">Specifies the list of values (of type T, e.g., int) to be sorted.</param>
         [Algorithm(AlgorithmType.Sort, "HeapSort")]
@@ -37,18 +35,19 @@ namespace CSFundamentals.Algorithms.Sort
         [TimeComplexity(Case.Best, "O(nLog(n))")]
         [TimeComplexity(Case.Worst, "O(nLog(n))")]
         [TimeComplexity(Case.Average, "O(nLog(n))")]
-        public static void Sort_Ascending(List<int> values)
+        public static void Sort_Ascending<T>(List<T> values) where T:IComparable<T>
         {
             // 1- re-arrange the elements in the integer array into a max heap. 
-            var maxHeap = new MaxBinaryHeap<int>(values);
+            var maxHeap = new MaxBinaryHeap<T>(values);
             maxHeap.BuildHeap_Recursively(values.Count);
 
             // 2- repeat the following 2 steps for all the elements in the array. 
             for (int i = values.Count - 1; i >= 0; i--)
             {
-                // Since the root element/node in a max heap, is the most maximum value in the array, putting it to the last element of the unsorted part of the array, will determine its right position in an array that is eventually ordered ascending
+                /* Since the root element/node in a max heap is the maximum value in the array, putting it in the last position of the unsorted part of the array, determines its final position in an array that is eventually ordered ascending.*/
                 Utils.Swap(values, 0, i);
-                // Since the new value in the root position of the heap (index :0) may not be in its correct position, heap-order-wise, then bubble it down, until it reaches its correct position.
+
+                /* Since the new value in the root position of the heap (index :0) may not be in its correct position, heap-order-wise, then bubble it down, until it reaches its correct position.*/
                 maxHeap.BubbleDown_Recursively(0, i);
             }
         }

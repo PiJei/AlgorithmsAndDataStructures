@@ -28,6 +28,8 @@ namespace CSFundamentals.Styling
 
         public string Name { get; private set; }
 
+        public bool IsGreedy { get; set; }
+
         public AlgorithmAttribute(AlgorithmType type, string name)
         {
             Type = type;
@@ -40,6 +42,7 @@ namespace CSFundamentals.Styling
         Sort = 1,
         Search = 2,
         PatternSearch = 3,
-        Hash = 4
+        Hash = 4,
+        GraphRouteSearch = 5
     }
 }
