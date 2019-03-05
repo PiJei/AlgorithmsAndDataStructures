@@ -21,38 +21,73 @@ using System;
 using System.Collections.Generic;
 using CSFundamentals.Styling;
 
+//TODO: nOT SURE WHY TO HAVE BOTH KEY AND Value
+//TODO: How to prevent de-genration /imbalance?
+
 namespace CSFundamentals.DataStructures.Trees
 {
     [DataStructure("BinarySearchTree (aka BST)")]
     public class BinarySearchTree<T> where T : IComparable<T>
     {
+        /// <summary>
+        /// Is the root of the binary search tree. 
+        /// </summary>
         private BinaryTreeNode<T> _root = null;
 
-        public bool Search(T value)
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "O(n)", When = "Tree is imbalanced such that it is like one sequential branch (linked list), every node except the leaf having exactly one child.")]
+        [TimeComplexity(Case.Average, "O(Log(n))")]
+        [SpaceComplexity("O(1)", InPlace = true)]
+        public BinaryTreeNode<T> Search(BinaryTreeNode<T> root, T value)
         {
-            throw new NotImplementedException();
+            if (root == null)
+            {
+                return root;
+            }
+
+            if (root.Value.Equals(value))
+            {
+                return root;
+            }
+
+            if (root.Value.CompareTo(value) < 0)
+            {
+                return Search(root.RightChild, value);
+            }
+
+            return Search(root.LeftChild, value);
         }
 
+        [TimeComplexity(Case.Average, "")]
+        [SpaceComplexity("", InPlace =)]
         public bool Insert(T value)
         {
             throw new NotImplementedException();
         }
 
+        [TimeComplexity(Case.Average, "")]
+        [SpaceComplexity("", InPlace =)]
         public bool Delete(T value)
         {
             throw new NotImplementedException();
         }
 
+        [TimeComplexity(Case.Average, "")]
+        [SpaceComplexity("", InPlace =)]
         public T GetMinValue()
         {
             throw new NotImplementedException();
         }
 
+        [TimeComplexity(Case.Average, "")]
+        [SpaceComplexity("", InPlace =)]
         public T GetMaxValue()
         {
             throw new NotImplementedException();
         }
 
+        [TimeComplexity(Case.Average, "")]
+        [SpaceComplexity("", InPlace =)]
         public List<T> GetSortedList()
         {
             throw new NotImplementedException();
