@@ -41,12 +41,6 @@ namespace CSFundamentals.DataStructures.Trees
 
         public BinaryTreeNode<T1, T2> RightChild { get; set; }
 
-        public bool IsLeaf { get; set; }
-
-        public bool IsRoot { get; set; }
-
-        public bool IsIntermediate { get; set; }
-
         public BinaryTreeNode(T1 key, T2 value)
         {
             Key = key;
