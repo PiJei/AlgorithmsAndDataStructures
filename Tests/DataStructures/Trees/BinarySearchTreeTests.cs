@@ -20,16 +20,73 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentals.DataStructures.Trees;
 using System;
+using System.Collections.Generic;
 
 namespace CSFundamentalsTests.DataStructures.Trees
 {
     [TestClass]
     public class BinarySearchTreeTests
     {
-        public void IsBinarySearchTree<T>(BinaryTreeNode<T> root) where T : IComparable<T>
+        private BinaryTreeNode<int, string> _root;
+        private BinarySearchTree<int, string> _tree;
+
+        [TestInitialize]
+        public void Init()
         {
-            throw new NotImplementedException();
-            // TODO: Can be implemented recursively
+            var keyVals = new Dictionary<int, string>
+            {
+                [40] = "str3",
+                [20] = "str1",
+                [70] = "str8",
+                [50] = "str4",
+                [80] = "str9",
+                [30] = "str2",
+                [60] = "str7",
+            };
+
+            _tree = new BinarySearchTree<int, string>();
+            _root = _tree.Build(keyVals);
+        }
+
+        [TestMethod]
+        public void BinarySearchTree_Build_Test()
+        {
+            IsBinarySearchTree(_root);
+        }
+
+        [TestMethod]
+        public void BinarySearchTree_InOrderTraversal_Test()
+        {
+            var inOrderTraversal = new List<BinaryTreeNode<int, string>>();
+            _tree.InOrderTraversal(_root, inOrderTraversal);
+            Assert.AreEqual(7, inOrderTraversal.Count);
+            for (int i = 0; i < inOrderTraversal.Count - 1; i++)
+            {
+                Assert.IsTrue(inOrderTraversal[i].Key < inOrderTraversal[i + 1].Key);
+            }
+        }
+
+        /// <summary>
+        /// Given the root of a binary search tree, checks whether the binary search tree properties hold.
+        /// </summary>
+        /// <typeparam name="T1">Specifies the type of the keys in tree. </typeparam>
+        /// <typeparam name="T2">Specifies the type of the values in tree nodes. </typeparam>
+        /// <param name="root">Is the root of a binary search tree. </param>
+        private void IsBinarySearchTree<T1, T2>(BinaryTreeNode<T1, T2> root) where T1 : IComparable<T1>, IEquatable<T1>
+        {
+            if (root != null)
+            {
+                if (root.LeftChild != null)
+                {
+                    Assert.IsTrue(root.Key.CompareTo(root.LeftChild.Key) > 0);
+                    IsBinarySearchTree(root.LeftChild);
+                }
+                if (root.RightChild != null)
+                {
+                    Assert.IsTrue(root.Key.CompareTo(root.RightChild.Key) < 0);
+                    IsBinarySearchTree(root.RightChild);
+                }
+            }
         }
     }
 }

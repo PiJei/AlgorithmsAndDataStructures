@@ -21,13 +21,25 @@ using System;
 
 namespace CSFundamentals.DataStructures.Trees
 {
-    public class BinaryTreeNode<T> where T : IComparable<T>
+    public class BinaryTreeNode<T1, T2> : IEquatable<BinaryTreeNode<T1, T2>> where T1 : IComparable<T1>, IEquatable<T1>
     {
-        public T Value { get; set; }
+        /// <summary>
+        /// Is a unique identifier to distinguish between nodes in a tree. 
+        /// Key is also the value over which BinarySearchTree properties should hold.
+        /// </summary>
+        public T1 Key { get; set; }
 
-        public BinaryTreeNode<T> LeftChild { get; set; }
+        /// <remarks>
+        /// This can be converted to a list of values alternatively, to handle duplicate keys. 
+        /// </remarks>
+        /// <summary>
+        /// Is the value (information) stored in a node. 
+        /// </summary> 
+        public T2 Value { get; set; }
 
-        public BinaryTreeNode<T> RightChild { get; set; }
+        public BinaryTreeNode<T1, T2> LeftChild { get; set; }
+
+        public BinaryTreeNode<T1, T2> RightChild { get; set; }
 
         public bool IsLeaf { get; set; }
 
@@ -35,9 +47,17 @@ namespace CSFundamentals.DataStructures.Trees
 
         public bool IsIntermediate { get; set; }
 
-        public BinaryTreeNode(T value)
+        public BinaryTreeNode(T1 key, T2 value)
         {
+            Key = key;
             Value = value;
+        }
+
+        public bool Equals(BinaryTreeNode<T1, T2> other)
+        {
+            if (other == null) return false;
+            if (Key.Equals(other.Key)) return true;
+            return false;
         }
     }
 }
