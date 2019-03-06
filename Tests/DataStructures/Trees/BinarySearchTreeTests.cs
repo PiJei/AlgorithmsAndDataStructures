@@ -37,11 +37,11 @@ namespace CSFundamentalsTests.DataStructures.Trees
             {
                 [40] = "str3",
                 [20] = "str1",
-                [70] = "str8",
+                [70] = "str6",
                 [50] = "str4",
-                [80] = "str9",
+                [80] = "str7",
                 [30] = "str2",
-                [60] = "str7",
+                [60] = "str5",
             };
 
             _tree = new BinarySearchTree<int, string>();
@@ -64,6 +64,231 @@ namespace CSFundamentalsTests.DataStructures.Trees
             {
                 Assert.IsTrue(inOrderTraversal[i].Key < inOrderTraversal[i + 1].Key);
             }
+        }
+
+        [TestMethod]
+        public void BinarySearchTree_Search_Test_Success()
+        {
+            Assert.AreEqual("str5", _tree.Search(_root, 60).Value, ignoreCase: false);
+            Assert.AreEqual("str2", _tree.Search(_root, 30).Value, ignoreCase: false);
+            Assert.AreEqual("str7", _tree.Search(_root, 80).Value, ignoreCase: false);
+            Assert.AreEqual("str4", _tree.Search(_root, 50).Value, ignoreCase: false);
+            Assert.AreEqual("str6", _tree.Search(_root, 70).Value, ignoreCase: false);
+            Assert.AreEqual("str1", _tree.Search(_root, 20).Value, ignoreCase: false);
+            Assert.AreEqual("str3", _tree.Search(_root, 40).Value, ignoreCase: false);
+        }
+
+        [TestMethod]
+        public void BinarySearchTree_Search_Test_Failure()
+        {
+            Assert.IsNull(_tree.Search(_root, 45));
+            Assert.IsNull(_tree.Search(null, 30));
+        }
+
+        [TestMethod]
+        public void BinarySearchTree_Update_Test_Success()
+        {
+            Assert.IsTrue(_tree.Update(_root, 40, "string3"));
+
+            Assert.IsTrue(_tree.Update(_root, 70, "string6"));
+        }
+
+        [TestMethod]
+        public void BinarySearchTree_Update_Test_Failue()
+        {
+            /* Testing the case where root is null. */
+            Assert.IsFalse(_tree.Update(null, 40, "string3"));
+
+            /* Testing the case where key does not exist in tree. */
+            Assert.IsFalse(_tree.Update(_root, 45, "string3"));
+        }
+
+        [TestMethod]
+        public void BinarySearchTree_FindMin_Test_Success()
+        {
+            Assert.AreEqual("str1", _tree.FindMin(_root).Value);
+            Assert.AreEqual("str1", _tree.FindMin(_root.LeftChild).Value);
+            Assert.AreEqual("str2", _tree.FindMin(_root.LeftChild.RightChild).Value);
+            Assert.AreEqual("str4", _tree.FindMin(_root.RightChild).Value);
+            Assert.AreEqual("str4", _tree.FindMin(_root.RightChild.LeftChild).Value);
+            Assert.AreEqual("str7", _tree.FindMin(_root.RightChild.RightChild).Value);
+            Assert.AreEqual("str5", _tree.FindMin(_root.RightChild.LeftChild.RightChild).Value);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void BinarySearchTree_FindMin_Test_Failure()
+        {
+            _tree.FindMin(null);
+        }
+
+        [TestMethod]
+        public void BinarySearchTree_FindMax_Test_Success()
+        {
+            Assert.AreEqual("str7", _tree.FindMax(_root).Value);
+            Assert.AreEqual("str2", _tree.FindMax(_root.LeftChild).Value);
+            Assert.AreEqual("str2", _tree.FindMax(_root.LeftChild.RightChild).Value);
+            Assert.AreEqual("str7", _tree.FindMax(_root.RightChild).Value);
+            Assert.AreEqual("str5", _tree.FindMax(_root.RightChild.LeftChild).Value);
+            Assert.AreEqual("str7", _tree.FindMax(_root.RightChild.RightChild).Value);
+            Assert.AreEqual("str5", _tree.FindMax(_root.RightChild.LeftChild.RightChild).Value);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void BinarySearchTree_FindMax_Test_Failure()
+        {
+            _tree.FindMax(null);
+        }
+
+        [TestMethod]
+        public void BinarySearchTree_Delete_Root_Test()
+        {
+            _root = _tree.Delete(_root, _root.Key);
+            IsBinarySearchTree(_root);
+
+            var inOrderTraversal = new List<BinaryTreeNode<int, string>>();
+            _tree.InOrderTraversal(_root, inOrderTraversal);
+            Assert.AreEqual(6, inOrderTraversal.Count);
+            for (int i = 0; i < inOrderTraversal.Count - 1; i++)
+            {
+                Assert.IsTrue(inOrderTraversal[i].Key < inOrderTraversal[i + 1].Key);
+            }
+        }
+
+        [TestMethod]
+        public void BinarySearchTree_Delete_NodeWith2Children_Test()
+        {
+            _root = _tree.Delete(_root, 70);
+            IsBinarySearchTree(_root);
+
+            var inOrderTraversal = new List<BinaryTreeNode<int, string>>();
+            _tree.InOrderTraversal(_root, inOrderTraversal);
+            Assert.AreEqual(6, inOrderTraversal.Count);
+            for (int i = 0; i < inOrderTraversal.Count - 1; i++)
+            {
+                Assert.IsTrue(inOrderTraversal[i].Key < inOrderTraversal[i + 1].Key);
+            }
+        }
+
+        [TestMethod]
+        public void BinarySearchTree_Delete_NodeWithNoChildren_Test()
+        {
+            _root = _tree.Delete(_root, 30);
+            IsBinarySearchTree(_root);
+
+            var inOrderTraversal = new List<BinaryTreeNode<int, string>>();
+            _tree.InOrderTraversal(_root, inOrderTraversal);
+            Assert.AreEqual(6, inOrderTraversal.Count);
+            for (int i = 0; i < inOrderTraversal.Count - 1; i++)
+            {
+                Assert.IsTrue(inOrderTraversal[i].Key < inOrderTraversal[i + 1].Key);
+            }
+        }
+
+        [TestMethod]
+        public void BinarySearchTree_Delete_NodeWithOneChildren_Test()
+        {
+            _root = _tree.Delete(_root, 20);
+            IsBinarySearchTree(_root);
+
+            var inOrderTraversal = new List<BinaryTreeNode<int, string>>();
+            _tree.InOrderTraversal(_root, inOrderTraversal);
+            Assert.AreEqual(6, inOrderTraversal.Count);
+            for (int i = 0; i < inOrderTraversal.Count - 1; i++)
+            {
+                Assert.IsTrue(inOrderTraversal[i].Key < inOrderTraversal[i + 1].Key);
+            }
+        }
+
+        [TestMethod]
+        public void BinarySearchTree_Delete_MultipleNodes_Test()
+        {
+            _root = _tree.Delete(_root, 20);
+            _root = _tree.Delete(_root, 40);
+            _root = _tree.Delete(_root, 50);
+
+            IsBinarySearchTree(_root);
+
+            var inOrderTraversal = new List<BinaryTreeNode<int, string>>();
+            _tree.InOrderTraversal(_root, inOrderTraversal);
+            Assert.AreEqual(4, inOrderTraversal.Count);
+            for (int i = 0; i < inOrderTraversal.Count - 1; i++)
+            {
+                Assert.IsTrue(inOrderTraversal[i].Key < inOrderTraversal[i + 1].Key);
+            }
+        }
+
+        [TestMethod]
+        public void BinarySearchTree_DeleteMin_Test_1()
+        {
+            _root = _tree.DeleteMin(_root);
+            IsBinarySearchTree(_root);
+
+            var inOrderTraversal = new List<BinaryTreeNode<int, string>>();
+            _tree.InOrderTraversal(_root, inOrderTraversal);
+            Assert.AreEqual(6, inOrderTraversal.Count);
+            for (int i = 0; i < inOrderTraversal.Count - 1; i++)
+            {
+                Assert.IsTrue(inOrderTraversal[i].Key < inOrderTraversal[i + 1].Key);
+            }
+
+            var minNode = _tree.FindMin(_root);
+            Assert.AreEqual(30, minNode.Key);
+        }
+
+        [TestMethod]
+        public void BinarySearchTree_DeleteMin_Test_2()
+        {
+            _root.RightChild = _tree.DeleteMin(_root.RightChild);
+            IsBinarySearchTree(_root.RightChild);
+
+            var inOrderTraversal = new List<BinaryTreeNode<int, string>>();
+            _tree.InOrderTraversal(_root.RightChild, inOrderTraversal);
+            Assert.AreEqual(3, inOrderTraversal.Count);
+            for (int i = 0; i < inOrderTraversal.Count - 1; i++)
+            {
+                Assert.IsTrue(inOrderTraversal[i].Key < inOrderTraversal[i + 1].Key);
+            }
+
+            var minNode = _tree.FindMin(_root.RightChild);
+            Assert.AreEqual(60, minNode.Key);
+        }
+
+        [TestMethod]
+        public void BinarySearchTree_DeleteMax_Test_1()
+        {
+            _root = _tree.DeleteMax(_root);
+            IsBinarySearchTree(_root);
+
+            var inOrderTraversal = new List<BinaryTreeNode<int, string>>();
+            _tree.InOrderTraversal(_root, inOrderTraversal);
+            Assert.AreEqual(6, inOrderTraversal.Count);
+            for (int i = 0; i < inOrderTraversal.Count - 1; i++)
+            {
+                Assert.IsTrue(inOrderTraversal[i].Key < inOrderTraversal[i + 1].Key);
+            }
+
+            var minNode = _tree.FindMax(_root);
+            Assert.AreEqual(70, minNode.Key);
+        }
+
+        [TestMethod]
+        public void BinarySearchTree_DeleteMax_Test_2()
+        {
+            _root.RightChild = _tree.DeleteMax(_root.LeftChild);
+            IsBinarySearchTree(_root.LeftChild);
+
+            var inOrderTraversal = new List<BinaryTreeNode<int, string>>();
+            _tree.InOrderTraversal(_root.LeftChild, inOrderTraversal);
+            Assert.AreEqual(1, inOrderTraversal.Count);
+            for (int i = 0; i < inOrderTraversal.Count - 1; i++)
+            {
+                Assert.IsTrue(inOrderTraversal[i].Key < inOrderTraversal[i + 1].Key);
+            }
+
+            var minNode = _tree.FindMin(_root.RightChild);
+            Assert.AreEqual(20, minNode.Key);
         }
 
         /// <summary>
@@ -90,3 +315,4 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
     }
 }
+

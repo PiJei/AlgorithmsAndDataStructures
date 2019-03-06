@@ -119,7 +119,7 @@ namespace CSFundamentals.DataStructures.Trees
         [SpaceComplexity("O(1)", InPlace = true)]
         public bool Update(BinaryTreeNode<T1, T2> root, T1 key, T2 value)
         {
-            BinaryTreeNode<T1, T2> node = Search(root, key);/* Since relies on Search, its time and space complexities are directly driven from Search() operation. */
+            BinaryTreeNode<T1, T2> node = Search(root, key); /* Since relies on Search, its time and space complexities are directly driven from Search() operation. */
             if (node != null)
             {
                 node.Value = value;
@@ -140,37 +140,43 @@ namespace CSFundamentals.DataStructures.Trees
             }
         }
 
-        [TimeComplexity(Case.Average, "")]
+        [TimeComplexity(Case.Average, "")] // TODO
         [SpaceComplexity("O(1)")]
-        public bool Delete(BinaryTreeNode<T1, T2> root, T1 key)
+        public BinaryTreeNode<T1, T2> Delete(BinaryTreeNode<T1, T2> root, T1 key)
         {
-            BinaryTreeNode<T1, T2> node = Search(root, key);
+            if (root == null) throw new ArgumentNullException();
 
-            if (node == null) { return false; }
-
-            if (node.RightChild == null && node.LeftChild == null)
+            if (root.Key.CompareTo(key) < 0)
             {
-                node = null;
-                return true;
+                root.RightChild = Delete(root.RightChild, key);
             }
-
-            if (node.RightChild == null)
+            else if (root.Key.CompareTo(key) > 0)
             {
-                node = node.LeftChild;
-                return true;
+                root.LeftChild = Delete(root.LeftChild, key);
             }
-
-            if (node.LeftChild == null)
+            else
             {
-                node = node.RightChild;
-                return true;
-            }
+                if (root.RightChild == null && root.LeftChild == null)
+                {
+                    return null;
+                }
 
-            BinaryTreeNode<T1, T2> rightChildMin = FindMin(node.RightChild);
-            node.Key = rightChildMin.Key;
-            node.Value = rightChildMin.Value;
-            Delete(node.RightChild, rightChildMin.Key);
-            return true;
+                if (root.RightChild == null)
+                {
+                    return root.LeftChild;
+                }
+
+                if (root.LeftChild == null)
+                {
+                    return root.RightChild;
+                }
+
+                BinaryTreeNode<T1, T2> rightChildMin = FindMin(root.RightChild);
+                root.Key = rightChildMin.Key;
+                root.Value = rightChildMin.Value;
+                root.RightChild = Delete(root.RightChild, rightChildMin.Key); /* at this point both node, and rightChildMin have the same keys, but calling delete on the same key, will only result in the removal  of rightChildMin, because pf the root that is passed to Delete.*/
+            }
+            return root;
         }
 
         [TimeComplexity(Case.Best, "O(1)")]
@@ -204,22 +210,21 @@ namespace CSFundamentals.DataStructures.Trees
             return node;
         }
 
-        /*
         [TimeComplexity(Case.Average, "")]
-        [SpaceComplexity("", InPlace =)]
-        public BinaryTreeNode<T1, T2> DeleteMin()
+        [SpaceComplexity("")]
+        public BinaryTreeNode<T1, T2> DeleteMin(BinaryTreeNode<T1, T2> root)
         {
-            throw new NotImplementedException();
-            //TODO
+            BinaryTreeNode<T1, T2>  minNode = FindMin(root);
+            return Delete(root, minNode.Key);
         }
 
         [TimeComplexity(Case.Average, "")]
-        [SpaceComplexity("", InPlace =)]
-        public BinaryTreeNode<T1, T2> DeleteMax()
+        [SpaceComplexity("")]
+        public BinaryTreeNode<T1, T2> DeleteMax(BinaryTreeNode<T1, T2> root)
         {
-            throw new NotImplementedException();
-            //TODO
-        }*/
+            BinaryTreeNode<T1, T2> maxNode = FindMax(root);
+            return Delete(root, maxNode.Key);
+        }
 
     }
 }
