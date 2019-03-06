@@ -20,6 +20,7 @@
 using System.Collections.Generic;
 using CSFundamentals.Styling;
 
+//TODO: Re-implement with a better understanding of key values (int, string)
 namespace CSFundamentals.Algorithms.Search
 {
     public class HashTableSearch
