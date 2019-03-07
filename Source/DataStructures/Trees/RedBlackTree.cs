@@ -26,6 +26,7 @@ namespace CSFundamentals.DataStructures.Trees
     {
         public override BinaryTreeNode<T1, T2> Build(Dictionary<T1, T2> keyValues)
         {
+            // Takeaway: I should not change the signature, if I want I can have another method with my desired signature that this one wraps, or I coul djust convert the types when working in the code, .. 
             throw new NotImplementedException();
         }
 
@@ -36,7 +37,26 @@ namespace CSFundamentals.DataStructures.Trees
 
         public override BinaryTreeNode<T1, T2> Insert(BinaryTreeNode<T1, T2> root, T1 key, T2 value)
         {
-            throw new NotImplementedException();
+           if (root == null)
+            {
+                root = new RedBlackTreeNode<T1, T2>(key, value);
+                return root;
+            }
+
+            if (root.Key.CompareTo(key) == 0) /* In this version, not allowing duplicate keys, and just updating the values, can make the values to be a list alternatively.*/
+            {
+                root.Value = value;
+            }
+            else if (root.Key.CompareTo(key) < 0)
+            {
+                root.RightChild = Insert(root.RightChild, key, value); /* assignment because, in case right child is null, and in the recursive call it is instantiated, then parent will have the link to its right child, otherwise nothing changes. */
+            }
+            else
+            {
+                root.LeftChild = Insert(root.LeftChild, key, value); /* assignment because, in case left child is null, and in the recursive call it is instantiated, then parent will have the link to its left child, otherwise nothing changes. */
+            }
+
+            return root;
         }
 
         public override BinaryTreeNode<T1, T2> Search(BinaryTreeNode<T1, T2> root, T1 key)
@@ -47,6 +67,11 @@ namespace CSFundamentals.DataStructures.Trees
         public override bool Update(BinaryTreeNode<T1, T2> root, T1 key, T2 value)
         {
             throw new NotImplementedException();
+        }
+
+        public int GetBlackHeight()
+        {
+
         }
     }
 }

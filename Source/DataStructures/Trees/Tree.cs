@@ -22,12 +22,12 @@ using System.Collections.Generic;
 
 namespace CSFundamentals.DataStructures.Trees
 {
-    public abstract class Tree<T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
+    public abstract class Tree<T1, T2>   where T1 : IComparable<T1>, IEquatable<T1>
     {
         /// <summary>
-        /// Is the root of the binary search tree. 
+        /// Is the root of the tree. 
         /// </summary>
-        protected BinaryTreeNode<T1, T2> _root = null;
+        protected BinaryTreeNode<T1,T2> _root = null;
 
         public abstract BinaryTreeNode<T1, T2> Build(Dictionary<T1, T2> keyValues);
 

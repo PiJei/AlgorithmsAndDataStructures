@@ -17,21 +17,24 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
- using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
-namespace CSFundamentalsTests.DataStructures.Trees
+namespace CSFundamentals.DataStructures.Trees
 {
-    [TestClass]
-    public class RedBlackTreeTests
+    public class RedBlackTreeNode<T1, T2> : BinaryTreeNode<T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
     {
-        private void IsRedBlackTree()
-        {
-            // TODO check for all the properties of the tree
+        public Color Color { get; set; }
 
-            // 1- A node is either red or black
-            //2 - The root and leaves are black
-            //3- if a node is red then its children are black
-            //4- all paths from a node to its null (leaf) descendents contain the same number of black nodes. 
+        public RedBlackTreeNode(T1 key, T2 value) : base(key, value)
+        {
         }
+
+    }
+
+    public enum Color
+    {
+        Unknown = 0, 
+        Red = 1,
+        Black = 2
     }
 }

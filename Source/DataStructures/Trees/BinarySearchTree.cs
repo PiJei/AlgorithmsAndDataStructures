@@ -30,12 +30,12 @@ namespace CSFundamentals.DataStructures.Trees
     /// <typeparam name="T1">Specifies the type of the key in tree nodes.</typeparam>
     /// <typeparam name="T2">Specifies the type of the value in tree nodes. </typeparam>
     [DataStructure("BinarySearchTree (aka BST)")]
-    public class BinarySearchTree<T1, T2> : Tree<T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
+    public class BinarySearchTree<T1, T2> : Tree<T1, T2> where  T1 : IComparable<T1>, IEquatable<T1> 
     {
         //TODO Compute best and worst case for build operation. 
         [TimeComplexity(Case.Average, "O(nLog(n))")]
         [SpaceComplexity("O(n)")]
-        public override BinaryTreeNode<T1, T2> Build(Dictionary<T1, T2> keyValues)
+        public override BinaryTreeNode<T1,T2> Build(Dictionary<T1, T2> keyValues)
         {
             foreach (KeyValuePair<T1, T2> item in keyValues)
             {
@@ -48,11 +48,11 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "O(n)", When = "Tree is imbalanced such that it is like one sequential branch (linked list), every node except the leaf having exactly one child.")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)", InPlace = true)] /* Notice that a new node is allocated for a new key, thus can be considered as O(Size(TreeNode))*/
-        public override BinaryTreeNode<T1, T2> Insert(BinaryTreeNode<T1, T2> root, T1 key, T2 value)
+        public override BinaryTreeNode<T1,T2> Insert(BinaryTreeNode<T1,T2> root, T1 key, T2 value)
         {
             if (root == null)
             {
-                root = new BinaryTreeNode<T1, T2>(key, value);
+                root = new BinaryTreeNode<T1,T2>(key, value);
                 return root;
             }
 
