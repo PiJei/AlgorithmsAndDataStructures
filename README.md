@@ -1,5 +1,5 @@
 # (C)omputer(S)cience Fundamental Algorithms & Data Structures in (CS)harp
-
+- When applicable, algorithms and data structures are decorated with time and space complexity attributes. 
  
 Content: 
 - Sorting Algorithms 
