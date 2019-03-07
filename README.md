@@ -1,5 +1,7 @@
 # (C)omputer(S)cience Fundamental Algorithms & Data Structures in (CS)harp
 - When applicable, algorithms and data structures are decorated with time and space complexity attributes. 
+- All the methods are accompanied by unit tests. 
+- To understand how to use a data structure or an algorithm, navigate to the corresponding tests.
  
 Content: 
 - Sorting Algorithms 
