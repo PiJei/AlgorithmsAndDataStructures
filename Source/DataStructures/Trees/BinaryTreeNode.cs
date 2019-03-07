@@ -25,7 +25,7 @@ namespace CSFundamentals.DataStructures.Trees
     {
         /// <summary>
         /// Is a unique identifier to distinguish between nodes in a tree. 
-        /// Key is also the value over which BinarySearchTree properties should hold.
+        /// Key is also the value over which tree order properties if any should hold.
         /// </summary>
         public T1 Key { get; set; }
 

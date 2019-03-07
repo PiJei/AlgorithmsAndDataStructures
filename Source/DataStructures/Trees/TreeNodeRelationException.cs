@@ -18,25 +18,13 @@
  */
 
 using System;
-using System.Collections.Generic;
 
 namespace CSFundamentals.DataStructures.Trees
 {
-    public abstract class Tree<T1, T2>   where T1 : IComparable<T1>, IEquatable<T1>
+    public class TreeNodeRelationException : Exception
     {
-        /// <summary>
-        /// Is the root of the tree. 
-        /// </summary>
-        protected BinaryTreeNode<T1,T2> _root = null;
-
-        public abstract BinaryTreeNode<T1, T2> Build(Dictionary<T1, T2> keyValues);
-
-        public abstract BinaryTreeNode<T1, T2> Insert(BinaryTreeNode<T1, T2> root, T1 key, T2 value);
-
-        public abstract BinaryTreeNode<T1, T2> Search(BinaryTreeNode<T1, T2> root, T1 key);
-
-        public abstract bool Update(BinaryTreeNode<T1, T2> root, T1 key, T2 value);
-
-        public abstract BinaryTreeNode<T1, T2> Delete(BinaryTreeNode<T1, T2> root, T1 key);
+        public TreeNodeRelationException(string message) : base(message)
+        {
+        }
     }
 }

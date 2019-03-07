@@ -17,7 +17,9 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
- using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using CSFundamentals.DataStructures.Trees;
+using System;
 
 namespace CSFundamentalsTests.DataStructures.Trees
 {
@@ -29,9 +31,168 @@ namespace CSFundamentalsTests.DataStructures.Trees
             // TODO check for all the properties of the tree
 
             // 1- A node is either red or black
-            //2 - The root and leaves are black
-            //3- if a node is red then its children are black
-            //4- all paths from a node to its null (leaf) descendents contain the same number of black nodes. 
+            // 2 - The root and leaves are black
+            // 3- if a node is red then its children are black
+            // 4- all paths from a node to its null (leaf) descendants contain the same number of black nodes. 
+            // 5- get the longest path, get the shortest path, assert is not more than twice.. shortest path might be all black nodes, and longest path would be alternating between red and black nodes
+        }
+
+        [TestMethod]
+        public void RedBlackTree_RotateLeft_Test()
+        {
+            RedBlackTreeNode<int, string> A = new RedBlackTreeNode<int, string>(50, "A");
+            RedBlackTreeNode<int, string> B = new RedBlackTreeNode<int, string>(30, "B");
+            RedBlackTreeNode<int, string> C = new RedBlackTreeNode<int, string>(20, "C");
+            RedBlackTreeNode<int, string> D = new RedBlackTreeNode<int, string>(40, "D");
+            RedBlackTreeNode<int, string> E = new RedBlackTreeNode<int, string>(35, "E");
+            RedBlackTreeNode<int, string> F = new RedBlackTreeNode<int, string>(45, "F");
+            RedBlackTreeNode<int, string> G = new RedBlackTreeNode<int, string>(47, "G");
+
+            A.Parent = null;
+            A.LeftChild = B;
+            A.RightChild = null;
+
+            B.Parent = A;
+            B.LeftChild = C;
+            B.RightChild = D;
+
+            C.Parent = B;
+            C.LeftChild = null;
+            C.RightChild = null;
+
+            D.Parent = B;
+            D.LeftChild = E;
+            D.RightChild = F;
+
+            E.Parent = D;
+            E.LeftChild = null;
+            E.RightChild = null;
+
+            F.Parent = D;
+            F.LeftChild = null;
+            F.RightChild = G;
+
+            G.Parent = F;
+            G.LeftChild = null;
+            G.RightChild = null;
+
+            HasBinarySearchTreeOrderProperty(A);
+            var tree = new RedBlackTree<int, string>();
+            tree.RotateLeft(B);
+            HasBinarySearchTreeOrderProperty(A);
+
+            Assert.IsTrue(A.Parent == null);
+            Assert.IsTrue(A.LeftChild.Equals(D));
+            Assert.IsTrue(A.RightChild == null);
+            Assert.IsTrue(B.Parent.Equals(D));
+            Assert.IsTrue(B.LeftChild.Equals(C));
+            Assert.IsTrue(B.RightChild.Equals(E));
+            Assert.IsTrue(C.Parent.Equals(B));
+            Assert.IsTrue(C.LeftChild == null);
+            Assert.IsTrue(C.RightChild == null);
+            Assert.IsTrue(D.Parent.Equals(A));
+            Assert.IsTrue(D.LeftChild.Equals(B));
+            Assert.IsTrue(D.RightChild.Equals(F));
+            Assert.IsTrue(E.Parent.Equals(B));
+            Assert.IsTrue(E.LeftChild == null);
+            Assert.IsTrue(E.RightChild == null);
+            Assert.IsTrue(F.Parent.Equals(D));
+            Assert.IsTrue(F.LeftChild == null);
+            Assert.IsTrue(F.RightChild.Equals(G));
+            Assert.IsTrue(G.Parent.Equals(F));
+            Assert.IsTrue(G.LeftChild == null);
+            Assert.IsTrue(G.RightChild == null);
+        }
+
+        [TestMethod]
+        public void RedBlackTree_RotateRight_Test()
+        {
+            RedBlackTreeNode<int, string> A = new RedBlackTreeNode<int, string>(30, "A");
+            RedBlackTreeNode<int, string> B = new RedBlackTreeNode<int, string>(70, "B");
+            RedBlackTreeNode<int, string> C = new RedBlackTreeNode<int, string>(50, "C");
+            RedBlackTreeNode<int, string> D = new RedBlackTreeNode<int, string>(80, "D");
+            RedBlackTreeNode<int, string> E = new RedBlackTreeNode<int, string>(40, "E");
+            RedBlackTreeNode<int, string> F = new RedBlackTreeNode<int, string>(60, "F");
+            RedBlackTreeNode<int, string> G = new RedBlackTreeNode<int, string>(35, "G");
+
+            A.Parent = null;
+            A.LeftChild = null;
+            A.RightChild = B;
+
+            B.Parent = A;
+            B.LeftChild = C;
+            B.RightChild = D;
+
+            C.Parent = B;
+            C.LeftChild = E;
+            C.RightChild = F;
+
+            D.Parent = B;
+            D.LeftChild = null;
+            D.RightChild = null;
+
+            E.Parent = C;
+            E.LeftChild = G;
+            E.RightChild = null;
+
+            F.Parent = C;
+            F.LeftChild = null;
+            F.RightChild = null;
+
+            G.Parent = E;
+            G.LeftChild = null;
+            G.RightChild = null;
+
+            HasBinarySearchTreeOrderProperty(A);
+            var tree = new RedBlackTree<int, string>();
+            tree.RotateRight(B);
+            HasBinarySearchTreeOrderProperty(A);
+
+            Assert.IsTrue(A.Parent == null);
+            Assert.IsTrue(A.LeftChild == null);
+            Assert.IsTrue(A.RightChild.Equals(C));
+            Assert.IsTrue(B.Parent.Equals(C));
+            Assert.IsTrue(B.LeftChild.Equals(F));
+            Assert.IsTrue(B.RightChild.Equals(D));
+            Assert.IsTrue(C.Parent.Equals(A));
+            Assert.IsTrue(C.LeftChild.Equals(E));
+            Assert.IsTrue(C.RightChild.Equals(B));
+            Assert.IsTrue(D.Parent.Equals(B));
+            Assert.IsTrue(D.LeftChild == null);
+            Assert.IsTrue(D.RightChild == null);
+            Assert.IsTrue(E.Parent.Equals(C));
+            Assert.IsTrue(E.LeftChild.Equals(G));
+            Assert.IsTrue(E.RightChild == null);
+            Assert.IsTrue(F.Parent.Equals(B));
+            Assert.IsTrue(F.LeftChild == null);
+            Assert.IsTrue(F.RightChild == null);
+            Assert.IsTrue(G.Parent.Equals(E));
+            Assert.IsTrue(G.LeftChild == null);
+            Assert.IsTrue(G.RightChild == null);
+        }
+
+        //TODO: This code is repeated between here and binary search tree: remove duplicates
+        /// <summary>
+        /// Given the root of a binary search tree, checks whether the binary search tree properties hold.
+        /// </summary>
+        /// <typeparam name="T1">Specifies the type of the keys in tree. </typeparam>
+        /// <typeparam name="T2">Specifies the type of the values in tree nodes. </typeparam>
+        /// <param name="root">Is the root of a binary search tree. </param>
+        private void HasBinarySearchTreeOrderProperty<T1, T2>(RedBlackTreeNode<T1, T2> root) where T1 : IComparable<T1>, IEquatable<T1>
+        {
+            if (root != null)
+            {
+                if (root.LeftChild != null)
+                {
+                    Assert.IsTrue(root.Key.CompareTo(root.LeftChild.Key) > 0);
+                    HasBinarySearchTreeOrderProperty(root.LeftChild);
+                }
+                if (root.RightChild != null)
+                {
+                    Assert.IsTrue(root.Key.CompareTo(root.RightChild.Key) < 0);
+                    HasBinarySearchTreeOrderProperty(root.RightChild);
+                }
+            }
         }
     }
 }

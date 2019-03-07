@@ -30,12 +30,17 @@ namespace CSFundamentals.DataStructures.Trees
     /// <typeparam name="T1">Specifies the type of the key in tree nodes.</typeparam>
     /// <typeparam name="T2">Specifies the type of the value in tree nodes. </typeparam>
     [DataStructure("BinarySearchTree (aka BST)")]
-    public class BinarySearchTree<T1, T2> : Tree<T1, T2> where  T1 : IComparable<T1>, IEquatable<T1> 
+    public class BinarySearchTree<T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
     {
+        /// <summary>
+        /// Is the root of the binary search tree.
+        /// </summary>
+        private BinaryTreeNode<T1, T2> _root = null;
+
         //TODO Compute best and worst case for build operation. 
         [TimeComplexity(Case.Average, "O(nLog(n))")]
         [SpaceComplexity("O(n)")]
-        public override BinaryTreeNode<T1,T2> Build(Dictionary<T1, T2> keyValues)
+        public BinaryTreeNode<T1, T2> Build(Dictionary<T1, T2> keyValues)
         {
             foreach (KeyValuePair<T1, T2> item in keyValues)
             {
@@ -48,11 +53,11 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "O(n)", When = "Tree is imbalanced such that it is like one sequential branch (linked list), every node except the leaf having exactly one child.")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)", InPlace = true)] /* Notice that a new node is allocated for a new key, thus can be considered as O(Size(TreeNode))*/
-        public override BinaryTreeNode<T1,T2> Insert(BinaryTreeNode<T1,T2> root, T1 key, T2 value)
+        public BinaryTreeNode<T1, T2> Insert(BinaryTreeNode<T1, T2> root, T1 key, T2 value)
         {
             if (root == null)
             {
-                root = new BinaryTreeNode<T1,T2>(key, value);
+                root = new BinaryTreeNode<T1, T2>(key, value);
                 return root;
             }
 
@@ -82,7 +87,7 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "O(n)", When = "Tree is imbalanced such that it is like one sequential branch (linked list), every node except the leaf having exactly one child.")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)", InPlace = true)]
-        public override BinaryTreeNode<T1, T2> Search(BinaryTreeNode<T1, T2> root, T1 key)
+        public BinaryTreeNode<T1, T2> Search(BinaryTreeNode<T1, T2> root, T1 key)
         {
             if (root == null)
             {
@@ -113,7 +118,7 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "o(n)")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)", InPlace = true)]
-        public override bool Update(BinaryTreeNode<T1, T2> root, T1 key, T2 value)
+        public bool Update(BinaryTreeNode<T1, T2> root, T1 key, T2 value)
         {
             BinaryTreeNode<T1, T2> node = Search(root, key); /* Since relies on Search, its time and space complexities are directly driven from Search() operation. */
             if (node != null)
@@ -138,7 +143,7 @@ namespace CSFundamentals.DataStructures.Trees
 
         [TimeComplexity(Case.Average, "")] // TODO
         [SpaceComplexity("O(1)")]
-        public override BinaryTreeNode<T1, T2> Delete(BinaryTreeNode<T1, T2> root, T1 key)
+        public BinaryTreeNode<T1, T2> Delete(BinaryTreeNode<T1, T2> root, T1 key)
         {
             if (root == null) throw new ArgumentNullException();
 
@@ -221,6 +226,5 @@ namespace CSFundamentals.DataStructures.Trees
             BinaryTreeNode<T1, T2> maxNode = FindMax(root);
             return Delete(root, maxNode.Key);
         }
-
     }
 }

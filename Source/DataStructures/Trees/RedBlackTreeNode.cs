@@ -21,19 +21,48 @@ using System;
 
 namespace CSFundamentals.DataStructures.Trees
 {
-    public class RedBlackTreeNode<T1, T2> : BinaryTreeNode<T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
+    public class RedBlackTreeNode<T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
     {
+        /// <summary>
+        /// Is a unique identifier to distinguish between nodes in a tree. 
+        /// Key is also the value over which RedBlackTree order properties should hold.
+        /// </summary>
+        public T1 Key { get; set; }
+
+        /// <remarks>
+        /// This can be converted to a list of values alternatively, to handle duplicate keys. 
+        /// </remarks>
+        /// <summary>
+        /// Is the value (information) stored in a node. 
+        /// </summary> 
+        public T2 Value { get; set; }
+
+        public RedBlackTreeNode<T1, T2> LeftChild { get; set; }
+
+        public RedBlackTreeNode<T1, T2> RightChild { get; set; }
+
+        public RedBlackTreeNode<T1, T2> Parent { get; set; }
+
         public Color Color { get; set; }
 
-        public RedBlackTreeNode(T1 key, T2 value) : base(key, value)
+        public RedBlackTreeNode(T1 key, T2 value, Color color = Color.Red)
         {
+            Key = key;
+            Value = value;
+            Color = color;
         }
 
+        public bool Equals(RedBlackTreeNode<T1, T2> other)
+        {
+            if (other == null) return false;
+            if (Key.Equals(other.Key)) return true;
+            return false;
+        }
     }
 
     public enum Color
     {
-        Unknown = 0, 
+        Unknown = 0,
         Red = 1,
         Black = 2
     }
