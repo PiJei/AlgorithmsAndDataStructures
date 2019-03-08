@@ -235,8 +235,9 @@ namespace CSFundamentals.DataStructures.Trees
         /// <returns>True in case the given node is the left child of its parent, and false otherwise.</returns>
         public bool IsLeftChild(RedBlackTreeNode<T1, T2> node)
         {
-            if (node == null) throw new ArgumentNullException();
+            if (node == null) return false;
             if (IsRoot(node)) return false;
+            if (node.Parent.LeftChild == null) return false;
             if (node.Parent.LeftChild.Key.CompareTo(node.Key) == 0) return true;
             return false;
         }
@@ -249,8 +250,9 @@ namespace CSFundamentals.DataStructures.Trees
         /// <returns>True in case the given node is the right child of its parent, and false if it is not.</returns>
         public bool IsRightChild(RedBlackTreeNode<T1, T2> node)
         {
-            if (node == null) throw new ArgumentNullException();
+            if (node == null) return false;
             if (IsRoot(node)) return false;
+            if (node.Parent.RightChild == null) return false;
             if (node.Parent.RightChild.Key.CompareTo(node.Key) == 0) return true;
             return false;
         }
@@ -282,7 +284,7 @@ namespace CSFundamentals.DataStructures.Trees
         public bool FormsLine(RedBlackTreeNode<T1, T2> node)
         {
             if (IsLeftChild(node) && IsLeftChild(node.Parent)) return true;
-            if (!IsLeftChild(node) && !IsLeftChild(node.Parent)) return true;
+            if (IsRightChild(node) && IsRightChild(node.Parent)) return true;
             return false;
         }
 
@@ -292,8 +294,8 @@ namespace CSFundamentals.DataStructures.Trees
         /// <param name="node"></param>
         public bool FormsTriangle(RedBlackTreeNode<T1, T2> node)
         {
-            if (IsLeftChild(node) && !IsLeftChild(node.Parent)) return true;
-            if (!IsLeftChild(node) && IsLeftChild(node.Parent)) return true;
+            if (IsLeftChild(node) && IsRightChild(node.Parent)) return true;
+            if (IsRightChild(node) && IsLeftChild(node.Parent)) return true;
             return false;
         }
     }
