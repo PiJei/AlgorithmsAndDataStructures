@@ -301,7 +301,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
             HasBinarySearchTreeOrderProperty(A);
             var tree = new RedBlackTree<int, string>();
-            
+
             Assert.IsTrue(tree.IsLeftChild(B));
             Assert.IsTrue(tree.IsLeftChild(C));
         }
@@ -327,7 +327,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
             HasBinarySearchTreeOrderProperty(A);
             var tree = new RedBlackTree<int, string>();
-            
+
             Assert.IsTrue(tree.IsRightChild(B));
             Assert.IsTrue(tree.IsRightChild(C));
         }
@@ -359,6 +359,50 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.IsFalse(tree.IsRightChild(C));
             Assert.IsFalse(tree.IsRightChild(null));
         }
+
+        [TestMethod]
+        public void RedBlackTree_IsRoot_Test()
+        {
+            RedBlackTreeNode<int, string> A = new RedBlackTreeNode<int, string>(10, "A");
+            RedBlackTreeNode<int, string> B = new RedBlackTreeNode<int, string>(5, "B");
+            RedBlackTreeNode<int, string> C = new RedBlackTreeNode<int, string>(2, "C");
+
+            A.Parent = null;
+            A.LeftChild = B;
+            A.RightChild = null;
+
+            B.Parent = A;
+            B.LeftChild = C;
+            B.RightChild = null;
+
+            C.Parent = B;
+            C.LeftChild = null;
+            C.RightChild = null;
+
+            HasBinarySearchTreeOrderProperty(A);
+            var tree = new RedBlackTree<int, string>();
+
+            Assert.IsTrue(tree.IsRoot(A));
+            Assert.IsFalse(tree.IsRoot(B));
+            Assert.IsFalse(tree.IsRoot(C));
+            Assert.IsFalse(tree.IsRoot(null));
+        }
+
+        [TestMethod]
+        public void RedBlackTree_FlipColor_Test()
+        {
+            RedBlackTreeNode<int, string> A = new RedBlackTreeNode<int, string>(2, "A", Color.Red);
+            Assert.AreEqual(Color.Red, A.Color);
+
+            var tree = new RedBlackTree<int, string>();
+
+            tree.FlipColor(A);
+            Assert.AreEqual(Color.Black, A.Color);
+            tree.FlipColor(A);
+            Assert.AreEqual(Color.Red, A.Color);
+        }
+
+
 
         //TODO: This code is repeated between here and binary search tree: remove duplicates
         /// <summary>

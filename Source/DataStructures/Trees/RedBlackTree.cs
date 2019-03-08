@@ -257,10 +257,9 @@ namespace CSFundamentals.DataStructures.Trees
             return false;
         }
 
-
         public bool IsRoot(RedBlackTreeNode<T1, T2> node)
         {
-            if (node == null) throw new ArgumentNullException();
+            if (node == null) return false;
             if (node.Parent == null) return true;
             return false;
         }
@@ -271,7 +270,7 @@ namespace CSFundamentals.DataStructures.Trees
             {
                 node.Color = Color.Black;
             }
-            if (node.Color == Color.Black)
+            else if (node.Color == Color.Black)
             {
                 node.Color = Color.Red;
             }
