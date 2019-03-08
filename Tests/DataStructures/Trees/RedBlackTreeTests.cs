@@ -402,7 +402,119 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.AreEqual(Color.Red, A.Color);
         }
 
+        [TestMethod]
+        public void RedBlackTree_FormsLine_Test()
+        {
+            RedBlackTreeNode<int, string> A = new RedBlackTreeNode<int, string>(50, "A");
+            RedBlackTreeNode<int, string> B = new RedBlackTreeNode<int, string>(30, "B");
+            RedBlackTreeNode<int, string> C = new RedBlackTreeNode<int, string>(20, "C");
+            RedBlackTreeNode<int, string> D = new RedBlackTreeNode<int, string>(40, "D");
+            RedBlackTreeNode<int, string> E = new RedBlackTreeNode<int, string>(35, "E");
+            RedBlackTreeNode<int, string> F = new RedBlackTreeNode<int, string>(45, "F");
+            RedBlackTreeNode<int, string> G = new RedBlackTreeNode<int, string>(47, "G");
+            RedBlackTreeNode<int, string> H = new RedBlackTreeNode<int, string>(25, "h");
 
+            A.Parent = null;
+            A.LeftChild = B;
+            A.RightChild = null;
+
+            B.Parent = A;
+            B.LeftChild = C;
+            B.RightChild = D;
+
+            C.Parent = B;
+            C.LeftChild = null;
+            C.RightChild = H;
+
+            D.Parent = B;
+            D.LeftChild = E;
+            D.RightChild = F;
+
+            E.Parent = D;
+            E.LeftChild = null;
+            E.RightChild = null;
+
+            F.Parent = D;
+            F.LeftChild = null;
+            F.RightChild = G;
+
+            G.Parent = F;
+            G.LeftChild = null;
+            G.RightChild = null;
+
+            H.Parent = C;
+            H.LeftChild = null;
+            H.RightChild = null;
+
+            HasBinarySearchTreeOrderProperty(A);
+            var tree = new RedBlackTree<int, string>();
+
+            Assert.IsFalse(tree.FormsLine(A));
+            Assert.IsFalse(tree.FormsLine(B));
+            Assert.IsTrue(tree.FormsLine(C));
+            Assert.IsFalse(tree.FormsLine(D));
+            Assert.IsFalse(tree.FormsLine(E));
+            Assert.IsTrue(tree.FormsLine(F));
+            Assert.IsTrue(tree.FormsLine(G));
+            Assert.IsFalse(tree.FormsLine(H));
+        }
+
+        [TestMethod]
+        public void RedBlackTree_FormsTriangle_Test()
+        {
+            RedBlackTreeNode<int, string> A = new RedBlackTreeNode<int, string>(50, "A");
+            RedBlackTreeNode<int, string> B = new RedBlackTreeNode<int, string>(30, "B");
+            RedBlackTreeNode<int, string> C = new RedBlackTreeNode<int, string>(20, "C");
+            RedBlackTreeNode<int, string> D = new RedBlackTreeNode<int, string>(40, "D");
+            RedBlackTreeNode<int, string> E = new RedBlackTreeNode<int, string>(35, "E");
+            RedBlackTreeNode<int, string> F = new RedBlackTreeNode<int, string>(45, "F");
+            RedBlackTreeNode<int, string> G = new RedBlackTreeNode<int, string>(47, "G");
+            RedBlackTreeNode<int, string> H = new RedBlackTreeNode<int, string>(25, "h");
+
+            A.Parent = null;
+            A.LeftChild = B;
+            A.RightChild = null;
+
+            B.Parent = A;
+            B.LeftChild = C;
+            B.RightChild = D;
+
+            C.Parent = B;
+            C.LeftChild = null;
+            C.RightChild = H;
+
+            D.Parent = B;
+            D.LeftChild = E;
+            D.RightChild = F;
+
+            E.Parent = D;
+            E.LeftChild = null;
+            E.RightChild = null;
+
+            F.Parent = D;
+            F.LeftChild = null;
+            F.RightChild = G;
+
+            G.Parent = F;
+            G.LeftChild = null;
+            G.RightChild = null;
+
+            H.Parent = C;
+            H.LeftChild = null;
+            H.RightChild = null;
+
+            HasBinarySearchTreeOrderProperty(A);
+            var tree = new RedBlackTree<int, string>();
+
+            Assert.IsFalse(tree.FormsTriangle(A));
+            Assert.IsFalse(tree.FormsTriangle(B));
+            Assert.IsFalse(tree.FormsTriangle(C));
+            Assert.IsTrue(tree.FormsTriangle(D));
+            Assert.IsTrue(tree.FormsTriangle(E));
+            Assert.IsFalse(tree.FormsTriangle(F));
+            Assert.IsFalse(tree.FormsTriangle(G));
+            Assert.IsTrue(tree.FormsTriangle(H));
+        }
 
         //TODO: This code is repeated between here and binary search tree: remove duplicates
         /// <summary>

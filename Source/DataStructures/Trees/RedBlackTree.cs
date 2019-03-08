@@ -278,8 +278,9 @@ namespace CSFundamentals.DataStructures.Trees
 
         /// <summary>
         /// Checks whether the node forms a line with its parent and grandparent. 
+        /// Notice a line needs exactly 3 nodes. 
         /// </summary>
-        /// <param name="node"></param>
+        /// <param name="node">The bottom-most node of a sequence that is being checked for line alignment.</param>
         public bool FormsLine(RedBlackTreeNode<T1, T2> node)
         {
             if (IsLeftChild(node) && IsLeftChild(node.Parent)) return true;
@@ -289,8 +290,9 @@ namespace CSFundamentals.DataStructures.Trees
 
         /// <summary>
         /// Checks whether the node forms a triangle with its parent and grandparent.
+        /// Notice a triangle needs exactly 3 nodes.
         /// </summary>
-        /// <param name="node"></param>
+        /// <param name="node">The bottom-most node of a sequence that is being checked for triangle alignment.</param>
         public bool FormsTriangle(RedBlackTreeNode<T1, T2> node)
         {
             if (IsLeftChild(node) && IsRightChild(node.Parent)) return true;
