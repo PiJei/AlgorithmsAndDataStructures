@@ -22,75 +22,153 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using CSFundamentals.Styling;
 
-[assembly: InternalsVisibleTo("CSFundamentalsTests.DataStructures")]
+[assembly: InternalsVisibleTo("CSFundamentalsTests")]
 
 // TODO: Make to inherit from BinarySearchTree and no implementations for search/update/insert-normal
+
 namespace CSFundamentals.DataStructures.Trees
 {
     /// <summary>
     /// Implements a red black tree and its operations. A red-black tree is a self-balancing binary search tree.
+    /// In this implementation, leaf nodes are treated as nulls and are not explicit. 
+    /// A red black tree can also be used as a key-value store.
     /// </summary>
-    /// <typeparam name="T1"></typeparam>
-    /// <typeparam name="T2"></typeparam>
+    /// <typeparam name="T1">Specifies the type of the keys in red black tree.</typeparam>
+    /// <typeparam name="T2">Specifies the type of the values in red black tree. </typeparam>
     public class RedBlackTree<T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
     {
+        private RedBlackTreeNode<T1, T2> _root = null;
+
         public RedBlackTreeNode<T1, T2> Build(Dictionary<T1, T2> keyValues)
         {
-            throw new NotImplementedException();
-        }
-
-        [TimeComplexity(Case.Worst, "O(Log(n))")]
-        public RedBlackTreeNode<T1, T2> Delete(RedBlackTreeNode<T1, T2> root, T1 key)
-        {
-            throw new NotImplementedException();
+            foreach (KeyValuePair<T1, T2> keyVal in keyValues)
+            {
+                _root = Insert(_root, keyVal.Key, keyVal.Value);
+            }
+            return _root;
         }
 
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         public RedBlackTreeNode<T1, T2> Insert(RedBlackTreeNode<T1, T2> root, T1 key, T2 value)
         {
-            root = Insert_WithoutBalancing(root, key, value);
-            throw new NotImplementedException();
+            var newNode = new RedBlackTreeNode<T1, T2>(key, value, Color.Red);
+            root = Insert_WithoutBalancing(root, newNode);
+            Insert_Repair(root, newNode);
 
-            // 1- insert node and color as red.
-            // 2-  recolor and rotate to fix balance
-            // a) if node is root color it black
-            // b) if node's uncle is red, flip colors of parent, grandparent, and uncle. 
-            // c) if uncle. black, and triangle is formed, rotate parent
-            // d ) if uncle is black, and line formed, rotate grandparent (but to which directions? opposite of z?)
+            /*After rotation the root could have easily changed. need to find the root. */
+            root = newNode;
+            while (root.Parent != null)
+            {
+                root = root.Parent;
+            }
+            return root;
+        }
+
+        [SpaceComplexity("O(1)", InPlace = true)]
+        public void Insert_Repair(RedBlackTreeNode<T1, T2> root, RedBlackTreeNode<T1, T2> newNode)
+        {
+            if (newNode.Parent == null && newNode.Color == Color.Red) /* Property: the root is black. */
+            {
+                FlipColor(newNode);
+            }
+            else if (newNode.Parent != null && newNode.Parent.Color == Color.Red) /* If this holds it means that both the new node and its parent are red, and in a red-black tree this is not allowed. Children of a red node should be black, and we can not have the same color in 2 consecutive layers.*/
+            {
+                var uncle = GetUncle(newNode);
+
+                if (uncle != null && uncle.Color == Color.Red) /* Both the parent and uncle of the new node are red. Note that a null uncle is considered black. */
+                {
+                    newNode.Parent.Color = Color.Black;
+                    uncle.Color = Color.Black;
+                    GetGrandParent(newNode).Color = Color.Red;
+                    Insert_Repair(root, GetGrandParent(newNode)); /* Repeat repair on the grandparent, as by the re-coloring the previous layers could have been messed up. */
+                }
+                else if (uncle == null || uncle.Color == Color.Black)
+                {
+                    if (FormsTriangle(newNode) && IsLeftChild(newNode))
+                    {
+                        RotateRight(newNode.Parent);
+                        newNode = newNode.RightChild; /* After rotation new node has become the parent of its former parent.*/
+                        /* Triangle is transformed to a line.*/
+                    }
+                    else if (FormsTriangle(newNode) && IsRightChild(newNode))
+                    {
+                        RotateLeft(newNode.Parent);
+                        newNode = newNode.LeftChild; /* After rotation new node has become the parent of its former parent.*/
+                        /* Triangle is transformed to a line.*/
+                    }
+
+                    /* When reaching at this point, we might or might not have gone through above two triangle forms, as the alignment could have already been a line.*/
+                    if (IsRightChild(newNode))
+                    {
+                        RotateLeft(GetGrandParent(newNode));
+                    }
+                    else if (IsLeftChild(newNode))
+                    {
+                        RotateRight(GetGrandParent(newNode));
+                    }
+                    newNode.Parent.Color = Color.Black;
+                    var grandParent = GetGrandParent(newNode);
+                    if (grandParent != null && !IsRoot(grandParent))
+                        grandParent.Color = Color.Red;
+                }
+            }
         }
 
         /// <summary>
-        /// Implements insert in a red black tree without the balancing step. The code is the same as the Insert operation for BinarySearchTree, except that because of the balancing performed by the man insert method, it is guaranteed to be upper bounded by O(Log(n))
+        /// Implements insert in a red black tree without the balancing step. The code is similar to the Insert operation for BinarySearchTree, except that it updates the parental relationship, and because of the balancing performed by the man insert method, it is guaranteed to be upper bounded by O(Log(n))
         /// </summary>
         /// <param name="root"></param>
         /// <param name="key"></param>
         /// <param name="value"></param>
         /// <returns></returns>
         [TimeComplexity(Case.Worst, "O(Log(n))")]
-        internal RedBlackTreeNode<T1, T2> Insert_WithoutBalancing(RedBlackTreeNode<T1, T2> root, T1 key, T2 value)
+        internal RedBlackTreeNode<T1, T2> Insert_WithoutBalancing(RedBlackTreeNode<T1, T2> root, RedBlackTreeNode<T1, T2> newNode)
         {
             if (root == null)
             {
-                root = new RedBlackTreeNode<T1, T2>(key, value, Color.Red);
+                root = newNode;
                 return root;
             }
 
-            if (root.Key.CompareTo(key) == 0) /* Turns to an Update. */
+            if (root.Equals(newNode)) /* Turns to an Update. */
             {
-                root.Value = value;
+                root.Value = newNode.Value;
                 return root;
             }
 
-            if (root.Key.CompareTo(key) < 0)
+            if (root.Key.CompareTo(newNode.Key) < 0)
             {
-                root.RightChild = Insert_WithoutBalancing(root.RightChild, key, value);
+                if (root.RightChild == null)
+                {
+                    root.RightChild = newNode;
+                    newNode.Parent = root;
+                }
+                else
+                {
+                    root.RightChild = Insert_WithoutBalancing(root.RightChild, newNode);
+                }
             }
             else
             {
-                root.LeftChild = Insert_WithoutBalancing(root.LeftChild, key, value);
+                if (root.LeftChild == null)
+                {
+                    root.LeftChild = newNode;
+                    newNode.Parent = root;
+                }
+                else
+                {
+                    root.LeftChild = Insert_WithoutBalancing(root.LeftChild, newNode);
+                }
             }
 
             return root;
+        }
+
+        [TimeComplexity(Case.Worst, "O(Log(n))")]
+        public RedBlackTreeNode<T1, T2> Delete(RedBlackTreeNode<T1, T2> root, T1 key)
+        {
+            throw new NotImplementedException();
+            // TODO
         }
 
         /// <summary>
@@ -124,6 +202,18 @@ namespace CSFundamentals.DataStructures.Trees
         public bool Update(RedBlackTreeNode<T1, T2> root, T1 key, T2 value)
         {
             throw new NotImplementedException();
+        }
+
+        [TimeComplexity(Case.Average, "O(n)")]
+        [SpaceComplexity("O(n)")]
+        public void InOrderTraversal(RedBlackTreeNode<T1, T2> root, List<RedBlackTreeNode<T1, T2>> inOrder)
+        {
+            if (root != null)
+            {
+                InOrderTraversal(root.LeftChild, inOrder);
+                inOrder.Add(root);
+                InOrderTraversal(root.RightChild, inOrder);
+            }
         }
 
         public int GetBlackHeight(RedBlackTreeNode<T1, T2> root)
@@ -164,8 +254,8 @@ namespace CSFundamentals.DataStructures.Trees
                 {
                     nodeParent.RightChild = newNode;
                 }
-                newNode.Parent = nodeParent;
             }
+            newNode.Parent = nodeParent;
         }
 
         /// <summary>
@@ -200,8 +290,8 @@ namespace CSFundamentals.DataStructures.Trees
                 {
                     nodeParent.RightChild = newNode;
                 }
-                newNode.Parent = nodeParent;
             }
+            newNode.Parent = nodeParent;
         }
 
         public RedBlackTreeNode<T1, T2> GetUncle(RedBlackTreeNode<T1, T2> node)
@@ -209,11 +299,11 @@ namespace CSFundamentals.DataStructures.Trees
             if (node == null) return null;
             if (node.Parent == null) return null;
             if (node.Parent.Parent == null) return null;
-            if (node.Parent.Parent.LeftChild.Key.CompareTo(node.Parent.Key) == 0)
+            if (node.Parent.Parent.LeftChild != null && node.Parent.Parent.LeftChild.Key.CompareTo(node.Parent.Key) == 0)
             {
                 return node.Parent.Parent.RightChild;
             }
-            else if (node.Parent.Parent.RightChild.Key.CompareTo(node.Parent.Key) == 0)
+            else if (node.Parent.Parent.RightChild != null && node.Parent.Parent.RightChild.Key.CompareTo(node.Parent.Key) == 0)
             {
                 return node.Parent.Parent.LeftChild;
             }

@@ -20,21 +20,105 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentals.DataStructures.Trees;
 using System;
+using System.Collections.Generic;
 
 namespace CSFundamentalsTests.DataStructures.Trees
 {
     [TestClass]
     public class RedBlackTreeTests
     {
-        private void IsRedBlackTree()
+        private void HasRedBlackTreeProperties(RedBlackTreeNode<int, string> root, List<RedBlackTreeNode<int, string>> inOrderTraversal, int expectedNodeCount)
         {
-            // TODO check for all the properties of the tree
+            // Check order properties.
+            HasBinarySearchTreeOrderProperty(root);
 
-            // 1- A node is either red or black
-            // 2 - The root and leaves are black
-            // 3- if a node is red then its children are black
-            // 4- all paths from a node to its null (leaf) descendants contain the same number of black nodes. 
-            // 5- get the longest path, get the shortest path, assert is not more than twice.. shortest path might be all black nodes, and longest path would be alternating between red and black nodes
+            //Check to make sure nodes are not orphaned in the insertion or deletion process. 
+            Assert.AreEqual(expectedNodeCount, inOrderTraversal.Count);
+
+            // Check color properties.
+            Assert.IsTrue(root.Color == Color.Black);
+            foreach (RedBlackTreeNode<int, string> node in inOrderTraversal)
+            {
+                Assert.IsTrue(node.Color == Color.Red || node.Color == Color.Black);
+
+                if (node.Color == Color.Red)
+                {
+                    if (node.LeftChild != null)
+                    {
+                        Assert.AreEqual(Color.Black, node.LeftChild.Color);
+                    }
+                    if (node.RightChild != null)
+                    {
+                        Assert.AreEqual(Color.Black, node.RightChild.Color);
+                    }
+                }
+            }
+            // TODO 4- all paths from a node to its null (leaf) descendants contain the same number of black nodes. 
+            // TODO 5- get the longest path, get the shortest path, assert is not more than twice.. shortest path might be all black nodes, and longest path would be alternating between red and black nodes
+        }
+
+        [TestMethod]
+        public void RedBlackTree_Build_Test()
+        {
+            var tree = new RedBlackTree<int, string>();
+
+            var keyVals = new Dictionary<int, string>
+            {
+                [40] = "D",
+                [50] = "A",
+                [47] = "G",
+                [30] = "B",
+                [20] = "C",
+                [35] = "E",
+                [45] = "F"
+            };
+
+            var root = tree.Build(keyVals);
+
+            List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
+            tree.InOrderTraversal(root, inOrderTraversal);
+            HasRedBlackTreeProperties(root, inOrderTraversal, keyVals.Count);
+        }
+
+
+        [TestMethod]
+        public void RedBlackTree_Insert_WithoutBalancing_Test()
+        {
+            var keyVals = new Dictionary<int, string>
+            {
+                [40] = "str3",
+                [20] = "str1",
+                [70] = "str6",
+                [50] = "str4",
+                [80] = "str7",
+                [30] = "str2",
+                [60] = "str5",
+            };
+
+            var tree = new RedBlackTree<int, string>();
+            RedBlackTreeNode<int, string> root = null;
+
+            root = tree.Insert_WithoutBalancing(root, new RedBlackTreeNode<int, string>(40, "str3", Color.Red));
+            root = tree.Insert_WithoutBalancing(root, new RedBlackTreeNode<int, string>(20, "str1", Color.Red));
+            root = tree.Insert_WithoutBalancing(root, new RedBlackTreeNode<int, string>(70, "str6", Color.Red));
+            root = tree.Insert_WithoutBalancing(root, new RedBlackTreeNode<int, string>(50, "str4", Color.Red));
+            root = tree.Insert_WithoutBalancing(root, new RedBlackTreeNode<int, string>(80, "str7", Color.Red));
+            root = tree.Insert_WithoutBalancing(root, new RedBlackTreeNode<int, string>(30, "str2", Color.Red));
+            root = tree.Insert_WithoutBalancing(root, new RedBlackTreeNode<int, string>(60, "str5", Color.Red));
+
+            HasBinarySearchTreeOrderProperty(root);
+
+            List<RedBlackTreeNode<int, string>> nodes = new List<RedBlackTreeNode<int, string>>();
+            tree.InOrderTraversal(root, nodes);
+            Assert.AreEqual(7, nodes.Count);
+            for (int i = 0; i < nodes.Count - 1; i++)
+            {
+                Assert.IsTrue(nodes[i].Key < nodes[i + 1].Key);
+            }
+
+            Assert.AreEqual(40, root.Key);
+            Assert.AreEqual("str3", root.Value, ignoreCase: false);
+
         }
 
         [TestMethod]
