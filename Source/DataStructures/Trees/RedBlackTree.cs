@@ -167,8 +167,50 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         public RedBlackTreeNode<T1, T2> Delete(RedBlackTreeNode<T1, T2> root, T1 key)
         {
-            throw new NotImplementedException();
-            // TODO
+            if (root == null) throw new ArgumentNullException();
+
+            if (root.Key.CompareTo(key) < 0)
+            {
+                root.RightChild = Delete(root.RightChild, key);
+            }
+            else if (root.Key.CompareTo(key) > 0)
+            {
+                root.LeftChild = Delete(root.LeftChild, key);
+            }
+            else
+            {
+                if (root.LeftChild == null && root.RightChild == null)
+                {
+
+                }
+                else if (root.RightChild == null || root.LeftChild == null)
+                {
+
+                }
+
+                RedBlackTreeNode<T1, T2> rightChildMin = FindMin(root.RightChild);
+                root.Key = rightChildMin.Key;
+                root.Value = rightChildMin.Value;
+                root.RightChild = Delete(root.RightChild, rightChildMin.Key);
+            }
+
+            return root;
+        }
+
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "O(n)")]
+        [TimeComplexity(Case.Average, "O(Log(n))")]
+        [SpaceComplexity("O(1)")]
+        public RedBlackTreeNode<T1, T2> FindMin(RedBlackTreeNode<T1, T2> root)
+        {
+            if (root == null) throw new ArgumentNullException();
+
+            RedBlackTreeNode<T1, T2> node = root;
+            while (node.LeftChild != null)
+            {
+                node = node.LeftChild;
+            }
+            return node;
         }
 
         /// <summary>
@@ -308,6 +350,15 @@ namespace CSFundamentals.DataStructures.Trees
                 return node.Parent.Parent.LeftChild;
             }
             return null;
+        }
+
+        public RedBlackTreeNode<T1, T2> GetSibling(RedBlackTreeNode<T1, T2> node)
+        {
+            if (node == null) return null;
+            if (node.Parent == null) return null;
+            if (node.Parent.LeftChild != null && node.Parent.LeftChild.Equals(node))
+                return node.Parent.RightChild;
+            return node.Parent.LeftChild;
         }
 
         public RedBlackTreeNode<T1, T2> GetGrandParent(RedBlackTreeNode<T1, T2> node)

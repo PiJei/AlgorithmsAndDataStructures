@@ -172,6 +172,8 @@ namespace CSFundamentals.DataStructures.Trees
                     return root.RightChild;
                 }
 
+                /* Else replacing the node that has 2 non-null children with its in-order successor, or could alternatively replace it with its in-order predecessor. */
+                /* From these definitions it is obvious that the replacement node has less than 2 children. */
                 BinaryTreeNode<T1, T2> rightChildMin = FindMin(root.RightChild);
                 root.Key = rightChildMin.Key;
                 root.Value = rightChildMin.Value;

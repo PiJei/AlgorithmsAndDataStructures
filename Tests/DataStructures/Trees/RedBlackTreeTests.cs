@@ -27,36 +27,6 @@ namespace CSFundamentalsTests.DataStructures.Trees
     [TestClass]
     public class RedBlackTreeTests
     {
-        private void HasRedBlackTreeProperties(RedBlackTreeNode<int, string> root, List<RedBlackTreeNode<int, string>> inOrderTraversal, int expectedNodeCount)
-        {
-            // Check order properties.
-            HasBinarySearchTreeOrderProperty(root);
-
-            //Check to make sure nodes are not orphaned in the insertion or deletion process. 
-            Assert.AreEqual(expectedNodeCount, inOrderTraversal.Count);
-
-            // Check color properties.
-            Assert.IsTrue(root.Color == Color.Black);
-            foreach (RedBlackTreeNode<int, string> node in inOrderTraversal)
-            {
-                Assert.IsTrue(node.Color == Color.Red || node.Color == Color.Black);
-
-                if (node.Color == Color.Red)
-                {
-                    if (node.LeftChild != null)
-                    {
-                        Assert.AreEqual(Color.Black, node.LeftChild.Color);
-                    }
-                    if (node.RightChild != null)
-                    {
-                        Assert.AreEqual(Color.Black, node.RightChild.Color);
-                    }
-                }
-            }
-            // TODO 4- all paths from a node to its null (leaf) descendants contain the same number of black nodes. 
-            // TODO 5- get the longest path, get the shortest path, assert is not more than twice.. shortest path might be all black nodes, and longest path would be alternating between red and black nodes
-        }
-
         [TestMethod]
         public void RedBlackTree_Build_Test()
         {
@@ -600,6 +570,41 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.IsTrue(tree.FormsTriangle(H));
         }
 
+        [TestMethod]
+        public void RedBlackTree_GetSibling_Test()
+        {
+            RedBlackTreeNode<int, string> A = new RedBlackTreeNode<int, string>(10, "A");
+            RedBlackTreeNode<int, string> B = new RedBlackTreeNode<int, string>(5, "B");
+            RedBlackTreeNode<int, string> C = new RedBlackTreeNode<int, string>(20, "C");
+            RedBlackTreeNode<int, string> D = new RedBlackTreeNode<int, string>(30, "D");
+
+            A.Parent = null;
+            A.LeftChild = B;
+            A.RightChild = C;
+
+            B.Parent = A;
+            B.LeftChild = null;
+            B.RightChild = null;
+
+            C.Parent = A;
+            C.LeftChild = null;
+            C.RightChild = D;
+
+            D.Parent = C;
+            D.LeftChild = null;
+            D.RightChild = null;
+
+            HasBinarySearchTreeOrderProperty(A);
+
+            var tree = new RedBlackTree<int, string>();
+
+            Assert.IsTrue(tree.GetSibling(A) == null);
+            Assert.IsTrue(tree.GetSibling(B).Equals(C));
+            Assert.IsTrue(tree.GetSibling(C).Equals(B));
+            Assert.IsTrue(tree.GetSibling(D) == null);
+
+        }
+
         //TODO: This code is repeated between here and binary search tree: remove duplicates
         /// <summary>
         /// Given the root of a binary search tree, checks whether the binary search tree properties hold.
@@ -622,6 +627,39 @@ namespace CSFundamentalsTests.DataStructures.Trees
                     HasBinarySearchTreeOrderProperty(root.RightChild);
                 }
             }
+        }
+
+        private void HasRedBlackTreeProperties(RedBlackTreeNode<int, string> root, List<RedBlackTreeNode<int, string>> inOrderTraversal, int expectedNodeCount)
+        {
+            // Check order properties.
+            HasBinarySearchTreeOrderProperty(root);
+
+            //Check to make sure nodes are not orphaned in the insertion or deletion process. 
+            Assert.AreEqual(expectedNodeCount, inOrderTraversal.Count);
+
+            // Check color properties.
+            Assert.IsTrue(root.Color == Color.Black);
+            foreach (RedBlackTreeNode<int, string> node in inOrderTraversal)
+            {
+                Assert.IsTrue(node.Color == Color.Red || node.Color == Color.Black);
+
+                if (node.Color == Color.Red)
+                {
+                    if (node.LeftChild != null)
+                    {
+                        Assert.AreEqual(Color.Black, node.LeftChild.Color);
+                    }
+                    if (node.RightChild != null)
+                    {
+                        Assert.AreEqual(Color.Black, node.RightChild.Color);
+                    }
+
+                    /* If node N is red, then its parent must be black. As otherwise its parent is red, and the children of a red parent should all be black, in our case node N, which we assumed is red. */
+                    Assert.IsTrue(node.Parent.Color == Color.Black);
+                }
+            }
+            // TODO 4- all paths from a node to its null (leaf) descendants contain the same number of black nodes. 
+            // TODO 5- get the longest path, get the shortest path, assert is not more than twice.. shortest path might be all black nodes, and longest path would be alternating between red and black nodes
         }
     }
 }
