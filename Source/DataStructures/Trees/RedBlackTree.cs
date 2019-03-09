@@ -179,19 +179,17 @@ namespace CSFundamentals.DataStructures.Trees
             }
             else
             {
-                if (root.LeftChild == null && root.RightChild == null)
+                if (root.LeftChild != null && root.RightChild != null)
+                {
+                    RedBlackTreeNode<T1, T2> rightChildMin = FindMin(root.RightChild);
+                    root.Key = rightChildMin.Key;
+                    root.Value = rightChildMin.Value;
+                    root.RightChild = Delete(root.RightChild, rightChildMin.Key);
+                }
+                else
                 {
 
                 }
-                else if (root.RightChild == null || root.LeftChild == null)
-                {
-
-                }
-
-                RedBlackTreeNode<T1, T2> rightChildMin = FindMin(root.RightChild);
-                root.Key = rightChildMin.Key;
-                root.Value = rightChildMin.Value;
-                root.RightChild = Delete(root.RightChild, rightChildMin.Key);
             }
 
             return root;
