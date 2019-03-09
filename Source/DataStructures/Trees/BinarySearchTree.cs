@@ -145,7 +145,7 @@ namespace CSFundamentals.DataStructures.Trees
         [SpaceComplexity("O(1)")]
         public BinaryTreeNode<T1, T2> Delete(BinaryTreeNode<T1, T2> root, T1 key)
         {
-            if (root == null) throw new ArgumentNullException();
+            if (root == null) return root;
 
             if (root.Key.CompareTo(key) < 0)
             {
@@ -155,7 +155,7 @@ namespace CSFundamentals.DataStructures.Trees
             {
                 root.LeftChild = Delete(root.LeftChild, key);
             }
-            else
+            else 
             {
                 if (root.RightChild == null && root.LeftChild == null)
                 {

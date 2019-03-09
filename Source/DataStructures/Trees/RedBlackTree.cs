@@ -167,7 +167,7 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         public RedBlackTreeNode<T1, T2> Delete(RedBlackTreeNode<T1, T2> root, T1 key)
         {
-            if (root == null) throw new ArgumentNullException();
+            if (root == null) return root;
 
             if (root.Key.CompareTo(key) < 0)
             {
@@ -179,21 +179,122 @@ namespace CSFundamentals.DataStructures.Trees
             }
             else
             {
-                if (root.LeftChild != null && root.RightChild != null)
+                if (root.LeftChild != null && root.RightChild != null) /* The root has exactly 2 non-null children. */
                 {
                     RedBlackTreeNode<T1, T2> rightChildMin = FindMin(root.RightChild);
                     root.Key = rightChildMin.Key;
                     root.Value = rightChildMin.Value;
                     root.RightChild = Delete(root.RightChild, rightChildMin.Key);
                 }
-                else
+                else /* The node (root) has at most 1 non-null child. */
                 {
+                    var leftChild = root.LeftChild;
+                    var rightChild = root.RightChild;
+                    int nullChildrenCount = 0;
+                    if (leftChild == null) nullChildrenCount++;
+                    if (rightChild == null) nullChildrenCount++;
+                    RedBlackTreeNode<T1, T2> theOnlyNotNullChild = null;
+                    if (nullChildrenCount == 1)
+                    {
+                        theOnlyNotNullChild = leftChild == null ? rightChild : leftChild;
+                    }
 
+                    // Case1 : root is red and both of its children are black (by definition) and by red black properties both are null
+                    if (root.Color == Color.Red)
+                    {
+                        root = null;
+                    }
+                    else if (root.Color == Color.Black)
+                    {
+                        // Case2: root is black, and its the only not null child is red
+                        if (theOnlyNotNullChild != null && theOnlyNotNullChild.Color == Color.Red)
+                        {
+                            root = theOnlyNotNullChild;
+                            root.Color = Color.Black;
+                        }
+                        else if (theOnlyNotNullChild == null) //Case3: root is black, and has 2 null children. Or in other words: Deleting a black node with 2 null children
+                        { /* This case is tricky, because removing one black node from the tree will violate red-black property of: all the paths from a node to all of its leaf (null) children have exactly the same number of black nodes. */
+                            DeleteBlackNode(root);
+                        }
+                    }
                 }
             }
 
             return root;
         }
+
+        public void DeleteBlackNode(RedBlackTreeNode<T1, T2> node)
+        {
+            if (node.Parent == null) return;
+
+            var sibling = GetSibling(node);
+            if (sibling == null) return;
+
+            if (sibling.Color == Color.Red) /* Implies that parent is black, following RedBlack tree properties.*/
+            {
+                node.Parent.Color = Color.Red;
+                sibling.Color = Color.Black;
+                if (IsLeftChild(node)) RotateLeft(node.Parent);
+                if (IsRightChild(node)) RotateRight(node.Parent);
+            }
+
+            if (node.Parent.Color == Color.Black &&
+                sibling.Color == Color.Black &&
+                ((sibling.LeftChild != null && sibling.LeftChild.Color == Color.Black) || sibling.LeftChild == null) &&
+                ((sibling.RightChild != null && sibling.RightChild.Color == Color.Black) || sibling.RightChild == null))
+            {
+                sibling.Color = Color.Red;
+                DeleteBlackNode(node.Parent);
+            }
+            else if (node.Parent.Color == Color.Red &&
+                     sibling.Color == Color.Black &&
+                     ((sibling.LeftChild != null && sibling.LeftChild.Color == Color.Black) || sibling.LeftChild == null) &&
+                     ((sibling.RightChild != null && sibling.RightChild.Color == Color.Black) || sibling.RightChild == null))
+            {
+                sibling.Color = Color.Red;
+                node.Parent.Color = Color.Black;
+            }
+            else if (sibling.Color == Color.Black)
+            {
+                if (((sibling.LeftChild != null && sibling.LeftChild.Color == Color.Red) || sibling.LeftChild == null) &&
+                    ((sibling.RightChild != null && sibling.RightChild.Color == Color.Black) || sibling.RightChild == null) &&
+                    IsLeftChild(node))
+                {
+                    sibling.Color = Color.Red;
+                    if (sibling.LeftChild != null)
+                        sibling.LeftChild.Color = Color.Black;
+                    RotateRight(sibling);
+                }
+                else if (((sibling.LeftChild != null && sibling.LeftChild.Color == Color.Black) || sibling.LeftChild == null) &&
+                         ((sibling.RightChild != null && sibling.RightChild.Color == Color.Red) || sibling.RightChild == null) &&
+                         IsRightChild(node))
+                {
+                    sibling.Color = Color.Red;
+                    if (sibling.RightChild != null)
+                        sibling.RightChild.Color = Color.Black;
+                    RotateLeft(sibling);
+                }
+
+                if (sibling.Color == Color.Black &&
+                   ((sibling.RightChild != null && sibling.RightChild.Color == Color.Red) || sibling.RightChild == null) &&
+                    IsLeftChild(node))
+                {
+                    sibling.Color = node.Parent.Color;
+                    node.Parent.Color = Color.Black;
+                    if (IsLeftChild(node))
+                    {
+                        sibling.RightChild.Color = Color.Black;
+                        RotateLeft(node.Parent);
+                    }
+                    else if (IsRightChild(node))
+                    {
+                        sibling.LeftChild.Color = Color.Black;
+                        RotateRight(node.Parent);
+                    }
+                }
+            }
+        }
+
 
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(n)")]

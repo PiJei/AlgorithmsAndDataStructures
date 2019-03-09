@@ -27,10 +27,13 @@ namespace CSFundamentalsTests.DataStructures.Trees
     [TestClass]
     public class RedBlackTreeTests
     {
-        [TestMethod]
-        public void RedBlackTree_Build_Test()
+        private RedBlackTree<int, string> _tree;
+        private RedBlackTreeNode<int, string> _root;
+
+        [TestInitialize]
+        public void Init()
         {
-            var tree = new RedBlackTree<int, string>();
+            _tree = new RedBlackTree<int, string>();
 
             var keyVals = new Dictionary<int, string>
             {
@@ -43,11 +46,126 @@ namespace CSFundamentalsTests.DataStructures.Trees
                 [45] = "F"
             };
 
-            var root = tree.Build(keyVals);
+            _root = _tree.Build(keyVals);
+        }
 
+        [TestMethod]
+        public void RedBlackTree_Build_Test()
+        {
             List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
-            tree.InOrderTraversal(root, inOrderTraversal);
-            HasRedBlackTreeProperties(root, inOrderTraversal, keyVals.Count);
+            _tree.InOrderTraversal(_root, inOrderTraversal);
+            HasRedBlackTreeProperties(_root, inOrderTraversal, 7);
+        }
+
+        [TestMethod]
+        public void RedBlackTree_Delete_Test_1()
+        {
+            _root = _tree.Delete(_root, 47);
+            List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
+            _tree.InOrderTraversal(_root, inOrderTraversal);
+            HasRedBlackTreeProperties(_root, inOrderTraversal, 6);
+        }
+
+        [TestMethod]
+        public void RedBlackTree_Delete_Test_2()
+        {
+            _root = _tree.Delete(_root, 30);
+            List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
+            _tree.InOrderTraversal(_root, inOrderTraversal);
+            HasRedBlackTreeProperties(_root, inOrderTraversal, 6);
+        }
+
+        [TestMethod]
+        public void RedBlackTree_Delete_Test_3()
+        {
+            _root = _tree.Delete(_root, 50);
+            List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
+            _tree.InOrderTraversal(_root, inOrderTraversal);
+            HasRedBlackTreeProperties(_root, inOrderTraversal, 6);
+        }
+
+        [TestMethod]
+        public void RedBlackTree_Delete_Test_4()
+        {
+            _root = _tree.Delete(_root, 20);
+            List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
+            _tree.InOrderTraversal(_root, inOrderTraversal);
+            HasRedBlackTreeProperties(_root, inOrderTraversal, 6);
+        }
+
+        [TestMethod]
+        public void RedBlackTree_Delete_Test_5()
+        {
+            _root = _tree.Delete(_root, 40);
+            List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
+            _tree.InOrderTraversal(_root, inOrderTraversal);
+            HasRedBlackTreeProperties(_root, inOrderTraversal, 6);
+        }
+
+        [TestMethod]
+        public void RedBlackTree_Delete_Test_6()
+        {
+            _root = _tree.Delete(_root, 35);
+            List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
+            _tree.InOrderTraversal(_root, inOrderTraversal);
+            HasRedBlackTreeProperties(_root, inOrderTraversal, 6);
+        }
+
+        [TestMethod]
+        public void RedBlackTree_Delete_Test_7()
+        {
+            _root = _tree.Delete(_root, 45);
+            List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
+            _tree.InOrderTraversal(_root, inOrderTraversal);
+            HasRedBlackTreeProperties(_root, inOrderTraversal, 6);
+        }
+
+        [TestMethod]
+        public void RedBlackTree_Delete_Test_8()
+        {
+            _root = _tree.Delete(_root, 15);
+            List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
+            _tree.InOrderTraversal(_root, inOrderTraversal);
+            HasRedBlackTreeProperties(_root, inOrderTraversal, 7);
+        }
+
+        [TestMethod]
+        public void RedBlackTree_Delete_Test_9()
+        {
+            _root = _tree.Delete(_root, 30);
+            List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
+            _tree.InOrderTraversal(_root, inOrderTraversal);
+            HasRedBlackTreeProperties(_root, inOrderTraversal, 6);
+
+            _root = _tree.Delete(_root, 47);
+            inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
+            _tree.InOrderTraversal(_root, inOrderTraversal);
+            HasRedBlackTreeProperties(_root, inOrderTraversal, 5);
+
+            _root = _tree.Delete(_root, 20);
+            inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
+            _tree.InOrderTraversal(_root, inOrderTraversal);
+            HasRedBlackTreeProperties(_root, inOrderTraversal, 4);
+
+            _root = _tree.Delete(_root, 50);
+            inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
+            _tree.InOrderTraversal(_root, inOrderTraversal);
+            HasRedBlackTreeProperties(_root, inOrderTraversal, 3);
+
+            _root = _tree.Delete(_root, 35);
+            inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
+            _tree.InOrderTraversal(_root, inOrderTraversal);
+            HasRedBlackTreeProperties(_root, inOrderTraversal, 2);
+
+            _root = _tree.Delete(_root, 30);
+            inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
+            _tree.InOrderTraversal(_root, inOrderTraversal);
+            HasRedBlackTreeProperties(_root, inOrderTraversal, 1);
+
+            _root = _tree.Delete(_root, 40);
+            inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
+            _tree.InOrderTraversal(_root, inOrderTraversal);
+            HasRedBlackTreeProperties(_root, inOrderTraversal, 0);
         }
 
 

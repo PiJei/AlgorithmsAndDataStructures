@@ -220,6 +220,24 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
+        public void BinarySearchTree_Delete_NotExistingKey_Test()
+        {
+            _root = _tree.Delete(_root, 15);
+            _root = _tree.Delete(_root, 800);
+            _root = _tree.Delete(_root, 234);
+
+            HasBinarySearchTreeOrderProperty(_root);
+
+            var inOrderTraversal = new List<BinaryTreeNode<int, string>>();
+            _tree.InOrderTraversal(_root, inOrderTraversal);
+            Assert.AreEqual(7, inOrderTraversal.Count);
+            for (int i = 0; i < inOrderTraversal.Count - 1; i++)
+            {
+                Assert.IsTrue(inOrderTraversal[i].Key < inOrderTraversal[i + 1].Key);
+            }
+        }
+
+        [TestMethod]
         public void BinarySearchTree_DeleteMin_Test_1()
         {
             _root = _tree.DeleteMin(_root);
