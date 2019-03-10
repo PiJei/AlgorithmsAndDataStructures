@@ -23,6 +23,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+//TODO: Add more tests with bigger trees.
+
 namespace CSFundamentalsTests.DataStructures.Trees
 {
     [TestClass]
@@ -168,7 +170,6 @@ namespace CSFundamentalsTests.DataStructures.Trees
             _tree.InOrderTraversal(_root, inOrderTraversal);
             HasRedBlackTreeProperties(_root, inOrderTraversal, 0);
         }
-
 
         [TestMethod]
         public void RedBlackTree_Insert_WithoutBalancing_Test()
