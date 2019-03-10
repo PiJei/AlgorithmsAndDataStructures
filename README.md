@@ -45,7 +45,10 @@ Content:
    - MaxHeap
    - MinMaxHeap
   
-
+  - Trees:
+   - BinarySearchTree
+   - RedBlackTree
+   
 - Hashing
 
 References : 
