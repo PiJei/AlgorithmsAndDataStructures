@@ -56,7 +56,7 @@ namespace CSFundamentals.DataStructures.Trees
             root = Insert_WithoutBalancing(root, newNode);
             Insert_Repair(root, newNode);
 
-            /*After rotation the root could have easily changed. need to find the root. */
+            /* After rotation the root could have easily changed. Need to find the root. */
             root = newNode;
             while (root.Parent != null)
             {
@@ -190,6 +190,7 @@ namespace CSFundamentals.DataStructures.Trees
                 node = null;
             }
 
+            // Find the root of the tree.
             if (newRoot == null) return null;
             while (newRoot.Parent != null)
             {
