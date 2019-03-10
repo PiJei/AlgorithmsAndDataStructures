@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using CSFundamentals.Styling;
+using System.Diagnostics.Contracts;
 
 [assembly: InternalsVisibleTo("CSFundamentalsTests")]
 
@@ -71,7 +72,7 @@ namespace CSFundamentals.DataStructures.Trees
             {
                 FlipColor(newNode);
             }
-            else if (newNode.Parent != null && newNode.Parent.Color == Color.Red) /* If this holds it means that both the new node and its parent are red, and in a red-black tree this is not allowed. Children of a red node should be black, and we can not have the same color in 2 consecutive layers.*/
+            else if (newNode.Parent != null && newNode.Parent.Color == Color.Red) /* If this holds it means that both the new node and its parent are red, and in a red-black tree this is not allowed. Children of a red node should be black.*/
             {
                 var uncle = GetUncle(newNode);
 
@@ -98,17 +99,17 @@ namespace CSFundamentals.DataStructures.Trees
                     }
 
                     /* When reaching at this point, we might or might not have gone through above two triangle forms, as the alignment could have already been a line.*/
+                    var grandParent = GetGrandParent(newNode);
                     if (IsRightChild(newNode))
                     {
-                        RotateLeft(GetGrandParent(newNode));
+                        RotateLeft(grandParent);
                     }
                     else if (IsLeftChild(newNode))
                     {
-                        RotateRight(GetGrandParent(newNode));
+                        RotateRight(grandParent);
                     }
                     newNode.Parent.Color = Color.Black;
-                    var grandParent = GetGrandParent(newNode);
-                    if (grandParent != null && !IsRoot(grandParent))
+                    if (grandParent != null)
                         grandParent.Color = Color.Red;
                 }
             }
@@ -188,42 +189,41 @@ namespace CSFundamentals.DataStructures.Trees
                 }
                 else /* The node (root) has at most 1 non-null child. */
                 {
-                    var leftChild = root.LeftChild;
-                    var rightChild = root.RightChild;
-                    int nullChildrenCount = 0;
-                    if (leftChild == null) nullChildrenCount++;
-                    if (rightChild == null) nullChildrenCount++;
-                    RedBlackTreeNode<T1, T2> theOnlyNotNullChild = null;
-                    if (nullChildrenCount == 1)
-                    {
-                        theOnlyNotNullChild = leftChild == null ? rightChild : leftChild;
-                    }
-
-                    // Case1 : root is red and both of its children are black (by definition) and by red black properties both are null
-                    if (root.Color == Color.Red)
+                    if (IsLeaf(root) && root.Color == Color.Red) // case 1 
                     {
                         root = null;
                     }
-                    else if (root.Color == Color.Black)
+                    else if (IsLeaf(root) && root.Color == Color.Black) //Case2: root is black, and has 2 null children. Or in other words: Deleting a black node with 2 null children. /* This case is tricky, because removing one black node from the tree will violate red-black property of: all the paths from a node to all of its leaf (null) children have exactly the same number of black nodes. */
                     {
-                        // Case2: root is black, and its the only not null child is red
-                        if (theOnlyNotNullChild != null && theOnlyNotNullChild.Color == Color.Red)
-                        {
-                            root = theOnlyNotNullChild;
-                            root.Color = Color.Black;
-                        }
-                        else if (theOnlyNotNullChild == null) //Case3: root is black, and has 2 null children. Or in other words: Deleting a black node with 2 null children
-                        { /* This case is tricky, because removing one black node from the tree will violate red-black property of: all the paths from a node to all of its leaf (null) children have exactly the same number of black nodes. */
-                            DeleteBlackNode(root);
-                        }
+                        DeleteBlackLeafNode(root);
+                        root = null;
                     }
+                    else if (!IsLeaf(root) && root.Color == Color.Black) // Case3: root is black, and its the only not null child is red
+                    {
+                        if (root.LeftChild != null) /* Then replace root with root.LeftChild*/
+                        {
+                            Contract.Assert(root.LeftChild.Color == Color.Red);
+                            root.LeftChild.Parent = root.Parent;
+                            root.Parent.LeftChild = root.LeftChild;
+                            root = root.LeftChild;
+                            root.Color = Color.Black; /* This is to keep the number of black nodes the same, as we have just dropped a non-leaf black node.*/
+                        }
+                        else if (root.RightChild != null) /* Then replace root with root.rightChild*/
+                        {
+                            Contract.Assert(root.RightChild.Color == Color.Red);
+                            root.RightChild.Parent = root.Parent;
+                            root.Parent.RightChild = root.RightChild;
+                            root = root.RightChild;
+                            root.Color = Color.Black; /* This is to keep the number of black nodes the same, as we have just dropped a non-leaf black node.*/
+                        }
+                    } // Case 4: Notice that by properties of RedBlackTree case 4 can not exist (case 4: !IsLeaf(root) && root.Color == Color.Red)
                 }
             }
 
             return root;
         }
 
-        public void DeleteBlackNode(RedBlackTreeNode<T1, T2> node)
+        public void DeleteBlackLeafNode(RedBlackTreeNode<T1, T2> node)
         {
             if (node.Parent == null) return;
 
@@ -244,7 +244,7 @@ namespace CSFundamentals.DataStructures.Trees
                 ((sibling.RightChild != null && sibling.RightChild.Color == Color.Black) || sibling.RightChild == null))
             {
                 sibling.Color = Color.Red;
-                DeleteBlackNode(node.Parent);
+                DeleteBlackLeafNode(node.Parent);
             }
             else if (node.Parent.Color == Color.Red &&
                      sibling.Color == Color.Black &&
@@ -294,7 +294,6 @@ namespace CSFundamentals.DataStructures.Trees
                 }
             }
         }
-
 
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(n)")]
@@ -360,6 +359,17 @@ namespace CSFundamentals.DataStructures.Trees
         public int GetBlackHeight(RedBlackTreeNode<T1, T2> root)
         {
             throw new NotImplementedException();
+        }
+
+        //TODO: ADD test
+        public bool IsLeaf(RedBlackTreeNode<T1, T2> node)
+        {
+            if (node == null) return true;
+            if (node.LeftChild == null && node.RightChild == null)
+            {
+                return true;
+            }
+            return false;
         }
 
         /// <summary>

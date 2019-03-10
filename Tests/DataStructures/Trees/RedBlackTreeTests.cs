@@ -21,6 +21,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentals.DataStructures.Trees;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CSFundamentalsTests.DataStructures.Trees
 {
@@ -157,7 +158,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             _tree.InOrderTraversal(_root, inOrderTraversal);
             HasRedBlackTreeProperties(_root, inOrderTraversal, 2);
 
-            _root = _tree.Delete(_root, 30);
+            _root = _tree.Delete(_root, 45);
             inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, inOrderTraversal);
             HasRedBlackTreeProperties(_root, inOrderTraversal, 1);
@@ -776,7 +777,21 @@ namespace CSFundamentalsTests.DataStructures.Trees
                     Assert.IsTrue(node.Parent.Color == Color.Black);
                 }
             }
-            // TODO 4- all paths from a node to its null (leaf) descendants contain the same number of black nodes. 
+
+            // all paths from a node to its null (leaf) descendants contain the same number of black nodes. 
+            foreach (RedBlackTreeNode<int, string> node in inOrderTraversal)
+            {
+                List<List<RedBlackTreeNode<int, string>>> paths = TreesUtils.GetAllPathToNullLeaves(node);
+                int firstPathBlackNodeCount = 0;
+                if (paths.Count >= 0)
+                    firstPathBlackNodeCount = paths[0].Count(n => n.Color == Color.Black);
+                for(int i=1;i<paths.Count; i++)
+                {
+                    Assert.AreEqual(firstPathBlackNodeCount, paths[i].Count(n=>n.Color == Color.Black));
+                }
+            }
+
+
             // TODO 5- get the longest path, get the shortest path, assert is not more than twice.. shortest path might be all black nodes, and longest path would be alternating between red and black nodes
         }
     }
