@@ -377,7 +377,8 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.AreEqual(expectedNodeCount, inOrderTraversal.Count);
 
             // Check color properties.
-            Assert.IsTrue(root.Color == Color.Black);
+            if (root != null)
+                Assert.IsTrue(root.Color == Color.Black);
             foreach (RedBlackTreeNode<T1, T2> node in inOrderTraversal)
             {
                 Assert.IsTrue(node.Color == Color.Red || node.Color == Color.Black);

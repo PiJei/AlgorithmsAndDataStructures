@@ -172,19 +172,24 @@ namespace CSFundamentals.DataStructures.Trees
             {
                 return root;
             }
+            var newRoot = node;
 
             if (node.LeftChild != null && node.RightChild != null) /* The root has exactly 2 non-null children. */
             {
-                RedBlackTreeNode<T1, T2> rightChildMin = FindMin(root.RightChild);
+                RedBlackTreeNode<T1, T2> rightChildMin = FindMin(node.RightChild);
                 node.Key = rightChildMin.Key;
                 node.Value = rightChildMin.Value;
-                node = Delete(rightChildMin);
+                var parent = rightChildMin.Parent;
+                newRoot = Delete(rightChildMin); ;
+                UpdateParentWithNullingChild(parent, rightChildMin);
+                rightChildMin = null;
             }
             else
             {
-                node = Delete(node);
+                newRoot = Delete(node);
+                node = null;
             }
-            var newRoot = node;
+
             if (newRoot == null) return null;
             while (newRoot.Parent != null)
             {
@@ -197,17 +202,17 @@ namespace CSFundamentals.DataStructures.Trees
         internal RedBlackTreeNode<T1, T2> Delete(RedBlackTreeNode<T1, T2> nodeToBeDeleted)
         {
             /* The nodeToBeDeleted has at most 1 non-null child. */
+            var parent = nodeToBeDeleted.Parent;
 
             if (nodeToBeDeleted.IsLeaf() && nodeToBeDeleted.Color == Color.Red) // case 1 
             {
-                var parent = nodeToBeDeleted.Parent;
-                nodeToBeDeleted = null;
+                UpdateParentWithNullingChild(parent, nodeToBeDeleted);
                 return parent;
             }
             else if (nodeToBeDeleted.IsLeaf() && nodeToBeDeleted.Color == Color.Black) //Case2: nodeToBeDeleted is black, and has 2 null children. Or in other words: Deleting a black node with 2 null children. /* This case is tricky, because removing one black node from the tree will violate red-black property of: all the paths from a node to all of its leaf (null) children have exactly the same number of black nodes. */
             {
                 var node = DeleteBlackLeafNode(nodeToBeDeleted);
-                nodeToBeDeleted = null;
+                UpdateParentWithNullingChild(parent, nodeToBeDeleted);
                 return node;
             }
             else if (!nodeToBeDeleted.IsLeaf() && nodeToBeDeleted.Color == Color.Black) // Case3: nodeToBeDeleted is black, and its the only not null child is red
@@ -216,7 +221,8 @@ namespace CSFundamentals.DataStructures.Trees
                 {
                     Contract.Assert(nodeToBeDeleted.LeftChild.Color == Color.Red);
                     nodeToBeDeleted.LeftChild.Parent = nodeToBeDeleted.Parent;
-                    nodeToBeDeleted.Parent.LeftChild = nodeToBeDeleted.LeftChild;
+                    if (nodeToBeDeleted.Parent != null)
+                        nodeToBeDeleted.Parent.LeftChild = nodeToBeDeleted.LeftChild;
                     nodeToBeDeleted = nodeToBeDeleted.LeftChild;
                     nodeToBeDeleted.Color = Color.Black; /* This is to keep the number of black nodes the same, as we have just dropped a non-leaf black node.*/
                 }
@@ -224,13 +230,29 @@ namespace CSFundamentals.DataStructures.Trees
                 {
                     Contract.Assert(nodeToBeDeleted.RightChild.Color == Color.Red);
                     nodeToBeDeleted.RightChild.Parent = nodeToBeDeleted.Parent;
-                    nodeToBeDeleted.Parent.RightChild = nodeToBeDeleted.RightChild;
+                    if (nodeToBeDeleted.Parent != null)
+                        nodeToBeDeleted.Parent.RightChild = nodeToBeDeleted.RightChild;
                     nodeToBeDeleted = nodeToBeDeleted.RightChild;
                     nodeToBeDeleted.Color = Color.Black; /* This is to keep the number of black nodes the same, as we have just dropped a non-leaf black node.*/
                 }
                 return nodeToBeDeleted;
             } // Case 4: Notice that by properties of RedBlackTree case 4 can not exist (case 4: !IsLeaf(nodeToBeDeleted) && nodeToBeDeleted.Color == Color.Red)
             return null;
+        }
+
+        public void UpdateParentWithNullingChild(RedBlackTreeNode<T1, T2> parent, RedBlackTreeNode<T1, T2> child)
+        {
+            if (parent != null)
+            {
+                if (child.IsLeftChild())
+                {
+                    parent.LeftChild = null;
+                }
+                else if (child.IsRightChild())
+                {
+                    parent.RightChild = null;
+                }
+            }
         }
 
         public RedBlackTreeNode<T1, T2> DeleteBlackLeafNode(RedBlackTreeNode<T1, T2> node)
@@ -240,54 +262,51 @@ namespace CSFundamentals.DataStructures.Trees
             var sibling = node.GetSibling();
             if (sibling == null) return null;
 
-            if (sibling.Color == Color.Red) /* Implies that parent is black, following RedBlack tree properties.*/
+            if (IsRed(sibling)) /* Implies that parent is black, following RedBlack tree properties.*/
             {
                 node.Parent.Color = Color.Red;
                 sibling.Color = Color.Black;
-                if (node.IsLeftChild()) RotateLeft(node.Parent);
-                if (node.IsRightChild()) RotateRight(node.Parent);
+                if (node.IsLeftChild())
+                {
+                    RotateLeft(node.Parent);
+                }
+                if (node.IsRightChild())
+                {
+                    RotateRight(node.Parent);
+                }
+                sibling = node.GetSibling();
             }
 
-            if (node.Parent.Color == Color.Black &&
-                sibling.Color == Color.Black &&
-                ((sibling.LeftChild != null && sibling.LeftChild.Color == Color.Black) || sibling.LeftChild == null) &&
-                ((sibling.RightChild != null && sibling.RightChild.Color == Color.Black) || sibling.RightChild == null))
+            if (IsBlack(node.Parent) && IsBlack(sibling) && IsBlack(sibling.LeftChild) && IsBlack(sibling.RightChild))
             {
                 sibling.Color = Color.Red;
                 DeleteBlackLeafNode(node.Parent);
             }
-            else if (node.Parent.Color == Color.Red &&
-                     sibling.Color == Color.Black &&
-                     ((sibling.LeftChild != null && sibling.LeftChild.Color == Color.Black) || sibling.LeftChild == null) &&
-                     ((sibling.RightChild != null && sibling.RightChild.Color == Color.Black) || sibling.RightChild == null))
+            else if (IsRed(node.Parent) && IsBlack(sibling) && IsBlack(sibling.LeftChild) && IsBlack(sibling.RightChild))
             {
                 sibling.Color = Color.Red;
                 node.Parent.Color = Color.Black;
             }
-            else if (sibling.Color == Color.Black)
+            else if (IsBlack(sibling))
             {
-                if ((sibling.LeftChild != null && sibling.LeftChild.Color == Color.Red) &&
-                    ((sibling.RightChild != null && sibling.RightChild.Color == Color.Black) || sibling.RightChild == null) &&
-                    node.IsLeftChild())
+                if (IsRed(sibling.LeftChild) && IsBlack(sibling.RightChild) && node.IsLeftChild())
                 {
                     sibling.Color = Color.Red;
                     if (sibling.LeftChild != null)
                         sibling.LeftChild.Color = Color.Black;
                     RotateRight(sibling);
+                    sibling = node.GetSibling();
                 }
-                else if (((sibling.LeftChild != null && sibling.LeftChild.Color == Color.Black) || sibling.LeftChild == null) &&
-                         (sibling.RightChild != null && sibling.RightChild.Color == Color.Red) &&
-                         node.IsRightChild())
+                else if (IsBlack(sibling.LeftChild) && IsRed(sibling.RightChild) && node.IsRightChild())
                 {
                     sibling.Color = Color.Red;
                     if (sibling.RightChild != null)
                         sibling.RightChild.Color = Color.Black;
                     RotateLeft(sibling);
+                    sibling = node.GetSibling();
                 }
 
-                if (sibling.Color == Color.Black &&
-                   (sibling.RightChild != null && sibling.RightChild.Color == Color.Red) &&
-                    node.IsLeftChild())
+                if (IsBlack(sibling) && IsRed(sibling.RightChild))
                 {
                     sibling.Color = node.Parent.Color;
                     node.Parent.Color = Color.Black;
@@ -304,6 +323,19 @@ namespace CSFundamentals.DataStructures.Trees
                 }
             }
             return sibling;
+        }
+
+        public bool IsRed(RedBlackTreeNode<T1, T2> node)
+        {
+            if (node != null && node.Color == Color.Red)
+                return true;
+            return false;
+        }
+
+        public bool IsBlack(RedBlackTreeNode<T1, T2> node)
+        {
+            if (node == null || (node != null && node.Color == Color.Black)) return true;
+            return false;
         }
 
         [TimeComplexity(Case.Best, "O(1)")]
@@ -372,7 +404,7 @@ namespace CSFundamentals.DataStructures.Trees
             throw new NotImplementedException();
         }
 
-       
+
         /// <summary>
         /// Rotates the tree to left at the given node, meaning that the current right child of the given node will be its new parent.
         /// Also notice that in rotation, keys or values of a node never change, only the relations change.

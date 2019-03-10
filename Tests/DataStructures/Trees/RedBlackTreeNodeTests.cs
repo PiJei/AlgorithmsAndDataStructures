@@ -22,6 +22,8 @@ using CSFundamentals.DataStructures.Trees;
 using System;
 using System.Collections.Generic;
 
+//TODO: Move most of these to binary tree node
+
 namespace CSFundamentalsTests.DataStructures.Trees
 {
     [TestClass]
