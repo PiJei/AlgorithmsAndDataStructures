@@ -24,7 +24,8 @@ using CSFundamentals.Styling;
 namespace CSFundamentals.DataStructures.Trees
 {
     /// <summary>
-    /// Implements a binary search tree, and its operations.
+    /// Implements a binary search tree, and its operations. In a binary search tree, each node's key is larger than its left child's key, and smaller than its right child's key.
+    /// A binary Search Tree can be used as a key-value store. 
     /// </summary>
     /// <typeparam name="T1">Specifies the type of the key in tree nodes.</typeparam>
     /// <typeparam name="T2">Specifies the type of the value in tree nodes. </typeparam>
@@ -32,7 +33,7 @@ namespace CSFundamentals.DataStructures.Trees
     public class BinarySearchTree<T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
     {
         /// <summary>
-        /// Is the root of the binary search tree. 
+        /// Is the root of the binary search tree.
         /// </summary>
         private BinaryTreeNode<T1, T2> _root = null;
 
@@ -48,8 +49,8 @@ namespace CSFundamentals.DataStructures.Trees
             return _root;
         }
 
-        [TimeComplexity(Case.Best, "O(1)")]
-        [TimeComplexity(Case.Worst, "O(n)")]
+        [TimeComplexity(Case.Best, "O(1)", When = "The tree is empty, and the first node is added.")]
+        [TimeComplexity(Case.Worst, "O(n)", When = "Tree is imbalanced such that it is like one sequential branch (linked list), every node except the leaf having exactly one child.")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)", InPlace = true)] /* Notice that a new node is allocated for a new key, thus can be considered as O(Size(TreeNode))*/
         public BinaryTreeNode<T1, T2> Insert(BinaryTreeNode<T1, T2> root, T1 key, T2 value)
@@ -144,7 +145,7 @@ namespace CSFundamentals.DataStructures.Trees
         [SpaceComplexity("O(1)")]
         public BinaryTreeNode<T1, T2> Delete(BinaryTreeNode<T1, T2> root, T1 key)
         {
-            if (root == null) throw new ArgumentNullException();
+            if (root == null) return root;
 
             if (root.Key.CompareTo(key) < 0)
             {
@@ -154,7 +155,7 @@ namespace CSFundamentals.DataStructures.Trees
             {
                 root.LeftChild = Delete(root.LeftChild, key);
             }
-            else
+            else 
             {
                 if (root.RightChild == null && root.LeftChild == null)
                 {
@@ -171,6 +172,8 @@ namespace CSFundamentals.DataStructures.Trees
                     return root.RightChild;
                 }
 
+                /* Else replacing the node that has 2 non-null children with its in-order successor, or could alternatively replace it with its in-order predecessor. */
+                /* From these definitions it is obvious that the replacement node has less than 2 children. */
                 BinaryTreeNode<T1, T2> rightChildMin = FindMin(root.RightChild);
                 root.Key = rightChildMin.Key;
                 root.Value = rightChildMin.Value;
@@ -214,7 +217,7 @@ namespace CSFundamentals.DataStructures.Trees
         [SpaceComplexity("")]
         public BinaryTreeNode<T1, T2> DeleteMin(BinaryTreeNode<T1, T2> root)
         {
-            BinaryTreeNode<T1, T2>  minNode = FindMin(root);
+            BinaryTreeNode<T1, T2> minNode = FindMin(root);
             return Delete(root, minNode.Key);
         }
 
@@ -225,6 +228,5 @@ namespace CSFundamentals.DataStructures.Trees
             BinaryTreeNode<T1, T2> maxNode = FindMax(root);
             return Delete(root, maxNode.Key);
         }
-
     }
 }
