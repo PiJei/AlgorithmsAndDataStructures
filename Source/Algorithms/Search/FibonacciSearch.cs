@@ -28,6 +28,11 @@ namespace CSFundamentals.Algorithms.Search
         //todo: specify time and space complexity.
         public static int Search(List<int> values, int searchValue)
         {
+            if (searchValue < values[0] || searchValue > values[values.Count - 1]) // We can perform this check as the array is expected to be sorted. 
+            {
+                return -1;
+            }
+
             FibonacciElement fib = GetSmallestFibonacciBiggerThanNumber(values.Count);
             int startIndex = -1;
 
