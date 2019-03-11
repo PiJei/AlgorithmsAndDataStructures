@@ -24,7 +24,7 @@ namespace CSFundamentals.Algorithms.Search
 {
     public class FibonacciSearch
     {
-        [Algorithm(AlgorithmType.Search, "FibonacciSearch")]
+        [Algorithm(AlgorithmType.Search, "FibonacciSearch", Assumptions = "Array is sorted with an ascending order.")]
         //todo: specify time and space complexity.
         public static int Search(List<int> values, int searchValue)
         {

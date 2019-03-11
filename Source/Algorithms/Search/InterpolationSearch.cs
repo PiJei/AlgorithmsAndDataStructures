@@ -34,7 +34,7 @@ namespace CSFundamentals.Algorithms.Search
         /// <param name="endIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
         /// <param name="searchValue">Specifies the value that is being searched for. </param>
         /// <returns>The index of the searchValue in the array values, and -1 if it does not exist in the array. </returns>
-        [Algorithm(AlgorithmType.Search, "InterpolationSearch")]
+        [Algorithm(AlgorithmType.Search, "InterpolationSearch", Assumptions = "Array is sorted with an ascending order, and elements are driven from a uniform distribution.")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(n)")]

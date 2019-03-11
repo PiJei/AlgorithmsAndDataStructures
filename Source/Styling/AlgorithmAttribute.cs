@@ -30,6 +30,8 @@ namespace CSFundamentals.Styling
 
         public bool IsGreedy { get; set; }
 
+        public string Assumptions { get; set; }
+
         public AlgorithmAttribute(AlgorithmType type, string name)
         {
             Type = type;
