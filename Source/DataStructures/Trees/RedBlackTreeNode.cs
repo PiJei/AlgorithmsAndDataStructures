@@ -21,20 +21,18 @@ using System;
 
 namespace CSFundamentals.DataStructures.Trees
 {
-    public class RedBlackTreeNode<T1, T2> : BinaryTreeNode<T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
+    public class RedBlackTreeNode<T1, T2> : TreeNode<RedBlackTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
     {
-        public new RedBlackTreeNode<T1, T2> LeftChild { get; set; }
-
-        public new RedBlackTreeNode<T1, T2> RightChild { get; set; }
-
-        public RedBlackTreeNode<T1, T2> Parent { get; set; }
-
         public Color Color { get; set; }
+        public override RedBlackTreeNode<T1, T2> LeftChild { get; set; }
+        public override RedBlackTreeNode<T1, T2> RightChild { get; set; }
+        public override RedBlackTreeNode<T1, T2> Parent { get; set; }
 
         public RedBlackTreeNode(T1 key, T2 value, Color color = Color.Red) : base(key, value)
         {
             Color = color;
         }
+
 
         public bool Equals(RedBlackTreeNode<T1, T2> other)
         {
@@ -55,7 +53,6 @@ namespace CSFundamentals.DataStructures.Trees
 
         public RedBlackTreeNode<T1, T2> GetUncle()
         {
-
             if (Parent == null) return null;
             if (Parent.Parent == null) return null;
             if (Parent.Parent.LeftChild != null && Parent.Parent.LeftChild.Key.CompareTo(Parent.Key) == 0)
@@ -133,8 +130,8 @@ namespace CSFundamentals.DataStructures.Trees
         public bool FormsLine()
         {
             if (Parent == null) return false;
-            if (IsLeftChild() && Parent.IsLeftChild()) return true;
-            if (IsRightChild() && Parent.IsRightChild()) return true;
+            if (IsLeftChild() && ((RedBlackTreeNode<T1, T2>)Parent).IsLeftChild()) return true;
+            if (IsRightChild() && ((RedBlackTreeNode<T1, T2>)Parent).IsRightChild()) return true;
             return false;
         }
 
@@ -146,8 +143,8 @@ namespace CSFundamentals.DataStructures.Trees
         public bool FormsTriangle()
         {
             if (Parent == null) return false;
-            if (IsLeftChild() && Parent.IsRightChild()) return true;
-            if (IsRightChild() && Parent.IsLeftChild()) return true;
+            if (IsLeftChild() && ((RedBlackTreeNode<T1, T2>)Parent).IsRightChild()) return true;
+            if (IsRightChild() && ((RedBlackTreeNode<T1, T2>)Parent).IsLeftChild()) return true;
             return false;
         }
     }

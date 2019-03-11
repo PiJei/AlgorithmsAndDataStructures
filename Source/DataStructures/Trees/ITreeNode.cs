@@ -21,13 +21,9 @@ using System;
 
 namespace CSFundamentals.DataStructures.Trees
 {
-    public class BinaryTreeNode<T1, T2> : IEquatable<BinaryTreeNode<T1, T2>> where T1 : IComparable<T1>, IEquatable<T1>
+    public interface ITreeNode<T, T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
     {
-        /// <summary>
-        /// Is a unique identifier to distinguish between nodes in a tree. 
-        /// Key is also the value over which tree order properties if any should hold.
-        /// </summary>
-        public T1 Key { get; set; }
+        T1 Key { get; set; }
 
         /// <remarks>
         /// This can be converted to a list of values alternatively, to handle duplicate keys. 
@@ -35,23 +31,10 @@ namespace CSFundamentals.DataStructures.Trees
         /// <summary>
         /// Is the value (information) stored in a node. 
         /// </summary> 
-        public T2 Value { get; set; }
+        T2 Value { get; set; }
 
-        public BinaryTreeNode<T1, T2> LeftChild { get; set; }
-
-        public BinaryTreeNode<T1, T2> RightChild { get; set; }
-
-        public BinaryTreeNode(T1 key, T2 value)
-        {
-            Key = key;
-            Value = value;
-        }
-
-        public bool Equals(BinaryTreeNode<T1, T2> other)
-        {
-            if (other == null) return false;
-            if (Key.Equals(other.Key)) return true;
-            return false;
-        }
+        T LeftChild { get; set; }
+        T RightChild { get; set; }
+        T Parent { get; set; }
     }
 }

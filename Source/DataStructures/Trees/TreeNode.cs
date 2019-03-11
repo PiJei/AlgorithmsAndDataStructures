@@ -19,33 +19,45 @@
 
 using System;
 using System.Collections.Generic;
-
+// TODO: I feel this can be simplified, no need to pass 3 parameters I feel! the definition is recursive!
 namespace CSFundamentals.DataStructures.Trees
 {
-    public class TreesUtils
+    public abstract class TreeNode<T, T1, T2> : ITreeNode<T, T1, T2> where T : ITreeNode<T, T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
     {
-        // TODO: Move this method to Algorithms/ graph traversal, and also make it more general node wise... 
-        public static List<List<RedBlackTreeNode<T1, T2>>> GetAllPathToNullLeaves<T1, T2>(RedBlackTreeNode<T1, T2> startNode) where T1:IComparable<T1>,IEquatable<T1>
+        public T1 Key { get; set; }
+        public T2 Value { get; set; }
+
+        public TreeNode(T1 key, T2 value)
+        {
+            Key = key;
+            Value = value;
+        }
+
+        public abstract T LeftChild { get; set; }
+        public abstract T RightChild { get; set; }
+        public abstract T Parent { get; set; }
+
+        public static List<List<T>> GetAllPathToNullLeaves(T startNode)
         {
             if (startNode == null)
             {
-                return new List<List<RedBlackTreeNode<T1, T2>>>();
+                return new List<List<T>>();
             }
 
-            List<List<RedBlackTreeNode<T1, T2>>> paths = new List<List<RedBlackTreeNode<T1, T2>>>();
-            List<List<RedBlackTreeNode<T1, T2>>> leftPaths = GetAllPathToNullLeaves(startNode.LeftChild);
-            List<List<RedBlackTreeNode<T1, T2>>> rightPaths = GetAllPathToNullLeaves(startNode.RightChild);
+            List<List<T>> paths = new List<List<T>>();
+            List<List<T>> leftPaths = GetAllPathToNullLeaves(startNode.LeftChild);
+            List<List<T>> rightPaths = GetAllPathToNullLeaves(startNode.RightChild);
 
             for (int i = 0; i < leftPaths.Count; i++)
             {
-                var newPath = new List<RedBlackTreeNode<T1, T2>>();
+                var newPath = new List<T>();
                 newPath.Add(startNode);
                 newPath.AddRange(leftPaths[i]);
                 paths.Add(newPath);
             }
             for (int i = 0; i < rightPaths.Count; i++)
             {
-                var newPath = new List<RedBlackTreeNode<T1, T2>>();
+                var newPath = new List<T>();
                 newPath.Add(startNode);
                 newPath.AddRange(rightPaths[i]);
                 paths.Add(newPath);
@@ -53,7 +65,7 @@ namespace CSFundamentals.DataStructures.Trees
 
             if (paths.Count == 0)
             {
-                paths.Add(new List<RedBlackTreeNode<T1, T2>> { startNode });
+                paths.Add(new List<T> { startNode });
             }
 
             return paths;

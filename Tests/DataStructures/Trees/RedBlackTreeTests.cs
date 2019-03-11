@@ -196,7 +196,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             root = tree.Insert_WithoutBalancing(root, new RedBlackTreeNode<int, string>(30, "str2", Color.Red));
             root = tree.Insert_WithoutBalancing(root, new RedBlackTreeNode<int, string>(60, "str5", Color.Red));
 
-            HasBinarySearchTreeOrderProperty(root);
+            BinarySearchTreeTests.HasBinarySearchTreeOrderProperty<RedBlackTreeNode<int, string>, int, string>(root);
 
             List<RedBlackTreeNode<int, string>> nodes = new List<RedBlackTreeNode<int, string>>();
             tree.InOrderTraversal(root, nodes);
@@ -250,10 +250,10 @@ namespace CSFundamentalsTests.DataStructures.Trees
             G.LeftChild = null;
             G.RightChild = null;
 
-            HasBinarySearchTreeOrderProperty(A);
+            BinarySearchTreeTests.HasBinarySearchTreeOrderProperty<RedBlackTreeNode<int, string>, int, string>(A);
             var tree = new RedBlackTree<int, string>();
             tree.RotateLeft(B);
-            HasBinarySearchTreeOrderProperty(A);
+            BinarySearchTreeTests.HasBinarySearchTreeOrderProperty<RedBlackTreeNode<int, string>, int, string>(A);
 
             Assert.IsTrue(A.Parent == null);
             Assert.IsTrue(A.LeftChild.Equals(D));
@@ -317,10 +317,10 @@ namespace CSFundamentalsTests.DataStructures.Trees
             G.LeftChild = null;
             G.RightChild = null;
 
-            HasBinarySearchTreeOrderProperty(A);
+            BinarySearchTreeTests.HasBinarySearchTreeOrderProperty<RedBlackTreeNode<int, string>, int, string>(A);
             var tree = new RedBlackTree<int, string>();
             tree.RotateRight(B);
-            HasBinarySearchTreeOrderProperty(A);
+            BinarySearchTreeTests.HasBinarySearchTreeOrderProperty<RedBlackTreeNode<int, string>, int, string>(A);
 
             Assert.IsTrue(A.Parent == null);
             Assert.IsTrue(A.LeftChild == null);
@@ -345,34 +345,10 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.IsTrue(G.RightChild == null);
         }
 
-        //TODO: This code is repeated between here and binary search tree: remove duplicates
-        /// <summary>
-        /// Given the root of a binary search tree, checks whether the binary search tree properties hold.
-        /// </summary>
-        /// <typeparam name="T1">Specifies the type of the keys in tree. </typeparam>
-        /// <typeparam name="T2">Specifies the type of the values in tree nodes. </typeparam>
-        /// <param name="root">Is the root of a binary search tree. </param>
-        public static void HasBinarySearchTreeOrderProperty<T1, T2>(RedBlackTreeNode<T1, T2> root) where T1 : IComparable<T1>, IEquatable<T1>
-        {
-            if (root != null)
-            {
-                if (root.LeftChild != null)
-                {
-                    Assert.IsTrue(root.Key.CompareTo(root.LeftChild.Key) > 0);
-                    HasBinarySearchTreeOrderProperty(root.LeftChild);
-                }
-                if (root.RightChild != null)
-                {
-                    Assert.IsTrue(root.Key.CompareTo(root.RightChild.Key) < 0);
-                    HasBinarySearchTreeOrderProperty(root.RightChild);
-                }
-            }
-        }
-
         public static void HasRedBlackTreeProperties<T1, T2>(RedBlackTreeNode<T1, T2> root, List<RedBlackTreeNode<T1, T2>> inOrderTraversal, int expectedNodeCount) where T1 : IComparable<T1>, IEquatable<T1>
         {
             // Check order properties.
-            HasBinarySearchTreeOrderProperty(root);
+            BinarySearchTreeTests.HasBinarySearchTreeOrderProperty<RedBlackTreeNode<T1, T2>, T1, T2>(root);
 
             //Check to make sure nodes are not orphaned in the insertion or deletion process. 
             Assert.AreEqual(expectedNodeCount, inOrderTraversal.Count);
@@ -403,7 +379,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             // all paths from a node to its null (leaf) descendants contain the same number of black nodes. 
             foreach (RedBlackTreeNode<T1, T2> node in inOrderTraversal)
             {
-                List<List<RedBlackTreeNode<T1, T2>>> paths = TreesUtils.GetAllPathToNullLeaves(node);
+                List<List<RedBlackTreeNode<T1, T2>>> paths = TreeNode<RedBlackTreeNode<T1, T2>, T1, T2>.GetAllPathToNullLeaves(node);
                 int firstPathBlackNodeCount = 0;
                 if (paths.Count >= 0)
                     firstPathBlackNodeCount = paths[0].Count(n => n.Color == Color.Black);

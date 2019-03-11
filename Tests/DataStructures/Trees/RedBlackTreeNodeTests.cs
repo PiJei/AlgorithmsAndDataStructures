@@ -51,7 +51,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             D.LeftChild = null;
             D.RightChild = null;
 
-            RedBlackTreeTests.HasBinarySearchTreeOrderProperty(A);
+            BinarySearchTreeTests.HasBinarySearchTreeOrderProperty<RedBlackTreeNode<int, string>, int, string>(A);
             var tree = new RedBlackTree<int, string>();
             Assert.IsTrue(A.GetUncle() == null);
             Assert.IsTrue(B.GetUncle() == null);
@@ -98,7 +98,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             G.LeftChild = null;
             G.RightChild = null;
 
-            RedBlackTreeTests.HasBinarySearchTreeOrderProperty(A);
+            BinarySearchTreeTests.HasBinarySearchTreeOrderProperty<RedBlackTreeNode<int, string>, int, string>(A);
             var tree = new RedBlackTree<int, string>();
             Assert.IsTrue(A.GetGrandParent() == null);
             Assert.IsTrue(B.GetGrandParent() == null);
@@ -128,7 +128,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             C.LeftChild = null;
             C.RightChild = null;
 
-            RedBlackTreeTests.HasBinarySearchTreeOrderProperty(A);
+            BinarySearchTreeTests.HasBinarySearchTreeOrderProperty<RedBlackTreeNode<int, string>, int, string>(A);
             var tree = new RedBlackTree<int, string>();
             Assert.IsFalse(A.IsLeftChild());
             Assert.IsFalse(B.IsLeftChild());
@@ -154,7 +154,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             C.LeftChild = null;
             C.RightChild = null;
 
-            RedBlackTreeTests.HasBinarySearchTreeOrderProperty(A);
+            BinarySearchTreeTests.HasBinarySearchTreeOrderProperty<RedBlackTreeNode<int, string>, int, string>(A);
             var tree = new RedBlackTree<int, string>();
 
             Assert.IsTrue(B.IsLeftChild());
@@ -180,7 +180,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             C.LeftChild = null;
             C.RightChild = null;
 
-            RedBlackTreeTests.HasBinarySearchTreeOrderProperty(A);
+            BinarySearchTreeTests.HasBinarySearchTreeOrderProperty<RedBlackTreeNode<int, string>, int, string>(A);
             var tree = new RedBlackTree<int, string>();
 
             Assert.IsTrue(B.IsRightChild());
@@ -206,7 +206,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             C.LeftChild = null;
             C.RightChild = null;
 
-            RedBlackTreeTests.HasBinarySearchTreeOrderProperty(A);
+            BinarySearchTreeTests.HasBinarySearchTreeOrderProperty<RedBlackTreeNode<int, string>, int, string>(A);
             var tree = new RedBlackTree<int, string>();
 
             Assert.IsFalse(A.IsRightChild());
@@ -233,7 +233,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             C.LeftChild = null;
             C.RightChild = null;
 
-            RedBlackTreeTests.HasBinarySearchTreeOrderProperty(A);
+            BinarySearchTreeTests.HasBinarySearchTreeOrderProperty<RedBlackTreeNode<int, string>, int, string>(A);
             var tree = new RedBlackTree<int, string>();
 
             Assert.IsTrue(A.IsRoot());
@@ -299,7 +299,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             H.LeftChild = null;
             H.RightChild = null;
 
-            RedBlackTreeTests.HasBinarySearchTreeOrderProperty(A);
+            BinarySearchTreeTests.HasBinarySearchTreeOrderProperty<RedBlackTreeNode<int, string>, int, string>(A);
             var tree = new RedBlackTree<int, string>();
 
             Assert.IsFalse(A.FormsLine());
@@ -356,7 +356,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             H.LeftChild = null;
             H.RightChild = null;
 
-            RedBlackTreeTests.HasBinarySearchTreeOrderProperty(A);
+            BinarySearchTreeTests.HasBinarySearchTreeOrderProperty<RedBlackTreeNode<int, string>, int, string>(A);
             var tree = new RedBlackTree<int, string>();
 
             Assert.IsFalse(A.FormsTriangle());
@@ -393,7 +393,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             D.LeftChild = null;
             D.RightChild = null;
 
-            RedBlackTreeTests.HasBinarySearchTreeOrderProperty(A);
+            BinarySearchTreeTests.HasBinarySearchTreeOrderProperty<RedBlackTreeNode<int, string>, int, string>(A);
 
             var tree = new RedBlackTree<int, string>();
 

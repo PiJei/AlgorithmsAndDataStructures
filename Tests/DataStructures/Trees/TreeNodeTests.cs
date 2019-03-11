@@ -24,20 +24,20 @@ using System.Collections.Generic;
 namespace CSFundamentalsTests.DataStructures.Trees
 {
     [TestClass]
-    public class TreesUtilsTests
+    public class TreeNodeTests
     {
-        private RedBlackTreeNode<int, string> _root = null;
+        private BinarySearchTreeNode<int, string> _root = null;
 
         [TestInitialize]
         public void Init()
         {
-            RedBlackTreeNode<int, string> A = new RedBlackTreeNode<int, string>(47, "A");
-            RedBlackTreeNode<int, string> B = new RedBlackTreeNode<int, string>(30, "B");
-            RedBlackTreeNode<int, string> C = new RedBlackTreeNode<int, string>(50, "C");
-            RedBlackTreeNode<int, string> D = new RedBlackTreeNode<int, string>(20, "D");
-            RedBlackTreeNode<int, string> E = new RedBlackTreeNode<int, string>(40, "E");
-            RedBlackTreeNode<int, string> F = new RedBlackTreeNode<int, string>(35, "F");
-            RedBlackTreeNode<int, string> G = new RedBlackTreeNode<int, string>(45, "G");
+            BinarySearchTreeNode<int, string> B = new BinarySearchTreeNode<int, string>(30, "B");
+            BinarySearchTreeNode<int, string> A = new BinarySearchTreeNode<int, string>(47, "A");
+            BinarySearchTreeNode<int, string> C = new BinarySearchTreeNode<int, string>(50, "C");
+            BinarySearchTreeNode<int, string> D = new BinarySearchTreeNode<int, string>(20, "D");
+            BinarySearchTreeNode<int, string> E = new BinarySearchTreeNode<int, string>(40, "E");
+            BinarySearchTreeNode<int, string> F = new BinarySearchTreeNode<int, string>(35, "F");
+            BinarySearchTreeNode<int, string> G = new BinarySearchTreeNode<int, string>(45, "G");
 
             A.Parent = null;
             A.LeftChild = B;
@@ -73,7 +73,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         [TestMethod]
         public void GetAllPathToNullLeaves_Test()
         {
-            List<List<RedBlackTreeNode<int, string>>> pathsFromA = TreesUtils.GetAllPathToNullLeaves(_root);
+            List<List<BinarySearchTreeNode<int, string>>> pathsFromA = TreeNode<BinarySearchTreeNode<int, string>, int, string>.GetAllPathToNullLeaves(_root);
             Assert.AreEqual(4, pathsFromA.Count);
             Assert.AreEqual(3, pathsFromA[0].Count);
             Assert.AreEqual(4, pathsFromA[1].Count);

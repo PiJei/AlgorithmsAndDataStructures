@@ -18,13 +18,24 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSFundamentals.DataStructures.Trees
 {
-    public class AVLTree
+    public class BinarySearchTreeNode<T1, T2> : TreeNode<BinarySearchTreeNode<T1, T2>, T1, T2>, IEquatable<BinarySearchTreeNode<T1, T2>> where T1 : IComparable<T1>, IEquatable<T1>
     {
+        public BinarySearchTreeNode(T1 key, T2 value) : base(key, value)
+        {
+        }
 
+        public override BinarySearchTreeNode<T1, T2> LeftChild { get; set; }
+        public override BinarySearchTreeNode<T1, T2> RightChild { get; set; }
+        public override BinarySearchTreeNode<T1, T2> Parent { get; set; }
+
+        public bool Equals(BinarySearchTreeNode<T1, T2> other)
+        {
+            if (other == null) return false;
+            if (Key.Equals(other.Key)) return true;
+            return false;
+        }
     }
 }

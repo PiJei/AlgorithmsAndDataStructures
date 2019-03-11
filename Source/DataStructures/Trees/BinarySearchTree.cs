@@ -35,12 +35,12 @@ namespace CSFundamentals.DataStructures.Trees
         /// <summary>
         /// Is the root of the binary search tree.
         /// </summary>
-        private BinaryTreeNode<T1, T2> _root = null;
+        private BinarySearchTreeNode<T1, T2> _root = null;
 
         //TODO Compute best and worst case for build operation. 
         [TimeComplexity(Case.Average, "O(nLog(n))")]
         [SpaceComplexity("O(n)")]
-        public BinaryTreeNode<T1, T2> Build(Dictionary<T1, T2> keyValues)
+        public BinarySearchTreeNode<T1, T2> Build(Dictionary<T1, T2> keyValues)
         {
             foreach (KeyValuePair<T1, T2> item in keyValues)
             {
@@ -53,11 +53,11 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "O(n)", When = "Tree is imbalanced such that it is like one sequential branch (linked list), every node except the leaf having exactly one child.")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)", InPlace = true)] /* Notice that a new node is allocated for a new key, thus can be considered as O(Size(TreeNode))*/
-        public BinaryTreeNode<T1, T2> Insert(BinaryTreeNode<T1, T2> root, T1 key, T2 value)
+        public BinarySearchTreeNode<T1, T2> Insert(BinarySearchTreeNode<T1, T2> root, T1 key, T2 value)
         {
             if (root == null)
             {
-                root = new BinaryTreeNode<T1, T2>(key, value);
+                root = new BinarySearchTreeNode<T1, T2>(key, value);
                 return root;
             }
 
@@ -87,7 +87,7 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "O(n)", When = "Tree is imbalanced such that it is like one sequential branch (linked list), every node except the leaf having exactly one child.")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)", InPlace = true)]
-        public BinaryTreeNode<T1, T2> Search(BinaryTreeNode<T1, T2> root, T1 key)
+        public BinarySearchTreeNode<T1, T2> Search(BinarySearchTreeNode<T1, T2> root, T1 key)
         {
             if (root == null)
             {
@@ -118,9 +118,9 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "o(n)")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)", InPlace = true)]
-        public bool Update(BinaryTreeNode<T1, T2> root, T1 key, T2 value)
+        public bool Update(BinarySearchTreeNode<T1, T2> root, T1 key, T2 value)
         {
-            BinaryTreeNode<T1, T2> node = Search(root, key); /* Since relies on Search, its time and space complexities are directly driven from Search() operation. */
+            BinarySearchTreeNode<T1, T2> node = Search(root, key); /* Since relies on Search, its time and space complexities are directly driven from Search() operation. */
             if (node != null)
             {
                 node.Value = value;
@@ -131,7 +131,7 @@ namespace CSFundamentals.DataStructures.Trees
 
         [TimeComplexity(Case.Average, "O(n)")]
         [SpaceComplexity("O(n)")]
-        public void InOrderTraversal(BinaryTreeNode<T1, T2> root, List<BinaryTreeNode<T1, T2>> inOrder)
+        public void InOrderTraversal(BinarySearchTreeNode<T1, T2> root, List<BinarySearchTreeNode<T1, T2>> inOrder)
         {
             if (root != null)
             {
@@ -143,7 +143,7 @@ namespace CSFundamentals.DataStructures.Trees
 
         [TimeComplexity(Case.Average, "")] // TODO
         [SpaceComplexity("O(1)")]
-        public BinaryTreeNode<T1, T2> Delete(BinaryTreeNode<T1, T2> root, T1 key)
+        public BinarySearchTreeNode<T1, T2> Delete(BinarySearchTreeNode<T1, T2> root, T1 key)
         {
             if (root == null) return root;
 
@@ -174,7 +174,7 @@ namespace CSFundamentals.DataStructures.Trees
 
                 /* Else replacing the node that has 2 non-null children with its in-order successor, or could alternatively replace it with its in-order predecessor. */
                 /* From these definitions it is obvious that the replacement node has less than 2 children. */
-                BinaryTreeNode<T1, T2> rightChildMin = FindMin(root.RightChild);
+                BinarySearchTreeNode<T1, T2> rightChildMin = FindMin(root.RightChild);
                 root.Key = rightChildMin.Key;
                 root.Value = rightChildMin.Value;
                 root.RightChild = Delete(root.RightChild, rightChildMin.Key); /* at this point both node, and rightChildMin have the same keys, but calling delete on the same key, will only result in the removal  of rightChildMin, because pf the root that is passed to Delete.*/
@@ -186,11 +186,11 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "O(n)")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)")]
-        public BinaryTreeNode<T1, T2> FindMin(BinaryTreeNode<T1, T2> root)
+        public BinarySearchTreeNode<T1, T2> FindMin(BinarySearchTreeNode<T1, T2> root)
         {
             if (root == null) throw new ArgumentNullException();
 
-            BinaryTreeNode<T1, T2> node = root;
+            BinarySearchTreeNode<T1, T2> node = root;
             while (node.LeftChild != null)
             {
                 node = node.LeftChild;
@@ -202,10 +202,10 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "O(n)")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)")]
-        public BinaryTreeNode<T1, T2> FindMax(BinaryTreeNode<T1, T2> root)
+        public BinarySearchTreeNode<T1, T2> FindMax(BinarySearchTreeNode<T1, T2> root)
         {
             if (root == null) throw new ArgumentNullException();
-            BinaryTreeNode<T1, T2> node = root;
+            BinarySearchTreeNode<T1, T2> node = root;
             while (node.RightChild != null)
             {
                 node = node.RightChild;
@@ -215,17 +215,17 @@ namespace CSFundamentals.DataStructures.Trees
 
         [TimeComplexity(Case.Average, "")]
         [SpaceComplexity("")]
-        public BinaryTreeNode<T1, T2> DeleteMin(BinaryTreeNode<T1, T2> root)
+        public BinarySearchTreeNode<T1, T2> DeleteMin(BinarySearchTreeNode<T1, T2> root)
         {
-            BinaryTreeNode<T1, T2> minNode = FindMin(root);
+            BinarySearchTreeNode<T1, T2> minNode = FindMin(root);
             return Delete(root, minNode.Key);
         }
 
         [TimeComplexity(Case.Average, "")]
         [SpaceComplexity("")]
-        public BinaryTreeNode<T1, T2> DeleteMax(BinaryTreeNode<T1, T2> root)
+        public BinarySearchTreeNode<T1, T2> DeleteMax(BinarySearchTreeNode<T1, T2> root)
         {
-            BinaryTreeNode<T1, T2> maxNode = FindMax(root);
+            BinarySearchTreeNode<T1, T2> maxNode = FindMax(root);
             return Delete(root, maxNode.Key);
         }
     }

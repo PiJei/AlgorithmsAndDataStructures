@@ -27,6 +27,10 @@ namespace CSFundamentalsTests.DataStructures.Trees
     [TestClass]
     public class AVLTreeTests
     {
-
+        public void HasAVLTreeProperties()
+        {
+            // 1- the height of the two subtrees of a node differ by 1 at most. 
+            // 2- it is still a binary search tree. 
+        }
     }
 }
