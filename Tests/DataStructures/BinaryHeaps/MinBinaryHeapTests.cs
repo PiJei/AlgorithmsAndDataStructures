@@ -28,84 +28,71 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
     {
         private List<int> arrayHeap1RecursivelyBuilt = new List<int> { 9, 6, 1, 8, 3, 5 };
         private List<int> arrayHeap1IterativelyBuilt = new List<int> { 9, 6, 1, 8, 3, 5 };
-
         private List<int> arrayHeap2RecursivelyBuilt = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
         private List<int> arrayHeap2IterativelyBuilt = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
 
-        // Checking the MinHeap ordering (node relations) for the node at the given index, to make sure the correct relations between the node and its parent and children holds. 
-        public static void CheckMinHeapOrderingPropertyForNode(BinaryHeapBase<int> heap, int nodeIndex)
-        {
-            int leftChildIndex = heap.GetLeftChildIndexInHeapArray(nodeIndex);
-            int rightChildIndex = heap.GetRightChildIndexInHeapArray(nodeIndex);
-            int parentindex = heap.GetParentIndex(nodeIndex);
+        private MinBinaryHeap<int> _heap1 = null;
+        private MinBinaryHeap<int> _heap2 = null;
+        private MinBinaryHeap<int> _heap3 = null;
+        private MinBinaryHeap<int> _heap4 = null;
 
-            if (leftChildIndex >= 0 && leftChildIndex < heap.HeapArray.Count)
-            {
-                Assert.IsTrue(heap.HeapArray[nodeIndex] <= heap.HeapArray[leftChildIndex]);
-            }
-            if (rightChildIndex >= 0 && rightChildIndex < heap.HeapArray.Count)
-            {
-                Assert.IsTrue(heap.HeapArray[nodeIndex] <= heap.HeapArray[rightChildIndex]);
-            }
-            if (parentindex >= 0 && parentindex < heap.HeapArray.Count)
-            {
-                Assert.IsTrue(heap.HeapArray[nodeIndex] >= heap.HeapArray[parentindex]);
-            }
+        [TestInitialize]
+        public void Init()
+        {
+            _heap1 = new MinBinaryHeap<int>(arrayHeap1IterativelyBuilt);
+            _heap1.BuildHeap_Iteratively(_heap1.HeapArray.Count);
+
+            _heap2 = new MinBinaryHeap<int>(arrayHeap2IterativelyBuilt);
+            _heap2.BuildHeap_Iteratively(_heap2.HeapArray.Count);
+
+            _heap3 = new MinBinaryHeap<int>(arrayHeap1RecursivelyBuilt);
+            _heap3.BuildHeap_Recursively(_heap3.HeapArray.Count);
+
+            _heap4 = new MinBinaryHeap<int>(arrayHeap2RecursivelyBuilt);
+            _heap4.BuildHeap_Recursively(_heap4.HeapArray.Count);
         }
 
         [TestMethod]
         public void MinBinaryHeap_BuildHeapRecursive_Test1()
         {
-            var heap = new MinBinaryHeap<int>(arrayHeap1RecursivelyBuilt);
-            heap.BuildHeap_Recursively(heap.HeapArray.Count);
-
             Assert.AreEqual(6, arrayHeap1RecursivelyBuilt.Count);
 
             for (int i = 0; i < arrayHeap1RecursivelyBuilt.Count; i++)
             {
-                CheckMinHeapOrderingPropertyForNode(heap, i);
+                HasMinHeapOrderingProperty(_heap3, i);
             }
         }
-
+        
         [TestMethod]
         public void MinBinaryHeap_BuildHeapRecursive_Test2()
         {
-            var heap = new MinBinaryHeap<int>(arrayHeap2RecursivelyBuilt);
-            heap.BuildHeap_Recursively(heap.HeapArray.Count);
-
             Assert.AreEqual(9, arrayHeap2RecursivelyBuilt.Count);
 
             for (int i = 0; i < arrayHeap2RecursivelyBuilt.Count; i++)
             {
-                CheckMinHeapOrderingPropertyForNode(heap, i);
+                HasMinHeapOrderingProperty(_heap4, i);
             }
         }
 
         [TestMethod]
         public void MinBinaryHeap_BuildHeapIterative_Test1()
         {
-            var heap = new MinBinaryHeap<int>(arrayHeap1IterativelyBuilt);
-            heap.BuildHeap_Iteratively(heap.HeapArray.Count);
-
             Assert.AreEqual(6, arrayHeap1IterativelyBuilt.Count);
 
             for (int i = 0; i < arrayHeap1IterativelyBuilt.Count; i++)
             {
-                CheckMinHeapOrderingPropertyForNode(heap, i);
+                HasMinHeapOrderingProperty(_heap1, i);
             }
         }
 
         [TestMethod]
         public void MinBinaryHeap_BuildHeapIterative_Test2()
         {
-            var heap = new MinBinaryHeap<int>(arrayHeap2IterativelyBuilt);
-            heap.BuildHeap_Iteratively(heap.HeapArray.Count);
-
             Assert.AreEqual(9, arrayHeap2IterativelyBuilt.Count);
 
             for (int i = 0; i < arrayHeap2IterativelyBuilt.Count; i++)
             {
-                CheckMinHeapOrderingPropertyForNode(heap, i);
+                HasMinHeapOrderingProperty(_heap2, i);
             }
         }
 
@@ -113,11 +100,6 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         [TestMethod]
         public void CompareEqualityOfRecursiveAndIterativeMinHeapConstruction()
         {
-            var heap1 = new MinBinaryHeap<int>(arrayHeap1IterativelyBuilt); heap1.BuildHeap_Iteratively(heap1.HeapArray.Count);
-            var heap2 = new MinBinaryHeap<int>(arrayHeap2IterativelyBuilt); heap2.BuildHeap_Iteratively(heap2.HeapArray.Count);
-            var heap3 = new MinBinaryHeap<int>(arrayHeap1RecursivelyBuilt); heap3.BuildHeap_Recursively(heap3.HeapArray.Count);
-            var heap4 = new MinBinaryHeap<int>(arrayHeap2RecursivelyBuilt); heap4.BuildHeap_Recursively(heap4.HeapArray.Count);
-
             for (int i = 0; i < arrayHeap1IterativelyBuilt.Count; i++)
             {
                 Assert.AreEqual(arrayHeap1IterativelyBuilt[i], arrayHeap1RecursivelyBuilt[i]);
@@ -187,63 +169,121 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
             Assert.AreEqual(1, heap.HeapArray.Count);
             for (int i = 0; i < heap.HeapArray.Count; i++)
             {
-                CheckMinHeapOrderingPropertyForNode(heap, i);
+                HasMinHeapOrderingProperty(heap, i);
             }
 
             heap.Insert(70, heap.HeapArray.Count);
             Assert.AreEqual(2, heap.HeapArray.Count);
             for (int i = 0; i < heap.HeapArray.Count; i++)
             {
-                CheckMinHeapOrderingPropertyForNode(heap, i);
+                HasMinHeapOrderingProperty(heap, i);
             }
 
             heap.Insert(202, heap.HeapArray.Count);
             Assert.AreEqual(3, heap.HeapArray.Count);
             for (int i = 0; i < heap.HeapArray.Count; i++)
             {
-                CheckMinHeapOrderingPropertyForNode(heap, i);
+                HasMinHeapOrderingProperty(heap, i);
             }
 
             heap.Insert(34, heap.HeapArray.Count);
             Assert.AreEqual(4, heap.HeapArray.Count);
             for (int i = 0; i < heap.HeapArray.Count; i++)
             {
-                CheckMinHeapOrderingPropertyForNode(heap, i);
+                HasMinHeapOrderingProperty(heap, i);
             }
 
             heap.Insert(42, heap.HeapArray.Count);
             Assert.AreEqual(5, heap.HeapArray.Count);
             for (int i = 0; i < heap.HeapArray.Count; i++)
             {
-                CheckMinHeapOrderingPropertyForNode(heap, i);
+                HasMinHeapOrderingProperty(heap, i);
             }
 
             heap.Insert(1, heap.HeapArray.Count);
             Assert.AreEqual(6, heap.HeapArray.Count);
             for (int i = 0; i < heap.HeapArray.Count; i++)
             {
-                CheckMinHeapOrderingPropertyForNode(heap, i);
+                HasMinHeapOrderingProperty(heap, i);
             }
 
             heap.Insert(3, heap.HeapArray.Count);
             Assert.AreEqual(7, heap.HeapArray.Count);
             for (int i = 0; i < heap.HeapArray.Count; i++)
             {
-                CheckMinHeapOrderingPropertyForNode(heap, i);
+                HasMinHeapOrderingProperty(heap, i);
             }
 
             heap.Insert(10, heap.HeapArray.Count);
             Assert.AreEqual(8, heap.HeapArray.Count);
             for (int i = 0; i < heap.HeapArray.Count; i++)
             {
-                CheckMinHeapOrderingPropertyForNode(heap, i);
+                HasMinHeapOrderingProperty(heap, i);
             }
 
             heap.Insert(21, heap.HeapArray.Count);
             Assert.AreEqual(9, heap.HeapArray.Count);
             for (int i = 0; i < heap.HeapArray.Count; i++)
             {
-                CheckMinHeapOrderingPropertyForNode(heap, i);
+                HasMinHeapOrderingProperty(heap, i);
+            }
+        }
+
+        [TestMethod]
+        public void MinBinaryHeap_GetNodeLevel_Test()
+        {
+            List<int> values = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
+            var heap = new MinBinaryHeap<int>(values);
+            heap.BuildHeap_Recursively(heap.HeapArray.Count);
+
+            for (int index = 0; index < values.Count; index++)
+            {
+                HasMinHeapOrderingProperty(heap, index);
+            }
+
+            Assert.AreEqual(0, values.IndexOf(1));
+            Assert.AreEqual(1, values.IndexOf(10));
+            Assert.AreEqual(2, values.IndexOf(3));
+            Assert.AreEqual(3, values.IndexOf(21));
+            Assert.AreEqual(4, values.IndexOf(42));
+            Assert.AreEqual(5, values.IndexOf(202));
+            Assert.AreEqual(6, values.IndexOf(150));
+            Assert.AreEqual(7, values.IndexOf(34));
+            Assert.AreEqual(8, values.IndexOf(70));
+
+            Assert.AreEqual(2, heap.GetNodeLevel(values.IndexOf(150)));
+            Assert.AreEqual(3, heap.GetNodeLevel(values.IndexOf(70)));
+            Assert.AreEqual(2, heap.GetNodeLevel(values.IndexOf(202)));
+            Assert.AreEqual(3, heap.GetNodeLevel(values.IndexOf(34)));
+            Assert.AreEqual(2, heap.GetNodeLevel(values.IndexOf(42)));
+            Assert.AreEqual(0, heap.GetNodeLevel(values.IndexOf(1)));
+            Assert.AreEqual(1, heap.GetNodeLevel(values.IndexOf(3)));
+            Assert.AreEqual(1, heap.GetNodeLevel(values.IndexOf(10)));
+            Assert.AreEqual(2, heap.GetNodeLevel(values.IndexOf(21)));
+        }
+
+        /// <summary>
+        /// Checking the MinHeap ordering (node relations) for the node at the given index, to make sure the correct relations between the node and its parent and children holds. 
+        /// </summary>
+        /// <param name="heap"></param>
+        /// <param name="nodeIndex"></param>
+        public static void HasMinHeapOrderingProperty(BinaryHeapBase<int> heap, int nodeIndex)
+        {
+            int leftChildIndex = heap.GetLeftChildIndexInHeapArray(nodeIndex);
+            int rightChildIndex = heap.GetRightChildIndexInHeapArray(nodeIndex);
+            int parentindex = heap.GetParentIndex(nodeIndex);
+
+            if (leftChildIndex >= 0 && leftChildIndex < heap.HeapArray.Count)
+            {
+                Assert.IsTrue(heap.HeapArray[nodeIndex] <= heap.HeapArray[leftChildIndex]);
+            }
+            if (rightChildIndex >= 0 && rightChildIndex < heap.HeapArray.Count)
+            {
+                Assert.IsTrue(heap.HeapArray[nodeIndex] <= heap.HeapArray[rightChildIndex]);
+            }
+            if (parentindex >= 0 && parentindex < heap.HeapArray.Count)
+            {
+                Assert.IsTrue(heap.HeapArray[nodeIndex] >= heap.HeapArray[parentindex]);
             }
         }
     }

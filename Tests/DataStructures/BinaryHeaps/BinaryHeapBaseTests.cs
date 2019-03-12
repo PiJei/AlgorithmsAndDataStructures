@@ -17,7 +17,6 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using CSFundamentals.DataStructures.BinaryHeaps;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -31,7 +30,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         public void BinaryHeap_Swap_Test()
         {
             List<int> values = new List<int> { 10, 34, 56, 2, 12, 1 };
-            var heap = new MinBinaryHeap<int>(values);
+            var heap = new MockBinaryHeap<int>(values);
             heap.Swap(values, 1, 2);
             Assert.AreEqual(6, values.Count);
             Assert.AreEqual(56, values[1]);
@@ -42,7 +41,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         public void BinaryHeap_TryFindMinIndex_Test()
         {
             List<int> values = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
-            var heap = new MinBinaryHeap<int>(values);
+            var heap = new MockBinaryHeap<int>(values);
 
             bool result1 = heap.TryFindMinIndex(values, new List<int> { 1, 2 }, 150, out int minValueIndex1);
             Assert.IsTrue(result1);
@@ -65,7 +64,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         public void BinaryHeap_TryFindMaxIndex_Test()
         {
             List<int> values = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
-            var heap = new MinBinaryHeap<int>(values);
+            var heap = new MockBinaryHeap<int>(values);
 
             bool result1 = heap.TryFindMaxIndex(values, values.Count, new List<int> { 1, 2 }, 150, out int maxValueIndex1);
             Assert.IsTrue(result1);
@@ -82,39 +81,6 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
             bool result4 = heap.TryFindMaxIndex(values, values.Count, new List<int> { 1, 3 }, 21, out int maxValueIndex4);
             Assert.IsTrue(result4);
             Assert.AreEqual(1, maxValueIndex4);
-        }
-
-        [TestMethod]
-        public void BinaryHeap_GetNodeLevel_Test()
-        {
-            List<int> values = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
-            var heap = new MinBinaryHeap<int>(values);
-            heap.BuildHeap_Recursively(heap.HeapArray.Count);
-
-            for (int index = 0; index < values.Count; index++)
-            {
-                MinBinaryHeapTests.CheckMinHeapOrderingPropertyForNode(heap, index);
-            }
-
-            Assert.AreEqual(0, values.IndexOf(1));
-            Assert.AreEqual(1, values.IndexOf(10));
-            Assert.AreEqual(2, values.IndexOf(3));
-            Assert.AreEqual(3, values.IndexOf(21));
-            Assert.AreEqual(4, values.IndexOf(42));
-            Assert.AreEqual(5, values.IndexOf(202));
-            Assert.AreEqual(6, values.IndexOf(150));
-            Assert.AreEqual(7, values.IndexOf(34));
-            Assert.AreEqual(8, values.IndexOf(70));
-
-            Assert.AreEqual(2, heap.GetNodeLevel(values.IndexOf(150)));
-            Assert.AreEqual(3, heap.GetNodeLevel(values.IndexOf(70)));
-            Assert.AreEqual(2, heap.GetNodeLevel(values.IndexOf(202)));
-            Assert.AreEqual(3, heap.GetNodeLevel(values.IndexOf(34)));
-            Assert.AreEqual(2, heap.GetNodeLevel(values.IndexOf(42)));
-            Assert.AreEqual(0, heap.GetNodeLevel(values.IndexOf(1)));
-            Assert.AreEqual(1, heap.GetNodeLevel(values.IndexOf(3)));
-            Assert.AreEqual(1, heap.GetNodeLevel(values.IndexOf(10)));
-            Assert.AreEqual(2, heap.GetNodeLevel(values.IndexOf(21)));
         }
     }
 }
