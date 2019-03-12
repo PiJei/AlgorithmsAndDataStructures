@@ -31,7 +31,7 @@ namespace CSFundamentals.DataStructures.Trees
     /// <typeparam name="T1">Specifies the type of the key in tree nodes.</typeparam>
     /// <typeparam name="T2">Specifies the type of the value in tree nodes. </typeparam>
     [DataStructure("BinarySearchTree (aka BST)")]
-    public class BinarySearchTree<T1, T2> : BinarySearchTreeBase<BinarySearchTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
+    public class BinarySearchTreeBase<T1, T2> : BinarySearchTreeBase<BinarySearchTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
     {
         //TODO Compute best and worst case for build operation. 
         [TimeComplexity(Case.Average, "O(nLog(n))")]

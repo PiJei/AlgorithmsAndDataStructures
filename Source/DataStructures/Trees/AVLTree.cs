@@ -17,19 +17,32 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using CSFundamentals.DataStructures.Trees.API;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 //TODO: Shall inherit from BinarySearchTree
 
 namespace CSFundamentals.DataStructures.Trees
 {
-    public class AVLTree<T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
+    public class AVLTree<T1, T2> : BinarySearchTreeBase<AVLTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
     {
-        public void Insert(AVLTreeNode<T1, T2> root, T1 key, T2 value)
+        public override AVLTreeNode<T1, T2> Build(List<AVLTreeNode<T1, T2>> keyValues)
         {
+            throw new NotImplementedException();
+            //TODO
+        }
 
+        public override AVLTreeNode<T1, T2> Delete(AVLTreeNode<T1, T2> root, T1 key)
+        {
+            throw new NotImplementedException();
+            //TODO
+        }
+
+        public override AVLTreeNode<T1, T2> Insert(AVLTreeNode<T1, T2> root, AVLTreeNode<T1, T2> newNode)
+        {
+            throw new NotImplementedException();
+            //TODO
         }
     }
 }

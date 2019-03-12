@@ -29,7 +29,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
     public class BinarySearchTreeTests
     {
         private BinarySearchTreeNode<int, string> _root;
-        private BinarySearchTree<int, string> _tree;
+        private BinarySearchTreeBase<int, string> _tree;
 
         [TestInitialize]
         public void Init()
@@ -45,7 +45,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
                 new BinarySearchTreeNode<int, string>(60,"str5")
             };
 
-            _tree = new BinarySearchTree<int, string>();
+            _tree = new BinarySearchTreeBase<int, string>();
             _root = _tree.Build(nodes);
         }
 
