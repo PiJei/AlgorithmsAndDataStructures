@@ -25,8 +25,11 @@ using System.Text;
 
 namespace CSFundamentals.DataStructures.Trees
 {
-    public class AVLTree
+    public class AVLTree<T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
     {
-        // TODO
+        public void Insert(AVLTreeNode<T1, T2> root, T1 key, T2 value)
+        {
+
+        }
     }
 }

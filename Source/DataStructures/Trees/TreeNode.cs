@@ -24,7 +24,7 @@ using System.Collections.Generic;
 
 namespace CSFundamentals.DataStructures.Trees
 {
-    public abstract class TreeNode<T, T1, T2> : IEquatable<T>, ITreeNode<T, T1, T2> where T : ITreeNode<T, T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
+    public abstract class TreeNode<T, T1, T2> : IComparable<T>, ITreeNode<T, T1, T2> where T : ITreeNode<T, T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
     {
         public T1 Key { get; set; }
         public T2 Value { get; set; }
@@ -182,6 +182,11 @@ namespace CSFundamentals.DataStructures.Trees
                 inOrder.Add(root);
                 InOrderTraversal(root.RightChild, inOrder);
             }
+        }
+
+        public int CompareTo(T other)
+        {
+            return Key.CompareTo(other.Key);
         }
     }
 }

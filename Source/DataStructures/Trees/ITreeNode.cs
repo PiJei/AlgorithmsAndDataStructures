@@ -21,7 +21,7 @@ using System;
 
 namespace CSFundamentals.DataStructures.Trees
 {
-    public interface ITreeNode<T, T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
+    public interface ITreeNode<T, T1, T2> : IComparable<T> where T1 : IComparable<T1>, IEquatable<T1>
     {
         T1 Key { get; set; }
 

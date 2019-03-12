@@ -30,21 +30,16 @@ namespace CSFundamentals.DataStructures.Trees
     /// <typeparam name="T1">Specifies the type of the key in tree nodes.</typeparam>
     /// <typeparam name="T2">Specifies the type of the value in tree nodes. </typeparam>
     [DataStructure("BinarySearchTree (aka BST)")]
-    public class BinarySearchTree<T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
+    public class BinarySearchTree<T1, T2> : BinarySearchTreeBase<BinarySearchTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
     {
-        /// <summary>
-        /// Is the root of the binary search tree.
-        /// </summary>
-        private BinarySearchTreeNode<T1, T2> _root = null;
-
         //TODO Compute best and worst case for build operation. 
         [TimeComplexity(Case.Average, "O(nLog(n))")]
         [SpaceComplexity("O(n)")]
-        public BinarySearchTreeNode<T1, T2> Build(Dictionary<T1, T2> keyValues)
+        public override BinarySearchTreeNode<T1, T2> Build(List<BinarySearchTreeNode<T1, T2>> nodes)
         {
-            foreach (KeyValuePair<T1, T2> item in keyValues)
+            foreach (BinarySearchTreeNode<T1, T2> node in nodes)
             {
-                _root = Insert(_root, item.Key, item.Value);
+                _root = Insert(_root, node);
             }
             return _root;
         }
@@ -53,80 +48,28 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "O(n)", When = "Tree is imbalanced such that it is like one sequential branch (linked list), every node except the leaf having exactly one child.")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)", InPlace = true)] /* Notice that a new node is allocated for a new key, thus can be considered as O(Size(TreeNode))*/
-        public BinarySearchTreeNode<T1, T2> Insert(BinarySearchTreeNode<T1, T2> root, T1 key, T2 value)
+        public override BinarySearchTreeNode<T1, T2> Insert(BinarySearchTreeNode<T1, T2> root, BinarySearchTreeNode<T1, T2> newNode)
         {
             if (root == null)
             {
-                root = new BinarySearchTreeNode<T1, T2>(key, value);
+                root = newNode;
                 return root;
             }
 
-            if (root.Key.CompareTo(key) == 0) /* In this version, not allowing duplicate keys, and just updating the values, can make the values to be a list alternatively.*/
+            if (root.CompareTo(newNode) == 0) /* In this version, not allowing duplicate keys, and just updating the values, can make the values to be a list alternatively.*/
             {
-                root.Value = value;
+                root.Value = newNode.Value;
             }
-            else if (root.Key.CompareTo(key) < 0)
+            else if (root.CompareTo(newNode) < 0)
             {
-                root.RightChild = Insert(root.RightChild, key, value); /* assignment because, in case right child is null, and in the recursive call it is instantiated, then parent will have the link to its right child, otherwise nothing changes. */
+                root.RightChild = Insert(root.RightChild, newNode); /* assignment because, in case right child is null, and in the recursive call it is instantiated, then parent will have the link to its right child, otherwise nothing changes. */
             }
             else
             {
-                root.LeftChild = Insert(root.LeftChild, key, value); /* assignment because, in case left child is null, and in the recursive call it is instantiated, then parent will have the link to its left child, otherwise nothing changes. */
+                root.LeftChild = Insert(root.LeftChild, newNode); /* assignment because, in case left child is null, and in the recursive call it is instantiated, then parent will have the link to its left child, otherwise nothing changes. */
             }
 
             return root;
-        }
-
-        /// <summary>
-        /// Implements Search/Lookup/Find operation for a BinarySearchTree. 
-        /// </summary>
-        /// <param name="root">Specifies the root of the tree.</param>
-        /// <param name="key">Specifies the key, the method should look for. </param>
-        /// <returns>The tree node that has the key. </returns>
-        [TimeComplexity(Case.Best, "O(1)")]
-        [TimeComplexity(Case.Worst, "O(n)", When = "Tree is imbalanced such that it is like one sequential branch (linked list), every node except the leaf having exactly one child.")]
-        [TimeComplexity(Case.Average, "O(Log(n))")]
-        [SpaceComplexity("O(1)", InPlace = true)]
-        public BinarySearchTreeNode<T1, T2> Search(BinarySearchTreeNode<T1, T2> root, T1 key)
-        {
-            if (root == null)
-            {
-                return root;
-            }
-
-            if (root.Key.CompareTo(key) == 0)
-            {
-                return root;
-            }
-
-            if (root.Key.CompareTo(key) < 0)
-            {
-                return Search(root.RightChild, key);
-            }
-
-            return Search(root.LeftChild, key);
-        }
-
-        /// <summary>
-        /// Implements Update operation for a BinarySearchTree.
-        /// </summary>
-        /// <param name="root">Specifies the root of the tree.</param>
-        /// <param name="key">Specifies the key of the node for which the value should be updated. </param>
-        /// <param name="value">Specifies the new value for the given key. </param>
-        /// <returns>True in case of success, and false otherwise. </returns>
-        [TimeComplexity(Case.Best, "O(1)")]
-        [TimeComplexity(Case.Worst, "o(n)")]
-        [TimeComplexity(Case.Average, "O(Log(n))")]
-        [SpaceComplexity("O(1)", InPlace = true)]
-        public bool Update(BinarySearchTreeNode<T1, T2> root, T1 key, T2 value)
-        {
-            BinarySearchTreeNode<T1, T2> node = Search(root, key); /* Since relies on Search, its time and space complexities are directly driven from Search() operation. */
-            if (node != null)
-            {
-                node.Value = value;
-                return true;
-            }
-            return false;
         }
 
         [TimeComplexity(Case.Average, "")] // TODO
@@ -143,7 +86,7 @@ namespace CSFundamentals.DataStructures.Trees
             {
                 root.LeftChild = Delete(root.LeftChild, key);
             }
-            else 
+            else
             {
                 if (root.RightChild == null && root.LeftChild == null)
                 {
@@ -168,37 +111,6 @@ namespace CSFundamentals.DataStructures.Trees
                 root.RightChild = Delete(root.RightChild, rightChildMin.Key); /* at this point both node, and rightChildMin have the same keys, but calling delete on the same key, will only result in the removal  of rightChildMin, because pf the root that is passed to Delete.*/
             }
             return root;
-        }
-
-        [TimeComplexity(Case.Best, "O(1)")]
-        [TimeComplexity(Case.Worst, "O(n)")]
-        [TimeComplexity(Case.Average, "O(Log(n))")]
-        [SpaceComplexity("O(1)")]
-        public BinarySearchTreeNode<T1, T2> FindMin(BinarySearchTreeNode<T1, T2> root)
-        {
-            if (root == null) throw new ArgumentNullException();
-
-            BinarySearchTreeNode<T1, T2> node = root;
-            while (node.LeftChild != null)
-            {
-                node = node.LeftChild;
-            }
-            return node;
-        }
-
-        [TimeComplexity(Case.Best, "O(1)")]
-        [TimeComplexity(Case.Worst, "O(n)")]
-        [TimeComplexity(Case.Average, "O(Log(n))")]
-        [SpaceComplexity("O(1)")]
-        public BinarySearchTreeNode<T1, T2> FindMax(BinarySearchTreeNode<T1, T2> root)
-        {
-            if (root == null) throw new ArgumentNullException();
-            BinarySearchTreeNode<T1, T2> node = root;
-            while (node.RightChild != null)
-            {
-                node = node.RightChild;
-            }
-            return node;
         }
 
         [TimeComplexity(Case.Average, "")]

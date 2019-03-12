@@ -33,19 +33,19 @@ namespace CSFundamentalsTests.DataStructures.Trees
         [TestInitialize]
         public void Init()
         {
-            var keyVals = new Dictionary<int, string>
+            var nodes = new List<BinarySearchTreeNode<int, string>>
             {
-                [40] = "str3",
-                [20] = "str1",
-                [70] = "str6",
-                [50] = "str4",
-                [80] = "str7",
-                [30] = "str2",
-                [60] = "str5",
+                new BinarySearchTreeNode<int, string>(40,"str3"),
+                new BinarySearchTreeNode<int, string>(20,"str1"),
+                new BinarySearchTreeNode<int, string>(70,"str6"),
+                new BinarySearchTreeNode<int, string>(50,"str4"),
+                new BinarySearchTreeNode<int, string>(80,"str7"),
+                new BinarySearchTreeNode<int, string>(30,"str2"),
+                new BinarySearchTreeNode<int, string>(60,"str5")
             };
 
             _tree = new BinarySearchTree<int, string>();
-            _root = _tree.Build(keyVals);
+            _root = _tree.Build(nodes);
         }
 
         [TestMethod]
