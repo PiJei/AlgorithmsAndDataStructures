@@ -19,17 +19,25 @@
 
 using CSFundamentals.DataStructures.Trees.API;
 using System;
+using System.Collections.Generic;
 
-namespace CSFundamentals.DataStructures.Trees
+namespace CSFundamentalsTests.DataStructures.Trees.API
 {
-    public class BinarySearchTreeNode<T1, T2> : TreeNode<BinarySearchTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
+    public class MockBinarySearchTreeBase<T1, T2> : BinarySearchTreeBase<MockTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
     {
-        public BinarySearchTreeNode(T1 key, T2 value) : base(key, value)
+        public override MockTreeNode<T1, T2> Build(List<MockTreeNode<T1, T2>> keyValues)
         {
+            throw new NotImplementedException();
         }
 
-        public override BinarySearchTreeNode<T1, T2> LeftChild { get; set; }
-        public override BinarySearchTreeNode<T1, T2> RightChild { get; set; }
-        public override BinarySearchTreeNode<T1, T2> Parent { get; set; }
+        public override MockTreeNode<T1, T2> Delete(MockTreeNode<T1, T2> root, T1 key)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override MockTreeNode<T1, T2> Insert(MockTreeNode<T1, T2> root, MockTreeNode<T1, T2> newNode)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

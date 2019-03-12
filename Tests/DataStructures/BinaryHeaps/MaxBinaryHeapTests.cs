@@ -20,6 +20,7 @@
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentals.DataStructures.BinaryHeaps;
+using CSFundamentals.DataStructures.BinaryHeaps.API;
 
 namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 {

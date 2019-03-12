@@ -19,6 +19,7 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentals.DataStructures.Trees;
+using CSFundamentals.DataStructures.Trees.API;
 using System;
 using System.Collections.Generic;
 
@@ -52,93 +53,6 @@ namespace CSFundamentalsTests.DataStructures.Trees
         public void BinarySearchTree_Build_Test()
         {
             HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root);
-        }
-
-        [TestMethod]
-        public void BinarySearchTree_InOrderTraversal_Test()
-        {
-            var inOrderTraversal = new List<BinarySearchTreeNode<int, string>>();
-            TreeNode<BinarySearchTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
-            Assert.AreEqual(7, inOrderTraversal.Count);
-            for (int i = 0; i < inOrderTraversal.Count - 1; i++)
-            {
-                Assert.IsTrue(inOrderTraversal[i].Key < inOrderTraversal[i + 1].Key);
-            }
-        }
-
-        [TestMethod]
-        public void BinarySearchTree_Search_Test_Success()
-        {
-            Assert.AreEqual("str5", _tree.Search(_root, 60).Value, ignoreCase: false);
-            Assert.AreEqual("str2", _tree.Search(_root, 30).Value, ignoreCase: false);
-            Assert.AreEqual("str7", _tree.Search(_root, 80).Value, ignoreCase: false);
-            Assert.AreEqual("str4", _tree.Search(_root, 50).Value, ignoreCase: false);
-            Assert.AreEqual("str6", _tree.Search(_root, 70).Value, ignoreCase: false);
-            Assert.AreEqual("str1", _tree.Search(_root, 20).Value, ignoreCase: false);
-            Assert.AreEqual("str3", _tree.Search(_root, 40).Value, ignoreCase: false);
-        }
-
-        [TestMethod]
-        public void BinarySearchTree_Search_Test_Failure()
-        {
-            Assert.IsNull(_tree.Search(_root, 45));
-            Assert.IsNull(_tree.Search(null, 30));
-        }
-
-        [TestMethod]
-        public void BinarySearchTree_Update_Test_Success()
-        {
-            Assert.IsTrue(_tree.Update(_root, 40, "string3"));
-
-            Assert.IsTrue(_tree.Update(_root, 70, "string6"));
-        }
-
-        [TestMethod]
-        public void BinarySearchTree_Update_Test_Failue()
-        {
-            /* Testing the case where root is null. */
-            Assert.IsFalse(_tree.Update(null, 40, "string3"));
-
-            /* Testing the case where key does not exist in tree. */
-            Assert.IsFalse(_tree.Update(_root, 45, "string3"));
-        }
-
-        [TestMethod]
-        public void BinarySearchTree_FindMin_Test_Success()
-        {
-            Assert.AreEqual("str1", _tree.FindMin(_root).Value);
-            Assert.AreEqual("str1", _tree.FindMin(_root.LeftChild).Value);
-            Assert.AreEqual("str2", _tree.FindMin(_root.LeftChild.RightChild).Value);
-            Assert.AreEqual("str4", _tree.FindMin(_root.RightChild).Value);
-            Assert.AreEqual("str4", _tree.FindMin(_root.RightChild.LeftChild).Value);
-            Assert.AreEqual("str7", _tree.FindMin(_root.RightChild.RightChild).Value);
-            Assert.AreEqual("str5", _tree.FindMin(_root.RightChild.LeftChild.RightChild).Value);
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void BinarySearchTree_FindMin_Test_Failure()
-        {
-            _tree.FindMin(null);
-        }
-
-        [TestMethod]
-        public void BinarySearchTree_FindMax_Test_Success()
-        {
-            Assert.AreEqual("str7", _tree.FindMax(_root).Value);
-            Assert.AreEqual("str2", _tree.FindMax(_root.LeftChild).Value);
-            Assert.AreEqual("str2", _tree.FindMax(_root.LeftChild.RightChild).Value);
-            Assert.AreEqual("str7", _tree.FindMax(_root.RightChild).Value);
-            Assert.AreEqual("str5", _tree.FindMax(_root.RightChild.LeftChild).Value);
-            Assert.AreEqual("str7", _tree.FindMax(_root.RightChild.RightChild).Value);
-            Assert.AreEqual("str5", _tree.FindMax(_root.RightChild.LeftChild.RightChild).Value);
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void BinarySearchTree_FindMax_Test_Failure()
-        {
-            _tree.FindMax(null);
         }
 
         [TestMethod]

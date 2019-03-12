@@ -17,10 +17,10 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using CSFundamentals.DataStructures.Trees;
+using CSFundamentals.DataStructures.Trees.API;
 using System;
 
-namespace CSFundamentalsTests.DataStructures.Trees
+namespace CSFundamentalsTests.DataStructures.Trees.API
 {
     /// <summary>
     /// This class is only created for testing purposes. 

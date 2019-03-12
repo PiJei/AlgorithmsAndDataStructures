@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using CSFundamentals.Styling;
 using System.Diagnostics.Contracts;
+using CSFundamentals.DataStructures.Trees.API;
 
 [assembly: InternalsVisibleTo("CSFundamentalsTests")]
 
@@ -36,23 +37,20 @@ namespace CSFundamentals.DataStructures.Trees
     /// </summary>
     /// <typeparam name="T1">Specifies the type of the keys in red black tree.</typeparam>
     /// <typeparam name="T2">Specifies the type of the values in red black tree. </typeparam>
-    public class RedBlackTree<T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
+    public class RedBlackTree<T1, T2> : BinarySearchTreeBase<RedBlackTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
     {
-        private RedBlackTreeNode<T1, T2> _root = null;
-
-        public RedBlackTreeNode<T1, T2> Build(Dictionary<T1, T2> keyValues)
+        public override RedBlackTreeNode<T1, T2> Build(List<RedBlackTreeNode<T1, T2>> nodes)
         {
-            foreach (KeyValuePair<T1, T2> keyVal in keyValues)
+            foreach (RedBlackTreeNode<T1, T2> node in nodes)
             {
-                _root = Insert(_root, keyVal.Key, keyVal.Value);
+                _root = Insert(_root, node);
             }
             return _root;
         }
 
         [TimeComplexity(Case.Worst, "O(Log(n))")]
-        public RedBlackTreeNode<T1, T2> Insert(RedBlackTreeNode<T1, T2> root, T1 key, T2 value)
+        public override RedBlackTreeNode<T1, T2> Insert(RedBlackTreeNode<T1, T2> root, RedBlackTreeNode<T1, T2> newNode)
         {
-            var newNode = new RedBlackTreeNode<T1, T2>(key, value, Color.Red);
             root = Insert_WithoutBalancing(root, newNode);
             Insert_Repair(root, newNode);
 
@@ -165,7 +163,7 @@ namespace CSFundamentals.DataStructures.Trees
             return root;
         }
 
-        public RedBlackTreeNode<T1, T2> Delete(RedBlackTreeNode<T1, T2> root, T1 key)
+        public override RedBlackTreeNode<T1, T2> Delete(RedBlackTreeNode<T1, T2> root, T1 key)
         {
             var node = Search(root, key);
             if (node == null)
@@ -338,56 +336,7 @@ namespace CSFundamentals.DataStructures.Trees
             if (node == null || (node != null && node.Color == Color.Black)) return true;
             return false;
         }
-
-        [TimeComplexity(Case.Best, "O(1)")]
-        [TimeComplexity(Case.Worst, "O(n)")]
-        [TimeComplexity(Case.Average, "O(Log(n))")]
-        [SpaceComplexity("O(1)")]
-        public RedBlackTreeNode<T1, T2> FindMin(RedBlackTreeNode<T1, T2> root)
-        {
-            if (root == null) throw new ArgumentNullException();
-
-            RedBlackTreeNode<T1, T2> node = root;
-            while (node.LeftChild != null)
-            {
-                node = node.LeftChild;
-            }
-            return node;
-        }
-
-        /// <summary>
-        /// Implements search for RedBlackTree- the code is exactly the same as Search for BinarySearchTree, however because of its self-balancing properties it is guaranteed to be upper bounded by O(Log(n)).
-        /// </summary>
-        /// <param name="root">Specifies the root of the tree.</param>
-        /// <param name="key">Specifies the key the method should look for. </param>
-        /// <returns></returns>
-        [TimeComplexity(Case.Worst, "O(Log(n))")]
-        public RedBlackTreeNode<T1, T2> Search(RedBlackTreeNode<T1, T2> root, T1 key)
-        {
-            if (root == null)
-            {
-                return root;
-            }
-
-            if (root.Key.CompareTo(key) == 0)
-            {
-                return root;
-            }
-
-            if (root.Key.CompareTo(key) < 0)
-            {
-                return Search(root.RightChild, key);
-            }
-
-            return Search(root.LeftChild, key);
-        }
-
-        [TimeComplexity(Case.Worst, "O(Log(n))")]
-        public bool Update(RedBlackTreeNode<T1, T2> root, T1 key, T2 value)
-        {
-            throw new NotImplementedException();
-        }
-
+       
         public int GetBlackHeight(RedBlackTreeNode<T1, T2> root)
         {
             throw new NotImplementedException();

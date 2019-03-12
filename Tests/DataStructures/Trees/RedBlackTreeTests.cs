@@ -19,6 +19,7 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentals.DataStructures.Trees;
+using CSFundamentals.DataStructures.Trees.API;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,18 +39,18 @@ namespace CSFundamentalsTests.DataStructures.Trees
         {
             _tree = new RedBlackTree<int, string>();
 
-            var keyVals = new Dictionary<int, string>
+            var nodes = new List<RedBlackTreeNode<int, string>>
             {
-                [40] = "D",
-                [50] = "A",
-                [47] = "G",
-                [30] = "B",
-                [20] = "C",
-                [35] = "E",
-                [45] = "F"
+                new RedBlackTreeNode<int, string>(40, "D"),
+                new RedBlackTreeNode<int, string>(50, "A"),
+                new RedBlackTreeNode<int, string>(47, "G"),
+                new RedBlackTreeNode<int, string>(30, "B"),
+                new RedBlackTreeNode<int, string>(20, "C"),
+                new RedBlackTreeNode<int, string>(35, "E"),
+                new RedBlackTreeNode<int, string>(45, "F")
             };
 
-            _root = _tree.Build(keyVals);
+            _root = _tree.Build(nodes);
         }
 
         [TestMethod]
@@ -211,140 +212,6 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
         }
 
-        [TestMethod]
-        public void RedBlackTree_RotateLeft_Test()
-        {
-            RedBlackTreeNode<int, string> A = new RedBlackTreeNode<int, string>(50, "A");
-            RedBlackTreeNode<int, string> B = new RedBlackTreeNode<int, string>(30, "B");
-            RedBlackTreeNode<int, string> C = new RedBlackTreeNode<int, string>(20, "C");
-            RedBlackTreeNode<int, string> D = new RedBlackTreeNode<int, string>(40, "D");
-            RedBlackTreeNode<int, string> E = new RedBlackTreeNode<int, string>(35, "E");
-            RedBlackTreeNode<int, string> F = new RedBlackTreeNode<int, string>(45, "F");
-            RedBlackTreeNode<int, string> G = new RedBlackTreeNode<int, string>(47, "G");
-
-            A.Parent = null;
-            A.LeftChild = B;
-            A.RightChild = null;
-
-            B.Parent = A;
-            B.LeftChild = C;
-            B.RightChild = D;
-
-            C.Parent = B;
-            C.LeftChild = null;
-            C.RightChild = null;
-
-            D.Parent = B;
-            D.LeftChild = E;
-            D.RightChild = F;
-
-            E.Parent = D;
-            E.LeftChild = null;
-            E.RightChild = null;
-
-            F.Parent = D;
-            F.LeftChild = null;
-            F.RightChild = G;
-
-            G.Parent = F;
-            G.LeftChild = null;
-            G.RightChild = null;
-
-            BinarySearchTreeTests.HasBinarySearchTreeOrderProperty<RedBlackTreeNode<int, string>, int, string>(A);
-            var tree = new RedBlackTree<int, string>();
-            tree.RotateLeft(B);
-            BinarySearchTreeTests.HasBinarySearchTreeOrderProperty<RedBlackTreeNode<int, string>, int, string>(A);
-
-            Assert.IsTrue(A.Parent == null);
-            Assert.IsTrue(A.LeftChild.Equals(D));
-            Assert.IsTrue(A.RightChild == null);
-            Assert.IsTrue(B.Parent.Equals(D));
-            Assert.IsTrue(B.LeftChild.Equals(C));
-            Assert.IsTrue(B.RightChild.Equals(E));
-            Assert.IsTrue(C.Parent.Equals(B));
-            Assert.IsTrue(C.LeftChild == null);
-            Assert.IsTrue(C.RightChild == null);
-            Assert.IsTrue(D.Parent.Equals(A));
-            Assert.IsTrue(D.LeftChild.Equals(B));
-            Assert.IsTrue(D.RightChild.Equals(F));
-            Assert.IsTrue(E.Parent.Equals(B));
-            Assert.IsTrue(E.LeftChild == null);
-            Assert.IsTrue(E.RightChild == null);
-            Assert.IsTrue(F.Parent.Equals(D));
-            Assert.IsTrue(F.LeftChild == null);
-            Assert.IsTrue(F.RightChild.Equals(G));
-            Assert.IsTrue(G.Parent.Equals(F));
-            Assert.IsTrue(G.LeftChild == null);
-            Assert.IsTrue(G.RightChild == null);
-        }
-
-        [TestMethod]
-        public void RedBlackTree_RotateRight_Test()
-        {
-            RedBlackTreeNode<int, string> A = new RedBlackTreeNode<int, string>(30, "A");
-            RedBlackTreeNode<int, string> B = new RedBlackTreeNode<int, string>(70, "B");
-            RedBlackTreeNode<int, string> C = new RedBlackTreeNode<int, string>(50, "C");
-            RedBlackTreeNode<int, string> D = new RedBlackTreeNode<int, string>(80, "D");
-            RedBlackTreeNode<int, string> E = new RedBlackTreeNode<int, string>(40, "E");
-            RedBlackTreeNode<int, string> F = new RedBlackTreeNode<int, string>(60, "F");
-            RedBlackTreeNode<int, string> G = new RedBlackTreeNode<int, string>(35, "G");
-
-            A.Parent = null;
-            A.LeftChild = null;
-            A.RightChild = B;
-
-            B.Parent = A;
-            B.LeftChild = C;
-            B.RightChild = D;
-
-            C.Parent = B;
-            C.LeftChild = E;
-            C.RightChild = F;
-
-            D.Parent = B;
-            D.LeftChild = null;
-            D.RightChild = null;
-
-            E.Parent = C;
-            E.LeftChild = G;
-            E.RightChild = null;
-
-            F.Parent = C;
-            F.LeftChild = null;
-            F.RightChild = null;
-
-            G.Parent = E;
-            G.LeftChild = null;
-            G.RightChild = null;
-
-            BinarySearchTreeTests.HasBinarySearchTreeOrderProperty<RedBlackTreeNode<int, string>, int, string>(A);
-            var tree = new RedBlackTree<int, string>();
-            tree.RotateRight(B);
-            BinarySearchTreeTests.HasBinarySearchTreeOrderProperty<RedBlackTreeNode<int, string>, int, string>(A);
-
-            Assert.IsTrue(A.Parent == null);
-            Assert.IsTrue(A.LeftChild == null);
-            Assert.IsTrue(A.RightChild.Equals(C));
-            Assert.IsTrue(B.Parent.Equals(C));
-            Assert.IsTrue(B.LeftChild.Equals(F));
-            Assert.IsTrue(B.RightChild.Equals(D));
-            Assert.IsTrue(C.Parent.Equals(A));
-            Assert.IsTrue(C.LeftChild.Equals(E));
-            Assert.IsTrue(C.RightChild.Equals(B));
-            Assert.IsTrue(D.Parent.Equals(B));
-            Assert.IsTrue(D.LeftChild == null);
-            Assert.IsTrue(D.RightChild == null);
-            Assert.IsTrue(E.Parent.Equals(C));
-            Assert.IsTrue(E.LeftChild.Equals(G));
-            Assert.IsTrue(E.RightChild == null);
-            Assert.IsTrue(F.Parent.Equals(B));
-            Assert.IsTrue(F.LeftChild == null);
-            Assert.IsTrue(F.RightChild == null);
-            Assert.IsTrue(G.Parent.Equals(E));
-            Assert.IsTrue(G.LeftChild == null);
-            Assert.IsTrue(G.RightChild == null);
-        }
-
         public static void HasRedBlackTreeProperties<T1, T2>(RedBlackTreeNode<T1, T2> root, List<RedBlackTreeNode<T1, T2>> inOrderTraversal, int expectedNodeCount) where T1 : IComparable<T1>, IEquatable<T1>
         {
             // Check order properties.
@@ -388,7 +255,6 @@ namespace CSFundamentalsTests.DataStructures.Trees
                     Assert.AreEqual(firstPathBlackNodeCount, paths[i].Count(n => n.Color == Color.Black));
                 }
             }
-
 
             // TODO 5- get the longest path, get the shortest path, assert is not more than twice.. shortest path might be all black nodes, and longest path would be alternating between red and black nodes
         }

@@ -17,11 +17,11 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using CSFundamentals.DataStructures.BinaryHeaps;
+using CSFundamentals.DataStructures.BinaryHeaps.API;
 using System;
 using System.Collections.Generic;
 
-namespace CSFundamentalsTests.DataStructures.BinaryHeaps
+namespace CSFundamentalsTests.DataStructures.BinaryHeaps.API
 {
     public class MockBinaryHeap<T> : BinaryHeapBase<T> where T : IComparable<T>
     {

@@ -21,7 +21,7 @@ using System;
 using System.Collections.Generic;
 using CSFundamentals.Styling;
 
-namespace CSFundamentals.DataStructures.Trees
+namespace CSFundamentals.DataStructures.Trees.API
 {
     public abstract class BinarySearchTreeBase<T, T1, T2> where T : ITreeNode<T, T1, T2> where T1 : IEquatable<T1>, IComparable<T1>
     {
@@ -39,8 +39,10 @@ namespace CSFundamentals.DataStructures.Trees
 
         public abstract T Insert(T root, T newNode);
 
-        // TODO: These bounds are no longer correct generally, depending on the Tree they change...
+        public abstract T Delete(T root, T1 key);
 
+
+        // TODO: These bounds are no longer correct generally, depending on the Tree they change...
         /// <summary>
         /// Implements Search/Lookup/Find operation for a BinarySearchTree. 
         /// </summary>
@@ -195,6 +197,22 @@ namespace CSFundamentals.DataStructures.Trees
                 }
             }
             newNode.Parent = nodeParent;
+        }
+
+        [TimeComplexity(Case.Average, "")]
+        [SpaceComplexity("")]
+        public T DeleteMin(T root)
+        {
+            T minNode = FindMin(root);
+            return Delete(root, minNode.Key);
+        }
+
+        [TimeComplexity(Case.Average, "")]
+        [SpaceComplexity("")]
+        public T DeleteMax(T root)
+        {
+            T maxNode = FindMax(root);
+            return Delete(root, maxNode.Key);
         }
     }
 }

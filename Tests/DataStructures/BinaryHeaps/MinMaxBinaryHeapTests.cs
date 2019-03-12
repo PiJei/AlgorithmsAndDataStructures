@@ -20,6 +20,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using CSFundamentals.DataStructures.BinaryHeaps;
+using CSFundamentals.DataStructures.BinaryHeaps.API;
 
 
 namespace CSFundamentalsTests.DataStructures.BinaryHeaps
@@ -27,7 +28,6 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
     [TestClass]
     public class MinMaxBinaryHeapTests
     {
-
         public static void CheckMinMaxOrdering_ForMinLevel(BinaryHeapBase<int> heap, int index)
         {
             int leftChildIndex = heap.GetLeftChildIndexInHeapArray(index);

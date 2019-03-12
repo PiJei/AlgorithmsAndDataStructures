@@ -19,7 +19,7 @@
 
 using System;
 
-namespace CSFundamentals.DataStructures.Trees
+namespace CSFundamentals.DataStructures.Trees.API
 {
     public interface ITreeNode<T, T1, T2> : IComparable<T> where T1 : IComparable<T1>, IEquatable<T1>
     {

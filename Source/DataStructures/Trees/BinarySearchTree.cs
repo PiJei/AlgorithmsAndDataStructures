@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+using CSFundamentals.DataStructures.Trees.API;
 using CSFundamentals.Styling;
 
 namespace CSFundamentals.DataStructures.Trees
@@ -74,7 +75,7 @@ namespace CSFundamentals.DataStructures.Trees
 
         [TimeComplexity(Case.Average, "")] // TODO
         [SpaceComplexity("O(1)")]
-        public BinarySearchTreeNode<T1, T2> Delete(BinarySearchTreeNode<T1, T2> root, T1 key)
+        public override BinarySearchTreeNode<T1, T2> Delete(BinarySearchTreeNode<T1, T2> root, T1 key)
         {
             if (root == null) return root;
 
@@ -111,22 +112,6 @@ namespace CSFundamentals.DataStructures.Trees
                 root.RightChild = Delete(root.RightChild, rightChildMin.Key); /* at this point both node, and rightChildMin have the same keys, but calling delete on the same key, will only result in the removal  of rightChildMin, because pf the root that is passed to Delete.*/
             }
             return root;
-        }
-
-        [TimeComplexity(Case.Average, "")]
-        [SpaceComplexity("")]
-        public BinarySearchTreeNode<T1, T2> DeleteMin(BinarySearchTreeNode<T1, T2> root)
-        {
-            BinarySearchTreeNode<T1, T2> minNode = FindMin(root);
-            return Delete(root, minNode.Key);
-        }
-
-        [TimeComplexity(Case.Average, "")]
-        [SpaceComplexity("")]
-        public BinarySearchTreeNode<T1, T2> DeleteMax(BinarySearchTreeNode<T1, T2> root)
-        {
-            BinarySearchTreeNode<T1, T2> maxNode = FindMax(root);
-            return Delete(root, maxNode.Key);
         }
     }
 }
