@@ -36,5 +36,9 @@ namespace CSFundamentals.DataStructures.Trees
         T LeftChild { get; set; }
         T RightChild { get; set; }
         T Parent { get; set; }
+
+        bool IsLeftChild();
+
+        bool IsRightChild();
     }
 }

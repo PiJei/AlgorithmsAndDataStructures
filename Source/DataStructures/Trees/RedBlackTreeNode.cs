@@ -44,31 +44,6 @@ namespace CSFundamentals.DataStructures.Trees
                 Color = Color.Red;
             }
         }
-
-        /// <summary>
-        /// Checks whether the node forms a line with its parent and grandparent. 
-        /// Notice a line needs exactly 3 nodes. 
-        /// </summary>
-        public bool FormsLine()
-        {
-            if (Parent == null) return false;
-            if (IsLeftChild() && Parent.IsLeftChild()) return true;
-            if (IsRightChild() && Parent.IsRightChild()) return true;
-            return false;
-        }
-
-        /// <summary>
-        /// Checks whether the node forms a triangle with its parent and grandparent.
-        /// Notice a triangle needs exactly 3 nodes.
-        /// </summary>
-        /// This node is the bottom-most node of a sequence that is being checked for triangle alignment.</param>
-        public bool FormsTriangle()
-        {
-            if (Parent == null) return false;
-            if (IsLeftChild() && Parent.IsRightChild()) return true;
-            if (IsRightChild() && Parent.IsLeftChild()) return true;
-            return false;
-        }
     }
 
     public enum Color

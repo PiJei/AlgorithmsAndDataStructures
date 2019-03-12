@@ -342,5 +342,113 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.IsFalse(D.IsLeaf());
             Assert.IsTrue(E.IsLeaf());
         }
+
+        [TestMethod]
+        public void TreeNode_FormsLine_Test()
+        {
+            MockTreeNode<int, string> A = new MockTreeNode<int, string>(50, "A");
+            MockTreeNode<int, string> B = new MockTreeNode<int, string>(30, "B");
+            MockTreeNode<int, string> C = new MockTreeNode<int, string>(20, "C");
+            MockTreeNode<int, string> D = new MockTreeNode<int, string>(40, "D");
+            MockTreeNode<int, string> E = new MockTreeNode<int, string>(35, "E");
+            MockTreeNode<int, string> F = new MockTreeNode<int, string>(45, "F");
+            MockTreeNode<int, string> G = new MockTreeNode<int, string>(47, "G");
+            MockTreeNode<int, string> H = new MockTreeNode<int, string>(25, "h");
+
+            A.Parent = null;
+            A.LeftChild = B;
+            A.RightChild = null;
+
+            B.Parent = A;
+            B.LeftChild = C;
+            B.RightChild = D;
+
+            C.Parent = B;
+            C.LeftChild = null;
+            C.RightChild = H;
+
+            D.Parent = B;
+            D.LeftChild = E;
+            D.RightChild = F;
+
+            E.Parent = D;
+            E.LeftChild = null;
+            E.RightChild = null;
+
+            F.Parent = D;
+            F.LeftChild = null;
+            F.RightChild = G;
+
+            G.Parent = F;
+            G.LeftChild = null;
+            G.RightChild = null;
+
+            H.Parent = C;
+            H.LeftChild = null;
+            H.RightChild = null;
+
+            Assert.IsFalse(A.FormsLine());
+            Assert.IsFalse(B.FormsLine());
+            Assert.IsTrue(C.FormsLine());
+            Assert.IsFalse(D.FormsLine());
+            Assert.IsFalse(E.FormsLine());
+            Assert.IsTrue(F.FormsLine());
+            Assert.IsTrue(G.FormsLine());
+            Assert.IsFalse(H.FormsLine());
+        }
+
+        [TestMethod]
+        public void TreeNode_FormsTriangle_Test()
+        {
+            MockTreeNode<int, string> A = new MockTreeNode<int, string>(50, "A");
+            MockTreeNode<int, string> B = new MockTreeNode<int, string>(30, "B");
+            MockTreeNode<int, string> C = new MockTreeNode<int, string>(20, "C");
+            MockTreeNode<int, string> D = new MockTreeNode<int, string>(40, "D");
+            MockTreeNode<int, string> E = new MockTreeNode<int, string>(35, "E");
+            MockTreeNode<int, string> F = new MockTreeNode<int, string>(45, "F");
+            MockTreeNode<int, string> G = new MockTreeNode<int, string>(47, "G");
+            MockTreeNode<int, string> H = new MockTreeNode<int, string>(25, "h");
+
+            A.Parent = null;
+            A.LeftChild = B;
+            A.RightChild = null;
+
+            B.Parent = A;
+            B.LeftChild = C;
+            B.RightChild = D;
+
+            C.Parent = B;
+            C.LeftChild = null;
+            C.RightChild = H;
+
+            D.Parent = B;
+            D.LeftChild = E;
+            D.RightChild = F;
+
+            E.Parent = D;
+            E.LeftChild = null;
+            E.RightChild = null;
+
+            F.Parent = D;
+            F.LeftChild = null;
+            F.RightChild = G;
+
+            G.Parent = F;
+            G.LeftChild = null;
+            G.RightChild = null;
+
+            H.Parent = C;
+            H.LeftChild = null;
+            H.RightChild = null;
+
+            Assert.IsFalse(A.FormsTriangle());
+            Assert.IsFalse(B.FormsTriangle());
+            Assert.IsFalse(C.FormsTriangle());
+            Assert.IsTrue(D.FormsTriangle());
+            Assert.IsTrue(E.FormsTriangle());
+            Assert.IsFalse(F.FormsTriangle());
+            Assert.IsFalse(G.FormsTriangle());
+            Assert.IsTrue(H.FormsTriangle());
+        }
     }
 }

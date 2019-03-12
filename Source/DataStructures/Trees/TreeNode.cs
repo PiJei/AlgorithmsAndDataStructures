@@ -114,7 +114,31 @@ namespace CSFundamentals.DataStructures.Trees
             return false;
         }
 
-        // if these methods are defined static, they are probably not in a good location, 
+        /// <summary>
+        /// Checks whether the node forms a line with its parent and grandparent. 
+        /// Notice a line needs exactly 3 nodes. 
+        /// </summary>
+        public bool FormsLine()
+        {
+            if (Parent == null) return false;
+            if (IsLeftChild() && Parent.IsLeftChild()) return true;
+            if (IsRightChild() && Parent.IsRightChild()) return true;
+            return false;
+        }
+
+        /// <summary>
+        /// Checks whether the node forms a triangle with its parent and grandparent.
+        /// Notice a triangle needs exactly 3 nodes.
+        /// </summary>
+        public bool FormsTriangle()
+        {
+            if (Parent == null) return false;
+            if (IsLeftChild() && Parent.IsRightChild()) return true;
+            if (IsRightChild() && Parent.IsLeftChild()) return true;
+            return false;
+        }
+
+        //TODO if these methods are defined static, they are probably not in a good location, 
         public static List<List<T>> GetAllPathToNullLeaves(T startNode)
         {
             if (startNode == null)
@@ -158,6 +182,5 @@ namespace CSFundamentals.DataStructures.Trees
                 InOrderTraversal(root.RightChild, inOrder);
             }
         }
-
     }
 }
