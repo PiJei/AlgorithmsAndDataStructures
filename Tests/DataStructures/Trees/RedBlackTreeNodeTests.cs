@@ -20,8 +20,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentals.DataStructures.Trees;
 
-//TODO: Move most of these to binary tree node
-
 namespace CSFundamentalsTests.DataStructures.Trees
 {
     [TestClass]

@@ -21,10 +21,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+//TODO: Shall inherit from BinarySearchTree
+
 namespace CSFundamentals.DataStructures.Trees
 {
     public class AVLTree
     {
-
+        // TODO
     }
 }

@@ -19,7 +19,8 @@
 
 using System;
 using System.Collections.Generic;
-// TODO: I feel this can be simplified, no need to pass 3 parameters I feel! the definition is recursive!
+
+// TODO: I feel this can be simplified, no need to pass 3 parameters! the definition is recursive!
 
 namespace CSFundamentals.DataStructures.Trees
 {
