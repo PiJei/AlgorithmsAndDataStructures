@@ -388,23 +388,10 @@ namespace CSFundamentals.DataStructures.Trees
             throw new NotImplementedException();
         }
 
-        [TimeComplexity(Case.Average, "O(n)")]
-        [SpaceComplexity("O(n)")]
-        public void InOrderTraversal(RedBlackTreeNode<T1, T2> root, List<RedBlackTreeNode<T1, T2>> inOrder)
-        {
-            if (root != null)
-            {
-                InOrderTraversal(root.LeftChild, inOrder);
-                inOrder.Add(root);
-                InOrderTraversal(root.RightChild, inOrder);
-            }
-        }
-
         public int GetBlackHeight(RedBlackTreeNode<T1, T2> root)
         {
             throw new NotImplementedException();
         }
-
 
         /// <summary>
         /// Rotates the tree to left at the given node, meaning that the current right child of the given node will be its new parent.

@@ -33,7 +33,7 @@ namespace CSFundamentals.DataStructures.Trees
         {
         }
 
-        private int GetBalanceFactor()
+        public int GetBalanceFactor()
         {
             return (RightChild == null ? 0 : RightChild.GetHeight()) - (LeftChild == null ? 0 : LeftChild.GetHeight());
         }
@@ -50,13 +50,6 @@ namespace CSFundamentals.DataStructures.Trees
                 }
             }
             return height;
-        }
-
-        public bool Equals(AVLTreeNode<T1, T2> other)
-        {
-            if (other == null) return false;
-            if (Key.Equals(other.Key)) return true;
-            return false;
         }
     }
 }

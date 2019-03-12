@@ -33,84 +33,6 @@ namespace CSFundamentals.DataStructures.Trees
             Color = color;
         }
 
-
-        public bool Equals(RedBlackTreeNode<T1, T2> other)
-        {
-            if (other == null) return false;
-            if (Key.Equals(other.Key)) return true;
-            return false;
-        }
-
-        //TODO: ADD test
-        public bool IsLeaf()
-        {
-            if (LeftChild == null && RightChild == null)
-            {
-                return true;
-            }
-            return false;
-        }
-
-        public RedBlackTreeNode<T1, T2> GetUncle()
-        {
-            if (Parent == null) return null;
-            if (Parent.Parent == null) return null;
-            if (Parent.Parent.LeftChild != null && Parent.Parent.LeftChild.Key.CompareTo(Parent.Key) == 0)
-            {
-                return Parent.Parent.RightChild;
-            }
-            else if (Parent.Parent.RightChild != null && Parent.Parent.RightChild.Key.CompareTo(Parent.Key) == 0)
-            {
-                return Parent.Parent.LeftChild;
-            }
-            return null;
-        }
-
-        public RedBlackTreeNode<T1, T2> GetSibling()
-        {
-            if (Parent == null) return null;
-            if (Parent.LeftChild != null && Parent.LeftChild.Equals(this))
-                return Parent.RightChild;
-            return Parent.LeftChild;
-        }
-
-        public RedBlackTreeNode<T1, T2> GetGrandParent()
-        {
-            if (Parent == null) return null;
-            if (Parent.Parent == null) return null;
-            return Parent.Parent;
-        }
-
-        /// <summary>
-        /// Checks to see if the node is the left child of its parent.
-        /// </summary>
-        /// <returns>True in case the node is the left child of its parent, and false otherwise.</returns>
-        public bool IsLeftChild()
-        {
-            if (Parent == null) return false;
-            if (Parent.LeftChild == null) return false;
-            if (Parent.LeftChild.Key.CompareTo(Key) == 0) return true;
-            return false;
-        }
-
-        /// <summary>
-        /// Checks to see if the node is the right child of its parent. 
-        /// </summary>
-        /// <returns>True in case the node is the right child of its parent, and false if it is not.</returns>
-        public bool IsRightChild()
-        {
-            if (Parent == null) return false;
-            if (Parent.RightChild == null) return false;
-            if (Parent.RightChild.Key.CompareTo(this.Key) == 0) return true;
-            return false;
-        }
-
-        public bool IsRoot()
-        {
-            if (Parent == null) return true;
-            return false;
-        }
-
         public void FlipColor()
         {
             if (Color == Color.Red)
@@ -130,8 +52,8 @@ namespace CSFundamentals.DataStructures.Trees
         public bool FormsLine()
         {
             if (Parent == null) return false;
-            if (IsLeftChild() && ((RedBlackTreeNode<T1, T2>)Parent).IsLeftChild()) return true;
-            if (IsRightChild() && ((RedBlackTreeNode<T1, T2>)Parent).IsRightChild()) return true;
+            if (IsLeftChild() && Parent.IsLeftChild()) return true;
+            if (IsRightChild() && Parent.IsRightChild()) return true;
             return false;
         }
 
@@ -143,8 +65,8 @@ namespace CSFundamentals.DataStructures.Trees
         public bool FormsTriangle()
         {
             if (Parent == null) return false;
-            if (IsLeftChild() && ((RedBlackTreeNode<T1, T2>)Parent).IsRightChild()) return true;
-            if (IsRightChild() && ((RedBlackTreeNode<T1, T2>)Parent).IsLeftChild()) return true;
+            if (IsLeftChild() && Parent.IsRightChild()) return true;
+            if (IsRightChild() && Parent.IsLeftChild()) return true;
             return false;
         }
     }

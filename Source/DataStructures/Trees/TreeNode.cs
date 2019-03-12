@@ -20,9 +20,10 @@
 using System;
 using System.Collections.Generic;
 // TODO: I feel this can be simplified, no need to pass 3 parameters I feel! the definition is recursive!
+
 namespace CSFundamentals.DataStructures.Trees
 {
-    public abstract class TreeNode<T, T1, T2> : ITreeNode<T, T1, T2> where T : ITreeNode<T, T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
+    public abstract class TreeNode<T, T1, T2> : IEquatable<T>, ITreeNode<T, T1, T2> where T : ITreeNode<T, T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
     {
         public T1 Key { get; set; }
         public T2 Value { get; set; }
@@ -37,6 +38,83 @@ namespace CSFundamentals.DataStructures.Trees
         public abstract T RightChild { get; set; }
         public abstract T Parent { get; set; }
 
+        public bool IsLeaf()
+        {
+            if (LeftChild == null && RightChild == null)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Checks to see if the node is the left child of its parent.
+        /// </summary>
+        /// <returns>True in case the node is the left child of its parent, and false otherwise.</returns>
+        public bool IsLeftChild()
+        {
+            if (Parent == null) return false;
+            if (Parent.LeftChild == null) return false;
+            if (Parent.LeftChild.Key.CompareTo(Key) == 0) return true;
+            return false;
+        }
+
+        /// <summary>
+        /// Checks to see if the node is the right child of its parent. 
+        /// </summary>
+        /// <returns>True in case the node is the right child of its parent, and false if it is not.</returns>
+        public bool IsRightChild()
+        {
+            if (Parent == null) return false;
+            if (Parent.RightChild == null) return false;
+            if (Parent.RightChild.Key.CompareTo(this.Key) == 0) return true;
+            return false;
+        }
+
+        public bool IsRoot()
+        {
+            if (Parent == null) return true;
+            return false;
+        }
+
+        public T GetUncle()
+        {
+            if (Parent == null) return default(T);
+            if (Parent.Parent == null) return default(T);
+            if (Parent.Parent.LeftChild != null && Parent.Parent.LeftChild.Key.CompareTo(Parent.Key) == 0)
+            {
+                return Parent.Parent.RightChild;
+            }
+            else if (Parent.Parent.RightChild != null && Parent.Parent.RightChild.Key.CompareTo(Parent.Key) == 0)
+            {
+                return Parent.Parent.LeftChild;
+            }
+            return default(T);
+        }
+
+        public T GetSibling()
+        {
+            if (Parent == null) return default(T);
+            if (Parent.LeftChild != null && Parent.LeftChild.Equals(this))
+                return Parent.RightChild;
+            return Parent.LeftChild;
+        }
+
+        public T GetGrandParent()
+        {
+            if (Parent == null) return default(T);
+            if (Parent.Parent == null) return default(T);
+            return Parent.Parent;
+        }
+
+        public bool Equals(T other)
+        {
+            if (other == null) return false;
+            if (Key.Equals(other.Key)) return true;
+            return false;
+        }
+
+        // if these methods are defined static, they are probably not in a good location, 
         public static List<List<T>> GetAllPathToNullLeaves(T startNode)
         {
             if (startNode == null)
@@ -70,5 +148,16 @@ namespace CSFundamentals.DataStructures.Trees
 
             return paths;
         }
+
+        public static void InOrderTraversal(T root, List<T> inOrder)
+        {
+            if (root != null)
+            {
+                InOrderTraversal(root.LeftChild, inOrder);
+                inOrder.Add(root);
+                InOrderTraversal(root.RightChild, inOrder);
+            }
+        }
+
     }
 }

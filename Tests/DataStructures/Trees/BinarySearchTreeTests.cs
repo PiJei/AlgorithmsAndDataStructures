@@ -58,7 +58,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         public void BinarySearchTree_InOrderTraversal_Test()
         {
             var inOrderTraversal = new List<BinarySearchTreeNode<int, string>>();
-            _tree.InOrderTraversal(_root, inOrderTraversal);
+            TreeNode<BinarySearchTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
             Assert.AreEqual(7, inOrderTraversal.Count);
             for (int i = 0; i < inOrderTraversal.Count - 1; i++)
             {
@@ -148,7 +148,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root);
 
             var inOrderTraversal = new List<BinarySearchTreeNode<int, string>>();
-            _tree.InOrderTraversal(_root, inOrderTraversal);
+            TreeNode<BinarySearchTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
             Assert.AreEqual(6, inOrderTraversal.Count);
             for (int i = 0; i < inOrderTraversal.Count - 1; i++)
             {
@@ -163,7 +163,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root);
 
             var inOrderTraversal = new List<BinarySearchTreeNode<int, string>>();
-            _tree.InOrderTraversal(_root, inOrderTraversal);
+            TreeNode<BinarySearchTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
             Assert.AreEqual(6, inOrderTraversal.Count);
             for (int i = 0; i < inOrderTraversal.Count - 1; i++)
             {
@@ -178,7 +178,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root);
 
             var inOrderTraversal = new List<BinarySearchTreeNode<int, string>>();
-            _tree.InOrderTraversal(_root, inOrderTraversal);
+            TreeNode<BinarySearchTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
             Assert.AreEqual(6, inOrderTraversal.Count);
             for (int i = 0; i < inOrderTraversal.Count - 1; i++)
             {
@@ -193,7 +193,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root);
 
             var inOrderTraversal = new List<BinarySearchTreeNode<int, string>>();
-            _tree.InOrderTraversal(_root, inOrderTraversal);
+            TreeNode<BinarySearchTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
             Assert.AreEqual(6, inOrderTraversal.Count);
             for (int i = 0; i < inOrderTraversal.Count - 1; i++)
             {
@@ -211,7 +211,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root);
 
             var inOrderTraversal = new List<BinarySearchTreeNode<int, string>>();
-            _tree.InOrderTraversal(_root, inOrderTraversal);
+            TreeNode<BinarySearchTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
             Assert.AreEqual(4, inOrderTraversal.Count);
             for (int i = 0; i < inOrderTraversal.Count - 1; i++)
             {
@@ -229,7 +229,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root);
 
             var inOrderTraversal = new List<BinarySearchTreeNode<int, string>>();
-            _tree.InOrderTraversal(_root, inOrderTraversal);
+            TreeNode<BinarySearchTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
             Assert.AreEqual(7, inOrderTraversal.Count);
             for (int i = 0; i < inOrderTraversal.Count - 1; i++)
             {
@@ -244,7 +244,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root);
 
             var inOrderTraversal = new List<BinarySearchTreeNode<int, string>>();
-            _tree.InOrderTraversal(_root, inOrderTraversal);
+            TreeNode<BinarySearchTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
             Assert.AreEqual(6, inOrderTraversal.Count);
             for (int i = 0; i < inOrderTraversal.Count - 1; i++)
             {
@@ -262,7 +262,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root.RightChild);
 
             var inOrderTraversal = new List<BinarySearchTreeNode<int, string>>();
-            _tree.InOrderTraversal(_root.RightChild, inOrderTraversal);
+            TreeNode<BinarySearchTreeNode<int, string>, int, string>.InOrderTraversal(_root.RightChild, inOrderTraversal);
             Assert.AreEqual(3, inOrderTraversal.Count);
             for (int i = 0; i < inOrderTraversal.Count - 1; i++)
             {
@@ -280,7 +280,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root);
 
             var inOrderTraversal = new List<BinarySearchTreeNode<int, string>>();
-            _tree.InOrderTraversal(_root, inOrderTraversal);
+            TreeNode<BinarySearchTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
             Assert.AreEqual(6, inOrderTraversal.Count);
             for (int i = 0; i < inOrderTraversal.Count - 1; i++)
             {
@@ -298,7 +298,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root.LeftChild);
 
             var inOrderTraversal = new List<BinarySearchTreeNode<int, string>>();
-            _tree.InOrderTraversal(_root.LeftChild, inOrderTraversal);
+            TreeNode<BinarySearchTreeNode<int, string>, int, string>.InOrderTraversal(_root.LeftChild, inOrderTraversal);
             Assert.AreEqual(1, inOrderTraversal.Count);
             for (int i = 0; i < inOrderTraversal.Count - 1; i++)
             {

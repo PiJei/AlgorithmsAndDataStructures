@@ -16,26 +16,27 @@
  * You should have received a copy of the GNU General Public License
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
-
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentals.DataStructures.Trees;
 using System;
-using System.Collections.Generic;
 
 namespace CSFundamentalsTests.DataStructures.Trees
 {
-    [TestClass]
-    public class AVLTreeTests
+    /// <summary>
+    /// This class is only created for testing purposes. 
+    /// TreeNode is an abstract class with generic types, and some method implementations. 
+    /// We need to test those methods without using any child class in production code. 
+    /// Therefore this mock class is created. 
+    /// </summary>
+    /// <typeparam name="T1">Specifies the type of the keys in a tree.</typeparam>
+    /// <typeparam name="T2">Specifies type of the values in a tree.</typeparam>
+    public class MockTreeNode<T1, T2> : TreeNode<MockTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
     {
-        public void HasAVLTreeProperties()
+        public MockTreeNode(T1 key, T2 value) : base(key, value)
         {
-            // 1- the height of the two subtrees of a node differ by 1 at most. 
-            // 2- it is still a binary search tree. 
         }
 
-        public void HasExpectedBalanceFactor<T1, T2>(List<AVLTreeNode<T1, T2>> nodes) where T1 : IComparable<T1>, IEquatable<T1>
-        {
-
-        }
+        public override MockTreeNode<T1, T2> LeftChild { get; set; }
+        public override MockTreeNode<T1, T2> RightChild { get; set; }
+        public override MockTreeNode<T1, T2> Parent { get; set; }
     }
 }

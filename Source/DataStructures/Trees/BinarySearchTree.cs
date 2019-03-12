@@ -129,18 +129,6 @@ namespace CSFundamentals.DataStructures.Trees
             return false;
         }
 
-        [TimeComplexity(Case.Average, "O(n)")]
-        [SpaceComplexity("O(n)")]
-        public void InOrderTraversal(BinarySearchTreeNode<T1, T2> root, List<BinarySearchTreeNode<T1, T2>> inOrder)
-        {
-            if (root != null)
-            {
-                InOrderTraversal(root.LeftChild, inOrder);
-                inOrder.Add(root);
-                InOrderTraversal(root.RightChild, inOrder);
-            }
-        }
-
         [TimeComplexity(Case.Average, "")] // TODO
         [SpaceComplexity("O(1)")]
         public BinarySearchTreeNode<T1, T2> Delete(BinarySearchTreeNode<T1, T2> root, T1 key)

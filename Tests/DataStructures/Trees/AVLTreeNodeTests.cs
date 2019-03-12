@@ -27,15 +27,15 @@ namespace CSFundamentalsTests.DataStructures.Trees
     [TestClass]
     public class AVLTreeNodeTests
     {
-        [TestMethod]
-        public void AVLTreeNode_GetHeight_Test()
-        {
-            AVLTreeNode<int, string> A = new AVLTreeNode<int, string>(50, "A");
-            AVLTreeNode<int, string> B = new AVLTreeNode<int, string>(20, "B");
-            AVLTreeNode<int, string> C = new AVLTreeNode<int, string>(10, "C");
-            AVLTreeNode<int, string> D = new AVLTreeNode<int, string>(40, "D");
-            AVLTreeNode<int, string> E = new AVLTreeNode<int, string>(30, "E");
+        private AVLTreeNode<int, string> A = new AVLTreeNode<int, string>(50, "A");
+        private AVLTreeNode<int, string> B = new AVLTreeNode<int, string>(20, "B");
+        private AVLTreeNode<int, string> C = new AVLTreeNode<int, string>(10, "C");
+        private AVLTreeNode<int, string> D = new AVLTreeNode<int, string>(40, "D");
+        private AVLTreeNode<int, string> E = new AVLTreeNode<int, string>(30, "E");
 
+        [TestInitialize]
+        public void Init()
+        {
             A.Parent = null;
             A.LeftChild = B;
             A.RightChild = null;
@@ -57,8 +57,33 @@ namespace CSFundamentalsTests.DataStructures.Trees
             E.RightChild = null;
 
             BinarySearchTreeTests.HasBinarySearchTreeOrderProperty<AVLTreeNode<int, string>, int, string>(A);
+        }
+
+        [TestMethod]
+        public void AVLTreeNode_GetHeight_Test()
+        {
 
             Assert.AreEqual(4, A.GetHeight());
+            Assert.AreEqual(3, B.GetHeight());
+            Assert.AreEqual(1, C.GetHeight()); // Is a leaf node. 
+            Assert.AreEqual(2, D.GetHeight());
+            Assert.AreEqual(1, E.GetHeight()); // Is a leaf node. 
+        }
+
+        [TestMethod]
+        public void AVLTreeNode_GetBalanceFactor_Test()
+        {
+            /* The constructed tree is not AVL, however the method GetBalanceFactor should work regardless. */
+            // TODO Maybe this means that you should  move this up to tree base class.
+            // TODO: Most of methods such as uncle, parent, etc can go up TreeNode using T template ... 
+            // TODO ANd then these tests should all move up to the TreeNode tests, given that none has to do with the properties of a binary search tree
+            // TODO Also given that avl and rb are binary search tree, I would expect some more inheritence there. .. for the tree itself besides the nodes
+
+            Assert.AreEqual(-3, A.GetBalanceFactor());
+            Assert.AreEqual(1, B.GetBalanceFactor());
+            Assert.AreEqual(0, C.GetBalanceFactor());
+            Assert.AreEqual(-1, D.GetBalanceFactor());
+            Assert.AreEqual(0, E.GetBalanceFactor());
         }
     }
 }
