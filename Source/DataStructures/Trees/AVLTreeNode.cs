@@ -25,6 +25,7 @@ namespace CSFundamentals.DataStructures.Trees
 {
     public class AVLTreeNode<T1, T2> : TreeNode<AVLTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
     {
+        public int BalanceFactor { get; set; }
         public override AVLTreeNode<T1, T2> LeftChild { get; set; }
         public override AVLTreeNode<T1, T2> RightChild { get; set; }
         public override AVLTreeNode<T1, T2> Parent { get; set; }
@@ -33,9 +34,10 @@ namespace CSFundamentals.DataStructures.Trees
         {
         }
 
-        public int GetBalanceFactor()
+        public int ComputeBalanceFactor()
         {
-            return (RightChild == null ? 0 : RightChild.GetHeight()) - (LeftChild == null ? 0 : LeftChild.GetHeight());
+            BalanceFactor = (RightChild == null ? 0 : RightChild.GetHeight()) - (LeftChild == null ? 0 : LeftChild.GetHeight());
+            return BalanceFactor;
         }
 
         public int GetHeight()

@@ -79,11 +79,11 @@ namespace CSFundamentalsTests.DataStructures.Trees
             // TODO ANd then these tests should all move up to the TreeNode tests, given that none has to do with the properties of a binary search tree
             // TODO Also given that avl and rb are binary search tree, I would expect some more inheritence there. .. for the tree itself besides the nodes
 
-            Assert.AreEqual(-3, A.GetBalanceFactor());
-            Assert.AreEqual(1, B.GetBalanceFactor());
-            Assert.AreEqual(0, C.GetBalanceFactor());
-            Assert.AreEqual(-1, D.GetBalanceFactor());
-            Assert.AreEqual(0, E.GetBalanceFactor());
+            Assert.AreEqual(-3, A.ComputeBalanceFactor());
+            Assert.AreEqual(1, B.ComputeBalanceFactor());
+            Assert.AreEqual(0, C.ComputeBalanceFactor());
+            Assert.AreEqual(-1, D.ComputeBalanceFactor());
+            Assert.AreEqual(0, E.ComputeBalanceFactor());
         }
     }
 }
