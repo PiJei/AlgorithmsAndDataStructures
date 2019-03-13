@@ -310,7 +310,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
             HasBinarySearchTreeOrderProperty<MockTreeNode<int, string>, int, string>(root);
 
             List<MockTreeNode<int, string>> nodes = new List<MockTreeNode<int, string>>();
-            BinarySearchTreeBase<MockTreeNode<int, string>, int, string>.InOrderTraversal(root, nodes);
+            _tree.InOrderTraversal(root, nodes);
             Assert.AreEqual(7, nodes.Count);
             for (int i = 0; i < nodes.Count - 1; i++)
             {
@@ -325,7 +325,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         public void BinarySearchTreeBase_InOrderTraversal_Test()
         {
             var inOrderTraversal = new List<MockTreeNode<int, string>>();
-            BinarySearchTreeBase<MockTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
+            _tree.InOrderTraversal(_root, inOrderTraversal);
             Assert.AreEqual(7, inOrderTraversal.Count);
             for (int i = 0; i < inOrderTraversal.Count - 1; i++)
             {
@@ -336,14 +336,14 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         [TestMethod]
         public void BinarySearchTreeBase_GetAllPathToNullLeaves_Test()
         {
-            List<List<MockTreeNode<int, string>>> pathsFromA = BinarySearchTreeBase<MockTreeNode<int, string>, int, string>.GetAllPathToNullLeaves(_root);
-            Assert.AreEqual(3, pathsFromA.Count);
-            Assert.AreEqual(3, pathsFromA[0].Count);
-            Assert.AreEqual(4, pathsFromA[1].Count);
-            Assert.AreEqual(5, pathsFromA[2].Count);
+            List<List<MockTreeNode<int, string>>> pathsFromRoot = _tree.GetAllPathToNullLeaves(_root);
+            Assert.AreEqual(3, pathsFromRoot.Count);
+            Assert.AreEqual(3, pathsFromRoot[0].Count);
+            Assert.AreEqual(4, pathsFromRoot[1].Count);
+            Assert.AreEqual(5, pathsFromRoot[2].Count);
         }
 
-        //TODO: This code is repeated between here and binary search tree: remove duplicates
+        // TODO: This code is repeated between here and binary search tree: remove duplicates
         /// <summary>
         /// Given the root of a binary search tree, checks whether the binary search tree properties hold.
         /// </summary>

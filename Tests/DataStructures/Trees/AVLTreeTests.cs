@@ -43,39 +43,39 @@ namespace CSFundamentalsTests.DataStructures.Trees
         {
             AVLTreeNode<int, string> E = new AVLTreeNode<int, string>(40, "E");
             _root = _tree.Insert(_root, E);
-            HasAVLTreeProperties(_root);
+            HasAVLTreeProperties(_tree, _root);
 
             AVLTreeNode<int, string> C = new AVLTreeNode<int, string>(50, "C");
             _root = _tree.Insert(_root, C);
-            HasAVLTreeProperties(_root);
+            HasAVLTreeProperties(_tree,_root);
 
             AVLTreeNode<int, string> A = new AVLTreeNode<int, string>(47, "A");
             _root = _tree.Insert(_root, A);
-            HasAVLTreeProperties(_root);
+            HasAVLTreeProperties(_tree, _root);
 
             AVLTreeNode<int, string> G = new AVLTreeNode<int, string>(45, "G");
             _root = _tree.Insert(_root, G);
-            HasAVLTreeProperties(_root);
+            HasAVLTreeProperties(_tree, _root);
 
             AVLTreeNode<int, string> D = new AVLTreeNode<int, string>(20, "D");
             _root = _tree.Insert(_root, D);
-            HasAVLTreeProperties(_root);
+            HasAVLTreeProperties(_tree, _root);
 
             AVLTreeNode<int, string> F = new AVLTreeNode<int, string>(35, "F");
             _root = _tree.Insert(_root, F);
-            HasAVLTreeProperties(_root);
+            HasAVLTreeProperties(_tree, _root);
 
             AVLTreeNode<int, string> B = new AVLTreeNode<int, string>(30, "B");
             _root = _tree.Insert(_root, B);
-            HasAVLTreeProperties(_root);
+            HasAVLTreeProperties(_tree, _root);
 
             AVLTreeNode<int, string> H = new AVLTreeNode<int, string>(10, "H");
             _root = _tree.Insert(_root, H);
-            HasAVLTreeProperties(_root);
+            HasAVLTreeProperties(_tree, _root);
 
             AVLTreeNode<int, string> I = new AVLTreeNode<int, string>(80, "I");
             _root = _tree.Insert(_root, I);
-            HasAVLTreeProperties(_root);
+            HasAVLTreeProperties(_tree , _root);
         }
 
         [TestMethod]
@@ -95,24 +95,102 @@ namespace CSFundamentalsTests.DataStructures.Trees
             };
 
             _root = _tree.Build(nodes);
-            HasAVLTreeProperties(_root);
+            HasAVLTreeProperties(_tree, _root);
+        }
+
+        [TestMethod]
+        public void AVLTree_GetHeight_Test()
+        {
+            AVLTreeNode<int, string> A = new AVLTreeNode<int, string>(50, "A");
+            AVLTreeNode<int, string> B = new AVLTreeNode<int, string>(20, "B");
+            AVLTreeNode<int, string> C = new AVLTreeNode<int, string>(10, "C");
+            AVLTreeNode<int, string> D = new AVLTreeNode<int, string>(40, "D");
+            AVLTreeNode<int, string> E = new AVLTreeNode<int, string>(30, "E");
+
+            A.Parent = null;
+            A.LeftChild = B;
+            A.RightChild = null;
+
+            B.Parent = A;
+            B.LeftChild = C;
+            B.RightChild = D;
+
+            C.Parent = B;
+            C.LeftChild = null;
+            C.RightChild = null;
+
+            D.Parent = B;
+            D.LeftChild = E;
+            D.RightChild = null;
+
+            E.Parent = D;
+            E.LeftChild = null;
+            E.RightChild = null;
+
+            BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<AVLTreeNode<int, string>, int, string>(A);
+            Assert.AreEqual(4, _tree.GetHeight(A));
+            Assert.AreEqual(3, _tree.GetHeight(B));
+            Assert.AreEqual(1, _tree.GetHeight(C)); // Is a leaf node. 
+            Assert.AreEqual(2, _tree.GetHeight(D));
+            Assert.AreEqual(1, _tree.GetHeight(E)); // Is a leaf node. 
+        }
+
+        [TestMethod]
+        public void AVLTree_GetBalanceFactor_Test()
+        {
+            /* The constructed tree is not AVL, however the method GetBalanceFactor should work regardless. */
+            // TODO Maybe this means that you should  move this up to tree base class.
+            // TODO: Most of methods such as uncle, parent, etc can go up TreeNode using T template ... 
+            // TODO ANd then these tests should all move up to the TreeNode tests, given that none has to do with the properties of a binary search tree
+            // TODO Also given that avl and rb are binary search tree, I would expect some more inheritence there. .. for the tree itself besides the nodes
+            AVLTreeNode<int, string> A = new AVLTreeNode<int, string>(50, "A");
+            AVLTreeNode<int, string> B = new AVLTreeNode<int, string>(20, "B");
+            AVLTreeNode<int, string> C = new AVLTreeNode<int, string>(10, "C");
+            AVLTreeNode<int, string> D = new AVLTreeNode<int, string>(40, "D");
+            AVLTreeNode<int, string> E = new AVLTreeNode<int, string>(30, "E");
+
+            A.Parent = null;
+            A.LeftChild = B;
+            A.RightChild = null;
+
+            B.Parent = A;
+            B.LeftChild = C;
+            B.RightChild = D;
+
+            C.Parent = B;
+            C.LeftChild = null;
+            C.RightChild = null;
+
+            D.Parent = B;
+            D.LeftChild = E;
+            D.RightChild = null;
+
+            E.Parent = D;
+            E.LeftChild = null;
+            E.RightChild = null;
+
+            Assert.AreEqual(-3, _tree.ComputeBalanceFactor(A));
+            Assert.AreEqual(1, _tree.ComputeBalanceFactor(B));
+            Assert.AreEqual(0, _tree.ComputeBalanceFactor(C));
+            Assert.AreEqual(-1, _tree.ComputeBalanceFactor(D));
+            Assert.AreEqual(0, _tree.ComputeBalanceFactor(E));
         }
 
         //TODO; Drop iequatable from all the tree stuff, and just use icomparable, ... 
-        public void HasAVLTreeProperties<T1, T2>(AVLTreeNode<T1, T2> root) where T1 : IComparable<T1>, IEquatable<T1>
+        public void HasAVLTreeProperties<T1, T2>(AVLTree<T1, T2> tree, AVLTreeNode<T1, T2> root) where T1 : IComparable<T1>, IEquatable<T1>
         {
             BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<AVLTreeNode<T1, T2>, T1, T2>(root);
 
             List<AVLTreeNode<T1, T2>> inOrderTraversal = new List<AVLTreeNode<T1, T2>>();
-            BinarySearchTreeBase<AVLTreeNode<T1, T2>, T1, T2>.InOrderTraversal(root, inOrderTraversal);
-            HasExpectedBalanceFactor(inOrderTraversal);
+            tree.InOrderTraversal(root, inOrderTraversal);
+            HasExpectedBalanceFactor(tree, inOrderTraversal);
         }
 
-        public void HasExpectedBalanceFactor<T1, T2>(List<AVLTreeNode<T1, T2>> nodes) where T1 : IComparable<T1>, IEquatable<T1>
+        public void HasExpectedBalanceFactor<T1, T2>(AVLTree<T1, T2> tree, List<AVLTreeNode<T1, T2>> nodes) where T1 : IComparable<T1>, IEquatable<T1>
         {
             foreach (AVLTreeNode<T1, T2> node in nodes)
             {
-                int balanceFactor = node.ComputeBalanceFactor();
+                int balanceFactor = tree.ComputeBalanceFactor(node);
                 Assert.IsTrue(balanceFactor >= -1 && balanceFactor <= 1);
             }
         }

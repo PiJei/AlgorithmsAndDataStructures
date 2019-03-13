@@ -283,7 +283,7 @@ namespace CSFundamentals.DataStructures.Trees.API
         }
 
         //TODO if these methods are defined static, they are probably not in a good location, 
-        public static List<List<T>> GetAllPathToNullLeaves(T startNode)
+        public List<List<T>> GetAllPathToNullLeaves(T startNode)
         {
             if (startNode == null)
             {
@@ -318,7 +318,7 @@ namespace CSFundamentals.DataStructures.Trees.API
         }
 
         //TODO  This should not be static?! look at my use cases in tests to see if I need static, ... 
-        public static void InOrderTraversal(T root, List<T> inOrder)
+        public void InOrderTraversal(T root, List<T> inOrder)
         {
             if (root != null)
             {

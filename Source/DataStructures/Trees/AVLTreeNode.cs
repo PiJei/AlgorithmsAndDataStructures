@@ -25,33 +25,12 @@ namespace CSFundamentals.DataStructures.Trees
 {
     public class AVLTreeNode<T1, T2> : TreeNode<AVLTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
     {
-        public int BalanceFactor { get; set; }
         public override AVLTreeNode<T1, T2> LeftChild { get; set; }
         public override AVLTreeNode<T1, T2> RightChild { get; set; }
         public override AVLTreeNode<T1, T2> Parent { get; set; }
 
         public AVLTreeNode(T1 key, T2 value) : base(key, value)
         {
-        }
-
-        public int ComputeBalanceFactor()
-        {
-            BalanceFactor = (RightChild == null ? 0 : RightChild.GetHeight()) - (LeftChild == null ? 0 : LeftChild.GetHeight());
-            return BalanceFactor;
-        }
-
-        public int GetHeight()
-        {
-            List<List<AVLTreeNode<T1, T2>>> paths = BinarySearchTreeBase<AVLTreeNode<T1, T2>, T1, T2>.GetAllPathToNullLeaves(this);
-            int height = paths[0].Count;
-            for (int i = 1; i < paths.Count; i++)
-            {
-                if (paths[i].Count > height)
-                {
-                    height = paths[i].Count;
-                }
-            }
-            return height;
         }
     }
 }

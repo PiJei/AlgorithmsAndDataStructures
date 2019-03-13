@@ -46,13 +46,12 @@ namespace CSFundamentals.DataStructures.Trees
         public override AVLTreeNode<T1, T2> Insert(AVLTreeNode<T1, T2> root, AVLTreeNode<T1, T2> newNode)
         {
             root = Insert_BST(root, newNode); /* First insert the node using normal BinarySearchInsert to preserve the ordering property. */
-
             var parent = newNode.Parent;
             var grandParent = newNode.GetGrandParent();
 
             while (grandParent != null && grandParent != null)
             {
-                int grandParentBalance = grandParent.ComputeBalanceFactor();
+                int grandParentBalance = ComputeBalanceFactor(grandParent);
                 if (grandParentBalance > 1)
                 {
                     if (newNode.FormsTriangle())
@@ -83,6 +82,7 @@ namespace CSFundamentals.DataStructures.Trees
                 }
                 else /* Expect this case be only repeated once, given the balance factor of any node that is kept controlled. */
                 {
+                    /* move one level upwards. */
                     newNode = parent;
                     parent = grandParent;
                     grandParent = grandParent.Parent;
@@ -96,6 +96,25 @@ namespace CSFundamentals.DataStructures.Trees
                 root = root.Parent;
             }
             return root;
+        }
+
+        public int ComputeBalanceFactor(AVLTreeNode<T1,T2> node)
+        {
+            return  (node.RightChild == null ? 0 : GetHeight(node.RightChild)) - (node.LeftChild == null ? 0 : GetHeight(node.LeftChild));
+        }
+
+        public int GetHeight(AVLTreeNode<T1, T2> node)
+        {
+            List<List<AVLTreeNode<T1, T2>>> paths = GetAllPathToNullLeaves(node);
+            int height = paths[0].Count;
+            for (int i = 1; i < paths.Count; i++)
+            {
+                if (paths[i].Count > height)
+                {
+                    height = paths[i].Count;
+                }
+            }
+            return height;
         }
     }
 }
