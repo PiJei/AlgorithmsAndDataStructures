@@ -439,28 +439,5 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
             Assert.IsFalse(G.FormsTriangle());
             Assert.IsTrue(H.FormsTriangle());
         }
-
-        [TestMethod]
-        public void BinarySearchTree_InOrderTraversal_Test()
-        {
-            var inOrderTraversal = new List<MockTreeNode<int, string>>();
-            TreeNode<MockTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
-            Assert.AreEqual(7, inOrderTraversal.Count);
-            for (int i = 0; i < inOrderTraversal.Count - 1; i++)
-            {
-                Assert.IsTrue(inOrderTraversal[i].Key < inOrderTraversal[i + 1].Key);
-            }
-        }
-
-        [TestMethod]
-        public void TreeNode_GetAllPathToNullLeaves_Test()
-        {
-            List<List<MockTreeNode<int, string>>> pathsFromA = TreeNode<MockTreeNode<int, string>, int, string>.GetAllPathToNullLeaves(_root);
-            Assert.AreEqual(4, pathsFromA.Count);
-            Assert.AreEqual(3, pathsFromA[0].Count);
-            Assert.AreEqual(4, pathsFromA[1].Count);
-            Assert.AreEqual(4, pathsFromA[2].Count);
-            Assert.AreEqual(2, pathsFromA[3].Count);
-        }
     }
 }

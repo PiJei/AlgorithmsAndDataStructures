@@ -310,7 +310,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
             BinarySearchTreeTests.HasBinarySearchTreeOrderProperty<MockTreeNode<int, string>, int, string>(root);
 
             List<MockTreeNode<int, string>> nodes = new List<MockTreeNode<int, string>>();
-            TreeNode<MockTreeNode<int, string>, int, string>.InOrderTraversal(root, nodes);
+            BinarySearchTreeBase<MockTreeNode<int, string>, int, string>.InOrderTraversal(root, nodes);
             Assert.AreEqual(7, nodes.Count);
             for (int i = 0; i < nodes.Count - 1; i++)
             {
@@ -319,7 +319,29 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
 
             Assert.AreEqual(40, root.Key);
             Assert.AreEqual("str3", root.Value, ignoreCase: false);
+        }
 
+        [TestMethod]
+        public void BinarySearchTreeBase_InOrderTraversal_Test()
+        {
+            var inOrderTraversal = new List<MockTreeNode<int, string>>();
+            BinarySearchTreeBase<MockTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
+            Assert.AreEqual(7, inOrderTraversal.Count);
+            for (int i = 0; i < inOrderTraversal.Count - 1; i++)
+            {
+                Assert.IsTrue(inOrderTraversal[i].Key < inOrderTraversal[i + 1].Key);
+            }
+        }
+
+        [TestMethod]
+        public void BinarySearchTreeBase_GetAllPathToNullLeaves_Test()
+        {
+            List<List<MockTreeNode<int, string>>> pathsFromA = BinarySearchTreeBase<MockTreeNode<int, string>, int, string>.GetAllPathToNullLeaves(_root);
+            Assert.AreEqual(4, pathsFromA.Count);
+            Assert.AreEqual(3, pathsFromA[0].Count);
+            Assert.AreEqual(4, pathsFromA[1].Count);
+            Assert.AreEqual(4, pathsFromA[2].Count);
+            Assert.AreEqual(2, pathsFromA[3].Count);
         }
     }
 }

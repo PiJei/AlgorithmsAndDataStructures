@@ -19,6 +19,7 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentals.DataStructures.Trees;
+using CSFundamentals.DataStructures.Trees.API;
 using System;
 using System.Collections.Generic;
 
@@ -35,7 +36,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
         public void HasExpectedBalanceFactor<T1, T2>(List<AVLTreeNode<T1, T2>> nodes) where T1 : IComparable<T1>, IEquatable<T1>
         {
-
+            
         }
     }
 }

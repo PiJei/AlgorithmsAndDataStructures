@@ -34,14 +34,30 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// Builds a binary search tree of the given list and returns the root of the tree.
         /// </summary>
         /// <param name="keyValues"></param>
-        /// <returns></returns>
+        /// <returns>Root of the tree.</returns>
         public abstract T Build(List<T> keyValues);
 
+        /// <summary>
+        /// Inserts a new node in the tree and returns the new root of the tree.
+        /// </summary>
+        /// <param name="root">Current root of the tree. </param>
+        /// <param name="newNode">New node to be inserted in the tree. </param>
+        /// <returns>New root of the tree (might or might not change during operation).</returns>
         public abstract T Insert(T root, T newNode);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="root"></param>
+        /// <param name="key"></param>
+        /// <returns>New root of the tree (might or might not change during the operation).</returns>
         public abstract T Delete(T root, T1 key);
 
+        // TODO: SOrt usings and headers in all the tree related code I have created, ... 
         // TODO: These bounds are no longer correct generally, depending on the Tree they change...
+        // one way is to have these also as abstract and in the inherited class just make calls here and use those as wrappers, to have the space and insert complexity, etc, ... 
+        // that is not a bad idea!
+        // TODO: Build is very similar in all of these trees so also have a Build_BST somethings, ... 
         /// <summary>
         /// Implements insert in a red black tree without the balancing step. The code is similar to the Insert operation for BinarySearchTree, except that it updates the parental relationship, and because of the balancing performed by the man insert method, it is guaranteed to be upper bounded by O(Log(n))
         /// </summary>
@@ -92,8 +108,6 @@ namespace CSFundamentals.DataStructures.Trees.API
 
             return root;
         }
-
-
 
         /// <summary>
         /// Implements Search/Lookup/Find operation for a BinarySearchTree. 
@@ -265,6 +279,51 @@ namespace CSFundamentals.DataStructures.Trees.API
         {
             T maxNode = FindMax(root);
             return Delete(root, maxNode.Key);
+        }
+
+        //TODO if these methods are defined static, they are probably not in a good location, 
+        public static List<List<T>> GetAllPathToNullLeaves(T startNode)
+        {
+            if (startNode == null)
+            {
+                return new List<List<T>>();
+            }
+
+            List<List<T>> paths = new List<List<T>>();
+            List<List<T>> leftPaths = GetAllPathToNullLeaves(startNode.LeftChild);
+            List<List<T>> rightPaths = GetAllPathToNullLeaves(startNode.RightChild);
+
+            for (int i = 0; i < leftPaths.Count; i++)
+            {
+                var newPath = new List<T>();
+                newPath.Add(startNode);
+                newPath.AddRange(leftPaths[i]);
+                paths.Add(newPath);
+            }
+            for (int i = 0; i < rightPaths.Count; i++)
+            {
+                var newPath = new List<T>();
+                newPath.Add(startNode);
+                newPath.AddRange(rightPaths[i]);
+                paths.Add(newPath);
+            }
+
+            if (paths.Count == 0)
+            {
+                paths.Add(new List<T> { startNode });
+            }
+
+            return paths;
+        }
+
+        public static void InOrderTraversal(T root, List<T> inOrder)
+        {
+            if (root != null)
+            {
+                InOrderTraversal(root.LeftChild, inOrder);
+                inOrder.Add(root);
+                InOrderTraversal(root.RightChild, inOrder);
+            }
         }
     }
 }

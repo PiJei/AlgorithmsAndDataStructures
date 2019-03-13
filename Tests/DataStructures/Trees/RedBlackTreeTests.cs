@@ -57,7 +57,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         public void RedBlackTree_Build_Test()
         {
             List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
-            TreeNode<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
+            BinarySearchTreeBase<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
             HasRedBlackTreeProperties(_root, inOrderTraversal, 7);
         }
 
@@ -66,7 +66,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         {
             _root = _tree.Delete(_root, 47);
             List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
-            TreeNode<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
+            BinarySearchTreeBase<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
             HasRedBlackTreeProperties(_root, inOrderTraversal, 6);
         }
 
@@ -75,7 +75,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         {
             _root = _tree.Delete(_root, 30);
             List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
-            TreeNode<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
+            BinarySearchTreeBase<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
             HasRedBlackTreeProperties(_root, inOrderTraversal, 6);
         }
 
@@ -84,7 +84,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         {
             _root = _tree.Delete(_root, 50);
             List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
-            TreeNode<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
+            BinarySearchTreeBase<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
             HasRedBlackTreeProperties(_root, inOrderTraversal, 6);
         }
 
@@ -93,7 +93,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         {
             _root = _tree.Delete(_root, 20);
             List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
-            TreeNode<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
+            BinarySearchTreeBase<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
             HasRedBlackTreeProperties(_root, inOrderTraversal, 6);
         }
 
@@ -102,7 +102,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         {
             _root = _tree.Delete(_root, 40);
             List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
-            TreeNode<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
+            BinarySearchTreeBase<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
             HasRedBlackTreeProperties(_root, inOrderTraversal, 6);
         }
 
@@ -111,7 +111,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         {
             _root = _tree.Delete(_root, 35);
             List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
-            TreeNode<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
+            BinarySearchTreeBase<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
             HasRedBlackTreeProperties(_root, inOrderTraversal, 6);
         }
 
@@ -120,7 +120,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         {
             _root = _tree.Delete(_root, 45);
             List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
-            TreeNode<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
+            BinarySearchTreeBase<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
             HasRedBlackTreeProperties(_root, inOrderTraversal, 6);
         }
 
@@ -129,7 +129,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         {
             _root = _tree.Delete(_root, 15);
             List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
-            TreeNode<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
+            BinarySearchTreeBase<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
             HasRedBlackTreeProperties(_root, inOrderTraversal, 7);
         }
 
@@ -138,37 +138,37 @@ namespace CSFundamentalsTests.DataStructures.Trees
         {
             _root = _tree.Delete(_root, 30);
             List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
-            TreeNode<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
+            BinarySearchTreeBase<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
             HasRedBlackTreeProperties(_root, inOrderTraversal, 6);
 
             _root = _tree.Delete(_root, 47);
             inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
-            TreeNode<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
+            BinarySearchTreeBase<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
             HasRedBlackTreeProperties(_root, inOrderTraversal, 5);
 
             _root = _tree.Delete(_root, 20);
             inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
-            TreeNode<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
+            BinarySearchTreeBase<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
             HasRedBlackTreeProperties(_root, inOrderTraversal, 4);
 
             _root = _tree.Delete(_root, 50);
             inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
-            TreeNode<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
+            BinarySearchTreeBase<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
             HasRedBlackTreeProperties(_root, inOrderTraversal, 3);
 
             _root = _tree.Delete(_root, 35);
             inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
-            TreeNode<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
+            BinarySearchTreeBase<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
             HasRedBlackTreeProperties(_root, inOrderTraversal, 2);
 
             _root = _tree.Delete(_root, 45);
             inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
-            TreeNode<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
+            BinarySearchTreeBase<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
             HasRedBlackTreeProperties(_root, inOrderTraversal, 1);
 
             _root = _tree.Delete(_root, 40);
             inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
-            TreeNode<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
+            BinarySearchTreeBase<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(_root, inOrderTraversal);
             HasRedBlackTreeProperties(_root, inOrderTraversal, 0);
         }
 
@@ -206,7 +206,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             // all paths from a node to its null (leaf) descendants contain the same number of black nodes. 
             foreach (RedBlackTreeNode<T1, T2> node in inOrderTraversal)
             {
-                List<List<RedBlackTreeNode<T1, T2>>> paths = TreeNode<RedBlackTreeNode<T1, T2>, T1, T2>.GetAllPathToNullLeaves(node);
+                List<List<RedBlackTreeNode<T1, T2>>> paths = BinarySearchTreeBase<RedBlackTreeNode<T1, T2>, T1, T2>.GetAllPathToNullLeaves(node);
                 int firstPathBlackNodeCount = 0;
                 if (paths.Count >= 0)
                     firstPathBlackNodeCount = paths[0].Count(n => n.Color == Color.Black);

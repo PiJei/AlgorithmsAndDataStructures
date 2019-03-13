@@ -139,51 +139,6 @@ namespace CSFundamentals.DataStructures.Trees.API
             return false;
         }
 
-        //TODO if these methods are defined static, they are probably not in a good location, 
-        public static List<List<T>> GetAllPathToNullLeaves(T startNode)
-        {
-            if (startNode == null)
-            {
-                return new List<List<T>>();
-            }
-
-            List<List<T>> paths = new List<List<T>>();
-            List<List<T>> leftPaths = GetAllPathToNullLeaves(startNode.LeftChild);
-            List<List<T>> rightPaths = GetAllPathToNullLeaves(startNode.RightChild);
-
-            for (int i = 0; i < leftPaths.Count; i++)
-            {
-                var newPath = new List<T>();
-                newPath.Add(startNode);
-                newPath.AddRange(leftPaths[i]);
-                paths.Add(newPath);
-            }
-            for (int i = 0; i < rightPaths.Count; i++)
-            {
-                var newPath = new List<T>();
-                newPath.Add(startNode);
-                newPath.AddRange(rightPaths[i]);
-                paths.Add(newPath);
-            }
-
-            if (paths.Count == 0)
-            {
-                paths.Add(new List<T> { startNode });
-            }
-
-            return paths;
-        }
-
-        public static void InOrderTraversal(T root, List<T> inOrder)
-        {
-            if (root != null)
-            {
-                InOrderTraversal(root.LeftChild, inOrder);
-                inOrder.Add(root);
-                InOrderTraversal(root.RightChild, inOrder);
-            }
-        }
-
         public int CompareTo(T other)
         {
             return Key.CompareTo(other.Key);

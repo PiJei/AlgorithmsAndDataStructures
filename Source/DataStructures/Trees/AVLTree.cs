@@ -20,6 +20,7 @@
 using CSFundamentals.DataStructures.Trees.API;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 
 //TODO: Shall inherit from BinarySearchTree
 
@@ -41,8 +42,51 @@ namespace CSFundamentals.DataStructures.Trees
 
         public override AVLTreeNode<T1, T2> Insert(AVLTreeNode<T1, T2> root, AVLTreeNode<T1, T2> newNode)
         {
-            throw new NotImplementedException();
-            //TODO
+            root = Insert_BST(root, newNode); /* First insert the node using normal BinarySearchInsert to preserve the ordering property. */
+
+            var parent = newNode.Parent;
+            var grandParent = newNode.GetGrandParent();
+
+            if (grandParent != null)
+            {
+                int grandParentBalance = grandParent.ComputeBalanceFactor();
+                if (grandParentBalance > 1)
+                {
+                    if (newNode.FormsTriangle())
+                    {
+                        Contract.Assert(newNode.IsLeftChild());
+                        RotateRight(parent);
+                        RotateLeft(grandParent);
+                    }
+                    else if (newNode.FormsLine())
+                    {
+                        Contract.Assert(newNode.IsRightChild());
+                        RotateLeft(grandParent);
+                    }
+                }
+                else if (grandParentBalance < -1)
+                {
+                    if (newNode.FormsTriangle())
+                    {
+                        Contract.Assert(newNode.IsRightChild());
+                        RotateLeft(parent);
+                        RotateRight(grandParent);
+                    }
+                    else if (newNode.FormsLine())
+                    {
+                        Contract.Assert(newNode.IsLeftChild()); ;
+                        RotateRight(grandParent);
+                    }
+                }
+            }
+
+            // Find the new root of the tree, as it might have changed during the operations. 
+            root = newNode;
+            while (root.Parent != null)
+            {
+                root = root.Parent;
+            }
+            return root;
         }
     }
 }

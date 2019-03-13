@@ -22,6 +22,8 @@ using System.Collections.Generic;
 using CSFundamentals.DataStructures.Trees.API;
 using CSFundamentals.Styling;
 
+// TODO: Could just move all the other implementations of BinarySearchTree also here such as delete and build, and make a mock object in tests or turn this to non-abstract class with virtual implementations
+
 namespace CSFundamentals.DataStructures.Trees
 {
     /// <summary>
@@ -34,6 +36,7 @@ namespace CSFundamentals.DataStructures.Trees
     public class BinarySearchTreeBase<T1, T2> : BinarySearchTreeBase<BinarySearchTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
     {
         //TODO Compute best and worst case for build operation. 
+        [TimeComplexity(Case.Worst, "O(n^2)")] //  TODO: Use character map for power 2
         [TimeComplexity(Case.Average, "O(nLog(n))")]
         [SpaceComplexity("O(n)")]
         public override BinarySearchTreeNode<T1, T2> Build(List<BinarySearchTreeNode<T1, T2>> nodes)

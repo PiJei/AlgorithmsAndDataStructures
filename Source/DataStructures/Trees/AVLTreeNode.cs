@@ -42,7 +42,7 @@ namespace CSFundamentals.DataStructures.Trees
 
         public int GetHeight()
         {
-            List<List<AVLTreeNode<T1, T2>>> paths = GetAllPathToNullLeaves(this);
+            List<List<AVLTreeNode<T1, T2>>> paths = BinarySearchTreeBase<AVLTreeNode<T1, T2>, T1, T2>.GetAllPathToNullLeaves(this);
             int height = paths[0].Count;
             for (int i = 1; i < paths.Count; i++)
             {
