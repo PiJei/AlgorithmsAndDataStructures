@@ -340,7 +340,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
             Assert.AreEqual(3, pathsFromRoot.Count);
             Assert.AreEqual(3, pathsFromRoot[0].Count);
             Assert.AreEqual(4, pathsFromRoot[1].Count);
-            Assert.AreEqual(5, pathsFromRoot[2].Count);
+            Assert.AreEqual(3, pathsFromRoot[2].Count);
         }
 
         // TODO: This code is repeated between here and binary search tree: remove duplicates
