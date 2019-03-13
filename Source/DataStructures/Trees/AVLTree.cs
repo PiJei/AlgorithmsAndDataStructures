@@ -17,17 +17,26 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using CSFundamentals.DataStructures.Trees.API;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
-
-//TODO: Shall inherit from BinarySearchTree
+using CSFundamentals.DataStructures.Trees.API;
+using CSFundamentals.Styling;
 
 namespace CSFundamentals.DataStructures.Trees
 {
+    /// <summary>
+    /// Implements an AVL tree. An AVL tree is a self balancing Binary Search Tree.
+    /// Notice the differences in time complexity at worst case for various operations, compared to a basic binary search tree. 
+    /// </summary>
+    /// <typeparam name="T1">Specifies the type of the keys in the tree. </typeparam>
+    /// <typeparam name="T2">Specifies the type of the values in the tree. </typeparam>
     public class AVLTree<T1, T2> : BinarySearchTreeBase<AVLTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>
     {
+        [TimeComplexity(Case.Best, "O(n)", When = "Every new node is inserted in the very first locations.")]
+        [TimeComplexity(Case.Worst, "O(nLog(n))")]
+        [TimeComplexity(Case.Average, "O(nLog(n))")]
+        [SpaceComplexity("O(n)")]
         public override AVLTreeNode<T1, T2> Build(List<AVLTreeNode<T1, T2>> nodes)
         {
             return Build_BST(nodes);
@@ -39,6 +48,10 @@ namespace CSFundamentals.DataStructures.Trees
             //TODO
         }
 
+        [TimeComplexity(Case.Best, "O(1)", When = "The tree is empty, and the first node is added.")]
+        [TimeComplexity(Case.Worst, "O(Log(n))")]
+        [TimeComplexity(Case.Average, "O(Log(n))")]
+        [SpaceComplexity("O(1)", InPlace = true)]
         public override AVLTreeNode<T1, T2> Insert(AVLTreeNode<T1, T2> root, AVLTreeNode<T1, T2> newNode)
         {
             root = Insert_BST(root, newNode); /* First insert the node using normal BinarySearchInsert to preserve the ordering property. */
@@ -94,11 +107,21 @@ namespace CSFundamentals.DataStructures.Trees
             return root;
         }
 
-        public int ComputeBalanceFactor(AVLTreeNode<T1,T2> node)
+        /// <summary>
+        /// Computes balance factor of a node. Which is the difference between the height of the left and right sub trees of the node.
+        /// </summary>
+        /// <param name="node">Is the node for which balance is computed.</param>
+        /// <returns>the balance factor of the node. </returns>
+        public int ComputeBalanceFactor(AVLTreeNode<T1, T2> node)
         {
-            return  (node.RightChild == null ? 0 : GetHeight(node.RightChild)) - (node.LeftChild == null ? 0 : GetHeight(node.LeftChild));
+            return (node.RightChild == null ? 0 : GetHeight(node.RightChild)) - (node.LeftChild == null ? 0 : GetHeight(node.LeftChild));
         }
 
+        /// <summary>
+        /// Computes the height of the tree rooted at the given node. The height of a node is the maximum path length to its leaf nodes.
+        /// </summary>
+        /// <param name="node">Is the node whose height is calculated.</param>
+        /// <returns>The height of the tree rooted at the given node. </returns>
         public int GetHeight(AVLTreeNode<T1, T2> node)
         {
             List<List<AVLTreeNode<T1, T2>>> paths = GetAllPathToLeaves(node);
@@ -111,6 +134,42 @@ namespace CSFundamentals.DataStructures.Trees
                 }
             }
             return height;
+        }
+
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "O(Log(n))")]
+        [TimeComplexity(Case.Average, "O(Log(n))")]
+        [SpaceComplexity("O(1)", InPlace = true)]
+        public override AVLTreeNode<T1, T2> Search(AVLTreeNode<T1, T2> root, T1 key)
+        {
+            return Search_BST(root, key);
+        }
+
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "O(Log(n))")]
+        [TimeComplexity(Case.Average, "O(Log(n))")]
+        [SpaceComplexity("O(1)", InPlace = true)]
+        public override bool Update(AVLTreeNode<T1, T2> root, T1 key, T2 value)
+        {
+            return Update_BST(root, key, value);
+        }
+
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "O(Log(n))")]
+        [TimeComplexity(Case.Average, "O(Log(n))")]
+        [SpaceComplexity("O(1)")]
+        public override AVLTreeNode<T1, T2> FindMin(AVLTreeNode<T1, T2> root)
+        {
+            return FindMin_BST(root);
+        }
+
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "O(Log(n))")]
+        [TimeComplexity(Case.Average, "O(Log(n))")]
+        [SpaceComplexity("O(1)")]
+        public override AVLTreeNode<T1, T2> FindMax(AVLTreeNode<T1, T2> root)
+        {
+            return FindMax_BST(root);
         }
     }
 }

@@ -17,9 +17,9 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using CSFundamentals.DataStructures.Trees.API;
 using System;
 using System.Collections.Generic;
+using CSFundamentals.DataStructures.Trees.API;
 
 namespace CSFundamentalsTests.DataStructures.Trees.API
 {
@@ -35,7 +35,27 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
             throw new NotImplementedException();
         }
 
+        public override MockTreeNode<T1, T2> FindMax(MockTreeNode<T1, T2> root)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override MockTreeNode<T1, T2> FindMin(MockTreeNode<T1, T2> root)
+        {
+            throw new NotImplementedException();
+        }
+
         public override MockTreeNode<T1, T2> Insert(MockTreeNode<T1, T2> root, MockTreeNode<T1, T2> newNode)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override MockTreeNode<T1, T2> Search(MockTreeNode<T1, T2> root, T1 key)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool Update(MockTreeNode<T1, T2> root, T1 key, T2 value)
         {
             throw new NotImplementedException();
         }

@@ -19,32 +19,33 @@
 
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using CSFundamentals.Styling;
 using System.Diagnostics.Contracts;
+using System.Runtime.CompilerServices;
 using CSFundamentals.DataStructures.Trees.API;
+using CSFundamentals.Styling;
 
 [assembly: InternalsVisibleTo("CSFundamentalsTests")]
-
-// TODO: Make to inherit from BinarySearchTree and no implementations for search/update/insert-normal
-
+//TODO: Specify time and space complexities
 namespace CSFundamentals.DataStructures.Trees
 {
     /// <summary>
     /// Implements a red black tree and its operations. A red-black tree is a self-balancing binary search tree.
-    /// In this implementation, leaf nodes are treated as nulls and are not explicit. 
+    /// In this implementation, nulls are treated as black nodes. 
     /// A red black tree can also be used as a key-value store.
     /// </summary>
     /// <typeparam name="T1">Specifies the type of the keys in red black tree.</typeparam>
     /// <typeparam name="T2">Specifies the type of the values in red black tree. </typeparam>
     public class RedBlackTree<T1, T2> : BinarySearchTreeBase<RedBlackTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>
     {
+        [TimeComplexity(Case.Best, "O(n)", When = "Every new node is inserted in the very first locations.")]
+        [TimeComplexity(Case.Worst, "O(nLog(n))")]
+        [TimeComplexity(Case.Average, "O(nLog(n))")]
+        [SpaceComplexity("O(n)")]
         public override RedBlackTreeNode<T1, T2> Build(List<RedBlackTreeNode<T1, T2>> nodes)
         {
             return Build_BST(nodes);
         }
 
-        // The code is similar to the Insert operation for BinarySearchTree, except that it updates the parental relationship, and because of the balancing performed by the man insert method, it is guaranteed to be upper bounded by O(Log(n))
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         public override RedBlackTreeNode<T1, T2> Insert(RedBlackTreeNode<T1, T2> root, RedBlackTreeNode<T1, T2> newNode)
         {
@@ -293,6 +294,42 @@ namespace CSFundamentals.DataStructures.Trees
         {
             throw new NotImplementedException();
             //TODO
+        }
+
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "O(Log(n))")]
+        [TimeComplexity(Case.Average, "O(Log(n))")]
+        [SpaceComplexity("O(1)", InPlace = true)]
+        public override RedBlackTreeNode<T1, T2> Search(RedBlackTreeNode<T1, T2> root, T1 key)
+        {
+            return Search_BST(root, key);
+        }
+
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "O(Log(n))")]
+        [TimeComplexity(Case.Average, "O(Log(n))")]
+        [SpaceComplexity("O(1)", InPlace = true)]
+        public override bool Update(RedBlackTreeNode<T1, T2> root, T1 key, T2 value)
+        {
+            return Update_BST(root, key, value);
+        }
+
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "O(Log(n))")]
+        [TimeComplexity(Case.Average, "O(Log(n))")]
+        [SpaceComplexity("O(1)")]
+        public override RedBlackTreeNode<T1, T2> FindMin(RedBlackTreeNode<T1, T2> root)
+        {
+            return FindMin_BST(root);
+        }
+
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "O(Log(n))")]
+        [TimeComplexity(Case.Average, "O(Log(n))")]
+        [SpaceComplexity("O(1)")]
+        public override RedBlackTreeNode<T1, T2> FindMax(RedBlackTreeNode<T1, T2> root)
+        {
+            return FindMax_BST(root);
         }
     }
 }

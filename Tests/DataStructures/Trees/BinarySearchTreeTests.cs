@@ -17,11 +17,10 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CSFundamentals.DataStructures.Trees;
-using CSFundamentals.DataStructures.Trees.API;
 using System.Collections.Generic;
+using CSFundamentals.DataStructures.Trees;
 using CSFundamentalsTests.DataStructures.Trees.API;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.DataStructures.Trees
 {

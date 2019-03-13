@@ -19,7 +19,10 @@
 
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using CSFundamentals.Styling;
+
+[assembly: InternalsVisibleTo("CSFundamentalTests")]
 
 namespace CSFundamentals.DataStructures.Trees.API
 {
@@ -80,7 +83,7 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// <param name="root">Current root of the tree, or the node at which insert operation should be started.</param>
         /// <param name="newNode">New node to be inserted in the tree. </param>
         /// <returns>New root of the tree (might or might not change during operation).</returns>
-        protected T Insert_BST(T root, T newNode)
+        internal T Insert_BST(T root, T newNode)
         {
             if (root == null) /* This is the case where there is no node in the tree, and newNode is the first one. */
             {
@@ -128,7 +131,7 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// </summary>
         /// <param name="nodes">Is a list of nodes to be inserted in the tree.</param>
         /// <returns>Root of the tree.</returns>
-        protected T Build_BST(List<T> nodes)
+        internal T Build_BST(List<T> nodes)
         {
             foreach(T node in nodes)
             {
@@ -143,7 +146,7 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// <param name="root">Current root of the tree, or the node at which search operation should be started. </param>
         /// <param name="key">Specifies the key to be searched. </param>
         /// <returns>Returns the tree node that contains key. </returns>
-        protected T Search_BST(T root, T1 key)
+        internal T Search_BST(T root, T1 key)
         {
             if (root == null)
             {
@@ -186,7 +189,7 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// </summary>
         /// <param name="root">Is the node at which the search starts. </param>
         /// <returns>The tree node with the smallest key. </returns>
-        public T FindMin_BST(T root)
+        internal T FindMin_BST(T root)
         {
             if (root == null) throw new ArgumentNullException();
 
@@ -203,7 +206,7 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// </summary>
         /// <param name="root">Is the node at which the search starts. </param>
         /// <returns>The tree node with the largest key.</returns>
-        public T FindMax_BST(T root)
+        internal T FindMax_BST(T root)
         {
             if (root == null) throw new ArgumentNullException();
             T node = root;

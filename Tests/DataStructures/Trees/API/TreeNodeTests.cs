@@ -18,8 +18,8 @@
  */
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CSFundamentals.DataStructures.Trees.API;
-using System.Collections.Generic;
+
+// TODO: Make tests in one test file to use the init and just it 
 
 namespace CSFundamentalsTests.DataStructures.Trees.API
 {
