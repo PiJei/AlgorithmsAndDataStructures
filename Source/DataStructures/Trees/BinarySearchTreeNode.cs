@@ -22,7 +22,7 @@ using System;
 
 namespace CSFundamentals.DataStructures.Trees
 {
-    public class BinarySearchTreeNode<T1, T2> : TreeNode<BinarySearchTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
+    public class BinarySearchTreeNode<T1, T2> : TreeNode<BinarySearchTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>
     {
         public BinarySearchTreeNode(T1 key, T2 value) : base(key, value)
         {

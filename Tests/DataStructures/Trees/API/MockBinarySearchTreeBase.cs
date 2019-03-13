@@ -23,7 +23,7 @@ using System.Collections.Generic;
 
 namespace CSFundamentalsTests.DataStructures.Trees.API
 {
-    public class MockBinarySearchTreeBase<T1, T2> : BinarySearchTreeBase<MockTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
+    public class MockBinarySearchTreeBase<T1, T2> : BinarySearchTreeBase<MockTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>
     {
         public override MockTreeNode<T1, T2> Build(List<MockTreeNode<T1, T2>> keyValues)
         {

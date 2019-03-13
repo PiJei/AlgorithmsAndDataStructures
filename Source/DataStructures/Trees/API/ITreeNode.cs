@@ -21,24 +21,52 @@ using System;
 
 namespace CSFundamentals.DataStructures.Trees.API
 {
-    public interface ITreeNode<T, T1, T2> : IComparable<T> where T1 : IComparable<T1>, IEquatable<T1>
+    /// <summary>
+    /// Specifies an interface for nodes in any tree structure. 
+    /// </summary>
+    /// <typeparam name="T">Is the type of the tree node. </typeparam>
+    /// <typeparam name="T1">Is the type of the keys in the tree nodes. </typeparam>
+    /// <typeparam name="T2">Is the type of the values in the tree nodes. </typeparam>
+    public interface ITreeNode<T, T1, T2> : IComparable<T> where T1 : IComparable<T1>
     {
+        /// <summary>
+        /// Is the key in a tree node. 
+        /// </summary>
         T1 Key { get; set; }
 
+        /// <summary>
+        /// Is the value (information) stored in a tree node. 
+        /// </summary> 
         /// <remarks>
         /// This can be converted to a list of values alternatively, to handle duplicate keys. 
         /// </remarks>
-        /// <summary>
-        /// Is the value (information) stored in a node. 
-        /// </summary> 
         T2 Value { get; set; }
 
+        /// <summary>
+        /// Is the left child of the node. 
+        /// </summary>
         T LeftChild { get; set; }
+
+        /// <summary>
+        /// Is the right child of the node. 
+        /// </summary>
         T RightChild { get; set; }
+
+        /// <summary>
+        /// Is the parent of the node.
+        /// </summary>
         T Parent { get; set; }
 
+        /// <summary>
+        /// Check whether the current node is left child of its parent.
+        /// </summary>
+        /// <returns>True in case the current node is the left child of its parent, and false otherwise.</returns>
         bool IsLeftChild();
 
+        /// <summary>
+        /// Check whether the current node is right child of its parent.
+        /// </summary>
+        /// <returns>True in case the current node is the right child of its parent, and false otherwise. </returns>
         bool IsRightChild();
     }
 }

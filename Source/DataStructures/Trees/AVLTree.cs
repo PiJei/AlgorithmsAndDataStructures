@@ -26,7 +26,7 @@ using System.Diagnostics.Contracts;
 
 namespace CSFundamentals.DataStructures.Trees
 {
-    public class AVLTree<T1, T2> : BinarySearchTreeBase<AVLTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
+    public class AVLTree<T1, T2> : BinarySearchTreeBase<AVLTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>
     {
         public override AVLTreeNode<T1, T2> Build(List<AVLTreeNode<T1, T2>> nodes)
         {

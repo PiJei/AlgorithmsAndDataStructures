@@ -18,13 +18,10 @@
  */
 
 using System;
-using System.Collections.Generic;
-
-// TODO: I feel this can be simplified, no need to pass 3 parameters! the definition is recursive!
 
 namespace CSFundamentals.DataStructures.Trees.API
 {
-    public abstract class TreeNode<T, T1, T2> : IComparable<T>, ITreeNode<T, T1, T2> where T : ITreeNode<T, T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
+    public abstract class TreeNode<T, T1, T2> : IComparable<T>, ITreeNode<T, T1, T2> where T : ITreeNode<T, T1, T2> where T1 : IComparable<T1>
     {
         public T1 Key { get; set; }
         public T2 Value { get; set; }

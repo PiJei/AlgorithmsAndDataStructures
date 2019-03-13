@@ -30,7 +30,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
     /// </summary>
     /// <typeparam name="T1">Specifies the type of the keys in a tree.</typeparam>
     /// <typeparam name="T2">Specifies type of the values in a tree.</typeparam>
-    public class MockTreeNode<T1, T2> : TreeNode<MockTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
+    public class MockTreeNode<T1, T2> : TreeNode<MockTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>
     {
         public MockTreeNode(T1 key, T2 value) : base(key, value)
         {

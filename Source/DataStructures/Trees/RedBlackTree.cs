@@ -37,7 +37,7 @@ namespace CSFundamentals.DataStructures.Trees
     /// </summary>
     /// <typeparam name="T1">Specifies the type of the keys in red black tree.</typeparam>
     /// <typeparam name="T2">Specifies the type of the values in red black tree. </typeparam>
-    public class RedBlackTree<T1, T2> : BinarySearchTreeBase<RedBlackTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
+    public class RedBlackTree<T1, T2> : BinarySearchTreeBase<RedBlackTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>
     {
         public override RedBlackTreeNode<T1, T2> Build(List<RedBlackTreeNode<T1, T2>> nodes)
         {
