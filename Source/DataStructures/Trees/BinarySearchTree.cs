@@ -22,8 +22,6 @@ using System.Collections.Generic;
 using CSFundamentals.DataStructures.Trees.API;
 using CSFundamentals.Styling;
 
-// TODO: Could just move all the other implementations of BinarySearchTree also here such as delete and build, and make a mock object in tests or turn this to non-abstract class with virtual implementations
-
 namespace CSFundamentals.DataStructures.Trees
 {
     /// <summary>
@@ -35,8 +33,8 @@ namespace CSFundamentals.DataStructures.Trees
     [DataStructure("BinarySearchTree (aka BST)")]
     public class BinarySearchTreeBase<T1, T2> : BinarySearchTreeBase<BinarySearchTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>
     {
-        //TODO Compute best and worst case for build operation. 
-        [TimeComplexity(Case.Worst, "O(n^2)")] //  TODO: Use character map for power 2
+        [TimeComplexity(Case.Best, "O(n)", When = "Every new node is inserted in the very first locations.")]
+        [TimeComplexity(Case.Worst, "O(n²)", When = "Tree is unbalanced such that it is turned into a linked list.")]
         [TimeComplexity(Case.Average, "O(nLog(n))")]
         [SpaceComplexity("O(n)")]
         public override BinarySearchTreeNode<T1, T2> Build(List<BinarySearchTreeNode<T1, T2>> nodes)
@@ -44,11 +42,6 @@ namespace CSFundamentals.DataStructures.Trees
             return Build_BST(nodes);
         }
 
-        // TODO: SOrt usings and headers in all the tree related code I have created, ... 
-        // TODO: These bounds are no longer correct generally, depending on the Tree they change...
-        // one way is to have these also as abstract and in the inherited class just make calls here and use those as wrappers, to have the space and insert complexity, etc, ... 
-        // that is not a bad idea!
-        // TODO: Build is very similar in all of these trees so also have a Build_BST somethings, ... 
         /// <summary>
         /// Implements insert in a binary search tree. 
         /// </summary>
@@ -65,7 +58,7 @@ namespace CSFundamentals.DataStructures.Trees
             return Insert_BST(root, newNode);
         }
 
-        [TimeComplexity(Case.Average, "")] // TODO
+        [TimeComplexity(Case.Average, "O(Log(n))")] // TODO for other cases
         [SpaceComplexity("O(1)")]
         public override BinarySearchTreeNode<T1, T2> Delete(BinarySearchTreeNode<T1, T2> root, T1 key)
         {
@@ -132,7 +125,7 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "o(n)")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)", InPlace = true)]
-        public override bool Update(BinarySearchTreeNode<T1,T2> root, T1 key, T2 value)
+        public override bool Update(BinarySearchTreeNode<T1, T2> root, T1 key, T2 value)
         {
             return Update_BST(root, key, value);
         }
