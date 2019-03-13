@@ -21,6 +21,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentals.DataStructures.Trees;
 using System;
 using System.Collections.Generic;
+using CSFundamentalsTests.DataStructures.Trees.API;
 
 namespace CSFundamentalsTests.DataStructures.Trees
 {
@@ -56,7 +57,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             E.LeftChild = null;
             E.RightChild = null;
 
-            BinarySearchTreeTests.HasBinarySearchTreeOrderProperty<AVLTreeNode<int, string>, int, string>(A);
+            BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<AVLTreeNode<int, string>, int, string>(A);
         }
 
         [TestMethod]

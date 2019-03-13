@@ -41,9 +41,6 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
             MockTreeNode<int, string> F = new MockTreeNode<int, string>(30, "str2");
             MockTreeNode<int, string> G = new MockTreeNode<int, string>(60, "str5");
 
-            _tree = new MockBinarySearchTreeBase<int, string>();
-            _root = A;
-
             A.Parent = null;
             A.LeftChild = B;
             A.RightChild = C;
@@ -71,6 +68,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
             G.Parent = D;
             G.LeftChild = null;
             G.RightChild = null;
+
+            _tree = new MockBinarySearchTreeBase<int, string>();
+            _root = A;
         }
 
         [TestMethod]
@@ -112,10 +112,10 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
             G.LeftChild = null;
             G.RightChild = null;
 
-            BinarySearchTreeTests.HasBinarySearchTreeOrderProperty<MockTreeNode<int, string>, int, string>(A);
+            HasBinarySearchTreeOrderProperty<MockTreeNode<int, string>, int, string>(A);
             var tree = new MockBinarySearchTreeBase<int, string>();
             tree.RotateLeft(B);
-            BinarySearchTreeTests.HasBinarySearchTreeOrderProperty<MockTreeNode<int, string>, int, string>(A);
+            HasBinarySearchTreeOrderProperty<MockTreeNode<int, string>, int, string>(A);
 
             Assert.IsTrue(A.Parent == null);
             Assert.IsTrue(A.LeftChild.Equals(D));
@@ -179,10 +179,10 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
             G.LeftChild = null;
             G.RightChild = null;
 
-            BinarySearchTreeTests.HasBinarySearchTreeOrderProperty<MockTreeNode<int, string>, int, string>(A);
+            HasBinarySearchTreeOrderProperty<MockTreeNode<int, string>, int, string>(A);
             var tree = new MockBinarySearchTreeBase<int, string>();
             tree.RotateRight(B);
-            BinarySearchTreeTests.HasBinarySearchTreeOrderProperty<MockTreeNode<int, string>, int, string>(A);
+            HasBinarySearchTreeOrderProperty<MockTreeNode<int, string>, int, string>(A);
 
             Assert.IsTrue(A.Parent == null);
             Assert.IsTrue(A.LeftChild == null);
@@ -307,7 +307,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
             root = tree.Insert_BST(root, new MockTreeNode<int, string>(30, "str2"));
             root = tree.Insert_BST(root, new MockTreeNode<int, string>(60, "str5"));
 
-            BinarySearchTreeTests.HasBinarySearchTreeOrderProperty<MockTreeNode<int, string>, int, string>(root);
+            HasBinarySearchTreeOrderProperty<MockTreeNode<int, string>, int, string>(root);
 
             List<MockTreeNode<int, string>> nodes = new List<MockTreeNode<int, string>>();
             BinarySearchTreeBase<MockTreeNode<int, string>, int, string>.InOrderTraversal(root, nodes);
@@ -337,11 +337,34 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         public void BinarySearchTreeBase_GetAllPathToNullLeaves_Test()
         {
             List<List<MockTreeNode<int, string>>> pathsFromA = BinarySearchTreeBase<MockTreeNode<int, string>, int, string>.GetAllPathToNullLeaves(_root);
-            Assert.AreEqual(4, pathsFromA.Count);
+            Assert.AreEqual(3, pathsFromA.Count);
             Assert.AreEqual(3, pathsFromA[0].Count);
             Assert.AreEqual(4, pathsFromA[1].Count);
-            Assert.AreEqual(4, pathsFromA[2].Count);
-            Assert.AreEqual(2, pathsFromA[3].Count);
+            Assert.AreEqual(5, pathsFromA[2].Count);
+        }
+
+        //TODO: This code is repeated between here and binary search tree: remove duplicates
+        /// <summary>
+        /// Given the root of a binary search tree, checks whether the binary search tree properties hold.
+        /// </summary>
+        /// <typeparam name="T1">Specifies the type of the keys in tree. </typeparam>
+        /// <typeparam name="T2">Specifies the type of the values in tree nodes. </typeparam>
+        /// <param name="root">Is the root of a binary search tree. </param>
+        public static void HasBinarySearchTreeOrderProperty<T, T1, T2>(T root) where T : ITreeNode<T, T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
+        {
+            if (root != null)
+            {
+                if (root.LeftChild != null)
+                {
+                    Assert.IsTrue(root.Key.CompareTo(root.LeftChild.Key) > 0);
+                    HasBinarySearchTreeOrderProperty<T, T1, T2>(root.LeftChild);
+                }
+                if (root.RightChild != null)
+                {
+                    Assert.IsTrue(root.Key.CompareTo(root.RightChild.Key) < 0);
+                    HasBinarySearchTreeOrderProperty<T, T1, T2>(root.RightChild);
+                }
+            }
         }
     }
 }

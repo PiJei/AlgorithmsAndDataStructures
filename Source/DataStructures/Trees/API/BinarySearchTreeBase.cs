@@ -25,6 +25,7 @@ namespace CSFundamentals.DataStructures.Trees.API
 {
     public abstract class BinarySearchTreeBase<T, T1, T2> where T : ITreeNode<T, T1, T2> where T1 : IEquatable<T1>, IComparable<T1>
     {
+        // TODO: I am not sure if I am using this root?
         /// <summary>
         /// Is the root of the binary search tree.
         /// </summary>
@@ -35,7 +36,7 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// </summary>
         /// <param name="keyValues"></param>
         /// <returns>Root of the tree.</returns>
-        public abstract T Build(List<T> keyValues);
+        public abstract T Build(List<T> nodes);
 
         /// <summary>
         /// Inserts a new node in the tree and returns the new root of the tree.
@@ -316,6 +317,7 @@ namespace CSFundamentals.DataStructures.Trees.API
             return paths;
         }
 
+        //TODO  This should not be static?! look at my use cases in tests to see if I need static, ... 
         public static void InOrderTraversal(T root, List<T> inOrder)
         {
             if (root != null)

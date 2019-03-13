@@ -28,10 +28,13 @@ namespace CSFundamentals.DataStructures.Trees
 {
     public class AVLTree<T1, T2> : BinarySearchTreeBase<AVLTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
     {
-        public override AVLTreeNode<T1, T2> Build(List<AVLTreeNode<T1, T2>> keyValues)
+        public override AVLTreeNode<T1, T2> Build(List<AVLTreeNode<T1, T2>> nodes)
         {
-            throw new NotImplementedException();
-            //TODO
+            foreach(AVLTreeNode<T1, T2> node in nodes)
+            {
+                _root = Insert(_root, node);
+            }
+            return _root;
         }
 
         public override AVLTreeNode<T1, T2> Delete(AVLTreeNode<T1, T2> root, T1 key)
@@ -47,7 +50,7 @@ namespace CSFundamentals.DataStructures.Trees
             var parent = newNode.Parent;
             var grandParent = newNode.GetGrandParent();
 
-            if (grandParent != null)
+            while (grandParent != null && grandParent != null)
             {
                 int grandParentBalance = grandParent.ComputeBalanceFactor();
                 if (grandParentBalance > 1)
@@ -77,6 +80,12 @@ namespace CSFundamentals.DataStructures.Trees
                         Contract.Assert(newNode.IsLeftChild()); ;
                         RotateRight(grandParent);
                     }
+                }
+                else /* Expect this case be only repeated once, given the balance factor of any node that is kept controlled. */
+                {
+                    newNode = parent;
+                    parent = grandParent;
+                    grandParent = grandParent.Parent;
                 }
             }
 
