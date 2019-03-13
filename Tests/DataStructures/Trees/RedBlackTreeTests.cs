@@ -172,46 +172,6 @@ namespace CSFundamentalsTests.DataStructures.Trees
             HasRedBlackTreeProperties(_root, inOrderTraversal, 0);
         }
 
-        [TestMethod]
-        public void RedBlackTree_Insert_WithoutBalancing_Test()
-        {
-            var keyVals = new Dictionary<int, string>
-            {
-                [40] = "str3",
-                [20] = "str1",
-                [70] = "str6",
-                [50] = "str4",
-                [80] = "str7",
-                [30] = "str2",
-                [60] = "str5",
-            };
-
-            var tree = new RedBlackTree<int, string>();
-            RedBlackTreeNode<int, string> root = null;
-
-            root = tree.Insert_WithoutBalancing(root, new RedBlackTreeNode<int, string>(40, "str3", Color.Red));
-            root = tree.Insert_WithoutBalancing(root, new RedBlackTreeNode<int, string>(20, "str1", Color.Red));
-            root = tree.Insert_WithoutBalancing(root, new RedBlackTreeNode<int, string>(70, "str6", Color.Red));
-            root = tree.Insert_WithoutBalancing(root, new RedBlackTreeNode<int, string>(50, "str4", Color.Red));
-            root = tree.Insert_WithoutBalancing(root, new RedBlackTreeNode<int, string>(80, "str7", Color.Red));
-            root = tree.Insert_WithoutBalancing(root, new RedBlackTreeNode<int, string>(30, "str2", Color.Red));
-            root = tree.Insert_WithoutBalancing(root, new RedBlackTreeNode<int, string>(60, "str5", Color.Red));
-
-            BinarySearchTreeTests.HasBinarySearchTreeOrderProperty<RedBlackTreeNode<int, string>, int, string>(root);
-
-            List<RedBlackTreeNode<int, string>> nodes = new List<RedBlackTreeNode<int, string>>();
-            TreeNode<RedBlackTreeNode<int, string>, int, string>.InOrderTraversal(root, nodes);
-            Assert.AreEqual(7, nodes.Count);
-            for (int i = 0; i < nodes.Count - 1; i++)
-            {
-                Assert.IsTrue(nodes[i].Key < nodes[i + 1].Key);
-            }
-
-            Assert.AreEqual(40, root.Key);
-            Assert.AreEqual("str3", root.Value, ignoreCase: false);
-
-        }
-
         public static void HasRedBlackTreeProperties<T1, T2>(RedBlackTreeNode<T1, T2> root, List<RedBlackTreeNode<T1, T2>> inOrderTraversal, int expectedNodeCount) where T1 : IComparable<T1>, IEquatable<T1>
         {
             // Check order properties.

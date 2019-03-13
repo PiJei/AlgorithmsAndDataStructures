@@ -41,8 +41,60 @@ namespace CSFundamentals.DataStructures.Trees.API
 
         public abstract T Delete(T root, T1 key);
 
-
         // TODO: These bounds are no longer correct generally, depending on the Tree they change...
+        /// <summary>
+        /// Implements insert in a red black tree without the balancing step. The code is similar to the Insert operation for BinarySearchTree, except that it updates the parental relationship, and because of the balancing performed by the man insert method, it is guaranteed to be upper bounded by O(Log(n))
+        /// </summary>
+        /// <param name="root"></param>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        [TimeComplexity(Case.Worst, "O(Log(n))")]
+        internal T Insert_BST(T root, T newNode)
+        {
+            if (root == null) /* This is the case where there is no node in the tree, and newNode is the first one. */
+            {
+                root = newNode;
+                root.Parent = default(T);
+                return root;
+            }
+
+            if (root.Equals(newNode)) /* Turns to an Update. In this version, not allowing duplicate keys, and just updating the values, can make the values to be a list alternatively.*/
+            {
+                root.Value = newNode.Value;
+                return root;
+            }
+
+            if (root.CompareTo(newNode) < 0)
+            {
+                if (root.RightChild == null) /* Treating this case separately as need to update the parent of the new node.*/
+                {
+                    root.RightChild = newNode;
+                    newNode.Parent = root;
+                }
+                else
+                {
+                    root.RightChild = Insert_BST(root.RightChild, newNode); /* assignment because, in case right child is null, and in the recursive call it is instantiated, then parent will have the link to its right child, otherwise nothing changes. */
+                }
+            }
+            else
+            {
+                if (root.LeftChild == null)
+                {
+                    root.LeftChild = newNode;
+                    newNode.Parent = root;
+                }
+                else
+                {
+                    root.LeftChild = Insert_BST(root.LeftChild, newNode); /* assignment because, in case left child is null, and in the recursive call it is instantiated, then parent will have the link to its left child, otherwise nothing changes. */
+                }
+            }
+
+            return root;
+        }
+
+
+
         /// <summary>
         /// Implements Search/Lookup/Find operation for a BinarySearchTree. 
         /// </summary>

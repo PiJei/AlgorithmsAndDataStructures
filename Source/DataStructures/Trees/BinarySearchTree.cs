@@ -51,26 +51,7 @@ namespace CSFundamentals.DataStructures.Trees
         [SpaceComplexity("O(1)", InPlace = true)] /* Notice that a new node is allocated for a new key, thus can be considered as O(Size(TreeNode))*/
         public override BinarySearchTreeNode<T1, T2> Insert(BinarySearchTreeNode<T1, T2> root, BinarySearchTreeNode<T1, T2> newNode)
         {
-            if (root == null)
-            {
-                root = newNode;
-                return root;
-            }
-
-            if (root.CompareTo(newNode) == 0) /* In this version, not allowing duplicate keys, and just updating the values, can make the values to be a list alternatively.*/
-            {
-                root.Value = newNode.Value;
-            }
-            else if (root.CompareTo(newNode) < 0)
-            {
-                root.RightChild = Insert(root.RightChild, newNode); /* assignment because, in case right child is null, and in the recursive call it is instantiated, then parent will have the link to its right child, otherwise nothing changes. */
-            }
-            else
-            {
-                root.LeftChild = Insert(root.LeftChild, newNode); /* assignment because, in case left child is null, and in the recursive call it is instantiated, then parent will have the link to its left child, otherwise nothing changes. */
-            }
-
-            return root;
+            return Insert_BST(root, newNode);
         }
 
         [TimeComplexity(Case.Average, "")] // TODO

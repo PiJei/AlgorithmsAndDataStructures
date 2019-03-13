@@ -17,8 +17,10 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using CSFundamentals.DataStructures.Trees.API;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 
 namespace CSFundamentalsTests.DataStructures.Trees.API
 {
@@ -70,7 +72,6 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
             G.LeftChild = null;
             G.RightChild = null;
         }
-
 
         [TestMethod]
         public void BinarySearchTreeBase_RotateLeft_Test()
@@ -279,6 +280,46 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         public void BinarySearchTreeBase_FindMax_Test_Failure()
         {
             _tree.FindMax(null);
+        }
+
+        [TestMethod]
+        public void BinarySearchTreeBase_Insert_WithoutBalancing_Test()
+        {
+            var keyVals = new Dictionary<int, string>
+            {
+                [40] = "str3",
+                [20] = "str1",
+                [70] = "str6",
+                [50] = "str4",
+                [80] = "str7",
+                [30] = "str2",
+                [60] = "str5",
+            };
+
+            var tree = new MockBinarySearchTreeBase<int, string>();
+            MockTreeNode<int, string> root = null;
+
+            root = tree.Insert_BST(root, new MockTreeNode<int, string>(40, "str3"));
+            root = tree.Insert_BST(root, new MockTreeNode<int, string>(20, "str1"));
+            root = tree.Insert_BST(root, new MockTreeNode<int, string>(70, "str6"));
+            root = tree.Insert_BST(root, new MockTreeNode<int, string>(50, "str4"));
+            root = tree.Insert_BST(root, new MockTreeNode<int, string>(80, "str7"));
+            root = tree.Insert_BST(root, new MockTreeNode<int, string>(30, "str2"));
+            root = tree.Insert_BST(root, new MockTreeNode<int, string>(60, "str5"));
+
+            BinarySearchTreeTests.HasBinarySearchTreeOrderProperty<MockTreeNode<int, string>, int, string>(root);
+
+            List<MockTreeNode<int, string>> nodes = new List<MockTreeNode<int, string>>();
+            TreeNode<MockTreeNode<int, string>, int, string>.InOrderTraversal(root, nodes);
+            Assert.AreEqual(7, nodes.Count);
+            for (int i = 0; i < nodes.Count - 1; i++)
+            {
+                Assert.IsTrue(nodes[i].Key < nodes[i + 1].Key);
+            }
+
+            Assert.AreEqual(40, root.Key);
+            Assert.AreEqual("str3", root.Value, ignoreCase: false);
+
         }
     }
 }

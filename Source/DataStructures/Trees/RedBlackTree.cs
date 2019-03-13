@@ -51,7 +51,7 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         public override RedBlackTreeNode<T1, T2> Insert(RedBlackTreeNode<T1, T2> root, RedBlackTreeNode<T1, T2> newNode)
         {
-            root = Insert_WithoutBalancing(root, newNode);
+            root = Insert_BST(root, newNode);
             Insert_Repair(root, newNode);
 
             /* After rotation the root could have easily changed. Need to find the root. */
@@ -113,56 +113,6 @@ namespace CSFundamentals.DataStructures.Trees
             }
         }
 
-        /// <summary>
-        /// Implements insert in a red black tree without the balancing step. The code is similar to the Insert operation for BinarySearchTree, except that it updates the parental relationship, and because of the balancing performed by the man insert method, it is guaranteed to be upper bounded by O(Log(n))
-        /// </summary>
-        /// <param name="root"></param>
-        /// <param name="key"></param>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        [TimeComplexity(Case.Worst, "O(Log(n))")]
-        internal RedBlackTreeNode<T1, T2> Insert_WithoutBalancing(RedBlackTreeNode<T1, T2> root, RedBlackTreeNode<T1, T2> newNode)
-        {
-            if (root == null)
-            {
-                root = newNode;
-                return root;
-            }
-
-            if (root.Equals(newNode)) /* Turns to an Update. */
-            {
-                root.Value = newNode.Value;
-                return root;
-            }
-
-            if (root.Key.CompareTo(newNode.Key) < 0)
-            {
-                if (root.RightChild == null)
-                {
-                    root.RightChild = newNode;
-                    newNode.Parent = root;
-                }
-                else
-                {
-                    root.RightChild = Insert_WithoutBalancing(root.RightChild, newNode);
-                }
-            }
-            else
-            {
-                if (root.LeftChild == null)
-                {
-                    root.LeftChild = newNode;
-                    newNode.Parent = root;
-                }
-                else
-                {
-                    root.LeftChild = Insert_WithoutBalancing(root.LeftChild, newNode);
-                }
-            }
-
-            return root;
-        }
-
         public override RedBlackTreeNode<T1, T2> Delete(RedBlackTreeNode<T1, T2> root, T1 key)
         {
             var node = Search(root, key);
@@ -197,6 +147,7 @@ namespace CSFundamentals.DataStructures.Trees
             return newRoot;
         }
 
+        //TODO: Test
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         internal RedBlackTreeNode<T1, T2> Delete(RedBlackTreeNode<T1, T2> nodeToBeDeleted)
         {
@@ -239,22 +190,8 @@ namespace CSFundamentals.DataStructures.Trees
             return null;
         }
 
-        public void UpdateParentWithNullingChild(RedBlackTreeNode<T1, T2> parent, RedBlackTreeNode<T1, T2> child)
-        {
-            if (parent != null)
-            {
-                if (child.IsLeftChild())
-                {
-                    parent.LeftChild = null;
-                }
-                else if (child.IsRightChild())
-                {
-                    parent.RightChild = null;
-                }
-            }
-        }
-
-        public RedBlackTreeNode<T1, T2> DeleteBlackLeafNode(RedBlackTreeNode<T1, T2> node)
+        //TODO: Test
+        internal RedBlackTreeNode<T1, T2> DeleteBlackLeafNode(RedBlackTreeNode<T1, T2> node)
         {
             if (node.Parent == null) return null;
 
@@ -324,6 +261,7 @@ namespace CSFundamentals.DataStructures.Trees
             return sibling;
         }
 
+        // TODO :Test
         public bool IsRed(RedBlackTreeNode<T1, T2> node)
         {
             if (node != null && node.Color == Color.Red)
@@ -331,15 +269,33 @@ namespace CSFundamentals.DataStructures.Trees
             return false;
         }
 
+        //TODO: Test
         public bool IsBlack(RedBlackTreeNode<T1, T2> node)
         {
             if (node == null || (node != null && node.Color == Color.Black)) return true;
             return false;
         }
-       
+
+        //TODO: Test
+        public void UpdateParentWithNullingChild(RedBlackTreeNode<T1, T2> parent, RedBlackTreeNode<T1, T2> child)
+        {
+            if (parent != null)
+            {
+                if (child.IsLeftChild())
+                {
+                    parent.LeftChild = null;
+                }
+                else if (child.IsRightChild())
+                {
+                    parent.RightChild = null;
+                }
+            }
+        }
+
         public int GetBlackHeight(RedBlackTreeNode<T1, T2> root)
         {
             throw new NotImplementedException();
+            //TODO
         }
     }
 }
