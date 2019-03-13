@@ -36,6 +36,10 @@ namespace CSFundamentals.DataStructures.Trees.API
         public abstract T RightChild { get; set; }
         public abstract T Parent { get; set; }
 
+        /// <summary>
+        /// Checks whether the current node is a leaf node. A node is leaf if it has no children. 
+        /// </summary>
+        /// <returns>True if the current node is leaf, and false otherwise. </returns>
         public bool IsLeaf()
         {
             if (LeftChild == null && RightChild == null)
@@ -60,56 +64,65 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// <summary>
         /// Checks to see if the node is the right child of its parent. 
         /// </summary>
-        /// <returns>True in case the node is the right child of its parent, and false if it is not.</returns>
+        /// <returns>True in case the node is the right child of its parent, and false otherwise.</returns>
         public bool IsRightChild()
         {
             if (Parent == null) return false;
             if (Parent.RightChild == null) return false;
-            if (Parent.RightChild.Key.CompareTo(this.Key) == 0) return true;
+            if (Parent.RightChild.Key.CompareTo(Key) == 0) return true;
             return false;
         }
 
+        /// <summary>
+        /// Checks whether the current node is the root of the tree. A node is root if it has no parent. 
+        /// </summary>
+        /// <returns>True in case the current node is the root, and false otherwise.</returns>
         public bool IsRoot()
         {
             if (Parent == null) return true;
             return false;
         }
 
+        /// <summary>
+        /// Gets the uncle of the current node. Uncle is the sibling of the parent.
+        /// </summary>
+        /// <returns>Uncle node.</returns>
         public T GetUncle()
         {
             if (Parent == null) return default(T);
             if (Parent.Parent == null) return default(T);
-            if (Parent.Parent.LeftChild != null && Parent.Parent.LeftChild.Key.CompareTo(Parent.Key) == 0)
+            if (Parent.Parent.LeftChild != null && Parent.Parent.LeftChild.CompareTo(Parent) == 0)
             {
                 return Parent.Parent.RightChild;
             }
-            else if (Parent.Parent.RightChild != null && Parent.Parent.RightChild.Key.CompareTo(Parent.Key) == 0)
+            else if (Parent.Parent.RightChild != null && Parent.Parent.RightChild.CompareTo(Parent) == 0)
             {
                 return Parent.Parent.LeftChild;
             }
             return default(T);
         }
 
+        /// <summary>
+        /// Gets the sibling of the current node.
+        /// </summary>
+        /// <returns>Sibling node.</returns>
         public T GetSibling()
         {
             if (Parent == null) return default(T);
-            if (Parent.LeftChild != null && Parent.LeftChild.Equals(this))
+            if (Parent.LeftChild != null && Parent.LeftChild.Key.CompareTo(Key) == 0)
                 return Parent.RightChild;
             return Parent.LeftChild;
         }
 
+        /// <summary>
+        /// Gets the grandparent of the current node. GrandParent is the parent of the parent. 
+        /// </summary>
+        /// <returns></returns>
         public T GetGrandParent()
         {
             if (Parent == null) return default(T);
             if (Parent.Parent == null) return default(T);
             return Parent.Parent;
-        }
-
-        public bool Equals(T other)
-        {
-            if (other == null) return false;
-            if (Key.Equals(other.Key)) return true;
-            return false;
         }
 
         /// <summary>
@@ -139,6 +152,13 @@ namespace CSFundamentals.DataStructures.Trees.API
         public int CompareTo(T other)
         {
             return Key.CompareTo(other.Key);
+        }
+
+        public bool Equals(T other)
+        {
+            if (other == null) return false;
+            if (Key.CompareTo(other.Key) == 0) return true;
+            return false;
         }
     }
 }
