@@ -30,11 +30,7 @@ namespace CSFundamentals.DataStructures.Trees
     {
         public override AVLTreeNode<T1, T2> Build(List<AVLTreeNode<T1, T2>> nodes)
         {
-            foreach(AVLTreeNode<T1, T2> node in nodes)
-            {
-                _root = Insert(_root, node);
-            }
-            return _root;
+            return Build_BST(nodes);
         }
 
         public override AVLTreeNode<T1, T2> Delete(AVLTreeNode<T1, T2> root, T1 key)
@@ -105,7 +101,7 @@ namespace CSFundamentals.DataStructures.Trees
 
         public int GetHeight(AVLTreeNode<T1, T2> node)
         {
-            List<List<AVLTreeNode<T1, T2>>> paths = GetAllPathToNullLeaves(node);
+            List<List<AVLTreeNode<T1, T2>>> paths = GetAllPathToLeaves(node);
             int height = paths[0].Count;
             for (int i = 1; i < paths.Count; i++)
             {

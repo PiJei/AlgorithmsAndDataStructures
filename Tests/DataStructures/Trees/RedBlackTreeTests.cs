@@ -207,7 +207,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             // all paths from a node to its null (leaf) descendants contain the same number of black nodes. 
             foreach (RedBlackTreeNode<T1, T2> node in inOrderTraversal)
             {
-                List<List<RedBlackTreeNode<T1, T2>>> paths = tree.GetAllPathToNullLeaves(node);
+                List<List<RedBlackTreeNode<T1, T2>>> paths = tree.GetAllPathToLeaves(node);
                 int firstPathBlackNodeCount = 0;
                 if (paths.Count >= 0)
                     firstPathBlackNodeCount = paths[0].Count(n => n.Color == Color.Black);

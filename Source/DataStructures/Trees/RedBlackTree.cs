@@ -41,13 +41,10 @@ namespace CSFundamentals.DataStructures.Trees
     {
         public override RedBlackTreeNode<T1, T2> Build(List<RedBlackTreeNode<T1, T2>> nodes)
         {
-            foreach (RedBlackTreeNode<T1, T2> node in nodes)
-            {
-                _root = Insert(_root, node);
-            }
-            return _root;
+            return Build_BST(nodes);
         }
 
+        // The code is similar to the Insert operation for BinarySearchTree, except that it updates the parental relationship, and because of the balancing performed by the man insert method, it is guaranteed to be upper bounded by O(Log(n))
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         public override RedBlackTreeNode<T1, T2> Insert(RedBlackTreeNode<T1, T2> root, RedBlackTreeNode<T1, T2> newNode)
         {

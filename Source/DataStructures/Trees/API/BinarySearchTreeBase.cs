@@ -25,49 +25,62 @@ namespace CSFundamentals.DataStructures.Trees.API
 {
     public abstract class BinarySearchTreeBase<T, T1, T2> where T : ITreeNode<T, T1, T2> where T1 : IComparable<T1>
     {
-        // TODO: I am not sure if I am using this root?
         /// <summary>
         /// Is the root of the binary search tree.
         /// </summary>
         protected T _root { get; set; } = default(T);
 
         /// <summary>
-        /// Builds a binary search tree of the given list and returns the root of the tree.
+        /// Builds the tree to include the given nodes.
         /// </summary>
-        /// <param name="keyValues"></param>
+        /// <param name="nodes">Is a list of nodes to be inserted in the tree.</param>
         /// <returns>Root of the tree.</returns>
         public abstract T Build(List<T> nodes);
 
         /// <summary>
-        /// Inserts a new node in the tree and returns the new root of the tree.
+        /// Inserts a new node in the tree
         /// </summary>
-        /// <param name="root">Current root of the tree. </param>
+        /// <param name="root">Current root of the tree, or the node at which insert operation should be started.</param>
         /// <param name="newNode">New node to be inserted in the tree. </param>
         /// <returns>New root of the tree (might or might not change during operation).</returns>
         public abstract T Insert(T root, T newNode);
 
         /// <summary>
-        /// 
+        /// Deletes a node with the given key from th tree.
         /// </summary>
-        /// <param name="root"></param>
-        /// <param name="key"></param>
+        /// <param name="root">Current root of the tree, or the node at which delete operation should be started. </param>
+        /// <param name="key">Specifies the key of the node to be deleted. </param>
         /// <returns>New root of the tree (might or might not change during the operation).</returns>
         public abstract T Delete(T root, T1 key);
 
-        // TODO: SOrt usings and headers in all the tree related code I have created, ... 
-        // TODO: These bounds are no longer correct generally, depending on the Tree they change...
-        // one way is to have these also as abstract and in the inherited class just make calls here and use those as wrappers, to have the space and insert complexity, etc, ... 
-        // that is not a bad idea!
-        // TODO: Build is very similar in all of these trees so also have a Build_BST somethings, ... 
         /// <summary>
-        /// Implements insert in a red black tree without the balancing step. The code is similar to the Insert operation for BinarySearchTree, except that it updates the parental relationship, and because of the balancing performed by the man insert method, it is guaranteed to be upper bounded by O(Log(n))
+        /// Searches for the given key in the tree. 
         /// </summary>
-        /// <param name="root"></param>
-        /// <param name="key"></param>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        [TimeComplexity(Case.Worst, "O(Log(n))")]
-        internal T Insert_BST(T root, T newNode)
+        /// <param name="root">Current root of the tree, or the node at which search operation should be started. </param>
+        /// <param name="key">Specifies the key to be searched. </param>
+        /// <returns>Returns the tree node that contains key. </returns>
+        public abstract T Search(T root, T1 key);
+
+        /// <summary>
+        /// Updates the tree node of the specified key with the new given value. 
+        /// </summary>
+        /// <param name="root">Current root of the tree, or the node at which update operation should be started.</param>
+        /// <param name="key">Specifies the key of the node whose value should be updated.</param>
+        /// <param name="value">Specifies the new value. </param>
+        /// <returns>true in case of success and false otherwise.</returns>
+        public abstract bool Update(T root, T1 key, T2 value);
+
+        public abstract T FindMin(T root);
+
+        public abstract T FindMax(T root);
+
+        /// <summary>
+        /// Implements a binary search tree insert. 
+        /// </summary>
+        /// <param name="root">Current root of the tree, or the node at which insert operation should be started.</param>
+        /// <param name="newNode">New node to be inserted in the tree. </param>
+        /// <returns>New root of the tree (might or might not change during operation).</returns>
+        protected T Insert_BST(T root, T newNode)
         {
             if (root == null) /* This is the case where there is no node in the tree, and newNode is the first one. */
             {
@@ -111,16 +124,26 @@ namespace CSFundamentals.DataStructures.Trees.API
         }
 
         /// <summary>
-        /// Implements Search/Lookup/Find operation for a BinarySearchTree. 
+        /// Builds a binary search tree to include the given nodes.
         /// </summary>
-        /// <param name="root">Specifies the root of the tree.</param>
-        /// <param name="key">Specifies the key, the method should look for. </param>
-        /// <returns>The tree node that has the key. </returns>
-        [TimeComplexity(Case.Best, "O(1)")]
-        [TimeComplexity(Case.Worst, "O(n)", When = "Tree is imbalanced such that it is like one sequential branch (linked list), every node except the leaf having exactly one child.")]
-        [TimeComplexity(Case.Average, "O(Log(n))")]
-        [SpaceComplexity("O(1)", InPlace = true)]
-        public T Search(T root, T1 key)
+        /// <param name="nodes">Is a list of nodes to be inserted in the tree.</param>
+        /// <returns>Root of the tree.</returns>
+        protected T Build_BST(List<T> nodes)
+        {
+            foreach(T node in nodes)
+            {
+                _root = Insert(_root, node);
+            }
+            return _root;
+        }
+
+        /// <summary>
+        /// Searches for the given key in a binary search tree. 
+        /// </summary>
+        /// <param name="root">Current root of the tree, or the node at which search operation should be started. </param>
+        /// <param name="key">Specifies the key to be searched. </param>
+        /// <returns>Returns the tree node that contains key. </returns>
+        protected T Search_BST(T root, T1 key)
         {
             if (root == null)
             {
@@ -134,24 +157,20 @@ namespace CSFundamentals.DataStructures.Trees.API
 
             if (root.Key.CompareTo(key) < 0)
             {
-                return Search(root.RightChild, key);
+                return Search_BST(root.RightChild, key);
             }
 
-            return Search(root.LeftChild, key);
+            return Search_BST(root.LeftChild, key);
         }
 
         /// <summary>
-        /// Implements Update operation for a BinarySearchTree.
+        /// Updates the tree node of the specified key with the new given value. 
         /// </summary>
-        /// <param name="root">Specifies the root of the tree.</param>
-        /// <param name="key">Specifies the key of the node for which the value should be updated. </param>
-        /// <param name="value">Specifies the new value for the given key. </param>
-        /// <returns>True in case of success, and false otherwise. </returns>
-        [TimeComplexity(Case.Best, "O(1)")]
-        [TimeComplexity(Case.Worst, "o(n)")]
-        [TimeComplexity(Case.Average, "O(Log(n))")]
-        [SpaceComplexity("O(1)", InPlace = true)]
-        public bool Update(T root, T1 key, T2 value)
+        /// <param name="root">Current root of the tree, or the node at which insert operation should be started.</param>
+        /// <param name="key">Specifies the key to be updated.</param>
+        /// <param name="value">Specifies the new value of the key.</param>
+        /// <returns>True in case the operation was successful, and false otherwise. </returns>
+        internal bool Update_BST(T root, T1 key, T2 value)
         {
             T node = Search(root, key); /* Since relies on Search, its time and space complexities are directly driven from Search() operation. */
             if (node != null)
@@ -162,11 +181,12 @@ namespace CSFundamentals.DataStructures.Trees.API
             return false;
         }
 
-        [TimeComplexity(Case.Best, "O(1)")]
-        [TimeComplexity(Case.Worst, "O(n)")]
-        [TimeComplexity(Case.Average, "O(Log(n))")]
-        [SpaceComplexity("O(1)")]
-        public T FindMin(T root)
+        /// <summary>
+        /// Finds the node with the smallest key in a binary search tree.
+        /// </summary>
+        /// <param name="root">Is the node at which the search starts. </param>
+        /// <returns>The tree node with the smallest key. </returns>
+        public T FindMin_BST(T root)
         {
             if (root == null) throw new ArgumentNullException();
 
@@ -178,11 +198,12 @@ namespace CSFundamentals.DataStructures.Trees.API
             return node;
         }
 
-        [TimeComplexity(Case.Best, "O(1)")]
-        [TimeComplexity(Case.Worst, "O(n)")]
-        [TimeComplexity(Case.Average, "O(Log(n))")]
-        [SpaceComplexity("O(1)")]
-        public T FindMax(T root)
+        /// <summary>
+        /// Finds the node with the largest key in a binary search tree.
+        /// </summary>
+        /// <param name="root">Is the node at which the search starts. </param>
+        /// <returns>The tree node with the largest key.</returns>
+        public T FindMax_BST(T root)
         {
             if (root == null) throw new ArgumentNullException();
             T node = root;
@@ -197,7 +218,7 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// Rotates the tree to left at the given node, meaning that the current right child of the given node will be its new parent.
         /// Also notice that in rotation, keys or values of a node never change, only the relations change.
         /// </summary>
-        /// <param name="node"></param>
+        /// <param name="node">Is the node at which rotation happens.</param>
         [TimeComplexity(Case.Average, "O(1)")]
         public void RotateLeft(T node)
         {
@@ -234,7 +255,7 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// Rotates the tree to right at the given node. Meaning that the current left child of the given node will be its new parent.
         /// Also notice that in rotation, keys or values of a node never change, only the relations change.
         /// </summary>
-        /// <param name="node"></param>
+        /// <param name="node">Is the node at which rotation happens.</param>
         [TimeComplexity(Case.Average, "O(1)")]
         public void RotateRight(T node)
         {
@@ -266,24 +287,24 @@ namespace CSFundamentals.DataStructures.Trees.API
             newNode.Parent = nodeParent;
         }
 
-        [TimeComplexity(Case.Average, "")]
-        [SpaceComplexity("")]
         public T DeleteMin(T root)
         {
             T minNode = FindMin(root);
             return Delete(root, minNode.Key);
         }
 
-        [TimeComplexity(Case.Average, "")]
-        [SpaceComplexity("")]
         public T DeleteMax(T root)
         {
             T maxNode = FindMax(root);
             return Delete(root, maxNode.Key);
         }
 
-        //TODO if these methods are defined static, they are probably not in a good location, 
-        public List<List<T>> GetAllPathToNullLeaves(T startNode)
+        /// <summary>
+        /// Computes all the paths from the given node to all of its leaves. A node is a leaf if it has no children.
+        /// </summary>
+        /// <param name="startNode">Is the node at which computing all routes/paths to leaf nodes starts.</param>
+        /// <returns>List of all the paths.</returns>
+        public List<List<T>> GetAllPathToLeaves(T startNode)
         {
             if (startNode == null)
             {
@@ -291,8 +312,8 @@ namespace CSFundamentals.DataStructures.Trees.API
             }
 
             List<List<T>> paths = new List<List<T>>();
-            List<List<T>> leftPaths = GetAllPathToNullLeaves(startNode.LeftChild);
-            List<List<T>> rightPaths = GetAllPathToNullLeaves(startNode.RightChild);
+            List<List<T>> leftPaths = GetAllPathToLeaves(startNode.LeftChild);
+            List<List<T>> rightPaths = GetAllPathToLeaves(startNode.RightChild);
 
             for (int i = 0; i < leftPaths.Count; i++)
             {
@@ -317,14 +338,18 @@ namespace CSFundamentals.DataStructures.Trees.API
             return paths;
         }
 
-        //TODO  This should not be static?! look at my use cases in tests to see if I need static, ... 
-        public void InOrderTraversal(T root, List<T> inOrder)
+        /// <summary>
+        /// Traverses tree in order, and since this is a binary search tree, in order traversal returns a sorted list of keys.
+        /// </summary>
+        /// <param name="root">Is the node at which in order traversal starts. </param>
+        /// <param name="inOrderSetOfNodes">Is the sorted list of nodes.</param>
+        public void InOrderTraversal(T root, List<T> inOrderSetOfNodes)
         {
             if (root != null)
             {
-                InOrderTraversal(root.LeftChild, inOrder);
-                inOrder.Add(root);
-                InOrderTraversal(root.RightChild, inOrder);
+                InOrderTraversal(root.LeftChild, inOrderSetOfNodes);
+                inOrderSetOfNodes.Add(root);
+                InOrderTraversal(root.RightChild, inOrderSetOfNodes);
             }
         }
     }
