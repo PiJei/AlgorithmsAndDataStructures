@@ -46,7 +46,9 @@ namespace CSFundamentals.DataStructures.Trees
             return Build_BST(nodes);
         }
 
+        [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
+        [TimeComplexity(Case.Average, "O(nLog(n))")]
         public override RedBlackTreeNode<T1, T2> Insert(RedBlackTreeNode<T1, T2> root, RedBlackTreeNode<T1, T2> newNode)
         {
             root = Insert_BST(root, newNode);
@@ -61,56 +63,9 @@ namespace CSFundamentals.DataStructures.Trees
             return root;
         }
 
-        [SpaceComplexity("O(1)", InPlace = true)]
-        public void Insert_Repair(RedBlackTreeNode<T1, T2> root, RedBlackTreeNode<T1, T2> newNode)
-        {
-            if (newNode.Parent == null && newNode.Color == Color.Red) /* Property: the root is black. */
-            {
-                newNode.FlipColor();
-            }
-            else if (newNode.Parent != null && newNode.Parent.Color == Color.Red) /* If this holds it means that both the new node and its parent are red, and in a red-black tree this is not allowed. Children of a red node should be black.*/
-            {
-                var uncle = newNode.GetUncle();
-
-                if (uncle != null && uncle.Color == Color.Red) /* Both the parent and uncle of the new node are red. Note that a null uncle is considered black. */
-                {
-                    newNode.Parent.Color = Color.Black;
-                    uncle.Color = Color.Black;
-                    newNode.GetGrandParent().Color = Color.Red;
-                    Insert_Repair(root, newNode.GetGrandParent()); /* Repeat repair on the grandparent, as by the re-coloring the previous layers could have been messed up. */
-                }
-                else if (uncle == null || uncle.Color == Color.Black)
-                {
-                    if (newNode.FormsTriangle() && newNode.IsLeftChild())
-                    {
-                        RotateRight(newNode.Parent);
-                        newNode = newNode.RightChild; /* After rotation new node has become the parent of its former parent.*/
-                        /* Triangle is transformed to a line.*/
-                    }
-                    else if (newNode.FormsTriangle() && newNode.IsRightChild())
-                    {
-                        RotateLeft(newNode.Parent);
-                        newNode = newNode.LeftChild; /* After rotation new node has become the parent of its former parent.*/
-                        /* Triangle is transformed to a line.*/
-                    }
-
-                    /* When reaching at this point, we might or might not have gone through above two triangle forms, as the alignment could have already been a line.*/
-                    var grandParent = newNode.GetGrandParent();
-                    if (newNode.IsRightChild())
-                    {
-                        RotateLeft(grandParent);
-                    }
-                    else if (newNode.IsLeftChild())
-                    {
-                        RotateRight(grandParent);
-                    }
-                    newNode.Parent.Color = Color.Black;
-                    if (grandParent != null)
-                        grandParent.Color = Color.Red;
-                }
-            }
-        }
-
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "O(Log(n))")]
+        [TimeComplexity(Case.Average, "O(nLog(n))")]
         public override RedBlackTreeNode<T1, T2> Delete(RedBlackTreeNode<T1, T2> root, T1 key)
         {
             var node = Search(root, key);
@@ -145,8 +100,43 @@ namespace CSFundamentals.DataStructures.Trees
             return newRoot;
         }
 
-        //TODO: Test
+        [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
+        [TimeComplexity(Case.Average, "O(Log(n))")]
+        [SpaceComplexity("O(1)", InPlace = true)]
+        public override RedBlackTreeNode<T1, T2> Search(RedBlackTreeNode<T1, T2> root, T1 key)
+        {
+            return Search_BST(root, key);
+        }
+
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "O(Log(n))")]
+        [TimeComplexity(Case.Average, "O(Log(n))")]
+        [SpaceComplexity("O(1)", InPlace = true)]
+        public override bool Update(RedBlackTreeNode<T1, T2> root, T1 key, T2 value)
+        {
+            return Update_BST(root, key, value);
+        }
+
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "O(Log(n))")]
+        [TimeComplexity(Case.Average, "O(Log(n))")]
+        [SpaceComplexity("O(1)")]
+        public override RedBlackTreeNode<T1, T2> FindMin(RedBlackTreeNode<T1, T2> root)
+        {
+            return FindMin_BST(root);
+        }
+
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "O(Log(n))")]
+        [TimeComplexity(Case.Average, "O(Log(n))")]
+        [SpaceComplexity("O(1)")]
+        public override RedBlackTreeNode<T1, T2> FindMax(RedBlackTreeNode<T1, T2> root)
+        {
+            return FindMax_BST(root);
+        }
+
+        //TODO: Test
         internal RedBlackTreeNode<T1, T2> Delete(RedBlackTreeNode<T1, T2> nodeToBeDeleted)
         {
             /* The nodeToBeDeleted has at most 1 non-null child. */
@@ -259,8 +249,58 @@ namespace CSFundamentals.DataStructures.Trees
             return sibling;
         }
 
+        [SpaceComplexity("O(1)", InPlace = true)]
+        internal void Insert_Repair(RedBlackTreeNode<T1, T2> root, RedBlackTreeNode<T1, T2> newNode)
+        {
+            if (newNode.Parent == null && newNode.Color == Color.Red) /* Property: the root is black. */
+            {
+                newNode.FlipColor();
+            }
+            else if (newNode.Parent != null && newNode.Parent.Color == Color.Red) /* If this holds it means that both the new node and its parent are red, and in a red-black tree this is not allowed. Children of a red node should be black.*/
+            {
+                var uncle = newNode.GetUncle();
+
+                if (uncle != null && uncle.Color == Color.Red) /* Both the parent and uncle of the new node are red. Note that a null uncle is considered black. */
+                {
+                    newNode.Parent.Color = Color.Black;
+                    uncle.Color = Color.Black;
+                    newNode.GetGrandParent().Color = Color.Red;
+                    Insert_Repair(root, newNode.GetGrandParent()); /* Repeat repair on the grandparent, as by the re-coloring the previous layers could have been messed up. */
+                }
+                else if (uncle == null || uncle.Color == Color.Black)
+                {
+                    if (newNode.FormsTriangle() && newNode.IsLeftChild())
+                    {
+                        RotateRight(newNode.Parent);
+                        newNode = newNode.RightChild; /* After rotation new node has become the parent of its former parent.*/
+                        /* Triangle is transformed to a line.*/
+                    }
+                    else if (newNode.FormsTriangle() && newNode.IsRightChild())
+                    {
+                        RotateLeft(newNode.Parent);
+                        newNode = newNode.LeftChild; /* After rotation new node has become the parent of its former parent.*/
+                        /* Triangle is transformed to a line.*/
+                    }
+
+                    /* When reaching at this point, we might or might not have gone through above two triangle forms, as the alignment could have already been a line.*/
+                    var grandParent = newNode.GetGrandParent();
+                    if (newNode.IsRightChild())
+                    {
+                        RotateLeft(grandParent);
+                    }
+                    else if (newNode.IsLeftChild())
+                    {
+                        RotateRight(grandParent);
+                    }
+                    newNode.Parent.Color = Color.Black;
+                    if (grandParent != null)
+                        grandParent.Color = Color.Red;
+                }
+            }
+        }
+
         // TODO :Test
-        public bool IsRed(RedBlackTreeNode<T1, T2> node)
+        internal bool IsRed(RedBlackTreeNode<T1, T2> node)
         {
             if (node != null && node.Color == Color.Red)
                 return true;
@@ -268,14 +308,14 @@ namespace CSFundamentals.DataStructures.Trees
         }
 
         //TODO: Test
-        public bool IsBlack(RedBlackTreeNode<T1, T2> node)
+        internal bool IsBlack(RedBlackTreeNode<T1, T2> node)
         {
             if (node == null || (node != null && node.Color == Color.Black)) return true;
             return false;
         }
 
         //TODO: Test
-        public void UpdateParentWithNullingChild(RedBlackTreeNode<T1, T2> parent, RedBlackTreeNode<T1, T2> child)
+        internal void UpdateParentWithNullingChild(RedBlackTreeNode<T1, T2> parent, RedBlackTreeNode<T1, T2> child)
         {
             if (parent != null)
             {
@@ -290,46 +330,10 @@ namespace CSFundamentals.DataStructures.Trees
             }
         }
 
-        public int GetBlackHeight(RedBlackTreeNode<T1, T2> root)
+        internal int GetBlackHeight(RedBlackTreeNode<T1, T2> root)
         {
             throw new NotImplementedException();
             //TODO
-        }
-
-        [TimeComplexity(Case.Best, "O(1)")]
-        [TimeComplexity(Case.Worst, "O(Log(n))")]
-        [TimeComplexity(Case.Average, "O(Log(n))")]
-        [SpaceComplexity("O(1)", InPlace = true)]
-        public override RedBlackTreeNode<T1, T2> Search(RedBlackTreeNode<T1, T2> root, T1 key)
-        {
-            return Search_BST(root, key);
-        }
-
-        [TimeComplexity(Case.Best, "O(1)")]
-        [TimeComplexity(Case.Worst, "O(Log(n))")]
-        [TimeComplexity(Case.Average, "O(Log(n))")]
-        [SpaceComplexity("O(1)", InPlace = true)]
-        public override bool Update(RedBlackTreeNode<T1, T2> root, T1 key, T2 value)
-        {
-            return Update_BST(root, key, value);
-        }
-
-        [TimeComplexity(Case.Best, "O(1)")]
-        [TimeComplexity(Case.Worst, "O(Log(n))")]
-        [TimeComplexity(Case.Average, "O(Log(n))")]
-        [SpaceComplexity("O(1)")]
-        public override RedBlackTreeNode<T1, T2> FindMin(RedBlackTreeNode<T1, T2> root)
-        {
-            return FindMin_BST(root);
-        }
-
-        [TimeComplexity(Case.Best, "O(1)")]
-        [TimeComplexity(Case.Worst, "O(Log(n))")]
-        [TimeComplexity(Case.Average, "O(Log(n))")]
-        [SpaceComplexity("O(1)")]
-        public override RedBlackTreeNode<T1, T2> FindMax(RedBlackTreeNode<T1, T2> root)
-        {
-            return FindMax_BST(root);
         }
     }
 }

@@ -58,7 +58,9 @@ namespace CSFundamentals.DataStructures.Trees
             return Insert_BST(root, newNode);
         }
 
-        [TimeComplexity(Case.Average, "O(Log(n))")] // TODO for other cases
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "O(n)", When = "Tree is imbalanced such that it is like one sequential branch (linked list), every node except the leaf having exactly one child.")]
+        [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)")]
         public override BinarySearchTreeNode<T1, T2> Delete(BinarySearchTreeNode<T1, T2> root, T1 key)
         {
