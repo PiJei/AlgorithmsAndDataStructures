@@ -22,12 +22,12 @@ using System.Collections.Generic;
 
 namespace CSFundamentals.DataStructures.Trees.API
 {
-    public abstract class TreeNode<T, T1, T2> : IComparable<T>, ITreeNode<T, T1, T2> where T : ITreeNode<T, T1, T2> where T1 : IComparable<T1>
+    public abstract class BinaryTreeNode<T, T1, T2> : IComparable<T>, ITreeNode<T, T1, T2> where T : ITreeNode<T, T1, T2> where T1 : IComparable<T1>
     {
         public T1 Key { get; set; }
         public T2 Value { get; set; }
 
-        public TreeNode(T1 key, T2 value)
+        public BinaryTreeNode(T1 key, T2 value)
         {
             Key = key;
             Value = value;
