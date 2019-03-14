@@ -20,7 +20,7 @@
 using System;
  using System.Collections.Generic;
 
-namespace CSFundamentals.DataStructures.BinaryHeaps
+namespace CSFundamentals.DataStructures.BinaryHeaps.API
 {
     public interface IBinaryHeap<T> where T:IComparable<T>
     {

@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using CSFundamentals.DataStructures.BinaryHeaps.API;
 using CSFundamentals.Styling;
 
 /* Similar to MinBinaryHeap. Refer to that class for missing explanations. */

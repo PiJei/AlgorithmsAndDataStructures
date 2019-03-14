@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+using CSFundamentals.DataStructures.Trees.API;
 using CSFundamentals.Styling;
 
 namespace CSFundamentals.DataStructures.Trees
@@ -30,51 +31,40 @@ namespace CSFundamentals.DataStructures.Trees
     /// <typeparam name="T1">Specifies the type of the key in tree nodes.</typeparam>
     /// <typeparam name="T2">Specifies the type of the value in tree nodes. </typeparam>
     [DataStructure("BinarySearchTree (aka BST)")]
-    public class BinarySearchTree<T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
+    public class BinarySearchTreeBase<T1, T2> : BinarySearchTreeBase<BinarySearchTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>
     {
-        /// <summary>
-        /// Is the root of the binary search tree.
-        /// </summary>
-        private BinaryTreeNode<T1, T2> _root = null;
-
-        //TODO Compute best and worst case for build operation. 
+        [TimeComplexity(Case.Best, "O(n)", When = "Every new node is inserted in the very first locations.")]
+        [TimeComplexity(Case.Worst, "O(n²)", When = "Tree is unbalanced such that it is turned into a linked list.")]
         [TimeComplexity(Case.Average, "O(nLog(n))")]
         [SpaceComplexity("O(n)")]
-        public BinaryTreeNode<T1, T2> Build(Dictionary<T1, T2> keyValues)
+        public override BinarySearchTreeNode<T1, T2> Build(List<BinarySearchTreeNode<T1, T2>> nodes)
         {
-            foreach (KeyValuePair<T1, T2> item in keyValues)
-            {
-                _root = Insert(_root, item.Key, item.Value);
-            }
-            return _root;
+            return Build_BST(nodes);
         }
 
+        /// <summary>
+        /// Implements insert in a binary search tree. 
+        /// </summary>
+        /// <param name="root">The node at which we would like to start the insert operation.</param>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
+        /// <returns>The new root node.</returns>
         [TimeComplexity(Case.Best, "O(1)", When = "The tree is empty, and the first node is added.")]
         [TimeComplexity(Case.Worst, "O(n)", When = "Tree is imbalanced such that it is like one sequential branch (linked list), every node except the leaf having exactly one child.")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)", InPlace = true)] /* Notice that a new node is allocated for a new key, thus can be considered as O(Size(TreeNode))*/
-        public BinaryTreeNode<T1, T2> Insert(BinaryTreeNode<T1, T2> root, T1 key, T2 value)
+        public override BinarySearchTreeNode<T1, T2> Insert(BinarySearchTreeNode<T1, T2> root, BinarySearchTreeNode<T1, T2> newNode)
         {
-            if (root == null)
-            {
-                root = new BinaryTreeNode<T1, T2>(key, value);
-                return root;
-            }
+            return Insert_BST(root, newNode);
+        }
 
-            if (root.Key.CompareTo(key) == 0) /* In this version, not allowing duplicate keys, and just updating the values, can make the values to be a list alternatively.*/
-            {
-                root.Value = value;
-            }
-            else if (root.Key.CompareTo(key) < 0)
-            {
-                root.RightChild = Insert(root.RightChild, key, value); /* assignment because, in case right child is null, and in the recursive call it is instantiated, then parent will have the link to its right child, otherwise nothing changes. */
-            }
-            else
-            {
-                root.LeftChild = Insert(root.LeftChild, key, value); /* assignment because, in case left child is null, and in the recursive call it is instantiated, then parent will have the link to its left child, otherwise nothing changes. */
-            }
-
-            return root;
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "O(n)", When = "Tree is imbalanced such that it is like one sequential branch (linked list), every node except the leaf having exactly one child.")]
+        [TimeComplexity(Case.Average, "O(Log(n))")]
+        [SpaceComplexity("O(1)")]
+        public override BinarySearchTreeNode<T1, T2> Delete(BinarySearchTreeNode<T1, T2> root, T1 key)
+        {
+            return Delete_BST(root, key);
         }
 
         /// <summary>
@@ -87,24 +77,9 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "O(n)", When = "Tree is imbalanced such that it is like one sequential branch (linked list), every node except the leaf having exactly one child.")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)", InPlace = true)]
-        public BinaryTreeNode<T1, T2> Search(BinaryTreeNode<T1, T2> root, T1 key)
+        public override BinarySearchTreeNode<T1, T2> Search(BinarySearchTreeNode<T1, T2> root, T1 key)
         {
-            if (root == null)
-            {
-                return root;
-            }
-
-            if (root.Key.CompareTo(key) == 0)
-            {
-                return root;
-            }
-
-            if (root.Key.CompareTo(key) < 0)
-            {
-                return Search(root.RightChild, key);
-            }
-
-            return Search(root.LeftChild, key);
+            return Search_BST(root, key);
         }
 
         /// <summary>
@@ -118,115 +93,27 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "o(n)")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)", InPlace = true)]
-        public bool Update(BinaryTreeNode<T1, T2> root, T1 key, T2 value)
+        public override bool Update(BinarySearchTreeNode<T1, T2> root, T1 key, T2 value)
         {
-            BinaryTreeNode<T1, T2> node = Search(root, key); /* Since relies on Search, its time and space complexities are directly driven from Search() operation. */
-            if (node != null)
-            {
-                node.Value = value;
-                return true;
-            }
-            return false;
-        }
-
-        [TimeComplexity(Case.Average, "O(n)")]
-        [SpaceComplexity("O(n)")]
-        public void InOrderTraversal(BinaryTreeNode<T1, T2> root, List<BinaryTreeNode<T1, T2>> inOrder)
-        {
-            if (root != null)
-            {
-                InOrderTraversal(root.LeftChild, inOrder);
-                inOrder.Add(root);
-                InOrderTraversal(root.RightChild, inOrder);
-            }
-        }
-
-        [TimeComplexity(Case.Average, "")] // TODO
-        [SpaceComplexity("O(1)")]
-        public BinaryTreeNode<T1, T2> Delete(BinaryTreeNode<T1, T2> root, T1 key)
-        {
-            if (root == null) return root;
-
-            if (root.Key.CompareTo(key) < 0)
-            {
-                root.RightChild = Delete(root.RightChild, key);
-            }
-            else if (root.Key.CompareTo(key) > 0)
-            {
-                root.LeftChild = Delete(root.LeftChild, key);
-            }
-            else 
-            {
-                if (root.RightChild == null && root.LeftChild == null)
-                {
-                    return null;
-                }
-
-                if (root.RightChild == null)
-                {
-                    return root.LeftChild;
-                }
-
-                if (root.LeftChild == null)
-                {
-                    return root.RightChild;
-                }
-
-                /* Else replacing the node that has 2 non-null children with its in-order successor, or could alternatively replace it with its in-order predecessor. */
-                /* From these definitions it is obvious that the replacement node has less than 2 children. */
-                BinaryTreeNode<T1, T2> rightChildMin = FindMin(root.RightChild);
-                root.Key = rightChildMin.Key;
-                root.Value = rightChildMin.Value;
-                root.RightChild = Delete(root.RightChild, rightChildMin.Key); /* at this point both node, and rightChildMin have the same keys, but calling delete on the same key, will only result in the removal  of rightChildMin, because pf the root that is passed to Delete.*/
-            }
-            return root;
+            return Update_BST(root, key, value);
         }
 
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(n)")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)")]
-        public BinaryTreeNode<T1, T2> FindMin(BinaryTreeNode<T1, T2> root)
+        public override BinarySearchTreeNode<T1, T2> FindMin(BinarySearchTreeNode<T1, T2> root)
         {
-            if (root == null) throw new ArgumentNullException();
-
-            BinaryTreeNode<T1, T2> node = root;
-            while (node.LeftChild != null)
-            {
-                node = node.LeftChild;
-            }
-            return node;
+            return FindMin_BST(root);
         }
 
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(n)")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)")]
-        public BinaryTreeNode<T1, T2> FindMax(BinaryTreeNode<T1, T2> root)
+        public override BinarySearchTreeNode<T1, T2> FindMax(BinarySearchTreeNode<T1, T2> root)
         {
-            if (root == null) throw new ArgumentNullException();
-            BinaryTreeNode<T1, T2> node = root;
-            while (node.RightChild != null)
-            {
-                node = node.RightChild;
-            }
-            return node;
-        }
-
-        [TimeComplexity(Case.Average, "")]
-        [SpaceComplexity("")]
-        public BinaryTreeNode<T1, T2> DeleteMin(BinaryTreeNode<T1, T2> root)
-        {
-            BinaryTreeNode<T1, T2> minNode = FindMin(root);
-            return Delete(root, minNode.Key);
-        }
-
-        [TimeComplexity(Case.Average, "")]
-        [SpaceComplexity("")]
-        public BinaryTreeNode<T1, T2> DeleteMax(BinaryTreeNode<T1, T2> root)
-        {
-            BinaryTreeNode<T1, T2> maxNode = FindMax(root);
-            return Delete(root, maxNode.Key);
+            return FindMax_BST(root);
         }
     }
 }

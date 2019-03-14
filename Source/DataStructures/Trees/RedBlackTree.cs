@@ -19,41 +19,39 @@
 
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using CSFundamentals.Styling;
 using System.Diagnostics.Contracts;
+using System.Runtime.CompilerServices;
+using CSFundamentals.DataStructures.Trees.API;
+using CSFundamentals.Styling;
 
 [assembly: InternalsVisibleTo("CSFundamentalsTests")]
-
-// TODO: Make to inherit from BinarySearchTree and no implementations for search/update/insert-normal
-
+//TODO: Specify time and space complexities
 namespace CSFundamentals.DataStructures.Trees
 {
     /// <summary>
     /// Implements a red black tree and its operations. A red-black tree is a self-balancing binary search tree.
-    /// In this implementation, leaf nodes are treated as nulls and are not explicit. 
+    /// In this implementation, nulls are treated as black nodes. 
     /// A red black tree can also be used as a key-value store.
     /// </summary>
     /// <typeparam name="T1">Specifies the type of the keys in red black tree.</typeparam>
     /// <typeparam name="T2">Specifies the type of the values in red black tree. </typeparam>
-    public class RedBlackTree<T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
+    public class RedBlackTree<T1, T2> : BinarySearchTreeBase<RedBlackTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>
     {
-        private RedBlackTreeNode<T1, T2> _root = null;
-
-        public RedBlackTreeNode<T1, T2> Build(Dictionary<T1, T2> keyValues)
+        [TimeComplexity(Case.Best, "O(n)", When = "Every new node is inserted in the very first locations.")]
+        [TimeComplexity(Case.Worst, "O(nLog(n))")]
+        [TimeComplexity(Case.Average, "O(nLog(n))")]
+        [SpaceComplexity("O(n)")]
+        public override RedBlackTreeNode<T1, T2> Build(List<RedBlackTreeNode<T1, T2>> nodes)
         {
-            foreach (KeyValuePair<T1, T2> keyVal in keyValues)
-            {
-                _root = Insert(_root, keyVal.Key, keyVal.Value);
-            }
-            return _root;
+            return Build_BST(nodes);
         }
 
+        [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
-        public RedBlackTreeNode<T1, T2> Insert(RedBlackTreeNode<T1, T2> root, T1 key, T2 value)
+        [TimeComplexity(Case.Average, "O(nLog(n))")]
+        public override RedBlackTreeNode<T1, T2> Insert(RedBlackTreeNode<T1, T2> root, RedBlackTreeNode<T1, T2> newNode)
         {
-            var newNode = new RedBlackTreeNode<T1, T2>(key, value, Color.Red);
-            root = Insert_WithoutBalancing(root, newNode);
+            root = Insert_BST(root, newNode);
             Insert_Repair(root, newNode);
 
             /* After rotation the root could have easily changed. Need to find the root. */
@@ -65,107 +63,10 @@ namespace CSFundamentals.DataStructures.Trees
             return root;
         }
 
-        [SpaceComplexity("O(1)", InPlace = true)]
-        public void Insert_Repair(RedBlackTreeNode<T1, T2> root, RedBlackTreeNode<T1, T2> newNode)
-        {
-            if (newNode.Parent == null && newNode.Color == Color.Red) /* Property: the root is black. */
-            {
-                newNode.FlipColor();
-            }
-            else if (newNode.Parent != null && newNode.Parent.Color == Color.Red) /* If this holds it means that both the new node and its parent are red, and in a red-black tree this is not allowed. Children of a red node should be black.*/
-            {
-                var uncle = newNode.GetUncle();
-
-                if (uncle != null && uncle.Color == Color.Red) /* Both the parent and uncle of the new node are red. Note that a null uncle is considered black. */
-                {
-                    newNode.Parent.Color = Color.Black;
-                    uncle.Color = Color.Black;
-                    newNode.GetGrandParent().Color = Color.Red;
-                    Insert_Repair(root, newNode.GetGrandParent()); /* Repeat repair on the grandparent, as by the re-coloring the previous layers could have been messed up. */
-                }
-                else if (uncle == null || uncle.Color == Color.Black)
-                {
-                    if (newNode.FormsTriangle() && newNode.IsLeftChild())
-                    {
-                        RotateRight(newNode.Parent);
-                        newNode = newNode.RightChild; /* After rotation new node has become the parent of its former parent.*/
-                        /* Triangle is transformed to a line.*/
-                    }
-                    else if (newNode.FormsTriangle() && newNode.IsRightChild())
-                    {
-                        RotateLeft(newNode.Parent);
-                        newNode = newNode.LeftChild; /* After rotation new node has become the parent of its former parent.*/
-                        /* Triangle is transformed to a line.*/
-                    }
-
-                    /* When reaching at this point, we might or might not have gone through above two triangle forms, as the alignment could have already been a line.*/
-                    var grandParent = newNode.GetGrandParent();
-                    if (newNode.IsRightChild())
-                    {
-                        RotateLeft(grandParent);
-                    }
-                    else if (newNode.IsLeftChild())
-                    {
-                        RotateRight(grandParent);
-                    }
-                    newNode.Parent.Color = Color.Black;
-                    if (grandParent != null)
-                        grandParent.Color = Color.Red;
-                }
-            }
-        }
-
-        /// <summary>
-        /// Implements insert in a red black tree without the balancing step. The code is similar to the Insert operation for BinarySearchTree, except that it updates the parental relationship, and because of the balancing performed by the man insert method, it is guaranteed to be upper bounded by O(Log(n))
-        /// </summary>
-        /// <param name="root"></param>
-        /// <param name="key"></param>
-        /// <param name="value"></param>
-        /// <returns></returns>
+        [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
-        internal RedBlackTreeNode<T1, T2> Insert_WithoutBalancing(RedBlackTreeNode<T1, T2> root, RedBlackTreeNode<T1, T2> newNode)
-        {
-            if (root == null)
-            {
-                root = newNode;
-                return root;
-            }
-
-            if (root.Equals(newNode)) /* Turns to an Update. */
-            {
-                root.Value = newNode.Value;
-                return root;
-            }
-
-            if (root.Key.CompareTo(newNode.Key) < 0)
-            {
-                if (root.RightChild == null)
-                {
-                    root.RightChild = newNode;
-                    newNode.Parent = root;
-                }
-                else
-                {
-                    root.RightChild = Insert_WithoutBalancing(root.RightChild, newNode);
-                }
-            }
-            else
-            {
-                if (root.LeftChild == null)
-                {
-                    root.LeftChild = newNode;
-                    newNode.Parent = root;
-                }
-                else
-                {
-                    root.LeftChild = Insert_WithoutBalancing(root.LeftChild, newNode);
-                }
-            }
-
-            return root;
-        }
-
-        public RedBlackTreeNode<T1, T2> Delete(RedBlackTreeNode<T1, T2> root, T1 key)
+        [TimeComplexity(Case.Average, "O(nLog(n))")]
+        public override RedBlackTreeNode<T1, T2> Delete(RedBlackTreeNode<T1, T2> root, T1 key)
         {
             var node = Search(root, key);
             if (node == null)
@@ -199,7 +100,43 @@ namespace CSFundamentals.DataStructures.Trees
             return newRoot;
         }
 
+        [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
+        [TimeComplexity(Case.Average, "O(Log(n))")]
+        [SpaceComplexity("O(1)", InPlace = true)]
+        public override RedBlackTreeNode<T1, T2> Search(RedBlackTreeNode<T1, T2> root, T1 key)
+        {
+            return Search_BST(root, key);
+        }
+
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "O(Log(n))")]
+        [TimeComplexity(Case.Average, "O(Log(n))")]
+        [SpaceComplexity("O(1)", InPlace = true)]
+        public override bool Update(RedBlackTreeNode<T1, T2> root, T1 key, T2 value)
+        {
+            return Update_BST(root, key, value);
+        }
+
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "O(Log(n))")]
+        [TimeComplexity(Case.Average, "O(Log(n))")]
+        [SpaceComplexity("O(1)")]
+        public override RedBlackTreeNode<T1, T2> FindMin(RedBlackTreeNode<T1, T2> root)
+        {
+            return FindMin_BST(root);
+        }
+
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "O(Log(n))")]
+        [TimeComplexity(Case.Average, "O(Log(n))")]
+        [SpaceComplexity("O(1)")]
+        public override RedBlackTreeNode<T1, T2> FindMax(RedBlackTreeNode<T1, T2> root)
+        {
+            return FindMax_BST(root);
+        }
+
+        //TODO: Test
         internal RedBlackTreeNode<T1, T2> Delete(RedBlackTreeNode<T1, T2> nodeToBeDeleted)
         {
             /* The nodeToBeDeleted has at most 1 non-null child. */
@@ -241,22 +178,8 @@ namespace CSFundamentals.DataStructures.Trees
             return null;
         }
 
-        public void UpdateParentWithNullingChild(RedBlackTreeNode<T1, T2> parent, RedBlackTreeNode<T1, T2> child)
-        {
-            if (parent != null)
-            {
-                if (child.IsLeftChild())
-                {
-                    parent.LeftChild = null;
-                }
-                else if (child.IsRightChild())
-                {
-                    parent.RightChild = null;
-                }
-            }
-        }
-
-        public RedBlackTreeNode<T1, T2> DeleteBlackLeafNode(RedBlackTreeNode<T1, T2> node)
+        //TODO: Test
+        internal RedBlackTreeNode<T1, T2> DeleteBlackLeafNode(RedBlackTreeNode<T1, T2> node)
         {
             if (node.Parent == null) return null;
 
@@ -326,157 +249,91 @@ namespace CSFundamentals.DataStructures.Trees
             return sibling;
         }
 
-        public bool IsRed(RedBlackTreeNode<T1, T2> node)
+        [SpaceComplexity("O(1)", InPlace = true)]
+        internal void Insert_Repair(RedBlackTreeNode<T1, T2> root, RedBlackTreeNode<T1, T2> newNode)
+        {
+            if (newNode.Parent == null && newNode.Color == Color.Red) /* Property: the root is black. */
+            {
+                newNode.FlipColor();
+            }
+            else if (newNode.Parent != null && newNode.Parent.Color == Color.Red) /* If this holds it means that both the new node and its parent are red, and in a red-black tree this is not allowed. Children of a red node should be black.*/
+            {
+                var uncle = newNode.GetUncle();
+
+                if (uncle != null && uncle.Color == Color.Red) /* Both the parent and uncle of the new node are red. Note that a null uncle is considered black. */
+                {
+                    newNode.Parent.Color = Color.Black;
+                    uncle.Color = Color.Black;
+                    newNode.GetGrandParent().Color = Color.Red;
+                    Insert_Repair(root, newNode.GetGrandParent()); /* Repeat repair on the grandparent, as by the re-coloring the previous layers could have been messed up. */
+                }
+                else if (uncle == null || uncle.Color == Color.Black)
+                {
+                    if (newNode.FormsTriangle() && newNode.IsLeftChild())
+                    {
+                        RotateRight(newNode.Parent);
+                        newNode = newNode.RightChild; /* After rotation new node has become the parent of its former parent.*/
+                        /* Triangle is transformed to a line.*/
+                    }
+                    else if (newNode.FormsTriangle() && newNode.IsRightChild())
+                    {
+                        RotateLeft(newNode.Parent);
+                        newNode = newNode.LeftChild; /* After rotation new node has become the parent of its former parent.*/
+                        /* Triangle is transformed to a line.*/
+                    }
+
+                    /* When reaching at this point, we might or might not have gone through above two triangle forms, as the alignment could have already been a line.*/
+                    var grandParent = newNode.GetGrandParent();
+                    if (newNode.IsRightChild())
+                    {
+                        RotateLeft(grandParent);
+                    }
+                    else if (newNode.IsLeftChild())
+                    {
+                        RotateRight(grandParent);
+                    }
+                    newNode.Parent.Color = Color.Black;
+                    if (grandParent != null)
+                        grandParent.Color = Color.Red;
+                }
+            }
+        }
+
+        // TODO :Test
+        internal bool IsRed(RedBlackTreeNode<T1, T2> node)
         {
             if (node != null && node.Color == Color.Red)
                 return true;
             return false;
         }
 
-        public bool IsBlack(RedBlackTreeNode<T1, T2> node)
+        //TODO: Test
+        internal bool IsBlack(RedBlackTreeNode<T1, T2> node)
         {
             if (node == null || (node != null && node.Color == Color.Black)) return true;
             return false;
         }
 
-        [TimeComplexity(Case.Best, "O(1)")]
-        [TimeComplexity(Case.Worst, "O(n)")]
-        [TimeComplexity(Case.Average, "O(Log(n))")]
-        [SpaceComplexity("O(1)")]
-        public RedBlackTreeNode<T1, T2> FindMin(RedBlackTreeNode<T1, T2> root)
+        //TODO: Test
+        internal void UpdateParentWithNullingChild(RedBlackTreeNode<T1, T2> parent, RedBlackTreeNode<T1, T2> child)
         {
-            if (root == null) throw new ArgumentNullException();
-
-            RedBlackTreeNode<T1, T2> node = root;
-            while (node.LeftChild != null)
+            if (parent != null)
             {
-                node = node.LeftChild;
+                if (child.IsLeftChild())
+                {
+                    parent.LeftChild = null;
+                }
+                else if (child.IsRightChild())
+                {
+                    parent.RightChild = null;
+                }
             }
-            return node;
         }
 
-        /// <summary>
-        /// Implements search for RedBlackTree- the code is exactly the same as Search for BinarySearchTree, however because of its self-balancing properties it is guaranteed to be upper bounded by O(Log(n)).
-        /// </summary>
-        /// <param name="root">Specifies the root of the tree.</param>
-        /// <param name="key">Specifies the key the method should look for. </param>
-        /// <returns></returns>
-        [TimeComplexity(Case.Worst, "O(Log(n))")]
-        public RedBlackTreeNode<T1, T2> Search(RedBlackTreeNode<T1, T2> root, T1 key)
-        {
-            if (root == null)
-            {
-                return root;
-            }
-
-            if (root.Key.CompareTo(key) == 0)
-            {
-                return root;
-            }
-
-            if (root.Key.CompareTo(key) < 0)
-            {
-                return Search(root.RightChild, key);
-            }
-
-            return Search(root.LeftChild, key);
-        }
-
-        [TimeComplexity(Case.Worst, "O(Log(n))")]
-        public bool Update(RedBlackTreeNode<T1, T2> root, T1 key, T2 value)
+        internal int GetBlackHeight(RedBlackTreeNode<T1, T2> root)
         {
             throw new NotImplementedException();
-        }
-
-        [TimeComplexity(Case.Average, "O(n)")]
-        [SpaceComplexity("O(n)")]
-        public void InOrderTraversal(RedBlackTreeNode<T1, T2> root, List<RedBlackTreeNode<T1, T2>> inOrder)
-        {
-            if (root != null)
-            {
-                InOrderTraversal(root.LeftChild, inOrder);
-                inOrder.Add(root);
-                InOrderTraversal(root.RightChild, inOrder);
-            }
-        }
-
-        public int GetBlackHeight(RedBlackTreeNode<T1, T2> root)
-        {
-            throw new NotImplementedException();
-        }
-
-
-        /// <summary>
-        /// Rotates the tree to left at the given node, meaning that the current right child of the given node will be its new parent.
-        /// Also notice that in rotation, keys or values of a node never change, only the relations change.
-        /// </summary>
-        /// <param name="node"></param>
-        [TimeComplexity(Case.Average, "O(1)")]
-        public void RotateLeft(RedBlackTreeNode<T1, T2> node)
-        {
-            if (node == null) throw new ArgumentNullException();
-            if (node.RightChild == null) throw new Exception("While rotating left, the new parent can not be null.");
-
-            var nodeParent = node.Parent;
-            var newNode = node.RightChild; /* This will be node's new parent. */
-
-            /* Since the node is losing its right child, we need to select a new right child. The left child of node's right child is a perfect candidate for this position to preserve tree's order properties.*/
-            node.RightChild = newNode.LeftChild;
-            if (node.RightChild != null)
-                node.RightChild.Parent = node;
-
-            newNode.LeftChild = node; /* Meaning new node is becoming node's parent. */
-            node.Parent = newNode;
-
-            /* Next need to update the links of the parent node, since one of its children is replaced by a new node. */
-            if (nodeParent != null)
-            {
-                if (nodeParent.LeftChild != null && nodeParent.LeftChild.Key.CompareTo(node.Key) == 0)
-                {
-                    nodeParent.LeftChild = newNode;
-                }
-                else if (nodeParent.RightChild != null && nodeParent.RightChild.Key.CompareTo(node.Key) == 0)
-                {
-                    nodeParent.RightChild = newNode;
-                }
-            }
-            newNode.Parent = nodeParent;
-        }
-
-        /// <summary>
-        /// Rotates the tree to right at the given node. Meaning that the current left child of the given node will be its new parent.
-        /// Also notice that in rotation, keys or values of a node never change, only the relations change.
-        /// </summary>
-        /// <param name="node"></param>
-        [TimeComplexity(Case.Average, "O(1)")]
-        public void RotateRight(RedBlackTreeNode<T1, T2> node)
-        {
-            if (node == null) throw new ArgumentNullException();
-            if (node.LeftChild == null) throw new Exception("While rotating right, the new parent can not be null.");
-
-            var nodeParent = node.Parent;
-            var newNode = node.LeftChild; /* This will be node's new parent. */
-
-            /* Since node is losing its left child, we need to select a new left child. The right child of node's left child is the perfect candidate for this position to preserve tree's order properties.*/
-            node.LeftChild = newNode.RightChild;
-            if (node.LeftChild != null)
-                node.LeftChild.Parent = node;
-
-            newNode.RightChild = node; /* Meaning that newNode is becoming node's parent. */
-            node.Parent = newNode;
-
-            if (nodeParent != null)
-            {
-                if (nodeParent.LeftChild != null && nodeParent.LeftChild.Key.CompareTo(node.Key) == 0)
-                {
-                    nodeParent.LeftChild = newNode;
-                }
-                else if (nodeParent.RightChild != null && nodeParent.RightChild.Key.CompareTo(node.Key) == 0)
-                {
-                    nodeParent.RightChild = newNode;
-                }
-            }
-            newNode.Parent = nodeParent;
+            //TODO
         }
     }
 }

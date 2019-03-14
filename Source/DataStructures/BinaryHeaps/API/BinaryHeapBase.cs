@@ -21,7 +21,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 
-namespace CSFundamentals.DataStructures.BinaryHeaps
+namespace CSFundamentals.DataStructures.BinaryHeaps.API
 {
     public abstract class BinaryHeapBase<T> : IBinaryHeap<T> where T : IComparable<T>
     {

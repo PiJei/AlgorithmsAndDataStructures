@@ -17,26 +17,19 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using CSFundamentals.DataStructures.Trees;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using CSFundamentals.DataStructures.Trees.API;
 
-namespace CSFundamentalsTests.DataStructures.Trees
+namespace CSFundamentals.DataStructures.Trees
 {
-    [TestClass]
-    public class RedBlackTreeNodeTests
+    public class AVLTreeNode<T1, T2> : TreeNode<AVLTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>
     {
-        [TestMethod]
-        public void RedBlackTree_FlipColor_Test()
+        public override AVLTreeNode<T1, T2> LeftChild { get; set; }
+        public override AVLTreeNode<T1, T2> RightChild { get; set; }
+        public override AVLTreeNode<T1, T2> Parent { get; set; }
+
+        public AVLTreeNode(T1 key, T2 value) : base(key, value)
         {
-            RedBlackTreeNode<int, string> A = new RedBlackTreeNode<int, string>(2, "A", Color.Red);
-            Assert.AreEqual(Color.Red, A.Color);
-
-            var tree = new RedBlackTree<int, string>();
-
-            A.FlipColor();
-            Assert.AreEqual(Color.Black, A.Color);
-            A.FlipColor();
-            Assert.AreEqual(Color.Red, A.Color);
         }
     }
 }
