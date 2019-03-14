@@ -18,6 +18,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 
 namespace CSFundamentals.DataStructures.Trees.API
 {
@@ -152,6 +153,42 @@ namespace CSFundamentals.DataStructures.Trees.API
         public int CompareTo(T other)
         {
             return Key.CompareTo(other.Key);
+        }
+
+        // TODO: Test
+        public bool IsComplete()
+        {
+            if (RightChild != null && LeftChild != null)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        // TODO: Test
+        public List<T> GetChidlren()
+        {
+            List<T> children = new List<T>();
+            if (RightChild != null)
+            {
+                children.Add(RightChild);
+            }
+            if (LeftChild != null)
+            {
+                children.Add(LeftChild);
+            }
+            return children;
+        }
+
+        // TODO: Test
+        public List<T> GetGrandChildren()
+        {
+            List<T> grandChildren = new List<T>();
+            if(RightChild != null)
+                grandChildren.AddRange(RightChild.GetChidlren());
+            if (LeftChild != null)
+                grandChildren.AddRange(LeftChild.GetChidlren());
+            return grandChildren;
         }
 
         public bool Equals(T other)

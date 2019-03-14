@@ -133,7 +133,7 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// <returns>Root of the tree.</returns>
         internal T Build_BST(List<T> nodes)
         {
-            foreach(T node in nodes)
+            foreach (T node in nodes)
             {
                 _root = Insert(_root, node);
             }
@@ -184,6 +184,45 @@ namespace CSFundamentals.DataStructures.Trees.API
             return false;
         }
 
+        internal T Delete_BST(T root, T1 key)
+        {
+            if (root == null) return root;
+
+            if (root.Key.CompareTo(key) < 0)
+            {
+                root.RightChild = Delete_BST(root.RightChild, key);
+            }
+            else if (root.Key.CompareTo(key) > 0)
+            {
+                root.LeftChild = Delete_BST(root.LeftChild, key);
+            }
+            else if (root.Key.CompareTo(key) == 0) // The key is found
+            {
+                if (root.RightChild == null && root.LeftChild == null)
+                {
+                    return default(T);
+                }
+
+                if (root.RightChild == null)
+                {
+                    return root.LeftChild;
+                }
+
+                if (root.LeftChild == null)
+                {
+                    return root.RightChild;
+                }
+
+                /* Else replacing the node that has 2 non-null children with its in-order successor, or could alternatively replace it with its in-order predecessor. */
+                /* From definition of FindMin() it is obvious that the replacement node [rightChildMin] has less than 2 children. */
+                T rightChildMin = FindMin_BST(root.RightChild);
+                root.Key = rightChildMin.Key;
+                root.Value = rightChildMin.Value;
+                root.RightChild = Delete_BST(root.RightChild, rightChildMin.Key); /* at this point both node, and rightChildMin have the same keys, but calling delete on the same key, will only result in the removal  of rightChildMin, because pf the root that is passed to Delete.*/
+            }
+            return root;
+        }
+
         /// <summary>
         /// Finds the node with the smallest key in a binary search tree.
         /// </summary>
@@ -223,7 +262,7 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// </summary>
         /// <param name="node">Is the node at which rotation happens.</param>
         [TimeComplexity(Case.Average, "O(1)")]
-        public void RotateLeft(T node)
+        public T RotateLeft(T node)
         {
             if (node == null) throw new ArgumentNullException();
             if (node.RightChild == null) throw new Exception("While rotating left, the new parent can not be null.");
@@ -252,6 +291,7 @@ namespace CSFundamentals.DataStructures.Trees.API
                 }
             }
             newNode.Parent = nodeParent;
+            return newNode;
         }
 
         /// <summary>
@@ -260,7 +300,7 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// </summary>
         /// <param name="node">Is the node at which rotation happens.</param>
         [TimeComplexity(Case.Average, "O(1)")]
-        public void RotateRight(T node)
+        public T RotateRight(T node)
         {
             if (node == null) throw new ArgumentNullException();
             if (node.LeftChild == null) throw new Exception("While rotating right, the new parent can not be null.");
@@ -288,6 +328,7 @@ namespace CSFundamentals.DataStructures.Trees.API
                 }
             }
             newNode.Parent = nodeParent;
+            return newNode;
         }
 
         public T DeleteMin(T root)

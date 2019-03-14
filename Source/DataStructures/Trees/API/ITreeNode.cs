@@ -18,6 +18,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 
 namespace CSFundamentals.DataStructures.Trees.API
 {
@@ -68,5 +69,7 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// </summary>
         /// <returns>True in case the current node is the right child of its parent, and false otherwise. </returns>
         bool IsRightChild();
+
+        List<T> GetChidlren();
     }
 }

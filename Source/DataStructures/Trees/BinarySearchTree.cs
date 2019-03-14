@@ -62,41 +62,7 @@ namespace CSFundamentals.DataStructures.Trees
         [SpaceComplexity("O(1)")]
         public override BinarySearchTreeNode<T1, T2> Delete(BinarySearchTreeNode<T1, T2> root, T1 key)
         {
-            if (root == null) return root;
-
-            if (root.Key.CompareTo(key) < 0)
-            {
-                root.RightChild = Delete(root.RightChild, key);
-            }
-            else if (root.Key.CompareTo(key) > 0)
-            {
-                root.LeftChild = Delete(root.LeftChild, key);
-            }
-            else
-            {
-                if (root.RightChild == null && root.LeftChild == null)
-                {
-                    return null;
-                }
-
-                if (root.RightChild == null)
-                {
-                    return root.LeftChild;
-                }
-
-                if (root.LeftChild == null)
-                {
-                    return root.RightChild;
-                }
-
-                /* Else replacing the node that has 2 non-null children with its in-order successor, or could alternatively replace it with its in-order predecessor. */
-                /* From these definitions it is obvious that the replacement node has less than 2 children. */
-                BinarySearchTreeNode<T1, T2> rightChildMin = FindMin(root.RightChild);
-                root.Key = rightChildMin.Key;
-                root.Value = rightChildMin.Value;
-                root.RightChild = Delete(root.RightChild, rightChildMin.Key); /* at this point both node, and rightChildMin have the same keys, but calling delete on the same key, will only result in the removal  of rightChildMin, because pf the root that is passed to Delete.*/
-            }
-            return root;
+            return Delete_BST(root, key);
         }
 
         /// <summary>
