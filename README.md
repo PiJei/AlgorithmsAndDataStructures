@@ -51,6 +51,7 @@ Content:
     - Trees:
          - BinarySearchTree
          - RedBlackTree
+         - AVLTree
    
 
 References : 
