@@ -37,27 +37,27 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
 
         public override MockTreeNode<T1, T2> FindMax(MockTreeNode<T1, T2> root)
         {
-            throw new NotImplementedException();
+            return FindMax_BST(root);
         }
 
         public override MockTreeNode<T1, T2> FindMin(MockTreeNode<T1, T2> root)
         {
-            throw new NotImplementedException();
+            return FindMin_BST(root);
         }
 
         public override MockTreeNode<T1, T2> Insert(MockTreeNode<T1, T2> root, MockTreeNode<T1, T2> newNode)
         {
-            throw new NotImplementedException();
+            return Insert_BST(root, newNode);
         }
 
         public override MockTreeNode<T1, T2> Search(MockTreeNode<T1, T2> root, T1 key)
         {
-            throw new NotImplementedException();
+            return Search_BST(root, key);
         }
 
         public override bool Update(MockTreeNode<T1, T2> root, T1 key, T2 value)
         {
-            throw new NotImplementedException();
+            return Update_BST(root, key, value);
         }
     }
 }

@@ -208,7 +208,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         }
 
         [TestMethod]
-        public void BinarySearchTreeBase_Search_Test_Success()
+        public void BinarySearchTreeBase_SearchBST_Test_Success()
         {
             Assert.AreEqual("str5", _tree.Search(_root, 60).Value, ignoreCase: false);
             Assert.AreEqual("str2", _tree.Search(_root, 30).Value, ignoreCase: false);
@@ -220,14 +220,14 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         }
 
         [TestMethod]
-        public void BinarySearchTreeBase_Search_Test_Failure()
+        public void BinarySearchTreeBase_SearchBST_Test_Failure()
         {
             Assert.IsNull(_tree.Search(_root, 45));
             Assert.IsNull(_tree.Search(null, 30));
         }
 
         [TestMethod]
-        public void BinarySearchTreeBase_Update_Test_Success()
+        public void BinarySearchTreeBase_UpdateBST_Test_Success()
         {
             Assert.IsTrue(_tree.Update(_root, 40, "string3"));
 
@@ -235,7 +235,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         }
 
         [TestMethod]
-        public void BinarySearchTreeBase_Update_Test_Failue()
+        public void BinarySearchTreeBase_UpdateBST_Test_Failue()
         {
             /* Testing the case where root is null. */
             Assert.IsFalse(_tree.Update(null, 40, "string3"));
@@ -245,7 +245,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         }
 
         [TestMethod]
-        public void BinarySearchTreeBase_FindMin_Test_Success()
+        public void BinarySearchTreeBase_FindMinBST_Test_Success()
         {
             Assert.AreEqual("str1", _tree.FindMin(_root).Value);
             Assert.AreEqual("str1", _tree.FindMin(_root.LeftChild).Value);
@@ -258,13 +258,13 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void BinarySearchTreeBase_FindMin_Test_Failure()
+        public void BinarySearchTreeBase_FindMinBST_Test_Failure()
         {
             _tree.FindMin(null);
         }
 
         [TestMethod]
-        public void BinarySearchTreeBase_FindMax_Test_Success()
+        public void BinarySearchTreeBase_FindMaxBST_Test_Success()
         {
             Assert.AreEqual("str7", _tree.FindMax(_root).Value);
             Assert.AreEqual("str2", _tree.FindMax(_root.LeftChild).Value);
@@ -277,13 +277,13 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void BinarySearchTreeBase_FindMax_Test_Failure()
+        public void BinarySearchTreeBase_FindMaxBST_Test_Failure()
         {
             _tree.FindMax(null);
         }
 
         [TestMethod]
-        public void BinarySearchTreeBase_Insert_WithoutBalancing_Test()
+        public void BinarySearchTreeBase_InsertBST_WithoutBalancing_Test()
         {
             var keyVals = new Dictionary<int, string>
             {
