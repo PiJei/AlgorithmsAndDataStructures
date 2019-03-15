@@ -28,7 +28,7 @@ namespace CSFundamentals.DataStructures.Trees.API
     /// <typeparam name="T">Is the type of the tree node. </typeparam>
     /// <typeparam name="T1">Is the type of the keys in the tree nodes. </typeparam>
     /// <typeparam name="T2">Is the type of the values in the tree nodes. </typeparam>
-    public interface ITreeNode<T, T1, T2> : IComparable<T> where T1 : IComparable<T1>
+    public interface IBinaryTreeNode<T, T1, T2> : IComparable<T> where T1 : IComparable<T1>
     {
         /// <summary>
         /// Is the key in a tree node. 

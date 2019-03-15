@@ -350,7 +350,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         /// <typeparam name="T1">Specifies the type of the keys in tree. </typeparam>
         /// <typeparam name="T2">Specifies the type of the values in tree nodes. </typeparam>
         /// <param name="root">Is the root of a binary search tree. </param>
-        public static void HasBinarySearchTreeOrderProperty<T, T1, T2>(T root) where T : ITreeNode<T, T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
+        public static void HasBinarySearchTreeOrderProperty<T, T1, T2>(T root) where T : IBinaryTreeNode<T, T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
         {
             if (root != null)
             {

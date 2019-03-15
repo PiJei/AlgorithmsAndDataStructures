@@ -22,7 +22,7 @@ using CSFundamentals.DataStructures.Trees.API;
 
 namespace CSFundamentals.DataStructures.Trees
 {
-    public class AVLTreeNode<T1, T2> : TreeNode<AVLTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>
+    public class AVLTreeNode<T1, T2> : BinaryTreeNode<AVLTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>
     {
         public override AVLTreeNode<T1, T2> LeftChild { get; set; }
         public override AVLTreeNode<T1, T2> RightChild { get; set; }
