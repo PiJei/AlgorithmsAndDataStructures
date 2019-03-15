@@ -26,7 +26,7 @@ using CSFundamentals.Styling;
 
 namespace CSFundamentals.DataStructures.Trees.API
 {
-    public abstract class BinarySearchTreeBase<T, T1, T2> where T : ITreeNode<T, T1, T2> where T1 : IComparable<T1>
+    public abstract class BinarySearchTreeBase<T, T1, T2> where T : IBinaryTreeNode<T, T1, T2> where T1 : IComparable<T1>
     {
         /// <summary>
         /// Is the root of the binary search tree.
