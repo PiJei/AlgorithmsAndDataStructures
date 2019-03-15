@@ -27,19 +27,19 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
     [TestClass]
     public class BinarySearchTreeBaseTests
     {
-        private MockTreeNode<int, string> _root;
+        private MockBinaryTreeNode<int, string> _root;
         private MockBinarySearchTreeBase<int, string> _tree;
 
         [TestInitialize]
         public void Init()
         {
-            MockTreeNode<int, string> A = new MockTreeNode<int, string>(40, "str3");
-            MockTreeNode<int, string> B = new MockTreeNode<int, string>(20, "str1");
-            MockTreeNode<int, string> C = new MockTreeNode<int, string>(70, "str6");
-            MockTreeNode<int, string> D = new MockTreeNode<int, string>(50, "str4");
-            MockTreeNode<int, string> E = new MockTreeNode<int, string>(80, "str7");
-            MockTreeNode<int, string> F = new MockTreeNode<int, string>(30, "str2");
-            MockTreeNode<int, string> G = new MockTreeNode<int, string>(60, "str5");
+            MockBinaryTreeNode<int, string> A = new MockBinaryTreeNode<int, string>(40, "str3");
+            MockBinaryTreeNode<int, string> B = new MockBinaryTreeNode<int, string>(20, "str1");
+            MockBinaryTreeNode<int, string> C = new MockBinaryTreeNode<int, string>(70, "str6");
+            MockBinaryTreeNode<int, string> D = new MockBinaryTreeNode<int, string>(50, "str4");
+            MockBinaryTreeNode<int, string> E = new MockBinaryTreeNode<int, string>(80, "str7");
+            MockBinaryTreeNode<int, string> F = new MockBinaryTreeNode<int, string>(30, "str2");
+            MockBinaryTreeNode<int, string> G = new MockBinaryTreeNode<int, string>(60, "str5");
 
             A.Parent = null;
             A.LeftChild = B;
@@ -76,13 +76,13 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         [TestMethod]
         public void BinarySearchTreeBase_RotateLeft_Test()
         {
-            MockTreeNode<int, string> A = new MockTreeNode<int, string>(50, "A");
-            MockTreeNode<int, string> B = new MockTreeNode<int, string>(30, "B");
-            MockTreeNode<int, string> C = new MockTreeNode<int, string>(20, "C");
-            MockTreeNode<int, string> D = new MockTreeNode<int, string>(40, "D");
-            MockTreeNode<int, string> E = new MockTreeNode<int, string>(35, "E");
-            MockTreeNode<int, string> F = new MockTreeNode<int, string>(45, "F");
-            MockTreeNode<int, string> G = new MockTreeNode<int, string>(47, "G");
+            MockBinaryTreeNode<int, string> A = new MockBinaryTreeNode<int, string>(50, "A");
+            MockBinaryTreeNode<int, string> B = new MockBinaryTreeNode<int, string>(30, "B");
+            MockBinaryTreeNode<int, string> C = new MockBinaryTreeNode<int, string>(20, "C");
+            MockBinaryTreeNode<int, string> D = new MockBinaryTreeNode<int, string>(40, "D");
+            MockBinaryTreeNode<int, string> E = new MockBinaryTreeNode<int, string>(35, "E");
+            MockBinaryTreeNode<int, string> F = new MockBinaryTreeNode<int, string>(45, "F");
+            MockBinaryTreeNode<int, string> G = new MockBinaryTreeNode<int, string>(47, "G");
 
             A.Parent = null;
             A.LeftChild = B;
@@ -112,10 +112,10 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
             G.LeftChild = null;
             G.RightChild = null;
 
-            HasBinarySearchTreeOrderProperty<MockTreeNode<int, string>, int, string>(A);
+            HasBinarySearchTreeOrderProperty<MockBinaryTreeNode<int, string>, int, string>(A);
             var tree = new MockBinarySearchTreeBase<int, string>();
             tree.RotateLeft(B);
-            HasBinarySearchTreeOrderProperty<MockTreeNode<int, string>, int, string>(A);
+            HasBinarySearchTreeOrderProperty<MockBinaryTreeNode<int, string>, int, string>(A);
 
             Assert.IsTrue(A.Parent == null);
             Assert.IsTrue(A.LeftChild.Equals(D));
@@ -143,13 +143,13 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         [TestMethod]
         public void BinarySearchTreeBase_RotateRight_Test()
         {
-            MockTreeNode<int, string> A = new MockTreeNode<int, string>(30, "A");
-            MockTreeNode<int, string> B = new MockTreeNode<int, string>(70, "B");
-            MockTreeNode<int, string> C = new MockTreeNode<int, string>(50, "C");
-            MockTreeNode<int, string> D = new MockTreeNode<int, string>(80, "D");
-            MockTreeNode<int, string> E = new MockTreeNode<int, string>(40, "E");
-            MockTreeNode<int, string> F = new MockTreeNode<int, string>(60, "F");
-            MockTreeNode<int, string> G = new MockTreeNode<int, string>(35, "G");
+            MockBinaryTreeNode<int, string> A = new MockBinaryTreeNode<int, string>(30, "A");
+            MockBinaryTreeNode<int, string> B = new MockBinaryTreeNode<int, string>(70, "B");
+            MockBinaryTreeNode<int, string> C = new MockBinaryTreeNode<int, string>(50, "C");
+            MockBinaryTreeNode<int, string> D = new MockBinaryTreeNode<int, string>(80, "D");
+            MockBinaryTreeNode<int, string> E = new MockBinaryTreeNode<int, string>(40, "E");
+            MockBinaryTreeNode<int, string> F = new MockBinaryTreeNode<int, string>(60, "F");
+            MockBinaryTreeNode<int, string> G = new MockBinaryTreeNode<int, string>(35, "G");
 
             A.Parent = null;
             A.LeftChild = null;
@@ -179,10 +179,10 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
             G.LeftChild = null;
             G.RightChild = null;
 
-            HasBinarySearchTreeOrderProperty<MockTreeNode<int, string>, int, string>(A);
+            HasBinarySearchTreeOrderProperty<MockBinaryTreeNode<int, string>, int, string>(A);
             var tree = new MockBinarySearchTreeBase<int, string>();
             tree.RotateRight(B);
-            HasBinarySearchTreeOrderProperty<MockTreeNode<int, string>, int, string>(A);
+            HasBinarySearchTreeOrderProperty<MockBinaryTreeNode<int, string>, int, string>(A);
 
             Assert.IsTrue(A.Parent == null);
             Assert.IsTrue(A.LeftChild == null);
@@ -297,19 +297,19 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
             };
 
             var tree = new MockBinarySearchTreeBase<int, string>();
-            MockTreeNode<int, string> root = null;
+            MockBinaryTreeNode<int, string> root = null;
 
-            root = tree.Insert_BST(root, new MockTreeNode<int, string>(40, "str3"));
-            root = tree.Insert_BST(root, new MockTreeNode<int, string>(20, "str1"));
-            root = tree.Insert_BST(root, new MockTreeNode<int, string>(70, "str6"));
-            root = tree.Insert_BST(root, new MockTreeNode<int, string>(50, "str4"));
-            root = tree.Insert_BST(root, new MockTreeNode<int, string>(80, "str7"));
-            root = tree.Insert_BST(root, new MockTreeNode<int, string>(30, "str2"));
-            root = tree.Insert_BST(root, new MockTreeNode<int, string>(60, "str5"));
+            root = tree.Insert_BST(root, new MockBinaryTreeNode<int, string>(40, "str3"));
+            root = tree.Insert_BST(root, new MockBinaryTreeNode<int, string>(20, "str1"));
+            root = tree.Insert_BST(root, new MockBinaryTreeNode<int, string>(70, "str6"));
+            root = tree.Insert_BST(root, new MockBinaryTreeNode<int, string>(50, "str4"));
+            root = tree.Insert_BST(root, new MockBinaryTreeNode<int, string>(80, "str7"));
+            root = tree.Insert_BST(root, new MockBinaryTreeNode<int, string>(30, "str2"));
+            root = tree.Insert_BST(root, new MockBinaryTreeNode<int, string>(60, "str5"));
 
-            HasBinarySearchTreeOrderProperty<MockTreeNode<int, string>, int, string>(root);
+            HasBinarySearchTreeOrderProperty<MockBinaryTreeNode<int, string>, int, string>(root);
 
-            List<MockTreeNode<int, string>> nodes = new List<MockTreeNode<int, string>>();
+            List<MockBinaryTreeNode<int, string>> nodes = new List<MockBinaryTreeNode<int, string>>();
             _tree.InOrderTraversal(root, nodes);
             Assert.AreEqual(7, nodes.Count);
             for (int i = 0; i < nodes.Count - 1; i++)
@@ -324,7 +324,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         [TestMethod]
         public void BinarySearchTreeBase_InOrderTraversal_Test()
         {
-            var inOrderTraversal = new List<MockTreeNode<int, string>>();
+            var inOrderTraversal = new List<MockBinaryTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, inOrderTraversal);
             Assert.AreEqual(7, inOrderTraversal.Count);
             for (int i = 0; i < inOrderTraversal.Count - 1; i++)
@@ -336,7 +336,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         [TestMethod]
         public void BinarySearchTreeBase_GetAllPathToNullLeaves_Test()
         {
-            List<List<MockTreeNode<int, string>>> pathsFromRoot = _tree.GetAllPathToLeaves(_root);
+            List<List<MockBinaryTreeNode<int, string>>> pathsFromRoot = _tree.GetAllPathToLeaves(_root);
             Assert.AreEqual(3, pathsFromRoot.Count);
             Assert.AreEqual(3, pathsFromRoot[0].Count);
             Assert.AreEqual(4, pathsFromRoot[1].Count);
