@@ -30,14 +30,14 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
     /// </summary>
     /// <typeparam name="T1">Specifies the type of the keys in a tree.</typeparam>
     /// <typeparam name="T2">Specifies type of the values in a tree.</typeparam>
-    public class MockTreeNode<T1, T2> : BinaryTreeNode<MockTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>
+    public class MockBinaryTreeNode<T1, T2> : BinaryTreeNode<MockBinaryTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>
     {
-        public MockTreeNode(T1 key, T2 value) : base(key, value)
+        public MockBinaryTreeNode(T1 key, T2 value) : base(key, value)
         {
         }
 
-        public override MockTreeNode<T1, T2> LeftChild { get; set; }
-        public override MockTreeNode<T1, T2> RightChild { get; set; }
-        public override MockTreeNode<T1, T2> Parent { get; set; }
+        public override MockBinaryTreeNode<T1, T2> LeftChild { get; set; }
+        public override MockBinaryTreeNode<T1, T2> RightChild { get; set; }
+        public override MockBinaryTreeNode<T1, T2> Parent { get; set; }
     }
 }
