@@ -254,16 +254,27 @@ namespace CSFundamentalsTests.DataStructures.Trees
             foreach (RedBlackTreeNode<T1, T2> node in inOrderTraversal)
             {
                 List<List<RedBlackTreeNode<T1, T2>>> paths = tree.GetAllPathToLeaves(node);
+                int shortestPathLength = int.MaxValue;
+                int longestPathLength = int.MinValue;
                 int firstPathBlackNodeCount = 0;
                 if (paths.Count >= 0)
                     firstPathBlackNodeCount = paths[0].Count(n => n.Color == Color.Black);
                 for (int i = 1; i < paths.Count; i++)
                 {
                     Assert.AreEqual(firstPathBlackNodeCount, paths[i].Count(n => n.Color == Color.Black));
+                    if(paths[i].Count > longestPathLength)
+                    {
+                        longestPathLength = paths[i].Count;
+                    }
+                    if(paths[i].Count < shortestPathLength)
+                    {
+                        shortestPathLength = paths[i].Count;
+                    }
                 }
-            }
 
-            // TODO 5- get the longest path, get the shortest path, assert is not more than twice.. shortest path might be all black nodes, and longest path would be alternating between red and black nodes
+                // Ensure longest path of a node is not more than twice the shortest path. In the extreme case, shortest path might be all black nodes, and longest path would be alternating between red and black nodes
+                Assert.IsTrue(longestPathLength <= 2 * shortestPathLength);
+            }
         }
     }
 }

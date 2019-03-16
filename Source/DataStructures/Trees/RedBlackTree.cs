@@ -25,7 +25,7 @@ using CSFundamentals.DataStructures.Trees.API;
 using CSFundamentals.Styling;
 
 [assembly: InternalsVisibleTo("CSFundamentalsTests")]
-//TODO: Specify time and space complexities
+
 namespace CSFundamentals.DataStructures.Trees
 {
     /// <summary>
@@ -340,12 +340,6 @@ namespace CSFundamentals.DataStructures.Trees
                     parent.RightChild = null;
                 }
             }
-        }
-
-        internal int GetBlackHeight(RedBlackTreeNode<T1, T2> root)
-        {
-            throw new NotImplementedException();
-            //TODO
         }
     }
 }

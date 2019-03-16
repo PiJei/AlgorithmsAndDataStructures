@@ -138,7 +138,7 @@ namespace CSFundamentals.DataStructures.Trees
         {
             root = Insert_BST(root, newNode); /* First insert the node using normal BinarySearchInsert to preserve the ordering property. */
 
-            ReBalance(newNode);
+            Balance(newNode);
 
             // Find the new root of the tree, as it might have changed during the operations. 
             root = newNode;
@@ -185,8 +185,11 @@ namespace CSFundamentals.DataStructures.Trees
             return FindMax_BST(root);
         }
 
-        // TODO: Test
-        internal void ReBalance(AVLTreeNode<T1, T2> node)
+        /// <summary>
+        /// Balances a tree, starting at the given node and going upward. 
+        /// </summary>
+        /// <param name="node">The bottom most node, from which balance starts, based on its parent and grand parent. </param>
+        internal void Balance(AVLTreeNode<T1, T2> node)
         {
             AVLTreeNode<T1, T2> parent = node?.Parent;
             AVLTreeNode<T1, T2> grandParent = node?.Parent?.Parent;
@@ -230,7 +233,6 @@ namespace CSFundamentals.DataStructures.Trees
                     grandParent = grandParent.Parent;
                 }
             }
-
         }
 
         /// <summary>
