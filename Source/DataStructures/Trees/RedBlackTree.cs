@@ -299,7 +299,11 @@ namespace CSFundamentals.DataStructures.Trees
             }
         }
 
-        // TODO :Test
+        /// <summary>
+        /// Checks whether the given node is red. 
+        /// </summary>
+        /// <param name="node">Is a node in a red black tree. </param>
+        /// <returns>True in case node is red, and false otherwise. </returns>
         internal bool IsRed(RedBlackTreeNode<T1, T2> node)
         {
             if (node != null && node.Color == Color.Red)
@@ -307,14 +311,22 @@ namespace CSFundamentals.DataStructures.Trees
             return false;
         }
 
-        //TODO: Test
+        /// <summary>
+        /// Checks whether the given node is black. 
+        /// </summary>
+        /// <param name="node">Is a node in a red black tree. </param>
+        /// <returns>True in case node is black, and false otherwise. </returns>
         internal bool IsBlack(RedBlackTreeNode<T1, T2> node)
         {
             if (node == null || (node != null && node.Color == Color.Black)) return true;
             return false;
         }
 
-        //TODO: Test
+        /// <summary>
+        /// Finds the given child node in the parent node, and if in fact a child of the parent replaces it with null. 
+        /// </summary>
+        /// <param name="parent">Is a parent node. </param>
+        /// <param name="child">Is a child node of the given parent node. </param>
         internal void UpdateParentWithNullingChild(RedBlackTreeNode<T1, T2> parent, RedBlackTreeNode<T1, T2> child)
         {
             if (parent != null)

@@ -172,6 +172,53 @@ namespace CSFundamentalsTests.DataStructures.Trees
             HasRedBlackTreeProperties(_tree, _root, inOrderTraversal, 0);
         }
 
+        [TestMethod]
+        public void RedBlackTree_IsRed_Test()
+        {
+            RedBlackTreeNode<int, string> node1 = new RedBlackTreeNode<int, string>(10, "string1");
+            Assert.IsTrue(_tree.IsRed(node1));
+            node1.Color = Color.Black;
+            Assert.IsFalse(_tree.IsRed(node1));
+        }
+
+        [TestMethod]
+        public void RedBlackTree_IsBlack_Test()
+        {
+            RedBlackTreeNode<int, string> node1 = new RedBlackTreeNode<int, string>(10, "string1");
+            Assert.IsFalse(_tree.IsBlack(node1));
+            node1.Color = Color.Black;
+            Assert.IsTrue(_tree.IsBlack(node1));
+        }
+
+        [TestMethod]
+        public void RedBlackTree_UpdateParentWithNullingChild_Test()
+        {
+            RedBlackTreeNode<int, string> node1 = new RedBlackTreeNode<int, string>(10, "string1");
+            RedBlackTreeNode<int, string> node2 = new RedBlackTreeNode<int, string>(5, "string2");
+            RedBlackTreeNode<int, string> node3 = new RedBlackTreeNode<int, string>(15, "string3");
+
+            node1.Parent = null;
+            node1.LeftChild = node2;
+            node1.RightChild = node3;
+
+            node2.Parent = node1;
+            node2.LeftChild = null;
+            node2.RightChild = null;
+
+            node3.Parent = node1;
+            node3.LeftChild = null;
+            node3.RightChild = null;
+
+            Assert.IsNotNull(node1.LeftChild);
+            _tree.UpdateParentWithNullingChild(node1, node2);
+            Assert.IsNull(node1.LeftChild);
+
+            RedBlackTreeNode<int, string> node4 = new RedBlackTreeNode<int, string>(15, "string4");
+            _tree.UpdateParentWithNullingChild(node1, node4);
+            Assert.IsNull(node1.LeftChild);
+            Assert.IsNotNull(node1.RightChild);
+        }
+
         public static void HasRedBlackTreeProperties<T1, T2>(RedBlackTree<T1, T2> tree, RedBlackTreeNode<T1, T2> root, List<RedBlackTreeNode<T1, T2>> inOrderTraversal, int expectedNodeCount) where T1 : IComparable<T1>, IEquatable<T1>
         {
             // Check order properties.
