@@ -58,3 +58,8 @@ References :
 - https://www.geeksforgeeks.org
 - https://www.wikipedia.org
 - https://stackoverflow.com/
+
+
+Disclaimer: 
+- The code is extensively tested, and is correct only to the best of the knowledge of the authors. Yet the authors take no responsibility in the correctness of the code. Please use at your own risk.  
+- The code, views, thoughts, and opinions expressed in this repository belong solely to the authors, and not necessarily to the author’s employer, organization, committee or other group or individual.
