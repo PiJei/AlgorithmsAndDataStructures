@@ -195,6 +195,11 @@ namespace CSFundamentals.DataStructures.LinkedLists
                         Tail = Tail.Previous;
                         Tail.Next = null;
                         return true;
+                    }else /* Node is in the middle and has not-null next and previous nodes. */
+                    {
+                        currentNode.Previous.Next = currentNode.Next;
+                        currentNode.Next.Previous = currentNode.Previous;
+                        return true;
                     }
                 }
                 else /* Keep moving forward in the list. */

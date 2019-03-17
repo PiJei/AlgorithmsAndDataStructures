@@ -188,8 +188,8 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.IsNull(list.Head.Previous);
             Assert.IsNull(list.Tail.Next);
             Assert.IsNotNull(list.Tail.Previous);
-            Assert.AreEqual(12 , list.Head.Next.Value);
-            Assert.AreEqual(2 ,list.Tail.Previous.Value);
+            Assert.AreEqual(12, list.Head.Next.Value);
+            Assert.AreEqual(2, list.Tail.Previous.Value);
 
             Assert.IsTrue(list.Append(7));
             Assert.AreEqual(3, list.Length());
@@ -238,30 +238,79 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         }
 
         [TestMethod]
-        public void BiDirectionalLinkedList_Search_Test()
+        [ExpectedException(typeof(NotFoundException))]
+        public void BiDirectionalLinkedList_Search_Test_Failure_1()
         {
-            // should test all the branches in the code, and all the possible combinations of the list
-            // no node
-            // one node
-            // 2 nodes
-            // 3 nodes
+            BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>();
+            var result = list.Search(10);
+        }
 
-            // TODO have another test for the mix of append and prepend
-            // TODO another test for the mix of insert before and after, ... 
+        [TestMethod]
+        [ExpectedException(typeof(NotFoundException))]
+        public void BiDirectionalLinkedList_Search_Test_Failure_2()
+        {
+            BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>(new BiDirectionalLinkedListNode<int>(20));
+            var result = list.Search(10);
+        }
+
+        [TestMethod]
+        public void BiDirectionalLinkedList_Search_Test_Success()
+        {
+            BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>(new BiDirectionalLinkedListNode<int>(20));
+            var result = list.Search(20);
+            Assert.IsNotNull(result);
+            Assert.AreEqual(20, result.Value);
+
+            list.Append(10);
+            list.Append(12);
+            list.Append(6);
+            result = list.Search(12);
+            Assert.IsNotNull(result);
+            Assert.AreEqual(12, result.Value);
         }
 
         [TestMethod]
         public void BiDirectionalLinkedList_Delete_Test()
         {
-            // should test all the branches in the code, and all the possible combinations of the list
-            // no node
-            // one node
-            // 2 nodes
-            // 3 nodes
+            BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>();
+            Assert.AreEqual(0, list.Length());
+            Assert.IsFalse(list.Delete(5));
+            list.Append(10);
+            Assert.AreEqual(1, list.Length());
+
+            Assert.IsTrue(list.Delete(10));
+            Assert.AreEqual(0, list.Length());
+
+            list.Append(10);
+            list.Append(3);
+
+            Assert.IsTrue(list.Delete(10));
+            Assert.AreEqual(1, list.Length());
+            Assert.AreEqual(3, list.Head.Value);
+            Assert.AreEqual(3, list.Tail.Value);
+
+            list.Append(14);
+
+            Assert.IsTrue(list.Delete(14));
+            Assert.AreEqual(1, list.Length());
+            Assert.AreEqual(3, list.Head.Value);
+            Assert.AreEqual(3, list.Tail.Value);
+
+            list.Append(5);
+            list.Append(4);
+            list.Append(1);
+            Assert.IsTrue(list.Delete(4));
+            Assert.AreEqual(3, list.Length());
+            Assert.AreEqual(3, list.Head.Value);
+            Assert.AreEqual(1, list.Tail.Value);
         }
 
-        // TODO have another test for the mix of append and prepend
+        // TODO have another test for the mix of append and pre-pend
         // TODO another test for the mix of insert before and after, ... 
+        [TestMethod]
+        public void BiDirectionalLinkedList_Append_Prepend_Test()
+        {
 
+        }
     }
 }
