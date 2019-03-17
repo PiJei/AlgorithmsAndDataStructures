@@ -19,15 +19,15 @@
 
 namespace CSFundamentals.DataStructures.LinkedLists
 {
-    public class BiDirectionalLinkedListNode<T>
+    public class DoublyLinkedListNode<T>
     {
         public T Value;
 
-        public BiDirectionalLinkedListNode<T> Next = null;
+        public DoublyLinkedListNode<T> Next = null;
 
-        public BiDirectionalLinkedListNode<T> Previous = null;
+        public DoublyLinkedListNode<T> Previous = null;
 
-        public BiDirectionalLinkedListNode(T value)
+        public DoublyLinkedListNode(T value)
         {
             Value = value;
         }

@@ -17,60 +17,57 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentals.DataStructures.LinkedLists;
 
 namespace CSFundamentalsTests.DataStructures.LinkedLists
 {
     [TestClass]
-    public class BiDirectionalLinkedListTests
+    public class DoublyLinkedListTests
     {
         [TestMethod]
-        public void BiDirectionalLinkedList_Length_Test()
+        public void DoublyLinkedList_Length_Test()
         {
-            BiDirectionalLinkedListNode<int> node1 = new BiDirectionalLinkedListNode<int>(10);
-            BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>();
+            DoublyLinkedListNode<int> node1 = new DoublyLinkedListNode<int>(10);
+            DoublyLinkedList<int> list = new DoublyLinkedList<int>();
             Assert.AreEqual(0, list.Count());
 
             list.Head = node1;
             Assert.AreEqual(1, list.Count());
 
-            list.Head.Next = new BiDirectionalLinkedListNode<int>(2);
+            list.Head.Next = new DoublyLinkedListNode<int>(2);
             Assert.AreEqual(2, list.Count());
 
-            list.Head.Next.Next = new BiDirectionalLinkedListNode<int>(20);
+            list.Head.Next.Next = new DoublyLinkedListNode<int>(20);
             Assert.AreEqual(3, list.Count());
 
-            list.Head.Next.Next.Next = new BiDirectionalLinkedListNode<int>(3);
+            list.Head.Next.Next.Next = new DoublyLinkedListNode<int>(3);
             Assert.AreEqual(4, list.Count());
         }
 
         [TestMethod]
         [ExpectedException(typeof(NotFoundException))]
-        public void BiDirectionalLinkedList_InsertAfter_Test_Failure_1()
+        public void DoublyLinkedList_InsertAfter_Test_Failure_1()
         {
             /* Testing the case where there is no node in the list, and the node after does not exist. */
-            BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>();
+            DoublyLinkedList<int> list = new DoublyLinkedList<int>();
             Assert.IsFalse(list.InsertAfter(1, 2));
         }
 
         [TestMethod]
         [ExpectedException(typeof(NotFoundException))]
-        public void BiDirectionalLinkedList_InsertAfter_Test_Failure_2()
+        public void DoublyLinkedList_InsertAfter_Test_Failure_2()
         {
             /* Testing the case where there is one node in the list, and the node after does not exist. */
-            BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>(new BiDirectionalLinkedListNode<int>(5));
+            DoublyLinkedList<int> list = new DoublyLinkedList<int>(new DoublyLinkedListNode<int>(5));
             Assert.IsFalse(list.InsertAfter(1, 2));
         }
 
         [TestMethod]
-        public void BiDirectionalLinkedList_InsertAfter_Test_Success_1()
+        public void DoublyLinkedList_InsertAfter_Test_Success_1()
         {
             /* Testing the case where there is one node in the list, and the node after exists. */
-            BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>(new BiDirectionalLinkedListNode<int>(5));
+            DoublyLinkedList<int> list = new DoublyLinkedList<int>(new DoublyLinkedListNode<int>(5));
 
             Assert.AreEqual(1, list.Count());
             Assert.AreEqual(5, list.Head.Value);
@@ -88,10 +85,10 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         }
 
         [TestMethod]
-        public void BiDirectionalLinkedList_InsertAfter_Test_Success_2()
+        public void DoublyLinkedList_InsertAfter_Test_Success_2()
         {
             /* Testing the case where there are 2 nodes in the list, and the node after exists. */
-            BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>(new BiDirectionalLinkedListNode<int>(5));
+            DoublyLinkedList<int> list = new DoublyLinkedList<int>(new DoublyLinkedListNode<int>(5));
             Assert.IsTrue(list.InsertAfter(5, 2));
             Assert.IsTrue(list.InsertAfter(5, 3));
 
@@ -107,26 +104,26 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
 
         [TestMethod]
         [ExpectedException(typeof(NotFoundException))]
-        public void BiDirectionalLinkedList_InsertBefore_Test_Failure_1()
+        public void DoublyLinkedList_InsertBefore_Test_Failure_1()
         {
             /* Testing the case where there is no node in the list, and the node before does not exist. */
-            BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>();
+            DoublyLinkedList<int> list = new DoublyLinkedList<int>();
             Assert.IsFalse(list.InsertBefore(1, 2));
         }
 
         [TestMethod]
         [ExpectedException(typeof(NotFoundException))]
-        public void BiDirectionalLinkedList_InsertBefore_Test_Failure_2()
+        public void DoublyLinkedList_InsertBefore_Test_Failure_2()
         {
             /* Testing the case where there is one node in the list, and the node before does not exist. */
-            BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>(new BiDirectionalLinkedListNode<int>(5));
+            DoublyLinkedList<int> list = new DoublyLinkedList<int>(new DoublyLinkedListNode<int>(5));
             Assert.IsFalse(list.InsertBefore(1, 2));
         }
 
         [TestMethod]
-        public void BiDirectionalLinkedList_InsertBefore_Test_Success_1()
+        public void DoublyLinkedList_InsertBefore_Test_Success_1()
         {
-            BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>(new BiDirectionalLinkedListNode<int>(5));
+            DoublyLinkedList<int> list = new DoublyLinkedList<int>(new DoublyLinkedListNode<int>(5));
 
             Assert.AreEqual(1, list.Count());
             Assert.AreEqual(5, list.Head.Value);
@@ -145,9 +142,9 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         }
 
         [TestMethod]
-        public void BiDirectionalLinkedList_InsertBefore_Test_Success_2()
+        public void DoublyLinkedList_InsertBefore_Test_Success_2()
         {
-            BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>(new BiDirectionalLinkedListNode<int>(5));
+            DoublyLinkedList<int> list = new DoublyLinkedList<int>(new DoublyLinkedListNode<int>(5));
 
             Assert.AreEqual(1, list.Count());
             Assert.AreEqual(5, list.Head.Value);
@@ -170,9 +167,9 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         }
 
         [TestMethod]
-        public void BiDirectionalLinkedList_Append_Test()
+        public void DoublyLinkedList_Append_Test()
         {
-            BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>();
+            DoublyLinkedList<int> list = new DoublyLinkedList<int>();
             Assert.AreEqual(0, list.Count());
 
             Assert.IsTrue(list.Append(2));
@@ -204,9 +201,9 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         }
 
         [TestMethod]
-        public void BiDirectionalLinkedList_Prepend_Test()
+        public void DoublyLinkedList_Prepend_Test()
         {
-            BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>();
+            DoublyLinkedList<int> list = new DoublyLinkedList<int>();
             Assert.AreEqual(0, list.Count());
 
             Assert.IsTrue(list.PrePend(2));
@@ -239,24 +236,24 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
 
         [TestMethod]
         [ExpectedException(typeof(NotFoundException))]
-        public void BiDirectionalLinkedList_Search_Test_Failure_1()
+        public void DoublyLinkedList_Search_Test_Failure_1()
         {
-            BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>();
+            DoublyLinkedList<int> list = new DoublyLinkedList<int>();
             var result = list.Search(10);
         }
 
         [TestMethod]
         [ExpectedException(typeof(NotFoundException))]
-        public void BiDirectionalLinkedList_Search_Test_Failure_2()
+        public void DoublyLinkedList_Search_Test_Failure_2()
         {
-            BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>(new BiDirectionalLinkedListNode<int>(20));
+            DoublyLinkedList<int> list = new DoublyLinkedList<int>(new DoublyLinkedListNode<int>(20));
             var result = list.Search(10);
         }
 
         [TestMethod]
-        public void BiDirectionalLinkedList_Search_Test_Success()
+        public void DoublyLinkedList_Search_Test_Success()
         {
-            BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>(new BiDirectionalLinkedListNode<int>(20));
+            DoublyLinkedList<int> list = new DoublyLinkedList<int>(new DoublyLinkedListNode<int>(20));
             var result = list.Search(20);
             Assert.IsNotNull(result);
             Assert.AreEqual(20, result.Value);
@@ -270,9 +267,9 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         }
 
         [TestMethod]
-        public void BiDirectionalLinkedList_Delete_Test()
+        public void DoublyLinkedList_Delete_Test()
         {
-            BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>();
+            DoublyLinkedList<int> list = new DoublyLinkedList<int>();
             Assert.AreEqual(0, list.Count());
             Assert.IsFalse(list.Delete(5));
             list.Append(10);
@@ -306,9 +303,9 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         }
 
         [TestMethod]
-        public void BiDirectionalLinkedList_Append_Prepend_Test()
+        public void DoublyLinkedList_Append_Prepend_Test()
         {
-            BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>();
+            DoublyLinkedList<int> list = new DoublyLinkedList<int>();
             list.Append(10);
             Assert.AreEqual(1, list.Count());
             Assert.AreEqual(10, list.Head.Value);

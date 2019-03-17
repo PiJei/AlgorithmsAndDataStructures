@@ -17,36 +17,33 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentals.DataStructures.LinkedLists;
 
 namespace CSFundamentalsTests.DataStructures.LinkedLists
 {
     [TestClass]
-    public class BiDirectionalLinkedListNodeTests
+    public class DoublyLinkedListNodeTests
     {
         [TestMethod]
-        public void BiDirectionalLinkedListNode_IsHead_Test()
+        public void DoublyLinkedListNode_IsHead_Test()
         {
-            BiDirectionalLinkedListNode<int> node = new BiDirectionalLinkedListNode<int>(10);
+            DoublyLinkedListNode<int> node = new DoublyLinkedListNode<int>(10);
             Assert.IsTrue(node.IsHead());
-            node.Next = new BiDirectionalLinkedListNode<int>(50);
+            node.Next = new DoublyLinkedListNode<int>(50);
             Assert.IsTrue(node.IsHead());
-            node.Previous = new BiDirectionalLinkedListNode<int>(100);
+            node.Previous = new DoublyLinkedListNode<int>(100);
             Assert.IsFalse(node.IsHead());
         }
 
         [TestMethod]
-        public void BiDirectionalLinkedListNode_IsTail_Test()
+        public void DoublyLinkedListNode_IsTail_Test()
         {
-            BiDirectionalLinkedListNode<int> node = new BiDirectionalLinkedListNode<int>(10);
+            DoublyLinkedListNode<int> node = new DoublyLinkedListNode<int>(10);
             Assert.IsTrue(node.IsTail());
-            node.Previous = new BiDirectionalLinkedListNode<int>(100);
+            node.Previous = new DoublyLinkedListNode<int>(100);
             Assert.IsTrue(node.IsTail());
-            node.Next = new BiDirectionalLinkedListNode<int>(50);
+            node.Next = new DoublyLinkedListNode<int>(50);
             Assert.IsFalse(node.IsTail());
         }
     }
