@@ -116,7 +116,8 @@ namespace CSFundamentals.DataStructures.LinkedLists
             return true;
         }
 
-        public void Append(T newValue)
+        //TODO I could have an Insert method that calls Append inside.  just for the sake of Interface. //
+        public bool Append(T newValue)
         {
             BiDirectionalLinkedListNode<T> newNode = new BiDirectionalLinkedListNode<T>(newValue);
             if (Tail != null)
@@ -131,10 +132,10 @@ namespace CSFundamentals.DataStructures.LinkedLists
             {
                 Head = newNode;
             }
-            // to do : what if tail is null
+            return true;
         }
 
-        public void PrePend(T newValue)
+        public bool PrePend(T newValue)
         {
             BiDirectionalLinkedListNode<T> newNode = new BiDirectionalLinkedListNode<T>(newValue);
             if (Head != null)
@@ -148,8 +149,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
             {
                 Tail = newNode;
             }
-            // what if head is null
-            // what if there was no item in the liked list, ... 
+            return true;
         }
 
         // Assuming no order between the nodes, boils down to linear search, ...

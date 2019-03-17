@@ -135,8 +135,8 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.IsTrue(list.InsertBefore(5, 1));
 
             Assert.AreEqual(2, list.Length());
-            Assert.AreEqual(1,list.Head.Value);
-            Assert.AreEqual(5,list.Tail.Value);
+            Assert.AreEqual(1, list.Head.Value);
+            Assert.AreEqual(5, list.Tail.Value);
 
             Assert.IsNotNull(list.Head.Next);
             Assert.IsNull(list.Head.Previous);
@@ -164,16 +164,44 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.IsNull(list.Head.Previous);
             Assert.IsNull(list.Tail.Next);
             Assert.IsNotNull(list.Tail.Previous);
+
+            Assert.AreEqual(0, list.Head.Next.Value);
+            Assert.AreEqual(0, list.Tail.Previous.Value);
+
         }
 
         [TestMethod]
         public void BiDirectionalLinkedList_Append_Test()
         {
-            // should test all the branches in the code, and all the possible combinations of the list
-            // no node
-            // one node
-            // 2 nodes
-            // 3 nodes
+            BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>();
+            Assert.AreEqual(0, list.Length());
+
+            Assert.IsTrue(list.Append(2));
+            Assert.AreEqual(1, list.Length());
+            Assert.AreEqual(2, list.Head.Value);
+            Assert.AreEqual(2, list.Tail.Value);
+
+            Assert.IsTrue(list.Append(12));
+            Assert.AreEqual(2, list.Length());
+            Assert.AreEqual(2, list.Head.Value);
+            Assert.AreEqual(12, list.Tail.Value);
+            Assert.IsNotNull(list.Head.Next);
+            Assert.IsNull(list.Head.Previous);
+            Assert.IsNull(list.Tail.Next);
+            Assert.IsNotNull(list.Tail.Previous);
+            Assert.AreEqual(12 , list.Head.Next.Value);
+            Assert.AreEqual(2 ,list.Tail.Previous.Value);
+
+            Assert.IsTrue(list.Append(7));
+            Assert.AreEqual(3, list.Length());
+            Assert.AreEqual(2, list.Head.Value);
+            Assert.AreEqual(7, list.Tail.Value);
+            Assert.IsNotNull(list.Head.Next);
+            Assert.IsNull(list.Head.Previous);
+            Assert.IsNull(list.Tail.Next);
+            Assert.IsNotNull(list.Tail.Previous);
+            Assert.AreEqual(12, list.Head.Next.Value);
+            Assert.AreEqual(12, list.Tail.Previous.Value);
         }
 
         [TestMethod]
@@ -194,6 +222,9 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             // one node
             // 2 nodes
             // 3 nodes
+
+            // have another test for the mix of append and prepend
+            // another test for the mix of insert before and after, ... 
         }
 
         [TestMethod]
