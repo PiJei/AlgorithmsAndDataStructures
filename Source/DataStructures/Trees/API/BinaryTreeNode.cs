@@ -155,7 +155,10 @@ namespace CSFundamentals.DataStructures.Trees.API
             return Key.CompareTo(other.Key);
         }
 
-        // TODO: Test
+        /// <summary>
+        /// Checks whether the current node is complete. A binary tree node is complete if it has both left and right children.
+        /// </summary>
+        /// <returns>True in case the current node is complete, and false otherwise.</returns>
         public bool IsComplete()
         {
             if (RightChild != null && LeftChild != null)
@@ -165,29 +168,35 @@ namespace CSFundamentals.DataStructures.Trees.API
             return false;
         }
 
-        // TODO: Test
-        public List<T> GetChidlren()
+        /// <summary>
+        /// Gets the immediate not-null children of the current node, the collection contains left and right children thus. 
+        /// </summary>
+        /// <returns>List of the immediate direct children of the current node.</returns>
+        public List<T> GetChildren()
         {
             List<T> children = new List<T>();
-            if (RightChild != null)
-            {
-                children.Add(RightChild);
-            }
             if (LeftChild != null)
             {
                 children.Add(LeftChild);
             }
+            if (RightChild != null)
+            {
+                children.Add(RightChild);
+            }
             return children;
         }
 
-        // TODO: Test
+        /// <summary>
+        /// Gets the immediate grand children of a node. This is the children of the children of the node.
+        /// </summary>
+        /// <returns>The list of grand children of the node.</returns>
         public List<T> GetGrandChildren()
         {
             List<T> grandChildren = new List<T>();
-            if(RightChild != null)
-                grandChildren.AddRange(RightChild.GetChidlren());
             if (LeftChild != null)
-                grandChildren.AddRange(LeftChild.GetChidlren());
+                grandChildren.AddRange(LeftChild.GetChildren());
+            if (RightChild != null)
+                grandChildren.AddRange(RightChild.GetChildren());
             return grandChildren;
         }
 

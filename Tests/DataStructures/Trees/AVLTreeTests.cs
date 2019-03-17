@@ -357,6 +357,12 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.AreEqual(0, _tree.ComputeBalanceFactor(E));
         }
 
+        [TestMethod]
+        public void AVLTree_Balance_Test()
+        {
+            // TODO 
+        }
+
         public void HasAVLTreeProperties<T1, T2>(AVLTree<T1, T2> tree, AVLTreeNode<T1, T2> root, int expectedNodeCount) where T1 : IComparable<T1>, IEquatable<T1>
         {
             BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<AVLTreeNode<T1, T2>, T1, T2>(root);

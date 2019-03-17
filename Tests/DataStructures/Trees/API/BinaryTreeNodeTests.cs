@@ -17,6 +17,7 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 // TODO: Make tests in one test file to use the init and just it 
@@ -438,6 +439,82 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
             Assert.IsFalse(F.FormsTriangle());
             Assert.IsFalse(G.FormsTriangle());
             Assert.IsTrue(H.FormsTriangle());
+        }
+
+        [TestMethod]
+        public void BinaryTreeNode_IsComplete_Test()
+        {
+            MockBinaryTreeNode<int, string> node1 = new MockBinaryTreeNode<int, string>(10, "str1");
+            node1.LeftChild = null;
+            node1.RightChild = null;
+
+            Assert.IsFalse(node1.IsComplete());
+            node1.LeftChild = new MockBinaryTreeNode<int, string>(5, "str2");
+
+            Assert.IsFalse(node1.IsComplete());
+
+            node1.RightChild = new MockBinaryTreeNode<int, string>(15, "str3");
+            Assert.IsTrue(node1.IsComplete());
+        }
+
+        [TestMethod]
+        public void BinaryTreeNode_GetChildren_Test()
+        {
+            List<MockBinaryTreeNode<int, string>> rootChildren = _root.GetChildren();
+            Assert.AreEqual(2, rootChildren.Count);
+            Assert.AreEqual(rootChildren[0].Value, "B", ignoreCase: false);
+            Assert.AreEqual(rootChildren[1].Value, "C", ignoreCase: false);
+
+            List<MockBinaryTreeNode<int, string>> cChildren = _root.RightChild.GetChildren();
+            Assert.AreEqual(0, cChildren.Count);
+
+            List<MockBinaryTreeNode<int, string>> bChildren = _root.LeftChild.GetChildren();
+            Assert.AreEqual(2, bChildren.Count);
+            Assert.AreEqual(bChildren[0].Value, "D", ignoreCase: false);
+            Assert.AreEqual(bChildren[1].Value, "E", ignoreCase: false);
+
+            List<MockBinaryTreeNode<int, string>> dChildren = _root.LeftChild.LeftChild.GetChildren();
+            Assert.AreEqual(0, dChildren.Count);
+
+            List<MockBinaryTreeNode<int, string>> eChildren = _root.LeftChild.RightChild.GetChildren();
+            Assert.AreEqual(2, eChildren.Count);
+            Assert.AreEqual(eChildren[0].Value, "F", ignoreCase: false);
+            Assert.AreEqual(eChildren[1].Value, "G", ignoreCase: false);
+
+            List<MockBinaryTreeNode<int, string>> fChildren = _root.LeftChild.RightChild.LeftChild.GetChildren();
+            Assert.AreEqual(0, fChildren.Count);
+
+            List<MockBinaryTreeNode<int, string>> gChildren = _root.LeftChild.RightChild.RightChild.GetChildren();
+            Assert.AreEqual(0, gChildren.Count);
+        }
+
+        [TestMethod]
+        public void BinaryTreeNode_GetGrandChildren()
+        {
+            List<MockBinaryTreeNode<int, string>> rootGrandChildren = _root.GetGrandChildren();
+            Assert.AreEqual(2, rootGrandChildren.Count);
+            Assert.AreEqual(rootGrandChildren[0].Value, "D", ignoreCase: false);
+            Assert.AreEqual(rootGrandChildren[1].Value, "E", ignoreCase: false);
+
+            List<MockBinaryTreeNode<int, string>> cGrandChildren = _root.RightChild.GetGrandChildren();
+            Assert.AreEqual(0, cGrandChildren.Count);
+
+            List<MockBinaryTreeNode<int, string>> bGrandChildren = _root.LeftChild.GetGrandChildren();
+            Assert.AreEqual(2, bGrandChildren.Count);
+            Assert.AreEqual(bGrandChildren[0].Value, "F", ignoreCase: false);
+            Assert.AreEqual(bGrandChildren[1].Value, "G", ignoreCase: false);
+
+            List<MockBinaryTreeNode<int, string>> dGrandChildren = _root.LeftChild.LeftChild.GetGrandChildren();
+            Assert.AreEqual(0, dGrandChildren.Count);
+
+            List<MockBinaryTreeNode<int, string>> eGrandChildren = _root.LeftChild.RightChild.GetGrandChildren();
+            Assert.AreEqual(0, eGrandChildren.Count);
+
+            List<MockBinaryTreeNode<int, string>> fGrandChildren = _root.LeftChild.RightChild.LeftChild.GetGrandChildren();
+            Assert.AreEqual(0, fGrandChildren.Count);
+
+            List<MockBinaryTreeNode<int, string>> gGrandChildren = _root.LeftChild.RightChild.RightChild.GetGrandChildren();
+            Assert.AreEqual(0, gGrandChildren.Count);
         }
     }
 }

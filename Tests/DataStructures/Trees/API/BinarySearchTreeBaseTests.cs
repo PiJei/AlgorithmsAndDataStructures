@@ -343,7 +343,6 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
             Assert.AreEqual(3, pathsFromRoot[2].Count);
         }
 
-        // TODO: This code is repeated between here and binary search tree: remove duplicates
         /// <summary>
         /// Given the root of a binary search tree, checks whether the binary search tree properties hold.
         /// </summary>

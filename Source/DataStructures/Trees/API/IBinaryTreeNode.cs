@@ -70,6 +70,6 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// <returns>True in case the current node is the right child of its parent, and false otherwise. </returns>
         bool IsRightChild();
 
-        List<T> GetChidlren();
+        List<T> GetChildren();
     }
 }
