@@ -69,9 +69,15 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         [TestMethod]
         public void BiDirectionalLinkedList_InsertAfter_Test_Success_1()
         {
+            /* Testing the case where there is one node in the list, and the node after exists. */
             BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>(new BiDirectionalLinkedListNode<int>(5));
+
+            Assert.AreEqual(1, list.Length());
+            Assert.AreEqual(5, list.Head.Value);
+            Assert.AreEqual(5, list.Tail.Value);
+
             Assert.IsTrue(list.InsertAfter(5, 2));
-            
+
             Assert.AreEqual(2, list.Length());
             Assert.AreEqual(5, list.Head.Value);
             Assert.AreEqual(2, list.Tail.Value);
@@ -84,6 +90,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         [TestMethod]
         public void BiDirectionalLinkedList_InsertAfter_Test_Success_2()
         {
+            /* Testing the case where there are 2 nodes in the list, and the node after exists. */
             BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>(new BiDirectionalLinkedListNode<int>(5));
             Assert.IsTrue(list.InsertAfter(5, 2));
             Assert.IsTrue(list.InsertAfter(5, 3));
@@ -91,6 +98,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.AreEqual(3, list.Length());
             Assert.AreEqual(5, list.Head.Value);
             Assert.AreEqual(2, list.Tail.Value);
+
             Assert.IsNotNull(list.Head.Next);
             Assert.IsNull(list.Head.Previous);
             Assert.IsNull(list.Tail.Next);
@@ -98,7 +106,68 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         }
 
         [TestMethod]
-        public void BiDirectionalLinkedList_InsertBefore_Test()
+        [ExpectedException(typeof(NotFoundException))]
+        public void BiDirectionalLinkedList_InsertBefore_Test_Failure_1()
+        {
+            /* Testing the case where there is no node in the list, and the node before does not exist. */
+            BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>();
+            Assert.IsFalse(list.InsertBefore(1, 2));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(NotFoundException))]
+        public void BiDirectionalLinkedList_InsertBefore_Test_Failure_2()
+        {
+            /* Testing the case where there is one node in the list, and the node before does not exist. */
+            BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>(new BiDirectionalLinkedListNode<int>(5));
+            Assert.IsFalse(list.InsertBefore(1, 2));
+        }
+
+        [TestMethod]
+        public void BiDirectionalLinkedList_InsertBefore_Test_Success_1()
+        {
+            BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>(new BiDirectionalLinkedListNode<int>(5));
+
+            Assert.AreEqual(1, list.Length());
+            Assert.AreEqual(5, list.Head.Value);
+            Assert.AreEqual(5, list.Tail.Value);
+
+            Assert.IsTrue(list.InsertBefore(5, 1));
+
+            Assert.AreEqual(2, list.Length());
+            Assert.AreEqual(1,list.Head.Value);
+            Assert.AreEqual(5,list.Tail.Value);
+
+            Assert.IsNotNull(list.Head.Next);
+            Assert.IsNull(list.Head.Previous);
+            Assert.IsNull(list.Tail.Next);
+            Assert.IsNotNull(list.Tail.Previous);
+        }
+
+        [TestMethod]
+        public void BiDirectionalLinkedList_InsertBefore_Test_Success_2()
+        {
+            BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>(new BiDirectionalLinkedListNode<int>(5));
+
+            Assert.AreEqual(1, list.Length());
+            Assert.AreEqual(5, list.Head.Value);
+            Assert.AreEqual(5, list.Tail.Value);
+
+            Assert.IsTrue(list.InsertBefore(5, 1));
+            Assert.IsTrue(list.InsertBefore(5, 0));
+
+            Assert.AreEqual(3, list.Length());
+            Assert.AreEqual(1, list.Head.Value);
+            Assert.AreEqual(5, list.Tail.Value);
+
+            Assert.IsNotNull(list.Head.Next);
+            Assert.IsNull(list.Head.Previous);
+            Assert.IsNull(list.Tail.Next);
+            Assert.IsNotNull(list.Tail.Previous);
+        }
+
+        [TestMethod]
+        public void BiDirectionalLinkedList_Append_Test()
         {
             // should test all the branches in the code, and all the possible combinations of the list
             // no node
@@ -108,27 +177,33 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         }
 
         [TestMethod]
-        public void BiDirectionalLinkedList_Append_Test()
-        {
-
-        }
-
-        [TestMethod]
         public void BiDirectionalLinkedList_Prepend_Test()
         {
-
+            // should test all the branches in the code, and all the possible combinations of the list
+            // no node
+            // one node
+            // 2 nodes
+            // 3 nodes
         }
 
         [TestMethod]
         public void BiDirectionalLinkedList_Search_Test()
         {
-
+            // should test all the branches in the code, and all the possible combinations of the list
+            // no node
+            // one node
+            // 2 nodes
+            // 3 nodes
         }
 
         [TestMethod]
         public void BiDirectionalLinkedList_Delete_Test()
         {
-
+            // should test all the branches in the code, and all the possible combinations of the list
+            // no node
+            // one node
+            // 2 nodes
+            // 3 nodes
         }
     }
 }

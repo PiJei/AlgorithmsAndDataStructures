@@ -72,10 +72,16 @@ namespace CSFundamentals.DataStructures.LinkedLists
             newNode.Previous = node;
             newNode.Next = node?.Next;
             node.Next = newNode;
+
             if (newNode.Next == null)
             {
                 Tail = newNode;
             }
+            else
+            {
+                newNode.Next.Previous = newNode;
+            }
+
             if (newNode.Previous == null)
             {
                 Head = newNode;
@@ -98,6 +104,14 @@ namespace CSFundamentals.DataStructures.LinkedLists
             if (newNode.Previous == null)
             {
                 Head = newNode;
+            }
+            else
+            {
+                newNode.Previous.Next = newNode;
+            }
+            if (newNode.Next == null)
+            {
+                Tail = newNode;
             }
             return true;
         }
