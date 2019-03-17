@@ -167,7 +167,6 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
 
             Assert.AreEqual(0, list.Head.Next.Value);
             Assert.AreEqual(0, list.Tail.Previous.Value);
-
         }
 
         [TestMethod]
@@ -207,11 +206,35 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         [TestMethod]
         public void BiDirectionalLinkedList_Prepend_Test()
         {
-            // should test all the branches in the code, and all the possible combinations of the list
-            // no node
-            // one node
-            // 2 nodes
-            // 3 nodes
+            BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>();
+            Assert.AreEqual(0, list.Length());
+
+            Assert.IsTrue(list.PrePend(2));
+            Assert.AreEqual(1, list.Length());
+            Assert.AreEqual(2, list.Head.Value);
+            Assert.AreEqual(2, list.Tail.Value);
+
+            Assert.IsTrue(list.PrePend(12));
+            Assert.AreEqual(2, list.Length());
+            Assert.AreEqual(12, list.Head.Value);
+            Assert.AreEqual(2, list.Tail.Value);
+            Assert.IsNotNull(list.Head.Next);
+            Assert.IsNull(list.Head.Previous);
+            Assert.IsNull(list.Tail.Next);
+            Assert.IsNotNull(list.Tail.Previous);
+            Assert.AreEqual(2, list.Head.Next.Value);
+            Assert.AreEqual(12, list.Tail.Previous.Value);
+
+            Assert.IsTrue(list.PrePend(7));
+            Assert.AreEqual(3, list.Length());
+            Assert.AreEqual(7, list.Head.Value);
+            Assert.AreEqual(2, list.Tail.Value);
+            Assert.IsNotNull(list.Head.Next);
+            Assert.IsNull(list.Head.Previous);
+            Assert.IsNull(list.Tail.Next);
+            Assert.IsNotNull(list.Tail.Previous);
+            Assert.AreEqual(12, list.Head.Next.Value);
+            Assert.AreEqual(12, list.Tail.Previous.Value);
         }
 
         [TestMethod]
@@ -223,8 +246,8 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             // 2 nodes
             // 3 nodes
 
-            // have another test for the mix of append and prepend
-            // another test for the mix of insert before and after, ... 
+            // TODO have another test for the mix of append and prepend
+            // TODO another test for the mix of insert before and after, ... 
         }
 
         [TestMethod]
@@ -236,5 +259,9 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             // 2 nodes
             // 3 nodes
         }
+
+        // TODO have another test for the mix of append and prepend
+        // TODO another test for the mix of insert before and after, ... 
+
     }
 }
