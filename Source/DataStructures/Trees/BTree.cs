@@ -23,7 +23,53 @@ using System.Text;
 
 namespace CSFundamentals.DataStructures.Trees
 {
-    class BTree
+    public class BTree<T1, T2> where T1 : IComparable<T1>
     {
+        /// <summary>
+        /// Is the root of the tree. 
+        /// </summary>
+        public BTreeNode<T1, T2> root;
+
+        /// <summary>
+        /// Is the minimum number of keys in internal and leaf nodes of this tree. 
+        /// </summary>
+        public int MinKeys { get; private set; }
+
+        public BTree(int minKeys)
+        {
+            MinKeys = minKeys;
+        }
+
+        public BTreeNode<T1, T2> Search(BTreeNode<T1, T2> root, T1 key)
+        {
+            if (key.CompareTo(root.KeyValues[0].Key) < 0)
+            {
+                return Search(root.Children[0], key);
+            }
+            else if (key.CompareTo(root.KeyValues[root.KeyValues.Count - 1].Key) > 0)
+            {
+                return root.Children[root.KeyValues.Count - 1];
+            }
+            else
+            {
+                int middle = (root.KeyValues.Count - 1) / 2;
+                if (key.CompareTo(root.KeyValues[middle].Key) == 0)
+                {
+                    return root;
+                }
+                else
+                {
+                    // I want to do a binary search over the key values, ... 
+                }
+            }
+            
+        }
+
+        public List<BTree<T1, T2>> Traverse()
+        {
+            throw new NotImplementedException();
+        }
+
+
     }
 }
