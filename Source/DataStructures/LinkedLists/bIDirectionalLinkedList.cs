@@ -41,8 +41,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
         }
 
         //TODO: Should I have a build method as well?
-        //TODO: Test
-        public int Length()
+        public int Count()
         {
             int length = 0;
             var current = Head;

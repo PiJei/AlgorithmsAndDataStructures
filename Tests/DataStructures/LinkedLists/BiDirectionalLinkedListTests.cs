@@ -33,19 +33,19 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         {
             BiDirectionalLinkedListNode<int> node1 = new BiDirectionalLinkedListNode<int>(10);
             BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>();
-            Assert.AreEqual(0, list.Length());
+            Assert.AreEqual(0, list.Count());
 
             list.Head = node1;
-            Assert.AreEqual(1, list.Length());
+            Assert.AreEqual(1, list.Count());
 
             list.Head.Next = new BiDirectionalLinkedListNode<int>(2);
-            Assert.AreEqual(2, list.Length());
+            Assert.AreEqual(2, list.Count());
 
             list.Head.Next.Next = new BiDirectionalLinkedListNode<int>(20);
-            Assert.AreEqual(3, list.Length());
+            Assert.AreEqual(3, list.Count());
 
             list.Head.Next.Next.Next = new BiDirectionalLinkedListNode<int>(3);
-            Assert.AreEqual(4, list.Length());
+            Assert.AreEqual(4, list.Count());
         }
 
         [TestMethod]
@@ -72,13 +72,13 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             /* Testing the case where there is one node in the list, and the node after exists. */
             BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>(new BiDirectionalLinkedListNode<int>(5));
 
-            Assert.AreEqual(1, list.Length());
+            Assert.AreEqual(1, list.Count());
             Assert.AreEqual(5, list.Head.Value);
             Assert.AreEqual(5, list.Tail.Value);
 
             Assert.IsTrue(list.InsertAfter(5, 2));
 
-            Assert.AreEqual(2, list.Length());
+            Assert.AreEqual(2, list.Count());
             Assert.AreEqual(5, list.Head.Value);
             Assert.AreEqual(2, list.Tail.Value);
             Assert.IsNotNull(list.Head.Next);
@@ -95,7 +95,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.IsTrue(list.InsertAfter(5, 2));
             Assert.IsTrue(list.InsertAfter(5, 3));
 
-            Assert.AreEqual(3, list.Length());
+            Assert.AreEqual(3, list.Count());
             Assert.AreEqual(5, list.Head.Value);
             Assert.AreEqual(2, list.Tail.Value);
 
@@ -128,13 +128,13 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         {
             BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>(new BiDirectionalLinkedListNode<int>(5));
 
-            Assert.AreEqual(1, list.Length());
+            Assert.AreEqual(1, list.Count());
             Assert.AreEqual(5, list.Head.Value);
             Assert.AreEqual(5, list.Tail.Value);
 
             Assert.IsTrue(list.InsertBefore(5, 1));
 
-            Assert.AreEqual(2, list.Length());
+            Assert.AreEqual(2, list.Count());
             Assert.AreEqual(1, list.Head.Value);
             Assert.AreEqual(5, list.Tail.Value);
 
@@ -149,14 +149,14 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         {
             BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>(new BiDirectionalLinkedListNode<int>(5));
 
-            Assert.AreEqual(1, list.Length());
+            Assert.AreEqual(1, list.Count());
             Assert.AreEqual(5, list.Head.Value);
             Assert.AreEqual(5, list.Tail.Value);
 
             Assert.IsTrue(list.InsertBefore(5, 1));
             Assert.IsTrue(list.InsertBefore(5, 0));
 
-            Assert.AreEqual(3, list.Length());
+            Assert.AreEqual(3, list.Count());
             Assert.AreEqual(1, list.Head.Value);
             Assert.AreEqual(5, list.Tail.Value);
 
@@ -173,15 +173,15 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         public void BiDirectionalLinkedList_Append_Test()
         {
             BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>();
-            Assert.AreEqual(0, list.Length());
+            Assert.AreEqual(0, list.Count());
 
             Assert.IsTrue(list.Append(2));
-            Assert.AreEqual(1, list.Length());
+            Assert.AreEqual(1, list.Count());
             Assert.AreEqual(2, list.Head.Value);
             Assert.AreEqual(2, list.Tail.Value);
 
             Assert.IsTrue(list.Append(12));
-            Assert.AreEqual(2, list.Length());
+            Assert.AreEqual(2, list.Count());
             Assert.AreEqual(2, list.Head.Value);
             Assert.AreEqual(12, list.Tail.Value);
             Assert.IsNotNull(list.Head.Next);
@@ -192,7 +192,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.AreEqual(2, list.Tail.Previous.Value);
 
             Assert.IsTrue(list.Append(7));
-            Assert.AreEqual(3, list.Length());
+            Assert.AreEqual(3, list.Count());
             Assert.AreEqual(2, list.Head.Value);
             Assert.AreEqual(7, list.Tail.Value);
             Assert.IsNotNull(list.Head.Next);
@@ -207,15 +207,15 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         public void BiDirectionalLinkedList_Prepend_Test()
         {
             BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>();
-            Assert.AreEqual(0, list.Length());
+            Assert.AreEqual(0, list.Count());
 
             Assert.IsTrue(list.PrePend(2));
-            Assert.AreEqual(1, list.Length());
+            Assert.AreEqual(1, list.Count());
             Assert.AreEqual(2, list.Head.Value);
             Assert.AreEqual(2, list.Tail.Value);
 
             Assert.IsTrue(list.PrePend(12));
-            Assert.AreEqual(2, list.Length());
+            Assert.AreEqual(2, list.Count());
             Assert.AreEqual(12, list.Head.Value);
             Assert.AreEqual(2, list.Tail.Value);
             Assert.IsNotNull(list.Head.Next);
@@ -226,7 +226,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.AreEqual(12, list.Tail.Previous.Value);
 
             Assert.IsTrue(list.PrePend(7));
-            Assert.AreEqual(3, list.Length());
+            Assert.AreEqual(3, list.Count());
             Assert.AreEqual(7, list.Head.Value);
             Assert.AreEqual(2, list.Tail.Value);
             Assert.IsNotNull(list.Head.Next);
@@ -273,26 +273,26 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         public void BiDirectionalLinkedList_Delete_Test()
         {
             BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>();
-            Assert.AreEqual(0, list.Length());
+            Assert.AreEqual(0, list.Count());
             Assert.IsFalse(list.Delete(5));
             list.Append(10);
-            Assert.AreEqual(1, list.Length());
+            Assert.AreEqual(1, list.Count());
 
             Assert.IsTrue(list.Delete(10));
-            Assert.AreEqual(0, list.Length());
+            Assert.AreEqual(0, list.Count());
 
             list.Append(10);
             list.Append(3);
 
             Assert.IsTrue(list.Delete(10));
-            Assert.AreEqual(1, list.Length());
+            Assert.AreEqual(1, list.Count());
             Assert.AreEqual(3, list.Head.Value);
             Assert.AreEqual(3, list.Tail.Value);
 
             list.Append(14);
 
             Assert.IsTrue(list.Delete(14));
-            Assert.AreEqual(1, list.Length());
+            Assert.AreEqual(1, list.Count());
             Assert.AreEqual(3, list.Head.Value);
             Assert.AreEqual(3, list.Tail.Value);
 
@@ -300,17 +300,29 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             list.Append(4);
             list.Append(1);
             Assert.IsTrue(list.Delete(4));
-            Assert.AreEqual(3, list.Length());
+            Assert.AreEqual(3, list.Count());
             Assert.AreEqual(3, list.Head.Value);
             Assert.AreEqual(1, list.Tail.Value);
         }
 
-        // TODO have another test for the mix of append and pre-pend
-        // TODO another test for the mix of insert before and after, ... 
         [TestMethod]
         public void BiDirectionalLinkedList_Append_Prepend_Test()
         {
+            BiDirectionalLinkedList<int> list = new BiDirectionalLinkedList<int>();
+            list.Append(10);
+            Assert.AreEqual(1, list.Count());
+            Assert.AreEqual(10, list.Head.Value);
+            Assert.AreEqual(10, list.Tail.Value);
 
+            list.PrePend(20);
+            Assert.AreEqual(2, list.Count());
+            Assert.AreEqual(20, list.Head.Value);
+            Assert.AreEqual(10, list.Tail.Value);
+
+            list.Append(30);
+            Assert.AreEqual(3, list.Count());
+            Assert.AreEqual(20, list.Head.Value);
+            Assert.AreEqual(30, list.Tail.Value);
         }
     }
 }
