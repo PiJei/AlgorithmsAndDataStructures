@@ -21,5 +21,9 @@ namespace CSFundamentals.DataStructures.LinkedLists
 {
     class DoublySortedLinkedList
     {
+        //TODO: Should I have a build method as well?
+        // TODO Insert can make sense for sorted list, because it is then similar to binary search tree, there is only one suitable location to insert, ...
+        //TODO I could have an Insert method that calls Append inside, or prepend, prepend will be O(1), and so will be Append: O(1).  just for the sake of Interface. //
+
     }
 }

@@ -20,12 +20,6 @@
 using System;
 using CSFundamentals.Styling;
 
-//TODO: Should I have a build method as well?
-// TODO: Could also call Append, with a node, after all this class does not have an insert method anyways, ...
-// TODO Insert can make sense for sorted list, because it is then similar to binary search tree, there is only one suitable location to insert, ...
-// But with a normal linked list there can be as many locations for inserts, ...
-//TODO I could have an Insert method that calls Append inside, or prepend, prepend will be O(1), and so will be Append: O(1).  just for the sake of Interface. //
-
 namespace CSFundamentals.DataStructures.LinkedLists
 {
     /// <summary>
@@ -34,7 +28,14 @@ namespace CSFundamentals.DataStructures.LinkedLists
     /// <typeparam name="T">Is the type of the keys in the list. </typeparam>
     public class DoublyLinkedList<T> where T : IComparable<T>
     {
+        /// <summary>
+        /// Is the first node in the list. 
+        /// </summary>
         public DoublyLinkedListNode<T> Head = null;
+
+        /// <summary>
+        /// Is the last node in the list. Note that some implementations of DLL do not have Tail. 
+        /// </summary>
         public DoublyLinkedListNode<T> Tail = null;
 
         public DoublyLinkedList()
