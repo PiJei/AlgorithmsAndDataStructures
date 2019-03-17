@@ -19,40 +19,176 @@
 
 using System;
 
-//TODO: In all operations keep head and tail updated, ... 
-
+// TODO: In all operations keep head and tail updated, ... 
+// TODO: Add summaries and space complexities, and then implement insert for Sorted arrays, ...
 // TODO: Have a sorted linked list also implemented 
 namespace CSFundamentals.DataStructures.LinkedLists
 {
-    public class BiDirectionalLinkedList<T>
+    public class BiDirectionalLinkedList<T> where T : IComparable<T>
     {
         public BiDirectionalLinkedListNode<T> Head = null;
         public BiDirectionalLinkedListNode<T> Tail = null;
 
-        public void InsertAfter()
+        public BiDirectionalLinkedList()
         {
-            // todo
+
         }
 
-        public void InsertBefore()
+        public BiDirectionalLinkedList(BiDirectionalLinkedListNode<T> head)
         {
-            // todo
+            Head = head;
+            Tail = head;
         }
 
-        public void Append()
+        //TODO: Should I have a build method as well?
+        //TODO: Test
+        public int Length()
         {
-            // todo
+            int length = 0;
+            var current = Head;
+            while (current != null)
+            {
+                length++;
+                current = current.Next;
+            }
+            return length;
         }
 
+        // TODO: Could also call Append, with a node, after all this class does not have an insert method anyways, ...
+        // TODO Insert can make sense for sorted list, because it is then similar to binary search tree, there is only one suitable location to insert, ...
+        // But with a normal linked list there can be as many locations for inserts, ...
+        // do not allow null
+        //TODO  expects at least one node in the list, as node = null is not allowed. expects relevant nodes, meaning if you pass a node that does not exist in the list you can get arbitrary results
+        // all these corner cases make me think that this whole thing is strange, unless you search for the value first and then insert it.
+        public bool InsertAfter(T value, T newValue)
+        {
+            var node = Search(value);
+            if (node == null)
+            {
+                return false;
+            }
+
+            BiDirectionalLinkedListNode<T> newNode = new BiDirectionalLinkedListNode<T>(newValue);
+            newNode.Previous = node;
+            newNode.Next = node?.Next;
+            node.Next = newNode;
+            if (newNode.Next == null)
+            {
+                Tail = newNode;
+            }
+            if (newNode.Previous == null)
+            {
+                Head = newNode;
+            }
+            return true;
+        }
+
+        public bool InsertBefore(T value, T newValue)
+        {
+            var node = Search(value);
+            if (node == null)
+            {
+                return false;
+            }
+
+            BiDirectionalLinkedListNode<T> newNode = new BiDirectionalLinkedListNode<T>(newValue);
+            newNode.Next = node;
+            newNode.Previous = node.Previous;
+            node.Previous = newNode;
+            if (newNode.Previous == null)
+            {
+                Head = newNode;
+            }
+            return true;
+        }
+
+        public void Append(T newValue)
+        {
+            BiDirectionalLinkedListNode<T> newNode = new BiDirectionalLinkedListNode<T>(newValue);
+            if (Tail != null)
+            {
+                Tail.Next = newNode;
+            }
+
+            newNode.Previous = Tail;
+            Tail = newNode;
+
+            if (Head == null)
+            {
+                Head = newNode;
+            }
+            // to do : what if tail is null
+        }
+
+        public void PrePend(T newValue)
+        {
+            BiDirectionalLinkedListNode<T> newNode = new BiDirectionalLinkedListNode<T>(newValue);
+            if (Head != null)
+            {
+                Head.Previous = newNode;
+            }
+
+            newNode.Next = Head;
+            Head = newNode;
+            if (Tail == null)
+            {
+                Tail = newNode;
+            }
+            // what if head is null
+            // what if there was no item in the liked list, ... 
+        }
+
+        // Assuming no order between the nodes, boils down to linear search, ...
         public BiDirectionalLinkedListNode<T> Search(T value)
         {
-            throw new NotImplementedException();
-            // todo
+            var currentNode = Head;
+            while (currentNode != null)
+            {
+                if (currentNode.Value.CompareTo(value) == 0)
+                {
+                    return currentNode;
+                }
+                else
+                {
+                    currentNode = currentNode.Next;
+                }
+            }
+            throw new NotFoundException($"Value {value.ToString()} does not exist in the list.");
         }
 
-        public void Delete()
+        // TODO: Test with empty list, with one node, with 2 nodes, delete head delete tail, test with 3 nodes, and more, delete head, delete tail, delete in between, 
+        public bool Delete(T value)
         {
-            // todo
+            var currentNode = Head;
+            while (currentNode != null)
+            {
+                if (currentNode.Value.CompareTo(value) == 0) /* If the key is found. */
+                {
+                    if (currentNode.Previous == null && currentNode.Next == null) /* This means the list has only one node.*/
+                    {
+                        Head = null;
+                        Tail = null;
+                        return true;
+                    }
+                    else if (currentNode.Previous == null) /* This means we are deleting the head. */
+                    {
+                        Head = Head.Next;
+                        Head.Previous = null;
+                        return true;
+                    }
+                    else if (currentNode.Next == null) /*This means we are deleting the tail.*/
+                    {
+                        Tail = Tail.Previous;
+                        Tail.Next = null;
+                        return true;
+                    }
+                }
+                else /* Keep moving forward in the list. */
+                {
+                    currentNode = currentNode.Next;
+                }
+            }
+            return false;
         }
     }
 }

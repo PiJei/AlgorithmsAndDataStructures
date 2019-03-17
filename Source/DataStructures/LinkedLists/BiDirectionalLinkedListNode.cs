@@ -21,11 +21,16 @@ namespace CSFundamentals.DataStructures.LinkedLists
 {
     public class BiDirectionalLinkedListNode<T>
     {
-        public T value;
+        public T Value;
 
         public BiDirectionalLinkedListNode<T> Next = null;
 
         public BiDirectionalLinkedListNode<T> Previous = null;
+
+        public BiDirectionalLinkedListNode(T value)
+        {
+            Value = value;
+        }
 
         /// <summary>
         /// Checks whether the current node is head, a node is head if it has no previous node.
