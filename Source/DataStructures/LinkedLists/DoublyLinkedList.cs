@@ -59,25 +59,6 @@ namespace CSFundamentals.DataStructures.LinkedLists
         }
 
         /// <summary>
-        /// Computes the length of the linked list. Length is the number of the nodes in the list.
-        /// </summary>
-        /// <returns>Number of nodes in the list. </returns>
-        [TimeComplexity(Case.Best, "O(n)")]
-        [TimeComplexity(Case.Worst, "O(n)")]
-        [TimeComplexity(Case.Average, "O(n)")]
-        public int Count()
-        {
-            int length = 0;
-            var current = Head;
-            while (current != null)
-            {
-                length++;
-                current = current.Next;
-            }
-            return length;
-        }
-
-        /// <summary>
         /// Inserts a new node with <paramref name="newValue"/> as its value in the list after the node containing <paramref name="Value"/> as its value. If a node with <paramref name="Value"/> does not exist, fails the insert and returns false. 
         /// </summary>
         /// <param name="value">The value of the node, that <paramref name="newValue"/> will be inserted after.</param>
@@ -227,31 +208,6 @@ namespace CSFundamentals.DataStructures.LinkedLists
                 Tail = newNode;
             }
             return true;
-        }
-
-        /// <summary>
-        /// Searches for the specified <paramref name="Value"/>. Since there is no assumption about the order of the values in the list, starts from the Head node and performs a linear search.
-        /// </summary>
-        /// <param name="value">Is the value of the node that is being searched for.</param>
-        /// <returns>The node containing <paramref name="value"/>, and if no node is found throws an exception. </returns>
-        [TimeComplexity(Case.Best, "O(1)", When = "The first node (Head) contains the value.")]
-        [TimeComplexity(Case.Worst, "O(n)")]
-        [TimeComplexity(Case.Average, "O(n)")]
-        public override DoublyLinkedNode<T1> Search(T1 value)
-        {
-            var currentNode = Head;
-            while (currentNode != null)
-            {
-                if (currentNode.Value.CompareTo(value) == 0)
-                {
-                    return currentNode;
-                }
-                else
-                {
-                    currentNode = currentNode.Next;
-                }
-            }
-            throw new NotFoundException($"Value {value.ToString()} does not exist in the list.");
         }
 
         /// <summary>

@@ -33,10 +33,5 @@ namespace CSFundamentals.DataStructures.LinkedLists
         {
             throw new NotImplementedException();
         }
-
-        public override SinglyLinkedNode<T1> Search(T1 value)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
