@@ -17,9 +17,26 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System;
+using CSFundamentals.DataStructures.LinkedLists.API;
+
 namespace CSFundamentals.DataStructures.LinkedLists
 {
-    public class SinglyLinkedList
+    public class SinglyLinkedList<T1> : LinkedListBase<SinglyLinkedNode<T1>, T1> where T1 : IComparable<T1>
     {
+        public override bool Delete(T1 value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool Insert(T1 newValue)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override SinglyLinkedNode<T1> Search(T1 value)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

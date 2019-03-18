@@ -18,8 +18,6 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSFundamentals.DataStructures.LinkedLists.API
 {
@@ -30,9 +28,25 @@ namespace CSFundamentals.DataStructures.LinkedLists.API
         /// </summary>
         public T Head { get; set; }
 
+        /// <summary>
+        /// Inserts a new value in the list.
+        /// </summary>
+        /// <param name="newValue">Is the value of the new node. </param>
+        /// <returns>True in case of success.</returns>
         public abstract bool Insert(T1 newValue);
-        public abstract bool Delete(T1 alue);
-        public abstract T Search(T1 alue);
 
+        /// <summary>
+        /// Deletes a node with the given value from the list. If no node with the given value exists, fails the operation and returns false.
+        /// </summary>
+        /// <param name="value">Is the value that is being searched for.</param>
+        /// <returns>True in case of success, and false otherwise. </returns>
+        public abstract bool Delete(T1 value);
+
+        /// <summary>
+        /// Searches/looks for a node with the given value. If the value is not found throws an exception.
+        /// </summary>
+        /// <param name="value">Is the value of the list node we are searching for. </param>
+        /// <returns>The node containing the value, or throws an exception if no node exists. </returns>
+        public abstract T Search(T1 value);
     }
 }
