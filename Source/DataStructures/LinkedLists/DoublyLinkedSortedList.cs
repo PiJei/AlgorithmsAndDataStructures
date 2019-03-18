@@ -22,7 +22,7 @@ using CSFundamentals.DataStructures.LinkedLists.API;
 
 namespace CSFundamentals.DataStructures.LinkedLists
 {
-    public class DoublySortedLinkedList<T1> : LinkedListBase<DoublyLinkedNode<T1>, T1> where T1 : IComparable<T1>
+    public class DoublyLinkedSortedList<T1> : LinkedListBase<DoublyLinkedNode<T1>, T1> where T1 : IComparable<T1>
     {
         /// <summary>
         /// Is the last node in the list. Note that some implementations of DLL do not have Tail. 

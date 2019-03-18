@@ -24,7 +24,7 @@ using CSFundamentals.DataStructures.LinkedLists;
 namespace CSFundamentalsTests.DataStructures.LinkedLists
 {
     [TestClass]
-    public class DoublySortedLinkedListTests
+    public class DoublyLinkedSortedListTests
     {
         [TestMethod]
         public void Test()
