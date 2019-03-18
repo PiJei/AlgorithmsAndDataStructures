@@ -26,26 +26,6 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
     public class DoublyLinkedListTests
     {
         [TestMethod]
-        public void DoublyLinkedList_Length_Test()
-        {
-            DoublyLinkedListNode<int> node1 = new DoublyLinkedListNode<int>(10);
-            DoublyLinkedList<int> list = new DoublyLinkedList<int>();
-            Assert.AreEqual(0, list.Count());
-
-            list.Head = node1;
-            Assert.AreEqual(1, list.Count());
-
-            list.Head.Next = new DoublyLinkedListNode<int>(2);
-            Assert.AreEqual(2, list.Count());
-
-            list.Head.Next.Next = new DoublyLinkedListNode<int>(20);
-            Assert.AreEqual(3, list.Count());
-
-            list.Head.Next.Next.Next = new DoublyLinkedListNode<int>(3);
-            Assert.AreEqual(4, list.Count());
-        }
-
-        [TestMethod]
         [ExpectedException(typeof(NotFoundException))]
         public void DoublyLinkedList_InsertAfter_Test_Failure_1()
         {
@@ -59,7 +39,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         public void DoublyLinkedList_InsertAfter_Test_Failure_2()
         {
             /* Testing the case where there is one node in the list, and the node after does not exist. */
-            DoublyLinkedList<int> list = new DoublyLinkedList<int>(new DoublyLinkedListNode<int>(5));
+            DoublyLinkedList<int> list = new DoublyLinkedList<int>(new DoublyLinkedNode<int>(5));
             Assert.IsFalse(list.InsertAfter(1, 2));
         }
 
@@ -67,7 +47,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         public void DoublyLinkedList_InsertAfter_Test_Success_1()
         {
             /* Testing the case where there is one node in the list, and the node after exists. */
-            DoublyLinkedList<int> list = new DoublyLinkedList<int>(new DoublyLinkedListNode<int>(5));
+            DoublyLinkedList<int> list = new DoublyLinkedList<int>(new DoublyLinkedNode<int>(5));
 
             Assert.AreEqual(1, list.Count());
             Assert.AreEqual(5, list.Head.Value);
@@ -88,7 +68,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         public void DoublyLinkedList_InsertAfter_Test_Success_2()
         {
             /* Testing the case where there are 2 nodes in the list, and the node after exists. */
-            DoublyLinkedList<int> list = new DoublyLinkedList<int>(new DoublyLinkedListNode<int>(5));
+            DoublyLinkedList<int> list = new DoublyLinkedList<int>(new DoublyLinkedNode<int>(5));
             Assert.IsTrue(list.InsertAfter(5, 2));
             Assert.IsTrue(list.InsertAfter(5, 3));
 
@@ -116,14 +96,14 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         public void DoublyLinkedList_InsertBefore_Test_Failure_2()
         {
             /* Testing the case where there is one node in the list, and the node before does not exist. */
-            DoublyLinkedList<int> list = new DoublyLinkedList<int>(new DoublyLinkedListNode<int>(5));
+            DoublyLinkedList<int> list = new DoublyLinkedList<int>(new DoublyLinkedNode<int>(5));
             Assert.IsFalse(list.InsertBefore(1, 2));
         }
 
         [TestMethod]
         public void DoublyLinkedList_InsertBefore_Test_Success_1()
         {
-            DoublyLinkedList<int> list = new DoublyLinkedList<int>(new DoublyLinkedListNode<int>(5));
+            DoublyLinkedList<int> list = new DoublyLinkedList<int>(new DoublyLinkedNode<int>(5));
 
             Assert.AreEqual(1, list.Count());
             Assert.AreEqual(5, list.Head.Value);
@@ -144,7 +124,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         [TestMethod]
         public void DoublyLinkedList_InsertBefore_Test_Success_2()
         {
-            DoublyLinkedList<int> list = new DoublyLinkedList<int>(new DoublyLinkedListNode<int>(5));
+            DoublyLinkedList<int> list = new DoublyLinkedList<int>(new DoublyLinkedNode<int>(5));
 
             Assert.AreEqual(1, list.Count());
             Assert.AreEqual(5, list.Head.Value);
@@ -232,38 +212,6 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.IsNotNull(list.Tail.Previous);
             Assert.AreEqual(12, list.Head.Next.Value);
             Assert.AreEqual(12, list.Tail.Previous.Value);
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(NotFoundException))]
-        public void DoublyLinkedList_Search_Test_Failure_1()
-        {
-            DoublyLinkedList<int> list = new DoublyLinkedList<int>();
-            var result = list.Search(10);
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(NotFoundException))]
-        public void DoublyLinkedList_Search_Test_Failure_2()
-        {
-            DoublyLinkedList<int> list = new DoublyLinkedList<int>(new DoublyLinkedListNode<int>(20));
-            var result = list.Search(10);
-        }
-
-        [TestMethod]
-        public void DoublyLinkedList_Search_Test_Success()
-        {
-            DoublyLinkedList<int> list = new DoublyLinkedList<int>(new DoublyLinkedListNode<int>(20));
-            var result = list.Search(20);
-            Assert.IsNotNull(result);
-            Assert.AreEqual(20, result.Value);
-
-            list.Append(10);
-            list.Append(12);
-            list.Append(6);
-            result = list.Search(12);
-            Assert.IsNotNull(result);
-            Assert.AreEqual(12, result.Value);
         }
 
         [TestMethod]

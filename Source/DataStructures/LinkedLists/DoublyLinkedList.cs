@@ -19,53 +19,44 @@
 
 using System;
 using CSFundamentals.Styling;
+using CSFundamentals.DataStructures.LinkedLists.API;
+// TODO: should some how make tail and head such that they can not be manipulated outside the interface exposed, .. maybe you can get their values, etc, but can not set them, ... 
 
 namespace CSFundamentals.DataStructures.LinkedLists
 {
     /// <summary>
     /// Implements a bi-directional/doubly linked list (aka. DLL). 
     /// </summary>
-    /// <typeparam name="T">Is the type of the keys in the list. </typeparam>
-    public class DoublyLinkedList<T> where T : IComparable<T>
+    /// <typeparam name="T1">Is the type of the keys in the list. </typeparam>
+    public class DoublyLinkedList<T1> : LinkedListBase<DoublyLinkedNode<T1>, T1> where T1 : IComparable<T1>
     {
-        /// <summary>
-        /// Is the first node in the list. 
-        /// </summary>
-        public DoublyLinkedListNode<T> Head = null;
-
         /// <summary>
         /// Is the last node in the list. Note that some implementations of DLL do not have Tail. 
         /// </summary>
-        public DoublyLinkedListNode<T> Tail = null;
+        public DoublyLinkedNode<T1> Tail { get; private set; } = null;
 
         public DoublyLinkedList()
         {
 
         }
 
-        public DoublyLinkedList(DoublyLinkedListNode<T> head)
+        public DoublyLinkedList(DoublyLinkedNode<T1> head)
         {
             Head = head;
             Tail = head;
         }
 
         /// <summary>
-        /// Computes the length of the linked list. Length is the number of the nodes in the list.
+        /// Inserts a new node at the beginning of the list, thus changing the head node.
         /// </summary>
-        /// <returns>Number of nodes in the list. </returns>
-        [TimeComplexity(Case.Best, "O(n)")]
-        [TimeComplexity(Case.Worst, "O(n)")]
-        [TimeComplexity(Case.Average, "O(n)")]
-        public int Count()
+        /// <param name="newValue">Is the new value of the new node to be added as the head of the list. </param>
+        /// <returns>True in case of success.</returns>
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "O(1)")]
+        [TimeComplexity(Case.Average, "O(1)")]
+        public override bool Insert(T1 newValue)
         {
-            int length = 0;
-            var current = Head;
-            while (current != null)
-            {
-                length++;
-                current = current.Next;
-            }
-            return length;
+            return PrePend(newValue);
         }
 
         /// <summary>
@@ -77,7 +68,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
         [TimeComplexity(Case.Best, "O(1)", When = "Inserting after the first node in the list.")]
         [TimeComplexity(Case.Worst, "O(n)")]
         [TimeComplexity(Case.Average, "O(n)")]
-        public bool InsertAfter(T value, T newValue)
+        public bool InsertAfter(T1 value, T1 newValue)
         {
             var node = Search(value);
             if (node == null)
@@ -97,9 +88,9 @@ namespace CSFundamentals.DataStructures.LinkedLists
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(1)")]
         [TimeComplexity(Case.Average, "O(1)")]
-        public bool InsertAfter(DoublyLinkedListNode<T> node, T newValue)
+        public bool InsertAfter(DoublyLinkedNode<T1> node, T1 newValue)
         {
-            DoublyLinkedListNode<T> newNode = new DoublyLinkedListNode<T>(newValue);
+            DoublyLinkedNode<T1> newNode = new DoublyLinkedNode<T1>(newValue);
             newNode.Previous = node;
             newNode.Next = node?.Next;
             node.Next = newNode;
@@ -129,7 +120,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
         [TimeComplexity(Case.Best, "O(1)", When = "Inserting before the first node in the list.")]
         [TimeComplexity(Case.Worst, "O(n)")]
         [TimeComplexity(Case.Average, "O(n)")]
-        public bool InsertBefore(T value, T newValue)
+        public bool InsertBefore(T1 value, T1 newValue)
         {
             var node = Search(value);
             if (node == null)
@@ -148,9 +139,9 @@ namespace CSFundamentals.DataStructures.LinkedLists
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(1)")]
         [TimeComplexity(Case.Average, "O(1)")]
-        public bool InsertBefore(DoublyLinkedListNode<T> node, T newValue)
+        public bool InsertBefore(DoublyLinkedNode<T1> node, T1 newValue)
         {
-            DoublyLinkedListNode<T> newNode = new DoublyLinkedListNode<T>(newValue);
+            DoublyLinkedNode<T1> newNode = new DoublyLinkedNode<T1>(newValue);
             newNode.Next = node;
             newNode.Previous = node.Previous;
             node.Previous = newNode;
@@ -177,9 +168,9 @@ namespace CSFundamentals.DataStructures.LinkedLists
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(1)")]
         [TimeComplexity(Case.Average, "O(1)")]
-        public bool Append(T newValue)
+        public bool Append(T1 newValue)
         {
-            DoublyLinkedListNode<T> newNode = new DoublyLinkedListNode<T>(newValue);
+            DoublyLinkedNode<T1> newNode = new DoublyLinkedNode<T1>(newValue);
             if (Tail != null)
             {
                 Tail.Next = newNode;
@@ -203,9 +194,9 @@ namespace CSFundamentals.DataStructures.LinkedLists
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(1)")]
         [TimeComplexity(Case.Average, "O(1)")]
-        public bool PrePend(T newValue)
+        public bool PrePend(T1 newValue)
         {
-            DoublyLinkedListNode<T> newNode = new DoublyLinkedListNode<T>(newValue);
+            DoublyLinkedNode<T1> newNode = new DoublyLinkedNode<T1>(newValue);
             if (Head != null)
             {
                 Head.Previous = newNode;
@@ -221,31 +212,6 @@ namespace CSFundamentals.DataStructures.LinkedLists
         }
 
         /// <summary>
-        /// Searches for the specified <paramref name="Value"/>. Since there is no assumption about the order of the values in the list, starts from the Head node and performs a linear search.
-        /// </summary>
-        /// <param name="value">Is the value of the node that is being searched for.</param>
-        /// <returns>The node containing <paramref name="value"/>, and if no node is found throws an exception. </returns>
-        [TimeComplexity(Case.Best, "O(1)", When = "The first node (Head) contains the value.")]
-        [TimeComplexity(Case.Worst, "O(n)")]
-        [TimeComplexity(Case.Average, "O(n)")]
-        public DoublyLinkedListNode<T> Search(T value)
-        {
-            var currentNode = Head;
-            while (currentNode != null)
-            {
-                if (currentNode.Value.CompareTo(value) == 0)
-                {
-                    return currentNode;
-                }
-                else
-                {
-                    currentNode = currentNode.Next;
-                }
-            }
-            throw new NotFoundException($"Value {value.ToString()} does not exist in the list.");
-        }
-
-        /// <summary>
         /// Deletes a node from the list with the given value. If no node with the <paramref name="value"/> is found fails the operation and returns false.
         /// </summary>
         /// <param name="value">Is the value of the node to be deleted. </param>
@@ -253,7 +219,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
         [TimeComplexity(Case.Best, "O(1)", When = "The first node (Head) contains the value.")]
         [TimeComplexity(Case.Worst, "O(n)")]
         [TimeComplexity(Case.Average, "O(n)")]
-        public bool Delete(T value)
+        public override bool Delete(T1 value)
         {
             var currentNode = Head;
             while (currentNode != null)

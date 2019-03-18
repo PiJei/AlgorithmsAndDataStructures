@@ -18,26 +18,30 @@
  */
 
 using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentals.DataStructures.LinkedLists.API;
 
-namespace CSFundamentals.DataStructures.LinkedLists
+namespace CSFundamentalsTests.DataStructures.LinkedLists.API
 {
-    public class DoublySortedLinkedList<T1> : LinkedListBase<DoublyLinkedNode<T1>, T1> where T1 : IComparable<T1>
+    [TestClass]
+    public class MockLinkedList<T1> : LinkedListBase<MockLinkedNode<T1>, T1> where T1 : IComparable<T1>
     {
-        //TODO: Should I have a build method as well?
-        // TODO Insert can make sense for sorted list, because it is then similar to binary search tree, there is only one suitable location to insert, ...
-        //TODO I could have an Insert method that calls Append inside, or prepend, prepend will be O(1), and so will be Append: O(1).  just for the sake of Interface. //
-        public override bool Delete(T1 alue)
+        public MockLinkedList()
+        {
+
+        }
+
+        public MockLinkedList(MockLinkedNode<T1> head)
+        {
+            Head = head;
+        }
+
+        public override bool Delete(T1 value)
         {
             throw new NotImplementedException();
         }
 
         public override bool Insert(T1 newValue)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override DoublyLinkedNode<T1> Search(T1 alue)
         {
             throw new NotImplementedException();
         }
