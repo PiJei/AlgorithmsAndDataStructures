@@ -51,17 +51,17 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
 
             Assert.AreEqual(1, list.Count());
             Assert.AreEqual(5, list.Head.Value);
-            Assert.AreEqual(5, list.Tail.Value);
+            Assert.AreEqual(5, list.Tail().Value);
 
             Assert.IsTrue(list.InsertAfter(5, 2));
 
             Assert.AreEqual(2, list.Count());
             Assert.AreEqual(5, list.Head.Value);
-            Assert.AreEqual(2, list.Tail.Value);
+            Assert.AreEqual(2, list.Tail().Value);
             Assert.IsNotNull(list.Head.Next);
             Assert.IsNull(list.Head.Previous);
-            Assert.IsNull(list.Tail.Next);
-            Assert.IsNotNull(list.Tail.Previous);
+            Assert.IsNull(list.Tail().Next);
+            Assert.IsNotNull(list.Tail().Previous);
         }
 
         [TestMethod]
@@ -74,12 +74,12 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
 
             Assert.AreEqual(3, list.Count());
             Assert.AreEqual(5, list.Head.Value);
-            Assert.AreEqual(2, list.Tail.Value);
+            Assert.AreEqual(2, list.Tail().Value);
 
             Assert.IsNotNull(list.Head.Next);
             Assert.IsNull(list.Head.Previous);
-            Assert.IsNull(list.Tail.Next);
-            Assert.IsNotNull(list.Tail.Previous);
+            Assert.IsNull(list.Tail().Next);
+            Assert.IsNotNull(list.Tail().Previous);
         }
 
         [TestMethod]
@@ -107,18 +107,18 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
 
             Assert.AreEqual(1, list.Count());
             Assert.AreEqual(5, list.Head.Value);
-            Assert.AreEqual(5, list.Tail.Value);
+            Assert.AreEqual(5, list.Tail().Value);
 
             Assert.IsTrue(list.InsertBefore(5, 1));
 
             Assert.AreEqual(2, list.Count());
             Assert.AreEqual(1, list.Head.Value);
-            Assert.AreEqual(5, list.Tail.Value);
+            Assert.AreEqual(5, list.Tail().Value);
 
             Assert.IsNotNull(list.Head.Next);
             Assert.IsNull(list.Head.Previous);
-            Assert.IsNull(list.Tail.Next);
-            Assert.IsNotNull(list.Tail.Previous);
+            Assert.IsNull(list.Tail().Next);
+            Assert.IsNotNull(list.Tail().Previous);
         }
 
         [TestMethod]
@@ -128,22 +128,22 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
 
             Assert.AreEqual(1, list.Count());
             Assert.AreEqual(5, list.Head.Value);
-            Assert.AreEqual(5, list.Tail.Value);
+            Assert.AreEqual(5, list.Tail().Value);
 
             Assert.IsTrue(list.InsertBefore(5, 1));
             Assert.IsTrue(list.InsertBefore(5, 0));
 
             Assert.AreEqual(3, list.Count());
             Assert.AreEqual(1, list.Head.Value);
-            Assert.AreEqual(5, list.Tail.Value);
+            Assert.AreEqual(5, list.Tail().Value);
 
             Assert.IsNotNull(list.Head.Next);
             Assert.IsNull(list.Head.Previous);
-            Assert.IsNull(list.Tail.Next);
-            Assert.IsNotNull(list.Tail.Previous);
+            Assert.IsNull(list.Tail().Next);
+            Assert.IsNotNull(list.Tail().Previous);
 
             Assert.AreEqual(0, list.Head.Next.Value);
-            Assert.AreEqual(0, list.Tail.Previous.Value);
+            Assert.AreEqual(0, list.Tail().Previous.Value);
         }
 
         [TestMethod]
@@ -155,29 +155,29 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.IsTrue(list.Append(2));
             Assert.AreEqual(1, list.Count());
             Assert.AreEqual(2, list.Head.Value);
-            Assert.AreEqual(2, list.Tail.Value);
+            Assert.AreEqual(2, list.Tail().Value);
 
             Assert.IsTrue(list.Append(12));
             Assert.AreEqual(2, list.Count());
             Assert.AreEqual(2, list.Head.Value);
-            Assert.AreEqual(12, list.Tail.Value);
+            Assert.AreEqual(12, list.Tail().Value);
             Assert.IsNotNull(list.Head.Next);
             Assert.IsNull(list.Head.Previous);
-            Assert.IsNull(list.Tail.Next);
-            Assert.IsNotNull(list.Tail.Previous);
+            Assert.IsNull(list.Tail().Next);
+            Assert.IsNotNull(list.Tail().Previous);
             Assert.AreEqual(12, list.Head.Next.Value);
-            Assert.AreEqual(2, list.Tail.Previous.Value);
+            Assert.AreEqual(2, list.Tail().Previous.Value);
 
             Assert.IsTrue(list.Append(7));
             Assert.AreEqual(3, list.Count());
             Assert.AreEqual(2, list.Head.Value);
-            Assert.AreEqual(7, list.Tail.Value);
+            Assert.AreEqual(7, list.Tail().Value);
             Assert.IsNotNull(list.Head.Next);
             Assert.IsNull(list.Head.Previous);
-            Assert.IsNull(list.Tail.Next);
-            Assert.IsNotNull(list.Tail.Previous);
+            Assert.IsNull(list.Tail().Next);
+            Assert.IsNotNull(list.Tail().Previous);
             Assert.AreEqual(12, list.Head.Next.Value);
-            Assert.AreEqual(12, list.Tail.Previous.Value);
+            Assert.AreEqual(12, list.Tail().Previous.Value);
         }
 
         [TestMethod]
@@ -189,29 +189,29 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.IsTrue(list.PrePend(2));
             Assert.AreEqual(1, list.Count());
             Assert.AreEqual(2, list.Head.Value);
-            Assert.AreEqual(2, list.Tail.Value);
+            Assert.AreEqual(2, list.Tail().Value);
 
             Assert.IsTrue(list.PrePend(12));
             Assert.AreEqual(2, list.Count());
             Assert.AreEqual(12, list.Head.Value);
-            Assert.AreEqual(2, list.Tail.Value);
+            Assert.AreEqual(2, list.Tail().Value);
             Assert.IsNotNull(list.Head.Next);
             Assert.IsNull(list.Head.Previous);
-            Assert.IsNull(list.Tail.Next);
-            Assert.IsNotNull(list.Tail.Previous);
+            Assert.IsNull(list.Tail().Next);
+            Assert.IsNotNull(list.Tail().Previous);
             Assert.AreEqual(2, list.Head.Next.Value);
-            Assert.AreEqual(12, list.Tail.Previous.Value);
+            Assert.AreEqual(12, list.Tail().Previous.Value);
 
             Assert.IsTrue(list.PrePend(7));
             Assert.AreEqual(3, list.Count());
             Assert.AreEqual(7, list.Head.Value);
-            Assert.AreEqual(2, list.Tail.Value);
+            Assert.AreEqual(2, list.Tail().Value);
             Assert.IsNotNull(list.Head.Next);
             Assert.IsNull(list.Head.Previous);
-            Assert.IsNull(list.Tail.Next);
-            Assert.IsNotNull(list.Tail.Previous);
+            Assert.IsNull(list.Tail().Next);
+            Assert.IsNotNull(list.Tail().Previous);
             Assert.AreEqual(12, list.Head.Next.Value);
-            Assert.AreEqual(12, list.Tail.Previous.Value);
+            Assert.AreEqual(12, list.Tail().Previous.Value);
         }
 
         [TestMethod]
@@ -232,14 +232,14 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.IsTrue(list.Delete(10));
             Assert.AreEqual(1, list.Count());
             Assert.AreEqual(3, list.Head.Value);
-            Assert.AreEqual(3, list.Tail.Value);
+            Assert.AreEqual(3, list.Tail().Value);
 
             list.Append(14);
 
             Assert.IsTrue(list.Delete(14));
             Assert.AreEqual(1, list.Count());
             Assert.AreEqual(3, list.Head.Value);
-            Assert.AreEqual(3, list.Tail.Value);
+            Assert.AreEqual(3, list.Tail().Value);
 
             list.Append(5);
             list.Append(4);
@@ -247,7 +247,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.IsTrue(list.Delete(4));
             Assert.AreEqual(3, list.Count());
             Assert.AreEqual(3, list.Head.Value);
-            Assert.AreEqual(1, list.Tail.Value);
+            Assert.AreEqual(1, list.Tail().Value);
         }
 
         [TestMethod]
@@ -257,17 +257,17 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             list.Append(10);
             Assert.AreEqual(1, list.Count());
             Assert.AreEqual(10, list.Head.Value);
-            Assert.AreEqual(10, list.Tail.Value);
+            Assert.AreEqual(10, list.Tail().Value);
 
             list.PrePend(20);
             Assert.AreEqual(2, list.Count());
             Assert.AreEqual(20, list.Head.Value);
-            Assert.AreEqual(10, list.Tail.Value);
+            Assert.AreEqual(10, list.Tail().Value);
 
             list.Append(30);
             Assert.AreEqual(3, list.Count());
             Assert.AreEqual(20, list.Head.Value);
-            Assert.AreEqual(30, list.Tail.Value);
+            Assert.AreEqual(30, list.Tail().Value);
         }
     }
 }
