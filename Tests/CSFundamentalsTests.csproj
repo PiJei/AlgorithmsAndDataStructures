@@ -16,8 +16,4 @@
     <ProjectReference Include="..\Source\CSFundamentals.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="DataStructures\LinkedLists\API\" />
-  </ItemGroup>
-
 </Project>

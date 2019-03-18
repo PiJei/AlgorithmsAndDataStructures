@@ -18,20 +18,14 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CSFundamentals.DataStructures.LinkedLists;
+using CSFundamentals.DataStructures.LinkedLists.API;
 
-namespace CSFundamentalsTests.DataStructures.LinkedLists
+namespace CSFundamentalsTests.DataStructures.LinkedLists.API
 {
     [TestClass]
-    public class SinglyLinkedListTests
+    public class MockLinkedNode<T1> : LinkedNode<MockLinkedNode<T1>, T1> where T1 : IComparable<T1>
     {
-        [TestMethod]
-        public void SinglyLinkedList_Insert_Test()
-        {
-
-        }
+        public MockLinkedNode(T1 value) : base(value) { }
     }
 }

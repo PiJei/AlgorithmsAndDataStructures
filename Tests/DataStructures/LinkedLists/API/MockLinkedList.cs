@@ -18,20 +18,32 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CSFundamentals.DataStructures.LinkedLists;
+using CSFundamentals.DataStructures.LinkedLists.API;
 
-namespace CSFundamentalsTests.DataStructures.LinkedLists
+namespace CSFundamentalsTests.DataStructures.LinkedLists.API
 {
     [TestClass]
-    public class SinglyLinkedListTests
+    public class MockLinkedList<T1> : LinkedListBase<MockLinkedNode<T1>, T1> where T1 : IComparable<T1>
     {
-        [TestMethod]
-        public void SinglyLinkedList_Insert_Test()
+        public MockLinkedList()
         {
 
+        }
+
+        public MockLinkedList(MockLinkedNode<T1> head)
+        {
+            Head = head;
+        }
+
+        public override bool Delete(T1 value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool Insert(T1 newValue)
+        {
+            throw new NotImplementedException();
         }
     }
 }

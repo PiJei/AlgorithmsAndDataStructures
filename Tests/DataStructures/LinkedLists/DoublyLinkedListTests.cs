@@ -26,26 +26,6 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
     public class DoublyLinkedListTests
     {
         [TestMethod]
-        public void DoublyLinkedList_Length_Test()
-        {
-            DoublyLinkedNode<int> node1 = new DoublyLinkedNode<int>(10);
-            DoublyLinkedList<int> list = new DoublyLinkedList<int>();
-            Assert.AreEqual(0, list.Count());
-
-            list.Head = node1;
-            Assert.AreEqual(1, list.Count());
-
-            list.Head.Next = new DoublyLinkedNode<int>(2);
-            Assert.AreEqual(2, list.Count());
-
-            list.Head.Next.Next = new DoublyLinkedNode<int>(20);
-            Assert.AreEqual(3, list.Count());
-
-            list.Head.Next.Next.Next = new DoublyLinkedNode<int>(3);
-            Assert.AreEqual(4, list.Count());
-        }
-
-        [TestMethod]
         [ExpectedException(typeof(NotFoundException))]
         public void DoublyLinkedList_InsertAfter_Test_Failure_1()
         {
@@ -232,38 +212,6 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.IsNotNull(list.Tail.Previous);
             Assert.AreEqual(12, list.Head.Next.Value);
             Assert.AreEqual(12, list.Tail.Previous.Value);
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(NotFoundException))]
-        public void DoublyLinkedList_Search_Test_Failure_1()
-        {
-            DoublyLinkedList<int> list = new DoublyLinkedList<int>();
-            var result = list.Search(10);
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(NotFoundException))]
-        public void DoublyLinkedList_Search_Test_Failure_2()
-        {
-            DoublyLinkedList<int> list = new DoublyLinkedList<int>(new DoublyLinkedNode<int>(20));
-            var result = list.Search(10);
-        }
-
-        [TestMethod]
-        public void DoublyLinkedList_Search_Test_Success()
-        {
-            DoublyLinkedList<int> list = new DoublyLinkedList<int>(new DoublyLinkedNode<int>(20));
-            var result = list.Search(20);
-            Assert.IsNotNull(result);
-            Assert.AreEqual(20, result.Value);
-
-            list.Append(10);
-            list.Append(12);
-            list.Append(6);
-            result = list.Search(12);
-            Assert.IsNotNull(result);
-            Assert.AreEqual(12, result.Value);
         }
 
         [TestMethod]
