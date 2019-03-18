@@ -28,7 +28,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
         /// <summary>
         /// Is the last node in the list. Note that some implementations of DLL do not have Tail. 
         /// </summary>
-        public DoublyLinkedNode<T1> Tail { get; private set; } = null;
+        private DoublyLinkedNode<T1> _tail = null;
 
         // TODO: Deletes do not support duplicates deletion, ... 
         [TimeComplexity(Case.Best, "O(1)", When = "The value is at head position.")]
@@ -36,27 +36,27 @@ namespace CSFundamentals.DataStructures.LinkedLists
         [TimeComplexity(Case.Average, "O(n)")]
         public override bool Delete(T1 value)
         {
-            var currentNode = Head;
+            var currentNode = _head;
             while (currentNode != null)
             {
                 if (currentNode.Value.CompareTo(value) == 0) /* If the key is found. */
                 {
                     if (currentNode.Previous == null && currentNode.Next == null) /* This means the list has only one node.*/
                     {
-                        Head = null;
-                        Tail = null;
+                        _head = null;
+                        _tail = null;
                         return true;
                     }
                     else if (currentNode.Previous == null) /* This means we are deleting the head. */
                     {
-                        Head = Head.Next;
-                        Head.Previous = null;
+                        _head = _head.Next;
+                        _head.Previous = null;
                         return true;
                     }
                     else if (currentNode.Next == null) /*This means we are deleting the tail.*/
                     {
-                        Tail = Tail.Previous;
-                        Tail.Next = null;
+                        _tail = _tail.Previous;
+                        _tail.Next = null;
                         return true;
                     }
                     else /* Node is in the middle and has not-null next and previous nodes. */
@@ -91,7 +91,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
         {
             DoublyLinkedNode<T1> newNode = new DoublyLinkedNode<T1>(newValue);
 
-            var currentNode = Head;
+            var currentNode = _head;
             while (currentNode != null && currentNode.Value.CompareTo(newValue) < 0) /* Navigate a long the list, until a node is found whose value is bigger than or equal to newValue. */
             {
                 currentNode = currentNode.Next;
@@ -100,13 +100,13 @@ namespace CSFundamentals.DataStructures.LinkedLists
 
             if (currentNode == null) /* Means the newValue will be inserted at the tail of the list.*/
             {
-                if (Tail != null)
-                    Tail.Next = newNode;
-                newNode.Previous = Tail;
-                Tail = newNode;
-                if (Head == null)
+                if (_tail != null)
+                    _tail.Next = newNode;
+                newNode.Previous = _tail;
+                _tail = newNode;
+                if (_head == null)
                 {
-                    Head = newNode;
+                    _head = newNode;
                 }
                 return true;
             }
@@ -116,7 +116,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
                 {
                     currentNode.Previous = newNode;
                     newNode.Next = currentNode;
-                    Head = newNode;
+                    _head = newNode;
                     return true;
                 }
                 else
@@ -136,7 +136,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
         [TimeComplexity(Case.Average, "O(n)")]
         public override DoublyLinkedNode<T1> Search(T1 value)
         {
-            var currentNode = Head;
+            var currentNode = _head;
             while (currentNode != null)
             {
                 if (currentNode.Value.CompareTo(value) == 0)

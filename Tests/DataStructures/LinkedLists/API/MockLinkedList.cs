@@ -33,7 +33,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists.API
 
         public MockLinkedList(MockLinkedNode<T1> head)
         {
-            Head = head;
+            _head = head;
         }
 
         public override bool Delete(T1 value)

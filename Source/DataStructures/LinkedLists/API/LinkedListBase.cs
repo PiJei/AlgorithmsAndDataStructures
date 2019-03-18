@@ -28,7 +28,12 @@ namespace CSFundamentals.DataStructures.LinkedLists.API
         /// <summary>
         /// Is the first node in the list. 
         /// </summary>
-        public T Head { get; set; }
+        protected T _head = null;
+
+        public T Head()
+        {
+            return Utils.DeepCopy(_head);
+        }
 
         /// <summary>
         /// Inserts a new value in the list.
@@ -54,7 +59,7 @@ namespace CSFundamentals.DataStructures.LinkedLists.API
         [TimeComplexity(Case.Average, "O(n)")]
         public virtual T Search(T1 value)
         {
-            var currentNode = Head;
+            var currentNode = _head;
             while (currentNode != null)
             {
                 if (currentNode.Value.CompareTo(value) == 0)
@@ -79,7 +84,7 @@ namespace CSFundamentals.DataStructures.LinkedLists.API
         public int Count()
         {
             int length = 0;
-            var current = Head;
+            var current = _head;
             while (current != null)
             {
                 length++;

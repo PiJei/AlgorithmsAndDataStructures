@@ -41,7 +41,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
 
         public DoublyLinkedList(DoublyLinkedNode<T1> head)
         {
-            Head = head;
+            _head = head;
             _tail = head;
         }
 
@@ -114,7 +114,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
 
             if (newNode.Previous == null)
             {
-                Head = newNode;
+                _head = newNode;
             }
             return true;
         }
@@ -155,7 +155,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
             node.Previous = newNode;
             if (newNode.Previous == null)
             {
-                Head = newNode;
+                _head = newNode;
             }
             else
             {
@@ -187,9 +187,9 @@ namespace CSFundamentals.DataStructures.LinkedLists
             newNode.Previous = _tail;
             _tail = newNode;
 
-            if (Head == null)
+            if (_head == null)
             {
-                Head = newNode;
+                _head = newNode;
             }
             return true;
         }
@@ -205,13 +205,13 @@ namespace CSFundamentals.DataStructures.LinkedLists
         public bool PrePend(T1 newValue)
         {
             DoublyLinkedNode<T1> newNode = new DoublyLinkedNode<T1>(newValue);
-            if (Head != null)
+            if (_head != null)
             {
-                Head.Previous = newNode;
+                _head.Previous = newNode;
             }
 
-            newNode.Next = Head;
-            Head = newNode;
+            newNode.Next = _head;
+            _head = newNode;
             if (_tail == null)
             {
                 _tail = newNode;
@@ -229,21 +229,21 @@ namespace CSFundamentals.DataStructures.LinkedLists
         [TimeComplexity(Case.Average, "O(n)")]
         public override bool Delete(T1 value)
         {
-            var currentNode = Head;
+            var currentNode = _head;
             while (currentNode != null)
             {
                 if (currentNode.Value.CompareTo(value) == 0) /* If the key is found. */
                 {
                     if (currentNode.Previous == null && currentNode.Next == null) /* This means the list has only one node.*/
                     {
-                        Head = null;
+                        _head = null;
                         _tail = null;
                         return true;
                     }
                     else if (currentNode.Previous == null) /* This means we are deleting the head. */
                     {
-                        Head = Head.Next;
-                        Head.Previous = null;
+                        _head = _head.Next;
+                        _head.Previous = null;
                         return true;
                     }
                     else if (currentNode.Next == null) /*This means we are deleting the tail.*/

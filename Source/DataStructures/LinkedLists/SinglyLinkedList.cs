@@ -25,17 +25,26 @@ namespace CSFundamentals.DataStructures.LinkedLists
 {
     public class SinglyLinkedList<T1> : LinkedListBase<SinglyLinkedNode<T1>, T1> where T1 : IComparable<T1>
     {
+        public SinglyLinkedList()
+        {
+        }
+
+        public SinglyLinkedList(SinglyLinkedNode<T1> head)
+        {
+            _head = head;
+        }
+
         public override bool Delete(T1 value)
         {
             SinglyLinkedNode<T1> previousNode = null;
-            SinglyLinkedNode<T1> currentNode = Head;
+            SinglyLinkedNode<T1> currentNode = _head;
             while (currentNode != null)
             {
                 if (currentNode.Value.CompareTo(value) == 0)
                 {
                     if (previousNode == null) /* Means we are deleting the head. */
                     {
-                        Head = currentNode.Next;
+                        _head = currentNode.Next;
                         return true;
                     }
                     else
@@ -66,9 +75,9 @@ namespace CSFundamentals.DataStructures.LinkedLists
         {
             SinglyLinkedNode<T1> newNode = new SinglyLinkedNode<T1>(newValue)
             {
-                Next = Head
+                Next = _head
             };
-            Head = newNode;
+            _head = newNode;
             return true;
         }
     }
