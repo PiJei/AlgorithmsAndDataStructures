@@ -18,19 +18,23 @@
  */
 
 using System;
+using System.IO;
+using System.Xml.Serialization;
+
 namespace CSFundamentals.DataStructures.LinkedLists.API
 {
-    //todo: needs mock testing
-    public class LinkedNode<T, T1> : ILinkedNode<T, T1> where T : ILinkedNode<T, T1> where T1 : IComparable<T1>
+    [Serializable]
+    public class LinkedNode<T, T1> where T : LinkedNode<T, T1> where T1 : IComparable<T1>
     {
-        public T1 Value { get; set; }
+        public T1 Value { get; private set; }
+
         public T Next { get; set; }
 
         public LinkedNode(T1 value)
         {
             Value = value;
         }
-        //TODO; Tests of this class should be moved to te proper places
+
         /// <summary>
         /// Checks whether the current node is tail. A node is tail if it has no next node. 
         /// </summary>

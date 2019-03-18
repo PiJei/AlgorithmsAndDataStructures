@@ -17,33 +17,29 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System;
-using CSFundamentals.DataStructures.LinkedLists.API;
+using System.IO;
+using System.Xml.Serialization;
 
 namespace CSFundamentals.DataStructures.LinkedLists
 {
-    /// <summary>
-    /// Implements a node in a DoublyLinkedList. 
-    /// </summary>
-    /// <typeparam name="T">Is the type of the values stored in a node.</typeparam>
-    [Serializable]
-    public class DoublyLinkedNode<T1> : LinkedNode<DoublyLinkedNode<T1>, T1> where T1 : IComparable<T1>
+    public class Utils
     {
-        public DoublyLinkedNode<T1> Previous = null;
-
-        public DoublyLinkedNode(T1 value) : base(value)
+        public static T DeepCopy<T>(T obj)
         {
-        }
+            string serializedData = string.Empty;
+            T deepCopy;
+            XmlSerializer serializer = new XmlSerializer(typeof(T));
+            using (StringWriter sw = new StringWriter())
+            {
+                serializer.Serialize(sw, obj);
+                serializedData = sw.ToString();
+            }
+            using (StringReader stringReader = new StringReader(serializedData))
+            {
+                deepCopy = (T)serializer.Deserialize(stringReader);
+            }
 
-        /// <summary>
-        /// Checks whether the current node is head, a node is head if it has no previous node.
-        /// </summary>
-        /// <returns>True in case the node is head, and false otherwise. </returns>
-        public bool IsHead()
-        {
-            if (Previous == null)
-                return true;
-            return false;
+            return deepCopy;
         }
     }
 }

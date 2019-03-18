@@ -33,7 +33,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
         /// <summary>
         /// Is the last node in the list. Note that some implementations of DLL do not have Tail. 
         /// </summary>
-        internal DoublyLinkedNode<T1> Tail = null;
+        public DoublyLinkedNode<T1> Tail { get; private set; } = null;
 
         public DoublyLinkedList()
         {

@@ -22,12 +22,12 @@ using CSFundamentals.Styling;
 
 namespace CSFundamentals.DataStructures.LinkedLists.API
 {
-    public abstract class LinkedListBase<T, T1> where T : ILinkedNode<T, T1> where T1 : IComparable<T1>
+    public abstract class LinkedListBase<T, T1> where T : LinkedNode<T, T1> where T1 : IComparable<T1>
     {
         /// <summary>
         /// Is the first node in the list. 
         /// </summary>
-        internal T Head { get; set; }
+        public T Head { get; set; }
 
         /// <summary>
         /// Inserts a new value in the list.

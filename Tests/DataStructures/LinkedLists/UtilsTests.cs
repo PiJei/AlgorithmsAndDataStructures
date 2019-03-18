@@ -17,13 +17,14 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using CSFundamentals.DataStructures.LinkedLists;
 
-namespace CSFundamentals.DataStructures.LinkedLists.API
+namespace CSFundamentalsTests.DataStructures.LinkedLists
 {
-    public interface ILinkedNode<T, T1> where T1 : IComparable<T1>
+    [TestClass]
+    public class UtilsTests
     {
-        T1 Value { get; set; }
-        T Next { get; set; }
+        // TODO 
     }
 }
