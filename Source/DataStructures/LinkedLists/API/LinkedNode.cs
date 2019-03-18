@@ -18,13 +18,28 @@
  */
 
 using System;
-
-namespace CSFundamentals.DataStructures.LinkedLists
+namespace CSFundamentals.DataStructures.LinkedLists.API
 {
-    public class SinglyLinkedListNode<T1> : LinkedListNode<SinglyLinkedListNode<T1>, T1> where T1 : IComparable<T1>
+    //todo: needs mock testing
+    public class LinkedNode<T, T1> : ILinkedNode<T, T1> where T : ILinkedNode<T, T1> where T1 : IComparable<T1>
     {
-        public SinglyLinkedListNode(T1 value) : base(value)
+        public T1 Value { get; set; }
+        public T Next { get; set; }
+
+        public LinkedNode(T1 value)
         {
+            Value = value;
+        }
+        //TODO; Tests of this class should be moved to te proper places
+        /// <summary>
+        /// Checks whether the current node is tail. A node is tail if it has no next node. 
+        /// </summary>
+        /// <returns>True in case the node is tail, and false otherwise.</returns>
+        public bool IsTail()
+        {
+            if (Next == null)
+                return true;
+            return false;
         }
     }
 }

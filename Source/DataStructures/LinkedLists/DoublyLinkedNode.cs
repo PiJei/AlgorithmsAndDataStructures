@@ -18,6 +18,7 @@
  */
 
 using System;
+using CSFundamentals.DataStructures.LinkedLists.API;
 
 namespace CSFundamentals.DataStructures.LinkedLists
 {
@@ -25,11 +26,11 @@ namespace CSFundamentals.DataStructures.LinkedLists
     /// Implements a node in a DoublyLinkedList. 
     /// </summary>
     /// <typeparam name="T">Is the type of the values stored in a node.</typeparam>
-    public class DoublyLinkedListNode<T1> : LinkedListNode<DoublyLinkedListNode<T1>, T1> where T1 : IComparable<T1>
+    public class DoublyLinkedNode<T1> : LinkedNode<DoublyLinkedNode<T1>, T1> where T1 : IComparable<T1>
     {
-        public DoublyLinkedListNode<T1> Previous = null;
+        public DoublyLinkedNode<T1> Previous = null;
 
-        public DoublyLinkedListNode(T1 value) : base(value)
+        public DoublyLinkedNode(T1 value) : base(value)
         {
         }
 

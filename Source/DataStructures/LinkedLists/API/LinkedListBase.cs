@@ -21,9 +21,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CSFundamentals.DataStructures.LinkedLists
+namespace CSFundamentals.DataStructures.LinkedLists.API
 {
-    public abstract class LinkedListBase<T, T1> where T : ILinkedListNode<T, T1> where T1 : IComparable<T1>
+    public abstract class LinkedListBase<T, T1> where T : ILinkedNode<T, T1> where T1 : IComparable<T1>
     {
         /// <summary>
         /// Is the first node in the list. 

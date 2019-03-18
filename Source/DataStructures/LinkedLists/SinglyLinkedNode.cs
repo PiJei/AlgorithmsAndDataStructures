@@ -18,12 +18,14 @@
  */
 
 using System;
+using CSFundamentals.DataStructures.LinkedLists.API;
 
 namespace CSFundamentals.DataStructures.LinkedLists
 {
-    public interface ILinkedListNode<T, T1> where T1 : IComparable<T1>
+    public class SinglyLinkedNode<T1> : LinkedNode<SinglyLinkedNode<T1>, T1> where T1 : IComparable<T1>
     {
-        T1 Value { get; set; }
-        T Next { get; set; }
+        public SinglyLinkedNode(T1 value) : base(value)
+        {
+        }
     }
 }
