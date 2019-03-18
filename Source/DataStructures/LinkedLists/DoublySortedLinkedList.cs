@@ -30,16 +30,19 @@ namespace CSFundamentals.DataStructures.LinkedLists
         public override bool Delete(T1 alue)
         {
             throw new NotImplementedException();
+            // if nt found up to some point, then break, an return false, ... 
         }
 
         public override bool Insert(T1 newValue)
         {
             throw new NotImplementedException();
+            // should always find the proper spot or inserting... 
         }
 
         public override DoublyLinkedNode<T1> Search(T1 alue)
         {
             throw new NotImplementedException();
+            // TODO can stop the search as soon as the next element is bigger,
         }
     }
 }
