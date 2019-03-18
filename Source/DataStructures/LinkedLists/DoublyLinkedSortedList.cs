@@ -19,6 +19,7 @@
 
 using System;
 using CSFundamentals.DataStructures.LinkedLists.API;
+using CSFundamentals.Styling;
 
 namespace CSFundamentals.DataStructures.LinkedLists
 {
@@ -29,10 +30,53 @@ namespace CSFundamentals.DataStructures.LinkedLists
         /// </summary>
         public DoublyLinkedNode<T1> Tail { get; private set; } = null;
 
+        // TODO: Deletes do not support duplicates deletion, ... 
+        [TimeComplexity(Case.Best, "O(1)", When = "The value is at head position.")]
+        [TimeComplexity(Case.Worst, "O(n)")]
+        [TimeComplexity(Case.Average, "O(n)")]
         public override bool Delete(T1 value)
         {
-            throw new NotImplementedException();
-            // if nt found up to some point, then break, an return false, ... 
+            var currentNode = Head;
+            while (currentNode != null)
+            {
+                if (currentNode.Value.CompareTo(value) == 0) /* If the key is found. */
+                {
+                    if (currentNode.Previous == null && currentNode.Next == null) /* This means the list has only one node.*/
+                    {
+                        Head = null;
+                        Tail = null;
+                        return true;
+                    }
+                    else if (currentNode.Previous == null) /* This means we are deleting the head. */
+                    {
+                        Head = Head.Next;
+                        Head.Previous = null;
+                        return true;
+                    }
+                    else if (currentNode.Next == null) /*This means we are deleting the tail.*/
+                    {
+                        Tail = Tail.Previous;
+                        Tail.Next = null;
+                        return true;
+                    }
+                    else /* Node is in the middle and has not-null next and previous nodes. */
+                    {
+                        currentNode.Previous.Next = currentNode.Next;
+                        currentNode.Next.Previous = currentNode.Previous;
+                        return true;
+                    }
+                }
+                else if (currentNode.Value.CompareTo(value) > 0) /* Since the list is sorted, this means the value does not exist in the list. */
+                {
+                    return false;
+                }
+                else /* Keep moving forward in the list. */
+                {
+                    currentNode = currentNode.Next;
+                }
+            }
+            return false;
+
         }
 
         // Allowing duplicates, should first find the proper spot, ... 
@@ -41,6 +85,9 @@ namespace CSFundamentals.DataStructures.LinkedLists
         /// </summary>
         /// <param name="newValue">Is the value of the new node. </param>
         /// <returns>True in case of success. </returns>
+        [TimeComplexity(Case.Best, "O(1)", When = "Insert happens at the head position. ")]
+        [TimeComplexity(Case.Worst, "O(n)")]
+        [TimeComplexity(Case.Average, "O(n)")]
         public override bool Insert(T1 newValue)
         {
             DoublyLinkedNode<T1> newNode = new DoublyLinkedNode<T1>(newValue);
@@ -78,10 +125,28 @@ namespace CSFundamentals.DataStructures.LinkedLists
             }
         }
 
+        [TimeComplexity(Case.Best, "O(1)", When = "The value is at head position.")]
+        [TimeComplexity(Case.Worst, "O(n)")]
+        [TimeComplexity(Case.Average, "O(n)")]
         public override DoublyLinkedNode<T1> Search(T1 value)
         {
-            throw new NotImplementedException();
-            // TODO can stop the search as soon as the next element is bigger,
+            var currentNode = Head;
+            while (currentNode != null)
+            {
+                if (currentNode.Value.CompareTo(value) == 0)
+                {
+                    return currentNode;
+                }
+                else if (currentNode.Value.CompareTo(value) > 0) /*Since the sort is listed, we can break out of the loop as soon as a larger value is encountered. */
+                {
+                    throw new NotFoundException($"Value {value.ToString()} does not exist in the list.");
+                }
+                else
+                {
+                    currentNode = currentNode.Next;
+                }
+            }
+            throw new NotFoundException($"Value {value.ToString()} does not exist in the list.");
         }
     }
 }
