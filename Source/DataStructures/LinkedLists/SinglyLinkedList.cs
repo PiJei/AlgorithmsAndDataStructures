@@ -17,29 +17,9 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System;
 namespace CSFundamentals.DataStructures.LinkedLists
 {
-    //todo: needs mock testing
-    public class LinkedListNode<T, T1> : ILinkedListNode<T, T1> where T : ILinkedListNode<T, T1> where T1 : IComparable<T1>
+    public class SinglyLinkedList
     {
-        public T1 Value { get; set; }
-        public T Next { get; set; }
-
-        public LinkedListNode(T1 value)
-        {
-            Value = value;
-        }
-        //TODO; Tests of this class hosuld be moved to te proper places
-        /// <summary>
-        /// Checks whether the current node is tail. A node is tail if it has no next node. 
-        /// </summary>
-        /// <returns>True in case the node is tail, and false otherwise.</returns>
-        public bool IsTail()
-        {
-            if (Next == null)
-                return true;
-            return false;
-        }
     }
 }

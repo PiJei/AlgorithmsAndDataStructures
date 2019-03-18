@@ -17,19 +17,20 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System;
+
 namespace CSFundamentals.DataStructures.LinkedLists
 {
-    public class DoublyLinkedListNode<T>
+    /// <summary>
+    /// Implements a node in a DoublyLinkedList. 
+    /// </summary>
+    /// <typeparam name="T">Is the type of the values stored in a node.</typeparam>
+    public class DoublyLinkedListNode<T1> : LinkedListNode<DoublyLinkedListNode<T1>, T1> where T1 : IComparable<T1>
     {
-        public T Value;
+        public DoublyLinkedListNode<T1> Previous = null;
 
-        public DoublyLinkedListNode<T> Next = null;
-
-        public DoublyLinkedListNode<T> Previous = null;
-
-        public DoublyLinkedListNode(T value)
+        public DoublyLinkedListNode(T1 value) : base(value)
         {
-            Value = value;
         }
 
         /// <summary>
@@ -39,17 +40,6 @@ namespace CSFundamentals.DataStructures.LinkedLists
         public bool IsHead()
         {
             if (Previous == null)
-                return true;
-            return false;
-        }
-
-        /// <summary>
-        /// Checks whether the current node is tail. A node is tail if it has no next node. 
-        /// </summary>
-        /// <returns>True in case the node is tail, and false otherwise.</returns>
-        public bool IsTail()
-        {
-            if (Next == null)
                 return true;
             return false;
         }
