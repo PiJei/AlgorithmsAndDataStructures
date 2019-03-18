@@ -27,7 +27,7 @@ namespace CSFundamentals.DataStructures.LinkedLists.API
         /// <summary>
         /// Is the first node in the list. 
         /// </summary>
-        public T Head { get; set; }
+        internal T Head { get; set; }
 
         /// <summary>
         /// Inserts a new value in the list.

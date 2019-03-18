@@ -19,6 +19,7 @@
 
 using System;
 using CSFundamentals.DataStructures.LinkedLists.API;
+using CSFundamentals.Styling;
 
 namespace CSFundamentals.DataStructures.LinkedLists
 {
@@ -32,7 +33,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
             {
                 if (currentNode.Value.CompareTo(value) == 0)
                 {
-                    if (previousNode == null) /*Means we are deleting the head. */
+                    if (previousNode == null) /* Means we are deleting the head. */
                     {
                         Head = currentNode.Next;
                         return true;
@@ -53,10 +54,14 @@ namespace CSFundamentals.DataStructures.LinkedLists
         }
 
         /// <summary>
-        /// Inserts a new node in the list. Insert in a singly linked list is the fastest when treated as a prepend, meaning adding to the beginning of the list. 
+        /// Inserts a new node in the beginning of the list. Insert in a singly linked list is the fastest when treated as a prepend, meaning adding to the beginning of the list. 
+        /// Notice that the current implementation allows duplicates.
         /// </summary>
         /// <param name="newValue">Is the value of the new node in the list.</param>
         /// <returns>True in case of success.</returns>
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "O(1)")]
+        [TimeComplexity(Case.Average, "O(1)")]
         public override bool Insert(T1 newValue)
         {
             SinglyLinkedNode<T1> newNode = new SinglyLinkedNode<T1>(newValue)

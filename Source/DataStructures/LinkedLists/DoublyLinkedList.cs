@@ -20,6 +20,7 @@
 using System;
 using CSFundamentals.Styling;
 using CSFundamentals.DataStructures.LinkedLists.API;
+// TODO: should some how make tail and head such that they can not be manipulated outside the interface exposed, .. maybe you can get their values, etc, but can not set them, ... 
 
 namespace CSFundamentals.DataStructures.LinkedLists
 {
@@ -32,7 +33,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
         /// <summary>
         /// Is the last node in the list. Note that some implementations of DLL do not have Tail. 
         /// </summary>
-        public DoublyLinkedNode<T1> Tail = null;
+        internal DoublyLinkedNode<T1> Tail = null;
 
         public DoublyLinkedList()
         {
