@@ -27,9 +27,100 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
     public class DoublyLinkedSortedListTests
     {
         [TestMethod]
-        public void Test()
+        public void DoublyLinkedSortedList_Insert_Test_1()
         {
+            DoublyLinkedSortedList<int> list = new DoublyLinkedSortedList<int>();
+            Assert.AreEqual(0, list.Count());
 
+            /* Testing insert with an empty list. */
+            Assert.IsTrue(list.Insert(10));
+            Assert.AreEqual(1, list.Count());
+            IsSorted(list.Head);
+
+            /* Testing insert with a list with 1 node, whereas the new node will replace the head. */
+            list.Insert(5);
+            Assert.AreEqual(2, list.Count());
+            IsSorted(list.Head);
+
+            /* Testing insert with a list with 2 nodes, whereas the new node will replace the tail. */
+            list.Insert(15);
+            Assert.AreEqual(3, list.Count());
+            IsSorted(list.Head);
+
+            /* Testing insert with a list with 3 nodes, whereas the new node will be at the middle. */
+            list.Insert(11);
+            Assert.AreEqual(4, list.Count());
+            IsSorted(list.Head);
+        }
+
+        [TestMethod]
+        public void DoublyLinkedSortedList_Insert_Test_2()
+        {
+            DoublyLinkedSortedList<int> list = new DoublyLinkedSortedList<int>();
+            Assert.AreEqual(0, list.Count());
+
+            /* Testing insert with an empty list. */
+            Assert.IsTrue(list.Insert(5));
+            Assert.AreEqual(1, list.Count());
+            IsSorted(list.Head);
+
+            /* Testing insert with a list with 1 node, whereas the new node will replace the tail. */
+            list.Insert(10);
+            Assert.AreEqual(2, list.Count());
+            IsSorted(list.Head);
+        }
+
+        [TestMethod]
+        public void DoublyLinkedSortedList_Delete_Test()
+        {
+            DoublyLinkedSortedList<int> list = new DoublyLinkedSortedList<int>();
+            Assert.AreEqual(0, list.Count());
+
+            /* Testing delete when list is empty.*/
+            Assert.IsFalse(list.Delete(20));
+            Assert.AreEqual(0, list.Count());
+            IsSorted(list.Head);
+
+            /* Testing delete when list has one member, but the value to be deleted does not exist in the list.*/
+            list.Insert(10);
+            Assert.AreEqual(1, list.Count());
+            Assert.IsFalse(list.Delete(20));
+            Assert.AreEqual(1, list.Count());
+            IsSorted(list.Head);
+
+            /* Testing delete when list has one member, and the value to be deleted is that member. */
+            Assert.IsTrue(list.Delete(10));
+            Assert.AreEqual(0, list.Count());
+            IsSorted(list.Head);
+
+            /* Testing with deleting head, when list has 2 members. */
+            list.Insert(10);
+            list.Insert(5);
+            Assert.AreEqual(2, list.Count());
+            Assert.IsFalse(list.Delete(6));
+            Assert.AreEqual(2, list.Count());
+            IsSorted(list.Head);
+
+            Assert.IsTrue(list.Delete(5));
+            Assert.AreEqual(1, list.Count());
+            IsSorted(list.Head);
+
+            /* Testing with deleting tail, when list has 2 members. */
+            list.Insert(5);
+            Assert.AreEqual(2, list.Count());
+            IsSorted(list.Head);
+
+            Assert.IsTrue(list.Delete(10));
+            Assert.AreEqual(1, list.Count());
+            IsSorted(list.Head);
+
+            /* Testing with deleting a node in the middle. */
+            list.Insert(10);
+            list.Insert(15);
+            list.Insert(11);
+            Assert.IsTrue(list.Delete(10));
+            Assert.AreEqual(3, list.Count());
+            IsSorted(list.Head);
         }
 
         public void IsSorted<T>(DoublyLinkedNode<T> head) where T : IComparable<T>
@@ -39,6 +130,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             while (current != null && current.Next != null)
             {
                 Assert.IsTrue(current.Value.CompareTo(current.Next.Value) <= 0);
+                current = current.Next;
             }
         }
     }

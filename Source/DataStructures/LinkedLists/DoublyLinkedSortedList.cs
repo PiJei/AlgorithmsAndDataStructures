@@ -76,7 +76,6 @@ namespace CSFundamentals.DataStructures.LinkedLists
                 }
             }
             return false;
-
         }
 
         // Allowing duplicates, should first find the proper spot, ... 
@@ -97,20 +96,26 @@ namespace CSFundamentals.DataStructures.LinkedLists
             {
                 currentNode = currentNode.Next;
             }
+            // At this point, if currentNode != null should insert before CurrentNode
 
             if (currentNode == null) /* Means the newValue will be inserted at the tail of the list.*/
             {
-                Tail.Next = newNode;
+                if (Tail != null)
+                    Tail.Next = newNode;
                 newNode.Previous = Tail;
-                newNode = Tail;
+                Tail = newNode;
+                if (Head == null)
+                {
+                    Head = newNode;
+                }
                 return true;
             }
             else
             {
-                if (currentNode.Previous == null) /* means the newly added node will be the new head. */
+                if (currentNode.Next == null && currentNode.Previous == null) /* meaning there is only one node in the list. */
                 {
-                    newNode.Next = Head.Next;
-                    newNode.Previous = Head.Previous;
+                    currentNode.Previous = newNode;
+                    newNode.Next = currentNode;
                     Head = newNode;
                     return true;
                 }
@@ -118,8 +123,9 @@ namespace CSFundamentals.DataStructures.LinkedLists
                 {
                     newNode.Previous = currentNode.Previous;
                     newNode.Next = currentNode;
-                    newNode.Next.Previous = newNode;
-                    newNode.Previous.Next = newNode;
+                    if (newNode.Previous != null)
+                        newNode.Previous.Next = newNode;
+                    currentNode.Previous = newNode;
                     return true;
                 }
             }
