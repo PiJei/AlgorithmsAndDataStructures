@@ -30,7 +30,7 @@ namespace CSFundamentals.Algorithms.Search
         /// </summary>
         /// <param name="values">Specifies a list of integers.</param>
         /// <param name="searchValue">Specifies the value the method is searching for. </param>
-        /// <returns>The list of all the indexes in the array that have searchValue. </returns>
+        /// <returns>The list of all the indexes in the array that have <paramref name="searchValue">. </returns>
         [Algorithm(AlgorithmType.Search, "HashTable")]
         [SpaceComplexity("O(n)", InPlace = false)]
         [TimeComplexity(Case.Best, "O(1)")]

@@ -28,7 +28,7 @@ namespace CSFundamentals.Algorithms.GraphTraversal
         /// <summary>
         /// Implements Dijkstra's ShortestPath algorithm using MinBinaryHeap
         /// </summary>
-        /// <param name="root">Specifies </param>
+        /// <param name="root">Specifies a node from which we want to compute shortest paths to all the other nodes in the graph. </param>
         /// <returns>All the nodes in the graph, in the order that they were visited with their shortest distance from the root computed. </returns>
         [Algorithm(AlgorithmType.GraphRouteSearch, "Dijkstra's shortest path", IsGreedy = true)]
         [SpaceComplexity("O(3V)", InPlace = false)]
