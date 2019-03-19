@@ -20,7 +20,6 @@
 using System;
 using CSFundamentals.Styling;
 using CSFundamentals.DataStructures.LinkedLists.API;
-// TODO: should some how make tail and head such that they can not be manipulated outside the interface exposed, .. maybe you can get their values, etc, but can not set them, ... 
 
 namespace CSFundamentals.DataStructures.LinkedLists
 {
@@ -33,7 +32,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
         /// <summary>
         /// Is the last node in the list. Note that some implementations of DLL do not have Tail. 
         /// </summary>
-        public DoublyLinkedNode<T1> Tail { get; private set; } = null;
+        private DoublyLinkedNode<T1> _tail = null;
 
         public DoublyLinkedList()
         {
@@ -42,8 +41,17 @@ namespace CSFundamentals.DataStructures.LinkedLists
 
         public DoublyLinkedList(DoublyLinkedNode<T1> head)
         {
-            Head = head;
-            Tail = head;
+            _head = head;
+            _tail = head;
+        }
+
+        /// <summary>
+        /// Tail can be read, but to prevent any modification outside the API in this class, only a deep copy of the tail can be returned for reading purposes.
+        /// </summary>
+        /// <returns></returns>
+        public DoublyLinkedNode<T1> Tail()
+        {
+            return Utils.DeepCopy(_tail);
         }
 
         /// <summary>
@@ -97,7 +105,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
 
             if (newNode.Next == null)
             {
-                Tail = newNode;
+                _tail = newNode;
             }
             else
             {
@@ -106,7 +114,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
 
             if (newNode.Previous == null)
             {
-                Head = newNode;
+                _head = newNode;
             }
             return true;
         }
@@ -147,7 +155,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
             node.Previous = newNode;
             if (newNode.Previous == null)
             {
-                Head = newNode;
+                _head = newNode;
             }
             else
             {
@@ -155,7 +163,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
             }
             if (newNode.Next == null)
             {
-                Tail = newNode;
+                _tail = newNode;
             }
             return true;
         }
@@ -171,17 +179,17 @@ namespace CSFundamentals.DataStructures.LinkedLists
         public bool Append(T1 newValue)
         {
             DoublyLinkedNode<T1> newNode = new DoublyLinkedNode<T1>(newValue);
-            if (Tail != null)
+            if (_tail != null)
             {
-                Tail.Next = newNode;
+                _tail.Next = newNode;
             }
 
-            newNode.Previous = Tail;
-            Tail = newNode;
+            newNode.Previous = _tail;
+            _tail = newNode;
 
-            if (Head == null)
+            if (_head == null)
             {
-                Head = newNode;
+                _head = newNode;
             }
             return true;
         }
@@ -197,16 +205,16 @@ namespace CSFundamentals.DataStructures.LinkedLists
         public bool PrePend(T1 newValue)
         {
             DoublyLinkedNode<T1> newNode = new DoublyLinkedNode<T1>(newValue);
-            if (Head != null)
+            if (_head != null)
             {
-                Head.Previous = newNode;
+                _head.Previous = newNode;
             }
 
-            newNode.Next = Head;
-            Head = newNode;
-            if (Tail == null)
+            newNode.Next = _head;
+            _head = newNode;
+            if (_tail == null)
             {
-                Tail = newNode;
+                _tail = newNode;
             }
             return true;
         }
@@ -221,27 +229,27 @@ namespace CSFundamentals.DataStructures.LinkedLists
         [TimeComplexity(Case.Average, "O(n)")]
         public override bool Delete(T1 value)
         {
-            var currentNode = Head;
+            var currentNode = _head;
             while (currentNode != null)
             {
                 if (currentNode.Value.CompareTo(value) == 0) /* If the key is found. */
                 {
                     if (currentNode.Previous == null && currentNode.Next == null) /* This means the list has only one node.*/
                     {
-                        Head = null;
-                        Tail = null;
+                        _head = null;
+                        _tail = null;
                         return true;
                     }
                     else if (currentNode.Previous == null) /* This means we are deleting the head. */
                     {
-                        Head = Head.Next;
-                        Head.Previous = null;
+                        _head = _head.Next;
+                        _head.Previous = null;
                         return true;
                     }
                     else if (currentNode.Next == null) /*This means we are deleting the tail.*/
                     {
-                        Tail = Tail.Previous;
-                        Tail.Next = null;
+                        _tail = _tail.Previous;
+                        _tail.Next = null;
                         return true;
                     }
                     else /* Node is in the middle and has not-null next and previous nodes. */

@@ -18,15 +18,13 @@
  */
 
 using System;
-using System.IO;
-using System.Xml.Serialization;
 
 namespace CSFundamentals.DataStructures.LinkedLists.API
 {
     [Serializable]
     public class LinkedNode<T, T1> where T : LinkedNode<T, T1> where T1 : IComparable<T1>
     {
-        public T1 Value { get; private set; }
+        public T1 Value { get; set; }
 
         public T Next { get; set; }
 
@@ -35,6 +33,12 @@ namespace CSFundamentals.DataStructures.LinkedLists.API
             Value = value;
         }
 
+        /// <summary>
+        /// This constructor is for Serializability.
+        /// </summary>
+        public LinkedNode()
+        {
+        }
         /// <summary>
         /// Checks whether the current node is tail. A node is tail if it has no next node. 
         /// </summary>

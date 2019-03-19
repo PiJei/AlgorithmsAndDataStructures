@@ -17,8 +17,7 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System.IO;
-using System.Xml.Serialization;
+using Newtonsoft.Json;
 
 namespace CSFundamentals.DataStructures.LinkedLists
 {
@@ -27,19 +26,8 @@ namespace CSFundamentals.DataStructures.LinkedLists
         public static T DeepCopy<T>(T obj)
         {
             string serializedData = string.Empty;
-            T deepCopy;
-            XmlSerializer serializer = new XmlSerializer(typeof(T));
-            using (StringWriter sw = new StringWriter())
-            {
-                serializer.Serialize(sw, obj);
-                serializedData = sw.ToString();
-            }
-            using (StringReader stringReader = new StringReader(serializedData))
-            {
-                deepCopy = (T)serializer.Deserialize(stringReader);
-            }
-
-            return deepCopy;
+            string serializedObject = JsonConvert.SerializeObject(obj, new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore });
+            return JsonConvert.DeserializeObject<T>(serializedObject);
         }
     }
 }

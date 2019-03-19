@@ -28,23 +28,25 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists.API
         [TestMethod]
         public void LinkedListBase_Length_Test()
         {
-            MockLinkedNode<int> node1 = new MockLinkedNode<int>(10);
             MockLinkedList<int> list = new MockLinkedList<int>();
             Assert.AreEqual(0, list.Count());
 
-            list.Head = node1;
+            var head = new MockLinkedNode<int>(10);
+            list = new MockLinkedList<int>(head);
             Assert.AreEqual(1, list.Count());
 
-            list.Head.Next = new MockLinkedNode<int>(2);
+            head.Next = new MockLinkedNode<int>(2);
+            list = new MockLinkedList<int>(head);
             Assert.AreEqual(2, list.Count());
 
-            list.Head.Next.Next = new MockLinkedNode<int>(20);
+            head.Next.Next = new MockLinkedNode<int>(20);
+            list = new MockLinkedList<int>(head);
             Assert.AreEqual(3, list.Count());
 
-            list.Head.Next.Next.Next = new MockLinkedNode<int>(3);
+            head.Next.Next.Next = new MockLinkedNode<int>(3);
+            list = new MockLinkedList<int>(head);
             Assert.AreEqual(4, list.Count());
         }
-
 
         [TestMethod]
         [ExpectedException(typeof(NotFoundException))]
