@@ -25,12 +25,12 @@ namespace CSFundamentals.Algorithms.PatternSearch
     public class BoyerMooreSearch
     {
         /// <summary>
-        /// Implements BoyerMoore search algorithm using only the bad character heuristic (in the main version  both bad character and good suffix are used to skip over text.)
-        /// The idea is to do tail based search, and skip over indexes in text to a proper tail, at which there is a chance of match. 
+        /// Implements BoyerMoore search algorithm using only the bad character heuristic (in the main version  both bad character and good suffix are used to skip over <paramref name="text"/>.)
+        /// The idea is to do tail based search, and skip over indexes in <paramref name="text"/> to a proper tail, at which there is a chance of match. 
         /// </summary>
-        /// <param name= "text">The parent string in which we are searching for a subString.</param>
-        /// <param name= "pattern">The string we want to find in parent string (text).</param>
-        /// <returns>All the starting index in text at which subString is found [in other words looks for all the occurrences of the subString in text, and does not stop by finding the first one.].</returns>
+        /// <param name= "text">The parent string in which we are searching for <paramref name="pattern"/>.</param>
+        /// <param name= "pattern">The string we want to find in parent string (<paramref name="text"/>).</param>
+        /// <returns>All the starting indexes in <paramref name="text"/> starting at which <paramref name="pattern"/> is found [in other words looks for all the occurrences of the <paramref name="pattern"/> in <paramref name="text"/>, and does not stop by finding the first one].</returns>
         [Algorithm(AlgorithmType.PatternSearch, "BoyerMoore")]
         public static List<int> Search_BasedOnBadCharacterShiftOnly(string text, string pattern)
         {
@@ -40,15 +40,15 @@ namespace CSFundamentals.Algorithms.PatternSearch
             int n = text.Length;
             int m = pattern.Length;
 
-            /* Preprocessing step for subString */
-            Dictionary<char, int> subStringMap = MapCharToLastIndex(pattern); /* Last index is needed, because otherwise if shifted the pattern along the text to right a lot (with the first index) we could miss some potential matches. */
+            /* Preprocessing step for pattern */
+            Dictionary<char, int> patternMap = MapCharToLastIndex(pattern); /* Last index is needed, because otherwise if shifted the pattern along the text to right a lot (with the first index) we could miss some potential matches. */
 
             int i = m - 1;  /* Is the index over text. Setting to (m-1) because BoyerMoore is tail-based search. */
 
             while (i < n) /* Since this is a tail-based search, i can even be (n-1), hence the loop condition.*/
             {
-                int j = m - 1; /* Starting index over subString, notice that we match the string backwards.*/
-                while (j >= 0 && i >= 0 && text[i] == pattern[j]) /* Continue moving backward on subString and text as long as the characters match.*/
+                int j = m - 1; /* Starting index over pattern, notice that we match the string backwards.*/
+                while (j >= 0 && i >= 0 && text[i] == pattern[j]) /* Continue moving backward on pattern and text as long as the characters match.*/
                 {
                     j--;
                     i--;
@@ -59,7 +59,7 @@ namespace CSFundamentals.Algorithms.PatternSearch
                     /*At this point i has gone backward such that it is set to the (matched-index - 1), so adjust it to point to matched-index. */
                     i = i + 1;
 
-                    /* Store i, as one of the answers, starting from which a match for subString is found. */
+                    /* Store i, as one of the answers, starting from which a match for pattern is found. */
                     indexes.Add(i);
 
                     /* Compute the potential new tail index on text.*/
@@ -72,10 +72,10 @@ namespace CSFundamentals.Algorithms.PatternSearch
                     if (i < n) /* Get the next unseen character in text*/
                     {
                         char nextUnVisitedCharOnText = text[i]; /* This can also be a bad character, if it does not exist in the map, and we should skip it. */
-                        int lastIndexOfNextCharInSubString = subStringMap.ContainsKey(nextUnVisitedCharOnText) ? subStringMap[nextUnVisitedCharOnText] : -1;
+                        int lastIndexOfNextCharInPattern = patternMap.ContainsKey(nextUnVisitedCharOnText) ? patternMap[nextUnVisitedCharOnText] : -1;
 
-                        /* Shift i further by length of subString, as the search is tail based. */
-                        i = i + ((m - 1) - lastIndexOfNextCharInSubString);
+                        /* Shift i further by length of pattern, as the search is tail based. */
+                        i = i + ((m - 1) - lastIndexOfNextCharInPattern);
                     }
                     else
                     {
@@ -86,8 +86,8 @@ namespace CSFundamentals.Algorithms.PatternSearch
                 {
                     // text[i] is the bad character.
                     char badChar = text[i];
-                    int lastIndexOfBadCharInSubString = subStringMap.ContainsKey(badChar) ? subStringMap[badChar] : -1;
-                    i = i + ((m - 1) - lastIndexOfBadCharInSubString); /* Notice that the text[i] in the next round will be compared to subString[m-1], that is why we need to slide i by this much to point to tail of the substring in text. */
+                    int lastIndexOfBadCharInPattern = patternMap.ContainsKey(badChar) ? patternMap[badChar] : -1;
+                    i = i + ((m - 1) - lastIndexOfBadCharInPattern); /* Notice that the text[i] in the next round will be compared to pattern[m-1], that is why we need to slide i by this much to point to tail of the pattern in text. */
                 }
             }
 

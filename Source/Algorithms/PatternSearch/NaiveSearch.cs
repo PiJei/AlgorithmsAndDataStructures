@@ -23,11 +23,11 @@ namespace CSFundamentals.Algorithms.PatternSearch
     public class NaiveSearch
     {
         /// <summary>
-        /// Implements a naive- brute force algorithm for finding subString in text.
-        /// Note: Any optimization, should try to reduce either the size of the outer loop or the inner loop.
+        /// Implements a naive, brute force algorithm for finding <paramref name="pattern"/> in <paramref name="text"/>.
+        /// Note: Any optimization over this algorithm, can try to reduce either the size of the outer loop or the inner loop.
         /// </summary>
-        /// <param name="text">The parent string in which we are searching for a subString.</param>
-        /// <param name="pattern">The string we want to find in parent string (text).</param>
+        /// <param name="text">The string in which we are searching for <paramref name="pattern"/>.</param>
+        /// <param name="pattern">The string we want to find in <paramref name="text"/>.</param>
         [Algorithm(AlgorithmType.PatternSearch, "Naive")]
         public static int Search(string text, string pattern)
         {

@@ -25,10 +25,10 @@ namespace CSFundamentals.Algorithms.GraphTraversal
     public class BFS
     {
         /// <summary>
-        /// Implements an iterative, recursion-free version of Breadth First Search algorithm for a graph (that can well have cycles);
+        /// Implements an iterative, recursion-free version of Breadth First Search algorithm for a graph (that can have cycles);
         /// </summary>
         /// <param name="root">Specifies a node in the graph from which the search starts. </param>
-        /// <returns>A BFS ordering of the graph's nodes.</returns>
+        /// <returns>a serialization of the graph, with a BFS ordering.</returns>
         public static List<GraphNode> BFS_Iterative(GraphNode root) /* Root is the node from which the search starts.*/
         {
             Queue<GraphNode> queue = new Queue<GraphNode>();
