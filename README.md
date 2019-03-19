@@ -36,7 +36,11 @@ Content:
    - Hashing
    
 1. DataStructures:
-
+    - LinkedLists
+        - SinglyLinked
+        - DoublyLinked
+        - DoublyLinkedSorted
+    
     - String DataStructures:
         - SuffixTree
         - SuffixArray
