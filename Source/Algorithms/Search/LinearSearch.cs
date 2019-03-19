@@ -32,7 +32,7 @@ namespace CSFundamentals.Algorithms.Search
         /// </summary>
         /// <param name="values">Specifies a list of integers.</param>
         /// <param name="searchValue">Specifies the value the method is searching for. </param>
-        /// <returns>The index of the searchValue in the array values, and -1 if it does not exist in the array, </returns>
+        /// <returns>The index of the <paramref name="searchValue"/> in the array, and -1 if it does not exist in the array. </returns>
         [Algorithm(AlgorithmType.Search, "LinearSearch")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(1)")]

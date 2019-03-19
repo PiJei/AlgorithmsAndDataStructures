@@ -33,7 +33,7 @@ namespace CSFundamentals.Algorithms.Search
         /// <param name="startIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>
         /// <param name="endIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
         /// <param name="searchValue">Specifies the value that is being searched for. </param>
-        /// <returns>The index of the searchValue in the array values, and -1 if it does not exist in the array. </returns>
+        /// <returns>The index of the <paramref name="searchValue"> in the array, and -1 if it does not exist in the array. </returns>
         [Algorithm(AlgorithmType.Search, "InterpolationSearch", Assumptions = "Array is sorted with an ascending order, and elements are driven from a uniform distribution.")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(1)")]
@@ -72,7 +72,7 @@ namespace CSFundamentals.Algorithms.Search
 
         /// <summary>
         /// Computes an index to start the search from. Dependent on the value we are after. 
-        /// This formula is such that if the search value is closer to the value in the startIndex, the search start point will be chosen closer to the startIndex, and if the search value is closer to the value in the endIndex, the search start point will be chosen closer to the endIndex.
+        /// This formula is such that if the <paramref name="searchValue"> is closer to the value in the <paramref name="startIndex"/>, the search start point will be chosen closer to the <paramref name="startIndex"/>, and if the <paramref name="searchValue"/> is closer to the value at <paramref name="endIndex"/>, the search start point will be chosen closer to the <paramref name="endIndex"/>.
         /// </summary>
         /// <param name="values">A sorted list of integers that are also uniformly distributed. </param>
         /// <param name="startIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>

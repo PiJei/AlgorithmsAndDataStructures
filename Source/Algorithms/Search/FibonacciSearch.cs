@@ -69,7 +69,7 @@ namespace CSFundamentals.Algorithms.Search
         }
 
         /// <summary>
-        /// Computes the smallest Fibonacci number that is greater than number. 
+        /// Computes the smallest Fibonacci number that is greater than <paramref name="number"/>. 
         /// Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...
         /// </summary>
         /// <param name="number">The integer we want to compute the closest Fibonacci to it that is bigger than or equal to it. </param>

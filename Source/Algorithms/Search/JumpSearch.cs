@@ -26,12 +26,12 @@ namespace CSFundamentals.Algorithms.Search
     public class JumpSearch
     {
         /// <summary>
-        /// Performs a jumpSearch on a list of integers to find the searchValue. 
+        /// Performs a jumpSearch on a list of integers to find the <paramref name="searchValue"/>. 
         /// Notice that only works if the given array is sorted. 
         /// </summary>
         /// <param name="values">Specifies a sorted list of integers.</param>
         /// <param name="searchValue">Specifies the value the method is searching for. </param>
-        /// <returns>The index of the searchValue in the array values, and -1 if it does not exist in the array, </returns>
+        /// <returns>The index of the <paramref name="searchValue"/> in the array, and -1 if it does not exist in the array. </returns>
         [Algorithm(AlgorithmType.Search, "JumpSearch", Assumptions = "Array is sorted with an ascending order.")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(1)")]
