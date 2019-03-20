@@ -18,7 +18,7 @@
  */
 
 using System;
- using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace CSFundamentals.DataStructures.Trees
 {
@@ -27,7 +27,7 @@ namespace CSFundamentals.DataStructures.Trees
     /// </summary>
     /// <typeparam name="T1">Is the type of the keys in the tree. </typeparam>
     /// <typeparam name="T2">Is the type of the values in the tree. </typeparam>
-    public class BTreeNode<T1, T2> where T1: IComparable<T1>
+    public class BTreeNode<T1, T2> where T1 : IComparable<T1>
     {
         /// <summary>
         /// Is the minimum number of keys in a B-tree internal/leaf node. (Notice that a root has no lower bound on the number of keys. Intuitively when the tree is just being built it might start with 1, and grow afterwards.)
@@ -49,12 +49,9 @@ namespace CSFundamentals.DataStructures.Trees
         /// </summary>
         public int MaxBranchingDegree { get; private set; }
 
-        // TODO A binary tree node rather than a binary search tree node would be enough in this case, but this makes finding isleaf o(n) 
-        // also list here is not very good, because we will need to shift back and forth to implement this... I think we need a tw-direction linked list implementation here for O(1) insertion in the middle, ... 
-        /// <summary>
-        /// Using an ordered sequence of binary search tree nodes, to represent the key-value pairs of a node in B-Tree node. for consecutive binary tree nodes n1,n2 : n1.rightChild = n2.leftChild
-        /// </summary>
-        public List<BinarySearchTreeNode<T1, T2>> KeyValues { get; set; }
+        public List<KeyValuePair<T1, T2>> KeyValues { get; private set; }
+
+        public List<BTreeNode<T1, T2>> Children { get; private set; }
 
         /// <summary>
         /// Is the parent of the current node.
@@ -67,7 +64,10 @@ namespace CSFundamentals.DataStructures.Trees
             MaxKeys = 2 * minKeys;
             MinBranchingDegree = minKeys + 1;
             MaxBranchingDegree = MaxKeys + 1;
+            KeyValues = new List<KeyValuePair<T1, T2>>(MaxKeys);
+            Children = new List<BTreeNode<T1, T2>>(MaxBranchingDegree);
         }
+
 
         /// <summary>
         /// Checks whether the current node is leaf. A node is leaf if it has no children. 
@@ -75,15 +75,9 @@ namespace CSFundamentals.DataStructures.Trees
         /// <returns>True if the current node is leaf, and false otherwise. </returns>
         public bool IsLeaf()
         {
-            //TODO: This is O(N) and not good, however if we had a separate array of children then just checking children count would be enough
-            foreach(BinarySearchTreeNode<T1,T2> node in KeyValues)
-            {
-                if (!node.IsLeaf())
-                {
-                    return false;
-                }
-            }
-            return true;
+            if (Children.Count == 0)
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -98,13 +92,15 @@ namespace CSFundamentals.DataStructures.Trees
             }
             return false;
         }
-
+        
+        // TODO
+        /*
         public int Search(T1 key)
         {
             //what about a varient of binary search , such that it either returns the index if it is found, or , or the index of the child of this node that it might be in it, ... 
             // the simplest obviously is to do a linear search ,,, ifkey gets bigger then 
             int i = 0;
-            while(i < KeyValues.Count)
+            while (i < KeyValues.Count)
             {
                 if (key.CompareTo(KeyValues[i].Key) > 0)
                 {
@@ -119,6 +115,6 @@ namespace CSFundamentals.DataStructures.Trees
             {
                 return i;
             }
-        }
+        }*/
     }
 }

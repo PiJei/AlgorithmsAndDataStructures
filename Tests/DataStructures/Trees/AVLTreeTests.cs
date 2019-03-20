@@ -61,45 +61,45 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
             AVLTreeNode<int, string> E = new AVLTreeNode<int, string>(40, "E");
             root = tree.Insert(root, E);
-            HasAVLTreeProperties(tree, root, 1);
+            Assert.IsTrue(HasAVLTreeProperties(tree, root, 1));
 
             AVLTreeNode<int, string> C = new AVLTreeNode<int, string>(50, "C");
             root = _tree.Insert(root, C);
-            HasAVLTreeProperties(tree, root, 2);
+            Assert.IsTrue(HasAVLTreeProperties(tree, root, 2));
 
             AVLTreeNode<int, string> A = new AVLTreeNode<int, string>(47, "A");
             root = tree.Insert(root, A);
-            HasAVLTreeProperties(tree, root, 3);
+            Assert.IsTrue(HasAVLTreeProperties(tree, root, 3));
 
             AVLTreeNode<int, string> G = new AVLTreeNode<int, string>(45, "G");
             root = tree.Insert(root, G);
-            HasAVLTreeProperties(tree, root, 4);
+            Assert.IsTrue(HasAVLTreeProperties(tree, root, 4));
 
             AVLTreeNode<int, string> D = new AVLTreeNode<int, string>(20, "D");
             root = tree.Insert(root, D);
-            HasAVLTreeProperties(tree, root, 5);
+            Assert.IsTrue(HasAVLTreeProperties(tree, root, 5));
 
             AVLTreeNode<int, string> F = new AVLTreeNode<int, string>(35, "F");
             root = tree.Insert(root, F);
-            HasAVLTreeProperties(tree, root, 6);
+            Assert.IsTrue(HasAVLTreeProperties(tree, root, 6));
 
             AVLTreeNode<int, string> B = new AVLTreeNode<int, string>(30, "B");
             root = tree.Insert(root, B);
-            HasAVLTreeProperties(tree, root, 7);
+            Assert.IsTrue(HasAVLTreeProperties(tree, root, 7));
 
             AVLTreeNode<int, string> H = new AVLTreeNode<int, string>(10, "H");
             root = tree.Insert(root, H);
-            HasAVLTreeProperties(tree, root, 8);
+            Assert.IsTrue(HasAVLTreeProperties(tree, root, 8));
 
             AVLTreeNode<int, string> I = new AVLTreeNode<int, string>(80, "I");
             root = tree.Insert(root, I);
-            HasAVLTreeProperties(tree, root, 9);
+            Assert.IsTrue(HasAVLTreeProperties(tree, root, 9));
         }
 
         [TestMethod]
         public void AVLTree_Build_Test()
         {
-            HasAVLTreeProperties(_tree, _root, 9);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 9));
         }
 
 
@@ -111,7 +111,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.AreEqual(9, nodes.Count);
 
             _root = _tree.Delete(_root, 25);
-            HasAVLTreeProperties(_tree, _root, 9);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 9));
         }
 
         [TestMethod]
@@ -122,7 +122,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.AreEqual(9, nodes.Count);
 
             _root = _tree.Delete(_root, 30);
-            HasAVLTreeProperties(_tree, _root, 8);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 8));
         }
 
         [TestMethod]
@@ -133,7 +133,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.AreEqual(9, nodes.Count);
 
             _root = _tree.Delete(_root, 40);
-            HasAVLTreeProperties(_tree, _root, 8);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 8));
         }
 
         [TestMethod]
@@ -144,7 +144,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.AreEqual(9, nodes.Count);
 
             _root = _tree.Delete(_root, 47);
-            HasAVLTreeProperties(_tree, _root, 8);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 8));
         }
 
         [TestMethod]
@@ -155,7 +155,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.AreEqual(9, nodes.Count);
 
             _root = _tree.Delete(_root, 10);
-            HasAVLTreeProperties(_tree, _root, 8);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 8));
         }
 
         [TestMethod]
@@ -166,7 +166,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.AreEqual(9, nodes.Count);
 
             _root = _tree.Delete(_root, 35);
-            HasAVLTreeProperties(_tree, _root, 8);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 8));
         }
 
         [TestMethod]
@@ -177,7 +177,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.AreEqual(9, nodes.Count);
 
             _root = _tree.Delete(_root, 45);
-            HasAVLTreeProperties(_tree, _root, 8);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 8));
         }
 
         [TestMethod]
@@ -188,7 +188,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.AreEqual(9, nodes.Count);
 
             _root = _tree.Delete(_root, 80);
-            HasAVLTreeProperties(_tree, _root, 8);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 8));
         }
 
         [TestMethod]
@@ -199,7 +199,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.AreEqual(9, nodes.Count);
 
             _root = _tree.Delete(_root, 20);
-            HasAVLTreeProperties(_tree, _root, 8);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 8));
         }
 
         [TestMethod]
@@ -210,7 +210,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.AreEqual(9, nodes.Count);
 
             _root = _tree.Delete(_root, 50);
-            HasAVLTreeProperties(_tree, _root, 8);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 8));
         }
 
         [TestMethod]
@@ -221,31 +221,31 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.AreEqual(9, nodes.Count);
 
             _root = _tree.Delete(_root, 50);
-            HasAVLTreeProperties(_tree, _root, 8);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 8));
 
             _root = _tree.Delete(_root, 40);
-            HasAVLTreeProperties(_tree, _root, 7);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 7));
 
             _root = _tree.Delete(_root, 10);
-            HasAVLTreeProperties(_tree, _root, 6);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 6));
 
             _root = _tree.Delete(_root, 80);
-            HasAVLTreeProperties(_tree, _root, 5);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 5));
 
             _root = _tree.Delete(_root, 47);
-            HasAVLTreeProperties(_tree, _root, 4);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 4));
 
             _root = _tree.Delete(_root, 20);
-            HasAVLTreeProperties(_tree, _root, 3);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 3));
 
             _root = _tree.Delete(_root, 45);
-            HasAVLTreeProperties(_tree, _root, 2);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 2));
 
             _root = _tree.Delete(_root, 30);
-            HasAVLTreeProperties(_tree, _root, 1);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 1));
 
             _root = _tree.Delete(_root, 35);
-            HasAVLTreeProperties(_tree, _root, 0);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 0));
         }
 
         [TestMethod]
@@ -256,31 +256,31 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.AreEqual(9, nodes.Count);
 
             _root = _tree.Delete(_root, 80);
-            HasAVLTreeProperties(_tree, _root, 8);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 8));
 
             _root = _tree.Delete(_root, 47);
-            HasAVLTreeProperties(_tree, _root, 7);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 7));
 
             _root = _tree.Delete(_root, 30);
-            HasAVLTreeProperties(_tree, _root, 6);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 6));
 
             _root = _tree.Delete(_root, 35);
-            HasAVLTreeProperties(_tree, _root, 5);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 5));
 
             _root = _tree.Delete(_root, 45);
-            HasAVLTreeProperties(_tree, _root, 4);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 4));
 
             _root = _tree.Delete(_root, 20);
-            HasAVLTreeProperties(_tree, _root, 3);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 3));
 
             _root = _tree.Delete(_root, 10);
-            HasAVLTreeProperties(_tree, _root, 2);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 2));
 
             _root = _tree.Delete(_root, 50);
-            HasAVLTreeProperties(_tree, _root, 1);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 1));
 
             _root = _tree.Delete(_root, 40);
-            HasAVLTreeProperties(_tree, _root, 0);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 0));
         }
 
         [TestMethod]
@@ -312,7 +312,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             E.LeftChild = null;
             E.RightChild = null;
 
-            BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<AVLTreeNode<int, string>, int, string>(A);
+            Assert.IsTrue(BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<AVLTreeNode<int, string>, int, string>(A));
             Assert.AreEqual(4, _tree.GetHeight(A));
             Assert.AreEqual(3, _tree.GetHeight(B));
             Assert.AreEqual(1, _tree.GetHeight(C)); // Is a leaf node. 
@@ -363,23 +363,24 @@ namespace CSFundamentalsTests.DataStructures.Trees
             // TODO 
         }
 
-        public void HasAVLTreeProperties<T1, T2>(AVLTree<T1, T2> tree, AVLTreeNode<T1, T2> root, int expectedNodeCount) where T1 : IComparable<T1>, IEquatable<T1>
+        public bool HasAVLTreeProperties<T1, T2>(AVLTree<T1, T2> tree, AVLTreeNode<T1, T2> root, int expectedNodeCount) where T1 : IComparable<T1>, IEquatable<T1>
         {
-            BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<AVLTreeNode<T1, T2>, T1, T2>(root);
-
+            Assert.IsTrue(BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<AVLTreeNode<T1, T2>, T1, T2>(root));
             List<AVLTreeNode<T1, T2>> inOrderTraversal = new List<AVLTreeNode<T1, T2>>();
             tree.InOrderTraversal(root, inOrderTraversal);
             Assert.AreEqual(expectedNodeCount, inOrderTraversal.Count);
-            HasExpectedBalanceFactor(tree, inOrderTraversal);
+            Assert.IsTrue(HasExpectedBalanceFactor(tree, inOrderTraversal));
+            return true;
         }
 
-        public void HasExpectedBalanceFactor<T1, T2>(AVLTree<T1, T2> tree, List<AVLTreeNode<T1, T2>> nodes) where T1 : IComparable<T1>, IEquatable<T1>
+        public bool HasExpectedBalanceFactor<T1, T2>(AVLTree<T1, T2> tree, List<AVLTreeNode<T1, T2>> nodes) where T1 : IComparable<T1>, IEquatable<T1>
         {
             foreach (AVLTreeNode<T1, T2> node in nodes)
             {
                 int balanceFactor = tree.ComputeBalanceFactor(node);
                 Assert.IsTrue(balanceFactor >= -1 && balanceFactor <= 1);
             }
+            return true;
         }
     }
 }

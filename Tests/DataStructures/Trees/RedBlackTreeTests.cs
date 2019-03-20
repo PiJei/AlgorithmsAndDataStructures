@@ -222,7 +222,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         public static void HasRedBlackTreeProperties<T1, T2>(RedBlackTree<T1, T2> tree, RedBlackTreeNode<T1, T2> root, List<RedBlackTreeNode<T1, T2>> inOrderTraversal, int expectedNodeCount) where T1 : IComparable<T1>, IEquatable<T1>
         {
             // Check order properties.
-            BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<RedBlackTreeNode<T1, T2>, T1, T2>(root);
+            Assert.IsTrue(BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<RedBlackTreeNode<T1, T2>, T1, T2>(root));
 
             //Check to make sure nodes are not orphaned in the insertion or deletion process. 
             Assert.AreEqual(expectedNodeCount, inOrderTraversal.Count);

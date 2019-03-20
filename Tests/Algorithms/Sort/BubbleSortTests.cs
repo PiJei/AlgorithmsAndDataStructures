@@ -31,7 +31,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             List<int> values = new List<int>(Constants.ArrayWithDistinctValues);
             BubbleSort.Sort_Iterative(values);
-            UtilsTests.CheckIfListIsSortedAscendingly(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
@@ -39,7 +39,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             List<int> values = new List<int>(Constants.ArrayWithDuplicateValues);
             BubbleSort.Sort_Iterative(values);
-            UtilsTests.CheckIfListIsSortedAscendingly(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
@@ -47,7 +47,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             List<int> values = new List<int>(Constants.ArrayWithSortedDistinctValues);
             BubbleSort.Sort_Iterative(values);
-            UtilsTests.CheckIfListIsSortedAscendingly(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
@@ -55,7 +55,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             List<int> values = new List<int>(Constants.ArrayWithSortedDuplicateValues);
             BubbleSort.Sort_Iterative(values);
-            UtilsTests.CheckIfListIsSortedAscendingly(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
@@ -63,7 +63,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             List<int> values = new List<int>(Constants.ArrayWithReverselySortedDistinctValues);
             BubbleSort.Sort_Iterative(values);
-            UtilsTests.CheckIfListIsSortedAscendingly(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
@@ -71,9 +71,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             List<int> values = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
             BubbleSort.Sort_Iterative(values);
-            UtilsTests.CheckIfListIsSortedAscendingly(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
-
-
     }
 }

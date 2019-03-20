@@ -25,5 +25,13 @@ namespace CSFundamentalsTests.DataStructures.Trees
 {
     class BTreeNodeTests
     {
+        // TOod
+        // number of children always one bigger than number of keys
+        // and that children count is fixed, limit the list size, ... 
+        // and check the size of the key list and children list, should not excee the limits
+        public bool HasBTreeNodeProperties()
+        {
+            return true;
+        }
     }
 }

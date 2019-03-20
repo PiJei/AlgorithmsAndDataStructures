@@ -30,7 +30,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             var values = new List<int>(Constants.ArrayWithDistinctValues);
             MergeSort.Sort_Recursively(values, 0, values.Count - 1);
-            UtilsTests.CheckIfListIsSortedAscendingly(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
@@ -38,7 +38,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             var values = new List<int>(Constants.ArrayWithDuplicateValues);
             MergeSort.Sort_Recursively(values, 0, values.Count - 1);
-            UtilsTests.CheckIfListIsSortedAscendingly(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
@@ -46,7 +46,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             var values = new List<int>(Constants.ArrayWithSortedDistinctValues);
             MergeSort.Sort_Recursively(values, 0, values.Count - 1);
-            UtilsTests.CheckIfListIsSortedAscendingly(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
@@ -54,7 +54,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             var values = new List<int>(Constants.ArrayWithSortedDuplicateValues);
             MergeSort.Sort_Recursively(values, 0, values.Count - 1);
-            UtilsTests.CheckIfListIsSortedAscendingly(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
@@ -62,7 +62,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             var values = new List<int>(Constants.ArrayWithReverselySortedDistinctValues);
             MergeSort.Sort_Recursively(values, 0, values.Count - 1);
-            UtilsTests.CheckIfListIsSortedAscendingly(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
@@ -70,7 +70,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             var values = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
             MergeSort.Sort_Recursively(values, 0, values.Count - 1);
-            UtilsTests.CheckIfListIsSortedAscendingly(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
@@ -78,7 +78,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             List<int> values1 = new List<int> { 10, 1 };
             MergeSort.Merge(values1, 0, 0, 1);
-            UtilsTests.CheckIfListIsSortedAscendingly(values1);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values1));
 
             List<int> values2 = new List<int> { 10, 1 };
             // Indexes are such that the list will not get sorted, 
@@ -88,7 +88,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
 
             List<int> values3 = new List<int> { 10, 41, 3, 10 };
             MergeSort.Merge(values3, 0, 1, 3);
-            UtilsTests.CheckIfListIsSortedAscendingly(values3);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values3));
         }
     }
 }

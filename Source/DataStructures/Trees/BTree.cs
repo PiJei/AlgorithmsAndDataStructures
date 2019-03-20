@@ -42,7 +42,8 @@ namespace CSFundamentals.DataStructures.Trees
 
         public BTreeNode<T1, T2> Search(BTreeNode<T1, T2> root, T1 key)
         {
-            if (key.CompareTo(root.KeyValues[0].Key) < 0)
+            throw new NotImplementedException();
+            /*if (key.CompareTo(root.KeyValues[0].Key) < 0)
             {
                 return Search(root.Children[0], key);
             }
@@ -62,7 +63,7 @@ namespace CSFundamentals.DataStructures.Trees
                     // I want to do a binary search over the key values, ... 
                 }
             }
-            
+            */
         }
 
         public List<BTree<T1, T2>> Traverse()

@@ -31,7 +31,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             var values = new List<int>(Constants.ArrayWithDistinctValues);
             InsertionSort.Sort_Iterative_V1(values);
-            UtilsTests.CheckIfListIsSortedAscendingly(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
@@ -39,7 +39,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             var values = new List<int>(Constants.ArrayWithDuplicateValues);
             InsertionSort.Sort_Iterative_V1(values);
-            UtilsTests.CheckIfListIsSortedAscendingly(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
@@ -47,7 +47,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             var values = new List<int>(Constants.ArrayWithDistinctValues);
             InsertionSort.Sort_Iterative_V2(values);
-            UtilsTests.CheckIfListIsSortedAscendingly(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
@@ -55,7 +55,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             var values = new List<int>(Constants.ArrayWithDuplicateValues);
             InsertionSort.Sort_Iterative_V2(values);
-            UtilsTests.CheckIfListIsSortedAscendingly(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
@@ -63,7 +63,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             var values = new List<int>(Constants.ArrayWithDistinctValues);
             InsertionSort.Sort_Recursive(values, values.Count - 1);
-            UtilsTests.CheckIfListIsSortedAscendingly(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
@@ -71,10 +71,8 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             var values = new List<int>(Constants.ArrayWithDuplicateValues);
             InsertionSort.Sort_Recursive(values, values.Count - 1);
-            UtilsTests.CheckIfListIsSortedAscendingly(values);
-
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
-
         // TODO: add tests with other types of input arrays. 
     }
 }
