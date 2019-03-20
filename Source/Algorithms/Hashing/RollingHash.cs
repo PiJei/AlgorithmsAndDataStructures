@@ -58,7 +58,7 @@ namespace CSFundamentals.Algorithms.Hashing
         }
 
         /// <summary>
-        /// Computes hash value for a string
+        /// Computes hash value for string <paramref name="s"/>.
         /// </summary>
         /// <param name="s">Specifies a string. </param>
         /// <param name="prime">Specifies a prime number for the modulo operation</param>

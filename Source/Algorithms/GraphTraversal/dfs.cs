@@ -24,10 +24,10 @@ namespace CSFundamentals.Algorithms.GraphTraversal
     public class DFS
     {
         /// <summary>
-        /// Implements an iterative, recursion-free version of Depth First Search algorithm for a graph (that can well have cycles);
+        /// Implements an iterative, recursion-free version of Depth First Search algorithm for a graph (that can have cycles);
         /// </summary>
         /// <param name="root">Specifies a node in the graph from which the search starts. </param>
-        /// <returns>A DFS ordering of the graph's nodes.</returns>
+        /// <returns>a serialization of the graph, with a DFS ordering.</returns>
         public static List<GraphNode> DFS_Iterative(GraphNode root)
         {
             Stack<GraphNode> stack = new Stack<GraphNode>();

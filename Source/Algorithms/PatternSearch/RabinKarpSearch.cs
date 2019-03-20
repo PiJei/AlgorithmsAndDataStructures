@@ -31,9 +31,9 @@ namespace CSFundamentals.Algorithms.PatternSearch
         /// Implements RabinKarp search algorithm, which is an improvement on NaiveSearch, using hashing.
         /// Hashing plays a crucial role in optimizing search time. Rolling hash methods are preferred, and the ones with the minimum collision. 
         /// </summary>
-        /// <param name= "text">The parent string in which we are searching for a subString.</param>
-        /// <param name= "pattern">The string we want to find in parent string (text).</param>
-        /// <returns>The starting index in text at which subString is found.</returns>
+        /// <param name= "text">The string in which we are searching for <paramref name="pattern"/>.</param>
+        /// <param name= "pattern">The string we want to find in <paramref name="text"/>.</param>
+        /// <returns>The starting index in <paramref name="text"/> starting at which <paramref name="pattern"/> is found.</returns>
         [Algorithm(AlgorithmType.PatternSearch, "RabinKarp")]
         public static int Search(string text, string pattern)
         {
@@ -41,21 +41,21 @@ namespace CSFundamentals.Algorithms.PatternSearch
             int m = pattern.Length;
 
             int hashConstant = RollingHash.ComputeHashConstantForRollingHash(m, PrimeNumber, NumCharacters);
-            int subStringHash = RollingHash.GetHash(pattern, PrimeNumber, NumCharacters); /* This hash is computed only once. Complexity : O(subString.Length)*/
+            int patternHash = RollingHash.GetHash(pattern, PrimeNumber, NumCharacters); /* This hash is computed only once. Complexity : O(subString.Length)*/
 
             if (m > text.Length)
             {
                 return -1;
             }
 
-            string subStringInText = text.Substring(0, m);
-            int subStringInTextHash = RollingHash.GetHash(subStringInText, PrimeNumber, NumCharacters);
+            string patternInText = text.Substring(0, m);
+            int patternInTextHash = RollingHash.GetHash(patternInText, PrimeNumber, NumCharacters);
 
             for (int i = 0; i < n - 1; i++) /* O(text.Length) */
             {
-                if (subStringHash == subStringInTextHash)
+                if (patternHash == patternInTextHash)
                 {
-                    if (pattern == subStringInText) /* This check is necessary as the hash function may have collisions.*/
+                    if (pattern == patternInText) /* This check is necessary as the hash function may have collisions.*/
                     {
                         return i;
                     }
@@ -63,8 +63,8 @@ namespace CSFundamentals.Algorithms.PatternSearch
 
                 if (i < n - m)
                 {
-                    subStringInText = text.Substring(i + 1, m); /* a substring in text, size of subString, starting at index i;*/
-                    subStringInTextHash = RollingHash.GetHashRollingForward(subStringInTextHash, text[i], text[i + m], m, hashConstant, PrimeNumber, NumCharacters); /* O(1) with a rolling hash, otherwise: O(subString.Length) */
+                    patternInText = text.Substring(i + 1, m); /* a substring in text, size of pattern, starting at index i;*/
+                    patternInTextHash = RollingHash.GetHashRollingForward(patternInTextHash, text[i], text[i + m], m, hashConstant, PrimeNumber, NumCharacters); /* O(1) with a rolling hash, otherwise: O(pattern.Length) */
                 }
                 else
                 {
