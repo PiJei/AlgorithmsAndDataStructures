@@ -18,19 +18,18 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Text;
+using CSFundamentals.DataStructures.Trees;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.DataStructures.Trees
 {
     class BTreeNodeTests
     {
-        // TOod
-        // number of children always one bigger than number of keys
-        // and that children count is fixed, limit the list size, ... 
-        // and check the size of the key list and children list, should not excee the limits
-        public bool HasBTreeNodeProperties()
+        public bool HasBTreeNodeProperties<T1, T2>(BTreeNode<T1, T2> node) where T1 : IComparable<T1>
         {
+            Assert.AreEqual(node.KeyValues.Count + 1, node.Children.Count);
+            Assert.IsTrue(node.Children.Count < node.MaxBranchingDegree);
+            Assert.IsTrue(node.KeyValues.Count < node.MaxKeys);
             return true;
         }
     }

@@ -28,8 +28,8 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
         /*
          Properties of B-Tree
-         assert the size property bewteen the key array and children array. 
-         I shuld also somehow make them to correspond to each ther, it is like having left and right children each of them, ... 
+         assert the size property between the key array and children array. 
+         I should also somehow make them to correspond to each other, it is like having left and right children each of them, ... 
          // I could implement them as a set of binary tree nodes, ... sorted set of binary tree nodes, ... what do you say?
 1) All leaves are at same level.
 2) A B-Tree is defined by the term minimum degree ‘t’. The value of t depends upon disk block size.
