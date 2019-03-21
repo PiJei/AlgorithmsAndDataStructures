@@ -40,6 +40,20 @@ namespace CSFundamentals.DataStructures.Trees
             MinKeys = minKeys;
         }
 
+
+        public void InOrderTraversal(BTreeNode<T1, T2> node, List<KeyValuePair<T1, T2>> sortedKeys)
+        {
+            if (node != null)
+            {
+                for (int i = 0; i < node.Children.Count; i++)
+                {
+                    InOrderTraversal(node.Children[i], sortedKeys);
+                    if (i < node.KeyValues.Count)
+                        sortedKeys.Add(node.KeyValues[i]);
+                }
+            }
+        }
+
         public BTreeNode<T1, T2> Search(BTreeNode<T1, T2> root, T1 key)
         {
             throw new NotImplementedException();
