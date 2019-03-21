@@ -19,27 +19,40 @@
 
 using System;
 using System.Collections.Generic;
-using System.Text;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using CSFundamentals.DataStructures.Trees;
 
 namespace CSFundamentalsTests.DataStructures.Trees
 {
-    class BTreeTests
+    [TestClass]
+    public class BTreeTests
     {
+        public bool HasBTreeProperties<T1, T2>(BTreeNode<T1, T2> root) where T1 : IComparable<T1>
+        {
+            List<BTreeNode<T1, T2>> nodes = new List<BTreeNode<T1, T2>>();
+            DFS(root, nodes);
 
-        /*
-         Properties of B-Tree
-         assert the size property between the key array and children array. 
-         I should also somehow make them to correspond to each other, it is like having left and right children each of them, ... 
-         // I could implement them as a set of binary tree nodes, ... sorted set of binary tree nodes, ... what do you say?
-1) All leaves are at same level.
-2) A B-Tree is defined by the term minimum degree ‘t’. The value of t depends upon disk block size.
-3) Every node except root must contain at least t-1 keys. Root may contain minimum 1 key.
-4) All nodes (including root) may contain at most 2t – 1 keys.
-5) Number of children of a node is equal to the number of keys in it plus 1.
-6) All keys of a node are sorted in increasing order. The child between two keys k1 and k2 contains all keys in the range from k1 and k2.
-7) B-Tree grows and shrinks from the root which is unlike Binary Search Tree. Binary Search Trees grow downward and also shrink from downward.
-8) Like other balanced Binary Search Trees, time complexity to search, insert and delete is O(Logn).
-         * 
-         */
-    }
+            /* Checking whether all the nodes are proper BTree nodes. */
+            foreach (BTreeNode<T1, T2> node in nodes)
+            {
+                Assert.IsTrue(BTreeNodeTests.HasBTreeNodeProperties(node));
+            }
+
+            /* Check all the leave nodes are at the same level, or one level apart? */
+
+            return true;
+        }
+
+        /// <summary>
+        /// TODO: How to make this to use the dfs I have in the algorithms? 
+        /// </summary>
+        public void DFS<T1, T2>(BTreeNode<T1, T2> node, List<BTreeNode<T1, T2>> nodes) where T1 : IComparable<T1>
+        {
+            nodes.Add(node);
+            foreach (BTreeNode<T1, T2> n in node.Children)
+            {
+                DFS(n, nodes);
+            }
+        }
+   }
 }

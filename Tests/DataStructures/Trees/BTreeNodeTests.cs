@@ -23,13 +23,33 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.DataStructures.Trees
 {
-    class BTreeNodeTests
+    [TestClass]
+    public class BTreeNodeTests
     {
-        public bool HasBTreeNodeProperties<T1, T2>(BTreeNode<T1, T2> node) where T1 : IComparable<T1>
+        public static bool HasBTreeNodeProperties<T1, T2>(BTreeNode<T1, T2> node) where T1 : IComparable<T1>
         {
+            /* Number of children should always be one bigger than the number of keys. */
             Assert.AreEqual(node.KeyValues.Count + 1, node.Children.Count);
-            Assert.IsTrue(node.Children.Count < node.MaxBranchingDegree);
-            Assert.IsTrue(node.KeyValues.Count < node.MaxKeys);
+
+            /* Number of children of any non-leaf node should be at most MaxBranchingDegree */
+            if (!node.IsLeaf())
+            {
+                Assert.IsTrue(node.Children.Count <= node.MaxBranchingDegree);
+            }
+            Assert.IsTrue(node.KeyValues.Count <= node.MaxKeys);
+
+            /* Every non-root node's key count should be at least MinKeys.*/
+            if (!node.IsRoot())
+            {
+                Assert.IsTrue(node.KeyValues.Count >= node.MinKeys);
+            }
+
+            /* All the keys in a node should be in ascending order.*/
+            for (int i = 0; i < node.KeyValues.Count - 1; i++)
+            {
+                Assert.IsTrue(node.KeyValues[i].Key.CompareTo(node.KeyValues[i + 1].Key) <= 0);
+            }
+
             return true;
         }
     }
