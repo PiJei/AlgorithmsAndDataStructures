@@ -92,29 +92,35 @@ namespace CSFundamentals.DataStructures.Trees
             }
             return false;
         }
-        
-        // TODO
-        /*
-        public int Search(T1 key)
+        //todo: do we need parent?, a link to the sibling? etc, left and right siblings? or just not?
+
+        //TODO: How can  make tis to use the binary search I have implemented in this project?
+        // Expects inclusive indexes, ...
+        public int Search(T1 key, int startIndex, int endIndex)
         {
-            //what about a varient of binary search , such that it either returns the index if it is found, or , or the index of the child of this node that it might be in it, ... 
-            // the simplest obviously is to do a linear search ,,, ifkey gets bigger then 
-            int i = 0;
-            while (i < KeyValues.Count)
+            if (startIndex <= endIndex &&
+                endIndex <= KeyValues.Count - 1 &&
+                KeyValues[startIndex].Key.CompareTo(key) >= 0
+                && KeyValues[endIndex].Key.CompareTo(key) <= 0)
             {
-                if (key.CompareTo(KeyValues[i].Key) > 0)
+                int middleIndex = (startIndex + endIndex) / 2;
+
+                if (KeyValues[middleIndex].Key.CompareTo(key) == 0)
                 {
-                    i++;
+                    return middleIndex;
+                }
+                else if (KeyValues[middleIndex].Key.CompareTo(key) < 0)
+                {
+                    return Search(key, startIndex, middleIndex - 1);
+                }
+                else if (KeyValues[middleIndex].Key.CompareTo(key) > 0)
+                {
+                    return Search(key, middleIndex + 1, endIndex);
                 }
             }
-            if (i == KeyValues.Count)
-            {
-                return Children.Count - 1; // the index of the child that should be searched at.
-            }
-            if (KeyValues[i].Key.CompareTo(key) == 0)
-            {
-                return i;
-            }
-        }*/
+
+            return -1;
+        }
+
     }
 }

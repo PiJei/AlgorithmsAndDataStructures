@@ -19,7 +19,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CSFundamentals.DataStructures.Trees
 {
@@ -40,7 +39,51 @@ namespace CSFundamentals.DataStructures.Trees
             MinKeys = minKeys;
         }
 
+        public bool Insert(BTreeNode<T1, T2> root, T1 key)
+        {
+            // shoudll first implement insert, it can not work like this, ... 
+        }
 
+        // TODO: Test 
+        /// <summary>
+        ///  search seems to be logK in logN....uses binary search within each node.... could we call the search in the node here?  
+        /// </summary>
+        /// <param name="root"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public BTreeNode<T1, T2> Search(BTreeNode<T1, T2> root, T1 key)
+        {
+            if (root != null)
+            {
+                int startIndex = 0;
+                int endIndex = root.KeyValues.Count - 1;
+                while (startIndex <= endIndex)
+                {
+                    int middleIndex = (startIndex + endIndex) / 2;
+                    if (root.KeyValues[middleIndex].Key.CompareTo(key) == 0)
+                    {
+                        return root;
+                    }
+                    else if (root.KeyValues[middleIndex].Key.CompareTo(key) > 0) /* search left-half of the root.*/
+                    {
+                        endIndex = middleIndex - 1;
+                    }
+                    else if (root.KeyValues[middleIndex].Key.CompareTo(key) > 0) /* search right-half of the root. */
+                    {
+                        startIndex = middleIndex + 1;
+                    }
+                }
+                if (startIndex > endIndex)
+                {
+                    return Search(root.Children[startIndex], key); // todo: not sure, ... 
+                }
+            }
+            throw new KeyNotFoundException($"{key.ToString()} is not found in the tree.");
+        }
+
+        // todo: test  for all methods here, .
+        // todo: summary
+        // todo: complexity
         public void InOrderTraversal(BTreeNode<T1, T2> node, List<KeyValuePair<T1, T2>> sortedKeys)
         {
             if (node != null)
@@ -53,38 +96,5 @@ namespace CSFundamentals.DataStructures.Trees
                 }
             }
         }
-
-        public BTreeNode<T1, T2> Search(BTreeNode<T1, T2> root, T1 key)
-        {
-            throw new NotImplementedException();
-            /*if (key.CompareTo(root.KeyValues[0].Key) < 0)
-            {
-                return Search(root.Children[0], key);
-            }
-            else if (key.CompareTo(root.KeyValues[root.KeyValues.Count - 1].Key) > 0)
-            {
-                return root.Children[root.KeyValues.Count - 1];
-            }
-            else
-            {
-                int middle = (root.KeyValues.Count - 1) / 2;
-                if (key.CompareTo(root.KeyValues[middle].Key) == 0)
-                {
-                    return root;
-                }
-                else
-                {
-                    // I want to do a binary search over the key values, ... 
-                }
-            }
-            */
-        }
-
-        public List<BTree<T1, T2>> Traverse()
-        {
-            throw new NotImplementedException();
-        }
-
-
     }
 }
