@@ -102,6 +102,30 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.AreEqual(100, maxKey);
         }
 
+        [TestMethod]
+        public void BTreeNode_Compare_Test()
+        {
+
+        }
+
+        [TestMethod]
+        public void BTreeNode_InsertKey_Test()
+        {
+            // TODO
+        }
+
+        [TestMethod]
+        public void BTreeNode_InsertChild_Test()
+        {
+            // TODO
+        }
+
+        [TestMethod]
+        public void BTreeNode_Search_Test()
+        {
+            // TODO
+        }
+
         public static bool HasBTreeNodeProperties<T1, T2>(BTreeNode<T1, T2> node) where T1 : IComparable<T1>
         {
             /* Number of children should always be one bigger than the number of keys. */
