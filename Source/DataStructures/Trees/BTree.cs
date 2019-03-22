@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CSFundamentals.DataStructures.Trees
 {
@@ -41,7 +42,8 @@ namespace CSFundamentals.DataStructures.Trees
 
         public bool Insert(BTreeNode<T1, T2> root, T1 key)
         {
-            // shoudll first implement insert, it can not work like this, ... 
+            // should first implement insert, it can not work like this, ... 
+            throw new NotImplementedException();
         }
 
         // TODO: Test 
@@ -60,22 +62,22 @@ namespace CSFundamentals.DataStructures.Trees
                 while (startIndex <= endIndex)
                 {
                     int middleIndex = (startIndex + endIndex) / 2;
-                    if (root.KeyValues[middleIndex].Key.CompareTo(key) == 0)
+                    if (root.KeyValues.Keys[middleIndex].CompareTo(key) == 0)
                     {
                         return root;
                     }
-                    else if (root.KeyValues[middleIndex].Key.CompareTo(key) > 0) /* search left-half of the root.*/
+                    else if (root.KeyValues.Keys[middleIndex].CompareTo(key) > 0) /* search left-half of the root.*/
                     {
                         endIndex = middleIndex - 1;
                     }
-                    else if (root.KeyValues[middleIndex].Key.CompareTo(key) > 0) /* search right-half of the root. */
+                    else if (root.KeyValues.Keys[middleIndex].CompareTo(key) > 0) /* search right-half of the root. */
                     {
                         startIndex = middleIndex + 1;
                     }
                 }
                 if (startIndex > endIndex)
                 {
-                    return Search(root.Children[startIndex], key); // todo: not sure, ... 
+                    return Search(root.Children.Keys[startIndex], key); // todo: not sure, ... 
                 }
             }
             throw new KeyNotFoundException($"{key.ToString()} is not found in the tree.");
@@ -90,9 +92,9 @@ namespace CSFundamentals.DataStructures.Trees
             {
                 for (int i = 0; i < node.Children.Count; i++)
                 {
-                    InOrderTraversal(node.Children[i], sortedKeys);
+                    InOrderTraversal(node.Children.Keys[i], sortedKeys);
                     if (i < node.KeyValues.Count)
-                        sortedKeys.Add(node.KeyValues[i]);
+                        sortedKeys.Add(node.KeyValues.ElementAt(i));
                 }
             }
         }

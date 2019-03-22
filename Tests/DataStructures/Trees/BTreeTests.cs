@@ -49,9 +49,9 @@ namespace CSFundamentalsTests.DataStructures.Trees
         public void DFS<T1, T2>(BTreeNode<T1, T2> node, List<BTreeNode<T1, T2>> nodes) where T1 : IComparable<T1>
         {
             nodes.Add(node);
-            foreach (BTreeNode<T1, T2> n in node.Children)
+            foreach (KeyValuePair<BTreeNode<T1, T2>, bool> n in node.Children)
             {
-                DFS(n, nodes);
+                DFS(n.Key, nodes);
             }
         }
    }

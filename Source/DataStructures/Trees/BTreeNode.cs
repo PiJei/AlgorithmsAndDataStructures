@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CSFundamentals.DataStructures.Trees
 {
@@ -27,7 +28,7 @@ namespace CSFundamentals.DataStructures.Trees
     /// </summary>
     /// <typeparam name="T1">Is the type of the keys in the tree. </typeparam>
     /// <typeparam name="T2">Is the type of the values in the tree. </typeparam>
-    public class BTreeNode<T1, T2> where T1 : IComparable<T1>
+    public class BTreeNode<T1, T2> : IComparer<BTreeNode<T1, T2>> where T1 : IComparable<T1>
     {
         /// <summary>
         /// Is the minimum number of keys in a B-tree internal/leaf node. (Notice that a root has no lower bound on the number of keys. Intuitively when the tree is just being built it might start with 1, and grow afterwards.)
@@ -49,25 +50,32 @@ namespace CSFundamentals.DataStructures.Trees
         /// </summary>
         public int MaxBranchingDegree { get; private set; }
 
-        public List<KeyValuePair<T1, T2>> KeyValues { get; private set; }
+        // TODO: Because of splits and merges, I feel the best way is to have these two lists as linked lists
+        // TODO: Shall i implement a sorted list myself? as a data structure here? 
+        public SortedList<T1, T2> KeyValues { get; private set; }
 
-        public List<BTreeNode<T1, T2>> Children { get; private set; }
+        public SortedList<BTreeNode<T1, T2>, bool> Children { get; private set; }
 
         /// <summary>
         /// Is the parent of the current node.
         /// </summary>
         public BTreeNode<T1, T2> Parent = null;
 
-        public BTreeNode(int minKeys)
-        {
-            MinKeys = minKeys;
-            MaxKeys = 2 * minKeys;
-            MinBranchingDegree = minKeys + 1;
-            MaxBranchingDegree = MaxKeys + 1;
-            KeyValues = new List<KeyValuePair<T1, T2>>(MaxKeys);
-            Children = new List<BTreeNode<T1, T2>>(MaxBranchingDegree);
-        }
+        /// <summary>
+        /// Is the index of this node in its parent's children list. 
+        /// </summary>
+        public int IndexAtParentChildren = -1;
 
+        public BTreeNode(int maxBranchingDegree)
+        {
+            MaxBranchingDegree = maxBranchingDegree;
+            MinBranchingDegree = Convert.ToInt32(Math.Ceiling(Math.Round(MaxBranchingDegree / (double)2, MidpointRounding.AwayFromZero)));
+            MinKeys = MinBranchingDegree - 1;
+            MaxKeys = MaxBranchingDegree - 1;
+
+            KeyValues = new SortedList<T1, T2>();
+            Children = new SortedList<BTreeNode<T1, T2>, bool>();
+        }
 
         /// <summary>
         /// Checks whether the current node is leaf. A node is leaf if it has no children. 
@@ -92,6 +100,25 @@ namespace CSFundamentals.DataStructures.Trees
             }
             return false;
         }
+
+        /// <summary>
+        /// Detects whether the node is full. A node is full, if it has MaxKeys keys. 
+        /// </summary>
+        /// <returns></returns>
+        public bool IsFull()
+        {
+            return KeyValues.Count == MaxKeys;
+        }
+
+        /// <summary>
+        /// Detects whether the node has overflown. A node is overflown, if its key count exceeds MaxKeys. 
+        /// </summary>
+        /// <returns></returns>
+        public bool HasOverFlown()
+        {
+            return KeyValues.Count > MaxKeys;
+        }
+
         //todo: do we need parent?, a link to the sibling? etc, left and right siblings? or just not?
 
         //TODO: How can  make tis to use the binary search I have implemented in this project?
@@ -100,20 +127,20 @@ namespace CSFundamentals.DataStructures.Trees
         {
             if (startIndex <= endIndex &&
                 endIndex <= KeyValues.Count - 1 &&
-                KeyValues[startIndex].Key.CompareTo(key) >= 0
-                && KeyValues[endIndex].Key.CompareTo(key) <= 0)
+                KeyValues.Keys[startIndex].CompareTo(key) >= 0
+                && KeyValues.Keys[endIndex].CompareTo(key) <= 0)
             {
                 int middleIndex = (startIndex + endIndex) / 2;
 
-                if (KeyValues[middleIndex].Key.CompareTo(key) == 0)
+                if (KeyValues.Keys[middleIndex].CompareTo(key) == 0)
                 {
                     return middleIndex;
                 }
-                else if (KeyValues[middleIndex].Key.CompareTo(key) < 0)
+                else if (KeyValues.Keys[middleIndex].CompareTo(key) < 0)
                 {
                     return Search(key, startIndex, middleIndex - 1);
                 }
-                else if (KeyValues[middleIndex].Key.CompareTo(key) > 0)
+                else if (KeyValues.Keys[middleIndex].CompareTo(key) > 0)
                 {
                     return Search(key, middleIndex + 1, endIndex);
                 }
@@ -122,5 +149,95 @@ namespace CSFundamentals.DataStructures.Trees
             return -1;
         }
 
+        // TODO: Test
+        public void InsertKey(T1 key, T2 value)
+        {
+            /* Notice that key-values are sorted, so should insert the new key at right location */
+            KeyValues.Add(key, value);
+            //TODO: Should perhaps stop or alert when overflown, out of capacity!
+        }
+
+        // TODO: Test
+        public void InsertChild(BTreeNode<T1, T2> child)
+        {
+            Children.Add(child, true); /* will be added on its correct position based on the Compare() method*/
+            child.Parent = this;
+            child.IndexAtParentChildren = Children.IndexOfKey(child);
+            //TODO: Should stop when out of capacity... need a strategy here, ...
+        }
+
+        // TODO: Test
+        public bool GetMinKey(out T1 minKey)
+        {
+            if (KeyValues.Keys.Any())
+            {
+                minKey = KeyValues.Keys[0];
+                return true;
+            }
+            minKey = default(T1);
+            return false;
+        }
+
+        //TODO: Test
+        public bool GetMaxKey(out T1 maxKey)
+        {
+            if (KeyValues.Keys.Any())
+            {
+                maxKey = KeyValues.Keys[KeyValues.Count - 1];
+                return true;
+            }
+            maxKey = default(T1);
+            return false;
+        }
+
+        // TODO: Test
+        public int Compare(BTreeNode<T1, T2> x, BTreeNode<T1, T2> y)
+        {
+            if (x == null && y == null)
+            {
+                return 0;
+            }
+            if (y == null)
+            {
+                return 1;
+
+            }
+            if (x == null)
+            {
+                return -1;
+            }
+
+            bool resultX = x.GetMinKey(out T1 minKeyX);
+            bool resultY = y.GetMinKey(out T1 minKeyY);
+
+            if (!resultX && !resultY)
+            {
+                return 0;
+            }
+
+            if (!resultX)
+            {
+                return -1;
+            }
+
+            if (!resultY)
+            {
+                return 1;
+            }
+
+            if (minKeyX.CompareTo(minKeyY) < 0)
+            {
+                return -1;
+            }
+            else if (minKeyX.CompareTo(minKeyY) == 0)
+            {
+                return 0;
+            }
+            else if (minKeyX.CompareTo(minKeyY) > 0)
+            {
+                return 1;
+            }
+            return -1;
+        }
     }
 }
