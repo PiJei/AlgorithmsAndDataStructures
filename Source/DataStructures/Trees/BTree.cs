@@ -31,18 +31,51 @@ namespace CSFundamentals.DataStructures.Trees
         public BTreeNode<T1, T2> root;
 
         /// <summary>
-        /// Is the minimum number of keys in internal and leaf nodes of this tree. 
+        /// Is the maximum number of children for an internal or root node in this B-Tree. 
         /// </summary>
-        public int MinKeys { get; private set; }
+        public int MaxBranchingDegree { get; private set; }
 
-        public BTree(int minKeys)
+        public BTree(int maxBranchingDegree)
         {
-            MinKeys = minKeys;
+            MaxBranchingDegree = maxBranchingDegree;
         }
 
-        public bool Insert(BTreeNode<T1, T2> root, T1 key)
+        public bool Insert(BTreeNode<T1, T2> root, KeyValuePair<T1, T2> keyValue)
         {
-            // should first implement insert, it can not work like this, ... 
+            if (root == null)
+            {
+                root = new BTreeNode<T1, T2>(MaxBranchingDegree, keyValue);
+                return true;
+            }
+            else
+
+            {
+                // This is a method on its own, ... 
+                // but must first find the leaf node at which to insert the node
+                // this is why the tree is growing from bottom to top... 
+                root.InsertKey(keyValue);
+                if (root.IsOverFlown()) // SOhuld check because the key might have been duplicate and insert did not happen
+                {
+                    // split into 2 nodes, and a new root.  I should have a node.split method which does this:
+
+                    // first half of the keys and children stay to the root (min-keys)
+                    // second half of the keys and children move to sibling (min-keys count)
+                    // take the key in the middle and 
+
+                    // what happens here is a method on its own,,,, Split I would call it, ... 
+                    var siblingKeys = root.KeyValues.TakeLast(root.MinKeys).ToList();
+                    Dictionary<BTreeNode<T1, T2>, bool> siblingChildren = root.Children.TakeLast(root.MinBranchingDegree).ToDictionary(keyVal => keyVal.Key, keyVal => keyVal.Value);
+                    var sibling = new BTreeNode<T1, T2>(MaxBranchingDegree, siblingKeys, siblingChildren.Keys.ToList());
+
+                    // todo: also change the method signatures so that i can pass ienumerables, etc, or a sorted list
+                    // what is the difference between sorted dictionary? ... why not to use the dictionary now? ... 
+                    // delete sibling keys from the node
+                    //Delet sibling children from node
+                    // insert  node's last key to parent : which means call this method again and again
+
+                }
+            }
+
             throw new NotImplementedException();
         }
 

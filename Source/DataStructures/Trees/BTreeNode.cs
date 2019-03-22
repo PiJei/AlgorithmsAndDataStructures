@@ -67,6 +67,28 @@ namespace CSFundamentals.DataStructures.Trees
 
         public BTreeNode(int maxBranchingDegree)
         {
+            Init(maxBranchingDegree);
+        }
+
+        public BTreeNode(int maxBranchingDegree, KeyValuePair<T1, T2> keyValue) : this(maxBranchingDegree)
+        {
+            InsertKey(keyValue);
+        }
+
+        public BTreeNode(int maxBranchingDegree, List<KeyValuePair<T1, T2>> keyValues, List<BTreeNode<T1,T2>> children) : this(maxBranchingDegree)
+        {
+            foreach (var keyVal in keyValues)
+            {
+                InsertKey(keyVal);
+            }
+            foreach(var node in children)
+            {
+                InsertChild(node);
+            }
+        }
+
+        private void Init(int maxBranchingDegree)
+        {
             MaxBranchingDegree = maxBranchingDegree;
             MinBranchingDegree = Convert.ToInt32(Math.Ceiling(Math.Round(MaxBranchingDegree / (double)2, MidpointRounding.AwayFromZero)));
             MinKeys = MinBranchingDegree - 1;
@@ -113,7 +135,7 @@ namespace CSFundamentals.DataStructures.Trees
         /// Detects whether the node has overflown. A node is overflown, if its key count exceeds MaxKeys. 
         /// </summary>
         /// <returns></returns>
-        public bool HasOverFlown()
+        public bool IsOverFlown()
         {
             return KeyValues.Count > MaxKeys;
         }
@@ -149,10 +171,10 @@ namespace CSFundamentals.DataStructures.Trees
         }
 
         // TODO: Test
-        public void InsertKey(T1 key, T2 value)
+        public void InsertKey(KeyValuePair<T1, T2> keyVal)
         {
             /* Since KeyValues is a sorted list, the new key value pair will be inserted at its correct position. */
-            KeyValues.Add(key, value);
+            KeyValues.Add(keyVal.Key, keyVal.Value);
             //TODO: Should perhaps stop or alert when overflown, out of capacity!
         }
 
@@ -160,7 +182,7 @@ namespace CSFundamentals.DataStructures.Trees
         public void InsertChild(BTreeNode<T1, T2> child)
         {
             /* Since Children is a sorted list, Child will be inserted at its correct position based on the Compare() method, to preserve the ordering. */
-            Children.Add(child, true); 
+            Children.Add(child, true);
             child.Parent = this;
             //TODO: Should stop when out of capacity... need a strategy here, ...
         }

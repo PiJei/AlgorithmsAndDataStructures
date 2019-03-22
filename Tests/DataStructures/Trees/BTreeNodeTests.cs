@@ -18,6 +18,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using CSFundamentals.DataStructures.Trees;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -78,9 +79,9 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.IsFalse(node1.GetMinKey(out _));
 
             /* Testing with 3 keys. */
-            node1.InsertKey(100, "C");
-            node1.InsertKey(10, "A");
-            node1.InsertKey(50, "B");
+            node1.InsertKey(new KeyValuePair<int, string>(100, "C"));
+            node1.InsertKey(new KeyValuePair<int, string>(10, "A"));
+            node1.InsertKey(new KeyValuePair<int, string>(50, "B"));
 
             Assert.IsTrue(node1.GetMinKey(out int minKey));
             Assert.AreEqual(10, minKey);
@@ -94,9 +95,9 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.IsFalse(node1.GetMaxKey(out _));
 
             /* Testing with 3 keys. */
-            node1.InsertKey(100, "C");
-            node1.InsertKey(10, "A");
-            node1.InsertKey(50, "B");
+            node1.InsertKey(new KeyValuePair<int, string>(100, "C"));
+            node1.InsertKey(new KeyValuePair<int, string>(10, "A"));
+            node1.InsertKey(new KeyValuePair<int, string>(50, "B"));
 
             Assert.IsTrue(node1.GetMaxKey(out int maxKey));
             Assert.AreEqual(100, maxKey);
@@ -114,14 +115,14 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.AreEqual(0, node1.CompareTo(node2));
 
             /* Testing comparison of a not-empty node to an empty-node */
-            node1.InsertKey(10, "A");
+            node1.InsertKey(new KeyValuePair<int, string>(10, "A"));
             Assert.AreEqual(1, node1.CompareTo(node2));
 
             /* Testing comparison of a 2 non-empty nodes. */
-            node2.InsertKey(50, "B2");
+            node2.InsertKey(new KeyValuePair<int, string>(50, "B2"));
             Assert.AreEqual(-1, node1.CompareTo(node2));
 
-            node2.InsertKey(10, "A2");
+            node2.InsertKey(new KeyValuePair<int, string>(10, "A2"));
             Assert.AreEqual(0, node1.CompareTo(node2)); /* Notice that in a B-Tree node we do not expect two children to have the same min key. Thus this comparison of these two nodes should be true to prevent inserting oen of them in the tree.*/
         }
 
@@ -130,9 +131,9 @@ namespace CSFundamentalsTests.DataStructures.Trees
         {
             var node1 = new BTreeNode<int, string>(3);
 
-            node1.InsertKey(50, "B");
-            node1.InsertKey(100, "C");
-            node1.InsertKey(10, "A");
+            node1.InsertKey(new KeyValuePair<int, string>(50, "B"));
+            node1.InsertKey(new KeyValuePair<int, string>(100, "C"));
+            node1.InsertKey(new KeyValuePair<int, string>(10, "A"));
 
             Assert.AreEqual(0, node1.KeyValues.IndexOfKey(10));
             Assert.AreEqual(1, node1.KeyValues.IndexOfKey(50));
@@ -145,8 +146,8 @@ namespace CSFundamentalsTests.DataStructures.Trees
         {
             var node1 = new BTreeNode<int, string>(3);
 
-            node1.InsertKey(10, "A");
-            node1.InsertKey(10, "B");
+            node1.InsertKey(new KeyValuePair<int, string>(10, "A"));
+            node1.InsertKey(new KeyValuePair<int, string>(10, "B"));
         }
 
         [TestMethod]
@@ -154,18 +155,18 @@ namespace CSFundamentalsTests.DataStructures.Trees
         {
             var node1 = new BTreeNode<int, string>(3);
 
-            node1.InsertKey(10, "A");
-            node1.InsertKey(50, "B");
-            node1.InsertKey(100, "C");
+            node1.InsertKey(new KeyValuePair<int, string>(10, "A"));
+            node1.InsertKey(new KeyValuePair<int, string>(50, "B"));
+            node1.InsertKey(new KeyValuePair<int, string>(100, "C"));
 
             var child1 = new BTreeNode<int, string>(3);
-            child1.InsertKey(5, "D");
-            child1.InsertKey(9, "E");
+            child1.InsertKey(new KeyValuePair<int, string>(5, "D"));
+            child1.InsertKey(new KeyValuePair<int, string>(9, "E"));
 
 
             var child2 = new BTreeNode<int, string>(3);
-            child2.InsertKey(55, "F");
-            child2.InsertKey(70, "G");
+            child2.InsertKey(new KeyValuePair<int, string>(55, "F"));
+            child2.InsertKey(new KeyValuePair<int, string>(70, "G"));
 
             node1.InsertChild(child2);
             node1.InsertChild(child1);
@@ -184,18 +185,18 @@ namespace CSFundamentalsTests.DataStructures.Trees
         {
             var node1 = new BTreeNode<int, string>(3);
 
-            node1.InsertKey(10, "A");
-            node1.InsertKey(50, "B");
-            node1.InsertKey(100, "C");
+            node1.InsertKey(new KeyValuePair<int, string>(10, "A"));
+            node1.InsertKey(new KeyValuePair<int, string>(50, "B"));
+            node1.InsertKey(new KeyValuePair<int, string>(100, "C"));
 
             var child1 = new BTreeNode<int, string>(3);
-            child1.InsertKey(5, "D");
-            child1.InsertKey(9, "E");
+            child1.InsertKey(new KeyValuePair<int, string>(5, "D"));
+            child1.InsertKey(new KeyValuePair<int, string>(9, "E"));
 
 
             var child2 = new BTreeNode<int, string>(3);
-            child2.InsertKey(55, "F");
-            child2.InsertKey(70, "G");
+            child2.InsertKey(new KeyValuePair<int, string>(55, "F"));
+            child2.InsertKey(new KeyValuePair<int, string>(70, "G"));
 
             node1.InsertChild(child1);
             node1.InsertChild(child1);
@@ -205,6 +206,51 @@ namespace CSFundamentalsTests.DataStructures.Trees
         public void BTreeNode_Search_Test()
         {
             // TODO
+        }
+
+        [TestMethod]
+        public void BTreeNode_IsOverFlown_Test()
+        {
+            var node = new BTreeNode<int, string>(3);
+            Assert.IsFalse(node.IsOverFlown());
+
+            node.InsertKey(new KeyValuePair<int, string>(10, "A"));
+            Assert.AreEqual(1, node.KeyValues.Count);
+            Assert.IsFalse(node.IsOverFlown());
+
+            /* Testing with duplicate keys with the same value */
+            try
+            {
+                node.InsertKey(new KeyValuePair<int, string>(10, "A"));
+                Assert.Fail();
+            }
+            catch (ArgumentException)
+            {
+                // Expected path. 
+            }
+            Assert.AreEqual(1, node.KeyValues.Count);
+            Assert.IsFalse(node.IsOverFlown());
+
+            /* Testing with duplicate keys with different values */
+            try
+            {
+                node.InsertKey(new KeyValuePair<int, string>(10, "B"));
+                Assert.Fail();
+            }
+            catch (ArgumentException)
+            {
+                //Expected path. 
+            }
+            Assert.AreEqual(1, node.KeyValues.Count);
+            Assert.IsFalse(node.IsOverFlown());
+
+            node.InsertKey(new KeyValuePair<int, string>(20, "C"));
+            Assert.AreEqual(2, node.KeyValues.Count);
+            Assert.IsFalse(node.IsOverFlown());
+
+            node.InsertKey(new KeyValuePair<int, string>(30, "C"));
+            Assert.AreEqual(3, node.KeyValues.Count);
+            Assert.IsTrue(node.IsOverFlown());
         }
 
         public static bool HasBTreeNodeProperties<T1, T2>(BTreeNode<T1, T2> node) where T1 : IComparable<T1>
