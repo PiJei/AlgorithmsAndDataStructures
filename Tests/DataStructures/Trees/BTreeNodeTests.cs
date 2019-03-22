@@ -105,19 +105,100 @@ namespace CSFundamentalsTests.DataStructures.Trees
         [TestMethod]
         public void BTreeNode_Compare_Test()
         {
+            /* Testing comparison to a null other node.*/
+            var node1 = new BTreeNode<int, string>(3);
+            Assert.AreEqual(1, node1.CompareTo(null));
 
+            /* Testing comparison of 2 empty nodes. */
+            var node2 = new BTreeNode<int, string>(3);
+            Assert.AreEqual(0, node1.CompareTo(node2));
+
+            /* Testing comparison of a not-empty node to an empty-node */
+            node1.InsertKey(10, "A");
+            Assert.AreEqual(1, node1.CompareTo(node2));
+
+            /* Testing comparison of a 2 non-empty nodes. */
+            node2.InsertKey(50, "B2");
+            Assert.AreEqual(-1, node1.CompareTo(node2));
+
+            node2.InsertKey(10, "A2");
+            Assert.AreEqual(0, node1.CompareTo(node2)); /* Notice that in a B-Tree node we do not expect two children to have the same min key. Thus this comparison of these two nodes should be true to prevent inserting oen of them in the tree.*/
         }
 
         [TestMethod]
         public void BTreeNode_InsertKey_Test()
         {
-            // TODO
+            var node1 = new BTreeNode<int, string>(3);
+
+            node1.InsertKey(50, "B");
+            node1.InsertKey(100, "C");
+            node1.InsertKey(10, "A");
+
+            Assert.AreEqual(0, node1.KeyValues.IndexOfKey(10));
+            Assert.AreEqual(1, node1.KeyValues.IndexOfKey(50));
+            Assert.AreEqual(2, node1.KeyValues.IndexOfKey(100));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void BTreeNode_InsertKey_Duplicate_Test()
+        {
+            var node1 = new BTreeNode<int, string>(3);
+
+            node1.InsertKey(10, "A");
+            node1.InsertKey(10, "B");
         }
 
         [TestMethod]
         public void BTreeNode_InsertChild_Test()
         {
-            // TODO
+            var node1 = new BTreeNode<int, string>(3);
+
+            node1.InsertKey(10, "A");
+            node1.InsertKey(50, "B");
+            node1.InsertKey(100, "C");
+
+            var child1 = new BTreeNode<int, string>(3);
+            child1.InsertKey(5, "D");
+            child1.InsertKey(9, "E");
+
+
+            var child2 = new BTreeNode<int, string>(3);
+            child2.InsertKey(55, "F");
+            child2.InsertKey(70, "G");
+
+            node1.InsertChild(child2);
+            node1.InsertChild(child1);
+
+            Assert.IsTrue(ReferenceEquals(node1, child1.Parent));
+            Assert.IsTrue(ReferenceEquals(node1, child2.Parent));
+
+            Assert.AreEqual(0, node1.Children.IndexOfKey(child1));
+            Assert.AreEqual(1, node1.Children.IndexOfKey(child2));
+        }
+
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void BTreeNode_InsertChild_Duplicate_Test()
+        {
+            var node1 = new BTreeNode<int, string>(3);
+
+            node1.InsertKey(10, "A");
+            node1.InsertKey(50, "B");
+            node1.InsertKey(100, "C");
+
+            var child1 = new BTreeNode<int, string>(3);
+            child1.InsertKey(5, "D");
+            child1.InsertKey(9, "E");
+
+
+            var child2 = new BTreeNode<int, string>(3);
+            child2.InsertKey(55, "F");
+            child2.InsertKey(70, "G");
+
+            node1.InsertChild(child1);
+            node1.InsertChild(child1);
         }
 
         [TestMethod]
@@ -170,10 +251,11 @@ namespace CSFundamentalsTests.DataStructures.Trees
                 bool hasMaxKey = node.GetMaxKey(out T1 maxKey);
                 Assert.IsTrue(hasMinKey);
                 Assert.IsTrue(hasMaxKey);
+                int indexAtParentChildren = node.Parent.Children.IndexOfKey(node);
 
-                if (node.IndexAtParentChildren > 0)
-                    Assert.IsTrue(minKey.CompareTo(node.Parent.KeyValues.Keys[node.IndexAtParentChildren - 1]) > 0);
-                Assert.IsTrue(maxKey.CompareTo(node.Parent.KeyValues.Keys[node.IndexAtParentChildren]) < 0);
+                if (indexAtParentChildren > 0)
+                    Assert.IsTrue(minKey.CompareTo(node.Parent.KeyValues.Keys[indexAtParentChildren - 1]) > 0);
+                Assert.IsTrue(maxKey.CompareTo(node.Parent.KeyValues.Keys[indexAtParentChildren]) < 0);
             }
 
             return true;

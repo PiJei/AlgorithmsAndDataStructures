@@ -28,7 +28,7 @@ namespace CSFundamentals.DataStructures.Trees
     /// </summary>
     /// <typeparam name="T1">Is the type of the keys in the tree. </typeparam>
     /// <typeparam name="T2">Is the type of the values in the tree. </typeparam>
-    public class BTreeNode<T1, T2> : IComparer<BTreeNode<T1, T2>> where T1 : IComparable<T1>
+    public class BTreeNode<T1, T2> : IComparable<BTreeNode<T1, T2>> where T1 : IComparable<T1>
     {
         /// <summary>
         /// Is the minimum number of keys in a B-tree internal/leaf node. (Notice that a root has no lower bound on the number of keys. Intuitively when the tree is just being built it might start with 1, and grow afterwards.)
@@ -52,6 +52,10 @@ namespace CSFundamentals.DataStructures.Trees
 
         // TODO: Because of splits and merges, I feel the best way is to have these two lists as linked lists
         // TODO: Shall i implement a sorted list myself? as a data structure here? 
+        /// <summary>
+        /// 
+        /// Notice that SortedList does not allow duplicates. 
+        /// </summary>
         public SortedList<T1, T2> KeyValues { get; private set; }
 
         public SortedList<BTreeNode<T1, T2>, bool> Children { get; private set; }
@@ -60,11 +64,6 @@ namespace CSFundamentals.DataStructures.Trees
         /// Is the parent of the current node.
         /// </summary>
         public BTreeNode<T1, T2> Parent = null;
-
-        /// <summary>
-        /// Is the index of this node in its parent's children list. 
-        /// </summary>
-        public int IndexAtParentChildren = -1;
 
         public BTreeNode(int maxBranchingDegree)
         {
@@ -152,7 +151,7 @@ namespace CSFundamentals.DataStructures.Trees
         // TODO: Test
         public void InsertKey(T1 key, T2 value)
         {
-            /* Notice that key-values are sorted, so should insert the new key at right location */
+            /* Since KeyValues is a sorted list, the new key value pair will be inserted at its correct position. */
             KeyValues.Add(key, value);
             //TODO: Should perhaps stop or alert when overflown, out of capacity!
         }
@@ -160,9 +159,9 @@ namespace CSFundamentals.DataStructures.Trees
         // TODO: Test
         public void InsertChild(BTreeNode<T1, T2> child)
         {
-            Children.Add(child, true); /* will be added on its correct position based on the Compare() method*/
+            /* Since Children is a sorted list, Child will be inserted at its correct position based on the Compare() method, to preserve the ordering. */
+            Children.Add(child, true); 
             child.Parent = this;
-            child.IndexAtParentChildren = Children.IndexOfKey(child);
             //TODO: Should stop when out of capacity... need a strategy here, ...
         }
 
@@ -190,50 +189,44 @@ namespace CSFundamentals.DataStructures.Trees
             return false;
         }
 
-        // TODO: Test
-        public int Compare(BTreeNode<T1, T2> x, BTreeNode<T1, T2> y)
+        // todo; summaries
+        //todo; complexites
+        //todo: somehow should not allow comparisons to nodes with other degrees, ... how can degree be considered, ...?
+        // i want a not-applicable node, some what, ..write a test for it as well.. 
+        public int CompareTo(BTreeNode<T1, T2> other)
         {
-            if (x == null && y == null)
-            {
-                return 0;
-            }
-            if (y == null)
-            {
-                return 1;
-
-            }
-            if (x == null)
-            {
-                return -1;
-            }
-
-            bool resultX = x.GetMinKey(out T1 minKeyX);
-            bool resultY = y.GetMinKey(out T1 minKeyY);
-
-            if (!resultX && !resultY)
-            {
-                return 0;
-            }
-
-            if (!resultX)
-            {
-                return -1;
-            }
-
-            if (!resultY)
+            if (other == null)
             {
                 return 1;
             }
 
-            if (minKeyX.CompareTo(minKeyY) < 0)
-            {
-                return -1;
-            }
-            else if (minKeyX.CompareTo(minKeyY) == 0)
+            bool resultThis = GetMinKey(out T1 minKeyThis);
+            bool resultOther = other.GetMinKey(out T1 minKeyOther);
+
+            if (!resultThis && !resultOther)
             {
                 return 0;
             }
-            else if (minKeyX.CompareTo(minKeyY) > 0)
+
+            if (!resultThis)
+            {
+                return -1;
+            }
+
+            if (!resultOther)
+            {
+                return 1;
+            }
+
+            if (minKeyThis.CompareTo(minKeyOther) < 0)
+            {
+                return -1;
+            }
+            else if (minKeyThis.CompareTo(minKeyOther) == 0)
+            {
+                return 0;
+            }
+            else if (minKeyThis.CompareTo(minKeyOther) > 0)
             {
                 return 1;
             }
