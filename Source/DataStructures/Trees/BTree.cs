@@ -43,25 +43,29 @@ namespace CSFundamentals.DataStructures.Trees
             MaxBranchingDegree = maxBranchingDegree;
         }
 
-        public BTreeNode<T1, T2> Insert(BTreeNode<T1, T2> root, KeyValuePair<T1, T2> keyValue)
+        /// <summary>
+        /// Inserts a new key-value pair in the tree and returns root of the tree. 
+        /// </summary>
+        /// <param name="keyValue">Is the key-value pair to be inserted in the tree. </param>
+        /// <returns>Root of the tree. </returns>
+        public BTreeNode<T1, T2> Insert(KeyValuePair<T1, T2> keyValue)
         {
-            if (root == null)
+            BTreeNode<T1, T2> leaf = FindLeaf(Root, keyValue.Key);
+            if (leaf == null) /* Means this is the first element of the tree, and we should create root. */
             {
-                root = new BTreeNode<T1, T2>(MaxBranchingDegree, keyValue);
-                return root;
+                Root = new BTreeNode<T1, T2>(MaxBranchingDegree, keyValue);
+                return Root;
             }
             else
             {
-                // This is a method on its own, ... 
-                // but must first find the leaf node at which to insert the node
-                // this is why the tree is growing from bottom to top... 
-                root.InsertKey(keyValue);
-                Split(root);
+                leaf.InsertKey(keyValue);
+                Split(leaf);
             }
 
             return Root;
         }
 
+        //TODO: Test and complexity, ... 
         internal void Split(BTreeNode<T1, T2> node)
         {
             while (node.IsOverFlown())
@@ -82,6 +86,33 @@ namespace CSFundamentals.DataStructures.Trees
                     node.Parent.InsertKey(keyToMoveToParent);
                     node.Parent.InsertChild(sibling);
                     node = node.Parent; /* Repeat while loop with the parent node that might itself be overflown now after inserting a new key.*/
+                }
+            }
+        }
+
+        // TODO: Test
+        internal BTreeNode<T1, T2> FindLeaf(BTreeNode<T1, T2> root, T1 key)
+        {
+            if (Root == null)
+            {
+                return Root;
+            }
+            else
+            {
+                if (root.IsLeaf())
+                {
+                    return root;
+                }
+                for (int i = 0; i < root.KeyValues.Count; i++)
+                {
+                    if (key.CompareTo(root.KeyValues.Keys[i]) < 0)
+                    {
+                        return FindLeaf(root.Children.ElementAt(i).Key, key);
+                    }
+                    else
+                    {
+                        return FindLeaf(root.Children.ElementAt(i + 1).Key, key);
+                    }
                 }
             }
         }
