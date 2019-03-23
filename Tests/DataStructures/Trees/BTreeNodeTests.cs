@@ -141,13 +141,14 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
         public void BTreeNode_InsertKey_Duplicate_Test()
         {
-            var node1 = new BTreeNode<int, string>(3);
+            var node = new BTreeNode<int, string>(3);
 
-            node1.InsertKey(new KeyValuePair<int, string>(10, "A"));
-            node1.InsertKey(new KeyValuePair<int, string>(10, "B"));
+            node.InsertKey(new KeyValuePair<int, string>(10, "A"));
+            Assert.AreEqual(1, node.KeyValues.Count);
+            node.InsertKey(new KeyValuePair<int, string>(10, "B"));
+            Assert.AreEqual(1, node.KeyValues.Count);
         }
 
         [TestMethod]
@@ -270,28 +271,13 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.IsFalse(node.IsOverFlown());
 
             /* Testing with duplicate keys with the same value */
-            try
-            {
-                node.InsertKey(new KeyValuePair<int, string>(10, "A"));
-                Assert.Fail();
-            }
-            catch (ArgumentException)
-            {
-                // Expected path. 
-            }
+            node.InsertKey(new KeyValuePair<int, string>(10, "A"));
+
             Assert.AreEqual(1, node.KeyValues.Count);
             Assert.IsFalse(node.IsOverFlown());
 
-            /* Testing with duplicate keys with different values */
-            try
-            {
-                node.InsertKey(new KeyValuePair<int, string>(10, "B"));
-                Assert.Fail();
-            }
-            catch (ArgumentException)
-            {
-                //Expected path. 
-            }
+            node.InsertKey(new KeyValuePair<int, string>(10, "B"));
+
             Assert.AreEqual(1, node.KeyValues.Count);
             Assert.IsFalse(node.IsOverFlown());
 
