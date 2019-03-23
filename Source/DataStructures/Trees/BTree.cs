@@ -20,6 +20,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("CSFundamentals")]
 
 namespace CSFundamentals.DataStructures.Trees
 {
@@ -28,7 +31,7 @@ namespace CSFundamentals.DataStructures.Trees
         /// <summary>
         /// Is the root of the tree. 
         /// </summary>
-        public BTreeNode<T1, T2> root;
+        public BTreeNode<T1, T2> Root = null;
 
         /// <summary>
         /// Is the maximum number of children for an internal or root node in this B-Tree. 
@@ -40,43 +43,47 @@ namespace CSFundamentals.DataStructures.Trees
             MaxBranchingDegree = maxBranchingDegree;
         }
 
-        public bool Insert(BTreeNode<T1, T2> root, KeyValuePair<T1, T2> keyValue)
+        public BTreeNode<T1, T2> Insert(BTreeNode<T1, T2> root, KeyValuePair<T1, T2> keyValue)
         {
             if (root == null)
             {
                 root = new BTreeNode<T1, T2>(MaxBranchingDegree, keyValue);
-                return true;
+                return root;
             }
             else
-
             {
                 // This is a method on its own, ... 
                 // but must first find the leaf node at which to insert the node
                 // this is why the tree is growing from bottom to top... 
                 root.InsertKey(keyValue);
-                if (root.IsOverFlown()) // SOhuld check because the key might have been duplicate and insert did not happen
-                {
-                    // split into 2 nodes, and a new root.  I should have a node.split method which does this:
-
-                    // first half of the keys and children stay to the root (min-keys)
-                    // second half of the keys and children move to sibling (min-keys count)
-                    // take the key in the middle and 
-
-                    // what happens here is a method on its own,,,, Split I would call it, ... 
-                    var siblingKeys = root.KeyValues.TakeLast(root.MinKeys).ToList();
-                    Dictionary<BTreeNode<T1, T2>, bool> siblingChildren = root.Children.TakeLast(root.MinBranchingDegree).ToDictionary(keyVal => keyVal.Key, keyVal => keyVal.Value);
-                    var sibling = new BTreeNode<T1, T2>(MaxBranchingDegree, siblingKeys, siblingChildren.Keys.ToList());
-
-                    // todo: also change the method signatures so that i can pass ienumerables, etc, or a sorted list
-                    // what is the difference between sorted dictionary? ... why not to use the dictionary now? ... 
-                    // delete sibling keys from the node
-                    //Delet sibling children from node
-                    // insert  node's last key to parent : which means call this method again and again
-
-                }
+                Split(root);
             }
 
-            throw new NotImplementedException();
+            return Root;
+        }
+
+        internal void Split(BTreeNode<T1, T2> node)
+        {
+            while (node.IsOverFlown())
+            {
+                BTreeNode<T1, T2> sibling = node.Split();
+                KeyValuePair<T1, T2> keyToMoveToParent = node.KeyToMoveUp();
+                node.KeyValues.Remove(keyToMoveToParent.Key);
+
+                if (node.Parent == null) /* Meaning the overflown node is the root. */
+                {
+                    Root = new BTreeNode<T1, T2>(MaxBranchingDegree, keyToMoveToParent); /* Creating a new root for the tree. */
+                    Root.InsertChild(node); /* Notice that this method adjusts node's parent internally. */
+                    Root.InsertChild(sibling);
+                    break;
+                }
+                else
+                {
+                    node.Parent.InsertKey(keyToMoveToParent);
+                    node.Parent.InsertChild(sibling);
+                    node = node.Parent; /* Repeat while loop with the parent node that might itself be overflown now after inserting a new key.*/
+                }
+            }
         }
 
         // TODO: Test 

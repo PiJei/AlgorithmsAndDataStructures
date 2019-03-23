@@ -75,15 +75,15 @@ namespace CSFundamentals.DataStructures.Trees
             InsertKey(keyValue);
         }
 
-        public BTreeNode(int maxBranchingDegree, List<KeyValuePair<T1, T2>> keyValues, List<BTreeNode<T1,T2>> children) : this(maxBranchingDegree)
+        public BTreeNode(int maxBranchingDegree, List<KeyValuePair<T1, T2>> keyValues, List<BTreeNode<T1, T2>> children) : this(maxBranchingDegree)
         {
             foreach (var keyVal in keyValues)
             {
                 InsertKey(keyVal);
             }
-            foreach(var node in children)
+            foreach (BTreeNode<T1, T2> child in children)
             {
-                InsertChild(node);
+                InsertChild(child);
             }
         }
 
@@ -96,6 +96,45 @@ namespace CSFundamentals.DataStructures.Trees
 
             KeyValues = new SortedList<T1, T2>();
             Children = new SortedList<BTreeNode<T1, T2>, bool>();
+        }
+
+        /// <summary>
+        /// Splits this node to 2 nodes if it is overflown. Such that each node have at least MinKeys keys.
+        /// </summary>
+        /// <returns>The new node. </returns>
+        public BTreeNode<T1, T2> Split()
+        {
+            if (IsOverFlown())
+            {
+                /* A valid BtreeNode should at least have MinKey keys.*/
+                List<KeyValuePair<T1, T2>> newNodeKeys = KeyValues.TakeLast(MinKeys).ToList();
+
+                /* A valid non-leaf BTree node with MinKeys should have MinChildren children. */
+                Dictionary<BTreeNode<T1, T2>, bool> newNodeChildren = Children
+                    .TakeLast(MinBranchingDegree)
+                    .ToDictionary(keyVal => keyVal.Key, keyVal => keyVal.Value); 
+
+                /* Remove the last MinKeys from this node.*/
+                foreach (KeyValuePair<T1, T2> keyVal in newNodeKeys)
+                {
+                    KeyValues.Remove(keyVal.Key);
+                }
+
+                /* Remove last MinBranchingFactor children from this node. */
+                foreach (KeyValuePair<BTreeNode<T1, T2>, bool> child in newNodeChildren)
+                {
+                    Children.Remove(child.Key);
+                }
+
+                return new BTreeNode<T1, T2>(MaxBranchingDegree, newNodeKeys, newNodeChildren.Keys.ToList());
+            }
+
+            return null;
+        }
+
+        public KeyValuePair<T1,T2> KeyToMoveUp()
+        {
+            return KeyValues.ElementAt(MinKeys + 1); ;
         }
 
         /// <summary>
@@ -140,7 +179,7 @@ namespace CSFundamentals.DataStructures.Trees
             return KeyValues.Count > MaxKeys;
         }
 
-        //todo: do we need parent?, a link to the sibling? etc, left and right siblings? or just not?
+        //todo: a link to the sibling? etc, left and right siblings? or just not?
 
         //TODO: How can  make tis to use the binary search I have implemented in this project?
         // Expects inclusive indexes, ...
@@ -170,24 +209,20 @@ namespace CSFundamentals.DataStructures.Trees
             return -1;
         }
 
-        // TODO: Test
         public void InsertKey(KeyValuePair<T1, T2> keyVal)
         {
             /* Since KeyValues is a sorted list, the new key value pair will be inserted at its correct position. */
-            KeyValues.Add(keyVal.Key, keyVal.Value);
-            //TODO: Should perhaps stop or alert when overflown, out of capacity!
+            if (!KeyValues.ContainsKey(keyVal.Key)) /* SortedList does not allow for duplicates, yet checking this as otherwise it will throw an exception.*/
+                KeyValues.Add(keyVal.Key, keyVal.Value);
         }
 
-        // TODO: Test
         public void InsertChild(BTreeNode<T1, T2> child)
         {
             /* Since Children is a sorted list, Child will be inserted at its correct position based on the Compare() method, to preserve the ordering. */
             Children.Add(child, true);
             child.Parent = this;
-            //TODO: Should stop when out of capacity... need a strategy here, ...
         }
 
-        // TODO: Test
         public bool GetMinKey(out T1 minKey)
         {
             if (KeyValues.Keys.Any())
@@ -199,7 +234,6 @@ namespace CSFundamentals.DataStructures.Trees
             return false;
         }
 
-        //TODO: Test
         public bool GetMaxKey(out T1 maxKey)
         {
             if (KeyValues.Keys.Any())

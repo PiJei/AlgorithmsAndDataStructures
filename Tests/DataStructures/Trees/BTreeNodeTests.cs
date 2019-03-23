@@ -203,6 +203,57 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
+        public void BTreeNode_Split_Test_NodeWithNoChildren()
+        {
+            BTreeNode<int, string> node = new BTreeNode<int, string>(3);
+            Assert.IsNull(node.Split());
+
+            node.InsertKey(new KeyValuePair<int, string>(100, "C"));
+            Assert.IsNull(node.Split());
+
+            node.InsertKey(new KeyValuePair<int, string>(50, "B"));
+            Assert.IsNull(node.Split());
+
+            node.InsertKey(new KeyValuePair<int, string>(10, "A"));
+            BTreeNode<int, string> newNode = node.Split();
+            Assert.IsTrue(HasBTreeNodeProperties(node));
+            Assert.IsTrue(HasBTreeNodeProperties(newNode));
+            Assert.IsTrue(node.KeyValues.Count == 2);
+            Assert.IsTrue(newNode.KeyValues.Count == 1);
+        }
+
+        [TestMethod]
+        public void BTreeNode_Split_Test_NodeWithChildren()
+        {
+            BTreeNode<int, string> node = new BTreeNode<int, string>(3);
+
+            node.InsertKey(new KeyValuePair<int, string>(20, "A"));
+            node.InsertKey(new KeyValuePair<int, string>(50, "B"));
+            node.InsertKey(new KeyValuePair<int, string>(200, "C"));
+
+            BTreeNode<int, string> child1 = new BTreeNode<int, string>(3);
+            child1.InsertKey(new KeyValuePair<int, string>(10, "D"));
+            node.InsertChild(child1);
+
+            BTreeNode<int, string> child2 = new BTreeNode<int, string>(3);
+            child2.InsertKey(new KeyValuePair<int, string>(30, "E"));
+            node.InsertChild(child2);
+
+            BTreeNode<int, string> child3 = new BTreeNode<int, string>(3);
+            child3.InsertKey(new KeyValuePair<int, string>(100, "F"));
+            node.InsertChild(child3);
+
+            BTreeNode<int, string> child4 = new BTreeNode<int, string>(3);
+            child4.InsertKey(new KeyValuePair<int, string>(300, "G"));
+            node.InsertChild(child4);
+
+            BTreeNode<int, string> newNode = node.Split();
+            /* At this point we do not expect this node to be valid, because the key in the middle has not yet moved up, that step is part of split method in the tree itself and not in the node.*/
+            // HasBTreeNodeProperties(node); 
+            Assert.IsTrue(HasBTreeNodeProperties(newNode));
+        }
+
+        [TestMethod]
         public void BTreeNode_Search_Test()
         {
             // TODO
@@ -255,14 +306,20 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
         public static bool HasBTreeNodeProperties<T1, T2>(BTreeNode<T1, T2> node) where T1 : IComparable<T1>
         {
-            /* Number of children should always be one bigger than the number of keys. */
-            Assert.AreEqual(node.KeyValues.Count + 1, node.Children.Count);
-
             /* Number of children of any non-leaf node should be at most MaxBranchingDegree */
             if (!node.IsLeaf())
             {
                 Assert.IsTrue(node.Children.Count <= node.MaxBranchingDegree);
+
+                /* Number of children should always be one bigger than the number of keys. */
+                Assert.AreEqual(node.KeyValues.Count + 1, node.Children.Count);
             }
+
+            if (!node.IsLeaf())
+            {
+                Assert.IsTrue(node.Children.Count >= node.MinBranchingDegree);
+            }
+
             Assert.IsTrue(node.KeyValues.Count <= node.MaxKeys);
 
             /* Every non-root node's key count should be at least MinKeys.*/
@@ -271,7 +328,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
                 Assert.IsTrue(node.KeyValues.Count >= node.MinKeys);
             }
 
-            /* All the keys in a node should be in ascending order.*/
+            /* All the keys in a node should be sorted in ascending order.*/
             for (int i = 0; i < node.KeyValues.Count - 1; i++)
             {
                 Assert.IsTrue(node.KeyValues.Keys[i].CompareTo(node.KeyValues.Keys[i + 1]) <= 0);
@@ -287,7 +344,8 @@ namespace CSFundamentalsTests.DataStructures.Trees
                 Assert.IsTrue(childHasMaxKey);
                 if (i > 0)
                     Assert.IsTrue(childMinKey.CompareTo(node.KeyValues.Keys[i - 1]) > 0);
-                Assert.IsTrue(childMaxKey.CompareTo(node.KeyValues.Keys[i]) < 0);
+                if (i < node.KeyValues.Count)
+                    Assert.IsTrue(childMaxKey.CompareTo(node.KeyValues.Keys[i]) < 0);
             }
 
             /* Check the key range ordering of the node against its parent. */
