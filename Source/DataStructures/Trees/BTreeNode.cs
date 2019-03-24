@@ -134,7 +134,7 @@ namespace CSFundamentals.DataStructures.Trees
 
         public KeyValuePair<T1,T2> KeyToMoveUp()
         {
-            return KeyValues.ElementAt(MinKeys + 1); ;
+            return KeyValues.ElementAt(MinKeys); /* since the indexes start at 0, this means that the node has MinKeys+1 keys. */
         }
 
         /// <summary>

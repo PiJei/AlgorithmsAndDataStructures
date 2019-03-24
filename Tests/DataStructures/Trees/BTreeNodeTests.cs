@@ -345,7 +345,8 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
                 if (indexAtParentChildren > 0)
                     Assert.IsTrue(minKey.CompareTo(node.Parent.KeyValues.Keys[indexAtParentChildren - 1]) > 0);
-                Assert.IsTrue(maxKey.CompareTo(node.Parent.KeyValues.Keys[indexAtParentChildren]) < 0);
+                if (indexAtParentChildren < node.Parent.KeyValues.Count)
+                    Assert.IsTrue(maxKey.CompareTo(node.Parent.KeyValues.Keys[indexAtParentChildren]) < 0);
             }
 
             return true;
