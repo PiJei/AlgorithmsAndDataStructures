@@ -171,12 +171,21 @@ namespace CSFundamentals.DataStructures.Trees
         }
 
         /// <summary>
-        /// Detects whether the node has overflown. A node is overflown, if its key count exceeds MaxKeys. 
+        /// Detects whether the node is overflown. A node is overflown, if its key count exceeds MaxKeys. 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>True if the node is overflown, and false otherwise. </returns>
         public bool IsOverFlown()
         {
             return KeyValues.Count > MaxKeys;
+        }
+
+        /// <summary>
+        /// Detects whether the node is UnderFlown. A node is UnderFlown, if its key count falls lower than MinKeys.
+        /// </summary>
+        /// <returns>Truce if the node is UnderFlown, and false otherwise. </returns>
+        public bool IsUnderFlown()
+        {
+            return KeyValues.Count < MinKeys;
         }
 
         //todo: a link to the sibling? etc, left and right siblings? or just not?

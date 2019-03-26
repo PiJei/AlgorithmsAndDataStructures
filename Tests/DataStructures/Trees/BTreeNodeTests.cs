@@ -264,6 +264,9 @@ namespace CSFundamentalsTests.DataStructures.Trees
         public void BTreeNode_IsOverFlown_Test()
         {
             var node = new BTreeNode<int, string>(3);
+            Assert.AreEqual(1, node.MinKeys);
+            Assert.AreEqual(2, node.MaxKeys);
+
             Assert.IsFalse(node.IsOverFlown());
 
             node.InsertKey(new KeyValuePair<int, string>(10, "A"));
@@ -288,6 +291,38 @@ namespace CSFundamentalsTests.DataStructures.Trees
             node.InsertKey(new KeyValuePair<int, string>(30, "C"));
             Assert.AreEqual(3, node.KeyValues.Count);
             Assert.IsTrue(node.IsOverFlown());
+        }
+
+        [TestMethod]
+        public void BTreeNode_IsUnderFlown_Test()
+        {
+            var node = new BTreeNode<int, string>(5);
+            Assert.AreEqual(2, node.MinKeys);
+            Assert.AreEqual(4, node.MaxKeys);
+            Assert.IsTrue(node.IsUnderFlown());
+
+            node.InsertKey(new KeyValuePair<int, string>(10, "A"));
+            Assert.AreEqual(1, node.KeyValues.Count);
+            Assert.IsTrue(node.IsUnderFlown());
+
+            /* Testing with duplicate keys with the same value */
+            node.InsertKey(new KeyValuePair<int, string>(10, "A"));
+
+            Assert.AreEqual(1, node.KeyValues.Count);
+            Assert.IsTrue(node.IsUnderFlown());
+
+            node.InsertKey(new KeyValuePair<int, string>(10, "B"));
+
+            Assert.AreEqual(1, node.KeyValues.Count);
+            Assert.IsTrue(node.IsUnderFlown());
+
+            node.InsertKey(new KeyValuePair<int, string>(20, "C"));
+            Assert.AreEqual(2, node.KeyValues.Count);
+            Assert.IsFalse(node.IsUnderFlown());
+
+            node.InsertKey(new KeyValuePair<int, string>(30, "C"));
+            Assert.AreEqual(3, node.KeyValues.Count);
+            Assert.IsFalse(node.IsUnderFlown());
         }
 
         public static bool HasBTreeNodeProperties<T1, T2>(BTreeNode<T1, T2> node) where T1 : IComparable<T1>
