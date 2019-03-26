@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using CSFundamentals.Styling;
@@ -86,6 +87,153 @@ namespace CSFundamentals.DataStructures.Trees
             return Root;
         }
 
+
+        public bool Delete(T1 key)
+        {
+            try
+            {
+                BTreeNode<T1, T2> node = Search(Root, key);
+                return Delete(node, key);
+            }
+            catch (KeyNotFoundException) /* This means that the key does not exist in the tree.*/
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Deletes <paramref name="key"> from <paramref name="node">, assuming that key exists in node.
+        /// </summary>
+        /// <param name="node"></param>
+        /// <param name="key"></param>
+        internal bool Delete(BTreeNode<T1, T2> node, T1 key)
+        {
+            if (node.IsLeaf()) /* Deleting a key from a leaf node. */
+            {
+                /* Remove the key. */
+                node.RemoveKey(key);
+
+                if (node.IsEmpty() && node.IsRoot())
+                {
+                    Root = null;
+                    return true;
+                }
+
+                /* If node is underFlown restructure the tree. */
+                if (node.IsUnderFlown() && !node.IsRoot()) /* B-TRee allows UnderFlown roots/*/
+                {
+                    BTreeNode<T1, T2> leftSibling = node.GetLeftSibling();
+                    BTreeNode<T1, T2> rightSibling = node.GetRightSibling();
+
+                    if (leftSibling != null && leftSibling.IsMin1Full())
+                    {
+                        RotateRight(node, leftSibling);
+                    }
+                    else if (rightSibling != null && rightSibling.IsMin1Full())
+                    {
+                        RotateLeft(node, rightSibling);
+                    }
+                    else if (leftSibling != null && rightSibling != null &&
+                        leftSibling.IsMinFull() && rightSibling.IsMinFull()) /* Meaning rotation wont work, as borrowing key from the siblings via parent will leave the sibling UnderFlown.*/
+                    {
+                        Join(node, leftSibling);
+                    }
+                }
+
+            }
+            else /* Deleting a key from a non-leaf node. */
+            {
+                // get the max key from the left side of the key
+                BTreeNode<T1, T2> leftChildOfKey = node.GetChild(node.GetKeyIndex(key));
+                KeyValuePair<T1, T2> replacementKey = leftChildOfKey.GetMaxKey();
+                node.RemoveKey(key); // TODO Make this deleteKey similar to insert key, we dont want to expose keyvalues, ... 
+                node.InsertKey(replacementKey);
+                Delete(leftChildOfKey, replacementKey.Key);
+
+
+                // check if the left side is underflown, .. then repeat the same thing you would do for the parent below, ... 
+                // this underflown maybe leaf, may not be leaf, .. for the maynot be part, I dont yet have a solution, ... 
+            }
+
+            return true; // TODO: On what cases can return false? ... 
+        }
+
+        // TODO: Test, complexity, summary, ... 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <param name="rightSibling"></param>
+        internal void RotateLeft(BTreeNode<T1, T2> node, BTreeNode<T1, T2> rightSibling)
+        {
+            int nodeAndRightSiblingSeparatorKeyAtParentIndex = node.GetIndexAtParentChildren();
+
+            /* 1- Move the separator key in the parent to the underFlown node. */
+            node.InsertKey(node.Parent.GetKeyValue(nodeAndRightSiblingSeparatorKeyAtParentIndex));
+            node.Parent.RemoveKey(nodeAndRightSiblingSeparatorKeyAtParentIndex);
+
+            /* 2- Replace separator key in the parent with the first key of the right sibling.*/
+            node.Parent.InsertKey(rightSibling.GetMinKey());
+            rightSibling.RemoveKey(rightSibling.GetMinKey().Key);
+
+            /* Check Validity. At this point both the node and its right sibling must be MinFull (have exactly MinKeys keys). */
+            Contract.Assert(rightSibling.IsMinFull());
+            Contract.Assert(node.IsMinFull());
+        }
+
+        /// <summary>
+        /// Rotates a key from <paramref name="leftSibling"/> to the common parent of <paramref name="node"/> & <paramref name="leftSibling"/>, and moves the separator key from the common parent to <paramref name="node"/>
+        /// </summary>
+        /// <param name="node">Is an UnderFlown leaf node. </param>
+        /// <param name="leftSibling">Is left sibling of <paramref name="node"/></param>
+        internal void RotateRight(BTreeNode<T1, T2> node, BTreeNode<T1, T2> leftSibling)
+        {
+            int nodeAndLeftSiblingSeparatorKeyAtParentIndex = leftSibling.GetIndexAtParentChildren();
+
+            /* 1- Move the separator key in the parent to the underFlown node. */
+            node.InsertKey(node.Parent.GetKeyValue(nodeAndLeftSiblingSeparatorKeyAtParentIndex));
+            node.Parent.RemoveKey(nodeAndLeftSiblingSeparatorKeyAtParentIndex);
+
+            /* 2- Replace separator key in the parent with the last key of the left sibling. */
+            node.Parent.InsertKey(leftSibling.GetMaxKey());
+            leftSibling.RemoveKey(leftSibling.GetMaxKey().Key);
+
+            /* Check validity. At this point both the node and its left sibling must be MinFull (have exactly MinKeys keys). */
+            Contract.Assert(leftSibling.IsMinFull());
+            Contract.Assert(node.IsMinFull());
+        }
+
+
+        // Todo: insert in a sorted list is o(n) thus how can these ops delete, insert etc be o(logn) alone! this is not possible!
+        // it si like my sorted doubly linked list, insert is o(n), check if I have correctly written it, .. 
+        internal void Join(BTreeNode<T1, T2> node, BTreeNode<T1, T2> leftSibling)
+        {
+            // 1- Move separator key to the left node
+            int nodeAndLeftSiblingSeparatorKeyAtParentIndex = leftSibling.GetIndexAtParentChildren();
+            leftSibling.InsertKey(node.Parent.GetKeyValue(nodeAndLeftSiblingSeparatorKeyAtParentIndex));
+            node.Parent.RemoveKey(nodeAndLeftSiblingSeparatorKeyAtParentIndex);
+
+            // 2- Join node with leftSibling: Move all the keys at node to left node
+            for (int i = 0; i < node.KeyCount; i++)
+            {
+                leftSibling.InsertKey(node.GetKeyValue(i));
+            }
+            node.Clear();
+            node.Parent.RemoveChild(nodeAndLeftSiblingSeparatorKeyAtParentIndex + 1);
+
+            if (node.Parent.IsEmpty()) /* Can happen if parent is root*/
+            {
+                leftSibling.Parent = null;
+                Root = leftSibling;
+            }
+
+            else if (node.Parent.IsUnderFlown()) /* Note that root is allowed to be underflown. */
+            {
+                // TODO: Re-structure
+                // could this be considered as deleting a key from parent and call on the parent instead?
+            }
+        }
+
         /// <summary>
         /// If the given node/leaf is overflown, splits it and propagates the split to upper levels if needed.
         /// </summary>
@@ -99,7 +247,7 @@ namespace CSFundamentals.DataStructures.Trees
             {
                 BTreeNode<T1, T2> sibling = node.Split();
                 KeyValuePair<T1, T2> keyToMoveToParent = node.KeyToMoveUp();
-                node.KeyValues.Remove(keyToMoveToParent.Key);
+                node.RemoveKey(keyToMoveToParent.Key);
 
                 if (node.Parent == null) /* Meaning the overflown node is the root. */
                 {
@@ -132,26 +280,25 @@ namespace CSFundamentals.DataStructures.Trees
             {
                 return root;
             }
-            for (int i = 0; i < root.KeyValues.Count; i++)
+            for (int i = 0; i < root.KeyCount; i++)
             {
-                if (key.CompareTo(root.KeyValues.Keys[i]) < 0)
+                if (key.CompareTo(root.GetKey(i)) < 0)
                 {
-                    return FindLeafToInsertKey(root.Children.ElementAt(i).Key, key);
+                    return FindLeafToInsertKey(root.GetChild(i), key);
                 }
-                else if (key.CompareTo(root.KeyValues.Keys[i]) == 0) /* means a node which such key already exists.*/
+                else if (key.CompareTo(root.GetKey(i)) == 0) /* means a node which such key already exists.*/
                 {
                     throw new ArgumentException("A node with this key exists in the tree. Duplicate keys are not allowed.");
                 }
-                else if (i == root.KeyValues.Count - 1 && key.CompareTo(root.KeyValues.Keys[i]) > 0)
+                else if (i == root.KeyCount - 1 && key.CompareTo(root.GetKey(i)) > 0)
                 {
-                    return FindLeafToInsertKey(root.Children.ElementAt(i + 1).Key, key);
+                    return FindLeafToInsertKey(root.GetChild(i + 1), key);
                 }
             }
             return null;
         }
 
         // TODO: could we use binary search implementation from search part of this lib?
-        // what to return? the container node, or the index in the container node, .. 
         /// <summary>
         ///  search seems to be logK in logN....uses binary search within each node.... could we call the search in the node here?  
         /// </summary>
@@ -163,26 +310,26 @@ namespace CSFundamentals.DataStructures.Trees
             if (root != null)
             {
                 int startIndex = 0;
-                int endIndex = root.KeyValues.Count - 1;
+                int endIndex = root.KeyCount - 1;
                 while (startIndex <= endIndex)
                 {
                     int middleIndex = (startIndex + endIndex) / 2;
-                    if (root.KeyValues.Keys[middleIndex].CompareTo(key) == 0)
+                    if (root.GetKey(middleIndex).CompareTo(key) == 0)
                     {
                         return root;
                     }
-                    else if (root.KeyValues.Keys[middleIndex].CompareTo(key) > 0) /* search left-half of the root.*/
+                    else if (root.GetKey(middleIndex).CompareTo(key) > 0) /* search left-half of the root.*/
                     {
                         endIndex = middleIndex - 1;
                     }
-                    else if (root.KeyValues.Keys[middleIndex].CompareTo(key) < 0) /* search right-half of the root. */
+                    else if (root.GetKey(middleIndex).CompareTo(key) < 0) /* search right-half of the root. */
                     {
                         startIndex = middleIndex + 1;
                     }
                 }
-                if (startIndex < root.Children.Count)
+                if (startIndex < root.ChildrenCount)
                 {
-                    return Search(root.Children.Keys[startIndex], key);
+                    return Search(root.GetChild(startIndex), key);
                 }
             }
             throw new KeyNotFoundException($"{key.ToString()} is not found in the tree.");
@@ -200,15 +347,15 @@ namespace CSFundamentals.DataStructures.Trees
         {
             if (node != null)
             {
-                for (int i = 0; i < node.KeyValues.Count; i++)
+                for (int i = 0; i < node.KeyCount; i++)
                 {
                     if (!node.IsLeaf()) /* Leaf nodes do not have children */
-                        InOrderTraversal(node.Children.Keys[i], sortedKeys);
+                        InOrderTraversal(node.GetChild(i), sortedKeys);
 
-                    sortedKeys.Add(node.KeyValues.ElementAt(i)); /* Visit the key. */
+                    sortedKeys.Add(node.GetKeyValue(i)); /* Visit the key. */
 
-                    if (!node.IsLeaf() && i == node.KeyValues.Count - 1) /* If is not leaf, and last key */
-                        InOrderTraversal(node.Children.Keys[i + 1], sortedKeys);
+                    if (!node.IsLeaf() && i == node.KeyCount - 1) /* If is not leaf, and last key */
+                        InOrderTraversal(node.GetChild(i + 1), sortedKeys);
                 }
             }
         }

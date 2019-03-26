@@ -60,19 +60,19 @@ namespace CSFundamentalsTests.DataStructures.Trees
         public void BTree_FindLeafToInsertKey_Test_1()
         {
             var leaf1 = _tree.FindLeafToInsertKey(_tree.Root, 5);
-            Assert.AreEqual(1, leaf1.KeyValues.Count);
+            Assert.AreEqual(1, leaf1.KeyCount);
             Assert.IsTrue(leaf1.IsLeaf());
-            Assert.AreEqual(10, leaf1.KeyValues.Keys[0]);
+            Assert.AreEqual(10, leaf1.GetKey(0));
 
             var leaf2 = _tree.FindLeafToInsertKey(_tree.Root, 800);
-            Assert.AreEqual(1, leaf2.KeyValues.Count);
+            Assert.AreEqual(1, leaf2.KeyCount);
             Assert.IsTrue(leaf2.IsLeaf());
-            Assert.AreEqual(600, leaf2.KeyValues.Keys[0]);
+            Assert.AreEqual(600, leaf2.GetKey(0));
 
             var leaf3 = _tree.FindLeafToInsertKey(_tree.Root, 75);
-            Assert.AreEqual(1, leaf3.KeyValues.Count);
+            Assert.AreEqual(1, leaf3.KeyCount);
             Assert.IsTrue(leaf3.IsLeaf());
-            Assert.AreEqual(60, leaf3.KeyValues.Keys[0]);
+            Assert.AreEqual(60, leaf3.GetKey(0));
         }
 
         [TestMethod]
@@ -142,9 +142,9 @@ namespace CSFundamentalsTests.DataStructures.Trees
             tree.Insert(new KeyValuePair<int, string>(90, "P"));
             Assert.IsTrue(HasBTreeProperties(tree, 16, 15));
 
-            Assert.AreEqual(1, tree.Root.KeyValues.Count);
-            Assert.AreEqual(100, tree.Root.KeyValues.ElementAt(0).Key);
-            Assert.AreEqual("C", tree.Root.KeyValues.ElementAt(0).Value, ignoreCase: true);
+            Assert.AreEqual(1, tree.Root.KeyCount);
+            Assert.AreEqual(100, tree.Root.GetKeyValue(0).Key);
+            Assert.AreEqual("C", tree.Root.GetKeyValue(0).Value, ignoreCase: true);
         }
 
         [TestMethod]
@@ -164,52 +164,52 @@ namespace CSFundamentalsTests.DataStructures.Trees
         public void BTree_Search_Test()
         {
             var node1 = _tree.Search(_tree.Root, 100);
-            Assert.IsTrue(node1.KeyValues.Count == 1);
+            Assert.IsTrue(node1.KeyCount == 1);
 
             var node2 = _tree.Search(_tree.Root, 300);
-            Assert.IsTrue(node2.KeyValues.Count == 1);
+            Assert.IsTrue(node2.KeyCount == 1);
 
             var node3 = _tree.Search(_tree.Root, 500);
-            Assert.IsTrue(node3.KeyValues.Count == 1);
+            Assert.IsTrue(node3.KeyCount == 1);
 
             var node4 = _tree.Search(_tree.Root, 200);
-            Assert.IsTrue(node4.KeyValues.Count == 1);
+            Assert.IsTrue(node4.KeyCount == 1);
 
             var node5 = _tree.Search(_tree.Root, 250);
-            Assert.IsTrue(node5.KeyValues.Count == 2);
+            Assert.IsTrue(node5.KeyCount == 2);
 
             var node6 = _tree.Search(_tree.Root, 270);
-            Assert.IsTrue(node6.KeyValues.Count == 2);
+            Assert.IsTrue(node6.KeyCount == 2);
 
             var node7 = _tree.Search(_tree.Root, 400);
-            Assert.IsTrue(node7.KeyValues.Count == 1);
+            Assert.IsTrue(node7.KeyCount == 1);
 
             var node8 = _tree.Search(_tree.Root, 600);
-            Assert.IsTrue(node8.KeyValues.Count == 1);
+            Assert.IsTrue(node8.KeyCount == 1);
 
             var node9 = _tree.Search(_tree.Root, 50);
-            Assert.IsTrue(node9.KeyValues.Count == 1);
+            Assert.IsTrue(node9.KeyCount == 1);
 
             var node10 = _tree.Search(_tree.Root, 20);
-            Assert.IsTrue(node10.KeyValues.Count == 1);
+            Assert.IsTrue(node10.KeyCount == 1);
 
             var node11 = _tree.Search(_tree.Root, 90);
-            Assert.IsTrue(node11.KeyValues.Count == 1);
+            Assert.IsTrue(node11.KeyCount == 1);
 
             var node12 = _tree.Search(_tree.Root, 60);
-            Assert.IsTrue(node12.KeyValues.Count == 1);
+            Assert.IsTrue(node12.KeyCount == 1);
 
             var node13 = _tree.Search(_tree.Root, 80);
-            Assert.IsTrue(node13.KeyValues.Count == 1);
+            Assert.IsTrue(node13.KeyCount == 1);
 
             var node14 = _tree.Search(_tree.Root, 10);
-            Assert.IsTrue(node14.KeyValues.Count == 1);
+            Assert.IsTrue(node14.KeyCount == 1);
 
             var node15 = _tree.Search(_tree.Root, 30);
-            Assert.IsTrue(node15.KeyValues.Count == 1);
+            Assert.IsTrue(node15.KeyCount == 1);
 
             var node16 = _tree.Search(_tree.Root, 150);
-            Assert.IsTrue(node16.KeyValues.Count == 1);
+            Assert.IsTrue(node16.KeyCount == 1);
         }
 
         [TestMethod]
@@ -240,7 +240,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             foreach (BTreeNode<T1, T2> node in nodes)
             {
                 Assert.IsTrue(BTreeNodeTests.HasBTreeNodeProperties(node));
-                keyCount += node.KeyValues.Count;
+                keyCount += node.KeyCount;
             }
 
             /* Check that key count of all the nodes matches the expected key count. */
@@ -268,9 +268,9 @@ namespace CSFundamentalsTests.DataStructures.Trees
             if (node != null)
             {
                 nodes.Add(node);
-                foreach (KeyValuePair<BTreeNode<T1, T2>, bool> n in node.Children)
+                for (int i = 0; i < node.ChildrenCount; i++)
                 {
-                    DFS(n.Key, nodes);
+                    DFS(node.GetChild(i), nodes);
                 }
             }
         }

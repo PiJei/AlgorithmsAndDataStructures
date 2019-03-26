@@ -135,9 +135,9 @@ namespace CSFundamentalsTests.DataStructures.Trees
             node1.InsertKey(new KeyValuePair<int, string>(100, "C"));
             node1.InsertKey(new KeyValuePair<int, string>(10, "A"));
 
-            Assert.AreEqual(0, node1.KeyValues.IndexOfKey(10));
-            Assert.AreEqual(1, node1.KeyValues.IndexOfKey(50));
-            Assert.AreEqual(2, node1.KeyValues.IndexOfKey(100));
+            Assert.AreEqual(0, node1.GetKeyIndex(10));
+            Assert.AreEqual(1, node1.GetKeyIndex(50));
+            Assert.AreEqual(2, node1.GetKeyIndex(100));
         }
 
         [TestMethod]
@@ -146,9 +146,9 @@ namespace CSFundamentalsTests.DataStructures.Trees
             var node = new BTreeNode<int, string>(3);
 
             node.InsertKey(new KeyValuePair<int, string>(10, "A"));
-            Assert.AreEqual(1, node.KeyValues.Count);
+            Assert.AreEqual(1, node.KeyCount);
             node.InsertKey(new KeyValuePair<int, string>(10, "B"));
-            Assert.AreEqual(1, node.KeyValues.Count);
+            Assert.AreEqual(1, node.KeyCount);
         }
 
         [TestMethod]
@@ -175,8 +175,8 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.IsTrue(ReferenceEquals(node1, child1.Parent));
             Assert.IsTrue(ReferenceEquals(node1, child2.Parent));
 
-            Assert.AreEqual(0, node1.Children.IndexOfKey(child1));
-            Assert.AreEqual(1, node1.Children.IndexOfKey(child2));
+            Assert.AreEqual(0, node1.GetChildIndex(child1));
+            Assert.AreEqual(1, node1.GetChildIndex(child2));
         }
 
 
@@ -219,8 +219,8 @@ namespace CSFundamentalsTests.DataStructures.Trees
             BTreeNode<int, string> newNode = node.Split();
             Assert.IsTrue(HasBTreeNodeProperties(node));
             Assert.IsTrue(HasBTreeNodeProperties(newNode));
-            Assert.IsTrue(node.KeyValues.Count == 2);
-            Assert.IsTrue(newNode.KeyValues.Count == 1);
+            Assert.AreEqual(2, node.KeyCount);
+            Assert.AreEqual(1, newNode.KeyCount);
         }
 
         [TestMethod]
@@ -270,26 +270,26 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.IsFalse(node.IsOverFlown());
 
             node.InsertKey(new KeyValuePair<int, string>(10, "A"));
-            Assert.AreEqual(1, node.KeyValues.Count);
+            Assert.AreEqual(1, node.KeyCount);
             Assert.IsFalse(node.IsOverFlown());
 
             /* Testing with duplicate keys with the same value */
             node.InsertKey(new KeyValuePair<int, string>(10, "A"));
 
-            Assert.AreEqual(1, node.KeyValues.Count);
+            Assert.AreEqual(1, node.KeyCount);
             Assert.IsFalse(node.IsOverFlown());
 
             node.InsertKey(new KeyValuePair<int, string>(10, "B"));
 
-            Assert.AreEqual(1, node.KeyValues.Count);
+            Assert.AreEqual(1, node.KeyCount);
             Assert.IsFalse(node.IsOverFlown());
 
             node.InsertKey(new KeyValuePair<int, string>(20, "C"));
-            Assert.AreEqual(2, node.KeyValues.Count);
+            Assert.AreEqual(2, node.KeyCount);
             Assert.IsFalse(node.IsOverFlown());
 
             node.InsertKey(new KeyValuePair<int, string>(30, "C"));
-            Assert.AreEqual(3, node.KeyValues.Count);
+            Assert.AreEqual(3, node.KeyCount);
             Assert.IsTrue(node.IsOverFlown());
         }
 
@@ -302,26 +302,26 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.IsTrue(node.IsUnderFlown());
 
             node.InsertKey(new KeyValuePair<int, string>(10, "A"));
-            Assert.AreEqual(1, node.KeyValues.Count);
+            Assert.AreEqual(1, node.KeyCount);
             Assert.IsTrue(node.IsUnderFlown());
 
             /* Testing with duplicate keys with the same value */
             node.InsertKey(new KeyValuePair<int, string>(10, "A"));
 
-            Assert.AreEqual(1, node.KeyValues.Count);
+            Assert.AreEqual(1, node.KeyCount);
             Assert.IsTrue(node.IsUnderFlown());
 
             node.InsertKey(new KeyValuePair<int, string>(10, "B"));
 
-            Assert.AreEqual(1, node.KeyValues.Count);
+            Assert.AreEqual(1, node.KeyCount);
             Assert.IsTrue(node.IsUnderFlown());
 
             node.InsertKey(new KeyValuePair<int, string>(20, "C"));
-            Assert.AreEqual(2, node.KeyValues.Count);
+            Assert.AreEqual(2, node.KeyCount);
             Assert.IsFalse(node.IsUnderFlown());
 
             node.InsertKey(new KeyValuePair<int, string>(30, "C"));
-            Assert.AreEqual(3, node.KeyValues.Count);
+            Assert.AreEqual(3, node.KeyCount);
             Assert.IsFalse(node.IsUnderFlown());
         }
 
@@ -330,43 +330,43 @@ namespace CSFundamentalsTests.DataStructures.Trees
             /* Number of children of any non-leaf node should be at most MaxBranchingDegree */
             if (!node.IsLeaf())
             {
-                Assert.IsTrue(node.Children.Count <= node.MaxBranchingDegree);
+                Assert.IsTrue(node.ChildrenCount <= node.MaxBranchingDegree);
 
                 /* Number of children should always be one bigger than the number of keys. */
-                Assert.AreEqual(node.KeyValues.Count + 1, node.Children.Count);
+                Assert.AreEqual(node.KeyCount + 1, node.ChildrenCount);
             }
 
             if (!node.IsLeaf())
             {
-                Assert.IsTrue(node.Children.Count >= node.MinBranchingDegree);
+                Assert.IsTrue(node.ChildrenCount >= node.MinBranchingDegree);
             }
 
-            Assert.IsTrue(node.KeyValues.Count <= node.MaxKeys);
+            Assert.IsTrue(node.KeyCount <= node.MaxKeys);
 
             /* Every non-root node's key count should be at least MinKeys.*/
             if (!node.IsRoot())
             {
-                Assert.IsTrue(node.KeyValues.Count >= node.MinKeys);
+                Assert.IsTrue(node.KeyCount >= node.MinKeys);
             }
 
             /* All the keys in a node should be sorted in ascending order.*/
-            for (int i = 0; i < node.KeyValues.Count - 1; i++)
+            for (int i = 0; i < node.KeyCount - 1; i++)
             {
-                Assert.IsTrue(node.KeyValues.Keys[i].CompareTo(node.KeyValues.Keys[i + 1]) <= 0);
+                Assert.IsTrue(node.GetKey(i).CompareTo(node.GetKey(i + 1)) <= 0);
             }
 
             /* Check the key range ordering of the node against its children. */
-            for (int i = 0; i < node.Children.Count; i++)
+            for (int i = 0; i < node.ChildrenCount; i++)
             {
-                BTreeNode<T1, T2> childNode = node.Children.ElementAt(i).Key;
+                BTreeNode<T1, T2> childNode = node.GetChild(i);
                 bool childHasMinKey = childNode.GetMinKey(out T1 childMinKey);
                 bool childHasMaxKey = childNode.GetMaxKey(out T1 childMaxKey);
                 Assert.IsTrue(childHasMinKey);
                 Assert.IsTrue(childHasMaxKey);
                 if (i > 0)
-                    Assert.IsTrue(childMinKey.CompareTo(node.KeyValues.Keys[i - 1]) > 0);
-                if (i < node.KeyValues.Count)
-                    Assert.IsTrue(childMaxKey.CompareTo(node.KeyValues.Keys[i]) < 0);
+                    Assert.IsTrue(childMinKey.CompareTo(node.GetKey(i - 1)) > 0);
+                if (i < node.KeyCount)
+                    Assert.IsTrue(childMaxKey.CompareTo(node.GetKey(i)) < 0);
             }
 
             /* Check the key range ordering of the node against its parent. */
@@ -376,12 +376,12 @@ namespace CSFundamentalsTests.DataStructures.Trees
                 bool hasMaxKey = node.GetMaxKey(out T1 maxKey);
                 Assert.IsTrue(hasMinKey);
                 Assert.IsTrue(hasMaxKey);
-                int indexAtParentChildren = node.Parent.Children.IndexOfKey(node);
+                int indexAtParentChildren = node.GetIndexAtParentChildren();
 
                 if (indexAtParentChildren > 0)
-                    Assert.IsTrue(minKey.CompareTo(node.Parent.KeyValues.Keys[indexAtParentChildren - 1]) > 0);
-                if (indexAtParentChildren < node.Parent.KeyValues.Count)
-                    Assert.IsTrue(maxKey.CompareTo(node.Parent.KeyValues.Keys[indexAtParentChildren]) < 0);
+                    Assert.IsTrue(minKey.CompareTo(node.Parent.GetKey(indexAtParentChildren - 1)) > 0);
+                if (indexAtParentChildren < node.Parent.KeyCount)
+                    Assert.IsTrue(maxKey.CompareTo(node.Parent.GetKey(indexAtParentChildren)) < 0);
             }
 
             return true;
