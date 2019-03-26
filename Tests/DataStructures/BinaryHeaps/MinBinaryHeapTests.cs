@@ -263,6 +263,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
             Assert.AreEqual(2, heap.GetNodeLevel(values.IndexOf(21)));
         }
 
+        // TODO: Shall this be generic?
         /// <summary>
         /// Checking the MinHeap ordering (node relations) for the node at the given index, to make sure the correct relations between the node and its parent and children holds. 
         /// </summary>
