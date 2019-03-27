@@ -80,7 +80,7 @@ namespace CSFundamentals.DataStructures.Trees
             }
             else
             {
-                leaf.InsertKey(keyValue);
+                leaf.InsertKeyValue(keyValue);
                 Split_Repair(leaf);
             }
 
@@ -147,7 +147,7 @@ namespace CSFundamentals.DataStructures.Trees
                 BTreeNode<T1, T2> leftChildOfKey = node.GetChild(node.GetKeyIndex(key));
                 KeyValuePair<T1, T2> replacementKey = leftChildOfKey.GetMaxKey();
                 node.RemoveKey(key); // TODO Make this deleteKey similar to insert key, we dont want to expose keyvalues, ... 
-                node.InsertKey(replacementKey);
+                node.InsertKeyValue(replacementKey);
                 Delete(leftChildOfKey, replacementKey.Key);
 
 
@@ -169,11 +169,11 @@ namespace CSFundamentals.DataStructures.Trees
             int nodeAndRightSiblingSeparatorKeyAtParentIndex = node.GetIndexAtParentChildren();
 
             /* 1- Move the separator key in the parent to the underFlown node. */
-            node.InsertKey(node.Parent.GetKeyValue(nodeAndRightSiblingSeparatorKeyAtParentIndex));
-            node.Parent.RemoveKey(nodeAndRightSiblingSeparatorKeyAtParentIndex);
+            node.InsertKeyValue(node.Parent.GetKeyValue(nodeAndRightSiblingSeparatorKeyAtParentIndex));
+            node.Parent.RemoveKeyByIndex(nodeAndRightSiblingSeparatorKeyAtParentIndex);
 
             /* 2- Replace separator key in the parent with the first key of the right sibling.*/
-            node.Parent.InsertKey(rightSibling.GetMinKey());
+            node.Parent.InsertKeyValue(rightSibling.GetMinKey());
             rightSibling.RemoveKey(rightSibling.GetMinKey().Key);
 
             /* Check Validity. At this point both the node and its right sibling must be MinFull (have exactly MinKeys keys). */
@@ -191,11 +191,11 @@ namespace CSFundamentals.DataStructures.Trees
             int nodeAndLeftSiblingSeparatorKeyAtParentIndex = leftSibling.GetIndexAtParentChildren();
 
             /* 1- Move the separator key in the parent to the underFlown node. */
-            node.InsertKey(node.Parent.GetKeyValue(nodeAndLeftSiblingSeparatorKeyAtParentIndex));
-            node.Parent.RemoveKey(nodeAndLeftSiblingSeparatorKeyAtParentIndex);
+            node.InsertKeyValue(node.Parent.GetKeyValue(nodeAndLeftSiblingSeparatorKeyAtParentIndex));
+            node.Parent.RemoveKeyByIndex(nodeAndLeftSiblingSeparatorKeyAtParentIndex);
 
             /* 2- Replace separator key in the parent with the last key of the left sibling. */
-            node.Parent.InsertKey(leftSibling.GetMaxKey());
+            node.Parent.InsertKeyValue(leftSibling.GetMaxKey());
             leftSibling.RemoveKey(leftSibling.GetMaxKey().Key);
 
             /* Check validity. At this point both the node and its left sibling must be MinFull (have exactly MinKeys keys). */
@@ -210,16 +210,16 @@ namespace CSFundamentals.DataStructures.Trees
         {
             // 1- Move separator key to the left node
             int nodeAndLeftSiblingSeparatorKeyAtParentIndex = leftSibling.GetIndexAtParentChildren();
-            leftSibling.InsertKey(node.Parent.GetKeyValue(nodeAndLeftSiblingSeparatorKeyAtParentIndex));
-            node.Parent.RemoveKey(nodeAndLeftSiblingSeparatorKeyAtParentIndex);
+            leftSibling.InsertKeyValue(node.Parent.GetKeyValue(nodeAndLeftSiblingSeparatorKeyAtParentIndex));
+            node.Parent.RemoveKeyByIndex(nodeAndLeftSiblingSeparatorKeyAtParentIndex);
 
             // 2- Join node with leftSibling: Move all the keys at node to left node
             for (int i = 0; i < node.KeyCount; i++)
             {
-                leftSibling.InsertKey(node.GetKeyValue(i));
+                leftSibling.InsertKeyValue(node.GetKeyValue(i));
             }
             node.Clear();
-            node.Parent.RemoveChild(nodeAndLeftSiblingSeparatorKeyAtParentIndex + 1);
+            node.Parent.RemoveChildByIndex(nodeAndLeftSiblingSeparatorKeyAtParentIndex + 1);
 
             if (node.Parent.IsEmpty()) /* Can happen if parent is root*/
             {
@@ -227,7 +227,7 @@ namespace CSFundamentals.DataStructures.Trees
                 Root = leftSibling;
             }
 
-            else if (node.Parent.IsUnderFlown()) /* Note that root is allowed to be underflown. */
+            else if (node.Parent.IsUnderFlown()) /* Note that root is allowed to be underFlown. */
             {
                 // TODO: Re-structure
                 // could this be considered as deleting a key from parent and call on the parent instead?
@@ -246,7 +246,7 @@ namespace CSFundamentals.DataStructures.Trees
             while (node.IsOverFlown())
             {
                 BTreeNode<T1, T2> sibling = node.Split();
-                KeyValuePair<T1, T2> keyToMoveToParent = node.KeyToMoveUp();
+                KeyValuePair<T1, T2> keyToMoveToParent = node.KeyValueToMoveUp();
                 node.RemoveKey(keyToMoveToParent.Key);
 
                 if (node.Parent == null) /* Meaning the overflown node is the root. */
@@ -258,7 +258,7 @@ namespace CSFundamentals.DataStructures.Trees
                 }
                 else
                 {
-                    node.Parent.InsertKey(keyToMoveToParent);
+                    node.Parent.InsertKeyValue(keyToMoveToParent);
                     node.Parent.InsertChild(sibling);
                     node = node.Parent; /* Repeat while loop with the parent node that might itself be overflown now after inserting a new key.*/
                 }
