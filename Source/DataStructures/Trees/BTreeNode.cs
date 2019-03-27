@@ -22,6 +22,10 @@ using System.Collections.Generic;
 using System.Linq;
 
 //TODO: part of me thinks that I should strengthen the inserts and etc,... because this should be a proper BTRee node, ... and shall not allow things that result in over flows, under flows, keys with no children, etc, ... ?//but this might make algorithms diff toimplement, .. 
+//todo; complexites
+//todo: somehow should not allow comparisons to nodes with other degrees, ... how can degree be considered, ...?
+// i want a not-applicable node, some what, ..write a test for it as well.. 
+// TODO: Test for search. ... 
 namespace CSFundamentals.DataStructures.Trees
 {
     /// <summary>
@@ -431,29 +435,33 @@ namespace CSFundamentals.DataStructures.Trees
                 throw new KeyNotFoundException();
         }
 
+        /// <summary>
+        /// Gets (reads) the key-value pair at index <paramref name="index"/> of node's <see cref="_keyValues"> array. 
+        /// </summary>
+        /// <param name="index">The index of the key-value pair wanted. </param>
+        /// <returns>Key-value pair located at index <paramref name="index"/> of node's <see cref="_keyValues"> array. </returns>
         public KeyValuePair<T1, T2> GetKeyValue(int index)
         {
             if (_keyValues.Count > index)
                 return _keyValues.ElementAt(index);
-            throw new KeyNotFoundException();
+            throw new IndexOutOfRangeException();
         }
 
+        /// <summary>
+        /// Gets (reads)the key of the key-value pair at index <paramref name="index"/> of node's <see cref="_keyValues"> array.
+        /// </summary>
+        /// <param name="index">The index of the key-value pair whose key is wanted. </param>
+        /// <returns>Key at index <paramref name="index"/> of node's <see cref="_keyValues"> array. </returns>
         public T1 GetKey(int index)
         {
-            if (_keyValues.Count > index)
-                return _keyValues.ElementAt(index).Key;
-            throw new KeyNotFoundException();
+            return GetKeyValue(index).Key;
         }
 
-        public BTreeNode<T1, T2> GetChild(int index)
-        {
-            if (_children.Count > index)
-            {
-                return _children.ElementAt(index).Key;
-            }
-            throw new KeyNotFoundException();
-        }
-
+        /// <summary>
+        /// Gets the index of the key <paramref name="key"/> at node's <see cref="_keyValues"> array. 
+        /// </summary>
+        /// <param name="key">The key to search for and return its index.</param>
+        /// <returns>Index of the key <paramref name="key"/> at node's <see cref="_keyValues"> array. </returns>
         public int GetKeyIndex(T1 key)
         {
             if (_keyValues.ContainsKey(key))
@@ -461,6 +469,25 @@ namespace CSFundamentals.DataStructures.Trees
             throw new KeyNotFoundException();
         }
 
+        /// <summary>
+        /// Gets (reads) the child at index <paramref name="index"/> of node's <see cref="_children"> array.
+        /// </summary>
+        /// <param name="index">The index of the child node wanted. </param>
+        /// <returns>Child node at index <paramref name="index"/> of node's <see cref="_children"> array.</returns>
+        public BTreeNode<T1, T2> GetChild(int index)
+        {
+            if (_children.Count > index)
+            {
+                return _children.ElementAt(index).Key;
+            }
+            throw new IndexOutOfRangeException();
+        }
+
+        /// <summary>
+        /// Looks for <paramref name="child"/> in node's <see cref="_children"> array, and returns its index.
+        /// </summary>
+        /// <param name="child">Child whose index is wanted. </param>
+        /// <returns>Index of <paramref name="child"/> in node's <see cref="_children"> array</returns>
         public int GetChildIndex(BTreeNode<T1, T2> child)
         {
             if (_children.ContainsKey(child))
@@ -470,10 +497,14 @@ namespace CSFundamentals.DataStructures.Trees
             throw new KeyNotFoundException();
         }
 
-        //todo: a link to the sibling? etc, left and right siblings? or just not?
-
         //TODO: How can  make tis to use the binary search I have implemented in this project?
-        // Expects inclusive indexes, ...
+        /// <summary>
+        /// Performs a binary search over <see cref="_keyValues"/> array of the node. 
+        /// </summary>
+        /// <param name="key">Key we are searching for. </param>
+        /// <param name="startIndex">Inclusive start index at <see cref="_keyValues"/> array. </param>
+        /// <param name="endIndex">Inclusive end index at <see cref="_keyValues"/> array. </param>
+        /// <returns>Index of the key in the <see cref="_keyValues"> array if it exists and -1 if it does not.</returns>
         public int Search(T1 key, int startIndex, int endIndex)
         {
             if (startIndex <= endIndex &&
@@ -500,6 +531,10 @@ namespace CSFundamentals.DataStructures.Trees
             return -1;
         }
 
+        /// <summary>
+        /// Inserts the given key-value pair in <see cref="_keyValues"/> array. 
+        /// </summary>
+        /// <param name="keyVal">the new key-value pair to be inserted in <see cref="_keyValues"/> array. </param>
         public void InsertKeyValue(KeyValuePair<T1, T2> keyVal)
         {
             /* Since KeyValues is a sorted list, the new key value pair will be inserted at its correct position. */
@@ -507,6 +542,10 @@ namespace CSFundamentals.DataStructures.Trees
                 _keyValues.Add(keyVal.Key, keyVal.Value);
         }
 
+        /// <summary>
+        /// Inserts a child in <see cref="_children"/> array.
+        /// </summary>
+        /// <param name="child">the new child to be inserted in <see cref="_children"/> array. </param>
         public void InsertChild(BTreeNode<T1, T2> child)
         {
             /* Since Children is a sorted list, Child will be inserted at its correct position based on the Compare() method, to preserve the ordering. */
@@ -514,9 +553,7 @@ namespace CSFundamentals.DataStructures.Trees
             child.Parent = this;
         }
 
-        //todo; complexites
-        //todo: somehow should not allow comparisons to nodes with other degrees, ... how can degree be considered, ...?
-        // i want a not-applicable node, some what, ..write a test for it as well.. 
+        
         public int CompareTo(BTreeNode<T1, T2> other)
         {
             if (other == null)

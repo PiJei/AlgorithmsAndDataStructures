@@ -871,6 +871,198 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.AreEqual(0, node.ChildrenCount);
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(IndexOutOfRangeException))]
+        public void BTreeNode_GetKeyValue_Test_Fail_1()
+        {
+            BTreeNode<int, string> node = new BTreeNode<int, string>(5);
+            Assert.AreEqual(3, node.MinBranchingDegree);
+            Assert.AreEqual(5, node.MaxBranchingDegree);
+
+            /* Testing with an empty node. */
+            node.GetKeyValue(2);
+        }
+
+
+        [TestMethod]
+        [ExpectedException(typeof(IndexOutOfRangeException))]
+        public void BTreeNode_GetKeyValue_Test_Fail_2()
+        {
+            BTreeNode<int, string> node = new BTreeNode<int, string>(5);
+            Assert.AreEqual(3, node.MinBranchingDegree);
+            Assert.AreEqual(5, node.MaxBranchingDegree);
+
+            node.InsertKeyValue(new KeyValuePair<int, string>(10, "A"));
+
+            /* Testing with a non-empty node, and non-existing index. */
+            node.GetKeyValue(2);
+        }
+
+        [TestMethod]
+        public void BTreeNode_GetKeyValue_Test_Success()
+        {
+            BTreeNode<int, string> node = new BTreeNode<int, string>(5);
+            Assert.AreEqual(3, node.MinBranchingDegree);
+            Assert.AreEqual(5, node.MaxBranchingDegree);
+
+            node.InsertKeyValue(new KeyValuePair<int, string>(10, "A"));
+            node.InsertKeyValue(new KeyValuePair<int, string>(50, "B"));
+            node.InsertKeyValue(new KeyValuePair<int, string>(100, "C"));
+
+            Assert.AreEqual(3, node.KeyCount);
+
+            var keyVal1 = node.GetKeyValue(2);
+            Assert.AreEqual(100, keyVal1.Key);
+            Assert.AreEqual("C", keyVal1.Value, ignoreCase: false);
+
+            var keyVal2 = node.GetKeyValue(1);
+            Assert.AreEqual(50, keyVal2.Key);
+            Assert.AreEqual("B", keyVal2.Value, ignoreCase: false);
+
+            var keyVal3 = node.GetKeyValue(0);
+            Assert.AreEqual(10, keyVal3.Key);
+            Assert.AreEqual("A", keyVal3.Value, ignoreCase: false);
+
+            Assert.AreEqual(3, node.KeyCount);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(IndexOutOfRangeException))]
+        public void BTreeNode_GetKey_Fail_1()
+        {
+            BTreeNode<int, string> node = new BTreeNode<int, string>(5);
+            Assert.AreEqual(3, node.MinBranchingDegree);
+            Assert.AreEqual(5, node.MaxBranchingDegree);
+
+            node.GetKey(3);
+        }
+
+        [TestMethod]
+        public void BTreeNode_GetKey_Success()
+        {
+            BTreeNode<int, string> node = new BTreeNode<int, string>(5);
+            Assert.AreEqual(3, node.MinBranchingDegree);
+            Assert.AreEqual(5, node.MaxBranchingDegree);
+
+            node.InsertKeyValue(new KeyValuePair<int, string>(10, "A"));
+            node.InsertKeyValue(new KeyValuePair<int, string>(50, "B"));
+            node.InsertKeyValue(new KeyValuePair<int, string>(100, "C"));
+
+            Assert.AreEqual(3, node.KeyCount);
+
+            var key1 = node.GetKey(2);
+            Assert.AreEqual(100, key1);
+
+            var key2 = node.GetKey(1);
+            Assert.AreEqual(50, key2);
+
+            var key3 = node.GetKey(0);
+            Assert.AreEqual(10, key3);
+
+            Assert.AreEqual(3, node.KeyCount);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(KeyNotFoundException))]
+        public void BTreeNode_GetKeyIndex_Test()
+        {
+            BTreeNode<int, string> node = new BTreeNode<int, string>(5);
+            Assert.AreEqual(3, node.MinBranchingDegree);
+            Assert.AreEqual(5, node.MaxBranchingDegree);
+
+            node.GetKeyIndex(2);
+        }
+
+        [TestMethod]
+        public void BTreeNode_GetKeyIndex_Success()
+        {
+            BTreeNode<int, string> node = new BTreeNode<int, string>(5);
+            Assert.AreEqual(3, node.MinBranchingDegree);
+            Assert.AreEqual(5, node.MaxBranchingDegree);
+
+            node.InsertKeyValue(new KeyValuePair<int, string>(10, "A"));
+            node.InsertKeyValue(new KeyValuePair<int, string>(50, "B"));
+            node.InsertKeyValue(new KeyValuePair<int, string>(100, "C"));
+
+            Assert.AreEqual(3, node.KeyCount);
+
+            var index1 = node.GetKeyIndex(50);
+            Assert.AreEqual(1, index1);
+
+            var index2 = node.GetKeyIndex(100);
+            Assert.AreEqual(2, index2);
+
+            var index3 = node.GetKeyIndex(10);
+            Assert.AreEqual(0, index3);
+
+            Assert.AreEqual(3, node.KeyCount);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(IndexOutOfRangeException))]
+        public void BTreeNode_GetChild_Fail()
+        {
+            BTreeNode<int, string> node = new BTreeNode<int, string>(5);
+            Assert.AreEqual(3, node.MinBranchingDegree);
+            Assert.AreEqual(5, node.MaxBranchingDegree);
+
+            node.GetChild(2);
+        }
+
+        [TestMethod]
+        public void BTreeNode_GetChild_Success()
+        {
+            BTreeNode<int, string> node = new BTreeNode<int, string>(5);
+            Assert.AreEqual(3, node.MinBranchingDegree);
+            Assert.AreEqual(5, node.MaxBranchingDegree);
+
+            var child1 = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(10, "A"));
+            var child2 = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(60, "B"));
+            var child3 = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(150, "C"));
+            node.InsertChild(child1);
+            node.InsertChild(child2);
+            node.InsertChild(child3);
+
+            var c1 = node.GetChild(0);
+            Assert.AreEqual(child1, c1);
+            var c2 = node.GetChild(1);
+            Assert.AreEqual(child2, c2);
+            var c3 = node.GetChild(2);
+            Assert.AreEqual(child3, c3);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(KeyNotFoundException))]
+        public void BTreeNode_GetChildIndex_Fail_1()
+        {
+            BTreeNode<int, string> node = new BTreeNode<int, string>(5);
+            Assert.AreEqual(3, node.MinBranchingDegree);
+            Assert.AreEqual(5, node.MaxBranchingDegree);
+
+            var child = new BTreeNode<int, string>(5);
+            node.GetChildIndex(child);
+
+        }
+
+        [TestMethod]
+        public void BTreeNode_GetChildIndex_Success()
+        {
+            BTreeNode<int, string> node = new BTreeNode<int, string>(5);
+            Assert.AreEqual(3, node.MinBranchingDegree);
+            Assert.AreEqual(5, node.MaxBranchingDegree);
+
+            var child1 = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(10, "A"));
+            var child2 = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(60, "B"));
+            var child3 = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(150, "C"));
+            node.InsertChild(child1);
+            node.InsertChild(child2);
+            node.InsertChild(child3);
+
+            Assert.AreEqual(0, node.GetChildIndex(child1));
+            Assert.AreEqual(1, node.GetChildIndex(child2));
+            Assert.AreEqual(2, node.GetChildIndex(child3));
+        }
+
         public static bool HasBTreeNodeProperties<T1, T2>(BTreeNode<T1, T2> node) where T1 : IComparable<T1>
         {
             Assert.IsTrue(node.KeyCount != 0); /* Every valid node (root and non-root) in the tree is expected to have at least one key.*/
