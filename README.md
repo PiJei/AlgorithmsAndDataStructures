@@ -54,9 +54,9 @@ Content:
   
     - Trees:
          - BinarySearchTree
-         - RedBlackTree
-         - AVLTree
-   
+           - RedBlackTree
+           - AVLTree
+         - B-Tree
 
 References : 
 - https://www.geeksforgeeks.org
