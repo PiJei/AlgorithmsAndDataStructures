@@ -55,13 +55,14 @@ namespace CSFundamentals.DataStructures.Trees
         /// </summary>
         public int MaxBranchingDegree { get; private set; }
 
+        // TODO: turn these back to private, for sake of debugging have been made public, can make them readonly ... 
         // TODO: Because of splits and merges, I feel the best way is to have these two lists as linked lists
         // TODO: Shall i implement a sorted list myself? as a data structure here? 
         /// <summary>
         /// 
         /// Notice that SortedList does not allow duplicates. 
         /// </summary>
-        private SortedList<T1, T2> _keyValues;
+        public SortedList<T1, T2> _keyValues;
 
         /// <summary>
         /// Contract: Keys of the child at index i are all smaller than key at index i of _keyValues
@@ -69,7 +70,7 @@ namespace CSFundamentals.DataStructures.Trees
         /// In otherWords for key at index i, left children are at index i of _children
         /// And right children are at index i+1 of _children. 
         /// </summary>
-        private SortedList<BTreeNode<T1, T2>, bool> _children;
+        public SortedList<BTreeNode<T1, T2>, bool> _children;
 
         /// <summary>
         /// Is the parent of the current node.
@@ -143,7 +144,31 @@ namespace CSFundamentals.DataStructures.Trees
         public void Clear()
         {
             _keyValues.Clear();
+            _children.Clear();
         }
+
+        // TODO Tests
+        /// <summary>
+        /// Find the node that contains the immediate predecessor of the key at index <paramref name="keyIndex"> of node's <see cref="_keyValues"> array. 
+        /// </summary>
+        /// <param name="keyIndex"></param>
+        /// <returns></returns>
+        public BTreeNode<T1, T2> GetPredecessorNode(int keyIndex)
+        {
+            return FindMaxInSubTree(_children.ElementAt(keyIndex).Key);
+        }
+
+        // TODO: Perhaps should move to the tree itself
+        public BTreeNode<T1, T2> FindMaxInSubTree(BTreeNode<T1, T2> node)
+        {
+            if (node.IsLeaf())
+            {
+                return node;
+            }
+
+            return FindMaxInSubTree(node.GetChild(node.ChildrenCount - 1));
+        }
+
 
         /// <summary>
         /// Splits this node to 2 nodes if it is overflown, such that each node has at least MinKeys keys.
@@ -177,6 +202,13 @@ namespace CSFundamentals.DataStructures.Trees
             }
 
             return null;
+        }
+
+        public bool IsNull()
+        {
+            if (KeyCount == 0 && ChildrenCount == 0)
+                return true;
+            return false;
         }
 
         /// <summary>
@@ -553,7 +585,7 @@ namespace CSFundamentals.DataStructures.Trees
             child.Parent = this;
         }
 
-        
+
         public int CompareTo(BTreeNode<T1, T2> other)
         {
             if (other == null)
@@ -589,6 +621,16 @@ namespace CSFundamentals.DataStructures.Trees
                 return 1;
             }
             return -1;
+        }
+
+        // TODO: Use string builder
+        // todo ; remove any methods here that I am not suing externally: or make them private/internal, etc, ..
+        public override string ToString()
+        {
+            string str = $"KeyCount: {KeyCount} - Keys: ";
+            str += string.Join(",", _keyValues.Keys.Select(k => k.ToString()).ToList());
+            str += $" - ChildrenCount {ChildrenCount}";
+            return str;
         }
     }
 }

@@ -1063,6 +1063,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.AreEqual(2, node.GetChildIndex(child3));
         }
 
+
         public static bool HasBTreeNodeProperties<T1, T2>(BTreeNode<T1, T2> node) where T1 : IComparable<T1>
         {
             Assert.IsTrue(node.KeyCount != 0); /* Every valid node (root and non-root) in the tree is expected to have at least one key.*/
@@ -1073,7 +1074,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             if (!node.IsLeaf())
             {
                 Assert.IsTrue(node.ChildrenCount <= node.MaxBranchingDegree);
-
+                
                 /* Number of children should always be one bigger than the number of keys. */
                 Assert.AreEqual(node.KeyCount + 1, node.ChildrenCount);
             }

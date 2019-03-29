@@ -108,54 +108,68 @@ namespace CSFundamentals.DataStructures.Trees
         /// <param name="key"></param>
         internal bool Delete(BTreeNode<T1, T2> node, T1 key)
         {
-            if (node.IsLeaf()) /* Deleting a key from a leaf node. */
+            // TODO: THe fact that I need to do these first shows the shortcoming of my implementation
+            // I also would preferably return null, rather than exceptions to be honest: 
+            BTreeNode<T1, T2> leftSibling = node.IsRoot() ? null : node.HasLeftSibling() ? node.GetLeftSibling() : null;
+            BTreeNode<T1, T2> rightSibling = node.IsRoot() ? null : node.HasRightSibling() ? node.GetRightSibling() : null;
+
+            if (!node.IsLeaf())
             {
-                /* Remove the key. */
+                int keyIndexAtNode = node.GetKeyIndex(key);
+                var predecessorNode = node.GetPredecessorNode(keyIndexAtNode);
+                node.RemoveKey(key);
+                node.InsertKeyValue(predecessorNode.GetMaxKey());
+                return Delete(predecessorNode, predecessorNode.GetMaxKey().Key);
+            }
+            else
+            {
                 node.RemoveKey(key);
 
+                /* TODO: Can we not treat this specially, and bend it with other cases? */
                 if (node.IsEmpty() && node.IsRoot())
                 {
                     Root = null;
                     return true;
                 }
 
-                /* If node is underFlown restructure the tree. */
-                if (node.IsUnderFlown() && !node.IsRoot()) /* B-TRee allows UnderFlown roots/*/
+                if (!node.IsUnderFlown())
                 {
-                    BTreeNode<T1, T2> leftSibling = node.GetLeftSibling();
-                    BTreeNode<T1, T2> rightSibling = node.GetRightSibling();
+                    return true;
+                }
+            }
 
-                    if (leftSibling != null && leftSibling.IsMin1Full())
-                    {
-                        RotateRight(node, leftSibling);
-                    }
-                    else if (rightSibling != null && rightSibling.IsMin1Full())
-                    {
-                        RotateLeft(node, rightSibling);
-                    }
-                    else if (leftSibling != null && rightSibling != null &&
-                        leftSibling.IsMinFull() && rightSibling.IsMinFull()) /* Meaning rotation wont work, as borrowing key from the siblings via parent will leave the sibling UnderFlown.*/
-                    {
-                        Join(node, leftSibling);
-                    }
+            //TODO  I think I should make this bit recursive and pass left and right children of the node
+            while (node.IsUnderFlown() && !node.IsRoot()) /* B-TRee allows UnderFlown roots*/
+            {
+                var parent = node.Parent;
+                var parentLeftSibling = parent == null || parent.IsRoot() ? null : parent.HasLeftSibling() ? parent.GetLeftSibling() : null;
+                var parentRightSibling = parent == null || parent.IsRoot() ? null : parent.HasRightSibling() ? parent.GetRightSibling() : null;
+
+                if (leftSibling != null && leftSibling.IsMin1Full())
+                {
+                    node = RotateRight(node, leftSibling);
+                }
+                else if (rightSibling != null && rightSibling.IsMin1Full())
+                {
+                    node = RotateLeft(node, rightSibling);
+                }
+                else if (rightSibling != null && rightSibling.IsMinFull()) /* Meaning rotation wont work, as borrowing key from the siblings via parent will leave the sibling UnderFlown.*/
+                {
+                    node = Join(rightSibling, node);
+                }
+                else if (leftSibling != null && leftSibling.IsMinFull())
+                {
+                    node = Join(node, leftSibling);
                 }
 
+                if (node == null)
+                    break;
+
+                // this does not work, because the key is already removed from parent!
+                leftSibling = parentLeftSibling;
+                rightSibling = parentRightSibling;
             }
-            else /* Deleting a key from a non-leaf node. */
-            {
-                // get the max key from the left side of the key
-                BTreeNode<T1, T2> leftChildOfKey = node.GetChild(node.GetKeyIndex(key));
-                KeyValuePair<T1, T2> replacementKey = leftChildOfKey.GetMaxKey();
-                node.RemoveKey(key); // TODO Make this deleteKey similar to insert key, we dont want to expose keyvalues, ... 
-                node.InsertKeyValue(replacementKey);
-                Delete(leftChildOfKey, replacementKey.Key);
-
-
-                // check if the left side is underflown, .. then repeat the same thing you would do for the parent below, ... 
-                // this underflown maybe leaf, may not be leaf, .. for the maynot be part, I dont yet have a solution, ... 
-            }
-
-            return true; // TODO: On what cases can return false? ... 
+            return true;
         }
 
         // TODO: Test, complexity, summary, ... 
@@ -164,7 +178,7 @@ namespace CSFundamentals.DataStructures.Trees
         /// </summary>
         /// <param name="node"></param>
         /// <param name="rightSibling"></param>
-        internal void RotateLeft(BTreeNode<T1, T2> node, BTreeNode<T1, T2> rightSibling)
+        internal BTreeNode<T1, T2> RotateLeft(BTreeNode<T1, T2> node, BTreeNode<T1, T2> rightSibling)
         {
             int nodeAndRightSiblingSeparatorKeyAtParentIndex = node.GetIndexAtParentChildren();
 
@@ -179,6 +193,8 @@ namespace CSFundamentals.DataStructures.Trees
             /* Check Validity. At this point both the node and its right sibling must be MinFull (have exactly MinKeys keys). */
             Contract.Assert(rightSibling.IsMinFull());
             Contract.Assert(node.IsMinFull());
+
+            return node.Parent;
         }
 
         /// <summary>
@@ -186,7 +202,7 @@ namespace CSFundamentals.DataStructures.Trees
         /// </summary>
         /// <param name="node">Is an UnderFlown leaf node. </param>
         /// <param name="leftSibling">Is left sibling of <paramref name="node"/></param>
-        internal void RotateRight(BTreeNode<T1, T2> node, BTreeNode<T1, T2> leftSibling)
+        internal BTreeNode<T1, T2> RotateRight(BTreeNode<T1, T2> node, BTreeNode<T1, T2> leftSibling)
         {
             int nodeAndLeftSiblingSeparatorKeyAtParentIndex = leftSibling.GetIndexAtParentChildren();
 
@@ -201,37 +217,43 @@ namespace CSFundamentals.DataStructures.Trees
             /* Check validity. At this point both the node and its left sibling must be MinFull (have exactly MinKeys keys). */
             Contract.Assert(leftSibling.IsMinFull());
             Contract.Assert(node.IsMinFull());
+            return node.Parent;
         }
 
+        // TODO: Havenot tested rotate left, and rotate right in action, ... 
+        // maybe one of those other delete tests does, but just one of them, rotate left or rotate right
+        // need a nother tree full to test these all : have a full- 4 layer tree to test this again
 
         // Todo: insert in a sorted list is o(n) thus how can these ops delete, insert etc be o(logn) alone! this is not possible!
         // it si like my sorted doubly linked list, insert is o(n), check if I have correctly written it, .. 
-        internal void Join(BTreeNode<T1, T2> node, BTreeNode<T1, T2> leftSibling)
+        internal BTreeNode<T1, T2> Join(BTreeNode<T1, T2> node, BTreeNode<T1, T2> leftSibling)
         {
             // 1- Move separator key to the left node
             int nodeAndLeftSiblingSeparatorKeyAtParentIndex = leftSibling.GetIndexAtParentChildren();
             leftSibling.InsertKeyValue(node.Parent.GetKeyValue(nodeAndLeftSiblingSeparatorKeyAtParentIndex));
             node.Parent.RemoveKeyByIndex(nodeAndLeftSiblingSeparatorKeyAtParentIndex);
 
-            // 2- Join node with leftSibling: Move all the keys at node to left node
+            // 2- Join node with leftSibling: Move all the keys and children at node to left node
             for (int i = 0; i < node.KeyCount; i++)
             {
                 leftSibling.InsertKeyValue(node.GetKeyValue(i));
             }
+            for (int i = 0; i < node.ChildrenCount; i++)
+            {
+                leftSibling.InsertChild(node.GetChild(i));
+            }
+
             node.Clear();
             node.Parent.RemoveChildByIndex(nodeAndLeftSiblingSeparatorKeyAtParentIndex + 1);
 
-            if (node.Parent.IsEmpty()) /* Can happen if parent is root*/
+            if (node.Parent.IsEmpty() && node.Parent.IsRoot()) /* Can happen if parent is root*/
             {
                 leftSibling.Parent = null;
                 Root = leftSibling;
             }
-
-            else if (node.Parent.IsUnderFlown()) /* Note that root is allowed to be underFlown. */
-            {
-                // TODO: Re-structure
-                // could this be considered as deleting a key from parent and call on the parent instead?
-            }
+            
+            // Since parent has lent a key to its children, it might be UnderFlown now, thus return the parent for additional checks.
+            return leftSibling.Parent;
         }
 
         /// <summary>

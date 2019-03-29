@@ -226,6 +226,267 @@ namespace CSFundamentalsTests.DataStructures.Trees
             var node1 = _tree.Search(_tree.Root, 55);
         }
 
+        [TestMethod]
+        public void BTree_Delete_Test_1()
+        {
+            Assert.IsTrue(_tree.Delete(100));
+            Assert.AreEqual(2, _tree.Root.KeyCount);
+            HasBTreeProperties(_tree, 15, 11);
+        }
+
+        [TestMethod]
+        public void BTree_Delete_Test_2()
+        {
+            Assert.IsTrue(_tree.Delete(50));
+            HasBTreeProperties(_tree, 15, 11);
+        }
+
+        [TestMethod]
+        public void BTree_Delete_Test_3()
+        {
+            Assert.IsTrue(_tree.Delete(300));
+            HasBTreeProperties(_tree, 15, 15);
+        }
+
+        [TestMethod]
+        public void BTree_Delete_Test_4()
+        {
+            Assert.IsTrue(_tree.Delete(20));
+            HasBTreeProperties(_tree, 15, 11);
+        }
+
+        [TestMethod]
+        public void BTree_Delete_Test_5()
+        {
+            Assert.IsTrue(_tree.Delete(80));
+            HasBTreeProperties(_tree, 15, 11);
+        }
+
+        [TestMethod]
+        public void BTree_Delete_Test_6()
+        {
+            Assert.IsTrue(_tree.Delete(200));
+            HasBTreeProperties(_tree, 15, 15);
+        }
+
+        [TestMethod]
+        public void BTree_Delete_Test_7()
+        {
+            Assert.IsTrue(_tree.Delete(500));
+            HasBTreeProperties(_tree, 15, 11);
+        }
+
+        [TestMethod]
+        public void BTree_Delete_Test_8()
+        {
+            Assert.IsTrue(_tree.Delete(10));
+            HasBTreeProperties(_tree, 15, 11);
+        }
+
+        [TestMethod]
+        public void BTree_Delete_Test_9()
+        {
+            Assert.IsTrue(_tree.Delete(30));
+            HasBTreeProperties(_tree, 15, 11);
+        }
+
+        [TestMethod]
+        public void BTree_Delete_Test_10()
+        {
+           Assert.IsTrue( _tree.Delete(60));
+            HasBTreeProperties(_tree, 15, 11);
+        }
+
+        [TestMethod]
+        public void BTree_Delete_Test_11()
+        {
+            Assert.IsTrue(_tree.Delete(90));
+            HasBTreeProperties(_tree, 15, 11);
+        }
+
+        [TestMethod]
+        public void BTree_Delete_Test_12()
+        {
+            Assert.IsTrue(_tree.Delete(150));
+            HasBTreeProperties(_tree, 15, 15);
+        }
+
+        [TestMethod]
+        public void BTree_Delete_Test_13()
+        {
+            Assert.IsTrue(_tree.Delete(250));
+            HasBTreeProperties(_tree, 15, 15);
+        }
+
+        [TestMethod]
+        public void BTree_Delete_Test_14()
+        {
+            Assert.IsTrue(_tree.Delete(270));
+            HasBTreeProperties(_tree, 15, 15);
+        }
+
+        [TestMethod]
+        public void BTree_Delete_Test_15()
+        {
+            Assert.IsTrue(_tree.Delete(400));
+            HasBTreeProperties(_tree, 15, 11);
+        }
+
+        [TestMethod]
+        public void BTree_Delete_Test_16()
+        {
+            Assert.IsTrue(_tree.Delete(600));
+            HasBTreeProperties(_tree, 15, 11);
+        }
+
+        [TestMethod]
+        public void BTree_Delete_Test_17()
+        {
+            // TODO: Mixed order consecutive deletes
+        }
+
+        [TestMethod]
+        public void BTree_Delete_Test_18()
+        {
+            // TODO: Mixed order consecutive deletes
+        }
+
+        /// <summary>
+        /// Tree has only one node: root, and root has 1 key.
+        /// </summary>
+        [TestMethod]
+        public void BTree_Delete_Test_19()
+        {
+            BTree<int, string> tree = new BTree<int, string>(3);
+            tree.Insert(new KeyValuePair<int, string>(10, "A"));
+            HasBTreeProperties(tree, 1, 1);
+
+            /* Deleting the only key in the only node of the tree. */
+            Assert.IsTrue(tree.Delete(10));
+            HasBTreeProperties(tree, 0, 0);
+        }
+
+        [TestMethod]
+        public void BTree_Delete_Test_20()
+        {
+            BTree<int, string> tree = new BTree<int, string>(3);
+            tree.Insert(new KeyValuePair<int, string>(10, "A"));
+            tree.Insert(new KeyValuePair<int, string>(100, "B"));
+            HasBTreeProperties(tree, 2, 1);
+
+            /* Deleting 1 out of 2 keys in the only node of the tree. */
+            Assert.IsTrue(tree.Delete(100));
+            HasBTreeProperties(tree, 1, 1);
+
+            /* Deleting a non-existing key. */
+            Assert.IsFalse(tree.Delete(50));
+            HasBTreeProperties(tree, 1, 1);
+
+            /* Deleting the only key in the only node of the tree. */
+            Assert.IsTrue(tree.Delete(10));
+            HasBTreeProperties(tree, 0, 0);
+
+            /* Deleting a key in a tree with no node. */
+            Assert.IsFalse(tree.Delete(150));
+            HasBTreeProperties(tree, 0, 0);
+        }
+
+        [TestMethod]
+        public void BTree_Delete_Test_21()
+        {
+            BTree<int, string> tree = new BTree<int, string>(3);
+            tree.Insert(new KeyValuePair<int, string>(10, "A"));
+            tree.Insert(new KeyValuePair<int, string>(20, "B"));
+            tree.Insert(new KeyValuePair<int, string>(30, "C"));
+            HasBTreeProperties(tree, 3, 3);
+
+            Assert.IsTrue(tree.Delete(20));
+            HasBTreeProperties(tree, 2, 1);
+        }
+
+        [TestMethod]
+        public void BTree_Delete_Test_22()
+        {
+            BTree<int, string> tree = new BTree<int, string>(3);
+            tree.Insert(new KeyValuePair<int, string>(10, "A"));
+            tree.Insert(new KeyValuePair<int, string>(20, "B"));
+            tree.Insert(new KeyValuePair<int, string>(30, "C"));
+            HasBTreeProperties(tree, 3, 3);
+
+            Assert.IsTrue(tree.Delete(10));
+            HasBTreeProperties(tree, 2, 1);
+
+        }
+
+        [TestMethod]
+        public void BTree_Delete_Test_23()
+        {
+            BTree<int, string> tree = new BTree<int, string>(3);
+            tree.Insert(new KeyValuePair<int, string>(10, "A"));
+            tree.Insert(new KeyValuePair<int, string>(20, "B"));
+            tree.Insert(new KeyValuePair<int, string>(30, "C"));
+            HasBTreeProperties(tree, 3, 3);
+
+            Assert.IsTrue(tree.Delete(30));
+            HasBTreeProperties(tree, 2, 1);
+        }
+
+        [TestMethod]
+        public void BTree_Delete_Test_24()
+        {
+            BTree<int, string> tree = new BTree<int, string>(3);
+            tree.Insert(new KeyValuePair<int, string>(10, "A"));
+            tree.Insert(new KeyValuePair<int, string>(20, "B"));
+            tree.Insert(new KeyValuePair<int, string>(30, "C"));
+            tree.Insert(new KeyValuePair<int, string>(40, "D"));
+            HasBTreeProperties(tree, 4, 3);
+
+            Assert.IsTrue(tree.Delete(30));
+            HasBTreeProperties(tree, 3, 3);
+        }
+
+        [TestMethod]
+        public void BTree_Delete_Test_25()
+        {
+            BTree<int, string> tree = new BTree<int, string>(3);
+            tree.Insert(new KeyValuePair<int, string>(10, "A"));
+            tree.Insert(new KeyValuePair<int, string>(20, "B"));
+            tree.Insert(new KeyValuePair<int, string>(30, "C"));
+            tree.Insert(new KeyValuePair<int, string>(40, "D"));
+            HasBTreeProperties(tree, 4, 3);
+
+            Assert.IsTrue(tree.Delete(40));
+            HasBTreeProperties(tree, 3, 3);
+        }
+
+        [TestMethod]
+        public void BTree_Delete_Test_26()
+        {
+            BTree<int, string> tree = new BTree<int, string>(3);
+            tree.Insert(new KeyValuePair<int, string>(10, "A"));
+            tree.Insert(new KeyValuePair<int, string>(20, "B"));
+            tree.Insert(new KeyValuePair<int, string>(30, "C"));
+            tree.Insert(new KeyValuePair<int, string>(40, "D"));
+            HasBTreeProperties(tree, 4, 3);
+
+            Assert.IsTrue(tree.Delete(10));
+            HasBTreeProperties(tree, 3, 3);
+        }
+
+        [TestMethod]
+        public void BTree_Delete_Test_27()
+        {
+            BTree<int, string> tree = new BTree<int, string>(3);
+            tree.Insert(new KeyValuePair<int, string>(10, "A"));
+            tree.Insert(new KeyValuePair<int, string>(20, "B"));
+            tree.Insert(new KeyValuePair<int, string>(30, "C"));
+            tree.Insert(new KeyValuePair<int, string>(40, "D"));
+            HasBTreeProperties(tree, 4, 3);
+
+            Assert.IsTrue(tree.Delete(20));
+            HasBTreeProperties(tree, 3, 3);
+        }
+
         // TOD0: Compute levels and after each insert confirm it
 
         public bool HasBTreeProperties<T1, T2>(BTree<T1, T2> tree, int expectedKeyCount, int expectedNodeCount) where T1 : IComparable<T1>
