@@ -112,6 +112,8 @@ namespace CSFundamentals.DataStructures.Trees
             // I also would preferably return null, rather than exceptions to be honest: 
             BTreeNode<T1, T2> leftSibling = node.IsRoot() ? null : node.HasLeftSibling() ? node.GetLeftSibling() : null;
             BTreeNode<T1, T2> rightSibling = node.IsRoot() ? null : node.HasRightSibling() ? node.GetRightSibling() : null;
+            int separatorWithLeftSiblingIndexAtParent = leftSibling == null ? -1 : leftSibling.GetIndexAtParentChildren();
+            int separatorWithRighthSiblingIndexAtParent = rightSibling == null ? -1 : node.GetIndexAtParentChildren();
 
             if (!node.IsLeaf())
             {
@@ -144,14 +146,19 @@ namespace CSFundamentals.DataStructures.Trees
                 var parent = node.Parent;
                 var parentLeftSibling = parent == null || parent.IsRoot() ? null : parent.HasLeftSibling() ? parent.GetLeftSibling() : null;
                 var parentRightSibling = parent == null || parent.IsRoot() ? null : parent.HasRightSibling() ? parent.GetRightSibling() : null;
+                int parentSeparatorWithLeftSiblingIndexAtParent = parentLeftSibling == null ? -1 : parentLeftSibling.GetIndexAtParentChildren();
+                int parentSeparatorWithRighthSiblingIndexAtParent = parentRightSibling == null ? -1 : parent.GetIndexAtParentChildren();
+
 
                 if (leftSibling != null && leftSibling.IsMin1Full())
                 {
-                    node = RotateRight(node, leftSibling);
+                    node = RotateRight(node, leftSibling, separatorWithLeftSiblingIndexAtParent);
+                    return true;
                 }
                 else if (rightSibling != null && rightSibling.IsMin1Full())
                 {
-                    node = RotateLeft(node, rightSibling);
+                    node = RotateLeft(node, rightSibling, separatorWithRighthSiblingIndexAtParent);
+                    return true;
                 }
                 else if (rightSibling != null && rightSibling.IsMinFull()) /* Meaning rotation wont work, as borrowing key from the siblings via parent will leave the sibling UnderFlown.*/
                 {
@@ -168,6 +175,8 @@ namespace CSFundamentals.DataStructures.Trees
                 // this does not work, because the key is already removed from parent!
                 leftSibling = parentLeftSibling;
                 rightSibling = parentRightSibling;
+                separatorWithLeftSiblingIndexAtParent = parentSeparatorWithLeftSiblingIndexAtParent;
+                separatorWithRighthSiblingIndexAtParent = parentSeparatorWithRighthSiblingIndexAtParent;
             }
             return true;
         }
@@ -178,13 +187,11 @@ namespace CSFundamentals.DataStructures.Trees
         /// </summary>
         /// <param name="node"></param>
         /// <param name="rightSibling"></param>
-        internal BTreeNode<T1, T2> RotateLeft(BTreeNode<T1, T2> node, BTreeNode<T1, T2> rightSibling)
+        internal BTreeNode<T1, T2> RotateLeft(BTreeNode<T1, T2> node, BTreeNode<T1, T2> rightSibling, int separatorIndex)
         {
-            int nodeAndRightSiblingSeparatorKeyAtParentIndex = node.GetIndexAtParentChildren();
-
             /* 1- Move the separator key in the parent to the underFlown node. */
-            node.InsertKeyValue(node.Parent.GetKeyValue(nodeAndRightSiblingSeparatorKeyAtParentIndex));
-            node.Parent.RemoveKeyByIndex(nodeAndRightSiblingSeparatorKeyAtParentIndex);
+            node.InsertKeyValue(node.Parent.GetKeyValue(separatorIndex));
+            node.Parent.RemoveKeyByIndex(separatorIndex);
 
             /* 2- Replace separator key in the parent with the first key of the right sibling.*/
             node.Parent.InsertKeyValue(rightSibling.GetMinKey());
@@ -202,13 +209,11 @@ namespace CSFundamentals.DataStructures.Trees
         /// </summary>
         /// <param name="node">Is an UnderFlown leaf node. </param>
         /// <param name="leftSibling">Is left sibling of <paramref name="node"/></param>
-        internal BTreeNode<T1, T2> RotateRight(BTreeNode<T1, T2> node, BTreeNode<T1, T2> leftSibling)
+        internal BTreeNode<T1, T2> RotateRight(BTreeNode<T1, T2> node, BTreeNode<T1, T2> leftSibling, int separatorIndex)
         {
-            int nodeAndLeftSiblingSeparatorKeyAtParentIndex = leftSibling.GetIndexAtParentChildren();
-
             /* 1- Move the separator key in the parent to the underFlown node. */
-            node.InsertKeyValue(node.Parent.GetKeyValue(nodeAndLeftSiblingSeparatorKeyAtParentIndex));
-            node.Parent.RemoveKeyByIndex(nodeAndLeftSiblingSeparatorKeyAtParentIndex);
+            node.InsertKeyValue(node.Parent.GetKeyValue(separatorIndex));
+            node.Parent.RemoveKeyByIndex(separatorIndex);
 
             /* 2- Replace separator key in the parent with the last key of the left sibling. */
             node.Parent.InsertKeyValue(leftSibling.GetMaxKey());
@@ -251,7 +256,7 @@ namespace CSFundamentals.DataStructures.Trees
                 leftSibling.Parent = null;
                 Root = leftSibling;
             }
-            
+
             // Since parent has lent a key to its children, it might be UnderFlown now, thus return the parent for additional checks.
             return leftSibling.Parent;
         }
