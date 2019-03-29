@@ -29,10 +29,10 @@ namespace CSFundamentals.DataStructures.Trees
 {
     public class BTree<T1, T2> where T1 : IComparable<T1>
     {
+        // First: clear summaries and understandable comment for all the methods here, ... 
         // TODO: Test, complexity, summary, ... 
-        // Todo: insert in a sorted list is o(n) thus how can these ops delete, insert etc be o(logn) alone! this is not possible!
-        // it si like my sorted doubly linked list, insert is o(n), check if I have correctly written it, .. 
-
+        // ToDo: insert in a sorted list is o(n) thus how can these ops delete, insert etc be o(Log(n)) alone! this is not possible!
+        // it is like my sorted doubly linked list, insert is o(n), check if I have correctly written it, .. 
 
         // TODO: Should protect the field from external manipulations, ... 
         // TODO: FindMin(), FindMax() methods, ... given a root, on the subtree started on the given root, ... 
@@ -137,11 +137,9 @@ namespace CSFundamentals.DataStructures.Trees
                 {
                     return true;
                 }
+                ReBalance(node, leftSibling, rightSibling, separatorWithLeftSiblingIndex, separatorWithRighthSiblingIndex);
+                return true;
             }
-
-            ReBalance(node, leftSibling, rightSibling, separatorWithLeftSiblingIndex, separatorWithRighthSiblingIndex);
-           
-            return true;
         }
 
         /// <summary>
