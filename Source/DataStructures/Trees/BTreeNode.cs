@@ -169,6 +169,19 @@ namespace CSFundamentals.DataStructures.Trees
             return FindMaxInSubTree(node.GetChild(node.ChildrenCount - 1));
         }
 
+        public BTreeNode<T1, T2> GetSuccessorNode(int keyIndex)
+        {
+            return FindMinInSubTree(_children.ElementAt(keyIndex + 1).Key);
+        }
+        public BTreeNode<T1, T2> FindMinInSubTree(BTreeNode<T1, T2> node)
+        {
+            if (node.IsLeaf())
+            {
+                return node;
+            }
+
+            return FindMinInSubTree(node.GetChild(0));
+        }
 
         /// <summary>
         /// Splits this node to 2 nodes if it is overflown, such that each node has at least MinKeys keys.

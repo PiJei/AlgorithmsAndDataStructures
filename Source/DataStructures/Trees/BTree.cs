@@ -152,13 +152,32 @@ namespace CSFundamentals.DataStructures.Trees
 
                 if (leftSibling != null && leftSibling.IsMin1Full())
                 {
+                    // var predecessor = parent.GetPredecessorNode(separatorWithLeftSiblingIndexAtParent);
+                    // /* 1- Move the separator key in the parent to the underFlown node. */
+                    // node.InsertKeyValue(node.Parent.GetKeyValue(separatorWithLeftSiblingIndexAtParent));
+                    // node.Parent.RemoveKeyByIndex(separatorWithLeftSiblingIndexAtParent);
+                    // 
+                    // /* 2- Replace separator key in the parent with the last key of the left sibling. */
+                    // node.Parent.InsertKeyValue(predecessor.GetMaxKey());
+                    // 
+                    // return Delete(predecessor, predecessor.GetMaxKey().Key);
+
                     node = RotateRight(node, leftSibling, separatorWithLeftSiblingIndexAtParent);
-                    return true;
+                    break;
                 }
                 else if (rightSibling != null && rightSibling.IsMin1Full())
                 {
+                    // var successor = parent.GetSuccessorNode(separatorWithRighthSiblingIndexAtParent);
+                    // 
+                    // node.InsertKeyValue(parent.GetKeyValue(separatorWithRighthSiblingIndexAtParent));
+                    // node.Parent.RemoveKeyByIndex(separatorWithRighthSiblingIndexAtParent);
+                    // 
+                    // /* 2- Replace separator key in the parent with the first key of the right sibling.*/
+                    // node.Parent.InsertKeyValue(successor.GetMinKey());
+                    // return Delete(successor, successor.GetMinKey().Key);
+
                     node = RotateLeft(node, rightSibling, separatorWithRighthSiblingIndexAtParent);
-                    return true;
+                    break;
                 }
                 else if (rightSibling != null && rightSibling.IsMinFull()) /* Meaning rotation wont work, as borrowing key from the siblings via parent will leave the sibling UnderFlown.*/
                 {
@@ -195,7 +214,15 @@ namespace CSFundamentals.DataStructures.Trees
 
             /* 2- Replace separator key in the parent with the first key of the right sibling.*/
             node.Parent.InsertKeyValue(rightSibling.GetMinKey());
+            //return Delete(rightSibling, rightSibling.GetMinKey().Key);
             rightSibling.RemoveKey(rightSibling.GetMinKey().Key);
+
+            // If rightSIbling has any children at 0, move that to the node as well
+            if (rightSibling.ChildrenCount >= 1)
+            {
+                node.InsertChild(rightSibling.GetChild(0));
+                rightSibling.RemoveChildByIndex(0);
+            }
 
             /* Check Validity. At this point both the node and its right sibling must be MinFull (have exactly MinKeys keys). */
             Contract.Assert(rightSibling.IsMinFull());
@@ -217,7 +244,17 @@ namespace CSFundamentals.DataStructures.Trees
 
             /* 2- Replace separator key in the parent with the last key of the left sibling. */
             node.Parent.InsertKeyValue(leftSibling.GetMaxKey());
+
+            //return Delete(leftSibling, leftSibling.GetMaxKey().Key);
             leftSibling.RemoveKey(leftSibling.GetMaxKey().Key);
+
+            // If rightSIbling has any children at 0, move that to the node as well
+            if (leftSibling.ChildrenCount >= 1)
+            {
+                node.InsertChild(leftSibling.GetChild(leftSibling.ChildrenCount - 1));
+                leftSibling.RemoveChildByIndex(leftSibling.ChildrenCount - 1);
+            }
+
 
             /* Check validity. At this point both the node and its left sibling must be MinFull (have exactly MinKeys keys). */
             Contract.Assert(leftSibling.IsMinFull());
