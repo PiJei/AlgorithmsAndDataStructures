@@ -24,20 +24,21 @@ using System.Runtime.CompilerServices;
 using CSFundamentals.Styling;
 
 [assembly: InternalsVisibleTo("CSFundamentals")]
+// TODO: Test, complexity
+// ToDo: insert in a sorted list is o(n) thus how can these ops delete, insert etc be o(Log(n)) alone! this is not possible!
+// it is like my sorted doubly linked list, insert is o(n), check if I have correctly written it, .. 
+
+// TODO: Should protect the field from external manipulations, ... 
+// TODO: FindMin(), FindMax() methods, ... given a root, on the subtree started on the given root, ... 
+// TODO: SHall be easily be able to compute the maximum number of keys and key-values that such a tree can hold, ... 
+// and should check at each state to make sure that the number of elements in the tree are smaller than this, ..
+// TODO:for search  could we use binary search implementation from search part of this lib?
+// search seems to be logK in logN....uses binary search within each node.... could we call the search in the node here?  
 
 namespace CSFundamentals.DataStructures.Trees
 {
     public class BTree<T1, T2> where T1 : IComparable<T1>
     {
-        // First: clear summaries and understandable comment for all the methods here, ... 
-        // TODO: Test, complexity, summary, ... 
-        // ToDo: insert in a sorted list is o(n) thus how can these ops delete, insert etc be o(Log(n)) alone! this is not possible!
-        // it is like my sorted doubly linked list, insert is o(n), check if I have correctly written it, .. 
-
-        // TODO: Should protect the field from external manipulations, ... 
-        // TODO: FindMin(), FindMax() methods, ... given a root, on the subtree started on the given root, ... 
-        // TODO: SHall be easily be able to compute the maximum number of keys and key-values that such a tree can hold, ... 
-        // and should check at each state to make sure that the number of elements in the tree are smaller than this, ..
         /// <summary>
         /// Is the root of the tree. 
         /// </summary>
@@ -54,7 +55,7 @@ namespace CSFundamentals.DataStructures.Trees
         }
 
         /// <summary>
-        /// Given the set of key values, builds a b-tree
+        /// Given the set of key values, builds a b-tree by inserting all the key-value pairs. 
         /// </summary>
         /// <param name="keyValues">Is the list of key values to be inserted in the tree. </param>
         /// <returns>Root of the tree. </returns>
@@ -74,7 +75,9 @@ namespace CSFundamentals.DataStructures.Trees
         /// <returns>Root of the tree. </returns>
         public BTreeNode<T1, T2> Insert(KeyValuePair<T1, T2> keyValue)
         {
+            /* Find the leaf node that should contain the new key-value pair. The leaf is found such that the order property of the B-Tree is preserved. */
             BTreeNode<T1, T2> leaf = FindLeafToInsertKey(Root, keyValue.Key);
+
             if (leaf == null) /* Means this is the first element of the tree, and we should create root. */
             {
                 Root = new BTreeNode<T1, T2>(MaxBranchingDegree, keyValue);
@@ -83,38 +86,47 @@ namespace CSFundamentals.DataStructures.Trees
             else
             {
                 leaf.InsertKeyValue(keyValue);
+
+                /* As the leaf has a new value now, it might be overFlown. Split_Reapir detects this case and fixes it. */
                 Split_Repair(leaf);
             }
 
             return Root;
         }
 
+        /// <summary>
+        /// Deletes the given key from the tree if it exists. 
+        /// </summary>
+        /// <param name="key">The key to be deleted from the tree. </param>
+        /// <returns>True in case of success, and false otherwise. </returns>
         public bool Delete(T1 key)
         {
             try
             {
+                /* First find the container node of the key, and then delete it.*/
                 BTreeNode<T1, T2> node = Search(Root, key);
                 return Delete(node, key);
             }
-            catch (KeyNotFoundException) /* This means that the key does not exist in the tree.*/
+            catch (KeyNotFoundException) /* This means that the key does not exist in the tree, and thus the operation is not successful.*/
             {
                 return false;
             }
         }
 
         /// <summary>
-        /// Deletes <paramref name="key"> from <paramref name="node">, assuming that key exists in node.
+        /// Deletes <paramref name="key"> from <paramref name="node">, assuming that key exists in the node.
         /// </summary>
-        /// <param name="node"></param>
-        /// <param name="key"></param>
+        /// <param name="node">A node in tree that contains the given key <paramref name="key"/>. </param>
+        /// <param name="key">The key that should be deleted from tree node <paramref name="node"/>.</param>
         internal bool Delete(BTreeNode<T1, T2> node, T1 key)
         {
-            // TODO: THe fact that I need to do these first shows the shortcoming of my implementation
+            /* Get information about the node that might be needed later, but impossible to retrieve after the key is removed from the node. */
             BTreeNode<T1, T2> leftSibling = node.IsRoot() ? null : node.HasLeftSibling() ? node.GetLeftSibling() : null;
             BTreeNode<T1, T2> rightSibling = node.IsRoot() ? null : node.HasRightSibling() ? node.GetRightSibling() : null;
             int separatorWithLeftSiblingIndex = leftSibling == null ? -1 : leftSibling.GetIndexAtParentChildren();
             int separatorWithRighthSiblingIndex = rightSibling == null ? -1 : node.GetIndexAtParentChildren();
 
+            /* If node is an internal node, find the predecessor key of the key in its left subtree and replace the key with it. Predecessor key belongs to a leaf node, thus the operation boils down to deleting the replacement key from this leaf node. */
             if (!node.IsLeaf())
             {
                 int keyIndexAtNode = node.GetKeyIndex(key);
@@ -123,7 +135,7 @@ namespace CSFundamentals.DataStructures.Trees
                 node.InsertKeyValue(predecessorNode.GetMaxKey());
                 return Delete(predecessorNode, predecessorNode.GetMaxKey().Key);
             }
-            else
+            else /* If node is leaf, remove the key from it, and then re balance if the node is under flown. */
             {
                 node.RemoveKey(key);
 
@@ -142,10 +154,10 @@ namespace CSFundamentals.DataStructures.Trees
         }
 
         /// <summary>
-        /// 
+        /// Rotates a key from the right sibling of the node via their parent to the node. 
         /// </summary>
-        /// <param name="node"></param>
-        /// <param name="rightSibling"></param>
+        /// <param name="node">Is the receiver of a new key. </param>
+        /// <param name="rightSibling">The node that lends a key to the process. This key moves to parent, and a key from parent moves to node. </param>
         internal BTreeNode<T1, T2> RotateLeft(BTreeNode<T1, T2> node, BTreeNode<T1, T2> rightSibling, int separatorIndex)
         {
             /* 1- Move the separator key in the parent to the underFlown node. */
@@ -155,7 +167,7 @@ namespace CSFundamentals.DataStructures.Trees
             /* 2- Replace separator key in the parent with the first key of the right sibling.*/
             node.Parent.InsertKeyValue(rightSibling.GetMinKey());
 
-            /* 3- Remove the minimum key from the right sibling, and move its child to the node. */
+            /* 3- Remove the first (minimum) key from the right sibling, and move its child to node. */
             rightSibling.RemoveKey(rightSibling.GetMinKey().Key);
             if (rightSibling.ChildrenCount >= 1)
             {
@@ -171,10 +183,10 @@ namespace CSFundamentals.DataStructures.Trees
         }
 
         /// <summary>
-        /// Rotates a key from <paramref name="leftSibling"/> to the common parent of <paramref name="node"/> & <paramref name="leftSibling"/>, and moves the separator key from the common parent to <paramref name="node"/>
+        /// Rotates a key from the left sibling of the node via their parent to the node.
         /// </summary>
-        /// <param name="node">Is an UnderFlown leaf node. </param>
-        /// <param name="leftSibling">Is left sibling of <paramref name="node"/></param>
+        /// <param name="node">Is the receiver of a new key. </param>
+        /// <param name="leftSibling">The node that lends a key to the process. This key moves to parent, and a key from parent moves to node.</param>
         internal BTreeNode<T1, T2> RotateRight(BTreeNode<T1, T2> node, BTreeNode<T1, T2> leftSibling, int separatorIndex)
         {
             /* 1- Move the separator key in the parent to the underFlown node. */
@@ -184,7 +196,7 @@ namespace CSFundamentals.DataStructures.Trees
             /* 2- Replace separator key in the parent with the last key of the left sibling. */
             node.Parent.InsertKeyValue(leftSibling.GetMaxKey());
 
-            /* 3- Remove the maximum key from the left sibling, and move its child to node. */
+            /* 3- Remove the last (maximum) key from the left sibling, and move its child to node. */
             leftSibling.RemoveKey(leftSibling.GetMaxKey().Key);
             if (leftSibling.ChildrenCount >= 1)
             {
@@ -195,17 +207,27 @@ namespace CSFundamentals.DataStructures.Trees
             /* Check validity. At this point both the node and its left sibling must be MinFull (have exactly MinKeys keys). */
             Contract.Assert(leftSibling.IsMinFull());
             Contract.Assert(node.IsMinFull());
+
             return node.Parent;
         }
 
+        /// <summary>
+        /// Merges node with its left sibling, such that node can be dropped. Also borrows a key from parent. 
+        /// </summary>
+        /// <param name="node">The node that will be dissolved at the end of operation. </param>
+        /// <param name="leftSibling">The node that will contain keys of the node, its current keys, and a key from parent. </param>
+        /// <returns>Parent of the nodes. </returns>
         internal BTreeNode<T1, T2> Join(BTreeNode<T1, T2> node, BTreeNode<T1, T2> leftSibling)
         {
             // 1- Move separator key to the left node
             int nodeAndLeftSiblingSeparatorKeyAtParentIndex = leftSibling.GetIndexAtParentChildren();
             leftSibling.InsertKeyValue(node.Parent.GetKeyValue(nodeAndLeftSiblingSeparatorKeyAtParentIndex));
+            
+            // 2- Remove separator key in the parent, and disconnect parent from node. 
             node.Parent.RemoveKeyByIndex(nodeAndLeftSiblingSeparatorKeyAtParentIndex);
+            node.Parent.RemoveChildByIndex(nodeAndLeftSiblingSeparatorKeyAtParentIndex + 1);
 
-            // 2- Join node with leftSibling: Move all the keys and children at node to left node
+            // 3- Join node with leftSibling: Move all the keys and children of node to its left sibling.
             for (int i = 0; i < node.KeyCount; i++)
             {
                 leftSibling.InsertKeyValue(node.GetKeyValue(i));
@@ -215,8 +237,8 @@ namespace CSFundamentals.DataStructures.Trees
                 leftSibling.InsertChild(node.GetChild(i));
             }
 
+            /* Clear node. */
             node.Clear();
-            node.Parent.RemoveChildByIndex(nodeAndLeftSiblingSeparatorKeyAtParentIndex + 1);
 
             if (node.Parent.IsEmpty() && node.Parent.IsRoot()) /* Can happen if parent is root*/
             {
@@ -228,7 +250,15 @@ namespace CSFundamentals.DataStructures.Trees
             return leftSibling.Parent;
         }
 
-        public void ReBalance(BTreeNode<T1,T2> node, BTreeNode<T1,T2> leftSibling, BTreeNode<T1,T2> rightSibling, int separatorWithLeftSiblingIndex, int separatorWithRightSiblingIndex)
+        /// <summary>
+        /// Re-balances the tree to restore back its properties. This method is called when node is underFlown, and thus must be fixed. 
+        /// </summary>
+        /// <param name="node">Specifies an underFlown node. </param>
+        /// <param name="leftSibling">Is the left sibling of the underFlown node. </param>
+        /// <param name="rightSibling">Is the right sibling of the underFlown node. </param>
+        /// <param name="separatorWithLeftSiblingIndex">Is the index of the key in parent that separates node from its left sibling. </param>
+        /// <param name="separatorWithRightSiblingIndex">Is the index of the key in parent that separates node from its right sibling. </param>
+        public void ReBalance(BTreeNode<T1, T2> node, BTreeNode<T1, T2> leftSibling, BTreeNode<T1, T2> rightSibling, int separatorWithLeftSiblingIndex, int separatorWithRightSiblingIndex)
         {
             if (node.IsUnderFlown() && !node.IsRoot()) /* B-TRee allows UnderFlown roots*/
             {
@@ -328,13 +358,12 @@ namespace CSFundamentals.DataStructures.Trees
             return null;
         }
 
-        // TODO: could we use binary search implementation from search part of this lib?
         /// <summary>
-        ///  search seems to be logK in logN....uses binary search within each node.... could we call the search in the node here?  
+        ///  Searchers the given key in (sub)tree rooted at node <paramref name="root">.
         /// </summary>
-        /// <param name="root"></param>
-        /// <param name="key"></param>
-        /// <returns></returns>
+        /// <param name="root">The root of the (sub) tree at which search starts. </param>
+        /// <param name="key">Is the key to search for.</param>
+        /// <returns>The node containing the key if it exists. Otherwise throws an exception. </returns>
         public BTreeNode<T1, T2> Search(BTreeNode<T1, T2> root, T1 key)
         {
             if (root != null)
@@ -365,9 +394,6 @@ namespace CSFundamentals.DataStructures.Trees
             throw new KeyNotFoundException($"{key.ToString()} is not found in the tree.");
         }
 
-        // todo: test  for all methods here, .
-
-        // todo: complexity
         /// <summary>
         /// Traverses tree in-order and generates list of keys sorted.
         /// </summary>

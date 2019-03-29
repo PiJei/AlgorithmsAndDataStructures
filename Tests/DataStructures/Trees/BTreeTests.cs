@@ -442,7 +442,6 @@ namespace CSFundamentalsTests.DataStructures.Trees
             HasBTreeProperties(_tree, 0, 0);
         }
 
-
         /// <summary>
         /// Tree has only one node: root, and root has 1 key.
         /// </summary>
@@ -645,12 +644,94 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
             BTree<int, string> tree = new BTree<int, string>(3);
             tree.Root = node1;
-            
+
             Assert.IsTrue(tree.Delete(10));
             HasBTreeProperties(tree, 8, 7);
         }
 
         // TOD0: Compute levels and after each insert confirm it
+        [TestMethod]
+        public void BTree_RotateLeft_Test()
+        {
+            var node1 = new BTreeNode<int, string>(3);
+            node1.InsertKeyValue(new KeyValuePair<int, string>(10, "A"));
+
+            var node2 = new BTreeNode<int, string>(3);
+
+            var node3 = new BTreeNode<int, string>(3);
+            node3.InsertKeyValue(new KeyValuePair<int, string>(20, "B"));
+            node3.InsertKeyValue(new KeyValuePair<int, string>(30, "C"));
+
+            var node4 = new BTreeNode<int, string>(3);
+            node4.InsertKeyValue(new KeyValuePair<int, string>(15, "D"));
+
+            var node5 = new BTreeNode<int, string>(3);
+            node5.InsertKeyValue(new KeyValuePair<int, string>(25, "E"));
+
+            var node6 = new BTreeNode<int, string>(3);
+            node6.InsertKeyValue(new KeyValuePair<int, string>(35, "F"));
+
+            var node7 = new BTreeNode<int, string>(3);
+            node7.InsertKeyValue(new KeyValuePair<int, string>(1, "G"));
+
+            node1.InsertChild(node2);
+            node1.InsertChild(node3);
+
+            node2.InsertChild(node7);
+
+            node3.InsertChild(node4);
+            node3.InsertChild(node5);
+            node3.InsertChild(node6);
+
+            BTree<int, string> tree = new BTree<int, string>(3);
+            tree.Root = node1;
+
+            tree.RotateLeft(node2, node3, 0);
+            Assert.IsTrue(HasBTreeProperties(tree, 7, 7));
+        }
+
+        [TestMethod]
+        public void BTree_RotateRight_Test()
+        {
+            var node1 = new BTreeNode<int, string>(3);
+            node1.InsertKeyValue(new KeyValuePair<int, string>(100, "A"));
+
+            var node2 = new BTreeNode<int, string>(3);
+            node2.InsertKeyValue(new KeyValuePair<int, string>(50, "B"));
+            node2.InsertKeyValue(new KeyValuePair<int, string>(80, "C"));
+
+            var node3 = new BTreeNode<int, string>(3);
+            node3.InsertKeyValue(new KeyValuePair<int, string>(100, "D"));
+
+            var node4 = new BTreeNode<int, string>(3);
+            node4.InsertKeyValue(new KeyValuePair<int, string>(40, "D"));
+
+            var node5 = new BTreeNode<int, string>(3);
+            node5.InsertKeyValue(new KeyValuePair<int, string>(70, "E"));
+
+            var node6 = new BTreeNode<int, string>(3);
+            node6.InsertKeyValue(new KeyValuePair<int, string>(90, "F"));
+
+            var node7 = new BTreeNode<int, string>(3);
+            node7.InsertKeyValue(new KeyValuePair<int, string>(150, "G"));
+
+            node1.InsertChild(node2);
+            node1.InsertChild(node3);
+
+            node2.InsertChild(node4);
+            node2.InsertChild(node5);
+            node2.InsertChild(node6);
+
+            node3.InsertChild(node7);
+            /* This is to be able to test RotateLeft without re-ordering children. */
+            node3.RemoveKey(100);
+
+            BTree<int, string> tree = new BTree<int, string>(3);
+            tree.Root = node1;
+            tree.RotateRight(node3, node2, 0);
+            // ideally I dont expect this to happen with a tree that is built with insert, etc, .. 
+            Assert.IsTrue(HasBTreeProperties(tree, 7, 7));
+        }
 
         public bool HasBTreeProperties<T1, T2>(BTree<T1, T2> tree, int expectedKeyCount, int expectedNodeCount) where T1 : IComparable<T1>
         {
