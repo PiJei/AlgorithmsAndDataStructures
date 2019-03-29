@@ -133,11 +133,10 @@ namespace CSFundamentals.DataStructures.Trees
                     return true;
                 }
 
-                if (!node.IsUnderFlown())
+                if (node.IsUnderFlown())
                 {
-                    return true;
+                    ReBalance(node, leftSibling, rightSibling, separatorWithLeftSiblingIndex, separatorWithRighthSiblingIndex);
                 }
-                ReBalance(node, leftSibling, rightSibling, separatorWithLeftSiblingIndex, separatorWithRighthSiblingIndex);
                 return true;
             }
         }
