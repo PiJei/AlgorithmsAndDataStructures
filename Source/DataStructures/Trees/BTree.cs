@@ -20,7 +20,6 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
-using System.Linq;
 using System.Runtime.CompilerServices;
 using CSFundamentals.Styling;
 
@@ -30,11 +29,15 @@ namespace CSFundamentals.DataStructures.Trees
 {
     public class BTree<T1, T2> where T1 : IComparable<T1>
     {
+        // TODO: Test, complexity, summary, ... 
+        // Todo: insert in a sorted list is o(n) thus how can these ops delete, insert etc be o(logn) alone! this is not possible!
+        // it si like my sorted doubly linked list, insert is o(n), check if I have correctly written it, .. 
+
+
         // TODO: Should protect the field from external manipulations, ... 
         // TODO: FindMin(), FindMax() methods, ... given a root, on the subtree started on the given root, ... 
         // TODO: SHall be easily be able to compute the maximum number of keys and key-values that such a tree can hold, ... 
         // and should check at each state to make sure that the number of elements in the tree are smaller than this, ..
-        // TODO: Test the in-order traversal as well, ... 
         /// <summary>
         /// Is the root of the tree. 
         /// </summary>
@@ -69,7 +72,6 @@ namespace CSFundamentals.DataStructures.Trees
         /// </summary>
         /// <param name="keyValue">Is the key-value pair to be inserted in the tree. </param>
         /// <returns>Root of the tree. </returns>
-
         public BTreeNode<T1, T2> Insert(KeyValuePair<T1, T2> keyValue)
         {
             BTreeNode<T1, T2> leaf = FindLeafToInsertKey(Root, keyValue.Key);
@@ -86,7 +88,6 @@ namespace CSFundamentals.DataStructures.Trees
 
             return Root;
         }
-
 
         public bool Delete(T1 key)
         {
@@ -109,11 +110,10 @@ namespace CSFundamentals.DataStructures.Trees
         internal bool Delete(BTreeNode<T1, T2> node, T1 key)
         {
             // TODO: THe fact that I need to do these first shows the shortcoming of my implementation
-            // I also would preferably return null, rather than exceptions to be honest: 
             BTreeNode<T1, T2> leftSibling = node.IsRoot() ? null : node.HasLeftSibling() ? node.GetLeftSibling() : null;
             BTreeNode<T1, T2> rightSibling = node.IsRoot() ? null : node.HasRightSibling() ? node.GetRightSibling() : null;
-            int separatorWithLeftSiblingIndexAtParent = leftSibling == null ? -1 : leftSibling.GetIndexAtParentChildren();
-            int separatorWithRighthSiblingIndexAtParent = rightSibling == null ? -1 : node.GetIndexAtParentChildren();
+            int separatorWithLeftSiblingIndex = leftSibling == null ? -1 : leftSibling.GetIndexAtParentChildren();
+            int separatorWithRighthSiblingIndex = rightSibling == null ? -1 : node.GetIndexAtParentChildren();
 
             if (!node.IsLeaf())
             {
@@ -127,7 +127,6 @@ namespace CSFundamentals.DataStructures.Trees
             {
                 node.RemoveKey(key);
 
-                /* TODO: Can we not treat this specially, and bend it with other cases? */
                 if (node.IsEmpty() && node.IsRoot())
                 {
                     Root = null;
@@ -140,67 +139,11 @@ namespace CSFundamentals.DataStructures.Trees
                 }
             }
 
-            //TODO  I think I should make this bit recursive and pass left and right children of the node
-            while (node.IsUnderFlown() && !node.IsRoot()) /* B-TRee allows UnderFlown roots*/
-            {
-                var parent = node.Parent;
-                var parentLeftSibling = parent == null || parent.IsRoot() ? null : parent.HasLeftSibling() ? parent.GetLeftSibling() : null;
-                var parentRightSibling = parent == null || parent.IsRoot() ? null : parent.HasRightSibling() ? parent.GetRightSibling() : null;
-                int parentSeparatorWithLeftSiblingIndexAtParent = parentLeftSibling == null ? -1 : parentLeftSibling.GetIndexAtParentChildren();
-                int parentSeparatorWithRighthSiblingIndexAtParent = parentRightSibling == null ? -1 : parent.GetIndexAtParentChildren();
-
-
-                if (leftSibling != null && leftSibling.IsMin1Full())
-                {
-                    // var predecessor = parent.GetPredecessorNode(separatorWithLeftSiblingIndexAtParent);
-                    // /* 1- Move the separator key in the parent to the underFlown node. */
-                    // node.InsertKeyValue(node.Parent.GetKeyValue(separatorWithLeftSiblingIndexAtParent));
-                    // node.Parent.RemoveKeyByIndex(separatorWithLeftSiblingIndexAtParent);
-                    // 
-                    // /* 2- Replace separator key in the parent with the last key of the left sibling. */
-                    // node.Parent.InsertKeyValue(predecessor.GetMaxKey());
-                    // 
-                    // return Delete(predecessor, predecessor.GetMaxKey().Key);
-
-                    node = RotateRight(node, leftSibling, separatorWithLeftSiblingIndexAtParent);
-                    break;
-                }
-                else if (rightSibling != null && rightSibling.IsMin1Full())
-                {
-                    // var successor = parent.GetSuccessorNode(separatorWithRighthSiblingIndexAtParent);
-                    // 
-                    // node.InsertKeyValue(parent.GetKeyValue(separatorWithRighthSiblingIndexAtParent));
-                    // node.Parent.RemoveKeyByIndex(separatorWithRighthSiblingIndexAtParent);
-                    // 
-                    // /* 2- Replace separator key in the parent with the first key of the right sibling.*/
-                    // node.Parent.InsertKeyValue(successor.GetMinKey());
-                    // return Delete(successor, successor.GetMinKey().Key);
-
-                    node = RotateLeft(node, rightSibling, separatorWithRighthSiblingIndexAtParent);
-                    break;
-                }
-                else if (rightSibling != null && rightSibling.IsMinFull()) /* Meaning rotation wont work, as borrowing key from the siblings via parent will leave the sibling UnderFlown.*/
-                {
-                    node = Join(rightSibling, node);
-                }
-                else if (leftSibling != null && leftSibling.IsMinFull())
-                {
-                    node = Join(node, leftSibling);
-                }
-
-                if (node == null)
-                    break;
-
-                // this does not work, because the key is already removed from parent!
-                leftSibling = parentLeftSibling;
-                rightSibling = parentRightSibling;
-                separatorWithLeftSiblingIndexAtParent = parentSeparatorWithLeftSiblingIndexAtParent;
-                separatorWithRighthSiblingIndexAtParent = parentSeparatorWithRighthSiblingIndexAtParent;
-            }
+            ReBalance(node, leftSibling, rightSibling, separatorWithLeftSiblingIndex, separatorWithRighthSiblingIndex);
+           
             return true;
         }
 
-        // TODO: Test, complexity, summary, ... 
         /// <summary>
         /// 
         /// </summary>
@@ -214,10 +157,9 @@ namespace CSFundamentals.DataStructures.Trees
 
             /* 2- Replace separator key in the parent with the first key of the right sibling.*/
             node.Parent.InsertKeyValue(rightSibling.GetMinKey());
-            //return Delete(rightSibling, rightSibling.GetMinKey().Key);
-            rightSibling.RemoveKey(rightSibling.GetMinKey().Key);
 
-            // If rightSIbling has any children at 0, move that to the node as well
+            /* 3- Remove the minimum key from the right sibling, and move its child to the node. */
+            rightSibling.RemoveKey(rightSibling.GetMinKey().Key);
             if (rightSibling.ChildrenCount >= 1)
             {
                 node.InsertChild(rightSibling.GetChild(0));
@@ -245,16 +187,13 @@ namespace CSFundamentals.DataStructures.Trees
             /* 2- Replace separator key in the parent with the last key of the left sibling. */
             node.Parent.InsertKeyValue(leftSibling.GetMaxKey());
 
-            //return Delete(leftSibling, leftSibling.GetMaxKey().Key);
+            /* 3- Remove the maximum key from the left sibling, and move its child to node. */
             leftSibling.RemoveKey(leftSibling.GetMaxKey().Key);
-
-            // If rightSIbling has any children at 0, move that to the node as well
             if (leftSibling.ChildrenCount >= 1)
             {
                 node.InsertChild(leftSibling.GetChild(leftSibling.ChildrenCount - 1));
                 leftSibling.RemoveChildByIndex(leftSibling.ChildrenCount - 1);
             }
-
 
             /* Check validity. At this point both the node and its left sibling must be MinFull (have exactly MinKeys keys). */
             Contract.Assert(leftSibling.IsMinFull());
@@ -262,12 +201,6 @@ namespace CSFundamentals.DataStructures.Trees
             return node.Parent;
         }
 
-        // TODO: Havenot tested rotate left, and rotate right in action, ... 
-        // maybe one of those other delete tests does, but just one of them, rotate left or rotate right
-        // need a nother tree full to test these all : have a full- 4 layer tree to test this again
-
-        // Todo: insert in a sorted list is o(n) thus how can these ops delete, insert etc be o(logn) alone! this is not possible!
-        // it si like my sorted doubly linked list, insert is o(n), check if I have correctly written it, .. 
         internal BTreeNode<T1, T2> Join(BTreeNode<T1, T2> node, BTreeNode<T1, T2> leftSibling)
         {
             // 1- Move separator key to the left node
@@ -296,6 +229,42 @@ namespace CSFundamentals.DataStructures.Trees
 
             // Since parent has lent a key to its children, it might be UnderFlown now, thus return the parent for additional checks.
             return leftSibling.Parent;
+        }
+
+        public void ReBalance(BTreeNode<T1,T2> node, BTreeNode<T1,T2> leftSibling, BTreeNode<T1,T2> rightSibling, int separatorWithLeftSiblingIndex, int separatorWithRightSiblingIndex)
+        {
+            if (node.IsUnderFlown() && !node.IsRoot()) /* B-TRee allows UnderFlown roots*/
+            {
+                var parent = node.Parent;
+                var parentLeftSibling = parent == null || parent.IsRoot() ? null : parent.HasLeftSibling() ? parent.GetLeftSibling() : null;
+                var parentRightSibling = parent == null || parent.IsRoot() ? null : parent.HasRightSibling() ? parent.GetRightSibling() : null;
+                int parentSeparatorWithLeftSiblingIndex = parentLeftSibling == null ? -1 : parentLeftSibling.GetIndexAtParentChildren();
+                int parentSeparatorWithRightSiblingIndex = parentRightSibling == null ? -1 : parent.GetIndexAtParentChildren();
+
+                if (leftSibling != null && leftSibling.IsMin1Full())
+                {
+                    node = RotateRight(node, leftSibling, separatorWithLeftSiblingIndex);
+                    return;
+                }
+                else if (rightSibling != null && rightSibling.IsMin1Full())
+                {
+                    node = RotateLeft(node, rightSibling, separatorWithRightSiblingIndex);
+                    return;
+                }
+                else if (rightSibling != null && rightSibling.IsMinFull()) /* Meaning rotation wont work, as borrowing key from the siblings via parent will leave the sibling UnderFlown.*/
+                {
+                    node = Join(rightSibling, node);
+                }
+                else if (leftSibling != null && leftSibling.IsMinFull())
+                {
+                    node = Join(node, leftSibling);
+                }
+
+                if (node == null)
+                    return;
+
+                ReBalance(node, parentLeftSibling, parentRightSibling, parentSeparatorWithLeftSiblingIndex, parentSeparatorWithRightSiblingIndex);
+            }
         }
 
         /// <summary>
