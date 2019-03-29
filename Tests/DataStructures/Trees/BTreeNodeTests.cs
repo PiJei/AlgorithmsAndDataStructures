@@ -522,60 +522,6 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
-        public void BTreeNode_GetLeftSiblingIndexAtParentChildren_Test_Fail()
-        {
-            BTreeNode<int, string> node = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(10, "A"));
-
-            node.Parent = new BTreeNode<int, string>(5,
-                new List<KeyValuePair<int, string>> { new KeyValuePair<int, string>(30, "B") },
-                new List<BTreeNode<int, string>> { node });
-            int leftSiblingIndex = node.GetLeftSiblingIndexAtParentChildren();
-        }
-
-        [TestMethod]
-        public void BTreeNode_GetLeftSiblingIndexAtParentChildren_Test_2()
-        {
-            BTreeNode<int, string> node1 = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(10, "A"));
-            BTreeNode<int, string> node2 = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(100, "B"));
-            BTreeNode<int, string> node3 = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(50, "C"));
-
-            var parent = new BTreeNode<int, string>(5,
-                new List<KeyValuePair<int, string>> { new KeyValuePair<int, string>(30, "B") },
-                new List<BTreeNode<int, string>> { node1, node2, node3 });
-
-            Assert.AreEqual(1, node2.GetLeftSiblingIndexAtParentChildren());
-            Assert.AreEqual(0, node3.GetLeftSiblingIndexAtParentChildren());
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
-        public void BTreeNode_GetRightSiblingIndexAtParentChildren_Test_Fail()
-        {
-            BTreeNode<int, string> node = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(10, "A"));
-
-            node.Parent = new BTreeNode<int, string>(5,
-                new List<KeyValuePair<int, string>> { new KeyValuePair<int, string>(30, "B") },
-                new List<BTreeNode<int, string>> { node });
-            int index = node.GetRightSiblingIndexAtParentChildren();
-        }
-
-        [TestMethod]
-        public void BTreeNode_GetRightSiblingIndexAtParentChildren_Test_2()
-        {
-            BTreeNode<int, string> node1 = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(10, "A"));
-            BTreeNode<int, string> node2 = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(100, "B"));
-            BTreeNode<int, string> node3 = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(50, "C"));
-
-            var parent = new BTreeNode<int, string>(5,
-                new List<KeyValuePair<int, string>> { new KeyValuePair<int, string>(30, "B") },
-                new List<BTreeNode<int, string>> { node1, node2, node3 });
-
-            Assert.AreEqual(1, node1.GetRightSiblingIndexAtParentChildren());
-            Assert.AreEqual(2, node3.GetRightSiblingIndexAtParentChildren());
-        }
-
-        [TestMethod]
         public void BTreeNode_GetLeftSibling_Test()
         {
             BTreeNode<int, string> node1 = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(10, "A"));
@@ -1074,7 +1020,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             if (!node.IsLeaf())
             {
                 Assert.IsTrue(node.ChildrenCount <= node.MaxBranchingDegree);
-                
+
                 /* Number of children should always be one bigger than the number of keys. */
                 Assert.AreEqual(node.KeyCount + 1, node.ChildrenCount);
             }

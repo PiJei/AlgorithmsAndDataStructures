@@ -322,6 +322,21 @@ namespace CSFundamentals.DataStructures.Trees
         }
 
         /// <summary>
+        /// Gets the node's left sibling node. 
+        /// </summary>
+        /// <returns>Node's left sibling node if it exists, and null otherwise. </returns>
+        public BTreeNode<T1, T2> GetLeftSibling()
+        {
+            int selfIndex = GetIndexAtParentChildren();
+            if(selfIndex == 0)
+            {
+                return null;
+            }
+            int leftSiblingIndex = selfIndex - 1;
+            return Parent._children.ElementAt(leftSiblingIndex).Key;
+        }
+
+        /// <summary>
         /// Detects whether the current node has a right sibling (a sibling to its right in the parent).
         /// </summary>
         /// <returns>True if the node has a right sibling, and false otherwise. </returns>
@@ -336,51 +351,18 @@ namespace CSFundamentals.DataStructures.Trees
         }
 
         /// <summary>
-        /// Gets the index of the node's left sibling at its parent's <see cref="_children"/> array.
-        /// </summary>
-        /// <returns>Index of the left sibling at parent's <see cref="_children"/> array. </returns>
-        public int GetLeftSiblingIndexAtParentChildren()
-        {
-            int index = GetIndexAtParentChildren();
-            if (index == 0)
-            {
-                throw new ArgumentException($"Node does not have left sibling.");
-            }
-            return index - 1;
-        }
-
-        /// <summary>
-        /// Gets the index of the node's right sibling at its parent's <see cref="_children"/> array.
-        /// </summary>
-        /// <returns>Index of the right sibling at parent's <see cref="_children"/> array. </returns>
-        public int GetRightSiblingIndexAtParentChildren()
-        {
-            int index = GetIndexAtParentChildren();
-            if (index == Parent._children.Count - 1)
-            {
-                throw new ArgumentException($"Node does not have right sibling.");
-            }
-            return index + 1;
-        }
-
-        /// <summary>
-        /// Gets the node's left sibling node. 
-        /// </summary>
-        /// <returns>Node's left sibling node. </returns>
-        public BTreeNode<T1, T2> GetLeftSibling()
-        {
-            int index = GetLeftSiblingIndexAtParentChildren();
-            return Parent._children.ElementAt(index).Key;
-        }
-
-        /// <summary>
         /// Gets the node's right sibling node. 
         /// </summary>
-        /// <returns>Node's right sibling node. </returns>
+        /// <returns>Node's right sibling node if it exists and null otherwise. </returns>
         public BTreeNode<T1, T2> GetRightSibling()
         {
-            int index = GetRightSiblingIndexAtParentChildren();
-            return Parent._children.ElementAt(index).Key;
+            int selfIndex = GetIndexAtParentChildren();
+            if (selfIndex == Parent._children.Count - 1)
+            {
+                return null;
+            }
+            int rightSiblingIndex = selfIndex + 1;
+            return Parent._children.ElementAt(rightSiblingIndex).Key;
         }
 
         /// <summary>
