@@ -30,16 +30,16 @@ namespace CSFundamentals.DataStructures.Trees
     /// Implements an AVL tree. An AVL tree is a self balancing Binary Search Tree.
     /// Notice the differences in time complexity at worst case for various operations, compared to a basic binary search tree. 
     /// </summary>
-    /// <typeparam name="T1">Specifies the type of the keys in the tree. </typeparam>
-    /// <typeparam name="T2">Specifies the type of the values in the tree. </typeparam>
-    public class AVLTree<T1, T2> : BinarySearchTreeBase<AVLTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>
+    /// <typeparam name="TKey">Specifies the type of the keys in the tree. </typeparam>
+    /// <typeparam name="TValue">Specifies the type of the values in the tree. </typeparam>
+    public class AVLTree<TKey, TValue> : BinarySearchTreeBase<AVLTreeNode<TKey, TValue>, TKey, TValue> where TKey : IComparable<TKey>
     {
         //TODO: Is o best true? I am suspicious, the input perhaps should be in a special order. 
         [TimeComplexity(Case.Best, "O(n)", When = "Every new node is inserted in the very first locations.")]
         [TimeComplexity(Case.Worst, "O(nLog(n))")]
         [TimeComplexity(Case.Average, "O(nLog(n))")]
         [SpaceComplexity("O(n)")]
-        public override AVLTreeNode<T1, T2> Build(List<AVLTreeNode<T1, T2>> nodes)
+        public override AVLTreeNode<TKey, TValue> Build(List<AVLTreeNode<TKey, TValue>> nodes)
         {
             return Build_BST(nodes);
         }
@@ -48,7 +48,7 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)", InPlace = true)]
-        public override AVLTreeNode<T1, T2> Delete(AVLTreeNode<T1, T2> root, T1 key)
+        public override AVLTreeNode<TKey, TValue> Delete(AVLTreeNode<TKey, TValue> root, TKey key)
         {
             if (root == null) return root;
 
@@ -80,7 +80,7 @@ namespace CSFundamentals.DataStructures.Trees
                 {
                     /* Else replacing the node that has 2 non-null children with its in-order successor, or could alternatively replace it with its in-order predecessor. */
                     /* From definition of FindMin() it is obvious that the replacement node [rightChildMin] has less than 2 children. */
-                    AVLTreeNode<T1, T2> rightChildMin = FindMin_BST(root.RightChild);
+                    AVLTreeNode<TKey, TValue> rightChildMin = FindMin_BST(root.RightChild);
                     root.Key = rightChildMin.Key;
                     root.Value = rightChildMin.Value;
                     root.RightChild = Delete(root.RightChild, rightChildMin.Key); /* at this point both node, and rightChildMin have the same keys, but calling delete on the same key, will only result in the removal  of rightChildMin, because pf the root that is passed to Delete.*/
@@ -134,7 +134,7 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)", InPlace = true)]
-        public override AVLTreeNode<T1, T2> Insert(AVLTreeNode<T1, T2> root, AVLTreeNode<T1, T2> newNode)
+        public override AVLTreeNode<TKey, TValue> Insert(AVLTreeNode<TKey, TValue> root, AVLTreeNode<TKey, TValue> newNode)
         {
             root = Insert_BST(root, newNode); /* First insert the node using normal BinarySearchInsert to preserve the ordering property. */
 
@@ -153,7 +153,7 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)", InPlace = true)]
-        public override AVLTreeNode<T1, T2> Search(AVLTreeNode<T1, T2> root, T1 key)
+        public override AVLTreeNode<TKey, TValue> Search(AVLTreeNode<TKey, TValue> root, TKey key)
         {
             return Search_BST(root, key);
         }
@@ -162,7 +162,7 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)", InPlace = true)]
-        public override bool Update(AVLTreeNode<T1, T2> root, T1 key, T2 value)
+        public override bool Update(AVLTreeNode<TKey, TValue> root, TKey key, TValue value)
         {
             return Update_BST(root, key, value);
         }
@@ -171,7 +171,7 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)")]
-        public override AVLTreeNode<T1, T2> FindMin(AVLTreeNode<T1, T2> root)
+        public override AVLTreeNode<TKey, TValue> FindMin(AVLTreeNode<TKey, TValue> root)
         {
             return FindMin_BST(root);
         }
@@ -180,7 +180,7 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)")]
-        public override AVLTreeNode<T1, T2> FindMax(AVLTreeNode<T1, T2> root)
+        public override AVLTreeNode<TKey, TValue> FindMax(AVLTreeNode<TKey, TValue> root)
         {
             return FindMax_BST(root);
         }
@@ -189,10 +189,10 @@ namespace CSFundamentals.DataStructures.Trees
         /// Balances a tree, starting at the given node and going upward. 
         /// </summary>
         /// <param name="node">The bottom most node, from which balance starts, based on its parent and grand parent. </param>
-        internal void Balance(AVLTreeNode<T1, T2> node)
+        internal void Balance(AVLTreeNode<TKey, TValue> node)
         {
-            AVLTreeNode<T1, T2> parent = node?.Parent;
-            AVLTreeNode<T1, T2> grandParent = node?.Parent?.Parent;
+            AVLTreeNode<TKey, TValue> parent = node?.Parent;
+            AVLTreeNode<TKey, TValue> grandParent = node?.Parent?.Parent;
 
             while (grandParent != null && parent != null)
             {
@@ -240,7 +240,7 @@ namespace CSFundamentals.DataStructures.Trees
         /// </summary>
         /// <param name="node">Is the node for which balance is computed.</param>
         /// <returns>the balance factor of the node. </returns>
-        internal int ComputeBalanceFactor(AVLTreeNode<T1, T2> node)
+        internal int ComputeBalanceFactor(AVLTreeNode<TKey, TValue> node)
         {
             return (node.RightChild == null ? 0 : GetHeight(node.RightChild)) - (node.LeftChild == null ? 0 : GetHeight(node.LeftChild));
         }
@@ -250,9 +250,9 @@ namespace CSFundamentals.DataStructures.Trees
         /// </summary>
         /// <param name="node">Is the node whose height is calculated.</param>
         /// <returns>The height of the tree rooted at the given node. </returns>
-        internal int GetHeight(AVLTreeNode<T1, T2> node)
+        internal int GetHeight(AVLTreeNode<TKey, TValue> node)
         {
-            List<List<AVLTreeNode<T1, T2>>> paths = GetAllPathToLeaves(node);
+            List<List<AVLTreeNode<TKey, TValue>>> paths = GetAllPathToLeaves(node);
             int height = paths[0].Count;
             for (int i = 1; i < paths.Count; i++)
             {

@@ -363,19 +363,19 @@ namespace CSFundamentalsTests.DataStructures.Trees
             // TODO 
         }
 
-        public bool HasAVLTreeProperties<T1, T2>(AVLTree<T1, T2> tree, AVLTreeNode<T1, T2> root, int expectedNodeCount) where T1 : IComparable<T1>, IEquatable<T1>
+        public bool HasAVLTreeProperties<TKey, TValue>(AVLTree<TKey, TValue> tree, AVLTreeNode<TKey, TValue> root, int expectedNodeCount) where TKey : IComparable<TKey>, IEquatable<TKey>
         {
-            Assert.IsTrue(BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<AVLTreeNode<T1, T2>, T1, T2>(root));
-            List<AVLTreeNode<T1, T2>> inOrderTraversal = new List<AVLTreeNode<T1, T2>>();
+            Assert.IsTrue(BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<AVLTreeNode<TKey, TValue>, TKey, TValue>(root));
+            List<AVLTreeNode<TKey, TValue>> inOrderTraversal = new List<AVLTreeNode<TKey, TValue>>();
             tree.InOrderTraversal(root, inOrderTraversal);
             Assert.AreEqual(expectedNodeCount, inOrderTraversal.Count);
             Assert.IsTrue(HasExpectedBalanceFactor(tree, inOrderTraversal));
             return true;
         }
 
-        public bool HasExpectedBalanceFactor<T1, T2>(AVLTree<T1, T2> tree, List<AVLTreeNode<T1, T2>> nodes) where T1 : IComparable<T1>, IEquatable<T1>
+        public bool HasExpectedBalanceFactor<TKey, TValue>(AVLTree<TKey, TValue> tree, List<AVLTreeNode<TKey, TValue>> nodes) where TKey : IComparable<TKey>, IEquatable<TKey>
         {
-            foreach (AVLTreeNode<T1, T2> node in nodes)
+            foreach (AVLTreeNode<TKey, TValue> node in nodes)
             {
                 int balanceFactor = tree.ComputeBalanceFactor(node);
                 Assert.IsTrue(balanceFactor >= -1 && balanceFactor <= 1);

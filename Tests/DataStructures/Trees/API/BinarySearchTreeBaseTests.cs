@@ -346,22 +346,22 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         /// <summary>
         /// Given the root of a binary search tree, checks whether the binary search tree properties hold.
         /// </summary>
-        /// <typeparam name="T1">Specifies the type of the keys in tree. </typeparam>
-        /// <typeparam name="T2">Specifies the type of the values in tree nodes. </typeparam>
+        /// <typeparam name="TKey">Specifies the type of the keys in tree. </typeparam>
+        /// <typeparam name="TValue">Specifies the type of the values in tree nodes. </typeparam>
         /// <param name="root">Is the root of a binary search tree. </param>
-        public static bool HasBinarySearchTreeOrderProperty<T, T1, T2>(T root) where T : IBinaryTreeNode<T, T1, T2> where T1 : IComparable<T1>, IEquatable<T1>
+        public static bool HasBinarySearchTreeOrderProperty<TNode, TKey, TValue>(TNode root) where TNode : IBinaryTreeNode<TNode, TKey, TValue> where TKey : IComparable<TKey>, IEquatable<TKey>
         {
             if (root != null)
             {
                 if (root.LeftChild != null)
                 {
                     Assert.IsTrue(root.Key.CompareTo(root.LeftChild.Key) > 0);
-                    Assert.IsTrue(HasBinarySearchTreeOrderProperty<T, T1, T2>(root.LeftChild));
+                    Assert.IsTrue(HasBinarySearchTreeOrderProperty<TNode, TKey, TValue>(root.LeftChild));
                 }
                 if (root.RightChild != null)
                 {
                     Assert.IsTrue(root.Key.CompareTo(root.RightChild.Key) < 0);
-                    Assert.IsTrue(HasBinarySearchTreeOrderProperty<T, T1, T2>(root.RightChild));
+                    Assert.IsTrue(HasBinarySearchTreeOrderProperty<TNode, TKey, TValue>(root.RightChild));
                 }
             }
             return true;

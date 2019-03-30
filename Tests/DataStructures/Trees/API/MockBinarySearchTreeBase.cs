@@ -23,39 +23,39 @@ using CSFundamentals.DataStructures.Trees.API;
 
 namespace CSFundamentalsTests.DataStructures.Trees.API
 {
-    public class MockBinarySearchTreeBase<T1, T2> : BinarySearchTreeBase<MockBinaryTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>
+    public class MockBinarySearchTreeBase<TKey, TValue> : BinarySearchTreeBase<MockBinaryTreeNode<TKey, TValue>, TKey, TValue> where TKey : IComparable<TKey>
     {
-        public override MockBinaryTreeNode<T1, T2> Build(List<MockBinaryTreeNode<T1, T2>> keyValues)
+        public override MockBinaryTreeNode<TKey, TValue> Build(List<MockBinaryTreeNode<TKey, TValue>> keyValues)
         {
             throw new NotImplementedException();
         }
 
-        public override MockBinaryTreeNode<T1, T2> Delete(MockBinaryTreeNode<T1, T2> root, T1 key)
+        public override MockBinaryTreeNode<TKey, TValue> Delete(MockBinaryTreeNode<TKey, TValue> root, TKey key)
         {
             throw new NotImplementedException();
         }
 
-        public override MockBinaryTreeNode<T1, T2> FindMax(MockBinaryTreeNode<T1, T2> root)
+        public override MockBinaryTreeNode<TKey, TValue> FindMax(MockBinaryTreeNode<TKey, TValue> root)
         {
             return FindMax_BST(root);
         }
 
-        public override MockBinaryTreeNode<T1, T2> FindMin(MockBinaryTreeNode<T1, T2> root)
+        public override MockBinaryTreeNode<TKey, TValue> FindMin(MockBinaryTreeNode<TKey, TValue> root)
         {
             return FindMin_BST(root);
         }
 
-        public override MockBinaryTreeNode<T1, T2> Insert(MockBinaryTreeNode<T1, T2> root, MockBinaryTreeNode<T1, T2> newNode)
+        public override MockBinaryTreeNode<TKey, TValue> Insert(MockBinaryTreeNode<TKey, TValue> root, MockBinaryTreeNode<TKey, TValue> newNode)
         {
             return Insert_BST(root, newNode);
         }
 
-        public override MockBinaryTreeNode<T1, T2> Search(MockBinaryTreeNode<T1, T2> root, T1 key)
+        public override MockBinaryTreeNode<TKey, TValue> Search(MockBinaryTreeNode<TKey, TValue> root, TKey key)
         {
             return Search_BST(root, key);
         }
 
-        public override bool Update(MockBinaryTreeNode<T1, T2> root, T1 key, T2 value)
+        public override bool Update(MockBinaryTreeNode<TKey, TValue> root, TKey key, TValue value)
         {
             return Update_BST(root, key, value);
         }

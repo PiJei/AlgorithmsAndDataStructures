@@ -25,15 +25,15 @@ namespace CSFundamentals.DataStructures.Trees.API
     /// <summary>
     /// Specifies an interface for nodes in any tree structure. 
     /// </summary>
-    /// <typeparam name="T">Is the type of the tree node. </typeparam>
-    /// <typeparam name="T1">Is the type of the keys in the tree nodes. </typeparam>
-    /// <typeparam name="T2">Is the type of the values in the tree nodes. </typeparam>
-    public interface IBinaryTreeNode<T, T1, T2> : IComparable<T> where T1 : IComparable<T1>
+    /// <typeparam name="TNode">Is the type of the tree node. </typeparam>
+    /// <typeparam name="TKey">Is the type of the keys in the tree nodes. </typeparam>
+    /// <typeparam name="TValue">Is the type of the values in the tree nodes. </typeparam>
+    public interface IBinaryTreeNode<TNode, TKey, TValue> : IComparable<TNode> where TKey : IComparable<TKey>
     {
         /// <summary>
         /// Is the key in a tree node. 
         /// </summary>
-        T1 Key { get; set; }
+        TKey Key { get; set; }
 
         /// <summary>
         /// Is the value (information) stored in a tree node. 
@@ -41,22 +41,22 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// <remarks>
         /// This can be converted to a list of values alternatively, to handle duplicate keys. 
         /// </remarks>
-        T2 Value { get; set; }
+        TValue Value { get; set; }
 
         /// <summary>
         /// Is the left child of the node. 
         /// </summary>
-        T LeftChild { get; set; }
+        TNode LeftChild { get; set; }
 
         /// <summary>
         /// Is the right child of the node. 
         /// </summary>
-        T RightChild { get; set; }
+        TNode RightChild { get; set; }
 
         /// <summary>
         /// Is the parent of the node.
         /// </summary>
-        T Parent { get; set; }
+        TNode Parent { get; set; }
 
         /// <summary>
         /// Check whether the current node is left child of its parent.
@@ -70,6 +70,6 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// <returns>True in case the current node is the right child of its parent, and false otherwise. </returns>
         bool IsRightChild();
 
-        List<T> GetChildren();
+        List<TNode> GetChildren();
     }
 }
