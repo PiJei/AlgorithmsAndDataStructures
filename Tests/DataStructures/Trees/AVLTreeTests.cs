@@ -103,7 +103,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void AVLTree_Delete_Test_NonExistingKey()
+        public void Delete_NonExistingKey()
         {
             List<AVLTreeNode<int, string>> nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
