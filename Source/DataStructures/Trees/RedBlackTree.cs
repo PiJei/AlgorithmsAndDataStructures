@@ -33,15 +33,15 @@ namespace CSFundamentals.DataStructures.Trees
     /// In this implementation, nulls are treated as black nodes. 
     /// A red black tree can also be used as a key-value store.
     /// </summary>
-    /// <typeparam name="T1">Specifies the type of the keys in red black tree.</typeparam>
-    /// <typeparam name="T2">Specifies the type of the values in red black tree. </typeparam>
-    public class RedBlackTree<T1, T2> : BinarySearchTreeBase<RedBlackTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>
+    /// <typeparam name="TKey">Specifies the type of the keys in red black tree.</typeparam>
+    /// <typeparam name="TValue">Specifies the type of the values in red black tree. </typeparam>
+    public class RedBlackTree<TKey, TValue> : BinarySearchTreeBase<RedBlackTreeNode<TKey, TValue>, TKey, TValue> where TKey : IComparable<TKey>
     {
         [TimeComplexity(Case.Best, "O(n)", When = "Every new node is inserted in the very first locations.")]
         [TimeComplexity(Case.Worst, "O(nLog(n))")]
         [TimeComplexity(Case.Average, "O(nLog(n))")]
         [SpaceComplexity("O(n)")]
-        public override RedBlackTreeNode<T1, T2> Build(List<RedBlackTreeNode<T1, T2>> nodes)
+        public override RedBlackTreeNode<TKey, TValue> Build(List<RedBlackTreeNode<TKey, TValue>> nodes)
         {
             return Build_BST(nodes);
         }
@@ -49,7 +49,7 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(nLog(n))")]
-        public override RedBlackTreeNode<T1, T2> Insert(RedBlackTreeNode<T1, T2> root, RedBlackTreeNode<T1, T2> newNode)
+        public override RedBlackTreeNode<TKey, TValue> Insert(RedBlackTreeNode<TKey, TValue> root, RedBlackTreeNode<TKey, TValue> newNode)
         {
             root = Insert_BST(root, newNode);
             Insert_Repair(root, newNode);
@@ -66,7 +66,7 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(nLog(n))")]
-        public override RedBlackTreeNode<T1, T2> Delete(RedBlackTreeNode<T1, T2> root, T1 key)
+        public override RedBlackTreeNode<TKey, TValue> Delete(RedBlackTreeNode<TKey, TValue> root, TKey key)
         {
             var node = Search(root, key);
             if (node == null)
@@ -77,7 +77,7 @@ namespace CSFundamentals.DataStructures.Trees
 
             if (node.LeftChild != null && node.RightChild != null) /* The root has exactly 2 non-null children. */
             {
-                RedBlackTreeNode<T1, T2> rightChildMin = FindMin(node.RightChild);
+                RedBlackTreeNode<TKey, TValue> rightChildMin = FindMin(node.RightChild);
                 node.Key = rightChildMin.Key;
                 node.Value = rightChildMin.Value;
                 var parent = rightChildMin.Parent;
@@ -104,7 +104,7 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)", InPlace = true)]
-        public override RedBlackTreeNode<T1, T2> Search(RedBlackTreeNode<T1, T2> root, T1 key)
+        public override RedBlackTreeNode<TKey, TValue> Search(RedBlackTreeNode<TKey, TValue> root, TKey key)
         {
             return Search_BST(root, key);
         }
@@ -113,7 +113,7 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)", InPlace = true)]
-        public override bool Update(RedBlackTreeNode<T1, T2> root, T1 key, T2 value)
+        public override bool Update(RedBlackTreeNode<TKey, TValue> root, TKey key, TValue value)
         {
             return Update_BST(root, key, value);
         }
@@ -122,7 +122,7 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)")]
-        public override RedBlackTreeNode<T1, T2> FindMin(RedBlackTreeNode<T1, T2> root)
+        public override RedBlackTreeNode<TKey, TValue> FindMin(RedBlackTreeNode<TKey, TValue> root)
         {
             return FindMin_BST(root);
         }
@@ -131,13 +131,13 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)")]
-        public override RedBlackTreeNode<T1, T2> FindMax(RedBlackTreeNode<T1, T2> root)
+        public override RedBlackTreeNode<TKey, TValue> FindMax(RedBlackTreeNode<TKey, TValue> root)
         {
             return FindMax_BST(root);
         }
 
         //TODO: Test
-        internal RedBlackTreeNode<T1, T2> Delete(RedBlackTreeNode<T1, T2> nodeToBeDeleted)
+        internal RedBlackTreeNode<TKey, TValue> Delete(RedBlackTreeNode<TKey, TValue> nodeToBeDeleted)
         {
             /* The nodeToBeDeleted has at most 1 non-null child. */
             var parent = nodeToBeDeleted.Parent;
@@ -179,7 +179,7 @@ namespace CSFundamentals.DataStructures.Trees
         }
 
         //TODO: Test
-        internal RedBlackTreeNode<T1, T2> DeleteBlackLeafNode(RedBlackTreeNode<T1, T2> node)
+        internal RedBlackTreeNode<TKey, TValue> DeleteBlackLeafNode(RedBlackTreeNode<TKey, TValue> node)
         {
             if (node.Parent == null) return null;
 
@@ -250,7 +250,7 @@ namespace CSFundamentals.DataStructures.Trees
         }
 
         [SpaceComplexity("O(1)", InPlace = true)]
-        internal void Insert_Repair(RedBlackTreeNode<T1, T2> root, RedBlackTreeNode<T1, T2> newNode)
+        internal void Insert_Repair(RedBlackTreeNode<TKey, TValue> root, RedBlackTreeNode<TKey, TValue> newNode)
         {
             if (newNode.Parent == null && newNode.Color == Color.Red) /* Property: the root is black. */
             {
@@ -304,7 +304,7 @@ namespace CSFundamentals.DataStructures.Trees
         /// </summary>
         /// <param name="node">Is a node in a red black tree. </param>
         /// <returns>True in case node is red, and false otherwise. </returns>
-        internal bool IsRed(RedBlackTreeNode<T1, T2> node)
+        internal bool IsRed(RedBlackTreeNode<TKey, TValue> node)
         {
             if (node != null && node.Color == Color.Red)
                 return true;
@@ -316,7 +316,7 @@ namespace CSFundamentals.DataStructures.Trees
         /// </summary>
         /// <param name="node">Is a node in a red black tree. </param>
         /// <returns>True in case node is black, and false otherwise. </returns>
-        internal bool IsBlack(RedBlackTreeNode<T1, T2> node)
+        internal bool IsBlack(RedBlackTreeNode<TKey, TValue> node)
         {
             if (node == null || (node != null && node.Color == Color.Black)) return true;
             return false;
@@ -327,7 +327,7 @@ namespace CSFundamentals.DataStructures.Trees
         /// </summary>
         /// <param name="parent">Is a parent node. </param>
         /// <param name="child">Is a child node of the given parent node. </param>
-        internal void UpdateParentWithNullingChild(RedBlackTreeNode<T1, T2> parent, RedBlackTreeNode<T1, T2> child)
+        internal void UpdateParentWithNullingChild(RedBlackTreeNode<TKey, TValue> parent, RedBlackTreeNode<TKey, TValue> child)
         {
             if (parent != null)
             {

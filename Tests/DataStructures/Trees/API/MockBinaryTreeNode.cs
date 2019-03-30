@@ -28,16 +28,16 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
     /// We need to test those methods without using any child class in production code. 
     /// Therefore this mock class is created. 
     /// </summary>
-    /// <typeparam name="T1">Specifies the type of the keys in a tree.</typeparam>
-    /// <typeparam name="T2">Specifies type of the values in a tree.</typeparam>
-    public class MockBinaryTreeNode<T1, T2> : BinaryTreeNode<MockBinaryTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>
+    /// <typeparam name="TKey">Specifies the type of the keys in a tree.</typeparam>
+    /// <typeparam name="TValue">Specifies type of the values in a tree.</typeparam>
+    public class MockBinaryTreeNode<TKey, TValue> : BinaryTreeNode<MockBinaryTreeNode<TKey, TValue>, TKey, TValue> where TKey : IComparable<TKey>
     {
-        public MockBinaryTreeNode(T1 key, T2 value) : base(key, value)
+        public MockBinaryTreeNode(TKey key, TValue value) : base(key, value)
         {
         }
 
-        public override MockBinaryTreeNode<T1, T2> LeftChild { get; set; }
-        public override MockBinaryTreeNode<T1, T2> RightChild { get; set; }
-        public override MockBinaryTreeNode<T1, T2> Parent { get; set; }
+        public override MockBinaryTreeNode<TKey, TValue> LeftChild { get; set; }
+        public override MockBinaryTreeNode<TKey, TValue> RightChild { get; set; }
+        public override MockBinaryTreeNode<TKey, TValue> Parent { get; set; }
     }
 }

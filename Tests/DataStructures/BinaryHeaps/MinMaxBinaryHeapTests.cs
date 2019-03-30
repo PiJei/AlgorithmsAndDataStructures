@@ -28,46 +28,6 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
     [TestClass]
     public class MinMaxBinaryHeapTests
     {
-        public static void CheckMinMaxOrdering_ForMinLevel(BinaryHeapBase<int> heap, int index)
-        {
-            int leftChildIndex = heap.GetLeftChildIndexInHeapArray(index);
-            int rightChildIndex = heap.GetRightChildIndexInHeapArray(index);
-            int parentIndex = heap.GetParentIndex(index);
-
-            if (leftChildIndex >= 0 && leftChildIndex < heap.HeapArray.Count)
-            {
-                Assert.IsTrue(heap.HeapArray[index] <= heap.HeapArray[leftChildIndex]);
-            }
-            if (rightChildIndex >= 0 && rightChildIndex < heap.HeapArray.Count)
-            {
-                Assert.IsTrue(heap.HeapArray[index] <= heap.HeapArray[rightChildIndex]);
-            }
-            if (parentIndex >= 0 && parentIndex < heap.HeapArray.Count)
-            {
-                Assert.IsTrue(heap.HeapArray[index] <= heap.HeapArray[parentIndex]);
-            }
-        }
-
-        public static void CheckMinMaxOrdering_ForMaxLevel(BinaryHeapBase<int> heap, int index)
-        {
-            int leftChildIndex = heap.GetLeftChildIndexInHeapArray(index);
-            int rightChildIndex = heap.GetRightChildIndexInHeapArray(index);
-            int parentIndex = heap.GetParentIndex(index);
-
-            if (leftChildIndex >= 0 && leftChildIndex < heap.HeapArray.Count)
-            {
-                Assert.IsTrue(heap.HeapArray[index] >= heap.HeapArray[leftChildIndex]);
-            }
-            if (rightChildIndex >= 0 && rightChildIndex < heap.HeapArray.Count)
-            {
-                Assert.IsTrue(heap.HeapArray[index] >= heap.HeapArray[rightChildIndex]);
-            }
-            if (parentIndex >= 0 && parentIndex < heap.HeapArray.Count)
-            {
-                Assert.IsTrue(heap.HeapArray[index] >= heap.HeapArray[parentIndex]);
-            }
-        }
-
         [TestMethod]
         public void MinMaxBinaryHeap_BuildHeapRecursively_Test1()
         {
@@ -80,11 +40,11 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
                 int level = heap.GetNodeLevel(i);
                 if (heap.IsMinLevel(level))
                 {
-                    CheckMinMaxOrdering_ForMinLevel(heap, i);
+                    Assert.IsTrue(HasMinMaxOrderingForMinLevel(heap, i));
                 }
                 else
                 {
-                    CheckMinMaxOrdering_ForMaxLevel(heap, i);
+                    Assert.IsTrue(HasMinMaxOrderingForMaxLevel(heap, i));
                 }
             }
 
@@ -111,13 +71,55 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
                 int level = heap.GetNodeLevel(i);
                 if (heap.IsMinLevel(level))
                 {
-                    CheckMinMaxOrdering_ForMinLevel(heap, i);
+                    Assert.IsTrue(HasMinMaxOrderingForMinLevel(heap, i));
                 }
                 else
                 {
-                    CheckMinMaxOrdering_ForMaxLevel(heap, i);
+                    Assert.IsTrue(HasMinMaxOrderingForMaxLevel(heap, i));
                 }
             }
+        }
+
+        public static bool HasMinMaxOrderingForMinLevel(BinaryHeapBase<int> heap, int index)
+        {
+            int leftChildIndex = heap.GetLeftChildIndexInHeapArray(index);
+            int rightChildIndex = heap.GetRightChildIndexInHeapArray(index);
+            int parentIndex = heap.GetParentIndex(index);
+
+            if (leftChildIndex >= 0 && leftChildIndex < heap.HeapArray.Count)
+            {
+                Assert.IsTrue(heap.HeapArray[index] <= heap.HeapArray[leftChildIndex]);
+            }
+            if (rightChildIndex >= 0 && rightChildIndex < heap.HeapArray.Count)
+            {
+                Assert.IsTrue(heap.HeapArray[index] <= heap.HeapArray[rightChildIndex]);
+            }
+            if (parentIndex >= 0 && parentIndex < heap.HeapArray.Count)
+            {
+                Assert.IsTrue(heap.HeapArray[index] <= heap.HeapArray[parentIndex]);
+            }
+            return true;
+        }
+
+        public static bool HasMinMaxOrderingForMaxLevel(BinaryHeapBase<int> heap, int index)
+        {
+            int leftChildIndex = heap.GetLeftChildIndexInHeapArray(index);
+            int rightChildIndex = heap.GetRightChildIndexInHeapArray(index);
+            int parentIndex = heap.GetParentIndex(index);
+
+            if (leftChildIndex >= 0 && leftChildIndex < heap.HeapArray.Count)
+            {
+                Assert.IsTrue(heap.HeapArray[index] >= heap.HeapArray[leftChildIndex]);
+            }
+            if (rightChildIndex >= 0 && rightChildIndex < heap.HeapArray.Count)
+            {
+                Assert.IsTrue(heap.HeapArray[index] >= heap.HeapArray[rightChildIndex]);
+            }
+            if (parentIndex >= 0 && parentIndex < heap.HeapArray.Count)
+            {
+                Assert.IsTrue(heap.HeapArray[index] >= heap.HeapArray[parentIndex]);
+            }
+            return true;
         }
     }
 }

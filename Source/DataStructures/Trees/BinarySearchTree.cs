@@ -28,16 +28,16 @@ namespace CSFundamentals.DataStructures.Trees
     /// Implements a binary search tree, and its operations. In a binary search tree, each node's key is larger than its left child's key, and smaller than its right child's key.
     /// A binary Search Tree can be used as a key-value store. 
     /// </summary>
-    /// <typeparam name="T1">Specifies the type of the key in tree nodes.</typeparam>
-    /// <typeparam name="T2">Specifies the type of the value in tree nodes. </typeparam>
+    /// <typeparam name="TKey">Specifies the type of the key in tree nodes.</typeparam>
+    /// <typeparam name="TValue">Specifies the type of the value in tree nodes. </typeparam>
     [DataStructure("BinarySearchTree (aka BST)")]
-    public class BinarySearchTreeBase<T1, T2> : BinarySearchTreeBase<BinarySearchTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>
+    public class BinarySearchTreeBase<TKey, TValue> : BinarySearchTreeBase<BinarySearchTreeNode<TKey, TValue>, TKey, TValue> where TKey : IComparable<TKey>
     {
         [TimeComplexity(Case.Best, "O(n)", When = "Every new node is inserted in the very first locations.")]
         [TimeComplexity(Case.Worst, "O(n²)", When = "Tree is unbalanced such that it is turned into a linked list.")]
         [TimeComplexity(Case.Average, "O(nLog(n))")]
         [SpaceComplexity("O(n)")]
-        public override BinarySearchTreeNode<T1, T2> Build(List<BinarySearchTreeNode<T1, T2>> nodes)
+        public override BinarySearchTreeNode<TKey, TValue> Build(List<BinarySearchTreeNode<TKey, TValue>> nodes)
         {
             return Build_BST(nodes);
         }
@@ -53,7 +53,7 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "O(n)", When = "Tree is imbalanced such that it is like one sequential branch (linked list), every node except the leaf having exactly one child.")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)", InPlace = true)] /* Notice that a new node is allocated for a new key, thus can be considered as O(Size(TreeNode))*/
-        public override BinarySearchTreeNode<T1, T2> Insert(BinarySearchTreeNode<T1, T2> root, BinarySearchTreeNode<T1, T2> newNode)
+        public override BinarySearchTreeNode<TKey, TValue> Insert(BinarySearchTreeNode<TKey, TValue> root, BinarySearchTreeNode<TKey, TValue> newNode)
         {
             return Insert_BST(root, newNode);
         }
@@ -62,7 +62,7 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "O(n)", When = "Tree is imbalanced such that it is like one sequential branch (linked list), every node except the leaf having exactly one child.")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)")]
-        public override BinarySearchTreeNode<T1, T2> Delete(BinarySearchTreeNode<T1, T2> root, T1 key)
+        public override BinarySearchTreeNode<TKey, TValue> Delete(BinarySearchTreeNode<TKey, TValue> root, TKey key)
         {
             return Delete_BST(root, key);
         }
@@ -77,7 +77,7 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "O(n)", When = "Tree is imbalanced such that it is like one sequential branch (linked list), every node except the leaf having exactly one child.")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)", InPlace = true)]
-        public override BinarySearchTreeNode<T1, T2> Search(BinarySearchTreeNode<T1, T2> root, T1 key)
+        public override BinarySearchTreeNode<TKey, TValue> Search(BinarySearchTreeNode<TKey, TValue> root, TKey key)
         {
             return Search_BST(root, key);
         }
@@ -93,7 +93,7 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "o(n)")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)", InPlace = true)]
-        public override bool Update(BinarySearchTreeNode<T1, T2> root, T1 key, T2 value)
+        public override bool Update(BinarySearchTreeNode<TKey, TValue> root, TKey key, TValue value)
         {
             return Update_BST(root, key, value);
         }
@@ -102,7 +102,7 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "O(n)")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)")]
-        public override BinarySearchTreeNode<T1, T2> FindMin(BinarySearchTreeNode<T1, T2> root)
+        public override BinarySearchTreeNode<TKey, TValue> FindMin(BinarySearchTreeNode<TKey, TValue> root)
         {
             return FindMin_BST(root);
         }
@@ -111,7 +111,7 @@ namespace CSFundamentals.DataStructures.Trees
         [TimeComplexity(Case.Worst, "O(n)")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         [SpaceComplexity("O(1)")]
-        public override BinarySearchTreeNode<T1, T2> FindMax(BinarySearchTreeNode<T1, T2> root)
+        public override BinarySearchTreeNode<TKey, TValue> FindMax(BinarySearchTreeNode<TKey, TValue> root)
         {
             return FindMax_BST(root);
         }

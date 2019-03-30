@@ -22,20 +22,20 @@ using System.Collections.Generic;
 
 namespace CSFundamentals.DataStructures.Trees.API
 {
-    public abstract class BinaryTreeNode<T, T1, T2> : IComparable<T>, IBinaryTreeNode<T, T1, T2> where T : IBinaryTreeNode<T, T1, T2> where T1 : IComparable<T1>
+    public abstract class BinaryTreeNode<TNode, TKey, TValue> : IComparable<TNode>, IBinaryTreeNode<TNode, TKey, TValue> where TNode : IBinaryTreeNode<TNode, TKey, TValue> where TKey : IComparable<TKey>
     {
-        public T1 Key { get; set; }
-        public T2 Value { get; set; }
+        public TKey Key { get; set; }
+        public TValue Value { get; set; }
 
-        public BinaryTreeNode(T1 key, T2 value)
+        public BinaryTreeNode(TKey key, TValue value)
         {
             Key = key;
             Value = value;
         }
 
-        public abstract T LeftChild { get; set; }
-        public abstract T RightChild { get; set; }
-        public abstract T Parent { get; set; }
+        public abstract TNode LeftChild { get; set; }
+        public abstract TNode RightChild { get; set; }
+        public abstract TNode Parent { get; set; }
 
         /// <summary>
         /// Checks whether the current node is a leaf node. A node is leaf if it has no children. 
@@ -88,10 +88,10 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// Gets the uncle of the current node. Uncle is the sibling of the parent.
         /// </summary>
         /// <returns>Uncle node.</returns>
-        public T GetUncle()
+        public TNode GetUncle()
         {
-            if (Parent == null) return default(T);
-            if (Parent.Parent == null) return default(T);
+            if (Parent == null) return default(TNode);
+            if (Parent.Parent == null) return default(TNode);
             if (Parent.Parent.LeftChild != null && Parent.Parent.LeftChild.CompareTo(Parent) == 0)
             {
                 return Parent.Parent.RightChild;
@@ -100,16 +100,16 @@ namespace CSFundamentals.DataStructures.Trees.API
             {
                 return Parent.Parent.LeftChild;
             }
-            return default(T);
+            return default(TNode);
         }
 
         /// <summary>
         /// Gets the sibling of the current node.
         /// </summary>
         /// <returns>Sibling node.</returns>
-        public T GetSibling()
+        public TNode GetSibling()
         {
-            if (Parent == null) return default(T);
+            if (Parent == null) return default(TNode);
             if (Parent.LeftChild != null && Parent.LeftChild.Key.CompareTo(Key) == 0)
                 return Parent.RightChild;
             return Parent.LeftChild;
@@ -119,10 +119,10 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// Gets the grandparent of the current node. GrandParent is the parent of the parent. 
         /// </summary>
         /// <returns></returns>
-        public T GetGrandParent()
+        public TNode GetGrandParent()
         {
-            if (Parent == null) return default(T);
-            if (Parent.Parent == null) return default(T);
+            if (Parent == null) return default(TNode);
+            if (Parent.Parent == null) return default(TNode);
             return Parent.Parent;
         }
 
@@ -150,7 +150,7 @@ namespace CSFundamentals.DataStructures.Trees.API
             return false;
         }
 
-        public int CompareTo(T other)
+        public int CompareTo(TNode other)
         {
             return Key.CompareTo(other.Key);
         }
@@ -172,9 +172,9 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// Gets the immediate not-null children of the current node, the collection contains left and right children thus. 
         /// </summary>
         /// <returns>List of the immediate direct children of the current node.</returns>
-        public List<T> GetChildren()
+        public List<TNode> GetChildren()
         {
-            List<T> children = new List<T>();
+            List<TNode> children = new List<TNode>();
             if (LeftChild != null)
             {
                 children.Add(LeftChild);
@@ -190,9 +190,9 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// Gets the immediate grand children of a node. This is the children of the children of the node.
         /// </summary>
         /// <returns>The list of grand children of the node.</returns>
-        public List<T> GetGrandChildren()
+        public List<TNode> GetGrandChildren()
         {
-            List<T> grandChildren = new List<T>();
+            List<TNode> grandChildren = new List<TNode>();
             if (LeftChild != null)
                 grandChildren.AddRange(LeftChild.GetChildren());
             if (RightChild != null)
@@ -200,7 +200,7 @@ namespace CSFundamentals.DataStructures.Trees.API
             return grandChildren;
         }
 
-        public bool Equals(T other)
+        public bool Equals(TNode other)
         {
             if (other == null) return false;
             if (Key.CompareTo(other.Key) == 0) return true;

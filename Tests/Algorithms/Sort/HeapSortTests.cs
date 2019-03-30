@@ -31,7 +31,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             var values = new List<int>(Constants.ArrayWithDistinctValues);
             HeapSort.Sort_Ascending(values);
-            UtilsTests.CheckIfListIsSortedAscendingly(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
@@ -39,7 +39,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             var values = new List<int>(Constants.ArrayWithDuplicateValues);
             HeapSort.Sort_Ascending(values);
-            UtilsTests.CheckIfListIsSortedAscendingly(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
@@ -47,7 +47,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             var values = new List<int>(Constants.ArrayWithSortedDistinctValues);
             HeapSort.Sort_Ascending(values);
-            UtilsTests.CheckIfListIsSortedAscendingly(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
@@ -55,7 +55,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             var values = new List<int>(Constants.ArrayWithSortedDuplicateValues);
             HeapSort.Sort_Ascending(values);
-            UtilsTests.CheckIfListIsSortedAscendingly(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
@@ -63,7 +63,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             var values = new List<int>(Constants.ArrayWithReverselySortedDistinctValues);
             HeapSort.Sort_Ascending(values);
-            UtilsTests.CheckIfListIsSortedAscendingly(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
@@ -71,7 +71,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             var values = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
             HeapSort.Sort_Ascending(values);
-            UtilsTests.CheckIfListIsSortedAscendingly(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
     }
 }

@@ -22,13 +22,13 @@ using CSFundamentals.DataStructures.Trees.API;
 
 namespace CSFundamentals.DataStructures.Trees
 {
-    public class AVLTreeNode<T1, T2> : BinaryTreeNode<AVLTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>
+    public class AVLTreeNode<TKey, TValue> : BinaryTreeNode<AVLTreeNode<TKey, TValue>, TKey, TValue> where TKey : IComparable<TKey>
     {
-        public override AVLTreeNode<T1, T2> LeftChild { get; set; }
-        public override AVLTreeNode<T1, T2> RightChild { get; set; }
-        public override AVLTreeNode<T1, T2> Parent { get; set; }
+        public override AVLTreeNode<TKey, TValue> LeftChild { get; set; }
+        public override AVLTreeNode<TKey, TValue> RightChild { get; set; }
+        public override AVLTreeNode<TKey, TValue> Parent { get; set; }
 
-        public AVLTreeNode(T1 key, T2 value) : base(key, value)
+        public AVLTreeNode(TKey key, TValue value) : base(key, value)
         {
         }
     }

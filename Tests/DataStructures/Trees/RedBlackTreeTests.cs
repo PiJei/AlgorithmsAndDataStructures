@@ -219,10 +219,10 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.IsNotNull(node1.RightChild);
         }
 
-        public static void HasRedBlackTreeProperties<T1, T2>(RedBlackTree<T1, T2> tree, RedBlackTreeNode<T1, T2> root, List<RedBlackTreeNode<T1, T2>> inOrderTraversal, int expectedNodeCount) where T1 : IComparable<T1>, IEquatable<T1>
+        public static void HasRedBlackTreeProperties<TKey, TValue>(RedBlackTree<TKey, TValue> tree, RedBlackTreeNode<TKey, TValue> root, List<RedBlackTreeNode<TKey, TValue>> inOrderTraversal, int expectedNodeCount) where TKey : IComparable<TKey>, IEquatable<TKey>
         {
             // Check order properties.
-            BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<RedBlackTreeNode<T1, T2>, T1, T2>(root);
+            Assert.IsTrue(BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<RedBlackTreeNode<TKey, TValue>, TKey, TValue>(root));
 
             //Check to make sure nodes are not orphaned in the insertion or deletion process. 
             Assert.AreEqual(expectedNodeCount, inOrderTraversal.Count);
@@ -230,7 +230,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
             // Check color properties.
             if (root != null)
                 Assert.IsTrue(root.Color == Color.Black);
-            foreach (RedBlackTreeNode<T1, T2> node in inOrderTraversal)
+            foreach (RedBlackTreeNode<TKey, TValue> node in inOrderTraversal)
             {
                 Assert.IsTrue(node.Color == Color.Red || node.Color == Color.Black);
 
@@ -251,9 +251,9 @@ namespace CSFundamentalsTests.DataStructures.Trees
             }
 
             // all paths from a node to its null (leaf) descendants contain the same number of black nodes. 
-            foreach (RedBlackTreeNode<T1, T2> node in inOrderTraversal)
+            foreach (RedBlackTreeNode<TKey, TValue> node in inOrderTraversal)
             {
-                List<List<RedBlackTreeNode<T1, T2>>> paths = tree.GetAllPathToLeaves(node);
+                List<List<RedBlackTreeNode<TKey, TValue>>> paths = tree.GetAllPathToLeaves(node);
                 int shortestPathLength = int.MaxValue;
                 int longestPathLength = int.MinValue;
                 int firstPathBlackNodeCount = 0;

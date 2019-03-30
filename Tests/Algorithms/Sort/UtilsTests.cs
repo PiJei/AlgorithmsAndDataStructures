@@ -30,12 +30,13 @@ namespace CSFundamentalsTests.Algorithms.Sort
         /// <summary>
         /// Checks whether the given integer list is sorted in ascending order. 
         /// </summary>
-        public static void CheckIfListIsSortedAscendingly(List<int> values)
+        public static bool IsSortedAscendingly(List<int> values)
         {
             for (int i = 0; i < values.Count - 1; i++)
             {
                 Assert.IsTrue(values[i] <= values[i + 1]);
             }
+            return true;
         }
 
         [TestMethod]

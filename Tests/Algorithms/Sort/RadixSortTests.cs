@@ -31,7 +31,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             List<int> values = new List<int>(Constants.ArrayWithDistinctValues);
             RadixSort.Sort_Iterative_V1(values);
-            UtilsTests.CheckIfListIsSortedAscendingly(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
@@ -39,7 +39,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             List<int> values = new List<int>(Constants.ArrayWithDuplicateValues);
             RadixSort.Sort_Iterative_V1(values);
-            UtilsTests.CheckIfListIsSortedAscendingly(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
@@ -47,7 +47,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             List<int> values = new List<int>(Constants.ArrayWithSortedDistinctValues);
             RadixSort.Sort_Iterative_V1(values);
-            UtilsTests.CheckIfListIsSortedAscendingly(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
@@ -55,7 +55,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             List<int> values = new List<int>(Constants.ArrayWithSortedDuplicateValues);
             RadixSort.Sort_Iterative_V1(values);
-            UtilsTests.CheckIfListIsSortedAscendingly(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
@@ -63,7 +63,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             List<int> values = new List<int>(Constants.ArrayWithReverselySortedDistinctValues);
             RadixSort.Sort_Iterative_V1(values);
-            UtilsTests.CheckIfListIsSortedAscendingly(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
@@ -71,7 +71,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             List<int> values = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
             RadixSort.Sort_Iterative_V1(values);
-            UtilsTests.CheckIfListIsSortedAscendingly(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
     }
 }

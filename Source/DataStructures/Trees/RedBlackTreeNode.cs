@@ -22,14 +22,14 @@ using CSFundamentals.DataStructures.Trees.API;
 
 namespace CSFundamentals.DataStructures.Trees
 {
-    public class RedBlackTreeNode<T1, T2> : BinaryTreeNode<RedBlackTreeNode<T1, T2>, T1, T2> where T1 : IComparable<T1>
+    public class RedBlackTreeNode<TKey, TValue> : BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue> where TKey : IComparable<TKey>
     {
         public Color Color { get; set; }
-        public override RedBlackTreeNode<T1, T2> LeftChild { get; set; }
-        public override RedBlackTreeNode<T1, T2> RightChild { get; set; }
-        public override RedBlackTreeNode<T1, T2> Parent { get; set; }
+        public override RedBlackTreeNode<TKey, TValue> LeftChild { get; set; }
+        public override RedBlackTreeNode<TKey, TValue> RightChild { get; set; }
+        public override RedBlackTreeNode<TKey, TValue> Parent { get; set; }
 
-        public RedBlackTreeNode(T1 key, T2 value, Color color = Color.Red) : base(key, value)
+        public RedBlackTreeNode(TKey key, TValue value, Color color = Color.Red) : base(key, value)
         {
             Color = color;
         }

@@ -26,19 +26,19 @@ using CSFundamentals.Styling;
 
 namespace CSFundamentals.DataStructures.Trees.API
 {
-    public abstract class BinarySearchTreeBase<T, T1, T2> where T : IBinaryTreeNode<T, T1, T2> where T1 : IComparable<T1>
+    public abstract class BinarySearchTreeBase<TNode, TKey, TValue> where TNode : IBinaryTreeNode<TNode, TKey, TValue> where TKey : IComparable<TKey>
     {
         /// <summary>
         /// Is the root of the binary search tree.
         /// </summary>
-        protected T _root { get; set; } = default(T);
+        protected TNode _root { get; set; } = default(TNode);
 
         /// <summary>
         /// Builds the tree to include the given nodes.
         /// </summary>
         /// <param name="nodes">Is a list of nodes to be inserted in the tree.</param>
         /// <returns>Root of the tree.</returns>
-        public abstract T Build(List<T> nodes);
+        public abstract TNode Build(List<TNode> nodes);
 
         /// <summary>
         /// Inserts a new node in the tree
@@ -46,7 +46,7 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// <param name="root">Current root of the tree, or the node at which insert operation should be started.</param>
         /// <param name="newNode">New node to be inserted in the tree. </param>
         /// <returns>New root of the tree (might or might not change during operation).</returns>
-        public abstract T Insert(T root, T newNode);
+        public abstract TNode Insert(TNode root, TNode newNode);
 
         /// <summary>
         /// Deletes a node with the given key from th tree.
@@ -54,7 +54,7 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// <param name="root">Current root of the tree, or the node at which delete operation should be started. </param>
         /// <param name="key">Specifies the key of the node to be deleted. </param>
         /// <returns>New root of the tree (might or might not change during the operation).</returns>
-        public abstract T Delete(T root, T1 key);
+        public abstract TNode Delete(TNode root, TKey key);
 
         /// <summary>
         /// Searches for the given key in the tree. 
@@ -62,7 +62,7 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// <param name="root">Current root of the tree, or the node at which search operation should be started. </param>
         /// <param name="key">Specifies the key to be searched. </param>
         /// <returns>Returns the tree node that contains key. </returns>
-        public abstract T Search(T root, T1 key);
+        public abstract TNode Search(TNode root, TKey key);
 
         /// <summary>
         /// Updates the tree node of the specified key with the new given value. 
@@ -71,11 +71,11 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// <param name="key">Specifies the key of the node whose value should be updated.</param>
         /// <param name="value">Specifies the new value. </param>
         /// <returns>true in case of success and false otherwise.</returns>
-        public abstract bool Update(T root, T1 key, T2 value);
+        public abstract bool Update(TNode root, TKey key, TValue value);
 
-        public abstract T FindMin(T root);
+        public abstract TNode FindMin(TNode root);
 
-        public abstract T FindMax(T root);
+        public abstract TNode FindMax(TNode root);
 
         /// <summary>
         /// Implements a binary search tree insert. 
@@ -83,12 +83,12 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// <param name="root">Current root of the tree, or the node at which insert operation should be started.</param>
         /// <param name="newNode">New node to be inserted in the tree. </param>
         /// <returns>New root of the tree (might or might not change during operation).</returns>
-        internal T Insert_BST(T root, T newNode)
+        internal TNode Insert_BST(TNode root, TNode newNode)
         {
             if (root == null) /* This is the case where there is no node in the tree, and newNode is the first one. */
             {
                 root = newNode;
-                root.Parent = default(T);
+                root.Parent = default(TNode);
                 return root;
             }
 
@@ -131,9 +131,9 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// </summary>
         /// <param name="nodes">Is a list of nodes to be inserted in the tree.</param>
         /// <returns>Root of the tree.</returns>
-        internal T Build_BST(List<T> nodes)
+        internal TNode Build_BST(List<TNode> nodes)
         {
-            foreach (T node in nodes)
+            foreach (TNode node in nodes)
             {
                 _root = Insert(_root, node);
             }
@@ -146,7 +146,7 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// <param name="root">Current root of the tree, or the node at which search operation should be started. </param>
         /// <param name="key">Specifies the key to be searched. </param>
         /// <returns>Returns the tree node that contains key. </returns>
-        internal T Search_BST(T root, T1 key)
+        internal TNode Search_BST(TNode root, TKey key)
         {
             if (root == null)
             {
@@ -173,9 +173,9 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// <param name="key">Specifies the key to be updated.</param>
         /// <param name="value">Specifies the new value of the key.</param>
         /// <returns>True in case the operation was successful, and false otherwise. </returns>
-        internal bool Update_BST(T root, T1 key, T2 value)
+        internal bool Update_BST(TNode root, TKey key, TValue value)
         {
-            T node = Search(root, key); /* Since relies on Search, its time and space complexities are directly driven from Search() operation. */
+            TNode node = Search(root, key); /* Since relies on Search, its time and space complexities are directly driven from Search() operation. */
             if (node != null)
             {
                 node.Value = value;
@@ -184,7 +184,7 @@ namespace CSFundamentals.DataStructures.Trees.API
             return false;
         }
 
-        internal T Delete_BST(T root, T1 key)
+        internal TNode Delete_BST(TNode root, TKey key)
         {
             if (root == null) return root;
 
@@ -200,7 +200,7 @@ namespace CSFundamentals.DataStructures.Trees.API
             {
                 if (root.RightChild == null && root.LeftChild == null)
                 {
-                    return default(T);
+                    return default(TNode);
                 }
 
                 if (root.RightChild == null)
@@ -215,7 +215,7 @@ namespace CSFundamentals.DataStructures.Trees.API
 
                 /* Else replacing the node that has 2 non-null children with its in-order successor, or could alternatively replace it with its in-order predecessor. */
                 /* From definition of FindMin() it is obvious that the replacement node [rightChildMin] has less than 2 children. */
-                T rightChildMin = FindMin_BST(root.RightChild);
+                TNode rightChildMin = FindMin_BST(root.RightChild);
                 root.Key = rightChildMin.Key;
                 root.Value = rightChildMin.Value;
                 root.RightChild = Delete_BST(root.RightChild, rightChildMin.Key); /* at this point both node, and rightChildMin have the same keys, but calling delete on the same key, will only result in the removal  of rightChildMin, because pf the root that is passed to Delete.*/
@@ -228,11 +228,11 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// </summary>
         /// <param name="root">Is the node at which the search starts. </param>
         /// <returns>The tree node with the smallest key. </returns>
-        internal T FindMin_BST(T root)
+        internal TNode FindMin_BST(TNode root)
         {
             if (root == null) throw new ArgumentNullException();
 
-            T node = root;
+            TNode node = root;
             while (node.LeftChild != null)
             {
                 node = node.LeftChild;
@@ -245,10 +245,10 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// </summary>
         /// <param name="root">Is the node at which the search starts. </param>
         /// <returns>The tree node with the largest key.</returns>
-        internal T FindMax_BST(T root)
+        internal TNode FindMax_BST(TNode root)
         {
             if (root == null) throw new ArgumentNullException();
-            T node = root;
+            TNode node = root;
             while (node.RightChild != null)
             {
                 node = node.RightChild;
@@ -262,7 +262,7 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// </summary>
         /// <param name="node">Is the node at which rotation happens.</param>
         [TimeComplexity(Case.Average, "O(1)")]
-        public T RotateLeft(T node)
+        public TNode RotateLeft(TNode node)
         {
             if (node == null) throw new ArgumentNullException();
             if (node.RightChild == null) throw new Exception("While rotating left, the new parent can not be null.");
@@ -300,7 +300,7 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// </summary>
         /// <param name="node">Is the node at which rotation happens.</param>
         [TimeComplexity(Case.Average, "O(1)")]
-        public T RotateRight(T node)
+        public TNode RotateRight(TNode node)
         {
             if (node == null) throw new ArgumentNullException();
             if (node.LeftChild == null) throw new Exception("While rotating right, the new parent can not be null.");
@@ -331,15 +331,15 @@ namespace CSFundamentals.DataStructures.Trees.API
             return newNode;
         }
 
-        public T DeleteMin(T root)
+        public TNode DeleteMin(TNode root)
         {
-            T minNode = FindMin(root);
+            TNode minNode = FindMin(root);
             return Delete(root, minNode.Key);
         }
 
-        public T DeleteMax(T root)
+        public TNode DeleteMax(TNode root)
         {
-            T maxNode = FindMax(root);
+            TNode maxNode = FindMax(root);
             return Delete(root, maxNode.Key);
         }
 
@@ -348,27 +348,27 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// </summary>
         /// <param name="startNode">Is the node at which computing all routes/paths to leaf nodes starts.</param>
         /// <returns>List of all the paths.</returns>
-        public List<List<T>> GetAllPathToLeaves(T startNode)
+        public List<List<TNode>> GetAllPathToLeaves(TNode startNode)
         {
             if (startNode == null)
             {
-                return new List<List<T>>();
+                return new List<List<TNode>>();
             }
 
-            List<List<T>> paths = new List<List<T>>();
-            List<List<T>> leftPaths = GetAllPathToLeaves(startNode.LeftChild);
-            List<List<T>> rightPaths = GetAllPathToLeaves(startNode.RightChild);
+            List<List<TNode>> paths = new List<List<TNode>>();
+            List<List<TNode>> leftPaths = GetAllPathToLeaves(startNode.LeftChild);
+            List<List<TNode>> rightPaths = GetAllPathToLeaves(startNode.RightChild);
 
             for (int i = 0; i < leftPaths.Count; i++)
             {
-                var newPath = new List<T>();
+                var newPath = new List<TNode>();
                 newPath.Add(startNode);
                 newPath.AddRange(leftPaths[i]);
                 paths.Add(newPath);
             }
             for (int i = 0; i < rightPaths.Count; i++)
             {
-                var newPath = new List<T>();
+                var newPath = new List<TNode>();
                 newPath.Add(startNode);
                 newPath.AddRange(rightPaths[i]);
                 paths.Add(newPath);
@@ -376,7 +376,7 @@ namespace CSFundamentals.DataStructures.Trees.API
 
             if (paths.Count == 0)
             {
-                paths.Add(new List<T> { startNode });
+                paths.Add(new List<TNode> { startNode });
             }
 
             return paths;
@@ -387,7 +387,7 @@ namespace CSFundamentals.DataStructures.Trees.API
         /// </summary>
         /// <param name="root">Is the node at which in order traversal starts. </param>
         /// <param name="inOrderSetOfNodes">Is the sorted list of nodes.</param>
-        public void InOrderTraversal(T root, List<T> inOrderSetOfNodes)
+        public void InOrderTraversal(TNode root, List<TNode> inOrderSetOfNodes)
         {
             if (root != null)
             {
