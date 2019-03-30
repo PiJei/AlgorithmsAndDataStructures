@@ -225,16 +225,9 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
         [TestMethod]
         [ExpectedException(typeof(KeyNotFoundException))]
-        public void BTree_Search_Test_Fail_1()
+        public void Search_NotExistingKey_ThrowsException()
         {
             var node1 = _tree.Search(_tree.Root, 5);
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(KeyNotFoundException))]
-        public void Search_Test_2()
-        {
-            var node1 = _tree.Search(_tree.Root, 55);
         }
 
         [TestMethod]
