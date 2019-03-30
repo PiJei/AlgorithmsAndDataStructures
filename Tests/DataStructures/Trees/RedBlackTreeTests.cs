@@ -173,7 +173,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void IsRed()
+        public void IsRed_DefaultColor_ExpectsTrue()
         {
             RedBlackTreeNode<int, string> node1 = new RedBlackTreeNode<int, string>(10, "string1");
             Assert.IsTrue(_tree.IsRed(node1));
@@ -182,11 +182,29 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void IsBlack()
+        public void IsRed_ColoredBlack_ExpectsFalse()
+        {
+            RedBlackTreeNode<int, string> node1 = new RedBlackTreeNode<int, string>(10, "string1")
+            {
+                Color = Color.Black
+            };
+            Assert.IsFalse(_tree.IsRed(node1));
+        }
+
+        [TestMethod]
+        public void IsBlack_DefaultColor_ExpectsFalse()
         {
             RedBlackTreeNode<int, string> node1 = new RedBlackTreeNode<int, string>(10, "string1");
             Assert.IsFalse(_tree.IsBlack(node1));
-            node1.Color = Color.Black;
+        }
+
+        [TestMethod]
+        public void IsBlack_ColoredBlack_ExpectsTrue()
+        {
+            RedBlackTreeNode<int, string> node1 = new RedBlackTreeNode<int, string>(10, "string1")
+            {
+                Color = Color.Black
+            };
             Assert.IsTrue(_tree.IsBlack(node1));
         }
 
@@ -262,11 +280,11 @@ namespace CSFundamentalsTests.DataStructures.Trees
                 for (int i = 1; i < paths.Count; i++)
                 {
                     Assert.AreEqual(firstPathBlackNodeCount, paths[i].Count(n => n.Color == Color.Black));
-                    if(paths[i].Count > longestPathLength)
+                    if (paths[i].Count > longestPathLength)
                     {
                         longestPathLength = paths[i].Count;
                     }
-                    if(paths[i].Count < shortestPathLength)
+                    if (paths[i].Count < shortestPathLength)
                     {
                         shortestPathLength = paths[i].Count;
                     }
