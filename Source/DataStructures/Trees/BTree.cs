@@ -368,7 +368,7 @@ namespace CSFundamentals.DataStructures.Trees
                 {
                     return FindLeafToInsertKey(root.GetChild(i), key);
                 }
-                else if (key.CompareTo(root.GetKey(i)) == 0) /* means a node which such key already exists.*/
+                else if (key.CompareTo(root.GetKey(i)) == 0) /* means a node with such key already exists.*/
                 {
                     throw new ArgumentException("A node with this key exists in the tree. Duplicate keys are not allowed.");
                 }

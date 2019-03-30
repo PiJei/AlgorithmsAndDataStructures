@@ -258,7 +258,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void FindMinBST_Failure()
+        public void FindMinBST_NodeIsNull_ThrowsException()
         {
             _tree.FindMin(null);
         }
@@ -277,7 +277,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void FindMaxBST_Failure()
+        public void FindMaxBST_NodeIsNull_ThrowsException()
         {
             _tree.FindMax(null);
         }

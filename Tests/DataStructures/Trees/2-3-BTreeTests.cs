@@ -89,7 +89,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void FindLeafToInsertKey_DuplicateKey()
+        public void FindLeafToInsertKey_DuplicateKey_ThrowsException()
         {
             var leaf5 = _tree.FindLeafToInsertKey(_tree.Root, 50);
         }

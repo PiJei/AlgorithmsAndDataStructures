@@ -27,7 +27,7 @@ namespace CSFundamentalsTests.StringStructures
     public class LLPPSTests
     {
         [TestMethod]
-        public void Build()
+        public void Build_1()
         {
             List<int> longestProperPrefixes1 = LLPPS.Build("aaaabcbaab");
             Assert.AreEqual(0, longestProperPrefixes1[0]);
@@ -43,7 +43,7 @@ namespace CSFundamentalsTests.StringStructures
         }
 
         [TestMethod]
-        public void Build()
+        public void Build_2()
         {
             List<int> longestProperPrefixes1 = LLPPS.Build("abcdef");
             Assert.AreEqual(0, longestProperPrefixes1[0]);
@@ -55,7 +55,7 @@ namespace CSFundamentalsTests.StringStructures
         }
 
         [TestMethod]
-        public void Build()
+        public void Build_3()
         {
             List<int> longestProperPrefixes1 = LLPPS.Build("ddgddcddgdd");
             Assert.AreEqual(0, longestProperPrefixes1[0]);

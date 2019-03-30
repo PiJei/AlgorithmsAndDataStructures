@@ -27,7 +27,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
     {
         [TestMethod]
         [ExpectedException(typeof(NotFoundException))]
-        public void InsertAfter_Failure_1()
+        public void InsertAfter_EmptyListAndInsertAfterNotExistingValue_ThrowsException()
         {
             /* Testing the case where there is no node in the list, and the node after does not exist. */
             DoublyLinkedList<int> list = new DoublyLinkedList<int>();
@@ -36,7 +36,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
 
         [TestMethod]
         [ExpectedException(typeof(NotFoundException))]
-        public void InsertAfter_Failure_2()
+        public void InsertAfter_NotEmptyListAndInsertAfterNotExistingValue_ThrowsException()
         {
             /* Testing the case where there is one node in the list, and the node after does not exist. */
             DoublyLinkedList<int> list = new DoublyLinkedList<int>(new DoublyLinkedNode<int>(5));
@@ -84,7 +84,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
 
         [TestMethod]
         [ExpectedException(typeof(NotFoundException))]
-        public void InsertBefore_Failure_1()
+        public void InsertBefore_EmptyListInsertBeforeNotExistingValue_ThrowsException()
         {
             /* Testing the case where there is no node in the list, and the node before does not exist. */
             DoublyLinkedList<int> list = new DoublyLinkedList<int>();
@@ -93,7 +93,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
 
         [TestMethod]
         [ExpectedException(typeof(NotFoundException))]
-        public void InsertBefore_Failure_2()
+        public void InsertBefore_NotEmptyListInsertBeforeNotExistingValue_ThrowsException()
         {
             /* Testing the case where there is one node in the list, and the node before does not exist. */
             DoublyLinkedList<int> list = new DoublyLinkedList<int>(new DoublyLinkedNode<int>(5));

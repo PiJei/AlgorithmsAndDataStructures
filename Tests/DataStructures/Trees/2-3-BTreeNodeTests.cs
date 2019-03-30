@@ -170,7 +170,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void InsertChild_Duplicate()
+        public void InsertChild_Duplicate_ThrowsException()
         {
             var node1 = new BTreeNode<int, string>(3);
 
@@ -181,11 +181,6 @@ namespace CSFundamentalsTests.DataStructures.Trees
             var child1 = new BTreeNode<int, string>(3);
             child1.InsertKeyValue(new KeyValuePair<int, string>(5, "D"));
             child1.InsertKeyValue(new KeyValuePair<int, string>(9, "E"));
-
-
-            var child2 = new BTreeNode<int, string>(3);
-            child2.InsertKeyValue(new KeyValuePair<int, string>(55, "F"));
-            child2.InsertKeyValue(new KeyValuePair<int, string>(70, "G"));
 
             node1.InsertChild(child1);
             node1.InsertChild(child1);
@@ -283,7 +278,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
         [TestMethod]
         [ExpectedException(typeof(KeyNotFoundException))]
-        public void KeyValueToMoveUp_Fail_1()
+        public void KeyValueToMoveUp_EmptyNode_ThrowsException()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(3);
             Assert.AreEqual(1, node.MinKeys);
@@ -295,7 +290,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
         [TestMethod]
         [ExpectedException(typeof(KeyNotFoundException))]
-        public void KeyValueToMoveUp_Fail_2()
+        public void KeyValueToMoveUp_MinFullNode_ThrowsException()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(3);
             Assert.AreEqual(1, node.MinKeys);

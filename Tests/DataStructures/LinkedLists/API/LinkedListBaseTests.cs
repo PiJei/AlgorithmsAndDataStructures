@@ -50,7 +50,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists.API
 
         [TestMethod]
         [ExpectedException(typeof(NotFoundException))]
-        public void Search_Failure_1()
+        public void Search_EmptyListAndNotExistingValue_ThrowsException()
         {
             MockLinkedList<int> list = new MockLinkedList<int>();
             var result = list.Search(10);
@@ -58,7 +58,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists.API
 
         [TestMethod]
         [ExpectedException(typeof(NotFoundException))]
-        public void Search_Failure_2()
+        public void Search_NonEmptyListAndNotExistingValue_ThrowsException()
         {
             MockLinkedList<int> list = new MockLinkedList<int>(new MockLinkedNode<int>(20));
             var result = list.Search(10);
