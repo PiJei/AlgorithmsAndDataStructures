@@ -26,7 +26,7 @@ namespace CSFundamentalsTests.StringStructures
     public class SuffixArrayTests
     {
         [TestMethod]
-        public void StringSuffix_SortSuffixes_Test()
+        public void SortSuffixes()
         {
             int[] suffixArray = SuffixArray.Build("banana");
             Assert.AreEqual(5, suffixArray[0]);

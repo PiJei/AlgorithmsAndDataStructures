@@ -27,7 +27,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
     public partial class InsertionSortTests
     {
         [TestMethod]
-        public void InsertionSort_IsStable_Test()
+        public void IsStable()
         {
             /* Insertion sort is stable, try to find an example which breaks this property.*/
 

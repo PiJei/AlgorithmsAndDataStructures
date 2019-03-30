@@ -29,7 +29,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
     public class MinMaxBinaryHeapTests
     {
         [TestMethod]
-        public void MinMaxBinaryHeap_BuildHeapRecursively_Test1()
+        public void BuildHeapRecursively_1()
         {
             List<int> values = new List<int> { 70, 21, 220, 10, 1, 34, 3, 150, 85 };
             var heap = new MinMaxBinaryHeap<int>(values);
@@ -60,7 +60,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         }
 
         [TestMethod]
-        public void MinMaxBinaryHeap_BuildHeapRecursively_Test2()
+        public void BuildHeapRecursively_2()
         {
             List<int> values = new List<int> { 39, 45, 37, 45, 38, 50, 59, 65, 27, 25, 36, 30, 57, 28 };
             var heap = new MinMaxBinaryHeap<int>(values);

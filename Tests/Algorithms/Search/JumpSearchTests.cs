@@ -27,7 +27,7 @@ namespace CSFundamentalsTests.Search
     public class JumpSearchTests
     {
         [TestMethod]
-        public void JumpSearch_Search_Test()
+        public void Search()
         {
             List<int> values = new List<int> { 1, 3, 10, 14, 25, 27, 34, 78, 90, 90, 120 };
 

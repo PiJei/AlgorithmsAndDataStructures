@@ -28,7 +28,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
     public partial class UtilsTests
     {
         [TestMethod]
-        public void Utils_Convert_Test()
+        public void Convert()
         {
             List<int> values = new List<int>() { 4, 3, 2, 4, 1 };
             List<Element> newValues = Utils.Convert(values);
@@ -42,7 +42,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void Utils_IsMapStable_Test()
+        public void IsMapStable()
         {
             var element1 = new Element(4, 0);
             element1.Move(4);
@@ -62,7 +62,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void Utils_HashListToIndexes_Test()
+        public void HashListToIndexes()
         {
             Dictionary<Element, List<Element>> map = Utils.HashListToIndexes(null);
             Assert.AreEqual(0, map.Keys.Count);
@@ -94,7 +94,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void Utils_Swap_Test()
+        public void Swap()
         {
             List<Element> values = new List<Element>();
             var element1 = new Element(10, 0);

@@ -27,7 +27,7 @@ namespace CSFundamentalsTests.Search
     public class LinearSearchTests
     {
         [TestMethod]
-        public void LinearSearch_Search_Test()
+        public void Search()
         {
             List<int> values = new List<int> { 4, 1, 9, 100, 3, 2, 45, 37, 3 };
             Assert.AreEqual(-1, LinearSearch.Search(values, 200));

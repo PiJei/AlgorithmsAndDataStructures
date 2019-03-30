@@ -27,7 +27,7 @@ namespace CSFundamentalsTests.Search
     public class BinarySearchTests
     {
         [TestMethod]
-        public void BinarySearch_Test()
+        public void Test()
         {
             List<int> values = new List<int> { 1, 3, 10, 14, 25, 27, 34, 78, 90, 90, 120 };
             

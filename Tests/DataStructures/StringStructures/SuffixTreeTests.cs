@@ -81,8 +81,6 @@ namespace CSFundamentalsTests.StringStructures
             Assert.AreEqual(1, childA2NA2.StartIndex);
             Assert.AreEqual(0, childA2NA2.Children.Count);
 
-
-
             Assert.IsTrue(rootChild2.IsIntermediate);
             Assert.IsFalse(rootChild2.IsRoot);
             Assert.IsFalse(rootChild2.IsLeaf);
@@ -103,7 +101,6 @@ namespace CSFundamentalsTests.StringStructures
             Assert.AreEqual("na$", childNA2.StringValue);
             Assert.AreEqual(2, childNA2.StartIndex);
             Assert.AreEqual(0, childNA2.Children.Count);
-
 
             Assert.IsFalse(rootChild3.IsIntermediate);
             Assert.IsFalse(rootChild3.IsRoot);
@@ -162,6 +159,5 @@ namespace CSFundamentalsTests.StringStructures
                 GetNodes(node, nodes);
             }
         }
-
     }
 }

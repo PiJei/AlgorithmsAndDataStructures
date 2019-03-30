@@ -59,7 +59,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         }
 
         [TestMethod]
-        public void MaxBinaryHeap_BuildHeap_Recursively_Test()
+        public void BuildHeap_Recursively()
         {
             List<int> values = new List<int> { 1, 20, 32, 56, 5, 3, 10, 100, 72 };
 
@@ -71,7 +71,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         }
 
         [TestMethod]
-        public void MaxBinaryHeap_BuildHeap_Itratively_Test()
+        public void BuildHeap_Itratively()
         {
             List<int> values = new List<int> { 1, 20, 32, 56, 5, 3, 10, 100, 72 };
 
@@ -83,7 +83,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         }
 
         [TestMethod]
-        public void MaxBinaryHeap_TryRemoveRoot_Test()
+        public void TryRemoveRoot()
         {
             List<int> values = new List<int> { 1, 20, 32, 56, 5, 3, 10, 100, 72 };
 
@@ -128,7 +128,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         }
 
         [TestMethod]
-        public void MaxBinaryHeap_Insert_Test()
+        public void Insert()
         {
             MaxBinaryHeap<int> heap = new MaxBinaryHeap<int>(new List<int> { });
             heap.Insert(1, heap.HeapArray.Count);

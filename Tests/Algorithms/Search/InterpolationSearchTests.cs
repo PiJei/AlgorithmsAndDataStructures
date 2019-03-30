@@ -27,7 +27,7 @@ namespace CSFundamentalsTests.Search
     public class InterpolationSearchTests
     {
         [TestMethod]
-        public void InterpolationSearch_Search_Test()
+        public void Search()
         {
             List<int> values = new List<int> { 3, 7, 10, 14, 21, 27, 32, 38, 45, 53 };
             Assert.AreEqual(-1, InterpolationSearch.Search(values, 0, values.Count - 1, 200));
@@ -41,7 +41,7 @@ namespace CSFundamentalsTests.Search
         }
 
         [TestMethod]
-        public void InterpolationSearch_GetSearchStartingIndex_Test()
+        public void GetSearchStartingIndex()
         {
             List<int> values = new List<int> { 3, 7, 10, 14, 21, 27, 32, 38, 45, 53 };
 

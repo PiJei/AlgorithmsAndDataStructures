@@ -26,7 +26,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
     public class SinglyLinkedListTests
     {
         [TestMethod]
-        public void SinglyLinkedList_Insert_Test()
+        public void Insert()
         {
             SinglyLinkedList<int> list = new SinglyLinkedList<int>();
             Assert.AreEqual(0, list.Count());
@@ -51,7 +51,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         }
 
         [TestMethod]
-        public void SinglyLinkedList_Delete_Test()
+        public void Delete()
         {
             SinglyLinkedList<int> list = new SinglyLinkedList<int>();
             Assert.AreEqual(0, list.Count());

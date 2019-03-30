@@ -28,7 +28,7 @@ namespace CSFundamentalsTests.PatternSearch
     public class BoyerMooreSearchTests
     {
         [TestMethod]
-        public void BoyerMooreSearch_Search_Test()
+        public void Search()
         {
             Assert.IsTrue(BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly("abd", "abdfgh").SequenceEqual(new List<int> {})); /* Testing the case where substring is longer than string. */
             Assert.IsTrue(BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly("gcaatgcctatgtgacc", "tatgtg").SequenceEqual(new List<int> { 8 })); /* Example taken from geeks for geeks. */
@@ -42,7 +42,7 @@ namespace CSFundamentalsTests.PatternSearch
         }
 
         [TestMethod]
-        public void BoyerMooreSearch_MapCharToLastIndex_Test()
+        public void MapCharToLastIndex()
         {
             Dictionary<char, int> map1 = BoyerMooreSearch.MapCharToLastIndex("aabcdakka");
             Assert.AreEqual(5, map1.Keys.Count);

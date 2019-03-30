@@ -27,7 +27,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
     public partial class MergeSortTests
     {
         [TestMethod]
-        public void MergeSort_IsStable_Test()
+        public void IsStable()
         {
             /* Merge sort is stable, try to find an example which breaks this property.*/
 

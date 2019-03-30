@@ -69,7 +69,7 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
         }
 
         [TestMethod]
-        public void BFS_Iterative_test_StartFromA()
+        public void Iterative_StartFromA()
         {
             List<GraphNode> bfsOrdering = BFS.BFS_Iterative(A);
             Assert.AreEqual(7, bfsOrdering.Count);
@@ -84,7 +84,7 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
         }
 
         [TestMethod]
-        public void BFS_Iterative_test_StartFromE()
+        public void Iterative_StartFromE()
         {
             List<GraphNode> bfsOrdering = BFS.BFS_Iterative(E);
             Assert.AreEqual(7, bfsOrdering.Count);
@@ -101,7 +101,7 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
         }
 
         [TestMethod]
-        public void BFS_Recursive_StartFromA()
+        public void Recursive_StartFromA()
         {
             Queue<GraphNode> queue = new Queue<GraphNode>();
             A.IsInserted = true;
@@ -123,7 +123,7 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
         }
 
         [TestMethod]
-        public void BFS_Recursive_StartFromE()
+        public void Recursive_StartFromE()
         {
             Queue<GraphNode> queue = new Queue<GraphNode>();
             E.IsInserted = true;

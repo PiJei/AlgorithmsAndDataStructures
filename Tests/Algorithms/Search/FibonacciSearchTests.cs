@@ -27,7 +27,7 @@ namespace CSFundamentalsTests.Search
     public class FibonacciSearchTests
     {
         [TestMethod]
-        public void FibonacciSearch_Search_Test()
+        public void Search()
         {
             // TODO: Investigate: Fibonacci search for duplicates, will return the biggest index, as it searches close to the end?
             List<int> values = new List<int> { 1, 1, 3, 10, 14, 25, 27, 34, 78, 90, 90, 120 };
@@ -51,7 +51,7 @@ namespace CSFundamentalsTests.Search
         }
 
         [TestMethod]
-        public void FibonacciSearch_GetSmallestFibonacciBiggerThanNumber_Test()
+        public void GetSmallestFibonacciBiggerThanNumber()
         {
             Assert.AreEqual(1, FibonacciSearch.GetSmallestFibonacciBiggerThanNumber(0).FibN);
             Assert.AreEqual(144, FibonacciSearch.GetSmallestFibonacciBiggerThanNumber(143).FibN);

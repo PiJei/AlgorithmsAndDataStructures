@@ -40,7 +40,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void Utils_GetDigitsCount_Test()
+        public void GetDigitsCount()
         {
             Assert.AreEqual(3, Utils.GetDigitsCount(123));
             Assert.AreEqual(1, Utils.GetDigitsCount(9));
@@ -51,7 +51,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void Utils_GetNthDigitFromRight_Test()
+        public void GetNthDigitFromRight()
         {
             Assert.AreEqual(3, Utils.GetNthDigitFromRight(123, 1));
             Assert.AreEqual(2, Utils.GetNthDigitFromRight(123, 2));

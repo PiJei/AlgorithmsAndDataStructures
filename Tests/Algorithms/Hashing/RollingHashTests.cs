@@ -29,7 +29,7 @@ namespace CSFundamentalsTests.Hashing
         private const int Prime = 101;
 
         [TestMethod]
-        public void RollingHash_Hash_Test()
+        public void Hash()
         {
             string s1 = "abc";
             Assert.AreEqual(90, RollingHash.GetHash(s1, Prime, NumCharactersInAlphabet));

@@ -27,7 +27,6 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps.API
     {
         public MockBinaryHeap(List<T> array) : base(array)
         {
-
         }
 
         public override void BubbleDown_Iteratively(int rootIndex, int heapArrayLength)

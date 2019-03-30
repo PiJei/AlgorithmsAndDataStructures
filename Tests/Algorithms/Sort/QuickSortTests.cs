@@ -27,7 +27,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
     public partial class QuickSortTests
     {
         [TestMethod]
-        public void QuickSort_QuickSort_Recursively_Test_WithDistinctValues()
+        public void QuickSort_Recursively_WithDistinctValues()
         {
             var values = new List<int>(Constants.ArrayWithDistinctValues);
             QuickSort.Sort_Recursively(values, 0, values.Count - 1);
@@ -35,7 +35,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void QuickSort_QuickSort_Recursively_Test_WithDuplicateValues()
+        public void QuickSort_Recursively_WithDuplicateValues()
         {
             var values = new List<int>(Constants.ArrayWithDuplicateValues);
             QuickSort.Sort_Recursively(values, 0, values.Count - 1);
@@ -43,7 +43,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void QuickSort_QuickSort_Recursively_Test_WithSortedDistinctValues()
+        public void QuickSort_Recursively_WithSortedDistinctValues()
         {
             var values = new List<int>(Constants.ArrayWithSortedDistinctValues);
             QuickSort.Sort_Recursively(values, 0, values.Count - 1);
@@ -51,7 +51,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void QuickSort_QuickSort_Recursively_Test_WithSortedDuplicateValues()
+        public void QuickSort_Recursively_WithSortedDuplicateValues()
         {
             var values = new List<int>(Constants.ArrayWithSortedDuplicateValues);
             QuickSort.Sort_Recursively(values, 0, values.Count - 1);
@@ -59,7 +59,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void QuickSort_QuickSort_Recursively_Test_WithReverselySortedDistinctValues()
+        public void QuickSort_Recursively_WithReverselySortedDistinctValues()
         {
             var values = new List<int>(Constants.ArrayWithReverselySortedDistinctValues);
             QuickSort.Sort_Recursively(values, 0, values.Count - 1);
@@ -67,7 +67,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void QuickSort_QuickSort_Recursively_Test_WithReverselySortedDuplicateValues()
+        public void QuickSort_Recursively_WithReverselySortedDuplicateValues()
         {
             var values = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
             QuickSort.Sort_Recursively(values, 0, values.Count - 1);

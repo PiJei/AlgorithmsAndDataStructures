@@ -27,7 +27,7 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
     public class DijkstraTests
     {
         [TestMethod]
-        public void Dijkstra_GetShortestDistancesFromRoot_Test()
+        public void GetShortestDistancesFromRoot()
         {
             var node1 = new GraphNode(0);
             var node2 = new GraphNode(1);

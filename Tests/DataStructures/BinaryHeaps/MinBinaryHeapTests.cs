@@ -54,7 +54,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         }
 
         [TestMethod]
-        public void MinBinaryHeap_BuildHeapRecursive_Test1()
+        public void BuildHeapRecursive_1()
         {
             Assert.AreEqual(6, arrayHeap1RecursivelyBuilt.Count);
 
@@ -65,7 +65,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         }
 
         [TestMethod]
-        public void MinBinaryHeap_BuildHeapRecursive_Test2()
+        public void BuildHeapRecursive_2()
         {
             Assert.AreEqual(9, arrayHeap2RecursivelyBuilt.Count);
 
@@ -76,7 +76,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         }
 
         [TestMethod]
-        public void MinBinaryHeap_BuildHeapIterative_Test1()
+        public void BuildHeapIterative_1()
         {
             Assert.AreEqual(6, arrayHeap1IterativelyBuilt.Count);
 
@@ -87,7 +87,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         }
 
         [TestMethod]
-        public void MinBinaryHeap_BuildHeapIterative_Test2()
+        public void BuildHeapIterative_2()
         {
             Assert.AreEqual(9, arrayHeap2IterativelyBuilt.Count);
 
@@ -113,7 +113,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         }
 
         [TestMethod]
-        public void MinBinaryHeap_TryRemoveMin_Test1()
+        public void TryRemoveMin_1()
         {
             List<int> values = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
 
@@ -159,7 +159,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         }
 
         [TestMethod]
-        public void MinBinaryHeap_Insert_Test()
+        public void Insert()
         {
             List<int> values = new List<int>();
             var heap = new MinBinaryHeap<int>(values);
@@ -231,7 +231,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         }
 
         [TestMethod]
-        public void MinBinaryHeap_GetNodeLevel_Test()
+        public void GetNodeLevel()
         {
             List<int> values = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
             var heap = new MinBinaryHeap<int>(values);

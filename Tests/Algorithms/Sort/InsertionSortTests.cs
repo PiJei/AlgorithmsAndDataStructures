@@ -27,7 +27,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
     public partial class InsertionSortTests
     {
         [TestMethod]
-        public void InsertionSort_InsertionSort_Iterative_V1_Test_WithDistinctValues()
+        public void InsertionSort_Iterative_V1_WithDistinctValues()
         {
             var values = new List<int>(Constants.ArrayWithDistinctValues);
             InsertionSort.Sort_Iterative_V1(values);
@@ -35,7 +35,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void InsertionSort_InsertionSort_Iterative_V1_Test_WithDuplicateValues()
+        public void InsertionSort_Iterative_V1_WithDuplicateValues()
         {
             var values = new List<int>(Constants.ArrayWithDuplicateValues);
             InsertionSort.Sort_Iterative_V1(values);
@@ -43,7 +43,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void InsertionSort_InsertionSort_Iterative_V2_Test_WithDistinctValues()
+        public void InsertionSort_Iterative_V2_WithDistinctValues()
         {
             var values = new List<int>(Constants.ArrayWithDistinctValues);
             InsertionSort.Sort_Iterative_V2(values);
@@ -51,7 +51,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void InsertionSort_InsertionSort_Iterative_V2_Test_WithDuplicateValues()
+        public void InsertionSort_Iterative_V2_WithDuplicateValues()
         {
             var values = new List<int>(Constants.ArrayWithDuplicateValues);
             InsertionSort.Sort_Iterative_V2(values);
@@ -59,7 +59,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void InsertionSort_InsertionSort_Recursive_Test_WithDistinctValues()
+        public void InsertionSort_Recursive_WithDistinctValues()
         {
             var values = new List<int>(Constants.ArrayWithDistinctValues);
             InsertionSort.Sort_Recursive(values, values.Count - 1);
@@ -67,7 +67,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void InsertionSort_InsertionSort_Recursive_Test_WithDuplicateValues()
+        public void InsertionSort_Recursive_WithDuplicateValues()
         {
             var values = new List<int>(Constants.ArrayWithDuplicateValues);
             InsertionSort.Sort_Recursive(values, values.Count - 1);

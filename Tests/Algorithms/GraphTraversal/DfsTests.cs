@@ -68,7 +68,7 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
             G.IsInserted = false;
         }
         [TestMethod]
-        public void DFS_Iterative_test_StartFromA()
+        public void Iterative_StartFromA()
         {
             List<GraphNode> dfsOrdering = DFS.DFS_Iterative(A);
             Assert.AreEqual(7, dfsOrdering.Count);
@@ -85,7 +85,7 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
         }
 
         [TestMethod]
-        public void DFS_Iterative_test_StartFromE()
+        public void Iterative_StartFromE()
         {
             List<GraphNode> dfsOrdering = DFS.DFS_Iterative(E);
             Assert.AreEqual(7, dfsOrdering.Count);
@@ -102,7 +102,7 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
         }
 
         [TestMethod]
-        public void DFS_Recursive_StartFromA()
+        public void Recursive_StartFromA()
         {
             ResetGraph();
             List<GraphNode> dfsOrdering = new List<GraphNode>();
@@ -122,7 +122,7 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
         }
 
         [TestMethod]
-        public void DFS_Recursive_StartFromE()
+        public void Recursive_StartFromE()
         {
             ResetGraph();
             List<GraphNode> dfsOrdering = new List<GraphNode>();

@@ -27,7 +27,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps.API
     public class BinaryHeapBaseTests
     {
         [TestMethod]
-        public void BinaryHeap_Swap_Test()
+        public void Swap()
         {
             List<int> values = new List<int> { 10, 34, 56, 2, 12, 1 };
             var heap = new MockBinaryHeap<int>(values);
@@ -38,7 +38,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps.API
         }
 
         [TestMethod]
-        public void BinaryHeap_TryFindMinIndex_Test()
+        public void TryFindMinIndex()
         {
             List<int> values = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
             var heap = new MockBinaryHeap<int>(values);
@@ -61,7 +61,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps.API
         }
 
         [TestMethod]
-        public void BinaryHeap_TryFindMaxIndex_Test()
+        public void TryFindMaxIndex()
         {
             List<int> values = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
             var heap = new MockBinaryHeap<int>(values);
