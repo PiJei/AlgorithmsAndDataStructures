@@ -54,7 +54,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void RedBlackTree_Build_Test()
+        public void Build()
         {
             List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, inOrderTraversal);
@@ -62,7 +62,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void RedBlackTree_Delete_Test_1()
+        public void Delete_1()
         {
             _root = _tree.Delete(_root, 47);
             List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
@@ -71,7 +71,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void RedBlackTree_Delete_Test_2()
+        public void Delete_2()
         {
             _root = _tree.Delete(_root, 30);
             List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
@@ -80,7 +80,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void RedBlackTree_Delete_Test_3()
+        public void Delete_3()
         {
             _root = _tree.Delete(_root, 50);
             List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
@@ -89,7 +89,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void RedBlackTree_Delete_Test_4()
+        public void Delete_4()
         {
             _root = _tree.Delete(_root, 20);
             List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
@@ -98,7 +98,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void RedBlackTree_Delete_Test_5()
+        public void Delete_5()
         {
             _root = _tree.Delete(_root, 40);
             List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
@@ -107,7 +107,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void RedBlackTree_Delete_Test_6()
+        public void Delete_6()
         {
             _root = _tree.Delete(_root, 35);
             List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
@@ -116,7 +116,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void RedBlackTree_Delete_Test_7()
+        public void Delete_7()
         {
             _root = _tree.Delete(_root, 45);
             List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
@@ -125,7 +125,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void RedBlackTree_Delete_Test_8()
+        public void Delete_8()
         {
             _root = _tree.Delete(_root, 15);
             List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
@@ -134,7 +134,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void RedBlackTree_Delete_Test_9()
+        public void Delete_9()
         {
             _root = _tree.Delete(_root, 30);
             List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
@@ -173,7 +173,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void RedBlackTree_IsRed_Test()
+        public void IsRed()
         {
             RedBlackTreeNode<int, string> node1 = new RedBlackTreeNode<int, string>(10, "string1");
             Assert.IsTrue(_tree.IsRed(node1));
@@ -182,7 +182,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void RedBlackTree_IsBlack_Test()
+        public void IsBlack()
         {
             RedBlackTreeNode<int, string> node1 = new RedBlackTreeNode<int, string>(10, "string1");
             Assert.IsFalse(_tree.IsBlack(node1));
@@ -191,7 +191,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void RedBlackTree_UpdateParentWithNullingChild_Test()
+        public void UpdateParentWithNullingChild()
         {
             RedBlackTreeNode<int, string> node1 = new RedBlackTreeNode<int, string>(10, "string1");
             RedBlackTreeNode<int, string> node2 = new RedBlackTreeNode<int, string>(5, "string2");

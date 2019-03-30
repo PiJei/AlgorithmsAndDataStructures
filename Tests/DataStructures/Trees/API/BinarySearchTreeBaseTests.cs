@@ -74,7 +74,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         }
 
         [TestMethod]
-        public void BinarySearchTreeBase_RotateLeft_Test()
+        public void RotateLeft()
         {
             MockBinaryTreeNode<int, string> A = new MockBinaryTreeNode<int, string>(50, "A");
             MockBinaryTreeNode<int, string> B = new MockBinaryTreeNode<int, string>(30, "B");
@@ -141,7 +141,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         }
 
         [TestMethod]
-        public void BinarySearchTreeBase_RotateRight_Test()
+        public void RotateRight()
         {
             MockBinaryTreeNode<int, string> A = new MockBinaryTreeNode<int, string>(30, "A");
             MockBinaryTreeNode<int, string> B = new MockBinaryTreeNode<int, string>(70, "B");
@@ -208,7 +208,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         }
 
         [TestMethod]
-        public void BinarySearchTreeBase_SearchBST_Test_Success()
+        public void SearchBST_Success()
         {
             Assert.AreEqual("str5", _tree.Search(_root, 60).Value, ignoreCase: false);
             Assert.AreEqual("str2", _tree.Search(_root, 30).Value, ignoreCase: false);
@@ -220,14 +220,14 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         }
 
         [TestMethod]
-        public void BinarySearchTreeBase_SearchBST_Test_Failure()
+        public void SearchBST_Failure()
         {
             Assert.IsNull(_tree.Search(_root, 45));
             Assert.IsNull(_tree.Search(null, 30));
         }
 
         [TestMethod]
-        public void BinarySearchTreeBase_UpdateBST_Test_Success()
+        public void UpdateBST_Success()
         {
             Assert.IsTrue(_tree.Update(_root, 40, "string3"));
 
@@ -235,7 +235,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         }
 
         [TestMethod]
-        public void BinarySearchTreeBase_UpdateBST_Test_Failue()
+        public void UpdateBST_Failue()
         {
             /* Testing the case where root is null. */
             Assert.IsFalse(_tree.Update(null, 40, "string3"));
@@ -245,7 +245,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         }
 
         [TestMethod]
-        public void BinarySearchTreeBase_FindMinBST_Test_Success()
+        public void FindMinBST_Success()
         {
             Assert.AreEqual("str1", _tree.FindMin(_root).Value);
             Assert.AreEqual("str1", _tree.FindMin(_root.LeftChild).Value);
@@ -258,13 +258,13 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void BinarySearchTreeBase_FindMinBST_Test_Failure()
+        public void FindMinBST_Failure()
         {
             _tree.FindMin(null);
         }
 
         [TestMethod]
-        public void BinarySearchTreeBase_FindMaxBST_Test_Success()
+        public void FindMaxBST_Success()
         {
             Assert.AreEqual("str7", _tree.FindMax(_root).Value);
             Assert.AreEqual("str2", _tree.FindMax(_root.LeftChild).Value);
@@ -277,13 +277,13 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void BinarySearchTreeBase_FindMaxBST_Test_Failure()
+        public void FindMaxBST_Failure()
         {
             _tree.FindMax(null);
         }
 
         [TestMethod]
-        public void BinarySearchTreeBase_InsertBST_WithoutBalancing_Test()
+        public void InsertBST_WithoutBalancing()
         {
             var keyVals = new Dictionary<int, string>
             {
@@ -322,7 +322,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         }
 
         [TestMethod]
-        public void BinarySearchTreeBase_InOrderTraversal_Test()
+        public void InOrderTraversal()
         {
             var inOrderTraversal = new List<MockBinaryTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, inOrderTraversal);
@@ -334,7 +334,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         }
 
         [TestMethod]
-        public void BinarySearchTreeBase_GetAllPathToNullLeaves_Test()
+        public void GetAllPathToNullLeaves()
         {
             List<List<MockBinaryTreeNode<int, string>>> pathsFromRoot = _tree.GetAllPathToLeaves(_root);
             Assert.AreEqual(3, pathsFromRoot.Count);

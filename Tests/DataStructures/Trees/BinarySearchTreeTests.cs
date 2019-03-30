@@ -49,13 +49,13 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BinarySearchTree_Build_Test()
+        public void Build()
         {
             Assert.IsTrue(BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root));
         }
 
         [TestMethod]
-        public void BinarySearchTree_Delete_Root_Test()
+        public void Delete_Root()
         {
             _root = _tree.Delete(_root, _root.Key);
             Assert.IsTrue(BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root));
@@ -70,7 +70,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BinarySearchTree_Delete_NodeWith2Children_Test()
+        public void Delete_NodeWith2Children()
         {
             _root = _tree.Delete(_root, 70);
             Assert.IsTrue(BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root));
@@ -85,7 +85,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BinarySearchTree_Delete_NodeWithNoChildren_Test()
+        public void Delete_NodeWithNoChildren()
         {
             _root = _tree.Delete(_root, 30);
             Assert.IsTrue(BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root));
@@ -100,7 +100,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BinarySearchTree_Delete_NodeWithOneChildren_Test()
+        public void Delete_NodeWithOneChildren()
         {
             _root = _tree.Delete(_root, 20);
             Assert.IsTrue(BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root));
@@ -115,7 +115,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BinarySearchTree_Delete_MultipleNodes_Test()
+        public void Delete_MultipleNodes()
         {
             _root = _tree.Delete(_root, 20);
             _root = _tree.Delete(_root, 40);
@@ -133,7 +133,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BinarySearchTree_Delete_NotExistingKey_Test()
+        public void Delete_NotExistingKey()
         {
             _root = _tree.Delete(_root, 15);
             _root = _tree.Delete(_root, 800);
@@ -151,7 +151,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BinarySearchTree_DeleteMin_Test_1()
+        public void DeleteMin_1()
         {
             _root = _tree.DeleteMin(_root);
             Assert.IsTrue(BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root));
@@ -169,7 +169,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BinarySearchTree_DeleteMin_Test_2()
+        public void DeleteMin_2()
         {
             _root.RightChild = _tree.DeleteMin(_root.RightChild);
             Assert.IsTrue(BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root.RightChild));
@@ -187,7 +187,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BinarySearchTree_DeleteMax_Test_1()
+        public void DeleteMax_1()
         {
             _root = _tree.DeleteMax(_root);
             Assert.IsTrue(BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root));
@@ -205,7 +205,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BinarySearchTree_DeleteMax_Test_2()
+        public void DeleteMax_2()
         {
             _root.RightChild = _tree.DeleteMax(_root.LeftChild);
             Assert.IsTrue(BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root.LeftChild));

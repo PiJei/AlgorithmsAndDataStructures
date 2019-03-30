@@ -72,7 +72,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         }
 
         [TestMethod]
-        public void BinaryTreeNode_IsLeftChild_Test_Failure()
+        public void IsLeftChild_Failure()
         {
             MockBinaryTreeNode<int, string> A = new MockBinaryTreeNode<int, string>(5, "A");
             MockBinaryTreeNode<int, string> B = new MockBinaryTreeNode<int, string>(10, "B");
@@ -96,7 +96,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         }
 
         [TestMethod]
-        public void BinaryTreeNode_IsLeftChild_Test_Success()
+        public void IsLeftChild_Success()
         {
             MockBinaryTreeNode<int, string> A = new MockBinaryTreeNode<int, string>(10, "A");
             MockBinaryTreeNode<int, string> B = new MockBinaryTreeNode<int, string>(5, "B");
@@ -119,7 +119,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         }
 
         [TestMethod]
-        public void BinaryTreeNode_IsRightChild_Test_Success()
+        public void IsRightChild_Success()
         {
             MockBinaryTreeNode<int, string> A = new MockBinaryTreeNode<int, string>(5, "A");
             MockBinaryTreeNode<int, string> B = new MockBinaryTreeNode<int, string>(10, "B");
@@ -142,7 +142,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         }
 
         [TestMethod]
-        public void BinaryTreeNode_IsRightChild_Test_Failure()
+        public void IsRightChild_Failure()
         {
             MockBinaryTreeNode<int, string> A = new MockBinaryTreeNode<int, string>(10, "A");
             MockBinaryTreeNode<int, string> B = new MockBinaryTreeNode<int, string>(5, "B");
@@ -166,7 +166,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         }
 
         [TestMethod]
-        public void BinaryTreeNode_IsRoot_Test()
+        public void IsRoot()
         {
             MockBinaryTreeNode<int, string> A = new MockBinaryTreeNode<int, string>(10, "A");
             MockBinaryTreeNode<int, string> B = new MockBinaryTreeNode<int, string>(5, "B");
@@ -190,7 +190,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         }
 
         [TestMethod]
-        public void BinaryTreeNode_GetSibling_Test()
+        public void GetSibling()
         {
             MockBinaryTreeNode<int, string> A = new MockBinaryTreeNode<int, string>(10, "A");
             MockBinaryTreeNode<int, string> B = new MockBinaryTreeNode<int, string>(5, "B");
@@ -220,7 +220,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         }
 
         [TestMethod]
-        public void BinaryTreeNode_GetUncle_Test()
+        public void GetUncle()
         {
             MockBinaryTreeNode<int, string> A = new MockBinaryTreeNode<int, string>(8, "A");
             MockBinaryTreeNode<int, string> B = new MockBinaryTreeNode<int, string>(2, "B");
@@ -250,7 +250,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         }
 
         [TestMethod]
-        public void BinaryTreeNode_GetGrandParent_Test()
+        public void GetGrandParent()
         {
             MockBinaryTreeNode<int, string> A = new MockBinaryTreeNode<int, string>(50, "A");
             MockBinaryTreeNode<int, string> B = new MockBinaryTreeNode<int, string>(30, "B");
@@ -298,7 +298,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         }
 
         [TestMethod]
-        public void BinaryTreeNode_IsLeaf_Test()
+        public void IsLeaf()
         {
             MockBinaryTreeNode<int, string> A = new MockBinaryTreeNode<int, string>(50, "A");
             MockBinaryTreeNode<int, string> B = new MockBinaryTreeNode<int, string>(20, "B");
@@ -334,7 +334,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         }
 
         [TestMethod]
-        public void BinaryTreeNode_FormsLine_Test()
+        public void FormsLine()
         {
             MockBinaryTreeNode<int, string> A = new MockBinaryTreeNode<int, string>(50, "A");
             MockBinaryTreeNode<int, string> B = new MockBinaryTreeNode<int, string>(30, "B");
@@ -388,7 +388,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         }
 
         [TestMethod]
-        public void BinaryTreeNode_FormsTriangle_Test()
+        public void FormsTriangle()
         {
             MockBinaryTreeNode<int, string> A = new MockBinaryTreeNode<int, string>(50, "A");
             MockBinaryTreeNode<int, string> B = new MockBinaryTreeNode<int, string>(30, "B");
@@ -442,7 +442,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         }
 
         [TestMethod]
-        public void BinaryTreeNode_IsComplete_Test()
+        public void IsComplete()
         {
             MockBinaryTreeNode<int, string> node1 = new MockBinaryTreeNode<int, string>(10, "str1");
             node1.LeftChild = null;
@@ -458,7 +458,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         }
 
         [TestMethod]
-        public void BinaryTreeNode_GetChildren_Test()
+        public void GetChildren()
         {
             List<MockBinaryTreeNode<int, string>> rootChildren = _root.GetChildren();
             Assert.AreEqual(2, rootChildren.Count);
@@ -489,7 +489,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.API
         }
 
         [TestMethod]
-        public void BinaryTreeNode_GetGrandChildren()
+        public void GetGrandChildren()
         {
             List<MockBinaryTreeNode<int, string>> rootGrandChildren = _root.GetGrandChildren();
             Assert.AreEqual(2, rootGrandChildren.Count);

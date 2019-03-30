@@ -54,7 +54,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void AVLTree_Insert_Test()
+        public void Insert()
         {
             AVLTreeNode<int, string> root = null;
             AVLTree<int, string> tree = new AVLTree<int, string>();
@@ -97,11 +97,10 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void AVLTree_Build_Test()
+        public void Build()
         {
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 9));
         }
-
 
         [TestMethod]
         public void AVLTree_Delete_Test_NonExistingKey()
@@ -115,7 +114,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void AVLTree_Delete_Test_NodeWith2Children_1()
+        public void Delete_NodeWith2Children_1()
         {
             List<AVLTreeNode<int, string>> nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
@@ -126,7 +125,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void AVLTree_Delete_Test_NodeWith2Children_2()
+        public void Delete_NodeWith2Children_2()
         {
             List<AVLTreeNode<int, string>> nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
@@ -137,7 +136,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void AVLTree_Delete_Test_NodeWith2Children_3()
+        public void Delete_NodeWith2Children_3()
         {
             List<AVLTreeNode<int, string>> nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
@@ -148,7 +147,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void AVLTree_Delete_Test_NodeWithNoChildren_1()
+        public void Delete_NodeWithNoChildren_1()
         {
             List<AVLTreeNode<int, string>> nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
@@ -159,7 +158,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void AVLTree_Delete_Test_NodeWithNoChildren_2()
+        public void Delete_NodeWithNoChildren_2()
         {
             List<AVLTreeNode<int, string>> nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
@@ -170,7 +169,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void AVLTree_Delete_Test_NodeWithNoChildren_3()
+        public void Delete_NodeWithNoChildren_3()
         {
             List<AVLTreeNode<int, string>> nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
@@ -181,7 +180,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void AVLTree_Delete_Test_NodeWithNoChildren_4()
+        public void Delete_NodeWithNoChildren_4()
         {
             List<AVLTreeNode<int, string>> nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
@@ -192,7 +191,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void AVLTree_Delete_Test_NodeWith1Children_1()
+        public void Delete_NodeWith1Children_1()
         {
             List<AVLTreeNode<int, string>> nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
@@ -203,7 +202,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void AVLTree_Delete_Test_NodeWith1Children_2()
+        public void Delete_NodeWith1Children_2()
         {
             List<AVLTreeNode<int, string>> nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
@@ -214,7 +213,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void AVLTree_Delete_Test_1()
+        public void Delete_1()
         {
             List<AVLTreeNode<int, string>> nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
@@ -249,7 +248,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void AVLTree_Delete_Test_2()
+        public void Delete_2()
         {
             List<AVLTreeNode<int, string>> nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
@@ -284,7 +283,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void AVLTree_GetHeight_Test()
+        public void GetHeight()
         {
             AVLTreeNode<int, string> A = new AVLTreeNode<int, string>(50, "A");
             AVLTreeNode<int, string> B = new AVLTreeNode<int, string>(20, "B");
@@ -321,7 +320,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void AVLTree_GetBalanceFactor_Test()
+        public void GetBalanceFactor()
         {
             /* The constructed tree is not AVL, however the method GetBalanceFactor should work regardless. */
             AVLTreeNode<int, string> A = new AVLTreeNode<int, string>(50, "A");
@@ -358,7 +357,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void AVLTree_Balance_Test()
+        public void Balance()
         {
             // TODO 
         }

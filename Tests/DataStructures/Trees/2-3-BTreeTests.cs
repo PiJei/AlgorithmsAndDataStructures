@@ -59,7 +59,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTreeNode_ComputeMaxKeyCount_Test()
+        public void ComputeMaxKeyCount()
         {
             Assert.AreEqual(2, _tree.GetMaxKeyCount(1));
             Assert.AreEqual(8, _tree.GetMaxKeyCount(2));
@@ -69,7 +69,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTree_FindLeafToInsertKey_Test_1()
+        public void FindLeafToInsertKey_1()
         {
             var leaf1 = _tree.FindLeafToInsertKey(_tree.Root, 5);
             Assert.AreEqual(1, leaf1.KeyCount);
@@ -89,19 +89,19 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void BTree_FindLeafToInsertKey_Test_DuplicateKey()
+        public void FindLeafToInsertKey_DuplicateKey()
         {
             var leaf5 = _tree.FindLeafToInsertKey(_tree.Root, 50);
         }
 
         [TestMethod]
-        public void BTree_Build_Test()
+        public void Build()
         {
             Assert.IsTrue(BTreeTestsUtils.HasBTreeProperties(_tree, 16, 15));
         }
 
         [TestMethod]
-        public void BTree_Insert_Test()
+        public void Insert()
         {
             BTree<int, string> tree = new BTree<int, string>(3);
             Assert.IsTrue(BTreeTestsUtils.HasBTreeProperties(tree, 0, 0));
@@ -160,7 +160,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTree_InOrderTraversal_Test()
+        public void InOrderTraversal()
         {
             List<KeyValuePair<int, string>> keyValues = new List<KeyValuePair<int, string>>();
             _tree.InOrderTraversal(_tree.Root, keyValues);
@@ -172,7 +172,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTree_Search_Test()
+        public void Search()
         {
             var node1 = _tree.Search(_tree.Root, 100);
             Assert.IsTrue(node1.KeyCount == 1);
@@ -232,13 +232,13 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
         [TestMethod]
         [ExpectedException(typeof(KeyNotFoundException))]
-        public void BTree_Search_Test_Fail_2()
+        public void Search_Test_2()
         {
             var node1 = _tree.Search(_tree.Root, 55);
         }
 
         [TestMethod]
-        public void BTree_Delete_Test_1()
+        public void Delete_1()
         {
             Assert.IsTrue(_tree.Delete(100));
             Assert.AreEqual(2, _tree.Root.KeyCount);
@@ -246,112 +246,112 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTree_Delete_Test_2()
+        public void Delete_2()
         {
             Assert.IsTrue(_tree.Delete(50));
             Assert.IsTrue(BTreeTestsUtils.HasBTreeProperties(_tree, 15, 11));
         }
 
         [TestMethod]
-        public void BTree_Delete_Test_3()
+        public void Delete_3()
         {
             Assert.IsTrue(_tree.Delete(300));
             Assert.IsTrue(BTreeTestsUtils.HasBTreeProperties(_tree, 15, 15));
         }
 
         [TestMethod]
-        public void BTree_Delete_Test_4()
+        public void Delete_4()
         {
             Assert.IsTrue(_tree.Delete(20));
             Assert.IsTrue(BTreeTestsUtils.HasBTreeProperties(_tree, 15, 11));
         }
 
         [TestMethod]
-        public void BTree_Delete_Test_5()
+        public void Delete_5()
         {
             Assert.IsTrue(_tree.Delete(80));
             Assert.IsTrue(BTreeTestsUtils.HasBTreeProperties(_tree, 15, 11));
         }
 
         [TestMethod]
-        public void BTree_Delete_Test_6()
+        public void Delete_6()
         {
             Assert.IsTrue(_tree.Delete(200));
             Assert.IsTrue(BTreeTestsUtils.HasBTreeProperties(_tree, 15, 15));
         }
 
         [TestMethod]
-        public void BTree_Delete_Test_7()
+        public void Delete_7()
         {
             Assert.IsTrue(_tree.Delete(500));
             Assert.IsTrue(BTreeTestsUtils.HasBTreeProperties(_tree, 15, 11));
         }
 
         [TestMethod]
-        public void BTree_Delete_Test_8()
+        public void Delete_8()
         {
             Assert.IsTrue(_tree.Delete(10));
             Assert.IsTrue(BTreeTestsUtils.HasBTreeProperties(_tree, 15, 11));
         }
 
         [TestMethod]
-        public void BTree_Delete_Test_9()
+        public void Delete_9()
         {
             Assert.IsTrue(_tree.Delete(30));
             Assert.IsTrue(BTreeTestsUtils.HasBTreeProperties(_tree, 15, 11));
         }
 
         [TestMethod]
-        public void BTree_Delete_Test_10()
+        public void Delete_10()
         {
             Assert.IsTrue(_tree.Delete(60));
             Assert.IsTrue(BTreeTestsUtils.HasBTreeProperties(_tree, 15, 11));
         }
 
         [TestMethod]
-        public void BTree_Delete_Test_11()
+        public void Delete_11()
         {
             Assert.IsTrue(_tree.Delete(90));
             Assert.IsTrue(BTreeTestsUtils.HasBTreeProperties(_tree, 15, 11));
         }
 
         [TestMethod]
-        public void BTree_Delete_Test_12()
+        public void Delete_12()
         {
             Assert.IsTrue(_tree.Delete(150));
             Assert.IsTrue(BTreeTestsUtils.HasBTreeProperties(_tree, 15, 15));
         }
 
         [TestMethod]
-        public void BTree_Delete_Test_13()
+        public void Delete_13()
         {
             Assert.IsTrue(_tree.Delete(250));
             Assert.IsTrue(BTreeTestsUtils.HasBTreeProperties(_tree, 15, 15));
         }
 
         [TestMethod]
-        public void BTree_Delete_Test_14()
+        public void Delete_14()
         {
             Assert.IsTrue(_tree.Delete(270));
             Assert.IsTrue(BTreeTestsUtils.HasBTreeProperties(_tree, 15, 15));
         }
 
         [TestMethod]
-        public void BTree_Delete_Test_15()
+        public void Delete_15()
         {
             Assert.IsTrue(_tree.Delete(400));
             Assert.IsTrue(BTreeTestsUtils.HasBTreeProperties(_tree, 15, 11));
         }
 
         [TestMethod]
-        public void BTree_Delete_Test_16()
+        public void Delete_16()
         {
             Assert.IsTrue(_tree.Delete(600));
             Assert.IsTrue(BTreeTestsUtils.HasBTreeProperties(_tree, 15, 11));
         }
 
         [TestMethod]
-        public void BTree_Delete_Test_17()
+        public void Delete_17()
         {
             Assert.IsTrue(_tree.Delete(100));
             Assert.IsTrue(BTreeTestsUtils.HasBTreeProperties(_tree, 15, 11));
@@ -403,7 +403,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTree_Delete_Test_18()
+        public void Delete_18()
         {
             Assert.IsTrue(_tree.Delete(90));
             Assert.IsTrue(BTreeTestsUtils.HasBTreeProperties(_tree, 15, 11));
@@ -458,7 +458,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         /// Tree has only one node: root, and root has 1 key.
         /// </summary>
         [TestMethod]
-        public void BTree_Delete_Test_19()
+        public void Delete_19()
         {
             BTree<int, string> tree = new BTree<int, string>(3);
             tree.Insert(new KeyValuePair<int, string>(10, "A"));
@@ -470,7 +470,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTree_Delete_Test_20()
+        public void Delete_20()
         {
             BTree<int, string> tree = new BTree<int, string>(3);
             tree.Insert(new KeyValuePair<int, string>(10, "A"));
@@ -495,7 +495,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTree_Delete_Test_21()
+        public void Delete_21()
         {
             BTree<int, string> tree = new BTree<int, string>(3);
             tree.Insert(new KeyValuePair<int, string>(10, "A"));
@@ -508,7 +508,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTree_Delete_Test_22()
+        public void Delete_22()
         {
             BTree<int, string> tree = new BTree<int, string>(3);
             tree.Insert(new KeyValuePair<int, string>(10, "A"));
@@ -522,7 +522,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTree_Delete_Test_23()
+        public void Delete_23()
         {
             BTree<int, string> tree = new BTree<int, string>(3);
             tree.Insert(new KeyValuePair<int, string>(10, "A"));
@@ -535,7 +535,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTree_Delete_Test_24()
+        public void Delete_24()
         {
             BTree<int, string> tree = new BTree<int, string>(3);
             tree.Insert(new KeyValuePair<int, string>(10, "A"));
@@ -549,7 +549,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTree_Delete_Test_25()
+        public void Delete_25()
         {
             BTree<int, string> tree = new BTree<int, string>(3);
             tree.Insert(new KeyValuePair<int, string>(10, "A"));
@@ -563,7 +563,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTree_Delete_Test_26()
+        public void Delete_26()
         {
             BTree<int, string> tree = new BTree<int, string>(3);
             tree.Insert(new KeyValuePair<int, string>(10, "A"));
@@ -577,7 +577,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTree_Delete_Test_27()
+        public void Delete_27()
         {
             BTree<int, string> tree = new BTree<int, string>(3);
             tree.Insert(new KeyValuePair<int, string>(10, "A"));
@@ -592,7 +592,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
 
         [TestMethod]
-        public void BTree_Delete_Test_28()
+        public void Delete_28()
         {
             var root = new BTreeNode<int, string>(3);
             root.InsertKeyValue(new KeyValuePair<int, string>(90, "A"));
@@ -617,7 +617,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTree_Delete_Test_29()
+        public void Delete_29()
         {
             var node1 = new BTreeNode<int, string>(3);
             node1.InsertKeyValue(new KeyValuePair<int, string>(60, "A"));
@@ -663,7 +663,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
         // TOD0: Compute levels and after each insert confirm it
         [TestMethod]
-        public void BTree_RotateLeft_Test()
+        public void RotateLeft()
         {
             var node1 = new BTreeNode<int, string>(3);
             node1.InsertKeyValue(new KeyValuePair<int, string>(10, "A"));
@@ -703,7 +703,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTree_RotateRight_Test()
+        public void RotateRight()
         {
             var node1 = new BTreeNode<int, string>(3);
             node1.InsertKeyValue(new KeyValuePair<int, string>(100, "A"));
@@ -745,7 +745,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTree_GetMaxNode_Test()
+        public void GetMaxNode()
         {
             var node = _tree.Search(_tree.Root, 100);
             node = _tree.GetMaxNode(node);

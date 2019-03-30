@@ -34,7 +34,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
     {
         [TestMethod]
         [ExpectedException(typeof(KeyNotFoundException))]
-        public void BTreeNode_GetMaxKey_Test_Fail()
+        public void GetMaxKey_Fail()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             Assert.AreEqual(2, node.MinKeys);
@@ -45,7 +45,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
         [TestMethod]
         [ExpectedException(typeof(KeyNotFoundException))]
-        public void BTreeNode_GetMinKey_Test_Fail()
+        public void GetMinKey_Fail()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             Assert.AreEqual(2, node.MinKeys);
@@ -55,7 +55,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTreeNode_IsUnderFlown_Test()
+        public void IsUnderFlown()
         {
             var node = new BTreeNode<int, string>(5);
             Assert.AreEqual(2, node.MinKeys);
@@ -87,7 +87,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTreeNode_KeyValueToMoveUp_Test_Success_2()
+        public void KeyValueToMoveUp_Success_2()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             Assert.AreEqual(2, node.MinKeys);
@@ -104,7 +104,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTreeNode_IsFull_Test()
+        public void IsFull()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             Assert.AreEqual(2, node.MinKeys);
@@ -131,7 +131,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void BTreeNode_GetIndexAtParentChildren_Test_Fail_1()
+        public void GetIndexAtParentChildren_Fail_1()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             int index = node.GetIndexAtParentChildren();
@@ -139,7 +139,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
         [TestMethod]
         [ExpectedException(typeof(KeyNotFoundException))]
-        public void BTreeNode_GetIndexAtParentChildren_Test_Fail_2()
+        public void GetIndexAtParentChildren_Fail_2()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             node.Parent = new BTreeNode<int, string>(5);
@@ -148,7 +148,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
         [TestMethod]
         [ExpectedException(typeof(KeyNotFoundException))]
-        public void BTreeNode_GetIndexAtParentChildren_Test_Fail_3()
+        public void GetIndexAtParentChildren_Fail_3()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(10, "A"));
 
@@ -159,7 +159,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTreeNode_GetIndexAtParentChildren_Test_Success()
+        public void GetIndexAtParentChildren_Success()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(10, "A"));
 
@@ -171,7 +171,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTreeNode_HasLeftSibling_Test_False()
+        public void HasLeftSibling_False()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(10, "A"));
 
@@ -182,7 +182,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTreeNode_HasLeftSibling_Test_2()
+        public void HasLeftSibling_2()
         {
             BTreeNode<int, string> node1 = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(10, "A"));
             BTreeNode<int, string> node2 = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(100, "B"));
@@ -198,7 +198,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTreeNode_HasRightSibling_Test_False()
+        public void HasRightSibling_False()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(10, "A"));
 
@@ -209,7 +209,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTreeNode_HasRightSibling_Test_2()
+        public void HasRightSibling_2()
         {
             BTreeNode<int, string> node1 = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(10, "A"));
             BTreeNode<int, string> node2 = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(100, "B"));
@@ -225,7 +225,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTreeNode_GetLeftSibling_Test()
+        public void GetLeftSibling()
         {
             BTreeNode<int, string> node1 = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(10, "A"));
             BTreeNode<int, string> node2 = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(100, "B"));
@@ -240,7 +240,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTreeNode_GetRightSibling_Test()
+        public void GetRightSibling()
         {
             BTreeNode<int, string> node1 = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(10, "A"));
             BTreeNode<int, string> node2 = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(100, "B"));
@@ -255,7 +255,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTreeNode_IsMinFull_Test()
+        public void IsMinFull()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             Assert.AreEqual(2, node.MinKeys);
@@ -280,7 +280,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTreeNode_IsMinOneFull_Test()
+        public void IsMinOneFull()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             Assert.AreEqual(2, node.MinKeys);
@@ -305,7 +305,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTreeNode_IsEmpty_Test()
+        public void IsEmpty()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             Assert.AreEqual(2, node.MinKeys);
@@ -331,7 +331,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
         [TestMethod]
         [ExpectedException(typeof(KeyNotFoundException))]
-        public void BTreeNode_RemoveKey_ByKey_Test_Fail_1()
+        public void RemoveKey_ByKey_Fail_1()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             Assert.AreEqual(2, node.MinKeys);
@@ -343,7 +343,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
         [TestMethod]
         [ExpectedException(typeof(KeyNotFoundException))]
-        public void BTreeNode_RemoveKey_ByKey_Test_Fail_2()
+        public void RemoveKey_ByKey_Fail_2()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             Assert.AreEqual(2, node.MinKeys);
@@ -355,7 +355,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTreeNode_RemoveKey_ByKey_Test_Success()
+        public void RemoveKey_ByKey_Success()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             Assert.AreEqual(2, node.MinKeys);
@@ -382,7 +382,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
         [TestMethod]
         [ExpectedException(typeof(IndexOutOfRangeException))]
-        public void BTreeNode_RemoveKey_ByIndex_Test_Fail_2()
+        public void RemoveKey_ByIndex_Fail_2()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             Assert.AreEqual(2, node.MinKeys);
@@ -394,7 +394,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTreeNode_RemoveKey_ByIndex_Test_Success()
+        public void RemoveKey_ByIndex_Success()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             Assert.AreEqual(2, node.MinKeys);
@@ -421,7 +421,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
         [TestMethod]
         [ExpectedException(typeof(IndexOutOfRangeException))]
-        public void BTreeNode_RemoveChild_ByIndex_Test_Fail_1()
+        public void RemoveChild_ByIndex_Fail_1()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             Assert.AreEqual(3, node.MinBranchingDegree);
@@ -433,7 +433,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
         [TestMethod]
         [ExpectedException(typeof(IndexOutOfRangeException))]
-        public void BTreeNode_RemoveChild_ByIndex_Test_Fail_2()
+        public void RemoveChild_ByIndex_Fail_2()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             Assert.AreEqual(3, node.MinBranchingDegree);
@@ -445,7 +445,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTreeNode_RemoveChild_ByIndex_Test_Success()
+        public void RemoveChild_ByIndex_Success()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             Assert.AreEqual(3, node.MinBranchingDegree);
@@ -469,7 +469,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
         [TestMethod]
         [ExpectedException(typeof(KeyNotFoundException))]
-        public void BTreeNode_RemoveChild_ByKey_Test_Fail_1()
+        public void RemoveChild_ByKey_Fail_1()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             Assert.AreEqual(3, node.MinBranchingDegree);
@@ -481,7 +481,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
         [TestMethod]
         [ExpectedException(typeof(KeyNotFoundException))]
-        public void BTreeNode_RemoveChild_ByKey_Test_Fail_2()
+        public void RemoveChild_ByKey_Fail_2()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             Assert.AreEqual(3, node.MinBranchingDegree);
@@ -493,7 +493,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTreeNode_RemoveChild_ByKey_Test_Success()
+        public void RemoveChild_ByKey_Success()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             Assert.AreEqual(3, node.MinBranchingDegree);
@@ -522,7 +522,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
         [TestMethod]
         [ExpectedException(typeof(IndexOutOfRangeException))]
-        public void BTreeNode_GetKeyValue_Test_Fail_1()
+        public void GetKeyValue_Fail_1()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             Assert.AreEqual(3, node.MinBranchingDegree);
@@ -535,7 +535,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
         [TestMethod]
         [ExpectedException(typeof(IndexOutOfRangeException))]
-        public void BTreeNode_GetKeyValue_Test_Fail_2()
+        public void GetKeyValue_Fail_2()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             Assert.AreEqual(3, node.MinBranchingDegree);
@@ -548,7 +548,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTreeNode_GetKeyValue_Test_Success()
+        public void GetKeyValue_Success()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             Assert.AreEqual(3, node.MinBranchingDegree);
@@ -577,7 +577,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
         [TestMethod]
         [ExpectedException(typeof(IndexOutOfRangeException))]
-        public void BTreeNode_GetKey_Fail_1()
+        public void GetKey_Fail_1()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             Assert.AreEqual(3, node.MinBranchingDegree);
@@ -587,7 +587,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTreeNode_GetKey_Success()
+        public void GetKey_Success()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             Assert.AreEqual(3, node.MinBranchingDegree);
@@ -613,7 +613,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
         [TestMethod]
         [ExpectedException(typeof(KeyNotFoundException))]
-        public void BTreeNode_GetKeyIndex_Test()
+        public void GetKeyIndex()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             Assert.AreEqual(3, node.MinBranchingDegree);
@@ -623,7 +623,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTreeNode_GetKeyIndex_Success()
+        public void GetKeyIndex_Success()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             Assert.AreEqual(3, node.MinBranchingDegree);
@@ -649,7 +649,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
         [TestMethod]
         [ExpectedException(typeof(IndexOutOfRangeException))]
-        public void BTreeNode_GetChild_Fail()
+        public void GetChild_Fail()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             Assert.AreEqual(3, node.MinBranchingDegree);
@@ -659,7 +659,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTreeNode_GetChild_Success()
+        public void GetChild_Success()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             Assert.AreEqual(3, node.MinBranchingDegree);
@@ -682,7 +682,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
         [TestMethod]
         [ExpectedException(typeof(KeyNotFoundException))]
-        public void BTreeNode_GetChildIndex_Fail_1()
+        public void GetChildIndex_Fail_1()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             Assert.AreEqual(3, node.MinBranchingDegree);
@@ -690,11 +690,10 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
             var child = new BTreeNode<int, string>(5);
             node.GetChildIndex(child);
-
         }
 
         [TestMethod]
-        public void BTreeNode_GetChildIndex_Success()
+        public void GetChildIndex_Success()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             Assert.AreEqual(3, node.MinBranchingDegree);
@@ -711,6 +710,5 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.AreEqual(1, node.GetChildIndex(child2));
             Assert.AreEqual(2, node.GetChildIndex(child3));
         }
-
     }
 }
