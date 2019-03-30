@@ -59,6 +59,16 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
+        public void BTreeNode_ComputeMaxKeyCount_Test()
+        {
+            Assert.AreEqual(2, _tree.ComputeMaxKeyCount(1));
+            Assert.AreEqual(8, _tree.ComputeMaxKeyCount(2));
+            Assert.AreEqual(26, _tree.ComputeMaxKeyCount(3));
+            Assert.AreEqual(80, _tree.ComputeMaxKeyCount(4));
+            Assert.AreEqual(242, _tree.ComputeMaxKeyCount(5));
+        }
+
+        [TestMethod]
         public void BTree_FindLeafToInsertKey_Test_1()
         {
             var leaf1 = _tree.FindLeafToInsertKey(_tree.Root, 5);

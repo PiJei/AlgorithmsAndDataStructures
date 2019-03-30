@@ -24,9 +24,6 @@ using System.Runtime.CompilerServices;
 using CSFundamentals.Styling;
 
 [assembly: InternalsVisibleTo("CSFundamentals")]
-// TODO: Test, complexity
-// ToDo: insert in a sorted list is o(n) thus how can these ops delete, insert etc be o(Log(n)) alone! this is not possible!
-// it is like my sorted doubly linked list, insert is o(n), check if I have correctly written it, .. 
 
 // TODO: Should protect the field from external manipulations, ... 
 // TODO: FindMin(), FindMax() methods, ... given a root, on the subtree started on the given root, ... 
@@ -34,7 +31,7 @@ using CSFundamentals.Styling;
 // and should check at each state to make sure that the number of elements in the tree are smaller than this, ..
 // TODO:for search  could we use binary search implementation from search part of this lib?
 // search seems to be logK in logN....uses binary search within each node.... could we call the search in the node here?  
-//TODO:  test with other degrees of trees, maybe created different test classes, 2-3 btree, 3-4 btree and so on
+// TODO:  test with other (than 2-3) degrees of trees
 
 namespace CSFundamentals.DataStructures.Trees
 {
@@ -46,7 +43,7 @@ namespace CSFundamentals.DataStructures.Trees
         public BTreeNode<TKey, TValue> Root = null;
 
         /// <summary>
-        /// Is the maximum number of children for an internal or root node in this B-Tree. 
+        /// Is the maximum number of children for a non-leaf node in this B-Tree. 
         /// </summary>
         public int MaxBranchingDegree { get; private set; }
 
@@ -60,6 +57,9 @@ namespace CSFundamentals.DataStructures.Trees
         /// </summary>
         /// <param name="keyValues">Is the list of key values to be inserted in the tree. </param>
         /// <returns>Root of the tree. </returns>
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "O(nLog(n))")]
+        [TimeComplexity(Case.Average, "O(n(Log(n))")]
         public BTreeNode<TKey, TValue> Build(Dictionary<TKey, TValue> keyValues)
         {
             foreach (KeyValuePair<TKey, TValue> keyValue in keyValues)
@@ -74,6 +74,9 @@ namespace CSFundamentals.DataStructures.Trees
         /// </summary>
         /// <param name="keyValue">Is the key-value pair to be inserted in the tree. </param>
         /// <returns>Root of the tree. </returns>
+        [TimeComplexity(Case.Best, "O(1)", When = "Fist key in the tree is inserted.")]
+        [TimeComplexity(Case.Worst, "O(Log(n))")]
+        [TimeComplexity(Case.Average, "O(Log(n))")]
         public BTreeNode<TKey, TValue> Insert(KeyValuePair<TKey, TValue> keyValue)
         {
             /* Find the leaf node that should contain the new key-value pair. The leaf is found such that the order property of the B-Tree is preserved. */
@@ -100,6 +103,9 @@ namespace CSFundamentals.DataStructures.Trees
         /// </summary>
         /// <param name="key">The key to be deleted from the tree. </param>
         /// <returns>True in case of success, and false otherwise. </returns>
+        [TimeComplexity(Case.Best, "O(1)", When = "For example, there is only one key left in the tree.")]
+        [TimeComplexity(Case.Worst, "O(Log(n))")]
+        [TimeComplexity(Case.Average, "O(Log(n))")]
         public bool Delete(TKey key)
         {
             try
@@ -156,9 +162,13 @@ namespace CSFundamentals.DataStructures.Trees
 
         /// <summary>
         /// Rotates a key from the right sibling of the node via their parent to the node. 
+        /// The cost of this operation is at inserting keys and children, in right position (to preserve order), Which at worst is O(K), Where K is the maximum number of keys in a node, and thus is constant. 
         /// </summary>
         /// <param name="node">Is the receiver of a new key. </param>
         /// <param name="rightSibling">The node that lends a key to the process. This key moves to parent, and a key from parent moves to node. </param>
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "O(K)")] // Constant time as is independent of n: number of keys in tree. 
+        [TimeComplexity(Case.Average, "O(K)")] // Constant time as is independent of n: number of keys in tree. 
         internal BTreeNode<TKey, TValue> RotateLeft(BTreeNode<TKey, TValue> node, BTreeNode<TKey, TValue> rightSibling, int separatorIndex)
         {
             /* 1- Move the separator key in the parent to the underFlown node. */
@@ -185,9 +195,13 @@ namespace CSFundamentals.DataStructures.Trees
 
         /// <summary>
         /// Rotates a key from the left sibling of the node via their parent to the node.
+        /// The cost of this operation is at inserting keys and children, in right position (to preserve order), Which at worst is O(K), Where K is the maximum number of keys in a node, and thus is constant. 
         /// </summary>
         /// <param name="node">Is the receiver of a new key. </param>
         /// <param name="leftSibling">The node that lends a key to the process. This key moves to parent, and a key from parent moves to node.</param>
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "O(K)")] // Constant time as is independent of n: number of keys in tree. 
+        [TimeComplexity(Case.Average, "O(K)")] // Constant time as is independent of n: number of keys in tree. 
         internal BTreeNode<TKey, TValue> RotateRight(BTreeNode<TKey, TValue> node, BTreeNode<TKey, TValue> leftSibling, int separatorIndex)
         {
             /* 1- Move the separator key in the parent to the underFlown node. */
@@ -218,12 +232,15 @@ namespace CSFundamentals.DataStructures.Trees
         /// <param name="node">The node that will be dissolved at the end of operation. </param>
         /// <param name="leftSibling">The node that will contain keys of the node, its current keys, and a key from parent. </param>
         /// <returns>Parent of the nodes. </returns>
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "O(K)")] // Constant time as is independent of n: number of keys in tree. 
+        [TimeComplexity(Case.Average, "O(K)")] // Constant time as is independent of n: number of keys in tree. 
         internal BTreeNode<TKey, TValue> Join(BTreeNode<TKey, TValue> node, BTreeNode<TKey, TValue> leftSibling)
         {
             // 1- Move separator key to the left node
             int nodeAndLeftSiblingSeparatorKeyAtParentIndex = leftSibling.GetIndexAtParentChildren();
             leftSibling.InsertKeyValue(node.Parent.GetKeyValue(nodeAndLeftSiblingSeparatorKeyAtParentIndex));
-            
+
             // 2- Remove separator key in the parent, and disconnect parent from node. 
             node.Parent.RemoveKeyByIndex(nodeAndLeftSiblingSeparatorKeyAtParentIndex);
             node.Parent.RemoveChildByIndex(nodeAndLeftSiblingSeparatorKeyAtParentIndex + 1);
@@ -259,6 +276,9 @@ namespace CSFundamentals.DataStructures.Trees
         /// <param name="rightSibling">Is the right sibling of the underFlown node. </param>
         /// <param name="separatorWithLeftSiblingIndex">Is the index of the key in parent that separates node from its left sibling. </param>
         /// <param name="separatorWithRightSiblingIndex">Is the index of the key in parent that separates node from its right sibling. </param>
+        [TimeComplexity(Case.Best, "O(1)", When = "There is no need to re-balance, or re-balance does not propagate to upper layers.")]
+        [TimeComplexity(Case.Worst, "O(Log(n))")]
+        [TimeComplexity(Case.Average, "O(Log(n))")]
         public void ReBalance(BTreeNode<TKey, TValue> node, BTreeNode<TKey, TValue> leftSibling, BTreeNode<TKey, TValue> rightSibling, int separatorWithLeftSiblingIndex, int separatorWithRightSiblingIndex)
         {
             if (node.IsUnderFlown() && !node.IsRoot()) /* B-TRee allows UnderFlown roots*/
@@ -300,8 +320,8 @@ namespace CSFundamentals.DataStructures.Trees
         /// </summary>
         /// <param name="node">The node to be split</param>
         [TimeComplexity(Case.Best, "O(1)", When = "Split does not propagate to upper levels.")]
-        [TimeComplexity(Case.Worst, "O(nLog(n))")]
-        [TimeComplexity(Case.Average, "O(nLog(n)))")]
+        [TimeComplexity(Case.Worst, "O(Log(n))")]
+        [TimeComplexity(Case.Average, "O(Log(n)))")]
         internal void Split_Repair(BTreeNode<TKey, TValue> node)
         {
             while (node.IsOverFlown())
@@ -365,6 +385,9 @@ namespace CSFundamentals.DataStructures.Trees
         /// <param name="root">The root of the (sub) tree at which search starts. </param>
         /// <param name="key">Is the key to search for.</param>
         /// <returns>The node containing the key if it exists. Otherwise throws an exception. </returns>
+        [TimeComplexity(Case.Best, "O(1)", When = "Key is the first item of the first node to visit.")]
+        [TimeComplexity(Case.Worst, "O(Log(n))")]
+        [TimeComplexity(Case.Average, "O(Log(n))")]
         public BTreeNode<TKey, TValue> Search(BTreeNode<TKey, TValue> root, TKey key)
         {
             if (root != null)
@@ -395,6 +418,7 @@ namespace CSFundamentals.DataStructures.Trees
             throw new KeyNotFoundException($"{key.ToString()} is not found in the tree.");
         }
 
+        //TODO: What is complexity?
         /// <summary>
         /// Traverses tree in-order and generates list of keys sorted.
         /// </summary>
@@ -415,6 +439,21 @@ namespace CSFundamentals.DataStructures.Trees
                         InOrderTraversal(node.GetChild(i + 1), sortedKeys);
                 }
             }
+        }
+
+        /// <summary>
+        /// Given number of levels in the tree, computes the maximum number of keys the tree can hold. 
+        /// </summary>
+        /// <param name="levelCount">Is the number of levels in the tree. </param>
+        /// <returns>Maximum number of keys a tree with <paramref name="levelCount"> levels can hold. </returns>
+        public int ComputeMaxKeyCount(int levelCount)
+        {
+            int maxKeys = 0;
+            for (int l = 0; l < levelCount; l++)
+            {
+                maxKeys += (MaxBranchingDegree - 1) * (int)Math.Pow(MaxBranchingDegree, l);
+            }
+            return maxKeys;
         }
     }
 }

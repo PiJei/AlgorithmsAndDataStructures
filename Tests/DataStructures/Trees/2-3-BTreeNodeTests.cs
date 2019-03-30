@@ -30,7 +30,6 @@ namespace CSFundamentalsTests.DataStructures.Trees
     [TestClass]
     public class _2_3_BTreeNodeTests
     {
-
         [TestMethod]
         public void BTreeNode_Constructor_Test()
         {
