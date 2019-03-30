@@ -25,12 +25,8 @@ using CSFundamentals.Styling;
 
 [assembly: InternalsVisibleTo("CSFundamentals")]
 
-// TODO: Should protect the field from external manipulations, ... 
-// TODO: FindMin(), FindMax() methods, ... given a root, on the subtree started on the given root, ... 
-// TODO: SHall be easily be able to compute the maximum number of keys and key-values that such a tree can hold, ... 
-// and should check at each state to make sure that the number of elements in the tree are smaller than this, ..
-// TODO:for search  could we use binary search implementation from search part of this lib?
-// search seems to be logK in logN....uses binary search within each node.... could we call the search in the node here?  
+// TODO: Should protect  fields from external manipulations, ... 
+// TODO: for search  could we use binary search implementation from search part of this lib?
 // TODO:  test with other (than 2-3) degrees of trees
 
 namespace CSFundamentals.DataStructures.Trees
@@ -136,10 +132,15 @@ namespace CSFundamentals.DataStructures.Trees
             /* If node is an internal node, find the predecessor key of the key in its left subtree and replace the key with it. Predecessor key belongs to a leaf node, thus the operation boils down to deleting the replacement key from this leaf node. */
             if (!node.IsLeaf())
             {
+                /* Find the immediate predecessor of key in its left subtree. */
                 int keyIndexAtNode = node.GetKeyIndex(key);
-                var predecessorNode = node.GetPredecessorNode(keyIndexAtNode);
+                BTreeNode<TKey, TValue> predecessorNode = GetMaxNode(node.GetChild(keyIndexAtNode));
+                
+                /* Remove key and replace it with its predecessor*/
                 node.RemoveKey(key);
                 node.InsertKeyValue(predecessorNode.GetMaxKey());
+
+                /* Delete the replacement key from predecessor node (must be a leaf). */
                 return Delete(predecessorNode, predecessorNode.GetMaxKey().Key);
             }
             else /* If node is leaf, remove the key from it, and then re balance if the node is under flown. */
@@ -289,12 +290,12 @@ namespace CSFundamentals.DataStructures.Trees
                 int parentSeparatorWithLeftSiblingIndex = parentLeftSibling == null ? -1 : parentLeftSibling.GetIndexAtParentChildren();
                 int parentSeparatorWithRightSiblingIndex = parentRightSibling == null ? -1 : parent.GetIndexAtParentChildren();
 
-                if (leftSibling != null && leftSibling.IsMin1Full())
+                if (leftSibling != null && leftSibling.IsMinOneFull())
                 {
                     node = RotateRight(node, leftSibling, separatorWithLeftSiblingIndex);
                     return;
                 }
-                else if (rightSibling != null && rightSibling.IsMin1Full())
+                else if (rightSibling != null && rightSibling.IsMinOneFull())
                 {
                     node = RotateLeft(node, rightSibling, separatorWithRightSiblingIndex);
                     return;
@@ -386,7 +387,7 @@ namespace CSFundamentals.DataStructures.Trees
         /// <param name="key">Is the key to search for.</param>
         /// <returns>The node containing the key if it exists. Otherwise throws an exception. </returns>
         [TimeComplexity(Case.Best, "O(1)", When = "Key is the first item of the first node to visit.")]
-        [TimeComplexity(Case.Worst, "O(Log(n))")]
+        [TimeComplexity(Case.Worst, "O(Log(n))")] // Each search with in a node uses binary-search which is Log(K) cost, and since it is constant is not included in this value. 
         [TimeComplexity(Case.Average, "O(Log(n))")]
         public BTreeNode<TKey, TValue> Search(BTreeNode<TKey, TValue> root, TKey key)
         {
@@ -446,7 +447,7 @@ namespace CSFundamentals.DataStructures.Trees
         /// </summary>
         /// <param name="levelCount">Is the number of levels in the tree. </param>
         /// <returns>Maximum number of keys a tree with <paramref name="levelCount"> levels can hold. </returns>
-        public int ComputeMaxKeyCount(int levelCount)
+        public int GetMaxKeyCount(int levelCount)
         {
             int maxKeys = 0;
             for (int l = 0; l < levelCount; l++)
@@ -454,6 +455,24 @@ namespace CSFundamentals.DataStructures.Trees
                 maxKeys += (MaxBranchingDegree - 1) * (int)Math.Pow(MaxBranchingDegree, l);
             }
             return maxKeys;
+        }
+
+        /// <summary>
+        /// Find the node that contains the maximum element of the subtree rooted at node.
+        /// </summary>
+        /// <param name="node">The node at which (sub)tree is rooted. </param>
+        /// <returns>The node containing the maximum key of the (sub)tree rooted at node. </returns>
+        [TimeComplexity(Case.Best, "O(1)", When = "when node is leaf.")]
+        [TimeComplexity(Case.Worst, "O(Log(n))")] 
+        [TimeComplexity(Case.Average, "O(Log(n))")]
+        public BTreeNode<TKey, TValue> GetMaxNode(BTreeNode<TKey, TValue> node)
+        {
+            if (node.IsLeaf())
+            {
+                return node;
+            }
+
+            return GetMaxNode(node.GetChild(node.ChildrenCount - 1));
         }
     }
 }

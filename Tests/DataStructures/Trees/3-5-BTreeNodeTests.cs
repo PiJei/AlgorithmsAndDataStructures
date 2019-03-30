@@ -280,7 +280,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void BTreeNode_IsMin1Full_Test()
+        public void BTreeNode_IsMinOneFull_Test()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
             Assert.AreEqual(2, node.MinKeys);
@@ -289,19 +289,19 @@ namespace CSFundamentalsTests.DataStructures.Trees
             Assert.IsFalse(node.IsMinFull());
 
             node.InsertKeyValue(new KeyValuePair<int, string>(10, "A"));
-            Assert.IsFalse(node.IsMin1Full());
+            Assert.IsFalse(node.IsMinOneFull());
 
             node.InsertKeyValue(new KeyValuePair<int, string>(100, "B"));
-            Assert.IsFalse(node.IsMin1Full());
+            Assert.IsFalse(node.IsMinOneFull());
 
             node.InsertKeyValue(new KeyValuePair<int, string>(50, "C"));
-            Assert.IsTrue(node.IsMin1Full());
+            Assert.IsTrue(node.IsMinOneFull());
 
             node.InsertKeyValue(new KeyValuePair<int, string>(20, "D"));
-            Assert.IsFalse(node.IsMin1Full());
+            Assert.IsFalse(node.IsMinOneFull());
 
             node.InsertKeyValue(new KeyValuePair<int, string>(150, "E"));
-            Assert.IsFalse(node.IsMin1Full());
+            Assert.IsFalse(node.IsMinOneFull());
         }
 
         [TestMethod]

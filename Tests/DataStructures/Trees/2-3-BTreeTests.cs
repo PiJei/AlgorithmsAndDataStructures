@@ -61,11 +61,11 @@ namespace CSFundamentalsTests.DataStructures.Trees
         [TestMethod]
         public void BTreeNode_ComputeMaxKeyCount_Test()
         {
-            Assert.AreEqual(2, _tree.ComputeMaxKeyCount(1));
-            Assert.AreEqual(8, _tree.ComputeMaxKeyCount(2));
-            Assert.AreEqual(26, _tree.ComputeMaxKeyCount(3));
-            Assert.AreEqual(80, _tree.ComputeMaxKeyCount(4));
-            Assert.AreEqual(242, _tree.ComputeMaxKeyCount(5));
+            Assert.AreEqual(2, _tree.GetMaxKeyCount(1));
+            Assert.AreEqual(8, _tree.GetMaxKeyCount(2));
+            Assert.AreEqual(26, _tree.GetMaxKeyCount(3));
+            Assert.AreEqual(80, _tree.GetMaxKeyCount(4));
+            Assert.AreEqual(242, _tree.GetMaxKeyCount(5));
         }
 
         [TestMethod]
@@ -741,8 +741,75 @@ namespace CSFundamentalsTests.DataStructures.Trees
             BTree<int, string> tree = new BTree<int, string>(3);
             tree.Root = node1;
             tree.RotateRight(node3, node2, 0);
-            // ideally I dont expect this to happen with a tree that is built with insert, etc, .. 
             Assert.IsTrue(BTreeTestsUtils.HasBTreeProperties(tree, 7, 7));
+        }
+
+        [TestMethod]
+        public void BTree_GetMaxNode_Test()
+        {
+            var node = _tree.Search(_tree.Root, 100);
+            node = _tree.GetMaxNode(node);
+            Assert.AreEqual(600, node.GetMaxKey().Key);
+
+            node = _tree.Search(_tree.Root, 50);
+            node = _tree.GetMaxNode(node);
+            Assert.AreEqual(90, node.GetMaxKey().Key);
+
+            node = _tree.Search(_tree.Root, 300);
+            node = _tree.GetMaxNode(node);
+            Assert.AreEqual(600, node.GetMaxKey().Key);
+
+            node = _tree.Search(_tree.Root, 20);
+            node = _tree.GetMaxNode(node);
+            Assert.AreEqual(30, node.GetMaxKey().Key);
+
+            node = _tree.Search(_tree.Root, 80);
+            node = _tree.GetMaxNode(node);
+            Assert.AreEqual(90, node.GetMaxKey().Key);
+
+            node = _tree.Search(_tree.Root, 10);
+            node = _tree.GetMaxNode(node);
+            Assert.AreEqual(10, node.GetMaxKey().Key);
+
+            node = _tree.Search(_tree.Root, 30);
+            node = _tree.GetMaxNode(node);
+            Assert.AreEqual(30, node.GetMaxKey().Key);
+
+            node = _tree.Search(_tree.Root, 60);
+            node = _tree.GetMaxNode(node);
+            Assert.AreEqual(60, node.GetMaxKey().Key);
+
+            node = _tree.Search(_tree.Root, 90);
+            node = _tree.GetMaxNode(node);
+            Assert.AreEqual(90, node.GetMaxKey().Key);
+
+            node = _tree.Search(_tree.Root, 200);
+            node = _tree.GetMaxNode(node);
+            Assert.AreEqual(270, node.GetMaxKey().Key);
+
+            node = _tree.Search(_tree.Root, 150);
+            node = _tree.GetMaxNode(node);
+            Assert.AreEqual(150, node.GetMaxKey().Key);
+
+            node = _tree.Search(_tree.Root, 250);
+            node = _tree.GetMaxNode(node);
+            Assert.AreEqual(270, node.GetMaxKey().Key);
+
+            node = _tree.Search(_tree.Root, 270);
+            node = _tree.GetMaxNode(node);
+            Assert.AreEqual(270, node.GetMaxKey().Key);
+
+            node = _tree.Search(_tree.Root, 500);
+            node = _tree.GetMaxNode(node);
+            Assert.AreEqual(600, node.GetMaxKey().Key);
+
+            node = _tree.Search(_tree.Root, 400);
+            node = _tree.GetMaxNode(node);
+            Assert.AreEqual(400, node.GetMaxKey().Key);
+
+            node = _tree.Search(_tree.Root, 600);
+            node = _tree.GetMaxNode(node);
+            Assert.AreEqual(600, node.GetMaxKey().Key);
         }
     }
 }

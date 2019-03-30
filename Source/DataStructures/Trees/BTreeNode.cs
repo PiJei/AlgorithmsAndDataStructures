@@ -21,11 +21,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-//TODO: part of me thinks that I should strengthen the inserts and etc,... because this should be a proper BTRee node, ... and shall not allow things that result in over flows, under flows, keys with no children, etc, ... ?//but this might make algorithms diff toimplement, .. 
-//todo; complexites
-//todo: somehow should not allow comparisons to nodes with other degrees, ... how can degree be considered, ...?
-// i want a not-applicable node, some what, ..write a test for it as well.. 
-// TODO: Test for search. ... 
+// TODO: somehow should not allow comparisons to nodes with other degrees, ... how can degree be considered, ...?
+
 namespace CSFundamentals.DataStructures.Trees
 {
     /// <summary>
@@ -55,22 +52,20 @@ namespace CSFundamentals.DataStructures.Trees
         /// </summary>
         public int MaxBranchingDegree { get; private set; }
 
-        // TODO: turn these back to private, for sake of debugging have been made public, can make them readonly ... 
-        // TODO: Because of splits and merges, I feel the best way is to have these two lists as linked lists
-        // TODO: Shall i implement a sorted list myself? as a data structure here? 
         /// <summary>
-        /// 
+        /// A list of key-value pairs stored in this node. 
         /// Notice that SortedList does not allow duplicates. 
         /// </summary>
-        public SortedList<TKey, TValue> _keyValues;
+        private SortedList<TKey, TValue> _keyValues;
 
         /// <summary>
+        /// Children of the current node. 
         /// Contract: Keys of the child at index i are all smaller than key at index i of _keyValues
         /// Contract: Keys of the child at index i are all greater than key at index i-1 of _keyValues
         /// In otherWords for key at index i, left children are at index i of _children
         /// And right children are at index i+1 of _children. 
         /// </summary>
-        public SortedList<BTreeNode<TKey, TValue>, bool> _children;
+        private SortedList<BTreeNode<TKey, TValue>, bool> _children;
 
         /// <summary>
         /// Is the parent of the current node.
@@ -147,42 +142,6 @@ namespace CSFundamentals.DataStructures.Trees
             _children.Clear();
         }
 
-        // TODO Tests
-        /// <summary>
-        /// Find the node that contains the immediate predecessor of the key at index <paramref name="keyIndex"> of node's <see cref="_keyValues"> array. 
-        /// </summary>
-        /// <param name="keyIndex"></param>
-        /// <returns></returns>
-        public BTreeNode<TKey, TValue> GetPredecessorNode(int keyIndex)
-        {
-            return FindMaxInSubTree(_children.ElementAt(keyIndex).Key);
-        }
-
-        // TODO: Perhaps should move to the tree itself
-        public BTreeNode<TKey, TValue> FindMaxInSubTree(BTreeNode<TKey, TValue> node)
-        {
-            if (node.IsLeaf())
-            {
-                return node;
-            }
-
-            return FindMaxInSubTree(node.GetChild(node.ChildrenCount - 1));
-        }
-
-        public BTreeNode<TKey, TValue> GetSuccessorNode(int keyIndex)
-        {
-            return FindMinInSubTree(_children.ElementAt(keyIndex + 1).Key);
-        }
-        public BTreeNode<TKey, TValue> FindMinInSubTree(BTreeNode<TKey, TValue> node)
-        {
-            if (node.IsLeaf())
-            {
-                return node;
-            }
-
-            return FindMinInSubTree(node.GetChild(0));
-        }
-
         /// <summary>
         /// Splits this node to 2 nodes if it is overflown, such that each node has at least MinKeys keys.
         /// </summary>
@@ -215,13 +174,6 @@ namespace CSFundamentals.DataStructures.Trees
             }
 
             return null;
-        }
-
-        public bool IsNull()
-        {
-            if (KeyCount == 0 && ChildrenCount == 0)
-                return true;
-            return false;
         }
 
         /// <summary>
@@ -270,7 +222,7 @@ namespace CSFundamentals.DataStructures.Trees
         }
 
         /// <summary>
-        /// Detects whether the node is overflown. A node is overflown, if its key count exceeds MaxKeys. 
+        /// Checks whether the node is overflown. A node is overflown, if its key count exceeds MaxKeys. 
         /// </summary>
         /// <returns>True if the node is overflown, and false otherwise. </returns>
         public bool IsOverFlown()
@@ -279,7 +231,7 @@ namespace CSFundamentals.DataStructures.Trees
         }
 
         /// <summary>
-        /// Detects whether the node is UnderFlown. A node is UnderFlown, if its key count falls lower than MinKeys.
+        /// Checks whether the node is UnderFlown. A node is UnderFlown, if its key count falls lower than MinKeys.
         /// </summary>
         /// <returns>Truce if the node is UnderFlown, and false otherwise. </returns>
         public bool IsUnderFlown()
@@ -308,7 +260,7 @@ namespace CSFundamentals.DataStructures.Trees
         }
 
         /// <summary>
-        /// Detects whether the current node has a left sibling (a sibling to its left in the parent). 
+        /// Checks whether the current node has a left sibling (a sibling to its left in the parent). 
         /// </summary>
         /// <returns>True if the node has a left sibling, and false otherwise. </returns>
         public bool HasLeftSibling()
@@ -337,7 +289,7 @@ namespace CSFundamentals.DataStructures.Trees
         }
 
         /// <summary>
-        /// Detects whether the current node has a right sibling (a sibling to its right in the parent).
+        /// Checks whether the current node has a right sibling (a sibling to its right in the parent).
         /// </summary>
         /// <returns>True if the node has a right sibling, and false otherwise. </returns>
         public bool HasRightSibling()
@@ -366,7 +318,7 @@ namespace CSFundamentals.DataStructures.Trees
         }
 
         /// <summary>
-        /// Detects whether a node is MinFull: meaning it has exactly MinKeys key-value pairs. 
+        /// Checks whether a node is MinFull: meaning it has exactly MinKeys key-value pairs. 
         /// </summary>
         /// <returns>True if case is MinFull, false otherwise. </returns>
         public bool IsMinFull()
@@ -375,18 +327,18 @@ namespace CSFundamentals.DataStructures.Trees
         }
 
         /// <summary>
-        /// Detects whether a node is min1full: meaning it has exactly MinKeys+1 key-value pairs. 
+        /// Checks whether a node is MinOneFull: meaning it has exactly MinKeys+1 key-value pairs. 
         /// </summary>
-        /// <returns>True if it is min1full, false otherwise. </returns>
-        public bool IsMin1Full()
+        /// <returns>True if it is MinOneFull, false otherwise. </returns>
+        public bool IsMinOneFull()
         {
             return _keyValues.Count == MinKeys + 1;
         }
 
         /// <summary>
-        /// Detects whether a node is empty: meaning has no key-value pairs. 
+        /// Checks whether a node is empty: meaning has no key-value pairs. 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>True if the node is free, and false otherwise. </returns>
         public bool IsEmpty()
         {
             return _keyValues.Count == 0;
@@ -395,7 +347,7 @@ namespace CSFundamentals.DataStructures.Trees
         /// <summary>
         /// Gets the key-value pair of the maximum key in the node.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Key-value pair of the maximum key in this node. </returns>
         public KeyValuePair<TKey, TValue> GetMaxKey()
         {
             if (_keyValues.Any())
@@ -406,7 +358,7 @@ namespace CSFundamentals.DataStructures.Trees
         /// <summary>
         /// Gets the key-value pair of the minimum key in the node. 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Key-value pair of the minimum key in this node. </returns>
         public KeyValuePair<TKey, TValue> GetMinKey()
         {
             if (_keyValues.Any())
@@ -524,40 +476,6 @@ namespace CSFundamentals.DataStructures.Trees
             throw new KeyNotFoundException();
         }
 
-        //TODO: How can  make tis to use the binary search I have implemented in this project?
-        /// <summary>
-        /// Performs a binary search over <see cref="_keyValues"/> array of the node. 
-        /// </summary>
-        /// <param name="key">Key we are searching for. </param>
-        /// <param name="startIndex">Inclusive start index at <see cref="_keyValues"/> array. </param>
-        /// <param name="endIndex">Inclusive end index at <see cref="_keyValues"/> array. </param>
-        /// <returns>Index of the key in the <see cref="_keyValues"> array if it exists and -1 if it does not.</returns>
-        public int Search(TKey key, int startIndex, int endIndex)
-        {
-            if (startIndex <= endIndex &&
-                endIndex <= _keyValues.Count - 1 &&
-                _keyValues.Keys[startIndex].CompareTo(key) >= 0
-                && _keyValues.Keys[endIndex].CompareTo(key) <= 0)
-            {
-                int middleIndex = (startIndex + endIndex) / 2;
-
-                if (_keyValues.Keys[middleIndex].CompareTo(key) == 0)
-                {
-                    return middleIndex;
-                }
-                else if (_keyValues.Keys[middleIndex].CompareTo(key) < 0)
-                {
-                    return Search(key, startIndex, middleIndex - 1);
-                }
-                else if (_keyValues.Keys[middleIndex].CompareTo(key) > 0)
-                {
-                    return Search(key, middleIndex + 1, endIndex);
-                }
-            }
-
-            return -1;
-        }
-
         /// <summary>
         /// Inserts the given key-value pair in <see cref="_keyValues"/> array. 
         /// </summary>
@@ -579,7 +497,6 @@ namespace CSFundamentals.DataStructures.Trees
             _children.Add(child, true);
             child.Parent = this;
         }
-
 
         public int CompareTo(BTreeNode<TKey, TValue> other)
         {
@@ -616,16 +533,6 @@ namespace CSFundamentals.DataStructures.Trees
                 return 1;
             }
             return -1;
-        }
-
-        // TODO: Use string builder
-        // todo ; remove any methods here that I am not suing externally: or make them private/internal, etc, ..
-        public override string ToString()
-        {
-            string str = $"KeyCount: {KeyCount} - Keys: ";
-            str += string.Join(",", _keyValues.Keys.Select(k => k.ToString()).ToList());
-            str += $" - ChildrenCount {ChildrenCount}";
-            return str;
         }
     }
 }
