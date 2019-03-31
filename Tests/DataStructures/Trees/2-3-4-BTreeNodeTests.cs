@@ -29,7 +29,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
     public class _2_3_4_BTreeNodeTests
     {
         [TestMethod]
-        public void Constructor()
+        public void Constructor_CheckingDegrees()
         {
             var node = new BTreeNode<int, string>(4);
             Assert.AreEqual(2, node.MinBranchingDegree);

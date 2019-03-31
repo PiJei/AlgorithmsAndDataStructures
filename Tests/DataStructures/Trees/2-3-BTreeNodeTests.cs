@@ -31,7 +31,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
     public class _2_3_BTreeNodeTests
     {
         [TestMethod]
-        public void Constructor()
+        public void Constructor_CheckingDegrees()
         {
             var node = new BTreeNode<int, string>(3);
             Assert.AreEqual(2, node.MinBranchingDegree);
@@ -41,45 +41,53 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void IsLeaf()
+        public void IsLeaf_ChildLessNode_ExpectsTrue()
         {
-            var node1 = new BTreeNode<int, string>(3);
-            Assert.IsTrue(node1.IsLeaf());
-
-            var node2 = new BTreeNode<int, string>(3);
-            node1.InsertChild(node2);
-            Assert.IsFalse(node1.IsLeaf());
-            Assert.IsTrue(node2.IsLeaf());
+            var node = new BTreeNode<int, string>(3);
+            Assert.IsTrue(node.IsLeaf());
         }
 
         [TestMethod]
-        public void IsRoot()
+        public void IsLeaf_NodeHasOneChild_ExpectsFalse()
         {
             var node1 = new BTreeNode<int, string>(3);
-            Assert.IsTrue(node1.IsRoot());
-
             var node2 = new BTreeNode<int, string>(3);
             node1.InsertChild(node2);
-            Assert.IsTrue(node1.IsRoot());
+            Assert.IsFalse(node1.IsLeaf());
+        }
+
+        [TestMethod]
+        public void IsRoot_NodeHasNoParent_ExpectsTrue()
+        {
+            var node = new BTreeNode<int, string>(3);
+            Assert.IsTrue(node.IsRoot());
+        }
+
+        [TestMethod]
+        public void IsRoot_NodeHasParent_ExpectsFalse()
+        {
+            var node1 = new BTreeNode<int, string>(3);
+            var node2 = new BTreeNode<int, string>(3);
+            node1.InsertChild(node2);
             Assert.IsFalse(node2.IsRoot());
         }
 
         [TestMethod]
-        public void GetMinKey()
+        public void GetMinKey_NodeHasKeys_FindsMinCorrectly()
         {
-            var node1 = new BTreeNode<int, string>(3);
+            var node = new BTreeNode<int, string>(3);
 
             /* Testing with 3 keys. */
-            node1.InsertKeyValue(new KeyValuePair<int, string>(100, "C"));
-            node1.InsertKeyValue(new KeyValuePair<int, string>(10, "A"));
-            node1.InsertKeyValue(new KeyValuePair<int, string>(50, "B"));
+            node.InsertKeyValue(new KeyValuePair<int, string>(100, "C"));
+            node.InsertKeyValue(new KeyValuePair<int, string>(10, "A"));
+            node.InsertKeyValue(new KeyValuePair<int, string>(50, "B"));
 
-            Assert.AreEqual(10, node1.GetMinKey().Key);
-            Assert.AreEqual("A", node1.GetMinKey().Value, ignoreCase: false);
+            Assert.AreEqual(10, node.GetMinKey().Key);
+            Assert.AreEqual("A", node.GetMinKey().Value, ignoreCase: false);
         }
 
         [TestMethod]
-        public void GetMaxKey()
+        public void GetMaxKey_NodeHasKeys_FindsMaxCorrectly()
         {
             var node1 = new BTreeNode<int, string>(3);
 
@@ -93,30 +101,54 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void Compare()
+        public void Compare_OtherIsNull_ExpectsBigger()
         {
-            /* Testing comparison to a null other node.*/
-            var node1 = new BTreeNode<int, string>(3);
-            Assert.AreEqual(1, node1.CompareTo(null));
-
-            /* Testing comparison of 2 empty nodes. */
-            var node2 = new BTreeNode<int, string>(3);
-            Assert.AreEqual(0, node1.CompareTo(node2));
-
-            /* Testing comparison of a not-empty node to an empty-node */
-            node1.InsertKeyValue(new KeyValuePair<int, string>(10, "A"));
-            Assert.AreEqual(1, node1.CompareTo(node2));
-
-            /* Testing comparison of a 2 non-empty nodes. */
-            node2.InsertKeyValue(new KeyValuePair<int, string>(50, "B2"));
-            Assert.AreEqual(-1, node1.CompareTo(node2));
-
-            node2.InsertKeyValue(new KeyValuePair<int, string>(10, "A2"));
-            Assert.AreEqual(0, node1.CompareTo(node2)); /* Notice that in a B-Tree node we do not expect two children to have the same min key. Thus this comparison of these two nodes should be true to prevent inserting oen of them in the tree.*/
+            var node = new BTreeNode<int, string>(3);
+            Assert.AreEqual(1, node.CompareTo(null));
         }
 
         [TestMethod]
-        public void InsertKey()
+        public void Compare_TwoEmptyNodes_ExpectsEqual()
+        {
+            var node1 = new BTreeNode<int, string>(3);
+            var node2 = new BTreeNode<int, string>(3);
+            Assert.AreEqual(0, node1.CompareTo(node2));
+        }
+
+        [TestMethod]
+        public void Compare_NonEmptyToEmpty_ExpectsNonEmptyToBeBigger()
+        {
+            var node1 = new BTreeNode<int, string>(3);
+            node1.InsertKeyValue(new KeyValuePair<int, string>(10, "A"));
+            var node2 = new BTreeNode<int, string>(3);
+            Assert.AreEqual(1, node1.CompareTo(node2));
+        }
+
+        [TestMethod]
+        public void Compare_TwoNodesEachWithOneKey_ExpectsNodeWithSmallerKeyToBeSmaller()
+        {
+            var node1 = new BTreeNode<int, string>(3);
+            node1.InsertKeyValue(new KeyValuePair<int, string>(10, "A"));
+            var node2 = new BTreeNode<int, string>(3);
+            node2.InsertKeyValue(new KeyValuePair<int, string>(50, "B2"));
+            Assert.AreEqual(-1, node1.CompareTo(node2));
+        }
+
+        [TestMethod]
+        public void Compare_TwoNodesWithEqualMinKeyAndDifferentMaxKey_ExpectsEqual()
+        {
+            var node1 = new BTreeNode<int, string>(3);
+            node1.InsertKeyValue(new KeyValuePair<int, string>(10, "A"));
+            var node2 = new BTreeNode<int, string>(3);
+            node2.InsertKeyValue(new KeyValuePair<int, string>(50, "B2"));
+            node2.InsertKeyValue(new KeyValuePair<int, string>(10, "A2"));
+
+            /* Notice that in a B-Tree node we do not expect 2 children to have the same min key. Thus these 2 nodes are expected to be equal, and considered duplicates to prevent inserting one of them in the tree.*/
+            Assert.AreEqual(0, node1.CompareTo(node2)); 
+        }
+
+        [TestMethod]
+        public void InsertKey_SeveralKeys_ExpectsAscendingOrderAmongKeys()
         {
             var node1 = new BTreeNode<int, string>(3);
 
@@ -130,18 +162,19 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void InsertKey_Duplicate()
+        public void InsertKey_Duplicates_ExpectsOnlyOneKey()
         {
             var node = new BTreeNode<int, string>(3);
-
             node.InsertKeyValue(new KeyValuePair<int, string>(10, "A"));
             Assert.AreEqual(1, node.KeyCount);
+
+            /* Expects this operation to reject insertion of duplicates, and thus the keyCount should not change.*/
             node.InsertKeyValue(new KeyValuePair<int, string>(10, "B"));
             Assert.AreEqual(1, node.KeyCount);
         }
 
         [TestMethod]
-        public void InsertChild()
+        public void InsertChild_SeveralChildren_ExpectsAscendingOrderAmongChildrenBasedOnTheirKeyRange()
         {
             var node1 = new BTreeNode<int, string>(3);
 
@@ -152,7 +185,6 @@ namespace CSFundamentalsTests.DataStructures.Trees
             var child1 = new BTreeNode<int, string>(3);
             child1.InsertKeyValue(new KeyValuePair<int, string>(5, "D"));
             child1.InsertKeyValue(new KeyValuePair<int, string>(9, "E"));
-
 
             var child2 = new BTreeNode<int, string>(3);
             child2.InsertKeyValue(new KeyValuePair<int, string>(55, "F"));
@@ -170,7 +202,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void InsertChild_Duplicate_ThrowsException()
+        public void InsertChild_Duplicates_ThrowsException()
         {
             var node1 = new BTreeNode<int, string>(3);
 
@@ -187,19 +219,54 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void Split_NodeWithNoChildren()
+        public void Split_EmptyNode_ExpectsNullForTheNewNode()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(3);
-            Assert.IsNull(node.Split());
+            Assert.AreEqual(2, node.MaxKeys); /* Thus to be overFlown (which is the condition for split) node should have 3 keys. */
+
+            var newNode = node.Split();
+            Assert.IsNull(newNode);
+        }
+
+        [TestMethod]
+        public void Split_NodeIsMinFull_ExpectsNullForTheNewNode()
+        {
+            BTreeNode<int, string> node = new BTreeNode<int, string>(3);
+            Assert.AreEqual(2, node.MaxKeys); /* Thus to be overFlown (which is the condition for split) node should have 3 keys. */
 
             node.InsertKeyValue(new KeyValuePair<int, string>(100, "C"));
-            Assert.IsNull(node.Split());
+            
+            /* Node has MinKeys key, and thus is not MinOneFull, to be splittable. */
+            Assert.IsTrue(!node.IsMinOneFull());
+            Assert.IsTrue(node.IsMinFull());
 
+            var newNode = node.Split();
+            Assert.IsNull(newNode);
+        }
+
+        [TestMethod]
+        public void Split_NodeIsFull_ExpectsNullForTheNewNode()
+        {
+            BTreeNode<int, string> node = new BTreeNode<int, string>(3);
+            Assert.AreEqual(2, node.MaxKeys); /* Thus to be overFlown (which is the condition for split) node should have 3 keys. */
+
+            node.InsertKeyValue(new KeyValuePair<int, string>(100, "C"));
             node.InsertKeyValue(new KeyValuePair<int, string>(50, "B"));
-            Assert.IsNull(node.Split());
+            var newNode = node.Split();
+            Assert.IsNull(newNode);
+        }
 
+        [TestMethod]
+        public void Split_NodeIsOverFlownAndHasNoChildren_ExpectsSuccessfulSplitForKeys()
+        {
+            BTreeNode<int, string> node = new BTreeNode<int, string>(3);
+            Assert.AreEqual(2, node.MaxKeys); /* Thus to be overFlown (which is the condition for split) node should have 3 keys. */
+
+            node.InsertKeyValue(new KeyValuePair<int, string>(100, "C"));
+            node.InsertKeyValue(new KeyValuePair<int, string>(50, "B"));
             node.InsertKeyValue(new KeyValuePair<int, string>(10, "A"));
-            BTreeNode<int, string> newNode = node.Split();
+
+            var  newNode = node.Split();
             Assert.IsTrue(BTreeTestsUtils.HasBTreeNodeProperties(node));
             Assert.IsTrue(BTreeTestsUtils.HasBTreeNodeProperties(newNode));
             Assert.AreEqual(2, node.KeyCount);
@@ -207,7 +274,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void Split_NodeWithChildren()
+        public void Split_NodeIsOverFlownAndHasChildren_ExpectsSuccessfulSplitForKeysAndChildren()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(3);
 
@@ -232,45 +299,50 @@ namespace CSFundamentalsTests.DataStructures.Trees
             node.InsertChild(child4);
 
             BTreeNode<int, string> newNode = node.Split();
-            /* At this point we do not expect this node to be valid, because the key in the middle has not yet moved up, that step is part of split method in the tree itself and not in the node.*/
-            // HasBTreeNodeProperties(node); 
+            /* At this point we do not expect 'node' to be valid (i.e., HasBTreeNodeProperties(node)==false ), because the key in the middle has not yet moved up, that step is part of split method in the tree itself and not in the node.*/
             Assert.IsTrue(BTreeTestsUtils.HasBTreeNodeProperties(newNode));
         }
 
         [TestMethod]
-        public void Search()
-        {
-            // TODO
-        }
-
-        [TestMethod]
-        public void IsOverFlown()
+        public void IsOverFlown_EmptyNode_ExpectsFalse()
         {
             var node = new BTreeNode<int, string>(3);
             Assert.AreEqual(1, node.MinKeys);
-            Assert.AreEqual(2, node.MaxKeys);
-
+            Assert.AreEqual(2, node.MaxKeys); /* Thus a node must have 3 keys to be overFlown. */
             Assert.IsFalse(node.IsOverFlown());
+        }
 
+        [TestMethod]
+        public void IsOverFlown_MinFullNode_ExpectsFalse()
+        {
+            var node = new BTreeNode<int, string>(3);
+            Assert.AreEqual(1, node.MinKeys);
+            Assert.AreEqual(2, node.MaxKeys); /* Thus a node must have 3 keys to be overFlown. */
             node.InsertKeyValue(new KeyValuePair<int, string>(10, "A"));
-            Assert.AreEqual(1, node.KeyCount);
+            Assert.AreEqual(1, node.KeyCount); /* Node has 1 key. */
             Assert.IsFalse(node.IsOverFlown());
+        }
 
-            /* Testing with duplicate keys with the same value */
+        [TestMethod]
+        public void IsOverFlown_FullNode_ExpectsFalse()
+        {
+            var node = new BTreeNode<int, string>(3);
+            Assert.AreEqual(1, node.MinKeys);
+            Assert.AreEqual(2, node.MaxKeys); /* Thus a node must have 3 keys to be overFlown. */
             node.InsertKeyValue(new KeyValuePair<int, string>(10, "A"));
-
-            Assert.AreEqual(1, node.KeyCount);
-            Assert.IsFalse(node.IsOverFlown());
-
-            node.InsertKeyValue(new KeyValuePair<int, string>(10, "B"));
-
-            Assert.AreEqual(1, node.KeyCount);
-            Assert.IsFalse(node.IsOverFlown());
-
             node.InsertKeyValue(new KeyValuePair<int, string>(20, "C"));
             Assert.AreEqual(2, node.KeyCount);
             Assert.IsFalse(node.IsOverFlown());
+        }
 
+        [TestMethod]
+        public void IsOverFlown_OverFlownNode_ExpectsTrue()
+        {
+            var node = new BTreeNode<int, string>(3);
+            Assert.AreEqual(1, node.MinKeys);
+            Assert.AreEqual(2, node.MaxKeys); /* Thus a node must have 3 keys to be overFlown. */
+            node.InsertKeyValue(new KeyValuePair<int, string>(10, "A"));
+            node.InsertKeyValue(new KeyValuePair<int, string>(20, "C"));
             node.InsertKeyValue(new KeyValuePair<int, string>(30, "C"));
             Assert.AreEqual(3, node.KeyCount);
             Assert.IsTrue(node.IsOverFlown());
@@ -302,11 +374,11 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        public void KeyValueToMoveUp_Success_1()
+        public void KeyValueToMoveUp_NodeIsMinOneFull_ExpectsLastKeyInTheNode()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(3);
-            Assert.AreEqual(1, node.MinKeys);
-            Assert.AreEqual(2, node.MaxKeys);
+            Assert.AreEqual(1, node.MinKeys); /* Thus node needs 1+1 = 2 keys to be MinOneFull, which is the condition for having a key to move up to its parent. */
+            Assert.AreEqual(2, node.MaxKeys); /* For a 2-3 BTree node, MinOneFull is the same as Full. */
 
             node.InsertKeyValue(new KeyValuePair<int, string>(10, "A"));
             node.InsertKeyValue(new KeyValuePair<int, string>(100, "B"));
