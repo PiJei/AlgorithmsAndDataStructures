@@ -349,7 +349,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        [ExpectedException(typeof(KeyNotFoundException))]
+        [ExpectedException(typeof(ArgumentException))]
         public void KeyValueToMoveUp_EmptyNode_ThrowsException()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(3);
@@ -361,7 +361,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
         }
 
         [TestMethod]
-        [ExpectedException(typeof(KeyNotFoundException))]
+        [ExpectedException(typeof(ArgumentException))]
         public void KeyValueToMoveUp_MinFullNode_ThrowsException()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(3);

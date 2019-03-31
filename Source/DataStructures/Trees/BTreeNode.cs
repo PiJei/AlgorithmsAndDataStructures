@@ -183,9 +183,9 @@ namespace CSFundamentals.DataStructures.Trees
         /// <returns>The key at the middle of the key-value pairs that shall be moved to the parent. </returns>
         public KeyValuePair<TKey, TValue> KeyValueToMoveUp()
         {
-            if (MinKeys < _keyValues.Count)
+            if (IsMinOneFull())
                 return _keyValues.ElementAt(MinKeys); /* since the indexes tart at 0, this means that the node has MinKeys+1 keys. */
-            throw new KeyNotFoundException($"The node has less than {MinKeys + 1} keys. Can not return element at {MinKeys}.");
+            throw new ArgumentException($"Failed to get a key to move up to parent. The node has less or more than {MinKeys + 1} keys.");
         }
 
         /// <summary>
