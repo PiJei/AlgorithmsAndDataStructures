@@ -21,7 +21,7 @@ using System;
 using System.Collections.Generic;
 using CSFundamentals.DataStructures.Trees;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+// TOD0: Compute levels and after each insert confirm it
 namespace CSFundamentalsTests.DataStructures.Trees
 {
     public static class BTreeTestsUtils

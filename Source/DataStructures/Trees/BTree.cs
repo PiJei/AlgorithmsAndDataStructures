@@ -447,7 +447,7 @@ namespace CSFundamentals.DataStructures.Trees
         /// </summary>
         /// <param name="levelCount">Is the number of levels in the tree. </param>
         /// <returns>Maximum number of keys a tree with <paramref name="levelCount"> levels can hold. </returns>
-        public int GetMaxKeyCount(int levelCount)
+        public int GetMaxCapacity(int levelCount)
         {
             int maxKeys = 0;
             for (int l = 0; l < levelCount; l++)
