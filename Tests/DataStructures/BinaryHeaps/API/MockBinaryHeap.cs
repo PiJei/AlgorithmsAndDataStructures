@@ -17,9 +17,9 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using CSFundamentals.DataStructures.BinaryHeaps.API;
 using System;
 using System.Collections.Generic;
+using CSFundamentals.DataStructures.BinaryHeaps.API;
 
 namespace CSFundamentalsTests.DataStructures.BinaryHeaps.API
 {

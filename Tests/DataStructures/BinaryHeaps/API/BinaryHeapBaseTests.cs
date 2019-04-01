@@ -17,25 +17,15 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.DataStructures.BinaryHeaps.API
 {
     [TestClass]
     public class BinaryHeapBaseTests
     {
-        [TestMethod]
-        public void Swap()
-        {
-            List<int> values = new List<int> { 10, 34, 56, 2, 12, 1 };
-            var heap = new MockBinaryHeap<int>(values);
-            heap.Swap(values, 1, 2);
-            Assert.AreEqual(6, values.Count);
-            Assert.AreEqual(56, values[1]);
-            Assert.AreEqual(34, values[2]);
-        }
 
         [TestMethod]
         public void TryFindMinIndex()

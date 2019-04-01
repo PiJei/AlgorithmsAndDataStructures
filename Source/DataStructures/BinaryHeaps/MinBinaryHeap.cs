@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using CSFundamentals.Algorithms.Sort;
 using CSFundamentals.DataStructures.BinaryHeaps.API;
 using CSFundamentals.Styling;
 
@@ -91,7 +92,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
 
             while (index != 0 && HeapArray[parentIndex].CompareTo(HeapArray[index]) > 0)
             {
-                Swap(HeapArray, index, parentIndex);
+                Utils.Swap(HeapArray, index, parentIndex);
                 index = parentIndex;
                 parentIndex = GetParentIndex(index);
             }
@@ -167,7 +168,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
             /* If root is not the minimum value, then bubble/trickle down the root via the smallest child. */
             if (minElementIndex != rootIndex)
             {
-                Swap(HeapArray, minElementIndex, rootIndex);
+                Utils.Swap(HeapArray, minElementIndex, rootIndex);
 
                 /* At this point, the value that was at rootIndex, is now at index minElementIndex, and the bubble/trickle down shall continue. */
                 if (GetLeftChildIndexInHeapArray(minElementIndex) < heapArrayLength) /* To avoid unnecessary recursion : notice that there is no need to check for the right child's index, as if left child index already is out of range so is right child index, since right child index = left child index +1. */
@@ -197,7 +198,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
 
                 if (rootIndex != minElementIndex)
                 {
-                    Swap(HeapArray, minElementIndex, rootIndex);
+                    Utils.Swap(HeapArray, minElementIndex, rootIndex);
                     rootIndex = minElementIndex;
                 }
                 else

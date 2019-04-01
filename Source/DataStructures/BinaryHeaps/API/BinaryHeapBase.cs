@@ -83,19 +83,6 @@ namespace CSFundamentals.DataStructures.BinaryHeaps.API
             return Convert.ToInt32(Math.Floor(parentIndex));
         }
 
-        /// <summary>
-        /// Swaps the values at the two given indexes. 
-        /// </summary>
-        /// <param name="array">Specifies the heap represented in an array.</param>
-        /// <param name="index1">Specifies the index of the first element. </param>
-        /// <param name="index2">Specifies the index of the second element. </param>
-        public void Swap(List<T> array, int index1, int index2)
-        {
-            var temp = array[index1];
-            array[index1] = array[index2];
-            array[index2] = temp;
-        }
-
         public int GetNodeLevel(int index)
         {
             double level = Math.Floor(Math.Log(index + 1, 2));

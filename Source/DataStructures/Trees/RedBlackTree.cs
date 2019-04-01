@@ -35,6 +35,7 @@ namespace CSFundamentals.DataStructures.Trees
     /// </summary>
     /// <typeparam name="TKey">Specifies the type of the keys in red black tree.</typeparam>
     /// <typeparam name="TValue">Specifies the type of the values in red black tree. </typeparam>
+    [DataStructure("RedBlackTree")]
     public class RedBlackTree<TKey, TValue> : BinarySearchTreeBase<RedBlackTreeNode<TKey, TValue>, TKey, TValue> where TKey : IComparable<TKey>
     {
         [TimeComplexity(Case.Best, "O(n)", When = "Every new node is inserted in the very first locations.")]

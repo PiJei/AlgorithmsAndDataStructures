@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using CSFundamentals.Algorithms.Sort;
 using CSFundamentals.DataStructures.BinaryHeaps.API;
 using CSFundamentals.Styling;
 
@@ -92,7 +93,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
 
             while (index != 0 && HeapArray[parentIndex].CompareTo(HeapArray[index]) < 0)
             {
-                Swap(HeapArray, parentIndex, index);
+                Utils.Swap(HeapArray, parentIndex, index);
                 index = parentIndex;
                 parentIndex = GetParentIndex(index);
             }
@@ -162,7 +163,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
 
             if (maxElementIndex != rootIndex)
             {
-                Swap(HeapArray, maxElementIndex, rootIndex);
+                Utils.Swap(HeapArray, maxElementIndex, rootIndex);
 
                 if (GetLeftChildIndexInHeapArray(maxElementIndex) < heapArrayLength)
                 {
@@ -191,7 +192,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
 
                 if (maxElementIndex != rootIndex)
                 {
-                    Swap(HeapArray, maxElementIndex, rootIndex);
+                    Utils.Swap(HeapArray, maxElementIndex, rootIndex);
                     rootIndex = maxElementIndex;
                 }
                 else

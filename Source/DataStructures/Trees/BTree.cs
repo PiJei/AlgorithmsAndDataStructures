@@ -31,6 +31,7 @@ using CSFundamentals.Styling;
 
 namespace CSFundamentals.DataStructures.Trees
 {
+    [DataStructure("BTree")]
     public class BTree<TKey, TValue> where TKey : IComparable<TKey>
     {
         /// <summary>
