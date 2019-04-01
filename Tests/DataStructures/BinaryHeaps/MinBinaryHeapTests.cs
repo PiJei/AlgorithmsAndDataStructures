@@ -17,6 +17,7 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System;
 using System.Collections.Generic;
 using CSFundamentals.DataStructures.BinaryHeaps;
 using CSFundamentals.DataStructures.BinaryHeaps.API;
@@ -113,7 +114,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         }
 
         [TestMethod]
-        public void TryRemoveMin_1()
+        public void TryRemoveMin_RemoveRootEqualToArrayLengthTimes_ExpectsAscendingOrderInResults()
         {
             List<int> values = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
 
@@ -159,7 +160,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         }
 
         [TestMethod]
-        public void Insert()
+        public void Insert_SeveralValues_ExpectCorrectMinBinaryHeapAfterEachInsert()
         {
             List<int> values = new List<int>();
             var heap = new MinBinaryHeap<int>(values);
@@ -263,13 +264,12 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
             Assert.AreEqual(2, heap.GetNodeLevel(values.IndexOf(21)));
         }
 
-        // TODO: Shall this be generic?
         /// <summary>
         /// Checking the MinHeap ordering (node relations) for the node at the given index, to make sure the correct relations between the node and its parent and children holds. 
         /// </summary>
         /// <param name="heap"></param>
         /// <param name="nodeIndex"></param>
-        public static bool HasMinOrderProperty(BinaryHeapBase<int> heap, int nodeIndex)
+        public static bool HasMinOrderProperty<T>(BinaryHeapBase<T> heap, int nodeIndex) where T : IComparable<T>
         {
             int leftChildIndex = heap.GetLeftChildIndexInHeapArray(nodeIndex);
             int rightChildIndex = heap.GetRightChildIndexInHeapArray(nodeIndex);
@@ -277,15 +277,15 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 
             if (leftChildIndex >= 0 && leftChildIndex < heap.HeapArray.Count)
             {
-                Assert.IsTrue(heap.HeapArray[nodeIndex] <= heap.HeapArray[leftChildIndex]);
+                Assert.IsTrue(heap.HeapArray[nodeIndex].CompareTo(heap.HeapArray[leftChildIndex]) <= 0);
             }
             if (rightChildIndex >= 0 && rightChildIndex < heap.HeapArray.Count)
             {
-                Assert.IsTrue(heap.HeapArray[nodeIndex] <= heap.HeapArray[rightChildIndex]);
+                Assert.IsTrue(heap.HeapArray[nodeIndex].CompareTo(heap.HeapArray[rightChildIndex]) <= 0);
             }
             if (parentindex >= 0 && parentindex < heap.HeapArray.Count)
             {
-                Assert.IsTrue(heap.HeapArray[nodeIndex] >= heap.HeapArray[parentindex]);
+                Assert.IsTrue(heap.HeapArray[nodeIndex].CompareTo(heap.HeapArray[parentindex]) >= 0);
             }
             return true;
         }

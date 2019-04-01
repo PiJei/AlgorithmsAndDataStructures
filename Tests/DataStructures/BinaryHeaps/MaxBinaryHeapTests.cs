@@ -27,37 +27,6 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
     [TestClass]
     public class MaxBinaryHeapTests
     {
-        // Checking the MaxHeap ordering (node relations) for the node at the given index, to make sure the correct relations between the node and its parent and children holds. 
-        public static bool HasMaxOrderPropertyForNode(BinaryHeapBase<int> heap, int nodeIndex)
-        {
-            int leftChildIndex = heap.GetLeftChildIndexInHeapArray(nodeIndex);
-            int rightChildIndex = heap.GetRightChildIndexInHeapArray(nodeIndex);
-            int parentindex = heap.GetParentIndex(nodeIndex);
-
-            if (leftChildIndex >= 0 && leftChildIndex < heap.HeapArray.Count)
-            {
-                Assert.IsTrue(heap.HeapArray[nodeIndex] >= heap.HeapArray[leftChildIndex]);
-            }
-            if (rightChildIndex >= 0 && rightChildIndex < heap.HeapArray.Count)
-            {
-                Assert.IsTrue(heap.HeapArray[nodeIndex] >= heap.HeapArray[rightChildIndex]);
-            }
-            if (parentindex >= 0 && parentindex < heap.HeapArray.Count)
-            {
-                Assert.IsTrue(heap.HeapArray[nodeIndex] <= heap.HeapArray[parentindex]);
-            }
-            return true;
-        }
-
-        public static bool HasMaxOrderPropertyForHeap(int arraySize, MaxBinaryHeap<int> heap)
-        {
-            for (int i = 0; i < arraySize; i++)
-            {
-                HasMaxOrderPropertyForNode(heap, i);
-            }
-            return true;
-        }
-
         [TestMethod]
         public void BuildHeap_Recursively()
         {
@@ -83,7 +52,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         }
 
         [TestMethod]
-        public void TryRemoveRoot()
+        public void TryRemoveRoot_RemoveRootEqualToArrayLengthTimes_ExpectDescendingOrderInResults()
         {
             List<int> values = new List<int> { 1, 20, 32, 56, 5, 3, 10, 100, 72 };
 
@@ -128,7 +97,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         }
 
         [TestMethod]
-        public void Insert()
+        public void Insert_SeveralValues_ExpectCorrectMaxBinaryHeapAfterEachInsert()
         {
             MaxBinaryHeap<int> heap = new MaxBinaryHeap<int>(new List<int> { });
             heap.Insert(1, heap.HeapArray.Count);
@@ -157,6 +126,37 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 
             heap.Insert(72, heap.HeapArray.Count);
             Assert.IsTrue(HasMaxOrderPropertyForHeap(heap.HeapArray.Count, heap));
+        }
+
+        // Checking the MaxHeap ordering (node relations) for the node at the given index, to make sure the correct relations between the node and its parent and children holds. 
+        public static bool HasMaxOrderPropertyForNode(BinaryHeapBase<int> heap, int nodeIndex)
+        {
+            int leftChildIndex = heap.GetLeftChildIndexInHeapArray(nodeIndex);
+            int rightChildIndex = heap.GetRightChildIndexInHeapArray(nodeIndex);
+            int parentindex = heap.GetParentIndex(nodeIndex);
+
+            if (leftChildIndex >= 0 && leftChildIndex < heap.HeapArray.Count)
+            {
+                Assert.IsTrue(heap.HeapArray[nodeIndex] >= heap.HeapArray[leftChildIndex]);
+            }
+            if (rightChildIndex >= 0 && rightChildIndex < heap.HeapArray.Count)
+            {
+                Assert.IsTrue(heap.HeapArray[nodeIndex] >= heap.HeapArray[rightChildIndex]);
+            }
+            if (parentindex >= 0 && parentindex < heap.HeapArray.Count)
+            {
+                Assert.IsTrue(heap.HeapArray[nodeIndex] <= heap.HeapArray[parentindex]);
+            }
+            return true;
+        }
+
+        public static bool HasMaxOrderPropertyForHeap(int arraySize, MaxBinaryHeap<int> heap)
+        {
+            for (int i = 0; i < arraySize; i++)
+            {
+                HasMaxOrderPropertyForNode(heap, i);
+            }
+            return true;
         }
     }
 }
