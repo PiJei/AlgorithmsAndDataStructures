@@ -211,7 +211,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
 
             /* Find the index of the descendants of rootIndex that has the minimum value */
             int minDescendentIndex = int.MaxValue;
-            if (!TryFindMinIndex(HeapArray, childrenIndexes.Union(grandChildrenIndexes).ToList(), (T)typeof(T).GetField("MaxValue").GetValue(null), out int minIndex))
+            if (!TryFindIndexOfMinSmallerThanReference(HeapArray, childrenIndexes.Union(grandChildrenIndexes).ToList(), (T)typeof(T).GetField("MaxValue").GetValue(null), out int minIndex))
             {
                 return;
             }
@@ -250,7 +250,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
             List<int> grandChildrenIndexes = GetChildrenIndexes(childrenIndexes, heapArrayLength);
 
             int maxDescendentIndex = int.MinValue;
-            if (!TryFindMaxIndex(HeapArray, heapArrayLength, childrenIndexes.Union(grandChildrenIndexes).ToList(), (T)typeof(T).GetField("MinValue").GetValue(null), out int maxIndex))
+            if (!TryFindIndexOfMaxBiggerThanReference(HeapArray, heapArrayLength, childrenIndexes.Union(grandChildrenIndexes).ToList(), (T)typeof(T).GetField("MinValue").GetValue(null), out int maxIndex))
             {
                 return;
             }

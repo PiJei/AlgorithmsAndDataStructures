@@ -17,11 +17,10 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using CSFundamentals.DataStructures.BinaryHeaps;
 using CSFundamentals.DataStructures.BinaryHeaps.API;
-
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 {
@@ -40,11 +39,11 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
                 int level = heap.GetNodeLevel(i);
                 if (heap.IsMinLevel(level))
                 {
-                    Assert.IsTrue(HasMinMaxOrderingForMinLevel(heap, i));
+                    Assert.IsTrue(HasMinMaxOrderPropertyForMinLevel(heap, i));
                 }
                 else
                 {
-                    Assert.IsTrue(HasMinMaxOrderingForMaxLevel(heap, i));
+                    Assert.IsTrue(HasMinMaxOrderPropertyForMaxLevel(heap, i));
                 }
             }
 
@@ -71,16 +70,16 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
                 int level = heap.GetNodeLevel(i);
                 if (heap.IsMinLevel(level))
                 {
-                    Assert.IsTrue(HasMinMaxOrderingForMinLevel(heap, i));
+                    Assert.IsTrue(HasMinMaxOrderPropertyForMinLevel(heap, i));
                 }
                 else
                 {
-                    Assert.IsTrue(HasMinMaxOrderingForMaxLevel(heap, i));
+                    Assert.IsTrue(HasMinMaxOrderPropertyForMaxLevel(heap, i));
                 }
             }
         }
 
-        public static bool HasMinMaxOrderingForMinLevel(BinaryHeapBase<int> heap, int index)
+        public static bool HasMinMaxOrderPropertyForMinLevel(BinaryHeapBase<int> heap, int index)
         {
             int leftChildIndex = heap.GetLeftChildIndexInHeapArray(index);
             int rightChildIndex = heap.GetRightChildIndexInHeapArray(index);
@@ -101,7 +100,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
             return true;
         }
 
-        public static bool HasMinMaxOrderingForMaxLevel(BinaryHeapBase<int> heap, int index)
+        public static bool HasMinMaxOrderPropertyForMaxLevel(BinaryHeapBase<int> heap, int index)
         {
             int leftChildIndex = heap.GetLeftChildIndexInHeapArray(index);
             int rightChildIndex = heap.GetRightChildIndexInHeapArray(index);

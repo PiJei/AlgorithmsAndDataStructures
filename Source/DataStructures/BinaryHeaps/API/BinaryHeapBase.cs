@@ -97,7 +97,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps.API
         /// <param name="minValueReference">Specifies the reference for the minimum value.  </param>
         /// <param name="minValueIndex">Specifies the index of the minimum value among the specifies indexes. </param>
         /// <returns>True in case of success, and false in case of failure. </returns>
-        public bool TryFindMinIndex(List<T> values, List<int> indexes, T minValueReference, out int minValueIndex)
+        public bool TryFindIndexOfMinSmallerThanReference(List<T> values, List<int> indexes, T minValueReference, out int minValueIndex)
         {
             minValueIndex = Int32.MinValue;
 
@@ -132,7 +132,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps.API
         /// <param name="maxValueReference">Specifies the reference for the maximum value.  </param>
         /// <param name="maxValueIndex">Specifies the index of the maximum value among the specifies indexes. </param>
         /// <returns>True in case of success, and false in case of failure. </returns>
-        public bool TryFindMaxIndex(List<T> values, int valuesCount, List<int> indexes, T maxValueReference, out int maxValueIndex)
+        public bool TryFindIndexOfMaxBiggerThanReference(List<T> values, int valuesCount, List<int> indexes, T maxValueReference, out int maxValueIndex)
         {
             maxValueIndex = Int32.MaxValue;
 

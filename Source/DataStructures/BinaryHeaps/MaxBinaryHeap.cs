@@ -156,7 +156,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
             int rightChildIndex = GetRightChildIndexInHeapArray(rootIndex);
             int maxElementIndex = rootIndex;
 
-            if (TryFindMaxIndex(HeapArray, heapArrayLength, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[maxElementIndex], out int maxIndex))
+            if (TryFindIndexOfMaxBiggerThanReference(HeapArray, heapArrayLength, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[maxElementIndex], out int maxIndex))
             {
                 maxElementIndex = maxIndex;
             }
@@ -185,7 +185,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
                 int rightChildIndex = GetRightChildIndexInHeapArray(rootIndex);
                 int maxElementIndex = rootIndex;
 
-                if (TryFindMaxIndex(HeapArray, heapArrayLength, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[rootIndex], out int maxIndex))
+                if (TryFindIndexOfMaxBiggerThanReference(HeapArray, heapArrayLength, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[rootIndex], out int maxIndex))
                 {
                     maxElementIndex = maxIndex;
                 }
@@ -197,7 +197,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
                 }
                 else
                 {
-                    if (TryFindMaxIndex(HeapArray, heapArrayLength, new List<int> { leftChildIndex, rightChildIndex }, (T)typeof(T).GetField("MinValue").GetValue(null), out int maxChildIndex))
+                    if (TryFindIndexOfMaxBiggerThanReference(HeapArray, heapArrayLength, new List<int> { leftChildIndex, rightChildIndex }, (T)typeof(T).GetField("MinValue").GetValue(null), out int maxChildIndex))
                     {
                         rootIndex = maxChildIndex;
                     }

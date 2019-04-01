@@ -34,7 +34,6 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
     {
         public MinBinaryHeap(List<T> array) : base(array)
         {
-
         }
 
         /// <summary>
@@ -160,7 +159,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
             int minElementIndex = rootIndex;
 
             /* Find the minimum value's index (among 3 values: root, and its left and right children). */
-            if (TryFindMinIndex(HeapArray, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[minElementIndex], out int minIndex))
+            if (TryFindIndexOfMinSmallerThanReference(HeapArray, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[minElementIndex], out int minIndex))
             {
                 minElementIndex = minIndex;
             }
@@ -191,7 +190,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
                 int rightChildIndex = GetRightChildIndexInHeapArray(rootIndex);
                 int minElementIndex = rootIndex;
 
-                if (TryFindMinIndex(HeapArray, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[minElementIndex], out int minIndex))
+                if (TryFindIndexOfMinSmallerThanReference(HeapArray, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[minElementIndex], out int minIndex))
                 {
                     minElementIndex = minIndex;
                 }
@@ -204,7 +203,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
                 else
                 {
                     /* Continue with the index of the smallest child. */
-                    if (TryFindMinIndex(HeapArray, new List<int> { leftChildIndex, rightChildIndex }, (T)typeof(T).GetField("MaxValue").GetValue(null), out int minChildIndex))
+                    if (TryFindIndexOfMinSmallerThanReference(HeapArray, new List<int> { leftChildIndex, rightChildIndex }, (T)typeof(T).GetField("MaxValue").GetValue(null), out int minChildIndex))
                     {
                         rootIndex = minChildIndex;
                     }

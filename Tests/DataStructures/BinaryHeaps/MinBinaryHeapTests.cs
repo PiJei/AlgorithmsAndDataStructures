@@ -17,10 +17,10 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System.Collections.Generic;
 using CSFundamentals.DataStructures.BinaryHeaps;
 using CSFundamentals.DataStructures.BinaryHeaps.API;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
 
 namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 {
@@ -60,7 +60,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 
             for (int i = 0; i < arrayHeap1RecursivelyBuilt.Count; i++)
             {
-                Assert.IsTrue(HasMinHeapOrderingProperty(_heap3, i));
+                Assert.IsTrue(HasMinOrderProperty(_heap3, i));
             }
         }
 
@@ -71,7 +71,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 
             for (int i = 0; i < arrayHeap2RecursivelyBuilt.Count; i++)
             {
-                Assert.IsTrue(HasMinHeapOrderingProperty(_heap4, i));
+                Assert.IsTrue(HasMinOrderProperty(_heap4, i));
             }
         }
 
@@ -82,7 +82,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 
             for (int i = 0; i < arrayHeap1IterativelyBuilt.Count; i++)
             {
-                Assert.IsTrue(HasMinHeapOrderingProperty(_heap1, i));
+                Assert.IsTrue(HasMinOrderProperty(_heap1, i));
             }
         }
 
@@ -93,7 +93,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 
             for (int i = 0; i < arrayHeap2IterativelyBuilt.Count; i++)
             {
-                Assert.IsTrue(HasMinHeapOrderingProperty(_heap2, i));
+                Assert.IsTrue(HasMinOrderProperty(_heap2, i));
             }
         }
 
@@ -170,63 +170,63 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
             Assert.AreEqual(1, heap.HeapArray.Count);
             for (int i = 0; i < heap.HeapArray.Count; i++)
             {
-                Assert.IsTrue(HasMinHeapOrderingProperty(heap, i));
+                Assert.IsTrue(HasMinOrderProperty(heap, i));
             }
 
             heap.Insert(70, heap.HeapArray.Count);
             Assert.AreEqual(2, heap.HeapArray.Count);
             for (int i = 0; i < heap.HeapArray.Count; i++)
             {
-                Assert.IsTrue(HasMinHeapOrderingProperty(heap, i));
+                Assert.IsTrue(HasMinOrderProperty(heap, i));
             }
 
             heap.Insert(202, heap.HeapArray.Count);
             Assert.AreEqual(3, heap.HeapArray.Count);
             for (int i = 0; i < heap.HeapArray.Count; i++)
             {
-                Assert.IsTrue(HasMinHeapOrderingProperty(heap, i));
+                Assert.IsTrue(HasMinOrderProperty(heap, i));
             }
 
             heap.Insert(34, heap.HeapArray.Count);
             Assert.AreEqual(4, heap.HeapArray.Count);
             for (int i = 0; i < heap.HeapArray.Count; i++)
             {
-                Assert.IsTrue(HasMinHeapOrderingProperty(heap, i));
+                Assert.IsTrue(HasMinOrderProperty(heap, i));
             }
 
             heap.Insert(42, heap.HeapArray.Count);
             Assert.AreEqual(5, heap.HeapArray.Count);
             for (int i = 0; i < heap.HeapArray.Count; i++)
             {
-                Assert.IsTrue(HasMinHeapOrderingProperty(heap, i));
+                Assert.IsTrue(HasMinOrderProperty(heap, i));
             }
 
             heap.Insert(1, heap.HeapArray.Count);
             Assert.AreEqual(6, heap.HeapArray.Count);
             for (int i = 0; i < heap.HeapArray.Count; i++)
             {
-                Assert.IsTrue(HasMinHeapOrderingProperty(heap, i));
+                Assert.IsTrue(HasMinOrderProperty(heap, i));
             }
 
             heap.Insert(3, heap.HeapArray.Count);
             Assert.AreEqual(7, heap.HeapArray.Count);
             for (int i = 0; i < heap.HeapArray.Count; i++)
             {
-                Assert.IsTrue(HasMinHeapOrderingProperty(heap, i));
+                Assert.IsTrue(HasMinOrderProperty(heap, i));
             }
 
             heap.Insert(10, heap.HeapArray.Count);
             Assert.AreEqual(8, heap.HeapArray.Count);
             for (int i = 0; i < heap.HeapArray.Count; i++)
             {
-                Assert.IsTrue(HasMinHeapOrderingProperty(heap, i));
+                Assert.IsTrue(HasMinOrderProperty(heap, i));
             }
 
             heap.Insert(21, heap.HeapArray.Count);
             Assert.AreEqual(9, heap.HeapArray.Count);
             for (int i = 0; i < heap.HeapArray.Count; i++)
             {
-                Assert.IsTrue(HasMinHeapOrderingProperty(heap, i));
+                Assert.IsTrue(HasMinOrderProperty(heap, i));
             }
         }
 
@@ -239,7 +239,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 
             for (int index = 0; index < values.Count; index++)
             {
-                Assert.IsTrue(HasMinHeapOrderingProperty(heap, index));
+                Assert.IsTrue(HasMinOrderProperty(heap, index));
             }
 
             Assert.AreEqual(0, values.IndexOf(1));
@@ -269,7 +269,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         /// </summary>
         /// <param name="heap"></param>
         /// <param name="nodeIndex"></param>
-        public static bool HasMinHeapOrderingProperty(BinaryHeapBase<int> heap, int nodeIndex)
+        public static bool HasMinOrderProperty(BinaryHeapBase<int> heap, int nodeIndex)
         {
             int leftChildIndex = heap.GetLeftChildIndexInHeapArray(nodeIndex);
             int rightChildIndex = heap.GetRightChildIndexInHeapArray(nodeIndex);
