@@ -21,7 +21,7 @@ using System.Collections.Generic;
 using CSFundamentals.Algorithms.Search;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSFundamentalsTests.Search
+namespace CSFundamentalsTests.Algorithms.Search
 {
     [TestClass]
     public class ExponentialSearchTests

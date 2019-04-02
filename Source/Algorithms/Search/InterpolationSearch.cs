@@ -43,7 +43,7 @@ namespace CSFundamentals.Algorithms.Search
         {
             if (startIndex <= endIndex && searchValue >= values[startIndex] && searchValue <= values[endIndex])
             {
-                int searchStartIndex = GetSearchStartingIndex(values, startIndex, endIndex, searchValue);
+                int searchStartIndex = GetStartIndex(values, startIndex, endIndex, searchValue);
                 if (!(searchStartIndex >= startIndex && searchStartIndex <= endIndex))
                 {
                     return -1;
@@ -79,7 +79,7 @@ namespace CSFundamentals.Algorithms.Search
         /// <param name="endIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
         /// <param name="searchValue">Specifies the value that is being searched for. </param>
         /// <returns>The index in the array at which to start the search. </returns>
-        public static int GetSearchStartingIndex(List<int> values, int startIndex, int endIndex, int searchValue)
+        public static int GetStartIndex(List<int> values, int startIndex, int endIndex, int searchValue)
         {
             double distanceFromStartIndex = (double)(searchValue - values[startIndex]) / (double)(values[endIndex] - values[startIndex]);
             distanceFromStartIndex = distanceFromStartIndex * (endIndex - startIndex);
