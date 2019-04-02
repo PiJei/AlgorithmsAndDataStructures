@@ -27,27 +27,21 @@ namespace CSFundamentalsTests.Algorithms.Search
     public class FibonacciSearchTests
     {
         [TestMethod]
-        public void Search()
+        public void Search_DistinctElements()
         {
-            // TODO: Investigate: Fibonacci search for duplicates, will return the biggest index, as it searches close to the end?
-            List<int> values = new List<int> { 1, 1, 3, 10, 14, 25, 27, 34, 78, 90, 90, 120 };
-            Assert.AreEqual(13, FibonacciSearch.GetSmallestFibonacciBiggerThanNumber(values.Count).FibN);
-            Assert.AreEqual(8, FibonacciSearch.GetSmallestFibonacciBiggerThanNumber(values.Count).FibN1);
-            Assert.AreEqual(5, FibonacciSearch.GetSmallestFibonacciBiggerThanNumber(values.Count).FibN2);
+            SearchTests.DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition(FibonacciSearch.Search);
+        }
 
-            Assert.AreEqual(11, FibonacciSearch.Search(values, 120));
-            Assert.AreEqual(1, FibonacciSearch.Search(values, 1)); // TODO: Investigate returns index 1 rather than 0, as always looks more to the end of the array. (by starting from the smallest fib number that is bigger than the array size)
-            Assert.AreEqual(2, FibonacciSearch.Search(values, 3));
-            Assert.AreEqual(3, FibonacciSearch.Search(values, 10));
-            Assert.AreEqual(4, FibonacciSearch.Search(values, 14));
-            Assert.AreEqual(5, FibonacciSearch.Search(values, 25));
-            Assert.AreEqual(6, FibonacciSearch.Search(values, 27));
-            Assert.AreEqual(7, FibonacciSearch.Search(values, 34));
-            Assert.AreEqual(8, FibonacciSearch.Search(values, 78));
-            Assert.AreEqual(9, FibonacciSearch.Search(values, 90)); // TODO: Investigate Why returns index 9 and not 10. 
-            Assert.AreEqual(-1, FibonacciSearch.Search(values, -20));
-            Assert.AreEqual(-1, FibonacciSearch.Search(values, 15));
-            Assert.AreEqual(-1, FibonacciSearch.Search(values, 456));
+        [TestMethod]
+        public void Search_DuplicateElements()
+        {
+            SearchTests.DuplicateElements_ExpectsToGetTheIndexOfOneOfTheDupliatesNoMatterHowManyTimeSearchIsPerformed(FibonacciSearch.Search);
+        }
+
+        [TestMethod]
+        public void Search_NonExistingElements()
+        {
+            SearchTests.NonExistingElements_ExpectsToGetMinusOne(FibonacciSearch.Search);
         }
 
         [TestMethod]
@@ -56,6 +50,10 @@ namespace CSFundamentalsTests.Algorithms.Search
             Assert.AreEqual(1, FibonacciSearch.GetSmallestFibonacciBiggerThanNumber(0).FibN);
             Assert.AreEqual(144, FibonacciSearch.GetSmallestFibonacciBiggerThanNumber(143).FibN);
             Assert.AreEqual(13, FibonacciSearch.GetSmallestFibonacciBiggerThanNumber(10).FibN);
+
+            Assert.AreEqual(13, FibonacciSearch.GetSmallestFibonacciBiggerThanNumber(12).FibN);
+            Assert.AreEqual(8, FibonacciSearch.GetSmallestFibonacciBiggerThanNumber(12).FibN1);
+            Assert.AreEqual(5, FibonacciSearch.GetSmallestFibonacciBiggerThanNumber(12).FibN2);
         }
     }
 }
