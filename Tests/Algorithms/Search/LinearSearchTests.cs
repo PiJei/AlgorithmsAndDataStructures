@@ -17,23 +17,24 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CSFundamentals.Algorithms.Search;
 using System.Collections.Generic;
+using CSFundamentals.Algorithms.Search;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.Search
 {
     [TestClass]
     public class LinearSearchTests
     {
+        private List<int> _values = new List<int> { 4, 1, 9, 100, 3, 2, 45, 37, 3 };
+
         [TestMethod]
         public void Search()
         {
-            List<int> values = new List<int> { 4, 1, 9, 100, 3, 2, 45, 37, 3 };
-            Assert.AreEqual(-1, LinearSearch.Search(values, 200));
-            Assert.AreEqual(4, LinearSearch.Search(values, 3));
-            Assert.AreEqual(0, LinearSearch.Search(values, 4));
-            Assert.AreEqual(7, LinearSearch.Search(values, 37));
+            Assert.AreEqual(-1, LinearSearch.Search(_values, 200));
+            Assert.AreEqual(4, LinearSearch.Search(_values, 3));
+            Assert.AreEqual(0, LinearSearch.Search(_values, 4));
+            Assert.AreEqual(7, LinearSearch.Search(_values, 37));
         }
     }
 }

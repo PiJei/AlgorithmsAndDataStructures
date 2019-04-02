@@ -17,34 +17,44 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CSFundamentals.Algorithms.Search;
 using System.Collections.Generic;
+using CSFundamentals.Algorithms.Search;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.Search
 {
     [TestClass]
     public class BinarySearchTests
     {
+        private List<int> _values = new List<int> { 1, 3, 10, 14, 25, 27, 34, 78, 90, 90, 120 };
+
         [TestMethod]
-        public void Test()
+        public void Search_DistinctElementsInArray_ExpectsToSuccessfullyGetTheIndexOfTheirPosition()
         {
-            List<int> values = new List<int> { 1, 3, 10, 14, 25, 27, 34, 78, 90, 90, 120 };
-            
-            Assert.AreEqual(0, BinarySearch.Search(values, 0, values.Count - 1, 1));
-            Assert.AreEqual(1, BinarySearch.Search(values, 0, values.Count - 1, 3));
-            Assert.AreEqual(2, BinarySearch.Search(values, 0, values.Count - 1, 10));
-            Assert.AreEqual(3, BinarySearch.Search(values, 0, values.Count - 1, 14));
-            Assert.AreEqual(4, BinarySearch.Search(values, 0, values.Count - 1, 25));
-            Assert.AreEqual(5, BinarySearch.Search(values, 0, values.Count - 1, 27));
-            Assert.AreEqual(6, BinarySearch.Search(values, 0, values.Count - 1, 34));
-            Assert.AreEqual(7, BinarySearch.Search(values, 0, values.Count - 1, 78));
-            Assert.AreEqual(8, BinarySearch.Search(values, 0, values.Count - 1, 90));
-            Assert.AreEqual(8, BinarySearch.Search(values, 0, values.Count - 1, 90));
-            Assert.AreEqual(10, BinarySearch.Search(values, 0, values.Count - 1, 120));
-            Assert.AreEqual(-1, BinarySearch.Search(values, 0, values.Count - 1, -20));
-            Assert.AreEqual(-1, BinarySearch.Search(values, 0, values.Count - 1, 15));
-            Assert.AreEqual(-1, BinarySearch.Search(values, 0, values.Count - 1, 456));
+            Assert.AreEqual(0, BinarySearch.Search(_values, 0, _values.Count - 1, 1));
+            Assert.AreEqual(1, BinarySearch.Search(_values, 0, _values.Count - 1, 3));
+            Assert.AreEqual(2, BinarySearch.Search(_values, 0, _values.Count - 1, 10));
+            Assert.AreEqual(3, BinarySearch.Search(_values, 0, _values.Count - 1, 14));
+            Assert.AreEqual(4, BinarySearch.Search(_values, 0, _values.Count - 1, 25));
+            Assert.AreEqual(5, BinarySearch.Search(_values, 0, _values.Count - 1, 27));
+            Assert.AreEqual(6, BinarySearch.Search(_values, 0, _values.Count - 1, 34));
+            Assert.AreEqual(7, BinarySearch.Search(_values, 0, _values.Count - 1, 78));
+            Assert.AreEqual(10, BinarySearch.Search(_values, 0, _values.Count - 1, 120));
+        }
+
+        [TestMethod]
+        public void Search_DuplicateElementsInArray_ExpectsToSuccessfullyGetTheIndexOfTheirFirstOccurrence()
+        {
+            Assert.AreEqual(8, BinarySearch.Search(_values, 0, _values.Count - 1, 90));
+            Assert.AreEqual(8, BinarySearch.Search(_values, 0, _values.Count - 1, 90));
+        }
+
+        [TestMethod]
+        public void Search_NonExistingElements_ExpectsToGetMinusOne()
+        {
+            Assert.AreEqual(-1, BinarySearch.Search(_values, 0, _values.Count - 1, -20));
+            Assert.AreEqual(-1, BinarySearch.Search(_values, 0, _values.Count - 1, 15));
+            Assert.AreEqual(-1, BinarySearch.Search(_values, 0, _values.Count - 1, 456));
         }
     }
 }
