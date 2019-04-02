@@ -31,20 +31,20 @@ namespace CSFundamentalsTests.Algorithms.Search
         {
             List<int> values = new List<int> { 1, 3, 10, 14, 25, 27, 34, 78, 90, 90, 120 };
 
-            Assert.AreEqual(0, BinarySearch.Search(values, 0, values.Count - 1, 1));
-            Assert.AreEqual(1, BinarySearch.Search(values, 0, values.Count - 1, 3));
-            Assert.AreEqual(2, BinarySearch.Search(values, 0, values.Count - 1, 10));
-            Assert.AreEqual(3, BinarySearch.Search(values, 0, values.Count - 1, 14));
-            Assert.AreEqual(4, BinarySearch.Search(values, 0, values.Count - 1, 25));
-            Assert.AreEqual(5, BinarySearch.Search(values, 0, values.Count - 1, 27));
-            Assert.AreEqual(6, BinarySearch.Search(values, 0, values.Count - 1, 34));
-            Assert.AreEqual(7, BinarySearch.Search(values, 0, values.Count - 1, 78));
-            Assert.AreEqual(8, BinarySearch.Search(values, 0, values.Count - 1, 90));
-            Assert.AreEqual(8, BinarySearch.Search(values, 0, values.Count - 1, 90));
-            Assert.AreEqual(10, BinarySearch.Search(values, 0, values.Count - 1, 120));
-            Assert.AreEqual(-1, BinarySearch.Search(values, 0, values.Count - 1, -20));
-            Assert.AreEqual(-1, BinarySearch.Search(values, 0, values.Count - 1, 15));
-            Assert.AreEqual(-1, BinarySearch.Search(values, 0, values.Count - 1, 456));
+            Assert.AreEqual(0, JumpSearch.Search(values, 1));
+            Assert.AreEqual(1, JumpSearch.Search(values, 3));
+            Assert.AreEqual(2, JumpSearch.Search(values, 10));
+            Assert.AreEqual(3, JumpSearch.Search(values, 14));
+            Assert.AreEqual(4, JumpSearch.Search(values, 25));
+            Assert.AreEqual(5, JumpSearch.Search(values, 27));
+            Assert.AreEqual(6, JumpSearch.Search(values, 34));
+            Assert.AreEqual(7, JumpSearch.Search(values, 78));
+            Assert.AreEqual(9, JumpSearch.Search(values, 90));
+            Assert.AreEqual(9, JumpSearch.Search(values, 90));
+            Assert.AreEqual(10, JumpSearch.Search(values, 120));
+            Assert.AreEqual(-1, JumpSearch.Search(values, -20));
+            Assert.AreEqual(-1, JumpSearch.Search(values, 15));
+            Assert.AreEqual(-1, JumpSearch.Search(values, 456));
         }
     }
 }
