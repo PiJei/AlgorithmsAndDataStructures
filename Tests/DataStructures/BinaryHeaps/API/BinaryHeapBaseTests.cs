@@ -17,9 +17,9 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.DataStructures.BinaryHeaps.API
 {
@@ -27,60 +27,91 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps.API
     public class BinaryHeapBaseTests
     {
         [TestMethod]
-        public void BinaryHeap_Swap_Test()
-        {
-            List<int> values = new List<int> { 10, 34, 56, 2, 12, 1 };
-            var heap = new MockBinaryHeap<int>(values);
-            heap.Swap(values, 1, 2);
-            Assert.AreEqual(6, values.Count);
-            Assert.AreEqual(56, values[1]);
-            Assert.AreEqual(34, values[2]);
-        }
-
-        [TestMethod]
-        public void BinaryHeap_TryFindMinIndex_Test()
+        public void TryFindIndexOfMinSmallerThanReference_IndexesInRange_ExpectsSuccessAndCorrectMinIndex()
         {
             List<int> values = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
             var heap = new MockBinaryHeap<int>(values);
 
-            bool result1 = heap.TryFindMinIndex(values, new List<int> { 1, 2 }, 150, out int minValueIndex1);
-            Assert.IsTrue(result1);
-            Assert.AreEqual(1, minValueIndex1);
-
-            bool result2 = heap.TryFindMinIndex(values, new List<int> { 1, 2 }, Int32.MinValue, out int minValueIndex2);
-            Assert.IsFalse(result2);
-            Assert.AreEqual(int.MinValue, minValueIndex2);
-
-            bool result3 = heap.TryFindMinIndex(values, new List<int> { 1, 120 }, 21, out int minValueIndex3);
-            Assert.IsFalse(result3);
-            Assert.AreEqual(int.MinValue, minValueIndex3);
-
-            bool result4 = heap.TryFindMinIndex(values, new List<int> { 1, 3 }, 21, out int minValueIndex4);
-            Assert.IsFalse(result4);
-            Assert.AreEqual(int.MinValue, minValueIndex4);
+            bool result = heap.TryFindIndexOfMinSmallerThanReference(values, new List<int> { 1, 2 }, 150, out int minValueIndex);
+            Assert.IsTrue(result);
+            Assert.AreEqual(1, minValueIndex);
         }
 
         [TestMethod]
-        public void BinaryHeap_TryFindMaxIndex_Test()
+        public void TryFindIndexOfMinSmallerThanReference_IndexesInRangeAndReferenceMinInteger_ExpectsFailureAndMinIntegerAsIndex()
+        {
+            List<int> values = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
+            var heap = new MockBinaryHeap<int>(values);
+            
+            bool result = heap.TryFindIndexOfMinSmallerThanReference(values, new List<int> { 1, 2 }, Int32.MinValue, out int minValueIndex);
+            Assert.IsFalse(result);
+            Assert.AreEqual(int.MinValue, minValueIndex);
+        }
+
+        [TestMethod]
+        public void TryFindIndexOfMinSmallerThanReference_OutOfRangeIndexes_ExpectsFailureAndMinIntegerAsMinIndex()
         {
             List<int> values = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
             var heap = new MockBinaryHeap<int>(values);
 
-            bool result1 = heap.TryFindMaxIndex(values, values.Count, new List<int> { 1, 2 }, 150, out int maxValueIndex1);
-            Assert.IsTrue(result1);
-            Assert.AreEqual(2, maxValueIndex1);
+            bool result = heap.TryFindIndexOfMinSmallerThanReference(values, new List<int> { 1, 120 }, 21, out int minValueIndex);
+            Assert.IsFalse(result);
+            Assert.AreEqual(int.MinValue, minValueIndex);
+        }
 
-            bool result2 = heap.TryFindMaxIndex(values, values.Count, new List<int> { 1, 2 }, Int32.MaxValue, out int maxValueIndex2);
-            Assert.IsFalse(result2);
-            Assert.AreEqual(int.MaxValue, maxValueIndex2);
+        [TestMethod]
+        public void TryFindIndexOfMinSmallerThanReference_ReferenceIsSmallest_ExpectsFailureAndMinIntegerAsMinIndex()
+        {
+            List<int> values = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
+            var heap = new MockBinaryHeap<int>(values);
 
-            bool result3 = heap.TryFindMaxIndex(values, values.Count, new List<int> { 1, 120 }, 21, out int maxValueIndex3);
-            Assert.IsTrue(result3);
-            Assert.AreEqual(1, maxValueIndex3);
+            bool result = heap.TryFindIndexOfMinSmallerThanReference(values, new List<int> { 1, 3 }, 21, out int minValueIndex);
+            Assert.IsFalse(result);
+            Assert.AreEqual(int.MinValue, minValueIndex);
+        }
 
-            bool result4 = heap.TryFindMaxIndex(values, values.Count, new List<int> { 1, 3 }, 21, out int maxValueIndex4);
-            Assert.IsTrue(result4);
-            Assert.AreEqual(1, maxValueIndex4);
+        [TestMethod]
+        public void TryFindIndexOfMaxBiggerThanReference_IndexesInRange_ExpectsSuccessAndCorrectMaxIdex()
+        {
+            List<int> values = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
+            var heap = new MockBinaryHeap<int>(values);
+
+            bool result = heap.TryFindIndexOfMaxBiggerThanReference(values, values.Count, new List<int> { 1, 2 }, 150, out int maxValueIndex);
+            Assert.IsTrue(result);
+            Assert.AreEqual(2, maxValueIndex);
+        }
+
+        [TestMethod]
+        public void TryFindIndexOfMaxBiggerThanReference_ReferenceIsMaxInteger_ExpectsFailureAndMaxIntegerAsMaxIndex()
+        {
+            List<int> values = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
+            var heap = new MockBinaryHeap<int>(values);
+
+            bool result = heap.TryFindIndexOfMaxBiggerThanReference(values, values.Count, new List<int> { 1, 2 }, Int32.MaxValue, out int maxValueIndex);
+            Assert.IsFalse(result);
+            Assert.AreEqual(int.MaxValue, maxValueIndex);
+        }
+
+        [TestMethod]
+        public void TryFindIndexOfMaxBiggerThanReference_OneIndexOutOfRange_ExpectsSuccessAndMaxIntegerAsMaxIndex()
+        {
+            List<int> values = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
+            var heap = new MockBinaryHeap<int>(values);
+
+            bool result = heap.TryFindIndexOfMaxBiggerThanReference(values, values.Count, new List<int> { 1, 120 }, 21, out int maxValueIndex);
+            Assert.IsTrue(result);
+            Assert.AreEqual(1, maxValueIndex);
+        }
+
+        [TestMethod]
+        public void TryFindIndexOfMaxBiggerThanReference_IndexesInRange_ExpectsSuccessAndCorrectMaxIndex()
+        {
+            List<int> values = new List<int> { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
+            var heap = new MockBinaryHeap<int>(values);
+
+            bool result = heap.TryFindIndexOfMaxBiggerThanReference(values, values.Count, new List<int> { 1, 3 }, 21, out int maxValueIndex);
+            Assert.IsTrue(result);
+            Assert.AreEqual(1, maxValueIndex);
         }
     }
 }

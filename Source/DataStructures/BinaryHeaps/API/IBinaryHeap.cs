@@ -105,14 +105,6 @@ namespace CSFundamentals.DataStructures.BinaryHeaps.API
         /// <param name="index">Specifies the index of a node in an array. </param>
         /// <returns>Returns the level of the node. </returns>
         int GetNodeLevel(int index);
-
-        /// <summary>
-        /// Swaps the values at the given two indexes in the given array.
-        /// </summary>
-        /// <param name="array">Specifies an array.</param>
-        /// <param name="index1">Specifies the first index. </param>
-        /// <param name="index2">Specifies the second index.</param>
-        void Swap(List<T> array, int index1, int index2);
     }
 }
 

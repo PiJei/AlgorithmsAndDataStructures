@@ -17,9 +17,9 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using CSFundamentals.DataStructures.BinaryHeaps.API;
 using System;
 using System.Collections.Generic;
+using CSFundamentals.DataStructures.BinaryHeaps.API;
 
 namespace CSFundamentalsTests.DataStructures.BinaryHeaps.API
 {
@@ -27,7 +27,6 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps.API
     {
         public MockBinaryHeap(List<T> array) : base(array)
         {
-
         }
 
         public override void BubbleDown_Iteratively(int rootIndex, int heapArrayLength)

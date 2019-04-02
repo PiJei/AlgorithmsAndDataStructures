@@ -27,7 +27,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
     public partial class BubbleSortTests
     {
         [TestMethod]
-        public void BubbleSort_BubbleSort_Iterative_Test_WithDistinctValues()
+        public void Iterative_WithDistinctValues()
         {
             List<int> values = new List<int>(Constants.ArrayWithDistinctValues);
             BubbleSort.Sort_Iterative(values);
@@ -35,7 +35,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void BubbleSort_BubbleSort_Iterative_Test_WithDuplicateValues()
+        public void Iterative_WithDuplicateValues()
         {
             List<int> values = new List<int>(Constants.ArrayWithDuplicateValues);
             BubbleSort.Sort_Iterative(values);
@@ -43,7 +43,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void BubbleSort_BubbleSort_Iterative_Test_WithSortedDistinctValues()
+        public void Iterative_WithSortedDistinctValues()
         {
             List<int> values = new List<int>(Constants.ArrayWithSortedDistinctValues);
             BubbleSort.Sort_Iterative(values);
@@ -51,7 +51,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void BubbleSort_BubbleSort_Iterative_Test_WithSortedDuplicateValues()
+        public void Iterative_WithSortedDuplicateValues()
         {
             List<int> values = new List<int>(Constants.ArrayWithSortedDuplicateValues);
             BubbleSort.Sort_Iterative(values);
@@ -59,7 +59,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void BubbleSort_BubbleSort_Iterative_Test_WithReverselySortedDistinctValues()
+        public void BubbleSort_Iterative_WithReverselySortedDistinctValues()
         {
             List<int> values = new List<int>(Constants.ArrayWithReverselySortedDistinctValues);
             BubbleSort.Sort_Iterative(values);
@@ -67,7 +67,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void BubbleSort_BubbleSort_Iterative_Test_WithReverselySortedDuplicateValues()
+        public void BubbleSort_Iterative_WithReverselySortedDuplicateValues()
         {
             List<int> values = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
             BubbleSort.Sort_Iterative(values);

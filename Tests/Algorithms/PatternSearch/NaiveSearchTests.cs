@@ -27,7 +27,7 @@ namespace CSFundamentalsTests.PatternSearch
     public class NaiveSearchTests
     {
         [TestMethod]
-        public void NaiveSearch_Search_Test()
+        public void Search()
         {
             Assert.AreEqual(-1, NaiveSearch.Search("abd", "abdfgh")); /* Testing the case where substring is longer than string. */
             Assert.AreEqual(-1, NaiveSearch.Search(string.Empty, string.Empty));

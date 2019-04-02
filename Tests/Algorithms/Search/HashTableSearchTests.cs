@@ -17,10 +17,12 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CSFundamentals.Algorithms.Search;
 using System.Collections.Generic;
 using System.Linq;
+using CSFundamentals.Algorithms.Search;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+//TODO: Unify similar to other searches, ... but first must make sure the algorithm is what we wanted, .. 
 
 namespace CSFundamentalsTests.Algorithms.Search
 {
@@ -28,7 +30,7 @@ namespace CSFundamentalsTests.Algorithms.Search
     public class HashTableSearchTests
     {
         [TestMethod]
-        public void HashTableSearch_Test_Search()
+        public void Search()
         {
             List<int> values = new List<int> { 1, 3, 10, 14, 25, 27, 34, 78, 90, 90, 120 };
 

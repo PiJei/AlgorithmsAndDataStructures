@@ -27,7 +27,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
     public class HeapSortTests
     {
         [TestMethod]
-        public void HeapSort_HeapSortAscending_Test_WithDistinctValues()
+        public void HeapSortAscending_WithDistinctValues()
         {
             var values = new List<int>(Constants.ArrayWithDistinctValues);
             HeapSort.Sort_Ascending(values);
@@ -35,7 +35,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void HeapSort_HeapSortAscending_Test_WithDuplicateValues()
+        public void HeapSortAscending_WithDuplicateValues()
         {
             var values = new List<int>(Constants.ArrayWithDuplicateValues);
             HeapSort.Sort_Ascending(values);
@@ -43,7 +43,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void HeapSort_HeapSortAscending_Test_WithSortedDistinctValues()
+        public void HeapSortAscending_WithSortedDistinctValues()
         {
             var values = new List<int>(Constants.ArrayWithSortedDistinctValues);
             HeapSort.Sort_Ascending(values);
@@ -51,7 +51,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void HeapSort_HeapSortAscending_Test_WithSortedDuplicateValues()
+        public void HeapSortAscending_WithSortedDuplicateValues()
         {
             var values = new List<int>(Constants.ArrayWithSortedDuplicateValues);
             HeapSort.Sort_Ascending(values);
@@ -59,7 +59,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void HeapSort_HeapSortAscending_Test_WithReverselySortedDistinctValues()
+        public void HeapSortAscending_WithReverselySortedDistinctValues()
         {
             var values = new List<int>(Constants.ArrayWithReverselySortedDistinctValues);
             HeapSort.Sort_Ascending(values);
@@ -67,7 +67,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void HeapSort_HeapSortAscending_Test_WithRevereselySortedDuplicateValues()
+        public void HeapSortAscending_WithRevereselySortedDuplicateValues()
         {
             var values = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
             HeapSort.Sort_Ascending(values);

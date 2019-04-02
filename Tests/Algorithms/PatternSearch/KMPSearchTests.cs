@@ -28,7 +28,7 @@ namespace CSFundamentalsTests.PatternSearch
     public class KMPSearchTests
     {
         [TestMethod]
-        public void KMPSearch_Search_Test()
+        public void Search()
         {
             Assert.IsTrue(KMPSearch.Search("abd", "abdfgh").SequenceEqual(new List<int> { })); /* Testing the case where substring is longer than string. */
             Assert.AreEqual(1, KMPSearch.Search("abcd", "bc")[0]);

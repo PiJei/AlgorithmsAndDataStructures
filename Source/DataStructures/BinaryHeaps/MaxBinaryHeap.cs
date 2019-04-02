@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using CSFundamentals.Algorithms.Sort;
 using CSFundamentals.DataStructures.BinaryHeaps.API;
 using CSFundamentals.Styling;
 
@@ -92,7 +93,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
 
             while (index != 0 && HeapArray[parentIndex].CompareTo(HeapArray[index]) < 0)
             {
-                Swap(HeapArray, parentIndex, index);
+                Utils.Swap(HeapArray, parentIndex, index);
                 index = parentIndex;
                 parentIndex = GetParentIndex(index);
             }
@@ -155,14 +156,14 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
             int rightChildIndex = GetRightChildIndexInHeapArray(rootIndex);
             int maxElementIndex = rootIndex;
 
-            if (TryFindMaxIndex(HeapArray, heapArrayLength, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[maxElementIndex], out int maxIndex))
+            if (TryFindIndexOfMaxBiggerThanReference(HeapArray, heapArrayLength, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[maxElementIndex], out int maxIndex))
             {
                 maxElementIndex = maxIndex;
             }
 
             if (maxElementIndex != rootIndex)
             {
-                Swap(HeapArray, maxElementIndex, rootIndex);
+                Utils.Swap(HeapArray, maxElementIndex, rootIndex);
 
                 if (GetLeftChildIndexInHeapArray(maxElementIndex) < heapArrayLength)
                 {
@@ -184,19 +185,19 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
                 int rightChildIndex = GetRightChildIndexInHeapArray(rootIndex);
                 int maxElementIndex = rootIndex;
 
-                if (TryFindMaxIndex(HeapArray, heapArrayLength, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[rootIndex], out int maxIndex))
+                if (TryFindIndexOfMaxBiggerThanReference(HeapArray, heapArrayLength, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[rootIndex], out int maxIndex))
                 {
                     maxElementIndex = maxIndex;
                 }
 
                 if (maxElementIndex != rootIndex)
                 {
-                    Swap(HeapArray, maxElementIndex, rootIndex);
+                    Utils.Swap(HeapArray, maxElementIndex, rootIndex);
                     rootIndex = maxElementIndex;
                 }
                 else
                 {
-                    if (TryFindMaxIndex(HeapArray, heapArrayLength, new List<int> { leftChildIndex, rightChildIndex }, (T)typeof(T).GetField("MinValue").GetValue(null), out int maxChildIndex))
+                    if (TryFindIndexOfMaxBiggerThanReference(HeapArray, heapArrayLength, new List<int> { leftChildIndex, rightChildIndex }, (T)typeof(T).GetField("MinValue").GetValue(null), out int maxChildIndex))
                     {
                         rootIndex = maxChildIndex;
                     }

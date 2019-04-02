@@ -26,7 +26,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
     public partial class MergeSortTests
     {
         [TestMethod]
-        public void MergeSort_MergeSort_Recursively_Test_WithDistinctValues()
+        public void MergeSort_Recursively_WithDistinctValues()
         {
             var values = new List<int>(Constants.ArrayWithDistinctValues);
             MergeSort.Sort_Recursively(values, 0, values.Count - 1);
@@ -34,7 +34,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void MergeSort_MergeSort_Recursively_Test_WithDuplicateValues()
+        public void MergeSort_Recursively_WithDuplicateValues()
         {
             var values = new List<int>(Constants.ArrayWithDuplicateValues);
             MergeSort.Sort_Recursively(values, 0, values.Count - 1);
@@ -42,7 +42,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void MergeSort_MergeSort_Recursively_Test_WithSortedDistinctValues()
+        public void MergeSort_Recursively_WithSortedDistinctValues()
         {
             var values = new List<int>(Constants.ArrayWithSortedDistinctValues);
             MergeSort.Sort_Recursively(values, 0, values.Count - 1);
@@ -50,7 +50,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void MergeSort_MergeSort_Recursively_Test_WithSortedDuplicateValues()
+        public void MergeSort_Recursively_WithSortedDuplicateValues()
         {
             var values = new List<int>(Constants.ArrayWithSortedDuplicateValues);
             MergeSort.Sort_Recursively(values, 0, values.Count - 1);
@@ -58,7 +58,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void MergeSort_MergeSort_Recursively_Test_WithReverselySortedDistinctValues()
+        public void MergeSort_Recursively_WithReverselySortedDistinctValues()
         {
             var values = new List<int>(Constants.ArrayWithReverselySortedDistinctValues);
             MergeSort.Sort_Recursively(values, 0, values.Count - 1);
@@ -66,7 +66,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void MergeSort_MergeSort_Recursively_Test_WithReverselySortedDuplicateValues()
+        public void MergeSort_Recursively_WithReverselySortedDuplicateValues()
         {
             var values = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
             MergeSort.Sort_Recursively(values, 0, values.Count - 1);
@@ -74,7 +74,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void MergeSort_Merge_Test()
+        public void Merge()
         {
             List<int> values1 = new List<int> { 10, 1 };
             MergeSort.Merge(values1, 0, 0, 1);

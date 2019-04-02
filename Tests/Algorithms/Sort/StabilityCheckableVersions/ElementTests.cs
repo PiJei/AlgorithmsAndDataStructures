@@ -26,7 +26,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
     public class ElementTests
     {
         [TestMethod]
-        public void Element_Equals_Test()
+        public void Equals()
         {
             Element element1 = new Element(1, 0);
             Assert.IsFalse(element1.Equals(null));
@@ -36,7 +36,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void Element_IsStable_Test()
+        public void IsStable()
         {
             Element element1 = new Element(1, 0); // Element1: 1, 0, -1
             Element element2 = new Element(2, 0); // Element2: 2, 0, -1

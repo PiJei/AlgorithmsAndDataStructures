@@ -26,7 +26,7 @@ namespace CSFundamentalsTests.SubarraySearch
     public class SubarraySearchTests
     {
         [TestMethod]
-        public void SubarraySearch_Search_NaiveContiguousSublist_Test()
+        public void Search_NaiveContiguousSublist()
         {
             Assert.IsTrue(Naive.Search_NaiveContiguousSublist(new List<int> { 10, 3, 4, 1, 7, 8 }, new List<int> { 1, 7 }));
             Assert.IsFalse(Naive.Search_NaiveContiguousSublist(new List<int> { 10, 3, 4, 1, 7, 8 }, new List<int> { 1, 8 }));
@@ -37,7 +37,7 @@ namespace CSFundamentalsTests.SubarraySearch
         }
 
         [TestMethod]
-        public void SubarraySearch_Search_UnContiguousSublist_Test()
+        public void Search_UnContiguousSublist()
         {
             Assert.IsTrue(Naive.Search_UnContiguousSublist(new List<int> { 10, 3, 4, 1, 7, 8 }, new List<int> { 1, 7 }));
             Assert.IsTrue(Naive.Search_UnContiguousSublist(new List<int> { 10, 3, 4, 1, 7, 8 }, new List<int> { 1, 8 }));

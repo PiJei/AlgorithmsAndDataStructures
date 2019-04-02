@@ -17,42 +17,46 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CSFundamentals.Algorithms.Search;
 using System.Collections.Generic;
+using CSFundamentals.Algorithms.Search;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSFundamentalsTests.Search
+namespace CSFundamentalsTests.Algorithms.Search
 {
     [TestClass]
     public class InterpolationSearchTests
     {
         [TestMethod]
-        public void InterpolationSearch_Search_Test()
+        public void Search_DistinctElements()
         {
-            List<int> values = new List<int> { 3, 7, 10, 14, 21, 27, 32, 38, 45, 53 };
-            Assert.AreEqual(-1, InterpolationSearch.Search(values, 0, values.Count - 1, 200));
-            Assert.AreEqual(9, InterpolationSearch.Search(values, 0, values.Count - 1, 53));
-            Assert.AreEqual(-1, InterpolationSearch.Search(values, 0, values.Count - 1, -1));
-            Assert.AreEqual(3, InterpolationSearch.Search(values, 0, values.Count - 1, 14));
-            Assert.AreEqual(5, InterpolationSearch.Search(values, 0, values.Count - 1, 27));
-            Assert.AreEqual(6, InterpolationSearch.Search(values, 0, values.Count - 1, 32));
-            Assert.AreEqual(1, InterpolationSearch.Search(values, 0, values.Count - 1, 7));
-            Assert.AreEqual(-1, InterpolationSearch.Search(values, 0, values.Count - 1, 4));
+            SearchTests.DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition(InterpolationSearch.Search);
         }
 
         [TestMethod]
-        public void InterpolationSearch_GetSearchStartingIndex_Test()
+        public void Search_DuplicateElements()
         {
-            List<int> values = new List<int> { 3, 7, 10, 14, 21, 27, 32, 38, 45, 53 };
+            SearchTests.DuplicateElements_ExpectsToGetTheIndexOfOneOfTheDupliatesNoMatterHowManyTimeSearchIsPerformed(InterpolationSearch.Search);
+        }
 
-            Assert.AreEqual(35, InterpolationSearch.GetSearchStartingIndex(values, 0, values.Count - 1, 200));
-            Assert.AreEqual(9, InterpolationSearch.GetSearchStartingIndex(values, 0, values.Count - 1, 53));
-            Assert.AreEqual(0, InterpolationSearch.GetSearchStartingIndex(values, 0, values.Count - 1, -1));
-            Assert.AreEqual(1, InterpolationSearch.GetSearchStartingIndex(values, 0, values.Count - 1, 14));
-            Assert.AreEqual(4, InterpolationSearch.GetSearchStartingIndex(values, 0, values.Count - 1, 27));
-            Assert.AreEqual(5, InterpolationSearch.GetSearchStartingIndex(values, 0, values.Count - 1, 32));
-            Assert.AreEqual(0, InterpolationSearch.GetSearchStartingIndex(values, 0, values.Count - 1, 7));
-            Assert.AreEqual(0, InterpolationSearch.GetSearchStartingIndex(values, 0, values.Count - 1, 4));
+        [TestMethod]
+        public void Search_NonExistingElements()
+        {
+            SearchTests.NonExistingElements_ExpectsToGetMinusOne(InterpolationSearch.Search);
+        }
+
+        [TestMethod]
+        public void GetStartIndex()
+        {
+            List<int> values = new List<int> { 3, 7, 10, 14, 21, 27, 27, 32, 38, 45, 53 };
+
+            Assert.AreEqual(39, InterpolationSearch.GetStartIndex(values, 0, values.Count - 1, 200));
+            Assert.AreEqual(10, InterpolationSearch.GetStartIndex(values, 0, values.Count - 1, 53));
+            Assert.AreEqual(0, InterpolationSearch.GetStartIndex(values, 0, values.Count - 1, -1));
+            Assert.AreEqual(2, InterpolationSearch.GetStartIndex(values, 0, values.Count - 1, 14));
+            Assert.AreEqual(4, InterpolationSearch.GetStartIndex(values, 0, values.Count - 1, 27));
+            Assert.AreEqual(5, InterpolationSearch.GetStartIndex(values, 0, values.Count - 1, 32));
+            Assert.AreEqual(0, InterpolationSearch.GetStartIndex(values, 0, values.Count - 1, 7));
+            Assert.AreEqual(0, InterpolationSearch.GetStartIndex(values, 0, values.Count - 1, 4));
         }
     }
 }

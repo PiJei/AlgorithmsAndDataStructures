@@ -31,6 +31,7 @@ using CSFundamentals.Styling;
 
 namespace CSFundamentals.DataStructures.Trees
 {
+    [DataStructure("BTree")]
     public class BTree<TKey, TValue> where TKey : IComparable<TKey>
     {
         /// <summary>
@@ -368,7 +369,7 @@ namespace CSFundamentals.DataStructures.Trees
                 {
                     return FindLeafToInsertKey(root.GetChild(i), key);
                 }
-                else if (key.CompareTo(root.GetKey(i)) == 0) /* means a node which such key already exists.*/
+                else if (key.CompareTo(root.GetKey(i)) == 0) /* means a node with such key already exists.*/
                 {
                     throw new ArgumentException("A node with this key exists in the tree. Duplicate keys are not allowed.");
                 }
@@ -447,7 +448,7 @@ namespace CSFundamentals.DataStructures.Trees
         /// </summary>
         /// <param name="levelCount">Is the number of levels in the tree. </param>
         /// <returns>Maximum number of keys a tree with <paramref name="levelCount"> levels can hold. </returns>
-        public int GetMaxKeyCount(int levelCount)
+        public int GetMaxCapacity(int levelCount)
         {
             int maxKeys = 0;
             for (int l = 0; l < levelCount; l++)

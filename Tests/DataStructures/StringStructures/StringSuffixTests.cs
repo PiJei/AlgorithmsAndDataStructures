@@ -26,7 +26,7 @@ namespace CSFundamentalsTests.StringStructures
     public class StringSuffixTests
     {
         [TestMethod]
-        public void StringSuffix_Comparison_Test()
+        public void Comparison()
         {
             var suffix1 = new StringSuffix(0, 'a', 'b');
             var suffix2 = new StringSuffix(0, 'a', 'b');

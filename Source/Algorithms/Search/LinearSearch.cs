@@ -38,9 +38,9 @@ namespace CSFundamentals.Algorithms.Search
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(n)")]
         [TimeComplexity(Case.Average, "O(n)")]
-        public static int Search(List<int> values, int searchValue)
+        public static int Search(List<int> values, int startIndex, int endIndex, int searchValue)
         {
-            for (int i = 0; i < values.Count; i++)
+            for (int i = startIndex; i <= endIndex; i++)
             {
                 if (values[i] == searchValue)
                 {

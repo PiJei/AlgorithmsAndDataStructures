@@ -26,7 +26,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
     public class UtilsTests
     {
         [TestMethod]
-        public void Utils_DeepCopy_Test()
+        public void DeepCopy()
         {
             var alice = new Person("Alice");
             alice.Parent = new Person("Bob");
@@ -65,5 +65,4 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             }
         }
     }
-
 }

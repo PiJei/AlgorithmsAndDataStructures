@@ -32,6 +32,7 @@ namespace CSFundamentals.DataStructures.Trees
     /// </summary>
     /// <typeparam name="TKey">Specifies the type of the keys in the tree. </typeparam>
     /// <typeparam name="TValue">Specifies the type of the values in the tree. </typeparam>
+    [DataStructure("AVLTree")]
     public class AVLTree<TKey, TValue> : BinarySearchTreeBase<AVLTreeNode<TKey, TValue>, TKey, TValue> where TKey : IComparable<TKey>
     {
         //TODO: Is o best true? I am suspicious, the input perhaps should be in a special order. 

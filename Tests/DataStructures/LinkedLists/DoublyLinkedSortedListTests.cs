@@ -27,7 +27,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
     public class DoublyLinkedSortedListTests
     {
         [TestMethod]
-        public void DoublyLinkedSortedList_Insert_Test_1()
+        public void Insert_1()
         {
             DoublyLinkedSortedList<int> list = new DoublyLinkedSortedList<int>();
             Assert.AreEqual(0, list.Count());
@@ -54,7 +54,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         }
 
         [TestMethod]
-        public void DoublyLinkedSortedList_Insert_Test_2()
+        public void Insert_2()
         {
             DoublyLinkedSortedList<int> list = new DoublyLinkedSortedList<int>();
             Assert.AreEqual(0, list.Count());
@@ -71,7 +71,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         }
 
         [TestMethod]
-        public void DoublyLinkedSortedList_Delete_Test()
+        public void Delete()
         {
             DoublyLinkedSortedList<int> list = new DoublyLinkedSortedList<int>();
             Assert.AreEqual(0, list.Count());

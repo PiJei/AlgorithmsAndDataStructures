@@ -27,7 +27,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
     public partial class SelectionSortTests
     {
         [TestMethod]
-        public void SelectionSort_SelectionSortIteratively_Test_WithDistnctValues()
+        public void SelectionSortIteratively_WithDistnctValues()
         {
             var values = new List<int>(Constants.ArrayWithDistinctValues);
             SelectionSort.Sort_Iteratively(values);
@@ -35,7 +35,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void SelectionSort_SelectionSortIteratively_Test_WithDuplicateValues()
+        public void SelectionSortIteratively_WithDuplicateValues()
         {
             var values = new List<int>(Constants.ArrayWithDuplicateValues);
             SelectionSort.Sort_Iteratively(values);
@@ -43,7 +43,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void SelectionSort_SelectionSortIteratively_Test_WithSortedDistinctValues()
+        public void SelectionSortIteratively_WithSortedDistinctValues()
         {
             var values = new List<int>(Constants.ArrayWithSortedDistinctValues);
             SelectionSort.Sort_Iteratively(values);
@@ -51,7 +51,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void SelectionSort_SelectionSortIteratively_Test_WithSortedDuplicateValues()
+        public void SelectionSortIteratively_WithSortedDuplicateValues()
         {
             var values = new List<int>(Constants.ArrayWithSortedDuplicateValues);
             SelectionSort.Sort_Iteratively(values);
@@ -59,7 +59,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void SelectionSort_SelectionSortIteratively_Test_WithReverselySortedDistinctValues()
+        public void SelectionSortIteratively_WithReverselySortedDistinctValues()
         {
             var values = new List<int>(Constants.ArrayWithReverselySortedDistinctValues);
             SelectionSort.Sort_Iteratively(values);
@@ -67,7 +67,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void SelectionSort_SelectionSortIteratively_Test_WithReverselySortedDuplicateValues()
+        public void SelectionSortIteratively_WithReverselySortedDuplicateValues()
         {
             var values = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
             SelectionSort.Sort_Iteratively(values);

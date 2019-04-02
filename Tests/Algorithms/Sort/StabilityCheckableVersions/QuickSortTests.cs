@@ -27,7 +27,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
     public partial class QuickSortTests
     {
         [TestMethod]
-        public void QuickSort_IsStable_Test()
+        public void IsStable()
         {
             /* We need to find "a" list with duplicate values, such that shows Quick sort is not stable. 
                This does not mean that Quick sort is unstable for all arrays with duplicate values. */

@@ -27,7 +27,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
     public partial class RadixSortTests
     {
         [TestMethod]
-        public void RadixSort_RadixSort_Iterative_V1_Test_WithDistinctValues()
+        public void RadixSort_Iterative_V1_WithDistinctValues()
         {
             List<int> values = new List<int>(Constants.ArrayWithDistinctValues);
             RadixSort.Sort_Iterative_V1(values);
@@ -35,7 +35,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void RadixSort_RadixSort_Iterative_V1_Test_WithDuplicateValues()
+        public void RadixSort_Iterative_V1_WithDuplicateValues()
         {
             List<int> values = new List<int>(Constants.ArrayWithDuplicateValues);
             RadixSort.Sort_Iterative_V1(values);
@@ -43,7 +43,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void RadixSort_RadixSort_Iterative_V1_Test_WithSortedDistinctValues()
+        public void RadixSort_Iterative_V1_WithSortedDistinctValues()
         {
             List<int> values = new List<int>(Constants.ArrayWithSortedDistinctValues);
             RadixSort.Sort_Iterative_V1(values);
@@ -51,7 +51,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void RadixSort_RadixSort_Iterative_V1_Test_WithSortedDuplicateValues()
+        public void RadixSort_Iterative_V1_WithSortedDuplicateValues()
         {
             List<int> values = new List<int>(Constants.ArrayWithSortedDuplicateValues);
             RadixSort.Sort_Iterative_V1(values);
@@ -59,7 +59,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void RadixSort_RadixSort_Iterative_V1_Test_WithReverselySortedDistinctValues()
+        public void RadixSort_Iterative_V1_WithReverselySortedDistinctValues()
         {
             List<int> values = new List<int>(Constants.ArrayWithReverselySortedDistinctValues);
             RadixSort.Sort_Iterative_V1(values);
@@ -67,7 +67,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void RadixSort_RadixSort_Iterative_V1_Test_WithReverselyDuplicateValues()
+        public void RadixSort_Iterative_V1_WithReverselyDuplicateValues()
         {
             List<int> values = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
             RadixSort.Sort_Iterative_V1(values);

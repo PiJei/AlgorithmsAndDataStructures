@@ -26,7 +26,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
     public class DoublyLinkedNodeTests
     {
         [TestMethod]
-        public void DoublyLinkedNode_IsHead_Test()
+        public void IsHead()
         {
             DoublyLinkedNode<int> node = new DoublyLinkedNode<int>(10);
             Assert.IsTrue(node.IsHead());
@@ -37,7 +37,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         }
 
         [TestMethod]
-        public void DoublyLinkedNode_IsTail_Test()
+        public void IsTail()
         {
             DoublyLinkedNode<int> node = new DoublyLinkedNode<int>(10);
             Assert.IsTrue(node.IsTail());

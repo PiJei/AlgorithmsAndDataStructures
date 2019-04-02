@@ -26,7 +26,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists.API
     public class LinkedListBaseTests
     {
         [TestMethod]
-        public void LinkedListBase_Length_Test()
+        public void Length()
         {
             MockLinkedList<int> list = new MockLinkedList<int>();
             Assert.AreEqual(0, list.Count());
@@ -50,7 +50,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists.API
 
         [TestMethod]
         [ExpectedException(typeof(NotFoundException))]
-        public void LinkedListBase_Search_Test_Failure_1()
+        public void Search_EmptyListAndNotExistingValue_ThrowsException()
         {
             MockLinkedList<int> list = new MockLinkedList<int>();
             var result = list.Search(10);
@@ -58,14 +58,14 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists.API
 
         [TestMethod]
         [ExpectedException(typeof(NotFoundException))]
-        public void LinkedListBase_Search_Test_Failure_2()
+        public void Search_NonEmptyListAndNotExistingValue_ThrowsException()
         {
             MockLinkedList<int> list = new MockLinkedList<int>(new MockLinkedNode<int>(20));
             var result = list.Search(10);
         }
 
         [TestMethod]
-        public void LinkedListBase_Search_Test_Success()
+        public void Search_Success()
         {
             var head = new MockLinkedNode<int>(20);
             head.Next = new MockLinkedNode<int>(10);

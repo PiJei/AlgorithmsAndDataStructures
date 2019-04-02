@@ -20,9 +20,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using CSFundamentals.Algorithms.Sort;
 using CSFundamentals.DataStructures.BinaryHeaps.API;
 using CSFundamentals.Styling;
-
+// TODO: Test all the methods with all the heaps: internals, and privates, ... 
 namespace CSFundamentals.DataStructures.BinaryHeaps
 {
     /// <summary>
@@ -33,7 +34,6 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
     {
         public MinBinaryHeap(List<T> array) : base(array)
         {
-
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
 
             while (index != 0 && HeapArray[parentIndex].CompareTo(HeapArray[index]) > 0)
             {
-                Swap(HeapArray, index, parentIndex);
+                Utils.Swap(HeapArray, index, parentIndex);
                 index = parentIndex;
                 parentIndex = GetParentIndex(index);
             }
@@ -159,7 +159,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
             int minElementIndex = rootIndex;
 
             /* Find the minimum value's index (among 3 values: root, and its left and right children). */
-            if (TryFindMinIndex(HeapArray, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[minElementIndex], out int minIndex))
+            if (TryFindIndexOfMinSmallerThanReference(HeapArray, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[minElementIndex], out int minIndex))
             {
                 minElementIndex = minIndex;
             }
@@ -167,7 +167,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
             /* If root is not the minimum value, then bubble/trickle down the root via the smallest child. */
             if (minElementIndex != rootIndex)
             {
-                Swap(HeapArray, minElementIndex, rootIndex);
+                Utils.Swap(HeapArray, minElementIndex, rootIndex);
 
                 /* At this point, the value that was at rootIndex, is now at index minElementIndex, and the bubble/trickle down shall continue. */
                 if (GetLeftChildIndexInHeapArray(minElementIndex) < heapArrayLength) /* To avoid unnecessary recursion : notice that there is no need to check for the right child's index, as if left child index already is out of range so is right child index, since right child index = left child index +1. */
@@ -190,20 +190,20 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
                 int rightChildIndex = GetRightChildIndexInHeapArray(rootIndex);
                 int minElementIndex = rootIndex;
 
-                if (TryFindMinIndex(HeapArray, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[minElementIndex], out int minIndex))
+                if (TryFindIndexOfMinSmallerThanReference(HeapArray, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[minElementIndex], out int minIndex))
                 {
                     minElementIndex = minIndex;
                 }
 
                 if (rootIndex != minElementIndex)
                 {
-                    Swap(HeapArray, minElementIndex, rootIndex);
+                    Utils.Swap(HeapArray, minElementIndex, rootIndex);
                     rootIndex = minElementIndex;
                 }
                 else
                 {
                     /* Continue with the index of the smallest child. */
-                    if (TryFindMinIndex(HeapArray, new List<int> { leftChildIndex, rightChildIndex }, (T)typeof(T).GetField("MaxValue").GetValue(null), out int minChildIndex))
+                    if (TryFindIndexOfMinSmallerThanReference(HeapArray, new List<int> { leftChildIndex, rightChildIndex }, (T)typeof(T).GetField("MaxValue").GetValue(null), out int minChildIndex))
                     {
                         rootIndex = minChildIndex;
                     }

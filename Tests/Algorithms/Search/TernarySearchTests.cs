@@ -18,33 +18,30 @@
  */
 
 using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentals.Algorithms.Search;
-
-namespace CSFundamentalsTests.Search
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+// TODO: Binary search and Ternary searches are very similar, can I just pass a function to them instead?
+namespace CSFundamentalsTests.Algorithms.Search
 {
     [TestClass]
     public class TernarySearchTests
     {
         [TestMethod]
-        public void TernarySearch_Search_Test()
+        public void Search_DistinctElements()
         {
-            List<int> values = new List<int> { 1, 3, 10, 14, 25, 27, 34, 78, 90, 90, 120 };
+            SearchTests.DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition(TernarySearch.Search);
+        }
 
-            Assert.AreEqual(0, TernarySearch.Search(values, 0, values.Count - 1, 1));
-            Assert.AreEqual(1, TernarySearch.Search(values, 0, values.Count - 1, 3));
-            Assert.AreEqual(2, TernarySearch.Search(values, 0, values.Count - 1, 10));
-            Assert.AreEqual(3, TernarySearch.Search(values, 0, values.Count - 1, 14));
-            Assert.AreEqual(4, TernarySearch.Search(values, 0, values.Count - 1, 25));
-            Assert.AreEqual(5, TernarySearch.Search(values, 0, values.Count - 1, 27));
-            Assert.AreEqual(6, TernarySearch.Search(values, 0, values.Count - 1, 34));
-            Assert.AreEqual(7, TernarySearch.Search(values, 0, values.Count - 1, 78));
-            Assert.AreEqual(8, TernarySearch.Search(values, 0, values.Count - 1, 90));
-            Assert.AreEqual(8, TernarySearch.Search(values, 0, values.Count - 1, 90));
-            Assert.AreEqual(10, TernarySearch.Search(values, 0, values.Count - 1, 120));
-            Assert.AreEqual(-1, TernarySearch.Search(values, 0, values.Count - 1, -20));
-            Assert.AreEqual(-1, TernarySearch.Search(values, 0, values.Count - 1, 15));
-            Assert.AreEqual(-1, TernarySearch.Search(values, 0, values.Count - 1, 456));
+        [TestMethod]
+        public void Search_DuplicateElements()
+        {
+            SearchTests.DuplicateElements_ExpectsToGetTheIndexOfOneOfTheDupliatesNoMatterHowManyTimeSearchIsPerformed(TernarySearch.Search);
+        }
+
+        [TestMethod]
+        public void Search_NonExistingElements()
+        {
+            SearchTests.NonExistingElements_ExpectsToGetMinusOne(TernarySearch.Search);
         }
     }
 }

@@ -17,11 +17,10 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using CSFundamentals.DataStructures.BinaryHeaps;
 using CSFundamentals.DataStructures.BinaryHeaps.API;
-
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 {
@@ -29,7 +28,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
     public class MinMaxBinaryHeapTests
     {
         [TestMethod]
-        public void MinMaxBinaryHeap_BuildHeapRecursively_Test1()
+        public void BuildHeapRecursively_DistinctValues()
         {
             List<int> values = new List<int> { 70, 21, 220, 10, 1, 34, 3, 150, 85 };
             var heap = new MinMaxBinaryHeap<int>(values);
@@ -40,11 +39,11 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
                 int level = heap.GetNodeLevel(i);
                 if (heap.IsMinLevel(level))
                 {
-                    Assert.IsTrue(HasMinMaxOrderingForMinLevel(heap, i));
+                    Assert.IsTrue(HasMinMaxOrderPropertyForMinLevel(heap, i));
                 }
                 else
                 {
-                    Assert.IsTrue(HasMinMaxOrderingForMaxLevel(heap, i));
+                    Assert.IsTrue(HasMinMaxOrderPropertyForMaxLevel(heap, i));
                 }
             }
 
@@ -60,7 +59,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         }
 
         [TestMethod]
-        public void MinMaxBinaryHeap_BuildHeapRecursively_Test2()
+        public void BuildHeapRecursively_DuplicateValues()
         {
             List<int> values = new List<int> { 39, 45, 37, 45, 38, 50, 59, 65, 27, 25, 36, 30, 57, 28 };
             var heap = new MinMaxBinaryHeap<int>(values);
@@ -71,16 +70,16 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
                 int level = heap.GetNodeLevel(i);
                 if (heap.IsMinLevel(level))
                 {
-                    Assert.IsTrue(HasMinMaxOrderingForMinLevel(heap, i));
+                    Assert.IsTrue(HasMinMaxOrderPropertyForMinLevel(heap, i));
                 }
                 else
                 {
-                    Assert.IsTrue(HasMinMaxOrderingForMaxLevel(heap, i));
+                    Assert.IsTrue(HasMinMaxOrderPropertyForMaxLevel(heap, i));
                 }
             }
         }
 
-        public static bool HasMinMaxOrderingForMinLevel(BinaryHeapBase<int> heap, int index)
+        public static bool HasMinMaxOrderPropertyForMinLevel(BinaryHeapBase<int> heap, int index)
         {
             int leftChildIndex = heap.GetLeftChildIndexInHeapArray(index);
             int rightChildIndex = heap.GetRightChildIndexInHeapArray(index);
@@ -101,7 +100,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
             return true;
         }
 
-        public static bool HasMinMaxOrderingForMaxLevel(BinaryHeapBase<int> heap, int index)
+        public static bool HasMinMaxOrderPropertyForMaxLevel(BinaryHeapBase<int> heap, int index)
         {
             int leftChildIndex = heap.GetLeftChildIndexInHeapArray(index);
             int rightChildIndex = heap.GetRightChildIndexInHeapArray(index);

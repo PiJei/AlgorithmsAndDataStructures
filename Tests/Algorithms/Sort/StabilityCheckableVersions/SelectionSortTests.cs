@@ -27,7 +27,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
     public partial class SelectionSortTests
     {
         [TestMethod]
-        public void SelectionSort_IsStable_Test()
+        public void IsStable()
         {
             /* All we need to do is to find "a" list with a particular arrangements of duplicate values and other distinct values, such that breaks isStable sort question for heap sort.. 
              * Meaning that not finding this list, does not prove that the sort method is stable.

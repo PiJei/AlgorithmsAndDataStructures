@@ -27,7 +27,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
     public partial class RadixSortTests
     {
         [TestMethod]
-        public void RadixSort_IsStable_Test()
+        public void IsStable()
         {
             /* Radix sort is stable, try to find an example which breaks this property.*/
 

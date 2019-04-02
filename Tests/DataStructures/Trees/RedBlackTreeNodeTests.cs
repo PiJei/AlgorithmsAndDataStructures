@@ -26,7 +26,7 @@ namespace CSFundamentalsTests.DataStructures.Trees
     public class RedBlackTreeNodeTests
     {
         [TestMethod]
-        public void RedBlackTree_FlipColor_Test()
+        public void FlipColor()
         {
             RedBlackTreeNode<int, string> A = new RedBlackTreeNode<int, string>(2, "A", Color.Red);
             Assert.AreEqual(Color.Red, A.Color);
