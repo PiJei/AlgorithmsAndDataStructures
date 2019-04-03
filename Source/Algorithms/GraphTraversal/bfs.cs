@@ -29,24 +29,24 @@ namespace CSFundamentals.Algorithms.GraphTraversal
         /// </summary>
         /// <param name="root">Specifies a node in the graph from which the search starts. </param>
         /// <returns>a serialization of the graph, with a BFS ordering.</returns>
-        public static List<GraphNode> BFS_Iterative(GraphNode root) /* Root is the node from which the search starts.*/
+        public static List<GraphNode<TValue>> BFS_Iterative<TValue>(GraphNode<TValue> root) /* Root is the node from which the search starts.*/
         {
-            Queue<GraphNode> queue = new Queue<GraphNode>();
+            Queue<GraphNode<TValue>> queue = new Queue<GraphNode<TValue>>();
 
             root.IsInserted = true;
             root.DistanceFromRoot = 0;
             queue.Enqueue(root);
 
             /* To store a BFS ordering of the nodes, starting from root. */
-            List<GraphNode> bfsOrdering = new List<GraphNode>();
+            List<GraphNode<TValue>> bfsOrdering = new List<GraphNode<TValue>>();
 
             while (queue.Count > 0) /* While queue is not empty.*/
             {
-                GraphNode nextNode = queue.Dequeue();
+                GraphNode<TValue> nextNode = queue.Dequeue();
                 bfsOrdering.Add(nextNode); /* Appending the queue head to bfsOrdering.*/
 
                 /* Enqueue all the adjacent neighbors of nextNode. */
-                foreach (GraphEdge edge in nextNode.Adjacents)
+                foreach (GraphEdge<TValue> edge in nextNode.Adjacents)
                 {
                     if (!edge.Node.IsInserted) /* Without this, and in the presence of cycles, the loop will be endless, the program can get out of memory exceptions. */
                     {
@@ -64,17 +64,17 @@ namespace CSFundamentals.Algorithms.GraphTraversal
         /// <summary>
         /// Is the recursive version of BFS_Iterative algorithm. Expects the queue to already have the root node in it. 
         /// </summary>
-        public static void BFS_Recursive(Queue<GraphNode> queue, List<GraphNode> bfsOrdering)
+        public static void BFS_Recursive<TValue>(Queue<GraphNode<TValue>> queue, List<GraphNode<TValue>> bfsOrdering)
         {
             if (queue.Count == 0)
             {
                 return;
             }
 
-            GraphNode node = queue.Dequeue();
+            GraphNode<TValue> node = queue.Dequeue();
             bfsOrdering.Add(node);
 
-            foreach (GraphEdge edge in node.Adjacents)
+            foreach (GraphEdge<TValue> edge in node.Adjacents)
             {
                 if (!edge.Node.IsInserted) /* To prevent endless recursion in case graph has cycles. */
                 {

@@ -26,35 +26,35 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
     [TestClass]
     public class BfsTests
     {
-        private GraphNode A = new GraphNode(4);
-        private GraphNode B = new GraphNode(1);
-        private GraphNode C = new GraphNode(20);
-        private GraphNode D = new GraphNode(6);
-        private GraphNode E = new GraphNode(3);
-        private GraphNode F = new GraphNode(11);
-        private GraphNode G = new GraphNode(5);
+        private GraphNode<int> A = new GraphNode<int>(4);
+        private GraphNode<int> B = new GraphNode<int>(1);
+        private GraphNode<int> C = new GraphNode<int>(20);
+        private GraphNode<int> D = new GraphNode<int>(6);
+        private GraphNode<int> E = new GraphNode<int>(3);
+        private GraphNode<int> F = new GraphNode<int>(11);
+        private GraphNode<int> G = new GraphNode<int>(5);
 
         [TestInitialize]
         public void Init()
         {
-            A.Adjacents.Add(new GraphEdge(B, 0));
-            A.Adjacents.Add(new GraphEdge(C, 0));
-            A.Adjacents.Add(new GraphEdge(D, 0));
+            A.Adjacents.Add(new GraphEdge<int>(B, 0));
+            A.Adjacents.Add(new GraphEdge<int>(C, 0));
+            A.Adjacents.Add(new GraphEdge<int>(D, 0));
 
-            B.Adjacents.Add(new GraphEdge(E, 0));
-            B.Adjacents.Add(new GraphEdge(F, 0));
-            B.Adjacents.Add(new GraphEdge(A, 0));
+            B.Adjacents.Add(new GraphEdge<int>(E, 0));
+            B.Adjacents.Add(new GraphEdge<int>(F, 0));
+            B.Adjacents.Add(new GraphEdge<int>(A, 0));
 
-            C.Adjacents.Add(new GraphEdge(G, 0));
-            C.Adjacents.Add(new GraphEdge(A, 0));
+            C.Adjacents.Add(new GraphEdge<int>(G, 0));
+            C.Adjacents.Add(new GraphEdge<int>(A, 0));
 
-            D.Adjacents.Add(new GraphEdge(F, 0));
-            D.Adjacents.Add(new GraphEdge(A, 0));
+            D.Adjacents.Add(new GraphEdge<int>(F, 0));
+            D.Adjacents.Add(new GraphEdge<int>(A, 0));
 
-            F.Adjacents.Add(new GraphEdge(D, 0));
-            F.Adjacents.Add(new GraphEdge(B, 0));
+            F.Adjacents.Add(new GraphEdge<int>(D, 0));
+            F.Adjacents.Add(new GraphEdge<int>(B, 0));
 
-            E.Adjacents.Add(new GraphEdge(B, 0));
+            E.Adjacents.Add(new GraphEdge<int>(B, 0));
         }
 
         public void ResetGraph() // It seems that this step is unnecessary. Even though the same instance is used across all the test methods. 
@@ -71,7 +71,7 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
         [TestMethod]
         public void Iterative_StartFromA()
         {
-            List<GraphNode> bfsOrdering = BFS.BFS_Iterative(A);
+            List<GraphNode<int>> bfsOrdering = BFS.BFS_Iterative(A);
             Assert.AreEqual(7, bfsOrdering.Count);
             Assert.AreEqual(4, bfsOrdering[0].Value);
             Assert.AreEqual(1, bfsOrdering[1].Value);
@@ -86,7 +86,7 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
         [TestMethod]
         public void Iterative_StartFromE()
         {
-            List<GraphNode> bfsOrdering = BFS.BFS_Iterative(E);
+            List<GraphNode<int>> bfsOrdering = BFS.BFS_Iterative(E);
             Assert.AreEqual(7, bfsOrdering.Count);
 
             Assert.AreEqual(3, bfsOrdering[0].Value);
@@ -103,10 +103,10 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
         [TestMethod]
         public void Recursive_StartFromA()
         {
-            Queue<GraphNode> queue = new Queue<GraphNode>();
+            Queue<GraphNode<int>> queue = new Queue<GraphNode<int>>();
             A.IsInserted = true;
             queue.Enqueue(A);
-            List<GraphNode> bfsOrdering = new List<GraphNode>();
+            List<GraphNode<int>> bfsOrdering = new List<GraphNode<int>>();
             BFS.BFS_Recursive(queue, bfsOrdering);
 
             Assert.AreEqual(7, bfsOrdering.Count);
@@ -125,10 +125,10 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
         [TestMethod]
         public void Recursive_StartFromE()
         {
-            Queue<GraphNode> queue = new Queue<GraphNode>();
+            Queue<GraphNode<int>> queue = new Queue<GraphNode<int>>();
             E.IsInserted = true;
             queue.Enqueue(E);
-            List<GraphNode> bfsOrdering = new List<GraphNode>();
+            List<GraphNode<int>> bfsOrdering = new List<GraphNode<int>>();
             BFS.BFS_Recursive(queue, bfsOrdering);
 
             Assert.AreEqual(7, bfsOrdering.Count);

@@ -17,6 +17,7 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System;
 using System.Collections.Generic;
 using CSFundamentals.DataStructures.BinaryHeaps;
 using CSFundamentals.DataStructures.BinaryHeaps.API;
@@ -30,11 +31,21 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         [TestMethod]
         public void BuildHeapRecursively_DistinctValues()
         {
-            List<int> values = new List<int> { 70, 21, 220, 10, 1, 34, 3, 150, 85 };
-            var heap = new MinMaxBinaryHeap<int>(values);
+            var A = new KeyValuePair<int, string>(70, "A");
+            var B = new KeyValuePair<int, string>(21, "B");
+            var C = new KeyValuePair<int, string>(220, "C");
+            var D = new KeyValuePair<int, string>(10, "D");
+            var E = new KeyValuePair<int, string>(1, "E");
+            var F = new KeyValuePair<int, string>(34, "F");
+            var G = new KeyValuePair<int, string>(3, "G");
+            var H = new KeyValuePair<int, string>(150, "H");
+            var I = new KeyValuePair<int, string>(85, "I");
+            List<KeyValuePair<int, string>> keyValues = new List<KeyValuePair<int, string>> { A, B, C, D, E, F, G, H, I };
+
+            var heap = new MinMaxBinaryHeap<int, string>(keyValues);
             heap.BuildHeap_Recursively(heap.HeapArray.Count);
 
-            for (int i = 0; i < values.Count; i++)
+            for (int i = 0; i < keyValues.Count; i++)
             {
                 int level = heap.GetNodeLevel(i);
                 if (heap.IsMinLevel(level))
@@ -47,25 +58,40 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
                 }
             }
 
-            Assert.IsTrue(heap.IsMinLevel(heap.GetNodeLevel(values.IndexOf(70))));
-            Assert.IsFalse(heap.IsMinLevel(heap.GetNodeLevel(values.IndexOf(21))));
-            Assert.IsFalse(heap.IsMinLevel(heap.GetNodeLevel(values.IndexOf(220))));
-            Assert.IsTrue(heap.IsMinLevel(heap.GetNodeLevel(values.IndexOf(10))));
-            Assert.IsTrue(heap.IsMinLevel(heap.GetNodeLevel(values.IndexOf(1))));
-            Assert.IsTrue(heap.IsMinLevel(heap.GetNodeLevel(values.IndexOf(34))));
-            Assert.IsTrue(heap.IsMinLevel(heap.GetNodeLevel(values.IndexOf(3))));
-            Assert.IsFalse(heap.IsMinLevel(heap.GetNodeLevel(values.IndexOf(150))));
-            Assert.IsFalse(heap.IsMinLevel(heap.GetNodeLevel(values.IndexOf(85))));
+            Assert.IsTrue(heap.IsMinLevel(heap.GetNodeLevel(keyValues.IndexOf(A))));
+            Assert.IsFalse(heap.IsMinLevel(heap.GetNodeLevel(keyValues.IndexOf(B))));
+            Assert.IsFalse(heap.IsMinLevel(heap.GetNodeLevel(keyValues.IndexOf(C))));
+            Assert.IsTrue(heap.IsMinLevel(heap.GetNodeLevel(keyValues.IndexOf(D))));
+            Assert.IsTrue(heap.IsMinLevel(heap.GetNodeLevel(keyValues.IndexOf(E))));
+            Assert.IsTrue(heap.IsMinLevel(heap.GetNodeLevel(keyValues.IndexOf(F))));
+            Assert.IsTrue(heap.IsMinLevel(heap.GetNodeLevel(keyValues.IndexOf(G))));
+            Assert.IsFalse(heap.IsMinLevel(heap.GetNodeLevel(keyValues.IndexOf(H))));
+            Assert.IsFalse(heap.IsMinLevel(heap.GetNodeLevel(keyValues.IndexOf(I))));
         }
 
         [TestMethod]
         public void BuildHeapRecursively_DuplicateValues()
         {
-            List<int> values = new List<int> { 39, 45, 37, 45, 38, 50, 59, 65, 27, 25, 36, 30, 57, 28 };
-            var heap = new MinMaxBinaryHeap<int>(values);
+            List<KeyValuePair<int, string>> keyValues = new List<KeyValuePair<int, string>> {
+                new KeyValuePair<int, string>(39,"A"),
+                new KeyValuePair<int, string>(45,"B"),
+                new KeyValuePair<int, string>(37,"C"),
+                new KeyValuePair<int, string>(45,"D"),
+                new KeyValuePair<int, string>(38,"E"),
+                new KeyValuePair<int, string>(50,"F"),
+                new KeyValuePair<int, string>(59,"G"),
+                new KeyValuePair<int, string>(65,"H"),
+                new KeyValuePair<int, string>(27,"I"),
+                new KeyValuePair<int, string>(25,"J"),
+                new KeyValuePair<int, string>(36,"K"),
+                new KeyValuePair<int, string>(30,"L"),
+                new KeyValuePair<int, string>(57,"M"),
+                new KeyValuePair<int, string>(28, "N")};
+
+            var heap = new MinMaxBinaryHeap<int, string>(keyValues);
             heap.BuildHeap_Recursively(heap.HeapArray.Count);
 
-            for (int i = 0; i < values.Count; i++)
+            for (int i = 0; i < keyValues.Count; i++)
             {
                 int level = heap.GetNodeLevel(i);
                 if (heap.IsMinLevel(level))
@@ -79,7 +105,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
             }
         }
 
-        public static bool HasMinMaxOrderPropertyForMinLevel(BinaryHeapBase<int> heap, int index)
+        public static bool HasMinMaxOrderPropertyForMinLevel<TKey, TValue>(BinaryHeapBase<TKey, TValue> heap, int index) where TKey : IComparable<TKey>
         {
             int leftChildIndex = heap.GetLeftChildIndexInHeapArray(index);
             int rightChildIndex = heap.GetRightChildIndexInHeapArray(index);
@@ -87,20 +113,20 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 
             if (leftChildIndex >= 0 && leftChildIndex < heap.HeapArray.Count)
             {
-                Assert.IsTrue(heap.HeapArray[index] <= heap.HeapArray[leftChildIndex]);
+                Assert.IsTrue(heap.HeapArray[index].Key.CompareTo(heap.HeapArray[leftChildIndex].Key) <= 0);
             }
             if (rightChildIndex >= 0 && rightChildIndex < heap.HeapArray.Count)
             {
-                Assert.IsTrue(heap.HeapArray[index] <= heap.HeapArray[rightChildIndex]);
+                Assert.IsTrue(heap.HeapArray[index].Key.CompareTo(heap.HeapArray[rightChildIndex].Key) <= 0);
             }
             if (parentIndex >= 0 && parentIndex < heap.HeapArray.Count)
             {
-                Assert.IsTrue(heap.HeapArray[index] <= heap.HeapArray[parentIndex]);
+                Assert.IsTrue(heap.HeapArray[index].Key.CompareTo(heap.HeapArray[parentIndex].Key) <= 0);
             }
             return true;
         }
 
-        public static bool HasMinMaxOrderPropertyForMaxLevel(BinaryHeapBase<int> heap, int index)
+        public static bool HasMinMaxOrderPropertyForMaxLevel<TKey, TValue>(BinaryHeapBase<TKey, TValue> heap, int index) where TKey : IComparable<TKey>
         {
             int leftChildIndex = heap.GetLeftChildIndexInHeapArray(index);
             int rightChildIndex = heap.GetRightChildIndexInHeapArray(index);
@@ -108,15 +134,15 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 
             if (leftChildIndex >= 0 && leftChildIndex < heap.HeapArray.Count)
             {
-                Assert.IsTrue(heap.HeapArray[index] >= heap.HeapArray[leftChildIndex]);
+                Assert.IsTrue(heap.HeapArray[index].Key.CompareTo(heap.HeapArray[leftChildIndex].Key) >= 0);
             }
             if (rightChildIndex >= 0 && rightChildIndex < heap.HeapArray.Count)
             {
-                Assert.IsTrue(heap.HeapArray[index] >= heap.HeapArray[rightChildIndex]);
+                Assert.IsTrue(heap.HeapArray[index].Key.CompareTo(heap.HeapArray[rightChildIndex].Key) >= 0);
             }
             if (parentIndex >= 0 && parentIndex < heap.HeapArray.Count)
             {
-                Assert.IsTrue(heap.HeapArray[index] >= heap.HeapArray[parentIndex]);
+                Assert.IsTrue(heap.HeapArray[index].Key.CompareTo(heap.HeapArray[parentIndex].Key) >= 0);
             }
             return true;
         }

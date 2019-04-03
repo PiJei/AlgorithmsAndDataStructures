@@ -22,10 +22,10 @@ using System.Collections.Generic;
 
 namespace CSFundamentals.Algorithms.GraphTraversal
 {
-    public class GraphNode : IComparable<GraphNode>
+    public class GraphNode<TValue> : IComparable<GraphNode<TValue>>
     {
-        public int Value { get; set; }
-        public List<GraphEdge> Adjacents { get; set; } = new List<GraphEdge>();
+        public TValue Value { get; set; }
+        public List<GraphEdge<TValue>> Adjacents { get; set; } = new List<GraphEdge<TValue>>();
         public int DistanceFromRoot { get; set; } = 0; 
 
         /// <summary>
@@ -33,12 +33,12 @@ namespace CSFundamentals.Algorithms.GraphTraversal
         /// </summary>
         public bool IsInserted { get; set; }
 
-        public GraphNode(int value)
+        public GraphNode(TValue value)
         {
             Value = value;
         }
         
-        public int CompareTo(GraphNode other)
+        public int CompareTo(GraphNode<TValue> other)
         {
             if (other == null) return 1;
             if (ReferenceEquals(this, other)) return 0;
@@ -48,8 +48,8 @@ namespace CSFundamentals.Algorithms.GraphTraversal
             return 0;
         }
        
-        public static readonly GraphNode MinValue = new GraphNode(int.MinValue);
+        public static readonly GraphNode<TValue> MinValue = new GraphNode<TValue>(default(TValue));
 
-        public static readonly GraphNode MaxValue = new GraphNode(int.MaxValue);
+        public static readonly GraphNode<TValue> MaxValue = new GraphNode<TValue>(default(TValue));
     }
 }

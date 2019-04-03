@@ -28,21 +28,21 @@ namespace CSFundamentals.Algorithms.GraphTraversal
         /// </summary>
         /// <param name="root">Specifies a node in the graph from which the search starts. </param>
         /// <returns>a serialization of the graph, with a DFS ordering.</returns>
-        public static List<GraphNode> DFS_Iterative(GraphNode root)
+        public static List<GraphNode<TValue>> DFS_Iterative<TValue>(GraphNode<TValue> root)
         {
-            Stack<GraphNode> stack = new Stack<GraphNode>();
+            Stack<GraphNode<TValue>> stack = new Stack<GraphNode<TValue>>();
 
             root.IsInserted = true;
             root.DistanceFromRoot = 0;
             stack.Push(root);
 
             /* To store a DFS ordering of the nodes, starting from root. */
-            List<GraphNode> dfsOrdering = new List<GraphNode>();
+            List<GraphNode<TValue>> dfsOrdering = new List<GraphNode<TValue>>();
             while (stack.Count > 0) /* while stack is not empty. */
             {
-                GraphNode nextNode = stack.Pop();
+                GraphNode<TValue> nextNode = stack.Pop();
                 dfsOrdering.Add(nextNode);
-                foreach (GraphEdge edge in nextNode.Adjacents)
+                foreach (GraphEdge<TValue> edge in nextNode.Adjacents)
                 {
                     if (!edge.Node.IsInserted) /* Without this check, while loop could never terminate in case graph contains cycles.*/
                     {
@@ -61,12 +61,12 @@ namespace CSFundamentals.Algorithms.GraphTraversal
         /// </summary>
         /// <param name="root"> Specifies the node to start the search from.</param>
         /// <param name="dfsOrdering">Contains a serialization of the graph, with a DFS ordering.</param>
-        public static void DFS_Recursive(GraphNode root, List<GraphNode> dfsOrdering)
+        public static void DFS_Recursive<TValue>(GraphNode<TValue> root, List<GraphNode<TValue>> dfsOrdering)
         {
             root.IsInserted = true;
             dfsOrdering.Add(root);
 
-            foreach (GraphEdge edge in root.Adjacents)
+            foreach (GraphEdge<TValue> edge in root.Adjacents)
             {
                 if (!edge.Node.IsInserted)
                 {

@@ -32,17 +32,16 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
     /// Implements a Max Binary Heap, and its main operations.
     /// </summary>
     [DataStructure("MaxBinaryHeap")]
-    public class MaxBinaryHeap<T> : BinaryHeapBase<T> where T : IComparable<T>
+    public class MaxBinaryHeap<TKey, TValue> : BinaryHeapBase<TKey, TValue> where TKey : IComparable<TKey>
     {
-        public MaxBinaryHeap(List<T> array) : base(array)
+        public MaxBinaryHeap(List<KeyValuePair<TKey, TValue>> array) : base(array)
         {
-
         }
 
         /// <summary>
         /// Builds an in-place max heap on the given array. 
         /// </summary>
-        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         public override void BuildHeap_Recursively(int heapArrayLength)
         {
             for (int i = heapArrayLength / 2; i >= 0; i--)
@@ -54,7 +53,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <summary>
         /// Is the iterative version of BuildHeap_Recursively. Expect to see exact same results for these two methods. 
         /// </summary>
-        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         public override void BuildHeap_Iteratively(int heapArrayLength)
         {
             for (int i = heapArrayLength / 2; i >= 0; i--)
@@ -68,7 +67,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// </summary>
         /// <param name="newValue">Specifies the new value to be inserted in the tree.</param>
         /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
-        public override void Insert(T value, int heapArrayLength)
+        public override void Insert(KeyValuePair<TKey, TValue> value, int heapArrayLength)
         {
             HeapArray.Add(value);// means gets added to the end of the list. 
 
@@ -91,7 +90,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
                 return;
             }
 
-            while (index != 0 && HeapArray[parentIndex].CompareTo(HeapArray[index]) < 0)
+            while (index != 0 && HeapArray[parentIndex].Key.CompareTo(HeapArray[index].Key) < 0)
             {
                 Utils.Swap(HeapArray, parentIndex, index);
                 index = parentIndex;
@@ -102,12 +101,12 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <summary>
         /// Removes the max element from the heap.
         /// </summary>
-        /// <param name="rootValue">If the operation is successful, contains the maximum element in the array.</param>
-        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        /// <param name="keyValue">If the operation is successful, contains the maximum element in the array.</param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         /// <returns>True in case of success, and false otherwise</returns>
-        public override bool TryRemoveRoot(out T rootValue, int heapArrayLength)
+        public override bool TryRemoveRoot(out KeyValuePair<TKey, TValue> keyValue, int heapArrayLength)
         {
-            rootValue = (T)typeof(T).GetField("MaxValue").GetValue(null);
+            keyValue = new KeyValuePair<TKey, TValue>((TKey)typeof(TKey).GetField("MaxValue").GetValue(null), default(TValue));
 
             if (heapArrayLength == 0)
             {
@@ -115,12 +114,12 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
             }
             if (heapArrayLength == 1)
             {
-                rootValue = HeapArray[0];
+                keyValue = HeapArray[0];
                 HeapArray.Clear();
                 return true;
             }
 
-            rootValue = HeapArray[0];
+            keyValue = HeapArray[0];
             HeapArray[0] = HeapArray[heapArrayLength - 1];
             HeapArray.RemoveAt(heapArrayLength - 1);
             BubbleDown_Recursively(0, heapArrayLength - 1); /* notice that the array is shorter by one value now, thus the new array length is one smaller. */
@@ -131,17 +130,17 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="rootValue"></param>
-        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        /// <param name="keyValue"></param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         /// <returns></returns>
-        public override bool TryFindRoot(out T rootValue, int heapArrayLength)
+        public override bool TryFindRoot(out KeyValuePair<TKey, TValue> keyValue, int heapArrayLength)
         {
             if (HeapArray.Any())
             {
-                rootValue = HeapArray[0];
+                keyValue = HeapArray[0];
                 return true;
             }
-            rootValue = (T)typeof(T).GetField("MinValue").GetValue(null);
+            keyValue = new KeyValuePair<TKey, TValue>((TKey)typeof(TKey).GetField("MinValue").GetValue(null), default(TValue));
             return false;
         }
 
@@ -149,14 +148,14 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// 
         /// </summary>
         /// <param name="rootIndex"></param>
-        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         public override void BubbleDown_Recursively(int rootIndex, int heapArrayLength)
         {
             int leftChildIndex = GetLeftChildIndexInHeapArray(rootIndex);
             int rightChildIndex = GetRightChildIndexInHeapArray(rootIndex);
             int maxElementIndex = rootIndex;
 
-            if (TryFindIndexOfMaxBiggerThanReference(HeapArray, heapArrayLength, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[maxElementIndex], out int maxIndex))
+            if (TryFindIndexOfMaxBiggerThanReference(HeapArray, heapArrayLength, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[maxElementIndex].Key, out int maxIndex))
             {
                 maxElementIndex = maxIndex;
             }
@@ -176,7 +175,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// 
         /// </summary>
         /// <param name="rootIndex"></param>
-        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         public override void BubbleDown_Iteratively(int rootIndex, int heapArrayLength)
         {
             while (GetLeftChildIndexInHeapArray(rootIndex) < heapArrayLength)
@@ -185,7 +184,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
                 int rightChildIndex = GetRightChildIndexInHeapArray(rootIndex);
                 int maxElementIndex = rootIndex;
 
-                if (TryFindIndexOfMaxBiggerThanReference(HeapArray, heapArrayLength, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[rootIndex], out int maxIndex))
+                if (TryFindIndexOfMaxBiggerThanReference(HeapArray, heapArrayLength, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[rootIndex].Key, out int maxIndex))
                 {
                     maxElementIndex = maxIndex;
                 }
@@ -197,7 +196,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
                 }
                 else
                 {
-                    if (TryFindIndexOfMaxBiggerThanReference(HeapArray, heapArrayLength, new List<int> { leftChildIndex, rightChildIndex }, (T)typeof(T).GetField("MinValue").GetValue(null), out int maxChildIndex))
+                    if (TryFindIndexOfMaxBiggerThanReference(HeapArray, heapArrayLength, new List<int> { leftChildIndex, rightChildIndex }, (TKey)typeof(TKey).GetField("MinValue").GetValue(null), out int maxChildIndex))
                     {
                         rootIndex = maxChildIndex;
                     }

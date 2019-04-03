@@ -23,7 +23,7 @@ using System.Collections.Generic;
 
 namespace CSFundamentals.DataStructures.BinaryHeaps.API
 {
-    public abstract class BinaryHeapBase<T> : IBinaryHeap<T> where T : IComparable<T>
+    public abstract class BinaryHeapBase<TKey, TValue> : IBinaryHeap<TKey, TValue> where TKey : IComparable<TKey>
     {
         /// <summary>
         /// Note that passing the array size is not a must, as the class itself contains the array and has access to its size. However some algorithms such as HeapSort which rely on a heap to perform sorting, are better implemented, if we have the length of the array passed to these methods. 
@@ -33,11 +33,11 @@ namespace CSFundamentals.DataStructures.BinaryHeaps.API
 
         public abstract void BuildHeap_Recursively(int heapArrayLength);
 
-        public abstract void Insert(T value, int heapArrayLength);
+        public abstract void Insert(KeyValuePair<TKey, TValue> keyValue, int heapArrayLength);
 
-        public abstract bool TryRemoveRoot(out T rootValue, int heapArrayLength);
+        public abstract bool TryRemoveRoot(out KeyValuePair<TKey, TValue> keyValue, int heapArrayLength);
 
-        public abstract bool TryFindRoot(out T rootValue, int heapArrayLength);
+        public abstract bool TryFindRoot(out KeyValuePair<TKey, TValue> keyValue, int heapArrayLength);
 
         public abstract void BubbleDown_Recursively(int rootIndex, int heapArrayLength);
 
@@ -45,9 +45,9 @@ namespace CSFundamentals.DataStructures.BinaryHeaps.API
 
         public abstract void BubbleUp_Iteratively(int index, int heapArrayLength);
 
-        public List<T> HeapArray;
+        public List<KeyValuePair<TKey, TValue>> HeapArray;
 
-        public BinaryHeapBase(List<T> array)
+        public BinaryHeapBase(List<KeyValuePair<TKey, TValue>> array)
         {
             HeapArray = array;
         }
@@ -92,30 +92,30 @@ namespace CSFundamentals.DataStructures.BinaryHeaps.API
         /// <summary>
         /// Finds the minimum element in the array, among the given indexes, with respect to minValueReference, and returns the index of the min value. 
         /// </summary>
-        /// <param name="values">Specifies the list of values. </param>
+        /// <param name="list">Specifies the list of values. </param>
         /// <param name="indexes">Specifies the list of indexes among which we want to find the minimum value. </param>
-        /// <param name="minValueReference">Specifies the reference for the minimum value.  </param>
-        /// <param name="minValueIndex">Specifies the index of the minimum value among the specifies indexes. </param>
+        /// <param name="minKeyReference">Specifies the reference for the minimum value.  </param>
+        /// <param name="minKeyIndex">Specifies the index of the minimum value among the specifies indexes. </param>
         /// <returns>True in case of success, and false in case of failure. </returns>
-        public bool TryFindIndexOfMinSmallerThanReference(List<T> values, List<int> indexes, T minValueReference, out int minValueIndex)
+        public bool TryFindIndexOfMinSmallerThanReference(List<KeyValuePair<TKey, TValue>> list, List<int> indexes, TKey minKeyReference, out int minKeyIndex)
         {
-            minValueIndex = Int32.MinValue;
+            minKeyIndex = Int32.MinValue;
 
             /* If all of the indexes exceed the range of the array, return false, and leave minValueReference as it was */
-            if (indexes.All(index => index >= values.Count || index < 0))
+            if (indexes.All(index => index >= list.Count || index < 0))
             {
                 return false;
             }
 
             /* Find the minimum value.*/
-            foreach (int index in indexes.Where(index => index < values.Count && index >= 0 && values[index].CompareTo(minValueReference) < 0))
+            foreach (int index in indexes.Where(index => index < list.Count && index >= 0 && list[index].Key.CompareTo(minKeyReference) < 0))
             {
-                minValueReference = values[index];
-                minValueIndex = index;
+                minKeyReference = list[index].Key;
+                minKeyIndex = index;
             }
 
             /* In the case that minValueReference is smallest, nothing changes, and minValueIndex remains as initiated at the beginning of the method. */
-            if (minValueIndex == Int32.MinValue)
+            if (minKeyIndex == Int32.MinValue)
             {
                 return false; /* meaning none of the elements in the given indexes, were smaller than the reference value. */
             }
@@ -126,31 +126,31 @@ namespace CSFundamentals.DataStructures.BinaryHeaps.API
         /// <summary>
         /// Finds the maximum element in the array, among the given indexes, with respect to maxValueReference, and returns the index of the max value. 
         /// </summary>
-        /// <param name="values">Specifies the list of values. </param>
-        /// <param name="valuesCount">Specifies the length of values array, which based on the usage, might be less than values.Count. For example when called via Heap-Sort. </param>
+        /// <param name="list">Specifies the list of values. </param>
+        /// <param name="listLength">Specifies the length of values array, which based on the usage, might be less than values.Count. For example when called via Heap-Sort. </param>
         /// <param name="indexes">Specifies the list of indexes among which we want to find the maximum value. </param>
-        /// <param name="maxValueReference">Specifies the reference for the maximum value.  </param>
-        /// <param name="maxValueIndex">Specifies the index of the maximum value among the specifies indexes. </param>
+        /// <param name="maxKeyReference">Specifies the reference for the maximum value.  </param>
+        /// <param name="maxKeyIndex">Specifies the index of the maximum value among the specifies indexes. </param>
         /// <returns>True in case of success, and false in case of failure. </returns>
-        public bool TryFindIndexOfMaxBiggerThanReference(List<T> values, int valuesCount, List<int> indexes, T maxValueReference, out int maxValueIndex)
+        public bool TryFindIndexOfMaxBiggerThanReference(List<KeyValuePair<TKey, TValue>> list, int listLength, List<int> indexes, TKey maxKeyReference, out int maxKeyIndex)
         {
-            maxValueIndex = Int32.MaxValue;
+            maxKeyIndex = Int32.MaxValue;
 
             /* If all of the indexes exceed the range of the array, return false, and leave maxValueReference as it was */
-            if (indexes.All(index => index >= valuesCount))
+            if (indexes.All(index => index >= listLength))
             {
                 return false;
             }
 
             /* Find the minimum value.*/
-            foreach (int index in indexes.Where(index => index < valuesCount && values[index].CompareTo(maxValueReference) > 0))
+            foreach (int index in indexes.Where(index => index < listLength && list[index].Key.CompareTo(maxKeyReference) > 0))
             {
-                maxValueReference = values[index];
-                maxValueIndex = index;
+                maxKeyReference = list[index].Key;
+                maxKeyIndex = index;
             }
 
             /* In the case that maxValueReference is biggest, nothing changes, and maxValueIndex remains as initiated at the beginning of the method. */
-            if (maxValueIndex == Int32.MaxValue)
+            if (maxKeyIndex == Int32.MaxValue)
             {
                 return false; /* meaning none of the elements in the given indexes, were bigger than the reference value. */
             }
@@ -158,11 +158,11 @@ namespace CSFundamentals.DataStructures.BinaryHeaps.API
             return true;
         }
 
-        public int FindIndex(T value)
+        public int FindIndex(TKey key)
         {
             for (int i = 0; i < HeapArray.Count; i++)
             {
-                if (HeapArray[i].Equals(value))
+                if (HeapArray[i].Key.Equals(key))
                 {
                     return i;
                 }
