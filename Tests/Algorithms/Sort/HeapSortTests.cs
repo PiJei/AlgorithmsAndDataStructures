@@ -27,50 +27,50 @@ namespace CSFundamentalsTests.Algorithms.Sort
     public class HeapSortTests
     {
         [TestMethod]
-        public void HeapSortAscending_WithDistinctValues()
+        public void Sort_WithDistinctValues()
         {
             var values = new List<int>(Constants.ArrayWithDistinctValues);
-            HeapSort.Sort_Ascending(values);
+            values = HeapSort.Sort(values);
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
-        public void HeapSortAscending_WithDuplicateValues()
+        public void Sort_WithDuplicateValues()
         {
             var values = new List<int>(Constants.ArrayWithDuplicateValues);
-            HeapSort.Sort_Ascending(values);
+            values = HeapSort.Sort(values);
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
-        public void HeapSortAscending_WithSortedDistinctValues()
+        public void Sort_WithSortedDistinctValues()
         {
             var values = new List<int>(Constants.ArrayWithSortedDistinctValues);
-            HeapSort.Sort_Ascending(values);
+            values = HeapSort.Sort(values);
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
-        public void HeapSortAscending_WithSortedDuplicateValues()
+        public void Sort_WithSortedDuplicateValues()
         {
             var values = new List<int>(Constants.ArrayWithSortedDuplicateValues);
-            HeapSort.Sort_Ascending(values);
+            values = HeapSort.Sort(values);
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
-        public void HeapSortAscending_WithReverselySortedDistinctValues()
+        public void Sort_WithReverselySortedDistinctValues()
         {
             var values = new List<int>(Constants.ArrayWithReverselySortedDistinctValues);
-            HeapSort.Sort_Ascending(values);
+            values = HeapSort.Sort(values);
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
         [TestMethod]
-        public void HeapSortAscending_WithRevereselySortedDuplicateValues()
+        public void Sort_WithRevereselySortedDuplicateValues()
         {
             var values = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
-            HeapSort.Sort_Ascending(values);
+            values = HeapSort.Sort(values);
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
     }

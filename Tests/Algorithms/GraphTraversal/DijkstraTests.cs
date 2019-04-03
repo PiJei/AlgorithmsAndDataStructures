@@ -29,54 +29,54 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
         [TestMethod]
         public void GetShortestDistancesFromRoot()
         {
-            var node1 = new GraphNode(0);
-            var node2 = new GraphNode(1);
-            var node3 = new GraphNode(7);
-            var node4 = new GraphNode(2);
-            var node5 = new GraphNode(8);
-            var node6 = new GraphNode(6);
-            var node7 = new GraphNode(3);
-            var node8 = new GraphNode(5);
-            var node9 = new GraphNode(4);
+            var node1 = new GraphNode<int>(0);
+            var node2 = new GraphNode<int>(1);
+            var node3 = new GraphNode<int>(7);
+            var node4 = new GraphNode<int>(2);
+            var node5 = new GraphNode<int>(8);
+            var node6 = new GraphNode<int>(6);
+            var node7 = new GraphNode<int>(3);
+            var node8 = new GraphNode<int>(5);
+            var node9 = new GraphNode<int>(4);
 
-            node1.Adjacents.Add(new GraphEdge(node2, 4));
-            node1.Adjacents.Add(new GraphEdge(node3, 8));
+            node1.Adjacents.Add(new GraphEdge<int>(node2, 4));
+            node1.Adjacents.Add(new GraphEdge<int>(node3, 8));
 
-            node2.Adjacents.Add(new GraphEdge(node1, 4));
-            node2.Adjacents.Add(new GraphEdge(node3, 11));
-            node2.Adjacents.Add(new GraphEdge(node4, 8));
+            node2.Adjacents.Add(new GraphEdge<int>(node1, 4));
+            node2.Adjacents.Add(new GraphEdge<int>(node3, 11));
+            node2.Adjacents.Add(new GraphEdge<int>(node4, 8));
 
-            node3.Adjacents.Add(new GraphEdge(node1, 8));
-            node3.Adjacents.Add(new GraphEdge(node2, 11));
-            node3.Adjacents.Add(new GraphEdge(node5, 7));
-            node3.Adjacents.Add(new GraphEdge(node6, 1));
+            node3.Adjacents.Add(new GraphEdge<int>(node1, 8));
+            node3.Adjacents.Add(new GraphEdge<int>(node2, 11));
+            node3.Adjacents.Add(new GraphEdge<int>(node5, 7));
+            node3.Adjacents.Add(new GraphEdge<int>(node6, 1));
 
-            node4.Adjacents.Add(new GraphEdge(node2, 8));
-            node4.Adjacents.Add(new GraphEdge(node5, 2));
-            node4.Adjacents.Add(new GraphEdge(node7, 7));
-            node4.Adjacents.Add(new GraphEdge(node8, 4));
+            node4.Adjacents.Add(new GraphEdge<int>(node2, 8));
+            node4.Adjacents.Add(new GraphEdge<int>(node5, 2));
+            node4.Adjacents.Add(new GraphEdge<int>(node7, 7));
+            node4.Adjacents.Add(new GraphEdge<int>(node8, 4));
 
-            node5.Adjacents.Add(new GraphEdge(node4, 2));
-            node5.Adjacents.Add(new GraphEdge(node3, 7));
-            node5.Adjacents.Add(new GraphEdge(node6, 6));
+            node5.Adjacents.Add(new GraphEdge<int>(node4, 2));
+            node5.Adjacents.Add(new GraphEdge<int>(node3, 7));
+            node5.Adjacents.Add(new GraphEdge<int>(node6, 6));
 
-            node6.Adjacents.Add(new GraphEdge(node3, 1));
-            node6.Adjacents.Add(new GraphEdge(node5, 6));
-            node6.Adjacents.Add(new GraphEdge(node8, 2));
+            node6.Adjacents.Add(new GraphEdge<int>(node3, 1));
+            node6.Adjacents.Add(new GraphEdge<int>(node5, 6));
+            node6.Adjacents.Add(new GraphEdge<int>(node8, 2));
 
-            node7.Adjacents.Add(new GraphEdge(node4, 7));
-            node7.Adjacents.Add(new GraphEdge(node8, 14));
-            node7.Adjacents.Add(new GraphEdge(node9, 9));
+            node7.Adjacents.Add(new GraphEdge<int>(node4, 7));
+            node7.Adjacents.Add(new GraphEdge<int>(node8, 14));
+            node7.Adjacents.Add(new GraphEdge<int>(node9, 9));
 
-            node8.Adjacents.Add(new GraphEdge(node6, 2));
-            node8.Adjacents.Add(new GraphEdge(node4, 4));
-            node8.Adjacents.Add(new GraphEdge(node7, 14));
-            node8.Adjacents.Add(new GraphEdge(node9, 10));
+            node8.Adjacents.Add(new GraphEdge<int>(node6, 2));
+            node8.Adjacents.Add(new GraphEdge<int>(node4, 4));
+            node8.Adjacents.Add(new GraphEdge<int>(node7, 14));
+            node8.Adjacents.Add(new GraphEdge<int>(node9, 10));
 
-            node9.Adjacents.Add(new GraphEdge(node7, 9));
-            node9.Adjacents.Add(new GraphEdge(node8, 10));
+            node9.Adjacents.Add(new GraphEdge<int>(node7, 9));
+            node9.Adjacents.Add(new GraphEdge<int>(node8, 10));
 
-            List<GraphNode> distancesFromRoot = Dijkstra.GetShortestDistancesFromRoot(node1);
+            List<GraphNode<int>> distancesFromRoot = Dijkstra.GetShortestDistancesFromRoot(node1);
 
             Assert.AreEqual(0, distancesFromRoot[0].Value);
             Assert.AreEqual(0, distancesFromRoot[0].DistanceFromRoot);

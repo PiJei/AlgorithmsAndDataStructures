@@ -22,19 +22,19 @@ namespace CSFundamentals.Algorithms.GraphTraversal
     /// <summary>
     /// Represents an edge in a graph. 
     /// </summary>
-    public class GraphEdge
+    public class GraphEdge<TValue>
     {
         /// <summary>
         /// Is the GraphNode on the other side of the edge. 
         /// </summary>
-        public GraphNode Node { get; set; }
+        public GraphNode<TValue> Node { get; set; }
 
         /// <summary>
         /// Represents an integer value for the weight for edge .
         /// </summary>
         public int Weight { get; set; }
 
-        public GraphEdge(GraphNode node, int weight)
+        public GraphEdge(GraphNode<TValue> node, int weight)
         {
             Node = node;
             Weight = weight;

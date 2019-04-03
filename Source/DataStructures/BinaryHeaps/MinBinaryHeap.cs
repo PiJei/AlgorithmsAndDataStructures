@@ -30,16 +30,16 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
     /// Implements a Min Binary Heap, and its main operations.
     /// </summary>
     [DataStructure("MinBinaryHeap")]
-    public class MinBinaryHeap<T> : BinaryHeapBase<T> where T : IComparable<T>
+    public class MinBinaryHeap<TKey, TValue> : BinaryHeapBase<TKey, TValue> where TKey : IComparable<TKey>
     {
-        public MinBinaryHeap(List<T> array) : base(array)
+        public MinBinaryHeap(List<KeyValuePair<TKey, TValue>> array) : base(array)
         {
         }
 
         /// <summary>
         /// Builds an in-place min heap on the given array. 
         /// </summary>
-        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         public override void BuildHeap_Recursively(int heapArrayLength)
         {
             for (int i = heapArrayLength / 2; i >= 0; i--) /* Why to start from half of the array? for bigger elements, left and right children will be out of range, due to the formula by which left and right children are found. */
@@ -51,7 +51,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <summary>
         /// Is the iterative version of BuildMinHeap_Recursive. Expect to see exact same results for these two methods. 
         /// </summary>
-        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         public override void BuildHeap_Iteratively(int heapArrayLength)
         {
             for (int i = heapArrayLength / 2; i >= 0; i--)
@@ -63,9 +63,9 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <summary>
         /// Inserts a new value into the Min Heap. 
         /// </summary>
-        /// <param name="newValue">Specifies the new value to be inserted in the tree.</param>
-        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
-        public override void Insert(T newValue, int heapArrayLength)
+        /// <param name="newValue">Specifies the new key-value pair to be inserted in the tree.</param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        public override void Insert(KeyValuePair<TKey, TValue> newValue, int heapArrayLength)
         {
             /* Add the new value to the end of the array. List is a dynamic array and grows in size automatically. */
             HeapArray.Add(newValue);
@@ -89,7 +89,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
                 return;
             }
 
-            while (index != 0 && HeapArray[parentIndex].CompareTo(HeapArray[index]) > 0)
+            while (index != 0 && HeapArray[parentIndex].Key.CompareTo(HeapArray[index].Key) > 0)
             {
                 Utils.Swap(HeapArray, index, parentIndex);
                 index = parentIndex;
@@ -100,12 +100,12 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <summary>
         /// Removes the min element from the heap.
         /// </summary>
-        /// <param name="rootValue">If the operation is successful, contains the minimum element in the array.</param>
-        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        /// <param name="keyValue">If the operation is successful, contains the minimum element in the array.</param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         /// <returns>True in case of success, and false otherwise</returns>
-        public override bool TryRemoveRoot(out T rootValue, int heapArrayLength)
+        public override bool TryRemoveRoot(out KeyValuePair<TKey, TValue> keyValue, int heapArrayLength)
         {
-            rootValue = (T)typeof(T).GetField("MinValue").GetValue(null); // T.MinValue;
+            keyValue = new KeyValuePair<TKey, TValue>((TKey)typeof(TKey).GetField("MinValue").GetValue(null), default(TValue)); // T.MinValue;
 
             /* If array is empty, returns false. */
             if (heapArrayLength == 0)
@@ -116,13 +116,13 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
             /* If array has only one element left, it is the minimum value, and clear the array after removing it.*/
             if (heapArrayLength == 1)
             {
-                rootValue = HeapArray[0];
+                keyValue = HeapArray[0];
                 HeapArray.Clear(); ;
                 return true;
             }
 
             /* If array has more than 1 element, the next instructions are executed. */
-            rootValue = HeapArray[0]; /* In a minHeap the minimum value is always in the root, which is at index 0.*/
+            keyValue = HeapArray[0]; /* In a minHeap the minimum value is always in the root, which is at index 0.*/
             HeapArray[0] = HeapArray[heapArrayLength - 1]; /* Move the last element to the place of root, and then bubble down. */
             HeapArray.RemoveAt(heapArrayLength - 1); /* Removing the last element, as it is now placed in the root's position, and needs to be bubbled down.*/
             BubbleDown_Recursively(0, heapArrayLength - 1); /* Call this method to bubble down the (new) root.*/ /* Also notice that the array is shorter by one value now, thus the new array length is one smaller. */
@@ -132,17 +132,17 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="rootValue"></param>
-        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        /// <param name="keyValue"></param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         /// <returns></returns>
-        public override bool TryFindRoot(out T rootValue, int heapArrayLength)
+        public override bool TryFindRoot(out KeyValuePair<TKey, TValue> keyValue, int heapArrayLength)
         {
             if (HeapArray.Any())
             {
-                rootValue = HeapArray[0];
+                keyValue = HeapArray[0];
                 return true;
             }
-            rootValue = (T)typeof(T).GetField("MaxValue").GetValue(null);
+            keyValue = new KeyValuePair<TKey, TValue>((TKey)typeof(TKey).GetField("MaxValue").GetValue(null), default(TValue));
             return false;
         }
 
@@ -151,7 +151,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// Recursively MinHeapifies (bubbles down/trickles down) the given rootIndex.
         /// </summary>
         /// <param name="rootIndex">Specifies the index of the node for which bubble down starts. </param>
-        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         public override void BubbleDown_Recursively(int rootIndex, int heapArrayLength)
         {
             int leftChildIndex = GetLeftChildIndexInHeapArray(rootIndex);
@@ -159,7 +159,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
             int minElementIndex = rootIndex;
 
             /* Find the minimum value's index (among 3 values: root, and its left and right children). */
-            if (TryFindIndexOfMinSmallerThanReference(HeapArray, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[minElementIndex], out int minIndex))
+            if (TryFindIndexOfMinSmallerThanReference(HeapArray, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[minElementIndex].Key, out int minIndex))
             {
                 minElementIndex = minIndex;
             }
@@ -181,7 +181,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// Is the iterative version of MinHeapify_Recursive method. 
         /// </summary>
         /// <param name="rootIndex">Specifies the index of the node for which bubble down starts. </param>
-        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         public override void BubbleDown_Iteratively(int rootIndex, int heapArrayLength)
         {
             while (GetLeftChildIndexInHeapArray(rootIndex) < heapArrayLength)
@@ -190,7 +190,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
                 int rightChildIndex = GetRightChildIndexInHeapArray(rootIndex);
                 int minElementIndex = rootIndex;
 
-                if (TryFindIndexOfMinSmallerThanReference(HeapArray, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[minElementIndex], out int minIndex))
+                if (TryFindIndexOfMinSmallerThanReference(HeapArray, new List<int> { leftChildIndex, rightChildIndex }, HeapArray[minElementIndex].Key, out int minIndex))
                 {
                     minElementIndex = minIndex;
                 }
@@ -203,7 +203,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
                 else
                 {
                     /* Continue with the index of the smallest child. */
-                    if (TryFindIndexOfMinSmallerThanReference(HeapArray, new List<int> { leftChildIndex, rightChildIndex }, (T)typeof(T).GetField("MaxValue").GetValue(null), out int minChildIndex))
+                    if (TryFindIndexOfMinSmallerThanReference(HeapArray, new List<int> { leftChildIndex, rightChildIndex }, (TKey)typeof(TKey).GetField("MaxValue").GetValue(null), out int minChildIndex))
                     {
                         rootIndex = minChildIndex;
                     }

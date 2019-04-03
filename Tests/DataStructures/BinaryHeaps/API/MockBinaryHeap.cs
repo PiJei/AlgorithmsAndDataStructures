@@ -23,9 +23,9 @@ using CSFundamentals.DataStructures.BinaryHeaps.API;
 
 namespace CSFundamentalsTests.DataStructures.BinaryHeaps.API
 {
-    public class MockBinaryHeap<T> : BinaryHeapBase<T> where T : IComparable<T>
+    public class MockBinaryHeap<TKey, TValue> : BinaryHeapBase<TKey, TValue> where TKey : IComparable<TKey>
     {
-        public MockBinaryHeap(List<T> array) : base(array)
+        public MockBinaryHeap(List<KeyValuePair<TKey, TValue>> array) : base(array)
         {
         }
 
@@ -54,17 +54,17 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps.API
             throw new NotImplementedException();
         }
 
-        public override void Insert(T value, int heapArrayLength)
+        public override void Insert(KeyValuePair<TKey, TValue> value, int heapArrayLength)
         {
             throw new NotImplementedException();
         }
 
-        public override bool TryFindRoot(out T rootValue, int heapArrayLength)
+        public override bool TryFindRoot(out KeyValuePair<TKey, TValue> keyValue, int heapArrayLength)
         {
             throw new NotImplementedException();
         }
 
-        public override bool TryRemoveRoot(out T rootValue, int heapArrayLength)
+        public override bool TryRemoveRoot(out KeyValuePair<TKey, TValue> keyValue, int heapArrayLength)
         {
             throw new NotImplementedException();
         }

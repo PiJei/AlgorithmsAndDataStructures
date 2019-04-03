@@ -19,9 +19,10 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using CSFundamentals.DataStructures.BinaryHeaps;
 using CSFundamentals.Styling;
-
+// TODO: Dont like the fact that had to change the signature to return values, and convert arrays
 namespace CSFundamentals.Algorithms.Sort
 {
     public partial class HeapSort
@@ -35,21 +36,33 @@ namespace CSFundamentals.Algorithms.Sort
         [TimeComplexity(Case.Best, "O(nLog(n))")]
         [TimeComplexity(Case.Worst, "O(nLog(n))")]
         [TimeComplexity(Case.Average, "O(nLog(n))")]
-        public static void Sort_Ascending<T>(List<T> values) where T:IComparable<T>
+        public static List<T> Sort<T>(List<T> values) where T : IComparable<T>
         {
-            // 1- re-arrange the elements in the integer array into a max heap. 
-            var maxHeap = new MaxBinaryHeap<T>(values);
+            // 1- re-arrange elements in the array into a max heap. 
+            var maxHeap = new MaxBinaryHeap<T, T>(ToHeapArray(values));
             maxHeap.BuildHeap_Recursively(values.Count);
 
             // 2- repeat the following 2 steps for all the elements in the array. 
             for (int i = values.Count - 1; i >= 0; i--)
             {
                 /* Since the root element/node in a max heap is the maximum value in the array, putting it in the last position of the unsorted part of the array, determines its final position in an array that is eventually ordered ascending.*/
-                Utils.Swap(values, 0, i);
+                Utils.Swap(maxHeap.HeapArray, 0, i);
 
                 /* Since the new value in the root position of the heap (index :0) may not be in its correct position, heap-order-wise, then bubble it down, until it reaches its correct position.*/
                 maxHeap.BubbleDown_Recursively(0, i);
             }
+
+            return ToArray(maxHeap.HeapArray);
+        }
+
+        private static List<KeyValuePair<T, T>> ToHeapArray<T>(List<T> values) where T : IComparable<T>
+        {
+            return values.Select(v => new KeyValuePair<T, T>(v, v)).ToList();
+        }
+
+        private static List<T> ToArray<T>(List<KeyValuePair<T, T>> values) where T:IComparable<T>
+        {
+            return values.Select(v => v.Key).ToList();
         }
     }
 }

@@ -37,7 +37,7 @@ namespace CSFundamentalsTests.Hashing
             string s2 = "bcd";
             Assert.AreEqual(31, RollingHash.GetHash(s2, Prime, NumCharactersInAlphabet));
 
-            string s = "abcd"; /* Hash(bcd) = Hash(abc)- hash (a) + hash(d) */
+            /*Note that:  string s = "abcd"; // Hash(bcd) = Hash(abc) - hash (a) + hash(d) */
 
             int hashConstant = RollingHash.ComputeHashConstantForRollingHash(3, Prime, NumCharactersInAlphabet);
 

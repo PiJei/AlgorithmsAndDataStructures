@@ -31,16 +31,16 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
     /// Implements a MinMaxBinaryHeap and its main operations. Notice that a MaxMinHeapBinaryHeap can be implemented in a very similar way.
     /// </summary>
     [DataStructure("MinMaxBinaryHeap")]
-    public class MinMaxBinaryHeap<T> : BinaryHeapBase<T> where T : IComparable<T>
+    public class MinMaxBinaryHeap<TKey, TValue> : BinaryHeapBase<TKey, TValue> where TKey : IComparable<TKey>
     {
-        public MinMaxBinaryHeap(List<T> array) : base(array)
+        public MinMaxBinaryHeap(List<KeyValuePair<TKey, TValue>> array) : base(array)
         {
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         public override void BuildHeap_Recursively(int heapArrayLength)
         {
             for (int i = heapArrayLength / 2; i >= 0; i--)
@@ -52,11 +52,11 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
-        public override void Insert(T value, int heapArrayLength)
+        /// <param name="keyValue"></param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        public override void Insert(KeyValuePair<TKey, TValue> keyValue, int heapArrayLength)
         {
-            HeapArray.Add(value);
+            HeapArray.Add(keyValue);
             int index = heapArrayLength;
             BubbleUp_Recursively(index, heapArrayLength + 1);
         }
@@ -65,7 +65,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// 
         /// </summary>
         /// <param name="index"></param>
-        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         public void BubbleUp_Recursively(int index, int heapArrayLength)
         {
             int level = GetNodeLevel(index);
@@ -75,7 +75,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
             {
                 if (IsMinLevel(level))
                 {
-                    if (HeapArray[index].CompareTo(HeapArray[parentIndex]) > 0) /* Parent is in a max level, and if its child is larger than it, then a swap should happen.*/
+                    if (HeapArray[index].Key.CompareTo(HeapArray[parentIndex].Key) > 0) /* Parent is in a max level, and if its child is larger than it, then a swap should happen.*/
                     {
                         Utils.Swap(HeapArray, index, parentIndex);
                         BubbleUpMax_Recursively(parentIndex, heapArrayLength); /* At this point, the value is pushed to a max level, and the next bubble up shall happen via max level, which at any point can again switch the bubble up to a min level.*/
@@ -87,7 +87,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
                 }
                 else /* meaning the node is located on a max / odd level. */
                 {
-                    if (HeapArray[index].CompareTo(HeapArray[parentIndex]) < 0) /* Parent is in a min level, and if its child is smaller than it, then a swap should happen.*/
+                    if (HeapArray[index].Key.CompareTo(HeapArray[parentIndex].Key) < 0) /* Parent is in a min level, and if its child is smaller than it, then a swap should happen.*/
                     {
                         Utils.Swap(HeapArray, index, parentIndex);
                         BubbleUpMin_Recursively(parentIndex, heapArrayLength); /* At this point, the value is pushed to a min level, and the next bubble up shall happen via min level, which at any point can again switch the bubble up to a max level. */
@@ -104,14 +104,14 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// Bubbles up the node at the given index which is assumed to be on a min/even level. 
         /// </summary>
         /// <param name="index">Specifies the index of a node in the heap array.</param>
-        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         public void BubbleUpMin_Recursively(int index, int heapArrayLength)
         {
             int parentIndex = GetParentIndex(index);
             int grandParentindex = GetParentIndex(parentIndex);
             if (grandParentindex >= 0 && grandParentindex < heapArrayLength)
             {
-                if (HeapArray[index].CompareTo(HeapArray[grandParentindex]) < 0)
+                if (HeapArray[index].Key.CompareTo(HeapArray[grandParentindex].Key) < 0)
                 {
                     Utils.Swap(HeapArray, index, grandParentindex);
                     BubbleUpMin_Recursively(grandParentindex, heapArrayLength);
@@ -123,14 +123,14 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// Bubbles up the node at the given index which is assumed to be on a max/odd level.
         /// </summary>
         /// <param name="index">Specifies the index of a node in the heap array.</param>
-        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         public void BubbleUpMax_Recursively(int index, int heapArrayLength)
         {
             int parentIndex = GetParentIndex(index);
             int grandParentIndex = GetParentIndex(parentIndex);
             if (grandParentIndex >= 0 && grandParentIndex < heapArrayLength)
             {
-                if (HeapArray[index].CompareTo(HeapArray[grandParentIndex]) > 0)
+                if (HeapArray[index].Key.CompareTo(HeapArray[grandParentIndex].Key) > 0)
                 {
                     Utils.Swap(HeapArray, index, grandParentIndex);
                     BubbleUpMax_Recursively(grandParentIndex, heapArrayLength);
@@ -141,12 +141,12 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="rootValue"></param>
-        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        /// <param name="keyValue"></param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         /// <returns></returns>
-        public override bool TryRemoveRoot(out T rootValue, int heapArrayLength)
+        public override bool TryRemoveRoot(out KeyValuePair<TKey, TValue> keyValue, int heapArrayLength)
         {
-            rootValue = (T)typeof(T).GetField("MinValue").GetValue(null);
+            keyValue = new KeyValuePair<TKey, TValue>((TKey)typeof(TKey).GetField("MinValue").GetValue(null), default(TValue));
 
             if (heapArrayLength == 0)
             {
@@ -154,12 +154,12 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
             }
             if (heapArrayLength == 1)
             {
-                rootValue = HeapArray[0];
+                keyValue = HeapArray[0];
                 HeapArray.Clear();
                 return true;
             }
 
-            rootValue = HeapArray[0];
+            keyValue = HeapArray[0];
             HeapArray[0] = HeapArray[heapArrayLength - 1];
             HeapArray.RemoveAt(heapArrayLength - 1);
             BubbleDownMin_Recursively(0, heapArrayLength - 1); /* Calling this method, because this is a min-max heap and 0 is expected to be on a min level.*/ /* Also notice that the array is shorter by one value now, thus the new array length is one smaller. */
@@ -169,16 +169,16 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="rootValue"></param>
+        /// <param name="keyValue"></param>
         /// <returns></returns>
-        public override bool TryFindRoot(out T rootValue, int heapArrayLength)
+        public override bool TryFindRoot(out KeyValuePair<TKey, TValue> keyValue, int heapArrayLength)
         {
             if (HeapArray.Any())
             {
-                rootValue = HeapArray[0];
+                keyValue = HeapArray[0];
                 return true;
             }
-            rootValue = (T)typeof(T).GetField("MaxValue").GetValue(null);
+            keyValue = new KeyValuePair<TKey, TValue>((TKey)typeof(TKey).GetField("MaxValue").GetValue(null), default(TValue));
             return false;
         }
 
@@ -186,7 +186,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// 
         /// </summary>
         /// <param name="rootIndex"></param>
-        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         public override void BubbleDown_Recursively(int rootIndex, int heapArrayLength)
         {
             int level = GetNodeLevel(rootIndex);
@@ -211,7 +211,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
 
             /* Find the index of the descendants of rootIndex that has the minimum value */
             int minDescendentIndex = int.MaxValue;
-            if (!TryFindIndexOfMinSmallerThanReference(HeapArray, childrenIndexes.Union(grandChildrenIndexes).ToList(), (T)typeof(T).GetField("MaxValue").GetValue(null), out int minIndex))
+            if (!TryFindIndexOfMinSmallerThanReference(HeapArray, childrenIndexes.Union(grandChildrenIndexes).ToList(), (TKey)typeof(TKey).GetField("MaxValue").GetValue(null), out int minIndex))
             {
                 return;
             }
@@ -221,7 +221,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
             Contract.Assert(minDescendentIndex != int.MinValue);
 
             /* If rootIndex has a descendant that has a value lower than itself, then shall swap the root with its descendant, as the nodes in min levels should be the smallest in their subtrees, rooted at them.*/
-            if (HeapArray[minDescendentIndex].CompareTo(HeapArray[rootIndex]) < 0)
+            if (HeapArray[minDescendentIndex].Key.CompareTo(HeapArray[rootIndex].Key) < 0)
             {
                 Utils.Swap(HeapArray, minDescendentIndex, rootIndex);
 
@@ -230,7 +230,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
                 if (grandChildrenIndexes.Contains(minDescendentIndex))
                 {
                     int parentIndex = GetParentIndex(minDescendentIndex);
-                    if (parentIndex >= 0 && parentIndex < heapArrayLength && HeapArray[minDescendentIndex].CompareTo(HeapArray[parentIndex]) > 0)
+                    if (parentIndex >= 0 && parentIndex < heapArrayLength && HeapArray[minDescendentIndex].Key.CompareTo(HeapArray[parentIndex].Key) > 0)
                     {
                         Utils.Swap(HeapArray, minDescendentIndex, parentIndex);
                     }
@@ -243,14 +243,14 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// Bubbles/trickles down the node at the given index, which is on a max/even level. 
         /// </summary>
         /// <param name="rootIndex">Specifies the index of the node at a max level, from which bubble down starts recursively.</param>
-        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         public void BubbleDownMax_Recursively(int rootIndex, int heapArrayLength)
         {
             List<int> childrenIndexes = GetChildrenIndexes(new List<int> { rootIndex }, heapArrayLength);
             List<int> grandChildrenIndexes = GetChildrenIndexes(childrenIndexes, heapArrayLength);
 
             int maxDescendentIndex = int.MinValue;
-            if (!TryFindIndexOfMaxBiggerThanReference(HeapArray, heapArrayLength, childrenIndexes.Union(grandChildrenIndexes).ToList(), (T)typeof(T).GetField("MinValue").GetValue(null), out int maxIndex))
+            if (!TryFindIndexOfMaxBiggerThanReference(HeapArray, heapArrayLength, childrenIndexes.Union(grandChildrenIndexes).ToList(), (TKey)typeof(TKey).GetField("MinValue").GetValue(null), out int maxIndex))
             {
                 return;
             }
@@ -259,13 +259,13 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
             Contract.Assert(maxDescendentIndex != int.MinValue);
             Contract.Assert(maxDescendentIndex != int.MaxValue);
 
-            if (HeapArray[maxDescendentIndex].CompareTo(HeapArray[rootIndex]) > 0)
+            if (HeapArray[maxDescendentIndex].Key.CompareTo(HeapArray[rootIndex].Key) > 0)
             {
                 Utils.Swap(HeapArray, maxDescendentIndex, rootIndex);
                 if (grandChildrenIndexes.Contains(maxDescendentIndex))
                 {
                     int parentIndex = GetParentIndex(maxDescendentIndex);
-                    if (parentIndex >= 0 && parentIndex < heapArrayLength && HeapArray[maxDescendentIndex].CompareTo(HeapArray[parentIndex]) < 0)
+                    if (parentIndex >= 0 && parentIndex < heapArrayLength && HeapArray[maxDescendentIndex].Key.CompareTo(HeapArray[parentIndex].Key) < 0)
                     {
                         Utils.Swap(HeapArray, maxDescendentIndex, parentIndex);
                     }

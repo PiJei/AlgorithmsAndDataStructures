@@ -18,57 +18,64 @@
  */
 
 using System;
- using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace CSFundamentals.DataStructures.BinaryHeaps.API
 {
-    public interface IBinaryHeap<T> where T:IComparable<T>
+    /// <summary>
+    /// Provides interface definition for a binary heap. 
+    /// </summary>
+    /// <typeparam name="TKey">Is the type of the keys, based on which priorities in a priority queue are defined. </typeparam>
+    /// <typeparam name="TValue">Is the type of the values stored with keys. </typeparam>
+    public interface IBinaryHeap<TKey, TValue> where TKey : IComparable<TKey>
     {
         /// <summary>
         /// Builds a heap using recursion, and does so in situ.
         /// </summary>
-        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         void BuildHeap_Recursively(int heapArrayLength);
 
         /// <summary>
         /// Builds a heap iteratively, and does so in situ.
         /// </summary>
-        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         void BuildHeap_Iteratively(int heapArrayLength);
 
         /// <summary>
         /// This method is for inserting a new value into heap.
         /// </summary>
-        /// <param name="value">Specifies the value to be inserted into the heap.</param>
-        void Insert(T value, int heapArrayLength);
+        /// <param name="keyValue">Specifies the key-value to be inserted into the heap.</param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        void Insert(KeyValuePair<TKey, TValue> keyValue, int heapArrayLength);
 
         /// <summary>
         /// This method is for removing the root of the heap. In a MinHeap and MinMaxHeap this is the min, and in a MaxHeap and MaxMinHeap this is the max. 
         /// </summary>
-        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        /// <param name="keyValue">Specifies the key-value of the root.</param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         /// <returns>True in case of success, and false otherwise.</returns>
-        bool TryRemoveRoot(out T rootValue, int heapArrayLength);
+        bool TryRemoveRoot(out KeyValuePair<TKey, TValue> keyValue, int heapArrayLength);
 
         /// <summary>
         /// This method is for finding the root of the heap, without removing it. 
         /// </summary>
-        /// <param name="rootValue"></param>
-        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        /// <param name="keyValue">Specifies the key-value of the root.</param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         /// <returns>True in case of success, and false in case of failure.</returns>
-        bool TryFindRoot(out T rootValue, int heapArrayLength);
+        bool TryFindRoot(out KeyValuePair<TKey, TValue> keyValue, int heapArrayLength);
 
         /// <summary>
         /// This method implements the bubble down/trickle down operation using recursion.
         /// </summary>
         /// <param name="rootIndex">Specifies the index of the root element, the element for which the trickle down should be performed.</param>
-        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         void BubbleDown_Recursively(int rootIndex, int heapArrayLength);
 
         /// <summary>
         /// This method implements the bubble down/trickle down operation using iteration.
         /// </summary>
         /// <param name="rootIndex">Specifies the index of the root element, the element for which the trickle down should be performed.</param>
-        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         void BubbleDown_Iteratively(int rootIndex, int heapArrayLength);
 
         /// <summary>
@@ -108,4 +115,4 @@ namespace CSFundamentals.DataStructures.BinaryHeaps.API
     }
 }
 
-//TODO: search all the swap implementations and have only one!
+//TODO: search all the swap implementations and have only one! and put them in Utils/general of whole library
