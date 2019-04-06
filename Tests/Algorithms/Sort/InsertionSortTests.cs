@@ -17,9 +17,9 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CSFundamentals.Algorithms.Sort;
 using System.Collections.Generic;
+using CSFundamentals.Algorithms.Sort;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.Algorithms.Sort
 {
@@ -27,39 +27,20 @@ namespace CSFundamentalsTests.Algorithms.Sort
     public partial class InsertionSortTests
     {
         [TestMethod]
-        public void InsertionSort_Iterative_V1_WithDistinctValues()
+        public void Sort_Iterative_V1_WithDifferentInputs()
         {
-            var values = new List<int>(Constants.ArrayWithDistinctValues);
-            InsertionSort.Sort_Iterative_V1(values);
-            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
+            SortTests.TestSortMethodWithDifferentInputs(InsertionSort.Sort_Iterative_V1);
         }
 
         [TestMethod]
-        public void InsertionSort_Iterative_V1_WithDuplicateValues()
+        public void Sort_Iterative_V2_WithDifferentInputs()
         {
-            var values = new List<int>(Constants.ArrayWithDuplicateValues);
-            InsertionSort.Sort_Iterative_V1(values);
-            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
+            SortTests.TestSortMethodWithDifferentInputs(InsertionSort.Sort_Iterative_V2);
         }
 
+        // TODO: How can I use the SortTests library to test this version as well?
         [TestMethod]
-        public void InsertionSort_Iterative_V2_WithDistinctValues()
-        {
-            var values = new List<int>(Constants.ArrayWithDistinctValues);
-            InsertionSort.Sort_Iterative_V2(values);
-            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
-        }
-
-        [TestMethod]
-        public void InsertionSort_Iterative_V2_WithDuplicateValues()
-        {
-            var values = new List<int>(Constants.ArrayWithDuplicateValues);
-            InsertionSort.Sort_Iterative_V2(values);
-            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
-        }
-
-        [TestMethod]
-        public void InsertionSort_Recursive_WithDistinctValues()
+        public void Sort_Recursive_WithDistinctValues()
         {
             var values = new List<int>(Constants.ArrayWithDistinctValues);
             InsertionSort.Sort_Recursive(values, values.Count - 1);
@@ -67,12 +48,11 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         [TestMethod]
-        public void InsertionSort_Recursive_WithDuplicateValues()
+        public void Sort_Recursive_WithDuplicateValues()
         {
             var values = new List<int>(Constants.ArrayWithDuplicateValues);
             InsertionSort.Sort_Recursive(values, values.Count - 1);
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
-        // TODO: add tests with other types of input arrays. 
     }
 }

@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+// TODO: Duplicate functions: how can I unify the signatures? ... 
 
 namespace CSFundamentalsTests.Algorithms.Search
 {
@@ -33,58 +34,58 @@ namespace CSFundamentalsTests.Algorithms.Search
         private static readonly int _startIndex = 0;
         private static readonly int _endIndex = _values.Count - 1;
 
-        public static void DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition(Func<List<int>, int, int, int, int> search)
+        public static void DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition(Func<List<int>, int, int, int, int> searchMethod)
         {
-            Assert.AreEqual(2, search(_values, _startIndex, _endIndex, 3));
-            Assert.AreEqual(3, search(_values, _startIndex, _endIndex, 10));
-            Assert.AreEqual(4, search(_values, _startIndex, _endIndex, 14));
-            Assert.AreEqual(5, search(_values, _startIndex, _endIndex, 25));
-            Assert.AreEqual(6, search(_values, _startIndex, _endIndex, 27));
-            Assert.AreEqual(7, search(_values, _startIndex, _endIndex, 34));
-            Assert.AreEqual(8, search(_values, _startIndex, _endIndex, 78));
-            Assert.AreEqual(11, search(_values, _startIndex, _endIndex, 120));
+            Assert.AreEqual(2, searchMethod(_values, _startIndex, _endIndex, 3));
+            Assert.AreEqual(3, searchMethod(_values, _startIndex, _endIndex, 10));
+            Assert.AreEqual(4, searchMethod(_values, _startIndex, _endIndex, 14));
+            Assert.AreEqual(5, searchMethod(_values, _startIndex, _endIndex, 25));
+            Assert.AreEqual(6, searchMethod(_values, _startIndex, _endIndex, 27));
+            Assert.AreEqual(7, searchMethod(_values, _startIndex, _endIndex, 34));
+            Assert.AreEqual(8, searchMethod(_values, _startIndex, _endIndex, 78));
+            Assert.AreEqual(11, searchMethod(_values, _startIndex, _endIndex, 120));
         }
 
-        public static void DuplicateElements_ExpectsToGetTheIndexOfOneOfTheDupliatesNoMatterHowManyTimeSearchIsPerformed(Func<List<int>, int, int, int, int> search)
+        public static void DuplicateElements_ExpectsToGetTheIndexOfOneOfTheDupliatesNoMatterHowManyTimeSearchIsPerformed(Func<List<int>, int, int, int, int> searchMethod)
         {
-            Assert.IsTrue(new List<int> { 0, 1 }.Contains(search(_values, _startIndex, _endIndex, 1)));
-            Assert.IsTrue(new List<int> { 0, 1 }.Contains(search(_values, _startIndex, _endIndex, 1)));
-            Assert.IsTrue(new List<int> { 9, 10 }.Contains(search(_values, _startIndex, _endIndex, 90)));
-            Assert.IsTrue(new List<int> { 9, 10 }.Contains(search(_values, _startIndex, _endIndex, 90)));
+            Assert.IsTrue(new List<int> { 0, 1 }.Contains(searchMethod(_values, _startIndex, _endIndex, 1)));
+            Assert.IsTrue(new List<int> { 0, 1 }.Contains(searchMethod(_values, _startIndex, _endIndex, 1)));
+            Assert.IsTrue(new List<int> { 9, 10 }.Contains(searchMethod(_values, _startIndex, _endIndex, 90)));
+            Assert.IsTrue(new List<int> { 9, 10 }.Contains(searchMethod(_values, _startIndex, _endIndex, 90)));
         }
 
-        public static void NonExistingElements_ExpectsToGetMinusOne(Func<List<int>, int, int, int, int> search)
+        public static void NonExistingElements_ExpectsToGetMinusOne(Func<List<int>, int, int, int, int> searchMethod)
         {
-            Assert.AreEqual(-1, search(_values, _startIndex, _endIndex, -20));
-            Assert.AreEqual(-1, search(_values, _startIndex, _endIndex, 15));
-            Assert.AreEqual(-1, search(_values, _startIndex, _endIndex, 456));
+            Assert.AreEqual(-1, searchMethod(_values, _startIndex, _endIndex, -20));
+            Assert.AreEqual(-1, searchMethod(_values, _startIndex, _endIndex, 15));
+            Assert.AreEqual(-1, searchMethod(_values, _startIndex, _endIndex, 456));
         }
 
-        public static void DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition(Func<List<int>, int, int> search)
+        public static void DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition(Func<List<int>, int, int> searchMethod)
         {
-            Assert.AreEqual(2, search(_values, 3));
-            Assert.AreEqual(3, search(_values, 10));
-            Assert.AreEqual(4, search(_values, 14));
-            Assert.AreEqual(5, search(_values, 25));
-            Assert.AreEqual(6, search(_values, 27));
-            Assert.AreEqual(7, search(_values, 34));
-            Assert.AreEqual(8, search(_values, 78));
-            Assert.AreEqual(11, search(_values, 120));
+            Assert.AreEqual(2, searchMethod(_values, 3));
+            Assert.AreEqual(3, searchMethod(_values, 10));
+            Assert.AreEqual(4, searchMethod(_values, 14));
+            Assert.AreEqual(5, searchMethod(_values, 25));
+            Assert.AreEqual(6, searchMethod(_values, 27));
+            Assert.AreEqual(7, searchMethod(_values, 34));
+            Assert.AreEqual(8, searchMethod(_values, 78));
+            Assert.AreEqual(11, searchMethod(_values, 120));
         }
 
-        public static void DuplicateElements_ExpectsToGetTheIndexOfOneOfTheDupliatesNoMatterHowManyTimeSearchIsPerformed(Func<List<int>, int, int> search)
+        public static void DuplicateElements_ExpectsToGetTheIndexOfOneOfTheDupliatesNoMatterHowManyTimeSearchIsPerformed(Func<List<int>, int, int> searchMethod)
         {
-            Assert.IsTrue(new List<int> { 0, 1 }.Contains(search(_values, 1)));
-            Assert.IsTrue(new List<int> { 0, 1 }.Contains(search(_values, 1)));
-            Assert.IsTrue(new List<int> { 9, 10 }.Contains(search(_values, 90)));
-            Assert.IsTrue(new List<int> { 9, 10 }.Contains(search(_values, 90)));
+            Assert.IsTrue(new List<int> { 0, 1 }.Contains(searchMethod(_values, 1)));
+            Assert.IsTrue(new List<int> { 0, 1 }.Contains(searchMethod(_values, 1)));
+            Assert.IsTrue(new List<int> { 9, 10 }.Contains(searchMethod(_values, 90)));
+            Assert.IsTrue(new List<int> { 9, 10 }.Contains(searchMethod(_values, 90)));
         }
 
-        public static void NonExistingElements_ExpectsToGetMinusOne(Func<List<int>, int, int> search)
+        public static void NonExistingElements_ExpectsToGetMinusOne(Func<List<int>, int, int> searchMethod)
         {
-            Assert.AreEqual(-1, search(_values, -20));
-            Assert.AreEqual(-1, search(_values, 15));
-            Assert.AreEqual(-1, search(_values, 456));
+            Assert.AreEqual(-1, searchMethod(_values, -20));
+            Assert.AreEqual(-1, searchMethod(_values, 15));
+            Assert.AreEqual(-1, searchMethod(_values, 456));
         }
     }
 }

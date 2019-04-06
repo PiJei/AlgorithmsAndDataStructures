@@ -18,9 +18,9 @@
  */
 
 using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CSFundamentals.Algorithms.Sort.StabilityCheckableVersions;
 using CSFundamentals.Algorithms.Sort;
+using CSFundamentals.Algorithms.Sort.StabilityCheckableVersions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.Algorithms.Sort
 {
