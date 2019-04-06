@@ -27,8 +27,10 @@ namespace CSFundamentalsTests.Algorithms.Sort
     public class HeapSortTests
     {
         [TestMethod]
-        public void Sort_WithDistinctValues()
+        public void Sort_WithDifferentInputs()
         {
+            // TODO: HeapSort signature is not the same as others, ... 
+            // SortTests.TestSortMethodWithDifferentInputs(HeapSort.Sort);
             var values = new List<int>(Constants.ArrayWithDistinctValues);
             values = HeapSort.Sort(values);
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
