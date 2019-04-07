@@ -17,6 +17,7 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System;
 using System.Collections.Generic;
 using CSFundamentals.Styling;
 
@@ -25,9 +26,9 @@ namespace CSFundamentals.Algorithms.Search
     public class BinarySearch
     {
         /// <summary>
-        /// Searches in a sorted list of integers, and returns the index of the <paramref name="searchValue"/> using binary search, and -1 if it is not found. 
+        /// Searches in a sorted list of any comparable type, and returns the index of the <paramref name="searchValue"/> using binary search, and -1 if it is not found. 
         /// </summary>
-        /// <param name="values">A sorted list of integers. </param>
+        /// <param name="values">A sorted list of any comparable type. </param>
         /// <param name="startIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>
         /// <param name="endIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
         /// <param name="searchValue">Specifies the value that is being searched for. </param>
@@ -37,22 +38,24 @@ namespace CSFundamentals.Algorithms.Search
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
-        public static int Search(List<int> values, int startIndex, int endIndex, int searchValue)
+        public static int Search<T>(List<T> values, int startIndex, int endIndex, int searchValue) where T : IComparable<T>
         {
-            if (startIndex <= endIndex && searchValue >= values[startIndex] && searchValue <= values[endIndex])
+            if (startIndex <= endIndex &&
+                searchValue.CompareTo(values[startIndex]) >= 0 && /* Check whether searchValue is in the range. Since the input array is sorted this is feasible. */
+                searchValue.CompareTo(values[endIndex]) <= 0)
             {
                 int middleIndex = (startIndex + endIndex) / 2;
-                int middleValue = values[middleIndex];
+                T middleValue = values[middleIndex];
 
-                if (searchValue == middleValue)
+                if (searchValue.CompareTo(middleValue) == 0)
                 {
                     return middleIndex;
                 }
-                if (searchValue < middleValue)
+                if (searchValue.CompareTo(middleValue) < 0)
                 {
                     return Search(values, startIndex, middleIndex - 1, searchValue);
                 }
-                if (searchValue > middleValue)
+                if (searchValue.CompareTo(middleValue) > 0)
                 {
                     return Search(values, middleIndex + 1, endIndex, searchValue);
                 }
