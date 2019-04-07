@@ -38,7 +38,7 @@ namespace CSFundamentals.Algorithms.Search
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
-        public static int Search<T>(List<T> values, int startIndex, int endIndex, int searchValue) where T : IComparable<T>
+        public static int Search<T>(List<T> values, int startIndex, int endIndex, T searchValue) where T : IComparable<T>
         {
             if (startIndex <= endIndex &&
                 searchValue.CompareTo(values[startIndex]) >= 0 && /* Check whether searchValue is in the range. Since the input array is sorted this is feasible. */

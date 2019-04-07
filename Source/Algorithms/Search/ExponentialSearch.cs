@@ -28,7 +28,7 @@ namespace CSFundamentals.Algorithms.Search
         /// Implements exponential search, where the search step is a multiple of 2, hence the naming. 
         /// Notice that only works if the given array is sorted. 
         /// </summary>
-        /// <param name="values">A sorted list of integers. </param>
+        /// <param name="values">A sorted list of any comparable type. </param>
         /// <param name="searchValue">Specifies the value that is being searched for. </param>
         /// <returns>The index of the <paramref name="searchValue"/> in the array, and -1 if it does not exist in the array. </returns>
         [Algorithm(AlgorithmType.Search, "ExponentialSearch", Assumptions = "Array is sorted with an ascending order.")]
@@ -36,17 +36,18 @@ namespace CSFundamentals.Algorithms.Search
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(log(i)), i is the index of the searchValue in the array.")]
         [TimeComplexity(Case.Average, "O(log(i)), i is the index of the searchValue in the array.")]
-        public static int Search(List<int> values, int searchValue)
+        public static int Search<T>(List<T> values, T searchValue) where T : IComparable<T>
         {
-            if (searchValue >= values[0] && searchValue <= values[values.Count - 1])
+            if (searchValue.CompareTo(values[0]) >= 0 &&
+                searchValue.CompareTo(values[values.Count - 1]) <= 0) /* Check whether searchValue is in the range. Since the input array is sorted this is feasible. */
             {
-                if (values[0] == searchValue)
+                if (values[0].CompareTo(searchValue) == 0)
                 {
                     return 0;
                 }
 
                 int nextIndex = 1; /* Ideally should start from index 1, however that would make the while loop indexing complex, thus treating index 0 differently, and then continuing with the rest. */
-                while (nextIndex < values.Count && values[nextIndex] < searchValue) /* multiple the search step by 2, until encountering an element that is bigger than the searchValue*/
+                while (nextIndex < values.Count && values[nextIndex].CompareTo(searchValue) < 0) /* multiple the search step by 2, until encountering an element that is bigger than the searchValue*/
                 {
                     nextIndex = nextIndex * 2;
                 }
