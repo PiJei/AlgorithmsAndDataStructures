@@ -17,41 +17,40 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System;
 using System.Collections.Generic;
-using CSFundamentals.Algorithms.Sort;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.Algorithms.Sort
 {
     [TestClass]
-    public partial class InsertionSortTests
+    public class SortTests
     {
         [TestMethod]
-        public void Sort_Iterative_V1_WithDifferentInputs()
+        public static void TestSortMethodWithDifferentInputs(Action<List<int>> sortMethod)
         {
-            SortTests.TestSortMethodWithDifferentInputs(InsertionSort.Sort_Iterative_V1);
-        }
-
-        [TestMethod]
-        public void Sort_Iterative_V2_WithDifferentInputs()
-        {
-            SortTests.TestSortMethodWithDifferentInputs(InsertionSort.Sort_Iterative_V2);
-        }
-
-        // TODO: How can I use the SortTests library to test this version as well?
-        [TestMethod]
-        public void Sort_Recursive_WithDistinctValues()
-        {
-            var values = new List<int>(Constants.ArrayWithDistinctValues);
-            InsertionSort.Sort_Recursive(values, values.Count - 1);
+            List<int> values = new List<int>(Constants.ArrayWithDistinctValues);
+            sortMethod(values);
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
-        }
 
-        [TestMethod]
-        public void Sort_Recursive_WithDuplicateValues()
-        {
-            var values = new List<int>(Constants.ArrayWithDuplicateValues);
-            InsertionSort.Sort_Recursive(values, values.Count - 1);
+            values = new List<int>(Constants.ArrayWithDuplicateValues);
+            sortMethod(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
+
+            values = new List<int>(Constants.ArrayWithSortedDistinctValues);
+            sortMethod(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
+
+            values = new List<int>(Constants.ArrayWithSortedDuplicateValues);
+            sortMethod(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
+
+            values = new List<int>(Constants.ArrayWithReverselySortedDistinctValues);
+            sortMethod(values);
+            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
+
+            values = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
+            sortMethod(values);
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
     }

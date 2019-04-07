@@ -17,9 +17,8 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
 using CSFundamentals.Algorithms.Sort;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.Algorithms.Sort
 {
@@ -27,51 +26,9 @@ namespace CSFundamentalsTests.Algorithms.Sort
     public partial class BubbleSortTests
     {
         [TestMethod]
-        public void Iterative_WithDistinctValues()
+        public void Sort_Iterative_WithDifferentInputs()
         {
-            List<int> values = new List<int>(Constants.ArrayWithDistinctValues);
-            BubbleSort.Sort_Iterative(values);
-            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
-        }
-
-        [TestMethod]
-        public void Iterative_WithDuplicateValues()
-        {
-            List<int> values = new List<int>(Constants.ArrayWithDuplicateValues);
-            BubbleSort.Sort_Iterative(values);
-            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
-        }
-
-        [TestMethod]
-        public void Iterative_WithSortedDistinctValues()
-        {
-            List<int> values = new List<int>(Constants.ArrayWithSortedDistinctValues);
-            BubbleSort.Sort_Iterative(values);
-            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
-        }
-
-        [TestMethod]
-        public void Iterative_WithSortedDuplicateValues()
-        {
-            List<int> values = new List<int>(Constants.ArrayWithSortedDuplicateValues);
-            BubbleSort.Sort_Iterative(values);
-            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
-        }
-
-        [TestMethod]
-        public void BubbleSort_Iterative_WithReverselySortedDistinctValues()
-        {
-            List<int> values = new List<int>(Constants.ArrayWithReverselySortedDistinctValues);
-            BubbleSort.Sort_Iterative(values);
-            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
-        }
-
-        [TestMethod]
-        public void BubbleSort_Iterative_WithReverselySortedDuplicateValues()
-        {
-            List<int> values = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
-            BubbleSort.Sort_Iterative(values);
-            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
+            SortTests.TestSortMethodWithDifferentInputs(BubbleSort.Sort_Iterative);
         }
     }
 }

@@ -17,9 +17,8 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentals.Algorithms.Sort;
-using System.Collections.Generic;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.Algorithms.Sort
 {
@@ -27,51 +26,9 @@ namespace CSFundamentalsTests.Algorithms.Sort
     public partial class RadixSortTests
     {
         [TestMethod]
-        public void RadixSort_Iterative_V1_WithDistinctValues()
+        public void Sort_Iterative_V1_WithDifferentInputs()
         {
-            List<int> values = new List<int>(Constants.ArrayWithDistinctValues);
-            RadixSort.Sort_Iterative_V1(values);
-            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
-        }
-
-        [TestMethod]
-        public void RadixSort_Iterative_V1_WithDuplicateValues()
-        {
-            List<int> values = new List<int>(Constants.ArrayWithDuplicateValues);
-            RadixSort.Sort_Iterative_V1(values);
-            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
-        }
-
-        [TestMethod]
-        public void RadixSort_Iterative_V1_WithSortedDistinctValues()
-        {
-            List<int> values = new List<int>(Constants.ArrayWithSortedDistinctValues);
-            RadixSort.Sort_Iterative_V1(values);
-            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
-        }
-
-        [TestMethod]
-        public void RadixSort_Iterative_V1_WithSortedDuplicateValues()
-        {
-            List<int> values = new List<int>(Constants.ArrayWithSortedDuplicateValues);
-            RadixSort.Sort_Iterative_V1(values);
-            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
-        }
-
-        [TestMethod]
-        public void RadixSort_Iterative_V1_WithReverselySortedDistinctValues()
-        {
-            List<int> values = new List<int>(Constants.ArrayWithReverselySortedDistinctValues);
-            RadixSort.Sort_Iterative_V1(values);
-            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
-        }
-
-        [TestMethod]
-        public void RadixSort_Iterative_V1_WithReverselyDuplicateValues()
-        {
-            List<int> values = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
-            RadixSort.Sort_Iterative_V1(values);
-            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
+            SortTests.TestSortMethodWithDifferentInputs(RadixSort.Sort_Iterative_V1);
         }
     }
 }

@@ -17,9 +17,9 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CSFundamentals.Algorithms.Sort;
 using System.Collections.Generic;
+using CSFundamentals.Algorithms.Sort;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.Algorithms.Sort
 {
@@ -27,8 +27,10 @@ namespace CSFundamentalsTests.Algorithms.Sort
     public class HeapSortTests
     {
         [TestMethod]
-        public void Sort_WithDistinctValues()
+        public void Sort_WithDifferentInputs()
         {
+            // TODO: HeapSort signature is not the same as others, ... 
+            // SortTests.TestSortMethodWithDifferentInputs(HeapSort.Sort);
             var values = new List<int>(Constants.ArrayWithDistinctValues);
             values = HeapSort.Sort(values);
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));

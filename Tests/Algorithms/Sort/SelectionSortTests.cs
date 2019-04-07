@@ -17,9 +17,8 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentals.Algorithms.Sort;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.Algorithms.Sort
 {
@@ -27,51 +26,9 @@ namespace CSFundamentalsTests.Algorithms.Sort
     public partial class SelectionSortTests
     {
         [TestMethod]
-        public void SelectionSortIteratively_WithDistnctValues()
+        public void Sort_Iteratively_WithDifferentInputs()
         {
-            var values = new List<int>(Constants.ArrayWithDistinctValues);
-            SelectionSort.Sort_Iteratively(values);
-            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
-        }
-
-        [TestMethod]
-        public void SelectionSortIteratively_WithDuplicateValues()
-        {
-            var values = new List<int>(Constants.ArrayWithDuplicateValues);
-            SelectionSort.Sort_Iteratively(values);
-            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
-        }
-
-        [TestMethod]
-        public void SelectionSortIteratively_WithSortedDistinctValues()
-        {
-            var values = new List<int>(Constants.ArrayWithSortedDistinctValues);
-            SelectionSort.Sort_Iteratively(values);
-            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
-        }
-
-        [TestMethod]
-        public void SelectionSortIteratively_WithSortedDuplicateValues()
-        {
-            var values = new List<int>(Constants.ArrayWithSortedDuplicateValues);
-            SelectionSort.Sort_Iteratively(values);
-            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
-        }
-
-        [TestMethod]
-        public void SelectionSortIteratively_WithReverselySortedDistinctValues()
-        {
-            var values = new List<int>(Constants.ArrayWithReverselySortedDistinctValues);
-            SelectionSort.Sort_Iteratively(values);
-            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
-        }
-
-        [TestMethod]
-        public void SelectionSortIteratively_WithReverselySortedDuplicateValues()
-        {
-            var values = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
-            SelectionSort.Sort_Iteratively(values);
-            Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
+            SortTests.TestSortMethodWithDifferentInputs(SelectionSort.Sort_Iteratively);
         }
     }
 }
