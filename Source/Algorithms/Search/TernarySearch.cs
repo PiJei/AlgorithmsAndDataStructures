@@ -17,6 +17,7 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System;
 using System.Collections.Generic;
 using CSFundamentals.Styling;
 
@@ -25,12 +26,12 @@ namespace CSFundamentals.Algorithms.Search
     public class TernarySearch
     {
         /// <summary>
-        /// Implements ternary search recursively on a list of integers. 
+        /// Implements ternary search recursively on a list of any comparable type. 
         /// This search is inspired by binary search (hence the naming, 3 versus 2).
         /// The difference being that rather than dividing the array into 2 sections, divides it into 3 equal sections and performs the search inside each one of those separately.
         /// Notice that only works if the given array is sorted. 
         /// </summary>
-        /// <param name="values">A sorted list of integers. </param>
+        /// <param name="values">A sorted list of any comparable type. </param>
         /// <param name="startIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>
         /// <param name="endIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
         /// <param name="searchValue">Specifies the value that is being searched for. </param>
@@ -40,42 +41,51 @@ namespace CSFundamentals.Algorithms.Search
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(log3(n))")]
         [TimeComplexity(Case.Average, "")] // TODO
-        public static int Search(List<int> values, int startIndex, int endIndex, int searchValue)
+        public static int Search<T>(List<T> values, int startIndex, int endIndex, T searchValue) where T : IComparable
         {
-            if (startIndex <= endIndex && searchValue >= values[startIndex] && searchValue <= values[endIndex]) /* the latter two comparisons only make sense because the array is sorted. */
+            if (startIndex > endIndex)
             {
-                /* Dividing array by ((endIndex - startIndex) / 3) size in2o 3 sections. */
-                int middleIndex1 = startIndex + (endIndex - startIndex) / 3;
-                int middleIndex2 = middleIndex1 + (endIndex - startIndex) / 3;
-
-                int middleValue1 = values[middleIndex1];
-                int middleValue2 = values[middleIndex2];
-
-                if (searchValue == middleValue1)
-                {
-                    return middleIndex1;
-                }
-
-                if (searchValue == middleValue2)
-                {
-                    return middleIndex2;
-                }
-
-                if (searchValue < middleValue1)
-                {
-                    return Search(values, startIndex, middleIndex1 - 1, searchValue);
-                }
-
-                if (searchValue > middleValue1 && searchValue < middleValue2)
-                {
-                    return Search(values, middleIndex1 + 1, middleIndex2 - 1, searchValue);
-                }
-
-                if (searchValue > middleValue2)
-                {
-                    return Search(values, middleIndex2 + 1, endIndex, searchValue);
-                }
+                return -1;
             }
+
+            /* If searchValue is NOT in the range, terminate search. Since the input array is sorted this early check is feasible. */
+            if (searchValue.CompareTo(values[startIndex]) < 0 || searchValue.CompareTo(values[endIndex]) > 0)
+            {
+                return -1;
+            }
+
+            /* Dividing array by ((endIndex - startIndex) / 3) size in2o 3 sections. */
+            int middleIndex1 = startIndex + (endIndex - startIndex) / 3;
+            int middleIndex2 = middleIndex1 + (endIndex - startIndex) / 3;
+
+            T middleValue1 = values[middleIndex1];
+            T middleValue2 = values[middleIndex2];
+
+            if (searchValue.CompareTo(middleValue1) == 0)
+            {
+                return middleIndex1;
+            }
+
+            if (searchValue.CompareTo(middleValue2) == 0)
+            {
+                return middleIndex2;
+            }
+
+            if (searchValue.CompareTo(middleValue1) < 0)
+            {
+                return Search(values, startIndex, middleIndex1 - 1, searchValue);
+            }
+
+            if (searchValue.CompareTo(middleValue1) > 0 && searchValue.CompareTo(middleValue2) < 0)
+            {
+                return Search(values, middleIndex1 + 1, middleIndex2 - 1, searchValue);
+            }
+
+            if (searchValue.CompareTo(middleValue2) > 0)
+            {
+                return Search(values, middleIndex2 + 1, endIndex, searchValue);
+            }
+
             return -1;
         }
     }

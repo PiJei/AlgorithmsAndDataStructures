@@ -17,6 +17,7 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System;
 using System.Collections.Generic;
 using CSFundamentals.Styling;
 
@@ -25,11 +26,11 @@ namespace CSFundamentals.Algorithms.Search
     public class InterpolationSearch
     {
         /// <summary>
-        /// Searches in a sorted list of integers where values have a uniform distribution. Is an improvement over binary search, and has a very similar implementation, the only main difference is where (which index in the array) the search starts at.
+        /// Searches in a sorted list of any comparable type, where values have a uniform distribution. Interpolation search is an improvement over binary search, and has a very similar implementation, the only main difference is where (which index in the array) the search starts at.
         /// The search is named inter-polation, as it always has two main poles that it moves back and forth between them, these poles are the start index and the end index of the array. 
         /// Notice that only works if the given array is sorted. 
         /// </summary>
-        /// <param name="values">A sorted list of integers that are also uniformly distributed. </param>
+        /// <param name="values">A sorted list of any comparable type that are also uniformly distributed. </param>
         /// <param name="startIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>
         /// <param name="endIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
         /// <param name="searchValue">Specifies the value that is being searched for. </param>
@@ -39,49 +40,57 @@ namespace CSFundamentals.Algorithms.Search
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(n)")]
         [TimeComplexity(Case.Average, "O(Log(Log(n)))")]
-        public static int Search(List<int> values, int startIndex, int endIndex, int searchValue)
+        public static int Search<T>(List<T> values, int startIndex, int endIndex, T searchValue) where T : IComparable<T>
         {
-            if (startIndex <= endIndex && searchValue >= values[startIndex] && searchValue <= values[endIndex])
+            if (startIndex > endIndex)
             {
-                int searchStartIndex = GetStartIndex(values, startIndex, endIndex, searchValue);
-                if (!(searchStartIndex >= startIndex && searchStartIndex <= endIndex))
-                {
-                    return -1;
-                }
+                return -1;
+            }
 
-                int searchStartValue = values[searchStartIndex];
+            /* If searchValue is NOT in the range, terminate search. Since the input array is sorted this early check is feasible. */
+            if (searchValue.CompareTo(values[startIndex]) < 0 || searchValue.CompareTo(values[endIndex]) > 0)
+            {
+                return -1;
+            }
 
-                if (searchValue == searchStartValue)
-                {
-                    return searchStartIndex;
-                }
+            int searchStartIndex = GetStartIndex(values, startIndex, endIndex, searchValue);
+            if (!(searchStartIndex >= startIndex && searchStartIndex <= endIndex))
+            {
+                return -1;
+            }
 
-                if (searchValue < searchStartValue)
-                {
-                    return Search(values, startIndex, searchStartIndex - 1, searchValue);
-                }
+            T searchStartValue = values[searchStartIndex];
 
-                if (searchValue > searchStartValue)
-                {
-                    return Search(values, searchStartIndex + 1, endIndex, searchValue);
-                }
+            if (searchValue.CompareTo(searchStartValue) == 0)
+            {
+                return searchStartIndex;
+            }
+
+            if (searchValue.CompareTo(searchStartValue) < 0)
+            {
+                return Search(values, startIndex, searchStartIndex - 1, searchValue);
+            }
+
+            if (searchValue.CompareTo(searchStartValue) > 0)
+            {
+                return Search(values, searchStartIndex + 1, endIndex, searchValue);
             }
 
             return -1;
         }
 
         /// <summary>
-        /// Computes an index to start the search from. Dependent on the value we are after. 
+        /// Computes an index to start the search from, Dependent on the value we are after. 
         /// This formula is such that if the <paramref name="searchValue"> is closer to the value in the <paramref name="startIndex"/>, the search start point will be chosen closer to the <paramref name="startIndex"/>, and if the <paramref name="searchValue"/> is closer to the value at <paramref name="endIndex"/>, the search start point will be chosen closer to the <paramref name="endIndex"/>.
         /// </summary>
-        /// <param name="values">A sorted list of integers that are also uniformly distributed. </param>
+        /// <param name="values">A sorted list of any comparable type that are also uniformly distributed. </param>
         /// <param name="startIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>
         /// <param name="endIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
         /// <param name="searchValue">Specifies the value that is being searched for. </param>
         /// <returns>The index in the array at which to start the search. </returns>
-        public static int GetStartIndex(List<int> values, int startIndex, int endIndex, int searchValue)
+        public static int GetStartIndex<T>(List<T> values, int startIndex, int endIndex, T searchValue) where T : IComparable<T>
         {
-            double distanceFromStartIndex = (double)(searchValue - values[startIndex]) / (double)(values[endIndex] - values[startIndex]);
+            double distanceFromStartIndex = ((dynamic)searchValue - (dynamic)values[startIndex]) / (double)((dynamic)values[endIndex] - (dynamic)values[startIndex]);
             distanceFromStartIndex = distanceFromStartIndex * (endIndex - startIndex);
             int index = (int)(startIndex + distanceFromStartIndex);
             return index;
@@ -93,5 +102,6 @@ namespace CSFundamentals.Algorithms.Search
         // TODO: Implement iterative versions and recursive versions for each search algorithm.. 
 
         // TODO: Implement methods to count the number of elements each search algorithm checks before finding a value and measure it in average?
+        // TODO: Not sure if this will work with types other than integer, because of conversion to dynamic... test with string for example. ... or any object, etc, .. 
     }
 }

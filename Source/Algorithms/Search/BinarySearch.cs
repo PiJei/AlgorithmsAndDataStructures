@@ -40,26 +40,33 @@ namespace CSFundamentals.Algorithms.Search
         [TimeComplexity(Case.Average, "O(Log(n))")]
         public static int Search<T>(List<T> values, int startIndex, int endIndex, T searchValue) where T : IComparable<T>
         {
-            if (startIndex <= endIndex &&
-                searchValue.CompareTo(values[startIndex]) >= 0 && /* Check whether searchValue is in the range. Since the input array is sorted this is feasible. */
-                searchValue.CompareTo(values[endIndex]) <= 0)
+            if (startIndex > endIndex)
             {
-                int middleIndex = (startIndex + endIndex) / 2;
-                T middleValue = values[middleIndex];
-
-                if (searchValue.CompareTo(middleValue) == 0)
-                {
-                    return middleIndex;
-                }
-                if (searchValue.CompareTo(middleValue) < 0)
-                {
-                    return Search(values, startIndex, middleIndex - 1, searchValue);
-                }
-                if (searchValue.CompareTo(middleValue) > 0)
-                {
-                    return Search(values, middleIndex + 1, endIndex, searchValue);
-                }
+                return -1;
             }
+
+            /* If searchValue is NOT in the range, terminate search. Since the input array is sorted this early check is feasible. */
+            if (searchValue.CompareTo(values[startIndex]) < 0 || searchValue.CompareTo(values[endIndex]) > 0)
+            {
+                return -1;
+            }
+
+            int middleIndex = (startIndex + endIndex) / 2;
+            T middleValue = values[middleIndex];
+
+            if (searchValue.CompareTo(middleValue) == 0)
+            {
+                return middleIndex;
+            }
+            if (searchValue.CompareTo(middleValue) < 0)
+            {
+                return Search(values, startIndex, middleIndex - 1, searchValue);
+            }
+            if (searchValue.CompareTo(middleValue) > 0)
+            {
+                return Search(values, middleIndex + 1, endIndex, searchValue);
+            }
+
             return -1;
         }
     }

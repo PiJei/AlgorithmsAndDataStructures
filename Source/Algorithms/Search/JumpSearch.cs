@@ -29,7 +29,7 @@ namespace CSFundamentals.Algorithms.Search
         /// Performs a jumpSearch on a list of integers to find the <paramref name="searchValue"/>. 
         /// Notice that only works if the given array is sorted. 
         /// </summary>
-        /// <param name="values">Specifies a sorted list of integers.</param>
+        /// <param name="values">Specifies a sorted list of any comparable type.</param>
         /// <param name="searchValue">Specifies the value the method is searching for. </param>
         /// <returns>The index of the <paramref name="searchValue"/> in the array, and -1 if it does not exist in the array. </returns>
         [Algorithm(AlgorithmType.Search, "JumpSearch", Assumptions = "Array is sorted with an ascending order.")]
@@ -37,9 +37,10 @@ namespace CSFundamentals.Algorithms.Search
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "o(√n)")]
         [TimeComplexity(Case.Average, "O(√n)")]
-        public static int Search(List<int> values, int searchValue)
+        public static int Search<T>(List<T> values, T searchValue) where T : IComparable<T>
         {
-            if (searchValue < values[0] || searchValue > values[values.Count - 1]) // We can perform this check as the array is expected to be sorted. 
+            /* If searchValue is NOT in the range, terminate search. Since the input array is sorted this early check is feasible. */
+            if (searchValue.CompareTo(values[0]) < 0 || searchValue.CompareTo(values[values.Count - 1]) > 0)
             {
                 return -1;
             }
@@ -47,7 +48,7 @@ namespace CSFundamentals.Algorithms.Search
             int jumpStepLength = (int)Math.Floor(Math.Sqrt(values.Count));
 
             int nextIndex = 0;
-            while (values[nextIndex] < searchValue)
+            while (values[nextIndex].CompareTo(searchValue) < 0)
             {
                 nextIndex += jumpStepLength; // Jump forward
                 if (nextIndex >= values.Count)
@@ -57,7 +58,7 @@ namespace CSFundamentals.Algorithms.Search
                 }
             }
 
-            if (values[nextIndex] == searchValue)
+            if (values[nextIndex].CompareTo(searchValue) == 0)
             {
                 return nextIndex;
             }

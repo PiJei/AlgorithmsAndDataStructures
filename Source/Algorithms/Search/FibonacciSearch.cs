@@ -26,10 +26,11 @@ namespace CSFundamentals.Algorithms.Search
     public class FibonacciSearch
     {
         [Algorithm(AlgorithmType.Search, "FibonacciSearch", Assumptions = "Array is sorted with an ascending order.")]
-        // TODO: specify time and space complexity.
+        // TODO: specify time and space complexity. AND SUMMARY
         public static int Search<T>(List<T> values, T searchValue) where T : IComparable<T>
         {
-            if (searchValue.CompareTo(values[0]) < 0 || searchValue.CompareTo(values[values.Count - 1]) > 0) /* Check whether searchValue is in the range. Since the input array is sorted this is feasible. */
+            /* If searchValue is NOT in the range, terminate search. Since the input array is sorted this early check is feasible. */
+            if (searchValue.CompareTo(values[0]) < 0 || searchValue.CompareTo(values[values.Count - 1]) > 0)
             {
                 return -1;
             }

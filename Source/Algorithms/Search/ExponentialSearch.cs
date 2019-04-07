@@ -38,24 +38,25 @@ namespace CSFundamentals.Algorithms.Search
         [TimeComplexity(Case.Average, "O(log(i)), i is the index of the searchValue in the array.")]
         public static int Search<T>(List<T> values, T searchValue) where T : IComparable<T>
         {
-            if (searchValue.CompareTo(values[0]) >= 0 &&
-                searchValue.CompareTo(values[values.Count - 1]) <= 0) /* Check whether searchValue is in the range. Since the input array is sorted this is feasible. */
+            /* If searchValue is NOT in the range, terminate search. Since the input array is sorted this early check is feasible. */
+            if (searchValue.CompareTo(values[0]) < 0 || searchValue.CompareTo(values[values.Count - 1]) > 0)
             {
-                if (values[0].CompareTo(searchValue) == 0)
-                {
-                    return 0;
-                }
-
-                int nextIndex = 1; /* Ideally should start from index 1, however that would make the while loop indexing complex, thus treating index 0 differently, and then continuing with the rest. */
-                while (nextIndex < values.Count && values[nextIndex].CompareTo(searchValue) < 0) /* multiple the search step by 2, until encountering an element that is bigger than the searchValue*/
-                {
-                    nextIndex = nextIndex * 2;
-                }
-
-                /* The range at which the searchValue is expected to be is thus [nextIndex/2, nextIndex] - perform a binary search in this range. */
-                return BinarySearch.Search(values, nextIndex / 2, Math.Min(nextIndex, values.Count - 1), searchValue);
+                return -1;
             }
-            return -1;
+
+            if (values[0].CompareTo(searchValue) == 0)
+            {
+                return 0;
+            }
+
+            int nextIndex = 1; /* Ideally should start from index 0, however that would make the while loop indexing complex, thus treating index 0 differently, and then continuing with the rest. */
+            while (nextIndex < values.Count && values[nextIndex].CompareTo(searchValue) < 0) /* multiple the search step by 2, until encountering an element that is bigger than the searchValue*/
+            {
+                nextIndex = nextIndex * 2;
+            }
+
+            /* The range at which the searchValue is expected to be is thus [nextIndex/2, nextIndex] - perform a binary search in this range. */
+            return BinarySearch.Search(values, nextIndex / 2, Math.Min(nextIndex, values.Count - 1), searchValue);
         }
     }
 }
