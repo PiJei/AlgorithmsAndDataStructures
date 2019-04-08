@@ -16,6 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 using System;
 using System.Collections.Generic;
 using CSFundamentals.Styling;
@@ -25,10 +26,11 @@ namespace CSFundamentals.Algorithms.Search
     public class FibonacciSearch
     {
         [Algorithm(AlgorithmType.Search, "FibonacciSearch", Assumptions = "Array is sorted with an ascending order.")]
-        //todo: specify time and space complexity.
-        public static int Search(List<int> values, int searchValue)
+        // TODO: specify time and space complexity. AND SUMMARY
+        public static int Search<T>(List<T> values, T searchValue) where T : IComparable<T>
         {
-            if (searchValue < values[0] || searchValue > values[values.Count - 1]) // We can perform this check as the array is expected to be sorted. 
+            /* If searchValue is NOT in the range, terminate search. Since the input array is sorted this early check is feasible. */
+            if (searchValue.CompareTo(values[0]) < 0 || searchValue.CompareTo(values[values.Count - 1]) > 0)
             {
                 return -1;
             }
@@ -41,26 +43,26 @@ namespace CSFundamentals.Algorithms.Search
             {
                 /* First compare to the value at index FibN2 */
                 int index = Math.Min(startIndex + fib.FibN2, values.Count - 1);
-                if (searchValue == values[index])
+                if (searchValue.CompareTo(values[index]) == 0)
                 {
                     return index;
                 }
 
-                if (searchValue < values[index])
+                if (searchValue.CompareTo(values[index]) < 0)
                 {
                     // Shift backward twice as checked against FibN2
                     fib.ShiftBackward();
                     fib.ShiftBackward();
                 }
 
-                if (searchValue > values[index])
+                if (searchValue.CompareTo(values[index]) > 0)
                 {
                     fib.ShiftBackward();
                     startIndex = index; /* Which is the previous Fib2*/
                 }
             }
 
-            if (fib.FibN1 == 1 && (startIndex + 1) < values.Count && values[startIndex + 1] == searchValue)
+            if (fib.FibN1 == 1 && (startIndex + 1) < values.Count && values[startIndex + 1].CompareTo(searchValue) == 0)
             {
                 return startIndex + 1;
             }
@@ -85,6 +87,7 @@ namespace CSFundamentals.Algorithms.Search
         }
     }
 
+    // todo: Come up with better naming for Fib1, Fib2, ... 
     /// <summary>
     /// Represents a Fibonacci number at index n, and the two Fibonacci numbers at two preceding indexes, which are necessary for calculating this element's value.  
     /// </summary>

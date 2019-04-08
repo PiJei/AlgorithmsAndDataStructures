@@ -17,6 +17,7 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+// TODO: Notations in complexities are not uniform. 
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
@@ -65,15 +66,15 @@ namespace CSFundamentals.DataStructures.Trees
             }
             return Root;
         }
-
+        // TODO: In time complexities subscripts and superscripts do not look good.
         /// <summary>
         /// Inserts a new key-value pair in the tree and returns root of the tree. 
         /// </summary>
         /// <param name="keyValue">Is the key-value pair to be inserted in the tree. </param>
         /// <returns>Root of the tree. </returns>
         [TimeComplexity(Case.Best, "O(1)", When = "Fist key in the tree is inserted.")]
-        [TimeComplexity(Case.Worst, "O(Log(n))")]
-        [TimeComplexity(Case.Average, "O(Log(n))")]
+        [TimeComplexity(Case.Worst, "O(D Log(n)(base:D)")] // where D is max branching factor of the tree. 
+        [TimeComplexity(Case.Average, "O(d Log(n)(base d))")] // where d is min branching factor of the tree.  
         public BTreeNode<TKey, TValue> Insert(KeyValuePair<TKey, TValue> keyValue)
         {
             /* Find the leaf node that should contain the new key-value pair. The leaf is found such that the order property of the B-Tree is preserved. */
@@ -101,8 +102,8 @@ namespace CSFundamentals.DataStructures.Trees
         /// <param name="key">The key to be deleted from the tree. </param>
         /// <returns>True in case of success, and false otherwise. </returns>
         [TimeComplexity(Case.Best, "O(1)", When = "For example, there is only one key left in the tree.")]
-        [TimeComplexity(Case.Worst, "O(Log(n))")]
-        [TimeComplexity(Case.Average, "O(Log(n))")]
+        [TimeComplexity(Case.Worst, "O(D Log(n)(base D))")] // where D is max branching factor of the tree. 
+        [TimeComplexity(Case.Average, "O(d Log(n) base d)")] // where d is min branching factor of the tree.  
         public bool Delete(TKey key)
         {
             try
@@ -136,7 +137,7 @@ namespace CSFundamentals.DataStructures.Trees
                 /* Find the immediate predecessor of key in its left subtree. */
                 int keyIndexAtNode = node.GetKeyIndex(key);
                 BTreeNode<TKey, TValue> predecessorNode = GetMaxNode(node.GetChild(keyIndexAtNode));
-                
+
                 /* Remove key and replace it with its predecessor*/
                 node.RemoveKey(key);
                 node.InsertKeyValue(predecessorNode.GetMaxKey());
@@ -388,8 +389,8 @@ namespace CSFundamentals.DataStructures.Trees
         /// <param name="key">Is the key to search for.</param>
         /// <returns>The node containing the key if it exists. Otherwise throws an exception. </returns>
         [TimeComplexity(Case.Best, "O(1)", When = "Key is the first item of the first node to visit.")]
-        [TimeComplexity(Case.Worst, "O(Log(n))")] // Each search with in a node uses binary-search which is Log(K) cost, and since it is constant is not included in this value. 
-        [TimeComplexity(Case.Average, "O(Log(n))")]
+        [TimeComplexity(Case.Worst, "O(LogD Log(n)Base(D))")] // Each search with in a node uses binary-search which is Log(K) cost, and since it is constant is not included in this value. 
+        [TimeComplexity(Case.Average, "O(Log(d) Log(n)Base(d))")]
         public BTreeNode<TKey, TValue> Search(BTreeNode<TKey, TValue> root, TKey key)
         {
             if (root != null)
@@ -464,7 +465,7 @@ namespace CSFundamentals.DataStructures.Trees
         /// <param name="node">The node at which (sub)tree is rooted. </param>
         /// <returns>The node containing the maximum key of the (sub)tree rooted at node. </returns>
         [TimeComplexity(Case.Best, "O(1)", When = "when node is leaf.")]
-        [TimeComplexity(Case.Worst, "O(Log(n))")] 
+        [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         public BTreeNode<TKey, TValue> GetMaxNode(BTreeNode<TKey, TValue> node)
         {

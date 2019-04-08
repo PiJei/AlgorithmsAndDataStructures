@@ -17,10 +17,12 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System;
 using System.Collections.Generic;
 using CSFundamentals.Styling;
 
-//TODO: Re-implement with a better understanding of key values (int, string)
+// TODO: Re-implement with a better understanding of key values (int, string)
+// TODO: Make generic
 namespace CSFundamentals.Algorithms.Search
 {
     public class HashTableSearch
@@ -28,7 +30,7 @@ namespace CSFundamentals.Algorithms.Search
         /// <summary>
         /// Implements search using a hash table. 
         /// </summary>
-        /// <param name="values">Specifies a list of integers.</param>
+        /// <param name="values">Specifies a list of any comparable type.</param>
         /// <param name="searchValue">Specifies the value the method is searching for. </param>
         /// <returns>The list of all the indexes in the array that have <paramref name="searchValue">. </returns>
         [Algorithm(AlgorithmType.Search, "HashTable")]
@@ -36,19 +38,19 @@ namespace CSFundamentals.Algorithms.Search
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(n)", When = "All the elements are mapped to the same key (for example due to lots of conflicts in the hashing method).")]
         [TimeComplexity(Case.Average, "O(1)")]
-        public static List<int> Search(List<int> values, int searchValue)
+        public static List<int> Search<T>(List<T> values, T searchValue) where T : IComparable<T>
         {
-            Dictionary<int, List<int>> hashTable = ConvertList2HashTable(values);
-            if (hashTable.ContainsKey(searchValue))
+            Dictionary<T, List<int>> hashTable = ConvertList2HashTable(values);
+            if (hashTable.ContainsKey(searchValue)) //todo: sHOULD USE my own contains... 
             {
                 return hashTable[searchValue];
             }
             return new List<int> { };
         }
 
-        private static Dictionary<int, List<int>> ConvertList2HashTable(List<int> values)
+        private static Dictionary<T, List<int>> ConvertList2HashTable<T>(List<T> values) where T : IComparable<T>
         {
-            Dictionary<int, List<int>> hashTable = new Dictionary<int, List<int>>();
+            Dictionary<T, List<int>> hashTable = new Dictionary<T, List<int>>();
             for (int i = 0; i < values.Count; i++)
             {
                 if (!hashTable.ContainsKey(values[i]))
