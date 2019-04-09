@@ -17,14 +17,26 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System;
+using CSFundamentals.DataStructures.Trees.Binary;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSFundamentals.DataStructures.Trees
+namespace CSFundamentalsTests.DataStructures.Trees.Binary
 {
-    public class TreeNodeRelationException : Exception
+    [TestClass]
+    public class RedBlackTreeNodeTests
     {
-        public TreeNodeRelationException(string message) : base(message)
+        [TestMethod]
+        public void FlipColor()
         {
+            RedBlackTreeNode<int, string> A = new RedBlackTreeNode<int, string>(2, "A", Color.Red);
+            Assert.AreEqual(Color.Red, A.Color);
+
+            var tree = new RedBlackTree<int, string>();
+
+            A.FlipColor();
+            Assert.AreEqual(Color.Black, A.Color);
+            A.FlipColor();
+            Assert.AreEqual(Color.Red, A.Color);
         }
     }
 }

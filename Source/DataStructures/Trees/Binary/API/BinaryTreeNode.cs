@@ -20,7 +20,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace CSFundamentals.DataStructures.Trees.API
+namespace CSFundamentals.DataStructures.Trees.Binary.API
 {
     public abstract class BinaryTreeNode<TNode, TKey, TValue> : IComparable<TNode>, IBinaryTreeNode<TNode, TKey, TValue> where TNode : IBinaryTreeNode<TNode, TKey, TValue> where TKey : IComparable<TKey>
     {

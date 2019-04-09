@@ -19,10 +19,10 @@
 
 using System;
 using System.Collections.Generic;
-using CSFundamentals.DataStructures.Trees;
+using CSFundamentals.DataStructures.Trees.Nary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSFundamentalsTests.DataStructures.Trees
+namespace CSFundamentalsTests.DataStructures.Trees.Nary
 {
     /// <summary>
     /// Tests BTreeNode implementation by a 2-3 BTree Node.

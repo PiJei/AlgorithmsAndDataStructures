@@ -18,9 +18,9 @@
  */
 
 using System;
-using CSFundamentals.DataStructures.Trees.API;
+using CSFundamentals.DataStructures.Trees.Binary.API;
 
-namespace CSFundamentals.DataStructures.Trees
+namespace CSFundamentals.DataStructures.Trees.Binary
 {
     public class RedBlackTreeNode<TKey, TValue> : BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue> where TKey : IComparable<TKey>
     {

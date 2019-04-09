@@ -22,7 +22,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 // TODO: Make tests in one test file to use the init and just it 
 
-namespace CSFundamentalsTests.DataStructures.Trees.API
+namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
 {
     [TestClass]
     public class BinaryTreeNodeTests

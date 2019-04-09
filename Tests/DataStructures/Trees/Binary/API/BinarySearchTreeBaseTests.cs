@@ -19,10 +19,10 @@
 
 using System;
 using System.Collections.Generic;
-using CSFundamentals.DataStructures.Trees.API;
+using CSFundamentals.DataStructures.Trees.Binary.API;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSFundamentalsTests.DataStructures.Trees.API
+namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
 {
     [TestClass]
     public class BinarySearchTreeBaseTests

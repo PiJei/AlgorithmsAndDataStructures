@@ -1,0 +1,1 @@
+﻿Contains implementations for variants of nary trees, these are trees where nodes can have n number of children. 

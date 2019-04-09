@@ -21,10 +21,10 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Linq;
-using CSFundamentals.DataStructures.Trees.API;
+using CSFundamentals.DataStructures.Trees.Binary.API;
 using CSFundamentals.Styling;
 
-namespace CSFundamentals.DataStructures.Trees
+namespace CSFundamentals.DataStructures.Trees.Binary
 {
     /// <summary>
     /// Implements an AVL tree. An AVL tree is a self balancing Binary Search Tree.

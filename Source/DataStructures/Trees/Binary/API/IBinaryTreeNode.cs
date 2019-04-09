@@ -20,7 +20,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace CSFundamentals.DataStructures.Trees.API
+namespace CSFundamentals.DataStructures.Trees.Binary.API
 {
     /// <summary>
     /// Specifies an interface for nodes in any tree structure. 

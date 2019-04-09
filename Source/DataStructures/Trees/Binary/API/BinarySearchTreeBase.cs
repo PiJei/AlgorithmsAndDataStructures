@@ -24,7 +24,7 @@ using CSFundamentals.Styling;
 
 [assembly: InternalsVisibleTo("CSFundamentalTests")]
 
-namespace CSFundamentals.DataStructures.Trees.API
+namespace CSFundamentals.DataStructures.Trees.Binary.API
 {
     public abstract class BinarySearchTreeBase<TNode, TKey, TValue> where TNode : IBinaryTreeNode<TNode, TKey, TValue> where TKey : IComparable<TKey>
     {

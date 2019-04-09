@@ -19,9 +19,9 @@
 
 using System;
 using System.Collections.Generic;
-using CSFundamentals.DataStructures.Trees.API;
+using CSFundamentals.DataStructures.Trees.Binary.API;
 
-namespace CSFundamentalsTests.DataStructures.Trees.API
+namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
 {
     public class MockBinarySearchTreeBase<TKey, TValue> : BinarySearchTreeBase<MockBinaryTreeNode<TKey, TValue>, TKey, TValue> where TKey : IComparable<TKey>
     {

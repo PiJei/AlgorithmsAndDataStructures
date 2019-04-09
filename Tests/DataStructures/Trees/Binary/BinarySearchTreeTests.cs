@@ -18,11 +18,11 @@
  */
 
 using System.Collections.Generic;
-using CSFundamentals.DataStructures.Trees;
-using CSFundamentalsTests.DataStructures.Trees.API;
+using CSFundamentals.DataStructures.Trees.Binary;
+using CSFundamentalsTests.DataStructures.Trees.Binary.API;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSFundamentalsTests.DataStructures.Trees
+namespace CSFundamentalsTests.DataStructures.Trees.Binary
 {
     [TestClass]
     public class BinarySearchTreeTests

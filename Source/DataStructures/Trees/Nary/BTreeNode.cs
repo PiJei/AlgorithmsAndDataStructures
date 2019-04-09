@@ -23,7 +23,7 @@ using System.Linq;
 
 // TODO: somehow should not allow comparisons to nodes with other degrees, ... how can degree be considered, ...?
 
-namespace CSFundamentals.DataStructures.Trees
+namespace CSFundamentals.DataStructures.Trees.Nary
 {
     /// <summary>
     /// Implements a B-Tree node. A B-tree node is an ordered sequence of K keys, and K+1 children.

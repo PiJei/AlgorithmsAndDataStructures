@@ -19,10 +19,10 @@
 
 using System;
 using System.Collections.Generic;
-using CSFundamentals.DataStructures.Trees.API;
+using CSFundamentals.DataStructures.Trees.Binary.API;
 using CSFundamentals.Styling;
 
-namespace CSFundamentals.DataStructures.Trees
+namespace CSFundamentals.DataStructures.Trees.Binary
 {
     /// <summary>
     /// Implements a binary search tree, and its operations. In a binary search tree, each node's key is larger than its left child's key, and smaller than its right child's key.

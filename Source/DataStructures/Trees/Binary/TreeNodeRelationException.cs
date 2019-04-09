@@ -18,17 +18,12 @@
  */
 
 using System;
-using CSFundamentals.DataStructures.Trees.API;
-
-namespace CSFundamentals.DataStructures.Trees
+// TODO: ADD a summary and better the naming
+namespace CSFundamentals.DataStructures.Trees.Binary
 {
-    public class AVLTreeNode<TKey, TValue> : BinaryTreeNode<AVLTreeNode<TKey, TValue>, TKey, TValue> where TKey : IComparable<TKey>
+    public class TreeNodeRelationException : Exception
     {
-        public override AVLTreeNode<TKey, TValue> LeftChild { get; set; }
-        public override AVLTreeNode<TKey, TValue> RightChild { get; set; }
-        public override AVLTreeNode<TKey, TValue> Parent { get; set; }
-
-        public AVLTreeNode(TKey key, TValue value) : base(key, value)
+        public TreeNodeRelationException(string message) : base(message)
         {
         }
     }

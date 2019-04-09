@@ -21,12 +21,12 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Runtime.CompilerServices;
-using CSFundamentals.DataStructures.Trees.API;
+using CSFundamentals.DataStructures.Trees.Binary.API;
 using CSFundamentals.Styling;
 
 [assembly: InternalsVisibleTo("CSFundamentalsTests")]
 
-namespace CSFundamentals.DataStructures.Trees
+namespace CSFundamentals.DataStructures.Trees.Binary
 {
     /// <summary>
     /// Implements a red black tree and its operations. A red-black tree is a self-balancing binary search tree.

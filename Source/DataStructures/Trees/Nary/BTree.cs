@@ -31,7 +31,7 @@ using CSFundamentals.Styling;
 // TODO: for search  could we use binary search implementation from search part of this lib?
 // TODO:  test with other (than 2-3) degrees of trees
 
-namespace CSFundamentals.DataStructures.Trees
+namespace CSFundamentals.DataStructures.Trees.Nary
 {
     [DataStructure("BTree")]
     public class BTree<TKey, TValue> where TKey : IComparable<TKey>

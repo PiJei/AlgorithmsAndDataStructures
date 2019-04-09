@@ -17,25 +17,19 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CSFundamentals.DataStructures.Trees;
+using System;
+using CSFundamentals.DataStructures.Trees.Binary.API;
 
-namespace CSFundamentalsTests.DataStructures.Trees
+namespace CSFundamentals.DataStructures.Trees.Binary
 {
-    /// <summary>
-    /// Tests BTreeNode implementation by a 2-3-4 BTree Node.
-    /// </summary>
-    [TestClass]
-    public class _2_3_4_BTreeNodeTests
+    public class BinarySearchTreeNode<TKey, TValue> : BinaryTreeNode<BinarySearchTreeNode<TKey, TValue>, TKey, TValue> where TKey : IComparable<TKey>
     {
-        [TestMethod]
-        public void Constructor_CheckingDegrees()
+        public BinarySearchTreeNode(TKey key, TValue value) : base(key, value)
         {
-            var node = new BTreeNode<int, string>(4);
-            Assert.AreEqual(2, node.MinBranchingDegree);
-            Assert.AreEqual(4, node.MaxBranchingDegree);
-            Assert.AreEqual(1, node.MinKeys);
-            Assert.AreEqual(3, node.MaxKeys);
         }
+
+        public override BinarySearchTreeNode<TKey, TValue> LeftChild { get; set; }
+        public override BinarySearchTreeNode<TKey, TValue> RightChild { get; set; }
+        public override BinarySearchTreeNode<TKey, TValue> Parent { get; set; }
     }
 }

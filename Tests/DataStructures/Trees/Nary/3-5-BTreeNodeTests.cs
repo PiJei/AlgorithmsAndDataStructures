@@ -19,12 +19,12 @@
 
 using System;
 using System.Collections.Generic;
-using CSFundamentals.DataStructures.Trees;
+using CSFundamentals.DataStructures.Trees.Nary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 // TODO: Completely test all methods for each number of b-tree instance. 
 
-namespace CSFundamentalsTests.DataStructures.Trees
+namespace CSFundamentalsTests.DataStructures.Trees.Nary
 {
     /// <summary>
     /// Tests BTreeNode implementation by a 3-5 BTree Node.

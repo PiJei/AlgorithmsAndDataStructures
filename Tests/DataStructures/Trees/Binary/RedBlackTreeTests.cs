@@ -20,13 +20,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using CSFundamentals.DataStructures.Trees;
-using CSFundamentalsTests.DataStructures.Trees.API;
+using CSFundamentals.DataStructures.Trees.Binary;
+using CSFundamentalsTests.DataStructures.Trees.Binary.API;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 //TODO: Add more tests with bigger trees.
 
-namespace CSFundamentalsTests.DataStructures.Trees
+namespace CSFundamentalsTests.DataStructures.Trees.Binary
 {
     [TestClass]
     public class RedBlackTreeTests

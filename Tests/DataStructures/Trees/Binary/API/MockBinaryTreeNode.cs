@@ -18,9 +18,9 @@
  */
 
 using System;
-using CSFundamentals.DataStructures.Trees.API;
+using CSFundamentals.DataStructures.Trees.Binary.API;
 
-namespace CSFundamentalsTests.DataStructures.Trees.API
+namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
 {
     /// <summary>
     /// This class is only created for testing purposes. 
