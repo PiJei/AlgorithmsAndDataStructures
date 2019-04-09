@@ -18,7 +18,7 @@
  */
 
 using System;
-using CSFundamentals.Styling;
+using CSFundamentals.Decoration;
 //TODO: Should I have a build method as well?
 
 namespace CSFundamentals.DataStructures.LinkedLists.API

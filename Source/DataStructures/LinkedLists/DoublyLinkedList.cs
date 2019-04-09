@@ -18,7 +18,7 @@
  */
 
 using System;
-using CSFundamentals.Styling;
+using CSFundamentals.Decoration;
 using CSFundamentals.DataStructures.LinkedLists.API;
 
 namespace CSFundamentals.DataStructures.LinkedLists

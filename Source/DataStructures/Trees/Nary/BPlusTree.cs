@@ -18,33 +18,14 @@
  */
 
 using System;
+using System.Collections.Generic;
+using System.Text;
+using CSFundamentals.Decoration;
 
-namespace CSFundamentals.Styling
+namespace CSFundamentals.DataStructures.Trees.Nary
 {
-    [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
-    public class AlgorithmAttribute : Attribute
+    [DataStructure("B+ Tree")]
+    public class BPlusTree
     {
-        public AlgorithmType Type { get; private set; }
-
-        public string Name { get; private set; }
-
-        public bool IsGreedy { get; set; }
-
-        public string Assumptions { get; set; }
-
-        public AlgorithmAttribute(AlgorithmType type, string name)
-        {
-            Type = type;
-            Name = name;
-        }
-    }
-
-    public enum AlgorithmType
-    {
-        Sort = 1,
-        Search = 2,
-        PatternSearch = 3,
-        Hash = 4,
-        GraphRouteSearch = 5
     }
 }

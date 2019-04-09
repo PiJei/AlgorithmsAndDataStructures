@@ -20,7 +20,7 @@
 using System;
 using System.Collections.Generic;
 using CSFundamentals.DataStructures.Trees.Binary.API;
-using CSFundamentals.Styling;
+using CSFundamentals.Decoration;
 
 namespace CSFundamentals.DataStructures.Trees.Binary
 {

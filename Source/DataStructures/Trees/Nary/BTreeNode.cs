@@ -30,28 +30,8 @@ namespace CSFundamentals.DataStructures.Trees.Nary
     /// </summary>
     /// <typeparam name="TKey">Is the type of the keys in the tree. </typeparam>
     /// <typeparam name="TValue">Is the type of the values in the tree. </typeparam>
-    public class BTreeNode<TKey, TValue> : IComparable<BTreeNode<TKey, TValue>> where TKey : IComparable<TKey>
+    public class BTreeNode<TKey, TValue> : BTreeNodeBase, IComparable<BTreeNode<TKey, TValue>> where TKey : IComparable<TKey>
     {
-        /// <summary>
-        /// Is the minimum number of keys in a B-tree internal/leaf node. (Notice that a root has no lower bound on the number of keys. Intuitively when the tree is just being built it might start with 1, and grow afterwards.)
-        /// </summary>
-        public int MinKeys { get; private set; }
-
-        /// <summary>
-        /// Is the maximum number of keys in a B-tree internal/leaf/root node. This is often 2 times the MinKeys.
-        /// </summary>
-        public int MaxKeys { get; private set; }
-
-        /// <summary>
-        /// Is the minimum number of branches/children a B-tree internal node can have. 
-        /// </summary>
-        public int MinBranchingDegree { get; private set; }
-
-        /// <summary>
-        /// Is the maximum number of branches/children a B-tree internal or root node can have. Leaf nodes contain 0 children. 
-        /// </summary>
-        public int MaxBranchingDegree { get; private set; }
-
         /// <summary>
         /// A list of key-value pairs stored in this node. 
         /// Notice that SortedList does not allow duplicates. 
@@ -76,10 +56,12 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         /// Creates a node with no keys. 
         /// </summary>
         /// <param name="maxBranchingDegree">Is the maximum number of children the node can have. </param>
-        public BTreeNode(int maxBranchingDegree)
+        public BTreeNode(int maxBranchingDegree): base(maxBranchingDegree)
         {
-            Init(maxBranchingDegree);
+            _keyValues = new SortedList<TKey, TValue>();
+            _children = new SortedList<BTreeNode<TKey, TValue>, bool>();
         }
+
         /// <summary>
         /// Creates a node with 1 key. 
         /// </summary>
@@ -118,9 +100,6 @@ namespace CSFundamentals.DataStructures.Trees.Nary
             MinBranchingDegree = Convert.ToInt32(Math.Ceiling(Math.Round(MaxBranchingDegree / (double)2, MidpointRounding.AwayFromZero)));
             MinKeys = MinBranchingDegree - 1;
             MaxKeys = MaxBranchingDegree - 1;
-
-            _keyValues = new SortedList<TKey, TValue>();
-            _children = new SortedList<BTreeNode<TKey, TValue>, bool>();
         }
 
         /// <summary>

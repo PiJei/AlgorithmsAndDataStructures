@@ -19,7 +19,7 @@
 
 using System;
 using CSFundamentals.DataStructures.LinkedLists.API;
-using CSFundamentals.Styling;
+using CSFundamentals.Decoration;
 
 namespace CSFundamentals.DataStructures.LinkedLists
 {

@@ -22,7 +22,7 @@ using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Linq;
 using CSFundamentals.DataStructures.Trees.Binary.API;
-using CSFundamentals.Styling;
+using CSFundamentals.Decoration;
 
 namespace CSFundamentals.DataStructures.Trees.Binary
 {

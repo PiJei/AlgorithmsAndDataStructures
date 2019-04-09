@@ -22,7 +22,7 @@ using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Runtime.CompilerServices;
 using CSFundamentals.DataStructures.Trees.Binary.API;
-using CSFundamentals.Styling;
+using CSFundamentals.Decoration;
 
 [assembly: InternalsVisibleTo("CSFundamentalsTests")]
 

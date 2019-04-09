@@ -18,7 +18,7 @@
  */
 
 using CSFundamentals.Algorithms.Hashing;
-using CSFundamentals.Styling;
+using CSFundamentals.Decoration;
 
 namespace CSFundamentals.Algorithms.PatternSearch
 {

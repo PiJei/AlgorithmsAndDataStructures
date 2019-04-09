@@ -23,7 +23,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Runtime.CompilerServices;
-using CSFundamentals.Styling;
+using CSFundamentals.Decoration;
 
 [assembly: InternalsVisibleTo("CSFundamentals")]
 

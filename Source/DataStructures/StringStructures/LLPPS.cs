@@ -19,7 +19,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using CSFundamentals.Styling;
+using CSFundamentals.Decoration;
 
 namespace CSFundamentals.DataStructures.StringStructures
 {

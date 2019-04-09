@@ -17,33 +17,22 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+//TODO: Specify the time and space complexity of all the code in this project
 using System;
 
-namespace CSFundamentals.Styling
+namespace CSFundamentals.Decoration
 {
-    //TODO: Very similar to space complexity, ideally unify
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
-    public class TimeComplexityAttribute : Attribute
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false)]
+    public class SpaceComplexityAttribute : Attribute
     {
         public string Complexity { get; private set; }
-        public Case ExecutionCase { get; private set; }
 
-        /// <summary>
-        /// Describes when the given ExecutionCase takes place, for example what conditions should the input have for the algorithm to be operating at the given ExecutionCase
-        /// </summary>
-        public string When { get; set; }
+        public bool InPlace { get; set; }
 
-        public TimeComplexityAttribute(Case executionCase, string complexity)
+        public SpaceComplexityAttribute(string complexity, bool inPlace = false)
         {
-            ExecutionCase = executionCase;
             Complexity = complexity;
+           InPlace = inPlace;
         }
-    }
-
-    public enum Case
-    {
-        Average,
-        Best,
-        Worst
     }
 }
