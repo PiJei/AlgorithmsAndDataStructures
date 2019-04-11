@@ -26,13 +26,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         IComparable<TNode>
         where TKey : IComparable<TKey>
     {
-        int MinKeys { get; }
-
-        int MaxKeys { get; }
-
-        int MinBranchingDegree { get; }
-
-        int MaxBranchingDegree { get; }
+        int MaxBranchingDegree { get; set; }
 
         /// <summary>
         /// Is the count of key-value pairs in the node. 
@@ -79,5 +73,9 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         TKey GetKey(int index);
 
         KeyValuePair<TKey, TValue> GetKeyValue(int index);
+
+        void InsertKeyValue(KeyValuePair<TKey, TValue> keyVal);
+
+        void InsertChild(TNode child);
     }
 }

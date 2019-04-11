@@ -42,9 +42,44 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
             MaxBranchingDegree = maxBranchingDegree;
         }
 
-        public abstract TNode Build(Dictionary<TKey, TValue> keyValues);
+        /// <summary>
+        /// Given the set of key values, builds a b-tree by inserting all the key-value pairs. 
+        /// </summary>
+        /// <param name="keyValues">Is the list of key values to be inserted in the tree. </param>
+        /// <returns>Root of the tree. </returns>
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "O(nLog(n))")]// todo: bases are incorrect
+        [TimeComplexity(Case.Average, "O(n(Log(n))")] // todo
+        public TNode Build(Dictionary<TKey, TValue> keyValues)
+        {
+            foreach (KeyValuePair<TKey, TValue> keyValue in keyValues)
+            {
+                Insert(keyValue);
+            }
+            return Root;
+        }
 
-        public abstract TNode Insert(KeyValuePair<TKey, TValue> keyValue);
+        // TODO: In time complexities subscripts and superscripts do not look good.
+        /// <summary>
+        /// Inserts a new key-value pair in the tree and returns root of the tree. 
+        /// </summary>
+        /// <param name="keyValue">Is the key-value pair to be inserted in the tree. </param>
+        /// <returns>Root of the tree. </returns>
+        [TimeComplexity(Case.Best, "O(1)", When = "Fist key in the tree is inserted.")]
+        [TimeComplexity(Case.Worst, "O(D Log(n)(base:D)")] // where D is max branching factor of the tree. 
+        [TimeComplexity(Case.Average, "O(d Log(n)(base d))")] // where d is min branching factor of the tree.  
+        public TNode Insert(KeyValuePair<TKey, TValue> keyValue)
+        {
+            /* Find the leaf node that should contain the new key-value pair. The leaf is found such that the order property of the B-Tree is preserved. */
+            TNode leaf = FindLeafToInsertKey(Root, keyValue.Key);
+
+            /* Insert the new keyValue pair in the leaf node. */
+            InsertInLeaf(leaf, keyValue);
+
+            return Root;
+        }
+
+        public abstract TNode InsertInLeaf(TNode leaf, KeyValuePair<TKey, TValue> keyValue);
 
         public abstract bool Delete(TKey key);
 

@@ -26,7 +26,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
     public abstract class BTreeNodeBase<TNode, TKey, TValue> :
         IBTreeNode<TNode, TKey, TValue>,
         IComparable<TNode>
-        where TNode : IBTreeNode<TNode, TKey, TValue>
+        where TNode : IBTreeNode<TNode, TKey, TValue>, new()
         where TKey : IComparable<TKey>
     {
         /// <summary>
@@ -52,32 +52,60 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <summary>
         /// Is the minimum number of keys in a B-tree internal/leaf node. (Notice that a root has no lower bound on the number of keys. Intuitively when the tree is just being built it might start with 1, and grow afterwards.)
         /// </summary>
-        public int MinKeys { get; }
+        public int MinKeys => MinBranchingDegree - 1;
 
         /// <summary>
         /// Is the maximum number of keys in a B-tree internal/leaf/root node. This is often 2 times the MinKeys.
         /// </summary>
-        public int MaxKeys { get; }
+        public int MaxKeys => MaxBranchingDegree - 1;
 
         /// <summary>
         /// Is the minimum number of branches/children a B-tree internal node can have. 
         /// </summary>
-        public int MinBranchingDegree { get; }
+        public int MinBranchingDegree => Convert.ToInt32(Math.Ceiling(Math.Round(MaxBranchingDegree / (double)2, MidpointRounding.AwayFromZero)));
 
         /// <summary>
         /// Is the maximum number of branches/children a B-tree internal or root node can have. Leaf nodes contain 0 children. 
         /// </summary>
-        public int MaxBranchingDegree { get; }
+        public int MaxBranchingDegree { get; set; }
+
+        public BTreeNodeBase() { }
 
         public BTreeNodeBase(int maxBranchingDegree)
         {
             MaxBranchingDegree = maxBranchingDegree;
-            MinBranchingDegree = Convert.ToInt32(Math.Ceiling(Math.Round(MaxBranchingDegree / (double)2, MidpointRounding.AwayFromZero)));
-            MinKeys = MinBranchingDegree - 1;
-            MaxKeys = MaxBranchingDegree - 1;
             _keyValues = new SortedList<TKey, TValue>();
             _children = new SortedList<TNode, bool>();
         }
+
+        /// <summary>
+        /// Creates a node with 1 key. 
+        /// </summary>
+        /// <param name="maxBranchingDegree">Is the maximum number of children the node can have. </param>
+        /// <param name="keyValue">Is a key-value pair to be inserted in the tree. </param>
+        public BTreeNodeBase(int maxBranchingDegree, KeyValuePair<TKey, TValue> keyValue) : this(maxBranchingDegree)
+        {
+            InsertKeyValue(keyValue);
+        }
+
+        /// <summary>
+        /// Creates a node with a set of keys and children.
+        /// </summary>
+        /// <param name="maxBranchingDegree">Is the maximum number of children the node can have. </param>
+        /// <param name="keyValues">Is a set of key-value pairs to be inserted in the new node. </param>
+        /// <param name="children">Is a set of children of the node. Expectancy is that the count of children is one bigger than the count of key-value pairs in the node. </param>
+        public BTreeNodeBase(int maxBranchingDegree, List<KeyValuePair<TKey, TValue>> keyValues, List<TNode> children) : this(maxBranchingDegree)
+        {
+            foreach (var keyVal in keyValues)
+            {
+                InsertKeyValue(keyVal);
+            }
+            foreach (TNode child in children)
+            {
+                InsertChild(child);
+            }
+        }
+
 
         /// <summary>
         /// Is the count of key-value pairs in the node. 
@@ -380,6 +408,19 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
             return _children.ContainsKey(child) ? _children.IndexOfKey(child) : throw new KeyNotFoundException();
         }
 
+        /// <summary>
+        /// Inserts the given key-value pair in <see cref="_keyValues"/> array. 
+        /// </summary>
+        /// <param name="keyVal">the new key-value pair to be inserted in <see cref="_keyValues"/> array. </param>
+        public void InsertKeyValue(KeyValuePair<TKey, TValue> keyVal)
+        {
+            /* Since KeyValues is a sorted list, the new key value pair will be inserted at its correct position. */
+            if (!_keyValues.ContainsKey(keyVal.Key)) /* SortedList does not allow for duplicates, yet checking this as otherwise it will throw an exception.*/
+            {
+                _keyValues.Add(keyVal.Key, keyVal.Value);
+            }
+        }
+
         public void SetParent(TNode parent)
         {
             _parent = parent;
@@ -388,6 +429,63 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         public TNode GetParent()
         {
             return _parent;
+        }
+
+        /// <summary>
+        /// Splits this node to 2 nodes if it is overflown, such that each node has at least MinKeys keys.
+        /// </summary>
+        /// <returns>The new node. </returns>
+        public TNode Split()
+        {
+            if (IsOverFlown())
+            {
+                /* Create a new node (aka left sibling, as it is taking the right most key-values )*/
+                TNode newNode = new TNode
+                {
+                    MaxBranchingDegree = MaxBranchingDegree
+                };
+
+                /* A valid BtreeNode should at least have MinKey keys.*/
+                List<KeyValuePair<TKey, TValue>> newNodeKeys = _keyValues.TakeLast(MinKeys).ToList();
+
+                /* A valid non-leaf BTree node with MinKeys should have MinChildren children. */
+                Dictionary<TNode, bool> newNodeChildren = _children
+                    .TakeLast(MinBranchingDegree)
+                    .ToDictionary(keyVal => keyVal.Key, keyVal => keyVal.Value);
+
+                /* Remove the last MinKeys from this node.*/
+                foreach (KeyValuePair<TKey, TValue> keyVal in newNodeKeys)
+                {
+                    _keyValues.Remove(keyVal.Key);
+                    newNode.InsertKeyValue(keyVal);
+                }
+
+                /* Remove last MinBranchingFactor children from this node. */
+                foreach (KeyValuePair<TNode, bool> child in newNodeChildren)
+                {
+                    _children.Remove(child.Key);
+                    newNode.InsertChild(child.Key);
+                }
+
+                return newNode;
+            }
+
+            return default(TNode);
+        }
+
+        /// <summary>
+        /// When a node is being split into two nodes, gets the key that shall be moved to the parent of this node.
+        /// This operation is expected to only be called upon a node that is full. Yet to prevent issues, first checks for the key count. 
+        /// </summary>
+        /// <returns>The key at the middle of the key-value pairs that shall be moved to the parent. </returns>
+        public KeyValuePair<TKey, TValue> KeyValueToMoveUp()
+        {
+            if (IsMinOneFull())
+            {
+                return _keyValues.ElementAt(MinKeys); /* since the indexes tart at 0, this means that the node has MinKeys+1 keys. */
+            }
+
+            throw new ArgumentException($"Failed to get a key to move up to parent. The node has less or more than {MinKeys + 1} keys.");
         }
 
         public int CompareTo(TNode other)

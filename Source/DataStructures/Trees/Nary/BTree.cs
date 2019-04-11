@@ -43,23 +43,6 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         {
         }
 
-        /// <summary>
-        /// Given the set of key values, builds a b-tree by inserting all the key-value pairs. 
-        /// </summary>
-        /// <param name="keyValues">Is the list of key values to be inserted in the tree. </param>
-        /// <returns>Root of the tree. </returns>
-        [TimeComplexity(Case.Best, "O(1)")]
-        [TimeComplexity(Case.Worst, "O(nLog(n))")]
-        [TimeComplexity(Case.Average, "O(n(Log(n))")]
-        public override BTreeNode<TKey, TValue> Build(Dictionary<TKey, TValue> keyValues)
-        {
-            foreach (KeyValuePair<TKey, TValue> keyValue in keyValues)
-            {
-                Insert(keyValue);
-            }
-            return Root;
-        }
-
         // TODO: In time complexities subscripts and superscripts do not look good.
         /// <summary>
         /// Inserts a new key-value pair in the tree and returns root of the tree. 
@@ -69,22 +52,20 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         [TimeComplexity(Case.Best, "O(1)", When = "Fist key in the tree is inserted.")]
         [TimeComplexity(Case.Worst, "O(D Log(n)(base:D)")] // where D is max branching factor of the tree. 
         [TimeComplexity(Case.Average, "O(d Log(n)(base d))")] // where d is min branching factor of the tree.  
-        public override BTreeNode<TKey, TValue> Insert(KeyValuePair<TKey, TValue> keyValue)
+        public override BTreeNode<TKey, TValue> InsertInLeaf(BTreeNode<TKey, TValue> leafNode, KeyValuePair<TKey, TValue> keyValue)
         {
-            /* Find the leaf node that should contain the new key-value pair. The leaf is found such that the order property of the B-Tree is preserved. */
-            BTreeNode<TKey, TValue> leaf = FindLeafToInsertKey(Root, keyValue.Key);
-
-            if (leaf == null) /* Means this is the first element of the tree, and we should create root. */
+            /* Means this is the first element of the tree, and we should create root. */
+            if (leafNode == null)
             {
                 Root = new BTreeNode<TKey, TValue>(MaxBranchingDegree, keyValue);
                 return Root;
             }
             else
             {
-                leaf.InsertKeyValue(keyValue);
+                leafNode.InsertKeyValue(keyValue);
 
                 /* As the leaf has a new value now, it might be overFlown. Split_Reapir detects this case and fixes it. */
-                Split_Repair(leaf);
+                Split_Repair(leafNode);
             }
 
             return Root;
