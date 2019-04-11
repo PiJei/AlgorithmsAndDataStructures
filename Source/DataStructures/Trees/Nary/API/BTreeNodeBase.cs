@@ -69,13 +69,15 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// </summary>
         public int MaxBranchingDegree { get; set; }
 
-        public BTreeNodeBase() { }
-
-        public BTreeNodeBase(int maxBranchingDegree)
+        public BTreeNodeBase()
         {
-            MaxBranchingDegree = maxBranchingDegree;
             _keyValues = new SortedList<TKey, TValue>();
             _children = new SortedList<TNode, bool>();
+        }
+
+        public BTreeNodeBase(int maxBranchingDegree): this()
+        {
+            MaxBranchingDegree = maxBranchingDegree;
         }
 
         /// <summary>

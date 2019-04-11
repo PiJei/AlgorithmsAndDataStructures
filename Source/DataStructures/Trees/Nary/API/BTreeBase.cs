@@ -154,33 +154,5 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
             }
             throw new KeyNotFoundException($"{key.ToString()} is not found in the tree.");
         }
-
-        //TODO: What is complexity?
-        /// <summary>
-        /// Traverses tree in-order and generates list of keys sorted.
-        /// </summary>
-        /// <param name="node">The tree node at which traverse starts.</param>
-        /// <param name="sortedKeys">List of the key-values sorted by their keys.</param>
-        public void InOrderTraversal(TNode node, List<KeyValuePair<TKey, TValue>> sortedKeys)
-        {
-            if (node != null)
-            {
-                for (int i = 0; i < node.KeyCount; i++)
-                {
-                    if (!node.IsLeaf()) /* Leaf nodes do not have children */
-                    {
-                        InOrderTraversal(node.GetChild(i), sortedKeys);
-                    }
-
-                    sortedKeys.Add(node.GetKeyValue(i)); /* Visit the key. */
-
-                    if (!node.IsLeaf() && i == node.KeyCount - 1) /* If is not leaf, and last key */
-                    {
-                        InOrderTraversal(node.GetChild(i + 1), sortedKeys);
-                    }
-                }
-            }
-        }
-
     }
 }
