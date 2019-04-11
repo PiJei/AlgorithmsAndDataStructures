@@ -139,6 +139,11 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
             _children.Clear();
         }
 
+        public List<KeyValuePair<TKey, TValue>> GetKeyValues()
+        {
+            return _keyValues.ToList();
+        }
+
         /// <summary>
         /// Checks whether the current node is leaf. A node is leaf if it has no children. 
         /// </summary>

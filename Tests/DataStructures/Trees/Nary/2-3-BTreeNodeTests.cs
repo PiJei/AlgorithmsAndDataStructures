@@ -144,7 +144,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             node2.InsertKeyValue(new KeyValuePair<int, string>(10, "A2"));
 
             /* Notice that in a B-Tree node we do not expect 2 children to have the same min key. Thus these 2 nodes are expected to be equal, and considered duplicates to prevent inserting one of them in the tree.*/
-            Assert.AreEqual(0, node1.CompareTo(node2)); 
+            Assert.AreEqual(0, node1.CompareTo(node2));
         }
 
         [TestMethod]
@@ -235,7 +235,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual(2, node.MaxKeys); /* Thus to be overFlown (which is the condition for split) node should have 3 keys. */
 
             node.InsertKeyValue(new KeyValuePair<int, string>(100, "C"));
-            
+
             /* Node has MinKeys key, and thus is not MinOneFull, to be splittable. */
             Assert.IsTrue(!node.IsMinOneFull());
             Assert.IsTrue(node.IsMinFull());
@@ -266,9 +266,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             node.InsertKeyValue(new KeyValuePair<int, string>(50, "B"));
             node.InsertKeyValue(new KeyValuePair<int, string>(10, "A"));
 
-            var  newNode = node.Split();
-            Assert.IsTrue(BTreeTestsUtils.HasBTreeNodeProperties(node));
-            Assert.IsTrue(BTreeTestsUtils.HasBTreeNodeProperties(newNode));
+            var newNode = node.Split();
+            Assert.IsTrue(BTreeTestsUtils<BTreeNode<int, string>, int, string>.HasBTreeNodeProperties(node));
+            Assert.IsTrue(BTreeTestsUtils<BTreeNode<int, string>, int, string>.HasBTreeNodeProperties(newNode));
             Assert.AreEqual(2, node.KeyCount);
             Assert.AreEqual(1, newNode.KeyCount);
         }
@@ -300,7 +300,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
 
             BTreeNode<int, string> newNode = node.Split();
             /* At this point we do not expect 'node' to be valid (i.e., HasBTreeNodeProperties(node)==false ), because the key in the middle has not yet moved up, that step is part of split method in the tree itself and not in the node.*/
-            Assert.IsTrue(BTreeTestsUtils.HasBTreeNodeProperties(newNode));
+            Assert.IsTrue(BTreeTestsUtils<BTreeNode<int, string>, int, string>.HasBTreeNodeProperties(newNode));
         }
 
         [TestMethod]

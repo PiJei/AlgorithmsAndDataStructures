@@ -24,7 +24,7 @@ using CSFundamentals.Decoration;
 namespace CSFundamentals.DataStructures.Trees.Nary.API
 {
     public abstract class BTreeBase<TNode, TKey, TValue>
-        where TNode : IBTreeNode<TNode, TKey, TValue>
+        where TNode : IBTreeNode<TNode, TKey, TValue>, IComparable<TNode>
         where TKey : IComparable<TKey>
     {
         /// <summary>
@@ -82,6 +82,13 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         public abstract TNode InsertInLeaf(TNode leaf, KeyValuePair<TKey, TValue> keyValue);
 
         public abstract bool Delete(TKey key);
+
+        /// <summary>
+        /// Gets the sorted list of all the key-values in the tree rooted at <paramref name="node">. 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public abstract List<KeyValuePair<TKey, TValue>> GetSortedKeyValues(TNode node);
 
         /// <summary>
         /// Starting from the given root, recursively traverses tree top-down to find the proper leaf node, at which <paramref name="key"/> can be inserted. 
@@ -154,5 +161,38 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
             }
             throw new KeyNotFoundException($"{key.ToString()} is not found in the tree.");
         }
+
+        /// <summary>
+        /// Finds the node that contains the maximum key of the subtree rooted at node.
+        /// </summary>
+        /// <param name="node">The node at which (sub)tree is rooted. </param>
+        /// <returns>The node containing the maximum key of the (sub)tree rooted at <paramref name="node">. </returns>
+        [TimeComplexity(Case.Best, "O(1)", When = "when node is leaf.")]
+        [TimeComplexity(Case.Worst, "O(Log(n))")] // todo base is wrong
+        [TimeComplexity(Case.Average, "O(Log(n))")]// todo: base is wrong, .. .
+        public TNode GetMaxNode(TNode node)
+        {
+            if (node.IsLeaf())
+            {
+                return node;
+            }
+
+            return GetMaxNode(node.GetChild(node.ChildrenCount - 1));
+        }
+
+        /// <summary>
+        /// Finds the node that contains the minimum key of the subtree rooted at <paramref name="node">.
+        /// </summary>
+        /// <param name="node">The node at which (sub)tree is rooted.</param>
+        /// <returns>The node containing the minimum key of the (sub)tree rooted at <paramref name="node">.</returns>
+        public TNode GetMinNode(TNode node)
+        {
+            if (node.IsLeaf())
+            {
+                return node;
+            }
+            return GetMinNode(node.GetChild(0));
+        }
+
     }
 }

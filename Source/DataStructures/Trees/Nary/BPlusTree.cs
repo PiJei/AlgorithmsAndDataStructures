@@ -115,8 +115,22 @@ namespace CSFundamentals.DataStructures.Trees.Nary
                 }
             }
         }
+
+        /// <summary>
+        /// Traverses the doubly linked list at the level of leaves and returns the list of all the key-values in leaves in a sorted order (sorted by key)
+        /// </summary>
+        /// <returns></returns>
+        public override List<KeyValuePair<TKey, TValue>> GetSortedKeyValues(BPlusTreeNode<TKey, TValue> node)
+        {
+            List<KeyValuePair<TKey, TValue>> keyValues = new List<KeyValuePair<TKey, TValue>>();
+
+            BPlusTreeNode<TKey, TValue> minLeaf = GetMinNode(node);
+            while(minLeaf!= null)
+            {
+                keyValues.AddRange(minLeaf.GetKeyValues());
+                minLeaf = minLeaf.NextLeaf;
+            }
+            return keyValues;
+        }
     }
 }
-// TODO: When writing tests makes ure you can get the in order traversal, by just traversing the leafs from left to write and that the count matches
-// Just in order traversal may not make much sense on key-values. here which is a doubly linked list essentially,  /// 
-// in fact find the min key in th tree and then scan the linked list, ... 

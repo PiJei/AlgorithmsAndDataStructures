@@ -28,6 +28,12 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
     {
         int MaxBranchingDegree { get; set; }
 
+        int MinBranchingDegree { get; }
+
+        int MaxKeys { get; }
+
+        int MinKeys { get;}
+
         /// <summary>
         /// Is the count of key-value pairs in the node. 
         /// </summary>
@@ -62,6 +68,8 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
 
         KeyValuePair<TKey, TValue> GetMinKey();
 
+        KeyValuePair<TKey, TValue> GetMaxKey();
+
         TNode GetChild(int index);
 
         TNode GetParent();
@@ -77,5 +85,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         void InsertKeyValue(KeyValuePair<TKey, TValue> keyVal);
 
         void InsertChild(TNode child);
+
+        int GetIndexAtParentChildren();
     }
 }

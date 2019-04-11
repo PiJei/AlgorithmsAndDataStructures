@@ -326,13 +326,20 @@ namespace CSFundamentals.DataStructures.Trees.Nary
             }
         }
 
+        public override List<KeyValuePair<TKey, TValue>> GetSortedKeyValues(BTreeNode<TKey, TValue> node)
+        {
+            List<KeyValuePair<TKey, TValue>> sortedKeyValues = new List<KeyValuePair<TKey, TValue>>();
+            InOrderTraversal(node, sortedKeyValues);
+            return sortedKeyValues;
+        }
+
         //TODO: What is complexity?
         /// <summary>
         /// Traverses tree in-order and generates list of keys sorted.
         /// </summary>
         /// <param name="node">The tree node at which traverse starts.</param>
-        /// <param name="sortedKeys">List of the key-values sorted by their keys.</param>
-        public void InOrderTraversal(BTreeNode<TKey,TValue> node, List<KeyValuePair<TKey, TValue>> sortedKeys)
+        /// <param name="sortedKeyValues">List of the key-values sorted by their keys.</param>
+        public void InOrderTraversal(BTreeNode<TKey,TValue> node, List<KeyValuePair<TKey, TValue>> sortedKeyValues)
         {
             if (node != null)
             {
@@ -340,14 +347,14 @@ namespace CSFundamentals.DataStructures.Trees.Nary
                 {
                     if (!node.IsLeaf()) /* Leaf nodes do not have children */
                     {
-                        InOrderTraversal(node.GetChild(i), sortedKeys);
+                        InOrderTraversal(node.GetChild(i), sortedKeyValues);
                     }
 
-                    sortedKeys.Add(node.GetKeyValue(i)); /* Visit the key. */
+                    sortedKeyValues.Add(node.GetKeyValue(i)); /* Visit the key. */
 
                     if (!node.IsLeaf() && i == node.KeyCount - 1) /* If is not leaf, and last key */
                     {
-                        InOrderTraversal(node.GetChild(i + 1), sortedKeys);
+                        InOrderTraversal(node.GetChild(i + 1), sortedKeyValues);
                     }
                 }
             }
@@ -366,24 +373,6 @@ namespace CSFundamentals.DataStructures.Trees.Nary
                 maxKeys += (MaxBranchingDegree - 1) * (int)Math.Pow(MaxBranchingDegree, l);
             }
             return maxKeys;
-        }
-
-        /// <summary>
-        /// Find the node that contains the maximum element of the subtree rooted at node.
-        /// </summary>
-        /// <param name="node">The node at which (sub)tree is rooted. </param>
-        /// <returns>The node containing the maximum key of the (sub)tree rooted at node. </returns>
-        [TimeComplexity(Case.Best, "O(1)", When = "when node is leaf.")]
-        [TimeComplexity(Case.Worst, "O(Log(n))")]
-        [TimeComplexity(Case.Average, "O(Log(n))")]
-        public BTreeNode<TKey, TValue> GetMaxNode(BTreeNode<TKey, TValue> node)
-        {
-            if (node.IsLeaf())
-            {
-                return node;
-            }
-
-            return GetMaxNode(node.GetChild(node.ChildrenCount - 1));
         }
     }
 }
