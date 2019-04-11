@@ -182,7 +182,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         public void GetIndexAtParentChildren_EmptyNode_ThrowsException()
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5);
-            node.Parent = new BTreeNode<int, string>(5);
+            node.SetParent(new BTreeNode<int, string>(5));
             int index = node.GetIndexAtParentChildren();
         }
 
@@ -190,12 +190,13 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         [ExpectedException(typeof(KeyNotFoundException))]
         public void GetIndexAtParentChildren_NodeIsNotAChildAtParent_ThrowsException()
         {
-            BTreeNode<int, string> node = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(10, "A"))
-            {
-                Parent = new BTreeNode<int, string>(5,
+            BTreeNode<int, string> node = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(10, "A"));
+
+            node.SetParent(new BTreeNode<int, string>(
+                5,
                 new List<KeyValuePair<int, string>> { new KeyValuePair<int, string>(30, "B") },
-                new List<BTreeNode<int, string>> { new BTreeNode<int, string>(5, new KeyValuePair<int, string>(40, "C")) })
-            };
+                new List<BTreeNode<int, string>> { new BTreeNode<int, string>(5, new KeyValuePair<int, string>(40, "C")) }));
+
             int index = node.GetIndexAtParentChildren();
         }
 
@@ -204,9 +205,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(10, "A"));
 
-            node.Parent = new BTreeNode<int, string>(5,
+            node.SetParent(new BTreeNode<int, string>(5,
                 new List<KeyValuePair<int, string>> { new KeyValuePair<int, string>(30, "B") },
-                new List<BTreeNode<int, string>> { node });
+                new List<BTreeNode<int, string>> { node }));
             int index = node.GetIndexAtParentChildren();
             Assert.AreEqual(0, index);
         }
@@ -216,9 +217,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(10, "A"));
 
-            node.Parent = new BTreeNode<int, string>(5,
+            node.SetParent( new BTreeNode<int, string>(5,
                 new List<KeyValuePair<int, string>> { new KeyValuePair<int, string>(30, "B") },
-                new List<BTreeNode<int, string>> { node });
+                new List<BTreeNode<int, string>> { node }));
             Assert.IsFalse(node.HasLeftSibling());
         }
 
@@ -243,9 +244,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         {
             BTreeNode<int, string> node = new BTreeNode<int, string>(5, new KeyValuePair<int, string>(10, "A"));
 
-            node.Parent = new BTreeNode<int, string>(5,
+            node.SetParent( new BTreeNode<int, string>(5,
                 new List<KeyValuePair<int, string>> { new KeyValuePair<int, string>(30, "B") },
-                new List<BTreeNode<int, string>> { node });
+                new List<BTreeNode<int, string>> { node }));
             Assert.IsFalse(node.HasRightSibling());
         }
 

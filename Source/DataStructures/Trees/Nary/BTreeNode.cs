@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using CSFundamentals.DataStructures.Trees.Nary.API;
 
 // TODO: somehow should not allow comparisons to nodes with other degrees, ... how can degree be considered, ...?
 
@@ -30,36 +31,16 @@ namespace CSFundamentals.DataStructures.Trees.Nary
     /// </summary>
     /// <typeparam name="TKey">Is the type of the keys in the tree. </typeparam>
     /// <typeparam name="TValue">Is the type of the values in the tree. </typeparam>
-    public class BTreeNode<TKey, TValue> : BTreeNodeBase, IComparable<BTreeNode<TKey, TValue>> where TKey : IComparable<TKey>
+    public class BTreeNode<TKey, TValue> :
+        BTreeNodeBase<BTreeNode<TKey, TValue>, TKey, TValue>
+        where TKey : IComparable<TKey>
     {
-        /// <summary>
-        /// A list of key-value pairs stored in this node. 
-        /// Notice that SortedList does not allow duplicates. 
-        /// </summary>
-        private SortedList<TKey, TValue> _keyValues;
-
-        /// <summary>
-        /// Children of the current node. 
-        /// Contract: Keys of the child at index i are all smaller than key at index i of _keyValues
-        /// Contract: Keys of the child at index i are all greater than key at index i-1 of _keyValues
-        /// In otherWords for key at index i, left children are at index i of _children
-        /// And right children are at index i+1 of _children. 
-        /// </summary>
-        private SortedList<BTreeNode<TKey, TValue>, bool> _children;
-
-        /// <summary>
-        /// Is the parent of the current node.
-        /// </summary>
-        public BTreeNode<TKey, TValue> Parent = null;
-
         /// <summary>
         /// Creates a node with no keys. 
         /// </summary>
         /// <param name="maxBranchingDegree">Is the maximum number of children the node can have. </param>
-        public BTreeNode(int maxBranchingDegree): base(maxBranchingDegree)
+        public BTreeNode(int maxBranchingDegree) : base(maxBranchingDegree)
         {
-            _keyValues = new SortedList<TKey, TValue>();
-            _children = new SortedList<BTreeNode<TKey, TValue>, bool>();
         }
 
         /// <summary>
@@ -91,35 +72,25 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         }
 
         /// <summary>
-        /// Initializes the node.
+        /// Gets the index of the current node in its parent's <see cref="_children"/> list.
         /// </summary>
-        /// <param name="maxBranchingDegree">Is the maximum number of children the node can have. </param>
-        private void Init(int maxBranchingDegree)
+        /// <returns>Index at parent's <see cref="_children"/> list.</returns>
+        public override int GetIndexAtParentChildren()
         {
-            MaxBranchingDegree = maxBranchingDegree;
-            MinBranchingDegree = Convert.ToInt32(Math.Ceiling(Math.Round(MaxBranchingDegree / (double)2, MidpointRounding.AwayFromZero)));
-            MinKeys = MinBranchingDegree - 1;
-            MaxKeys = MaxBranchingDegree - 1;
+            return _parent != null ? _parent.GetChildIndex(this) : throw new ArgumentException($"Failed to get index of the node at its parent's children array. Parent is null.");
         }
 
         /// <summary>
-        /// Is the count of key-value pairs in the node. 
+        /// Inserts a child in <see cref="_children"/> array.
         /// </summary>
-        public int KeyCount => _keyValues.Count;
-
-        /// <summary>
-        /// Is the count of the children of the node. 
-        /// </summary>
-        public int ChildrenCount => _children.Count;
-
-        /// <summary>
-        /// Removes all the keys from the node. 
-        /// </summary>
-        public void Clear()
+        /// <param name="child">the new child to be inserted in <see cref="_children"/> array. </param>
+        public override void InsertChild(BTreeNode<TKey,TValue> child)
         {
-            _keyValues.Clear();
-            _children.Clear();
+            /* Since Children is a sorted list, Child will be inserted at its correct position based on the Compare() method, to preserve the ordering. */
+            _children.Add(child, true);
+            child.SetParent(this);
         }
+
 
         /// <summary>
         /// Splits this node to 2 nodes if it is overflown, such that each node has at least MinKeys keys.
@@ -163,296 +134,11 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         public KeyValuePair<TKey, TValue> KeyValueToMoveUp()
         {
             if (IsMinOneFull())
+            {
                 return _keyValues.ElementAt(MinKeys); /* since the indexes tart at 0, this means that the node has MinKeys+1 keys. */
+            }
+
             throw new ArgumentException($"Failed to get a key to move up to parent. The node has less or more than {MinKeys + 1} keys.");
-        }
-
-        /// <summary>
-        /// Checks whether the current node is leaf. A node is leaf if it has no children. 
-        /// </summary>
-        /// <returns>True if the current node is leaf, and false otherwise. </returns>
-        public bool IsLeaf()
-        {
-            if (_children.Count == 0)
-                return true;
-            return false;
-        }
-
-        /// <summary>
-        /// Checks whether the current node is root. A node is root if it has no parent.
-        /// </summary>
-        /// <returns>True if the current node is root, and false otherwise.</returns>
-        public bool IsRoot()
-        {
-            if (Parent == null)
-            {
-                return true;
-            }
-            return false;
-        }
-
-        /// <summary>
-        /// Detects whether the node is full. A node is full, if it has MaxKeys keys. 
-        /// </summary>
-        /// <returns>Truce if the node is full, and false otherwise. </returns>
-        public bool IsFull()
-        {
-            return _keyValues.Count == MaxKeys;
-        }
-
-        /// <summary>
-        /// Checks whether the node is overflown. A node is overflown, if its key count exceeds MaxKeys. 
-        /// </summary>
-        /// <returns>True if the node is overflown, and false otherwise. </returns>
-        public bool IsOverFlown()
-        {
-            return _keyValues.Count > MaxKeys;
-        }
-
-        /// <summary>
-        /// Checks whether the node is UnderFlown. A node is UnderFlown, if its key count falls lower than MinKeys.
-        /// </summary>
-        /// <returns>Truce if the node is UnderFlown, and false otherwise. </returns>
-        public bool IsUnderFlown()
-        {
-            return _keyValues.Count < MinKeys;
-        }
-
-        /// <summary>
-        /// Gets the index of the current node in its parent's <see cref="_children"/> list.
-        /// </summary>
-        /// <returns>Index at parent's <see cref="_children"/> list.</returns>
-        public int GetIndexAtParentChildren()
-        {
-            if (Parent != null)
-            {
-                if (Parent._children.ContainsKey(this))
-                {
-                    return Parent._children.IndexOfKey(this);
-                }
-                else
-                {
-                    throw new KeyNotFoundException($"Parent does not have a child reference to this node. ");
-                }
-            }
-            throw new ArgumentException($"Failed to get index of the node at its parent's children array. Parent is null.");
-        }
-
-        /// <summary>
-        /// Checks whether the current node has a left sibling (a sibling to its left in the parent). 
-        /// </summary>
-        /// <returns>True if the node has a left sibling, and false otherwise. </returns>
-        public bool HasLeftSibling()
-        {
-            int index = GetIndexAtParentChildren();
-            if (index == 0) /* If this node is the left-most child at its parent, it does not have a left sibling.*/
-            {
-                return false;
-            }
-            return true;
-        }
-
-        /// <summary>
-        /// Gets the node's left sibling node. 
-        /// </summary>
-        /// <returns>Node's left sibling node if it exists, and null otherwise. </returns>
-        public BTreeNode<TKey, TValue> GetLeftSibling()
-        {
-            int selfIndex = GetIndexAtParentChildren();
-            if(selfIndex == 0)
-            {
-                return null;
-            }
-            int leftSiblingIndex = selfIndex - 1;
-            return Parent._children.ElementAt(leftSiblingIndex).Key;
-        }
-
-        /// <summary>
-        /// Checks whether the current node has a right sibling (a sibling to its right in the parent).
-        /// </summary>
-        /// <returns>True if the node has a right sibling, and false otherwise. </returns>
-        public bool HasRightSibling()
-        {
-            int index = GetIndexAtParentChildren();
-            if (index == Parent._children.Count - 1) /* If this node is the right-most child at its parent, it does not have a right sibling.*/
-            {
-                return false;
-            }
-            return true;
-        }
-
-        /// <summary>
-        /// Gets the node's right sibling node. 
-        /// </summary>
-        /// <returns>Node's right sibling node if it exists and null otherwise. </returns>
-        public BTreeNode<TKey, TValue> GetRightSibling()
-        {
-            int selfIndex = GetIndexAtParentChildren();
-            if (selfIndex == Parent._children.Count - 1)
-            {
-                return null;
-            }
-            int rightSiblingIndex = selfIndex + 1;
-            return Parent._children.ElementAt(rightSiblingIndex).Key;
-        }
-
-        /// <summary>
-        /// Checks whether a node is MinFull: meaning it has exactly MinKeys key-value pairs. 
-        /// </summary>
-        /// <returns>True if case is MinFull, false otherwise. </returns>
-        public bool IsMinFull()
-        {
-            return _keyValues.Count == MinKeys;
-        }
-
-        /// <summary>
-        /// Checks whether a node is MinOneFull: meaning it has exactly MinKeys+1 key-value pairs. 
-        /// </summary>
-        /// <returns>True if it is MinOneFull, false otherwise. </returns>
-        public bool IsMinOneFull()
-        {
-            return _keyValues.Count == MinKeys + 1;
-        }
-
-        /// <summary>
-        /// Checks whether a node is empty: meaning has no key-value pairs. 
-        /// </summary>
-        /// <returns>True if the node is free, and false otherwise. </returns>
-        public bool IsEmpty()
-        {
-            return _keyValues.Count == 0;
-        }
-
-        /// <summary>
-        /// Gets the key-value pair of the maximum key in the node.
-        /// </summary>
-        /// <returns>Key-value pair of the maximum key in this node. </returns>
-        public KeyValuePair<TKey, TValue> GetMaxKey()
-        {
-            if (_keyValues.Any())
-                return _keyValues.ElementAt(_keyValues.Count - 1);
-            throw new KeyNotFoundException();
-        }
-
-        /// <summary>
-        /// Gets the key-value pair of the minimum key in the node. 
-        /// </summary>
-        /// <returns>Key-value pair of the minimum key in this node. </returns>
-        public KeyValuePair<TKey, TValue> GetMinKey()
-        {
-            if (_keyValues.Any())
-                return _keyValues.ElementAt(0);
-            throw new KeyNotFoundException();
-        }
-
-        /// <summary>
-        /// Removes key <paramref name="key"/> from the node's <see cref="_keyValues"> array. 
-        /// </summary>
-        /// <param name="key">Is the key to be removed.</param>
-        public void RemoveKey(TKey key)
-        {
-            if (_keyValues.ContainsKey(key))
-                _keyValues.Remove(key);
-            else
-                throw new KeyNotFoundException();
-        }
-
-        /// <summary>
-        /// Removes key at index <paramref name="index"/> from the node's <see cref="_keyValues"> array. 
-        /// </summary>
-        /// <param name="index">The index of the key to be removed from the node. </param>
-        public void RemoveKeyByIndex(int index)
-        {
-            if (_keyValues.Count > index)
-                _keyValues.RemoveAt(index);
-            else
-                throw new IndexOutOfRangeException($"The node contains {KeyCount} keys, can not remove a non-existing key at index {index}.");
-        }
-
-        /// <summary>
-        /// Removes child at index <paramref name="index"/> from the node's <see cref="_children"> array.
-        /// </summary>
-        /// <param name="index">The child index. </param>
-        public void RemoveChildByIndex(int index)
-        {
-            if (index < _children.Count)
-                _children.RemoveAt(index);
-            else
-                throw new IndexOutOfRangeException();
-        }
-
-        /// <summary>
-        /// Removes child <paramref name="child"/> from the node's <see cref="_children"> array.
-        /// </summary>
-        /// <param name="child">Child to be removed. </param>
-        public void RemoveChild(BTreeNode<TKey, TValue> child)
-        {
-            if (_children.ContainsKey(child))
-                _children.Remove(child);
-            else
-                throw new KeyNotFoundException();
-        }
-
-        /// <summary>
-        /// Gets (reads) the key-value pair at index <paramref name="index"/> of node's <see cref="_keyValues"> array. 
-        /// </summary>
-        /// <param name="index">The index of the key-value pair wanted. </param>
-        /// <returns>Key-value pair located at index <paramref name="index"/> of node's <see cref="_keyValues"> array. </returns>
-        public KeyValuePair<TKey, TValue> GetKeyValue(int index)
-        {
-            if (_keyValues.Count > index)
-                return _keyValues.ElementAt(index);
-            throw new IndexOutOfRangeException();
-        }
-
-        /// <summary>
-        /// Gets (reads)the key of the key-value pair at index <paramref name="index"/> of node's <see cref="_keyValues"> array.
-        /// </summary>
-        /// <param name="index">The index of the key-value pair whose key is wanted. </param>
-        /// <returns>Key at index <paramref name="index"/> of node's <see cref="_keyValues"> array. </returns>
-        public TKey GetKey(int index)
-        {
-            return GetKeyValue(index).Key;
-        }
-
-        /// <summary>
-        /// Gets the index of the key <paramref name="key"/> at node's <see cref="_keyValues"> array. 
-        /// </summary>
-        /// <param name="key">The key to search for and return its index.</param>
-        /// <returns>Index of the key <paramref name="key"/> at node's <see cref="_keyValues"> array. </returns>
-        public int GetKeyIndex(TKey key)
-        {
-            if (_keyValues.ContainsKey(key))
-                return _keyValues.IndexOfKey(key);
-            throw new KeyNotFoundException();
-        }
-
-        /// <summary>
-        /// Gets (reads) the child at index <paramref name="index"/> of node's <see cref="_children"> array.
-        /// </summary>
-        /// <param name="index">The index of the child node wanted. </param>
-        /// <returns>Child node at index <paramref name="index"/> of node's <see cref="_children"> array.</returns>
-        public BTreeNode<TKey, TValue> GetChild(int index)
-        {
-            if (_children.Count > index)
-            {
-                return _children.ElementAt(index).Key;
-            }
-            throw new IndexOutOfRangeException();
-        }
-
-        /// <summary>
-        /// Looks for <paramref name="child"/> in node's <see cref="_children"> array, and returns its index.
-        /// </summary>
-        /// <param name="child">Child whose index is wanted. </param>
-        /// <returns>Index of <paramref name="child"/> in node's <see cref="_children"> array</returns>
-        public int GetChildIndex(BTreeNode<TKey, TValue> child)
-        {
-            if (_children.ContainsKey(child))
-            {
-                return _children.IndexOfKey(child);
-            }
-            throw new KeyNotFoundException();
         }
 
         /// <summary>
@@ -463,55 +149,9 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         {
             /* Since KeyValues is a sorted list, the new key value pair will be inserted at its correct position. */
             if (!_keyValues.ContainsKey(keyVal.Key)) /* SortedList does not allow for duplicates, yet checking this as otherwise it will throw an exception.*/
+            {
                 _keyValues.Add(keyVal.Key, keyVal.Value);
-        }
-
-        /// <summary>
-        /// Inserts a child in <see cref="_children"/> array.
-        /// </summary>
-        /// <param name="child">the new child to be inserted in <see cref="_children"/> array. </param>
-        public void InsertChild(BTreeNode<TKey, TValue> child)
-        {
-            /* Since Children is a sorted list, Child will be inserted at its correct position based on the Compare() method, to preserve the ordering. */
-            _children.Add(child, true);
-            child.Parent = this;
-        }
-
-        public int CompareTo(BTreeNode<TKey, TValue> other)
-        {
-            if (other == null)
-            {
-                return 1;
             }
-            if (KeyCount == 0 && other.KeyCount == 0)
-            {
-                return 0;
-            }
-            if (KeyCount == 0)
-            {
-                return -1;
-            }
-            if (other.KeyCount == 0)
-            {
-                return 1;
-            }
-
-            var minKeyThis = GetMinKey();
-            var minKeyOther = other.GetMinKey();
-
-            if (minKeyThis.Key.CompareTo(minKeyOther.Key) < 0)
-            {
-                return -1;
-            }
-            else if (minKeyThis.Key.CompareTo(minKeyOther.Key) == 0)
-            {
-                return 0;
-            }
-            else if (minKeyThis.Key.CompareTo(minKeyOther.Key) > 0)
-            {
-                return 1;
-            }
-            return -1;
         }
     }
 }

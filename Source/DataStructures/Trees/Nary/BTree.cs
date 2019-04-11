@@ -23,6 +23,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Runtime.CompilerServices;
+using CSFundamentals.DataStructures.Trees.Nary.API;
 using CSFundamentals.Decoration;
 
 [assembly: InternalsVisibleTo("CSFundamentals")]
@@ -34,21 +35,12 @@ using CSFundamentals.Decoration;
 namespace CSFundamentals.DataStructures.Trees.Nary
 {
     [DataStructure("BTree")]
-    public class BTree<TKey, TValue> where TKey : IComparable<TKey>
+    public class BTree<TKey, TValue> :
+        BTreeBase<BTreeNode<TKey, TValue>, TKey, TValue>
+        where TKey : IComparable<TKey>
     {
-        /// <summary>
-        /// Is the root of the tree. 
-        /// </summary>
-        public BTreeNode<TKey, TValue> Root = null;
-
-        /// <summary>
-        /// Is the maximum number of children for a non-leaf node in this B-Tree. 
-        /// </summary>
-        public int MaxBranchingDegree { get; private set; }
-
-        public BTree(int maxBranchingDegree)
+        public BTree(int maxBranchingDegree) : base(maxBranchingDegree)
         {
-            MaxBranchingDegree = maxBranchingDegree;
         }
 
         /// <summary>
@@ -67,6 +59,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary
             }
             return Root;
         }
+
         // TODO: In time complexities subscripts and superscripts do not look good.
         /// <summary>
         /// Inserts a new key-value pair in the tree and returns root of the tree. 
@@ -176,11 +169,11 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         internal BTreeNode<TKey, TValue> RotateLeft(BTreeNode<TKey, TValue> node, BTreeNode<TKey, TValue> rightSibling, int separatorIndex)
         {
             /* 1- Move the separator key in the parent to the underFlown node. */
-            node.InsertKeyValue(node.Parent.GetKeyValue(separatorIndex));
-            node.Parent.RemoveKeyByIndex(separatorIndex);
+            node.InsertKeyValue(node.GetParent().GetKeyValue(separatorIndex));
+            node.GetParent().RemoveKeyByIndex(separatorIndex);
 
             /* 2- Replace separator key in the parent with the first key of the right sibling.*/
-            node.Parent.InsertKeyValue(rightSibling.GetMinKey());
+            node.GetParent().InsertKeyValue(rightSibling.GetMinKey());
 
             /* 3- Remove the first (minimum) key from the right sibling, and move its child to node. */
             rightSibling.RemoveKey(rightSibling.GetMinKey().Key);
@@ -194,7 +187,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary
             Contract.Assert(rightSibling.IsMinFull());
             Contract.Assert(node.IsMinFull());
 
-            return node.Parent;
+            return node.GetParent();
         }
 
         /// <summary>
@@ -209,11 +202,11 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         internal BTreeNode<TKey, TValue> RotateRight(BTreeNode<TKey, TValue> node, BTreeNode<TKey, TValue> leftSibling, int separatorIndex)
         {
             /* 1- Move the separator key in the parent to the underFlown node. */
-            node.InsertKeyValue(node.Parent.GetKeyValue(separatorIndex));
-            node.Parent.RemoveKeyByIndex(separatorIndex);
+            node.InsertKeyValue(node.GetParent().GetKeyValue(separatorIndex));
+            node.GetParent().RemoveKeyByIndex(separatorIndex);
 
             /* 2- Replace separator key in the parent with the last key of the left sibling. */
-            node.Parent.InsertKeyValue(leftSibling.GetMaxKey());
+            node.GetParent().InsertKeyValue(leftSibling.GetMaxKey());
 
             /* 3- Remove the last (maximum) key from the left sibling, and move its child to node. */
             leftSibling.RemoveKey(leftSibling.GetMaxKey().Key);
@@ -227,7 +220,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary
             Contract.Assert(leftSibling.IsMinFull());
             Contract.Assert(node.IsMinFull());
 
-            return node.Parent;
+            return node.GetParent();
         }
 
         /// <summary>
@@ -243,11 +236,11 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         {
             // 1- Move separator key to the left node
             int nodeAndLeftSiblingSeparatorKeyAtParentIndex = leftSibling.GetIndexAtParentChildren();
-            leftSibling.InsertKeyValue(node.Parent.GetKeyValue(nodeAndLeftSiblingSeparatorKeyAtParentIndex));
+            leftSibling.InsertKeyValue(node.GetParent().GetKeyValue(nodeAndLeftSiblingSeparatorKeyAtParentIndex));
 
             // 2- Remove separator key in the parent, and disconnect parent from node. 
-            node.Parent.RemoveKeyByIndex(nodeAndLeftSiblingSeparatorKeyAtParentIndex);
-            node.Parent.RemoveChildByIndex(nodeAndLeftSiblingSeparatorKeyAtParentIndex + 1);
+            node.GetParent().RemoveKeyByIndex(nodeAndLeftSiblingSeparatorKeyAtParentIndex);
+            node.GetParent().RemoveChildByIndex(nodeAndLeftSiblingSeparatorKeyAtParentIndex + 1);
 
             // 3- Join node with leftSibling: Move all the keys and children of node to its left sibling.
             for (int i = 0; i < node.KeyCount; i++)
@@ -262,14 +255,14 @@ namespace CSFundamentals.DataStructures.Trees.Nary
             /* Clear node. */
             node.Clear();
 
-            if (node.Parent.IsEmpty() && node.Parent.IsRoot()) /* Can happen if parent is root*/
+            if (node.GetParent().IsEmpty() && node.GetParent().IsRoot()) /* Can happen if parent is root*/
             {
-                leftSibling.Parent = null;
+                leftSibling.SetParent(null);
                 Root = leftSibling;
             }
 
             // Since parent has lent a key to its children, it might be UnderFlown now, thus return the parent for additional checks.
-            return leftSibling.Parent;
+            return leftSibling.GetParent();
         }
 
         /// <summary>
@@ -287,7 +280,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         {
             if (node.IsUnderFlown() && !node.IsRoot()) /* B-TRee allows UnderFlown roots*/
             {
-                var parent = node.Parent;
+                var parent = node.GetParent();
                 var parentLeftSibling = parent == null || parent.IsRoot() ? null : parent.HasLeftSibling() ? parent.GetLeftSibling() : null;
                 var parentRightSibling = parent == null || parent.IsRoot() ? null : parent.HasRightSibling() ? parent.GetRightSibling() : null;
                 int parentSeparatorWithLeftSiblingIndex = parentLeftSibling == null ? -1 : parentLeftSibling.GetIndexAtParentChildren();
@@ -313,7 +306,9 @@ namespace CSFundamentals.DataStructures.Trees.Nary
                 }
 
                 if (node == null)
+                {
                     return;
+                }
 
                 ReBalance(node, parentLeftSibling, parentRightSibling, parentSeparatorWithLeftSiblingIndex, parentSeparatorWithRightSiblingIndex);
             }
@@ -324,8 +319,8 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         /// </summary>
         /// <param name="node">The node to be split</param>
         [TimeComplexity(Case.Best, "O(1)", When = "Split does not propagate to upper levels.")]
-        [TimeComplexity(Case.Worst, "O(Log(n))")]
-        [TimeComplexity(Case.Average, "O(Log(n)))")]
+        [TimeComplexity(Case.Worst, "O(Log(n))")] // todo
+        [TimeComplexity(Case.Average, "O(Log(n)))")] // todo
         internal void Split_Repair(BTreeNode<TKey, TValue> node)
         {
             while (node.IsOverFlown())
@@ -334,7 +329,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary
                 KeyValuePair<TKey, TValue> keyToMoveToParent = node.KeyValueToMoveUp();
                 node.RemoveKey(keyToMoveToParent.Key);
 
-                if (node.Parent == null) /* Meaning the overflown node is the root. */
+                if (node.GetParent() == null) /* Meaning the overflown node is the root. */
                 {
                     Root = new BTreeNode<TKey, TValue>(MaxBranchingDegree, keyToMoveToParent); /* Creating a new root for the tree. */
                     Root.InsertChild(node); /* Notice that this method adjusts node's parent internally. */
@@ -343,9 +338,9 @@ namespace CSFundamentals.DataStructures.Trees.Nary
                 }
                 else
                 {
-                    node.Parent.InsertKeyValue(keyToMoveToParent);
-                    node.Parent.InsertChild(sibling);
-                    node = node.Parent; /* Repeat while loop with the parent node that might itself be overflown now after inserting a new key.*/
+                    node.GetParent().InsertKeyValue(keyToMoveToParent);
+                    node.GetParent().InsertChild(sibling);
+                    node = node.GetParent(); /* Repeat while loop with the parent node that might itself be overflown now after inserting a new key.*/
                 }
             }
         }
@@ -357,8 +352,8 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         /// <param name="key">Is the key for which a container leaf is being searched. </param>
         /// <returns>Leaf node to insert the key. </returns>
         [TimeComplexity(Case.Best, "O(1)", When = "There is no node in the tree or only one node.")]
-        [TimeComplexity(Case.Worst, "O(Log(n))")]
-        [TimeComplexity(Case.Average, "O(Log(n))")]
+        [TimeComplexity(Case.Worst, "O(Log(n))")] // todo
+        [TimeComplexity(Case.Average, "O(Log(n))")] // todo 
         internal BTreeNode<TKey, TValue> FindLeafToInsertKey(BTreeNode<TKey, TValue> root, TKey key)
         {
             if (root == null || root.IsLeaf())
@@ -375,7 +370,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary
                 {
                     throw new ArgumentException("A node with this key exists in the tree. Duplicate keys are not allowed.");
                 }
-                else if (i == root.KeyCount - 1 && key.CompareTo(root.GetKey(i)) > 0)
+                else if (i == root.KeyCount - 1 && key.CompareTo(root.GetKey(i)) > 0) /*Last key is treated differently because it also has a child to its right.*/
                 {
                     return FindLeafToInsertKey(root.GetChild(i + 1), key);
                 }
@@ -435,12 +430,16 @@ namespace CSFundamentals.DataStructures.Trees.Nary
                 for (int i = 0; i < node.KeyCount; i++)
                 {
                     if (!node.IsLeaf()) /* Leaf nodes do not have children */
+                    {
                         InOrderTraversal(node.GetChild(i), sortedKeys);
+                    }
 
                     sortedKeys.Add(node.GetKeyValue(i)); /* Visit the key. */
 
                     if (!node.IsLeaf() && i == node.KeyCount - 1) /* If is not leaf, and last key */
+                    {
                         InOrderTraversal(node.GetChild(i + 1), sortedKeys);
+                    }
                 }
             }
         }

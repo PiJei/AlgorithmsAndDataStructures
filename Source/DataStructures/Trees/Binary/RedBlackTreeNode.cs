@@ -22,7 +22,9 @@ using CSFundamentals.DataStructures.Trees.Binary.API;
 
 namespace CSFundamentals.DataStructures.Trees.Binary
 {
-    public class RedBlackTreeNode<TKey, TValue> : BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue> where TKey : IComparable<TKey>
+    public class RedBlackTreeNode<TKey, TValue> : 
+        BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue> 
+        where TKey : IComparable<TKey>
     {
         public Color Color { get; set; }
         public override RedBlackTreeNode<TKey, TValue> LeftChild { get; set; }

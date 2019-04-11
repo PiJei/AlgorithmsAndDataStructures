@@ -193,8 +193,8 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             node1.InsertChild(child2);
             node1.InsertChild(child1);
 
-            Assert.IsTrue(ReferenceEquals(node1, child1.Parent));
-            Assert.IsTrue(ReferenceEquals(node1, child2.Parent));
+            Assert.IsTrue(ReferenceEquals(node1, child1.GetParent()));
+            Assert.IsTrue(ReferenceEquals(node1, child2.GetParent()));
 
             Assert.AreEqual(0, node1.GetChildIndex(child1));
             Assert.AreEqual(1, node1.GetChildIndex(child2));

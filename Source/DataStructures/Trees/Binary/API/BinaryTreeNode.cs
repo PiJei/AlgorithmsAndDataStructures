@@ -22,7 +22,11 @@ using System.Collections.Generic;
 
 namespace CSFundamentals.DataStructures.Trees.Binary.API
 {
-    public abstract class BinaryTreeNode<TNode, TKey, TValue> : IComparable<TNode>, IBinaryTreeNode<TNode, TKey, TValue> where TNode : IBinaryTreeNode<TNode, TKey, TValue> where TKey : IComparable<TKey>
+    public abstract class BinaryTreeNode<TNode, TKey, TValue> :
+        IBinaryTreeNode<TNode, TKey, TValue>,
+        IComparable<TNode>
+        where TNode : IBinaryTreeNode<TNode, TKey, TValue>
+        where TKey : IComparable<TKey>
     {
         public TKey Key { get; set; }
         public TValue Value { get; set; }
@@ -56,9 +60,21 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// <returns>True in case the node is the left child of its parent, and false otherwise.</returns>
         public bool IsLeftChild()
         {
-            if (Parent == null) return false;
-            if (Parent.LeftChild == null) return false;
-            if (Parent.LeftChild.Key.CompareTo(Key) == 0) return true;
+            if (Parent == null)
+            {
+                return false;
+            }
+
+            if (Parent.LeftChild == null)
+            {
+                return false;
+            }
+
+            if (Parent.LeftChild.Key.CompareTo(Key) == 0)
+            {
+                return true;
+            }
+
             return false;
         }
 
@@ -68,9 +84,21 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// <returns>True in case the node is the right child of its parent, and false otherwise.</returns>
         public bool IsRightChild()
         {
-            if (Parent == null) return false;
-            if (Parent.RightChild == null) return false;
-            if (Parent.RightChild.Key.CompareTo(Key) == 0) return true;
+            if (Parent == null)
+            {
+                return false;
+            }
+
+            if (Parent.RightChild == null)
+            {
+                return false;
+            }
+
+            if (Parent.RightChild.Key.CompareTo(Key) == 0)
+            {
+                return true;
+            }
+
             return false;
         }
 
@@ -80,7 +108,11 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// <returns>True in case the current node is the root, and false otherwise.</returns>
         public bool IsRoot()
         {
-            if (Parent == null) return true;
+            if (Parent == null)
+            {
+                return true;
+            }
+
             return false;
         }
 
@@ -90,8 +122,16 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// <returns>Uncle node.</returns>
         public TNode GetUncle()
         {
-            if (Parent == null) return default(TNode);
-            if (Parent.Parent == null) return default(TNode);
+            if (Parent == null)
+            {
+                return default(TNode);
+            }
+
+            if (Parent.Parent == null)
+            {
+                return default(TNode);
+            }
+
             if (Parent.Parent.LeftChild != null && Parent.Parent.LeftChild.CompareTo(Parent) == 0)
             {
                 return Parent.Parent.RightChild;
@@ -109,9 +149,16 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// <returns>Sibling node.</returns>
         public TNode GetSibling()
         {
-            if (Parent == null) return default(TNode);
+            if (Parent == null)
+            {
+                return default(TNode);
+            }
+
             if (Parent.LeftChild != null && Parent.LeftChild.Key.CompareTo(Key) == 0)
+            {
                 return Parent.RightChild;
+            }
+
             return Parent.LeftChild;
         }
 
@@ -121,8 +168,16 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// <returns></returns>
         public TNode GetGrandParent()
         {
-            if (Parent == null) return default(TNode);
-            if (Parent.Parent == null) return default(TNode);
+            if (Parent == null)
+            {
+                return default(TNode);
+            }
+
+            if (Parent.Parent == null)
+            {
+                return default(TNode);
+            }
+
             return Parent.Parent;
         }
 
@@ -132,9 +187,21 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// </summary>
         public bool FormsLine()
         {
-            if (Parent == null) return false;
-            if (IsLeftChild() && Parent.IsLeftChild()) return true;
-            if (IsRightChild() && Parent.IsRightChild()) return true;
+            if (Parent == null)
+            {
+                return false;
+            }
+
+            if (IsLeftChild() && Parent.IsLeftChild())
+            {
+                return true;
+            }
+
+            if (IsRightChild() && Parent.IsRightChild())
+            {
+                return true;
+            }
+
             return false;
         }
 
@@ -144,9 +211,21 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// </summary>
         public bool FormsTriangle()
         {
-            if (Parent == null) return false;
-            if (IsLeftChild() && Parent.IsRightChild()) return true;
-            if (IsRightChild() && Parent.IsLeftChild()) return true;
+            if (Parent == null)
+            {
+                return false;
+            }
+
+            if (IsLeftChild() && Parent.IsRightChild())
+            {
+                return true;
+            }
+
+            if (IsRightChild() && Parent.IsLeftChild())
+            {
+                return true;
+            }
+
             return false;
         }
 
@@ -194,16 +273,30 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         {
             List<TNode> grandChildren = new List<TNode>();
             if (LeftChild != null)
+            {
                 grandChildren.AddRange(LeftChild.GetChildren());
+            }
+
             if (RightChild != null)
+            {
                 grandChildren.AddRange(RightChild.GetChildren());
+            }
+
             return grandChildren;
         }
 
         public bool Equals(TNode other)
         {
-            if (other == null) return false;
-            if (Key.CompareTo(other.Key) == 0) return true;
+            if (other == null)
+            {
+                return false;
+            }
+
+            if (Key.CompareTo(other.Key) == 0)
+            {
+                return true;
+            }
+
             return false;
         }
     }

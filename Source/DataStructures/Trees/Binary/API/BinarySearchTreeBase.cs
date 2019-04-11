@@ -26,7 +26,9 @@ using CSFundamentals.Decoration;
 
 namespace CSFundamentals.DataStructures.Trees.Binary.API
 {
-    public abstract class BinarySearchTreeBase<TNode, TKey, TValue> where TNode : IBinaryTreeNode<TNode, TKey, TValue> where TKey : IComparable<TKey>
+    public abstract class BinarySearchTreeBase<TNode, TKey, TValue>
+        where TNode : IBinaryTreeNode<TNode, TKey, TValue>
+        where TKey : IComparable<TKey>
     {
         /// <summary>
         /// Is the root of the binary search tree.
@@ -186,7 +188,10 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
 
         internal TNode Delete_BST(TNode root, TKey key)
         {
-            if (root == null) return root;
+            if (root == null)
+            {
+                return root;
+            }
 
             if (root.Key.CompareTo(key) < 0)
             {
@@ -230,7 +235,10 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// <returns>The tree node with the smallest key. </returns>
         internal TNode FindMin_BST(TNode root)
         {
-            if (root == null) throw new ArgumentNullException();
+            if (root == null)
+            {
+                throw new ArgumentNullException();
+            }
 
             TNode node = root;
             while (node.LeftChild != null)
@@ -247,7 +255,11 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// <returns>The tree node with the largest key.</returns>
         internal TNode FindMax_BST(TNode root)
         {
-            if (root == null) throw new ArgumentNullException();
+            if (root == null)
+            {
+                throw new ArgumentNullException();
+            }
+
             TNode node = root;
             while (node.RightChild != null)
             {
@@ -264,8 +276,15 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         [TimeComplexity(Case.Average, "O(1)")]
         public TNode RotateLeft(TNode node)
         {
-            if (node == null) throw new ArgumentNullException();
-            if (node.RightChild == null) throw new Exception("While rotating left, the new parent can not be null.");
+            if (node == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            if (node.RightChild == null)
+            {
+                throw new Exception("While rotating left, the new parent can not be null.");
+            }
 
             var nodeParent = node.Parent;
             var newNode = node.RightChild; /* This will be node's new parent. */
@@ -273,7 +292,9 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
             /* Since the node is losing its right child, we need to select a new right child. The left child of node's right child is a perfect candidate for this position to preserve tree's order properties.*/
             node.RightChild = newNode.LeftChild;
             if (node.RightChild != null)
+            {
                 node.RightChild.Parent = node;
+            }
 
             newNode.LeftChild = node; /* Meaning new node is becoming node's parent. */
             node.Parent = newNode;
@@ -302,8 +323,15 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         [TimeComplexity(Case.Average, "O(1)")]
         public TNode RotateRight(TNode node)
         {
-            if (node == null) throw new ArgumentNullException();
-            if (node.LeftChild == null) throw new Exception("While rotating right, the new parent can not be null.");
+            if (node == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            if (node.LeftChild == null)
+            {
+                throw new Exception("While rotating right, the new parent can not be null.");
+            }
 
             var nodeParent = node.Parent;
             var newNode = node.LeftChild; /* This will be node's new parent. */
@@ -311,7 +339,9 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
             /* Since node is losing its left child, we need to select a new left child. The right child of node's left child is the perfect candidate for this position to preserve tree's order properties.*/
             node.LeftChild = newNode.RightChild;
             if (node.LeftChild != null)
+            {
                 node.LeftChild.Parent = node;
+            }
 
             newNode.RightChild = node; /* Meaning that newNode is becoming node's parent. */
             node.Parent = newNode;

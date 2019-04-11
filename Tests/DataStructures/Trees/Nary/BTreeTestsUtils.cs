@@ -122,16 +122,16 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             }
 
             /* Check the key range ordering of the node against its parent. */
-            if (node.Parent != null)
+            if (node.GetParent() != null)
             {
                 KeyValuePair<TKey, TValue> minKey = node.GetMinKey();
                 KeyValuePair<TKey, TValue> maxKey = node.GetMaxKey();
                 int indexAtParentChildren = node.GetIndexAtParentChildren();
 
                 if (indexAtParentChildren > 0)
-                    Assert.IsTrue(minKey.Key.CompareTo(node.Parent.GetKey(indexAtParentChildren - 1)) > 0);
-                if (indexAtParentChildren < node.Parent.KeyCount)
-                    Assert.IsTrue(maxKey.Key.CompareTo(node.Parent.GetKey(indexAtParentChildren)) < 0);
+                    Assert.IsTrue(minKey.Key.CompareTo(node.GetParent().GetKey(indexAtParentChildren - 1)) > 0);
+                if (indexAtParentChildren < node.GetParent().KeyCount)
+                    Assert.IsTrue(maxKey.Key.CompareTo(node.GetParent().GetKey(indexAtParentChildren)) < 0);
             }
 
             return true;

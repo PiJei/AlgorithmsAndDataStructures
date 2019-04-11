@@ -18,18 +18,26 @@
  */
 
 using System;
-using CSFundamentals.Decoration;
 
-namespace CSFundamentals.DataStructures.Trees.Nary
+namespace CSFundamentals.DataStructures.Trees.Nary.API
 {
-    [DataStructure("B+ Tree")]
-    public class BPlusTree<TKey, TValue> where TKey : IComparable<TKey>
+    public abstract class BTreeBase<TNode, TKey, TValue>
+        where TNode : IBTreeNode<TNode, TKey, TValue>
+        where TKey : IComparable<TKey>
     {
-        // Insert is different in that, when split happens, 
-        // The key-value should stay in the leaf, and only a copy of the key to be moved up, so 
-        // The question is in which leaf do we keep the key? left or right? 
+        /// <summary>
+        /// Is the root of the tree. 
+        /// </summary>
+        public BTreeNode<TKey, TValue> Root = null;
 
+        /// <summary>
+        /// Is the maximum number of children for a non-leaf node in this B-Tree. 
+        /// </summary>
+        public int MaxBranchingDegree { get; private set; }
 
-
+        public BTreeBase(int maxBranchingDegree)
+        {
+            MaxBranchingDegree = maxBranchingDegree;
+        }
     }
 }
