@@ -75,5 +75,9 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         void SetParent(TNode parent);
 
         int GetChildIndex(TNode child);
+
+        TKey GetKey(int index);
+
+        KeyValuePair<TKey, TValue> GetKeyValue(int index);
     }
 }

@@ -51,7 +51,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(nLog(n))")]
         [TimeComplexity(Case.Average, "O(n(Log(n))")]
-        public BTreeNode<TKey, TValue> Build(Dictionary<TKey, TValue> keyValues)
+        public override BTreeNode<TKey, TValue> Build(Dictionary<TKey, TValue> keyValues)
         {
             foreach (KeyValuePair<TKey, TValue> keyValue in keyValues)
             {
@@ -69,7 +69,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         [TimeComplexity(Case.Best, "O(1)", When = "Fist key in the tree is inserted.")]
         [TimeComplexity(Case.Worst, "O(D Log(n)(base:D)")] // where D is max branching factor of the tree. 
         [TimeComplexity(Case.Average, "O(d Log(n)(base d))")] // where d is min branching factor of the tree.  
-        public BTreeNode<TKey, TValue> Insert(KeyValuePair<TKey, TValue> keyValue)
+        public override BTreeNode<TKey, TValue> Insert(KeyValuePair<TKey, TValue> keyValue)
         {
             /* Find the leaf node that should contain the new key-value pair. The leaf is found such that the order property of the B-Tree is preserved. */
             BTreeNode<TKey, TValue> leaf = FindLeafToInsertKey(Root, keyValue.Key);
@@ -98,7 +98,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         [TimeComplexity(Case.Best, "O(1)", When = "For example, there is only one key left in the tree.")]
         [TimeComplexity(Case.Worst, "O(D Log(n)(base D))")] // where D is max branching factor of the tree. 
         [TimeComplexity(Case.Average, "O(d Log(n) base d)")] // where d is min branching factor of the tree.  
-        public bool Delete(TKey key)
+        public override bool Delete(TKey key)
         {
             try
             {
@@ -341,105 +341,6 @@ namespace CSFundamentals.DataStructures.Trees.Nary
                     node.GetParent().InsertKeyValue(keyToMoveToParent);
                     node.GetParent().InsertChild(sibling);
                     node = node.GetParent(); /* Repeat while loop with the parent node that might itself be overflown now after inserting a new key.*/
-                }
-            }
-        }
-
-        /// <summary>
-        /// Starting from the given root, recursively traverses tree top-down to find the proper leaf node, at which <paramref name="key"/> can be inserted. 
-        /// </summary>
-        /// <param name="root">Is the top-most node at which search for the leaf starts.</param>
-        /// <param name="key">Is the key for which a container leaf is being searched. </param>
-        /// <returns>Leaf node to insert the key. </returns>
-        [TimeComplexity(Case.Best, "O(1)", When = "There is no node in the tree or only one node.")]
-        [TimeComplexity(Case.Worst, "O(Log(n))")] // todo
-        [TimeComplexity(Case.Average, "O(Log(n))")] // todo 
-        internal BTreeNode<TKey, TValue> FindLeafToInsertKey(BTreeNode<TKey, TValue> root, TKey key)
-        {
-            if (root == null || root.IsLeaf())
-            {
-                return root;
-            }
-            for (int i = 0; i < root.KeyCount; i++)
-            {
-                if (key.CompareTo(root.GetKey(i)) < 0)
-                {
-                    return FindLeafToInsertKey(root.GetChild(i), key);
-                }
-                else if (key.CompareTo(root.GetKey(i)) == 0) /* means a node with such key already exists.*/
-                {
-                    throw new ArgumentException("A node with this key exists in the tree. Duplicate keys are not allowed.");
-                }
-                else if (i == root.KeyCount - 1 && key.CompareTo(root.GetKey(i)) > 0) /*Last key is treated differently because it also has a child to its right.*/
-                {
-                    return FindLeafToInsertKey(root.GetChild(i + 1), key);
-                }
-            }
-            return null;
-        }
-
-        /// <summary>
-        ///  Searchers the given key in (sub)tree rooted at node <paramref name="root">.
-        /// </summary>
-        /// <param name="root">The root of the (sub) tree at which search starts. </param>
-        /// <param name="key">Is the key to search for.</param>
-        /// <returns>The node containing the key if it exists. Otherwise throws an exception. </returns>
-        [TimeComplexity(Case.Best, "O(1)", When = "Key is the first item of the first node to visit.")]
-        [TimeComplexity(Case.Worst, "O(LogD Log(n)Base(D))")] // Each search with in a node uses binary-search which is Log(K) cost, and since it is constant is not included in this value. 
-        [TimeComplexity(Case.Average, "O(Log(d) Log(n)Base(d))")]
-        public BTreeNode<TKey, TValue> Search(BTreeNode<TKey, TValue> root, TKey key)
-        {
-            if (root != null)
-            {
-                int startIndex = 0;
-                int endIndex = root.KeyCount - 1;
-                while (startIndex <= endIndex)
-                {
-                    int middleIndex = (startIndex + endIndex) / 2;
-                    if (root.GetKey(middleIndex).CompareTo(key) == 0)
-                    {
-                        return root;
-                    }
-                    else if (root.GetKey(middleIndex).CompareTo(key) > 0) /* search left-half of the root.*/
-                    {
-                        endIndex = middleIndex - 1;
-                    }
-                    else if (root.GetKey(middleIndex).CompareTo(key) < 0) /* search right-half of the root. */
-                    {
-                        startIndex = middleIndex + 1;
-                    }
-                }
-                if (startIndex < root.ChildrenCount)
-                {
-                    return Search(root.GetChild(startIndex), key);
-                }
-            }
-            throw new KeyNotFoundException($"{key.ToString()} is not found in the tree.");
-        }
-
-        //TODO: What is complexity?
-        /// <summary>
-        /// Traverses tree in-order and generates list of keys sorted.
-        /// </summary>
-        /// <param name="node">The tree node at which traverse starts.</param>
-        /// <param name="sortedKeys">List of the key-values sorted by their keys.</param>
-        public void InOrderTraversal(BTreeNode<TKey, TValue> node, List<KeyValuePair<TKey, TValue>> sortedKeys)
-        {
-            if (node != null)
-            {
-                for (int i = 0; i < node.KeyCount; i++)
-                {
-                    if (!node.IsLeaf()) /* Leaf nodes do not have children */
-                    {
-                        InOrderTraversal(node.GetChild(i), sortedKeys);
-                    }
-
-                    sortedKeys.Add(node.GetKeyValue(i)); /* Visit the key. */
-
-                    if (!node.IsLeaf() && i == node.KeyCount - 1) /* If is not leaf, and last key */
-                    {
-                        InOrderTraversal(node.GetChild(i + 1), sortedKeys);
-                    }
                 }
             }
         }
