@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using CSFundamentals.DataStructures.Trees.Nary.API;
 
 namespace CSFundamentals.DataStructures.Trees.Nary
@@ -94,5 +95,11 @@ namespace CSFundamentals.DataStructures.Trees.Nary
             child.SetParent(this);
         }
 
+
+        // TODO: add test
+        public bool HasGrandChild()
+        {
+            return _children.Any() && _children.Any(child => child.Key.ChildrenCount > 0);
+        }
     }
 }

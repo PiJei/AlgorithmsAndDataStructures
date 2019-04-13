@@ -339,7 +339,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         /// </summary>
         /// <param name="node">The tree node at which traverse starts.</param>
         /// <param name="sortedKeyValues">List of the key-values sorted by their keys.</param>
-        public void InOrderTraversal(BTreeNode<TKey,TValue> node, List<KeyValuePair<TKey, TValue>> sortedKeyValues)
+        public void InOrderTraversal(BTreeNode<TKey, TValue> node, List<KeyValuePair<TKey, TValue>> sortedKeyValues)
         {
             if (node != null)
             {
@@ -359,6 +359,40 @@ namespace CSFundamentals.DataStructures.Trees.Nary
                 }
             }
         }
+
+        /// <summary>
+        /// Starting from the given root, recursively traverses tree top-down to find the proper leaf node, at which <paramref name="key"/> can be inserted. 
+        /// </summary>
+        /// <param name="root">Is the top-most node at which search for the leaf starts.</param>
+        /// <param name="key">Is the key for which a container leaf is being searched. </param>
+        /// <returns>Leaf node to insert the key. </returns>
+        [TimeComplexity(Case.Best, "O(1)", When = "There is no node in the tree or only one node.")]
+        [TimeComplexity(Case.Worst, "O(Log(n))")] // todo
+        [TimeComplexity(Case.Average, "O(Log(n))")] // todo 
+        public override BTreeNode<TKey, TValue> FindLeafToInsertKey(BTreeNode<TKey, TValue> root, TKey key)
+        {
+            if (root == null || root.IsLeaf())
+            {
+                return root;
+            }
+            for (int i = 0; i < root.KeyCount; i++)
+            {
+                if (key.CompareTo(root.GetKey(i)) < 0)
+                {
+                    return FindLeafToInsertKey(root.GetChild(i), key);
+                }
+                else if (key.CompareTo(root.GetKey(i)) == 0) /* means a node with such key already exists.*/
+                {
+                    throw new ArgumentException("A node with this key exists in the tree. Duplicate keys are not allowed.");
+                }
+                else if (i == root.KeyCount - 1 && key.CompareTo(root.GetKey(i)) > 0) /*Last key is treated differently because it also has a child to its right.*/
+                {
+                    return FindLeafToInsertKey(root.GetChild(i + 1), key);
+                }
+            }
+            return null;
+        }
+
 
         /// <summary>
         /// Given number of levels in the tree, computes the maximum number of keys the tree can hold. 

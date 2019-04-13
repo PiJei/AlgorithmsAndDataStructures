@@ -30,59 +30,59 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         public void Insert_SeveralKeys_ExpectsTreeToIncreaseInLevelsAfewTimes()
         {
             BPlusTree<int, string> tree = new BPlusTree<int, string>(3);
-            BTreeTestsUtils.HasBPlusTreeProperties(tree, 0, 0);
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 0, 0, 0);
 
             tree.Insert(new KeyValuePair<int, string>(50, "A"));
-            BTreeTestsUtils.HasBPlusTreeProperties(tree, 1, 1);
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 2, 1, 2);
 
             tree.Insert(new KeyValuePair<int, string>(10, "B"));
-            BTreeTestsUtils.HasBPlusTreeProperties(tree, 2, 1);
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 3, 2, 2);
 
             tree.Insert(new KeyValuePair<int, string>(100, "C"));
-            BTreeTestsUtils.HasBPlusTreeProperties(tree, 3, 3);
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 4, 3, 3);
 
             tree.Insert(new KeyValuePair<int, string>(200, "D"));
-            BTreeTestsUtils.HasBPlusTreeProperties(tree, 4, 3);
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 5, 4, 3);
 
             tree.Insert(new KeyValuePair<int, string>(20, "E"));
-            BTreeTestsUtils.HasBPlusTreeProperties(tree, 5, 3);
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 7, 5, 4);
 
             tree.Insert(new KeyValuePair<int, string>(300, "F"));
-            BTreeTestsUtils.HasBPlusTreeProperties(tree, 6, 4);
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 9, 6, 7);
 
             tree.Insert(new KeyValuePair<int, string>(30, "G"));
-            BTreeTestsUtils.HasBPlusTreeProperties(tree, 7, 7);
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 10, 7, 7);
 
             tree.Insert(new KeyValuePair<int, string>(500, "H"));
-            BTreeTestsUtils.HasBPlusTreeProperties(tree, 8, 7);
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 11, 8, 7);
 
             tree.Insert(new KeyValuePair<int, string>(250, "I"));
-            BTreeTestsUtils.HasBPlusTreeProperties(tree, 9, 8);
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 13, 9, 8);
 
             tree.Insert(new KeyValuePair<int, string>(400, "J"));
-            BTreeTestsUtils.HasBPlusTreeProperties(tree, 10, 8);
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 14, 10, 8);
 
             tree.Insert(new KeyValuePair<int, string>(270, "K"));
-            BTreeTestsUtils.HasBPlusTreeProperties(tree, 11, 8);
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 16, 11, 10);
 
             tree.Insert(new KeyValuePair<int, string>(600, "L"));
-            BTreeTestsUtils.HasBPlusTreeProperties(tree, 12, 10);
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 18, 12, 11);
 
             tree.Insert(new KeyValuePair<int, string>(150, "M"));
-            BTreeTestsUtils.HasBPlusTreeProperties(tree, 13, 10);
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 20, 13, 12);
 
             tree.Insert(new KeyValuePair<int, string>(80, "N"));
-            BTreeTestsUtils.HasBPlusTreeProperties(tree, 14, 11);
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 22, 14, 16);
 
             tree.Insert(new KeyValuePair<int, string>(60, "O"));
-            BTreeTestsUtils.HasBPlusTreeProperties(tree, 15, 11);
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 24, 15, 17);
 
             tree.Insert(new KeyValuePair<int, string>(90, "P"));
-            BTreeTestsUtils.HasBPlusTreeProperties(tree, 16, 15);
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 25, 16, 17);
 
             Assert.AreEqual(1, tree.Root.KeyCount);
-            Assert.AreEqual(100, tree.Root.GetKeyValue(0).Key);
-            Assert.AreEqual("C", tree.Root.GetKeyValue(0).Value, ignoreCase: true);
+            Assert.AreEqual(150, tree.Root.GetKeyValue(0).Key);
+            Assert.AreEqual(default(string), tree.Root.GetKeyValue(0).Value, ignoreCase: true);
         }
     }
 }

@@ -43,7 +43,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             }
         }
 
-        public static bool HasBTreeProperties<TNode, TKey, TValue>(BTreeBase<TNode, TKey, TValue> tree, int expectedKeyCount, int expectedNodeCount, Func<TNode, bool> HasNodeProperties) where TNode : IBTreeNode<TNode, TKey, TValue>, IComparable<TNode> where TKey : IComparable<TKey>
+        public static bool HasBTreeProperties<TNode, TKey, TValue>(BTreeBase<TNode, TKey, TValue> tree, int expectedTotalKeyCount, int expectedDistinctKeyCount, int expectedNodeCount, Func<TNode, bool> HasNodeProperties) where TNode : IBTreeNode<TNode, TKey, TValue>, IComparable<TNode> where TKey : IComparable<TKey>
         {
             List<TNode> nodes = new List<TNode>();
             DFS<TNode, TKey, TValue>(tree.Root, nodes);
@@ -59,15 +59,19 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             }
 
             /* Check that key count matches the expected key count. */
-            Assert.AreEqual(expectedKeyCount, keyCount);
+            Assert.AreEqual(expectedTotalKeyCount, keyCount);
 
             /* Get the sorted key list and make sure it is sorted. */
-            List<KeyValuePair<TKey, TValue>> sortedKeys = tree.GetSortedKeyValues(tree.Root);
 
-            Assert.AreEqual(expectedKeyCount, sortedKeys.Count);
-            for (int i = 0; i < sortedKeys.Count - 1; i++)
+            if (tree.Root != null)
             {
-                Assert.IsTrue(sortedKeys[i].Key.CompareTo(sortedKeys[i + 1].Key) < 0);
+                List<KeyValuePair<TKey, TValue>> sortedKeys = tree.GetSortedKeyValues(tree.Root);
+
+                Assert.AreEqual(expectedDistinctKeyCount, sortedKeys.Count);
+                for (int i = 0; i < sortedKeys.Count - 1; i++)
+                {
+                    Assert.IsTrue(sortedKeys[i].Key.CompareTo(sortedKeys[i + 1].Key) < 0);
+                }
             }
 
             /* TODO Check all the leave nodes are at the same level, or one level apart? */
@@ -144,7 +148,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             return true;
         }
 
-        public static bool HasBPlusTreeNodeProperties<TNode, TKey, TValue>(TNode node) where TNode : IBTreeNode<TNode, TKey, TValue>, IComparable<TNode> where TKey : IComparable<TKey>
+        public static bool HasBPlusTreeNodeProperties<TKey, TValue>(BPlusTreeNode<TKey, TValue> node) where TKey : IComparable<TKey>
         {
             /* Any valid node (root and non-root) in the tree is expected to have at least one key.*/
             Assert.IsFalse(node.IsEmpty());
@@ -160,14 +164,14 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
 
             if (!node.IsLeaf())
             {
-                if (!node.IsRoot())
+                if (!node.IsRoot() || (node.IsRoot() && node.HasGrandChild()))
                 {
                     /* Any non-leaf node should have most MaxBranchingDegree and at least MinBranching children. */
                     Assert.IsTrue(node.ChildrenCount <= node.MaxBranchingDegree && node.MinBranchingDegree <= node.ChildrenCount);
-                }
 
-                /* Any non-leaf node's children count should be exactly one more than its key count. */
-                Assert.AreEqual(node.KeyCount + 1, node.ChildrenCount);
+                    /* Any non-leaf node's children count should be exactly one more than its key count. */
+                    Assert.AreEqual(node.KeyCount + 1, node.ChildrenCount);
+                }
             }
 
             /* All the keys in a node should be sorted in ascending order.*/
@@ -179,7 +183,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             /* Check the key range ordering of the node against its children. */
             for (int i = 0; i < node.ChildrenCount; i++)
             {
-                TNode childNode = node.GetChild(i);
+                BPlusTreeNode<TKey, TValue> childNode = node.GetChild(i);
                 KeyValuePair<TKey, TValue> childMinKey = childNode.GetMinKey();
                 KeyValuePair<TKey, TValue> childMaxKey = childNode.GetMaxKey();
 
@@ -216,14 +220,14 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             return true;
         }
 
-        public static void HasBTreeProperties(BTree<int, string> tree, int expectedKeyCount, int expectedNodeCount)
+        public static void HasBTreeProperties(BTree<int, string> tree, int expectedTotalKeyCount, int expectedDistinctKeyCount, int expectedNodeCount)
         {
-            Assert.IsTrue(HasBTreeProperties(tree, expectedKeyCount, expectedNodeCount, HasBTreeNodeProperties<BTreeNode<int, string>, int, string>));
+            Assert.IsTrue(HasBTreeProperties(tree, expectedTotalKeyCount, expectedDistinctKeyCount, expectedNodeCount, HasBTreeNodeProperties<BTreeNode<int, string>, int, string>));
         }
 
-        public static void HasBPlusTreeProperties(BPlusTree<int, string> tree, int expectedKeyCount, int expectedNodeCount)
+        public static void HasBPlusTreeProperties(BPlusTree<int, string> tree, int expectedTotalKeyCount, int expectedDistinctKeyCount, int expectedNodeCount)
         {
-            Assert.IsTrue(HasBTreeProperties(tree, expectedKeyCount, expectedNodeCount, HasBPlusTreeNodeProperties<BPlusTreeNode<int, string>, int, string>));
+            Assert.IsTrue(HasBTreeProperties(tree, expectedTotalKeyCount, expectedDistinctKeyCount, expectedNodeCount, HasBPlusTreeNodeProperties));
 
             /* Check that all the non-leaf nodes have no value in their key value array*/
             List<BPlusTreeNode<int, string>> nodes = new List<BPlusTreeNode<int, string>>();
