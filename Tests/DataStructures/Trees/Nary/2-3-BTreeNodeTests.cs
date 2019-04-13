@@ -267,8 +267,8 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             node.InsertKeyValue(new KeyValuePair<int, string>(10, "A"));
 
             var newNode = node.Split();
-            Assert.IsTrue(BTreeTestsUtils<BTreeNode<int, string>, int, string>.HasBTreeNodeProperties(node));
-            Assert.IsTrue(BTreeTestsUtils<BTreeNode<int, string>, int, string>.HasBTreeNodeProperties(newNode));
+            Assert.IsTrue(BTreeTestsUtils.HasBTreeNodeProperties<BTreeNode<int, string>, int, string>(node));
+            Assert.IsTrue(BTreeTestsUtils.HasBTreeNodeProperties<BTreeNode<int, string>, int, string>(newNode));
             Assert.AreEqual(2, node.KeyCount);
             Assert.AreEqual(1, newNode.KeyCount);
         }
@@ -300,7 +300,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
 
             BTreeNode<int, string> newNode = node.Split();
             /* At this point we do not expect 'node' to be valid (i.e., HasBTreeNodeProperties(node)==false ), because the key in the middle has not yet moved up, that step is part of split method in the tree itself and not in the node.*/
-            Assert.IsTrue(BTreeTestsUtils<BTreeNode<int, string>, int, string>.HasBTreeNodeProperties(newNode));
+            Assert.IsTrue(BTreeTestsUtils.HasBTreeNodeProperties<BTreeNode<int, string>, int, string>(newNode));
         }
 
         [TestMethod]

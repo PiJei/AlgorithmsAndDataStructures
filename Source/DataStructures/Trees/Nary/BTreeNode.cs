@@ -66,6 +66,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         {
         }
 
+        // TODO: Rather than having this replace this with a call on parent node! meaning you wont need this! and can move up
         /// <summary>
         /// Gets the index of the current node in its parent's <see cref="_children"/> list.
         /// </summary>

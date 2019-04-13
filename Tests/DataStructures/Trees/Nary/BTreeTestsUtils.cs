@@ -26,29 +26,27 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 // TODO: Compute levels and after each insert confirm it
 namespace CSFundamentalsTests.DataStructures.Trees.Nary
 {
-    public static class BTreeTestsUtils<TNode, TKey, TValue>
-        where TNode : IBTreeNode<TNode, TKey, TValue>, IComparable<TNode>
-        where TKey : IComparable<TKey>
+    public static class BTreeTestsUtils
     {
         /// <summary>
         /// TODO: How to make this to use the DFS I have in the algorithms? 
         /// </summary>
-        public static void DFS(TNode node, List<TNode> nodes)
+        public static void DFS<TNode, TKey, TValue>(TNode node, List<TNode> nodes) where TNode : IBTreeNode<TNode, TKey, TValue>, IComparable<TNode> where TKey : IComparable<TKey>
         {
             if (node != null)
             {
                 nodes.Add(node);
                 for (int i = 0; i < node.ChildrenCount; i++)
                 {
-                    DFS(node.GetChild(i), nodes);
+                    DFS<TNode, TKey, TValue>(node.GetChild(i), nodes);
                 }
             }
         }
 
-        public static bool HasBTreeProperties(BTreeBase<TNode, TKey, TValue> tree, int expectedKeyCount, int expectedNodeCount)
+        public static bool HasBTreeProperties<TNode, TKey, TValue>(BTreeBase<TNode, TKey, TValue> tree, int expectedKeyCount, int expectedNodeCount, Func<TNode, bool> HasNodeProperties) where TNode : IBTreeNode<TNode, TKey, TValue>, IComparable<TNode> where TKey : IComparable<TKey>
         {
             List<TNode> nodes = new List<TNode>();
-            DFS(tree.Root, nodes);
+            DFS<TNode, TKey, TValue>(tree.Root, nodes);
             Assert.AreEqual(expectedNodeCount, nodes.Count);
 
             int keyCount = 0;
@@ -56,11 +54,11 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             /* Checking whether all the nodes are proper BTree nodes. */
             foreach (TNode node in nodes)
             {
-                Assert.IsTrue(HasBTreeNodeProperties(node));
+                Assert.IsTrue(HasNodeProperties(node));
                 keyCount += node.KeyCount;
             }
 
-            /* Check that key count of all the nodes matches the expected key count. */
+            /* Check that key count matches the expected key count. */
             Assert.AreEqual(expectedKeyCount, keyCount);
 
             /* Get the sorted key list and make sure it is sorted. */
@@ -77,40 +75,27 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             return true;
         }
 
-        public static bool HasBPlusTreeProperties(BTreeBase<TNode, TKey, TValue> tree, int expectedKeyCount, int expectedNodeCount)
+        public static bool HasBTreeNodeProperties<TNode, TKey, TValue>(TNode node) where TNode : IBTreeNode<TNode, TKey, TValue>, IComparable<TNode> where TKey : IComparable<TKey>
         {
-            // TODO: SHould implement this
-            throw new NotImplementedException();
-            return true;
-        }
+            /* Any valid node (root and non-root) in the tree is expected to have at least one key.*/
+            Assert.IsFalse(node.IsEmpty());
 
-        public static bool HasBTreeNodeProperties(TNode node)
-        {
-            Assert.IsTrue(node.KeyCount != 0); /* Every valid node (root and non-root) in the tree is expected to have at least one key.*/
-
+            /* Any node should have at most MaxKeys. */
             Assert.IsFalse(node.IsOverFlown());
 
-            /* Number of children of any non-leaf node should be at most MaxBranchingDegree */
-            if (!node.IsLeaf())
-            {
-                Assert.IsTrue(node.ChildrenCount <= node.MaxBranchingDegree);
-
-                /* Number of children should always be one bigger than the number of keys. */
-                Assert.AreEqual(node.KeyCount + 1, node.ChildrenCount);
-            }
-
-            if (!node.IsLeaf())
-            {
-                Assert.IsTrue(node.ChildrenCount >= node.MinBranchingDegree);
-            }
-
-            Assert.IsTrue(node.KeyCount <= node.MaxKeys);
-
-            /* Every non-root node's key count should be at least MinKeys.*/
+            /* Any non-root node should have at least MinKeys.*/
             if (!node.IsRoot())
             {
-                Assert.IsTrue(node.KeyCount >= node.MinKeys);
                 Assert.IsFalse(node.IsUnderFlown());
+            }
+
+            if (!node.IsLeaf()) //todo: for b+tree and non-root and what if root is the only intermediate node, and how do we detect that?
+            {
+                /* Any non-leaf node should have most MaxBranchingDegree and at least MinBranching children. */
+                Assert.IsTrue(node.ChildrenCount <= node.MaxBranchingDegree && node.MinBranchingDegree <= node.ChildrenCount);
+
+                /* Any non-leaf node's children count should be exactly one more than its key count. */
+                Assert.AreEqual(node.KeyCount + 1, node.ChildrenCount);
             }
 
             /* All the keys in a node should be sorted in ascending order.*/
@@ -128,17 +113,18 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
 
                 if (i > 0)
                 {
-                    Assert.IsTrue(childMinKey.Key.CompareTo(node.GetKey(i - 1)) > 0);
+                    Assert.IsTrue(childMinKey.Key.CompareTo(node.GetKey(i - 1)) > 0); // todo: b+tree will be >=
                 }
 
                 if (i < node.KeyCount)
                 {
-                    Assert.IsTrue(childMaxKey.Key.CompareTo(node.GetKey(i)) < 0);
+                    Assert.IsTrue(childMaxKey.Key.CompareTo(node.GetKey(i)) < 0); //todo: <= for b+tree
                 }
             }
 
             /* Check the key range ordering of the node against its parent. */
-            if (node.GetParent() != null)
+            var parent = node.GetParent();
+            if (parent != null)
             {
                 KeyValuePair<TKey, TValue> minKey = node.GetMinKey();
                 KeyValuePair<TKey, TValue> maxKey = node.GetMaxKey();
@@ -146,18 +132,98 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
 
                 if (indexAtParentChildren > 0)
                 {
-                    Assert.IsTrue(minKey.Key.CompareTo(node.GetParent().GetKey(indexAtParentChildren - 1)) > 0);
+                    Assert.IsTrue(minKey.Key.CompareTo(parent.GetKey(indexAtParentChildren - 1)) > 0); // todo: b+tree: >=0
                 }
 
-                if (indexAtParentChildren < node.GetParent().KeyCount)
+                if (indexAtParentChildren < parent.KeyCount)
                 {
-                    Assert.IsTrue(maxKey.Key.CompareTo(node.GetParent().GetKey(indexAtParentChildren)) < 0);
+                    Assert.IsTrue(maxKey.Key.CompareTo(parent.GetKey(indexAtParentChildren)) < 0); // todo: b+tree <==
                 }
             }
 
             return true;
         }
 
+        public static bool HasBPlusTreeNodeProperties<TNode, TKey, TValue>(TNode node) where TNode : IBTreeNode<TNode, TKey, TValue>, IComparable<TNode> where TKey : IComparable<TKey>
+        {
+            /* Any valid node (root and non-root) in the tree is expected to have at least one key.*/
+            Assert.IsFalse(node.IsEmpty());
 
+            /* Any node should have at most MaxKeys. */
+            Assert.IsFalse(node.IsOverFlown());
+
+            /* Any non-root node should have at least MinKeys.*/
+            if (!node.IsRoot())
+            {
+                Assert.IsFalse(node.IsUnderFlown());
+            }
+
+            if (!node.IsLeaf())
+            {
+                if (!node.IsRoot())
+                {
+                    /* Any non-leaf node should have most MaxBranchingDegree and at least MinBranching children. */
+                    Assert.IsTrue(node.ChildrenCount <= node.MaxBranchingDegree && node.MinBranchingDegree <= node.ChildrenCount);
+                }
+
+                /* Any non-leaf node's children count should be exactly one more than its key count. */
+                Assert.AreEqual(node.KeyCount + 1, node.ChildrenCount);
+            }
+
+            /* All the keys in a node should be sorted in ascending order.*/
+            for (int i = 0; i < node.KeyCount - 1; i++)
+            {
+                Assert.IsTrue(node.GetKey(i).CompareTo(node.GetKey(i + 1)) <= 0);
+            }
+
+            /* Check the key range ordering of the node against its children. */
+            for (int i = 0; i < node.ChildrenCount; i++)
+            {
+                TNode childNode = node.GetChild(i);
+                KeyValuePair<TKey, TValue> childMinKey = childNode.GetMinKey();
+                KeyValuePair<TKey, TValue> childMaxKey = childNode.GetMaxKey();
+
+                if (i > 0)
+                {
+                    Assert.IsTrue(childMinKey.Key.CompareTo(node.GetKey(i - 1)) >= 0);
+                }
+
+                if (i < node.KeyCount)
+                {
+                    Assert.IsTrue(childMaxKey.Key.CompareTo(node.GetKey(i)) <= 0);
+                }
+            }
+
+            /* Check the key range ordering of the node against its parent. */
+            var parent = node.GetParent();
+            if (parent != null)
+            {
+                KeyValuePair<TKey, TValue> minKey = node.GetMinKey();
+                KeyValuePair<TKey, TValue> maxKey = node.GetMaxKey();
+                int indexAtParentChildren = node.GetIndexAtParentChildren();
+
+                if (indexAtParentChildren > 0)
+                {
+                    Assert.IsTrue(minKey.Key.CompareTo(parent.GetKey(indexAtParentChildren - 1)) >= 0);
+                }
+
+                if (indexAtParentChildren < parent.KeyCount)
+                {
+                    Assert.IsTrue(maxKey.Key.CompareTo(parent.GetKey(indexAtParentChildren)) <= 0);
+                }
+            }
+
+            return true;
+        }
+
+        public static void HasBTreeProperties(BTree<int, string> tree, int expectedKeyCount, int expectedNodeCount)
+        {
+            Assert.IsTrue(HasBTreeProperties(tree, expectedKeyCount, expectedNodeCount, HasBTreeNodeProperties<BTreeNode<int, string>, int, string>));
+        }
+
+        public static void HasBPlusTreeProperties(BPlusTree<int, string> tree, int expectedKeyCount, int expectedNodeCount)
+        {
+            Assert.IsTrue(HasBTreeProperties(tree, expectedKeyCount, expectedNodeCount, HasBPlusTreeNodeProperties<BPlusTreeNode<int, string>, int, string>));
+        }
     }
 }

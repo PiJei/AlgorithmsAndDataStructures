@@ -79,16 +79,20 @@ namespace CSFundamentals.DataStructures.Trees.Nary
 
         public override int GetIndexAtParentChildren()
         {
-            throw new NotImplementedException();
+            return _parent != null ? _parent.GetChildIndex(this) : throw new ArgumentException($"Failed to get index of the node at its parent's children array. Parent is null.");
         }
 
+        // TODO: How could this method be moved to base class and redundant implementations dropped from b-tree variation
+        /// <summary>
+        /// Inserts a child in <see cref="_children"/> array.
+        /// </summary>
+        /// <param name="child">the new child to be inserted in <see cref="_children"/> array. </param>
         public override void InsertChild(BPlusTreeNode<TKey, TValue> child)
         {
-            throw new NotImplementedException();
+            /* Since Children is a sorted list, Child will be inserted at its correct position based on the Compare() method, to preserve the ordering. */
+            _children.Add(child, true);
+            child.SetParent(this);
         }
 
-        // Should implement insertKey on top of insertKeyvalue
-        // If however encounter a method in B-TRee that this class doesn't need, then, create the hierarchy, .. 
-        // ...
     }
 }

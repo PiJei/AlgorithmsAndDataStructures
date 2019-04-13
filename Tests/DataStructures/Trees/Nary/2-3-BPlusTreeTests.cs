@@ -30,55 +30,55 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         public void Insert_SeveralKeys_ExpectsTreeToIncreaseInLevelsAfewTimes()
         {
             BPlusTree<int, string> tree = new BPlusTree<int, string>(3);
-            Assert.IsTrue(BTreeTestsUtils<BPlusTreeNode<int, string>, int, string>.HasBPlusTreeProperties(tree, 0, 0));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 0, 0);
 
             tree.Insert(new KeyValuePair<int, string>(50, "A"));
-            Assert.IsTrue(BTreeTestsUtils<BPlusTreeNode<int, string>, int, string>.HasBPlusTreeProperties(tree, 1, 1));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 1, 1);
 
             tree.Insert(new KeyValuePair<int, string>(10, "B"));
-            Assert.IsTrue(BTreeTestsUtils<BPlusTreeNode<int, string>, int, string>.HasBPlusTreeProperties(tree, 2, 1));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 2, 1);
 
             tree.Insert(new KeyValuePair<int, string>(100, "C"));
-            Assert.IsTrue(BTreeTestsUtils<BPlusTreeNode<int, string>, int, string>.HasBPlusTreeProperties(tree, 3, 3));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 3, 3);
 
             tree.Insert(new KeyValuePair<int, string>(200, "D"));
-            Assert.IsTrue(BTreeTestsUtils<BPlusTreeNode<int, string>, int, string>.HasBPlusTreeProperties(tree, 4, 3));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 4, 3);
 
             tree.Insert(new KeyValuePair<int, string>(20, "E"));
-            Assert.IsTrue(BTreeTestsUtils<BPlusTreeNode<int, string>, int, string>.HasBPlusTreeProperties(tree, 5, 3));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 5, 3);
 
             tree.Insert(new KeyValuePair<int, string>(300, "F"));
-            Assert.IsTrue(BTreeTestsUtils<BPlusTreeNode<int, string>, int, string>.HasBPlusTreeProperties(tree, 6, 4));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 6, 4);
 
             tree.Insert(new KeyValuePair<int, string>(30, "G"));
-            Assert.IsTrue(BTreeTestsUtils<BPlusTreeNode<int, string>, int, string>.HasBPlusTreeProperties(tree, 7, 7));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 7, 7);
 
             tree.Insert(new KeyValuePair<int, string>(500, "H"));
-            Assert.IsTrue(BTreeTestsUtils<BPlusTreeNode<int, string>, int, string>.HasBPlusTreeProperties(tree, 8, 7));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 8, 7);
 
             tree.Insert(new KeyValuePair<int, string>(250, "I"));
-            Assert.IsTrue(BTreeTestsUtils<BPlusTreeNode<int, string>, int, string>.HasBPlusTreeProperties(tree, 9, 8));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 9, 8);
 
             tree.Insert(new KeyValuePair<int, string>(400, "J"));
-            Assert.IsTrue(BTreeTestsUtils<BPlusTreeNode<int, string>, int, string>.HasBPlusTreeProperties(tree, 10, 8));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 10, 8);
 
             tree.Insert(new KeyValuePair<int, string>(270, "K"));
-            Assert.IsTrue(BTreeTestsUtils<BPlusTreeNode<int, string>, int, string>.HasBPlusTreeProperties(tree, 11, 8));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 11, 8);
 
             tree.Insert(new KeyValuePair<int, string>(600, "L"));
-            Assert.IsTrue(BTreeTestsUtils<BPlusTreeNode<int, string>, int, string>.HasBPlusTreeProperties(tree, 12, 10));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 12, 10);
 
             tree.Insert(new KeyValuePair<int, string>(150, "M"));
-            Assert.IsTrue(BTreeTestsUtils<BPlusTreeNode<int, string>, int, string>.HasBPlusTreeProperties(tree, 13, 10));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 13, 10);
 
             tree.Insert(new KeyValuePair<int, string>(80, "N"));
-            Assert.IsTrue(BTreeTestsUtils<BPlusTreeNode<int, string>, int, string>.HasBPlusTreeProperties(tree, 14, 11));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 14, 11);
 
             tree.Insert(new KeyValuePair<int, string>(60, "O"));
-            Assert.IsTrue(BTreeTestsUtils<BPlusTreeNode<int, string>, int, string>.HasBPlusTreeProperties(tree, 15, 11));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 15, 11);
 
             tree.Insert(new KeyValuePair<int, string>(90, "P"));
-            Assert.IsTrue(BTreeTestsUtils<BPlusTreeNode<int, string>, int, string>.HasBPlusTreeProperties(tree, 16, 15));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 16, 15);
 
             Assert.AreEqual(1, tree.Root.KeyCount);
             Assert.AreEqual(100, tree.Root.GetKeyValue(0).Key);
