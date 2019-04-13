@@ -89,7 +89,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
                 Assert.IsFalse(node.IsUnderFlown());
             }
 
-            if (!node.IsLeaf()) //todo: for b+tree and non-root and what if root is the only intermediate node, and how do we detect that?
+            if (!node.IsLeaf())
             {
                 /* Any non-leaf node should have most MaxBranchingDegree and at least MinBranching children. */
                 Assert.IsTrue(node.ChildrenCount <= node.MaxBranchingDegree && node.MinBranchingDegree <= node.ChildrenCount);
@@ -113,12 +113,12 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
 
                 if (i > 0)
                 {
-                    Assert.IsTrue(childMinKey.Key.CompareTo(node.GetKey(i - 1)) > 0); // todo: b+tree will be >=
+                    Assert.IsTrue(childMinKey.Key.CompareTo(node.GetKey(i - 1)) > 0);
                 }
 
                 if (i < node.KeyCount)
                 {
-                    Assert.IsTrue(childMaxKey.Key.CompareTo(node.GetKey(i)) < 0); //todo: <= for b+tree
+                    Assert.IsTrue(childMaxKey.Key.CompareTo(node.GetKey(i)) < 0);
                 }
             }
 
@@ -132,12 +132,12 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
 
                 if (indexAtParentChildren > 0)
                 {
-                    Assert.IsTrue(minKey.Key.CompareTo(parent.GetKey(indexAtParentChildren - 1)) > 0); // todo: b+tree: >=0
+                    Assert.IsTrue(minKey.Key.CompareTo(parent.GetKey(indexAtParentChildren - 1)) > 0);
                 }
 
                 if (indexAtParentChildren < parent.KeyCount)
                 {
-                    Assert.IsTrue(maxKey.Key.CompareTo(parent.GetKey(indexAtParentChildren)) < 0); // todo: b+tree <==
+                    Assert.IsTrue(maxKey.Key.CompareTo(parent.GetKey(indexAtParentChildren)) < 0);
                 }
             }
 
@@ -224,6 +224,20 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         public static void HasBPlusTreeProperties(BPlusTree<int, string> tree, int expectedKeyCount, int expectedNodeCount)
         {
             Assert.IsTrue(HasBTreeProperties(tree, expectedKeyCount, expectedNodeCount, HasBPlusTreeNodeProperties<BPlusTreeNode<int, string>, int, string>));
+
+            /* Check that all the non-leaf nodes have no value in their key value array*/
+            List<BPlusTreeNode<int, string>> nodes = new List<BPlusTreeNode<int, string>>();
+            DFS<BPlusTreeNode<int, string>, int, string>(tree.Root, nodes);
+            foreach (var node in nodes)
+            {
+                if (!node.IsLeaf())
+                {
+                    foreach (KeyValuePair<int, string> keyVal in node.GetKeyValues())
+                    {
+                        Assert.AreEqual(default(string), keyVal.Value);
+                    }
+                }
+            }
         }
     }
 }
