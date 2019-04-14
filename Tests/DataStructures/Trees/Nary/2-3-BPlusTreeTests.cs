@@ -26,12 +26,12 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
     [TestClass]
     public class _2_3_BPlusTreeTests
     {
-        private BPlusTree<int, string> _tree;
+        private BPlusTree<int, string> _tree = null;
 
         [TestInitialize]
         public void Init()
         {
-
+            _tree = new BPlusTree<int, string>(3);
             Dictionary<int, string> keyValues = new Dictionary<int, string>
             {
                 [50] = "A",
