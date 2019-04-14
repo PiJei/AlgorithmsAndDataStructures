@@ -59,6 +59,12 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         }
 
         [TestMethod]
+        public void Build_ExpectsACorrectBTree()
+        {
+            BTreeTestsUtils.HasBTreeProperties(_tree, 16, 16, 15);
+        }
+
+        [TestMethod]
         public void GetMaxCapacity_ForATreeWithOneToFiveLevels_ExpectsNumbersAsIndicatedInAsserts()
         {
             Assert.AreEqual(2, _tree.GetMaxCapacity(levelCount: 1)); /* One level means the tree has only one node: the root. */
@@ -100,12 +106,6 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         public void FindLeafToInsertKey_DuplicateKey_ThrowsException()
         {
             _tree.FindLeafToInsertKey(_tree.Root, 50);
-        }
-
-        [TestMethod]
-        public void Build_ExpectsACorrectBTree()
-        {
-            BTreeTestsUtils.HasBTreeProperties(_tree, 16, 16, 15);
         }
 
         [TestMethod]

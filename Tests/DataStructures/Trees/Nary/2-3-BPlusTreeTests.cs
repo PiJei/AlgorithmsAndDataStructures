@@ -26,6 +26,40 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
     [TestClass]
     public class _2_3_BPlusTreeTests
     {
+        private BPlusTree<int, string> _tree;
+
+        [TestInitialize]
+        public void Init()
+        {
+
+            Dictionary<int, string> keyValues = new Dictionary<int, string>
+            {
+                [50] = "A",
+                [10] = "B",
+                [100] = "C",
+                [200] = "D",
+                [20] = "E",
+                [300] = "F",
+                [30] = "G",
+                [500] = "H",
+                [250] = "I",
+                [400] = "J",
+                [270] = "K",
+                [600] = "L",
+                [150] = "M",
+                [80] = "N",
+                [60] = "O",
+                [90] = "P"
+            };
+            _tree.Build(keyValues);
+        }
+
+        [TestMethod]
+        public void Build_ExpectsACorrectBPlusTree()
+        {
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 25, 16, 17);
+        }
+
         [TestMethod]
         public void Insert_SeveralKeys_ExpectsTreeToIncreaseInLevelsAfewTimes()
         {
