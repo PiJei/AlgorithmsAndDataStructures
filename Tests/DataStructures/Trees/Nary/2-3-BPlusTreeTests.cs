@@ -118,5 +118,525 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual(150, tree.Root.GetKeyValue(0).Key);
             Assert.AreEqual(default(string), tree.Root.GetKeyValue(0).Value, ignoreCase: true);
         }
+
+        // ToDo:  test the find in leaf ...
+        // TODO : Rename these delete test methods becaus ethe representation is now different
+        // TDOO/; In power point draw the tree that you expect to see at the end, these should be linked to the Library.
+
+        [TestMethod]
+        public void Search_ForAllExistingKeysInTree_ExpectsSuccess()
+        {
+            var node1 = _tree.Search(_tree.Root, 100);
+            Assert.IsTrue(node1.KeyCount == 2);
+            Assert.AreEqual("C", node1.GetKeyValue(node1.GetKeyIndex(100)).Value);
+            Assert.IsTrue(node1.IsLeaf());
+
+            var node2 = _tree.Search(_tree.Root, 300);
+            Assert.IsTrue(node2.KeyCount == 1);
+            Assert.AreEqual("F", node2.GetKeyValue(node2.GetKeyIndex(300)).Value);
+            Assert.IsTrue(node2.IsLeaf());
+
+            var node3 = _tree.Search(_tree.Root, 500);
+            Assert.IsTrue(node3.KeyCount == 2);
+            Assert.AreEqual("H", node3.GetKeyValue(node3.GetKeyIndex(500)).Value);
+            Assert.IsTrue(node3.IsLeaf());
+
+            var node4 = _tree.Search(_tree.Root, 200);
+            Assert.IsTrue(node4.KeyCount == 1);
+            Assert.AreEqual("D", node4.GetKeyValue(node4.GetKeyIndex(200)).Value);
+            Assert.IsTrue(node4.IsLeaf());
+
+            var node5 = _tree.Search(_tree.Root, 250);
+            Assert.IsTrue(node5.KeyCount == 2);
+            Assert.AreEqual("I", node5.GetKeyValue(node5.GetKeyIndex(250)).Value);
+            Assert.IsTrue(node5.IsLeaf());
+
+            var node6 = _tree.Search(_tree.Root, 270);
+            Assert.IsTrue(node6.KeyCount == 2);
+            Assert.AreEqual("K", node6.GetKeyValue(node6.GetKeyIndex(270)).Value);
+            Assert.IsTrue(node6.IsLeaf());
+
+            var node7 = _tree.Search(_tree.Root, 400);
+            Assert.IsTrue(node7.KeyCount == 2);
+            Assert.AreEqual("J", node7.GetKeyValue(node7.GetKeyIndex(400)).Value);
+            Assert.IsTrue(node7.IsLeaf());
+
+            var node8 = _tree.Search(_tree.Root, 600);
+            Assert.IsTrue(node8.KeyCount == 1);
+            Assert.AreEqual("L", node8.GetKeyValue(node8.GetKeyIndex(600)).Value);
+            Assert.IsTrue(node8.IsLeaf());
+
+            var node9 = _tree.Search(_tree.Root, 50);
+            Assert.IsTrue(node9.KeyCount == 2);
+            Assert.AreEqual("A", node9.GetKeyValue(node9.GetKeyIndex(50)).Value);
+            Assert.IsTrue(node9.IsLeaf());
+
+            var node10 = _tree.Search(_tree.Root, 20);
+            Assert.IsTrue(node10.KeyCount == 2);
+            Assert.AreEqual("E", node10.GetKeyValue(node10.GetKeyIndex(20)).Value);
+            Assert.IsTrue(node10.IsLeaf());
+
+            var node11 = _tree.Search(_tree.Root, 90);
+            Assert.IsTrue(node11.KeyCount == 2);
+            Assert.AreEqual("P", node11.GetKeyValue(node11.GetKeyIndex(90)).Value);
+            Assert.IsTrue(node11.IsLeaf());
+
+            var node12 = _tree.Search(_tree.Root, 60);
+            Assert.IsTrue(node12.KeyCount == 2);
+            Assert.AreEqual("O", node12.GetKeyValue(node12.GetKeyIndex(60)).Value);
+            Assert.IsTrue(node12.IsLeaf());
+
+            var node13 = _tree.Search(_tree.Root, 80);
+            Assert.IsTrue(node13.KeyCount == 2);
+            Assert.AreEqual("N", node13.GetKeyValue(node13.GetKeyIndex(80)).Value);
+            Assert.IsTrue(node13.IsLeaf());
+
+            var node14 = _tree.Search(_tree.Root, 10);
+            Assert.IsTrue(node14.KeyCount == 2);
+            Assert.AreEqual("B", node14.GetKeyValue(node14.GetKeyIndex(10)).Value);
+            Assert.IsTrue(node14.IsLeaf());
+
+            var node15 = _tree.Search(_tree.Root, 30);
+            Assert.IsTrue(node15.KeyCount == 2);
+            Assert.AreEqual("G", node15.GetKeyValue(node15.GetKeyIndex(30)).Value);
+            Assert.IsTrue(node15.IsLeaf());
+
+            var node16 = _tree.Search(_tree.Root, 150);
+            Assert.IsTrue(node16.KeyCount == 1);
+            Assert.AreEqual("M", node16.GetKeyValue(node16.GetKeyIndex(150)).Value);
+            Assert.IsTrue(node16.IsLeaf());
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(KeyNotFoundException))]
+        public void Search_NotExistingKey_ThrowsException()
+        {
+            var node1 = _tree.Search(_tree.Root, 5);
+        }
+
+        [TestMethod]
+        public void Delete_Root_ExpectsToReduceBy1Key()
+        {
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 25, 16, 17);
+            Assert.IsTrue(_tree.Delete(150));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 24, 15, 17);
+        }
+
+        [TestMethod]
+        public void Delete_TheOnlyKeyOfLeftChildOfRoot_ExpectsToReduceBy1Key()
+        {
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 25, 16, 17);
+            Assert.IsTrue(_tree.Delete(50));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 24, 15, 17);
+        }
+
+        [TestMethod]
+        public void Delete_TheOnlyKeyOfRightChildOfRoot_ExpectsToReduceBy1Key()
+        {
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 25, 16, 17);
+            Assert.IsTrue(_tree.Delete(270));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 24, 15, 17);
+        }
+
+        [TestMethod]
+        public void Delete_TheBiggestKeyInLeftMostLeafOnLeftSubtree_ExpectsToReduceBy1Key()
+        {
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 25, 16, 17);
+            Assert.IsTrue(_tree.Delete(20));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 24, 15, 17);
+        }
+
+        [TestMethod]
+        public void Delete_TheBiggestKeyInAFullLeafNodeOfLeftSubtree_ExpectsToReduceBy1Key()
+        {
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 25, 16, 17);
+            Assert.IsTrue(_tree.Delete(80));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 24, 15, 17);
+        }
+
+        [TestMethod]
+        public void Delete_TheOnlyKeyInLeaf_ExpectsRightRotationAndToReduceBy1Key()
+        {
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 25, 16, 17);
+            Assert.IsTrue(_tree.Delete(200));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 24, 15, 17);
+        }
+
+        [TestMethod]
+        public void Delete_TheBiggestKeyInFullLeaf_ExpectsSimpleDeleteAndToReduceBy1Key()
+        {
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 25, 16, 17);
+            Assert.IsTrue(_tree.Delete(500));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 24, 15, 17);
+        }
+
+        [TestMethod]
+        public void Delete_TheSmallestKeyInFullLeaf_ExpectsSimpleDeleteAndToReduceBy1Key()
+        {
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 25, 16, 17);
+            Assert.IsTrue(_tree.Delete(10));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 24, 15, 17);
+        }
+
+        [TestMethod]
+        public void Delete_TheSmallestKeyInAFullLeafNode_ExpectsSimpleDeleteAndToReduceBy1Key()
+        {
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 25, 16, 17);
+            Assert.IsTrue(_tree.Delete(30));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 24, 15, 17);
+        }
+
+        [TestMethod]
+        public void Delete_TheSmallestKeyInAFullLeaf_ExpectsSimpleDeleteAndToReduceBy1Key()
+        {
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 25, 16, 17);
+            Assert.IsTrue(_tree.Delete(60));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 24, 15, 17);
+        }
+
+        [TestMethod]
+        public void Delete_TheSmallestKeyInAFullLeaf_ExpectsToReduceBy1Key()
+        {
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 25, 16, 17);
+            Assert.IsTrue(_tree.Delete(90));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 24, 15, 17);
+        }
+
+        [TestMethod]
+        public void Delete_TheBiggestKeyInFullLeafNode_ExpectsSimpleDeleteAndToReduceBy1Key()
+        {
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 25, 16, 17);
+            Assert.IsTrue(_tree.Delete(100));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 24, 15, 17);
+        }
+
+        [TestMethod]
+        public void Delete_SmallestKeyInAFullLeaf_ExpectsToReduceBy1Key()
+        {
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 25, 16, 17);
+            Assert.IsTrue(_tree.Delete(250));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 24, 15, 17);
+        }
+
+        [TestMethod]
+        public void Delete_TheOnlyKeyInLeafNode_ExpectsLeftRotationAndToReduceBy1Key()
+        {
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 25, 16, 17);
+            Assert.IsTrue(_tree.Delete(300));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 24, 15, 17);
+        }
+
+        [TestMethod]
+        public void Delete_TheSmallestKeyInAFullLeafNodeOfRightSubtree_ExpectsSimpleDeleteAndToReduceBy1Key()
+        {
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 25, 16, 17);
+            Assert.IsTrue(_tree.Delete(400));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 24, 15, 17);
+        }
+
+        [TestMethod]
+        public void Delete_TheOnlyKeyInLeafNode_ExpectsRightRotationAndToReduceBy1Key()
+        {
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 25, 16, 17);
+            Assert.IsTrue(_tree.Delete(600));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 24, 15, 17);
+        }
+
+        [TestMethod]
+        public void Delete_AllNodesInRandomOrder1_ExpectsProperBtreeAfterEachDelete()
+        {
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 25, 16, 17);
+
+            Assert.IsTrue(_tree.Delete(100));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 24, 15, 17);
+
+            Assert.IsTrue(_tree.Delete(20));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 23, 14, 17);
+
+            Assert.IsTrue(_tree.Delete(250));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 22, 13, 17);
+
+            Assert.IsTrue(_tree.Delete(600));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 21, 12, 17);
+
+            Assert.IsTrue(_tree.Delete(270));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 19, 11, 16);
+
+            Assert.IsTrue(_tree.Delete(60));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 18, 10, 16);
+
+            Assert.IsTrue(_tree.Delete(10));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 17, 9, 16);
+
+            Assert.IsTrue(_tree.Delete(300));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 15, 8, 12);
+
+            Assert.IsTrue(_tree.Delete(80));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 13, 7, 11);
+
+            Assert.IsTrue(_tree.Delete(150));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 11, 6, 10);
+
+            Assert.IsTrue(_tree.Delete(400));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 9, 5, 8);
+
+            Assert.IsTrue(_tree.Delete(30));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 7, 4, 7);
+
+            Assert.IsTrue(_tree.Delete(90));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 5, 3, 4);
+
+            Assert.IsTrue(_tree.Delete(500));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 3, 2, 3);
+
+            Assert.IsTrue(_tree.Delete(50));
+             BTreeTestsUtils.HasBPlusTreeProperties(_tree, 2, 1, 2); //TODO: Tree is left in 150/200 index! I think I should have copied 200 to the parent
+
+            Assert.IsTrue(_tree.Delete(200));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 0, 0, 0);
+        }
+
+        [TestMethod]
+        public void Delete_AllNodesInRandomOrder2_ExpectsProperBtreeAfterEachDelete()
+        {
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 25, 16, 17);
+
+            Assert.IsTrue(_tree.Delete(90));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 24, 15, 17);
+
+            Assert.IsTrue(_tree.Delete(400));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 23, 14, 17);
+
+            Assert.IsTrue(_tree.Delete(80));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 22, 13, 17);
+
+            Assert.IsTrue(_tree.Delete(600));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 20, 12, 16);
+
+            Assert.IsTrue(_tree.Delete(100));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 18, 11, 15);
+
+            Assert.IsTrue(_tree.Delete(20));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 17, 10, 15);
+
+            Assert.IsTrue(_tree.Delete(270));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 16, 9, 15);
+
+            Assert.IsTrue(_tree.Delete(10));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 15, 8, 15);
+
+            Assert.IsTrue(_tree.Delete(250));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 13, 7, 11);
+
+            Assert.IsTrue(_tree.Delete(50));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 11, 6, 9);
+
+            Assert.IsTrue(_tree.Delete(200));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 9, 5, 8);
+
+            Assert.IsTrue(_tree.Delete(30));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 7, 4, 7);
+
+            Assert.IsTrue(_tree.Delete(150));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 5, 3, 4);
+
+            Assert.IsTrue(_tree.Delete(300));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 3, 2, 3);
+
+            Assert.IsTrue(_tree.Delete(60));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 2, 1, 2);
+
+            Assert.IsTrue(_tree.Delete(500));
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 0, 0, 0);
+        }
+
+        [TestMethod]
+        public void Delete_TheOnlyKeyInTree_ExpectsNoNodeAndNoKeyAfter()
+        {
+            BPlusTree<int, string> tree = new BPlusTree<int, string>(3);
+            tree.Insert(new KeyValuePair<int, string>(10, "A"));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 2, 1, 2);
+
+            /* Deleting the only key in the only leaf node of the tree. */
+            Assert.IsTrue(tree.Delete(10));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 0, 0, 0);
+        }
+
+        [TestMethod]
+        public void Delete_BiggestKeyInTheOnlyLeafNodeOfTree_ExpectsToReduceBy1Key()
+        {
+            BPlusTree<int, string> tree = new BPlusTree<int, string>(3);
+            tree.Insert(new KeyValuePair<int, string>(10, "A"));
+            tree.Insert(new KeyValuePair<int, string>(100, "B"));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 3, 2, 3);
+
+            /* Deleting 1 out of 2 keys in the only leaf node of the tree. */
+            Assert.IsTrue(tree.Delete(100));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 2, 1, 2);
+        }
+
+        [TestMethod]
+        public void Delete_NonExistingKey_ExpectsFailure()
+        {
+            BPlusTree<int, string> tree = new BPlusTree<int, string>(3);
+            tree.Insert(new KeyValuePair<int, string>(10, "A"));
+            tree.Insert(new KeyValuePair<int, string>(100, "B"));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 3, 2, 3);
+
+            /* Deleting a non-existing key. */
+            Assert.IsFalse(tree.Delete(50));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 3, 2, 3);
+        }
+
+        [TestMethod]
+        public void Delete_TheOnlyKeyInInternalNode_ExpectsToTriggerJoinAndReduceBy2NodesAnd1Key()
+        {
+            BPlusTree<int, string> tree = new BPlusTree<int, string>(3);
+            tree.Insert(new KeyValuePair<int, string>(10, "A"));
+            tree.Insert(new KeyValuePair<int, string>(20, "B"));
+            tree.Insert(new KeyValuePair<int, string>(30, "C"));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 4, 3, 3);
+
+            Assert.IsTrue(tree.Delete(20));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 3, 2, 3);
+        }
+
+        [TestMethod]
+        public void Delete_TheOnlyKeyInLeafNode_ExpectsToTriggerJoinByRightSiblingAndReduceBy2NodesAnd1Key()
+        {
+            BPlusTree<int, string> tree = new BPlusTree<int, string>(3);
+            tree.Insert(new KeyValuePair<int, string>(10, "A"));
+            tree.Insert(new KeyValuePair<int, string>(20, "B"));
+            tree.Insert(new KeyValuePair<int, string>(30, "C"));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 4, 3, 3);
+
+            Assert.IsTrue(tree.Delete(20));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 3, 2, 3);
+        }
+
+        [TestMethod]
+        public void Delete_TheOnlyKeyInLeafNode_ExpectsToTriggerJoinByLeftSiblingAndReduceBy2NodesAnd1Key()
+        {
+            BPlusTree<int, string> tree = new BPlusTree<int, string>(3);
+            tree.Insert(new KeyValuePair<int, string>(10, "A"));
+            tree.Insert(new KeyValuePair<int, string>(20, "B"));
+            tree.Insert(new KeyValuePair<int, string>(30, "C"));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 4, 3, 3);
+
+            Assert.IsTrue(tree.Delete(10));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 3, 2, 3);
+        }
+
+        [TestMethod]
+        public void Delete_KeyInFullLeaf_ExpectsToReduceBy1Key()
+        {
+            BPlusTree<int, string> tree = new BPlusTree<int, string>(3);
+            tree.Insert(new KeyValuePair<int, string>(10, "A"));
+            tree.Insert(new KeyValuePair<int, string>(20, "B"));
+            tree.Insert(new KeyValuePair<int, string>(30, "C"));
+            tree.Insert(new KeyValuePair<int, string>(40, "D"));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 6, 4, 4);
+
+            Assert.IsTrue(tree.Delete(30));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 5, 3, 4);
+        }
+
+        [TestMethod]
+        public void Delete_TheOnlyKeyInLeafNodeWithMinOneFullSibling_ExpectsToTriggerLeftRotate()
+        {
+            BPlusTree<int, string> tree = new BPlusTree<int, string>(3);
+            tree.Insert(new KeyValuePair<int, string>(10, "A"));
+            tree.Insert(new KeyValuePair<int, string>(20, "B"));
+            tree.Insert(new KeyValuePair<int, string>(30, "C"));
+            tree.Insert(new KeyValuePair<int, string>(40, "D"));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 6, 4, 4);
+
+            Assert.IsTrue(tree.Delete(10));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 5, 3, 4);
+        }
+
+        [TestMethod]
+        public void Delete_DeleteTheOnlyKeyInInternalNode_ExpectsToTriggerLeafDeleteAndLeftRotate()
+        {
+            BPlusTree<int, string> tree = new BPlusTree<int, string>(3);
+            tree.Insert(new KeyValuePair<int, string>(10, "A"));
+            tree.Insert(new KeyValuePair<int, string>(20, "B"));
+            tree.Insert(new KeyValuePair<int, string>(30, "C"));
+            tree.Insert(new KeyValuePair<int, string>(40, "D"));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 6, 4, 4);
+
+            Assert.IsTrue(tree.Delete(20));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 5, 3, 4);
+        }
+
+        [TestMethod]
+        public void Delete_TheOnlyKeyInLeafWithFullParentAndMinOneFullSibling_ExpectsLeftRotateAndToReduceBy1Key()
+        {
+            var root = new BPlusTreeNode<int, string>(3);
+            root.InsertKeyValue(new KeyValuePair<int, string>(90, "A"));
+            root.InsertKeyValue(new KeyValuePair<int, string>(200, "B"));
+
+            var child1 = new BPlusTreeNode<int, string>(3, new KeyValuePair<int, string>(30, "C"));
+            child1.InsertKeyValue(new KeyValuePair<int, string>(50, "D"));
+
+            var child2 = new BPlusTreeNode<int, string>(3, new KeyValuePair<int, string>(150, "E"));
+            var child3 = new BPlusTreeNode<int, string>(3, new KeyValuePair<int, string>(400, "F"));
+            child3.InsertKeyValue(new KeyValuePair<int, string>(500, "F"));
+
+            root.InsertChild(child1);
+            root.InsertChild(child2);
+            root.InsertChild(child3);
+
+            BPlusTree<int, string> tree = new BPlusTree<int, string>(3) { Root = root };
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 7, 7, 4);
+
+            Assert.IsTrue(tree.Delete(150));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 6, 6, 4);
+        }
+
+        [TestMethod]
+        public void Delete_TheOnlyKeyInLeaf_ExpectsToTriggerJoinAndLeftRotateOnANodeWithChildren()
+        {
+            var node1 = new BPlusTreeNode<int, string>(3);
+            node1.InsertKeyValue(new KeyValuePair<int, string>(60, "A"));
+
+            var node2 = new BPlusTreeNode<int, string>(3);
+            node2.InsertKeyValue(new KeyValuePair<int, string>(30, "B"));
+
+            var node3 = new BPlusTreeNode<int, string>(3);
+            node3.InsertKeyValue(new KeyValuePair<int, string>(200, "C"));
+            node3.InsertKeyValue(new KeyValuePair<int, string>(300, "D"));
+
+            var node4 = new BPlusTreeNode<int, string>(3);
+            node4.InsertKeyValue(new KeyValuePair<int, string>(10, "E"));
+
+            var node5 = new BPlusTreeNode<int, string>(3);
+            node5.InsertKeyValue(new KeyValuePair<int, string>(50, "F"));
+
+            var node6 = new BPlusTreeNode<int, string>(3);
+            node6.InsertKeyValue(new KeyValuePair<int, string>(150, "G"));
+
+            var node7 = new BPlusTreeNode<int, string>(3);
+            node7.InsertKeyValue(new KeyValuePair<int, string>(250, "H"));
+
+            var node8 = new BPlusTreeNode<int, string>(3);
+            node8.InsertKeyValue(new KeyValuePair<int, string>(500, "I"));
+
+            node1.InsertChild(node2);
+            node1.InsertChild(node3);
+
+            node2.InsertChild(node4);
+            node2.InsertChild(node5);
+
+            node3.InsertChild(node6);
+            node3.InsertChild(node7);
+            node3.InsertChild(node8);
+
+            BPlusTree<int, string> tree = new BPlusTree<int, string>(3);
+            tree.Root = node1;
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 9, 9, 8);
+            Assert.IsTrue(tree.Delete(10));
+            BTreeTestsUtils.HasBPlusTreeProperties(tree, 8, 8, 7);
+        }
     }
 }

@@ -72,33 +72,11 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         }
 
         /// <summary>
-        /// Deletes the given key from the tree if it exists. 
-        /// </summary>
-        /// <param name="key">The key to be deleted from the tree. </param>
-        /// <returns>True in case of success, and false otherwise. </returns>
-        [TimeComplexity(Case.Best, "O(1)", When = "For example, there is only one key left in the tree.")]
-        [TimeComplexity(Case.Worst, "O(D Log(n)(base D))")] // where D is max branching factor of the tree. 
-        [TimeComplexity(Case.Average, "O(d Log(n) base d)")] // where d is min branching factor of the tree.  
-        public override bool Delete(TKey key)
-        {
-            try
-            {
-                /* First find the container node of the key, and then delete it.*/
-                BTreeNode<TKey, TValue> node = Search(Root, key);
-                return Delete(node, key);
-            }
-            catch (KeyNotFoundException) /* This means that the key does not exist in the tree, and thus the operation is not successful.*/
-            {
-                return false;
-            }
-        }
-
-        /// <summary>
         /// Deletes <paramref name="key"> from <paramref name="node">, assuming that key exists in the node.
         /// </summary>
         /// <param name="node">A node in tree that contains the given key <paramref name="key"/>. </param>
         /// <param name="key">The key that should be deleted from tree node <paramref name="node"/>.</param>
-        internal bool Delete(BTreeNode<TKey, TValue> node, TKey key)
+        public override bool Delete(BTreeNode<TKey, TValue> node, TKey key)
         {
             /* Get information about the node that might be needed later, but impossible to retrieve after the key is removed from the node. */
             BTreeNode<TKey, TValue> leftSibling = node.IsRoot() ? null : node.HasLeftSibling() ? node.GetLeftSibling() : null;
@@ -393,6 +371,50 @@ namespace CSFundamentals.DataStructures.Trees.Nary
             return null;
         }
 
+        /// <summary>
+        ///  Searchers the given key in (sub)tree rooted at node <paramref name="root">.
+        /// </summary>
+        /// <param name="root">The root of the (sub) tree at which search starts. </param>
+        /// <param name="key">Is the key to search for.</param>
+        /// <returns>The node containing the key if it exists. Otherwise throws an exception. </returns>
+        [TimeComplexity(Case.Best, "O(1)", When = "Key is the first item of the first node to visit.")]
+        [TimeComplexity(Case.Worst, "O(LogD Log(n)Base(D))")] // Each search with in a node uses binary-search which is Log(K) cost, and since it is constant is not included in this value. 
+        [TimeComplexity(Case.Average, "O(Log(d) Log(n)Base(d))")]
+        public override BTreeNode<TKey, TValue> Search(BTreeNode<TKey, TValue> root, TKey key)
+        {
+            if (root == null)
+            {
+                throw new KeyNotFoundException($"{key.ToString()} is not found in the tree.");
+            }
+
+            /* Perform a binary search within the node */
+            int startIndex = 0;
+            int endIndex = root.KeyCount - 1;
+            while (startIndex <= endIndex)
+            {
+                int middleIndex = (startIndex + endIndex) / 2;
+                if (root.GetKey(middleIndex).CompareTo(key) == 0)
+                {
+                    return root;
+                }
+                else if (root.GetKey(middleIndex).CompareTo(key) > 0) /* search left-half of the root.*/
+                {
+                    endIndex = middleIndex - 1;
+                }
+                else if (root.GetKey(middleIndex).CompareTo(key) < 0) /* search right-half of the root. */
+                {
+                    startIndex = middleIndex + 1;
+                }
+            }
+
+            /* If key is not found in the node, continue search in the child that is likely to contain the key. */
+            if (startIndex < root.ChildrenCount)
+            {
+                return Search(root.GetChild(startIndex), key);
+            }
+
+            throw new KeyNotFoundException($"{key.ToString()} is not found in the tree.");
+        }
 
         /// <summary>
         /// Given number of levels in the tree, computes the maximum number of keys the tree can hold. 

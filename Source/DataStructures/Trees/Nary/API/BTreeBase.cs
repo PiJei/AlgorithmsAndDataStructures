@@ -79,9 +79,32 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
             return Root;
         }
 
+        /// <summary>
+        /// Deletes the given key from the tree if it exists. 
+        /// </summary>
+        /// <param name="key">The key to be deleted from the tree. </param>
+        /// <returns>True in case of success, and false otherwise. </returns>
+        [TimeComplexity(Case.Best, "O(1)", When = "For example, there is only one key left in the tree.")]
+        [TimeComplexity(Case.Worst, "O(D Log(n)(base D))")] // where D is max branching factor of the tree. 
+        [TimeComplexity(Case.Average, "O(d Log(n) base d)")] // where d is min branching factor of the tree.  
+        public bool Delete(TKey key)
+        {
+            try
+            {
+                /* Find the container node of the key, and if this node exists, delete key from it.*/
+                TNode node = Search(Root, key);
+
+                return Delete(node, key);
+            }
+            catch (KeyNotFoundException) /* This means that the key does not exist in the tree, and thus the operation is not successful.*/
+            {
+                return false;
+            }
+        }
+
         public abstract TNode InsertInLeaf(TNode leaf, KeyValuePair<TKey, TValue> keyValue);
 
-        public abstract bool Delete(TKey key);
+        public abstract bool Delete(TNode node, TKey key);
 
         /// <summary>
         /// Gets the sorted list of all the key-values in the tree rooted at <paramref name="node">. 
@@ -90,46 +113,9 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <returns></returns>
         public abstract List<KeyValuePair<TKey, TValue>> GetSortedKeyValues(TNode node);
 
-        public abstract  TNode FindLeafToInsertKey(TNode root, TKey key);
+        public abstract TNode FindLeafToInsertKey(TNode root, TKey key);
 
-        /// <summary>
-        ///  Searchers the given key in (sub)tree rooted at node <paramref name="root">.
-        /// </summary>
-        /// <param name="root">The root of the (sub) tree at which search starts. </param>
-        /// <param name="key">Is the key to search for.</param>
-        /// <returns>The node containing the key if it exists. Otherwise throws an exception. </returns>
-        [TimeComplexity(Case.Best, "O(1)", When = "Key is the first item of the first node to visit.")]
-        [TimeComplexity(Case.Worst, "O(LogD Log(n)Base(D))")] // Each search with in a node uses binary-search which is Log(K) cost, and since it is constant is not included in this value. 
-        [TimeComplexity(Case.Average, "O(Log(d) Log(n)Base(d))")]
-        public TNode Search(TNode root, TKey key)
-        {
-            if (root != null)
-            {
-                int startIndex = 0;
-                int endIndex = root.KeyCount - 1;
-                while (startIndex <= endIndex)
-                {
-                    int middleIndex = (startIndex + endIndex) / 2;
-                    if (root.GetKey(middleIndex).CompareTo(key) == 0)
-                    {
-                        return root;
-                    }
-                    else if (root.GetKey(middleIndex).CompareTo(key) > 0) /* search left-half of the root.*/
-                    {
-                        endIndex = middleIndex - 1;
-                    }
-                    else if (root.GetKey(middleIndex).CompareTo(key) < 0) /* search right-half of the root. */
-                    {
-                        startIndex = middleIndex + 1;
-                    }
-                }
-                if (startIndex < root.ChildrenCount)
-                {
-                    return Search(root.GetChild(startIndex), key);
-                }
-            }
-            throw new KeyNotFoundException($"{key.ToString()} is not found in the tree.");
-        }
+        public abstract TNode Search(TNode root, TKey key);
 
         /// <summary>
         /// Finds the node that contains the maximum key of the subtree rooted at node.
