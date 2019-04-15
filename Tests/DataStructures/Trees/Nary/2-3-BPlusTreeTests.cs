@@ -22,13 +22,14 @@ using System.Collections.Generic;
 using CSFundamentals.DataStructures.Trees.Nary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-// TDOO In power point draw the tree that you expect to see at the end, these should be linked to the Library.
-
 namespace CSFundamentalsTests.DataStructures.Trees.Nary
 {
     [TestClass]
     public class _2_3_BPlusTreeTests
     {
+        /// <summary>
+        /// To visualize this tree build as in <see cref="Init()"/> method <see cref="2-3-BPlus-Tree.png"/>
+        /// </summary>
         private BPlusTree<int, string> _tree = null;
 
         [TestInitialize]
