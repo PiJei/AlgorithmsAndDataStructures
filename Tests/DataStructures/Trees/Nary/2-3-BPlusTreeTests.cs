@@ -29,7 +29,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
     {
         /// <summary>
         /// Is a B+ tree. 
-        /// To visualize this tree built as in <see cref="Init()"/> method, please <see cref="2-3-BPlus-Tree.png"/>
+        /// To visualize this tree built as in <see cref="Init()"/> method, please <see cref="2-3-BPlus-Tree.png"/> in current directory. 
         /// </summary>
         private BPlusTree<int, string> _tree = null;
 
