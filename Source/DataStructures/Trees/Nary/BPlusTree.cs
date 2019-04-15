@@ -276,32 +276,25 @@ namespace CSFundamentals.DataStructures.Trees.Nary
                 // 1- Disconnect parent from node. 
                 parent.RemoveChildByIndex(nodeAndLeftSiblingSeparatorKeyAtParentIndex + 1);
 
-
-                // 3- Join node with leftSibling: Move all the keys of node to its left sibling.
+                // 2- Join node with leftSibling: Move all the keys of node to its left sibling.
                 for (int i = 0; i < node.KeyCount; i++)
                 {
                     leftSibling.InsertKeyValue(node.GetKeyValue(i));
                 }
 
-                // 4- Update the next pointer of the left sibling. 
+                // 3- Update the next pointer of the left sibling. 
                 leftSibling.NextLeaf = node.NextLeaf;
 
                 /* Clear node. */
                 node.Clear();
 
-                // 2- Remove separator key in the parent if needed
+                // 4- Remove separator key in the parent if needed
                 parent.RemoveKeyByIndex(nodeAndLeftSiblingSeparatorKeyAtParentIndex);
 
                 if (parent == Root && parent.ChildrenCount == 1)
                 {
                     parent.InsertKey(leftSibling.GetMaxKey().Key);
                 }
-
-                /*if (parent.IsEmpty() && parent.IsRoot()) 
-                {
-                    leftSibling.SetParent(null);
-                    Root = leftSibling;
-                }*/
 
                 // Since parent has lent a key to its children, it might be UnderFlown now, thus return the parent for additional checks.
                 return leftSibling.GetParent();
