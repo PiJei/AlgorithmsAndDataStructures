@@ -24,8 +24,7 @@ using CSFundamentals.DataStructures.Trees.Nary.API;
 using CSFundamentals.Decoration;
 
 // TODO: update summaries: they are copies of the B-Tree and have issues, 
-// TODO: Refactor code: what can go to common? base? and hat should stay here? ... Maybe is best to do after BPlus tree is added?
-
+// todo: capacity
 namespace CSFundamentals.DataStructures.Trees.Nary
 {
     [DataStructure("B+ Tree")]
@@ -63,11 +62,6 @@ namespace CSFundamentals.DataStructures.Trees.Nary
                 ReBalance(node, leftSibling, rightSibling, separatorWithLeftSiblingIndex, separatorWithRighthSiblingIndex);
             }
             return true;
-
-
-            // TODO: Remember to update the links when joining two leaf nodes, ... 
-            // TODO: When is the tree empty because we are not deleting the indexes!
-
         }
 
         /// <summary>
@@ -93,21 +87,51 @@ namespace CSFundamentals.DataStructures.Trees.Nary
 
                 if (leftSibling != null && leftSibling.IsMinOneFull())
                 {
-                    RotateRight(node, leftSibling, separatorWithLeftSiblingIndex);
+                    if (!node.IsLeaf())
+                    {
+                        RotateRight(node, leftSibling, separatorWithLeftSiblingIndex);
+                    }
+                    else
+                    {
+                        RotateRightAtLeafLevel(node, leftSibling, separatorWithLeftSiblingIndex);
+                    }
+
                     return;
                 }
                 else if (rightSibling != null && rightSibling.IsMinOneFull())
                 {
-                    RotateLeft(node, rightSibling, separatorWithRightSiblingIndex);
+                    if (!node.IsLeaf())
+                    {
+                        RotateLeft(node, rightSibling, separatorWithRightSiblingIndex);
+                    }
+                    else
+                    {
+                        RotateLeftAtLeafLevel(node, rightSibling, separatorWithRightSiblingIndex);
+                    }
+
                     return;
                 }
                 else if (rightSibling != null && rightSibling.IsMinFull()) /* Meaning rotation wont work, as borrowing key from the siblings via parent will leave the sibling UnderFlown.*/
                 {
-                    node = Join(rightSibling, node);
+                    if (!node.IsLeaf())
+                    {
+                        node = Join(rightSibling, node);
+                    }
+                    else
+                    {
+                        node = JoinAtLeafLevel(rightSibling, node);
+                    }
                 }
                 else if (leftSibling != null && leftSibling.IsMinFull())
                 {
-                    node = Join(node, leftSibling);
+                    if (!node.IsLeaf())
+                    {
+                        node = Join(node, leftSibling);
+                    }
+                    else
+                    {
+                        node = JoinAtLeafLevel(node, leftSibling);
+                    }
                 }
                 else if (rightSibling == null && leftSibling == null && parent.IsRoot() && node.IsEmpty())
                 {
@@ -134,45 +158,21 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(K)")] // Constant time as is independent of n: number of keys in tree. 
         [TimeComplexity(Case.Average, "O(K)")] // Constant time as is independent of n: number of keys in tree. 
-        internal void RotateRight(BPlusTreeNode<TKey, TValue> node, BPlusTreeNode<TKey, TValue> leftSibling, int separatorIndex)
+        internal void RotateRightAtLeafLevel(BPlusTreeNode<TKey, TValue> node, BPlusTreeNode<TKey, TValue> leftSibling, int separatorIndex)
         {
-            if (node.IsLeaf())
-            {
-                /* 1- Move the last (maximum) key from the left sibling to the underFlown node. */
-                node.InsertKeyValue(leftSibling.GetMaxKey());
+            /* 1- Move the last (maximum) key from the left sibling to the underFlown node. */
+            node.InsertKeyValue(leftSibling.GetMaxKey());
 
-                /* 2- Remove the last (maximum) key from the left sibling. */
-                leftSibling.RemoveKey(leftSibling.GetMaxKey().Key);
+            /* 2- Remove the last (maximum) key from the left sibling. */
+            leftSibling.RemoveKey(leftSibling.GetMaxKey().Key);
 
-                /* 3- Replace separator key in the parent with the current last key of the left sibling. */
-                node.GetParent().RemoveKeyByIndex(separatorIndex);
-                node.GetParent().InsertKey(leftSibling.GetMaxKey().Key);
+            /* 3- Replace separator key in the parent with the current last key of the left sibling. */
+            node.GetParent().RemoveKeyByIndex(separatorIndex);
+            node.GetParent().InsertKey(leftSibling.GetMaxKey().Key);
 
-                /* Check validity. At this point both the node and its left sibling must be MinFull (have exactly MinKeys keys). */
-                Contract.Assert(leftSibling.IsMinFull());
-                Contract.Assert(node.IsMinFull());
-            }
-            else
-            {
-                /* 1- Move the separator key in the parent to the underFlown node. */
-                node.InsertKeyValue(node.GetParent().GetKeyValue(separatorIndex));
-                node.GetParent().RemoveKeyByIndex(separatorIndex);
-
-                /* 2- Replace separator key in the parent with the last key of the left sibling. */
-                node.GetParent().InsertKeyValue(leftSibling.GetMaxKey());
-
-                /* 3- Remove the last (maximum) key from the left sibling, and move its child to node. */
-                leftSibling.RemoveKey(leftSibling.GetMaxKey().Key);
-                if (leftSibling.ChildrenCount >= 1)
-                {
-                    node.InsertChild(leftSibling.GetChild(leftSibling.ChildrenCount - 1));
-                    leftSibling.RemoveChildByIndex(leftSibling.ChildrenCount - 1);
-                }
-
-                /* Check validity. At this point both the node and its left sibling must be MinFull (have exactly MinKeys keys). */
-                Contract.Assert(leftSibling.IsMinFull());
-                Contract.Assert(node.IsMinFull());
-            }
+            /* Check validity. At this point both the node and its left sibling must be MinFull (have exactly MinKeys keys). */
+            Contract.Assert(leftSibling.IsMinFull());
+            Contract.Assert(node.IsMinFull());
         }
 
         /// <summary>
@@ -184,45 +184,21 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(K)")] // Constant time as is independent of n: number of keys in tree. 
         [TimeComplexity(Case.Average, "O(K)")] // Constant time as is independent of n: number of keys in tree. 
-        internal void RotateLeft(BPlusTreeNode<TKey, TValue> node, BPlusTreeNode<TKey, TValue> rightSibling, int separatorIndex)
+        internal void RotateLeftAtLeafLevel(BPlusTreeNode<TKey, TValue> node, BPlusTreeNode<TKey, TValue> rightSibling, int separatorIndex)
         {
-            if (node.IsLeaf())
-            {
-                /* 1- Move the first (minimum) key from the right sibling to the underFlown node. */
-                node.InsertKeyValue(rightSibling.GetMinKey());
+            /* 1- Move the first (minimum) key from the right sibling to the underFlown node. */
+            node.InsertKeyValue(rightSibling.GetMinKey());
 
-                /* 2- Remove the first (minimum) key from the right sibling. */
-                rightSibling.RemoveKey(rightSibling.GetMinKey().Key);
+            /* 2- Remove the first (minimum) key from the right sibling. */
+            rightSibling.RemoveKey(rightSibling.GetMinKey().Key);
 
-                /* 3- Replace separator key in the parent with the current maximum key of the node.*/
-                node.GetParent().RemoveKeyByIndex(separatorIndex);
-                node.GetParent().InsertKey(node.GetMaxKey().Key);
+            /* 3- Replace separator key in the parent with the current maximum key of the node.*/
+            node.GetParent().RemoveKeyByIndex(separatorIndex);
+            node.GetParent().InsertKey(node.GetMaxKey().Key);
 
-                /* Check Validity. At this point both the node and its right sibling must be MinFull (have exactly MinKeys keys). */
-                Contract.Assert(rightSibling.IsMinFull());
-                Contract.Assert(node.IsMinFull());
-            }
-            else
-            {
-                /* 1- Move the separator key in the parent to the underFlown node. */
-                node.InsertKeyValue(node.GetParent().GetKeyValue(separatorIndex));
-                node.GetParent().RemoveKeyByIndex(separatorIndex);
-
-                /* 2- Replace separator key in the parent with the first key of the right sibling.*/
-                node.GetParent().InsertKeyValue(rightSibling.GetMinKey());
-
-                /* 3- Remove the first (minimum) key from the right sibling, and move its child to node. */
-                rightSibling.RemoveKey(rightSibling.GetMinKey().Key);
-                if (rightSibling.ChildrenCount >= 1)
-                {
-                    node.InsertChild(rightSibling.GetChild(0));
-                    rightSibling.RemoveChildByIndex(0);
-                }
-
-                /* Check Validity. At this point both the node and its right sibling must be MinFull (have exactly MinKeys keys). */
-                Contract.Assert(rightSibling.IsMinFull());
-                Contract.Assert(node.IsMinFull());
-            }
+            /* Check Validity. At this point both the node and its right sibling must be MinFull (have exactly MinKeys keys). */
+            Contract.Assert(rightSibling.IsMinFull());
+            Contract.Assert(node.IsMinFull());
         }
 
         /// <summary>
@@ -234,72 +210,38 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(K)")] // Constant time as is independent of n: number of keys in tree. 
         [TimeComplexity(Case.Average, "O(K)")] // Constant time as is independent of n: number of keys in tree. 
-        internal BPlusTreeNode<TKey, TValue> Join(BPlusTreeNode<TKey, TValue> node, BPlusTreeNode<TKey, TValue> leftSibling)
+        internal BPlusTreeNode<TKey, TValue> JoinAtLeafLevel(BPlusTreeNode<TKey, TValue> node, BPlusTreeNode<TKey, TValue> leftSibling)
         {
             var parent = node.GetParent();
 
-            if (!node.IsLeaf())
+            int nodeAndLeftSiblingSeparatorKeyAtParentIndex = leftSibling.GetIndexAtParentChildren();
+
+            // 1- Disconnect parent from node. 
+            parent.RemoveChildByIndex(nodeAndLeftSiblingSeparatorKeyAtParentIndex + 1);
+
+            // 2- Join node with leftSibling: Move all the keys of node to its left sibling.
+            for (int i = 0; i < node.KeyCount; i++)
             {
-                // 1- Move separator key to the left node
-                int nodeAndLeftSiblingSeparatorKeyAtParentIndex = leftSibling.GetIndexAtParentChildren();
-                leftSibling.InsertKeyValue(parent.GetKeyValue(nodeAndLeftSiblingSeparatorKeyAtParentIndex));
-
-                // 2- Remove separator key in the parent, and disconnect parent from node. 
-                parent.RemoveKeyByIndex(nodeAndLeftSiblingSeparatorKeyAtParentIndex);
-                parent.RemoveChildByIndex(nodeAndLeftSiblingSeparatorKeyAtParentIndex + 1);
-
-                // 3- Join node with leftSibling: Move all the keys and children of node to its left sibling.
-                for (int i = 0; i < node.KeyCount; i++)
-                {
-                    leftSibling.InsertKeyValue(node.GetKeyValue(i));
-                }
-                for (int i = 0; i < node.ChildrenCount; i++)
-                {
-                    leftSibling.InsertChild(node.GetChild(i));
-                }
-
-                /* Clear node. */
-                node.Clear();
-
-                if (parent.IsEmpty() && parent.IsRoot()) /* Can happen if parent is root*/
-                {
-                    leftSibling.SetParent(null);
-                    Root = leftSibling;
-                }
-
-                // Since parent has lent a key to its children, it might be UnderFlown now, thus return the parent for additional checks.
-                return leftSibling.GetParent();
+                leftSibling.InsertKeyValue(node.GetKeyValue(i));
             }
-            else
+
+            // 3- Update the next pointer of the left sibling. 
+            leftSibling.NextLeaf = node.NextLeaf;
+
+            /* Clear node. */
+            node.Clear();
+
+            // 4- Remove separator key in the parent if needed
+            parent.RemoveKeyByIndex(nodeAndLeftSiblingSeparatorKeyAtParentIndex);
+
+            if (parent == Root && parent.ChildrenCount == 1)
             {
-                int nodeAndLeftSiblingSeparatorKeyAtParentIndex = leftSibling.GetIndexAtParentChildren();
-
-                // 1- Disconnect parent from node. 
-                parent.RemoveChildByIndex(nodeAndLeftSiblingSeparatorKeyAtParentIndex + 1);
-
-                // 2- Join node with leftSibling: Move all the keys of node to its left sibling.
-                for (int i = 0; i < node.KeyCount; i++)
-                {
-                    leftSibling.InsertKeyValue(node.GetKeyValue(i));
-                }
-
-                // 3- Update the next pointer of the left sibling. 
-                leftSibling.NextLeaf = node.NextLeaf;
-
-                /* Clear node. */
-                node.Clear();
-
-                // 4- Remove separator key in the parent if needed
-                parent.RemoveKeyByIndex(nodeAndLeftSiblingSeparatorKeyAtParentIndex);
-
-                if (parent == Root && parent.ChildrenCount == 1)
-                {
-                    parent.InsertKey(leftSibling.GetMaxKey().Key);
-                }
-
-                // Since parent has lent a key to its children, it might be UnderFlown now, thus return the parent for additional checks.
-                return leftSibling.GetParent();
+                parent.InsertKey(leftSibling.GetMaxKey().Key);
             }
+
+            // Since parent has lent a key to its children, it might be UnderFlown now, thus return the parent for additional checks.
+            return leftSibling.GetParent();
+
         }
 
         public override BPlusTreeNode<TKey, TValue> InsertInLeaf(BPlusTreeNode<TKey, TValue> leaf, KeyValuePair<TKey, TValue> keyValue)

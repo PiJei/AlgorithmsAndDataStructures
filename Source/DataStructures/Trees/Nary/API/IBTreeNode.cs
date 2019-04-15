@@ -87,5 +87,11 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         void InsertChild(TNode child);
 
         int GetIndexAtParentChildren();
+
+        void RemoveKeyByIndex(int index);
+
+        void RemoveKey(TKey key);
+
+        void RemoveChildByIndex(int index);
     }
 }
