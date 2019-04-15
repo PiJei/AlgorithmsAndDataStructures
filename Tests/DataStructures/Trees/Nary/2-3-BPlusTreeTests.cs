@@ -22,9 +22,7 @@ using System.Collections.Generic;
 using CSFundamentals.DataStructures.Trees.Nary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-// TODO : Rename these delete test methods because the representation is now different
-// TDOO/; In power point draw the tree that you expect to see at the end, these should be linked to the Library.
-
+// TDOO In power point draw the tree that you expect to see at the end, these should be linked to the Library.
 
 namespace CSFundamentalsTests.DataStructures.Trees.Nary
 {
@@ -252,7 +250,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         }
 
         [TestMethod]
-        public void Delete_Root_ExpectsToReduceBy1Key()
+        public void Delete_TheBiggestKeyInLeftSubTree_ExpectsRightRotateAndToReduceBy1Key()
         {
             BTreeTestsUtils.HasBPlusTreeProperties(_tree, 25, 16, 17);
             Assert.IsTrue(_tree.Delete(150));
@@ -260,7 +258,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         }
 
         [TestMethod]
-        public void Delete_TheOnlyKeyOfLeftChildOfRoot_ExpectsToReduceBy1Key()
+        public void Delete_TheBiggestKeyInLeftSubTreeOfTheLeftSubtreeOfRoot_ExpectsSimpleDeleteAndToReduceBy1Key()
         {
             BTreeTestsUtils.HasBPlusTreeProperties(_tree, 25, 16, 17);
             Assert.IsTrue(_tree.Delete(50));
@@ -268,7 +266,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         }
 
         [TestMethod]
-        public void Delete_TheOnlyKeyOfRightChildOfRoot_ExpectsToReduceBy1Key()
+        public void Delete_AKeyFromFullLeaf_ExpectsSimpleDeleteAndToReduceBy1Key()
         {
             BTreeTestsUtils.HasBPlusTreeProperties(_tree, 25, 16, 17);
             Assert.IsTrue(_tree.Delete(270));
@@ -276,7 +274,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         }
 
         [TestMethod]
-        public void Delete_TheBiggestKeyInLeftMostLeafOnLeftSubtree_ExpectsToReduceBy1Key()
+        public void Delete_TheBiggestKeyInLeftMostLeafOnLeftSubtree_ExpectsSimpleDeleteAndToReduceBy1Key()
         {
             BTreeTestsUtils.HasBPlusTreeProperties(_tree, 25, 16, 17);
             Assert.IsTrue(_tree.Delete(20));
@@ -284,7 +282,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         }
 
         [TestMethod]
-        public void Delete_TheBiggestKeyInAFullLeafNodeOfLeftSubtree_ExpectsToReduceBy1Key()
+        public void Delete_TheBiggestKeyInAFullLeafNodeOfLeftSubtree_ExpectsSimpleDeleteToReduceBy1Key()
         {
             BTreeTestsUtils.HasBPlusTreeProperties(_tree, 25, 16, 17);
             Assert.IsTrue(_tree.Delete(80));
@@ -292,7 +290,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         }
 
         [TestMethod]
-        public void Delete_TheOnlyKeyInLeaf_ExpectsRightRotationAndToReduceBy1Key()
+        public void Delete_TheOnlyKeyInLeaf_ExpectsLeftRotationAndToReduceBy1Key()
         {
             BTreeTestsUtils.HasBPlusTreeProperties(_tree, 25, 16, 17);
             Assert.IsTrue(_tree.Delete(200));
@@ -332,7 +330,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         }
 
         [TestMethod]
-        public void Delete_TheSmallestKeyInAFullLeaf_ExpectsToReduceBy1Key()
+        public void Delete_TheSmallestKeyInFullLeafWith2Siblings_ExpectsSimpleDeleteAndToReduceBy1Key()
         {
             BTreeTestsUtils.HasBPlusTreeProperties(_tree, 25, 16, 17);
             Assert.IsTrue(_tree.Delete(90));
@@ -348,7 +346,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         }
 
         [TestMethod]
-        public void Delete_SmallestKeyInAFullLeaf_ExpectsToReduceBy1Key()
+        public void Delete_SmallestKeyInAFullLeaf_ExpectsSimpleDeleteAndToReduceBy1Key()
         {
             BTreeTestsUtils.HasBPlusTreeProperties(_tree, 25, 16, 17);
             Assert.IsTrue(_tree.Delete(250));
@@ -526,7 +524,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         }
 
         [TestMethod]
-        public void Delete_TheOnlyKeyInInternalNode_ExpectsToTriggerJoinAndReduceBy2NodesAnd1Key()
+        public void Delete_TheKeyInFullLeafNode_ExpectsSimpleDeleteAndReduceBy1Key()
         {
             BPlusTree<int, string> tree = new BPlusTree<int, string>(3);
             tree.Insert(new KeyValuePair<int, string>(10, "A"));
@@ -539,20 +537,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         }
 
         [TestMethod]
-        public void Delete_TheOnlyKeyInLeafNode_ExpectsToTriggerJoinByRightSiblingAndReduceBy2NodesAnd1Key()
-        {
-            BPlusTree<int, string> tree = new BPlusTree<int, string>(3);
-            tree.Insert(new KeyValuePair<int, string>(10, "A"));
-            tree.Insert(new KeyValuePair<int, string>(20, "B"));
-            tree.Insert(new KeyValuePair<int, string>(30, "C"));
-            BTreeTestsUtils.HasBPlusTreeProperties(tree, 4, 3, 3);
-
-            Assert.IsTrue(tree.Delete(20));
-            BTreeTestsUtils.HasBPlusTreeProperties(tree, 3, 2, 3);
-        }
-
-        [TestMethod]
-        public void Delete_TheOnlyKeyInLeafNode_ExpectsToTriggerJoinByLeftSiblingAndReduceBy2NodesAnd1Key()
+        public void Delete_TheOnlyKeyInLeafNode_ExpectsToTriggerLeftRotateAndReduceBy1Key()
         {
             BPlusTree<int, string> tree = new BPlusTree<int, string>(3);
             tree.Insert(new KeyValuePair<int, string>(10, "A"));
@@ -589,20 +574,6 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBPlusTreeProperties(tree, 6, 4, 4);
 
             Assert.IsTrue(tree.Delete(10));
-            BTreeTestsUtils.HasBPlusTreeProperties(tree, 5, 3, 4);
-        }
-
-        [TestMethod]
-        public void Delete_DeleteTheOnlyKeyInInternalNode_ExpectsToTriggerLeafDeleteAndLeftRotate()
-        {
-            BPlusTree<int, string> tree = new BPlusTree<int, string>(3);
-            tree.Insert(new KeyValuePair<int, string>(10, "A"));
-            tree.Insert(new KeyValuePair<int, string>(20, "B"));
-            tree.Insert(new KeyValuePair<int, string>(30, "C"));
-            tree.Insert(new KeyValuePair<int, string>(40, "D"));
-            BTreeTestsUtils.HasBPlusTreeProperties(tree, 6, 4, 4);
-
-            Assert.IsTrue(tree.Delete(20));
             BTreeTestsUtils.HasBPlusTreeProperties(tree, 5, 3, 4);
         }
     }
