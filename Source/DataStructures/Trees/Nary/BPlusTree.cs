@@ -24,7 +24,7 @@ using CSFundamentals.DataStructures.Trees.Nary.API;
 using CSFundamentals.Decoration;
 
 // TODO: update summaries: they are copies of the B-Tree and have issues, 
-// todo: capacity
+// TODO: capacity
 namespace CSFundamentals.DataStructures.Trees.Nary
 {
     [DataStructure("B+ Tree")]
