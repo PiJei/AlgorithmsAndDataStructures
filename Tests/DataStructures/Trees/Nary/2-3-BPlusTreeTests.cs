@@ -17,9 +17,14 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System;
 using System.Collections.Generic;
 using CSFundamentals.DataStructures.Trees.Nary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+// TODO : Rename these delete test methods because the representation is now different
+// TDOO/; In power point draw the tree that you expect to see at the end, these should be linked to the Library.
+
 
 namespace CSFundamentalsTests.DataStructures.Trees.Nary
 {
@@ -119,10 +124,6 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual(default(string), tree.Root.GetKeyValue(0).Value, ignoreCase: true);
         }
 
-        // ToDo:  test the find in leaf ...
-        // TODO : Rename these delete test methods becaus ethe representation is now different
-        // TDOO/; In power point draw the tree that you expect to see at the end, these should be linked to the Library.
-
         [TestMethod]
         public void Search_ForAllExistingKeysInTree_ExpectsSuccess()
         {
@@ -212,6 +213,42 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         public void Search_NotExistingKey_ThrowsException()
         {
             var node1 = _tree.Search(_tree.Root, 5);
+        }
+
+        [TestMethod]
+        public void FindLeafToInsertKey_NewKeySmallerThanAllKeysInTree_ExpectsTheSparseLeafNodeContainingSmallestKey()
+        {
+            var leaf = _tree.FindLeafToInsertKey(_tree.Root, 5);
+            Assert.AreEqual(2, leaf.KeyCount);
+            Assert.IsTrue(leaf.IsLeaf());
+            Assert.AreEqual(10, leaf.GetKey(0));
+            Assert.AreEqual(20, leaf.GetKey(1));
+        }
+
+        [TestMethod]
+        public void FindLeafToInsertKey_NewKeyBiggerThanAllKeysInTree_ExpectsTheSparseLeafNodeContainingBiggestKey()
+        {
+            var leaf = _tree.FindLeafToInsertKey(_tree.Root, 800);
+            Assert.AreEqual(1, leaf.KeyCount);
+            Assert.IsTrue(leaf.IsLeaf());
+            Assert.AreEqual(600, leaf.GetKey(0));
+        }
+
+        [TestMethod]
+        public void FindLeafToInsertKey_NewKey_ExpectsSuccess()
+        {
+            var leaf = _tree.FindLeafToInsertKey(_tree.Root, 75);
+            Assert.AreEqual(2, leaf.KeyCount);
+            Assert.IsTrue(leaf.IsLeaf());
+            Assert.AreEqual(60, leaf.GetKey(0));
+            Assert.AreEqual(80, leaf.GetKey(1));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void FindLeafToInsertKey_DuplicateKey_ThrowsException()
+        {
+            _tree.FindLeafToInsertKey(_tree.Root, 50);
         }
 
         [TestMethod]
@@ -567,76 +604,6 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
 
             Assert.IsTrue(tree.Delete(20));
             BTreeTestsUtils.HasBPlusTreeProperties(tree, 5, 3, 4);
-        }
-
-        [TestMethod]
-        public void Delete_TheOnlyKeyInLeafWithFullParentAndMinOneFullSibling_ExpectsLeftRotateAndToReduceBy1Key()
-        {
-            var root = new BPlusTreeNode<int, string>(3);
-            root.InsertKeyValue(new KeyValuePair<int, string>(90, "A"));
-            root.InsertKeyValue(new KeyValuePair<int, string>(200, "B"));
-
-            var child1 = new BPlusTreeNode<int, string>(3, new KeyValuePair<int, string>(30, "C"));
-            child1.InsertKeyValue(new KeyValuePair<int, string>(50, "D"));
-
-            var child2 = new BPlusTreeNode<int, string>(3, new KeyValuePair<int, string>(150, "E"));
-            var child3 = new BPlusTreeNode<int, string>(3, new KeyValuePair<int, string>(400, "F"));
-            child3.InsertKeyValue(new KeyValuePair<int, string>(500, "F"));
-
-            root.InsertChild(child1);
-            root.InsertChild(child2);
-            root.InsertChild(child3);
-
-            BPlusTree<int, string> tree = new BPlusTree<int, string>(3) { Root = root };
-            BTreeTestsUtils.HasBPlusTreeProperties(tree, 7, 7, 4);
-
-            Assert.IsTrue(tree.Delete(150));
-            BTreeTestsUtils.HasBPlusTreeProperties(tree, 6, 6, 4);
-        }
-
-        [TestMethod]
-        public void Delete_TheOnlyKeyInLeaf_ExpectsToTriggerJoinAndLeftRotateOnANodeWithChildren()
-        {
-            var node1 = new BPlusTreeNode<int, string>(3);
-            node1.InsertKeyValue(new KeyValuePair<int, string>(60, "A"));
-
-            var node2 = new BPlusTreeNode<int, string>(3);
-            node2.InsertKeyValue(new KeyValuePair<int, string>(30, "B"));
-
-            var node3 = new BPlusTreeNode<int, string>(3);
-            node3.InsertKeyValue(new KeyValuePair<int, string>(200, "C"));
-            node3.InsertKeyValue(new KeyValuePair<int, string>(300, "D"));
-
-            var node4 = new BPlusTreeNode<int, string>(3);
-            node4.InsertKeyValue(new KeyValuePair<int, string>(10, "E"));
-
-            var node5 = new BPlusTreeNode<int, string>(3);
-            node5.InsertKeyValue(new KeyValuePair<int, string>(50, "F"));
-
-            var node6 = new BPlusTreeNode<int, string>(3);
-            node6.InsertKeyValue(new KeyValuePair<int, string>(150, "G"));
-
-            var node7 = new BPlusTreeNode<int, string>(3);
-            node7.InsertKeyValue(new KeyValuePair<int, string>(250, "H"));
-
-            var node8 = new BPlusTreeNode<int, string>(3);
-            node8.InsertKeyValue(new KeyValuePair<int, string>(500, "I"));
-
-            node1.InsertChild(node2);
-            node1.InsertChild(node3);
-
-            node2.InsertChild(node4);
-            node2.InsertChild(node5);
-
-            node3.InsertChild(node6);
-            node3.InsertChild(node7);
-            node3.InsertChild(node8);
-
-            BPlusTree<int, string> tree = new BPlusTree<int, string>(3);
-            tree.Root = node1;
-            BTreeTestsUtils.HasBPlusTreeProperties(tree, 9, 9, 8);
-            Assert.IsTrue(tree.Delete(10));
-            BTreeTestsUtils.HasBPlusTreeProperties(tree, 8, 8, 7);
         }
     }
 }
