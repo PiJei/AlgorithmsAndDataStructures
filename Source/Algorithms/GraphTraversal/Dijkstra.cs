@@ -20,7 +20,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using CSFundamentals.DataStructures.BinaryHeaps;
-using CSFundamentals.Styling;
+using CSFundamentals.Decoration;
 
 namespace CSFundamentals.Algorithms.GraphTraversal
 {

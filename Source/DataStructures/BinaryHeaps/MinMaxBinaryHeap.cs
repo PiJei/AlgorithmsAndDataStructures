@@ -23,7 +23,7 @@ using System.Diagnostics.Contracts;
 using System.Linq;
 using CSFundamentals.Algorithms.Sort;
 using CSFundamentals.DataStructures.BinaryHeaps.API;
-using CSFundamentals.Styling;
+using CSFundamentals.Decoration;
 
 namespace CSFundamentals.DataStructures.BinaryHeaps
 {

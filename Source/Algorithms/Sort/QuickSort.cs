@@ -19,7 +19,7 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using CSFundamentals.Styling;
+using CSFundamentals.Decoration;
 
 [assembly: InternalsVisibleTo("CSFundamentalAlgorithmsTests")]
 

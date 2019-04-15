@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
-using CSFundamentals.Styling;
+using CSFundamentals.Decoration;
 
 namespace CSFundamentals.Algorithms.PatternSearch
 {

@@ -19,7 +19,7 @@
 
 using System.Collections.Generic;
 using CSFundamentals.DataStructures.StringStructures;
-using CSFundamentals.Styling;
+using CSFundamentals.Decoration;
 
 namespace CSFundamentals.Algorithms.PatternSearch
 {

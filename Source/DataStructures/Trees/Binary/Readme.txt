@@ -1,0 +1,1 @@
+﻿Contains implementations for variants of binary trees, these are trees where nodes can have 2 children at most.

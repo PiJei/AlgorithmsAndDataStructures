@@ -18,7 +18,7 @@
  */
 using System;
 using System.Collections.Generic;
-using CSFundamentals.Styling;
+using CSFundamentals.Decoration;
 
 // TODO Make all sorting algorithms generic
 

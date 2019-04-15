@@ -19,7 +19,7 @@
 
 using System.Collections.Generic;
 using CSFundamentals.Algorithms.Sort;
-using CSFundamentals.Styling;
+using CSFundamentals.Decoration;
 
 // TODO: Add a linear-time implementation of suffix array. 
 

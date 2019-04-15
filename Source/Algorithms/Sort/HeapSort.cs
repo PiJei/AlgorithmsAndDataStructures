@@ -21,7 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using CSFundamentals.DataStructures.BinaryHeaps;
-using CSFundamentals.Styling;
+using CSFundamentals.Decoration;
 // TODO: Dont like the fact that had to change the signature to return values, and convert arrays
 namespace CSFundamentals.Algorithms.Sort
 {

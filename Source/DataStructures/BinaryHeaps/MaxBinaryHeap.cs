@@ -22,7 +22,7 @@ using System.Collections.Generic;
 using System.Linq;
 using CSFundamentals.Algorithms.Sort;
 using CSFundamentals.DataStructures.BinaryHeaps.API;
-using CSFundamentals.Styling;
+using CSFundamentals.Decoration;
 
 /* Similar to MinBinaryHeap. Refer to that class for missing explanations. */
 
