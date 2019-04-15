@@ -40,7 +40,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         public void Init()
         {
             _tree = new BTree<int, string>(3);
-            Dictionary<int, string> keyValues = new Dictionary<int, string>
+            var keyValues = new Dictionary<int, string>
             {
                 [50] = "A",
                 [10] = "B",
@@ -115,7 +115,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         [TestMethod]
         public void Insert_SeveralKeys_ExpectsTreeToIncreaseInLevelsAfewTimes()
         {
-            BTree<int, string> tree = new BTree<int, string>(3);
+            var tree = new BTree<int, string>(3);
             BTreeTestsUtils.HasBTreeProperties(tree, 0, 0, 0);
 
             tree.Insert(new KeyValuePair<int, string>(50, "A"));
@@ -174,7 +174,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         [TestMethod]
         public void InOrderTraversal_StartingFromRoot_ExpectsAscendingOrder()
         {
-            List<KeyValuePair<int, string>> keyValues = new List<KeyValuePair<int, string>>();
+            var keyValues = new List<KeyValuePair<int, string>>();
             _tree.InOrderTraversal(_tree.Root, keyValues);
             Assert.AreEqual(16, keyValues.Count);
             for (int i = 0; i < keyValues.Count - 1; i++)
@@ -462,7 +462,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         [TestMethod]
         public void Delete_TheOnlyKeyInTree_ExpectsNoNodeAndNoKeyAfter()
         {
-            BTree<int, string> tree = new BTree<int, string>(3);
+            var tree = new BTree<int, string>(3);
             tree.Insert(new KeyValuePair<int, string>(10, "A"));
             BTreeTestsUtils.HasBTreeProperties(tree, 1, 1, 1);
 
@@ -474,7 +474,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         [TestMethod]
         public void Delete_BiggestKeyInTheOnlyNodeOfTree_ExpectsToReduceBy1Key()
         {
-            BTree<int, string> tree = new BTree<int, string>(3);
+            var tree = new BTree<int, string>(3);
             tree.Insert(new KeyValuePair<int, string>(10, "A"));
             tree.Insert(new KeyValuePair<int, string>(100, "B"));
             BTreeTestsUtils.HasBTreeProperties(tree, 2, 2, 1);
@@ -487,7 +487,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         [TestMethod]
         public void Delete_NonExistingKey_ExpectsFailure()
         {
-            BTree<int, string> tree = new BTree<int, string>(3);
+            var tree = new BTree<int, string>(3);
             tree.Insert(new KeyValuePair<int, string>(10, "A"));
             tree.Insert(new KeyValuePair<int, string>(100, "B"));
             BTreeTestsUtils.HasBTreeProperties(tree, 2, 2, 1);
@@ -500,7 +500,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         [TestMethod]
         public void Delete_TheOnlyKeyInInternalNode_ExpectsToTriggerJoinAndReduceBy2NodesAnd1Key()
         {
-            BTree<int, string> tree = new BTree<int, string>(3);
+            var tree = new BTree<int, string>(3);
             tree.Insert(new KeyValuePair<int, string>(10, "A"));
             tree.Insert(new KeyValuePair<int, string>(20, "B"));
             tree.Insert(new KeyValuePair<int, string>(30, "C"));
@@ -513,7 +513,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         [TestMethod]
         public void Delete_TheOnlyKeyInLeafNode_ExpectsToTriggerJoinByRightSiblingAndReduceBy2NodesAnd1Key()
         {
-            BTree<int, string> tree = new BTree<int, string>(3);
+            var tree = new BTree<int, string>(3);
             tree.Insert(new KeyValuePair<int, string>(10, "A"));
             tree.Insert(new KeyValuePair<int, string>(20, "B"));
             tree.Insert(new KeyValuePair<int, string>(30, "C"));
@@ -526,7 +526,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         [TestMethod]
         public void Delete_TheOnlyKeyInLeafNode_ExpectsToTriggerJoinByLeftSiblingAndReduceBy2NodesAnd1Key()
         {
-            BTree<int, string> tree = new BTree<int, string>(3);
+            var tree = new BTree<int, string>(3);
             tree.Insert(new KeyValuePair<int, string>(10, "A"));
             tree.Insert(new KeyValuePair<int, string>(20, "B"));
             tree.Insert(new KeyValuePair<int, string>(30, "C"));
@@ -539,7 +539,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         [TestMethod]
         public void Delete_KeyInFullLeaf_ExpectsToReduceBy1Key()
         {
-            BTree<int, string> tree = new BTree<int, string>(3);
+            var tree = new BTree<int, string>(3);
             tree.Insert(new KeyValuePair<int, string>(10, "A"));
             tree.Insert(new KeyValuePair<int, string>(20, "B"));
             tree.Insert(new KeyValuePair<int, string>(30, "C"));
@@ -553,7 +553,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         [TestMethod]
         public void Delete_TheOnlyKeyInLeafNodeWithMinOneFullSibling_ExpectsToTriggerLeftRotate()
         {
-            BTree<int, string> tree = new BTree<int, string>(3);
+            var tree = new BTree<int, string>(3);
             tree.Insert(new KeyValuePair<int, string>(10, "A"));
             tree.Insert(new KeyValuePair<int, string>(20, "B"));
             tree.Insert(new KeyValuePair<int, string>(30, "C"));
@@ -567,7 +567,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         [TestMethod]
         public void Delete_DeleteTheOnlyKeyInInternalNode_ExpectsToTriggerLeafDeleteAndLeftRotate()
         {
-            BTree<int, string> tree = new BTree<int, string>(3);
+            var tree = new BTree<int, string>(3);
             tree.Insert(new KeyValuePair<int, string>(10, "A"));
             tree.Insert(new KeyValuePair<int, string>(20, "B"));
             tree.Insert(new KeyValuePair<int, string>(30, "C"));
@@ -596,7 +596,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             root.InsertChild(child2);
             root.InsertChild(child3);
 
-            BTree<int, string> tree = new BTree<int, string>(3) { Root = root };
+            var tree = new BTree<int, string>(3) { Root = root };
             BTreeTestsUtils.HasBTreeProperties(tree, 7, 7, 4);
 
             Assert.IsTrue(tree.Delete(150));
@@ -641,7 +641,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             node3.InsertChild(node7);
             node3.InsertChild(node8);
 
-            BTree<int, string> tree = new BTree<int, string>(3);
+            var tree = new BTree<int, string>(3);
             tree.Root = node1;
             BTreeTestsUtils.HasBTreeProperties(tree, 9, 9, 8);
             Assert.IsTrue(tree.Delete(10));
@@ -681,7 +681,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             node3.InsertChild(node5);
             node3.InsertChild(node6);
 
-            BTree<int, string> tree = new BTree<int, string>(3) { Root = node1 };
+            var tree = new BTree<int, string>(3) { Root = node1 };
 
             tree.RotateLeft(node2, node3, 0);
             BTreeTestsUtils.HasBTreeProperties(tree, 7, 7, 7);
@@ -723,7 +723,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             /* This is to be able to test RotateLeft without re-ordering children. */
             node3.RemoveKey(100);
 
-            BTree<int, string> tree = new BTree<int, string>(3);
+            var tree = new BTree<int, string>(3);
             tree.Root = node1;
             tree.RotateRight(node3, node2, 0);
             BTreeTestsUtils.HasBTreeProperties(tree, 7, 7, 7);
