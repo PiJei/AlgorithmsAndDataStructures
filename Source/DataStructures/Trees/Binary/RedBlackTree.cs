@@ -93,7 +93,11 @@ namespace CSFundamentals.DataStructures.Trees.Binary
             }
 
             // Find the root of the tree.
-            if (newRoot == null) return null;
+            if (newRoot == null)
+            {
+                return null;
+            }
+
             while (newRoot.Parent != null)
             {
                 newRoot = newRoot.Parent;
@@ -161,7 +165,10 @@ namespace CSFundamentals.DataStructures.Trees.Binary
                     Contract.Assert(nodeToBeDeleted.LeftChild.Color == Color.Red);
                     nodeToBeDeleted.LeftChild.Parent = nodeToBeDeleted.Parent;
                     if (nodeToBeDeleted.Parent != null)
+                    {
                         nodeToBeDeleted.Parent.LeftChild = nodeToBeDeleted.LeftChild;
+                    }
+
                     nodeToBeDeleted = nodeToBeDeleted.LeftChild;
                     nodeToBeDeleted.Color = Color.Black; /* This is to keep the number of black nodes the same, as we have just dropped a non-leaf black node.*/
                 }
@@ -170,7 +177,10 @@ namespace CSFundamentals.DataStructures.Trees.Binary
                     Contract.Assert(nodeToBeDeleted.RightChild.Color == Color.Red);
                     nodeToBeDeleted.RightChild.Parent = nodeToBeDeleted.Parent;
                     if (nodeToBeDeleted.Parent != null)
+                    {
                         nodeToBeDeleted.Parent.RightChild = nodeToBeDeleted.RightChild;
+                    }
+
                     nodeToBeDeleted = nodeToBeDeleted.RightChild;
                     nodeToBeDeleted.Color = Color.Black; /* This is to keep the number of black nodes the same, as we have just dropped a non-leaf black node.*/
                 }
@@ -182,10 +192,16 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         //TODO: Test
         internal RedBlackTreeNode<TKey, TValue> DeleteBlackLeafNode(RedBlackTreeNode<TKey, TValue> node)
         {
-            if (node.Parent == null) return null;
+            if (node.Parent == null)
+            {
+                return null;
+            }
 
             var sibling = node.GetSibling();
-            if (sibling == null) return null;
+            if (sibling == null)
+            {
+                return null;
+            }
 
             if (IsRed(sibling)) /* Implies that parent is black, following RedBlack tree properties.*/
             {
@@ -218,7 +234,10 @@ namespace CSFundamentals.DataStructures.Trees.Binary
                 {
                     sibling.Color = Color.Red;
                     if (sibling.LeftChild != null)
+                    {
                         sibling.LeftChild.Color = Color.Black;
+                    }
+
                     RotateRight(sibling);
                     sibling = node.GetSibling();
                 }
@@ -226,7 +245,10 @@ namespace CSFundamentals.DataStructures.Trees.Binary
                 {
                     sibling.Color = Color.Red;
                     if (sibling.RightChild != null)
+                    {
                         sibling.RightChild.Color = Color.Black;
+                    }
+
                     RotateLeft(sibling);
                     sibling = node.GetSibling();
                 }
@@ -295,7 +317,9 @@ namespace CSFundamentals.DataStructures.Trees.Binary
                     }
                     newNode.Parent.Color = Color.Black;
                     if (grandParent != null)
+                    {
                         grandParent.Color = Color.Red;
+                    }
                 }
             }
         }
@@ -308,7 +332,10 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         internal bool IsRed(RedBlackTreeNode<TKey, TValue> node)
         {
             if (node != null && node.Color == Color.Red)
+            {
                 return true;
+            }
+
             return false;
         }
 
@@ -319,7 +346,11 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         /// <returns>True in case node is black, and false otherwise. </returns>
         internal bool IsBlack(RedBlackTreeNode<TKey, TValue> node)
         {
-            if (node == null || (node != null && node.Color == Color.Black)) return true;
+            if (node == null || (node != null && node.Color == Color.Black))
+            {
+                return true;
+            }
+
             return false;
         }
 

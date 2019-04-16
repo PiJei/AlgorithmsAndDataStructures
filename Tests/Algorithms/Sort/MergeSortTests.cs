@@ -76,17 +76,17 @@ namespace CSFundamentalsTests.Algorithms.Sort
         [TestMethod]
         public void Merge()
         {
-            List<int> values1 = new List<int> { 10, 1 };
+            var values1 = new List<int> { 10, 1 };
             MergeSort.Merge(values1, 0, 0, 1);
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values1));
 
-            List<int> values2 = new List<int> { 10, 1 };
+            var values2 = new List<int> { 10, 1 };
             // Indexes are such that the list will not get sorted, 
             MergeSort.Merge(values2, 0, 1, 1);
             Assert.IsTrue(values2[0] == 10);
             Assert.IsTrue(values2[1] == 1);
 
-            List<int> values3 = new List<int> { 10, 41, 3, 10 };
+            var values3 = new List<int> { 10, 41, 3, 10 };
             MergeSort.Merge(values3, 0, 1, 3);
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values3));
         }

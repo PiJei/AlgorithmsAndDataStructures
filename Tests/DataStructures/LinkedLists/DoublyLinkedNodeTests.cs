@@ -17,8 +17,8 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentals.DataStructures.LinkedLists;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.DataStructures.LinkedLists
 {
@@ -28,7 +28,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         [TestMethod]
         public void IsHead()
         {
-            DoublyLinkedNode<int> node = new DoublyLinkedNode<int>(10);
+            var node = new DoublyLinkedNode<int>(10);
             Assert.IsTrue(node.IsHead());
             node.Next = new DoublyLinkedNode<int>(50);
             Assert.IsTrue(node.IsHead());
@@ -39,7 +39,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         [TestMethod]
         public void IsTail()
         {
-            DoublyLinkedNode<int> node = new DoublyLinkedNode<int>(10);
+            var node = new DoublyLinkedNode<int>(10);
             Assert.IsTrue(node.IsTail());
             node.Previous = new DoublyLinkedNode<int>(100);
             Assert.IsTrue(node.IsTail());

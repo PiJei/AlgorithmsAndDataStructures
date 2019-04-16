@@ -32,7 +32,7 @@ namespace CSFundamentalsTests.Algorithms.Search
         [TestMethod]
         public void Search()
         {
-            List<int> values = new List<int> { 1, 3, 10, 14, 25, 27, 34, 78, 90, 90, 120 };
+            var values = new List<int> { 1, 3, 10, 14, 25, 27, 34, 78, 90, 90, 120 };
 
             Assert.IsTrue(new List<int> { 0 }.SequenceEqual(HashTableSearch.Search(values, 1)));
             Assert.IsTrue(new List<int> { 1 }.SequenceEqual(HashTableSearch.Search(values, 3)));

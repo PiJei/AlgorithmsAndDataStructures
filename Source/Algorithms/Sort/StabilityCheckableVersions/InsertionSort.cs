@@ -17,8 +17,8 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using CSFundamentals.Algorithms.Sort.StabilityCheckableVersions;
 using System.Collections.Generic;
+using CSFundamentals.Algorithms.Sort.StabilityCheckableVersions;
 
 namespace CSFundamentals.Algorithms.Sort
 {

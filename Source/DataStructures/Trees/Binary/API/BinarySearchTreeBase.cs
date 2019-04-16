@@ -385,21 +385,19 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
                 return new List<List<TNode>>();
             }
 
-            List<List<TNode>> paths = new List<List<TNode>>();
+            var paths = new List<List<TNode>>();
             List<List<TNode>> leftPaths = GetAllPathToLeaves(startNode.LeftChild);
             List<List<TNode>> rightPaths = GetAllPathToLeaves(startNode.RightChild);
 
             for (int i = 0; i < leftPaths.Count; i++)
             {
-                var newPath = new List<TNode>();
-                newPath.Add(startNode);
+                var newPath = new List<TNode> { startNode};
                 newPath.AddRange(leftPaths[i]);
                 paths.Add(newPath);
             }
             for (int i = 0; i < rightPaths.Count; i++)
             {
-                var newPath = new List<TNode>();
-                newPath.Add(startNode);
+                var newPath = new List<TNode> { startNode};
                 newPath.AddRange(rightPaths[i]);
                 paths.Add(newPath);
             }

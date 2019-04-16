@@ -47,7 +47,7 @@ namespace CSFundamentalsTests.Algorithms.Search
         [TestMethod]
         public void GetStartIndex()
         {
-            List<int> values = new List<int> { 3, 7, 10, 14, 21, 27, 27, 32, 38, 45, 53 };
+            var values = new List<int> { 3, 7, 10, 14, 21, 27, 27, 32, 38, 45, 53 };
 
             Assert.AreEqual(39, InterpolationSearch.GetStartIndex(values, 0, values.Count - 1, 200));
             Assert.AreEqual(10, InterpolationSearch.GetStartIndex(values, 0, values.Count - 1, 53));

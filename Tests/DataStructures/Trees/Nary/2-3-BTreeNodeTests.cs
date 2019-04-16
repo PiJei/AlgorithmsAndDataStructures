@@ -221,7 +221,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         [TestMethod]
         public void Split_EmptyNode_ExpectsNullForTheNewNode()
         {
-            BTreeNode<int, string> node = new BTreeNode<int, string>(3);
+            var node = new BTreeNode<int, string>(3);
             Assert.AreEqual(2, node.MaxKeys); /* Thus to be overFlown (which is the condition for split) node should have 3 keys. */
 
             var newNode = node.Split();
@@ -231,7 +231,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         [TestMethod]
         public void Split_NodeIsMinFull_ExpectsNullForTheNewNode()
         {
-            BTreeNode<int, string> node = new BTreeNode<int, string>(3);
+            var node = new BTreeNode<int, string>(3);
             Assert.AreEqual(2, node.MaxKeys); /* Thus to be overFlown (which is the condition for split) node should have 3 keys. */
 
             node.InsertKeyValue(new KeyValuePair<int, string>(100, "C"));
@@ -247,7 +247,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         [TestMethod]
         public void Split_NodeIsFull_ExpectsNullForTheNewNode()
         {
-            BTreeNode<int, string> node = new BTreeNode<int, string>(3);
+            var node = new BTreeNode<int, string>(3);
             Assert.AreEqual(2, node.MaxKeys); /* Thus to be overFlown (which is the condition for split) node should have 3 keys. */
 
             node.InsertKeyValue(new KeyValuePair<int, string>(100, "C"));
@@ -259,7 +259,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         [TestMethod]
         public void Split_NodeIsOverFlownAndHasNoChildren_ExpectsSuccessfulSplitForKeys()
         {
-            BTreeNode<int, string> node = new BTreeNode<int, string>(3);
+            var node = new BTreeNode<int, string>(3);
             Assert.AreEqual(2, node.MaxKeys); /* Thus to be overFlown (which is the condition for split) node should have 3 keys. */
 
             node.InsertKeyValue(new KeyValuePair<int, string>(100, "C"));
@@ -276,25 +276,25 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         [TestMethod]
         public void Split_NodeIsOverFlownAndHasChildren_ExpectsSuccessfulSplitForKeysAndChildren()
         {
-            BTreeNode<int, string> node = new BTreeNode<int, string>(3);
+            var node = new BTreeNode<int, string>(3);
 
             node.InsertKeyValue(new KeyValuePair<int, string>(20, "A"));
             node.InsertKeyValue(new KeyValuePair<int, string>(50, "B"));
             node.InsertKeyValue(new KeyValuePair<int, string>(200, "C"));
 
-            BTreeNode<int, string> child1 = new BTreeNode<int, string>(3);
+            var child1 = new BTreeNode<int, string>(3);
             child1.InsertKeyValue(new KeyValuePair<int, string>(10, "D"));
             node.InsertChild(child1);
 
-            BTreeNode<int, string> child2 = new BTreeNode<int, string>(3);
+            var child2 = new BTreeNode<int, string>(3);
             child2.InsertKeyValue(new KeyValuePair<int, string>(30, "E"));
             node.InsertChild(child2);
 
-            BTreeNode<int, string> child3 = new BTreeNode<int, string>(3);
+            var child3 = new BTreeNode<int, string>(3);
             child3.InsertKeyValue(new KeyValuePair<int, string>(100, "F"));
             node.InsertChild(child3);
 
-            BTreeNode<int, string> child4 = new BTreeNode<int, string>(3);
+            var child4 = new BTreeNode<int, string>(3);
             child4.InsertKeyValue(new KeyValuePair<int, string>(300, "G"));
             node.InsertChild(child4);
 
@@ -352,7 +352,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         [ExpectedException(typeof(ArgumentException))]
         public void KeyValueToMoveUp_EmptyNode_ThrowsException()
         {
-            BTreeNode<int, string> node = new BTreeNode<int, string>(3);
+            var node = new BTreeNode<int, string>(3);
             Assert.AreEqual(1, node.MinKeys);
             Assert.AreEqual(2, node.MaxKeys);
 
@@ -364,7 +364,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         [ExpectedException(typeof(ArgumentException))]
         public void KeyValueToMoveUp_MinFullNode_ThrowsException()
         {
-            BTreeNode<int, string> node = new BTreeNode<int, string>(3);
+            var node = new BTreeNode<int, string>(3);
             Assert.AreEqual(1, node.MinKeys);
             Assert.AreEqual(2, node.MaxKeys);
 
@@ -376,7 +376,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         [TestMethod]
         public void KeyValueToMoveUp_NodeIsMinOneFull_ExpectsLastKeyInTheNode()
         {
-            BTreeNode<int, string> node = new BTreeNode<int, string>(3);
+            var node = new BTreeNode<int, string>(3);
             Assert.AreEqual(1, node.MinKeys); /* Thus node needs 1+1 = 2 keys to be MinOneFull, which is the condition for having a key to move up to its parent. */
             Assert.AreEqual(2, node.MaxKeys); /* For a 2-3 BTree node, MinOneFull is the same as Full. */
 

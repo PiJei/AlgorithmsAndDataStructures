@@ -32,7 +32,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
 
         int MaxKeys { get; }
 
-        int MinKeys { get;}
+        int MinKeys { get; }
 
         /// <summary>
         /// Is the count of key-value pairs in the node. 

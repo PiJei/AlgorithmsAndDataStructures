@@ -34,7 +34,7 @@ namespace CSFundamentals.Algorithms.PatternSearch
         [Algorithm(AlgorithmType.PatternSearch, "BoyerMoore")]
         public static List<int> Search_BasedOnBadCharacterShiftOnly(string text, string pattern)
         {
-            List<int> indexes = new List<int>();
+            var indexes = new List<int>();
 
             /* For readability in the code: */
             int n = text.Length;
@@ -101,7 +101,7 @@ namespace CSFundamentals.Algorithms.PatternSearch
         /// <returns>A mapping of all the characters in the given string to their last index in the string. </returns>
         public static Dictionary<char, int> MapCharToLastIndex(string text)
         {
-            Dictionary<char, int> indexes = new Dictionary<char, int>();
+            var indexes = new Dictionary<char, int>();
 
             for (int i = 0; i < text.Length; i++)
             {

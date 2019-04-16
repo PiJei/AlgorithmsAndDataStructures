@@ -58,7 +58,7 @@ namespace CSFundamentals.Algorithms.Sort
         public static void Merge<T>(List<T> values, int startIndex, int middleIndex, int endIndex) where T : IComparable<T>
         {
             //Making a copy of the values
-            List<T> valuesOriginal = new List<T>(values); /* This is where the extra space complexity of O(n) for merge sort comes from. */
+            var valuesOriginal = new List<T>(values); /* This is where the extra space complexity of O(n) for merge sort comes from. */
 
             //Inclusive boundaries of the first sub-array
             int start1 = startIndex;

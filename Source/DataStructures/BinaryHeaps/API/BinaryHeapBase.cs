@@ -18,8 +18,8 @@
  */
 
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CSFundamentals.DataStructures.BinaryHeaps.API
 {
@@ -99,7 +99,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps.API
         /// <returns>True in case of success, and false in case of failure. </returns>
         public bool TryFindIndexOfMinSmallerThanReference(List<KeyValuePair<TKey, TValue>> list, List<int> indexes, TKey minKeyReference, out int minKeyIndex)
         {
-            minKeyIndex = Int32.MinValue;
+            minKeyIndex = int.MinValue;
 
             /* If all of the indexes exceed the range of the array, return false, and leave minValueReference as it was */
             if (indexes.All(index => index >= list.Count || index < 0))
@@ -115,7 +115,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps.API
             }
 
             /* In the case that minValueReference is smallest, nothing changes, and minValueIndex remains as initiated at the beginning of the method. */
-            if (minKeyIndex == Int32.MinValue)
+            if (minKeyIndex == int.MinValue)
             {
                 return false; /* meaning none of the elements in the given indexes, were smaller than the reference value. */
             }
@@ -134,7 +134,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps.API
         /// <returns>True in case of success, and false in case of failure. </returns>
         public bool TryFindIndexOfMaxBiggerThanReference(List<KeyValuePair<TKey, TValue>> list, int listLength, List<int> indexes, TKey maxKeyReference, out int maxKeyIndex)
         {
-            maxKeyIndex = Int32.MaxValue;
+            maxKeyIndex = int.MaxValue;
 
             /* If all of the indexes exceed the range of the array, return false, and leave maxValueReference as it was */
             if (indexes.All(index => index >= listLength))
@@ -150,7 +150,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps.API
             }
 
             /* In the case that maxValueReference is biggest, nothing changes, and maxValueIndex remains as initiated at the beginning of the method. */
-            if (maxKeyIndex == Int32.MaxValue)
+            if (maxKeyIndex == int.MaxValue)
             {
                 return false; /* meaning none of the elements in the given indexes, were bigger than the reference value. */
             }

@@ -37,7 +37,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         public void Init()
         {
             _tree = new BPlusTree<int, string>(3);
-            Dictionary<int, string> keyValues = new Dictionary<int, string>
+            var keyValues = new Dictionary<int, string>
             {
                 [50] = "A",
                 [10] = "B",
@@ -68,7 +68,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         [TestMethod]
         public void Insert_SeveralKeys_ExpectsTreeToIncreaseInLevelsAfewTimes()
         {
-            BPlusTree<int, string> tree = new BPlusTree<int, string>(3);
+            var tree = new BPlusTree<int, string>(3);
             BTreeTestsUtils.HasBPlusTreeProperties(tree, 0, 0, 0);
 
             tree.Insert(new KeyValuePair<int, string>(50, "A"));
@@ -427,7 +427,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBPlusTreeProperties(_tree, 3, 2, 3);
 
             Assert.IsTrue(_tree.Delete(50));
-             BTreeTestsUtils.HasBPlusTreeProperties(_tree, 2, 1, 2); //TODO: Tree is left in 150/200 index! I think I should have copied 200 to the parent
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 2, 1, 2); //TODO: Tree is left in 150/200 index! I think I should have copied 200 to the parent
 
             Assert.IsTrue(_tree.Delete(200));
             BTreeTestsUtils.HasBPlusTreeProperties(_tree, 0, 0, 0);
@@ -490,7 +490,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         [TestMethod]
         public void Delete_TheOnlyKeyInTree_ExpectsNoNodeAndNoKeyAfter()
         {
-            BPlusTree<int, string> tree = new BPlusTree<int, string>(3);
+            var tree = new BPlusTree<int, string>(3);
             tree.Insert(new KeyValuePair<int, string>(10, "A"));
             BTreeTestsUtils.HasBPlusTreeProperties(tree, 2, 1, 2);
 
@@ -502,7 +502,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         [TestMethod]
         public void Delete_BiggestKeyInTheOnlyLeafNodeOfTree_ExpectsToReduceBy1Key()
         {
-            BPlusTree<int, string> tree = new BPlusTree<int, string>(3);
+            var tree = new BPlusTree<int, string>(3);
             tree.Insert(new KeyValuePair<int, string>(10, "A"));
             tree.Insert(new KeyValuePair<int, string>(100, "B"));
             BTreeTestsUtils.HasBPlusTreeProperties(tree, 3, 2, 3);
@@ -515,7 +515,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         [TestMethod]
         public void Delete_NonExistingKey_ExpectsFailure()
         {
-            BPlusTree<int, string> tree = new BPlusTree<int, string>(3);
+            var tree = new BPlusTree<int, string>(3);
             tree.Insert(new KeyValuePair<int, string>(10, "A"));
             tree.Insert(new KeyValuePair<int, string>(100, "B"));
             BTreeTestsUtils.HasBPlusTreeProperties(tree, 3, 2, 3);
@@ -528,7 +528,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         [TestMethod]
         public void Delete_TheKeyInFullLeafNode_ExpectsSimpleDeleteAndReduceBy1Key()
         {
-            BPlusTree<int, string> tree = new BPlusTree<int, string>(3);
+            var tree = new BPlusTree<int, string>(3);
             tree.Insert(new KeyValuePair<int, string>(10, "A"));
             tree.Insert(new KeyValuePair<int, string>(20, "B"));
             tree.Insert(new KeyValuePair<int, string>(30, "C"));
@@ -541,7 +541,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         [TestMethod]
         public void Delete_TheOnlyKeyInLeafNode_ExpectsToTriggerLeftRotateAndReduceBy1Key()
         {
-            BPlusTree<int, string> tree = new BPlusTree<int, string>(3);
+            var tree = new BPlusTree<int, string>(3);
             tree.Insert(new KeyValuePair<int, string>(10, "A"));
             tree.Insert(new KeyValuePair<int, string>(20, "B"));
             tree.Insert(new KeyValuePair<int, string>(30, "C"));
@@ -554,7 +554,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         [TestMethod]
         public void Delete_KeyInFullLeaf_ExpectsToReduceBy1Key()
         {
-            BPlusTree<int, string> tree = new BPlusTree<int, string>(3);
+            var tree = new BPlusTree<int, string>(3);
             tree.Insert(new KeyValuePair<int, string>(10, "A"));
             tree.Insert(new KeyValuePair<int, string>(20, "B"));
             tree.Insert(new KeyValuePair<int, string>(30, "C"));
@@ -568,7 +568,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         [TestMethod]
         public void Delete_TheOnlyKeyInLeafNodeWithMinOneFullSibling_ExpectsToTriggerLeftRotate()
         {
-            BPlusTree<int, string> tree = new BPlusTree<int, string>(3);
+            var tree = new BPlusTree<int, string>(3);
             tree.Insert(new KeyValuePair<int, string>(10, "A"));
             tree.Insert(new KeyValuePair<int, string>(20, "B"));
             tree.Insert(new KeyValuePair<int, string>(30, "C"));

@@ -21,7 +21,7 @@ using System;
 
 namespace CSFundamentals.Decoration
 {
-    [AttributeUsage(AttributeTargets.Class| AttributeTargets.Method, AllowMultiple = true )]
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public class DataStructureAttribute : Attribute
     {
         public string Name { get; private set; }

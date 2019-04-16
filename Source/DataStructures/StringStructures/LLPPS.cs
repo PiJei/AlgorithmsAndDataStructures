@@ -37,7 +37,7 @@ namespace CSFundamentals.DataStructures.StringStructures
         /// <returns> An array of longest proper prefixes</returns>
         public static List<int> Build(string text)
         {
-            List<int> longestProperPrexiLengths = Enumerable.Repeat(0, text.Length).ToList(); /* Note that the values in this list, are < text.Length always. */
+            var longestProperPrexiLengths = Enumerable.Repeat(0, text.Length).ToList(); /* Note that the values in this list, are < text.Length always. */
 
             int lengthOfPreviousProperPrefixThatIsAlsoSuffix = 0;
 

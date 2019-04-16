@@ -23,21 +23,21 @@ using CSFundamentals.Decoration;
 
 namespace CSFundamentals.DataStructures.LinkedLists
 {
-    public class SinglyLinkedList<T1> : LinkedListBase<SinglyLinkedNode<T1>, T1> where T1 : IComparable<T1>
+    public class SinglyLinkedList<TValue> : LinkedListBase<SinglyLinkedNode<TValue>, TValue> where TValue : IComparable<TValue>
     {
         public SinglyLinkedList()
         {
         }
 
-        public SinglyLinkedList(SinglyLinkedNode<T1> head)
+        public SinglyLinkedList(SinglyLinkedNode<TValue> head)
         {
             _head = head;
         }
 
-        public override bool Delete(T1 value)
+        public override bool Delete(TValue value)
         {
-            SinglyLinkedNode<T1> previousNode = null;
-            SinglyLinkedNode<T1> currentNode = _head;
+            SinglyLinkedNode<TValue> previousNode = null;
+            SinglyLinkedNode<TValue> currentNode = _head;
             while (currentNode != null)
             {
                 if (currentNode.Value.CompareTo(value) == 0)
@@ -71,9 +71,9 @@ namespace CSFundamentals.DataStructures.LinkedLists
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(1)")]
         [TimeComplexity(Case.Average, "O(1)")]
-        public override bool Insert(T1 newValue)
+        public override bool Insert(TValue newValue)
         {
-            SinglyLinkedNode<T1> newNode = new SinglyLinkedNode<T1>(newValue)
+            var newNode = new SinglyLinkedNode<TValue>(newValue)
             {
                 Next = _head
             };

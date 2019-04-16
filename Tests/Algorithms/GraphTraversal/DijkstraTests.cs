@@ -18,8 +18,8 @@
  */
 
 using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentals.Algorithms.GraphTraversal;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.Algorithms.GraphTraversal
 {

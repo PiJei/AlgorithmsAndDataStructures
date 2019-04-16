@@ -21,7 +21,6 @@
 // TODO: Notations in complexities are not uniform. 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
 using System.Runtime.CompilerServices;
 using CSFundamentals.DataStructures.Trees.Nary.API;
 using CSFundamentals.Decoration;
@@ -198,7 +197,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary
 
         public override List<KeyValuePair<TKey, TValue>> GetSortedKeyValues(BTreeNode<TKey, TValue> node)
         {
-            List<KeyValuePair<TKey, TValue>> sortedKeyValues = new List<KeyValuePair<TKey, TValue>>();
+            var sortedKeyValues = new List<KeyValuePair<TKey, TValue>>();
             InOrderTraversal(node, sortedKeyValues);
             return sortedKeyValues;
         }

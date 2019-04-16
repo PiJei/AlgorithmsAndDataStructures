@@ -16,9 +16,9 @@
  * You should have received a copy of the GNU General Public License
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CSFundamentals.Algorithms.SubarraySearch;
 using System.Collections.Generic;
+using CSFundamentals.Algorithms.SubarraySearch;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.SubarraySearch
 {

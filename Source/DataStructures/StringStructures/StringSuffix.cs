@@ -47,15 +47,31 @@ namespace CSFundamentals.DataStructures.StringStructures
 
         public bool Equals(StringSuffix other)
         {
-            if (ReferenceEquals(other, null)) return false;
-            if (RankPair[0] == other.RankPair[0] && RankPair[1] == other.RankPair[1]) return true;
+            if (ReferenceEquals(other, null))
+            {
+                return false;
+            }
+
+            if (RankPair[0] == other.RankPair[0] && RankPair[1] == other.RankPair[1])
+            {
+                return true;
+            }
+
             return false;
         }
 
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(obj, null)) return false;
-            if (ReferenceEquals(this, obj)) return true;
+            if (ReferenceEquals(obj, null))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
             return Equals((StringSuffix)obj);
         }
 
@@ -66,7 +82,11 @@ namespace CSFundamentals.DataStructures.StringStructures
 
         public int CompareTo(StringSuffix other)
         {
-            if (Equals(other)) return 0;
+            if (Equals(other))
+            {
+                return 0;
+            }
+
             if (RankPair[0] == other.RankPair[0])
             {
                 return RankPair[1].CompareTo(other.RankPair[1]);

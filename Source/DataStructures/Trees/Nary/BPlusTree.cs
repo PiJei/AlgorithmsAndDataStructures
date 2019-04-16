@@ -250,7 +250,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary
             if (leaf == null && Root == null)
             {
                 /* 1- Create a leaf node (aka. record) that can contain value besides key.*/
-                BPlusTreeNode<TKey, TValue> leafContainingValue = new BPlusTreeNode<TKey, TValue>(MaxBranchingDegree, keyValue);
+                var leafContainingValue = new BPlusTreeNode<TKey, TValue>(MaxBranchingDegree, keyValue);
 
                 /* 2- Create an internal node (here root) that will contain only a copy of the key, and the record as its child. */
                 Root = new BPlusTreeNode<TKey, TValue>(
@@ -334,7 +334,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         /// <returns></returns>
         public override List<KeyValuePair<TKey, TValue>> GetSortedKeyValues(BPlusTreeNode<TKey, TValue> node)
         {
-            List<KeyValuePair<TKey, TValue>> keyValues = new List<KeyValuePair<TKey, TValue>>();
+            var keyValues = new List<KeyValuePair<TKey, TValue>>();
 
             BPlusTreeNode<TKey, TValue> minLeaf = GetMinNode(node);
             while (minLeaf != null)

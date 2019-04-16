@@ -103,10 +103,10 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
         [TestMethod]
         public void Recursive_StartFromA()
         {
-            Queue<GraphNode<int>> queue = new Queue<GraphNode<int>>();
+            var queue = new Queue<GraphNode<int>>();
             A.IsInserted = true;
             queue.Enqueue(A);
-            List<GraphNode<int>> bfsOrdering = new List<GraphNode<int>>();
+            var bfsOrdering = new List<GraphNode<int>>();
             BFS.BFS_Recursive(queue, bfsOrdering);
 
             Assert.AreEqual(7, bfsOrdering.Count);
@@ -125,10 +125,10 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
         [TestMethod]
         public void Recursive_StartFromE()
         {
-            Queue<GraphNode<int>> queue = new Queue<GraphNode<int>>();
+            var queue = new Queue<GraphNode<int>>();
             E.IsInserted = true;
             queue.Enqueue(E);
-            List<GraphNode<int>> bfsOrdering = new List<GraphNode<int>>();
+            var bfsOrdering = new List<GraphNode<int>>();
             BFS.BFS_Recursive(queue, bfsOrdering);
 
             Assert.AreEqual(7, bfsOrdering.Count);

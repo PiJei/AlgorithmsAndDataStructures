@@ -17,7 +17,7 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
- using System.Collections.Generic;
+using System.Collections.Generic;
 using CSFundamentals.Algorithms.GraphTraversal;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -105,7 +105,7 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
         public void Recursive_StartFromA()
         {
             ResetGraph();
-            List<GraphNode<int>> dfsOrdering = new List<GraphNode<int>>();
+            var dfsOrdering = new List<GraphNode<int>>();
             DFS.DFS_Recursive(A, dfsOrdering);
 
             Assert.AreEqual(7, dfsOrdering.Count);
@@ -125,7 +125,7 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
         public void Recursive_StartFromE()
         {
             ResetGraph();
-            List<GraphNode<int>> dfsOrdering = new List<GraphNode<int>>();
+            var dfsOrdering = new List<GraphNode<int>>();
             DFS.DFS_Recursive(E, dfsOrdering);
 
             Assert.AreEqual(7, dfsOrdering.Count);

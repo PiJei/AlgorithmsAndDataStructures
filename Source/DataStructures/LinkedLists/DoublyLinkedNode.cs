@@ -25,13 +25,13 @@ namespace CSFundamentals.DataStructures.LinkedLists
     /// <summary>
     /// Implements a node in a DoublyLinkedList. 
     /// </summary>
-    /// <typeparam name="T">Is the type of the values stored in a node.</typeparam>
+    /// <typeparam name="TValue">Is the type of the values stored in a node.</typeparam>
     [Serializable]
-    public class DoublyLinkedNode<T1> : LinkedNode<DoublyLinkedNode<T1>, T1> where T1 : IComparable<T1>
+    public class DoublyLinkedNode<TValue> : LinkedNode<DoublyLinkedNode<TValue>, TValue> where TValue : IComparable<TValue>
     {
-        public DoublyLinkedNode<T1> Previous = null;
+        public DoublyLinkedNode<TValue> Previous = null;
 
-        public DoublyLinkedNode(T1 value) : base(value)
+        public DoublyLinkedNode(TValue value) : base(value)
         {
         }
 
@@ -42,7 +42,10 @@ namespace CSFundamentals.DataStructures.LinkedLists
         public bool IsHead()
         {
             if (Previous == null)
+            {
                 return true;
+            }
+
             return false;
         }
     }

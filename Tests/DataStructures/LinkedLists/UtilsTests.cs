@@ -17,8 +17,8 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentals.DataStructures.LinkedLists;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.DataStructures.LinkedLists
 {
@@ -28,8 +28,10 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         [TestMethod]
         public void DeepCopy()
         {
-            var alice = new Person("Alice");
-            alice.Parent = new Person("Bob");
+            var alice = new Person("Alice")
+            {
+                Parent = new Person("Bob")
+            };
 
             var aliceCopy = Utils.DeepCopy(alice);
             /* Making sure after the deep copy the values in the copy are exactly as in the original version. */

@@ -51,7 +51,7 @@ namespace CSFundamentals.Algorithms.Sort
         public static void Merge(List<Element> values, int startIndex, int middleIndex, int endIndex)
         {
             //Making a copy of the values
-            List<Element> valuesOriginal = new List<Element>(values.Count);
+            var valuesOriginal = new List<Element>(values.Count);
             for (int i = 0; i < values.Count; i++)
             {
                 valuesOriginal.Add(new Element(values[i]));

@@ -17,9 +17,9 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CSFundamentals.Algorithms.PatternSearch;
 using System.Collections.Generic;
+using CSFundamentals.Algorithms.PatternSearch;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.PatternSearch
 {

@@ -39,7 +39,7 @@ namespace CSFundamentals.DataStructures.StringStructures
         /// <returns></returns>
         public static int[] Build(string text)
         {
-            List<StringSuffix> suffixes = new List<StringSuffix>();
+            var suffixes = new List<StringSuffix>();
             for (int i = 0; i < text.Length; i++)
             {
                 char firstChar = text[i];
@@ -61,7 +61,7 @@ namespace CSFundamentals.DataStructures.StringStructures
                 /* Update the first rank of all the suffixes, which depends on the ranks of their immediately preceding suffix. */
                 for (int i = 1; i < text.Length; i++)
                 {
-                    
+
                     if (suffixes[i].RankPair[0] == rank && suffixes[i].RankPair[1] == suffixes[i - 1].RankPair[1])
                     {
                         rank = suffixes[i].RankPair[0];

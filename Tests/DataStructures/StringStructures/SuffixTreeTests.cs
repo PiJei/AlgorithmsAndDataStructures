@@ -112,17 +112,20 @@ namespace CSFundamentalsTests.StringStructures
 
         public void CheckSuffixTreeProperties(SuffixTreeNode root, string text)
         {
-            List<SuffixTreeNode> nodes = new List<SuffixTreeNode>();
+            var nodes = new List<SuffixTreeNode>();
             GetNodes(root, nodes);
-            
+
             int leafCounter = 0;
             int rootCounter = 0;
             SuffixTreeNode rootNode = null;
-            List<SuffixTreeNode> intermediateNodes = new List<SuffixTreeNode>();
+            var intermediateNodes = new List<SuffixTreeNode>();
             foreach (SuffixTreeNode node in nodes)
             {
                 if (node.IsLeaf)
+                {
                     leafCounter++;
+                }
+
                 if (node.IsRoot)
                 {
                     rootCounter++;
@@ -133,7 +136,7 @@ namespace CSFundamentalsTests.StringStructures
                     intermediateNodes.Add(node);
                 }
             }
-            
+
             /* Property1: the suffix tree must contain exactly 'text.Length' leaf nodes. */
             Assert.AreEqual(text.Length, leafCounter);
 
@@ -145,7 +148,7 @@ namespace CSFundamentalsTests.StringStructures
             Assert.IsTrue(root.Children.Count >= 0);
 
             /* Property4: All intermediate nodes' childrenCount >= 2 */
-            foreach(SuffixTreeNode node in intermediateNodes)
+            foreach (SuffixTreeNode node in intermediateNodes)
             {
                 Assert.IsTrue(node.Children.Count >= 2);
             }

@@ -253,7 +253,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// <returns>List of the immediate direct children of the current node.</returns>
         public List<TNode> GetChildren()
         {
-            List<TNode> children = new List<TNode>();
+            var children = new List<TNode>();
             if (LeftChild != null)
             {
                 children.Add(LeftChild);
@@ -271,7 +271,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// <returns>The list of grand children of the node.</returns>
         public List<TNode> GetGrandChildren()
         {
-            List<TNode> grandChildren = new List<TNode>();
+            var grandChildren = new List<TNode>();
             if (LeftChild != null)
             {
                 grandChildren.AddRange(LeftChild.GetChildren());

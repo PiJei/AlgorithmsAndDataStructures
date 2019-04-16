@@ -50,7 +50,7 @@ namespace CSFundamentals.Algorithms.GraphTraversal
             //4- Build a MinHeap over all the nodes in the array.
             var minHeap = new MinBinaryHeap<GraphNode<TValue>, TValue>(bfsOrdering.Select(o => new KeyValuePair<GraphNode<TValue>, TValue>(o, o.Value)).ToList()); /* Extra space usage O(V) for heapArray. */
 
-            List<GraphNode<TValue>> shortestDistanceFromRoot = new List<GraphNode<TValue>>(); /* Extra space usage O(V) for tracking shortest distances of all the nodes from the root node. */
+            var shortestDistanceFromRoot = new List<GraphNode<TValue>>(); /* Extra space usage O(V) for tracking shortest distances of all the nodes from the root node. */
 
             while (true) // Repeat until minHeap is empty. 
             {
@@ -66,7 +66,9 @@ namespace CSFundamentals.Algorithms.GraphTraversal
                                 edge.Node.DistanceFromRoot = currentMinNode.Key.DistanceFromRoot + edge.Weight;
                                 int index = minHeap.FindIndex(edge.Node); /* Can be O(1) if the index of each element is stored with the element. */
                                 if (index >= 0)
+                                {
                                     minHeap.BubbleUp_Iteratively(index, minHeap.HeapArray.Count);
+                                }
                             }
                         }
                     }

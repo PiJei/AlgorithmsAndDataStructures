@@ -31,27 +31,27 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             /* Bubble sort is stable, try to find an example which breaks this property.*/
 
-            List<int> duplicateValues1 = new List<int> { 4, 3, 2, 4, 1 };
+            var duplicateValues1 = new List<int> { 4, 3, 2, 4, 1 };
             List<Element> duplicateValuesElements1 = Utils.Convert(duplicateValues1);
             bool isStable1 = Utils.IsSortMethodStable(BubbleSort.Sort_Iterative, duplicateValuesElements1);
             Assert.IsTrue(isStable1);
 
-            List<int> duplicateValues2 = new List<int>(Constants.ArrayWithDuplicateValues);
+            var duplicateValues2 = new List<int>(Constants.ArrayWithDuplicateValues);
             List<Element> duplicateValuesElements2 = Utils.Convert(duplicateValues2);
             bool isStable2 = Utils.IsSortMethodStable(BubbleSort.Sort_Iterative, duplicateValuesElements2);
             Assert.IsTrue(isStable2);
 
-            List<int> duplicateValues3 = new List<int>(Constants.ArrayWithSortedDuplicateValues);
+            var duplicateValues3 = new List<int>(Constants.ArrayWithSortedDuplicateValues);
             List<Element> duplicateValuesElements3 = Utils.Convert(duplicateValues3);
             bool isStable3 = Utils.IsSortMethodStable(BubbleSort.Sort_Iterative, duplicateValuesElements3);
             Assert.IsTrue(isStable3);
 
-            List<int> duplicateValues4 = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
+            var duplicateValues4 = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
             List<Element> duplicateValuesElements4 = Utils.Convert(duplicateValues4);
             bool isStable4 = Utils.IsSortMethodStable(BubbleSort.Sort_Iterative, duplicateValuesElements4);
             Assert.IsTrue(isStable4);
 
-            List<int> duplicateValues5 = new List<int> { 3, 1, 1, 2, 2, 4, 1, 1, 2, 2 };
+            var duplicateValues5 = new List<int> { 3, 1, 1, 2, 2, 4, 1, 1, 2, 2 };
             List<Element> duplicateValuesElements5 = Utils.Convert(duplicateValues5);
             bool isStable5 = Utils.IsSortMethodStable(BubbleSort.Sort_Iterative, duplicateValuesElements5);
             Assert.IsTrue(isStable5);

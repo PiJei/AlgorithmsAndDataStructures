@@ -32,7 +32,7 @@ namespace CSFundamentals.Decoration
         public SpaceComplexityAttribute(string complexity, bool inPlace = false)
         {
             Complexity = complexity;
-           InPlace = inPlace;
+            InPlace = inPlace;
         }
     }
 }

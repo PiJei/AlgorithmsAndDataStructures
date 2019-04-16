@@ -17,10 +17,10 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using CSFundamentals.Algorithms.PatternSearch;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Linq;
+using CSFundamentals.Algorithms.PatternSearch;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.PatternSearch
 {
@@ -30,7 +30,7 @@ namespace CSFundamentalsTests.PatternSearch
         [TestMethod]
         public void Search()
         {
-            Assert.IsTrue(BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly("abd", "abdfgh").SequenceEqual(new List<int> {})); /* Testing the case where substring is longer than string. */
+            Assert.IsTrue(BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly("abd", "abdfgh").SequenceEqual(new List<int> { })); /* Testing the case where substring is longer than string. */
             Assert.IsTrue(BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly("gcaatgcctatgtgacc", "tatgtg").SequenceEqual(new List<int> { 8 })); /* Example taken from geeks for geeks. */
             Assert.IsTrue(BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly("aaaa", "aa").SequenceEqual(new List<int> { 0, 1, 2 }));
             Assert.AreEqual(1, BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly("abcd", "bc")[0]);

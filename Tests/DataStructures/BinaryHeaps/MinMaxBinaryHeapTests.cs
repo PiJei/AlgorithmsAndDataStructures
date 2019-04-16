@@ -40,7 +40,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
             var G = new KeyValuePair<int, string>(3, "G");
             var H = new KeyValuePair<int, string>(150, "H");
             var I = new KeyValuePair<int, string>(85, "I");
-            List<KeyValuePair<int, string>> keyValues = new List<KeyValuePair<int, string>> { A, B, C, D, E, F, G, H, I };
+            var keyValues = new List<KeyValuePair<int, string>> { A, B, C, D, E, F, G, H, I };
 
             var heap = new MinMaxBinaryHeap<int, string>(keyValues);
             heap.BuildHeap_Recursively(heap.HeapArray.Count);
@@ -72,7 +72,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         [TestMethod]
         public void BuildHeapRecursively_DuplicateValues()
         {
-            List<KeyValuePair<int, string>> keyValues = new List<KeyValuePair<int, string>> {
+            var keyValues = new List<KeyValuePair<int, string>> {
                 new KeyValuePair<int, string>(39,"A"),
                 new KeyValuePair<int, string>(45,"B"),
                 new KeyValuePair<int, string>(37,"C"),
