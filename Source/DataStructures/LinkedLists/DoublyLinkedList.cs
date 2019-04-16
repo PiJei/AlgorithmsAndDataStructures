@@ -98,9 +98,12 @@ namespace CSFundamentals.DataStructures.LinkedLists
         [TimeComplexity(Case.Average, "O(1)")]
         public bool InsertAfter(DoublyLinkedNode<TValue> node, TValue newValue)
         {
-            var newNode = new DoublyLinkedNode<TValue>(newValue);
-            newNode.Previous = node;
-            newNode.Next = node?.Next;
+            var newNode = new DoublyLinkedNode<TValue>(newValue)
+            {
+                Previous = node,
+                Next = node?.Next
+            };
+
             node.Next = newNode;
 
             if (newNode.Next == null)
@@ -149,9 +152,12 @@ namespace CSFundamentals.DataStructures.LinkedLists
         [TimeComplexity(Case.Average, "O(1)")]
         public bool InsertBefore(DoublyLinkedNode<TValue> node, TValue newValue)
         {
-            var newNode = new DoublyLinkedNode<TValue>(newValue);
-            newNode.Next = node;
-            newNode.Previous = node.Previous;
+            var newNode = new DoublyLinkedNode<TValue>(newValue)
+            {
+                Next = node,
+                Previous = node.Previous
+            };
+        
             node.Previous = newNode;
             if (newNode.Previous == null)
             {

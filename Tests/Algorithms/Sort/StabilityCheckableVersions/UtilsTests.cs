@@ -50,9 +50,11 @@ namespace CSFundamentalsTests.Algorithms.Sort
             var element2 = new Element(4, 3);
             element2.Move(3);
 
-            var map = new Dictionary<Element, List<Element>>();
+            var map = new Dictionary<Element, List<Element>>
+            {
+                [element1] = new List<Element> { element1, element2 }
+            };
 
-            map.Add(element1, new List<Element> { element1, element2 });
             Assert.IsFalse(Utils.IsMapStable(map));
 
             element1.Move(3);

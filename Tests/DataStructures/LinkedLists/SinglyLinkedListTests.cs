@@ -73,8 +73,10 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.IsNull(list.Head());
 
             /*Deleting a non-existing item from a list with 2 items. */
-            var head = new SinglyLinkedNode<int>(5);
-            head.Next = new SinglyLinkedNode<int>(10);
+            var head = new SinglyLinkedNode<int>(5)
+            {
+                Next = new SinglyLinkedNode<int>(10)
+            };
             list = new SinglyLinkedList<int>(head);
 
             Assert.AreEqual(2, list.Count());
@@ -89,8 +91,10 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.IsNull(list.Head().Next);
 
             /* Deleting head from a list with 3 nodes.*/
-            head = new SinglyLinkedNode<int>(10);
-            head.Next = new SinglyLinkedNode<int>(3);
+            head = new SinglyLinkedNode<int>(10)
+            {
+                Next = new SinglyLinkedNode<int>(3)
+            };
             head.Next.Next = new SinglyLinkedNode<int>(1);
             list = new SinglyLinkedList<int>(head);
             Assert.AreEqual(3, list.Count());

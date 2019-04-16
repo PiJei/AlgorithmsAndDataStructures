@@ -641,8 +641,10 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             node3.InsertChild(node7);
             node3.InsertChild(node8);
 
-            var tree = new BTree<int, string>(3);
-            tree.Root = node1;
+            var tree = new BTree<int, string>(3)
+            {
+                Root = node1
+            };
             BTreeTestsUtils.HasBTreeProperties(tree, 9, 9, 8);
             Assert.IsTrue(tree.Delete(10));
             BTreeTestsUtils.HasBTreeProperties(tree, 8, 8, 7);
@@ -723,8 +725,10 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             /* This is to be able to test RotateLeft without re-ordering children. */
             node3.RemoveKey(100);
 
-            var tree = new BTree<int, string>(3);
-            tree.Root = node1;
+            var tree = new BTree<int, string>(3)
+            {
+                Root = node1
+            };
             tree.RotateRight(node3, node2, 0);
             BTreeTestsUtils.HasBTreeProperties(tree, 7, 7, 7);
         }

@@ -444,9 +444,11 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
         [TestMethod]
         public void IsComplete()
         {
-            var node1 = new MockBinaryTreeNode<int, string>(10, "str1");
-            node1.LeftChild = null;
-            node1.RightChild = null;
+            var node1 = new MockBinaryTreeNode<int, string>(10, "str1")
+            {
+                LeftChild = null,
+                RightChild = null
+            };
 
             Assert.IsFalse(node1.IsComplete());
             node1.LeftChild = new MockBinaryTreeNode<int, string>(5, "str2");

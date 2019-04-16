@@ -57,7 +57,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps.API
         [TestMethod]
         public void TryFindIndexOfMinSmallerThanReference_IndexesInRangeAndReferenceMinInteger_ExpectsFailureAndMinIntegerAsIndex()
         {
-            bool result = _heap.TryFindIndexOfMinSmallerThanReference(_keyValues, new List<int> { 1, 2 }, Int32.MinValue, out int minValueIndex);
+            bool result = _heap.TryFindIndexOfMinSmallerThanReference(_keyValues, new List<int> { 1, 2 }, int.MinValue, out int minValueIndex);
             Assert.IsFalse(result);
             Assert.AreEqual(int.MinValue, minValueIndex);
         }
@@ -89,7 +89,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps.API
         [TestMethod]
         public void TryFindIndexOfMaxBiggerThanReference_ReferenceIsMaxInteger_ExpectsFailureAndMaxIntegerAsMaxIndex()
         {
-            bool result = _heap.TryFindIndexOfMaxBiggerThanReference(_keyValues, _keyValues.Count, new List<int> { 1, 2 }, Int32.MaxValue, out int maxValueIndex);
+            bool result = _heap.TryFindIndexOfMaxBiggerThanReference(_keyValues, _keyValues.Count, new List<int> { 1, 2 }, int.MaxValue, out int maxValueIndex);
             Assert.IsFalse(result);
             Assert.AreEqual(int.MaxValue, maxValueIndex);
         }

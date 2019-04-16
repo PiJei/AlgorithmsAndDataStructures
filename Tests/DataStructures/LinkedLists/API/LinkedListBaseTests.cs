@@ -67,9 +67,11 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists.API
         [TestMethod]
         public void Search_Success()
         {
-            var head = new MockLinkedNode<int>(20);
-            head.Next = new MockLinkedNode<int>(10);
-            head.Next.Next = new MockLinkedNode<int>(12);
+            var head = new MockLinkedNode<int>(20)
+            {
+                Next = new MockLinkedNode<int>(10)
+            };
+            head.Next.Next = new MockLinkedNode<int>(12) { };
             head.Next.Next.Next = new MockLinkedNode<int>(6);
 
             var list = new MockLinkedList<int>(head);
