@@ -17,7 +17,6 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System.Collections.Generic;
 using CSFundamentals.Algorithms.Search;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 // TODO: Binary search and Ternary searches are very similar, can I just pass a function to them instead?

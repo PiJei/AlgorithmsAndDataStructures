@@ -28,7 +28,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         [TestMethod]
         public void FlipColor()
         {
-            RedBlackTreeNode<int, string> A = new RedBlackTreeNode<int, string>(2, "A", Color.Red);
+            var A = new RedBlackTreeNode<int, string>(2, "A", Color.Red);
             Assert.AreEqual(Color.Red, A.Color);
 
             var tree = new RedBlackTree<int, string>();

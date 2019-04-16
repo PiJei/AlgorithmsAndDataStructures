@@ -30,14 +30,14 @@ namespace CSFundamentals.Algorithms.GraphTraversal
         /// <returns>a serialization of the graph, with a DFS ordering.</returns>
         public static List<GraphNode<TValue>> DFS_Iterative<TValue>(GraphNode<TValue> root)
         {
-            Stack<GraphNode<TValue>> stack = new Stack<GraphNode<TValue>>();
+            var stack = new Stack<GraphNode<TValue>>();
 
             root.IsInserted = true;
             root.DistanceFromRoot = 0;
             stack.Push(root);
 
             /* To store a DFS ordering of the nodes, starting from root. */
-            List<GraphNode<TValue>> dfsOrdering = new List<GraphNode<TValue>>();
+            var dfsOrdering = new List<GraphNode<TValue>>();
             while (stack.Count > 0) /* while stack is not empty. */
             {
                 GraphNode<TValue> nextNode = stack.Pop();

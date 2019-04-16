@@ -50,7 +50,7 @@ namespace CSFundamentals.Algorithms.Search
 
         private static Dictionary<T, List<int>> ConvertList2HashTable<T>(List<T> values) where T : IComparable<T>
         {
-            Dictionary<T, List<int>> hashTable = new Dictionary<T, List<int>>();
+            var hashTable = new Dictionary<T, List<int>>();
             for (int i = 0; i < values.Count; i++)
             {
                 if (!hashTable.ContainsKey(values[i]))

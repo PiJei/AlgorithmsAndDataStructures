@@ -29,7 +29,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         [TestMethod]
         public static void TestSortMethodWithDifferentInputs(Action<List<int>> sortMethod)
         {
-            List<int> values = new List<int>(Constants.ArrayWithDistinctValues);
+            var values = new List<int>(Constants.ArrayWithDistinctValues);
             sortMethod(values);
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
 

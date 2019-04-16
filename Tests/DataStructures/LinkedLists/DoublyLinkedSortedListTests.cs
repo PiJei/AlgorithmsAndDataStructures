@@ -18,8 +18,8 @@
  */
 
 using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentals.DataStructures.LinkedLists;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.DataStructures.LinkedLists
 {
@@ -29,7 +29,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         [TestMethod]
         public void Insert_1()
         {
-            DoublyLinkedSortedList<int> list = new DoublyLinkedSortedList<int>();
+            var list = new DoublyLinkedSortedList<int>();
             Assert.AreEqual(0, list.Count());
 
             /* Testing insert with an empty list. */
@@ -56,7 +56,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         [TestMethod]
         public void Insert_2()
         {
-            DoublyLinkedSortedList<int> list = new DoublyLinkedSortedList<int>();
+            var list = new DoublyLinkedSortedList<int>();
             Assert.AreEqual(0, list.Count());
 
             /* Testing insert with an empty list. */
@@ -73,7 +73,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         [TestMethod]
         public void Delete()
         {
-            DoublyLinkedSortedList<int> list = new DoublyLinkedSortedList<int>();
+            var list = new DoublyLinkedSortedList<int>();
             Assert.AreEqual(0, list.Count());
 
             /* Testing delete when list is empty.*/

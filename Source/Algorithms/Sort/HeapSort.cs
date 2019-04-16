@@ -60,7 +60,7 @@ namespace CSFundamentals.Algorithms.Sort
             return values.Select(v => new KeyValuePair<T, T>(v, v)).ToList();
         }
 
-        private static List<T> ToArray<T>(List<KeyValuePair<T, T>> values) where T:IComparable<T>
+        private static List<T> ToArray<T>(List<KeyValuePair<T, T>> values) where T : IComparable<T>
         {
             return values.Select(v => v.Key).ToList();
         }

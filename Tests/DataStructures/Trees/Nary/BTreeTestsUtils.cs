@@ -45,7 +45,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
 
         public static bool HasBTreeProperties<TNode, TKey, TValue>(BTreeBase<TNode, TKey, TValue> tree, int expectedTotalKeyCount, int expectedDistinctKeyCount, int expectedNodeCount, Func<TNode, bool> HasNodeProperties) where TNode : IBTreeNode<TNode, TKey, TValue>, IComparable<TNode> where TKey : IComparable<TKey>
         {
-            List<TNode> nodes = new List<TNode>();
+            var nodes = new List<TNode>();
             DFS<TNode, TKey, TValue>(tree.Root, nodes);
             Assert.AreEqual(expectedNodeCount, nodes.Count);
 
@@ -230,7 +230,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsTrue(HasBTreeProperties(tree, expectedTotalKeyCount, expectedDistinctKeyCount, expectedNodeCount, HasBPlusTreeNodeProperties));
 
             /* Check that all the non-leaf nodes have no value in their key value array*/
-            List<BPlusTreeNode<int, string>> nodes = new List<BPlusTreeNode<int, string>>();
+            var nodes = new List<BPlusTreeNode<int, string>>();
             DFS<BPlusTreeNode<int, string>, int, string>(tree.Root, nodes);
             foreach (var node in nodes)
             {

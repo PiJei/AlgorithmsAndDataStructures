@@ -17,8 +17,8 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentals.DataStructures.LinkedLists;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.DataStructures.LinkedLists.API
 {
@@ -28,7 +28,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists.API
         [TestMethod]
         public void Length()
         {
-            MockLinkedList<int> list = new MockLinkedList<int>();
+            var list = new MockLinkedList<int>();
             Assert.AreEqual(0, list.Count());
 
             var head = new MockLinkedNode<int>(10);
@@ -52,7 +52,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists.API
         [ExpectedException(typeof(NotFoundException))]
         public void Search_EmptyListAndNotExistingValue_ThrowsException()
         {
-            MockLinkedList<int> list = new MockLinkedList<int>();
+            var list = new MockLinkedList<int>();
             var result = list.Search(10);
         }
 
@@ -60,7 +60,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists.API
         [ExpectedException(typeof(NotFoundException))]
         public void Search_NonEmptyListAndNotExistingValue_ThrowsException()
         {
-            MockLinkedList<int> list = new MockLinkedList<int>(new MockLinkedNode<int>(20));
+            var list = new MockLinkedList<int>(new MockLinkedNode<int>(20));
             var result = list.Search(10);
         }
 
@@ -72,7 +72,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists.API
             head.Next.Next = new MockLinkedNode<int>(12);
             head.Next.Next.Next = new MockLinkedNode<int>(6);
 
-            MockLinkedList<int> list = new MockLinkedList<int>(head);
+            var list = new MockLinkedList<int>(head);
             var result = list.Search(20);
             Assert.IsNotNull(result);
             Assert.AreEqual(20, result.Value);

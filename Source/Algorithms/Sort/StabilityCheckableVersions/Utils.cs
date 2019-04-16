@@ -28,7 +28,7 @@ namespace CSFundamentals.Algorithms.Sort
     {
         public static List<Element> Convert(List<int> values)
         {
-            List<Element> newValues = new List<Element>();
+            var newValues = new List<Element>();
             for (int i = 0; i < values.Count; i++)
             {
                 newValues.Add(new Element(values[i], i));
@@ -58,7 +58,7 @@ namespace CSFundamentals.Algorithms.Sort
         public static Dictionary<Element, List<Element>> HashListToIndexes(List<Element> values)
         {
             /* Such that the keys in the dictionary are the values in the array, and the values in the dictionary are the list of indexes for each value in the array. */
-            Dictionary<Element, List<Element>> positions = new Dictionary<Element, List<Element>>();
+            var positions = new Dictionary<Element, List<Element>>();
             if (values == null)
             {
                 return positions;
@@ -105,7 +105,7 @@ namespace CSFundamentals.Algorithms.Sort
 
         public static void Swap(List<Element> values, int index1, int index2)
         {
-            Element temp = new Element(values[index1]);
+            var temp = new Element(values[index1]);
 
             values[index2].Move(index1);
             values[index1] = values[index2];

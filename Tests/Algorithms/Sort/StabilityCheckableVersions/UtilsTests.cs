@@ -30,7 +30,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         [TestMethod]
         public void Convert()
         {
-            List<int> values = new List<int>() { 4, 3, 2, 4, 1 };
+            var values = new List<int>() { 4, 3, 2, 4, 1 };
             List<Element> newValues = Utils.Convert(values);
             Assert.AreEqual(newValues.Count, values.Count);
             for (int i = 0; i < values.Count; i++)
@@ -50,7 +50,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
             var element2 = new Element(4, 3);
             element2.Move(3);
 
-            Dictionary<Element, List<Element>> map = new Dictionary<Element, List<Element>>();
+            var map = new Dictionary<Element, List<Element>>();
 
             map.Add(element1, new List<Element> { element1, element2 });
             Assert.IsFalse(Utils.IsMapStable(map));
@@ -73,7 +73,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
             var element4 = new Element(4, 3);
             var element5 = new Element(1, 4);
 
-            List<Element> values1 = new List<Element> {
+            var values1 = new List<Element> {
                 element1,
                 element2,
                 element3,
@@ -96,7 +96,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         [TestMethod]
         public void Swap()
         {
-            List<Element> values = new List<Element>();
+            var values = new List<Element>();
             var element1 = new Element(10, 0);
             var element2 = new Element(5, 1);
             var element3 = new Element(16, 2);

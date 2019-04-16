@@ -23,14 +23,14 @@ using CSFundamentals.Decoration;
 
 namespace CSFundamentals.DataStructures.LinkedLists.API
 {
-    public abstract class LinkedListBase<T, T1> where T : LinkedNode<T, T1> where T1 : IComparable<T1>
+    public abstract class LinkedListBase<TNode, TValue> where TNode : LinkedNode<TNode, TValue> where TValue : IComparable<TValue>
     {
         /// <summary>
         /// Is the first node in the list. 
         /// </summary>
-        protected T _head = null;
+        protected TNode _head = null;
 
-        public T Head()
+        public TNode Head()
         {
             return Utils.DeepCopy(_head);
         }
@@ -40,14 +40,14 @@ namespace CSFundamentals.DataStructures.LinkedLists.API
         /// </summary>
         /// <param name="newValue">Is the value of the new node. </param>
         /// <returns>True in case of success.</returns>
-        public abstract bool Insert(T1 newValue);
+        public abstract bool Insert(TValue newValue);
 
         /// <summary>
         /// Deletes a node with the given value from the list. If no node with the given value exists, fails the operation and returns false.
         /// </summary>
         /// <param name="value">Is the value that is being searched for.</param>
         /// <returns>True in case of success, and false otherwise. </returns>
-        public abstract bool Delete(T1 value);
+        public abstract bool Delete(TValue value);
 
         /// <summary>
         /// Searches for the specified <paramref name="Value"/>. Since there is no assumption about the order of the values in the list, starts from the Head node and performs a linear search.
@@ -57,7 +57,7 @@ namespace CSFundamentals.DataStructures.LinkedLists.API
         [TimeComplexity(Case.Best, "O(1)", When = "The first node (Head) contains the value.")]
         [TimeComplexity(Case.Worst, "O(n)")]
         [TimeComplexity(Case.Average, "O(n)")]
-        public virtual T Search(T1 value)
+        public virtual TNode Search(TValue value)
         {
             var currentNode = _head;
             while (currentNode != null)

@@ -79,9 +79,21 @@ namespace CSFundamentals.Algorithms.Sort.StabilityCheckableVersions
         /// <returns></returns>
         public int CompareTo(Element other)
         {
-            if (ReferenceEquals(other, null)) return 1;
-            if (Value == other.Value) return 0;
-            if (Value < other.Value) return -1;
+            if (ReferenceEquals(other, null))
+            {
+                return 1;
+            }
+
+            if (Value == other.Value)
+            {
+                return 0;
+            }
+
+            if (Value < other.Value)
+            {
+                return -1;
+            }
+
             return 1;
         }
     }

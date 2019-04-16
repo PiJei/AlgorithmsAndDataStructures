@@ -116,7 +116,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         [TestMethod]
         public void TryRemoveMin_RemoveRootEqualToArrayLengthTimes_ExpectsAscendingOrderInResults()
         {
-            List<KeyValuePair<int, string>> keyValues = new List<KeyValuePair<int, string>> {
+            var keyValues = new List<KeyValuePair<int, string>> {
                 new KeyValuePair<int, string>(150, "A"),
                 new KeyValuePair<int, string>(70,"B"),
                 new KeyValuePair<int, string>(202,"C"),
@@ -171,7 +171,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         [TestMethod]
         public void Insert_SeveralValues_ExpectCorrectMinBinaryHeapAfterEachInsert()
         {
-            List<KeyValuePair<int, string>> values = new List<KeyValuePair<int, string>>();
+            var values = new List<KeyValuePair<int, string>>();
             var heap = new MinBinaryHeap<int, string>(values);
 
             // Inserting these values: { 150, 70, 202, 34, 42, 1, 3, 10, 21 };
@@ -253,7 +253,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
             var H = new KeyValuePair<int, string>(10, "H");
             var I = new KeyValuePair<int, string>(21, "I");
 
-            List<KeyValuePair<int, string>> keyValues = new List<KeyValuePair<int, string>> { A, B, C, D, E, F, G, H, I };
+            var keyValues = new List<KeyValuePair<int, string>> { A, B, C, D, E, F, G, H, I };
 
             var heap = new MinBinaryHeap<int, string>(keyValues);
             heap.BuildHeap_Recursively(heap.HeapArray.Count);

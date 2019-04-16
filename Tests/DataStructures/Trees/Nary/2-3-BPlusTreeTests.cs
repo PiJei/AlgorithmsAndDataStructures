@@ -427,7 +427,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBPlusTreeProperties(_tree, 3, 2, 3);
 
             Assert.IsTrue(_tree.Delete(50));
-             BTreeTestsUtils.HasBPlusTreeProperties(_tree, 2, 1, 2); //TODO: Tree is left in 150/200 index! I think I should have copied 200 to the parent
+            BTreeTestsUtils.HasBPlusTreeProperties(_tree, 2, 1, 2); //TODO: Tree is left in 150/200 index! I think I should have copied 200 to the parent
 
             Assert.IsTrue(_tree.Delete(200));
             BTreeTestsUtils.HasBPlusTreeProperties(_tree, 0, 0, 0);

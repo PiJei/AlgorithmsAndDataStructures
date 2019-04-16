@@ -39,7 +39,7 @@ namespace CSFundamentals.Algorithms.PatternSearch
             /* Starts with a preprocessing step. Get the data structure for longest proper prefix that is also a suffix. */
             List<int> longestProperPrefixLengths = LLPPS.Build(pattern);
 
-            List<int> indexes = new List<int>();
+            var indexes = new List<int>();
 
             int i = 0; /* Index to navigate over text */
             int j = 0; /* Index to navigate over pattern*/

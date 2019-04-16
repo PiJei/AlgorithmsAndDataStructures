@@ -31,14 +31,14 @@ namespace CSFundamentals.Algorithms.GraphTraversal
         /// <returns>a serialization of the graph, with a BFS ordering.</returns>
         public static List<GraphNode<TValue>> BFS_Iterative<TValue>(GraphNode<TValue> root) /* Root is the node from which the search starts.*/
         {
-            Queue<GraphNode<TValue>> queue = new Queue<GraphNode<TValue>>();
+            var queue = new Queue<GraphNode<TValue>>();
 
             root.IsInserted = true;
             root.DistanceFromRoot = 0;
             queue.Enqueue(root);
 
             /* To store a BFS ordering of the nodes, starting from root. */
-            List<GraphNode<TValue>> bfsOrdering = new List<GraphNode<TValue>>();
+            var bfsOrdering = new List<GraphNode<TValue>>();
 
             while (queue.Count > 0) /* While queue is not empty.*/
             {

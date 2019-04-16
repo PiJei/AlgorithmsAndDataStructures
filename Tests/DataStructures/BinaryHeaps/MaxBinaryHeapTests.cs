@@ -49,7 +49,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         [TestMethod]
         public void BuildHeap_Recursively()
         {
-            MaxBinaryHeap<int, string> heap = new MaxBinaryHeap<int, string>(_keyValues);
+            var heap = new MaxBinaryHeap<int, string>(_keyValues);
             heap.BuildHeap_Recursively(heap.HeapArray.Count);
 
             Assert.AreEqual(9, heap.HeapArray.Count);
@@ -59,7 +59,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         [TestMethod]
         public void BuildHeap_Itratively()
         {
-            MaxBinaryHeap<int, string> heap = new MaxBinaryHeap<int, string>(_keyValues);
+            var heap = new MaxBinaryHeap<int, string>(_keyValues);
             heap.BuildHeap_Iteratively(heap.HeapArray.Count);
 
             Assert.AreEqual(9, heap.HeapArray.Count);
@@ -69,7 +69,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         [TestMethod]
         public void TryRemoveRoot_RemoveRootEqualToArrayLengthTimes_ExpectDescendingOrderInResults()
         {
-            MaxBinaryHeap<int, string> heap = new MaxBinaryHeap<int, string>(_keyValues);
+            var heap = new MaxBinaryHeap<int, string>(_keyValues);
             heap.BuildHeap_Recursively(heap.HeapArray.Count);
 
             Assert.IsTrue(heap.TryRemoveRoot(out KeyValuePair<int, string> maxValue1, heap.HeapArray.Count));
@@ -112,7 +112,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         [TestMethod]
         public void Insert_SeveralValues_ExpectCorrectMaxBinaryHeapAfterEachInsert()
         {
-            MaxBinaryHeap<int, string> heap = new MaxBinaryHeap<int, string>(new List<KeyValuePair<int, string>> { });
+            var heap = new MaxBinaryHeap<int, string>(new List<KeyValuePair<int, string>> { });
 
             heap.Insert(_A, heap.HeapArray.Count);
             Assert.IsTrue(HasMaxOrderPropertyForHeap(heap.HeapArray.Count, heap));

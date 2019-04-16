@@ -22,13 +22,13 @@ using System;
 namespace CSFundamentals.DataStructures.LinkedLists.API
 {
     [Serializable]
-    public class LinkedNode<T, T1> where T : LinkedNode<T, T1> where T1 : IComparable<T1>
+    public class LinkedNode<TNode, TValue> where TNode : LinkedNode<TNode, TValue> where TValue : IComparable<TValue>
     {
-        public T1 Value { get; set; }
+        public TValue Value { get; set; }
 
-        public T Next { get; set; }
+        public TNode Next { get; set; }
 
-        public LinkedNode(T1 value)
+        public LinkedNode(TValue value)
         {
             Value = value;
         }
@@ -46,7 +46,10 @@ namespace CSFundamentals.DataStructures.LinkedLists.API
         public bool IsTail()
         {
             if (Next == null)
+            {
                 return true;
+            }
+
             return false;
         }
     }

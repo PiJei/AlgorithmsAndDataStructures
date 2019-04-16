@@ -33,12 +33,12 @@ namespace CSFundamentalsTests.Algorithms.Sort
              * Meaning that not finding this list, does not prove that the sort method is stable.
              * This also means that there might be lots of lists with duplicate values, for which heap sort acts as stable. 
              */
-            List<int> duplicateValues1 = new List<int> { 4, 2, 3, 4, 1 };
+            var duplicateValues1 = new List<int> { 4, 2, 3, 4, 1 };
             List<Element> duplicateValuesElements1 = Utils.Convert(duplicateValues1);
             bool isStable = Utils.IsSortMethodStable(SelectionSort.Sort_Iteratively, duplicateValuesElements1);
             Assert.IsFalse(isStable);
 
-            List<int> duplicateValues4 = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
+            var duplicateValues4 = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
             List<Element> duplicateValuesElements4 = Utils.Convert(duplicateValues4);
             bool isStable4 = Utils.IsSortMethodStable(SelectionSort.Sort_Iteratively, duplicateValuesElements4);
             Assert.IsFalse(isStable4);

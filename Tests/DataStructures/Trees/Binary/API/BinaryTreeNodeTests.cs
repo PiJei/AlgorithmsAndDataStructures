@@ -32,13 +32,13 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
         [TestInitialize]
         public void Init()
         {
-            MockBinaryTreeNode<int, string> B = new MockBinaryTreeNode<int, string>(30, "B");
-            MockBinaryTreeNode<int, string> A = new MockBinaryTreeNode<int, string>(47, "A");
-            MockBinaryTreeNode<int, string> C = new MockBinaryTreeNode<int, string>(50, "C");
-            MockBinaryTreeNode<int, string> D = new MockBinaryTreeNode<int, string>(20, "D");
-            MockBinaryTreeNode<int, string> E = new MockBinaryTreeNode<int, string>(40, "E");
-            MockBinaryTreeNode<int, string> F = new MockBinaryTreeNode<int, string>(35, "F");
-            MockBinaryTreeNode<int, string> G = new MockBinaryTreeNode<int, string>(45, "G");
+            var B = new MockBinaryTreeNode<int, string>(30, "B");
+            var A = new MockBinaryTreeNode<int, string>(47, "A");
+            var C = new MockBinaryTreeNode<int, string>(50, "C");
+            var D = new MockBinaryTreeNode<int, string>(20, "D");
+            var E = new MockBinaryTreeNode<int, string>(40, "E");
+            var F = new MockBinaryTreeNode<int, string>(35, "F");
+            var G = new MockBinaryTreeNode<int, string>(45, "G");
 
             A.Parent = null;
             A.LeftChild = B;
@@ -74,9 +74,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
         [TestMethod]
         public void IsLeftChild_Failure()
         {
-            MockBinaryTreeNode<int, string> A = new MockBinaryTreeNode<int, string>(5, "A");
-            MockBinaryTreeNode<int, string> B = new MockBinaryTreeNode<int, string>(10, "B");
-            MockBinaryTreeNode<int, string> C = new MockBinaryTreeNode<int, string>(20, "C");
+            var A = new MockBinaryTreeNode<int, string>(5, "A");
+            var B = new MockBinaryTreeNode<int, string>(10, "B");
+            var C = new MockBinaryTreeNode<int, string>(20, "C");
 
             A.Parent = null;
             A.LeftChild = null;
@@ -98,9 +98,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
         [TestMethod]
         public void IsLeftChild_Success()
         {
-            MockBinaryTreeNode<int, string> A = new MockBinaryTreeNode<int, string>(10, "A");
-            MockBinaryTreeNode<int, string> B = new MockBinaryTreeNode<int, string>(5, "B");
-            MockBinaryTreeNode<int, string> C = new MockBinaryTreeNode<int, string>(2, "C");
+            var A = new MockBinaryTreeNode<int, string>(10, "A");
+            var B = new MockBinaryTreeNode<int, string>(5, "B");
+            var C = new MockBinaryTreeNode<int, string>(2, "C");
 
             A.Parent = null;
             A.LeftChild = B;
@@ -121,9 +121,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
         [TestMethod]
         public void IsRightChild_Success()
         {
-            MockBinaryTreeNode<int, string> A = new MockBinaryTreeNode<int, string>(5, "A");
-            MockBinaryTreeNode<int, string> B = new MockBinaryTreeNode<int, string>(10, "B");
-            MockBinaryTreeNode<int, string> C = new MockBinaryTreeNode<int, string>(20, "C");
+            var A = new MockBinaryTreeNode<int, string>(5, "A");
+            var B = new MockBinaryTreeNode<int, string>(10, "B");
+            var C = new MockBinaryTreeNode<int, string>(20, "C");
 
             A.Parent = null;
             A.LeftChild = null;
@@ -144,9 +144,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
         [TestMethod]
         public void IsRightChild_Failure()
         {
-            MockBinaryTreeNode<int, string> A = new MockBinaryTreeNode<int, string>(10, "A");
-            MockBinaryTreeNode<int, string> B = new MockBinaryTreeNode<int, string>(5, "B");
-            MockBinaryTreeNode<int, string> C = new MockBinaryTreeNode<int, string>(2, "C");
+            var A = new MockBinaryTreeNode<int, string>(10, "A");
+            var B = new MockBinaryTreeNode<int, string>(5, "B");
+            var C = new MockBinaryTreeNode<int, string>(2, "C");
 
             A.Parent = null;
             A.LeftChild = B;
@@ -168,9 +168,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
         [TestMethod]
         public void IsRoot()
         {
-            MockBinaryTreeNode<int, string> A = new MockBinaryTreeNode<int, string>(10, "A");
-            MockBinaryTreeNode<int, string> B = new MockBinaryTreeNode<int, string>(5, "B");
-            MockBinaryTreeNode<int, string> C = new MockBinaryTreeNode<int, string>(2, "C");
+            var A = new MockBinaryTreeNode<int, string>(10, "A");
+            var B = new MockBinaryTreeNode<int, string>(5, "B");
+            var C = new MockBinaryTreeNode<int, string>(2, "C");
 
             A.Parent = null;
             A.LeftChild = B;
@@ -192,10 +192,10 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
         [TestMethod]
         public void GetSibling()
         {
-            MockBinaryTreeNode<int, string> A = new MockBinaryTreeNode<int, string>(10, "A");
-            MockBinaryTreeNode<int, string> B = new MockBinaryTreeNode<int, string>(5, "B");
-            MockBinaryTreeNode<int, string> C = new MockBinaryTreeNode<int, string>(20, "C");
-            MockBinaryTreeNode<int, string> D = new MockBinaryTreeNode<int, string>(30, "D");
+            var A = new MockBinaryTreeNode<int, string>(10, "A");
+            var B = new MockBinaryTreeNode<int, string>(5, "B");
+            var C = new MockBinaryTreeNode<int, string>(20, "C");
+            var D = new MockBinaryTreeNode<int, string>(30, "D");
 
             A.Parent = null;
             A.LeftChild = B;
@@ -222,10 +222,10 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
         [TestMethod]
         public void GetUncle()
         {
-            MockBinaryTreeNode<int, string> A = new MockBinaryTreeNode<int, string>(8, "A");
-            MockBinaryTreeNode<int, string> B = new MockBinaryTreeNode<int, string>(2, "B");
-            MockBinaryTreeNode<int, string> C = new MockBinaryTreeNode<int, string>(10, "C");
-            MockBinaryTreeNode<int, string> D = new MockBinaryTreeNode<int, string>(9, "D");
+            var A = new MockBinaryTreeNode<int, string>(8, "A");
+            var B = new MockBinaryTreeNode<int, string>(2, "B");
+            var C = new MockBinaryTreeNode<int, string>(10, "C");
+            var D = new MockBinaryTreeNode<int, string>(9, "D");
 
             A.Parent = null;
             A.LeftChild = B;
@@ -252,13 +252,13 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
         [TestMethod]
         public void GetGrandParent()
         {
-            MockBinaryTreeNode<int, string> A = new MockBinaryTreeNode<int, string>(50, "A");
-            MockBinaryTreeNode<int, string> B = new MockBinaryTreeNode<int, string>(30, "B");
-            MockBinaryTreeNode<int, string> C = new MockBinaryTreeNode<int, string>(20, "C");
-            MockBinaryTreeNode<int, string> D = new MockBinaryTreeNode<int, string>(40, "D");
-            MockBinaryTreeNode<int, string> E = new MockBinaryTreeNode<int, string>(35, "E");
-            MockBinaryTreeNode<int, string> F = new MockBinaryTreeNode<int, string>(45, "F");
-            MockBinaryTreeNode<int, string> G = new MockBinaryTreeNode<int, string>(47, "G");
+            var A = new MockBinaryTreeNode<int, string>(50, "A");
+            var B = new MockBinaryTreeNode<int, string>(30, "B");
+            var C = new MockBinaryTreeNode<int, string>(20, "C");
+            var D = new MockBinaryTreeNode<int, string>(40, "D");
+            var E = new MockBinaryTreeNode<int, string>(35, "E");
+            var F = new MockBinaryTreeNode<int, string>(45, "F");
+            var G = new MockBinaryTreeNode<int, string>(47, "G");
 
             A.Parent = null;
             A.LeftChild = B;
@@ -300,11 +300,11 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
         [TestMethod]
         public void IsLeaf()
         {
-            MockBinaryTreeNode<int, string> A = new MockBinaryTreeNode<int, string>(50, "A");
-            MockBinaryTreeNode<int, string> B = new MockBinaryTreeNode<int, string>(20, "B");
-            MockBinaryTreeNode<int, string> C = new MockBinaryTreeNode<int, string>(10, "C");
-            MockBinaryTreeNode<int, string> D = new MockBinaryTreeNode<int, string>(40, "D");
-            MockBinaryTreeNode<int, string> E = new MockBinaryTreeNode<int, string>(30, "E");
+            var A = new MockBinaryTreeNode<int, string>(50, "A");
+            var B = new MockBinaryTreeNode<int, string>(20, "B");
+            var C = new MockBinaryTreeNode<int, string>(10, "C");
+            var D = new MockBinaryTreeNode<int, string>(40, "D");
+            var E = new MockBinaryTreeNode<int, string>(30, "E");
 
             A.Parent = null;
             A.LeftChild = B;
@@ -336,14 +336,14 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
         [TestMethod]
         public void FormsLine()
         {
-            MockBinaryTreeNode<int, string> A = new MockBinaryTreeNode<int, string>(50, "A");
-            MockBinaryTreeNode<int, string> B = new MockBinaryTreeNode<int, string>(30, "B");
-            MockBinaryTreeNode<int, string> C = new MockBinaryTreeNode<int, string>(20, "C");
-            MockBinaryTreeNode<int, string> D = new MockBinaryTreeNode<int, string>(40, "D");
-            MockBinaryTreeNode<int, string> E = new MockBinaryTreeNode<int, string>(35, "E");
-            MockBinaryTreeNode<int, string> F = new MockBinaryTreeNode<int, string>(45, "F");
-            MockBinaryTreeNode<int, string> G = new MockBinaryTreeNode<int, string>(47, "G");
-            MockBinaryTreeNode<int, string> H = new MockBinaryTreeNode<int, string>(25, "h");
+            var A = new MockBinaryTreeNode<int, string>(50, "A");
+            var B = new MockBinaryTreeNode<int, string>(30, "B");
+            var C = new MockBinaryTreeNode<int, string>(20, "C");
+            var D = new MockBinaryTreeNode<int, string>(40, "D");
+            var E = new MockBinaryTreeNode<int, string>(35, "E");
+            var F = new MockBinaryTreeNode<int, string>(45, "F");
+            var G = new MockBinaryTreeNode<int, string>(47, "G");
+            var H = new MockBinaryTreeNode<int, string>(25, "h");
 
             A.Parent = null;
             A.LeftChild = B;
@@ -390,14 +390,14 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
         [TestMethod]
         public void FormsTriangle()
         {
-            MockBinaryTreeNode<int, string> A = new MockBinaryTreeNode<int, string>(50, "A");
-            MockBinaryTreeNode<int, string> B = new MockBinaryTreeNode<int, string>(30, "B");
-            MockBinaryTreeNode<int, string> C = new MockBinaryTreeNode<int, string>(20, "C");
-            MockBinaryTreeNode<int, string> D = new MockBinaryTreeNode<int, string>(40, "D");
-            MockBinaryTreeNode<int, string> E = new MockBinaryTreeNode<int, string>(35, "E");
-            MockBinaryTreeNode<int, string> F = new MockBinaryTreeNode<int, string>(45, "F");
-            MockBinaryTreeNode<int, string> G = new MockBinaryTreeNode<int, string>(47, "G");
-            MockBinaryTreeNode<int, string> H = new MockBinaryTreeNode<int, string>(25, "h");
+            var A = new MockBinaryTreeNode<int, string>(50, "A");
+            var B = new MockBinaryTreeNode<int, string>(30, "B");
+            var C = new MockBinaryTreeNode<int, string>(20, "C");
+            var D = new MockBinaryTreeNode<int, string>(40, "D");
+            var E = new MockBinaryTreeNode<int, string>(35, "E");
+            var F = new MockBinaryTreeNode<int, string>(45, "F");
+            var G = new MockBinaryTreeNode<int, string>(47, "G");
+            var H = new MockBinaryTreeNode<int, string>(25, "h");
 
             A.Parent = null;
             A.LeftChild = B;
@@ -444,7 +444,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
         [TestMethod]
         public void IsComplete()
         {
-            MockBinaryTreeNode<int, string> node1 = new MockBinaryTreeNode<int, string>(10, "str1");
+            var node1 = new MockBinaryTreeNode<int, string>(10, "str1");
             node1.LeftChild = null;
             node1.RightChild = null;
 

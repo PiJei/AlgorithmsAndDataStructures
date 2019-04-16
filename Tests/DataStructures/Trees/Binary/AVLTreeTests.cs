@@ -36,7 +36,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         {
             _tree = new AVLTree<int, string>();
 
-            List<AVLTreeNode<int, string>> nodes = new List<AVLTreeNode<int, string>>
+            var nodes = new List<AVLTreeNode<int, string>>
             {
                 new AVLTreeNode<int, string>(40, "E"),
                 new AVLTreeNode<int, string>(50, "C"),
@@ -56,41 +56,41 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         public void Insert()
         {
             AVLTreeNode<int, string> root = null;
-            AVLTree<int, string> tree = new AVLTree<int, string>();
+            var tree = new AVLTree<int, string>();
 
-            AVLTreeNode<int, string> E = new AVLTreeNode<int, string>(40, "E");
+            var E = new AVLTreeNode<int, string>(40, "E");
             root = tree.Insert(root, E);
             Assert.IsTrue(HasAVLTreeProperties(tree, root, 1));
 
-            AVLTreeNode<int, string> C = new AVLTreeNode<int, string>(50, "C");
+            var C = new AVLTreeNode<int, string>(50, "C");
             root = _tree.Insert(root, C);
             Assert.IsTrue(HasAVLTreeProperties(tree, root, 2));
 
-            AVLTreeNode<int, string> A = new AVLTreeNode<int, string>(47, "A");
+            var A = new AVLTreeNode<int, string>(47, "A");
             root = tree.Insert(root, A);
             Assert.IsTrue(HasAVLTreeProperties(tree, root, 3));
 
-            AVLTreeNode<int, string> G = new AVLTreeNode<int, string>(45, "G");
+            var G = new AVLTreeNode<int, string>(45, "G");
             root = tree.Insert(root, G);
             Assert.IsTrue(HasAVLTreeProperties(tree, root, 4));
 
-            AVLTreeNode<int, string> D = new AVLTreeNode<int, string>(20, "D");
+            var D = new AVLTreeNode<int, string>(20, "D");
             root = tree.Insert(root, D);
             Assert.IsTrue(HasAVLTreeProperties(tree, root, 5));
 
-            AVLTreeNode<int, string> F = new AVLTreeNode<int, string>(35, "F");
+            var F = new AVLTreeNode<int, string>(35, "F");
             root = tree.Insert(root, F);
             Assert.IsTrue(HasAVLTreeProperties(tree, root, 6));
 
-            AVLTreeNode<int, string> B = new AVLTreeNode<int, string>(30, "B");
+            var B = new AVLTreeNode<int, string>(30, "B");
             root = tree.Insert(root, B);
             Assert.IsTrue(HasAVLTreeProperties(tree, root, 7));
 
-            AVLTreeNode<int, string> H = new AVLTreeNode<int, string>(10, "H");
+            var H = new AVLTreeNode<int, string>(10, "H");
             root = tree.Insert(root, H);
             Assert.IsTrue(HasAVLTreeProperties(tree, root, 8));
 
-            AVLTreeNode<int, string> I = new AVLTreeNode<int, string>(80, "I");
+            var I = new AVLTreeNode<int, string>(80, "I");
             root = tree.Insert(root, I);
             Assert.IsTrue(HasAVLTreeProperties(tree, root, 9));
         }
@@ -104,7 +104,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         [TestMethod]
         public void Delete_NonExistingKey()
         {
-            List<AVLTreeNode<int, string>> nodes = new List<AVLTreeNode<int, string>>();
+            var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
             Assert.AreEqual(9, nodes.Count);
 
@@ -115,7 +115,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         [TestMethod]
         public void Delete_NodeWith2Children_1()
         {
-            List<AVLTreeNode<int, string>> nodes = new List<AVLTreeNode<int, string>>();
+            var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
             Assert.AreEqual(9, nodes.Count);
 
@@ -126,7 +126,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         [TestMethod]
         public void Delete_NodeWith2Children_2()
         {
-            List<AVLTreeNode<int, string>> nodes = new List<AVLTreeNode<int, string>>();
+            var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
             Assert.AreEqual(9, nodes.Count);
 
@@ -137,7 +137,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         [TestMethod]
         public void Delete_NodeWith2Children_3()
         {
-            List<AVLTreeNode<int, string>> nodes = new List<AVLTreeNode<int, string>>();
+            var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
             Assert.AreEqual(9, nodes.Count);
 
@@ -148,7 +148,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         [TestMethod]
         public void Delete_NodeWithNoChildren_1()
         {
-            List<AVLTreeNode<int, string>> nodes = new List<AVLTreeNode<int, string>>();
+            var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
             Assert.AreEqual(9, nodes.Count);
 
@@ -159,7 +159,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         [TestMethod]
         public void Delete_NodeWithNoChildren_2()
         {
-            List<AVLTreeNode<int, string>> nodes = new List<AVLTreeNode<int, string>>();
+            var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
             Assert.AreEqual(9, nodes.Count);
 
@@ -170,7 +170,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         [TestMethod]
         public void Delete_NodeWithNoChildren_3()
         {
-            List<AVLTreeNode<int, string>> nodes = new List<AVLTreeNode<int, string>>();
+            var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
             Assert.AreEqual(9, nodes.Count);
 
@@ -181,7 +181,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         [TestMethod]
         public void Delete_NodeWithNoChildren_4()
         {
-            List<AVLTreeNode<int, string>> nodes = new List<AVLTreeNode<int, string>>();
+            var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
             Assert.AreEqual(9, nodes.Count);
 
@@ -192,7 +192,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         [TestMethod]
         public void Delete_NodeWith1Children_1()
         {
-            List<AVLTreeNode<int, string>> nodes = new List<AVLTreeNode<int, string>>();
+            var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
             Assert.AreEqual(9, nodes.Count);
 
@@ -203,7 +203,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         [TestMethod]
         public void Delete_NodeWith1Children_2()
         {
-            List<AVLTreeNode<int, string>> nodes = new List<AVLTreeNode<int, string>>();
+            var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
             Assert.AreEqual(9, nodes.Count);
 
@@ -214,7 +214,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         [TestMethod]
         public void Delete_1()
         {
-            List<AVLTreeNode<int, string>> nodes = new List<AVLTreeNode<int, string>>();
+            var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
             Assert.AreEqual(9, nodes.Count);
 
@@ -249,7 +249,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         [TestMethod]
         public void Delete_2()
         {
-            List<AVLTreeNode<int, string>> nodes = new List<AVLTreeNode<int, string>>();
+            var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
             Assert.AreEqual(9, nodes.Count);
 
@@ -284,11 +284,11 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         [TestMethod]
         public void GetHeight()
         {
-            AVLTreeNode<int, string> A = new AVLTreeNode<int, string>(50, "A");
-            AVLTreeNode<int, string> B = new AVLTreeNode<int, string>(20, "B");
-            AVLTreeNode<int, string> C = new AVLTreeNode<int, string>(10, "C");
-            AVLTreeNode<int, string> D = new AVLTreeNode<int, string>(40, "D");
-            AVLTreeNode<int, string> E = new AVLTreeNode<int, string>(30, "E");
+            var A = new AVLTreeNode<int, string>(50, "A");
+            var B = new AVLTreeNode<int, string>(20, "B");
+            var C = new AVLTreeNode<int, string>(10, "C");
+            var D = new AVLTreeNode<int, string>(40, "D");
+            var E = new AVLTreeNode<int, string>(30, "E");
 
             A.Parent = null;
             A.LeftChild = B;
@@ -322,11 +322,11 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         public void GetBalanceFactor()
         {
             /* The constructed tree is not AVL, however the method GetBalanceFactor should work regardless. */
-            AVLTreeNode<int, string> A = new AVLTreeNode<int, string>(50, "A");
-            AVLTreeNode<int, string> B = new AVLTreeNode<int, string>(20, "B");
-            AVLTreeNode<int, string> C = new AVLTreeNode<int, string>(10, "C");
-            AVLTreeNode<int, string> D = new AVLTreeNode<int, string>(40, "D");
-            AVLTreeNode<int, string> E = new AVLTreeNode<int, string>(30, "E");
+            var A = new AVLTreeNode<int, string>(50, "A");
+            var B = new AVLTreeNode<int, string>(20, "B");
+            var C = new AVLTreeNode<int, string>(10, "C");
+            var D = new AVLTreeNode<int, string>(40, "D");
+            var E = new AVLTreeNode<int, string>(30, "E");
 
             A.Parent = null;
             A.LeftChild = B;
@@ -364,7 +364,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         public bool HasAVLTreeProperties<TKey, TValue>(AVLTree<TKey, TValue> tree, AVLTreeNode<TKey, TValue> root, int expectedNodeCount) where TKey : IComparable<TKey>, IEquatable<TKey>
         {
             Assert.IsTrue(BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<AVLTreeNode<TKey, TValue>, TKey, TValue>(root));
-            List<AVLTreeNode<TKey, TValue>> inOrderTraversal = new List<AVLTreeNode<TKey, TValue>>();
+            var inOrderTraversal = new List<AVLTreeNode<TKey, TValue>>();
             tree.InOrderTraversal(root, inOrderTraversal);
             Assert.AreEqual(expectedNodeCount, inOrderTraversal.Count);
             Assert.IsTrue(HasExpectedBalanceFactor(tree, inOrderTraversal));

@@ -26,7 +26,7 @@ namespace CSFundamentals.Algorithms.GraphTraversal
     {
         public TValue Value { get; set; }
         public List<GraphEdge<TValue>> Adjacents { get; set; } = new List<GraphEdge<TValue>>();
-        public int DistanceFromRoot { get; set; } = 0; 
+        public int DistanceFromRoot { get; set; } = 0;
 
         /// <summary>
         /// Determines whether this node, in a particular instance of a traversal algorithm has been already visited : inserted in the queue/stack. 
@@ -37,17 +37,37 @@ namespace CSFundamentals.Algorithms.GraphTraversal
         {
             Value = value;
         }
-        
+
         public int CompareTo(GraphNode<TValue> other)
         {
-            if (other == null) return 1;
-            if (ReferenceEquals(this, other)) return 0;
-            if (DistanceFromRoot < other.DistanceFromRoot) return -1;
-            if (DistanceFromRoot == other.DistanceFromRoot) return 0;
-            if (DistanceFromRoot > other.DistanceFromRoot) return 1;
+            if (other == null)
+            {
+                return 1;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return 0;
+            }
+
+            if (DistanceFromRoot < other.DistanceFromRoot)
+            {
+                return -1;
+            }
+
+            if (DistanceFromRoot == other.DistanceFromRoot)
+            {
+                return 0;
+            }
+
+            if (DistanceFromRoot > other.DistanceFromRoot)
+            {
+                return 1;
+            }
+
             return 0;
         }
-       
+
         public static readonly GraphNode<TValue> MinValue = new GraphNode<TValue>(default(TValue));
 
         public static readonly GraphNode<TValue> MaxValue = new GraphNode<TValue>(default(TValue));

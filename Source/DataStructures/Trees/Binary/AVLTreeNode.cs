@@ -22,8 +22,8 @@ using CSFundamentals.DataStructures.Trees.Binary.API;
 
 namespace CSFundamentals.DataStructures.Trees.Binary
 {
-    public class AVLTreeNode<TKey, TValue> : 
-        BinaryTreeNode<AVLTreeNode<TKey, TValue>, TKey, TValue> 
+    public class AVLTreeNode<TKey, TValue> :
+        BinaryTreeNode<AVLTreeNode<TKey, TValue>, TKey, TValue>
         where TKey : IComparable<TKey>
     {
         public override AVLTreeNode<TKey, TValue> LeftChild { get; set; }

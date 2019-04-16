@@ -75,7 +75,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
             _children = new SortedList<TNode, bool>();
         }
 
-        public BTreeNodeBase(int maxBranchingDegree): this()
+        public BTreeNodeBase(int maxBranchingDegree) : this()
         {
             MaxBranchingDegree = maxBranchingDegree;
         }
@@ -446,16 +446,16 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
             if (IsOverFlown())
             {
                 /* Create a new node (aka left sibling, as it is taking the right most key-values )*/
-                TNode newNode = new TNode
+                var newNode = new TNode
                 {
                     MaxBranchingDegree = MaxBranchingDegree
                 };
 
                 /* A valid BtreeNode should at least have MinKey keys.*/
-                List<KeyValuePair<TKey, TValue>> newNodeKeys = _keyValues.TakeLast(MinKeys).ToList();
+                var newNodeKeys = _keyValues.TakeLast(MinKeys).ToList();
 
                 /* A valid non-leaf BTree node with MinKeys should have MinChildren children. */
-                Dictionary<TNode, bool> newNodeChildren = _children
+                var newNodeChildren = _children
                     .TakeLast(MinBranchingDegree)
                     .ToDictionary(keyVal => keyVal.Key, keyVal => keyVal.Value);
 

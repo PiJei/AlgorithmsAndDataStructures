@@ -23,18 +23,18 @@ using CSFundamentals.Decoration;
 
 namespace CSFundamentals.DataStructures.LinkedLists
 {
-    public class DoublyLinkedSortedList<T1> : LinkedListBase<DoublyLinkedNode<T1>, T1> where T1 : IComparable<T1>
+    public class DoublyLinkedSortedList<TValue> : LinkedListBase<DoublyLinkedNode<TValue>, TValue> where TValue : IComparable<TValue>
     {
         /// <summary>
         /// Is the last node in the list. Note that some implementations of DLL do not have Tail. 
         /// </summary>
-        private DoublyLinkedNode<T1> _tail = null;
+        private DoublyLinkedNode<TValue> _tail = null;
 
         // TODO: Deletes do not support duplicates deletion, ... 
         [TimeComplexity(Case.Best, "O(1)", When = "The value is at head position.")]
         [TimeComplexity(Case.Worst, "O(n)")]
         [TimeComplexity(Case.Average, "O(n)")]
-        public override bool Delete(T1 value)
+        public override bool Delete(TValue value)
         {
             var currentNode = _head;
             while (currentNode != null)
@@ -87,9 +87,9 @@ namespace CSFundamentals.DataStructures.LinkedLists
         [TimeComplexity(Case.Best, "O(1)", When = "Insert happens at the head position. ")]
         [TimeComplexity(Case.Worst, "O(n)")]
         [TimeComplexity(Case.Average, "O(n)")]
-        public override bool Insert(T1 newValue)
+        public override bool Insert(TValue newValue)
         {
-            DoublyLinkedNode<T1> newNode = new DoublyLinkedNode<T1>(newValue);
+            var newNode = new DoublyLinkedNode<TValue>(newValue);
 
             var currentNode = _head;
             while (currentNode != null && currentNode.Value.CompareTo(newValue) < 0) /* Navigate a long the list, until a node is found whose value is bigger than or equal to newValue. */
@@ -101,7 +101,10 @@ namespace CSFundamentals.DataStructures.LinkedLists
             if (currentNode == null) /* Means the newValue will be inserted at the tail of the list.*/
             {
                 if (_tail != null)
+                {
                     _tail.Next = newNode;
+                }
+
                 newNode.Previous = _tail;
                 _tail = newNode;
                 if (_head == null)
@@ -124,7 +127,10 @@ namespace CSFundamentals.DataStructures.LinkedLists
                     newNode.Previous = currentNode.Previous;
                     newNode.Next = currentNode;
                     if (newNode.Previous != null)
+                    {
                         newNode.Previous.Next = newNode;
+                    }
+
                     currentNode.Previous = newNode;
                     return true;
                 }
@@ -134,7 +140,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
         [TimeComplexity(Case.Best, "O(1)", When = "The value is at head position.")]
         [TimeComplexity(Case.Worst, "O(n)")]
         [TimeComplexity(Case.Average, "O(n)")]
-        public override DoublyLinkedNode<T1> Search(T1 value)
+        public override DoublyLinkedNode<TValue> Search(TValue value)
         {
             var currentNode = _head;
             while (currentNode != null)

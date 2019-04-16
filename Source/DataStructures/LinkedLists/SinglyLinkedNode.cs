@@ -23,9 +23,9 @@ using CSFundamentals.DataStructures.LinkedLists.API;
 namespace CSFundamentals.DataStructures.LinkedLists
 {
     [Serializable]
-    public class SinglyLinkedNode<T1> : LinkedNode<SinglyLinkedNode<T1>, T1> where T1 : IComparable<T1>
+    public class SinglyLinkedNode<TValue> : LinkedNode<SinglyLinkedNode<TValue>, TValue> where TValue : IComparable<TValue>
     {
-        public SinglyLinkedNode(T1 value) : base(value)
+        public SinglyLinkedNode(TValue value) : base(value)
         {
         }
     }

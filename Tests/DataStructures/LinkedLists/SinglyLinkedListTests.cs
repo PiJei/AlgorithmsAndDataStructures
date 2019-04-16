@@ -17,8 +17,8 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSFundamentals.DataStructures.LinkedLists;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.DataStructures.LinkedLists
 {
@@ -28,7 +28,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         [TestMethod]
         public void Insert()
         {
-            SinglyLinkedList<int> list = new SinglyLinkedList<int>();
+            var list = new SinglyLinkedList<int>();
             Assert.AreEqual(0, list.Count());
 
             /* Inserting into an empty list. */
@@ -44,7 +44,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.IsNotNull(list.Head().Next);
 
             /*Inserting into a list with 2 nodes. */
-            Assert.IsTrue(list.Insert(5)); 
+            Assert.IsTrue(list.Insert(5));
             Assert.AreEqual(3, list.Count());
             Assert.AreEqual(5, list.Head().Value);
             Assert.IsNotNull(list.Head().Next);
@@ -53,7 +53,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
         [TestMethod]
         public void Delete()
         {
-            SinglyLinkedList<int> list = new SinglyLinkedList<int>();
+            var list = new SinglyLinkedList<int>();
             Assert.AreEqual(0, list.Count());
 
             /* Deleting an item from an empty list. */

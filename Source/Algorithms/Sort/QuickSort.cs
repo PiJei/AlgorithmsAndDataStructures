@@ -104,7 +104,7 @@ namespace CSFundamentals.Algorithms.Sort
         /// <param name="values"></param>
         /// <param name="startIndex"></param>
         /// <param name="endIndex"></param>
-        public static void Sort_Iteratively<T>(List<T> values, int startIndex, int endIndex) where T:IComparable<T>
+        public static void Sort_Iteratively<T>(List<T> values, int startIndex, int endIndex) where T : IComparable<T>
         {
             throw new NotImplementedException();
         }

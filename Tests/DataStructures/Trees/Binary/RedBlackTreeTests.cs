@@ -56,7 +56,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         [TestMethod]
         public void Build()
         {
-            List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
+            var inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, inOrderTraversal);
             HasRedBlackTreeProperties(_tree, _root, inOrderTraversal, 7);
         }
@@ -65,7 +65,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         public void Delete_1()
         {
             _root = _tree.Delete(_root, 47);
-            List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
+            var inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, inOrderTraversal);
             HasRedBlackTreeProperties(_tree, _root, inOrderTraversal, 6);
         }
@@ -74,7 +74,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         public void Delete_2()
         {
             _root = _tree.Delete(_root, 30);
-            List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
+            var inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, inOrderTraversal);
             HasRedBlackTreeProperties(_tree, _root, inOrderTraversal, 6);
         }
@@ -83,7 +83,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         public void Delete_3()
         {
             _root = _tree.Delete(_root, 50);
-            List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
+            var inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, inOrderTraversal);
             HasRedBlackTreeProperties(_tree, _root, inOrderTraversal, 6);
         }
@@ -92,7 +92,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         public void Delete_4()
         {
             _root = _tree.Delete(_root, 20);
-            List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
+            var inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, inOrderTraversal);
             HasRedBlackTreeProperties(_tree, _root, inOrderTraversal, 6);
         }
@@ -101,7 +101,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         public void Delete_5()
         {
             _root = _tree.Delete(_root, 40);
-            List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
+            var inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, inOrderTraversal);
             HasRedBlackTreeProperties(_tree, _root, inOrderTraversal, 6);
         }
@@ -110,7 +110,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         public void Delete_6()
         {
             _root = _tree.Delete(_root, 35);
-            List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
+            var inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, inOrderTraversal);
             HasRedBlackTreeProperties(_tree, _root, inOrderTraversal, 6);
         }
@@ -119,7 +119,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         public void Delete_7()
         {
             _root = _tree.Delete(_root, 45);
-            List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
+            var inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, inOrderTraversal);
             HasRedBlackTreeProperties(_tree, _root, inOrderTraversal, 6);
         }
@@ -128,7 +128,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         public void Delete_8()
         {
             _root = _tree.Delete(_root, 15);
-            List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
+            var inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, inOrderTraversal);
             HasRedBlackTreeProperties(_tree, _root, inOrderTraversal, 7);
         }
@@ -137,7 +137,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         public void Delete_9()
         {
             _root = _tree.Delete(_root, 30);
-            List<RedBlackTreeNode<int, string>> inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
+            var inOrderTraversal = new List<RedBlackTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, inOrderTraversal);
             HasRedBlackTreeProperties(_tree, _root, inOrderTraversal, 6);
 
@@ -175,7 +175,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         [TestMethod]
         public void IsRed_DefaultColor_ExpectsTrue()
         {
-            RedBlackTreeNode<int, string> node1 = new RedBlackTreeNode<int, string>(10, "string1");
+            var node1 = new RedBlackTreeNode<int, string>(10, "string1");
             Assert.IsTrue(_tree.IsRed(node1));
             node1.Color = Color.Black;
             Assert.IsFalse(_tree.IsRed(node1));
@@ -184,7 +184,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         [TestMethod]
         public void IsRed_ColoredBlack_ExpectsFalse()
         {
-            RedBlackTreeNode<int, string> node1 = new RedBlackTreeNode<int, string>(10, "string1")
+            var node1 = new RedBlackTreeNode<int, string>(10, "string1")
             {
                 Color = Color.Black
             };
@@ -194,14 +194,14 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         [TestMethod]
         public void IsBlack_DefaultColor_ExpectsFalse()
         {
-            RedBlackTreeNode<int, string> node1 = new RedBlackTreeNode<int, string>(10, "string1");
+            var node1 = new RedBlackTreeNode<int, string>(10, "string1");
             Assert.IsFalse(_tree.IsBlack(node1));
         }
 
         [TestMethod]
         public void IsBlack_ColoredBlack_ExpectsTrue()
         {
-            RedBlackTreeNode<int, string> node1 = new RedBlackTreeNode<int, string>(10, "string1")
+            var node1 = new RedBlackTreeNode<int, string>(10, "string1")
             {
                 Color = Color.Black
             };
@@ -211,9 +211,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         [TestMethod]
         public void UpdateParentWithNullingChild()
         {
-            RedBlackTreeNode<int, string> node1 = new RedBlackTreeNode<int, string>(10, "string1");
-            RedBlackTreeNode<int, string> node2 = new RedBlackTreeNode<int, string>(5, "string2");
-            RedBlackTreeNode<int, string> node3 = new RedBlackTreeNode<int, string>(15, "string3");
+            var node1 = new RedBlackTreeNode<int, string>(10, "string1");
+            var node2 = new RedBlackTreeNode<int, string>(5, "string2");
+            var node3 = new RedBlackTreeNode<int, string>(15, "string3");
 
             node1.Parent = null;
             node1.LeftChild = node2;
@@ -231,7 +231,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             _tree.UpdateParentWithNullingChild(node1, node2);
             Assert.IsNull(node1.LeftChild);
 
-            RedBlackTreeNode<int, string> node4 = new RedBlackTreeNode<int, string>(15, "string4");
+            var node4 = new RedBlackTreeNode<int, string>(15, "string4");
             _tree.UpdateParentWithNullingChild(node1, node4);
             Assert.IsNull(node1.LeftChild);
             Assert.IsNotNull(node1.RightChild);
@@ -247,7 +247,10 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
 
             // Check color properties.
             if (root != null)
+            {
                 Assert.IsTrue(root.Color == Color.Black);
+            }
+
             foreach (RedBlackTreeNode<TKey, TValue> node in inOrderTraversal)
             {
                 Assert.IsTrue(node.Color == Color.Red || node.Color == Color.Black);
@@ -276,7 +279,10 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
                 int longestPathLength = int.MinValue;
                 int firstPathBlackNodeCount = 0;
                 if (paths.Count >= 0)
+                {
                     firstPathBlackNodeCount = paths[0].Count(n => n.Color == Color.Black);
+                }
+
                 for (int i = 1; i < paths.Count; i++)
                 {
                     Assert.AreEqual(firstPathBlackNodeCount, paths[i].Count(n => n.Color == Color.Black));

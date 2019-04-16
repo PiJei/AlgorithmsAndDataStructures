@@ -51,7 +51,10 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         [SpaceComplexity("O(1)", InPlace = true)]
         public override AVLTreeNode<TKey, TValue> Delete(AVLTreeNode<TKey, TValue> root, TKey key)
         {
-            if (root == null) return root;
+            if (root == null)
+            {
+                return root;
+            }
 
             if (root.Key.CompareTo(key) < 0)
             {

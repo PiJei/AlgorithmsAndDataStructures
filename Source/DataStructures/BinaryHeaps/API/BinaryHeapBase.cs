@@ -18,8 +18,8 @@
  */
 
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CSFundamentals.DataStructures.BinaryHeaps.API
 {

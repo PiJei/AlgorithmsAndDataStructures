@@ -18,28 +18,28 @@
  */
 
 using System;
-using CSFundamentals.Decoration;
 using CSFundamentals.DataStructures.LinkedLists.API;
+using CSFundamentals.Decoration;
 
 namespace CSFundamentals.DataStructures.LinkedLists
 {
     /// <summary>
     /// Implements a bi-directional/doubly linked list (aka. DLL). 
     /// </summary>
-    /// <typeparam name="T1">Is the type of the keys in the list. </typeparam>
-    public class DoublyLinkedList<T1> : LinkedListBase<DoublyLinkedNode<T1>, T1> where T1 : IComparable<T1>
+    /// <typeparam name="TValue">Is the type of the keys in the list. </typeparam>
+    public class DoublyLinkedList<TValue> : LinkedListBase<DoublyLinkedNode<TValue>, TValue> where TValue : IComparable<TValue>
     {
         /// <summary>
         /// Is the last node in the list. Note that some implementations of DLL do not have Tail. 
         /// </summary>
-        private DoublyLinkedNode<T1> _tail = null;
+        private DoublyLinkedNode<TValue> _tail = null;
 
         public DoublyLinkedList()
         {
 
         }
 
-        public DoublyLinkedList(DoublyLinkedNode<T1> head)
+        public DoublyLinkedList(DoublyLinkedNode<TValue> head)
         {
             _head = head;
             _tail = head;
@@ -49,7 +49,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
         /// Tail can be read, but to prevent any modification outside the API in this class, only a deep copy of the tail can be returned for reading purposes.
         /// </summary>
         /// <returns></returns>
-        public DoublyLinkedNode<T1> Tail()
+        public DoublyLinkedNode<TValue> Tail()
         {
             return Utils.DeepCopy(_tail);
         }
@@ -62,7 +62,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(1)")]
         [TimeComplexity(Case.Average, "O(1)")]
-        public override bool Insert(T1 newValue)
+        public override bool Insert(TValue newValue)
         {
             return PrePend(newValue);
         }
@@ -76,7 +76,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
         [TimeComplexity(Case.Best, "O(1)", When = "Inserting after the first node in the list.")]
         [TimeComplexity(Case.Worst, "O(n)")]
         [TimeComplexity(Case.Average, "O(n)")]
-        public bool InsertAfter(T1 value, T1 newValue)
+        public bool InsertAfter(TValue value, TValue newValue)
         {
             var node = Search(value);
             if (node == null)
@@ -96,9 +96,9 @@ namespace CSFundamentals.DataStructures.LinkedLists
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(1)")]
         [TimeComplexity(Case.Average, "O(1)")]
-        public bool InsertAfter(DoublyLinkedNode<T1> node, T1 newValue)
+        public bool InsertAfter(DoublyLinkedNode<TValue> node, TValue newValue)
         {
-            DoublyLinkedNode<T1> newNode = new DoublyLinkedNode<T1>(newValue);
+            var newNode = new DoublyLinkedNode<TValue>(newValue);
             newNode.Previous = node;
             newNode.Next = node?.Next;
             node.Next = newNode;
@@ -128,7 +128,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
         [TimeComplexity(Case.Best, "O(1)", When = "Inserting before the first node in the list.")]
         [TimeComplexity(Case.Worst, "O(n)")]
         [TimeComplexity(Case.Average, "O(n)")]
-        public bool InsertBefore(T1 value, T1 newValue)
+        public bool InsertBefore(TValue value, TValue newValue)
         {
             var node = Search(value);
             if (node == null)
@@ -147,9 +147,9 @@ namespace CSFundamentals.DataStructures.LinkedLists
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(1)")]
         [TimeComplexity(Case.Average, "O(1)")]
-        public bool InsertBefore(DoublyLinkedNode<T1> node, T1 newValue)
+        public bool InsertBefore(DoublyLinkedNode<TValue> node, TValue newValue)
         {
-            DoublyLinkedNode<T1> newNode = new DoublyLinkedNode<T1>(newValue);
+            var newNode = new DoublyLinkedNode<TValue>(newValue);
             newNode.Next = node;
             newNode.Previous = node.Previous;
             node.Previous = newNode;
@@ -176,9 +176,9 @@ namespace CSFundamentals.DataStructures.LinkedLists
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(1)")]
         [TimeComplexity(Case.Average, "O(1)")]
-        public bool Append(T1 newValue)
+        public bool Append(TValue newValue)
         {
-            DoublyLinkedNode<T1> newNode = new DoublyLinkedNode<T1>(newValue);
+            var newNode = new DoublyLinkedNode<TValue>(newValue);
             if (_tail != null)
             {
                 _tail.Next = newNode;
@@ -202,9 +202,9 @@ namespace CSFundamentals.DataStructures.LinkedLists
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(1)")]
         [TimeComplexity(Case.Average, "O(1)")]
-        public bool PrePend(T1 newValue)
+        public bool PrePend(TValue newValue)
         {
-            DoublyLinkedNode<T1> newNode = new DoublyLinkedNode<T1>(newValue);
+            var newNode = new DoublyLinkedNode<TValue>(newValue);
             if (_head != null)
             {
                 _head.Previous = newNode;
@@ -227,7 +227,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
         [TimeComplexity(Case.Best, "O(1)", When = "The first node (Head) contains the value.")]
         [TimeComplexity(Case.Worst, "O(n)")]
         [TimeComplexity(Case.Average, "O(n)")]
-        public override bool Delete(T1 value)
+        public override bool Delete(TValue value)
         {
             var currentNode = _head;
             while (currentNode != null)

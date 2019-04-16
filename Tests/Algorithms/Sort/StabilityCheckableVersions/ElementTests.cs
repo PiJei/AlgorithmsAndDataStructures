@@ -28,22 +28,22 @@ namespace CSFundamentalsTests.Algorithms.Sort
         [TestMethod]
         public void Equals()
         {
-            Element element1 = new Element(1, 0);
+            var element1 = new Element(1, 0);
             Assert.IsFalse(element1.Equals(null));
 
-            Element element2 = new Element(1, 3);
+            var element2 = new Element(1, 3);
             Assert.IsTrue(element1.Equals(element2));
         }
 
         [TestMethod]
         public void IsStable()
         {
-            Element element1 = new Element(1, 0); // Element1: 1, 0, -1
-            Element element2 = new Element(2, 0); // Element2: 2, 0, -1
+            var element1 = new Element(1, 0); // Element1: 1, 0, -1
+            var element2 = new Element(2, 0); // Element2: 2, 0, -1
 
             Assert.IsFalse(element1.IsStable(element2));
 
-            Element element3 = new Element(1, 2); // Element3 : 1, 2, -1 
+            var element3 = new Element(1, 2); // Element3 : 1, 2, -1 
             Assert.IsFalse(element1.IsStable(element3)); /* Expects false, as newIndex is not decided yet. */
 
             element1.Move(5); // Element1: 1, 0, 5
