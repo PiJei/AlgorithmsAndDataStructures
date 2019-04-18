@@ -24,4 +24,8 @@
     <ProjectReference Include="..\Source\CSFundamentals.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DataStructures\Trees\Binary\Images\" />
+  </ItemGroup>
+
 </Project>

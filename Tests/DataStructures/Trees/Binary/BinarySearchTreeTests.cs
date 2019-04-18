@@ -35,13 +35,13 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         {
             var nodes = new List<BinarySearchTreeNode<int, string>>
             {
-                new BinarySearchTreeNode<int, string>(40,"str3"),
-                new BinarySearchTreeNode<int, string>(20,"str1"),
-                new BinarySearchTreeNode<int, string>(70,"str6"),
-                new BinarySearchTreeNode<int, string>(50,"str4"),
-                new BinarySearchTreeNode<int, string>(80,"str7"),
-                new BinarySearchTreeNode<int, string>(30,"str2"),
-                new BinarySearchTreeNode<int, string>(60,"str5")
+                new BinarySearchTreeNode<int, string>(40,"A"),
+                new BinarySearchTreeNode<int, string>(20,"B"),
+                new BinarySearchTreeNode<int, string>(70,"C"),
+                new BinarySearchTreeNode<int, string>(50,"D"),
+                new BinarySearchTreeNode<int, string>(80,"E"),
+                new BinarySearchTreeNode<int, string>(30,"F"),
+                new BinarySearchTreeNode<int, string>(60,"G")
             };
 
             _tree = new BinarySearchTreeBase<int, string>();
