@@ -28,6 +28,11 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
     public class BinarySearchTreeTests
     {
         private BinarySearchTreeNode<int, string> _root;
+
+        /// <summary>
+        /// Is a binary search tree (aka. BST). 
+        /// To visualize this tree built as in <see cref="Init()"/> method, please <see cref="images\bst.png"/> in current directory. 
+        /// </summary>
         private BinarySearchTreeBase<int, string> _tree;
 
         [TestInitialize]

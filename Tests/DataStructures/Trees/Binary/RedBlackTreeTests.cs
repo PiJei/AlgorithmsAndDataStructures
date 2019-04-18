@@ -41,13 +41,13 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
 
             var nodes = new List<RedBlackTreeNode<int, string>>
             {
-                new RedBlackTreeNode<int, string>(40, "D"),
-                new RedBlackTreeNode<int, string>(50, "A"),
-                new RedBlackTreeNode<int, string>(47, "G"),
-                new RedBlackTreeNode<int, string>(30, "B"),
-                new RedBlackTreeNode<int, string>(20, "C"),
+                new RedBlackTreeNode<int, string>(40, "A"),
+                new RedBlackTreeNode<int, string>(50, "D"),
+                new RedBlackTreeNode<int, string>(47, "C"),
+                new RedBlackTreeNode<int, string>(30, "F"),
+                new RedBlackTreeNode<int, string>(20, "B"),
                 new RedBlackTreeNode<int, string>(35, "E"),
-                new RedBlackTreeNode<int, string>(45, "F")
+                new RedBlackTreeNode<int, string>(45, "G")
             };
 
             _root = _tree.Build(nodes);
