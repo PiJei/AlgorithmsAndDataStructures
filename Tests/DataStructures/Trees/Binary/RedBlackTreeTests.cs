@@ -42,22 +42,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         public void Init()
         {
             _tree = new RedBlackTree<int, string>();
-
-            var nodes = new List<RedBlackTreeNode<int, string>>
-            {
-                new RedBlackTreeNode<int, string>(40, "E"),
-                new RedBlackTreeNode<int, string>(50, "C"),
-                new RedBlackTreeNode<int, string>(47, "A"),
-                new RedBlackTreeNode<int, string>(45, "G"),
-                new RedBlackTreeNode<int, string>(20, "D"),
-                new RedBlackTreeNode<int, string>(35, "F"),
-                new RedBlackTreeNode<int, string>(30, "B"),
-                new RedBlackTreeNode<int, string>(10, "H"),
-                new RedBlackTreeNode<int, string>(80, "I"),
-                new RedBlackTreeNode<int, string>(42, "J")
-            };
-
-            _root = _tree.Build(nodes);
+            _root = _tree.Build(Constants.KeyValues);
         }
 
         [TestMethod]

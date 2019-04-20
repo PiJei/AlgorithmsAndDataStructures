@@ -40,22 +40,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         public void Init()
         {
             _tree = new AVLTree<int, string>();
-
-            var nodes = new List<AVLTreeNode<int, string>>
-            {
-                new AVLTreeNode<int, string>(40, "E"),
-                new AVLTreeNode<int, string>(50, "C"),
-                new AVLTreeNode<int, string>(47, "A"),
-                new AVLTreeNode<int, string>(45, "G"),
-                new AVLTreeNode<int, string>(20, "D"),
-                new AVLTreeNode<int, string>(35, "F"),
-                new AVLTreeNode<int, string>(30, "B"),
-                new AVLTreeNode<int, string>(10, "H"),
-                new AVLTreeNode<int, string>(80, "I"),
-                new AVLTreeNode<int, string>(42, "J")
-            };
-
-            _root = _tree.Build(nodes);
+            _root = _tree.Build(Constants.KeyValues);
         }
 
         [TestMethod]

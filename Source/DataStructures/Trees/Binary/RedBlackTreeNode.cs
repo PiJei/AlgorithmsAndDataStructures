@@ -31,7 +31,10 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         public override RedBlackTreeNode<TKey, TValue> RightChild { get; set; }
         public override RedBlackTreeNode<TKey, TValue> Parent { get; set; }
 
-        public RedBlackTreeNode() { }
+        public RedBlackTreeNode()
+        {
+            Color = Color.Red;
+        }
 
         public RedBlackTreeNode(TKey key, TValue value, Color color = Color.Red) : base(key, value)
         {

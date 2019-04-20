@@ -40,7 +40,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// </summary>
         /// <param name="nodes">Is a list of nodes to be inserted in the tree.</param>
         /// <returns>Root of the tree.</returns>
-        public abstract TNode Build(List<TNode> nodes);
+        public abstract TNode Build(List<KeyValuePair<TKey,TValue>> nodes);
 
         /// <summary>
         /// Inserts a new node in the tree
@@ -133,10 +133,15 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// </summary>
         /// <param name="nodes">Is a list of nodes to be inserted in the tree.</param>
         /// <returns>Root of the tree.</returns>
-        internal TNode Build_BST(List<TNode> nodes)
+        internal TNode Build_BST(List<KeyValuePair<TKey, TValue>> keyValues)
         {
-            foreach (TNode node in nodes)
+            foreach (KeyValuePair<TKey, TValue> keyVal in keyValues)
             {
+                var node = new TNode()
+                {
+                    Key = keyVal.Key,
+                    Value = keyVal.Value
+                };
                 _root = Insert(_root, node);
             }
             return _root;

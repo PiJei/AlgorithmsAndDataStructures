@@ -25,7 +25,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
 {
     public class MockBinarySearchTreeBase<TKey, TValue> : BinarySearchTreeBase<MockBinaryTreeNode<TKey, TValue>, TKey, TValue> where TKey : IComparable<TKey>
     {
-        public override MockBinaryTreeNode<TKey, TValue> Build(List<MockBinaryTreeNode<TKey, TValue>> keyValues)
+        public override MockBinaryTreeNode<TKey, TValue> Build(List<KeyValuePair<TKey, TValue>> keyValues)
         {
             throw new NotImplementedException();
         }

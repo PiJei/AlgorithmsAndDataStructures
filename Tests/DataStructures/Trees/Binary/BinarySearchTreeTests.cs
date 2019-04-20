@@ -38,22 +38,8 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         [TestInitialize]
         public void Init()
         {
-            var nodes = new List<BinarySearchTreeNode<int, string>>
-            {
-                new BinarySearchTreeNode<int, string>(40, "E"),
-                new BinarySearchTreeNode<int, string>(50, "C"),
-                new BinarySearchTreeNode<int, string>(47, "A"),
-                new BinarySearchTreeNode<int, string>(45, "G"),
-                new BinarySearchTreeNode<int, string>(20, "D"),
-                new BinarySearchTreeNode<int, string>(35, "F"),
-                new BinarySearchTreeNode<int, string>(30, "B"),
-                new BinarySearchTreeNode<int, string>(10, "H"),
-                new BinarySearchTreeNode<int, string>(80, "I"),
-                new BinarySearchTreeNode<int, string>(42, "J")
-            };
-
             _tree = new BinarySearchTreeBase<int, string>();
-            _root = _tree.Build(nodes);
+            _root = _tree.Build(Constants.KeyValues);
         }
 
         [TestMethod]

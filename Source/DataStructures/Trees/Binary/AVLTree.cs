@@ -40,9 +40,9 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         [TimeComplexity(Case.Worst, "O(nLog(n))")]
         [TimeComplexity(Case.Average, "O(nLog(n))")]
         [SpaceComplexity("O(n)")]
-        public override AVLTreeNode<TKey, TValue> Build(List<AVLTreeNode<TKey, TValue>> nodes)
+        public override AVLTreeNode<TKey, TValue> Build(List<KeyValuePair<TKey, TValue>> keyValues)
         {
-            return Build_BST(nodes);
+            return Build_BST(keyValues);
         }
 
         [TimeComplexity(Case.Best, "O(1)")]
