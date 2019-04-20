@@ -257,6 +257,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         internal int GetHeight(AVLTreeNode<TKey, TValue> node)
         {
             List<List<AVLTreeNode<TKey, TValue>>> paths = GetAllPathToLeaves(node);
+
             int height = paths[0].Count;
             for (int i = 1; i < paths.Count; i++)
             {

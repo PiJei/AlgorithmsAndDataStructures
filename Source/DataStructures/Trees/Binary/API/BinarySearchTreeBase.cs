@@ -378,11 +378,11 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// </summary>
         /// <param name="startNode">Is the node at which computing all routes/paths to leaf nodes starts.</param>
         /// <returns>List of all the paths.</returns>
-        public List<List<TNode>> GetAllPathToLeaves(TNode startNode)
+        public virtual List<List<TNode>> GetAllPathToLeaves(TNode startNode)
         {
             if (startNode == null)
             {
-                return new List<List<TNode>> { new List<TNode> { new TNode() { IsNill = true } } };
+                return new List<List<TNode>>();
             }
 
             var paths = new List<List<TNode>>();

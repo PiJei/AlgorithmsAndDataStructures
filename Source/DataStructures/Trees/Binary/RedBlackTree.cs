@@ -373,5 +373,42 @@ namespace CSFundamentals.DataStructures.Trees.Binary
                 }
             }
         }
+        /// <summary>
+        /// Computes all the paths from the given node to all of its leaves. A node is a leaf if it has no children.
+        /// </summary>
+        /// <param name="startNode">Is the node at which computing all routes/paths to leaf nodes starts.</param>
+        /// <returns>List of all the paths.</returns>
+        public override List<List<RedBlackTreeNode<TKey, TValue>>> GetAllPathToLeaves(RedBlackTreeNode<TKey, TValue> startNode)
+        {
+            if (startNode == null)
+            {
+                return new List<List<RedBlackTreeNode<TKey, TValue>>> { new List<RedBlackTreeNode<TKey, TValue>> { new RedBlackTreeNode<TKey, TValue>() { IsNill = true } } };
+            }
+
+            var paths = new List<List<RedBlackTreeNode<TKey, TValue>>>();
+            List<List<RedBlackTreeNode<TKey, TValue>>> leftPaths = GetAllPathToLeaves(startNode.LeftChild);
+            List<List<RedBlackTreeNode<TKey, TValue>>> rightPaths = GetAllPathToLeaves(startNode.RightChild);
+
+            for (int i = 0; i < leftPaths.Count; i++)
+            {
+                var newPath = new List<RedBlackTreeNode<TKey, TValue>> { startNode };
+                newPath.AddRange(leftPaths[i]);
+                paths.Add(newPath);
+            }
+            for (int i = 0; i < rightPaths.Count; i++)
+            {
+                var newPath = new List<RedBlackTreeNode<TKey, TValue>> { startNode };
+                newPath.AddRange(rightPaths[i]);
+                paths.Add(newPath);
+            }
+
+            if (paths.Count == 0)
+            {
+                paths.Add(new List<RedBlackTreeNode<TKey, TValue>> { startNode });
+            }
+
+            return paths;
+        }
+
     }
 }
