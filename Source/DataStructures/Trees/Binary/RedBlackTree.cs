@@ -30,7 +30,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary
 {
     /// <summary>
     /// Implements a red black tree and its operations. A red-black tree is a self-balancing binary search tree.
-    /// In this implementation, nulls are treated as black nodes. 
+    /// In this implementation, nulls are treated as black leaf nodes and not shown explicitly. 
     /// A red black tree can also be used as a key-value store.
     /// </summary>
     /// <typeparam name="TKey">Specifies the type of the keys in red black tree.</typeparam>

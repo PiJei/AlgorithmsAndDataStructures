@@ -63,87 +63,97 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         [TestMethod]
         public void Build()
         {
-            HasRedBlackTreeProperties(_tree, _root, 7);
+            HasRedBlackTreeProperties(_tree, _root, 10);
         }
 
         [TestMethod]
-        public void Delete_1()
+        public void Delete_RedNodeWithTWoChildren_1()
         {
             _root = _tree.Delete(_root, 47);
-            HasRedBlackTreeProperties(_tree, _root, 6);
+            HasRedBlackTreeProperties(_tree, _root, 9);
         }
 
         [TestMethod]
-        public void Delete_2()
+        public void Delete_RedNodeWithTwoChildren_2()
         {
             _root = _tree.Delete(_root, 30);
-            HasRedBlackTreeProperties(_tree, _root, 6);
+            HasRedBlackTreeProperties(_tree, _root, 9);
         }
 
         [TestMethod]
-        public void Delete_3()
+        public void Delete_BlackNodeWithOneRedChild()
         {
             _root = _tree.Delete(_root, 50);
-            HasRedBlackTreeProperties(_tree, _root, 6);
+            HasRedBlackTreeProperties(_tree, _root, 9);
         }
 
         [TestMethod]
-        public void Delete_4()
+        public void Delete_BlackNodeWithOneLeftChild()
         {
             _root = _tree.Delete(_root, 20);
-            HasRedBlackTreeProperties(_tree, _root, 6);
+            HasRedBlackTreeProperties(_tree, _root, 9);
         }
 
         [TestMethod]
-        public void Delete_5()
+        public void Delete_Root()
         {
             _root = _tree.Delete(_root, 40);
-            HasRedBlackTreeProperties(_tree, _root, 6);
+            HasRedBlackTreeProperties(_tree, _root, 9);
+            Assert.AreEqual(42, _root.Key);
         }
 
         [TestMethod]
-        public void Delete_6()
+        public void Delete_BlackLeafNode()
         {
             _root = _tree.Delete(_root, 35);
-            HasRedBlackTreeProperties(_tree, _root, 6);
+            HasRedBlackTreeProperties(_tree, _root, 9);
         }
 
         [TestMethod]
-        public void Delete_7()
+        public void Delete_BlackNodeWithLeftChild()
         {
             _root = _tree.Delete(_root, 45);
-            HasRedBlackTreeProperties(_tree, _root, 6);
+            HasRedBlackTreeProperties(_tree, _root, 9);
         }
 
         [TestMethod]
-        public void Delete_8()
+        public void Delete_RedLeafNode()
         {
-            _root = _tree.Delete(_root, 15);
-            HasRedBlackTreeProperties(_tree, _root, 7);
+            _root = _tree.Delete(_root, 10);
+            HasRedBlackTreeProperties(_tree, _root, 9);
         }
 
         [TestMethod]
-        public void Delete_9()
+        public void Delete_MultipleKyesConsecutively_ExpectsCorrectTreeAfterEachStep()
         {
             _root = _tree.Delete(_root, 30);
-            HasRedBlackTreeProperties(_tree, _root, 6);
+            HasRedBlackTreeProperties(_tree, _root, 9);
 
             _root = _tree.Delete(_root, 47);
+            HasRedBlackTreeProperties(_tree, _root, 8);
+
+            _root = _tree.Delete(_root, 20);
+            HasRedBlackTreeProperties(_tree, _root, 7);
+
+            _root = _tree.Delete(_root, 50);
+            HasRedBlackTreeProperties(_tree, _root, 6);
+
+            _root = _tree.Delete(_root, 35);
             HasRedBlackTreeProperties(_tree, _root, 5);
 
-            _root = _tree.Delete(_root, 20);
+            _root = _tree.Delete(_root, 45);
             HasRedBlackTreeProperties(_tree, _root, 4);
 
-            _root = _tree.Delete(_root, 50);
+            _root = _tree.Delete(_root, 40);
             HasRedBlackTreeProperties(_tree, _root, 3);
 
-            _root = _tree.Delete(_root, 35);
+            _root = _tree.Delete(_root, 10);
             HasRedBlackTreeProperties(_tree, _root, 2);
 
-            _root = _tree.Delete(_root, 45);
+            _root = _tree.Delete(_root, 42);
             HasRedBlackTreeProperties(_tree, _root, 1);
 
-            _root = _tree.Delete(_root, 40);
+            _root = _tree.Delete(_root, 80);
             HasRedBlackTreeProperties(_tree, _root, 0);
         }
 
