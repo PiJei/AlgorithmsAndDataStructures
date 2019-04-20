@@ -29,6 +29,11 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
     public class AVLTreeTests
     {
         private AVLTreeNode<int, string> _root = null;
+
+        /// <summary>
+        /// Is an AVL tree (A form of balanced BST). 
+        /// To visualize this tree built as in <see cref="Init()"/> method, please <see cref="images\avl-bst.png"/> in current directory. 
+        /// </summary>
         private AVLTree<int, string> _tree = null;
 
         [TestInitialize]
@@ -46,10 +51,17 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
                 new AVLTreeNode<int, string>(35, "F"),
                 new AVLTreeNode<int, string>(30, "B"),
                 new AVLTreeNode<int, string>(10, "H"),
-                new AVLTreeNode<int, string>(80, "I")
+                new AVLTreeNode<int, string>(80, "I"),
+                new AVLTreeNode<int, string>(42, "J")
             };
 
             _root = _tree.Build(nodes);
+        }
+
+        [TestMethod]
+        public void Build()
+        {
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 9));
         }
 
         [TestMethod]
@@ -93,12 +105,6 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             var I = new AVLTreeNode<int, string>(80, "I");
             root = tree.Insert(root, I);
             Assert.IsTrue(HasAVLTreeProperties(tree, root, 9));
-        }
-
-        [TestMethod]
-        public void Build()
-        {
-            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 9));
         }
 
         [TestMethod]
