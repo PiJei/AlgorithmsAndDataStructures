@@ -61,41 +61,41 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         }
 
         [TestMethod]
-        public void Build()
+        public void Build_ExpectsCorrectRedBlackTree()
         {
             HasRedBlackTreeProperties(_tree, _root, 10);
         }
 
         [TestMethod]
-        public void Delete_RedNodeWithTWoChildren_1()
+        public void Delete_RedNodeWithTWoChildren_ExpectsToBeRepalcedBy50WhichIsBlackWithARedRightChild()
         {
             _root = _tree.Delete(_root, 47);
             HasRedBlackTreeProperties(_tree, _root, 9);
         }
 
         [TestMethod]
-        public void Delete_RedNodeWithTwoChildren_2()
+        public void Delete_RedNodeWithTwoChildren_ExpectsToBeReplacedBy35AndIsSubjectToLastCaseBlackSiblingWithLeftRedChild()
         {
             _root = _tree.Delete(_root, 30);
             HasRedBlackTreeProperties(_tree, _root, 9);
         }
 
         [TestMethod]
-        public void Delete_BlackNodeWithOneRedChild()
+        public void Delete_BlackNodeWithOneRedRightChild_ReplaceWithTheRightRedChildWith80AsKeyAndColorItBlack()
         {
             _root = _tree.Delete(_root, 50);
             HasRedBlackTreeProperties(_tree, _root, 9);
         }
 
         [TestMethod]
-        public void Delete_BlackNodeWithOneLeftChild()
+        public void Delete_BlackNodeWithOneRedLeftChild_RepalceWithLeftRedChildWith10AsKeyAndColorItBlack()
         {
             _root = _tree.Delete(_root, 20);
             HasRedBlackTreeProperties(_tree, _root, 9);
         }
 
         [TestMethod]
-        public void Delete_Root()
+        public void Delete_Root_ExpectsToBeReplacedBy47WhichIsARedLeafAndHasSimpleDeletion()
         {
             _root = _tree.Delete(_root, 40);
             HasRedBlackTreeProperties(_tree, _root, 9);
@@ -103,21 +103,21 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         }
 
         [TestMethod]
-        public void Delete_BlackLeafNode()
+        public void Delete_BlackLeafNode_BlackSiblingWithARedLeftChild_ExpectsRightRotate()
         {
             _root = _tree.Delete(_root, 35);
             HasRedBlackTreeProperties(_tree, _root, 9);
         }
 
         [TestMethod]
-        public void Delete_BlackNodeWithLeftChild()
+        public void Delete_BlackNodeWithLeftRedChild_ReplaceWithLeftChildAs42AndColorItBlack()
         {
             _root = _tree.Delete(_root, 45);
             HasRedBlackTreeProperties(_tree, _root, 9);
         }
 
         [TestMethod]
-        public void Delete_RedLeafNode()
+        public void Delete_RedLeafNode_ExpectsSimpleDelete()
         {
             _root = _tree.Delete(_root, 10);
             HasRedBlackTreeProperties(_tree, _root, 9);
