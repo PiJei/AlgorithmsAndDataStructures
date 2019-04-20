@@ -57,13 +57,13 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         }
 
         [TestMethod]
-        public void Build()
+        public void Build_ExpectsCorrectBinaryTree()
         {
             HasBinarySearchTreeProperties(_tree, _root, 10);
         }
 
         [TestMethod]
-        public void Delete_Root()
+        public void Delete_Root_ExpectsReplacementByImmediateSuccessorKey42()
         {
             Assert.AreEqual(40, _root.Key);
             _root = _tree.Delete(_root, _root.Key);
@@ -72,10 +72,11 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         }
 
         [TestMethod]
-        public void Delete_NodeWith2Children()
+        public void Delete_NodeWith2Children_ExpectsReplacementWithImmediateSuccessorKey50()
         {
             _root = _tree.Delete(_root, 50);
             HasBinarySearchTreeProperties(_tree, _root, 9);
+            Assert.AreEqual(80, _root.RightChild.Key);
         }
 
         [TestMethod]
@@ -86,14 +87,14 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         }
 
         [TestMethod]
-        public void Delete_NodeWithOneChildren()
+        public void Delete_NodeWithOneChildren_ExpectsReplacementByLeftChild()
         {
             _root = _tree.Delete(_root, 47);
             HasBinarySearchTreeProperties(_tree, _root, 9);
         }
 
         [TestMethod]
-        public void Delete_MultipleNodes()
+        public void Delete_MultipleNodesConsecutively_ExpectsCorrectBinarySearchTreeAfterEachStep()
         {
             _root = _tree.Delete(_root, 20);
             HasBinarySearchTreeProperties(_tree, _root, 9);
@@ -106,7 +107,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         }
 
         [TestMethod]
-        public void Delete_NotExistingKey()
+        public void Delete_NotExistingKey_ExpectsNoAlternationInTree()
         {
             _root = _tree.Delete(_root, 15);
             _root = _tree.Delete(_root, 800);
@@ -116,7 +117,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         }
 
         [TestMethod]
-        public void DeleteMin_1()
+        public void DeleteMin_InEntireTree_ExpectsToDelete10AndHave20AsNewMin()
         {
             _root = _tree.DeleteMin(_root);
             HasBinarySearchTreeProperties(_tree, _root, 9);
@@ -125,7 +126,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         }
 
         [TestMethod]
-        public void DeleteMin_2()
+        public void DeleteMin_InRightSubtreeOfRoot_ExpectsToDelete42AndHave45AsMinAtTheEnd()
         {
             _root.RightChild = _tree.DeleteMin(_root.RightChild);
             HasBinarySearchTreeProperties(_tree, _root.RightChild, 4);
@@ -134,21 +135,21 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         }
 
         [TestMethod]
-        public void DeleteMax_1()
+        public void DeleteMax_InEntireTree_ExpectsToDelete80AndHave50AsNewMax()
         {
             _root = _tree.DeleteMax(_root);
             HasBinarySearchTreeProperties(_tree, _root, 9);
-            var minNode = _tree.FindMax(_root);
-            Assert.AreEqual(50, minNode.Key);
+            var maxNode = _tree.FindMax(_root);
+            Assert.AreEqual(50, maxNode.Key);
         }
 
         [TestMethod]
-        public void DeleteMax_2()
+        public void DeleteMax_InLeftSubtreeOfRoot_ExpectsToDelete35AndHave30AsMinAtTheEnd()
         {
             _root.LeftChild = _tree.DeleteMax(_root.LeftChild);
             HasBinarySearchTreeProperties(_tree, _root.LeftChild, 3);
-            var minNode = _tree.FindMax(_root.LeftChild);
-            Assert.AreEqual(30, minNode.Key);
+            var maxNode = _tree.FindMax(_root.LeftChild);
+            Assert.AreEqual(30, maxNode.Key);
         }
 
         public void HasBinarySearchTreeProperties(BinarySearchTreeBase<int, string> tree, BinarySearchTreeNode<int, string> root, int expectedTotalKeyCount)
