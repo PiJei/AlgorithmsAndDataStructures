@@ -253,20 +253,17 @@ namespace CSFundamentals.DataStructures.Trees.Binary
                     sibling = node.GetSibling();
                 }
 
-                if (IsBlack(sibling) && IsRed(sibling.RightChild))
+                sibling.Color = node.Parent.Color;
+                node.Parent.Color = Color.Black;
+                if (node.IsLeftChild())
                 {
-                    sibling.Color = node.Parent.Color;
-                    node.Parent.Color = Color.Black;
-                    if (node.IsLeftChild())
-                    {
-                        sibling.RightChild.Color = Color.Black;
-                        RotateLeft(node.Parent);
-                    }
-                    else if (node.IsRightChild())
-                    {
-                        sibling.LeftChild.Color = Color.Black;
-                        RotateRight(node.Parent);
-                    }
+                    sibling.RightChild.Color = Color.Black;
+                    RotateLeft(node.Parent);
+                }
+                else if (node.IsRightChild())
+                {
+                    sibling.LeftChild.Color = Color.Black;
+                    RotateRight(node.Parent);
                 }
             }
             return sibling;
