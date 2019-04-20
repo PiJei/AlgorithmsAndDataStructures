@@ -59,13 +59,13 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         }
 
         [TestMethod]
-        public void Build()
+        public void Build_ExpectsACorrectAVLTree()
         {
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 10));
         }
 
         [TestMethod]
-        public void Insert()
+        public void Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion()
         {
             AVLTreeNode<int, string> root = null;
             var tree = new AVLTree<int, string>();
@@ -108,7 +108,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         }
 
         [TestMethod]
-        public void Delete_NonExistingKey()
+        public void Delete_NonExistingKey_ExpectsNoAlternationToTree()
         {
             var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
@@ -119,7 +119,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         }
 
         [TestMethod]
-        public void Delete_NodeWith2Children_1()
+        public void Delete_NodeWith2Children_ExpectsLineAndRotateRight()
         {
             var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
@@ -130,7 +130,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         }
 
         [TestMethod]
-        public void Delete_NodeWith2Children_2()
+        public void Delete_RootNodeNodeWith2Children_ExpectsReplacementWithSuccessorAndSimpleLeafNodeDeletion()
         {
             var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
@@ -141,7 +141,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         }
 
         [TestMethod]
-        public void Delete_NodeWith2Children_3()
+        public void Delete_NodeWith2Children_ExpectsReplacementWithMinInSubtreeAndSimpleLeafNodeDeletion()
         {
             var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
@@ -152,7 +152,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         }
 
         [TestMethod]
-        public void Delete_NodeWithNoChildren_1()
+        public void Delete_NodeWithNoChildren_ExpectsSimpleDeletion()
         {
             var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
@@ -163,7 +163,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         }
 
         [TestMethod]
-        public void Delete_NodeWithNoChildren_2()
+        public void Delete_NodeWithNoChildren_ExpectsLineAndRightRotation()
         {
             var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
@@ -174,7 +174,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         }
 
         [TestMethod]
-        public void Delete_NodeWithNoChildren_3()
+        public void Delete_NodeWithNoChildren_ExpectsSimpleLeafDeletion()
         {
             var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
@@ -185,7 +185,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         }
 
         [TestMethod]
-        public void Delete_NodeWithNoChildren_4()
+        public void Delete_NodeWithNoChildrenAndMaxKey_ExpectsSimpleLeafDeletion()
         {
             var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
@@ -196,7 +196,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         }
 
         [TestMethod]
-        public void Delete_NodeWith1Children_1()
+        public void Delete_NodeWith1Children_ExpectsReplacementWithMinInSubtreeAndSimpleLeafDeletion()
         {
             var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
@@ -207,7 +207,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         }
 
         [TestMethod]
-        public void Delete_NodeWith1Children_2()
+        public void Delete_NodeWith1Children_ExpectsReplacementWithRightChild()
         {
             var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
@@ -294,7 +294,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         }
 
         [TestMethod]
-        public void GetHeight()
+        public void GetHeight_ForSeveralNodesInSampleTree_ExpectsCorrectHeights()
         {
             var A = new AVLTreeNode<int, string>(50, "A");
             var B = new AVLTreeNode<int, string>(20, "B");
@@ -331,7 +331,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         }
 
         [TestMethod]
-        public void GetBalanceFactor()
+        public void GetBalanceFactor_ForSeveralNodesInSampleTree_ExpectsCorrectValues()
         {
             /* The constructed tree is not AVL, however the method GetBalanceFactor should work regardless. */
             var A = new AVLTreeNode<int, string>(50, "A");

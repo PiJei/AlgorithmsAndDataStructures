@@ -126,7 +126,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary
                     }
                     else if (grandChild.FormsLine())
                     {
-                        Contract.Assert(grandChild.IsLeftChild()); ;
+                        Contract.Assert(grandChild.IsLeftChild());
                         return RotateRight(grandParent);
                     }
                 }
