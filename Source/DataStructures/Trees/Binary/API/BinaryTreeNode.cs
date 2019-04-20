@@ -28,8 +28,13 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         where TNode : IBinaryTreeNode<TNode, TKey, TValue>
         where TKey : IComparable<TKey>
     {
+        public bool IsNill { get; set; }
         public TKey Key { get; set; }
         public TValue Value { get; set; }
+
+        public BinaryTreeNode()
+        {
+        }
 
         public BinaryTreeNode(TKey key, TValue value)
         {

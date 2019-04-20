@@ -27,7 +27,7 @@ using CSFundamentals.Decoration;
 namespace CSFundamentals.DataStructures.Trees.Binary.API
 {
     public abstract class BinarySearchTreeBase<TNode, TKey, TValue>
-        where TNode : IBinaryTreeNode<TNode, TKey, TValue>
+        where TNode : IBinaryTreeNode<TNode, TKey, TValue>, new()
         where TKey : IComparable<TKey>
     {
         /// <summary>
@@ -382,7 +382,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         {
             if (startNode == null)
             {
-                return new List<List<TNode>>();
+                return new List<List<TNode>> { new List<TNode> { new TNode() { IsNill = true } } };
             }
 
             var paths = new List<List<TNode>>();
@@ -391,13 +391,13 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
 
             for (int i = 0; i < leftPaths.Count; i++)
             {
-                var newPath = new List<TNode> { startNode};
+                var newPath = new List<TNode> { startNode };
                 newPath.AddRange(leftPaths[i]);
                 paths.Add(newPath);
             }
             for (int i = 0; i < rightPaths.Count; i++)
             {
-                var newPath = new List<TNode> { startNode};
+                var newPath = new List<TNode> { startNode };
                 newPath.AddRange(rightPaths[i]);
                 paths.Add(newPath);
             }

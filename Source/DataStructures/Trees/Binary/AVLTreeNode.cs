@@ -30,6 +30,11 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         public override AVLTreeNode<TKey, TValue> RightChild { get; set; }
         public override AVLTreeNode<TKey, TValue> Parent { get; set; }
 
+        public AVLTreeNode()
+        {
+
+        }
+
         public AVLTreeNode(TKey key, TValue value) : base(key, value)
         {
         }

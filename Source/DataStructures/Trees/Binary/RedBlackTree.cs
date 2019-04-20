@@ -160,7 +160,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary
             }
             else if (!nodeToBeDeleted.IsLeaf() && nodeToBeDeleted.Color == Color.Black) // Case3: nodeToBeDeleted is black, and its the only not null child is red
             {
-                if (nodeToBeDeleted.LeftChild != null) /* Then replace nodeToBeDeleted with nodeToBeDeleted.LeftChild*/
+                if (nodeToBeDeleted.LeftChild != null) /* Then replace nodeToBeDeleted with nodeToBeDeleted.LeftChild */
                 {
                     Contract.Assert(nodeToBeDeleted.LeftChild.Color == Color.Red);
                     nodeToBeDeleted.LeftChild.Parent = nodeToBeDeleted.Parent;
@@ -172,7 +172,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary
                     nodeToBeDeleted = nodeToBeDeleted.LeftChild;
                     nodeToBeDeleted.Color = Color.Black; /* This is to keep the number of black nodes the same, as we have just dropped a non-leaf black node.*/
                 }
-                else if (nodeToBeDeleted.RightChild != null) /* Then replace nodeToBeDeleted with nodeToBeDeleted.rightChild*/
+                else if (nodeToBeDeleted.RightChild != null) /* Then replace nodeToBeDeleted with nodeToBeDeleted.rightChild */
                 {
                     Contract.Assert(nodeToBeDeleted.RightChild.Color == Color.Red);
                     nodeToBeDeleted.RightChild.Parent = nodeToBeDeleted.Parent;
