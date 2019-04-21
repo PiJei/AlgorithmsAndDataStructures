@@ -49,6 +49,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 10));
         }
 
+        /// <summary>
+        /// For a step by step transition of the AVL tree while inserting these keys, please <see cref="images\avl-bst-insert-stepByStep.png"/>.
+        /// </summary>
         [TestMethod]
         public void Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion()
         {
