@@ -166,7 +166,14 @@ namespace CSFundamentals.DataStructures.Trees.Binary
                     nodeToBeDeleted.LeftChild.Parent = nodeToBeDeleted.Parent;
                     if (nodeToBeDeleted.Parent != null)
                     {
-                        nodeToBeDeleted.Parent.LeftChild = nodeToBeDeleted.LeftChild;
+                        if (nodeToBeDeleted.IsLeftChild())
+                        {
+                            nodeToBeDeleted.Parent.LeftChild = nodeToBeDeleted.LeftChild;
+                        }
+                        else if (nodeToBeDeleted.IsRightChild())
+                        {
+                            nodeToBeDeleted.Parent.RightChild = nodeToBeDeleted.LeftChild;
+                        }
                     }
 
                     nodeToBeDeleted = nodeToBeDeleted.LeftChild;
@@ -178,7 +185,14 @@ namespace CSFundamentals.DataStructures.Trees.Binary
                     nodeToBeDeleted.RightChild.Parent = nodeToBeDeleted.Parent;
                     if (nodeToBeDeleted.Parent != null)
                     {
-                        nodeToBeDeleted.Parent.RightChild = nodeToBeDeleted.RightChild;
+                        if (nodeToBeDeleted.IsRightChild())
+                        {
+                            nodeToBeDeleted.Parent.RightChild = nodeToBeDeleted.RightChild;
+                        }
+                        else if (nodeToBeDeleted.IsLeftChild())
+                        {
+                            nodeToBeDeleted.Parent.LeftChild = nodeToBeDeleted.RightChild;
+                        }
                     }
 
                     nodeToBeDeleted = nodeToBeDeleted.RightChild;
@@ -276,7 +290,11 @@ namespace CSFundamentals.DataStructures.Trees.Binary
             {
                 newNode.FlipColor();
             }
-            else if (newNode.Parent != null && newNode.Parent.Color == Color.Red) /* If this holds it means that both the new node and its parent are red, and in a red-black tree this is not allowed. Children of a red node should be black.*/
+            else if (newNode.Parent != null && newNode.Parent.Color == Color.Black)
+            {
+                return;
+            }
+            else if (newNode.Parent != null)
             {
                 var uncle = newNode.GetUncle();
 
@@ -287,7 +305,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary
                     newNode.GetGrandParent().Color = Color.Red;
                     Insert_Repair(root, newNode.GetGrandParent()); /* Repeat repair on the grandparent, as by the re-coloring the previous layers could have been messed up. */
                 }
-                else if (uncle == null || uncle.Color == Color.Black)
+                else
                 {
                     if (newNode.FormsTriangle() && newNode.IsLeftChild())
                     {

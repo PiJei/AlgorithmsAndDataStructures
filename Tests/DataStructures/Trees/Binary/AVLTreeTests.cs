@@ -209,6 +209,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 9));
         }
 
+        /// <summary>
+        /// For a step by step transition of the AVL tree while deleting these keys, please <see cref="images\avl-bst-delete-stepBystep.png"/>.
+        /// </summary>
         [TestMethod]
         public void Delete_MultipleKeysConsecutively_ExpectsCorrectTreeAfterEachDeletion_RandomOrder1()
         {

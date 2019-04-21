@@ -51,6 +51,56 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             HasRedBlackTreeProperties(_tree, _root, 10);
         }
 
+        /// <summary>
+        /// For a step by step transition of the RedBlack tree while inserting these keys, please <see cref="images\redblack-bst-insert-stepByStep.png"/>.
+        /// </summary>
+        [TestMethod]
+        public void Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion()
+        {
+            RedBlackTreeNode<int, string> root = null;
+            var tree = new RedBlackTree<int, string>();
+
+            var E = new RedBlackTreeNode<int, string>(40, "E");
+            root = tree.Insert(root, E);
+            HasRedBlackTreeProperties(tree, root, 1);
+
+            var C = new RedBlackTreeNode<int, string>(50, "C");
+            root = _tree.Insert(root, C);
+            HasRedBlackTreeProperties(tree, root, 2);
+
+            var A = new RedBlackTreeNode<int, string>(47, "A");
+            root = tree.Insert(root, A);
+            HasRedBlackTreeProperties(tree, root, 3);
+
+            var G = new RedBlackTreeNode<int, string>(45, "G");
+            root = tree.Insert(root, G);
+            HasRedBlackTreeProperties(tree, root, 4);
+
+            var D = new RedBlackTreeNode<int, string>(20, "D");
+            root = tree.Insert(root, D);
+            HasRedBlackTreeProperties(tree, root, 5);
+
+            var F = new RedBlackTreeNode<int, string>(35, "F");
+            root = tree.Insert(root, F);
+            HasRedBlackTreeProperties(tree, root, 6);
+
+            var B = new RedBlackTreeNode<int, string>(30, "B");
+            root = tree.Insert(root, B);
+            HasRedBlackTreeProperties(tree, root, 7);
+
+            var H = new RedBlackTreeNode<int, string>(10, "H");
+            root = tree.Insert(root, H);
+            HasRedBlackTreeProperties(tree, root, 8);
+
+            var I = new RedBlackTreeNode<int, string>(80, "I");
+            root = tree.Insert(root, I);
+            HasRedBlackTreeProperties(tree, root, 9);
+
+            var J = new RedBlackTreeNode<int, string>(42, "J");
+            root = tree.Insert(root, J);
+            HasRedBlackTreeProperties(tree, root, 10);
+        }
+
         [TestMethod]
         public void Delete_RedNodeWithTWoChildren_ExpectsToBeRepalcedBy50WhichIsBlackWithARedRightChild()
         {
