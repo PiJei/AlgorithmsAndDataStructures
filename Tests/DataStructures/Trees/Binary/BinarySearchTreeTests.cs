@@ -42,6 +42,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             _root = _tree.Build(Constants.KeyValues);
         }
 
+        /// <summary>
+        /// For a step by step transition of the BST while inserting these keys, please <see cref="images\bst-insert-stepBystep.png"/>.
+        /// </summary>
         [TestMethod]
         public void Build_ExpectsCorrectBinaryTree()
         {
@@ -79,17 +82,43 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             HasBinarySearchTreeProperties(_tree, _root, 9);
         }
 
+        /// <summary>
+        /// For a step by step transition of the BST while deleting these keys, please <see cref="images\bst-delete-stepBystep.png"/>.
+        /// </summary>
         [TestMethod]
         public void Delete_MultipleNodesConsecutively_ExpectsCorrectBinarySearchTreeAfterEachStep()
         {
-            _root = _tree.Delete(_root, 20);
+            HasBinarySearchTreeProperties(_tree, _root, 10);
+
+            _root = _tree.Delete(_root, 30);
             HasBinarySearchTreeProperties(_tree, _root, 9);
 
-            _root = _tree.Delete(_root, 80);
+            _root = _tree.Delete(_root, 40);
             HasBinarySearchTreeProperties(_tree, _root, 8);
 
-            _root = _tree.Delete(_root, 50);
+            _root = _tree.Delete(_root, 10);
             HasBinarySearchTreeProperties(_tree, _root, 7);
+
+            _root = _tree.Delete(_root, 80);
+            HasBinarySearchTreeProperties(_tree, _root, 6);
+
+            _root = _tree.Delete(_root, 47);
+            HasBinarySearchTreeProperties(_tree, _root, 5);
+
+            _root = _tree.Delete(_root, 20);
+            HasBinarySearchTreeProperties(_tree, _root, 4);
+
+            _root = _tree.Delete(_root, 45);
+            HasBinarySearchTreeProperties(_tree, _root, 3);
+
+            _root = _tree.Delete(_root, 42);
+            HasBinarySearchTreeProperties(_tree, _root, 2);
+
+            _root = _tree.Delete(_root, 35);
+            HasBinarySearchTreeProperties(_tree, _root, 1);
+
+            _root = _tree.Delete(_root, 50);
+            HasBinarySearchTreeProperties(_tree, _root, 0);
         }
 
         [TestMethod]

@@ -90,6 +90,10 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             var I = new AVLTreeNode<int, string>(80, "I");
             root = tree.Insert(root, I);
             Assert.IsTrue(HasAVLTreeProperties(tree, root, 9));
+
+            var J = new AVLTreeNode<int, string>(42, "J");
+            root = tree.Insert(root, J);
+            Assert.IsTrue(HasAVLTreeProperties(tree, root, 10));
         }
 
         [TestMethod]
@@ -209,7 +213,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             _tree.InOrderTraversal(_root, nodes);
             Assert.AreEqual(10, nodes.Count);
 
-            _root = _tree.Delete(_root, 42);
+            _root = _tree.Delete(_root, 30);
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 9));
 
             _root = _tree.Delete(_root, 40);
@@ -230,7 +234,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             _root = _tree.Delete(_root, 45);
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 3));
 
-            _root = _tree.Delete(_root, 30);
+            _root = _tree.Delete(_root, 42);
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 2));
 
             _root = _tree.Delete(_root, 35);

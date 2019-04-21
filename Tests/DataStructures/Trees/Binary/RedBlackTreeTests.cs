@@ -114,31 +114,31 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             _root = _tree.Delete(_root, 30);
             HasRedBlackTreeProperties(_tree, _root, 9);
 
-            _root = _tree.Delete(_root, 47);
+            _root = _tree.Delete(_root, 40);
             HasRedBlackTreeProperties(_tree, _root, 8);
 
-            _root = _tree.Delete(_root, 20);
+            _root = _tree.Delete(_root, 10);
             HasRedBlackTreeProperties(_tree, _root, 7);
 
-            _root = _tree.Delete(_root, 50);
+            _root = _tree.Delete(_root, 80);
             HasRedBlackTreeProperties(_tree, _root, 6);
 
-            _root = _tree.Delete(_root, 35);
+            _root = _tree.Delete(_root, 47);
             HasRedBlackTreeProperties(_tree, _root, 5);
 
-            _root = _tree.Delete(_root, 45);
+            _root = _tree.Delete(_root, 20);
             HasRedBlackTreeProperties(_tree, _root, 4);
 
-            _root = _tree.Delete(_root, 40);
+            _root = _tree.Delete(_root, 45);
             HasRedBlackTreeProperties(_tree, _root, 3);
 
-            _root = _tree.Delete(_root, 10);
+            _root = _tree.Delete(_root, 42);
             HasRedBlackTreeProperties(_tree, _root, 2);
 
-            _root = _tree.Delete(_root, 42);
+            _root = _tree.Delete(_root, 35);
             HasRedBlackTreeProperties(_tree, _root, 1);
 
-            _root = _tree.Delete(_root, 80);
+            _root = _tree.Delete(_root, 50);
             HasRedBlackTreeProperties(_tree, _root, 0);
         }
 
