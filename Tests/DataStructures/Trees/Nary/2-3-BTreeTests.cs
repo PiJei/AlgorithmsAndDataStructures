@@ -112,6 +112,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             _tree.FindLeafToInsertKey(_tree.Root, 50);
         }
 
+        /// <summary>
+        /// For a step by step transition of this 2-3 BTree while inserting these keys, please <see cref="images\2-3-BTree-insert-stepBystep.png"/>.
+        /// </summary>
         [TestMethod]
         public void Insert_SeveralKeys_ExpectsTreeToIncreaseInLevelsAfewTimes()
         {
