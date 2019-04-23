@@ -358,6 +358,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(_tree, 15, 15, 11);
         }
 
+        /// <summary>
+        /// For a step by step transition of this 2-3 BTree while deleting these keys, please <see cref="images\2-3-BTree-delete-stepBystep.png"/>.
+        /// </summary>
         [TestMethod]
         public void Delete_AllNodesInRandomOrder1_ExpectsProperBtreeAfterEachDelete()
         {
