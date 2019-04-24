@@ -40,9 +40,9 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         [TimeComplexity(Case.Worst, "O(nLog(n))")]
         [TimeComplexity(Case.Average, "O(nLog(n))")]
         [SpaceComplexity("O(n)")]
-        public override AVLTreeNode<TKey, TValue> Build(List<AVLTreeNode<TKey, TValue>> nodes)
+        public override AVLTreeNode<TKey, TValue> Build(List<KeyValuePair<TKey, TValue>> keyValues)
         {
-            return Build_BST(nodes);
+            return Build_BST(keyValues);
         }
 
         [TimeComplexity(Case.Best, "O(1)")]
@@ -126,7 +126,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary
                     }
                     else if (grandChild.FormsLine())
                     {
-                        Contract.Assert(grandChild.IsLeftChild()); ;
+                        Contract.Assert(grandChild.IsLeftChild());
                         return RotateRight(grandParent);
                     }
                 }
@@ -257,6 +257,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         internal int GetHeight(AVLTreeNode<TKey, TValue> node)
         {
             List<List<AVLTreeNode<TKey, TValue>>> paths = GetAllPathToLeaves(node);
+
             int height = paths[0].Count;
             for (int i = 1; i < paths.Count; i++)
             {

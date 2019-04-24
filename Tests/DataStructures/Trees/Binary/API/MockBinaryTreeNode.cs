@@ -32,6 +32,10 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
     /// <typeparam name="TValue">Specifies type of the values in a tree.</typeparam>
     public class MockBinaryTreeNode<TKey, TValue> : BinaryTreeNode<MockBinaryTreeNode<TKey, TValue>, TKey, TValue> where TKey : IComparable<TKey>
     {
+        public MockBinaryTreeNode()
+        {
+        }
+
         public MockBinaryTreeNode(TKey key, TValue value) : base(key, value)
         {
         }

@@ -30,7 +30,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary
 {
     /// <summary>
     /// Implements a red black tree and its operations. A red-black tree is a self-balancing binary search tree.
-    /// In this implementation, nulls are treated as black nodes. 
+    /// In this implementation, nulls are treated as black leaf nodes and not shown explicitly. 
     /// A red black tree can also be used as a key-value store.
     /// </summary>
     /// <typeparam name="TKey">Specifies the type of the keys in red black tree.</typeparam>
@@ -42,9 +42,9 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         [TimeComplexity(Case.Worst, "O(nLog(n))")]
         [TimeComplexity(Case.Average, "O(nLog(n))")]
         [SpaceComplexity("O(n)")]
-        public override RedBlackTreeNode<TKey, TValue> Build(List<RedBlackTreeNode<TKey, TValue>> nodes)
+        public override RedBlackTreeNode<TKey, TValue> Build(List<KeyValuePair<TKey, TValue>> keyValues)
         {
-            return Build_BST(nodes);
+            return Build_BST(keyValues);
         }
 
         [TimeComplexity(Case.Best, "O(1)")]
@@ -160,25 +160,39 @@ namespace CSFundamentals.DataStructures.Trees.Binary
             }
             else if (!nodeToBeDeleted.IsLeaf() && nodeToBeDeleted.Color == Color.Black) // Case3: nodeToBeDeleted is black, and its the only not null child is red
             {
-                if (nodeToBeDeleted.LeftChild != null) /* Then replace nodeToBeDeleted with nodeToBeDeleted.LeftChild*/
+                if (nodeToBeDeleted.LeftChild != null) /* Then replace nodeToBeDeleted with nodeToBeDeleted.LeftChild */
                 {
                     Contract.Assert(nodeToBeDeleted.LeftChild.Color == Color.Red);
                     nodeToBeDeleted.LeftChild.Parent = nodeToBeDeleted.Parent;
                     if (nodeToBeDeleted.Parent != null)
                     {
-                        nodeToBeDeleted.Parent.LeftChild = nodeToBeDeleted.LeftChild;
+                        if (nodeToBeDeleted.IsLeftChild())
+                        {
+                            nodeToBeDeleted.Parent.LeftChild = nodeToBeDeleted.LeftChild;
+                        }
+                        else if (nodeToBeDeleted.IsRightChild())
+                        {
+                            nodeToBeDeleted.Parent.RightChild = nodeToBeDeleted.LeftChild;
+                        }
                     }
 
                     nodeToBeDeleted = nodeToBeDeleted.LeftChild;
                     nodeToBeDeleted.Color = Color.Black; /* This is to keep the number of black nodes the same, as we have just dropped a non-leaf black node.*/
                 }
-                else if (nodeToBeDeleted.RightChild != null) /* Then replace nodeToBeDeleted with nodeToBeDeleted.rightChild*/
+                else if (nodeToBeDeleted.RightChild != null) /* Then replace nodeToBeDeleted with nodeToBeDeleted.rightChild */
                 {
                     Contract.Assert(nodeToBeDeleted.RightChild.Color == Color.Red);
                     nodeToBeDeleted.RightChild.Parent = nodeToBeDeleted.Parent;
                     if (nodeToBeDeleted.Parent != null)
                     {
-                        nodeToBeDeleted.Parent.RightChild = nodeToBeDeleted.RightChild;
+                        if (nodeToBeDeleted.IsRightChild())
+                        {
+                            nodeToBeDeleted.Parent.RightChild = nodeToBeDeleted.RightChild;
+                        }
+                        else if (nodeToBeDeleted.IsLeftChild())
+                        {
+                            nodeToBeDeleted.Parent.LeftChild = nodeToBeDeleted.RightChild;
+                        }
                     }
 
                     nodeToBeDeleted = nodeToBeDeleted.RightChild;
@@ -253,20 +267,17 @@ namespace CSFundamentals.DataStructures.Trees.Binary
                     sibling = node.GetSibling();
                 }
 
-                if (IsBlack(sibling) && IsRed(sibling.RightChild))
+                sibling.Color = node.Parent.Color;
+                node.Parent.Color = Color.Black;
+                if (node.IsLeftChild())
                 {
-                    sibling.Color = node.Parent.Color;
-                    node.Parent.Color = Color.Black;
-                    if (node.IsLeftChild())
-                    {
-                        sibling.RightChild.Color = Color.Black;
-                        RotateLeft(node.Parent);
-                    }
-                    else if (node.IsRightChild())
-                    {
-                        sibling.LeftChild.Color = Color.Black;
-                        RotateRight(node.Parent);
-                    }
+                    sibling.RightChild.Color = Color.Black;
+                    RotateLeft(node.Parent);
+                }
+                else if (node.IsRightChild())
+                {
+                    sibling.LeftChild.Color = Color.Black;
+                    RotateRight(node.Parent);
                 }
             }
             return sibling;
@@ -279,7 +290,11 @@ namespace CSFundamentals.DataStructures.Trees.Binary
             {
                 newNode.FlipColor();
             }
-            else if (newNode.Parent != null && newNode.Parent.Color == Color.Red) /* If this holds it means that both the new node and its parent are red, and in a red-black tree this is not allowed. Children of a red node should be black.*/
+            else if (newNode.Parent != null && newNode.Parent.Color == Color.Black)
+            {
+                return;
+            }
+            else if (newNode.Parent != null)
             {
                 var uncle = newNode.GetUncle();
 
@@ -290,7 +305,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary
                     newNode.GetGrandParent().Color = Color.Red;
                     Insert_Repair(root, newNode.GetGrandParent()); /* Repeat repair on the grandparent, as by the re-coloring the previous layers could have been messed up. */
                 }
-                else if (uncle == null || uncle.Color == Color.Black)
+                else
                 {
                     if (newNode.FormsTriangle() && newNode.IsLeftChild())
                     {
@@ -373,5 +388,42 @@ namespace CSFundamentals.DataStructures.Trees.Binary
                 }
             }
         }
+        /// <summary>
+        /// Computes all the paths from the given node to all of its leaves. A node is a leaf if it has no children.
+        /// </summary>
+        /// <param name="startNode">Is the node at which computing all routes/paths to leaf nodes starts.</param>
+        /// <returns>List of all the paths.</returns>
+        public override List<List<RedBlackTreeNode<TKey, TValue>>> GetAllPathToLeaves(RedBlackTreeNode<TKey, TValue> startNode)
+        {
+            if (startNode == null)
+            {
+                return new List<List<RedBlackTreeNode<TKey, TValue>>> { new List<RedBlackTreeNode<TKey, TValue>> { new RedBlackTreeNode<TKey, TValue>() { IsNill = true } } };
+            }
+
+            var paths = new List<List<RedBlackTreeNode<TKey, TValue>>>();
+            List<List<RedBlackTreeNode<TKey, TValue>>> leftPaths = GetAllPathToLeaves(startNode.LeftChild);
+            List<List<RedBlackTreeNode<TKey, TValue>>> rightPaths = GetAllPathToLeaves(startNode.RightChild);
+
+            for (int i = 0; i < leftPaths.Count; i++)
+            {
+                var newPath = new List<RedBlackTreeNode<TKey, TValue>> { startNode };
+                newPath.AddRange(leftPaths[i]);
+                paths.Add(newPath);
+            }
+            for (int i = 0; i < rightPaths.Count; i++)
+            {
+                var newPath = new List<RedBlackTreeNode<TKey, TValue>> { startNode };
+                newPath.AddRange(rightPaths[i]);
+                paths.Add(newPath);
+            }
+
+            if (paths.Count == 0)
+            {
+                paths.Add(new List<RedBlackTreeNode<TKey, TValue>> { startNode });
+            }
+
+            return paths;
+        }
+
     }
 }

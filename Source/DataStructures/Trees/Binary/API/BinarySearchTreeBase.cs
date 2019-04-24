@@ -27,7 +27,7 @@ using CSFundamentals.Decoration;
 namespace CSFundamentals.DataStructures.Trees.Binary.API
 {
     public abstract class BinarySearchTreeBase<TNode, TKey, TValue>
-        where TNode : IBinaryTreeNode<TNode, TKey, TValue>
+        where TNode : IBinaryTreeNode<TNode, TKey, TValue>, new()
         where TKey : IComparable<TKey>
     {
         /// <summary>
@@ -40,7 +40,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// </summary>
         /// <param name="nodes">Is a list of nodes to be inserted in the tree.</param>
         /// <returns>Root of the tree.</returns>
-        public abstract TNode Build(List<TNode> nodes);
+        public abstract TNode Build(List<KeyValuePair<TKey,TValue>> nodes);
 
         /// <summary>
         /// Inserts a new node in the tree
@@ -133,10 +133,15 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// </summary>
         /// <param name="nodes">Is a list of nodes to be inserted in the tree.</param>
         /// <returns>Root of the tree.</returns>
-        internal TNode Build_BST(List<TNode> nodes)
+        internal TNode Build_BST(List<KeyValuePair<TKey, TValue>> keyValues)
         {
-            foreach (TNode node in nodes)
+            foreach (KeyValuePair<TKey, TValue> keyVal in keyValues)
             {
+                var node = new TNode()
+                {
+                    Key = keyVal.Key,
+                    Value = keyVal.Value
+                };
                 _root = Insert(_root, node);
             }
             return _root;
@@ -378,7 +383,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// </summary>
         /// <param name="startNode">Is the node at which computing all routes/paths to leaf nodes starts.</param>
         /// <returns>List of all the paths.</returns>
-        public List<List<TNode>> GetAllPathToLeaves(TNode startNode)
+        public virtual List<List<TNode>> GetAllPathToLeaves(TNode startNode)
         {
             if (startNode == null)
             {
@@ -391,13 +396,13 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
 
             for (int i = 0; i < leftPaths.Count; i++)
             {
-                var newPath = new List<TNode> { startNode};
+                var newPath = new List<TNode> { startNode };
                 newPath.AddRange(leftPaths[i]);
                 paths.Add(newPath);
             }
             for (int i = 0; i < rightPaths.Count; i++)
             {
-                var newPath = new List<TNode> { startNode};
+                var newPath = new List<TNode> { startNode };
                 newPath.AddRange(rightPaths[i]);
                 paths.Add(newPath);
             }

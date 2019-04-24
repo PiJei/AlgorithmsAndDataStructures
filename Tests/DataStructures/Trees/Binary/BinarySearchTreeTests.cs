@@ -28,198 +28,156 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
     public class BinarySearchTreeTests
     {
         private BinarySearchTreeNode<int, string> _root;
+
+        /// <summary>
+        /// Is a binary search tree (aka. BST). 
+        /// To visualize this tree built as in <see cref="Init()"/> method, please <see cref="images\bst.png"/> in current directory. 
+        /// </summary>
         private BinarySearchTreeBase<int, string> _tree;
 
         [TestInitialize]
         public void Init()
         {
-            var nodes = new List<BinarySearchTreeNode<int, string>>
-            {
-                new BinarySearchTreeNode<int, string>(40,"str3"),
-                new BinarySearchTreeNode<int, string>(20,"str1"),
-                new BinarySearchTreeNode<int, string>(70,"str6"),
-                new BinarySearchTreeNode<int, string>(50,"str4"),
-                new BinarySearchTreeNode<int, string>(80,"str7"),
-                new BinarySearchTreeNode<int, string>(30,"str2"),
-                new BinarySearchTreeNode<int, string>(60,"str5")
-            };
-
             _tree = new BinarySearchTreeBase<int, string>();
-            _root = _tree.Build(nodes);
+            _root = _tree.Build(Constants.KeyValues);
+        }
+
+        /// <summary>
+        /// For a step by step transition of the BST while inserting these keys, please <see cref="images\bst-insert-stepBystep.png"/>.
+        /// </summary>
+        [TestMethod]
+        public void Build_ExpectsCorrectBinaryTree()
+        {
+            HasBinarySearchTreeProperties(_tree, _root, 10);
         }
 
         [TestMethod]
-        public void Build()
+        public void Delete_Root_ExpectsReplacementByImmediateSuccessorKey42()
         {
-            Assert.IsTrue(BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root));
-        }
-
-        [TestMethod]
-        public void Delete_Root()
-        {
+            Assert.AreEqual(40, _root.Key);
             _root = _tree.Delete(_root, _root.Key);
-            Assert.IsTrue(BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root));
-
-            var inOrderTraversal = new List<BinarySearchTreeNode<int, string>>();
-            _tree.InOrderTraversal(_root, inOrderTraversal);
-            Assert.AreEqual(6, inOrderTraversal.Count);
-            for (int i = 0; i < inOrderTraversal.Count - 1; i++)
-            {
-                Assert.IsTrue(inOrderTraversal[i].Key < inOrderTraversal[i + 1].Key);
-            }
+            HasBinarySearchTreeProperties(_tree, _root, 9);
+            Assert.AreEqual(42, _root.Key);
         }
 
         [TestMethod]
-        public void Delete_NodeWith2Children()
+        public void Delete_NodeWith2Children_ExpectsReplacementWithImmediateSuccessorKey50()
         {
-            _root = _tree.Delete(_root, 70);
-            Assert.IsTrue(BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root));
-
-            var inOrderTraversal = new List<BinarySearchTreeNode<int, string>>();
-            _tree.InOrderTraversal(_root, inOrderTraversal);
-            Assert.AreEqual(6, inOrderTraversal.Count);
-            for (int i = 0; i < inOrderTraversal.Count - 1; i++)
-            {
-                Assert.IsTrue(inOrderTraversal[i].Key < inOrderTraversal[i + 1].Key);
-            }
+            _root = _tree.Delete(_root, 50);
+            HasBinarySearchTreeProperties(_tree, _root, 9);
+            Assert.AreEqual(80, _root.RightChild.Key);
         }
 
         [TestMethod]
         public void Delete_NodeWithNoChildren()
         {
             _root = _tree.Delete(_root, 30);
-            Assert.IsTrue(BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root));
-
-            var inOrderTraversal = new List<BinarySearchTreeNode<int, string>>();
-            _tree.InOrderTraversal(_root, inOrderTraversal);
-            Assert.AreEqual(6, inOrderTraversal.Count);
-            for (int i = 0; i < inOrderTraversal.Count - 1; i++)
-            {
-                Assert.IsTrue(inOrderTraversal[i].Key < inOrderTraversal[i + 1].Key);
-            }
+            HasBinarySearchTreeProperties(_tree, _root, 9);
         }
 
         [TestMethod]
-        public void Delete_NodeWithOneChildren()
+        public void Delete_NodeWithOneChildren_ExpectsReplacementByLeftChild()
         {
-            _root = _tree.Delete(_root, 20);
-            Assert.IsTrue(BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root));
-
-            var inOrderTraversal = new List<BinarySearchTreeNode<int, string>>();
-            _tree.InOrderTraversal(_root, inOrderTraversal);
-            Assert.AreEqual(6, inOrderTraversal.Count);
-            for (int i = 0; i < inOrderTraversal.Count - 1; i++)
-            {
-                Assert.IsTrue(inOrderTraversal[i].Key < inOrderTraversal[i + 1].Key);
-            }
+            _root = _tree.Delete(_root, 47);
+            HasBinarySearchTreeProperties(_tree, _root, 9);
         }
 
+        /// <summary>
+        /// For a step by step transition of the BST while deleting these keys, please <see cref="images\bst-delete-stepBystep.png"/>.
+        /// </summary>
         [TestMethod]
-        public void Delete_MultipleNodes()
+        public void Delete_MultipleNodesConsecutively_ExpectsCorrectBinarySearchTreeAfterEachStep()
         {
-            _root = _tree.Delete(_root, 20);
+            HasBinarySearchTreeProperties(_tree, _root, 10);
+
+            _root = _tree.Delete(_root, 30);
+            HasBinarySearchTreeProperties(_tree, _root, 9);
+
             _root = _tree.Delete(_root, 40);
+            HasBinarySearchTreeProperties(_tree, _root, 8);
+
+            _root = _tree.Delete(_root, 10);
+            HasBinarySearchTreeProperties(_tree, _root, 7);
+
+            _root = _tree.Delete(_root, 80);
+            HasBinarySearchTreeProperties(_tree, _root, 6);
+
+            _root = _tree.Delete(_root, 47);
+            HasBinarySearchTreeProperties(_tree, _root, 5);
+
+            _root = _tree.Delete(_root, 20);
+            HasBinarySearchTreeProperties(_tree, _root, 4);
+
+            _root = _tree.Delete(_root, 45);
+            HasBinarySearchTreeProperties(_tree, _root, 3);
+
+            _root = _tree.Delete(_root, 42);
+            HasBinarySearchTreeProperties(_tree, _root, 2);
+
+            _root = _tree.Delete(_root, 35);
+            HasBinarySearchTreeProperties(_tree, _root, 1);
+
             _root = _tree.Delete(_root, 50);
-
-            Assert.IsTrue(BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root));
-
-            var inOrderTraversal = new List<BinarySearchTreeNode<int, string>>();
-            _tree.InOrderTraversal(_root, inOrderTraversal);
-            Assert.AreEqual(4, inOrderTraversal.Count);
-            for (int i = 0; i < inOrderTraversal.Count - 1; i++)
-            {
-                Assert.IsTrue(inOrderTraversal[i].Key < inOrderTraversal[i + 1].Key);
-            }
+            HasBinarySearchTreeProperties(_tree, _root, 0);
         }
 
         [TestMethod]
-        public void Delete_NotExistingKey()
+        public void Delete_NotExistingKey_ExpectsNoAlternationInTree()
         {
             _root = _tree.Delete(_root, 15);
             _root = _tree.Delete(_root, 800);
             _root = _tree.Delete(_root, 234);
 
-            Assert.IsTrue(BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root));
-
-            var inOrderTraversal = new List<BinarySearchTreeNode<int, string>>();
-            _tree.InOrderTraversal(_root, inOrderTraversal);
-            Assert.AreEqual(7, inOrderTraversal.Count);
-            for (int i = 0; i < inOrderTraversal.Count - 1; i++)
-            {
-                Assert.IsTrue(inOrderTraversal[i].Key < inOrderTraversal[i + 1].Key);
-            }
+            HasBinarySearchTreeProperties(_tree, _root, 10);
         }
 
         [TestMethod]
-        public void DeleteMin_1()
+        public void DeleteMin_InEntireTree_ExpectsToDelete10AndHave20AsNewMin()
         {
             _root = _tree.DeleteMin(_root);
-            Assert.IsTrue(BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root));
-
-            var inOrderTraversal = new List<BinarySearchTreeNode<int, string>>();
-            _tree.InOrderTraversal(_root, inOrderTraversal);
-            Assert.AreEqual(6, inOrderTraversal.Count);
-            for (int i = 0; i < inOrderTraversal.Count - 1; i++)
-            {
-                Assert.IsTrue(inOrderTraversal[i].Key < inOrderTraversal[i + 1].Key);
-            }
-
+            HasBinarySearchTreeProperties(_tree, _root, 9);
             var minNode = _tree.FindMin(_root);
-            Assert.AreEqual(30, minNode.Key);
+            Assert.AreEqual(20, minNode.Key);
         }
 
         [TestMethod]
-        public void DeleteMin_2()
+        public void DeleteMin_InRightSubtreeOfRoot_ExpectsToDelete42AndHave45AsMinAtTheEnd()
         {
             _root.RightChild = _tree.DeleteMin(_root.RightChild);
-            Assert.IsTrue(BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root.RightChild));
-
-            var inOrderTraversal = new List<BinarySearchTreeNode<int, string>>();
-            _tree.InOrderTraversal(_root.RightChild, inOrderTraversal);
-            Assert.AreEqual(3, inOrderTraversal.Count);
-            for (int i = 0; i < inOrderTraversal.Count - 1; i++)
-            {
-                Assert.IsTrue(inOrderTraversal[i].Key < inOrderTraversal[i + 1].Key);
-            }
-
+            HasBinarySearchTreeProperties(_tree, _root.RightChild, 4);
             var minNode = _tree.FindMin(_root.RightChild);
-            Assert.AreEqual(60, minNode.Key);
+            Assert.AreEqual(45, minNode.Key);
         }
 
         [TestMethod]
-        public void DeleteMax_1()
+        public void DeleteMax_InEntireTree_ExpectsToDelete80AndHave50AsNewMax()
         {
             _root = _tree.DeleteMax(_root);
-            Assert.IsTrue(BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root));
-
-            var inOrderTraversal = new List<BinarySearchTreeNode<int, string>>();
-            _tree.InOrderTraversal(_root, inOrderTraversal);
-            Assert.AreEqual(6, inOrderTraversal.Count);
-            for (int i = 0; i < inOrderTraversal.Count - 1; i++)
-            {
-                Assert.IsTrue(inOrderTraversal[i].Key < inOrderTraversal[i + 1].Key);
-            }
-
-            var minNode = _tree.FindMax(_root);
-            Assert.AreEqual(70, minNode.Key);
+            HasBinarySearchTreeProperties(_tree, _root, 9);
+            var maxNode = _tree.FindMax(_root);
+            Assert.AreEqual(50, maxNode.Key);
         }
 
         [TestMethod]
-        public void DeleteMax_2()
+        public void DeleteMax_InLeftSubtreeOfRoot_ExpectsToDelete35AndHave30AsMinAtTheEnd()
         {
-            _root.RightChild = _tree.DeleteMax(_root.LeftChild);
-            Assert.IsTrue(BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(_root.LeftChild));
+            _root.LeftChild = _tree.DeleteMax(_root.LeftChild);
+            HasBinarySearchTreeProperties(_tree, _root.LeftChild, 3);
+            var maxNode = _tree.FindMax(_root.LeftChild);
+            Assert.AreEqual(30, maxNode.Key);
+        }
+
+        public void HasBinarySearchTreeProperties(BinarySearchTreeBase<int, string> tree, BinarySearchTreeNode<int, string> root, int expectedTotalKeyCount)
+        {
+            Assert.IsTrue(BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(root));
 
             var inOrderTraversal = new List<BinarySearchTreeNode<int, string>>();
-            _tree.InOrderTraversal(_root.LeftChild, inOrderTraversal);
-            Assert.AreEqual(1, inOrderTraversal.Count);
+            tree.InOrderTraversal(root, inOrderTraversal);
+            Assert.AreEqual(expectedTotalKeyCount, inOrderTraversal.Count);
             for (int i = 0; i < inOrderTraversal.Count - 1; i++)
             {
                 Assert.IsTrue(inOrderTraversal[i].Key < inOrderTraversal[i + 1].Key);
             }
-
-            var minNode = _tree.FindMin(_root.RightChild);
-            Assert.AreEqual(20, minNode.Key);
         }
     }
 }

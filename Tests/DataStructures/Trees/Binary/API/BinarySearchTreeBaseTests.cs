@@ -338,9 +338,6 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
         {
             List<List<MockBinaryTreeNode<int, string>>> pathsFromRoot = _tree.GetAllPathToLeaves(_root);
             Assert.AreEqual(3, pathsFromRoot.Count);
-            Assert.AreEqual(3, pathsFromRoot[0].Count);
-            Assert.AreEqual(4, pathsFromRoot[1].Count);
-            Assert.AreEqual(3, pathsFromRoot[2].Count);
         }
 
         /// <summary>

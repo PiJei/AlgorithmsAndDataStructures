@@ -29,31 +29,31 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
     public class AVLTreeTests
     {
         private AVLTreeNode<int, string> _root = null;
+
+        /// <summary>
+        /// Is an AVL tree (A form of balanced BST). 
+        /// To visualize this tree built as in <see cref="Init()"/> method, please <see cref="images\avl-bst.png"/> in current directory. 
+        /// </summary>
         private AVLTree<int, string> _tree = null;
 
         [TestInitialize]
         public void Init()
         {
             _tree = new AVLTree<int, string>();
-
-            var nodes = new List<AVLTreeNode<int, string>>
-            {
-                new AVLTreeNode<int, string>(40, "E"),
-                new AVLTreeNode<int, string>(50, "C"),
-                new AVLTreeNode<int, string>(47, "A"),
-                new AVLTreeNode<int, string>(45, "G"),
-                new AVLTreeNode<int, string>(20, "D"),
-                new AVLTreeNode<int, string>(35, "F"),
-                new AVLTreeNode<int, string>(30, "B"),
-                new AVLTreeNode<int, string>(10, "H"),
-                new AVLTreeNode<int, string>(80, "I")
-            };
-
-            _root = _tree.Build(nodes);
+            _root = _tree.Build(Constants.KeyValues);
         }
 
         [TestMethod]
-        public void Insert()
+        public void Build_ExpectsACorrectAVLTree()
+        {
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 10));
+        }
+
+        /// <summary>
+        /// For a step by step transition of the AVL tree while inserting these keys, please <see cref="images\avl-bst-insert-stepByStep.png"/>.
+        /// </summary>
+        [TestMethod]
+        public void Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion()
         {
             AVLTreeNode<int, string> root = null;
             var tree = new AVLTree<int, string>();
@@ -93,196 +93,203 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             var I = new AVLTreeNode<int, string>(80, "I");
             root = tree.Insert(root, I);
             Assert.IsTrue(HasAVLTreeProperties(tree, root, 9));
+
+            var J = new AVLTreeNode<int, string>(42, "J");
+            root = tree.Insert(root, J);
+            Assert.IsTrue(HasAVLTreeProperties(tree, root, 10));
         }
 
         [TestMethod]
-        public void Build()
-        {
-            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 9));
-        }
-
-        [TestMethod]
-        public void Delete_NonExistingKey()
+        public void Delete_NonExistingKey_ExpectsNoAlternationToTree()
         {
             var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
-            Assert.AreEqual(9, nodes.Count);
+            Assert.AreEqual(10, nodes.Count);
 
             _root = _tree.Delete(_root, 25);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 10));
+        }
+
+        [TestMethod]
+        public void Delete_NodeWith2Children_ExpectsLineAndRotateRight()
+        {
+            var nodes = new List<AVLTreeNode<int, string>>();
+            _tree.InOrderTraversal(_root, nodes);
+            Assert.AreEqual(10, nodes.Count);
+
+            _root = _tree.Delete(_root, 30);
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 9));
         }
 
         [TestMethod]
-        public void Delete_NodeWith2Children_1()
+        public void Delete_RootNodeNodeWith2Children_ExpectsReplacementWithSuccessorAndSimpleLeafNodeDeletion()
         {
             var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
-            Assert.AreEqual(9, nodes.Count);
-
-            _root = _tree.Delete(_root, 30);
-            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 8));
-        }
-
-        [TestMethod]
-        public void Delete_NodeWith2Children_2()
-        {
-            var nodes = new List<AVLTreeNode<int, string>>();
-            _tree.InOrderTraversal(_root, nodes);
-            Assert.AreEqual(9, nodes.Count);
+            Assert.AreEqual(10, nodes.Count);
 
             _root = _tree.Delete(_root, 40);
-            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 8));
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 9));
         }
 
         [TestMethod]
-        public void Delete_NodeWith2Children_3()
+        public void Delete_NodeWith2Children_ExpectsReplacementWithMinInSubtreeAndSimpleLeafNodeDeletion()
         {
             var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
-            Assert.AreEqual(9, nodes.Count);
+            Assert.AreEqual(10, nodes.Count);
 
             _root = _tree.Delete(_root, 47);
-            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 8));
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 9));
         }
 
         [TestMethod]
-        public void Delete_NodeWithNoChildren_1()
+        public void Delete_NodeWithNoChildren_ExpectsSimpleDeletion()
         {
             var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
-            Assert.AreEqual(9, nodes.Count);
+            Assert.AreEqual(10, nodes.Count);
 
             _root = _tree.Delete(_root, 10);
-            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 8));
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 9));
         }
 
         [TestMethod]
-        public void Delete_NodeWithNoChildren_2()
+        public void Delete_NodeWithNoChildren_ExpectsLineAndRightRotation()
         {
             var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
-            Assert.AreEqual(9, nodes.Count);
+            Assert.AreEqual(10, nodes.Count);
 
             _root = _tree.Delete(_root, 35);
-            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 8));
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 9));
         }
 
         [TestMethod]
-        public void Delete_NodeWithNoChildren_3()
+        public void Delete_NodeWithNoChildren_ExpectsSimpleLeafDeletion()
         {
             var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
-            Assert.AreEqual(9, nodes.Count);
+            Assert.AreEqual(10, nodes.Count);
 
-            _root = _tree.Delete(_root, 45);
-            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 8));
+            _root = _tree.Delete(_root, 42);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 9));
         }
 
         [TestMethod]
-        public void Delete_NodeWithNoChildren_4()
+        public void Delete_NodeWithNoChildrenAndMaxKey_ExpectsSimpleLeafDeletion()
         {
             var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
-            Assert.AreEqual(9, nodes.Count);
+            Assert.AreEqual(10, nodes.Count);
 
             _root = _tree.Delete(_root, 80);
-            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 8));
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 9));
         }
 
         [TestMethod]
-        public void Delete_NodeWith1Children_1()
+        public void Delete_NodeWith1Children_ExpectsReplacementWithMinInSubtreeAndSimpleLeafDeletion()
         {
             var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
-            Assert.AreEqual(9, nodes.Count);
+            Assert.AreEqual(10, nodes.Count);
 
             _root = _tree.Delete(_root, 20);
-            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 8));
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 9));
         }
 
         [TestMethod]
-        public void Delete_NodeWith1Children_2()
+        public void Delete_NodeWith1Children_ExpectsReplacementWithRightChild()
         {
             var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
-            Assert.AreEqual(9, nodes.Count);
+            Assert.AreEqual(10, nodes.Count);
 
             _root = _tree.Delete(_root, 50);
-            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 8));
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 9));
         }
 
+        /// <summary>
+        /// For a step by step transition of the AVL tree while deleting these keys, please <see cref="images\avl-bst-delete-stepBystep.png"/>.
+        /// </summary>
         [TestMethod]
-        public void Delete_1()
+        public void Delete_MultipleKeysConsecutively_ExpectsCorrectTreeAfterEachDeletion_RandomOrder1()
         {
             var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
-            Assert.AreEqual(9, nodes.Count);
+            Assert.AreEqual(10, nodes.Count);
 
-            _root = _tree.Delete(_root, 50);
-            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 8));
+            _root = _tree.Delete(_root, 30);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 9));
 
             _root = _tree.Delete(_root, 40);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 8));
+
+            _root = _tree.Delete(_root, 10);
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 7));
 
-            _root = _tree.Delete(_root, 10);
+            _root = _tree.Delete(_root, 80);
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 6));
 
-            _root = _tree.Delete(_root, 80);
+            _root = _tree.Delete(_root, 47);
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 5));
 
-            _root = _tree.Delete(_root, 47);
+            _root = _tree.Delete(_root, 20);
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 4));
 
-            _root = _tree.Delete(_root, 20);
+            _root = _tree.Delete(_root, 45);
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 3));
 
-            _root = _tree.Delete(_root, 45);
+            _root = _tree.Delete(_root, 42);
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 2));
 
-            _root = _tree.Delete(_root, 30);
+            _root = _tree.Delete(_root, 35);
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 1));
 
-            _root = _tree.Delete(_root, 35);
+            _root = _tree.Delete(_root, 50);
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 0));
         }
 
         [TestMethod]
-        public void Delete_2()
+        public void Delete_MultipleKeysConsecutively_ExpectsCorrectTreeAfterEachDeletion_RandomOrder2()
         {
             var nodes = new List<AVLTreeNode<int, string>>();
             _tree.InOrderTraversal(_root, nodes);
-            Assert.AreEqual(9, nodes.Count);
+            Assert.AreEqual(10, nodes.Count);
 
             _root = _tree.Delete(_root, 80);
-            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 8));
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 9));
 
             _root = _tree.Delete(_root, 47);
-            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 7));
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 8));
 
             _root = _tree.Delete(_root, 30);
-            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 6));
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 7));
 
             _root = _tree.Delete(_root, 35);
-            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 5));
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 6));
 
             _root = _tree.Delete(_root, 45);
-            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 4));
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 5));
 
             _root = _tree.Delete(_root, 20);
+            Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 4));
+
+            _root = _tree.Delete(_root, 42);
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 3));
 
-            _root = _tree.Delete(_root, 10);
+            _root = _tree.Delete(_root, 50);
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 2));
 
-            _root = _tree.Delete(_root, 50);
+            _root = _tree.Delete(_root, 40);
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 1));
 
-            _root = _tree.Delete(_root, 40);
+            _root = _tree.Delete(_root, 10);
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 0));
         }
 
         [TestMethod]
-        public void GetHeight()
+        public void GetHeight_ForSeveralNodesInSampleTree_ExpectsCorrectHeights()
         {
             var A = new AVLTreeNode<int, string>(50, "A");
             var B = new AVLTreeNode<int, string>(20, "B");
@@ -319,7 +326,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         }
 
         [TestMethod]
-        public void GetBalanceFactor()
+        public void GetBalanceFactor_ForSeveralNodesInSampleTree_ExpectsCorrectValues()
         {
             /* The constructed tree is not AVL, however the method GetBalanceFactor should work regardless. */
             var A = new AVLTreeNode<int, string>(50, "A");

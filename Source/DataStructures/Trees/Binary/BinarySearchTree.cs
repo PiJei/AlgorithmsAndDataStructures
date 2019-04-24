@@ -37,9 +37,9 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         [TimeComplexity(Case.Worst, "O(n²)", When = "Tree is unbalanced such that it is turned into a linked list.")]
         [TimeComplexity(Case.Average, "O(nLog(n))")]
         [SpaceComplexity("O(n)")]
-        public override BinarySearchTreeNode<TKey, TValue> Build(List<BinarySearchTreeNode<TKey, TValue>> nodes)
+        public override BinarySearchTreeNode<TKey, TValue> Build(List<KeyValuePair<TKey, TValue>> keyValues)
         {
-            return Build_BST(nodes);
+            return Build_BST(keyValues);
         }
 
         /// <summary>

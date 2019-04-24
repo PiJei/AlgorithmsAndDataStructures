@@ -32,6 +32,12 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         IComparable<TNode>
         where TKey : IComparable<TKey>
     {
+        // TODO: Used by red black trees move to red black trees
+        /// <summary>
+        /// If set means the node contains no key-values, left or right children.
+        /// </summary>
+        bool IsNill { get; set; }
+
         /// <summary>
         /// Is the key in a tree node. 
         /// </summary>

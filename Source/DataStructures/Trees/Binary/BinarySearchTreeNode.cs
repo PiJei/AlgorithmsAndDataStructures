@@ -24,6 +24,10 @@ namespace CSFundamentals.DataStructures.Trees.Binary
 {
     public class BinarySearchTreeNode<TKey, TValue> : BinaryTreeNode<BinarySearchTreeNode<TKey, TValue>, TKey, TValue> where TKey : IComparable<TKey>
     {
+        public BinarySearchTreeNode()
+        {
+        }
+
         public BinarySearchTreeNode(TKey key, TValue value) : base(key, value)
         {
         }
