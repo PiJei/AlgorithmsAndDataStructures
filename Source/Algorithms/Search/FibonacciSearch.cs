@@ -27,42 +27,42 @@ namespace CSFundamentals.Algorithms.Search
     {
         [Algorithm(AlgorithmType.Search, "FibonacciSearch", Assumptions = "Array is sorted with an ascending order.")]
         // TODO: specify time and space complexity. AND SUMMARY
-        public static int Search<T>(List<T> values, T searchValue) where T : IComparable<T>
+        public static int Search<T>(List<T> sortedList, T key) where T : IComparable<T>
         {
             /* If searchValue is NOT in the range, terminate search. Since the input array is sorted this early check is feasible. */
-            if (searchValue.CompareTo(values[0]) < 0 || searchValue.CompareTo(values[values.Count - 1]) > 0)
+            if (key.CompareTo(sortedList[0]) < 0 || key.CompareTo(sortedList[sortedList.Count - 1]) > 0)
             {
                 return -1;
             }
 
-            FibonacciElement fib = GetSmallestFibonacciBiggerThanNumber(values.Count);
+            FibonacciElement fib = GetSmallestFibonacciBiggerThanNumber(sortedList.Count);
             int startIndex = -1;
 
             /* Note that fib numbers indicate indexes in the array to look at, and not values. */
             while (fib.FibN > 1) /*  meaning in the sequence {0, 1, 1, 2, 3, ...} the while loop will stop when fibN = 2, thus fibN2 can at least be 1 */
             {
                 /* First compare to the value at index FibN2 */
-                int index = Math.Min(startIndex + fib.FibN2, values.Count - 1);
-                if (searchValue.CompareTo(values[index]) == 0)
+                int index = Math.Min(startIndex + fib.FibN2, sortedList.Count - 1);
+                if (key.CompareTo(sortedList[index]) == 0)
                 {
                     return index;
                 }
 
-                if (searchValue.CompareTo(values[index]) < 0)
+                if (key.CompareTo(sortedList[index]) < 0)
                 {
                     // Shift backward twice as checked against FibN2
                     fib.ShiftBackward();
                     fib.ShiftBackward();
                 }
 
-                if (searchValue.CompareTo(values[index]) > 0)
+                if (key.CompareTo(sortedList[index]) > 0)
                 {
                     fib.ShiftBackward();
                     startIndex = index; /* Which is the previous Fib2*/
                 }
             }
 
-            if (fib.FibN1 == 1 && (startIndex + 1) < values.Count && values[startIndex + 1].CompareTo(searchValue) == 0)
+            if (fib.FibN1 == 1 && (startIndex + 1) < sortedList.Count && sortedList[startIndex + 1].CompareTo(key) == 0)
             {
                 return startIndex + 1;
             }

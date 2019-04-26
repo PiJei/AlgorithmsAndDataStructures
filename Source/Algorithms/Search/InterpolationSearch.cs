@@ -30,17 +30,17 @@ namespace CSFundamentals.Algorithms.Search
         /// The search is named inter-polation, as it always has two main poles that it moves back and forth between them, these poles are the start index and the end index of the array. 
         /// Notice that only works if the given array is sorted. 
         /// </summary>
-        /// <param name="values">A sorted list of any comparable type that are also uniformly distributed. </param>
+        /// <param name="sortedList">A sorted list of any comparable type that are also uniformly distributed. </param>
         /// <param name="startIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>
         /// <param name="endIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
-        /// <param name="searchValue">Specifies the value that is being searched for. </param>
-        /// <returns>The index of the <paramref name="searchValue"> in the array, and -1 if it does not exist in the array. </returns>
+        /// <param name="key">Specifies the value that is being searched for. </param>
+        /// <returns>The index of the <paramref name="key"> in the array, and -1 if it does not exist in the array. </returns>
         [Algorithm(AlgorithmType.Search, "InterpolationSearch", Assumptions = "Array is sorted with an ascending order, and elements are driven from a uniform distribution.")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(n)")]
         [TimeComplexity(Case.Average, "O(Log(Log(n)))")]
-        public static int Search<T>(List<T> values, int startIndex, int endIndex, T searchValue) where T : IComparable<T>
+        public static int Search<T>(List<T> sortedList, int startIndex, int endIndex, T key) where T : IComparable<T>
         {
             if (startIndex > endIndex)
             {
@@ -48,32 +48,32 @@ namespace CSFundamentals.Algorithms.Search
             }
 
             /* If searchValue is NOT in the range, terminate search. Since the input array is sorted this early check is feasible. */
-            if (searchValue.CompareTo(values[startIndex]) < 0 || searchValue.CompareTo(values[endIndex]) > 0)
+            if (key.CompareTo(sortedList[startIndex]) < 0 || key.CompareTo(sortedList[endIndex]) > 0)
             {
                 return -1;
             }
 
-            int searchStartIndex = GetStartIndex(values, startIndex, endIndex, searchValue);
+            int searchStartIndex = GetStartIndex(sortedList, startIndex, endIndex, key);
             if (!(searchStartIndex >= startIndex && searchStartIndex <= endIndex))
             {
                 return -1;
             }
 
-            T searchStartValue = values[searchStartIndex];
+            T searchStartValue = sortedList[searchStartIndex];
 
-            if (searchValue.CompareTo(searchStartValue) == 0)
+            if (key.CompareTo(searchStartValue) == 0)
             {
                 return searchStartIndex;
             }
 
-            if (searchValue.CompareTo(searchStartValue) < 0)
+            if (key.CompareTo(searchStartValue) < 0)
             {
-                return Search(values, startIndex, searchStartIndex - 1, searchValue);
+                return Search(sortedList, startIndex, searchStartIndex - 1, key);
             }
 
-            if (searchValue.CompareTo(searchStartValue) > 0)
+            if (key.CompareTo(searchStartValue) > 0)
             {
-                return Search(values, searchStartIndex + 1, endIndex, searchValue);
+                return Search(sortedList, searchStartIndex + 1, endIndex, key);
             }
 
             return -1;

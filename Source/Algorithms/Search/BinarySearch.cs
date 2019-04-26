@@ -26,19 +26,19 @@ namespace CSFundamentals.Algorithms.Search
     public class BinarySearch
     {
         /// <summary>
-        /// Searches in a sorted list of any comparable type, and returns the index of the <paramref name="searchValue"/> using binary search, and -1 if it is not found. 
+        /// Searches in a sorted list of any comparable type, and returns the index of the <paramref name="key"/> using binary search, and -1 if it is not found. 
         /// </summary>
-        /// <param name="values">A sorted list of any comparable type. </param>
+        /// <param name="sortedList">A sorted list of any comparable type. </param>
         /// <param name="startIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>
         /// <param name="endIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
-        /// <param name="searchValue">Specifies the value that is being searched for. </param>
-        /// <returns>The index of the <paramref name="searchValue"/> in the array, and -1 if it is absent from the array. </returns>
+        /// <param name="key">Specifies the value that is being searched for. </param>
+        /// <returns>The index of the <paramref name="key"/> in the array, and -1 if it is absent from the array. </returns>
         [Algorithm(AlgorithmType.Search, "BinarySearch", Assumptions = "Array is sorted with an ascending order.")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
-        public static int Search<T>(List<T> values, int startIndex, int endIndex, T searchValue) where T : IComparable<T>
+        public static int Search<T>(List<T> sortedList, int startIndex, int endIndex, T key) where T : IComparable<T>
         {
             if (startIndex > endIndex)
             {
@@ -46,25 +46,25 @@ namespace CSFundamentals.Algorithms.Search
             }
 
             /* If searchValue is NOT in the range, terminate search. Since the input array is sorted this early check is feasible. */
-            if (searchValue.CompareTo(values[startIndex]) < 0 || searchValue.CompareTo(values[endIndex]) > 0)
+            if (key.CompareTo(sortedList[startIndex]) < 0 || key.CompareTo(sortedList[endIndex]) > 0)
             {
                 return -1;
             }
 
             int middleIndex = (startIndex + endIndex) / 2;
-            T middleValue = values[middleIndex];
+            T middleValue = sortedList[middleIndex];
 
-            if (searchValue.CompareTo(middleValue) == 0)
+            if (key.CompareTo(middleValue) == 0)
             {
                 return middleIndex;
             }
-            if (searchValue.CompareTo(middleValue) < 0)
+            if (key.CompareTo(middleValue) < 0)
             {
-                return Search(values, startIndex, middleIndex - 1, searchValue);
+                return Search(sortedList, startIndex, middleIndex - 1, key);
             }
-            if (searchValue.CompareTo(middleValue) > 0)
+            if (key.CompareTo(middleValue) > 0)
             {
-                return Search(values, middleIndex + 1, endIndex, searchValue);
+                return Search(sortedList, middleIndex + 1, endIndex, key);
             }
 
             return -1;
