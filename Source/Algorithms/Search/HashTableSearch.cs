@@ -30,20 +30,20 @@ namespace CSFundamentals.Algorithms.Search
         /// <summary>
         /// Implements search using a hash table. 
         /// </summary>
-        /// <param name="values">Specifies a list of any comparable type.</param>
-        /// <param name="searchValue">Specifies the value the method is searching for. </param>
-        /// <returns>The list of all the indexes in the array that have <paramref name="searchValue">. </returns>
+        /// <param name="list">Specifies a list of any comparable type.</param>
+        /// <param name="key">Specifies the value the method is searching for. </param>
+        /// <returns>The list of all the indexes in the array that have <paramref name="key">. </returns>
         [Algorithm(AlgorithmType.Search, "HashTable")]
         [SpaceComplexity("O(n)", InPlace = false)]
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(n)", When = "All the elements are mapped to the same key (for example due to lots of conflicts in the hashing method).")]
         [TimeComplexity(Case.Average, "O(1)")]
-        public static List<int> Search<T>(List<T> values, T searchValue) where T : IComparable<T>
+        public static List<int> Search<T>(List<T> list, T key) where T : IComparable<T>
         {
-            Dictionary<T, List<int>> hashTable = ConvertList2HashTable(values);
-            if (hashTable.ContainsKey(searchValue)) //todo: sHOULD USE my own contains... 
+            Dictionary<T, List<int>> hashTable = ConvertList2HashTable(list);
+            if (hashTable.ContainsKey(key)) //todo: sHOULD USE my own contains... 
             {
-                return hashTable[searchValue];
+                return hashTable[key];
             }
             return new List<int> { };
         }

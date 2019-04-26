@@ -31,19 +31,19 @@ namespace CSFundamentals.Algorithms.Search
         /// <summary>
         /// Searches for a given value in a list. 
         /// </summary>
-        /// <param name="values">Specifies a list of any comparable type.</param>
-        /// <param name="searchValue">Specifies the value the method is searching for. </param>
-        /// <returns>The index of the <paramref name="searchValue"/> in the array, and -1 if it does not exist in the array. </returns>
+        /// <param name="list">Specifies a list of any comparable type.</param>
+        /// <param name="key">Specifies the value the method is searching for. </param>
+        /// <returns>The index of the <paramref name="key"/> in the array, and -1 if it does not exist in the array. </returns>
         [Algorithm(AlgorithmType.Search, "LinearSearch")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(n)")]
         [TimeComplexity(Case.Average, "O(n)")]
-        public static int Search<T>(List<T> values, int startIndex, int endIndex, T searchValue) where T : IComparable<T>
+        public static int Search<T>(List<T> list, int startIndex, int endIndex, T key) where T : IComparable<T>
         {
             for (int i = startIndex; i <= endIndex; i++)
             {
-                if (values[i].CompareTo(searchValue) == 0)
+                if (list[i].CompareTo(key) == 0)
                 {
                     return i;
                 }
