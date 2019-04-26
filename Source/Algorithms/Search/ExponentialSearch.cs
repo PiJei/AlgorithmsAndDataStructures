@@ -34,11 +34,11 @@ namespace CSFundamentals.Algorithms.Search
         [Algorithm(AlgorithmType.Search, "ExponentialSearch", Assumptions = "Array is sorted with an ascending order.")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(1)")]
-        [TimeComplexity(Case.Worst, "O(log(i)), i is the index of the searchValue in the array.")]
-        [TimeComplexity(Case.Average, "O(log(i)), i is the index of the searchValue in the array.")]
+        [TimeComplexity(Case.Worst, "O(log(i)), i is the index of the key in the array.")]
+        [TimeComplexity(Case.Average, "O(log(i)), i is the index of the key in the array.")]
         public static int Search<T>(List<T> sortedList, T key) where T : IComparable<T>
         {
-            /* If searchValue is NOT in the range, terminate search. Since the input array is sorted this early check is feasible. */
+            /* If key is NOT in the range, terminate search. Since the input array is sorted this early check is feasible. */
             if (key.CompareTo(sortedList[0]) < 0 || key.CompareTo(sortedList[sortedList.Count - 1]) > 0)
             {
                 return -1;
@@ -50,12 +50,12 @@ namespace CSFundamentals.Algorithms.Search
             }
 
             int nextIndex = 1; /* Ideally should start from index 0, however that would make the while loop indexing complex, thus treating index 0 differently, and then continuing with the rest. */
-            while (nextIndex < sortedList.Count && sortedList[nextIndex].CompareTo(key) < 0) /* multiple the search step by 2, until encountering an element that is bigger than the searchValue*/
+            while (nextIndex < sortedList.Count && sortedList[nextIndex].CompareTo(key) < 0) /* multiple the search step by 2, until encountering an element that is bigger than the key. */
             {
                 nextIndex = nextIndex * 2;
             }
 
-            /* The range at which the searchValue is expected to be is thus [nextIndex/2, nextIndex] - perform a binary search in this range. */
+            /* The range at which the key is expected to be is thus [nextIndex/2, nextIndex] - perform a binary search in this range. */
             return BinarySearch.Search(sortedList, nextIndex / 2, Math.Min(nextIndex, sortedList.Count - 1), key);
         }
     }

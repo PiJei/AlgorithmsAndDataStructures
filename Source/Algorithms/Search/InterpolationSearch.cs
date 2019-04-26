@@ -47,7 +47,7 @@ namespace CSFundamentals.Algorithms.Search
                 return -1;
             }
 
-            /* If searchValue is NOT in the range, terminate search. Since the input array is sorted this early check is feasible. */
+            /* If key is NOT in the range, terminate search. Since the input array is sorted this early check is feasible. */
             if (key.CompareTo(sortedList[startIndex]) < 0 || key.CompareTo(sortedList[endIndex]) > 0)
             {
                 return -1;
@@ -81,16 +81,16 @@ namespace CSFundamentals.Algorithms.Search
 
         /// <summary>
         /// Computes an index to start the search from, Dependent on the value we are after. 
-        /// This formula is such that if the <paramref name="searchValue"> is closer to the value in the <paramref name="startIndex"/>, the search start point will be chosen closer to the <paramref name="startIndex"/>, and if the <paramref name="searchValue"/> is closer to the value at <paramref name="endIndex"/>, the search start point will be chosen closer to the <paramref name="endIndex"/>.
+        /// This formula is such that if the <paramref name="key"> is closer to the value in the <paramref name="startIndex"/>, the search start point will be chosen closer to the <paramref name="startIndex"/>, and if the <paramref name="key"/> is closer to the value at <paramref name="endIndex"/>, the search start point will be chosen closer to the <paramref name="endIndex"/>.
         /// </summary>
-        /// <param name="values">A sorted list of any comparable type that are also uniformly distributed. </param>
+        /// <param name="sortedList">A sorted list of any comparable type that are also uniformly distributed. </param>
         /// <param name="startIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>
         /// <param name="endIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
-        /// <param name="searchValue">Specifies the value that is being searched for. </param>
+        /// <param name="key">Specifies the value that is being searched for. </param>
         /// <returns>The index in the array at which to start the search. </returns>
-        public static int GetStartIndex<T>(List<T> values, int startIndex, int endIndex, T searchValue) where T : IComparable<T>
+        public static int GetStartIndex<T>(List<T> sortedList, int startIndex, int endIndex, T key) where T : IComparable<T>
         {
-            double distanceFromStartIndex = ((dynamic)searchValue - (dynamic)values[startIndex]) / (double)((dynamic)values[endIndex] - (dynamic)values[startIndex]);
+            double distanceFromStartIndex = ((dynamic)key - (dynamic)sortedList[startIndex]) / (double)((dynamic)sortedList[endIndex] - (dynamic)sortedList[startIndex]);
             distanceFromStartIndex = distanceFromStartIndex * (endIndex - startIndex);
             int index = (int)(startIndex + distanceFromStartIndex);
             return index;

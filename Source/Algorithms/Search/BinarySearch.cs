@@ -45,7 +45,7 @@ namespace CSFundamentals.Algorithms.Search
                 return -1;
             }
 
-            /* If searchValue is NOT in the range, terminate search. Since the input array is sorted this early check is feasible. */
+            /* If key is NOT in the range, terminate search. Since the input array is sorted this early check is feasible. */
             if (key.CompareTo(sortedList[startIndex]) < 0 || key.CompareTo(sortedList[endIndex]) > 0)
             {
                 return -1;

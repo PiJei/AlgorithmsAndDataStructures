@@ -39,7 +39,7 @@ namespace CSFundamentals.Algorithms.Search
         [TimeComplexity(Case.Average, "O(√n)")]
         public static int Search<T>(List<T> sortedList, T key) where T : IComparable<T>
         {
-            /* If searchValue is NOT in the range, terminate search. Since the input array is sorted this early check is feasible. */
+            /* If key is NOT in the range, terminate search. Since the input array is sorted this early check is feasible. */
             if (key.CompareTo(sortedList[0]) < 0 || key.CompareTo(sortedList[sortedList.Count - 1]) > 0)
             {
                 return -1;
