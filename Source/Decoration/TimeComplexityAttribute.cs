@@ -23,10 +23,20 @@ using System;
 namespace CSFundamentals.Decoration
 {
     //TODO: Very similar to space complexity, ideally unify
+    /// <summary>
+    /// Implements an attribute for decorating algorithms with time complexity. 
+    /// </summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public class TimeComplexityAttribute : Attribute
     {
+        /// <summary>
+        /// Specifies the time complexity of the algorithms. 
+        /// </summary>
         public string Complexity { get; private set; }
+
+        /// <summary>
+        /// Specifies the case for time complexity, such as best, average, worst. 
+        /// </summary>
         public Case ExecutionCase { get; private set; }
 
         /// <summary>
@@ -34,6 +44,11 @@ namespace CSFundamentals.Decoration
         /// </summary>
         public string When { get; set; }
 
+        /// <summary>
+        /// Constructor. 
+        /// </summary>
+        /// <param name="executionCase">Case such as best, average, worst</param>
+        /// <param name="complexity">Is the time complexity of the algorithm.</param>
         public TimeComplexityAttribute(Case executionCase, string complexity)
         {
             ExecutionCase = executionCase;
@@ -41,10 +56,24 @@ namespace CSFundamentals.Decoration
         }
     }
 
+    /// <summary>
+    /// Is the execution case of an algorithm. 
+    /// </summary>
     public enum Case
     {
+        /// <summary>
+        /// Average case, 
+        /// </summary>
         Average,
+
+        /// <summary>
+        /// Best case, when some specific conditions are met. 
+        /// </summary>
         Best,
+
+        /// <summary>
+        ///  Worst case. 
+        /// </summary>
         Worst
     }
 }

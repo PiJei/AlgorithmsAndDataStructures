@@ -25,6 +25,11 @@ using CSFundamentals.DataStructures.Trees.Nary.API;
 
 namespace CSFundamentals.DataStructures.Trees.Nary
 {
+    /// <summary>
+    /// Implements a B+ Tree node. 
+    /// </summary>
+    /// <typeparam name="TKey">Type of the keys in the tree. </typeparam>
+    /// <typeparam name="TValue">Type of the values in the tree. </typeparam>
     public class BPlusTreeNode<TKey, TValue> :
         BTreeNodeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>
         where TKey : IComparable<TKey>
@@ -39,6 +44,9 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         /// </summary>
         public BPlusTreeNode<TKey, TValue> PreviousLeaf { get; set; } = null;
 
+        /// <summary>
+        /// Parameter-less constructor.
+        /// </summary>
         public BPlusTreeNode()
         {
         }
@@ -70,6 +78,10 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         {
         }
 
+        /// <summary>
+        /// Inserts the given key in _keyValues array. 
+        /// </summary>
+        /// <param name="key">A key to be inserted in the _keyValues array. </param>
         public void InsertKey(TKey key)
         {
             /* Since KeyValues is a sorted list, the new key value pair will be inserted at its correct position. */
@@ -79,6 +91,10 @@ namespace CSFundamentals.DataStructures.Trees.Nary
             }
         }
 
+        /// <summary>
+        /// Gets the index of the current node in its parent's _children array. 
+        /// </summary>
+        /// <returns>index of the current node in its parent's _children array. </returns>
         public override int GetIndexAtParentChildren()
         {
             return _parent != null ? _parent.GetChildIndex(this) : throw new ArgumentException($"Failed to get index of the node at its parent's children array. Parent is null.");
@@ -86,9 +102,9 @@ namespace CSFundamentals.DataStructures.Trees.Nary
 
         // TODO: How could this method be moved to base class and redundant implementations dropped from b-tree variation
         /// <summary>
-        /// Inserts a child in <see cref="_children"/> array.
+        /// Inserts a child in _children array.
         /// </summary>
-        /// <param name="child">the new child to be inserted in <see cref="_children"/> array. </param>
+        /// <param name="child">the new child to be inserted in _children array. </param>
         public override void InsertChild(BPlusTreeNode<TKey, TValue> child)
         {
             /* Since Children is a sorted list, Child will be inserted at its correct position based on the Compare() method, to preserve the ordering. */
@@ -96,8 +112,11 @@ namespace CSFundamentals.DataStructures.Trees.Nary
             child.SetParent(this);
         }
 
-
         // TODO: add test
+        /// <summary>
+        /// Checks whether the current node has any grand children. 
+        /// </summary>
+        /// <returns>True if the current node has any grand child, and false otherwise. </returns>
         public bool HasGrandChild()
         {
             return _children.Any() && _children.Any(child => child.Key.ChildrenCount > 0);

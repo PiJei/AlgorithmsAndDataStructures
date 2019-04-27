@@ -22,11 +22,21 @@ using System;
 
 namespace CSFundamentals.Decoration
 {
+    /// <summary>
+    /// Implements an attribute for decorating data structures. 
+    /// </summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public class DataStructureAttribute : Attribute
     {
+        /// <summary>
+        /// Is the name of data structure. 
+        /// </summary>
         public string Name { get; private set; }
 
+        /// <summary>
+        /// Constructor. 
+        /// </summary>
+        /// <param name="name">Name of the data structure. </param>
         public DataStructureAttribute(string name)
         {
             Name = name;

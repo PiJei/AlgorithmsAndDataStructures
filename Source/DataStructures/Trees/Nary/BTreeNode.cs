@@ -35,6 +35,9 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         BTreeNodeBase<BTreeNode<TKey, TValue>, TKey, TValue>
         where TKey : IComparable<TKey>
     {
+        /// <summary>
+        /// Parameter-less constructor. 
+        /// </summary>
         public BTreeNode()
         {
         }
@@ -68,18 +71,18 @@ namespace CSFundamentals.DataStructures.Trees.Nary
 
         // TODO: Rather than having this replace this with a call on parent node! meaning you wont need this! and can move up
         /// <summary>
-        /// Gets the index of the current node in its parent's <see cref="_children"/> list.
+        /// Gets the index of the current node in its parent's _children list.
         /// </summary>
-        /// <returns>Index at parent's <see cref="_children"/> list.</returns>
+        /// <returns>Index at parent's _children list.</returns>
         public override int GetIndexAtParentChildren()
         {
             return _parent != null ? _parent.GetChildIndex(this) : throw new ArgumentException($"Failed to get index of the node at its parent's children array. Parent is null.");
         }
 
         /// <summary>
-        /// Inserts a child in <see cref="_children"/> array.
+        /// Inserts a child in _children array.
         /// </summary>
-        /// <param name="child">the new child to be inserted in <see cref="_children"/> array. </param>
+        /// <param name="child">the new child to be inserted in _children array. </param>
         public override void InsertChild(BTreeNode<TKey, TValue> child)
         {
             /* Since Children is a sorted list, Child will be inserted at its correct position based on the Compare() method, to preserve the ordering. */

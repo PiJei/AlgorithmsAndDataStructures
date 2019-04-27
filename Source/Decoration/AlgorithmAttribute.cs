@@ -22,17 +22,37 @@ using System;
 
 namespace CSFundamentals.Decoration
 {
+    /// <summary>
+    /// Implements an attribute for decorating algorithms. 
+    /// </summary>
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
     public class AlgorithmAttribute : Attribute
     {
+        /// <summary>
+        /// Specifies the type of the algorithm. 
+        /// </summary>
         public AlgorithmType Type { get; private set; }
 
+        /// <summary>
+        /// Is the name of the algorithm. 
+        /// </summary>
         public string Name { get; private set; }
 
+        /// <summary>
+        /// Is set to true if the algorithm has a greedy approach. 
+        /// </summary>
         public bool IsGreedy { get; set; }
 
+        /// <summary>
+        /// A string list of assumptions made by the algorithm. 
+        /// </summary>
         public string Assumptions { get; set; }
 
+        /// <summary>
+        /// Constructor. 
+        /// </summary>
+        /// <param name="type">Type of the algorithm. </param>
+        /// <param name="name">Name of the algorithm. </param>
         public AlgorithmAttribute(AlgorithmType type, string name)
         {
             Type = type;
@@ -40,12 +60,34 @@ namespace CSFundamentals.Decoration
         }
     }
 
+    /// <summary>
+    /// Specifies algorithm categories. 
+    /// </summary>
     public enum AlgorithmType
     {
+        /// <summary>
+        /// Used for tagging sort algorithms. 
+        /// </summary>
         Sort = 1,
+
+        /// <summary>
+        /// Used for tagging search algorithms. 
+        /// </summary>
         Search = 2,
+
+        /// <summary>
+        /// Used for tagging pattern search algorithms. 
+        /// </summary>
         PatternSearch = 3,
+
+        /// <summary>
+        /// Used for tagging hashing algorithms. 
+        /// </summary>
         Hash = 4,
+
+        /// <summary>
+        /// Used for graph path/route search algorithms. 
+        /// </summary>
         GraphRouteSearch = 5
     }
 }

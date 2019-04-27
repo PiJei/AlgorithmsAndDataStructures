@@ -34,11 +34,20 @@ using CSFundamentals.Decoration;
 
 namespace CSFundamentals.DataStructures.Trees.Nary
 {
+    /// <summary>
+    /// Implements a B-Tree. 
+    /// </summary>
+    /// <typeparam name="TKey">Type of the keys in the tree. </typeparam>
+    /// <typeparam name="TValue">Type of the values in the tree. </typeparam>
     [DataStructure("BTree")]
     public class BTree<TKey, TValue> :
         BTreeBase<BTreeNode<TKey, TValue>, TKey, TValue>
         where TKey : IComparable<TKey>
     {
+        /// <summary>
+        /// Constructor. 
+        /// </summary>
+        /// <param name="maxBranchingDegree">Maximum branching degree of any node in the tree or the maximum number of children any node can have. </param>
         public BTree(int maxBranchingDegree) : base(maxBranchingDegree)
         {
         }
@@ -47,6 +56,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         /// <summary>
         /// Inserts a new key-value pair in the tree and returns root of the tree. 
         /// </summary>
+        /// <param name="leafNode">Is a leaf node. </param>
         /// <param name="keyValue">Is the key-value pair to be inserted in the tree. </param>
         /// <returns>Root of the tree. </returns>
         [TimeComplexity(Case.Best, "O(1)", When = "Fist key in the tree is inserted.")]
@@ -196,6 +206,11 @@ namespace CSFundamentals.DataStructures.Trees.Nary
             }
         }
 
+        /// <summary>
+        /// Returns a sorted list of all key-value pairs in the tree. 
+        /// </summary>
+        /// <param name="node">The node at which to start traversing the tree. </param>
+        /// <returns>A sorted list of key value pairs. </returns>
         public override List<KeyValuePair<TKey, TValue>> GetSortedKeyValues(BTreeNode<TKey, TValue> node)
         {
             var sortedKeyValues = new List<KeyValuePair<TKey, TValue>>();

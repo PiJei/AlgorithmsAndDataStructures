@@ -24,13 +24,27 @@ using System;
 
 namespace CSFundamentals.Decoration
 {
+    /// <summary>
+    /// Implements an attribute for decorating space complexity of algorithms. 
+    /// </summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false)]
     public class SpaceComplexityAttribute : Attribute
     {
+        /// <summary>
+        /// Specifies the complexity of space / memory used in algorithm implementation. 
+        /// </summary>
         public string Complexity { get; private set; }
 
+        /// <summary>
+        /// If set to true means the algorithm is in place and thus does not use any auxiliary space. 
+        /// </summary>
         public bool InPlace { get; set; }
 
+        /// <summary>
+        /// Constructor. 
+        /// </summary>
+        /// <param name="complexity">Space complexity. </param>
+        /// <param name="inPlace">Specifies whether the algorithm is in place or not. </param>
         public SpaceComplexityAttribute(string complexity, bool inPlace = false)
         {
             Complexity = complexity;
