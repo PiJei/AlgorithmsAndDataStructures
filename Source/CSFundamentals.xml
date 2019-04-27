@@ -2611,6 +2611,14 @@
             <param name="leftSibling">The node that will contain keys of the node, its current keys, and a key from parent. </param>
             <returns>Parent of the nodes. </returns>
         </member>
+        <member name="T:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3">
+            <summary>
+            Implements a base B-Tree node. 
+            </summary>
+            <typeparam name="TNode">Type of B-Tree node.</typeparam>
+            <typeparam name="TKey">Type of the key stored in the B-Tree node. </typeparam>
+            <typeparam name="TValue">Type of the value stored in the B-Tree node. </typeparam>
+        </member>
         <member name="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._keyValues">
             <summary>
             A list of key-value pairs stored in this node. 
@@ -2651,6 +2659,17 @@
             Is the maximum number of branches/children a B-tree internal or root node can have. Leaf nodes contain 0 children. 
             </summary>
         </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.#ctor">
+            <summary>
+            Parameter-less constructor.
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.#ctor(System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="maxBranchingDegree">Maximum branching factor or the maximum number of children the node can have. </param>
+        </member>
         <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.#ctor(System.Int32,System.Collections.Generic.KeyValuePair{`1,`2})">
             <summary>
             Creates a node with 1 key. 
@@ -2680,6 +2699,12 @@
             <summary>
             Removes all the keys from the node. 
             </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetKeyValues">
+            <summary>
+            Returns the list of key-value pairs stored in this node. 
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.IsLeaf">
             <summary>
@@ -2842,6 +2867,18 @@
             </summary>
             <param name="keyVal">the new key-value pair to be inserted in <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._keyValues"/> array. </param>
         </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.SetParent(`0)">
+            <summary>
+            Sets the parent node of the current node. 
+            </summary>
+            <param name="parent">Parent node of the current node. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetParent">
+            <summary>
+            Gets the parent node of the current node. 
+            </summary>
+            <returns>Parent node of the current node. </returns>
+        </member>
         <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.Split">
             <summary>
             Splits this node to 2 nodes if it is overflown, such that each node has at least MinKeys keys.
@@ -2855,6 +2892,41 @@
             </summary>
             <returns>The key at the middle of the key-value pairs that shall be moved to the parent. </returns>
         </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.CompareTo(`0)">
+            <summary>
+            Compares current node to another node. 
+            </summary>
+            <param name="other">A tree node. </param>
+            <returns>0 if they are equal, 1 if the current node is bigger and -1 otherwise. </returns>
+        </member>
+        <member name="T:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3">
+            <summary>
+            Provides an interface for B-Tree nodes. 
+            </summary>
+            <typeparam name="TNode">Type of a B-Tree node. </typeparam>
+            <typeparam name="TKey">Type of the key stored in the node. </typeparam>
+            <typeparam name="TValue">Type of the value stored in the node. </typeparam>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.MaxBranchingDegree">
+            <summary>
+            Maximum branching degree or maximum number of children the node can have. 
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.MinBranchingDegree">
+            <summary>
+            Minimum branching degree or the minimum number of children the node can have. 
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.MaxKeys">
+            <summary>
+            Maximum number of keys that can be stored in a tree. 
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.MinKeys">
+            <summary>
+            Minimum number of keys that can be stored in a tree. 
+            </summary>
+        </member>
         <member name="P:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.KeyCount">
             <summary>
             Is the count of key-value pairs in the node. 
@@ -2864,6 +2936,159 @@
             <summary>
             Is the count of the children of the node. 
             </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.Clear">
+            <summary>
+            Clears the current node's key-values.
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.IsLeaf">
+            <summary>
+            Checks whether the current node is a leaf node. 
+            </summary>
+            <returns>True if leaf and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.IsRoot">
+            <summary>
+            Checks whether the current node is a root node. 
+            </summary>
+            <returns>True if root and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.IsFull">
+            <summary>
+            Checks whether the current node has MaxKeys keys stored in it (meaning it is full). 
+            </summary>
+            <returns>True if the node is full, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.IsOverFlown">
+            <summary>
+            Checks whether the current node has more than MaxKeys stored in it (meaning it is overFlown). 
+            </summary>
+            <returns>True if the node is overflown and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.IsUnderFlown">
+            <summary>
+            Checks whether the current node has less than MinKeys stored in it (meaning it is underFlown)
+            </summary>
+            <returns>True if the node is underFlown, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.IsMinFull">
+            <summary>
+            Checks whether the current node has exactly MinKeys stored in it (meaning it is minFull). 
+            </summary>
+            <returns>True if the node is minFull, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.IsMinOneFull">
+            <summary>
+            Checks whether the current node has exactly MinKeys+1 stored in it (meaning it is minOneFull).
+            </summary>
+            <returns>True if the node is MinOneFull, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.IsEmpty">
+            <summary>
+            Checks whether the current node has 0 keys stored in it (meaning is empty).
+            </summary>
+            <returns>True if the node is empty, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.HasLeftSibling">
+            <summary>
+            Checks whether the current node has a left sibling.
+            </summary>
+            <returns>True if the current node has a left sibling, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.HasRightSibling">
+            <summary>
+            Checks whether the current node has a right sibling. 
+            </summary>
+            <returns>True if the current node has a right sibling, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.GetMinKey">
+            <summary>
+            Gets the minimum key in the current node. 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.GetMaxKey">
+            <summary>
+            Gets the maximum key in the current node. 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.GetChild(System.Int32)">
+            <summary>
+            Gets the child at index <paramref name="index"/>
+            </summary>
+            <param name="index">An index to be evaluated in the _children array.</param>
+            <returns>The child node. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.GetParent">
+            <summary>
+            Gets the parent of the current node. 
+            </summary>
+            <returns>Parent node. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.SetParent(`0)">
+            <summary>
+            Sets the parent node of the current node. 
+            </summary>
+            <param name="parent">Parent node. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.GetChildIndex(`0)">
+            <summary>
+            Gets the index of the given child in _children array. 
+            </summary>
+            <param name="child">The child node. </param>
+            <returns>Index of the child node in the _children array. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.GetKey(System.Int32)">
+            <summary>
+            Gets the key in index <paramref name="index"/> of _keyValues array. 
+            </summary>
+            <param name="index">An index to be evaluated in _keyValues array. </param>
+            <returns>The key at the given index. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.GetKeyValue(System.Int32)">
+            <summary>
+            Gets the key-value pair at index <paramref name="index"/> of _keyValues array. 
+            </summary>
+            <param name="index">An index to be evaluated in _keyValues array. </param>
+            <returns>The key-value pair at the given index. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.InsertKeyValue(System.Collections.Generic.KeyValuePair{`1,`2})">
+            <summary>
+            Inserts the given key-value pair in the _keyValues array.
+            </summary>
+            <param name="keyVal">A key-value pair to be inserted in the _keyValues array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.InsertChild(`0)">
+            <summary>
+            Inserts the given child node in the _children array. 
+            </summary>
+            <param name="child">A tree node. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.GetIndexAtParentChildren">
+            <summary>
+            Gets the index of the current node in its parent's _children array. 
+            </summary>
+            <returns>index of the current node in its parent's _children array</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.RemoveKeyByIndex(System.Int32)">
+            <summary>
+            Removes the key at the given index in _keyValues array. 
+            </summary>
+            <param name="index">An index in _keyValues array.</param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.RemoveKey(`1)">
+            <summary>
+            Removes the given key from _keyValues array. 
+            </summary>
+            <param name="key">A key to be removed. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.RemoveChildByIndex(System.Int32)">
+            <summary>
+            Removes the child at the given index from _children array. 
+            </summary>
+            <param name="index">An index in the _children array. </param>
         </member>
         <member name="M:CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.ReBalance(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},System.Int32,System.Int32)">
             <summary>

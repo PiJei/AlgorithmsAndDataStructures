@@ -24,6 +24,12 @@ using System.Linq;
 
 namespace CSFundamentals.DataStructures.Trees.Nary.API
 {
+    /// <summary>
+    /// Implements a base B-Tree node. 
+    /// </summary>
+    /// <typeparam name="TNode">Type of B-Tree node.</typeparam>
+    /// <typeparam name="TKey">Type of the key stored in the B-Tree node. </typeparam>
+    /// <typeparam name="TValue">Type of the value stored in the B-Tree node. </typeparam>
     public abstract class BTreeNodeBase<TNode, TKey, TValue> :
         IBTreeNode<TNode, TKey, TValue>,
         IComparable<TNode>
@@ -70,12 +76,19 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// </summary>
         public int MaxBranchingDegree { get; set; }
 
+        /// <summary>
+        /// Parameter-less constructor.
+        /// </summary>
         public BTreeNodeBase()
         {
             _keyValues = new SortedList<TKey, TValue>();
             _children = new SortedList<TNode, bool>();
         }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="maxBranchingDegree">Maximum branching factor or the maximum number of children the node can have. </param>
         public BTreeNodeBase(int maxBranchingDegree) : this()
         {
             MaxBranchingDegree = maxBranchingDegree;
@@ -140,6 +153,10 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
             _children.Clear();
         }
 
+        /// <summary>
+        /// Returns the list of key-value pairs stored in this node. 
+        /// </summary>
+        /// <returns></returns>
         public List<KeyValuePair<TKey, TValue>> GetKeyValues()
         {
             return _keyValues.ToList();
@@ -428,11 +445,19 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
             }
         }
 
+        /// <summary>
+        /// Sets the parent node of the current node. 
+        /// </summary>
+        /// <param name="parent">Parent node of the current node. </param>
         public void SetParent(TNode parent)
         {
             _parent = parent;
         }
 
+        /// <summary>
+        /// Gets the parent node of the current node. 
+        /// </summary>
+        /// <returns>Parent node of the current node. </returns>
         public TNode GetParent()
         {
             return _parent;
@@ -495,6 +520,11 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
             throw new ArgumentException($"Failed to get a key to move up to parent. The node has less or more than {MinKeys + 1} keys.");
         }
 
+        /// <summary>
+        /// Compares current node to another node. 
+        /// </summary>
+        /// <param name="other">A tree node. </param>
+        /// <returns>0 if they are equal, 1 if the current node is bigger and -1 otherwise. </returns>
         public int CompareTo(TNode other)
         {
             if (other == null)
