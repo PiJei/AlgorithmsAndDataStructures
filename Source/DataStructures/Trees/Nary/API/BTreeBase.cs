@@ -119,7 +119,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// </summary>
         /// <param name="leaf">A leaf node in the tree. </param>
         /// <param name="keyValue">A key-value pair to be inserted in the tree. </param>
-        /// <returns></returns>
+        /// <returns>Root of the tree. </returns>
         public abstract TNode InsertInLeaf(TNode leaf, KeyValuePair<TKey, TValue> keyValue);
 
         /// <summary>

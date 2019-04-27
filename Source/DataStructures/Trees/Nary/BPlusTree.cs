@@ -28,16 +28,31 @@ using CSFundamentals.Decoration;
 // TODO: capacity
 namespace CSFundamentals.DataStructures.Trees.Nary
 {
+    /// <summary>
+    /// Implements a B+ Tree. 
+    /// </summary>
+    /// <typeparam name="TKey">Type of the keys stored in the tree. </typeparam>
+    /// <typeparam name="TValue">Type of the values stored in the tree. </typeparam>
     [DataStructure("B+ Tree")]
     public class BPlusTree<TKey, TValue> :
         BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>
         where TKey : IComparable<TKey>
     {
+        /// <summary>
+        /// Constructor. 
+        /// </summary>
+        /// <param name="maxBranchingDegree">Maximum branching degree of the tree or the maximum number of children a node can have. </param>
         public BPlusTree(int maxBranchingDegree) : base(maxBranchingDegree)
         {
         }
 
         // TODO: which parts are repeated code, and how can it be shared, ... 
+        /// <summary>
+        /// Deletes the given key from the given node 
+        /// </summary>
+        /// <param name="node">The node to delete the key from. </param>
+        /// <param name="key">The key to be deleted from the node. </param>
+        /// <returns>True in case of success, and false otherwise. </returns>
         public override bool Delete(BPlusTreeNode<TKey, TValue> node, TKey key)
         {
             /* In B+ Tree deletes always happen in leaf nodes, because internal nodes do  not store values. */
@@ -156,6 +171,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         /// </summary>
         /// <param name="node">Is the receiver of a new key. </param>
         /// <param name="leftSibling">The node that lends a key to the process. This key moves to parent, and a key from parent moves to node.</param>
+        /// <param name="separatorIndex">Is the separator index of <paramref name="node"/> and <paramref name="leftSibling"/> nodes in their parent _keyValues array.</param>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(K)")] // Constant time as is independent of n: number of keys in tree. 
         [TimeComplexity(Case.Average, "O(K)")] // Constant time as is independent of n: number of keys in tree. 
@@ -182,6 +198,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         /// </summary>
         /// <param name="node">Is the receiver of a new key. </param>
         /// <param name="rightSibling">The node that lends a key to the process. This key moves to parent, and a key from parent moves to node. </param>
+        /// <param name="separatorIndex">Is the separator index of <paramref name="node"/> and <paramref name="rightSibling"/> nodes in their parent _keyValues array.</param>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(K)")] // Constant time as is independent of n: number of keys in tree. 
         [TimeComplexity(Case.Average, "O(K)")] // Constant time as is independent of n: number of keys in tree. 
@@ -245,6 +262,12 @@ namespace CSFundamentals.DataStructures.Trees.Nary
 
         }
 
+        /// <summary>
+        /// Inserts the given key-value pair in the given leaf node. 
+        /// </summary>
+        /// <param name="leaf">A leaf node in the tree. </param>
+        /// <param name="keyValue">A key-value pair to be inserted in the tree. </param>
+        /// <returns>Root of the tree. </returns>
         public override BPlusTreeNode<TKey, TValue> InsertInLeaf(BPlusTreeNode<TKey, TValue> leaf, KeyValuePair<TKey, TValue> keyValue)
         {
             /* Means this is the first element of the tree, and we should create root. */
