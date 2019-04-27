@@ -27,6 +27,12 @@ using CSFundamentals.Decoration;
 
 namespace CSFundamentals.DataStructures.Trees.Binary.API
 {
+    /// <summary>
+    /// Provides a base class for a binary search tree (aka. BST)
+    /// </summary>
+    /// <typeparam name="TNode">Type of the nodes in the tree. </typeparam>
+    /// <typeparam name="TKey">Type of the keys stored in the tree nodes. </typeparam>
+    /// <typeparam name="TValue">Type of the values stored in the tree nodes. </typeparam>
     public abstract class BinarySearchTreeBase<TNode, TKey, TValue>
         where TNode : IBinaryTreeNode<TNode, TKey, TValue>, new()
         where TKey : IComparable<TKey>
@@ -39,9 +45,9 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// <summary>
         /// Builds the tree to include the given nodes.
         /// </summary>
-        /// <param name="nodes">Is a list of nodes to be inserted in the tree.</param>
+        /// <param name="keyValues">Is a list of key-value pairs to be inserted in the tree.</param>
         /// <returns>Root of the tree.</returns>
-        public abstract TNode Build(List<KeyValuePair<TKey,TValue>> nodes);
+        public abstract TNode Build(List<KeyValuePair<TKey,TValue>> keyValues);
 
         /// <summary>
         /// Inserts a new node in the tree
@@ -76,8 +82,18 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// <returns>true in case of success and false otherwise.</returns>
         public abstract bool Update(TNode root, TKey key, TValue value);
 
+        /// <summary>
+        /// Finds the minimum key in the (sub)tree rooted at <paramref name="root"/> node. 
+        /// </summary>
+        /// <param name="root">Is the node at which (sub)tree is rooted. </param>
+        /// <returns>The node containing the minimum key. </returns>
         public abstract TNode FindMin(TNode root);
 
+        /// <summary>
+        /// Finds the maximum key in the (sub)tree rooted at <paramref name="root"/> node. 
+        /// </summary>
+        /// <param name="root">Is the node at which (sub)tree is rooted. </param>
+        /// <returns>The node containing the maximum key. </returns>
         public abstract TNode FindMax(TNode root);
 
         /// <summary>
@@ -132,7 +148,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// <summary>
         /// Builds a binary search tree to include the given nodes.
         /// </summary>
-        /// <param name="nodes">Is a list of nodes to be inserted in the tree.</param>
+        /// <param name="keyValues">Is a list of key-value pairs to be inserted in the tree.</param>
         /// <returns>Root of the tree.</returns>
         internal TNode Build_BST(List<KeyValuePair<TKey, TValue>> keyValues)
         {
@@ -367,12 +383,22 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
             return newNode;
         }
 
+        /// <summary>
+        /// Deletes the minimum key from the tree. 
+        /// </summary>
+        /// <param name="root">The node at which the tree is rooted. </param>
+        /// <returns>The root of the tree.</returns>
         public TNode DeleteMin(TNode root)
         {
             TNode minNode = FindMin(root);
             return Delete(root, minNode.Key);
         }
 
+        /// <summary>
+        /// Deletes the maximum key from the tree. 
+        /// </summary>
+        /// <param name="root">The node at which the tree is rooted. </param>
+        /// <returns>The root of the tree. </returns>
         public TNode DeleteMax(TNode root)
         {
             TNode maxNode = FindMax(root);

@@ -23,18 +23,42 @@ using CSFundamentals.DataStructures.Trees.Binary.API;
 
 namespace CSFundamentals.DataStructures.Trees.Binary
 {
+    /// <summary>
+    /// Implements a binary search tree node. 
+    /// </summary>
+    /// <typeparam name="TKey">Type of the key stored in the tree. </typeparam>
+    /// <typeparam name="TValue">Type of the value stored in the tree. </typeparam>
     public class BinarySearchTreeNode<TKey, TValue> : BinaryTreeNode<BinarySearchTreeNode<TKey, TValue>, TKey, TValue> where TKey : IComparable<TKey>
     {
+        /// <summary>
+        /// Parameter-less constructor. 
+        /// </summary>
         public BinarySearchTreeNode()
         {
         }
 
+        /// <summary>
+        /// Constructor. 
+        /// </summary>
+        /// <param name="key">Type of the key stored in the tree. </param>
+        /// <param name="value">Type of the value stored in the tree. </param>
         public BinarySearchTreeNode(TKey key, TValue value) : base(key, value)
         {
         }
 
+        /// <summary>
+        /// Is a reference to the left child of the current node. 
+        /// </summary>
         public override BinarySearchTreeNode<TKey, TValue> LeftChild { get; set; }
+
+        /// <summary>
+        /// Is a reference to the right child of the current node. 
+        /// </summary>
         public override BinarySearchTreeNode<TKey, TValue> RightChild { get; set; }
+
+        /// <summary>
+        /// Is a reference to the parent of the current node. 
+        /// </summary>
         public override BinarySearchTreeNode<TKey, TValue> Parent { get; set; }
     }
 }

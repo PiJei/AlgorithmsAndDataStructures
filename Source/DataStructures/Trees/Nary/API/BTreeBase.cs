@@ -25,6 +25,12 @@ using CSFundamentals.Decoration;
 
 namespace CSFundamentals.DataStructures.Trees.Nary.API
 {
+    /// <summary>
+    /// Implements base B-Tree
+    /// </summary>
+    /// <typeparam name="TNode">Type of the nodes stored in the tree. </typeparam>
+    /// <typeparam name="TKey">Type of the keys stored in the tree. </typeparam>
+    /// <typeparam name="TValue">Type of the values stored in the tree. </typeparam>
     public abstract class BTreeBase<TNode, TKey, TValue>
         where TNode : IBTreeNode<TNode, TKey, TValue>, IComparable<TNode>
         where TKey : IComparable<TKey>
@@ -39,6 +45,10 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// </summary>
         public int MaxBranchingDegree { get; private set; }
 
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="maxBranchingDegree">Is the max branching degree or the max number of children a node in this tree can have. </param>
         public BTreeBase(int maxBranchingDegree)
         {
             MaxBranchingDegree = maxBranchingDegree;
@@ -104,8 +114,20 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
             }
         }
 
+        /// <summary>
+        /// Inserts the given key-value pair in the given leaf node. 
+        /// </summary>
+        /// <param name="leaf">A leaf node in the tree. </param>
+        /// <param name="keyValue">A key-value pair to be inserted in the tree. </param>
+        /// <returns></returns>
         public abstract TNode InsertInLeaf(TNode leaf, KeyValuePair<TKey, TValue> keyValue);
 
+        /// <summary>
+        /// Deletes the given key from the given node. 
+        /// </summary>
+        /// <param name="node">A node in the tree. </param>
+        /// <param name="key">A key in the tree. </param>
+        /// <returns>True in case of success and false otherwise. </returns>
         public abstract bool Delete(TNode node, TKey key);
 
         /// <summary>
@@ -115,8 +137,20 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <returns></returns>
         public abstract List<KeyValuePair<TKey, TValue>> GetSortedKeyValues(TNode node);
 
+        /// <summary>
+        /// Finds a leaf node to insert a new given key. 
+        /// </summary>
+        /// <param name="root">Is the node at which the tree is rooted. </param>
+        /// <param name="key">A new key to be inserted in the tree. </param>
+        /// <returns>Leaf node to insert the key. </returns>
         public abstract TNode FindLeafToInsertKey(TNode root, TKey key);
 
+        /// <summary>
+        /// Searches tree rooted at <paramref name="root"/> node for the given key. 
+        /// </summary>
+        /// <param name="root">The node at which tree is rooted. </param>
+        /// <param name="key">The key that is being searched. </param>
+        /// <returns>Tree node containing <paramref name="key"/></returns>
         public abstract TNode Search(TNode root, TKey key);
 
         /// <summary>
@@ -157,6 +191,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// </summary>
         /// <param name="node">Is the receiver of a new key. </param>
         /// <param name="rightSibling">The node that lends a key to the process. This key moves to parent, and a key from parent moves to node. </param>
+        /// <param name="separatorIndex">The index of the key separating <paramref name="node"/> and <paramref name="rightSibling"/> in the parent children array. </param>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(K)")] // Constant time as is independent of n: number of keys in tree. 
         [TimeComplexity(Case.Average, "O(K)")] // Constant time as is independent of n: number of keys in tree. 
@@ -190,6 +225,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// </summary>
         /// <param name="node">Is the receiver of a new key. </param>
         /// <param name="leftSibling">The node that lends a key to the process. This key moves to parent, and a key from parent moves to node.</param>
+        /// <param name="separatorIndex">The index of the key separating <paramref name="node"/> and <paramref name="leftSibling"/> in the parent children array. </param>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(K)")] // Constant time as is independent of n: number of keys in tree. 
         [TimeComplexity(Case.Average, "O(K)")] // Constant time as is independent of n: number of keys in tree. 

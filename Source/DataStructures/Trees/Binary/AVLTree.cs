@@ -37,6 +37,11 @@ namespace CSFundamentals.DataStructures.Trees.Binary
     public class AVLTree<TKey, TValue> : BinarySearchTreeBase<AVLTreeNode<TKey, TValue>, TKey, TValue> where TKey : IComparable<TKey>
     {
         //TODO: Is o best true? I am suspicious, the input perhaps should be in a special order. 
+        /// <summary>
+        /// Builds the tree to include the given nodes.
+        /// </summary>
+        /// <param name="keyValues">Is a list of key-value pairs to be inserted in the tree.</param>
+        /// <returns>Root of the tree.</returns>
         [TimeComplexity(Case.Best, "O(n)", When = "Every new node is inserted in the very first locations.")]
         [TimeComplexity(Case.Worst, "O(nLog(n))")]
         [TimeComplexity(Case.Average, "O(nLog(n))")]
@@ -46,6 +51,12 @@ namespace CSFundamentals.DataStructures.Trees.Binary
             return Build_BST(keyValues);
         }
 
+        /// <summary>
+        /// Deletes a node with the given key from th tree.
+        /// </summary>
+        /// <param name="root">Current root of the tree, or the node at which delete operation should be started. </param>
+        /// <param name="key">Specifies the key of the node to be deleted. </param>
+        /// <returns>New root of the tree (might or might not change during the operation).</returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
@@ -135,6 +146,12 @@ namespace CSFundamentals.DataStructures.Trees.Binary
             return root;
         }
 
+        /// <summary>
+        /// Inserts a new node in the tree
+        /// </summary>
+        /// <param name="root">Current root of the tree, or the node at which insert operation should be started.</param>
+        /// <param name="newNode">New node to be inserted in the tree. </param>
+        /// <returns>New root of the tree (might or might not change during operation).</returns>
         [TimeComplexity(Case.Best, "O(1)", When = "The tree is empty, and the first node is added.")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
@@ -154,6 +171,12 @@ namespace CSFundamentals.DataStructures.Trees.Binary
             return root;
         }
 
+        /// <summary>
+        /// Searches for the given key in the tree. 
+        /// </summary>
+        /// <param name="root">Current root of the tree, or the node at which search operation should be started. </param>
+        /// <param name="key">Specifies the key to be searched. </param>
+        /// <returns>Returns the tree node that contains key. </returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
@@ -163,6 +186,13 @@ namespace CSFundamentals.DataStructures.Trees.Binary
             return Search_BST(root, key);
         }
 
+        /// <summary>
+        /// Updates the tree node of the specified key with the new given value. 
+        /// </summary>
+        /// <param name="root">Current root of the tree, or the node at which update operation should be started.</param>
+        /// <param name="key">Specifies the key of the node whose value should be updated.</param>
+        /// <param name="value">Specifies the new value. </param>
+        /// <returns>true in case of success and false otherwise.</returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
@@ -172,6 +202,11 @@ namespace CSFundamentals.DataStructures.Trees.Binary
             return Update_BST(root, key, value);
         }
 
+        /// <summary>
+        /// Finds the minimum key in the (sub)tree rooted at <paramref name="root"/> node. 
+        /// </summary>
+        /// <param name="root">Is the node at which (sub)tree is rooted. </param>
+        /// <returns>The node containing the minimum key. </returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
@@ -181,6 +216,11 @@ namespace CSFundamentals.DataStructures.Trees.Binary
             return FindMin_BST(root);
         }
 
+        /// <summary>
+        /// Finds the maximum key in the (sub)tree rooted at <paramref name="root"/> node. 
+        /// </summary>
+        /// <param name="root">Is the node at which (sub)tree is rooted. </param>
+        /// <returns>The node containing the maximum key. </returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(Log(n))")]

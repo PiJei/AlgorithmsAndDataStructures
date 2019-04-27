@@ -34,6 +34,11 @@ namespace CSFundamentals.DataStructures.Trees.Binary
     [DataStructure("BinarySearchTree (aka BST)")]
     public class BinarySearchTreeBase<TKey, TValue> : BinarySearchTreeBase<BinarySearchTreeNode<TKey, TValue>, TKey, TValue> where TKey : IComparable<TKey>
     {
+        /// <summary>
+        /// Builds the tree to include the given nodes.
+        /// </summary>
+        /// <param name="keyValues">Is a list of key-value pairs to be inserted in the tree.</param>
+        /// <returns>Root of the tree.</returns>
         [TimeComplexity(Case.Best, "O(n)", When = "Every new node is inserted in the very first locations.")]
         [TimeComplexity(Case.Worst, "O(n²)", When = "Tree is unbalanced such that it is turned into a linked list.")]
         [TimeComplexity(Case.Average, "O(nLog(n))")]
@@ -44,12 +49,11 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         }
 
         /// <summary>
-        /// Implements insert in a binary search tree. 
+        /// Inserts a new node in the tree
         /// </summary>
-        /// <param name="root">The node at which we would like to start the insert operation.</param>
-        /// <param name="key"></param>
-        /// <param name="value"></param>
-        /// <returns>The new root node.</returns>
+        /// <param name="root">Current root of the tree, or the node at which insert operation should be started.</param>
+        /// <param name="newNode">New node to be inserted in the tree. </param>
+        /// <returns>New root of the tree (might or might not change during operation).</returns>
         [TimeComplexity(Case.Best, "O(1)", When = "The tree is empty, and the first node is added.")]
         [TimeComplexity(Case.Worst, "O(n)", When = "Tree is imbalanced such that it is like one sequential branch (linked list), every node except the leaf having exactly one child.")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
@@ -59,6 +63,12 @@ namespace CSFundamentals.DataStructures.Trees.Binary
             return Insert_BST(root, newNode);
         }
 
+        /// <summary>
+        /// Deletes a node with the given key from th tree.
+        /// </summary>
+        /// <param name="root">Current root of the tree, or the node at which delete operation should be started. </param>
+        /// <param name="key">Specifies the key of the node to be deleted. </param>
+        /// <returns>New root of the tree (might or might not change during the operation).</returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(n)", When = "Tree is imbalanced such that it is like one sequential branch (linked list), every node except the leaf having exactly one child.")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
@@ -99,6 +109,11 @@ namespace CSFundamentals.DataStructures.Trees.Binary
             return Update_BST(root, key, value);
         }
 
+        /// <summary>
+        /// Finds the minimum key in the (sub)tree rooted at <paramref name="root"/> node. 
+        /// </summary>
+        /// <param name="root">Is the node at which (sub)tree is rooted. </param>
+        /// <returns>The node containing the minimum key. </returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(n)")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
@@ -108,6 +123,11 @@ namespace CSFundamentals.DataStructures.Trees.Binary
             return FindMin_BST(root);
         }
 
+        /// <summary>
+        /// Finds the maximum key in the (sub)tree rooted at <paramref name="root"/> node. 
+        /// </summary>
+        /// <param name="root">Is the node at which (sub)tree is rooted. </param>
+        /// <returns>The node containing the maximum key. </returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(n)")]
         [TimeComplexity(Case.Average, "O(Log(n))")]

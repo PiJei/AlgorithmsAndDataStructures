@@ -19,11 +19,18 @@
  */
 #endregion
 using System;
-// TODO: ADD a summary and better the naming
+// TODO: better the naming
 namespace CSFundamentals.DataStructures.Trees.Binary
 {
+    /// <summary>
+    /// A customized exception for relation between tree nodes. 
+    /// </summary>
     public class TreeNodeRelationException : Exception
     {
+        /// <summary>
+        /// Constructor. 
+        /// </summary>
+        /// <param name="message">A string clarifying exception's context. </param>
         public TreeNodeRelationException(string message) : base(message)
         {
         }

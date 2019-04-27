@@ -79,6 +79,10 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// <returns>True in case the current node is the right child of its parent, and false otherwise. </returns>
         bool IsRightChild();
 
+        /// <summary>
+        /// Returns a list of the current node's children. 
+        /// </summary>
+        /// <returns></returns>
         List<TNode> GetChildren();
     }
 }

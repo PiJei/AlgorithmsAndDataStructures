@@ -198,7 +198,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         {
             var node1 = new RedBlackTreeNode<int, string>(10, "string1");
             Assert.IsTrue(_tree.IsRed(node1));
-            node1.Color = Color.Black;
+            node1.Color = RedBlackTreeNodeColor.Black;
             Assert.IsFalse(_tree.IsRed(node1));
         }
 
@@ -207,7 +207,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         {
             var node1 = new RedBlackTreeNode<int, string>(10, "string1")
             {
-                Color = Color.Black
+                Color = RedBlackTreeNodeColor.Black
             };
             Assert.IsFalse(_tree.IsRed(node1));
         }
@@ -224,7 +224,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         {
             var node1 = new RedBlackTreeNode<int, string>(10, "string1")
             {
-                Color = Color.Black
+                Color = RedBlackTreeNodeColor.Black
             };
             Assert.IsTrue(_tree.IsBlack(node1));
         }
@@ -272,26 +272,26 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             // Check color properties.
             if (root != null)
             {
-                Assert.IsTrue(root.Color == Color.Black);
+                Assert.IsTrue(root.Color == RedBlackTreeNodeColor.Black);
             }
 
             foreach (RedBlackTreeNode<TKey, TValue> node in inOrderTraversal)
             {
-                Assert.IsTrue(node.Color == Color.Red || node.Color == Color.Black);
+                Assert.IsTrue(node.Color == RedBlackTreeNodeColor.Red || node.Color == RedBlackTreeNodeColor.Black);
 
-                if (node.Color == Color.Red)
+                if (node.Color == RedBlackTreeNodeColor.Red)
                 {
                     if (node.LeftChild != null)
                     {
-                        Assert.AreEqual(Color.Black, node.LeftChild.Color);
+                        Assert.AreEqual(RedBlackTreeNodeColor.Black, node.LeftChild.Color);
                     }
                     if (node.RightChild != null)
                     {
-                        Assert.AreEqual(Color.Black, node.RightChild.Color);
+                        Assert.AreEqual(RedBlackTreeNodeColor.Black, node.RightChild.Color);
                     }
 
                     /* If node N is red, then its parent must be black. As otherwise its parent is red, and the children of a red parent should all be black, in our case node N, which we assumed is red. */
-                    Assert.IsTrue(node.Parent.Color == Color.Black);
+                    Assert.IsTrue(node.Parent.Color == RedBlackTreeNodeColor.Black);
                 }
             }
 
@@ -304,12 +304,12 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
                 int firstPathBlackNodeCount = 0;
                 if (paths.Count >= 0)
                 {
-                    firstPathBlackNodeCount = paths[0].Count(n => n.Color == Color.Black);
+                    firstPathBlackNodeCount = paths[0].Count(n => n.Color == RedBlackTreeNodeColor.Black);
                 }
 
                 for (int i = 1; i < paths.Count; i++)
                 {
-                    Assert.AreEqual(firstPathBlackNodeCount, paths[i].Count(n => n.Color == Color.Black));
+                    Assert.AreEqual(firstPathBlackNodeCount, paths[i].Count(n => n.Color == RedBlackTreeNodeColor.Black));
                     if (paths[i].Count > longestPathLength)
                     {
                         longestPathLength = paths[i].Count;

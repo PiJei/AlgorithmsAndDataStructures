@@ -29,15 +29,15 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         [TestMethod]
         public void FlipColor()
         {
-            var A = new RedBlackTreeNode<int, string>(2, "A", Color.Red);
-            Assert.AreEqual(Color.Red, A.Color);
+            var A = new RedBlackTreeNode<int, string>(2, "A", RedBlackTreeNodeColor.Red);
+            Assert.AreEqual(RedBlackTreeNodeColor.Red, A.Color);
 
             var tree = new RedBlackTree<int, string>();
 
             A.FlipColor();
-            Assert.AreEqual(Color.Black, A.Color);
+            Assert.AreEqual(RedBlackTreeNodeColor.Black, A.Color);
             A.FlipColor();
-            Assert.AreEqual(Color.Red, A.Color);
+            Assert.AreEqual(RedBlackTreeNodeColor.Red, A.Color);
         }
     }
 }

@@ -23,19 +23,42 @@ using CSFundamentals.DataStructures.Trees.Binary.API;
 
 namespace CSFundamentals.DataStructures.Trees.Binary
 {
+    /// <summary>
+    /// Implements an AVL tree node. 
+    /// </summary>
+    /// <typeparam name="TKey">Type of the key stored in the node. </typeparam>
+    /// <typeparam name="TValue">Type of the value stored in the node. </typeparam>
     public class AVLTreeNode<TKey, TValue> :
         BinaryTreeNode<AVLTreeNode<TKey, TValue>, TKey, TValue>
         where TKey : IComparable<TKey>
     {
+        /// <summary>
+        /// Is a reference to the left child of the current node. 
+        /// </summary>
         public override AVLTreeNode<TKey, TValue> LeftChild { get; set; }
+
+        /// <summary>
+        /// Is a reference to the right child of the current node. 
+        /// </summary>
         public override AVLTreeNode<TKey, TValue> RightChild { get; set; }
+
+        /// <summary>
+        /// Is a reference to the parent of the current node. 
+        /// </summary>
         public override AVLTreeNode<TKey, TValue> Parent { get; set; }
 
+        /// <summary>
+        /// Parameter-less constructor. 
+        /// </summary>
         public AVLTreeNode()
         {
-
         }
 
+        /// <summary>
+        /// Constructor. 
+        /// </summary>
+        /// <param name="key">The key to be stored in the tree. </param>
+        /// <param name="value">The value to be stored in the tree. </param>
         public AVLTreeNode(TKey key, TValue value) : base(key, value)
         {
         }

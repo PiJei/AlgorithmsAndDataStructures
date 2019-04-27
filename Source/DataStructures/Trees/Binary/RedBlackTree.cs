@@ -39,6 +39,11 @@ namespace CSFundamentals.DataStructures.Trees.Binary
     [DataStructure("RedBlackTree")]
     public class RedBlackTree<TKey, TValue> : BinarySearchTreeBase<RedBlackTreeNode<TKey, TValue>, TKey, TValue> where TKey : IComparable<TKey>
     {
+        /// <summary>
+        /// Builds the tree to include the given nodes.
+        /// </summary>
+        /// <param name="keyValues">Is a list of key-value pairs to be inserted in the tree.</param>
+        /// <returns>Root of the tree.</returns>
         [TimeComplexity(Case.Best, "O(n)", When = "Every new node is inserted in the very first locations.")]
         [TimeComplexity(Case.Worst, "O(nLog(n))")]
         [TimeComplexity(Case.Average, "O(nLog(n))")]
@@ -48,6 +53,12 @@ namespace CSFundamentals.DataStructures.Trees.Binary
             return Build_BST(keyValues);
         }
 
+        /// <summary>
+        /// Inserts a new node in the tree
+        /// </summary>
+        /// <param name="root">Current root of the tree, or the node at which insert operation should be started.</param>
+        /// <param name="newNode">New node to be inserted in the tree. </param>
+        /// <returns>New root of the tree (might or might not change during operation).</returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(nLog(n))")]
@@ -65,6 +76,12 @@ namespace CSFundamentals.DataStructures.Trees.Binary
             return root;
         }
 
+        /// <summary>
+        /// Deletes a node with the given key from th tree.
+        /// </summary>
+        /// <param name="root">Current root of the tree, or the node at which delete operation should be started. </param>
+        /// <param name="key">Specifies the key of the node to be deleted. </param>
+        /// <returns>New root of the tree (might or might not change during the operation).</returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(nLog(n))")]
@@ -106,6 +123,12 @@ namespace CSFundamentals.DataStructures.Trees.Binary
             return newRoot;
         }
 
+        /// <summary>
+        /// Searches for the given key in the tree. 
+        /// </summary>
+        /// <param name="root">Current root of the tree, or the node at which search operation should be started. </param>
+        /// <param name="key">Specifies the key to be searched. </param>
+        /// <returns>Returns the tree node that contains key. </returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
@@ -115,6 +138,13 @@ namespace CSFundamentals.DataStructures.Trees.Binary
             return Search_BST(root, key);
         }
 
+        /// <summary>
+        /// Updates the tree node of the specified key with the new given value. 
+        /// </summary>
+        /// <param name="root">Current root of the tree, or the node at which update operation should be started.</param>
+        /// <param name="key">Specifies the key of the node whose value should be updated.</param>
+        /// <param name="value">Specifies the new value. </param>
+        /// <returns>true in case of success and false otherwise.</returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
@@ -124,6 +154,11 @@ namespace CSFundamentals.DataStructures.Trees.Binary
             return Update_BST(root, key, value);
         }
 
+        /// <summary>
+        /// Finds the minimum key in the (sub)tree rooted at <paramref name="root"/> node. 
+        /// </summary>
+        /// <param name="root">Is the node at which (sub)tree is rooted. </param>
+        /// <returns>The node containing the minimum key. </returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
@@ -133,6 +168,11 @@ namespace CSFundamentals.DataStructures.Trees.Binary
             return FindMin_BST(root);
         }
 
+        /// <summary>
+        /// Finds the maximum key in the (sub)tree rooted at <paramref name="root"/> node. 
+        /// </summary>
+        /// <param name="root">Is the node at which (sub)tree is rooted. </param>
+        /// <returns>The node containing the maximum key. </returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
@@ -148,22 +188,22 @@ namespace CSFundamentals.DataStructures.Trees.Binary
             /* The nodeToBeDeleted has at most 1 non-null child. */
             var parent = nodeToBeDeleted.Parent;
 
-            if (nodeToBeDeleted.IsLeaf() && nodeToBeDeleted.Color == Color.Red) // case 1 
+            if (nodeToBeDeleted.IsLeaf() && nodeToBeDeleted.Color == RedBlackTreeNodeColor.Red) // case 1 
             {
                 UpdateParentWithNullingChild(parent, nodeToBeDeleted);
                 return parent;
             }
-            else if (nodeToBeDeleted.IsLeaf() && nodeToBeDeleted.Color == Color.Black) //Case2: nodeToBeDeleted is black, and has 2 null children. Or in other words: Deleting a black node with 2 null children. /* This case is tricky, because removing one black node from the tree will violate red-black property of: all the paths from a node to all of its leaf (null) children have exactly the same number of black nodes. */
+            else if (nodeToBeDeleted.IsLeaf() && nodeToBeDeleted.Color == RedBlackTreeNodeColor.Black) //Case2: nodeToBeDeleted is black, and has 2 null children. Or in other words: Deleting a black node with 2 null children. /* This case is tricky, because removing one black node from the tree will violate red-black property of: all the paths from a node to all of its leaf (null) children have exactly the same number of black nodes. */
             {
                 var node = DeleteBlackLeafNode(nodeToBeDeleted);
                 UpdateParentWithNullingChild(parent, nodeToBeDeleted);
                 return node;
             }
-            else if (!nodeToBeDeleted.IsLeaf() && nodeToBeDeleted.Color == Color.Black) // Case3: nodeToBeDeleted is black, and its the only not null child is red
+            else if (!nodeToBeDeleted.IsLeaf() && nodeToBeDeleted.Color == RedBlackTreeNodeColor.Black) // Case3: nodeToBeDeleted is black, and its the only not null child is red
             {
                 if (nodeToBeDeleted.LeftChild != null) /* Then replace nodeToBeDeleted with nodeToBeDeleted.LeftChild */
                 {
-                    Contract.Assert(nodeToBeDeleted.LeftChild.Color == Color.Red);
+                    Contract.Assert(nodeToBeDeleted.LeftChild.Color == RedBlackTreeNodeColor.Red);
                     nodeToBeDeleted.LeftChild.Parent = nodeToBeDeleted.Parent;
                     if (nodeToBeDeleted.Parent != null)
                     {
@@ -178,11 +218,11 @@ namespace CSFundamentals.DataStructures.Trees.Binary
                     }
 
                     nodeToBeDeleted = nodeToBeDeleted.LeftChild;
-                    nodeToBeDeleted.Color = Color.Black; /* This is to keep the number of black nodes the same, as we have just dropped a non-leaf black node.*/
+                    nodeToBeDeleted.Color = RedBlackTreeNodeColor.Black; /* This is to keep the number of black nodes the same, as we have just dropped a non-leaf black node.*/
                 }
                 else if (nodeToBeDeleted.RightChild != null) /* Then replace nodeToBeDeleted with nodeToBeDeleted.rightChild */
                 {
-                    Contract.Assert(nodeToBeDeleted.RightChild.Color == Color.Red);
+                    Contract.Assert(nodeToBeDeleted.RightChild.Color == RedBlackTreeNodeColor.Red);
                     nodeToBeDeleted.RightChild.Parent = nodeToBeDeleted.Parent;
                     if (nodeToBeDeleted.Parent != null)
                     {
@@ -197,7 +237,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary
                     }
 
                     nodeToBeDeleted = nodeToBeDeleted.RightChild;
-                    nodeToBeDeleted.Color = Color.Black; /* This is to keep the number of black nodes the same, as we have just dropped a non-leaf black node.*/
+                    nodeToBeDeleted.Color = RedBlackTreeNodeColor.Black; /* This is to keep the number of black nodes the same, as we have just dropped a non-leaf black node.*/
                 }
                 return nodeToBeDeleted;
             } // Case 4: Notice that by properties of RedBlackTree case 4 can not exist (case 4: !IsLeaf(nodeToBeDeleted) && nodeToBeDeleted.Color == Color.Red)
@@ -220,8 +260,8 @@ namespace CSFundamentals.DataStructures.Trees.Binary
 
             if (IsRed(sibling)) /* Implies that parent is black, following RedBlack tree properties.*/
             {
-                node.Parent.Color = Color.Red;
-                sibling.Color = Color.Black;
+                node.Parent.Color = RedBlackTreeNodeColor.Red;
+                sibling.Color = RedBlackTreeNodeColor.Black;
                 if (node.IsLeftChild())
                 {
                     RotateLeft(node.Parent);
@@ -235,22 +275,22 @@ namespace CSFundamentals.DataStructures.Trees.Binary
 
             if (IsBlack(node.Parent) && IsBlack(sibling) && IsBlack(sibling.LeftChild) && IsBlack(sibling.RightChild))
             {
-                sibling.Color = Color.Red;
+                sibling.Color = RedBlackTreeNodeColor.Red;
                 DeleteBlackLeafNode(node.Parent);
             }
             else if (IsRed(node.Parent) && IsBlack(sibling) && IsBlack(sibling.LeftChild) && IsBlack(sibling.RightChild))
             {
-                sibling.Color = Color.Red;
-                node.Parent.Color = Color.Black;
+                sibling.Color = RedBlackTreeNodeColor.Red;
+                node.Parent.Color = RedBlackTreeNodeColor.Black;
             }
             else if (IsBlack(sibling))
             {
                 if (IsRed(sibling.LeftChild) && IsBlack(sibling.RightChild) && node.IsLeftChild())
                 {
-                    sibling.Color = Color.Red;
+                    sibling.Color = RedBlackTreeNodeColor.Red;
                     if (sibling.LeftChild != null)
                     {
-                        sibling.LeftChild.Color = Color.Black;
+                        sibling.LeftChild.Color = RedBlackTreeNodeColor.Black;
                     }
 
                     RotateRight(sibling);
@@ -258,10 +298,10 @@ namespace CSFundamentals.DataStructures.Trees.Binary
                 }
                 else if (IsBlack(sibling.LeftChild) && IsRed(sibling.RightChild) && node.IsRightChild())
                 {
-                    sibling.Color = Color.Red;
+                    sibling.Color = RedBlackTreeNodeColor.Red;
                     if (sibling.RightChild != null)
                     {
-                        sibling.RightChild.Color = Color.Black;
+                        sibling.RightChild.Color = RedBlackTreeNodeColor.Black;
                     }
 
                     RotateLeft(sibling);
@@ -269,15 +309,15 @@ namespace CSFundamentals.DataStructures.Trees.Binary
                 }
 
                 sibling.Color = node.Parent.Color;
-                node.Parent.Color = Color.Black;
+                node.Parent.Color = RedBlackTreeNodeColor.Black;
                 if (node.IsLeftChild())
                 {
-                    sibling.RightChild.Color = Color.Black;
+                    sibling.RightChild.Color = RedBlackTreeNodeColor.Black;
                     RotateLeft(node.Parent);
                 }
                 else if (node.IsRightChild())
                 {
-                    sibling.LeftChild.Color = Color.Black;
+                    sibling.LeftChild.Color = RedBlackTreeNodeColor.Black;
                     RotateRight(node.Parent);
                 }
             }
@@ -287,11 +327,11 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         [SpaceComplexity("O(1)", InPlace = true)]
         internal void Insert_Repair(RedBlackTreeNode<TKey, TValue> root, RedBlackTreeNode<TKey, TValue> newNode)
         {
-            if (newNode.Parent == null && newNode.Color == Color.Red) /* Property: the root is black. */
+            if (newNode.Parent == null && newNode.Color == RedBlackTreeNodeColor.Red) /* Property: the root is black. */
             {
                 newNode.FlipColor();
             }
-            else if (newNode.Parent != null && newNode.Parent.Color == Color.Black)
+            else if (newNode.Parent != null && newNode.Parent.Color == RedBlackTreeNodeColor.Black)
             {
                 return;
             }
@@ -299,11 +339,11 @@ namespace CSFundamentals.DataStructures.Trees.Binary
             {
                 var uncle = newNode.GetUncle();
 
-                if (uncle != null && uncle.Color == Color.Red) /* Both the parent and uncle of the new node are red. Note that a null uncle is considered black. */
+                if (uncle != null && uncle.Color == RedBlackTreeNodeColor.Red) /* Both the parent and uncle of the new node are red. Note that a null uncle is considered black. */
                 {
-                    newNode.Parent.Color = Color.Black;
-                    uncle.Color = Color.Black;
-                    newNode.GetGrandParent().Color = Color.Red;
+                    newNode.Parent.Color = RedBlackTreeNodeColor.Black;
+                    uncle.Color = RedBlackTreeNodeColor.Black;
+                    newNode.GetGrandParent().Color = RedBlackTreeNodeColor.Red;
                     Insert_Repair(root, newNode.GetGrandParent()); /* Repeat repair on the grandparent, as by the re-coloring the previous layers could have been messed up. */
                 }
                 else
@@ -331,10 +371,10 @@ namespace CSFundamentals.DataStructures.Trees.Binary
                     {
                         RotateRight(grandParent);
                     }
-                    newNode.Parent.Color = Color.Black;
+                    newNode.Parent.Color = RedBlackTreeNodeColor.Black;
                     if (grandParent != null)
                     {
-                        grandParent.Color = Color.Red;
+                        grandParent.Color = RedBlackTreeNodeColor.Red;
                     }
                 }
             }
@@ -347,7 +387,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         /// <returns>True in case node is red, and false otherwise. </returns>
         internal bool IsRed(RedBlackTreeNode<TKey, TValue> node)
         {
-            if (node != null && node.Color == Color.Red)
+            if (node != null && node.Color == RedBlackTreeNodeColor.Red)
             {
                 return true;
             }
@@ -362,7 +402,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         /// <returns>True in case node is black, and false otherwise. </returns>
         internal bool IsBlack(RedBlackTreeNode<TKey, TValue> node)
         {
-            if (node == null || (node != null && node.Color == Color.Black))
+            if (node == null || (node != null && node.Color == RedBlackTreeNodeColor.Black))
             {
                 return true;
             }

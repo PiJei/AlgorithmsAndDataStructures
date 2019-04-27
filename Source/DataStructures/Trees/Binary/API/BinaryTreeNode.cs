@@ -23,28 +23,64 @@ using System.Collections.Generic;
 
 namespace CSFundamentals.DataStructures.Trees.Binary.API
 {
+    /// <summary>
+    /// Implements a base binary tree node. 
+    /// </summary>
+    /// <typeparam name="TNode">Type of a binary tree node. </typeparam>
+    /// <typeparam name="TKey">Type of the key stored in the node. </typeparam>
+    /// <typeparam name="TValue">Type of the value stored in the node. </typeparam>
     public abstract class BinaryTreeNode<TNode, TKey, TValue> :
         IBinaryTreeNode<TNode, TKey, TValue>,
         IComparable<TNode>
         where TNode : IBinaryTreeNode<TNode, TKey, TValue>
         where TKey : IComparable<TKey>
     {
+        /// <summary>
+        /// Specifies whether the node is a sentinel node. 
+        /// </summary>
         public bool IsNill { get; set; }
+
+        /// <summary>
+        /// Is the key stored in the node. 
+        /// </summary>
         public TKey Key { get; set; }
+
+        /// <summary>
+        /// Is the value stored in the node. 
+        /// </summary>
         public TValue Value { get; set; }
 
+        /// <summary>
+        /// Parameter-less constructor. 
+        /// </summary>
         public BinaryTreeNode()
         {
         }
 
+        /// <summary>
+        /// Constructor. 
+        /// </summary>
+        /// <param name="key">The key to be stored in the node. </param>
+        /// <param name="value">The value to be stored in the node. </param>
         public BinaryTreeNode(TKey key, TValue value)
         {
             Key = key;
             Value = value;
         }
 
+        /// <summary>
+        /// Is a reference to the left child of the current node. 
+        /// </summary>
         public abstract TNode LeftChild { get; set; }
+
+        /// <summary>
+        /// Is a reference to the right child of the current node. 
+        /// </summary>
         public abstract TNode RightChild { get; set; }
+
+        /// <summary>
+        /// Is a reference to the parent of the current node. 
+        /// </summary>
         public abstract TNode Parent { get; set; }
 
         /// <summary>
@@ -171,7 +207,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// <summary>
         /// Gets the grandparent of the current node. GrandParent is the parent of the parent. 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Grand parent node. </returns>
         public TNode GetGrandParent()
         {
             if (Parent == null)
@@ -235,6 +271,11 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
             return false;
         }
 
+        /// <summary>
+        /// Compares current node to another node. 
+        /// </summary>
+        /// <param name="other">A binary tree node. </param>
+        /// <returns>0 if the current node is equal to the other node, 1 if the current node is bigger and -1 otherwise. </returns>
         public int CompareTo(TNode other)
         {
             return Key.CompareTo(other.Key);
@@ -291,6 +332,11 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
             return grandChildren;
         }
 
+        /// <summary>
+        /// Compares the current node to <paramref name="other"/> node for equality. 
+        /// </summary>
+        /// <param name="other">A binary tree node. </param>
+        /// <returns>True if they are equal and false otherwise. </returns>
         public bool Equals(TNode other)
         {
             if (other == null)

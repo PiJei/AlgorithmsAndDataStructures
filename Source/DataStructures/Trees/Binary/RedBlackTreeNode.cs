@@ -23,42 +23,88 @@ using CSFundamentals.DataStructures.Trees.Binary.API;
 
 namespace CSFundamentals.DataStructures.Trees.Binary
 {
+    /// <summary>
+    /// Implements a RedBlack tree node.
+    /// </summary>
+    /// <typeparam name="TKey"></typeparam>
+    /// <typeparam name="TValue"></typeparam>
     public class RedBlackTreeNode<TKey, TValue> :
         BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>
         where TKey : IComparable<TKey>
     {
-        public Color Color { get; set; }
+        /// <summary>
+        /// Is the color of the node. 
+        /// </summary>
+        public RedBlackTreeNodeColor Color { get; set; }
+
+        /// <summary>
+        /// Is a reference to the left child of the current node. 
+        /// </summary>
         public override RedBlackTreeNode<TKey, TValue> LeftChild { get; set; }
+
+        /// <summary>
+        /// Is a reference to the right child of the current node.
+        /// </summary>
         public override RedBlackTreeNode<TKey, TValue> RightChild { get; set; }
+
+        /// <summary>
+        /// Is a reference to the parent of the current node.
+        /// </summary>
         public override RedBlackTreeNode<TKey, TValue> Parent { get; set; }
 
+        /// <summary>
+        /// Parameter-less constructor. 
+        /// </summary>
         public RedBlackTreeNode()
         {
-            Color = Color.Red;
+            Color = RedBlackTreeNodeColor.Red;
         }
 
-        public RedBlackTreeNode(TKey key, TValue value, Color color = Color.Red) : base(key, value)
+        /// <summary>
+        /// Constructor. 
+        /// </summary>
+        /// <param name="key">Is the key to be stored in the node. </param>
+        /// <param name="value">Is the value to be stored in the node. </param>
+        /// <param name="color">Is the color of the node, default is red. </param>
+        public RedBlackTreeNode(TKey key, TValue value, RedBlackTreeNodeColor color = RedBlackTreeNodeColor.Red) : base(key, value)
         {
             Color = color;
         }
 
+        /// <summary>
+        /// Flips the current color of the node between red and black. 
+        /// </summary>
         public void FlipColor()
         {
-            if (Color == Color.Red)
+            if (Color == RedBlackTreeNodeColor.Red)
             {
-                Color = Color.Black;
+                Color = RedBlackTreeNodeColor.Black;
             }
-            else if (Color == Color.Black)
+            else if (Color == RedBlackTreeNodeColor.Black)
             {
-                Color = Color.Red;
+                Color = RedBlackTreeNodeColor.Red;
             }
         }
     }
 
-    public enum Color
+    /// <summary>
+    /// Represents the color of the RedBlack tree node. 
+    /// </summary>
+    public enum RedBlackTreeNodeColor
     {
+        /// <summary>
+        /// Unknown color. 
+        /// </summary>
         Unknown = 0,
+
+        /// <summary>
+        /// Red color.
+        /// </summary>
         Red = 1,
+
+        /// <summary>
+        /// Black color. 
+        /// </summary>
         Black = 2
     }
 }
