@@ -619,6 +619,12 @@
             </summary>
             <param name="list">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
         </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.SelectionSort.Sort_Iteratively(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})">
+            <summary>
+            Implements Selection sort. 
+            </summary>
+            <param name="list">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
+        </member>
         <member name="M:CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element.IsStable(CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element)">
             <summary>
             Given two Elements, if the order between their new array index is the same order between their old array index, the element has been stable.
