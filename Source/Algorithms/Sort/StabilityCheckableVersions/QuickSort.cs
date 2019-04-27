@@ -25,13 +25,19 @@ namespace CSFundamentals.Algorithms.Sort
 {
     public partial class QuickSort
     {
-        public static void Sort_Recursively(List<Element> values, int startIndex, int endIndex)
+        /// <summary>
+        /// Implements a recursive version of quick sort. 
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="startIndex"></param>
+        /// <param name="endIndex"></param>
+        public static void Sort_Recursively(List<Element> list, int startIndex, int endIndex)
         {
             if (startIndex < endIndex)
             {
-                int partitionIndex = PartitionArray_StabilityCheckableVersion(values, startIndex, endIndex);
-                Sort_Recursively(values, startIndex, partitionIndex);
-                Sort_Recursively(values, partitionIndex + 1, endIndex);
+                int partitionIndex = PartitionArray_StabilityCheckableVersion(list, startIndex, endIndex);
+                Sort_Recursively(list, startIndex, partitionIndex);
+                Sort_Recursively(list, partitionIndex + 1, endIndex);
             }
         }
 

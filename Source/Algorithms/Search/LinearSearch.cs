@@ -32,9 +32,12 @@ namespace CSFundamentals.Algorithms.Search
         /// <summary>
         /// Searches for a given value in a list. 
         /// </summary>
+        /// <typeparam name="T"></typeparam>
         /// <param name="list">Specifies a list of any comparable type.</param>
+        /// <param name="startIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>
+        /// <param name="endIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
         /// <param name="key">Specifies the value the method is searching for. </param>
-        /// <returns>The index of the <paramref name="key"/> in the array, and -1 if it does not exist in the array. </returns>
+        /// <returns></returns>
         [Algorithm(AlgorithmType.Search, "LinearSearch")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(1)")]

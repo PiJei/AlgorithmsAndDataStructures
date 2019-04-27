@@ -24,6 +24,9 @@ using CSFundamentals.Decoration;
 
 namespace CSFundamentals.Algorithms.Search
 {
+    /// <summary>
+    /// Implements Jump search algorithm for finding a specific value in a sorted array.
+    /// </summary>
     public class JumpSearch
     {
         /// <summary>

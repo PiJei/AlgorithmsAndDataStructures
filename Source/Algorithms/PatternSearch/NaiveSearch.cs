@@ -22,6 +22,9 @@ using CSFundamentals.Decoration;
 
 namespace CSFundamentals.Algorithms.PatternSearch
 {
+    /// <summary>
+    /// Implements a naive simple algorithm for searching a pattern string in a string. 
+    /// </summary>
     public class NaiveSearch
     {
         /// <summary>

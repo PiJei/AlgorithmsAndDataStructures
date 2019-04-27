@@ -28,9 +28,9 @@ namespace CSFundamentals.Algorithms.Sort
         /// <summary>
         /// Implements Radix sort for base 10 (decimal integers) using queues. 
         /// </summary>
-        public static void Sort_Iterative_V1(List<Element> values)
+        public static void Sort_Iterative_V1(List<Element> list)
         {
-            Element maxElement = Utils.GetMaxElement(values);
+            Element maxElement = Utils.GetMaxElement(list);
             int digitsCountForMaxElement = Utils.GetDigitsCount(maxElement.Value);
 
             /* Creating an array of 10 queues. One queue per each possible digit in base 10 (decimal) numbers: (0, 1, 2, ..., 9)*/
@@ -43,11 +43,11 @@ namespace CSFundamentals.Algorithms.Sort
             for (int d = 1; d <= digitsCountForMaxElement; d++) /* the sorting should happen as many as digitsCount of the max element times. */
             {
                 /* Enqueue each number in the correct queue based on its (d)th least significant digit (right most). */
-                for (int i = 0; i < values.Count; i++)
+                for (int i = 0; i < list.Count; i++)
                 {
                     /* Get the d(th) least significant digit of element i in the array.  */
-                    int digit = Utils.GetNthDigitFromRight(values[i].Value, d);
-                    queues[digit].Enqueue(values[i]);
+                    int digit = Utils.GetNthDigitFromRight(list[i].Value, d);
+                    queues[digit].Enqueue(list[i]);
                 }
 
                 /* Dequeue each queue from 0 to 9*/
@@ -58,7 +58,7 @@ namespace CSFundamentals.Algorithms.Sort
                     {
                         Element element = queues[i].Dequeue();
                         element.Move(nextIndex);
-                        values[nextIndex] = element;
+                        list[nextIndex] = element;
                         nextIndex++;
                     }
                 }

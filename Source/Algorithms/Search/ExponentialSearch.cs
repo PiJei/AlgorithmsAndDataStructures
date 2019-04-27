@@ -24,12 +24,16 @@ using CSFundamentals.Decoration;
 
 namespace CSFundamentals.Algorithms.Search
 {
+    /// <summary>
+    /// Implements Exponential search algorithm for finding a specific value in a sorted array.
+    /// </summary>
     public class ExponentialSearch
     {
         /// <summary>
         /// Implements exponential search, where the search step is a multiple of 2, hence the naming. 
         /// Notice that only works if the given array is sorted. 
         /// </summary>
+        /// <typeparam name="T">Type of the values in the sorted list.</typeparam>
         /// <param name="sortedList">A sorted list of any comparable type. </param>
         /// <param name="key">Specifies the value that is being searched for. </param>
         /// <returns>The index of the <paramref name="key"/> in the array, and -1 if it does not exist in the array. </returns>

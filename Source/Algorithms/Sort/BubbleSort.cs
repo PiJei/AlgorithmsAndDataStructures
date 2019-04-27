@@ -24,28 +24,31 @@ using CSFundamentals.Decoration;
 
 namespace CSFundamentals.Algorithms.Sort
 {
+    /// <summary>
+    /// Implements Bubble sort algorithm. 
+    /// </summary>
     public partial class BubbleSort
     {
         /// <summary>
         /// Implements bubble sort iteratively, elements are bubbled down or up the array till they are at their final correct positions. 
         /// </summary>
-        /// <param name="values">Specifies the list of values (of type T, e.g., int) to be sorted.</param>
+        /// <param name="list">Specifies the list of values (of type T, e.g., int) to be sorted.</param>
         [Algorithm(AlgorithmType.Sort, "BubbleSort")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(n)", When = "Input array is already sorted.")]
         [TimeComplexity(Case.Worst, "O(n²)")]
         [TimeComplexity(Case.Average, "O(n²)")]
-        public static void Sort_Iterative<T>(List<T> values) where T : IComparable<T>
+        public static void Sort_Iterative<T>(List<T> list) where T : IComparable<T>
         {
             /* Bubble sort iterates many times over an array, and stops iterating when no swap happens any more. */
             while (true)
             {
                 bool swapHappened = false;
-                for (int i = 0; i < values.Count - 1; i++)
+                for (int i = 0; i < list.Count - 1; i++)
                 {
-                    if (values[i + 1].CompareTo(values[i]) < 0)
+                    if (list[i + 1].CompareTo(list[i]) < 0)
                     {
-                        Utils.Swap(values, i + 1, i);
+                        Utils.Swap(list, i + 1, i);
                         swapHappened = true;
                     }
                 }
@@ -56,7 +59,11 @@ namespace CSFundamentals.Algorithms.Sort
             }
         }
 
-        public static void Sort_Recursive(List<int> values)
+        /// <summary>
+        /// Is the recursive version of Bubble sort.
+        /// </summary>
+        /// <param name="list"></param>
+        public static void Sort_Recursive(List<int> list)
         {
             throw new NotImplementedException();
         }

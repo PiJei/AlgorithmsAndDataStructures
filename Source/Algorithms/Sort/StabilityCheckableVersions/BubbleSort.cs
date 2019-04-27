@@ -28,21 +28,21 @@ namespace CSFundamentals.Algorithms.Sort
         /// <summary>
         /// Implements bubble sort iteratively, elements are bubbled down or up the array till they are at their final correct positions. 
         /// </summary>
-        /// <param name="values"></param>
-        public static void Sort_Iterative(List<Element> values)
+        /// <param name="list"></param>
+        public static void Sort_Iterative(List<Element> list)
         {
             /* Bubble sort iterates many times over an array, and stops iterating when no swap happens any more. */
             while (true)
             {
                 bool swapHappened = false;
-                for (int i = 0; i < values.Count - 1; i++)
+                for (int i = 0; i < list.Count - 1; i++)
                 {
-                    if (values[i + 1].Value < values[i].Value)
+                    if (list[i + 1].Value < list[i].Value)
                     {
-                        Utils.Swap(values, i + 1, i);
+                        Utils.Swap(list, i + 1, i);
                         swapHappened = true;
                     }
-                    values[i].Move(i);
+                    list[i].Move(i);
                 }
                 if (!swapHappened) /* If no swap happened in this pass, then the array is sorted. break out of the loop. */
                 {

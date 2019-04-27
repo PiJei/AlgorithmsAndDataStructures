@@ -4,6 +4,11 @@
         <name>CSFundamentals</name>
     </assembly>
     <members>
+        <member name="T:CSFundamentals.Algorithms.GraphTraversal.BFS">
+            <summary>
+            Implements BFS: Breadth First Search algorithm for graphs.
+            </summary>
+        </member>
         <member name="M:CSFundamentals.Algorithms.GraphTraversal.BFS.BFS_Iterative``1(CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0})">
             <summary>
             Implements an iterative, recursion-free version of Breadth First Search algorithm for a graph (that can have cycles);
@@ -14,6 +19,11 @@
         <member name="M:CSFundamentals.Algorithms.GraphTraversal.BFS.BFS_Recursive``1(System.Collections.Generic.Queue{CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0}},System.Collections.Generic.List{CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0}})">
             <summary>
             Is the recursive version of BFS_Iterative algorithm. Expects the queue to already have the root node in it. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentals.Algorithms.GraphTraversal.DFS">
+            <summary>
+            Implements DFS: Depth First Search algorithm for graphs.
             </summary>
         </member>
         <member name="M:CSFundamentals.Algorithms.GraphTraversal.DFS.DFS_Iterative``1(CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0})">
@@ -29,6 +39,11 @@
             </summary>
             <param name="root"> Specifies the node to start the search from.</param>
             <param name="dfsOrdering">Contains a serialization of the graph, with a DFS ordering.</param>
+        </member>
+        <member name="T:CSFundamentals.Algorithms.GraphTraversal.Dijkstra">
+            <summary>
+            Implements Dijkstra's algorithm for finding shortest paths from a given node to all other nodes in a graph.
+            </summary>
         </member>
         <member name="M:CSFundamentals.Algorithms.GraphTraversal.Dijkstra.GetShortestDistancesFromRoot``1(CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0})">
             <summary>
@@ -52,9 +67,65 @@
             Represents an integer value for the weight for edge .
             </summary>
         </member>
+        <member name="M:CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1.#ctor(CSFundamentals.Algorithms.GraphTraversal.GraphNode{`0},System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="node">Specifies the node at the end of an edge. </param>
+            <param name="weight">Specifies weight on the edge. </param>
+        </member>
+        <member name="T:CSFundamentals.Algorithms.GraphTraversal.GraphNode`1">
+            <summary>
+            Implements a generic graph node. 
+            </summary>
+            <typeparam name="TValue">Is the type of the value stored in the node. </typeparam>
+        </member>
+        <member name="P:CSFundamentals.Algorithms.GraphTraversal.GraphNode`1.Value">
+            <summary>
+            The value stored in the node. 
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.Algorithms.GraphTraversal.GraphNode`1.Adjacents">
+            <summary>
+            The list of all the adjacent nodes of this node. It means all the nodes that are connected to this node by a direct edge.
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.Algorithms.GraphTraversal.GraphNode`1.DistanceFromRoot">
+            <summary>
+            Is the distance of this node from a node deemed as root (unlike trees graphs do not have a designated root)
+            </summary>
+        </member>
         <member name="P:CSFundamentals.Algorithms.GraphTraversal.GraphNode`1.IsInserted">
             <summary>
             Determines whether this node, in a particular instance of a traversal algorithm has been already visited : inserted in the queue/stack. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.GraphTraversal.GraphNode`1.#ctor(`0)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="value"> The value to be stored in the node. </param>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.GraphTraversal.GraphNode`1.CompareTo(CSFundamentals.Algorithms.GraphTraversal.GraphNode{`0})">
+            <summary>
+            Compares this node to another node of type GraphNode.
+            </summary>
+            <param name="other">A graph node</param>
+            <returns></returns>
+        </member>
+        <member name="F:CSFundamentals.Algorithms.GraphTraversal.GraphNode`1.MinValue">
+            <summary>
+            Specifies the minimum value for GraphNode type. 
+            </summary>
+        </member>
+        <member name="F:CSFundamentals.Algorithms.GraphTraversal.GraphNode`1.MaxValue">
+            <summary>
+            Specifies the maximum value for GraphNode type.
+            </summary>
+        </member>
+        <member name="T:CSFundamentals.Algorithms.Hashing.RollingHash">
+            <summary>
+            Implements a rolling hash algorithm. In this sort of hashing the new hash value of a string can be calculated incrementally by rolling over to new characters, similar to moving a window over the string and decrementing the characters that fall out of the window. 
             </summary>
         </member>
         <member name="M:CSFundamentals.Algorithms.Hashing.RollingHash.GetHashRollingForward(System.Int32,System.Char,System.Char,System.Int32,System.Int32,System.Int32,System.Int32)">
@@ -89,6 +160,11 @@
             <param name="numCharsInAlphabet">Specifies the number of characters in alphabet for the multiply operation. </param>
             <returns>Hash value of the string. </returns>
         </member>
+        <member name="T:CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch">
+            <summary>
+            Implements Boyer-More algorithm for searching a pattern string in a string. 
+            </summary>
+        </member>
         <member name="M:CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly(System.String,System.String)">
             <summary>
             Implements BoyerMoore search algorithm using only the bad character heuristic (in the main version  both bad character and good suffix are used to skip over <paramref name="text"/>.)
@@ -105,6 +181,11 @@
             </summary>
             <returns>A mapping of all the characters in the given string to their last index in the string. </returns>
         </member>
+        <member name="T:CSFundamentals.Algorithms.PatternSearch.KMPSearch">
+            <summary>
+            Implements Knuth-Morris-Pratt algorithm for searching a pattern string in a string. 
+            </summary>
+        </member>
         <member name="M:CSFundamentals.Algorithms.PatternSearch.KMPSearch.Search(System.String,System.String)">
             <summary>
             Implements KMP search = Knuth-Morris-Pratt algorithm for searching <paramref name="pattern"/> in <paramref name="text"/>, using proper prefixes, and preprocessing of the <paramref name="pattern"/>.
@@ -115,6 +196,11 @@
             <param name= "pattern">The string we want to find in <paramref name="text"/>.</param>
             <returns>All the starting indexes in <paramref name="text"/> starting at which <paramref name="pattern"/> is found [in other words looks for all the occurrences of <paramref name="pattern"/> in <paramref name="text"/>, and does not stop by finding the first one].</returns>
         </member>
+        <member name="T:CSFundamentals.Algorithms.PatternSearch.NaiveSearch">
+            <summary>
+            Implements a naive simple algorithm for searching a pattern string in a string. 
+            </summary>
+        </member>
         <member name="M:CSFundamentals.Algorithms.PatternSearch.NaiveSearch.Search(System.String,System.String)">
             <summary>
             Implements a naive, brute force algorithm for finding <paramref name="pattern"/> in <paramref name="text"/>.
@@ -122,6 +208,11 @@
             </summary>
             <param name="text">The string in which we are searching for <paramref name="pattern"/>.</param>
             <param name="pattern">The string we want to find in <paramref name="text"/>.</param>
+        </member>
+        <member name="T:CSFundamentals.Algorithms.PatternSearch.RabinKarpSearch">
+            <summary>
+            Implements Rabin-Karp algorithm for searching a pattern string in a string. 
+            </summary>
         </member>
         <member name="M:CSFundamentals.Algorithms.PatternSearch.RabinKarpSearch.Search(System.String,System.String)">
             <summary>
@@ -131,6 +222,11 @@
             <param name= "text">The string in which we are searching for <paramref name="pattern"/>.</param>
             <param name= "pattern">The string we want to find in <paramref name="text"/>.</param>
             <returns>The starting index in <paramref name="text"/> starting at which <paramref name="pattern"/> is found.</returns>
+        </member>
+        <member name="T:CSFundamentals.Algorithms.Search.BinarySearch">
+            <summary>
+            Implements Binary search algorithm for finding a specific value in a sorted array.
+            </summary>
         </member>
         <member name="M:CSFundamentals.Algorithms.Search.BinarySearch.Search``1(System.Collections.Generic.List{``0},System.Int32,System.Int32,``0)">
             <summary>
@@ -142,11 +238,31 @@
             <param name="key">Specifies the value that is being searched for. </param>
             <returns>The index of the <paramref name="key"/> in the array, and -1 if it is absent from the array. </returns>
         </member>
+        <member name="T:CSFundamentals.Algorithms.Search.ExponentialSearch">
+            <summary>
+            Implements Exponential search algorithm for finding a specific value in a sorted array.
+            </summary>
+        </member>
         <member name="M:CSFundamentals.Algorithms.Search.ExponentialSearch.Search``1(System.Collections.Generic.List{``0},``0)">
             <summary>
             Implements exponential search, where the search step is a multiple of 2, hence the naming. 
             Notice that only works if the given array is sorted. 
             </summary>
+            <typeparam name="T">Type of the values in the sorted list.</typeparam>
+            <param name="sortedList">A sorted list of any comparable type. </param>
+            <param name="key">Specifies the value that is being searched for. </param>
+            <returns>The index of the <paramref name="key"/> in the array, and -1 if it does not exist in the array. </returns>
+        </member>
+        <member name="T:CSFundamentals.Algorithms.Search.FibonacciSearch">
+            <summary>
+            Implements Fibonacci search algorithm for finding a specific value in a sorted array.
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Search.FibonacciSearch.Search``1(System.Collections.Generic.List{``0},``0)">
+            <summary>
+            Implements Fibonacci search. 
+            </summary>
+            <typeparam name="T">Type of the values in the sorted list.</typeparam>
             <param name="sortedList">A sorted list of any comparable type. </param>
             <param name="key">Specifies the value that is being searched for. </param>
             <returns>The index of the <paramref name="key"/> in the array, and -1 if it does not exist in the array. </returns>
@@ -166,7 +282,39 @@
         </member>
         <member name="P:CSFundamentals.Algorithms.Search.FibonacciElement.FibN">
             <summary>
-            FibN = FibN1 {aka. fib(n-1)} + FibN2 {aka. fib(n-2)} 
+            Is a Fibonacci number: FibN = FibN1 {aka. fib(n-1)} + FibN2 {aka. fib(n-2)} 
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.Algorithms.Search.FibonacciElement.FibN1">
+            <summary>
+            Is the Fibonacci number immediately before FibN
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.Algorithms.Search.FibonacciElement.FibN2">
+            <summary>
+            Is the Fibonacci number immediately before FibN1
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Search.FibonacciElement.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="fibN2">Second Fibonacci number. </param>
+            <param name="fibN1">First Fibonacci number</param>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Search.FibonacciElement.ShiftForward">
+            <summary>
+            Shifts Fibonacci number one element forward in the sequence. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Search.FibonacciElement.ShiftBackward">
+            <summary>
+            Shifts Fibonacci number one element backward in the sequence. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentals.Algorithms.Search.HashTableSearch">
+            <summary>
+            Implements search using a hash table. Search algorithm is for finding a specific value in an array.
             </summary>
         </member>
         <member name="M:CSFundamentals.Algorithms.Search.HashTableSearch.Search``1(System.Collections.Generic.List{``0},``0)">
@@ -176,6 +324,11 @@
             <param name="list">Specifies a list of any comparable type.</param>
             <param name="key">Specifies the value the method is searching for. </param>
             <returns>The list of all the indexes in the array that have <paramref name="key"/>. </returns>
+        </member>
+        <member name="T:CSFundamentals.Algorithms.Search.InterpolationSearch">
+            <summary>
+            Implements Interpolation search algorithm for finding a specific value in a sorted array.
+            </summary>
         </member>
         <member name="M:CSFundamentals.Algorithms.Search.InterpolationSearch.Search``1(System.Collections.Generic.List{``0},System.Int32,System.Int32,``0)">
             <summary>
@@ -200,6 +353,11 @@
             <param name="key">Specifies the value that is being searched for. </param>
             <returns>The index in the array at which to start the search. </returns>
         </member>
+        <member name="T:CSFundamentals.Algorithms.Search.JumpSearch">
+            <summary>
+            Implements Jump search algorithm for finding a specific value in a sorted array.
+            </summary>
+        </member>
         <member name="M:CSFundamentals.Algorithms.Search.JumpSearch.Search``1(System.Collections.Generic.List{``0},``0)">
             <summary>
             Performs a jumpSearch on a list of integers to find the <paramref name="key"/>. 
@@ -218,9 +376,17 @@
             <summary>
             Searches for a given value in a list. 
             </summary>
+            <typeparam name="T"></typeparam>
             <param name="list">Specifies a list of any comparable type.</param>
+            <param name="startIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>
+            <param name="endIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
             <param name="key">Specifies the value the method is searching for. </param>
-            <returns>The index of the <paramref name="key"/> in the array, and -1 if it does not exist in the array. </returns>
+            <returns></returns>
+        </member>
+        <member name="T:CSFundamentals.Algorithms.Search.TernarySearch">
+            <summary>
+            Implements Ternary search algorithm for finding a specific value in a sorted array.
+            </summary>
         </member>
         <member name="M:CSFundamentals.Algorithms.Search.TernarySearch.Search``1(System.Collections.Generic.List{``0},System.Int32,System.Int32,``0)">
             <summary>
@@ -235,23 +401,39 @@
             <param name="key">Specifies the value that is being searched for. </param>
             <returns>The index of the <paramref name="key"/> in the array, and -1 if it does not exist in the array. </returns>
         </member>
+        <member name="T:CSFundamentals.Algorithms.Sort.BubbleSort">
+            <summary>
+            Implements Bubble sort algorithm. 
+            </summary>
+        </member>
         <member name="M:CSFundamentals.Algorithms.Sort.BubbleSort.Sort_Iterative``1(System.Collections.Generic.List{``0})">
             <summary>
             Implements bubble sort iteratively, elements are bubbled down or up the array till they are at their final correct positions. 
             </summary>
-            <param name="values">Specifies the list of values (of type T, e.g., int) to be sorted.</param>
+            <param name="list">Specifies the list of values (of type T, e.g., int) to be sorted.</param>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.BubbleSort.Sort_Recursive(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Is the recursive version of Bubble sort.
+            </summary>
+            <param name="list"></param>
         </member>
         <member name="M:CSFundamentals.Algorithms.Sort.BubbleSort.Sort_Iterative(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})">
             <summary>
             Implements bubble sort iteratively, elements are bubbled down or up the array till they are at their final correct positions. 
             </summary>
-            <param name="values"></param>
+            <param name="list"></param>
+        </member>
+        <member name="T:CSFundamentals.Algorithms.Sort.HeapSort">
+            <summary>
+            Implements Heap sort algorithm.
+            </summary>
         </member>
         <member name="M:CSFundamentals.Algorithms.Sort.HeapSort.Sort``1(System.Collections.Generic.List{``0})">
             <summary>
             Sorts the elements in an array using heap sort algorithm into an ascending order. 
             </summary>
-            <param name="values">Specifies the list of values (of type T, e.g., int) to be sorted.</param>
+            <param name="list">Specifies the list of values (of type T, e.g., int) to be sorted.</param>
         </member>
         <member name="T:CSFundamentals.Algorithms.Sort.InsertionSort">
             <summary>
@@ -262,25 +444,37 @@
             <summary>
             Implements insertion sort iteratively, and in-situ, using many Swaps.
             </summary>
-            <param name="values">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
+            <param name="list">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
         </member>
         <member name="M:CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Iterative_V2``1(System.Collections.Generic.List{``0})">
             <summary>
             Implements insertion sort iteratively, and in-situ, using only one swap per element.
             </summary>
-            <param name="values">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
+            <param name="list">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
         </member>
         <member name="M:CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Recursive``1(System.Collections.Generic.List{``0},System.Int32)">
             <summary>
             Implements insertion sort recursively. Initial call shall be Sort_Recursive(values, values.Count-1);
             </summary>
-            <param name="values">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
+            <param name="list">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
+            <param name="n"> Is the last inclusive index of the <paramref name="list"/>. </param>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Iterative_V2(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})">
+            <summary>
+            Implements an iterative version of Insertion sort. 
+            </summary>
+            <param name="list"></param>
+        </member>
+        <member name="T:CSFundamentals.Algorithms.Sort.MergeSort">
+            <summary>
+            Implements Merge sort algorithm. 
+            </summary>
         </member>
         <member name="M:CSFundamentals.Algorithms.Sort.MergeSort.Sort_Recursively``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)">
             <summary>
             Implements merge sort recursively. 
             </summary>
-            <param name="values">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
+            <param name="list">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
             <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
             <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
         </member>
@@ -288,7 +482,7 @@
             <summary>
             Merges two sub arrays [startIndex, middleIndex], [middleIndex+1, endIndex] such to end up with a sorted list. 
             </summary>
-            <param name="values">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
+            <param name="list">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
             <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
             <param name="middleIndex">Specifies the middle index of the array. </param>
             <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
@@ -297,7 +491,7 @@
             <summary>
             Provides an iterative version for MergeSort. 
             </summary>
-            <param name="values"></param>
+            <param name="list"></param>
             <param name="startIndex"></param>
             <param name="endIndex"></param>
         </member>
@@ -305,7 +499,7 @@
             <summary>
             Implements a basic version of merge sort recursively. 
             </summary>
-            <param name="values">Specifies the list of integer values to be sorted. </param>
+            <param name="list">Specifies the list of integer values to be sorted. </param>
             <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
             <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
         </member>
@@ -326,11 +520,16 @@
             </summary>
             <param name="values">Specifies the list of integers to be sorted. </param>
         </member>
+        <member name="T:CSFundamentals.Algorithms.Sort.QuickSort">
+            <summary>
+            Implements Quick sort algorithm. 
+            </summary>
+        </member>
         <member name="M:CSFundamentals.Algorithms.Sort.QuickSort.Sort_Recursively``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)">
             <summary>
             Implements quick sort recursively. 
             </summary>
-            <param name="values">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
+            <param name="list">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
             <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
             <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
         </member>
@@ -338,7 +537,7 @@
             <summary>
             Partitions the given array, with respect to the computed pivot, such that elements to the left of the pivot are smaller than the pivot, and elements to the right of the pivot are bigger than the pivot. 
             </summary>
-            <param name="values">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
+            <param name="list">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
             <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
             <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
             <returns>The next partitioning index. </returns>
@@ -355,7 +554,15 @@
             <summary>
             Provides an iterative version of QuickSort.
             </summary>
-            <param name="values"></param>
+            <param name="list"></param>
+            <param name="startIndex"></param>
+            <param name="endIndex"></param>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.QuickSort.Sort_Recursively(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element},System.Int32,System.Int32)">
+            <summary>
+            Implements a recursive version of quick sort. 
+            </summary>
+            <param name="list"></param>
             <param name="startIndex"></param>
             <param name="endIndex"></param>
         </member>
@@ -375,6 +582,11 @@
             In sort methods the signature is: void SortMethod(List(int) values); 
             </summary>
             <param name="values">Specifies the list of integers to be sorted. </param>
+        </member>
+        <member name="T:CSFundamentals.Algorithms.Sort.RadixSort">
+            <summary>
+            Implements Radix sort algorithm.
+            </summary>
         </member>
         <member name="M:CSFundamentals.Algorithms.Sort.RadixSort.Sort_Iterative_V1(System.Collections.Generic.List{System.Int32})">
             <summary>
@@ -396,11 +608,16 @@
             Implements Radix sort for base 10 (decimal integers) using queues. 
             </summary>
         </member>
+        <member name="T:CSFundamentals.Algorithms.Sort.SelectionSort">
+            <summary>
+            Implements Selection sort algorithm. 
+            </summary>
+        </member>
         <member name="M:CSFundamentals.Algorithms.Sort.SelectionSort.Sort_Iteratively``1(System.Collections.Generic.List{``0})">
             <summary>
             Implements selection sort, which is in-situ and unstable, and at each step, the array would look as one sorted part, and one unsorted part. 
             </summary>
-            <param name="values">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
+            <param name="list">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
         </member>
         <member name="M:CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element.IsStable(CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element)">
             <summary>

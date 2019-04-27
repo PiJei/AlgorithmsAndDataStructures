@@ -24,6 +24,9 @@ using CSFundamentals.Decoration;
 
 namespace CSFundamentals.Algorithms.PatternSearch
 {
+    /// <summary>
+    /// Implements Knuth-Morris-Pratt algorithm for searching a pattern string in a string. 
+    /// </summary>
     public class KMPSearch
     {
         /// <summary>

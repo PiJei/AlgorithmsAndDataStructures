@@ -22,6 +22,9 @@ using System.Collections.Generic;
 
 namespace CSFundamentals.Algorithms.GraphTraversal
 {
+    /// <summary>
+    /// Implements DFS: Depth First Search algorithm for graphs.
+    /// </summary>
     public class DFS
     {
         /// <summary>

@@ -25,24 +25,28 @@ namespace CSFundamentals.Algorithms.Sort
 {
     public partial class InsertionSort
     {
-        public static void Sort_Iterative_V2(List<Element> values)
+        /// <summary>
+        /// Implements an iterative version of Insertion sort. 
+        /// </summary>
+        /// <param name="list"></param>
+        public static void Sort_Iterative_V2(List<Element> list)
         {
             // In this version, we will overwrite the array location for element (i) by shifting each element to the right if bigger than (i) till finding its correct position
-            for (int i = 1; i < values.Count; i++)
+            for (int i = 1; i < list.Count; i++)
             {
-                Element arrayValueAtIndexI = values[i];
+                Element arrayValueAtIndexI = list[i];
                 int correctIndex = i;
 
-                for (int j = i - 1; j >= 0 && values[j].Value > arrayValueAtIndexI.Value; j--)
+                for (int j = i - 1; j >= 0 && list[j].Value > arrayValueAtIndexI.Value; j--)
                 {
-                    values[j].Move(j + 1);
-                    values[j + 1] = values[j];
+                    list[j].Move(j + 1);
+                    list[j + 1] = list[j];
 
                     correctIndex = j;
                 }
 
                 arrayValueAtIndexI.Move(correctIndex);
-                values[correctIndex] = arrayValueAtIndexI;
+                list[correctIndex] = arrayValueAtIndexI;
             }
         }
     }

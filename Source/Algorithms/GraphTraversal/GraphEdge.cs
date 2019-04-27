@@ -25,6 +25,7 @@ namespace CSFundamentals.Algorithms.GraphTraversal
     /// </summary>
     public class GraphEdge<TValue>
     {
+        // TODO: Should ideally have 2 nodes
         /// <summary>
         /// Is the GraphNode on the other side of the edge. 
         /// </summary>
@@ -35,6 +36,11 @@ namespace CSFundamentals.Algorithms.GraphTraversal
         /// </summary>
         public int Weight { get; set; }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="node">Specifies the node at the end of an edge. </param>
+        /// <param name="weight">Specifies weight on the edge. </param>
         public GraphEdge(GraphNode<TValue> node, int weight)
         {
             Node = node;

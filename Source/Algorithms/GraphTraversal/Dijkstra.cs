@@ -25,6 +25,9 @@ using CSFundamentals.Decoration;
 
 namespace CSFundamentals.Algorithms.GraphTraversal
 {
+    /// <summary>
+    /// Implements Dijkstra's algorithm for finding shortest paths from a given node to all other nodes in a graph.
+    /// </summary>
     public class Dijkstra
     {
         /// <summary>

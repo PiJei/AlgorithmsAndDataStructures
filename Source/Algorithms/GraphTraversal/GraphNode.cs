@@ -23,10 +23,25 @@ using System.Collections.Generic;
 
 namespace CSFundamentals.Algorithms.GraphTraversal
 {
+    /// <summary>
+    /// Implements a generic graph node. 
+    /// </summary>
+    /// <typeparam name="TValue">Is the type of the value stored in the node. </typeparam>
     public class GraphNode<TValue> : IComparable<GraphNode<TValue>>
     {
+        /// <summary>
+        /// The value stored in the node. 
+        /// </summary>
         public TValue Value { get; set; }
+
+        /// <summary>
+        /// The list of all the adjacent nodes of this node. It means all the nodes that are connected to this node by a direct edge.
+        /// </summary>
         public List<GraphEdge<TValue>> Adjacents { get; set; } = new List<GraphEdge<TValue>>();
+
+        /// <summary>
+        /// Is the distance of this node from a node deemed as root (unlike trees graphs do not have a designated root)
+        /// </summary>
         public int DistanceFromRoot { get; set; } = 0;
 
         /// <summary>
@@ -34,11 +49,20 @@ namespace CSFundamentals.Algorithms.GraphTraversal
         /// </summary>
         public bool IsInserted { get; set; }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="value"> The value to be stored in the node. </param>
         public GraphNode(TValue value)
         {
             Value = value;
         }
 
+        /// <summary>
+        /// Compares this node to another node of type GraphNode.
+        /// </summary>
+        /// <param name="other">A graph node</param>
+        /// <returns></returns>
         public int CompareTo(GraphNode<TValue> other)
         {
             if (other == null)
@@ -69,8 +93,14 @@ namespace CSFundamentals.Algorithms.GraphTraversal
             return 0;
         }
 
+        /// <summary>
+        /// Specifies the minimum value for GraphNode type. 
+        /// </summary>
         public static readonly GraphNode<TValue> MinValue = new GraphNode<TValue>(default(TValue));
 
+        /// <summary>
+        /// Specifies the maximum value for GraphNode type.
+        /// </summary>
         public static readonly GraphNode<TValue> MaxValue = new GraphNode<TValue>(default(TValue));
     }
 }

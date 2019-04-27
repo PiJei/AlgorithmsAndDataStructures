@@ -20,6 +20,9 @@
 #endregion
 namespace CSFundamentals.Algorithms.Hashing
 {
+    /// <summary>
+    /// Implements a rolling hash algorithm. In this sort of hashing the new hash value of a string can be calculated incrementally by rolling over to new characters, similar to moving a window over the string and decrementing the characters that fall out of the window. 
+    /// </summary>
     public class RollingHash
     {
         /// <summary>
@@ -50,12 +53,12 @@ namespace CSFundamentals.Algorithms.Hashing
         /// <returns>Hashing constant based on the given prime number, window size, and numCharsInAlphabet. </returns>
         public static int ComputeHashConstantForRollingHash(int rollingWindowLength, int prime, int numCharsInAlphabet)
         {
-            int HashConstant = 1;
+            int hashConstant = 1;
             for (int i = 0; i < rollingWindowLength - 1; i++)
             {
-                HashConstant = (HashConstant * numCharsInAlphabet) % prime;
+                hashConstant = (hashConstant * numCharsInAlphabet) % prime;
             }
-            return HashConstant;
+            return hashConstant;
         }
 
         /// <summary>

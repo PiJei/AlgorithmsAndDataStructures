@@ -24,6 +24,9 @@ using System.Collections.Generic;
 
 namespace CSFundamentals.Algorithms.GraphTraversal
 {
+    /// <summary>
+    /// Implements BFS: Breadth First Search algorithm for graphs.
+    /// </summary>
     public class BFS
     {
         /// <summary>

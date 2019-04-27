@@ -26,6 +26,9 @@ using CSFundamentals.Decoration;
 // TODO: Make generic
 namespace CSFundamentals.Algorithms.Search
 {
+    /// <summary>
+    /// Implements search using a hash table. Search algorithm is for finding a specific value in an array.
+    /// </summary>
     public class HashTableSearch
     {
         /// <summary>

@@ -26,25 +26,28 @@ using CSFundamentals.Decoration;
 // TODO: Dont like the fact that had to change the signature to return values, and convert arrays
 namespace CSFundamentals.Algorithms.Sort
 {
+    /// <summary>
+    /// Implements Heap sort algorithm.
+    /// </summary>
     public partial class HeapSort
     {
         /// <summary>
         /// Sorts the elements in an array using heap sort algorithm into an ascending order. 
         /// </summary>
-        /// <param name="values">Specifies the list of values (of type T, e.g., int) to be sorted.</param>
+        /// <param name="list">Specifies the list of values (of type T, e.g., int) to be sorted.</param>
         [Algorithm(AlgorithmType.Sort, "HeapSort")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(nLog(n))")]
         [TimeComplexity(Case.Worst, "O(nLog(n))")]
         [TimeComplexity(Case.Average, "O(nLog(n))")]
-        public static List<T> Sort<T>(List<T> values) where T : IComparable<T>
+        public static List<T> Sort<T>(List<T> list) where T : IComparable<T>
         {
             // 1- re-arrange elements in the array into a max heap. 
-            var maxHeap = new MaxBinaryHeap<T, T>(ToHeapArray(values));
-            maxHeap.BuildHeap_Recursively(values.Count);
+            var maxHeap = new MaxBinaryHeap<T, T>(ToHeapArray(list));
+            maxHeap.BuildHeap_Recursively(list.Count);
 
             // 2- repeat the following 2 steps for all the elements in the array. 
-            for (int i = values.Count - 1; i >= 0; i--)
+            for (int i = list.Count - 1; i >= 0; i--)
             {
                 /* Since the root element/node in a max heap is the maximum value in the array, putting it in the last position of the unsorted part of the array, determines its final position in an array that is eventually ordered ascending.*/
                 Utils.Swap(maxHeap.HeapArray, 0, i);
@@ -56,14 +59,14 @@ namespace CSFundamentals.Algorithms.Sort
             return ToArray(maxHeap.HeapArray);
         }
 
-        private static List<KeyValuePair<T, T>> ToHeapArray<T>(List<T> values) where T : IComparable<T>
+        private static List<KeyValuePair<T, T>> ToHeapArray<T>(List<T> list) where T : IComparable<T>
         {
-            return values.Select(v => new KeyValuePair<T, T>(v, v)).ToList();
+            return list.Select(v => new KeyValuePair<T, T>(v, v)).ToList();
         }
 
-        private static List<T> ToArray<T>(List<KeyValuePair<T, T>> values) where T : IComparable<T>
+        private static List<T> ToArray<T>(List<KeyValuePair<T, T>> list) where T : IComparable<T>
         {
-            return values.Select(v => v.Key).ToList();
+            return list.Select(v => v.Key).ToList();
         }
     }
 }

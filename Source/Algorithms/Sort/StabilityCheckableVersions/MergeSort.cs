@@ -28,17 +28,17 @@ namespace CSFundamentals.Algorithms.Sort
         /// <summary>
         /// Implements a basic version of merge sort recursively. 
         /// </summary>
-        /// <param name="values">Specifies the list of integer values to be sorted. </param>
+        /// <param name="list">Specifies the list of integer values to be sorted. </param>
         /// <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
         /// <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
-        public static void Sort_Recursively(List<Element> values, int startIndex, int endIndex)
+        public static void Sort_Recursively(List<Element> list, int startIndex, int endIndex)
         {
             if (startIndex < endIndex)
             {
                 int middleIndex = (startIndex + endIndex) / 2;
-                Sort_Recursively(values, startIndex, middleIndex);
-                Sort_Recursively(values, middleIndex + 1, endIndex);
-                Merge(values, startIndex, middleIndex, endIndex);
+                Sort_Recursively(list, startIndex, middleIndex);
+                Sort_Recursively(list, middleIndex + 1, endIndex);
+                Merge(list, startIndex, middleIndex, endIndex);
             }
         }
 

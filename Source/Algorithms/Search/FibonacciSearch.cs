@@ -24,10 +24,20 @@ using CSFundamentals.Decoration;
 
 namespace CSFundamentals.Algorithms.Search
 {
+    /// <summary>
+    /// Implements Fibonacci search algorithm for finding a specific value in a sorted array.
+    /// </summary>
     public class FibonacciSearch
     {
+        // TODO: specify time and space complexity. 
+        /// <summary>
+        /// Implements Fibonacci search. 
+        /// </summary>
+        /// <typeparam name="T">Type of the values in the sorted list.</typeparam>
+        /// <param name="sortedList">A sorted list of any comparable type. </param>
+        /// <param name="key">Specifies the value that is being searched for. </param>
+        /// <returns>The index of the <paramref name="key"/> in the array, and -1 if it does not exist in the array. </returns>
         [Algorithm(AlgorithmType.Search, "FibonacciSearch", Assumptions = "Array is sorted with an ascending order.")]
-        // TODO: specify time and space complexity. AND SUMMARY
         public static int Search<T>(List<T> sortedList, T key) where T : IComparable<T>
         {
             /* If key is NOT in the range, terminate search. Since the input array is sorted this early check is feasible. */
@@ -95,12 +105,25 @@ namespace CSFundamentals.Algorithms.Search
     public class FibonacciElement
     {
         /// <summary>
-        /// FibN = FibN1 {aka. fib(n-1)} + FibN2 {aka. fib(n-2)} 
+        /// Is a Fibonacci number: FibN = FibN1 {aka. fib(n-1)} + FibN2 {aka. fib(n-2)} 
         /// </summary>
         public int FibN { get; set; }
+
+        /// <summary>
+        /// Is the Fibonacci number immediately before FibN
+        /// </summary>
         public int FibN1 { get; set; }
+
+        /// <summary>
+        /// Is the Fibonacci number immediately before FibN1
+        /// </summary>
         public int FibN2 { get; set; }
 
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="fibN2">Second Fibonacci number. </param>
+        /// <param name="fibN1">First Fibonacci number</param>
         public FibonacciElement(int fibN2, int fibN1)
         {
             FibN2 = fibN2;
@@ -108,6 +131,9 @@ namespace CSFundamentals.Algorithms.Search
             FibN = FibN1 + FibN2;
         }
 
+        /// <summary>
+        /// Shifts Fibonacci number one element forward in the sequence. 
+        /// </summary>
         public void ShiftForward()
         {
             FibN2 = FibN1;
@@ -115,6 +141,9 @@ namespace CSFundamentals.Algorithms.Search
             FibN = FibN1 + FibN2;
         }
 
+        /// <summary>
+        /// Shifts Fibonacci number one element backward in the sequence. 
+        /// </summary>
         public void ShiftBackward()
         {
             FibN = FibN1;

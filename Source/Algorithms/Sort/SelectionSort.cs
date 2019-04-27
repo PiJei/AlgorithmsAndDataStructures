@@ -24,31 +24,34 @@ using CSFundamentals.Decoration;
 
 namespace CSFundamentals.Algorithms.Sort
 {
+    /// <summary>
+    /// Implements Selection sort algorithm. 
+    /// </summary>
     public partial class SelectionSort
     {
         /// <summary>
         /// Implements selection sort, which is in-situ and unstable, and at each step, the array would look as one sorted part, and one unsorted part. 
         /// </summary>
-        /// <param name="values">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
+        /// <param name="list">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
         [Algorithm(AlgorithmType.Sort, "SelectionSort")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(n²)")]
         [TimeComplexity(Case.Worst, "O(n²)")]
         [TimeComplexity(Case.Average, "O(n²)")]
-        public static void Sort_Iteratively<T>(List<T> values) where T : IComparable<T>
+        public static void Sort_Iteratively<T>(List<T> list) where T : IComparable<T>
         {
             /*Notice that the loop does not have to repeat over the last element of the array, as by then the last element is already the largest element in the array.*/
-            for (int i = 0; i < values.Count - 1; i++) /* Iteration i, determines the i-th smallest/min value. */
+            for (int i = 0; i < list.Count - 1; i++) /* Iteration i, determines the i-th smallest/min value. */
             {
                 int minIndex = i;
-                for (int j = i; j < values.Count; j++) /* This loop finds an element in the unsorted part of the array that is smaller than the current value at index i. */
+                for (int j = i; j < list.Count; j++) /* This loop finds an element in the unsorted part of the array that is smaller than the current value at index i. */
                 {
-                    if (values[j].CompareTo(values[minIndex]) < 0)
+                    if (list[j].CompareTo(list[minIndex]) < 0)
                     {
                         minIndex = j;
                     }
                 }
-                Utils.Swap(values, i, minIndex); /* Even though if minIndex has not changed, the swap happens. Can be made efficient by adding an if check. */
+                Utils.Swap(list, i, minIndex); /* Even though if minIndex has not changed, the swap happens. Can be made efficient by adding an if check. */
             }
         }
     }

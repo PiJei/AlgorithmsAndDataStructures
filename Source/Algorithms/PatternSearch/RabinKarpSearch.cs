@@ -23,6 +23,9 @@ using CSFundamentals.Decoration;
 
 namespace CSFundamentals.Algorithms.PatternSearch
 {
+    /// <summary>
+    /// Implements Rabin-Karp algorithm for searching a pattern string in a string. 
+    /// </summary>
     public class RabinKarpSearch
     {
         private const int NumCharacters = 256;
