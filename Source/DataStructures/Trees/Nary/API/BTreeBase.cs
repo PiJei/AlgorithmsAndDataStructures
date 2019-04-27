@@ -109,7 +109,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         public abstract bool Delete(TNode node, TKey key);
 
         /// <summary>
-        /// Gets the sorted list of all the key-values in the tree rooted at <paramref name="node">. 
+        /// Gets the sorted list of all the key-values in the tree rooted at <paramref name="node"/>. 
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
@@ -123,7 +123,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// Finds the node that contains the maximum key of the subtree rooted at node.
         /// </summary>
         /// <param name="node">The node at which (sub)tree is rooted. </param>
-        /// <returns>The node containing the maximum key of the (sub)tree rooted at <paramref name="node">. </returns>
+        /// <returns>The node containing the maximum key of the (sub)tree rooted at <paramref name="node"/>. </returns>
         [TimeComplexity(Case.Best, "O(1)", When = "when node is leaf.")]
         [TimeComplexity(Case.Worst, "O(Log(n))")] // todo base is wrong
         [TimeComplexity(Case.Average, "O(Log(n))")]// todo: base is wrong, .. .
@@ -138,10 +138,10 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         }
 
         /// <summary>
-        /// Finds the node that contains the minimum key of the subtree rooted at <paramref name="node">.
+        /// Finds the node that contains the minimum key of the subtree rooted at <paramref name="node"/>.
         /// </summary>
         /// <param name="node">The node at which (sub)tree is rooted.</param>
-        /// <returns>The node containing the minimum key of the (sub)tree rooted at <paramref name="node">.</returns>
+        /// <returns>The node containing the minimum key of the (sub)tree rooted at <paramref name="node"/>.</returns>
         public TNode GetMinNode(TNode node)
         {
             if (node.IsLeaf())

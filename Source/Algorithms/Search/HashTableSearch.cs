@@ -33,7 +33,7 @@ namespace CSFundamentals.Algorithms.Search
         /// </summary>
         /// <param name="list">Specifies a list of any comparable type.</param>
         /// <param name="key">Specifies the value the method is searching for. </param>
-        /// <returns>The list of all the indexes in the array that have <paramref name="key">. </returns>
+        /// <returns>The list of all the indexes in the array that have <paramref name="key"/>. </returns>
         [Algorithm(AlgorithmType.Search, "HashTable")]
         [SpaceComplexity("O(n)", InPlace = false)]
         [TimeComplexity(Case.Best, "O(1)")]

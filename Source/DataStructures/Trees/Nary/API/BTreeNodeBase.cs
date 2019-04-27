@@ -302,7 +302,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         }
 
         /// <summary>
-        /// Removes key <paramref name="key"/> from the node's <see cref="_keyValues"> array. 
+        /// Removes key <paramref name="key"/> from the node's <see cref="_keyValues"/> array. 
         /// </summary>
         /// <param name="key">Is the key to be removed.</param>
         public void RemoveKey(TKey key)
@@ -318,7 +318,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         }
 
         /// <summary>
-        /// Removes key at index <paramref name="index"/> from the node's <see cref="_keyValues"> array. 
+        /// Removes key at index <paramref name="index"/> from the node's <see cref="_keyValues"/> array. 
         /// </summary>
         /// <param name="index">The index of the key to be removed from the node. </param>
         public void RemoveKeyByIndex(int index)
@@ -334,7 +334,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         }
 
         /// <summary>
-        /// Removes child at index <paramref name="index"/> from the node's <see cref="_children"> array.
+        /// Removes child at index <paramref name="index"/> from the node's <see cref="_children"/> array.
         /// </summary>
         /// <param name="index">The child index. </param>
         public void RemoveChildByIndex(int index)
@@ -350,7 +350,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         }
 
         /// <summary>
-        /// Removes child <paramref name="child"/> from the node's <see cref="_children"> array.
+        /// Removes child <paramref name="child"/> from the node's <see cref="_children"/> array.
         /// </summary>
         /// <param name="child">Child to be removed. </param>
         public void RemoveChild(TNode child)
@@ -366,50 +366,50 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         }
 
         /// <summary>
-        /// Gets (reads) the key-value pair at index <paramref name="index"/> of node's <see cref="_keyValues"> array. 
+        /// Gets (reads) the key-value pair at index <paramref name="index"/> of node's <see cref="_keyValues"/> array. 
         /// </summary>
         /// <param name="index">The index of the key-value pair wanted. </param>
-        /// <returns>Key-value pair located at index <paramref name="index"/> of node's <see cref="_keyValues"> array. </returns>
+        /// <returns>Key-value pair located at index <paramref name="index"/> of node's <see cref="_keyValues"/> array. </returns>
         public KeyValuePair<TKey, TValue> GetKeyValue(int index)
         {
             return index < KeyCount ? _keyValues.ElementAt(index) : throw new IndexOutOfRangeException();
         }
 
         /// <summary>
-        /// Gets (reads)the key of the key-value pair at index <paramref name="index"/> of node's <see cref="_keyValues"> array.
+        /// Gets (reads)the key of the key-value pair at index <paramref name="index"/> of node's <see cref="_keyValues"/> array.
         /// </summary>
         /// <param name="index">The index of the key-value pair whose key is wanted. </param>
-        /// <returns>Key at index <paramref name="index"/> of node's <see cref="_keyValues"> array. </returns>
+        /// <returns>Key at index <paramref name="index"/> of node's <see cref="_keyValues"/> array. </returns>
         public TKey GetKey(int index)
         {
             return GetKeyValue(index).Key;
         }
 
         /// <summary>
-        /// Gets the index of the key <paramref name="key"/> at node's <see cref="_keyValues"> array. 
+        /// Gets the index of the key <paramref name="key"/> at node's <see cref="_keyValues"/> array. 
         /// </summary>
         /// <param name="key">The key to search for and return its index.</param>
-        /// <returns>Index of the key <paramref name="key"/> at node's <see cref="_keyValues"> array. </returns>
+        /// <returns>Index of the key <paramref name="key"/> at node's <see cref="_keyValues"/> array. </returns>
         public int GetKeyIndex(TKey key)
         {
             return _keyValues.ContainsKey(key) ? _keyValues.IndexOfKey(key) : throw new KeyNotFoundException();
         }
 
         /// <summary>
-        /// Gets (reads) the child at index <paramref name="index"/> of node's <see cref="_children"> array.
+        /// Gets (reads) the child at index <paramref name="index"/> of node's <see cref="_children"/> array.
         /// </summary>
         /// <param name="index">The index of the child node wanted. </param>
-        /// <returns>Child node at index <paramref name="index"/> of node's <see cref="_children"> array.</returns>
+        /// <returns>Child node at index <paramref name="index"/> of node's <see cref="_children"/> array.</returns>
         public TNode GetChild(int index)
         {
             return ChildrenCount > index ? _children.ElementAt(index).Key : throw new IndexOutOfRangeException();
         }
 
         /// <summary>
-        /// Looks for <paramref name="child"/> in node's <see cref="_children"> array, and returns its index.
+        /// Looks for <paramref name="child"/> in node's <see cref="_children"/> array, and returns its index.
         /// </summary>
         /// <param name="child">Child whose index is wanted. </param>
-        /// <returns>Index of <paramref name="child"/> in node's <see cref="_children"> array</returns>
+        /// <returns>Index of <paramref name="child"/> in node's <see cref="_children"/> array</returns>
         public int GetChildIndex(TNode child)
         {
             return _children.ContainsKey(child) ? _children.IndexOfKey(child) : throw new KeyNotFoundException();

@@ -387,7 +387,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary
 
 
         /// <summary>
-        ///  Searchers the given key in leaf nodes of the (sub)tree rooted at node <paramref name="root">.
+        ///  Searchers the given key in leaf nodes of the (sub)tree rooted at node <paramref name="root"/>.
         /// </summary>
         /// <param name="root">The root of the (sub) tree at which search starts. </param>
         /// <param name="key">Is the key to search for.</param>

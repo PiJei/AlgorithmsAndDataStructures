@@ -95,7 +95,7 @@ namespace CSFundamentals.Algorithms.Search
     public class FibonacciElement
     {
         /// <summary>
-        // FibN = FibN1 {aka. fib(n-1)} + FibN2 {aka. fib(n-2)} 
+        /// FibN = FibN1 {aka. fib(n-1)} + FibN2 {aka. fib(n-2)} 
         /// </summary>
         public int FibN { get; set; }
         public int FibN1 { get; set; }

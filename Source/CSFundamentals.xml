@@ -105,7 +105,16 @@
             </summary>
             <returns>A mapping of all the characters in the given string to their last index in the string. </returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.Algorithms.PatternSearch.KMPSearch.Search(System.String,System.String)" -->
+        <member name="M:CSFundamentals.Algorithms.PatternSearch.KMPSearch.Search(System.String,System.String)">
+            <summary>
+            Implements KMP search = Knuth-Morris-Pratt algorithm for searching <paramref name="pattern"/> in <paramref name="text"/>, using proper prefixes, and preprocessing of the <paramref name="pattern"/>.
+            The idea: while searching for <paramref name="pattern"/> in <paramref name="text"/>, we already 'have seen' some characters in <paramref name="text"/>, so shall not re-check if they match with parts of the <paramref name="pattern"/>.
+            When compared to Naive algorithm, whereas at each internal iteration, we reset j to zero, here we do not always reset j to zero, the value j gets set to, depends on its prefixes. 
+            </summary>
+            <param name= "text">The string in which we are searching for <paramref name="pattern"/>.</param>
+            <param name= "pattern">The string we want to find in <paramref name="text"/>.</param>
+            <returns>All the starting indexes in <paramref name="text"/> starting at which <paramref name="pattern"/> is found [in other words looks for all the occurrences of <paramref name="pattern"/> in <paramref name="text"/>, and does not stop by finding the first one].</returns>
+        </member>
         <member name="M:CSFundamentals.Algorithms.PatternSearch.NaiveSearch.Search(System.String,System.String)">
             <summary>
             Implements a naive, brute force algorithm for finding <paramref name="pattern"/> in <paramref name="text"/>.
@@ -155,10 +164,42 @@
             Represents a Fibonacci number at index n, and the two Fibonacci numbers at two preceding indexes, which are necessary for calculating this element's value.  
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "P:CSFundamentals.Algorithms.Search.FibonacciElement.FibN" -->
-        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.Algorithms.Search.HashTableSearch.Search``1(System.Collections.Generic.List{``0},``0)" -->
-        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.Algorithms.Search.InterpolationSearch.Search``1(System.Collections.Generic.List{``0},System.Int32,System.Int32,``0)" -->
-        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.Algorithms.Search.InterpolationSearch.GetStartIndex``1(System.Collections.Generic.List{``0},System.Int32,System.Int32,``0)" -->
+        <member name="P:CSFundamentals.Algorithms.Search.FibonacciElement.FibN">
+            <summary>
+            FibN = FibN1 {aka. fib(n-1)} + FibN2 {aka. fib(n-2)} 
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Search.HashTableSearch.Search``1(System.Collections.Generic.List{``0},``0)">
+            <summary>
+            Implements search using a hash table. 
+            </summary>
+            <param name="list">Specifies a list of any comparable type.</param>
+            <param name="key">Specifies the value the method is searching for. </param>
+            <returns>The list of all the indexes in the array that have <paramref name="key"/>. </returns>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Search.InterpolationSearch.Search``1(System.Collections.Generic.List{``0},System.Int32,System.Int32,``0)">
+            <summary>
+            Searches in a sorted list of any comparable type, where values have a uniform distribution. Interpolation search is an improvement over binary search, and has a very similar implementation, the only main difference is where (which index in the array) the search starts at.
+            The search is named inter-polation, as it always has two main poles that it moves back and forth between them, these poles are the start index and the end index of the array. 
+            Notice that only works if the given array is sorted. 
+            </summary>
+            <param name="sortedList">A sorted list of any comparable type that are also uniformly distributed. </param>
+            <param name="startIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>
+            <param name="endIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
+            <param name="key">Specifies the value that is being searched for. </param>
+            <returns>The index of the <paramref name="key"/> in the array, and -1 if it does not exist in the array. </returns>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Search.InterpolationSearch.GetStartIndex``1(System.Collections.Generic.List{``0},System.Int32,System.Int32,``0)">
+            <summary>
+            Computes an index to start the search from, Dependent on the value we are after. 
+            This formula is such that if the <paramref name="key"/> is closer to the value in the <paramref name="startIndex"/>, the search start point will be chosen closer to the <paramref name="startIndex"/>, and if the <paramref name="key"/> is closer to the value at <paramref name="endIndex"/>, the search start point will be chosen closer to the <paramref name="endIndex"/>.
+            </summary>
+            <param name="sortedList">A sorted list of any comparable type that are also uniformly distributed. </param>
+            <param name="startIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>
+            <param name="endIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
+            <param name="key">Specifies the value that is being searched for. </param>
+            <returns>The index in the array at which to start the search. </returns>
+        </member>
         <member name="M:CSFundamentals.Algorithms.Search.JumpSearch.Search``1(System.Collections.Generic.List{``0},``0)">
             <summary>
             Performs a jumpSearch on a list of integers to find the <paramref name="key"/>. 
@@ -277,7 +318,14 @@
             <param name="middleIndex">Specifies the middle index of the array. </param>
             <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.Algorithms.Sort.MergeSort.MergeSort_Recursively_Wrapper(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})" -->
+        <member name="M:CSFundamentals.Algorithms.Sort.MergeSort.MergeSort_Recursively_Wrapper(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})">
+            <summary>
+            This is to be able to call MergeSort sort methods with only the list that needs to be sorted, and independent of the indexes. 
+            This is needed for methods that receive other sort methods as parameters, and would ideally like to have similar signature for all the methods that are passed as parameters, 
+            In sort methods the signature is: void SortMethod(List(int) values); 
+            </summary>
+            <param name="values">Specifies the list of integers to be sorted. </param>
+        </member>
         <member name="M:CSFundamentals.Algorithms.Sort.QuickSort.Sort_Recursively``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)">
             <summary>
             Implements quick sort recursively. 
@@ -320,7 +368,14 @@
             <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
             <returns>The next partitioning index. </returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.Algorithms.Sort.QuickSort.Wrapper(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})" -->
+        <member name="M:CSFundamentals.Algorithms.Sort.QuickSort.Wrapper(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})">
+            <summary>
+            This is to be able to call QuickSort sort methods with only the list that needs to be sorted, and independent of the indexes. 
+            This is needed for methods that receive other sort methods as parameters, and would ideally like to have similar signature for all the methods that are passed as parameters, 
+            In sort methods the signature is: void SortMethod(List(int) values); 
+            </summary>
+            <param name="values">Specifies the list of integers to be sorted. </param>
+        </member>
         <member name="M:CSFundamentals.Algorithms.Sort.RadixSort.Sort_Iterative_V1(System.Collections.Generic.List{System.Int32})">
             <summary>
             Implements Radix sort for base 10 (decimal integers) using queues. 
@@ -1406,9 +1461,27 @@
             <param name="key">The key to be deleted from the tree. </param>
             <returns>True in case of success, and false otherwise. </returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.GetSortedKeyValues(`0)" -->
-        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.GetMaxNode(`0)" -->
-        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.GetMinNode(`0)" -->
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.GetSortedKeyValues(`0)">
+            <summary>
+            Gets the sorted list of all the key-values in the tree rooted at <paramref name="node"/>. 
+            </summary>
+            <param name="node"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.GetMaxNode(`0)">
+            <summary>
+            Finds the node that contains the maximum key of the subtree rooted at node.
+            </summary>
+            <param name="node">The node at which (sub)tree is rooted. </param>
+            <returns>The node containing the maximum key of the (sub)tree rooted at <paramref name="node"/>. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.GetMinNode(`0)">
+            <summary>
+            Finds the node that contains the minimum key of the subtree rooted at <paramref name="node"/>.
+            </summary>
+            <param name="node">The node at which (sub)tree is rooted.</param>
+            <returns>The node containing the minimum key of the (sub)tree rooted at <paramref name="node"/>.</returns>
+        </member>
         <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.RotateLeft(`0,`0,System.Int32)">
             <summary>
             Rotates a key from the right sibling of the node via their parent to the node. 
@@ -1599,15 +1672,65 @@
             </summary>
             <returns>Key-value pair of the minimum key in this node. </returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.RemoveKey(`1)" -->
-        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.RemoveKeyByIndex(System.Int32)" -->
-        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.RemoveChildByIndex(System.Int32)" -->
-        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.RemoveChild(`0)" -->
-        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetKeyValue(System.Int32)" -->
-        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetKey(System.Int32)" -->
-        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetKeyIndex(`1)" -->
-        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetChild(System.Int32)" -->
-        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetChildIndex(`0)" -->
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.RemoveKey(`1)">
+            <summary>
+            Removes key <paramref name="key"/> from the node's <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._keyValues"/> array. 
+            </summary>
+            <param name="key">Is the key to be removed.</param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.RemoveKeyByIndex(System.Int32)">
+            <summary>
+            Removes key at index <paramref name="index"/> from the node's <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._keyValues"/> array. 
+            </summary>
+            <param name="index">The index of the key to be removed from the node. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.RemoveChildByIndex(System.Int32)">
+            <summary>
+            Removes child at index <paramref name="index"/> from the node's <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._children"/> array.
+            </summary>
+            <param name="index">The child index. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.RemoveChild(`0)">
+            <summary>
+            Removes child <paramref name="child"/> from the node's <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._children"/> array.
+            </summary>
+            <param name="child">Child to be removed. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetKeyValue(System.Int32)">
+            <summary>
+            Gets (reads) the key-value pair at index <paramref name="index"/> of node's <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._keyValues"/> array. 
+            </summary>
+            <param name="index">The index of the key-value pair wanted. </param>
+            <returns>Key-value pair located at index <paramref name="index"/> of node's <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._keyValues"/> array. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetKey(System.Int32)">
+            <summary>
+            Gets (reads)the key of the key-value pair at index <paramref name="index"/> of node's <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._keyValues"/> array.
+            </summary>
+            <param name="index">The index of the key-value pair whose key is wanted. </param>
+            <returns>Key at index <paramref name="index"/> of node's <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._keyValues"/> array. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetKeyIndex(`1)">
+            <summary>
+            Gets the index of the key <paramref name="key"/> at node's <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._keyValues"/> array. 
+            </summary>
+            <param name="key">The key to search for and return its index.</param>
+            <returns>Index of the key <paramref name="key"/> at node's <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._keyValues"/> array. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetChild(System.Int32)">
+            <summary>
+            Gets (reads) the child at index <paramref name="index"/> of node's <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._children"/> array.
+            </summary>
+            <param name="index">The index of the child node wanted. </param>
+            <returns>Child node at index <paramref name="index"/> of node's <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._children"/> array.</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetChildIndex(`0)">
+            <summary>
+            Looks for <paramref name="child"/> in node's <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._children"/> array, and returns its index.
+            </summary>
+            <param name="child">Child whose index is wanted. </param>
+            <returns>Index of <paramref name="child"/> in node's <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._children"/> array</returns>
+        </member>
         <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.InsertKeyValue(System.Collections.Generic.KeyValuePair{`1,`2})">
             <summary>
             Inserts the given key-value pair in <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._keyValues"/> array. 
@@ -1685,7 +1808,14 @@
             <param name="key">Is the key for which a container leaf is being searched. </param>
             <returns>Leaf node to insert the key. </returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.Search(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0)" -->
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.Search(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0)">
+            <summary>
+             Searchers the given key in leaf nodes of the (sub)tree rooted at node <paramref name="root"/>.
+            </summary>
+            <param name="root">The root of the (sub) tree at which search starts. </param>
+            <param name="key">Is the key to search for.</param>
+            <returns>The leaf node containing the key if it exists. Otherwise throws an exception. </returns>
+        </member>
         <member name="P:CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2.NextLeaf">
             <summary>
             Only used by leaf nodes, and points to the leaf to its right (note that the right leaf may or may not be a sibling of the current leaf)
@@ -1730,7 +1860,13 @@
             <param name="keyValue">Is the key-value pair to be inserted in the tree. </param>
             <returns>Root of the tree. </returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.BTree`2.Delete(CSFundamentals.DataStructures.Trees.Nary.BTreeNode{`0,`1},`0)" -->
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.BTree`2.Delete(CSFundamentals.DataStructures.Trees.Nary.BTreeNode{`0,`1},`0)">
+            <summary>
+            Deletes <paramref name="key"/> from <paramref name="node"/>, assuming that key exists in the node.
+            </summary>
+            <param name="node">A node in tree that contains the given key <paramref name="key"/>. </param>
+            <param name="key">The key that should be deleted from tree node <paramref name="node"/>.</param>
+        </member>
         <member name="M:CSFundamentals.DataStructures.Trees.Nary.BTree`2.ReBalance(CSFundamentals.DataStructures.Trees.Nary.BTreeNode{`0,`1},CSFundamentals.DataStructures.Trees.Nary.BTreeNode{`0,`1},CSFundamentals.DataStructures.Trees.Nary.BTreeNode{`0,`1},System.Int32,System.Int32)">
             <summary>
             Re-balances the tree to restore back its properties. This method is called when node is underFlown, and thus must be fixed. 
@@ -1762,8 +1898,21 @@
             <param name="key">Is the key for which a container leaf is being searched. </param>
             <returns>Leaf node to insert the key. </returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.BTree`2.Search(CSFundamentals.DataStructures.Trees.Nary.BTreeNode{`0,`1},`0)" -->
-        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.BTree`2.GetMaxCapacity(System.Int32)" -->
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.BTree`2.Search(CSFundamentals.DataStructures.Trees.Nary.BTreeNode{`0,`1},`0)">
+            <summary>
+             Searchers the given key in (sub)tree rooted at node <paramref name="root"/>.
+            </summary>
+            <param name="root">The root of the (sub) tree at which search starts. </param>
+            <param name="key">Is the key to search for.</param>
+            <returns>The node containing the key if it exists. Otherwise throws an exception. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.BTree`2.GetMaxCapacity(System.Int32)">
+            <summary>
+            Given number of levels in the tree, computes the maximum number of keys the tree can hold. 
+            </summary>
+            <param name="levelCount">Is the number of levels in the tree. </param>
+            <returns>Maximum number of keys a tree with <paramref name="levelCount"/> levels can hold. </returns>
+        </member>
         <member name="T:CSFundamentals.DataStructures.Trees.Nary.BTreeNode`2">
             <summary>
             Implements a B-Tree node. A B-tree node is an ordered sequence of K keys, and K+1 children.

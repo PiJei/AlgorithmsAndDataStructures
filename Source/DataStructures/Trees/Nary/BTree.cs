@@ -72,7 +72,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         }
 
         /// <summary>
-        /// Deletes <paramref name="key"> from <paramref name="node">, assuming that key exists in the node.
+        /// Deletes <paramref name="key"/> from <paramref name="node"/>, assuming that key exists in the node.
         /// </summary>
         /// <param name="node">A node in tree that contains the given key <paramref name="key"/>. </param>
         /// <param name="key">The key that should be deleted from tree node <paramref name="node"/>.</param>
@@ -264,7 +264,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         }
 
         /// <summary>
-        ///  Searchers the given key in (sub)tree rooted at node <paramref name="root">.
+        ///  Searchers the given key in (sub)tree rooted at node <paramref name="root"/>.
         /// </summary>
         /// <param name="root">The root of the (sub) tree at which search starts. </param>
         /// <param name="key">Is the key to search for.</param>
@@ -312,7 +312,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         /// Given number of levels in the tree, computes the maximum number of keys the tree can hold. 
         /// </summary>
         /// <param name="levelCount">Is the number of levels in the tree. </param>
-        /// <returns>Maximum number of keys a tree with <paramref name="levelCount"> levels can hold. </returns>
+        /// <returns>Maximum number of keys a tree with <paramref name="levelCount"/> levels can hold. </returns>
         public int GetMaxCapacity(int levelCount)
         {
             int maxKeys = 0;

@@ -78,7 +78,7 @@ namespace CSFundamentals.Algorithms.Sort
         /// <summary>
         /// This is to be able to call QuickSort sort methods with only the list that needs to be sorted, and independent of the indexes. 
         /// This is needed for methods that receive other sort methods as parameters, and would ideally like to have similar signature for all the methods that are passed as parameters, 
-        /// In sort methods the signature is: void SortMethod(List<int> values); 
+        /// In sort methods the signature is: void SortMethod(List(int) values); 
         /// </summary>
         /// <param name="values">Specifies the list of integers to be sorted. </param>
         public static void Wrapper(List<Element> values)

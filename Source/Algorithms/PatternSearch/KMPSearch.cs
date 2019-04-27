@@ -28,7 +28,7 @@ namespace CSFundamentals.Algorithms.PatternSearch
     {
         /// <summary>
         /// Implements KMP search = Knuth-Morris-Pratt algorithm for searching <paramref name="pattern"/> in <paramref name="text"/>, using proper prefixes, and preprocessing of the <paramref name="pattern"/>.
-        /// The idea: while searching for <paramref name="pattern"> in <paramref name="text">, we already 'have seen' some characters in <paramref name="text"/>, so shall not re-check if they match with parts of the <paramref name="pattern"/>.
+        /// The idea: while searching for <paramref name="pattern"/> in <paramref name="text"/>, we already 'have seen' some characters in <paramref name="text"/>, so shall not re-check if they match with parts of the <paramref name="pattern"/>.
         /// When compared to Naive algorithm, whereas at each internal iteration, we reset j to zero, here we do not always reset j to zero, the value j gets set to, depends on its prefixes. 
         /// </summary>
         /// <param name= "text">The string in which we are searching for <paramref name="pattern"/>.</param>
