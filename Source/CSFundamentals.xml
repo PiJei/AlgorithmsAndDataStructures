@@ -1,0 +1,1813 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CSFundamentals</name>
+    </assembly>
+    <members>
+        <member name="M:CSFundamentals.Algorithms.GraphTraversal.BFS.BFS_Iterative``1(CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0})">
+            <summary>
+            Implements an iterative, recursion-free version of Breadth First Search algorithm for a graph (that can have cycles);
+            </summary>
+            <param name="root">Specifies a node in the graph from which the search starts. </param>
+            <returns>a serialization of the graph, with a BFS ordering.</returns>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.GraphTraversal.BFS.BFS_Recursive``1(System.Collections.Generic.Queue{CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0}},System.Collections.Generic.List{CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0}})">
+            <summary>
+            Is the recursive version of BFS_Iterative algorithm. Expects the queue to already have the root node in it. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.GraphTraversal.DFS.DFS_Iterative``1(CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0})">
+            <summary>
+            Implements an iterative, recursion-free version of Depth First Search algorithm for a graph (that can have cycles);
+            </summary>
+            <param name="root">Specifies a node in the graph from which the search starts. </param>
+            <returns>a serialization of the graph, with a DFS ordering.</returns>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.GraphTraversal.DFS.DFS_Recursive``1(CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0},System.Collections.Generic.List{CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0}})">
+            <summary>
+            Implements a recursive version of DFS, for returning a DFS ordering of the nodes. 
+            </summary>
+            <param name="root"> Specifies the node to start the search from.</param>
+            <param name="dfsOrdering">Contains a serialization of the graph, with a DFS ordering.</param>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.GraphTraversal.Dijkstra.GetShortestDistancesFromRoot``1(CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0})">
+            <summary>
+            Implements Dijkstra's ShortestPath algorithm using MinBinaryHeap
+            </summary>
+            <param name="root">Specifies a node from which we want to compute shortest paths to all the other nodes in the graph. </param>
+            <returns>All the nodes in the graph, in the order that they were visited with their shortest distance from the root computed. </returns>
+        </member>
+        <member name="T:CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1">
+            <summary>
+            Represents an edge in a graph. 
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1.Node">
+            <summary>
+            Is the GraphNode on the other side of the edge. 
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1.Weight">
+            <summary>
+            Represents an integer value for the weight for edge .
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.Algorithms.GraphTraversal.GraphNode`1.IsInserted">
+            <summary>
+            Determines whether this node, in a particular instance of a traversal algorithm has been already visited : inserted in the queue/stack. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Hashing.RollingHash.GetHashRollingForward(System.Int32,System.Char,System.Char,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Implements a rolling hash function. 
+            A use-case is Rabin-Karp search algorithm. 
+            </summary>
+            <param name="previousHashValue">Specifies the previous hash value, using which the new hash value will be computed.</param>
+            <param name="oldCharToLeft">Specifies the character that will be omitted from the hash, and thus the rolling window. </param>
+            <param name="newCharToRight">Specifies the new character that will be included in the hash and thus in the rolling window. </param>
+            <param name="rollingWindowLength">Specifies the size of the rolling window. </param>
+            <param name="hashConstant">Specifies the hash constant that is computed using ComputeHashConstantForRollingHash() method</param>
+            <param name="prime">Specifies a prime number for the modulo operation in the hash function.</param>
+            <param name="numCharsInAlphabet">Specifies the number of characters in alphabet needed by the hash function in the multiplication operation. </param>
+            <returns>The hash value. </returns>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Hashing.RollingHash.ComputeHashConstantForRollingHash(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Computes the hash constant needed for the rolling hash. 
+            </summary>
+            <param name="rollingWindowLength">Specifies the size of the rolling window. </param>
+            <param name="prime">Specifies a prime number for the modulo operation</param>
+            <param name="numCharsInAlphabet">Specifies the number of characters in alphabet for the multiply operation. </param>
+            <returns>Hashing constant based on the given prime number, window size, and numCharsInAlphabet. </returns>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Hashing.RollingHash.GetHash(System.String,System.Int32,System.Int32)">
+            <summary>
+            Computes hash value for string <paramref name="s"/>.
+            </summary>
+            <param name="s">Specifies a string. </param>
+            <param name="prime">Specifies a prime number for the modulo operation</param>
+            <param name="numCharsInAlphabet">Specifies the number of characters in alphabet for the multiply operation. </param>
+            <returns>Hash value of the string. </returns>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly(System.String,System.String)">
+            <summary>
+            Implements BoyerMoore search algorithm using only the bad character heuristic (in the main version  both bad character and good suffix are used to skip over <paramref name="text"/>.)
+            The idea is to do tail based search, and skip over indexes in <paramref name="text"/> to a proper tail, at which there is a chance of match. 
+            </summary>
+            <param name= "text">The parent string in which we are searching for <paramref name="pattern"/>.</param>
+            <param name= "pattern">The string we want to find in parent string (<paramref name="text"/>).</param>
+            <returns>All the starting indexes in <paramref name="text"/> starting at which <paramref name="pattern"/> is found [in other words looks for all the occurrences of the <paramref name="pattern"/> in <paramref name="text"/>, and does not stop by finding the first one].</returns>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch.MapCharToLastIndex(System.String)">
+            <summary>
+            Maps every character in the given string to its last index in the string. 
+            An example use is Boyer-Moore search algorithm for re-alignment of the pattern being searched for when a bad character is found in the string that is being searched in.
+            </summary>
+            <returns>A mapping of all the characters in the given string to their last index in the string. </returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.Algorithms.PatternSearch.KMPSearch.Search(System.String,System.String)" -->
+        <member name="M:CSFundamentals.Algorithms.PatternSearch.NaiveSearch.Search(System.String,System.String)">
+            <summary>
+            Implements a naive, brute force algorithm for finding <paramref name="pattern"/> in <paramref name="text"/>.
+            Note: Any optimization over this algorithm, can try to reduce either the size of the outer loop or the inner loop.
+            </summary>
+            <param name="text">The string in which we are searching for <paramref name="pattern"/>.</param>
+            <param name="pattern">The string we want to find in <paramref name="text"/>.</param>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.PatternSearch.RabinKarpSearch.Search(System.String,System.String)">
+            <summary>
+            Implements RabinKarp search algorithm, which is an improvement on NaiveSearch, using hashing.
+            Hashing plays a crucial role in optimizing search time. Rolling hash methods are preferred, and the ones with the minimum collision. 
+            </summary>
+            <param name= "text">The string in which we are searching for <paramref name="pattern"/>.</param>
+            <param name= "pattern">The string we want to find in <paramref name="text"/>.</param>
+            <returns>The starting index in <paramref name="text"/> starting at which <paramref name="pattern"/> is found.</returns>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Search.BinarySearch.Search``1(System.Collections.Generic.List{``0},System.Int32,System.Int32,``0)">
+            <summary>
+            Searches in a sorted list of any comparable type, and returns the index of the <paramref name="key"/> using binary search, and -1 if it is not found. 
+            </summary>
+            <param name="sortedList">A sorted list of any comparable type. </param>
+            <param name="startIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>
+            <param name="endIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
+            <param name="key">Specifies the value that is being searched for. </param>
+            <returns>The index of the <paramref name="key"/> in the array, and -1 if it is absent from the array. </returns>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Search.ExponentialSearch.Search``1(System.Collections.Generic.List{``0},``0)">
+            <summary>
+            Implements exponential search, where the search step is a multiple of 2, hence the naming. 
+            Notice that only works if the given array is sorted. 
+            </summary>
+            <param name="sortedList">A sorted list of any comparable type. </param>
+            <param name="key">Specifies the value that is being searched for. </param>
+            <returns>The index of the <paramref name="key"/> in the array, and -1 if it does not exist in the array. </returns>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Search.FibonacciSearch.GetSmallestFibonacciBiggerThanNumber(System.Int32)">
+            <summary>
+            Computes the smallest Fibonacci number that is greater than <paramref name="number"/>. 
+            Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...
+            </summary>
+            <param name="number">The integer we want to compute the closest Fibonacci to it that is bigger than or equal to it. </param>
+            <returns>The Fibonacci number.</returns>
+        </member>
+        <member name="T:CSFundamentals.Algorithms.Search.FibonacciElement">
+            <summary>
+            Represents a Fibonacci number at index n, and the two Fibonacci numbers at two preceding indexes, which are necessary for calculating this element's value.  
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:CSFundamentals.Algorithms.Search.FibonacciElement.FibN" -->
+        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.Algorithms.Search.HashTableSearch.Search``1(System.Collections.Generic.List{``0},``0)" -->
+        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.Algorithms.Search.InterpolationSearch.Search``1(System.Collections.Generic.List{``0},System.Int32,System.Int32,``0)" -->
+        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.Algorithms.Search.InterpolationSearch.GetStartIndex``1(System.Collections.Generic.List{``0},System.Int32,System.Int32,``0)" -->
+        <member name="M:CSFundamentals.Algorithms.Search.JumpSearch.Search``1(System.Collections.Generic.List{``0},``0)">
+            <summary>
+            Performs a jumpSearch on a list of integers to find the <paramref name="key"/>. 
+            Notice that only works if the given array is sorted. 
+            </summary>
+            <param name="sortedList">Specifies a sorted list of any comparable type.</param>
+            <param name="key">Specifies the value the method is searching for. </param>
+            <returns>The index of the <paramref name="key"/> in the array, and -1 if it does not exist in the array. </returns>
+        </member>
+        <member name="T:CSFundamentals.Algorithms.Search.LinearSearch">
+            <summary>
+            Implements linear search, time complexity is O(N)
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Search.LinearSearch.Search``1(System.Collections.Generic.List{``0},System.Int32,System.Int32,``0)">
+            <summary>
+            Searches for a given value in a list. 
+            </summary>
+            <param name="list">Specifies a list of any comparable type.</param>
+            <param name="key">Specifies the value the method is searching for. </param>
+            <returns>The index of the <paramref name="key"/> in the array, and -1 if it does not exist in the array. </returns>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Search.TernarySearch.Search``1(System.Collections.Generic.List{``0},System.Int32,System.Int32,``0)">
+            <summary>
+            Implements ternary search recursively on a list of any comparable type. 
+            This search is inspired by binary search (hence the naming, 3 versus 2).
+            The difference being that rather than dividing the array into 2 sections, divides it into 3 equal sections and performs the search inside each one of those separately.
+            Notice that only works if the given array is sorted. 
+            </summary>
+            <param name="sortedList">A sorted list of any comparable type. </param>
+            <param name="startIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>
+            <param name="endIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
+            <param name="key">Specifies the value that is being searched for. </param>
+            <returns>The index of the <paramref name="key"/> in the array, and -1 if it does not exist in the array. </returns>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.BubbleSort.Sort_Iterative``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Implements bubble sort iteratively, elements are bubbled down or up the array till they are at their final correct positions. 
+            </summary>
+            <param name="values">Specifies the list of values (of type T, e.g., int) to be sorted.</param>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.BubbleSort.Sort_Iterative(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})">
+            <summary>
+            Implements bubble sort iteratively, elements are bubbled down or up the array till they are at their final correct positions. 
+            </summary>
+            <param name="values"></param>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.HeapSort.Sort``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Sorts the elements in an array using heap sort algorithm into an ascending order. 
+            </summary>
+            <param name="values">Specifies the list of values (of type T, e.g., int) to be sorted.</param>
+        </member>
+        <member name="T:CSFundamentals.Algorithms.Sort.InsertionSort">
+            <summary>
+            This class contains 3 different implementations of Insertion Sort. The sort is called insertion, as at each iteration, it finds the correct position of an element, and "inserts" it in that position. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Iterative_V1``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Implements insertion sort iteratively, and in-situ, using many Swaps.
+            </summary>
+            <param name="values">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Iterative_V2``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Implements insertion sort iteratively, and in-situ, using only one swap per element.
+            </summary>
+            <param name="values">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Recursive``1(System.Collections.Generic.List{``0},System.Int32)">
+            <summary>
+            Implements insertion sort recursively. Initial call shall be Sort_Recursive(values, values.Count-1);
+            </summary>
+            <param name="values">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.MergeSort.Sort_Recursively``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)">
+            <summary>
+            Implements merge sort recursively. 
+            </summary>
+            <param name="values">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
+            <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
+            <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.MergeSort.Merge``1(System.Collections.Generic.List{``0},System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Merges two sub arrays [startIndex, middleIndex], [middleIndex+1, endIndex] such to end up with a sorted list. 
+            </summary>
+            <param name="values">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
+            <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
+            <param name="middleIndex">Specifies the middle index of the array. </param>
+            <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.MergeSort.Sort_Iteratively(System.Collections.Generic.List{System.Int32},System.Int32,System.Int32)">
+            <summary>
+            Provides an iterative version for MergeSort. 
+            </summary>
+            <param name="values"></param>
+            <param name="startIndex"></param>
+            <param name="endIndex"></param>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.MergeSort.Sort_Recursively(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element},System.Int32,System.Int32)">
+            <summary>
+            Implements a basic version of merge sort recursively. 
+            </summary>
+            <param name="values">Specifies the list of integer values to be sorted. </param>
+            <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
+            <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.MergeSort.Merge(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element},System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Merges two sub arrays [startIndex, middleIndex], [middleIndex+1, endIndex] such to end up with a sorted list. 
+            </summary>
+            <param name="values">Specifies the list of integer values to be sorted. </param>
+            <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
+            <param name="middleIndex">Specifies the middle index of the array. </param>
+            <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.Algorithms.Sort.MergeSort.MergeSort_Recursively_Wrapper(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})" -->
+        <member name="M:CSFundamentals.Algorithms.Sort.QuickSort.Sort_Recursively``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)">
+            <summary>
+            Implements quick sort recursively. 
+            </summary>
+            <param name="values">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
+            <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
+            <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.QuickSort.PartitionArray``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)">
+            <summary>
+            Partitions the given array, with respect to the computed pivot, such that elements to the left of the pivot are smaller than the pivot, and elements to the right of the pivot are bigger than the pivot. 
+            </summary>
+            <param name="values">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
+            <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
+            <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
+            <returns>The next partitioning index. </returns>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.QuickSort.GetPivotIndex(System.Int32,System.Int32)">
+            <summary>
+            This algorithm uses the middle element of the array as pivot. The algorithm can be replaced with other mechanisms as well. 
+            </summary>
+            <param name="startIndex">Specifies the startIndex of an array.</param>
+            <param name="endIndex">Specifies the endIndex of an array. </param>
+            <returns></returns>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.QuickSort.Sort_Iteratively``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)">
+            <summary>
+            Provides an iterative version of QuickSort.
+            </summary>
+            <param name="values"></param>
+            <param name="startIndex"></param>
+            <param name="endIndex"></param>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.QuickSort.PartitionArray_StabilityCheckableVersion(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element},System.Int32,System.Int32)">
+            <summary>
+            Partitions the given array, with respect to the computed pivot, such that elements to the left of the pivot are smaller than the pivot, and elements to the right of the pivot are bigger than the pivot. 
+            </summary>
+            <param name="values">Specifies the list of integer values to be sorted. </param>
+            <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
+            <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
+            <returns>The next partitioning index. </returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.Algorithms.Sort.QuickSort.Wrapper(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})" -->
+        <member name="M:CSFundamentals.Algorithms.Sort.RadixSort.Sort_Iterative_V1(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Implements Radix sort for base 10 (decimal integers) using queues. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.RadixSort.Sort_Iterative_V2(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Implements Radix Sort based on count sort.
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.RadixSort.Sort_Recursive(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Implements a recursive version of Radix Sort. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.RadixSort.Sort_Iterative_V1(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})">
+            <summary>
+            Implements Radix sort for base 10 (decimal integers) using queues. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.SelectionSort.Sort_Iteratively``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Implements selection sort, which is in-situ and unstable, and at each step, the array would look as one sorted part, and one unsorted part. 
+            </summary>
+            <param name="values">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element.IsStable(CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element)">
+            <summary>
+            Given two Elements, if the order between their new array index is the same order between their old array index, the element has been stable.
+            </summary>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element.CompareTo(CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element)">
+            <summary>
+            this Less than other : return less than 0 , this == other return 0, this > other return > 0 
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.Utils.IsSortMethodStable(System.Action{System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}},System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})">
+            <summary>
+            Detects whether the given sort method is stable. A sort method is stable, if it preserves the ordering of duplicate values in the original array. 
+            </summary>
+            <param name="sortMethod">Specifies the name of a method with the signature specified by the Action (void return type) </param>
+            <returns>True in case the method is stable, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.Utils.HashListToIndexes(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})">
+            <summary>
+            Per each value in the array, makes a list of their indexes in the array. 
+            Notice that the array may include duplicate values, thus a list of indexes rather than one index.
+            </summary>
+            <param name="values">An array of integers. </param>
+            <returns>A hash table/dictionary mapping each value to the list of its indexes in the array. </returns>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.Utils.IsMapStable(System.Collections.Generic.Dictionary{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element,System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}})">
+            <summary>
+            Given the two dictionaries compares them to see if they are equal, in terms of the values per key. It is very important to compare the values (lists) in their original order and expect the same position for each element. 
+            </summary>
+            <param name="map1">Specifies the first map. </param>
+            <returns>True in case the maps are equal, false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.Utils.GetMaxElement(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})">
+            <summary>
+            Gets the max element in the array. Alternatively we could use Linq.Max operator. However using this version so that the time complexity is obvious.
+            </summary>
+            <param name="values">Specifies a list of integers. </param>
+            <returns>maximum element in the array. </returns>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.Utils.GetMaxElement``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Gets the max element in the array. Alternatively we could use Linq.Max operator. However using this version so that the time complexity is obvious.
+            </summary>
+            <param name="values">Specifies a list of values (of type T, e.g., int). </param>
+            <returns>maximum element in the array. </returns>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.Utils.GetDigitsCount(System.Int32)">
+            <summary>
+            Computes the number of digits in a number. 
+            An alternative is : 
+            digitsCount = (n == 0 ? 1 : Math.Floor(Math.Log10(Math.Abs(n)) + 1));
+            </summary>
+            <param name="number">Specifies the integer for which we want to compute its digit count. </param>
+            <returns>The number of digits in the given integer number. </returns>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.Utils.GetNthDigitFromRight(System.Int32,System.Int32)">
+            <summary>
+            Gets the i(th) = whichDigit of the given integer number. For example in number 145, second digit is 4, and the third is 1, and th first is 5. 
+            </summary>
+            <param name="number"></param>
+            <param name="whichDigit"></param>
+            <returns>The i(th) = whichDigit(th) digit from the right, or the least significant digit. </returns>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.SubarraySearch.Naive.Search_NaiveContiguousSublist(System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Detects whether parent list contains child list contiguously. For example list {1, 3, 7, 2, 10} contains sublist {7,2}, but does not contain {7,10}.
+            Easier to implement this with linked lists due to the contiguous search. 
+            </summary>
+            <param name="list">The list in which we are searching for a sublist.</param>
+            <param name="subList">The sublist</param>
+            <returns>True if the list contains the sublist, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.SubarraySearch.Naive.Search_UnContiguousSublist(System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Searches whether subList can be built from the elements in list, while respecting the order at which elements appear in list. 
+            For example given list {3, 4, 1, 6, 7, 1, 8, 7}, can we build subList{1, 7}?
+            Yes, in several ways, indexes {2, 4} or {2, 7} or {5, 7}, we can build it in 3 different ways. 
+            The approach this algorithm takes is to find the number of times the sublist can be built and returns true if this number higher than 0.
+            </summary>
+            <param name="list">The list in which we are searching for a sublist.</param>
+            <param name="subList">The sublist</param>
+            <returns>True if the list contains the sublist, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BuildHeap_Iteratively(System.Int32)">
+            <summary>
+            Note that passing the array size is not a must, as the class itself contains the array and has access to its size. However some algorithms such as HeapSort which rely on a heap to perform sorting, are better implemented, if we have the length of the array passed to these methods. 
+            </summary>
+            <param name="heapArrayLength"></param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.GetLeftChildIndexInHeapArray(System.Int32)">
+            <summary>
+            Given a node index in the heapArray, returns the expected index of its left child. 
+            </summary>
+            <param name="index"> The index of the node for which, left child index shall be found. </param>
+            <returns>The index of the left child. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.GetRightChildIndexInHeapArray(System.Int32)">
+            <summary>
+            Given a node index in the heapArray, returns the expected index of its right child. 
+            </summary>
+            <param name="index"> The index of the node for which, right child index shall be found. </param>
+            <returns>The index of the right child.</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.GetParentIndex(System.Int32)">
+            <summary>
+            Given a node index in the heapArray, returns the expected index of its parent. 
+            </summary>
+            <param name="index">The index of the node, for which parent index shall be found. </param>
+            <returns>The index of the parent. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryFindIndexOfMinSmallerThanReference(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}},System.Collections.Generic.List{System.Int32},`0,System.Int32@)">
+            <summary>
+            Finds the minimum element in the array, among the given indexes, with respect to minValueReference, and returns the index of the min value. 
+            </summary>
+            <param name="list">Specifies the list of values. </param>
+            <param name="indexes">Specifies the list of indexes among which we want to find the minimum value. </param>
+            <param name="minKeyReference">Specifies the reference for the minimum value.  </param>
+            <param name="minKeyIndex">Specifies the index of the minimum value among the specifies indexes. </param>
+            <returns>True in case of success, and false in case of failure. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryFindIndexOfMaxBiggerThanReference(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}},System.Int32,System.Collections.Generic.List{System.Int32},`0,System.Int32@)">
+            <summary>
+            Finds the maximum element in the array, among the given indexes, with respect to maxValueReference, and returns the index of the max value. 
+            </summary>
+            <param name="list">Specifies the list of values. </param>
+            <param name="listLength">Specifies the length of values array, which based on the usage, might be less than values.Count. For example when called via Heap-Sort. </param>
+            <param name="indexes">Specifies the list of indexes among which we want to find the maximum value. </param>
+            <param name="maxKeyReference">Specifies the reference for the maximum value.  </param>
+            <param name="maxKeyIndex">Specifies the index of the maximum value among the specifies indexes. </param>
+            <returns>True in case of success, and false in case of failure. </returns>
+        </member>
+        <member name="T:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2">
+            <summary>
+            Provides interface definition for a binary heap. 
+            </summary>
+            <typeparam name="TKey">Is the type of the keys, based on which priorities in a priority queue are defined. </typeparam>
+            <typeparam name="TValue">Is the type of the values stored with keys. </typeparam>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BuildHeap_Recursively(System.Int32)">
+            <summary>
+            Builds a heap using recursion, and does so in situ.
+            </summary>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BuildHeap_Iteratively(System.Int32)">
+            <summary>
+            Builds a heap iteratively, and does so in situ.
+            </summary>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.Insert(System.Collections.Generic.KeyValuePair{`0,`1},System.Int32)">
+            <summary>
+            This method is for inserting a new value into heap.
+            </summary>
+            <param name="keyValue">Specifies the key-value to be inserted into the heap.</param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.TryRemoveRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)">
+            <summary>
+            This method is for removing the root of the heap. In a MinHeap and MinMaxHeap this is the min, and in a MaxHeap and MaxMinHeap this is the max. 
+            </summary>
+            <param name="keyValue">Specifies the key-value of the root.</param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+            <returns>True in case of success, and false otherwise.</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.TryFindRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)">
+            <summary>
+            This method is for finding the root of the heap, without removing it. 
+            </summary>
+            <param name="keyValue">Specifies the key-value of the root.</param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+            <returns>True in case of success, and false in case of failure.</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BubbleDown_Recursively(System.Int32,System.Int32)">
+            <summary>
+            This method implements the bubble down/trickle down operation using recursion.
+            </summary>
+            <param name="rootIndex">Specifies the index of the root element, the element for which the trickle down should be performed.</param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BubbleDown_Iteratively(System.Int32,System.Int32)">
+            <summary>
+            This method implements the bubble down/trickle down operation using iteration.
+            </summary>
+            <param name="rootIndex">Specifies the index of the root element, the element for which the trickle down should be performed.</param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BubbleUp_Iteratively(System.Int32,System.Int32)">
+            <summary>
+            Moves the value in the given index, up in the heap till its position is found. The position is defined such to respect heap ordering property.
+            </summary>
+            <param name="index">Specifies the index of the element that should be bubbled up.</param>
+            <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetLeftChildIndexInHeapArray(System.Int32)">
+            <summary>
+            Returns the index of the left child for the given index in a heap array.
+            </summary>
+            <param name="index">Specifies the index of a node in an array.</param>
+            <returns>The index of the left child.</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetRightChildIndexInHeapArray(System.Int32)">
+            <summary>
+            Returns the index of the right child for the given index in a heap array.
+            </summary>
+            <param name="index">Specifies the index of a node in an array.</param>
+            <returns>The index of the right child.</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetParentIndex(System.Int32)">
+            <summary>
+            Returns the index of the parent for the given index in a heap array.
+            </summary>
+            <param name="index">Specifies the index of a node in an array.</param>
+            <returns>The index of the parent.</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetNodeLevel(System.Int32)">
+            <summary>
+            Returns the level of a node in the heap, given the node's index in the heap array.
+            </summary>
+            <param name="index">Specifies the index of a node in an array. </param>
+            <returns>Returns the level of the node. </returns>
+        </member>
+        <member name="T:CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap`2">
+            <summary>
+            Implements a Max Binary Heap, and its main operations.
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap`2.BuildHeap_Recursively(System.Int32)">
+            <summary>
+            Builds an in-place max heap on the given array. 
+            </summary>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap`2.BuildHeap_Iteratively(System.Int32)">
+            <summary>
+            Is the iterative version of BuildHeap_Recursively. Expect to see exact same results for these two methods. 
+            </summary>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap`2.Insert(System.Collections.Generic.KeyValuePair{`0,`1},System.Int32)">
+            <summary>
+            Inserts a new value into the Max Heap. 
+            </summary>
+            <param name="newValue">Specifies the new value to be inserted in the tree.</param>
+            <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap`2.BubbleUp_Iteratively(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap`2.TryRemoveRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)">
+            <summary>
+            Removes the max element from the heap.
+            </summary>
+            <param name="keyValue">If the operation is successful, contains the maximum element in the array.</param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+            <returns>True in case of success, and false otherwise</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap`2.TryFindRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="keyValue"></param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+            <returns></returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap`2.BubbleDown_Recursively(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="rootIndex"></param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap`2.BubbleDown_Iteratively(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="rootIndex"></param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="T:CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap`2">
+            <summary>
+            Implements a Min Binary Heap, and its main operations.
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap`2.BuildHeap_Recursively(System.Int32)">
+            <summary>
+            Builds an in-place min heap on the given array. 
+            </summary>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap`2.BuildHeap_Iteratively(System.Int32)">
+            <summary>
+            Is the iterative version of BuildMinHeap_Recursive. Expect to see exact same results for these two methods. 
+            </summary>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap`2.Insert(System.Collections.Generic.KeyValuePair{`0,`1},System.Int32)">
+            <summary>
+            Inserts a new value into the Min Heap. 
+            </summary>
+            <param name="newValue">Specifies the new key-value pair to be inserted in the tree.</param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap`2.BubbleUp_Iteratively(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap`2.TryRemoveRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)">
+            <summary>
+            Removes the min element from the heap.
+            </summary>
+            <param name="keyValue">If the operation is successful, contains the minimum element in the array.</param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+            <returns>True in case of success, and false otherwise</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap`2.TryFindRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="keyValue"></param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+            <returns></returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap`2.BubbleDown_Recursively(System.Int32,System.Int32)">
+            <summary>
+            Recursively MinHeapifies (bubbles down/trickles down) the given rootIndex.
+            </summary>
+            <param name="rootIndex">Specifies the index of the node for which bubble down starts. </param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap`2.BubbleDown_Iteratively(System.Int32,System.Int32)">
+            <summary>
+            Is the iterative version of MinHeapify_Recursive method. 
+            </summary>
+            <param name="rootIndex">Specifies the index of the node for which bubble down starts. </param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="T:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2">
+            <summary>
+            Implements a MinMaxBinaryHeap and its main operations. Notice that a MaxMinHeapBinaryHeap can be implemented in a very similar way.
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BuildHeap_Recursively(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.Insert(System.Collections.Generic.KeyValuePair{`0,`1},System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="keyValue"></param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BubbleUp_Recursively(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BubbleUpMin_Recursively(System.Int32,System.Int32)">
+            <summary>
+            Bubbles up the node at the given index which is assumed to be on a min/even level. 
+            </summary>
+            <param name="index">Specifies the index of a node in the heap array.</param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BubbleUpMax_Recursively(System.Int32,System.Int32)">
+            <summary>
+            Bubbles up the node at the given index which is assumed to be on a max/odd level.
+            </summary>
+            <param name="index">Specifies the index of a node in the heap array.</param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.TryRemoveRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="keyValue"></param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+            <returns></returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.TryFindRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="keyValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BubbleDown_Recursively(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="rootIndex"></param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BubbleDownMin_Recursively(System.Int32,System.Int32)">
+            <summary>
+            Bubbles/trickles down the node at the given index, which is on a min/even level. 
+            </summary>
+            <param name="rootIndex">Specifies the index of a node at a min level, from which bubble down starts recursively.</param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BubbleDownMax_Recursively(System.Int32,System.Int32)">
+            <summary>
+            Bubbles/trickles down the node at the given index, which is on a max/even level. 
+            </summary>
+            <param name="rootIndex">Specifies the index of the node at a max level, from which bubble down starts recursively.</param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.IsMinLevel(System.Int32)">
+            <summary>
+            Given a node level in a MinMax heap, returns true if that node is on an even level, meaning on a Min level. and false otherwise/ 
+            </summary>
+            <param name="level">Specifies the level of a node in a MinMax heap.</param>
+            <returns>True in case of success, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.GetChildrenIndexes(System.Collections.Generic.List{System.Int32},System.Int32)">
+            <summary>
+            Gets the list of indexes of all the children of all the given indexes. 
+            </summary>
+            <param name="indexes">Specifies the indexes of the nodes for which their children's indexes shall be computed. </param>
+            <returns>List of all the children of all the indexes. </returns>
+        </member>
+        <member name="F:CSFundamentals.DataStructures.LinkedLists.API.LinkedListBase`2._head">
+            <summary>
+            Is the first node in the list. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.API.LinkedListBase`2.Insert(`1)">
+            <summary>
+            Inserts a new value in the list.
+            </summary>
+            <param name="newValue">Is the value of the new node. </param>
+            <returns>True in case of success.</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.API.LinkedListBase`2.Delete(`1)">
+            <summary>
+            Deletes a node with the given value from the list. If no node with the given value exists, fails the operation and returns false.
+            </summary>
+            <param name="value">Is the value that is being searched for.</param>
+            <returns>True in case of success, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.API.LinkedListBase`2.Search(`1)">
+            <summary>
+            Searches for the specified <paramref name="Value"/>. Since there is no assumption about the order of the values in the list, starts from the Head node and performs a linear search.
+            </summary>
+            <param name="value">Is the value of the node that is being searched for.</param>
+            <returns>The node containing <paramref name="value"/>, and if no node is found throws an exception. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.API.LinkedListBase`2.Count">
+            <summary>
+            Computes the length of the linked list. Length is the number of the nodes in the list.
+            </summary>
+            <returns>Number of nodes in the list. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.API.LinkedNode`2.#ctor">
+            <summary>
+            This constructor is for Serializability.
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.API.LinkedNode`2.IsTail">
+            <summary>
+            Checks whether the current node is tail. A node is tail if it has no next node. 
+            </summary>
+            <returns>True in case the node is tail, and false otherwise.</returns>
+        </member>
+        <member name="T:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedList`1">
+            <summary>
+            Implements a bi-directional/doubly linked list (aka. DLL). 
+            </summary>
+            <typeparam name="TValue">Is the type of the keys in the list. </typeparam>
+        </member>
+        <member name="F:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedList`1._tail">
+            <summary>
+            Is the last node in the list. Note that some implementations of DLL do not have Tail. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedList`1.Tail">
+            <summary>
+            Tail can be read, but to prevent any modification outside the API in this class, only a deep copy of the tail can be returned for reading purposes.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedList`1.Insert(`0)">
+            <summary>
+            Inserts a new node at the beginning of the list, thus changing the head node.
+            </summary>
+            <param name="newValue">Is the new value of the new node to be added as the head of the list. </param>
+            <returns>True in case of success.</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedList`1.InsertAfter(`0,`0)">
+            <summary>
+            Inserts a new node with <paramref name="newValue"/> as its value in the list after the node containing <paramref name="Value"/> as its value. If a node with <paramref name="Value"/> does not exist, fails the insert and returns false. 
+            </summary>
+            <param name="value">The value of the node, that <paramref name="newValue"/> will be inserted after.</param>
+            <param name="newValue">The value of the new node that is meant to be inserted in the list. </param>
+            <returns>True in case the operation is successful, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedList`1.InsertAfter(CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode{`0},`0)">
+            <summary>
+            Inserts a new node with <paramref name="newValue"/> as its value in the list after the given node <paramref name="node"/>.
+            </summary>
+            <param name="node">The node that a new node with value <paramref name="newValue"/> will be inserted after.</param>
+            <param name="newValue">The value of the new node that is meant to be inserted in the list. </param>
+            <returns>True in case the operation is successful</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedList`1.InsertBefore(`0,`0)">
+            <summary>
+            Inserts a new node with <paramref name="newValue"/> as its value in the list before the node containing <paramref name="Value"/> as its value. If a node with <paramref name="Value"/> does not exist, fails the insert and returns false. 
+            </summary>
+            <param name="value">The value of the node, that <paramref name="newValue"/> will be inserted before.</param>
+            <param name="newValue">The value of the new node that is meant to be inserted in the list. </param>
+            <returns>True in case the operation is successful, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedList`1.InsertBefore(CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode{`0},`0)">
+            <summary>
+            Inserts a new node with <paramref name="newValue"/> as its value in the list before the given node.
+            </summary>
+            <param name="node">The node that a new node with value <paramref name="newValue"/> will be inserted before.</param>
+            <param name="newValue">The value of the new node that is meant to be inserted in the list. </param>
+            <returns>True in case the operation is successful. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedList`1.Append(`0)">
+            <summary>
+            Adds a new node to the end of the list. Changing the Tail node.
+            </summary>
+            <param name="newValue">The value of the new node that is meant to be appended in the list. </param>
+            <returns>True in case the operation is successful, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedList`1.PrePend(`0)">
+            <summary>
+            Ands a new node to the beginning of the list. Changing the Head node. 
+            </summary>
+            <param name="newValue">The value of the new node that is meant to be prepended to the list. </param>
+            <returns>True in case operation is successful, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedList`1.Delete(`0)">
+            <summary>
+            Deletes a node from the list with the given value. If no node with the <paramref name="value"/> is found fails the operation and returns false.
+            </summary>
+            <param name="value">Is the value of the node to be deleted. </param>
+            <returns>True in case the operation is successful, and false otherwise. </returns>
+        </member>
+        <member name="T:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode`1">
+            <summary>
+            Implements a node in a DoublyLinkedList. 
+            </summary>
+            <typeparam name="TValue">Is the type of the values stored in a node.</typeparam>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode`1.IsHead">
+            <summary>
+            Checks whether the current node is head, a node is head if it has no previous node.
+            </summary>
+            <returns>True in case the node is head, and false otherwise. </returns>
+        </member>
+        <member name="F:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedSortedList`1._tail">
+            <summary>
+            Is the last node in the list. Note that some implementations of DLL do not have Tail. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedSortedList`1.Insert(`0)">
+            <summary>
+            Inserts a new node with <paramref name="newValue"/> as its value in its proper position in the sorted list. 
+            </summary>
+            <param name="newValue">Is the value of the new node. </param>
+            <returns>True in case of success. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.SinglyLinkedList`1.Insert(`0)">
+            <summary>
+            Inserts a new node in the beginning of the list. Insert in a singly linked list is the fastest when treated as a prepend, meaning adding to the beginning of the list. 
+            Notice that the current implementation allows duplicates.
+            </summary>
+            <param name="newValue">Is the value of the new node in the list.</param>
+            <returns>True in case of success.</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.StringStructures.LLPPS.Build(System.String)">
+            <summary>
+            For each sub pattern in text, ending at position (i)-0-based, computes the length of the longest proper prefix of text[0:i] such that it is also a suffix of text[0:i]
+            All proper prefixes of text[0:i] must start at index 0, and must end at most at index i-1.
+            All suffixes of text[0:i] must end at index i, and must start at least at index 0. 
+            A proper prefix of a string is any prefix that is not equal to the string itself. for example for string = kmp: '', k, km are 3 proper prefixes. Note that they all start at index 0 
+            A suffix of a string is any suffix. For example for string kmp: p, mp, kmp, '' are 4 suffixes. All end at index 2 . m is not a suffix. 
+            </summary>
+            <param name="text">Specifies the string for which we want to compute its longest proper prefixes that are also suffixes. </param>
+            <returns> An array of longest proper prefixes</returns>
+        </member>
+        <member name="T:CSFundamentals.DataStructures.StringStructures.StringSuffix">
+            <summary>
+            Stores information about a suffix of a string. 
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.StringStructures.StringSuffix.StartIndex">
+            <summary>
+            Specifies the 0-based starting index of this suffix in the string
+            Notice that there is no need to store the end index, as it is always string.Length - 1, based on the suffix definition. 
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.StringStructures.StringSuffix.RankPair">
+            <summary>
+            Specifies the rank for (starting char, second char) of the suffix. If second char does not exist, -1 rather than rank. 
+            Rank of a character is computing using: 'char'-'a'. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.StringStructures.StringSuffix.#ctor(System.Int32,System.Char,System.Char)">
+            <param name="secondChar">If -1, means there is no second char. </param>
+        </member>
+        <member name="T:CSFundamentals.DataStructures.StringStructures.SuffixArray">
+            <summary>
+            Implements SuffixArray data structure. A suffix array of an string is an array of integers that contains the starting index of all suffixes of the string in alphabetically sorted order. 
+            For example for string 'data' , where suffixes are : 'data', 'ata', 'ta', 'a' the suffix array is [3, 1, 0, 2]
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.StringStructures.SuffixArray.Build(System.String)">
+            <summary>
+            TODO: Provide an intuitive description for this algorithm. 
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CSFundamentals.DataStructures.StringStructures.SuffixTree">
+            <summary>
+            Implements a SuffixTree also known as a PAT. A DFS search of the tree should give the collection of all the suffixes of the string. 
+            This implementation is Naive: not optimized. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.StringStructures.SuffixTree.Build(System.String)">
+            <summary>
+            Given a string, builds its suffix tree. 
+            </summary>
+            <param name="text">Specifies the string for which the suffix tree is being built. </param>
+            <returns>The root of the suffix tree. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.StringStructures.SuffixTree.Insert(CSFundamentals.DataStructures.StringStructures.SuffixTreeNode,System.String,System.Int32)">
+            <summary>
+            Inserts the given suffix in the tree. Notice that the suffix is not necessarily inserted as a while. On the traversal of the tree, the intermediate nodes that have common prefixes with these suffix, make the suffix to break down. 
+            </summary>
+            <param name="root">Specifies the root node of a suffix tree. </param>
+            <param name="suffix">Specifies the suffix string that should be inserted in the suffix tree. </param>
+            <param name="startIndex">Specifies the start index of the suffix in its container string. </param>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.StringStructures.SuffixTreeNode.StringValue">
+            <summary>
+            Is the substring - Also considered an edge. 
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.StringStructures.SuffixTreeNode.StartIndex">
+            <summary>
+            Is the startIndex of the suffix
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.StringStructures.SuffixTreeNode.IsLeaf">
+            <summary>
+            True if the suffix is a leaf node.
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.StringStructures.SuffixTreeNode.IsRoot">
+            <summary>
+            True if the suffix is a root node. 
+            If Root, then suffix string is empty. 
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.StringStructures.SuffixTreeNode.IsIntermediate">
+            <summary>
+            True if the node is an intermediate node. 
+            Intermediate nodes' startIndex is set to -1
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.StringStructures.SuffixTreeNode.Children">
+            <summary>
+            Is the list if the suffix Nodes that can be reached from the current node. 
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase`3._root">
+            <summary>
+            Is the root of the binary search tree.
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase`3.Build(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`1,`2}})">
+            <summary>
+            Builds the tree to include the given nodes.
+            </summary>
+            <param name="nodes">Is a list of nodes to be inserted in the tree.</param>
+            <returns>Root of the tree.</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase`3.Insert(`0,`0)">
+            <summary>
+            Inserts a new node in the tree
+            </summary>
+            <param name="root">Current root of the tree, or the node at which insert operation should be started.</param>
+            <param name="newNode">New node to be inserted in the tree. </param>
+            <returns>New root of the tree (might or might not change during operation).</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase`3.Delete(`0,`1)">
+            <summary>
+            Deletes a node with the given key from th tree.
+            </summary>
+            <param name="root">Current root of the tree, or the node at which delete operation should be started. </param>
+            <param name="key">Specifies the key of the node to be deleted. </param>
+            <returns>New root of the tree (might or might not change during the operation).</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase`3.Search(`0,`1)">
+            <summary>
+            Searches for the given key in the tree. 
+            </summary>
+            <param name="root">Current root of the tree, or the node at which search operation should be started. </param>
+            <param name="key">Specifies the key to be searched. </param>
+            <returns>Returns the tree node that contains key. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase`3.Update(`0,`1,`2)">
+            <summary>
+            Updates the tree node of the specified key with the new given value. 
+            </summary>
+            <param name="root">Current root of the tree, or the node at which update operation should be started.</param>
+            <param name="key">Specifies the key of the node whose value should be updated.</param>
+            <param name="value">Specifies the new value. </param>
+            <returns>true in case of success and false otherwise.</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase`3.Insert_BST(`0,`0)">
+            <summary>
+            Implements a binary search tree insert. 
+            </summary>
+            <param name="root">Current root of the tree, or the node at which insert operation should be started.</param>
+            <param name="newNode">New node to be inserted in the tree. </param>
+            <returns>New root of the tree (might or might not change during operation).</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase`3.Build_BST(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`1,`2}})">
+            <summary>
+            Builds a binary search tree to include the given nodes.
+            </summary>
+            <param name="nodes">Is a list of nodes to be inserted in the tree.</param>
+            <returns>Root of the tree.</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase`3.Search_BST(`0,`1)">
+            <summary>
+            Searches for the given key in a binary search tree. 
+            </summary>
+            <param name="root">Current root of the tree, or the node at which search operation should be started. </param>
+            <param name="key">Specifies the key to be searched. </param>
+            <returns>Returns the tree node that contains key. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase`3.Update_BST(`0,`1,`2)">
+            <summary>
+            Updates the tree node of the specified key with the new given value. 
+            </summary>
+            <param name="root">Current root of the tree, or the node at which insert operation should be started.</param>
+            <param name="key">Specifies the key to be updated.</param>
+            <param name="value">Specifies the new value of the key.</param>
+            <returns>True in case the operation was successful, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase`3.FindMin_BST(`0)">
+            <summary>
+            Finds the node with the smallest key in a binary search tree.
+            </summary>
+            <param name="root">Is the node at which the search starts. </param>
+            <returns>The tree node with the smallest key. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase`3.FindMax_BST(`0)">
+            <summary>
+            Finds the node with the largest key in a binary search tree.
+            </summary>
+            <param name="root">Is the node at which the search starts. </param>
+            <returns>The tree node with the largest key.</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase`3.RotateLeft(`0)">
+            <summary>
+            Rotates the tree to left at the given node, meaning that the current right child of the given node will be its new parent.
+            Also notice that in rotation, keys or values of a node never change, only the relations change.
+            </summary>
+            <param name="node">Is the node at which rotation happens.</param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase`3.RotateRight(`0)">
+            <summary>
+            Rotates the tree to right at the given node. Meaning that the current left child of the given node will be its new parent.
+            Also notice that in rotation, keys or values of a node never change, only the relations change.
+            </summary>
+            <param name="node">Is the node at which rotation happens.</param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase`3.GetAllPathToLeaves(`0)">
+            <summary>
+            Computes all the paths from the given node to all of its leaves. A node is a leaf if it has no children.
+            </summary>
+            <param name="startNode">Is the node at which computing all routes/paths to leaf nodes starts.</param>
+            <returns>List of all the paths.</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase`3.InOrderTraversal(`0,System.Collections.Generic.List{`0})">
+            <summary>
+            Traverses tree in order, and since this is a binary search tree, in order traversal returns a sorted list of keys.
+            </summary>
+            <param name="root">Is the node at which in order traversal starts. </param>
+            <param name="inOrderSetOfNodes">Is the sorted list of nodes.</param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsLeaf">
+            <summary>
+            Checks whether the current node is a leaf node. A node is leaf if it has no children. 
+            </summary>
+            <returns>True if the current node is leaf, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsLeftChild">
+            <summary>
+            Checks to see if the node is the left child of its parent.
+            </summary>
+            <returns>True in case the node is the left child of its parent, and false otherwise.</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsRightChild">
+            <summary>
+            Checks to see if the node is the right child of its parent. 
+            </summary>
+            <returns>True in case the node is the right child of its parent, and false otherwise.</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsRoot">
+            <summary>
+            Checks whether the current node is the root of the tree. A node is root if it has no parent. 
+            </summary>
+            <returns>True in case the current node is the root, and false otherwise.</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetUncle">
+            <summary>
+            Gets the uncle of the current node. Uncle is the sibling of the parent.
+            </summary>
+            <returns>Uncle node.</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetSibling">
+            <summary>
+            Gets the sibling of the current node.
+            </summary>
+            <returns>Sibling node.</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetGrandParent">
+            <summary>
+            Gets the grandparent of the current node. GrandParent is the parent of the parent. 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.FormsLine">
+            <summary>
+            Checks whether the node forms a line with its parent and grandparent. 
+            Notice a line needs exactly 3 nodes. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.FormsTriangle">
+            <summary>
+            Checks whether the node forms a triangle with its parent and grandparent.
+            Notice a triangle needs exactly 3 nodes.
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsComplete">
+            <summary>
+            Checks whether the current node is complete. A binary tree node is complete if it has both left and right children.
+            </summary>
+            <returns>True in case the current node is complete, and false otherwise.</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetChildren">
+            <summary>
+            Gets the immediate not-null children of the current node, the collection contains left and right children thus. 
+            </summary>
+            <returns>List of the immediate direct children of the current node.</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetGrandChildren">
+            <summary>
+            Gets the immediate grand children of a node. This is the children of the children of the node.
+            </summary>
+            <returns>The list of grand children of the node.</returns>
+        </member>
+        <member name="T:CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode`3">
+            <summary>
+            Specifies an interface for nodes in any tree structure. 
+            </summary>
+            <typeparam name="TNode">Is the type of the tree node. </typeparam>
+            <typeparam name="TKey">Is the type of the keys in the tree nodes. </typeparam>
+            <typeparam name="TValue">Is the type of the values in the tree nodes. </typeparam>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode`3.IsNill">
+            <summary>
+            If set means the node contains no key-values, left or right children.
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode`3.Key">
+            <summary>
+            Is the key in a tree node. 
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode`3.Value">
+            <summary>
+            Is the value (information) stored in a tree node. 
+            </summary> 
+            <remarks>
+            This can be converted to a list of values alternatively, to handle duplicate keys. 
+            </remarks>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode`3.LeftChild">
+            <summary>
+            Is the left child of the node. 
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode`3.RightChild">
+            <summary>
+            Is the right child of the node. 
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode`3.Parent">
+            <summary>
+            Is the parent of the node.
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode`3.IsLeftChild">
+            <summary>
+            Check whether the current node is left child of its parent.
+            </summary>
+            <returns>True in case the current node is the left child of its parent, and false otherwise.</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode`3.IsRightChild">
+            <summary>
+            Check whether the current node is right child of its parent.
+            </summary>
+            <returns>True in case the current node is the right child of its parent, and false otherwise. </returns>
+        </member>
+        <member name="T:CSFundamentals.DataStructures.Trees.Binary.AVLTree`2">
+            <summary>
+            Implements an AVL tree. An AVL tree is a self balancing Binary Search Tree.
+            Notice the differences in time complexity at worst case for various operations, compared to a basic binary search tree. 
+            </summary>
+            <typeparam name="TKey">Specifies the type of the keys in the tree. </typeparam>
+            <typeparam name="TValue">Specifies the type of the values in the tree. </typeparam>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.AVLTree`2.Balance(CSFundamentals.DataStructures.Trees.Binary.AVLTreeNode{`0,`1})">
+            <summary>
+            Balances a tree, starting at the given node and going upward. 
+            </summary>
+            <param name="node">The bottom most node, from which balance starts, based on its parent and grand parent. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.AVLTree`2.ComputeBalanceFactor(CSFundamentals.DataStructures.Trees.Binary.AVLTreeNode{`0,`1})">
+            <summary>
+            Computes balance factor of a node. Which is the difference between the height of the left and right sub trees of the node.
+            </summary>
+            <param name="node">Is the node for which balance is computed.</param>
+            <returns>the balance factor of the node. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.AVLTree`2.GetHeight(CSFundamentals.DataStructures.Trees.Binary.AVLTreeNode{`0,`1})">
+            <summary>
+            Computes the height of the tree rooted at the given node. The height of a node is the maximum path length to its leaf nodes.
+            </summary>
+            <param name="node">Is the node whose height is calculated.</param>
+            <returns>The height of the tree rooted at the given node. </returns>
+        </member>
+        <member name="T:CSFundamentals.DataStructures.Trees.Binary.BinarySearchTreeBase`2">
+            <summary>
+            Implements a binary search tree, and its operations. In a binary search tree, each node's key is larger than its left child's key, and smaller than its right child's key.
+            A binary Search Tree can be used as a key-value store. 
+            </summary>
+            <typeparam name="TKey">Specifies the type of the key in tree nodes.</typeparam>
+            <typeparam name="TValue">Specifies the type of the value in tree nodes. </typeparam>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.BinarySearchTreeBase`2.Insert(CSFundamentals.DataStructures.Trees.Binary.BinarySearchTreeNode{`0,`1},CSFundamentals.DataStructures.Trees.Binary.BinarySearchTreeNode{`0,`1})">
+            <summary>
+            Implements insert in a binary search tree. 
+            </summary>
+            <param name="root">The node at which we would like to start the insert operation.</param>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns>The new root node.</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.BinarySearchTreeBase`2.Search(CSFundamentals.DataStructures.Trees.Binary.BinarySearchTreeNode{`0,`1},`0)">
+            <summary>
+            Implements Search/Lookup/Find operation for a BinarySearchTree. 
+            </summary>
+            <param name="root">Specifies the root of the tree.</param>
+            <param name="key">Specifies the key, the method should look for. </param>
+            <returns>The tree node that has the key. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.BinarySearchTreeBase`2.Update(CSFundamentals.DataStructures.Trees.Binary.BinarySearchTreeNode{`0,`1},`0,`1)">
+            <summary>
+            Implements Update operation for a BinarySearchTree.
+            </summary>
+            <param name="root">Specifies the root of the tree.</param>
+            <param name="key">Specifies the key of the node for which the value should be updated. </param>
+            <param name="value">Specifies the new value for the given key. </param>
+            <returns>True in case of success, and false otherwise. </returns>
+        </member>
+        <member name="T:CSFundamentals.DataStructures.Trees.Binary.RedBlackTree`2">
+            <summary>
+            Implements a red black tree and its operations. A red-black tree is a self-balancing binary search tree.
+            In this implementation, nulls are treated as black leaf nodes and not shown explicitly. 
+            A red black tree can also be used as a key-value store.
+            </summary>
+            <typeparam name="TKey">Specifies the type of the keys in red black tree.</typeparam>
+            <typeparam name="TValue">Specifies the type of the values in red black tree. </typeparam>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.RedBlackTree`2.IsRed(CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode{`0,`1})">
+            <summary>
+            Checks whether the given node is red. 
+            </summary>
+            <param name="node">Is a node in a red black tree. </param>
+            <returns>True in case node is red, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.RedBlackTree`2.IsBlack(CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode{`0,`1})">
+            <summary>
+            Checks whether the given node is black. 
+            </summary>
+            <param name="node">Is a node in a red black tree. </param>
+            <returns>True in case node is black, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.RedBlackTree`2.UpdateParentWithNullingChild(CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode{`0,`1},CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode{`0,`1})">
+            <summary>
+            Finds the given child node in the parent node, and if in fact a child of the parent replaces it with null. 
+            </summary>
+            <param name="parent">Is a parent node. </param>
+            <param name="child">Is a child node of the given parent node. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Binary.RedBlackTree`2.GetAllPathToLeaves(CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode{`0,`1})">
+            <summary>
+            Computes all the paths from the given node to all of its leaves. A node is a leaf if it has no children.
+            </summary>
+            <param name="startNode">Is the node at which computing all routes/paths to leaf nodes starts.</param>
+            <returns>List of all the paths.</returns>
+        </member>
+        <member name="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Root">
+            <summary>
+            Is the root of the tree. 
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.MaxBranchingDegree">
+            <summary>
+            Is the maximum number of children for a non-leaf node in this B-Tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Build(System.Collections.Generic.Dictionary{`1,`2})">
+            <summary>
+            Given the set of key values, builds a b-tree by inserting all the key-value pairs. 
+            </summary>
+            <param name="keyValues">Is the list of key values to be inserted in the tree. </param>
+            <returns>Root of the tree. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Insert(System.Collections.Generic.KeyValuePair{`1,`2})">
+            <summary>
+            Inserts a new key-value pair in the tree and returns root of the tree. 
+            </summary>
+            <param name="keyValue">Is the key-value pair to be inserted in the tree. </param>
+            <returns>Root of the tree. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Delete(`1)">
+            <summary>
+            Deletes the given key from the tree if it exists. 
+            </summary>
+            <param name="key">The key to be deleted from the tree. </param>
+            <returns>True in case of success, and false otherwise. </returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.GetSortedKeyValues(`0)" -->
+        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.GetMaxNode(`0)" -->
+        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.GetMinNode(`0)" -->
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.RotateLeft(`0,`0,System.Int32)">
+            <summary>
+            Rotates a key from the right sibling of the node via their parent to the node. 
+            The cost of this operation is at inserting keys and children, in right position (to preserve order), Which at worst is O(K), Where K is the maximum number of keys in a node, and thus is constant. 
+            </summary>
+            <param name="node">Is the receiver of a new key. </param>
+            <param name="rightSibling">The node that lends a key to the process. This key moves to parent, and a key from parent moves to node. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.RotateRight(`0,`0,System.Int32)">
+            <summary>
+            Rotates a key from the left sibling of the node via their parent to the node.
+            The cost of this operation is at inserting keys and children, in right position (to preserve order), Which at worst is O(K), Where K is the maximum number of keys in a node, and thus is constant. 
+            </summary>
+            <param name="node">Is the receiver of a new key. </param>
+            <param name="leftSibling">The node that lends a key to the process. This key moves to parent, and a key from parent moves to node.</param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Join(`0,`0)">
+            <summary>
+            Merges node with its left sibling, such that node can be dropped. Also borrows a key from parent. 
+            </summary>
+            <param name="node">The node that will be dissolved at the end of operation. </param>
+            <param name="leftSibling">The node that will contain keys of the node, its current keys, and a key from parent. </param>
+            <returns>Parent of the nodes. </returns>
+        </member>
+        <member name="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._keyValues">
+            <summary>
+            A list of key-value pairs stored in this node. 
+            Notice that SortedList does not allow duplicates. 
+            </summary>
+        </member>
+        <member name="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._children">
+            <summary>
+            Children of the current node. 
+            Contract: Keys of the child at index i are all smaller than key at index i of _keyValues
+            Contract: Keys of the child at index i are all greater than key at index i-1 of _keyValues
+            In otherWords for key at index i, left children are at index i of _children
+            And right children are at index i+1 of _children. 
+            </summary>
+        </member>
+        <member name="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._parent">
+            <summary>
+            Is the parent of the current node.
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.MinKeys">
+            <summary>
+            Is the minimum number of keys in a B-tree internal/leaf node. (Notice that a root has no lower bound on the number of keys. Intuitively when the tree is just being built it might start with 1, and grow afterwards.)
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.MaxKeys">
+            <summary>
+            Is the maximum number of keys in a B-tree internal/leaf/root node. This is often 2 times the MinKeys.
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.MinBranchingDegree">
+            <summary>
+            Is the minimum number of branches/children a B-tree internal node can have. 
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.MaxBranchingDegree">
+            <summary>
+            Is the maximum number of branches/children a B-tree internal or root node can have. Leaf nodes contain 0 children. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.#ctor(System.Int32,System.Collections.Generic.KeyValuePair{`1,`2})">
+            <summary>
+            Creates a node with 1 key. 
+            </summary>
+            <param name="maxBranchingDegree">Is the maximum number of children the node can have. </param>
+            <param name="keyValue">Is a key-value pair to be inserted in the tree. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.#ctor(System.Int32,System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`1,`2}},System.Collections.Generic.List{`0})">
+            <summary>
+            Creates a node with a set of keys and children.
+            </summary>
+            <param name="maxBranchingDegree">Is the maximum number of children the node can have. </param>
+            <param name="keyValues">Is a set of key-value pairs to be inserted in the new node. </param>
+            <param name="children">Is a set of children of the node. Expectancy is that the count of children is one bigger than the count of key-value pairs in the node. </param>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.KeyCount">
+            <summary>
+            Is the count of key-value pairs in the node. 
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.ChildrenCount">
+            <summary>
+            Is the count of the children of the node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.Clear">
+            <summary>
+            Removes all the keys from the node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.IsLeaf">
+            <summary>
+            Checks whether the current node is leaf. A node is leaf if it has no children. 
+            </summary>
+            <returns>True if the current node is leaf, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.IsRoot">
+            <summary>
+            Checks whether the current node is root. A node is root if it has no parent.
+            </summary>
+            <returns>True if the current node is root, and false otherwise.</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.IsFull">
+            <summary>
+            Detects whether the node is full. A node is full, if it has MaxKeys keys. 
+            </summary>
+            <returns>Truce if the node is full, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.IsOverFlown">
+            <summary>
+            Checks whether the node is overflown. A node is overflown, if its key count exceeds MaxKeys. 
+            </summary>
+            <returns>True if the node is overflown, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.IsUnderFlown">
+            <summary>
+            Checks whether the node is UnderFlown. A node is UnderFlown, if its key count falls lower than MinKeys.
+            </summary>
+            <returns>Truce if the node is UnderFlown, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.IsMinFull">
+            <summary>
+            Checks whether a node is MinFull: meaning it has exactly MinKeys key-value pairs. 
+            </summary>
+            <returns>True if case is MinFull, false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.IsMinOneFull">
+            <summary>
+            Checks whether a node is MinOneFull: meaning it has exactly MinKeys+1 key-value pairs. 
+            </summary>
+            <returns>True if it is MinOneFull, false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.IsEmpty">
+            <summary>
+            Checks whether a node is empty: meaning has no key-value pairs. 
+            </summary>
+            <returns>True if the node is free, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetIndexAtParentChildren">
+            <summary>
+            Gets the index of the current node in its parent's <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._children"/> list.
+            </summary>
+            <returns>Index at parent's <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._children"/> list.</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.InsertChild(`0)">
+            <summary>
+            Inserts a child in <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._children"/> array.
+            </summary>
+            <param name="child">the new child to be inserted in <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._children"/> array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.HasLeftSibling">
+            <summary>
+            Checks whether the current node has a left sibling (a sibling to its left in the parent). 
+            </summary>
+            <returns>True if the node has a left sibling, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.HasRightSibling">
+            <summary>
+            Checks whether the current node has a right sibling (a sibling to its right in the parent).
+            </summary>
+            <returns>True if the node has a right sibling, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetLeftSibling">
+            <summary>
+            Gets the node's left sibling node. 
+            </summary>
+            <returns>Node's left sibling node if it exists, and null otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetRightSibling">
+            <summary>
+            Gets the node's right sibling node. 
+            </summary>
+            <returns>Node's right sibling node if it exists and null otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetMaxKey">
+            <summary>
+            Gets the key-value pair of the maximum key in the node.
+            </summary>
+            <returns>Key-value pair of the maximum key in this node. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetMinKey">
+            <summary>
+            Gets the key-value pair of the minimum key in the node. 
+            </summary>
+            <returns>Key-value pair of the minimum key in this node. </returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.RemoveKey(`1)" -->
+        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.RemoveKeyByIndex(System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.RemoveChildByIndex(System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.RemoveChild(`0)" -->
+        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetKeyValue(System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetKey(System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetKeyIndex(`1)" -->
+        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetChild(System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetChildIndex(`0)" -->
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.InsertKeyValue(System.Collections.Generic.KeyValuePair{`1,`2})">
+            <summary>
+            Inserts the given key-value pair in <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._keyValues"/> array. 
+            </summary>
+            <param name="keyVal">the new key-value pair to be inserted in <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._keyValues"/> array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.Split">
+            <summary>
+            Splits this node to 2 nodes if it is overflown, such that each node has at least MinKeys keys.
+            </summary>
+            <returns>The new node. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.KeyValueToMoveUp">
+            <summary>
+            When a node is being split into two nodes, gets the key that shall be moved to the parent of this node.
+            This operation is expected to only be called upon a node that is full. Yet to prevent issues, first checks for the key count. 
+            </summary>
+            <returns>The key at the middle of the key-value pairs that shall be moved to the parent. </returns>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.KeyCount">
+            <summary>
+            Is the count of key-value pairs in the node. 
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.ChildrenCount">
+            <summary>
+            Is the count of the children of the node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.ReBalance(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},System.Int32,System.Int32)">
+            <summary>
+            Re-balances the tree to restore back its properties. This method is called when node is underFlown, and thus must be fixed. 
+            </summary>
+            <param name="node">Specifies an underFlown node. </param>
+            <param name="leftSibling">Is the left sibling of the underFlown node. </param>
+            <param name="rightSibling">Is the right sibling of the underFlown node. </param>
+            <param name="separatorWithLeftSiblingIndex">Is the index of the key in parent that separates node from its left sibling. </param>
+            <param name="separatorWithRightSiblingIndex">Is the index of the key in parent that separates node from its right sibling. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.RotateRightAtLeafLevel(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},System.Int32)">
+            <summary>
+            Rotates a key from the left sibling of the node via their parent to the node.
+            The cost of this operation is at inserting keys and children, in right position (to preserve order), Which at worst is O(K), Where K is the maximum number of keys in a node, and thus is constant. 
+            </summary>
+            <param name="node">Is the receiver of a new key. </param>
+            <param name="leftSibling">The node that lends a key to the process. This key moves to parent, and a key from parent moves to node.</param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.RotateLeftAtLeafLevel(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},System.Int32)">
+            <summary>
+            Rotates a key from the right sibling of the node via their parent to the node. 
+            The cost of this operation is at inserting keys and children, in right position (to preserve order), Which at worst is O(K), Where K is the maximum number of keys in a node, and thus is constant. 
+            </summary>
+            <param name="node">Is the receiver of a new key. </param>
+            <param name="rightSibling">The node that lends a key to the process. This key moves to parent, and a key from parent moves to node. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.JoinAtLeafLevel(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1})">
+            <summary>
+            Merges node with its left sibling, such that node can be dropped. Also borrows a key from parent. 
+            </summary>
+            <param name="node">The node that will be dissolved at the end of operation. </param>
+            <param name="leftSibling">The node that will contain keys of the node, its current keys, and a key from parent. </param>
+            <returns>Parent of the nodes. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.GetSortedKeyValues(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1})">
+            <summary>
+            Traverses the doubly linked list at the level of leaves and returns the list of all the key-values in leaves in a sorted order (sorted by key)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.FindLeafToInsertKey(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0)">
+            <summary>
+            Starting from the given root, recursively traverses tree top-down to find the proper leaf node, at which <paramref name="key"/> can be inserted. 
+            </summary>
+            <param name="root">Is the top-most node at which search for the leaf starts.</param>
+            <param name="key">Is the key for which a container leaf is being searched. </param>
+            <returns>Leaf node to insert the key. </returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.Search(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0)" -->
+        <member name="P:CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2.NextLeaf">
+            <summary>
+            Only used by leaf nodes, and points to the leaf to its right (note that the right leaf may or may not be a sibling of the current leaf)
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2.PreviousLeaf">
+            <summary>
+            Only used by leaf nodes, and points to the leaf to its left (note that the left leaf may or may not be a sibling of the current leaf)
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2.#ctor(System.Int32)">
+            <summary>
+            Creates a node with no keys. 
+            </summary>
+            <param name="maxBranchingDegree">Is the maximum number of children the node can have. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2.#ctor(System.Int32,System.Collections.Generic.KeyValuePair{`0,`1})">
+            <summary>
+            Creates a node with 1 key. 
+            </summary>
+            <param name="maxBranchingDegree">Is the maximum number of children the node can have. </param>
+            <param name="keyValue">Is a key-value pair to be inserted in the tree. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2.#ctor(System.Int32,System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}},System.Collections.Generic.List{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1}})">
+            <summary>
+            Creates a node with a set of keys and children.
+            </summary>
+            <param name="maxBranchingDegree">Is the maximum number of children the node can have. </param>
+            <param name="keyValues">Is a set of key-value pairs to be inserted in the new node. </param>
+            <param name="children">Is a set of children of the node. Expectancy is that the count of children is one bigger than the count of key-value pairs in the node. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2.InsertChild(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1})">
+            <summary>
+            Inserts a child in <see cref="!:_children"/> array.
+            </summary>
+            <param name="child">the new child to be inserted in <see cref="!:_children"/> array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.BTree`2.InsertInLeaf(CSFundamentals.DataStructures.Trees.Nary.BTreeNode{`0,`1},System.Collections.Generic.KeyValuePair{`0,`1})">
+            <summary>
+            Inserts a new key-value pair in the tree and returns root of the tree. 
+            </summary>
+            <param name="keyValue">Is the key-value pair to be inserted in the tree. </param>
+            <returns>Root of the tree. </returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.BTree`2.Delete(CSFundamentals.DataStructures.Trees.Nary.BTreeNode{`0,`1},`0)" -->
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.BTree`2.ReBalance(CSFundamentals.DataStructures.Trees.Nary.BTreeNode{`0,`1},CSFundamentals.DataStructures.Trees.Nary.BTreeNode{`0,`1},CSFundamentals.DataStructures.Trees.Nary.BTreeNode{`0,`1},System.Int32,System.Int32)">
+            <summary>
+            Re-balances the tree to restore back its properties. This method is called when node is underFlown, and thus must be fixed. 
+            </summary>
+            <param name="node">Specifies an underFlown node. </param>
+            <param name="leftSibling">Is the left sibling of the underFlown node. </param>
+            <param name="rightSibling">Is the right sibling of the underFlown node. </param>
+            <param name="separatorWithLeftSiblingIndex">Is the index of the key in parent that separates node from its left sibling. </param>
+            <param name="separatorWithRightSiblingIndex">Is the index of the key in parent that separates node from its right sibling. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.BTree`2.Split_Repair(CSFundamentals.DataStructures.Trees.Nary.BTreeNode{`0,`1})">
+            <summary>
+            If the given node/leaf is overflown, splits it and propagates the split to upper levels if needed.
+            </summary>
+            <param name="node">The node to be split</param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.BTree`2.InOrderTraversal(CSFundamentals.DataStructures.Trees.Nary.BTreeNode{`0,`1},System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}})">
+            <summary>
+            Traverses tree in-order and generates list of keys sorted.
+            </summary>
+            <param name="node">The tree node at which traverse starts.</param>
+            <param name="sortedKeyValues">List of the key-values sorted by their keys.</param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.BTree`2.FindLeafToInsertKey(CSFundamentals.DataStructures.Trees.Nary.BTreeNode{`0,`1},`0)">
+            <summary>
+            Starting from the given root, recursively traverses tree top-down to find the proper leaf node, at which <paramref name="key"/> can be inserted. 
+            </summary>
+            <param name="root">Is the top-most node at which search for the leaf starts.</param>
+            <param name="key">Is the key for which a container leaf is being searched. </param>
+            <returns>Leaf node to insert the key. </returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.BTree`2.Search(CSFundamentals.DataStructures.Trees.Nary.BTreeNode{`0,`1},`0)" -->
+        <!-- Badly formed XML comment ignored for member "M:CSFundamentals.DataStructures.Trees.Nary.BTree`2.GetMaxCapacity(System.Int32)" -->
+        <member name="T:CSFundamentals.DataStructures.Trees.Nary.BTreeNode`2">
+            <summary>
+            Implements a B-Tree node. A B-tree node is an ordered sequence of K keys, and K+1 children.
+            </summary>
+            <typeparam name="TKey">Is the type of the keys in the tree. </typeparam>
+            <typeparam name="TValue">Is the type of the values in the tree. </typeparam>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.BTreeNode`2.#ctor(System.Int32)">
+            <summary>
+            Creates a node with no keys. 
+            </summary>
+            <param name="maxBranchingDegree">Is the maximum number of children the node can have. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.BTreeNode`2.#ctor(System.Int32,System.Collections.Generic.KeyValuePair{`0,`1})">
+            <summary>
+            Creates a node with 1 key. 
+            </summary>
+            <param name="maxBranchingDegree">Is the maximum number of children the node can have. </param>
+            <param name="keyValue">Is a key-value pair to be inserted in the tree. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.BTreeNode`2.#ctor(System.Int32,System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}},System.Collections.Generic.List{CSFundamentals.DataStructures.Trees.Nary.BTreeNode{`0,`1}})">
+            <summary>
+            Creates a node with a set of keys and children.
+            </summary>
+            <param name="maxBranchingDegree">Is the maximum number of children the node can have. </param>
+            <param name="keyValues">Is a set of key-value pairs to be inserted in the new node. </param>
+            <param name="children">Is a set of children of the node. Expectancy is that the count of children is one bigger than the count of key-value pairs in the node. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.BTreeNode`2.GetIndexAtParentChildren">
+            <summary>
+            Gets the index of the current node in its parent's <see cref="!:_children"/> list.
+            </summary>
+            <returns>Index at parent's <see cref="!:_children"/> list.</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.Trees.Nary.BTreeNode`2.InsertChild(CSFundamentals.DataStructures.Trees.Nary.BTreeNode{`0,`1})">
+            <summary>
+            Inserts a child in <see cref="!:_children"/> array.
+            </summary>
+            <param name="child">the new child to be inserted in <see cref="!:_children"/> array. </param>
+        </member>
+        <member name="P:CSFundamentals.Decoration.TimeComplexityAttribute.When">
+            <summary>
+            Describes when the given ExecutionCase takes place, for example what conditions should the input have for the algorithm to be operating at the given ExecutionCase
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CSFundamentalsTests</name>
+    </assembly>
+    <members>
+        <member name="F:CSFundamentalsTests.Algorithms.Search.LinearSearchTests._values">
+            <summary>
+            A random array of integers (not sorted), and containing duplicates
+            </summary>
+        </member>
+        <member name="F:CSFundamentalsTests.Algorithms.Search.SearchTests._values">
+            <summary>
+            Sorted array of elements. Note that binary search expects a sorted array. 
+            </summary>
+        </member>
+        <member name="F:CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithDistinctValues">
+            <summary>
+            Is an array of integers with only distinct values. 
+            </summary>
+        </member>
+        <member name="F:CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithDuplicateValues">
+            <summary>
+            Is an array of integers with several duplicate values. 
+            </summary>
+        </member>
+        <member name="F:CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithSortedDistinctValues">
+            <summary>
+            Is an array of integers with distinct values, such that the array is already sorted ascending. 
+            </summary>
+        </member>
+        <member name="F:CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithSortedDuplicateValues">
+            <summary>
+            Is an array of integers with duplicate values, such that the array is already sorted ascending. 
+            </summary>
+        </member>
+        <member name="F:CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithReverselySortedDistinctValues">
+            <summary>
+            Is an array of integers with distinct values, such that the array is reversely sorted, meaning it is descending, whereas sort meant ascending.  
+            </summary>
+        </member>
+        <member name="F:CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithReverselySortedDuplicateValues">
+            <summary>
+            Is an array of integers with duplicate values, such that the array is reversely sorted, meaning it is descending, whereas sort meant ascending. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.UtilsTests.IsSortedAscendingly(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Checks whether the given integer list is sorted in ascending order. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.HasMinOrderProperty``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)">
+            <summary>
+            Checking the MinHeap ordering (node relations) for the node at the given index, to make sure the correct relations between the node and its parent and children holds. 
+            </summary>
+            <param name="heap"></param>
+            <param name="nodeIndex"></param>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty``3(``0)">
+            <summary>
+            Given the root of a binary search tree, checks whether the binary search tree properties hold.
+            </summary>
+            <typeparam name="TKey">Specifies the type of the keys in tree. </typeparam>
+            <typeparam name="TValue">Specifies the type of the values in tree nodes. </typeparam>
+            <param name="root">Is the root of a binary search tree. </param>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode`2">
+            <summary>
+            This class is only created for testing purposes. 
+            TreeNode is an abstract class with generic types, and some method implementations. 
+            We need to test those methods without using any child class in production code. 
+            Therefore this mock class is created. 
+            </summary>
+            <typeparam name="TKey">Specifies the type of the keys in a tree.</typeparam>
+            <typeparam name="TValue">Specifies type of the values in a tree.</typeparam>
+        </member>
+        <member name="F:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests._tree">
+            <summary>
+            Is an AVL tree (A form of balanced BST). 
+            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Init"/> method, please <see cref="!:images\avl-bst.png"/> in current directory. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion">
+            <summary>
+            For a step by step transition of the AVL tree while inserting these keys, please <see cref="!:images\avl-bst-insert-stepByStep.png"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Delete_MultipleKeysConsecutively_ExpectsCorrectTreeAfterEachDeletion_RandomOrder1">
+            <summary>
+            For a step by step transition of the AVL tree while deleting these keys, please <see cref="!:images\avl-bst-delete-stepBystep.png"/>.
+            </summary>
+        </member>
+        <member name="F:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests._tree">
+            <summary>
+            Is a binary search tree (aka. BST). 
+            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Init"/> method, please <see cref="!:images\bst.png"/> in current directory. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Build_ExpectsCorrectBinaryTree">
+            <summary>
+            For a step by step transition of the BST while inserting these keys, please <see cref="!:images\bst-insert-stepBystep.png"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Delete_MultipleNodesConsecutively_ExpectsCorrectBinarySearchTreeAfterEachStep">
+            <summary>
+            For a step by step transition of the BST while deleting these keys, please <see cref="!:images\bst-delete-stepBystep.png"/>.
+            </summary>
+        </member>
+        <member name="F:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests._tree">
+            <summary>
+            Is a RedBlack tree (A form of balanced BST). 
+            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Init"/> method, please <see cref="!:images\redblack-bst.png"/> in current directory. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion">
+            <summary>
+            For a step by step transition of the RedBlack tree while inserting these keys, please <see cref="!:images\redblack-bst-insert-stepByStep.png"/>.
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_4_BTreeNodeTests">
+            <summary>
+            Tests BTreeNode implementation by a 2-3-4 BTree Node.
+            </summary>
+        </member>
+        <member name="F:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests._tree">
+            <summary>
+            Is a B+ tree. 
+            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Init"/> method, please <see cref="!:images\2-3-BPlus-Tree.png"/> in current directory. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Insert_SeveralKeys_ExpectsTreeToIncreaseInLevelsAfewTimes">
+            <summary>
+            For a step by step transition of this 2-3 B + Tree while inserting these keys, please <see cref="!:images\2-3-BPlus-Tree-insert-stepBystep.png"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_AllNodesInRandomOrder1_ExpectsProperBtreeAfterEachDelete">
+            <summary>
+            For a step by step transition of this 2-3 B + Tree while deleting these keys, please <see cref="!:images\2-3-BPlus-Tree-delete-stepBystep.png"/>.
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests">
+            <summary>
+            Tests BTreeNode implementation by a 2-3 BTree Node.
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests">
+            <summary>
+            Tests BTree implementation by a 2-3 B-Tree, where minimum number of children for a non-root tree is 2, and maximum number of children for any node is 3. 
+            </summary>
+        </member>
+        <member name="F:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests._tree">
+            <summary>
+            Is a B tree. 
+            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Init"/> method, please <see cref="!:Images\2-3-BTree.png"/> in current directory. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Insert_SeveralKeys_ExpectsTreeToIncreaseInLevelsAfewTimes">
+            <summary>
+            For a step by step transition of this 2-3 BTree while inserting these keys, please <see cref="!:images\2-3-BTree-insert-stepBystep.png"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_AllNodesInRandomOrder1_ExpectsProperBtreeAfterEachDelete">
+            <summary>
+            For a step by step transition of this 2-3 BTree while deleting these keys, please <see cref="!:images\2-3-BTree-delete-stepBystep.png"/>.
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests">
+            <summary>
+            Tests BTreeNode implementation by a 3-5 BTree Node.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.DFS``3(``0,System.Collections.Generic.List{``0})">
+            <summary>
+            TODO: How to make this to use the DFS I have in the algorithms? 
+            </summary>
+        </member>
+    </members>
+</doc>

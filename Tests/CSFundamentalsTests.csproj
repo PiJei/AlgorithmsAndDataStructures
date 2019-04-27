@@ -6,6 +6,10 @@
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>CSFundamentalsTests.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Remove="DataStructures\Trees\Nary\2-3-BPlus-Tree.PNG" />
   </ItemGroup>
