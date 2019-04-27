@@ -34,12 +34,16 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
     [DataStructure("MinMaxBinaryHeap")]
     public class MinMaxBinaryHeap<TKey, TValue> : BinaryHeapBase<TKey, TValue> where TKey : IComparable<TKey>
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="array">An array containing key-value pairs</param>
         public MinMaxBinaryHeap(List<KeyValuePair<TKey, TValue>> array) : base(array)
         {
         }
 
         /// <summary>
-        /// 
+        /// Builds an in-place MinMax heap on the given array. 
         /// </summary>
         /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         public override void BuildHeap_Recursively(int heapArrayLength)
@@ -51,9 +55,9 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         }
 
         /// <summary>
-        /// 
+        /// Inserts a new value into the Min Heap. 
         /// </summary>
-        /// <param name="keyValue"></param>
+        /// <param name="keyValue">Specifies the new key-value pair to be inserted in the tree.</param>
         /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         public override void Insert(KeyValuePair<TKey, TValue> keyValue, int heapArrayLength)
         {
@@ -63,9 +67,9 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         }
 
         /// <summary>
-        /// 
+        /// Bubbles up the node at the given index. 
         /// </summary>
-        /// <param name="index"></param>
+        /// <param name="index">Specifies the index of a node in the heap array.</param>
         /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         public void BubbleUp_Recursively(int index, int heapArrayLength)
         {
@@ -140,9 +144,9 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         }
 
         /// <summary>
-        /// 
+        /// Removes the min element from the heap.
         /// </summary>
-        /// <param name="keyValue"></param>
+        /// <param name="keyValue">If the operation is successful, contains the minimum element in the array.</param>
         /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         /// <returns></returns>
         public override bool TryRemoveRoot(out KeyValuePair<TKey, TValue> keyValue, int heapArrayLength)
@@ -168,10 +172,11 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         }
 
         /// <summary>
-        /// 
+        /// This method is for finding the root of the heap, without removing it. 
         /// </summary>
-        /// <param name="keyValue"></param>
-        /// <returns></returns>
+        /// <param name="keyValue">Specifies the key-value of the root.</param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        /// <returns>True in case of success, and false in case of failure.</returns>
         public override bool TryFindRoot(out KeyValuePair<TKey, TValue> keyValue, int heapArrayLength)
         {
             if (HeapArray.Any())
@@ -184,9 +189,9 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         }
 
         /// <summary>
-        /// 
+        /// Recursively bubbles down/trickles down the given rootIndex.
         /// </summary>
-        /// <param name="rootIndex"></param>
+        /// <param name="rootIndex">Specifies the index of the node for which bubble down starts. </param>
         /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         public override void BubbleDown_Recursively(int rootIndex, int heapArrayLength)
         {
@@ -205,6 +210,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// Bubbles/trickles down the node at the given index, which is on a min/even level. 
         /// </summary>
         /// <param name="rootIndex">Specifies the index of a node at a min level, from which bubble down starts recursively.</param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         public void BubbleDownMin_Recursively(int rootIndex, int heapArrayLength)
         {
             List<int> childrenIndexes = GetChildrenIndexes(new List<int> { rootIndex }, heapArrayLength);
@@ -290,6 +296,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// Gets the list of indexes of all the children of all the given indexes. 
         /// </summary>
         /// <param name="indexes">Specifies the indexes of the nodes for which their children's indexes shall be computed. </param>
+        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         /// <returns>List of all the children of all the indexes. </returns>
         private List<int> GetChildrenIndexes(List<int> indexes, int heapArrayLength)
         {
@@ -312,26 +319,46 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
             return childrenIndexes;
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
+        /// <param name="heapArrayLength"></param>
         public override void BuildHeap_Iteratively(int heapArrayLength)
         {
             throw new System.NotImplementedException();
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
+        /// <param name="rootIndex"></param>
+        /// <param name="heapArrayLength"></param>
         public override void BubbleDown_Iteratively(int rootIndex, int heapArrayLength)
         {
             throw new System.NotImplementedException();
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
+        /// <param name="index"></param>
+        /// <param name="heapArrayLength"></param>
         public override void BubbleUp_Iteratively(int index, int heapArrayLength)
         {
             throw new System.NotImplementedException();
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         public void TryRemoveMax()
         {
             throw new System.NotImplementedException();
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         public void TryFindMax()
         {
             throw new System.NotImplementedException();

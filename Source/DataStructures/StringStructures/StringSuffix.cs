@@ -39,6 +39,12 @@ namespace CSFundamentals.DataStructures.StringStructures
         /// </summary>
         public int[] RankPair { get; set; } = new int[2];
 
+
+        /// <summary>
+        /// TODO
+        /// </summary>
+        /// <param name="startIndex"></param>
+        /// <param name="firstChar"></param>
         /// <param name="secondChar">If -1, means there is no second char. </param>
         public StringSuffix(int startIndex, char firstChar, char secondChar)
         {
@@ -47,6 +53,11 @@ namespace CSFundamentals.DataStructures.StringStructures
             RankPair[1] = secondChar != '\0' ? secondChar - 'a' : -1;
         }
 
+        /// <summary>
+        /// Compares the current object to the given object for equality. 
+        /// </summary>
+        /// <param name="other">An object of type StringSuffix. </param>
+        /// <returns>True if the two objects are equal, and false otherwise. </returns>
         public bool Equals(StringSuffix other)
         {
             if (ReferenceEquals(other, null))
@@ -62,6 +73,11 @@ namespace CSFundamentals.DataStructures.StringStructures
             return false;
         }
 
+        /// <summary>
+        /// Compares the current object to the given object.
+        /// </summary>
+        /// <param name="obj">An object to compare to the current object. </param>
+        /// <returns>True if the two objects are equal, and false otherwise. </returns>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(obj, null))
@@ -77,11 +93,20 @@ namespace CSFundamentals.DataStructures.StringStructures
             return Equals((StringSuffix)obj);
         }
 
+        /// <summary>
+        /// Computes a hash code for this object. 
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             return RankPair[0].GetHashCode() * 17 + RankPair[1].GetHashCode();
         }
 
+        /// <summary>
+        /// Compares the current object to another object of the same type. 
+        /// </summary>
+        /// <param name="other">An object of type StringSuffix. </param>
+        /// <returns>0 if they are equal, 1 if the current object is bigger and -1 otherwise. </returns>
         public int CompareTo(StringSuffix other)
         {
             if (Equals(other))
@@ -96,27 +121,67 @@ namespace CSFundamentals.DataStructures.StringStructures
             return RankPair[0].CompareTo(other.RankPair[0]);
         }
 
+        /// <summary>
+        /// Overrides smaller than /equal operator. 
+        /// </summary>
+        /// <param name="current">Current object of type StringSuffix. </param>
+        /// <param name="other">Another object of type StringSuffix. </param>
+        /// <returns>True if the current object is smaller than or equal to the other object. </returns>
         public static bool operator <=(StringSuffix current, StringSuffix other)
         {
             return current.CompareTo(other) <= 0;
         }
+
+        /// <summary>
+        /// Overrides bigger than/equal operator. 
+        /// </summary>
+        /// <param name="current">Current object of type StringSuffix. </param>
+        /// <param name="other">Another object of type StringSuffix. </param>
+        /// <returns>True if the current object is bigger than or equal to the other object. </returns>
         public static bool operator >=(StringSuffix current, StringSuffix other)
         {
             return current.CompareTo(other) >= 0;
         }
 
+        /// <summary>
+        /// Overrides smaller than  operator. 
+        /// </summary>
+        /// <param name="current">Current object of type StringSuffix. </param>
+        /// <param name="other">Another object of type StringSuffix. </param>
+        /// <returns>True if the current object is smaller than the other object. </returns>
         public static bool operator <(StringSuffix current, StringSuffix other)
         {
             return current.CompareTo(other) < 0;
         }
+
+        /// <summary>
+        /// Overrides bigger than operator. 
+        /// </summary>
+        /// <param name="current">Current object of type StringSuffix. </param>
+        /// <param name="other">Another object of type StringSuffix. </param>
+        /// <returns>True if the current object is bigger than the other object. </returns>
         public static bool operator >(StringSuffix current, StringSuffix other)
         {
             return current.CompareTo(other) > 0;
         }
+
+        /// <summary>
+        /// Overrides equality operator. 
+        /// </summary>
+        /// <param name="current">Current object of type StringSuffix. </param>
+        /// <param name="other">Another object of type StringSuffix. </param>
+        /// <returns>True if the current object is equal to the other object. </returns>
         public static bool operator ==(StringSuffix current, StringSuffix other)
         {
             return current.CompareTo(other) == 0;
         }
+
+        /// <summary>
+        /// Overrides inequality operator. 
+        /// </summary>
+        /// <param name="current">Current object of type StringSuffix. </param>
+        /// <param name="other">Another object of type StringSuffix. </param>
+        /// <returns>True if the current object is not equal to the other object. </returns>
         public static bool operator !=(StringSuffix current, StringSuffix other)
         {
             return current.CompareTo(other) != 0;

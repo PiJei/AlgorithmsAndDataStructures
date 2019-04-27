@@ -24,17 +24,34 @@ using CSFundamentals.Decoration;
 
 namespace CSFundamentals.DataStructures.LinkedLists
 {
+    /// <summary>
+    /// Implements a singly linked list. 
+    /// </summary>
+    /// <typeparam name="TValue">Type of the values stored in the list.</typeparam>
     public class SinglyLinkedList<TValue> : LinkedListBase<SinglyLinkedNode<TValue>, TValue> where TValue : IComparable<TValue>
     {
+        /// <summary>
+        /// Parameter-less Constructor.
+        /// </summary>
         public SinglyLinkedList()
         {
         }
 
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="head">Head/starting node in the list. </param>
         public SinglyLinkedList(SinglyLinkedNode<TValue> head)
         {
             _head = head;
         }
 
+
+        /// <summary>
+        /// Deletes a node with the given value from the list. If no node with the given value exists, fails the operation and returns false.
+        /// </summary>
+        /// <param name="value">Is the value that is being searched for.</param>
+        /// <returns>True in case of success, and false otherwise. </returns>
         public override bool Delete(TValue value)
         {
             SinglyLinkedNode<TValue> previousNode = null;

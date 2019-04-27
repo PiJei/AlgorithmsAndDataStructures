@@ -35,6 +35,10 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
     [DataStructure("MaxBinaryHeap")]
     public class MaxBinaryHeap<TKey, TValue> : BinaryHeapBase<TKey, TValue> where TKey : IComparable<TKey>
     {
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="array">An array containing key-value pairs</param>
         public MaxBinaryHeap(List<KeyValuePair<TKey, TValue>> array) : base(array)
         {
         }
@@ -66,7 +70,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <summary>
         /// Inserts a new value into the Max Heap. 
         /// </summary>
-        /// <param name="newValue">Specifies the new value to be inserted in the tree.</param>
+        /// <param name="value">Specifies the new value to be inserted in the tree.</param>
         /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
         public override void Insert(KeyValuePair<TKey, TValue> value, int heapArrayLength)
         {

@@ -33,6 +33,10 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
     [DataStructure("MinBinaryHeap")]
     public class MinBinaryHeap<TKey, TValue> : BinaryHeapBase<TKey, TValue> where TKey : IComparable<TKey>
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="array">An array containing key-value pairs</param>
         public MinBinaryHeap(List<KeyValuePair<TKey, TValue>> array) : base(array)
         {
         }
@@ -131,11 +135,11 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         }
 
         /// <summary>
-        /// 
+        /// This method is for finding the root of the heap, without removing it. 
         /// </summary>
-        /// <param name="keyValue"></param>
+        /// <param name="keyValue">Specifies the key-value of the root.</param>
         /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
-        /// <returns></returns>
+        /// <returns>True in case of success, and false in case of failure.</returns>
         public override bool TryFindRoot(out KeyValuePair<TKey, TValue> keyValue, int heapArrayLength)
         {
             if (HeapArray.Any())

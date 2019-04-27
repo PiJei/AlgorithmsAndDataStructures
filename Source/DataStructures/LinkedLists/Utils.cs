@@ -22,8 +22,17 @@ using Newtonsoft.Json;
 
 namespace CSFundamentals.DataStructures.LinkedLists
 {
+    /// <summary>
+    /// A collection of helper methods used by linked lists. 
+    /// </summary>
     public class Utils
     {
+        /// <summary>
+        /// Deeply copies the given object by serializing and deserializing it.
+        /// </summary>
+        /// <typeparam name="T">Type of the object to be copied. </typeparam>
+        /// <param name="obj">The object to be copied. </param>
+        /// <returns>A deep copy of the object. </returns>
         public static T DeepCopy<T>(T obj)
         {
             string serializedData = string.Empty;

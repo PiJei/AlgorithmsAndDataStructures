@@ -35,11 +35,17 @@ namespace CSFundamentals.DataStructures.LinkedLists
         /// </summary>
         private DoublyLinkedNode<TValue> _tail = null;
 
+        /// <summary>
+        /// Parameter-less Constructor
+        /// </summary>
         public DoublyLinkedList()
         {
-
         }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="head">Head/starting node of the list</param>
         public DoublyLinkedList(DoublyLinkedNode<TValue> head)
         {
             _head = head;
@@ -69,7 +75,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
         }
 
         /// <summary>
-        /// Inserts a new node with <paramref name="newValue"/> as its value in the list after the node containing <paramref name="Value"/> as its value. If a node with <paramref name="Value"/> does not exist, fails the insert and returns false. 
+        /// Inserts a new node with <paramref name="newValue"/> as its value in the list after the node containing <paramref name="value"/> as its value. If a node with <paramref name="value"/> does not exist, fails the insert and returns false. 
         /// </summary>
         /// <param name="value">The value of the node, that <paramref name="newValue"/> will be inserted after.</param>
         /// <param name="newValue">The value of the new node that is meant to be inserted in the list. </param>
@@ -124,7 +130,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
         }
 
         /// <summary>
-        /// Inserts a new node with <paramref name="newValue"/> as its value in the list before the node containing <paramref name="Value"/> as its value. If a node with <paramref name="Value"/> does not exist, fails the insert and returns false. 
+        /// Inserts a new node with <paramref name="newValue"/> as its value in the list before the node containing <paramref name="value"/> as its value. If a node with <paramref name="value"/> does not exist, fails the insert and returns false. 
         /// </summary>
         /// <param name="value">The value of the node, that <paramref name="newValue"/> will be inserted before.</param>
         /// <param name="newValue">The value of the new node that is meant to be inserted in the list. </param>

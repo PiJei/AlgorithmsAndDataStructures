@@ -24,6 +24,9 @@ using CSFundamentals.Decoration;
 
 namespace CSFundamentals.DataStructures.StringStructures
 {
+    /// <summary>
+    /// Implements the length of the longest proper prefix of a string which is also a suffix. 
+    /// </summary>
     [DataStructure("LengthOfTheLongestProperPrefixWhichIsAlsoSuffix")]
     public class LLPPS
     {

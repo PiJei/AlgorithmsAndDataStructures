@@ -25,27 +25,34 @@ namespace CSFundamentals.Algorithms.Sort
 {
     public partial class Utils
     {
-        public static void Swap<T>(List<T> values, int index1, int index2)
+        /// <summary>
+        /// Swaps the values at given indexes of the array.
+        /// </summary>
+        /// <typeparam name="T">Is the type of elements in the array.</typeparam>
+        /// <param name="list">Is a list of values. </param>
+        /// <param name="index1">First index.</param>
+        /// <param name="index2">Second index.</param>
+        public static void Swap<T>(List<T> list, int index1, int index2)
         {
-            T temp = values[index1];
-            values[index1] = values[index2];
-            values[index2] = temp;
+            T temp = list[index1];
+            list[index1] = list[index2];
+            list[index2] = temp;
         }
 
         /// <summary>
         /// Gets the max element in the array. Alternatively we could use Linq.Max operator. However using this version so that the time complexity is obvious.
         /// </summary>
-        /// <param name="values">Specifies a list of values (of type T, e.g., int). </param>
+        /// <param name="list">Specifies a list of values (of type T, e.g., int). </param>
         /// <returns>maximum element in the array. </returns>
-        public static T GetMaxElement<T>(List<T> values) where T : IComparable<T>
+        public static T GetMaxElement<T>(List<T> list) where T : IComparable<T>
         {
             /* This method assumes values has at least one member. Otherwise this will throw a null reference exception . */
-            T max = values[0];
-            for (int i = 0; i < values.Count; i++)
+            T max = list[0];
+            for (int i = 0; i < list.Count; i++)
             {
-                if (values[i].CompareTo(max) > 0)
+                if (list[i].CompareTo(max) > 0)
                 {
-                    max = values[i];
+                    max = list[i];
                 }
             }
             return max;

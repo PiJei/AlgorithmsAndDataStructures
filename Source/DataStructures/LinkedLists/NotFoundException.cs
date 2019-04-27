@@ -23,11 +23,17 @@ using System;
 namespace CSFundamentals.DataStructures.LinkedLists
 {
     // TODO: Maybe I could use this with all the search methods, string search, etc, ...
+    /// <summary>
+    /// Defines a customized exception for cases where the value is not found in a search. 
+    /// </summary>
     public class NotFoundException : Exception
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="message">The text message to display with exception. </param>
         public NotFoundException(string message) : base(message)
         {
-
         }
     }
 }

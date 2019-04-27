@@ -625,6 +625,58 @@
             </summary>
             <param name="list">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
         </member>
+        <member name="T:CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element.Value">
+            <summary>
+            Is the value stored in this object. 
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element.FirstArrayIndex">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element.LatestArrayIndex">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element.#ctor(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <param name="firstArrayIndex"></param>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element.#ctor(CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element.Move(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="newIndex"></param>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element.Equals(CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element)">
+            <summary>
+            
+            </summary>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element.GetHashCode">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element.IsStable(CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element)">
             <summary>
             Given two Elements, if the order between their new array index is the same order between their old array index, the element has been stable.
@@ -689,11 +741,20 @@
             <param name="list">Specifies a list of integers. </param>
             <returns>maximum element in the array. </returns>
         </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.Utils.Swap``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)">
+            <summary>
+            Swaps the values at given indexes of the array.
+            </summary>
+            <typeparam name="T">Is the type of elements in the array.</typeparam>
+            <param name="list">Is a list of values. </param>
+            <param name="index1">First index.</param>
+            <param name="index2">Second index.</param>
+        </member>
         <member name="M:CSFundamentals.Algorithms.Sort.Utils.GetMaxElement``1(System.Collections.Generic.List{``0})">
             <summary>
             Gets the max element in the array. Alternatively we could use Linq.Max operator. However using this version so that the time complexity is obvious.
             </summary>
-            <param name="values">Specifies a list of values (of type T, e.g., int). </param>
+            <param name="list">Specifies a list of values (of type T, e.g., int). </param>
             <returns>maximum element in the array. </returns>
         </member>
         <member name="M:CSFundamentals.Algorithms.Sort.Utils.GetDigitsCount(System.Int32)">
@@ -712,6 +773,11 @@
             <param name="number"></param>
             <param name="whichDigit"></param>
             <returns>The i(th) = whichDigit(th) digit from the right, or the least significant digit. </returns>
+        </member>
+        <member name="T:CSFundamentals.Algorithms.SubarraySearch.Naive">
+            <summary>
+            Implements a simple naive algorithm for searching if a sublist exists in a list. 
+            </summary>
         </member>
         <member name="M:CSFundamentals.Algorithms.SubarraySearch.Naive.Search_NaiveContiguousSublist(System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{System.Int32})">
             <summary>
@@ -733,11 +799,79 @@
             <param name="subList">The sublist</param>
             <returns>True if the list contains the sublist, and false otherwise. </returns>
         </member>
+        <member name="T:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2">
+            <summary>
+            Is a base class for Binary heap. 
+            </summary>
+            <typeparam name="TKey">Is the type of the keys stored in the heap. </typeparam>
+            <typeparam name="TValue">Is the type of the values stored in the heap. </typeparam>
+        </member>
         <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BuildHeap_Iteratively(System.Int32)">
             <summary>
             Note that passing the array size is not a must, as the class itself contains the array and has access to its size. However some algorithms such as HeapSort which rely on a heap to perform sorting, are better implemented, if we have the length of the array passed to these methods. 
             </summary>
-            <param name="heapArrayLength"></param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BuildHeap_Recursively(System.Int32)">
+            <summary>
+            Builds a heap using recursion, and does so in situ.
+            </summary>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.Insert(System.Collections.Generic.KeyValuePair{`0,`1},System.Int32)">
+            <summary>
+            This method is for inserting a new value into heap.
+            </summary>
+            <param name="keyValue">Specifies the key-value to be inserted into the heap.</param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryRemoveRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)">
+            <summary>
+            This method is for removing the root of the heap. In a MinHeap and MinMaxHeap this is the min, and in a MaxHeap and MaxMinHeap this is the max. 
+            </summary>
+            <param name="keyValue">Specifies the key-value of the root.</param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+            <returns>True in case of success, and false otherwise.</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryFindRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)">
+            <summary>
+            This method is for finding the root of the heap, without removing it. 
+            </summary>
+            <param name="keyValue">Specifies the key-value of the root.</param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+            <returns>True in case of success, and false in case of failure.</returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BubbleDown_Recursively(System.Int32,System.Int32)">
+            <summary>
+            This method implements the bubble down/trickle down operation using recursion.
+            </summary>
+            <param name="rootIndex">Specifies the index of the root element, the element for which the trickle down should be performed.</param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BubbleDown_Iteratively(System.Int32,System.Int32)">
+            <summary>
+            This method implements the bubble down/trickle down operation using iteration.
+            </summary>
+            <param name="rootIndex">Specifies the index of the root element, the element for which the trickle down should be performed.</param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BubbleUp_Iteratively(System.Int32,System.Int32)">
+            <summary>
+            Moves the value in the given index, up in the heap till its position is found. The position is defined such to respect heap ordering property.
+            </summary>
+            <param name="index">Specifies the index of the element that should be bubbled up.</param>
+            <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        </member>
+        <member name="F:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.HeapArray">
+            <summary>
+            Is the array used to implement binary heap. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.#ctor(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="array">The array containing all the key-values to be converted to a heap. </param>
         </member>
         <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.GetLeftChildIndexInHeapArray(System.Int32)">
             <summary>
@@ -760,6 +894,13 @@
             <param name="index">The index of the node, for which parent index shall be found. </param>
             <returns>The index of the parent. </returns>
         </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.GetNodeLevel(System.Int32)">
+            <summary>
+            Returns the level of a node in the heap, given the node's index in the heap array.
+            </summary>
+            <param name="index">Specifies the index of a node in an array. </param>
+            <returns>Returns the level of the node. </returns>
+        </member>
         <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryFindIndexOfMinSmallerThanReference(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}},System.Collections.Generic.List{System.Int32},`0,System.Int32@)">
             <summary>
             Finds the minimum element in the array, among the given indexes, with respect to minValueReference, and returns the index of the min value. 
@@ -780,6 +921,13 @@
             <param name="maxKeyReference">Specifies the reference for the maximum value.  </param>
             <param name="maxKeyIndex">Specifies the index of the maximum value among the specifies indexes. </param>
             <returns>True in case of success, and false in case of failure. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.FindIndex(`0)">
+            <summary>
+            Find the index of a key in the heap array. 
+            </summary>
+            <param name="key">Is a key for which the index in the array must be found. </param>
+            <returns>The array index of the <paramref name="key"/> if it exists and -1 otherwise. </returns>
         </member>
         <member name="T:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2">
             <summary>
@@ -877,6 +1025,12 @@
             Implements a Max Binary Heap, and its main operations.
             </summary>
         </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap`2.#ctor(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}})">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="array">An array containing key-value pairs</param>
+        </member>
         <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap`2.BuildHeap_Recursively(System.Int32)">
             <summary>
             Builds an in-place max heap on the given array. 
@@ -893,7 +1047,7 @@
             <summary>
             Inserts a new value into the Max Heap. 
             </summary>
-            <param name="newValue">Specifies the new value to be inserted in the tree.</param>
+            <param name="value">Specifies the new value to be inserted in the tree.</param>
             <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
         </member>
         <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap`2.BubbleUp_Iteratively(System.Int32,System.Int32)">
@@ -938,6 +1092,12 @@
             Implements a Min Binary Heap, and its main operations.
             </summary>
         </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap`2.#ctor(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="array">An array containing key-value pairs</param>
+        </member>
         <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap`2.BuildHeap_Recursively(System.Int32)">
             <summary>
             Builds an in-place min heap on the given array. 
@@ -974,11 +1134,11 @@
         </member>
         <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap`2.TryFindRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)">
             <summary>
-            
+            This method is for finding the root of the heap, without removing it. 
             </summary>
-            <param name="keyValue"></param>
+            <param name="keyValue">Specifies the key-value of the root.</param>
             <param name="heapArrayLength">Specifies the length of the heap array. </param>
-            <returns></returns>
+            <returns>True in case of success, and false in case of failure.</returns>
         </member>
         <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap`2.BubbleDown_Recursively(System.Int32,System.Int32)">
             <summary>
@@ -999,24 +1159,30 @@
             Implements a MinMaxBinaryHeap and its main operations. Notice that a MaxMinHeapBinaryHeap can be implemented in a very similar way.
             </summary>
         </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.#ctor(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="array">An array containing key-value pairs</param>
+        </member>
         <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BuildHeap_Recursively(System.Int32)">
             <summary>
-            
+            Builds an in-place MinMax heap on the given array. 
             </summary>
             <param name="heapArrayLength">Specifies the length of the heap array. </param>
         </member>
         <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.Insert(System.Collections.Generic.KeyValuePair{`0,`1},System.Int32)">
             <summary>
-            
+            Inserts a new value into the Min Heap. 
             </summary>
-            <param name="keyValue"></param>
+            <param name="keyValue">Specifies the new key-value pair to be inserted in the tree.</param>
             <param name="heapArrayLength">Specifies the length of the heap array. </param>
         </member>
         <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BubbleUp_Recursively(System.Int32,System.Int32)">
             <summary>
-            
+            Bubbles up the node at the given index. 
             </summary>
-            <param name="index"></param>
+            <param name="index">Specifies the index of a node in the heap array.</param>
             <param name="heapArrayLength">Specifies the length of the heap array. </param>
         </member>
         <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BubbleUpMin_Recursively(System.Int32,System.Int32)">
@@ -1035,24 +1201,25 @@
         </member>
         <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.TryRemoveRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)">
             <summary>
-            
+            Removes the min element from the heap.
             </summary>
-            <param name="keyValue"></param>
+            <param name="keyValue">If the operation is successful, contains the minimum element in the array.</param>
             <param name="heapArrayLength">Specifies the length of the heap array. </param>
             <returns></returns>
         </member>
         <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.TryFindRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)">
             <summary>
-            
+            This method is for finding the root of the heap, without removing it. 
             </summary>
-            <param name="keyValue"></param>
-            <returns></returns>
+            <param name="keyValue">Specifies the key-value of the root.</param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+            <returns>True in case of success, and false in case of failure.</returns>
         </member>
         <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BubbleDown_Recursively(System.Int32,System.Int32)">
             <summary>
-            
+            Recursively bubbles down/trickles down the given rootIndex.
             </summary>
-            <param name="rootIndex"></param>
+            <param name="rootIndex">Specifies the index of the node for which bubble down starts. </param>
             <param name="heapArrayLength">Specifies the length of the heap array. </param>
         </member>
         <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BubbleDownMin_Recursively(System.Int32,System.Int32)">
@@ -1060,6 +1227,7 @@
             Bubbles/trickles down the node at the given index, which is on a min/even level. 
             </summary>
             <param name="rootIndex">Specifies the index of a node at a min level, from which bubble down starts recursively.</param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
         </member>
         <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BubbleDownMax_Recursively(System.Int32,System.Int32)">
             <summary>
@@ -1080,12 +1248,56 @@
             Gets the list of indexes of all the children of all the given indexes. 
             </summary>
             <param name="indexes">Specifies the indexes of the nodes for which their children's indexes shall be computed. </param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
             <returns>List of all the children of all the indexes. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BuildHeap_Iteratively(System.Int32)">
+            <summary>
+            TODO
+            </summary>
+            <param name="heapArrayLength"></param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BubbleDown_Iteratively(System.Int32,System.Int32)">
+            <summary>
+            TODO
+            </summary>
+            <param name="rootIndex"></param>
+            <param name="heapArrayLength"></param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BubbleUp_Iteratively(System.Int32,System.Int32)">
+            <summary>
+            TODO
+            </summary>
+            <param name="index"></param>
+            <param name="heapArrayLength"></param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.TryRemoveMax">
+            <summary>
+            TODO
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.TryFindMax">
+            <summary>
+            TODO
+            </summary>
+        </member>
+        <member name="T:CSFundamentals.DataStructures.LinkedLists.API.LinkedListBase`2">
+            <summary>
+            Is the abstract class for a Linked List
+            </summary>
+            <typeparam name="TNode">Type of the nodes in linked list. </typeparam>
+            <typeparam name="TValue">Type of the values stored in the linked list. </typeparam>
         </member>
         <member name="F:CSFundamentals.DataStructures.LinkedLists.API.LinkedListBase`2._head">
             <summary>
             Is the first node in the list. 
             </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.API.LinkedListBase`2.Head">
+            <summary>
+            Gets a copy of the head node. 
+            </summary>
+            <returns>A copy of the head node. </returns>
         </member>
         <member name="M:CSFundamentals.DataStructures.LinkedLists.API.LinkedListBase`2.Insert(`1)">
             <summary>
@@ -1103,7 +1315,7 @@
         </member>
         <member name="M:CSFundamentals.DataStructures.LinkedLists.API.LinkedListBase`2.Search(`1)">
             <summary>
-            Searches for the specified <paramref name="Value"/>. Since there is no assumption about the order of the values in the list, starts from the Head node and performs a linear search.
+            Searches for the specified <paramref name="value"/>. Since there is no assumption about the order of the values in the list, starts from the Head node and performs a linear search.
             </summary>
             <param name="value">Is the value of the node that is being searched for.</param>
             <returns>The node containing <paramref name="value"/>, and if no node is found throws an exception. </returns>
@@ -1113,6 +1325,29 @@
             Computes the length of the linked list. Length is the number of the nodes in the list.
             </summary>
             <returns>Number of nodes in the list. </returns>
+        </member>
+        <member name="T:CSFundamentals.DataStructures.LinkedLists.API.LinkedNode`2">
+            <summary>
+            Implements a node in a linked list. 
+            </summary>
+            <typeparam name="TNode">Type of the nodes in the linked list. </typeparam>
+            <typeparam name="TValue">Type of the values stored in the linked list. </typeparam>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.LinkedLists.API.LinkedNode`2.Value">
+            <summary>
+            Is the value stored in the node. 
+            </summary>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.LinkedLists.API.LinkedNode`2.Next">
+            <summary>
+            Is a reference to the next immediate node in the list. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.API.LinkedNode`2.#ctor(`1)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="value">The value to be stored in the node. </param>
         </member>
         <member name="M:CSFundamentals.DataStructures.LinkedLists.API.LinkedNode`2.#ctor">
             <summary>
@@ -1136,6 +1371,17 @@
             Is the last node in the list. Note that some implementations of DLL do not have Tail. 
             </summary>
         </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedList`1.#ctor">
+            <summary>
+            Parameter-less Constructor
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedList`1.#ctor(CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode{`0})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="head">Head/starting node of the list</param>
+        </member>
         <member name="M:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedList`1.Tail">
             <summary>
             Tail can be read, but to prevent any modification outside the API in this class, only a deep copy of the tail can be returned for reading purposes.
@@ -1151,7 +1397,7 @@
         </member>
         <member name="M:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedList`1.InsertAfter(`0,`0)">
             <summary>
-            Inserts a new node with <paramref name="newValue"/> as its value in the list after the node containing <paramref name="Value"/> as its value. If a node with <paramref name="Value"/> does not exist, fails the insert and returns false. 
+            Inserts a new node with <paramref name="newValue"/> as its value in the list after the node containing <paramref name="value"/> as its value. If a node with <paramref name="value"/> does not exist, fails the insert and returns false. 
             </summary>
             <param name="value">The value of the node, that <paramref name="newValue"/> will be inserted after.</param>
             <param name="newValue">The value of the new node that is meant to be inserted in the list. </param>
@@ -1167,7 +1413,7 @@
         </member>
         <member name="M:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedList`1.InsertBefore(`0,`0)">
             <summary>
-            Inserts a new node with <paramref name="newValue"/> as its value in the list before the node containing <paramref name="Value"/> as its value. If a node with <paramref name="Value"/> does not exist, fails the insert and returns false. 
+            Inserts a new node with <paramref name="newValue"/> as its value in the list before the node containing <paramref name="value"/> as its value. If a node with <paramref name="value"/> does not exist, fails the insert and returns false. 
             </summary>
             <param name="value">The value of the node, that <paramref name="newValue"/> will be inserted before.</param>
             <param name="newValue">The value of the new node that is meant to be inserted in the list. </param>
@@ -1208,16 +1454,40 @@
             </summary>
             <typeparam name="TValue">Is the type of the values stored in a node.</typeparam>
         </member>
+        <member name="F:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode`1.Previous">
+            <summary>
+            Is a reference to the node before this one in the list. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode`1.#ctor(`0)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="value">The value to be stored in the node. </param>
+        </member>
         <member name="M:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode`1.IsHead">
             <summary>
             Checks whether the current node is head, a node is head if it has no previous node.
             </summary>
             <returns>True in case the node is head, and false otherwise. </returns>
         </member>
+        <member name="T:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedSortedList`1">
+            <summary>
+            Implements a doubly sorted linked list. 
+            </summary>
+            <typeparam name="TValue">Is the type of the values stored in the linked list. </typeparam>
+        </member>
         <member name="F:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedSortedList`1._tail">
             <summary>
             Is the last node in the list. Note that some implementations of DLL do not have Tail. 
             </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedSortedList`1.Delete(`0)">
+            <summary>
+            Deletes a node with the given value from the list. If no node with the given value exists, fails the operation and returns false.
+            </summary>
+            <param name="value">Is the value that is being searched for.</param>
+            <returns>True in case of success, and false otherwise. </returns>
         </member>
         <member name="M:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedSortedList`1.Insert(`0)">
             <summary>
@@ -1226,6 +1496,48 @@
             <param name="newValue">Is the value of the new node. </param>
             <returns>True in case of success. </returns>
         </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedSortedList`1.Search(`0)">
+            <summary>
+            Searches for the specified <paramref name="value"/>. 
+            </summary>
+            <param name="value">Is the value of the node that is being searched for.</param>
+            <returns>The node containing <paramref name="value"/>, and if no node is found throws an exception. </returns>
+        </member>
+        <member name="T:CSFundamentals.DataStructures.LinkedLists.NotFoundException">
+            <summary>
+            Defines a customized exception for cases where the value is not found in a search. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.NotFoundException.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="message">The text message to display with exception. </param>
+        </member>
+        <member name="T:CSFundamentals.DataStructures.LinkedLists.SinglyLinkedList`1">
+            <summary>
+            Implements a singly linked list. 
+            </summary>
+            <typeparam name="TValue">Type of the values stored in the list.</typeparam>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.SinglyLinkedList`1.#ctor">
+            <summary>
+            Parameter-less Constructor.
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.SinglyLinkedList`1.#ctor(CSFundamentals.DataStructures.LinkedLists.SinglyLinkedNode{`0})">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="head">Head/starting node in the list. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.SinglyLinkedList`1.Delete(`0)">
+            <summary>
+            Deletes a node with the given value from the list. If no node with the given value exists, fails the operation and returns false.
+            </summary>
+            <param name="value">Is the value that is being searched for.</param>
+            <returns>True in case of success, and false otherwise. </returns>
+        </member>
         <member name="M:CSFundamentals.DataStructures.LinkedLists.SinglyLinkedList`1.Insert(`0)">
             <summary>
             Inserts a new node in the beginning of the list. Insert in a singly linked list is the fastest when treated as a prepend, meaning adding to the beginning of the list. 
@@ -1233,6 +1545,36 @@
             </summary>
             <param name="newValue">Is the value of the new node in the list.</param>
             <returns>True in case of success.</returns>
+        </member>
+        <member name="T:CSFundamentals.DataStructures.LinkedLists.SinglyLinkedNode`1">
+            <summary>
+            Implements a node in a singly linked list. 
+            </summary>
+            <typeparam name="TValue"></typeparam>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.SinglyLinkedNode`1.#ctor(`0)">
+            <summary>
+            Constructor. 
+            </summary>
+            <param name="value">The value to be stored in the list. </param>
+        </member>
+        <member name="T:CSFundamentals.DataStructures.LinkedLists.Utils">
+            <summary>
+            A collection of helper methods used by linked lists. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.LinkedLists.Utils.DeepCopy``1(``0)">
+            <summary>
+            Deeply copies the given object by serializing and deserializing it.
+            </summary>
+            <typeparam name="T">Type of the object to be copied. </typeparam>
+            <param name="obj">The object to be copied. </param>
+            <returns>A deep copy of the object. </returns>
+        </member>
+        <member name="T:CSFundamentals.DataStructures.StringStructures.LLPPS">
+            <summary>
+            Implements the length of the longest proper prefix of a string which is also a suffix. 
+            </summary>
         </member>
         <member name="M:CSFundamentals.DataStructures.StringStructures.LLPPS.Build(System.String)">
             <summary>
@@ -1263,7 +1605,87 @@
             </summary>
         </member>
         <member name="M:CSFundamentals.DataStructures.StringStructures.StringSuffix.#ctor(System.Int32,System.Char,System.Char)">
+            <summary>
+            TODO
+            </summary>
+            <param name="startIndex"></param>
+            <param name="firstChar"></param>
             <param name="secondChar">If -1, means there is no second char. </param>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.StringStructures.StringSuffix.Equals(CSFundamentals.DataStructures.StringStructures.StringSuffix)">
+            <summary>
+            Compares the current object to the given object for equality. 
+            </summary>
+            <param name="other">An object of type StringSuffix. </param>
+            <returns>True if the two objects are equal, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.StringStructures.StringSuffix.Equals(System.Object)">
+            <summary>
+            Compares the current object to the given object.
+            </summary>
+            <param name="obj">An object to compare to the current object. </param>
+            <returns>True if the two objects are equal, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.StringStructures.StringSuffix.GetHashCode">
+            <summary>
+            Computes a hash code for this object. 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.StringStructures.StringSuffix.CompareTo(CSFundamentals.DataStructures.StringStructures.StringSuffix)">
+            <summary>
+            Compares the current object to another object of the same type. 
+            </summary>
+            <param name="other">An object of type StringSuffix. </param>
+            <returns>0 if they are equal, 1 if the current object is bigger and -1 otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.StringStructures.StringSuffix.op_LessThanOrEqual(CSFundamentals.DataStructures.StringStructures.StringSuffix,CSFundamentals.DataStructures.StringStructures.StringSuffix)">
+            <summary>
+            Overrides smaller than /equal operator. 
+            </summary>
+            <param name="current">Current object of type StringSuffix. </param>
+            <param name="other">Another object of type StringSuffix. </param>
+            <returns>True if the current object is smaller than or equal to the other object. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.StringStructures.StringSuffix.op_GreaterThanOrEqual(CSFundamentals.DataStructures.StringStructures.StringSuffix,CSFundamentals.DataStructures.StringStructures.StringSuffix)">
+            <summary>
+            Overrides bigger than/equal operator. 
+            </summary>
+            <param name="current">Current object of type StringSuffix. </param>
+            <param name="other">Another object of type StringSuffix. </param>
+            <returns>True if the current object is bigger than or equal to the other object. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.StringStructures.StringSuffix.op_LessThan(CSFundamentals.DataStructures.StringStructures.StringSuffix,CSFundamentals.DataStructures.StringStructures.StringSuffix)">
+            <summary>
+            Overrides smaller than  operator. 
+            </summary>
+            <param name="current">Current object of type StringSuffix. </param>
+            <param name="other">Another object of type StringSuffix. </param>
+            <returns>True if the current object is smaller than the other object. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.StringStructures.StringSuffix.op_GreaterThan(CSFundamentals.DataStructures.StringStructures.StringSuffix,CSFundamentals.DataStructures.StringStructures.StringSuffix)">
+            <summary>
+            Overrides bigger than operator. 
+            </summary>
+            <param name="current">Current object of type StringSuffix. </param>
+            <param name="other">Another object of type StringSuffix. </param>
+            <returns>True if the current object is bigger than the other object. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.StringStructures.StringSuffix.op_Equality(CSFundamentals.DataStructures.StringStructures.StringSuffix,CSFundamentals.DataStructures.StringStructures.StringSuffix)">
+            <summary>
+            Overrides equality operator. 
+            </summary>
+            <param name="current">Current object of type StringSuffix. </param>
+            <param name="other">Another object of type StringSuffix. </param>
+            <returns>True if the current object is equal to the other object. </returns>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.StringStructures.StringSuffix.op_Inequality(CSFundamentals.DataStructures.StringStructures.StringSuffix,CSFundamentals.DataStructures.StringStructures.StringSuffix)">
+            <summary>
+            Overrides inequality operator. 
+            </summary>
+            <param name="current">Current object of type StringSuffix. </param>
+            <param name="other">Another object of type StringSuffix. </param>
+            <returns>True if the current object is not equal to the other object. </returns>
         </member>
         <member name="T:CSFundamentals.DataStructures.StringStructures.SuffixArray">
             <summary>

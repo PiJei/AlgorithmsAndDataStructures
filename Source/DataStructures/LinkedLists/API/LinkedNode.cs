@@ -22,13 +22,28 @@ using System;
 
 namespace CSFundamentals.DataStructures.LinkedLists.API
 {
+    /// <summary>
+    /// Implements a node in a linked list. 
+    /// </summary>
+    /// <typeparam name="TNode">Type of the nodes in the linked list. </typeparam>
+    /// <typeparam name="TValue">Type of the values stored in the linked list. </typeparam>
     [Serializable]
     public class LinkedNode<TNode, TValue> where TNode : LinkedNode<TNode, TValue> where TValue : IComparable<TValue>
     {
+        /// <summary>
+        /// Is the value stored in the node. 
+        /// </summary>
         public TValue Value { get; set; }
 
+        /// <summary>
+        /// Is a reference to the next immediate node in the list. 
+        /// </summary>
         public TNode Next { get; set; }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="value">The value to be stored in the node. </param>
         public LinkedNode(TValue value)
         {
             Value = value;
@@ -40,6 +55,7 @@ namespace CSFundamentals.DataStructures.LinkedLists.API
         public LinkedNode()
         {
         }
+
         /// <summary>
         /// Checks whether the current node is tail. A node is tail if it has no next node. 
         /// </summary>

@@ -24,6 +24,11 @@ using CSFundamentals.Decoration;
 
 namespace CSFundamentals.DataStructures.LinkedLists.API
 {
+    /// <summary>
+    /// Is the abstract class for a Linked List
+    /// </summary>
+    /// <typeparam name="TNode">Type of the nodes in linked list. </typeparam>
+    /// <typeparam name="TValue">Type of the values stored in the linked list. </typeparam>
     public abstract class LinkedListBase<TNode, TValue> where TNode : LinkedNode<TNode, TValue> where TValue : IComparable<TValue>
     {
         /// <summary>
@@ -31,6 +36,10 @@ namespace CSFundamentals.DataStructures.LinkedLists.API
         /// </summary>
         protected TNode _head = null;
 
+        /// <summary>
+        /// Gets a copy of the head node. 
+        /// </summary>
+        /// <returns>A copy of the head node. </returns>
         public TNode Head()
         {
             return Utils.DeepCopy(_head);
@@ -51,7 +60,7 @@ namespace CSFundamentals.DataStructures.LinkedLists.API
         public abstract bool Delete(TValue value);
 
         /// <summary>
-        /// Searches for the specified <paramref name="Value"/>. Since there is no assumption about the order of the values in the list, starts from the Head node and performs a linear search.
+        /// Searches for the specified <paramref name="value"/>. Since there is no assumption about the order of the values in the list, starts from the Head node and performs a linear search.
         /// </summary>
         /// <param name="value">Is the value of the node that is being searched for.</param>
         /// <returns>The node containing <paramref name="value"/>, and if no node is found throws an exception. </returns>

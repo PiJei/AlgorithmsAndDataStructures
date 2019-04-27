@@ -30,8 +30,15 @@ namespace CSFundamentals.DataStructures.LinkedLists
     [Serializable]
     public class DoublyLinkedNode<TValue> : LinkedNode<DoublyLinkedNode<TValue>, TValue> where TValue : IComparable<TValue>
     {
+        /// <summary>
+        /// Is a reference to the node before this one in the list. 
+        /// </summary>
         public DoublyLinkedNode<TValue> Previous = null;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="value">The value to be stored in the node. </param>
         public DoublyLinkedNode(TValue value) : base(value)
         {
         }

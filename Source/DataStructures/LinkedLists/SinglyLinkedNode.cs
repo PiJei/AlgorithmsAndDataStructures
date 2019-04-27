@@ -23,9 +23,17 @@ using CSFundamentals.DataStructures.LinkedLists.API;
 
 namespace CSFundamentals.DataStructures.LinkedLists
 {
+    /// <summary>
+    /// Implements a node in a singly linked list. 
+    /// </summary>
+    /// <typeparam name="TValue"></typeparam>
     [Serializable]
     public class SinglyLinkedNode<TValue> : LinkedNode<SinglyLinkedNode<TValue>, TValue> where TValue : IComparable<TValue>
     {
+        /// <summary>
+        /// Constructor. 
+        /// </summary>
+        /// <param name="value">The value to be stored in the list. </param>
         public SinglyLinkedNode(TValue value) : base(value)
         {
         }
