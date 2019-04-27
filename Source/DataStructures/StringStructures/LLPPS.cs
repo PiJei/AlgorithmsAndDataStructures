@@ -1,4 +1,5 @@
-﻿/* 
+﻿#region copyright
+/* 
  * Copyright (c) 2019 (PiJei) 
  * 
  * This file is part of CSFundamentalAlgorithms project.
@@ -16,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+#endregion
 using System.Collections.Generic;
 using System.Linq;
 using CSFundamentals.Decoration;
