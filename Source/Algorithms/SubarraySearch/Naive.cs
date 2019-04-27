@@ -22,7 +22,9 @@ using System.Collections.Generic;
 
 namespace CSFundamentals.Algorithms.SubarraySearch
 {
-    //TODO: Rename
+    /// <summary>
+    /// Implements a simple naive algorithm for searching if a sublist exists in a list. 
+    /// </summary>
     public class Naive
     {
         /// <summary>

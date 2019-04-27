@@ -636,14 +636,27 @@
             <summary>
             this Less than other : return less than 0 , this == other return 0, this > other return > 0 
             </summary>
-            <param name="obj"></param>
+            <param name="other"> Specifies an object of type Element. </param>
             <returns></returns>
+        </member>
+        <member name="T:CSFundamentals.Algorithms.Sort.Utils">
+            <summary>
+            Is a collection of helper methods used by sort algorithms. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.Utils.Convert(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Converts a list of integers to a list of Elements. 
+            </summary>
+            <param name="list">Is a list of integers. </param>
+            <returns>A list of Elements. </returns>
         </member>
         <member name="M:CSFundamentals.Algorithms.Sort.Utils.IsSortMethodStable(System.Action{System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}},System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})">
             <summary>
             Detects whether the given sort method is stable. A sort method is stable, if it preserves the ordering of duplicate values in the original array. 
             </summary>
             <param name="sortMethod">Specifies the name of a method with the signature specified by the Action (void return type) </param>
+            <param name="list">Is a list of Elements. </param>
             <returns>True in case the method is stable, and false otherwise. </returns>
         </member>
         <member name="M:CSFundamentals.Algorithms.Sort.Utils.HashListToIndexes(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})">
@@ -658,14 +671,22 @@
             <summary>
             Given the two dictionaries compares them to see if they are equal, in terms of the values per key. It is very important to compare the values (lists) in their original order and expect the same position for each element. 
             </summary>
-            <param name="map1">Specifies the first map. </param>
+            <param name="map">Specifies a dictionary with one Element as the key and a list of Elements as the value per entry. </param>
             <returns>True in case the maps are equal, false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentals.Algorithms.Sort.Utils.Swap(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element},System.Int32,System.Int32)">
+            <summary>
+            Swaps values in indexes <paramref name="index1"/> and <paramref name="index2"/> in the <paramref name="list"/> array. 
+            </summary>
+            <param name="list">Is a list of Elements. </param>
+            <param name="index1">Is the first index. </param>
+            <param name="index2">Is the second index. </param>
         </member>
         <member name="M:CSFundamentals.Algorithms.Sort.Utils.GetMaxElement(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})">
             <summary>
             Gets the max element in the array. Alternatively we could use Linq.Max operator. However using this version so that the time complexity is obvious.
             </summary>
-            <param name="values">Specifies a list of integers. </param>
+            <param name="list">Specifies a list of integers. </param>
             <returns>maximum element in the array. </returns>
         </member>
         <member name="M:CSFundamentals.Algorithms.Sort.Utils.GetMaxElement``1(System.Collections.Generic.List{``0})">

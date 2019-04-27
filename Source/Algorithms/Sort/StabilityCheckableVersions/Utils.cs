@@ -25,14 +25,22 @@ using CSFundamentals.Algorithms.Sort.StabilityCheckableVersions;
 
 namespace CSFundamentals.Algorithms.Sort
 {
+    /// <summary>
+    /// Is a collection of helper methods used by sort algorithms. 
+    /// </summary>
     public partial class Utils
     {
-        public static List<Element> Convert(List<int> values)
+        /// <summary>
+        /// Converts a list of integers to a list of Elements. 
+        /// </summary>
+        /// <param name="list">Is a list of integers. </param>
+        /// <returns>A list of Elements. </returns>
+        public static List<Element> Convert(List<int> list)
         {
             var newValues = new List<Element>();
-            for (int i = 0; i < values.Count; i++)
+            for (int i = 0; i < list.Count; i++)
             {
-                newValues.Add(new Element(values[i], i));
+                newValues.Add(new Element(list[i], i));
             }
             return newValues;
         }
@@ -43,11 +51,12 @@ namespace CSFundamentals.Algorithms.Sort
         /// Detects whether the given sort method is stable. A sort method is stable, if it preserves the ordering of duplicate values in the original array. 
         /// </summary>
         /// <param name="sortMethod">Specifies the name of a method with the signature specified by the Action (void return type) </param>
+        /// <param name="list">Is a list of Elements. </param>
         /// <returns>True in case the method is stable, and false otherwise. </returns>
-        public static bool IsSortMethodStable(Action<List<Element>> sortMethod, List<Element> values)
+        public static bool IsSortMethodStable(Action<List<Element>> sortMethod, List<Element> list)
         {
-            sortMethod(values);
-            return IsMapStable(HashListToIndexes(values));
+            sortMethod(list);
+            return IsMapStable(HashListToIndexes(list));
         }
 
         /// <summary>
@@ -83,7 +92,7 @@ namespace CSFundamentals.Algorithms.Sort
         /// <summary>
         /// Given the two dictionaries compares them to see if they are equal, in terms of the values per key. It is very important to compare the values (lists) in their original order and expect the same position for each element. 
         /// </summary>
-        /// <param name="map1">Specifies the first map. </param>
+        /// <param name="map">Specifies a dictionary with one Element as the key and a list of Elements as the value per entry. </param>
         /// <returns>True in case the maps are equal, false otherwise. </returns>
         public static bool IsMapStable(Dictionary<Element, List<Element>> map)
         {
@@ -104,31 +113,37 @@ namespace CSFundamentals.Algorithms.Sort
             return true;
         }
 
-        public static void Swap(List<Element> values, int index1, int index2)
+        /// <summary>
+        /// Swaps values in indexes <paramref name="index1"/> and <paramref name="index2"/> in the <paramref name="list"/> array. 
+        /// </summary>
+        /// <param name="list">Is a list of Elements. </param>
+        /// <param name="index1">Is the first index. </param>
+        /// <param name="index2">Is the second index. </param>
+        public static void Swap(List<Element> list, int index1, int index2)
         {
-            var temp = new Element(values[index1]);
+            var temp = new Element(list[index1]);
 
-            values[index2].Move(index1);
-            values[index1] = values[index2];
+            list[index2].Move(index1);
+            list[index1] = list[index2];
 
             temp.Move(index2);
-            values[index2] = temp;
+            list[index2] = temp;
         }
 
         /// <summary>
         /// Gets the max element in the array. Alternatively we could use Linq.Max operator. However using this version so that the time complexity is obvious.
         /// </summary>
-        /// <param name="values">Specifies a list of integers. </param>
+        /// <param name="list">Specifies a list of integers. </param>
         /// <returns>maximum element in the array. </returns>
-        public static Element GetMaxElement(List<Element> values)
+        public static Element GetMaxElement(List<Element> list)
         {
             /* This method assumes values has at least one member. Otherwise this will throw a null reference exception . */
-            Element max = values[0];
-            for (int i = 0; i < values.Count; i++)
+            Element max = list[0];
+            for (int i = 0; i < list.Count; i++)
             {
-                if (values[i].Value > max.Value)
+                if (list[i].Value > max.Value)
                 {
-                    max = values[i];
+                    max = list[i];
                 }
             }
             return max;

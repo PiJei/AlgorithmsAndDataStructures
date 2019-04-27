@@ -22,18 +22,41 @@ using System;
 
 namespace CSFundamentals.Algorithms.Sort.StabilityCheckableVersions
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Element : IEquatable<Element>, IComparable<Element>
     {
+        /// <summary>
+        /// Is the value stored in this object. 
+        /// </summary>
         public int Value { get; private set; }
+        
+        /// <summary>
+        /// 
+        /// </summary>
         public int FirstArrayIndex { get; private set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public int LatestArrayIndex { get; private set; } = -1;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="firstArrayIndex"></param>
         public Element(int value, int firstArrayIndex)
         {
             Value = value;
             FirstArrayIndex = firstArrayIndex;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e"></param>
         public Element(Element e)
         {
             Value = e.Value;
@@ -41,17 +64,30 @@ namespace CSFundamentals.Algorithms.Sort.StabilityCheckableVersions
             LatestArrayIndex = e.LatestArrayIndex;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="newIndex"></param>
         public void Move(int newIndex)
         {
             LatestArrayIndex = newIndex;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
         public bool Equals(Element other)
         {
             if (ReferenceEquals(other, null)) { return false; }
             return Value == other.Value;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             int hashCode = Value.GetHashCode() * 17;
@@ -76,7 +112,7 @@ namespace CSFundamentals.Algorithms.Sort.StabilityCheckableVersions
         /// <summary>
         /// this Less than other : return less than 0 , this == other return 0, this > other return > 0 
         /// </summary>
-        /// <param name="obj"></param>
+        /// <param name="other"> Specifies an object of type Element. </param>
         /// <returns></returns>
         public int CompareTo(Element other)
         {
