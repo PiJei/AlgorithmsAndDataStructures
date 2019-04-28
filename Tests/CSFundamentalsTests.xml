@@ -930,9 +930,84 @@
             <typeparam name="TValue">Specifies the type of the values in tree nodes. </typeparam>
             <param name="root">Is the root of a binary search tree. </param>
         </member>
+        <member name="T:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3"/> using <see cref="T:CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode`2"/> class. 
+            </summary>
+        </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.Initialize">
             <summary>
             Initializes/Resets variables before executing each unit test in this class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsLeftChild_Failure">
+            <summary>
+            Tests the correctness of detecting whether a node is the left child of its parent, when it is not. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsLeftChild_Success">
+            <summary>
+            Tests the correctness of detecting whether a node is the left child of its parent, when it is. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsRightChild_Success">
+            <summary>
+            Tests the correctness of detecting whether a node is the right child of its parent, when it is. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsRightChild_Failure">
+            <summary>
+            Tests the correctness of detecting whether a node is the right child of its parent, when it is not. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsRoot">
+            <summary>
+            Tests the correctness of detecting whether a node is root. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetSibling">
+            <summary>
+            Tests the correctness of getting a node's sibling. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetUncle">
+            <summary>
+            Tests the correctness of getting a node's uncle. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetGrandParent">
+            <summary>
+            Tests the correctness of getting a node's grand parent.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsLeaf">
+            <summary>
+            Tests the correctness of detecting whether a node is a leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.FormsLine">
+            <summary>
+            Tests the correctness of detecting whether a node forms a line with its parent and grand parent. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.FormsTriangle">
+            <summary>
+            Tests the correctness of detecting whether a node forms a triangle with its parent and grand parent. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsComplete">
+            <summary>
+            Tests the correctness of detecting whether a node is complete (meaning have left and right children).
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetChildren">
+            <summary>
+            Tests the correctness of getting the list of children of a node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetGrandChildren">
+            <summary>
+            Tests the correctness of getting the list of a grand children of a node. 
             </summary>
         </member>
         <member name="T:CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode`2">

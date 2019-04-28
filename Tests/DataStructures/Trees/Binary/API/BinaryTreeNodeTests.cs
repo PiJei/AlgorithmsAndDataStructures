@@ -19,12 +19,16 @@
  */
 #endregion
 using System.Collections.Generic;
+using CSFundamentals.DataStructures.Trees.Binary.API;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 // TODO: Make tests in one test file to use the init and just it 
 
 namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
 {
+    /// <summary>
+    /// Tests methods in <see cref="BinaryTreeNode{TNode, TKey, TValue}"/> using <see cref="MockBinaryTreeNode{TKey, TValue}"/> class. 
+    /// </summary>
     [TestClass]
     public class BinaryTreeNodeTests
     {
@@ -75,6 +79,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
             _root = A;
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node is the left child of its parent, when it is not. 
+        /// </summary>
         [TestMethod]
         public void IsLeftChild_Failure()
         {
@@ -99,6 +106,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
             Assert.IsFalse(C.IsLeftChild());
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node is the left child of its parent, when it is. 
+        /// </summary>
         [TestMethod]
         public void IsLeftChild_Success()
         {
@@ -122,6 +132,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
             Assert.IsTrue(C.IsLeftChild());
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node is the right child of its parent, when it is. 
+        /// </summary>
         [TestMethod]
         public void IsRightChild_Success()
         {
@@ -145,6 +158,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
             Assert.IsTrue(C.IsRightChild());
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node is the right child of its parent, when it is not. 
+        /// </summary>
         [TestMethod]
         public void IsRightChild_Failure()
         {
@@ -169,6 +185,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
             Assert.IsFalse(C.IsRightChild());
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node is root. 
+        /// </summary>
         [TestMethod]
         public void IsRoot()
         {
@@ -193,6 +212,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
             Assert.IsFalse(C.IsRoot());
         }
 
+        /// <summary>
+        /// Tests the correctness of getting a node's sibling. 
+        /// </summary>
         [TestMethod]
         public void GetSibling()
         {
@@ -223,6 +245,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
             Assert.IsTrue(D.GetSibling() == null);
         }
 
+        /// <summary>
+        /// Tests the correctness of getting a node's uncle. 
+        /// </summary>
         [TestMethod]
         public void GetUncle()
         {
@@ -253,6 +278,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
             Assert.IsTrue(D.GetUncle().Equals(B));
         }
 
+        /// <summary>
+        /// Tests the correctness of getting a node's grand parent.
+        /// </summary>
         [TestMethod]
         public void GetGrandParent()
         {
@@ -301,6 +329,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
             Assert.IsTrue(G.GetGrandParent().Equals(D));
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node is a leaf node. 
+        /// </summary>
         [TestMethod]
         public void IsLeaf()
         {
@@ -337,6 +368,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
             Assert.IsTrue(E.IsLeaf());
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node forms a line with its parent and grand parent. 
+        /// </summary>
         [TestMethod]
         public void FormsLine()
         {
@@ -391,6 +425,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
             Assert.IsFalse(H.FormsLine());
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node forms a triangle with its parent and grand parent. 
+        /// </summary>
         [TestMethod]
         public void FormsTriangle()
         {
@@ -445,6 +482,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
             Assert.IsTrue(H.FormsTriangle());
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node is complete (meaning have left and right children).
+        /// </summary>
         [TestMethod]
         public void IsComplete()
         {
@@ -463,6 +503,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
             Assert.IsTrue(node1.IsComplete());
         }
 
+        /// <summary>
+        /// Tests the correctness of getting the list of children of a node. 
+        /// </summary>
         [TestMethod]
         public void GetChildren()
         {
@@ -494,6 +537,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
             Assert.AreEqual(0, gChildren.Count);
         }
 
+        /// <summary>
+        /// Tests the correctness of getting the list of a grand children of a node. 
+        /// </summary>
         [TestMethod]
         public void GetGrandChildren()
         {
