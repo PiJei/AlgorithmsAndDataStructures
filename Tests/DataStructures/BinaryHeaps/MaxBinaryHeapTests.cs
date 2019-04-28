@@ -41,8 +41,11 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 
         private static List<KeyValuePair<int, string>> _keyValues;
 
+        /// <summary>
+        /// Initializes/Resets variables before executing each unit test in this class. 
+        /// </summary>
         [TestInitialize]
-        public void Init()
+        public void Initialize()
         {
             _keyValues = new List<KeyValuePair<int, string>> { _A, _B, _C, _D, _E, _F, _G, _H, _I };
         }

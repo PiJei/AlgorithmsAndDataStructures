@@ -35,8 +35,11 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
         private GraphNode<int> F = new GraphNode<int>(11);
         private GraphNode<int> G = new GraphNode<int>(5);
 
+        /// <summary>
+        /// Initializes/Resets variables before executing each unit test in this class. 
+        /// </summary>
         [TestInitialize]
-        public void Init()
+        public void Initialize()
         {
             A.Adjacents.Add(new GraphEdge<int>(B, 0));
             A.Adjacents.Add(new GraphEdge<int>(C, 0));

@@ -31,8 +31,11 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
         private MockBinaryTreeNode<int, string> _root;
         private MockBinarySearchTreeBase<int, string> _tree;
 
+        /// <summary>
+        /// Initializes/Resets variables before executing each unit test in this class. 
+        /// </summary>
         [TestInitialize]
-        public void Init()
+        public void Initialize()
         {
             var A = new MockBinaryTreeNode<int, string>(40, "str3");
             var B = new MockBinaryTreeNode<int, string>(20, "str1");

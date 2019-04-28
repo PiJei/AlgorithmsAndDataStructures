@@ -30,8 +30,11 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps.API
         private static List<KeyValuePair<int, string>> _keyValues;
         private static MockBinaryHeap<int, string> _heap;
 
+        /// <summary>
+        /// Initializes/Resets variables before executing each unit test in this class. 
+        /// </summary>
         [TestInitialize]
-        public void Init()
+        public void Initialize()
         {
             _keyValues = new List<KeyValuePair<int, string>> {
                 new KeyValuePair<int, string>(150, "A"),

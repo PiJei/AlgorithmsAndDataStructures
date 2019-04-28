@@ -26,6 +26,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.DataStructures.Trees.Binary
 {
+    /// <summary>
+    /// Tests methods of <see cref="AVLTree{TKey, TValue}"/> class. 
+    /// </summary>
     [TestClass]
     public class AVLTreeTests
     {
@@ -33,17 +36,23 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
 
         /// <summary>
         /// Is an AVL tree (A form of balanced BST). 
-        /// To visualize this tree built as in <see cref="Init()"/> method, please <see cref="images\avl-bst.png"/> in current directory. 
+        /// To visualize this tree built as in <see cref="Initialize()"/> method, see <see cref=images/avl-bst.png"/> in current directory. 
         /// </summary>
         private AVLTree<int, string> _tree = null;
 
+        /// <summary>
+        /// Initializes/Resets variables before executing each unit test in this class. 
+        /// </summary>
         [TestInitialize]
-        public void Init()
+        public void Initialize()
         {
             _tree = new AVLTree<int, string>();
             _root = _tree.Build(Constants.KeyValues);
         }
 
+        /// <summary>
+        /// Tests the correctness of Build operation
+        /// </summary>
         [TestMethod]
         public void Build_ExpectsACorrectAVLTree()
         {
@@ -51,7 +60,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         }
 
         /// <summary>
-        /// For a step by step transition of the AVL tree while inserting these keys, please <see cref="images\avl-bst-insert-stepByStep.png"/>.
+        /// For a step by step transition of the AVL tree while inserting these keys, see <see cref="images\avl-bst-insert-stepByStep.png"/>.
         /// </summary>
         [TestMethod]
         public void Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion()
@@ -100,6 +109,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             Assert.IsTrue(HasAVLTreeProperties(tree, root, 10));
         }
 
+        /// <summary>
+        /// Tests deleting a non existing key, and expects the tree to be the same before and after the operation. 
+        /// </summary>
         [TestMethod]
         public void Delete_NonExistingKey_ExpectsNoAlternationToTree()
         {
@@ -111,6 +123,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 10));
         }
 
+        /// <summary>
+        /// Tests delete operation on a node with 2 children, and expects right rotate to be triggered during the operation.
+        /// </summary>
         [TestMethod]
         public void Delete_NodeWith2Children_ExpectsLineAndRotateRight()
         {
@@ -122,6 +137,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 9));
         }
 
+        /// <summary>
+        /// Tests deleting the root node which has 2 children. 
+        /// </summary>
         [TestMethod]
         public void Delete_RootNodeNodeWith2Children_ExpectsReplacementWithSuccessorAndSimpleLeafNodeDeletion()
         {
@@ -133,6 +151,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 9));
         }
 
+        /// <summary>
+        /// Tests deleting a node with 2 children, expects simple deletion of the replacement leaf node.
+        /// </summary>
         [TestMethod]
         public void Delete_NodeWith2Children_ExpectsReplacementWithMinInSubtreeAndSimpleLeafNodeDeletion()
         {
@@ -144,6 +165,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 9));
         }
 
+        /// <summary>
+        /// Tests deletion of a leaf node. 
+        /// </summary>
         [TestMethod]
         public void Delete_NodeWithNoChildren_ExpectsSimpleDeletion()
         {
@@ -155,6 +179,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 9));
         }
 
+        /// <summary>
+        /// Tests deletion of a leaf node and expects right rotation to be triggered during the operation. 
+        /// </summary>
         [TestMethod]
         public void Delete_NodeWithNoChildren_ExpectsLineAndRightRotation()
         {
@@ -166,6 +193,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 9));
         }
 
+        /// <summary>
+        /// Tests deletion of a leaf node
+        /// </summary>
         [TestMethod]
         public void Delete_NodeWithNoChildren_ExpectsSimpleLeafDeletion()
         {
@@ -177,6 +207,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 9));
         }
 
+        /// <summary>
+        /// Tests deletion of the max key in the tree. 
+        /// </summary>
         [TestMethod]
         public void Delete_NodeWithNoChildrenAndMaxKey_ExpectsSimpleLeafDeletion()
         {
@@ -188,6 +221,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 9));
         }
 
+        /// <summary>
+        /// Tests deletion of the min key in the tree. 
+        /// </summary>
         [TestMethod]
         public void Delete_NodeWith1Children_ExpectsReplacementWithMinInSubtreeAndSimpleLeafDeletion()
         {
@@ -199,6 +235,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 9));
         }
 
+        /// <summary>
+        /// Tests deletion of a node with only one right child. 
+        /// </summary>
         [TestMethod]
         public void Delete_NodeWith1Children_ExpectsReplacementWithRightChild()
         {
@@ -211,7 +250,8 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         }
 
         /// <summary>
-        /// For a step by step transition of the AVL tree while deleting these keys, please <see cref="images\avl-bst-delete-stepBystep.png"/>.
+        /// Deletes all the keys in the tree in a random order in several sequential operations. 
+        /// For a step by step transition of the AVL tree while deleting these keys, see <see cref="images\avl-bst-delete-stepBystep.png"/>.
         /// </summary>
         [TestMethod]
         public void Delete_MultipleKeysConsecutively_ExpectsCorrectTreeAfterEachDeletion_RandomOrder1()
@@ -251,6 +291,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 0));
         }
 
+        /// <summary>
+        /// Deletes all the keys in the tree in a random order in several sequential operations. 
+        /// </summary>
         [TestMethod]
         public void Delete_MultipleKeysConsecutively_ExpectsCorrectTreeAfterEachDeletion_RandomOrder2()
         {
@@ -289,6 +332,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             Assert.IsTrue(HasAVLTreeProperties(_tree, _root, 0));
         }
 
+        /// <summary>
+        /// Tests computing height of the (sub)tree rooted at the chosen nodes.
+        /// </summary>
         [TestMethod]
         public void GetHeight_ForSeveralNodesInSampleTree_ExpectsCorrectHeights()
         {
@@ -326,6 +372,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             Assert.AreEqual(1, _tree.GetHeight(E)); // Is a leaf node. 
         }
 
+        /// <summary>
+        /// Tests computing balance factor for nodes in the tree. 
+        /// </summary>
         [TestMethod]
         public void GetBalanceFactor_ForSeveralNodesInSampleTree_ExpectsCorrectValues()
         {
@@ -363,12 +412,24 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             Assert.AreEqual(0, _tree.ComputeBalanceFactor(E));
         }
 
+        /// <summary>
+        /// Tests balance internal method. 
+        /// </summary>
         [TestMethod]
         public void Balance()
         {
             // TODO 
         }
 
+        /// <summary>
+        /// Checks whether the given tree has AVL tree properties
+        /// </summary>
+        /// <typeparam name="TKey">Type of the keys stored in the tree. </typeparam>
+        /// <typeparam name="TValue">Type of the values stored in the tree. </typeparam>
+        /// <param name="tree">An AVL tree</param>
+        /// <param name="root">Root of the AVL tree</param>
+        /// <param name="expectedNodeCount">Specifies the expected number of tree nodes in the tree. </param>
+        /// <returns>True if the tree has AVL tree properties and false otherwise. </returns>
         public bool HasAVLTreeProperties<TKey, TValue>(AVLTree<TKey, TValue> tree, AVLTreeNode<TKey, TValue> root, int expectedNodeCount) where TKey : IComparable<TKey>, IEquatable<TKey>
         {
             Assert.IsTrue(BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<AVLTreeNode<TKey, TValue>, TKey, TValue>(root));
@@ -379,6 +440,14 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             return true;
         }
 
+        /// <summary>
+        /// Checks whether all the nodes in the AVL tree have expected balance factors between -1 and 1. 
+        /// </summary>
+        /// <typeparam name="TKey">Type of the keys stored in the tree. </typeparam>
+        /// <typeparam name="TValue">Type of the values stored in the tree. </typeparam>
+        /// <param name="tree">An AVL tree</param>
+        /// <param name="nodes">List of all the nodes in the tree. </param>
+        /// <returns>True if the nodes all have expected balance factors, and false otherwise. </returns>
         public bool HasExpectedBalanceFactor<TKey, TValue>(AVLTree<TKey, TValue> tree, List<AVLTreeNode<TKey, TValue>> nodes) where TKey : IComparable<TKey>, IEquatable<TKey>
         {
             foreach (AVLTreeNode<TKey, TValue> node in nodes)

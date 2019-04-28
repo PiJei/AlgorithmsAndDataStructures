@@ -31,7 +31,7 @@ namespace CSFundamentals.Algorithms.Search
     {
         /// <summary>
         /// Searches in a sorted list of any comparable type, where values have a uniform distribution. Interpolation search is an improvement over binary search, and has a very similar implementation, the only main difference is where (which index in the array) the search starts at.
-        /// The search is named inter-polation, as it always has two main poles that it moves back and forth between them, these poles are the start index and the end index of the array. 
+        /// The search is named interpolation, as it always has two main poles that it moves back and forth between them, these poles are the start index and the end index of the array. 
         /// Notice that only works if the given array is sorted. 
         /// </summary>
         /// <param name="sortedList">A sorted list of any comparable type that are also uniformly distributed. </param>

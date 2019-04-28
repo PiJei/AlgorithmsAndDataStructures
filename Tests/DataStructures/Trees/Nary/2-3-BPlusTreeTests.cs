@@ -30,12 +30,15 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
     {
         /// <summary>
         /// Is a B+ tree. 
-        /// To visualize this tree built as in <see cref="Init()"/> method, please <see cref="images\2-3-BPlus-Tree.png"/> in current directory. 
+        /// To visualize this tree built as in <see cref="Initialize()"/> method, see <see cref="images\2-3-BPlus-Tree.png"/> in current directory. 
         /// </summary>
         private BPlusTree<int, string> _tree = null;
 
+        /// <summary>
+        /// Initializes/Resets variables before executing each unit test in this class. 
+        /// </summary>
         [TestInitialize]
-        public void Init()
+        public void Initialize()
         {
             _tree = new BPlusTree<int, string>(3);
             var keyValues = new Dictionary<int, string>
@@ -67,7 +70,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         }
 
         /// <summary>
-        /// For a step by step transition of this 2-3 B + Tree while inserting these keys, please <see cref="images\2-3-BPlus-Tree-insert-stepBystep.png"/>.
+        /// For a step by step transition of this 2-3 B + Tree while inserting these keys, see <see cref="images\2-3-BPlus-Tree-insert-stepBystep.png"/>.
         /// </summary>
         [TestMethod]
         public void Insert_SeveralKeys_ExpectsTreeToIncreaseInLevelsAfewTimes()
@@ -384,7 +387,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         }
 
         /// <summary>
-        /// For a step by step transition of this 2-3 B + Tree while deleting these keys, please <see cref="images\2-3-BPlus-Tree-delete-stepBystep.png"/>.
+        /// For a step by step transition of this 2-3 B + Tree while deleting these keys, see <see cref="images\2-3-BPlus-Tree-delete-stepBystep.png"/>.
         /// </summary>
         [TestMethod]
         public void Delete_AllNodesInRandomOrder1_ExpectsProperBtreeAfterEachDelete()

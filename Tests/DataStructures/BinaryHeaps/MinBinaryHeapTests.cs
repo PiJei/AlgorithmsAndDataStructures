@@ -39,8 +39,11 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         private MinBinaryHeap<int, string> _heap3 = null;
         private MinBinaryHeap<int, string> _heap4 = null;
 
+        /// <summary>
+        /// Initializes/Resets variables before executing each unit test in this class. 
+        /// </summary>
         [TestInitialize]
-        public void Init()
+        public void Initialize()
         {
             _heap1 = new MinBinaryHeap<int, string>(arrayHeap1IterativelyBuilt);
             _heap1.BuildHeap_Iteratively(_heap1.HeapArray.Count);

@@ -333,7 +333,7 @@
         <member name="M:CSFundamentals.Algorithms.Search.InterpolationSearch.Search``1(System.Collections.Generic.List{``0},System.Int32,System.Int32,``0)">
             <summary>
             Searches in a sorted list of any comparable type, where values have a uniform distribution. Interpolation search is an improvement over binary search, and has a very similar implementation, the only main difference is where (which index in the array) the search starts at.
-            The search is named inter-polation, as it always has two main poles that it moves back and forth between them, these poles are the start index and the end index of the array. 
+            The search is named interpolation, as it always has two main poles that it moves back and forth between them, these poles are the start index and the end index of the array. 
             Notice that only works if the given array is sorted. 
             </summary>
             <param name="sortedList">A sorted list of any comparable type that are also uniformly distributed. </param>
@@ -516,7 +516,7 @@
             <summary>
             This is to be able to call MergeSort sort methods with only the list that needs to be sorted, and independent of the indexes. 
             This is needed for methods that receive other sort methods as parameters, and would ideally like to have similar signature for all the methods that are passed as parameters, 
-            In sort methods the signature is: void SortMethod(List(int) values); 
+            In sort methods the signature is: void SortMethod(List{int} values); 
             </summary>
             <param name="values">Specifies the list of integers to be sorted. </param>
         </member>
@@ -579,7 +579,7 @@
             <summary>
             This is to be able to call QuickSort sort methods with only the list that needs to be sorted, and independent of the indexes. 
             This is needed for methods that receive other sort methods as parameters, and would ideally like to have similar signature for all the methods that are passed as parameters, 
-            In sort methods the signature is: void SortMethod(List(int) values); 
+            In sort methods the signature is: void SortMethod(List{int} values); 
             </summary>
             <param name="values">Specifies the list of integers to be sorted. </param>
         </member>

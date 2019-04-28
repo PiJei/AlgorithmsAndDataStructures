@@ -34,13 +34,16 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
     {
         /// <summary>
         /// Is a RedBlack tree (A form of balanced BST). 
-        /// To visualize this tree built as in <see cref="Init()"/> method, please <see cref="images\redblack-bst.png"/> in current directory. 
+        /// To visualize this tree built as in <see cref="Initialize()"/> method, see <see cref="images\redblack-bst.png"/> in current directory. 
         /// </summary>
         private RedBlackTree<int, string> _tree;
         private RedBlackTreeNode<int, string> _root;
 
+        /// <summary>
+        /// Initializes/Resets variables before executing each unit test in this class. 
+        /// </summary>
         [TestInitialize]
-        public void Init()
+        public void Initialize()
         {
             _tree = new RedBlackTree<int, string>();
             _root = _tree.Build(Constants.KeyValues);
@@ -53,7 +56,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         }
 
         /// <summary>
-        /// For a step by step transition of the RedBlack tree while inserting these keys, please <see cref="images\redblack-bst-insert-stepByStep.png"/>.
+        /// For a step by step transition of the RedBlack tree while inserting these keys, see <see cref="images\redblack-bst-insert-stepByStep.png"/>.
         /// </summary>
         [TestMethod]
         public void Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion()
