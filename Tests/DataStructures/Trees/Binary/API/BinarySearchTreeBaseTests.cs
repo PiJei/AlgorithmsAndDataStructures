@@ -270,6 +270,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
             Assert.IsFalse(_tree.Update(_root, 45, "string3"));
         }
 
+        /// <summary>
+        /// Tests the correctness of finding minimum key in a binary search tree. 
+        /// </summary>
         [TestMethod]
         public void FindMinBST_Success()
         {
@@ -282,6 +285,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
             Assert.AreEqual("str5", _tree.FindMin(_root.RightChild.LeftChild.RightChild).Value);
         }
 
+        /// <summary>
+        /// Tests the correctness of finding minimum key in an empty node. Expects an exception to be thrown. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void FindMinBST_NodeIsNull_ThrowsException()
@@ -289,6 +295,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
             _tree.FindMin(null);
         }
 
+        /// <summary>
+        /// Tests the correctness of finding the maximum key in a binary search tree. 
+        /// </summary>
         [TestMethod]
         public void FindMaxBST_Success()
         {
@@ -301,6 +310,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
             Assert.AreEqual("str5", _tree.FindMax(_root.RightChild.LeftChild.RightChild).Value);
         }
 
+        /// <summary>
+        /// Tests the correctness of finding the maximum key in a binary search tree rooted in a null node. Expects an exception to be thrown. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void FindMaxBST_NodeIsNull_ThrowsException()
@@ -308,6 +320,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
             _tree.FindMax(null);
         }
 
+        /// <summary>
+        /// Tests the correctness of Insert operation in a binary search tree. 
+        /// </summary>
         [TestMethod]
         public void InsertBST_WithoutBalancing()
         {
@@ -347,6 +362,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
             Assert.AreEqual("str3", root.Value, ignoreCase: false);
         }
 
+        /// <summary>
+        /// Tests the correctness of in-order traversal. 
+        /// </summary>
         [TestMethod]
         public void InOrderTraversal()
         {
@@ -359,6 +377,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
             }
         }
 
+        /// <summary>
+        /// Tests the correctness of getting all the paths to all the leaf nodes in the tree. 
+        /// </summary>
         [TestMethod]
         public void GetAllPathToNullLeaves()
         {
@@ -369,6 +390,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
         /// <summary>
         /// Given the root of a binary search tree, checks whether the binary search tree properties hold.
         /// </summary>
+        /// <typeparam name="TNode">Type of the nodes in the tree. </typeparam>
         /// <typeparam name="TKey">Specifies the type of the keys in tree. </typeparam>
         /// <typeparam name="TValue">Specifies the type of the values in tree nodes. </typeparam>
         /// <param name="root">Is the root of a binary search tree. </param>

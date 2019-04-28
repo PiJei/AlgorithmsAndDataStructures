@@ -33,6 +33,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
     [TestClass]
     public class _3_5_BTreeNodeTests
     {
+        /// <summary>
+        /// Tests the correctness of getting max key in an empty B Tree node. Expects an exception to be thrown. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(KeyNotFoundException))]
         public void GetMaxKey_EmptyNode_ThrowsException()
@@ -44,6 +47,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             KeyValuePair<int, string> maxKeyValue = node.GetMaxKey();
         }
 
+        /// <summary>
+        /// Tests the correctness of getting min key in an empty B Tree node. Expects an exception to be thrown. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(KeyNotFoundException))]
         public void GetMinKey_EmptyNode_ThrowsException()
@@ -55,6 +61,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             KeyValuePair<int, string> minKeyValue = node.GetMinKey();
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether an empty node is UnderFlown. 
+        /// </summary>
         [TestMethod]
         public void IsUnderFlown_EmptyNode_ExpectsTrue()
         {
@@ -65,6 +74,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsTrue(node.IsUnderFlown());
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node with less than MinKeys is underFlown. 
+        /// </summary>
         [TestMethod]
         public void IsUnderFlown_NodeHasLessThanMinKeys_ExpectsTrue()
         {
@@ -77,6 +89,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsTrue(node.IsUnderFlown());
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node with MinKeys is underFlown. 
+        /// </summary>
         [TestMethod]
         public void IsUnderFlown_NodeMinKeys_ExpectsFalse()
         {
@@ -91,6 +106,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsFalse(node.IsUnderFlown());
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a minOneFull node is underFlown. 
+        /// </summary>
         [TestMethod]
         public void IsUnderFlown_NodeHasMinKeysPlusOne_ExpectsFalse()
         {
@@ -106,6 +124,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsFalse(node.IsUnderFlown());
         }
 
+        /// <summary>
+        /// Tests the correctness of getting the key to move up as part of split operation. The node is full and thus expects an exception to be thrown. Note that only when the node has MinKeys+1 keys this operation is successful. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void KeyValueToMoveUp_NodeIsFullAndHasMoreThanMinKeyPlusOneKeys_ExpectsFailure()
@@ -122,6 +143,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             KeyValuePair<int, string> keyValue = node.KeyValueToMoveUp();
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether an empty node is full. 
+        /// </summary>
         [TestMethod]
         public void IsFull_EmptyNode_ExpectsFalse()
         {
@@ -130,6 +154,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual(4, node.MaxKeys); /* Thus a node must have 4 keys to be full. */
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node with less than MaxKeys is full. 
+        /// </summary>
         [TestMethod]
         public void IsFull_NodeWithLessThanMaxKeys_ExpectsFalse()
         {
@@ -141,6 +168,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsFalse(node.IsFull());
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node with MaxKeys is full.
+        /// </summary>
         [TestMethod]
         public void IsFull_NodeWithMaxKeys_ExpectsTrue()
         {
@@ -155,6 +185,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsTrue(node.IsFull());
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node with more than MaxKeys is full. 
+        /// </summary>
         [TestMethod]
         public void IsFull_NodeWithMoreThanMaxKeys_ExpectsFalse()
         {
@@ -170,6 +203,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsFalse(node.IsFull());
         }
 
+        /// <summary>
+        /// Tests the correctness of finding the index of the current node in its parent's _children array. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void GetIndexAtParentChildren_ParentIsNull_ThrowsException()
@@ -178,6 +214,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             int index = node.GetIndexAtParentChildren();
         }
 
+        /// <summary>
+        /// Tests the correctness of finding the index of an empty node in its parent's _children array. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(KeyNotFoundException))]
         public void GetIndexAtParentChildren_EmptyNode_ThrowsException()
@@ -187,6 +226,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             int index = node.GetIndexAtParentChildren();
         }
 
+        /// <summary>
+        /// Tests the correctness of finding the index of an empty node in a random node's _children array. Expects an exception to be thrown. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(KeyNotFoundException))]
         public void GetIndexAtParentChildren_NodeIsNotAChildAtParent_ThrowsException()
@@ -201,6 +243,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             int index = node.GetIndexAtParentChildren();
         }
 
+        /// <summary>
+        /// Tests the correctness of finding the index of a non-empty node in its parent's _children array. Expects 0 as the index. 
+        /// </summary>
         [TestMethod]
         public void GetIndexAtParentChildren_ParentHasNodeAsFirstChild_Expects0AsIndex()
         {
@@ -213,6 +258,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual(0, index);
         }
 
+        /// <summary>
+        /// Tests the correctness of finding out whether the node has a left sibling when it is the only child of the parent. 
+        /// </summary>
         [TestMethod]
         public void HasLeftSibling_NodeIsOnlyChildOfParent_ExpectsFalse()
         {
@@ -224,6 +272,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsFalse(node.HasLeftSibling());
         }
 
+        /// <summary>
+        /// Tests the correctness of finding out whether the 3 children of a node have a left sibling.
+        /// </summary>
         [TestMethod]
         public void HasLeftSibling_ParentHas3Children_ExpectsTrueForTwoRightMostChildrenAndFalseForTheLeftMostChild()
         {
@@ -240,6 +291,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsTrue(node3.HasLeftSibling());
         }
 
+        /// <summary>
+        /// Tests the correctness of finding out whether the node has a right sibling when it is the only child of the parent. 
+        /// </summary>
         [TestMethod]
         public void HasRightSibling_NodeIsOnlyChildOfParent_ExpectsFalse()
         {
@@ -251,6 +305,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsFalse(node.HasRightSibling());
         }
 
+        /// <summary>
+        /// Tests the correctness of finding out whether the 3 children of a node have a right sibling.
+        /// </summary>
         [TestMethod]
         public void HasRightSibling_ParentHas3Children_ExpectsTrueForTwoLeftMostChildrenAndFalseForTheRightMostChild()
         {
@@ -267,6 +324,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsFalse(node2.HasRightSibling());
         }
 
+        /// <summary>
+        /// Tests the correctness of retrieving left siblings of the 3 children of a node. 
+        /// </summary>
         [TestMethod]
         public void GetLeftSibling_ParentHas3Children_ExpectsNonNullForTwoRightMostChildrenAndNullForLeftMostChild()
         {
@@ -283,6 +343,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsNull(node1.GetLeftSibling());
         }
 
+        /// <summary>
+        /// Tests the correctness of retrieving right siblings of the 3 children of a node. 
+        /// </summary>
         [TestMethod]
         public void GetRightSibling_ParentHas3Children_ExpectsNonNullForTwoLeftMostChildrenAndNullForRightMostChild()
         {
@@ -298,6 +361,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual(node2, node3.GetRightSibling());
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether an empty node has MinKeys.
+        /// </summary>
         [TestMethod]
         public void IsMinFull_EmptyNode_ExpectsFalse()
         {
@@ -307,6 +373,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsFalse(node.IsMinFull());
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node with less than MinKeys has MinKeys.
+        /// </summary>
         [TestMethod]
         public void IsMinFull_NodeHasLessThanMinKeys_ExpectsFalse()
         {
@@ -317,6 +386,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsFalse(node.IsMinFull());
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node with MinKeys has MinKeys.
+        /// </summary>
         [TestMethod]
         public void IsMinFull_NodeHasExactlyMinKeys_ExpectsTrue()
         {
@@ -328,6 +400,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsTrue(node.IsMinFull());
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node with more than MinKeys has MinKeys.
+        /// </summary>
         [TestMethod]
         public void IsMinFull_NodeHasMoreThanMinKeys_ExpectsFalse()
         {
@@ -340,6 +415,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsFalse(node.IsMinFull());
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether an empty node has MinKeys+1 keys. 
+        /// </summary>
         [TestMethod]
         public void IsMinOneFull_EmptyNode_ExpectsFalse()
         {
@@ -349,6 +427,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsFalse(node.IsMinFull());
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node with less than MinKeys+1 has MinKeys+1 keys. 
+        /// </summary>
         [TestMethod]
         public void IsMinOneFull_NodeHasLessThanMinKeysPlusOne_ExpectsFalse()
         {
@@ -359,6 +440,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsFalse(node.IsMinOneFull());
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node with MinKeys has MinKeys+1 keys. 
+        /// </summary>
         [TestMethod]
         public void IsMinOneFull_NodeIsMinFull_ExpectsFalse()
         {
@@ -379,6 +463,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsFalse(node.IsMinOneFull());
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node with MinKeys+1 has MinKeys+1 keys. 
+        /// </summary>
         [TestMethod]
         public void IsMinOneFull_NodeHasExactlyMinKeysPlusOne_ExpectsTrue()
         {
@@ -391,6 +478,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsTrue(node.IsMinOneFull());
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node with more than MinKeys+1 has MinKeys+1 keys. 
+        /// </summary>
         [TestMethod]
         public void IsMinOneFull_NodeHasMoreThanMinKeysPlusOne_ExpectsFalse()
         {
@@ -404,6 +494,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsFalse(node.IsMinOneFull());
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether an empty node is empty. 
+        /// </summary>
         [TestMethod]
         public void IsEmpty_EmptyNode_ExpectsTrue()
         {
@@ -414,6 +507,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsTrue(node.IsEmpty());
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node with one key is empty. 
+        /// </summary>
         [TestMethod]
         public void IsEmpty_NodeHasAtLeastOneKey_ExpectsFalse()
         {
@@ -428,6 +524,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsFalse(node.IsEmpty());
         }
 
+        /// <summary>
+        /// Tests the correctness of removing key from an empty node. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(KeyNotFoundException))]
         public void RemoveKey_EmptyNode_ThrowsException()
@@ -440,6 +539,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             node.RemoveKey(10);
         }
 
+        /// <summary>
+        /// Tests the correctness of removing a non existing key from a node. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(KeyNotFoundException))]
         public void RemoveKey_NotExistingKey_ThrowsException()
@@ -453,6 +555,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             node.RemoveKey(10);
         }
 
+        /// <summary>
+        /// Tests the correctness of removing an existing key from a node. 
+        /// </summary>
         [TestMethod]
         public void RemoveKey_ByKey_ExistingKeys_ExpectsSuccess()
         {
@@ -479,6 +584,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual(0, node.KeyCount);
         }
 
+        /// <summary>
+        /// Tests the correctness of removing a key by an index that is out of range. Expects an exception to be thrown.
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(IndexOutOfRangeException))]
         public void RemoveKey_ByIndex_IndexOutOfRange_ThrowsException()
@@ -492,6 +600,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             node.RemoveKeyByIndex(2);
         }
 
+        /// <summary>
+        /// Tests the correctness of removing a key by an in range index. 
+        /// </summary>
         [TestMethod]
         public void RemoveKey_ByIndex_InRangeIndexes_ExpectsSuccess()
         {
@@ -518,6 +629,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual(0, node.KeyCount);
         }
 
+        /// <summary>
+        /// Tests the correctness of removing a child from a node that has no children. Expects an exception to be thrown. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(IndexOutOfRangeException))]
         public void RemoveChild_ByIndex_ChildLessNode_ThrowsException()
@@ -530,6 +644,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             node.RemoveChildByIndex(2);
         }
 
+        /// <summary>
+        /// Tests the correctness of removing a child when index is out of range. Expects an exception to be thrown. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(IndexOutOfRangeException))]
         public void RemoveChild_ByIndex_IndexOutOfRange_ThrowsException()
@@ -543,6 +660,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             node.RemoveChildByIndex(2);
         }
 
+        /// <summary>
+        /// Tests the correctness of removing a child when index is in range. 
+        /// </summary>
         [TestMethod]
         public void RemoveChild_ByIndex_InRangeIndexes_ExpectsSuccess()
         {
@@ -566,6 +686,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual(0, node.ChildrenCount);
         }
 
+        /// <summary>
+        /// Tests the correctness of removing a an empty child from an empty node. Expects an exception to be thrown. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(KeyNotFoundException))]
         public void RemoveChild_ByKey_EmptyNodeEmptyChild_ThrowsException()
@@ -578,6 +701,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             node.RemoveChild(new BTreeNode<int, string>(5));
         }
 
+        /// <summary>
+        /// Tests the correctness of removing an empty child. Expects an exception to be thrown. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(KeyNotFoundException))]
         public void RemoveChild_ByKey_EmptyChild_ThrowsException()
@@ -591,6 +717,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             node.RemoveChild(new BTreeNode<int, string>(5));
         }
 
+        /// <summary>
+        /// Tests the correctness of removing an existing child. 
+        /// </summary>
         [TestMethod]
         public void RemoveChild_ByKey_ExistingKeys_ExpectsSuccess()
         {
@@ -619,6 +748,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual(0, node.ChildrenCount);
         }
 
+        /// <summary>
+        /// Tests the correctness of getting a key-value pair from an empty node. Expects an exception to be thrown. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(IndexOutOfRangeException))]
         public void GetKeyValue_EmptyNode_ThrowsException()
@@ -631,6 +763,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             node.GetKeyValue(2);
         }
 
+        /// <summary>
+        /// Tests the correctness of getting a key-value pair when index is out of range. Expects an exception to be thrown. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(IndexOutOfRangeException))]
         public void GetKeyValue_IndexOutOfRange_ThrowsException()
@@ -645,6 +780,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             node.GetKeyValue(2);
         }
 
+        /// <summary>
+        /// Tests the correctness of getting a key-value pair when index is in range. 
+        /// </summary>
         [TestMethod]
         public void GetKeyValue_InRangeIndexes_ExpectsSuccess()
         {
@@ -673,6 +811,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual(3, node.KeyCount);
         }
 
+        /// <summary>
+        /// Tests the correctness of getting key from an empty node. Expects an exception to be thrown. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(IndexOutOfRangeException))]
         public void GetKey_EmptyNode_ThrowsException()
@@ -684,6 +825,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             node.GetKey(3);
         }
 
+        /// <summary>
+        /// Tests the correctness of getting an in range key. 
+        /// </summary>
         [TestMethod]
         public void GetKey_InRangeIndexes_ExpectsSuccess()
         {
@@ -709,6 +853,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual(3, node.KeyCount);
         }
 
+        /// <summary>
+        /// Tests the correctness of getting the key index in an empty node. Expects an exception  to be thrown. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(KeyNotFoundException))]
         public void GetKeyIndex_EmptyNode_ThrowsException()
@@ -720,6 +867,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             node.GetKeyIndex(2);
         }
 
+        /// <summary>
+        /// Tests the correctness of getting the key index of an existing key. 
+        /// </summary>
         [TestMethod]
         public void GetKeyIndex_ExistingKey_ExpectsSuccess()
         {
@@ -745,6 +895,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual(3, node.KeyCount);
         }
 
+        /// <summary>
+        /// Tests the correctness of getting a child from an empty node. Expects an exception to be thrown.
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(IndexOutOfRangeException))]
         public void GetChild_EmptyNode_ThrowsException()
@@ -756,6 +909,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             node.GetChild(2);
         }
 
+        /// <summary>
+        /// Tests the correctness of getting a child when the index is in range.
+        /// </summary>
         [TestMethod]
         public void GetChild_InRangeIndexes_ExpectsSuccess()
         {
@@ -778,6 +934,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual(child3, c3);
         }
 
+        /// <summary>
+        /// Tests the correctness of getting a child index when the node is empty and child is empty as well. Expects an exception to be thrown. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(KeyNotFoundException))]
         public void GetChildIndex_EmptyNodeEmptyChild_ThrowsException()
@@ -790,6 +949,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             node.GetChildIndex(child);
         }
 
+        /// <summary>
+        /// Tests the correctness of getting an existing child index. 
+        /// </summary>
         [TestMethod]
         public void GetChildIndex_ExistingKeys_ExpectsSuccess()
         {

@@ -29,6 +29,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
     [TestClass]
     public class _2_3_4_BTreeNodeTests
     {
+        /// <summary>
+        /// Tests the correctness of constructor. 
+        /// </summary>
         [TestMethod]
         public void Constructor_CheckingDegrees()
         {
