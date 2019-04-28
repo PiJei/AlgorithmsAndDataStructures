@@ -23,9 +23,15 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.Algorithms.Sort
 {
+    /// <summary>
+    /// Tests methods in <see cref="RadixSort"/> class.
+    /// </summary>
     [TestClass]
     public partial class RadixSortTests
     {
+        /// <summary>
+        /// Tests the correctness of Radix sort algorithm.
+        /// </summary>
         [TestMethod]
         public void Sort_Iterative_V1_WithDifferentInputs()
         {

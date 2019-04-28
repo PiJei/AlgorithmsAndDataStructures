@@ -24,27 +24,42 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.Algorithms.Search
 {
+    /// <summary>
+    /// Tests methods in <see cref="InterpolationSearch"/> class. 
+    /// </summary>
     [TestClass]
     public class InterpolationSearchTests
     {
+        /// <summary>
+        /// Tests the correctness of Interpolation search algorithm on an array with distinct elements. 
+        /// </summary>
         [TestMethod]
         public void Search_DistinctElements()
         {
             SearchTests.DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition(InterpolationSearch.Search);
         }
 
+        /// <summary>
+        /// Tests the correctness of Interpolation search algorithm on an array with duplicate elements. 
+        /// </summary>
         [TestMethod]
         public void Search_DuplicateElements()
         {
             SearchTests.DuplicateElements_ExpectsToGetTheIndexOfOneOfTheDupliatesNoMatterHowManyTimeSearchIsPerformed(InterpolationSearch.Search);
         }
 
+        /// <summary>
+        /// Tests the correctness of Interpolation search algorithm when the key does not exist in the array. 
+        /// </summary>
         [TestMethod]
         public void Search_NonExistingElements()
         {
             SearchTests.NonExistingElements_ExpectsToGetMinusOne(InterpolationSearch.Search);
         }
 
+        /// <summary>
+        /// Tests the correctness of computing the index at which to start search when using Interpolation algorithm. 
+        /// </summary>
         [TestMethod]
         public void GetStartIndex()
         {

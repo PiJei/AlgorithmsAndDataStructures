@@ -27,6 +27,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 // TODO: Compute levels and after each insert confirm it
 namespace CSFundamentalsTests.DataStructures.Trees.Nary
 {
+    /// <summary>
+    /// Provides a collection of helper methods used by B-Tree tests. 
+    /// </summary>
     public static class BTreeTestsUtils
     {
         /// <summary>
@@ -44,6 +47,18 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             }
         }
 
+        /// <summary>
+        /// Checks whether the tree has B-Tree properties. 
+        /// </summary>
+        /// <typeparam name="TNode">Type of the tree nodes stored in the tree. </typeparam>
+        /// <typeparam name="TKey">Type of the keys stored in the tree. </typeparam>
+        /// <typeparam name="TValue">Type of the values stored in the tree. </typeparam>
+        /// <param name="tree">Is a B-Tree</param>
+        /// <param name="expectedTotalKeyCount">Is the expected number of keys (duplicate and distinct) in the tree. </param>
+        /// <param name="expectedDistinctKeyCount">Is the expected number of distinct keys in the tree. </param>
+        /// <param name="expectedNodeCount">Is the expected number of tree nodes. </param>
+        /// <param name="HasNodeProperties">Is the method used for checking properties. </param>
+        /// <returns>True if the tree has the expected properties. </returns>
         public static bool HasBTreeProperties<TNode, TKey, TValue>(BTreeBase<TNode, TKey, TValue> tree, int expectedTotalKeyCount, int expectedDistinctKeyCount, int expectedNodeCount, Func<TNode, bool> HasNodeProperties) where TNode : IBTreeNode<TNode, TKey, TValue>, IComparable<TNode> where TKey : IComparable<TKey>
         {
             var nodes = new List<TNode>();
@@ -79,7 +94,14 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
 
             return true;
         }
-
+        /// <summary>
+        /// Checks whether the node has BTree node properties. 
+        /// </summary>
+        /// <typeparam name="TNode">Type of tree node. </typeparam>
+        /// <typeparam name="TKey">Type of the key stored in the node. </typeparam>
+        /// <typeparam name="TValue">Type of the value stored in the node. </typeparam>
+        /// <param name="node">Is a B-Tree node. </param>
+        /// <returns>True if the node has expected properties, and false otherwise. </returns>
         public static bool HasBTreeNodeProperties<TNode, TKey, TValue>(TNode node) where TNode : IBTreeNode<TNode, TKey, TValue>, IComparable<TNode> where TKey : IComparable<TKey>
         {
             /* Any valid node (root and non-root) in the tree is expected to have at least one key.*/
@@ -149,6 +171,13 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             return true;
         }
 
+        /// <summary>
+        /// Checks whether the node has proper B+ Tree node properties. 
+        /// </summary>
+        /// <typeparam name="TKey">Type of the key stored in the node. </typeparam>
+        /// <typeparam name="TValue">Type of the value stored in the node. </typeparam>
+        /// <param name="node">Is a B+ Tree node. </param>
+        /// <returns>True if the node has expected properties, and false otherwise. </returns>
         public static bool HasBPlusTreeNodeProperties<TKey, TValue>(BPlusTreeNode<TKey, TValue> node) where TKey : IComparable<TKey>
         {
             /* Any valid node (root and non-root) in the tree is expected to have at least one key.*/
@@ -221,11 +250,25 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             return true;
         }
 
+        /// <summary>
+        /// Checks whether tree has B Tree properties. 
+        /// </summary>
+        /// <param name="tree">Is a BTree node. </param>
+        /// <param name="expectedTotalKeyCount">Is the expected number of keys (duplicate and distinct) in the tree. </param>
+        /// <param name="expectedDistinctKeyCount">Is the expected number of distinct keys in the tree. </param>
+        /// <param name="expectedNodeCount">Is the expected number of nodes in the tree. </param>
         public static void HasBTreeProperties(BTree<int, string> tree, int expectedTotalKeyCount, int expectedDistinctKeyCount, int expectedNodeCount)
         {
             Assert.IsTrue(HasBTreeProperties(tree, expectedTotalKeyCount, expectedDistinctKeyCount, expectedNodeCount, HasBTreeNodeProperties<BTreeNode<int, string>, int, string>));
         }
 
+        /// <summary>
+        /// Checks whether the tree has B+ Tree properties. 
+        /// </summary>
+        /// <param name="tree">Is a B + tree. </param>
+        /// <param name="expectedTotalKeyCount">Is the expected number of keys (duplicate and distinct) in the tree. </param>
+        /// <param name="expectedDistinctKeyCount">Is the expected number of distinct keys in the tree. </param>
+        /// <param name="expectedNodeCount">Is the expected number of nodes in the tree. </param>
         public static void HasBPlusTreeProperties(BPlusTree<int, string> tree, int expectedTotalKeyCount, int expectedDistinctKeyCount, int expectedNodeCount)
         {
             Assert.IsTrue(HasBTreeProperties(tree, expectedTotalKeyCount, expectedDistinctKeyCount, expectedNodeCount, HasBPlusTreeNodeProperties));

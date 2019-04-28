@@ -24,9 +24,15 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.SubarraySearch
 {
+    /// <summary>
+    /// Tests methods in <see cref="SubarraySearch"/> class. 
+    /// </summary>
     [TestClass]
     public class SubarraySearchTests
     {
+        /// <summary>
+        /// Tests the correctness of checking whether a sublist exists continuously in another list. 
+        /// </summary>
         [TestMethod]
         public void Search_NaiveContiguousSublist()
         {
@@ -38,6 +44,9 @@ namespace CSFundamentalsTests.SubarraySearch
             Assert.IsFalse(Naive.Search_NaiveContiguousSublist(new List<int> { }, new List<int> { }));
         }
 
+        /// <summary>
+        /// Tests the correctness of checking whether a sublist exists in another list non-continuously. 
+        /// </summary>
         [TestMethod]
         public void Search_UnContiguousSublist()
         {

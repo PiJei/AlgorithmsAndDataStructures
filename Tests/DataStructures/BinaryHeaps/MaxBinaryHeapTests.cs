@@ -26,6 +26,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 {
+    /// <summary>
+    /// Tests methods in <see cref="MaxBinaryHeap{TKey, TValue}"/> class. 
+    /// </summary>
     [TestClass]
     public class MaxBinaryHeapTests
     {
@@ -50,6 +53,9 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
             _keyValues = new List<KeyValuePair<int, string>> { _A, _B, _C, _D, _E, _F, _G, _H, _I };
         }
 
+        /// <summary>
+        /// Tests the correctness of build operation when implemented recursively. 
+        /// </summary>
         [TestMethod]
         public void BuildHeap_Recursively()
         {
@@ -60,6 +66,9 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
             Assert.IsTrue(HasMaxOrderPropertyForHeap(_keyValues.Count, heap));
         }
 
+        /// <summary>
+        /// Tests the correctness of Build operation when implemented iteratively. 
+        /// </summary>
         [TestMethod]
         public void BuildHeap_Itratively()
         {
@@ -70,8 +79,11 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
             Assert.IsTrue(HasMaxOrderPropertyForHeap(_keyValues.Count, heap));
         }
 
+        /// <summary>
+        /// Tests the correctness of removing root of the heap. Removes root several times until no member in tree remains.
+        /// </summary>
         [TestMethod]
-        public void TryRemoveRoot_RemoveRootEqualToArrayLengthTimes_ExpectDescendingOrderInResults()
+        public void TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectDescendingOrderInResults()
         {
             var heap = new MaxBinaryHeap<int, string>(_keyValues);
             heap.BuildHeap_Recursively(heap.HeapArray.Count);
@@ -113,6 +125,9 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
             Assert.IsTrue(HasMaxOrderPropertyForHeap(_keyValues.Count, heap));
         }
 
+        /// <summary>
+        /// Tests the correctness of insert operation. 
+        /// </summary>
         [TestMethod]
         public void Insert_SeveralValues_ExpectCorrectMaxBinaryHeapAfterEachInsert()
         {
@@ -146,7 +161,15 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
             Assert.IsTrue(HasMaxOrderPropertyForHeap(heap.HeapArray.Count, heap));
         }
 
-        // Checking the MaxHeap ordering (node relations) for the node at the given index, to make sure the correct relations between the node and its parent and children holds. 
+        /// <summary>
+        /// Checks whether the element at the given index follows heap properties. 
+        /// Checking the MaxHeap ordering (node relations) for the node at the given index, to make sure the correct relations between the node and its parent and children holds. 
+        /// </summary>
+        /// <typeparam name="TKey">Type of the keys stored in the heap. </typeparam>
+        /// <typeparam name="TValue">Type of the values stored in the heap. </typeparam>
+        /// <param name="heap">A max binary heap. </param>
+        /// <param name="nodeIndex">Index of a heap node in heap array. </param>
+        /// <returns></returns>
         public static bool HasMaxOrderPropertyForNode<TKey, TValue>(BinaryHeapBase<TKey, TValue> heap, int nodeIndex) where TKey : IComparable<TKey>
         {
             int leftChildIndex = heap.GetLeftChildIndexInHeapArray(nodeIndex);
@@ -168,6 +191,14 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
             return true;
         }
 
+        /// <summary>
+        /// Checks whether the heap is a proper Max heap. 
+        /// </summary>
+        /// <typeparam name="TKey">Type of the keys stored in the heap. </typeparam>
+        /// <typeparam name="TValue">Type of the values stored in the heap. </typeparam>
+        /// <param name="arraySize">Size of the heap array. </param>
+        /// <param name="heap">Is a Max binary heap. </param>
+        /// <returns>True if the heap is a proper Max binary heap, and false otherwise. </returns>
         public static bool HasMaxOrderPropertyForHeap<TKey, TValue>(int arraySize, MaxBinaryHeap<TKey, TValue> heap) where TKey : IComparable<TKey>
         {
             for (int i = 0; i < arraySize; i++)

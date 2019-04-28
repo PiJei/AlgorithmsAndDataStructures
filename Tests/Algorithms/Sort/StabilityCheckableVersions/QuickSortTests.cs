@@ -27,6 +27,9 @@ namespace CSFundamentalsTests.Algorithms.Sort
 {
     public partial class QuickSortTests
     {
+        /// <summary>
+        /// Tests the stability of Quick sort algorithm. 
+        /// </summary>
         [TestMethod]
         public void IsStable()
         {

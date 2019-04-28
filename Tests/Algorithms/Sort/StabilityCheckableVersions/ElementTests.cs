@@ -23,9 +23,15 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.Algorithms.Sort
 {
+    /// <summary>
+    /// Tests methods in <see cref="Element"/> class. 
+    /// </summary>
     [TestClass]
     public class ElementTests
     {
+        /// <summary>
+        /// Tests the correctness of equality operation when comparing two objects of type Element. 
+        /// </summary>
         [TestMethod]
         public void Equals()
         {
@@ -36,6 +42,9 @@ namespace CSFundamentalsTests.Algorithms.Sort
             Assert.IsTrue(element1.Equals(element2));
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting stability of an Element. An Element is stable in an array if its index before and after sorting the array is the same. 
+        /// </summary>
         [TestMethod]
         public void IsStable()
         {

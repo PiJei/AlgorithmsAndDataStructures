@@ -24,15 +24,24 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.Algorithms.Sort
 {
+    /// <summary>
+    /// Tests methods in <see cref="InsertionSort"/> class. 
+    /// </summary>
     [TestClass]
     public partial class InsertionSortTests
     {
+        /// <summary>
+        /// Tests the correctness of Insertion sort iterative version1. 
+        /// </summary>
         [TestMethod]
         public void Sort_Iterative_V1_WithDifferentInputs()
         {
             SortTests.TestSortMethodWithDifferentInputs(InsertionSort.Sort_Iterative_V1);
         }
 
+        /// <summary>
+        /// Tests the correctness of Insertion sort iterative version2. 
+        /// </summary>
         [TestMethod]
         public void Sort_Iterative_V2_WithDifferentInputs()
         {
@@ -40,6 +49,9 @@ namespace CSFundamentalsTests.Algorithms.Sort
         }
 
         // TODO: How can I use the SortTests library to test this version as well?
+        /// <summary>
+        /// Tests the correctness of Insertion sort recursive version over an array with distinct values. 
+        /// </summary>
         [TestMethod]
         public void Sort_Recursive_WithDistinctValues()
         {
@@ -48,6 +60,9 @@ namespace CSFundamentalsTests.Algorithms.Sort
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
+        /// <summary>
+        /// Tests the correctness of Insertion sort recursive version over an array with duplicate values. 
+        /// </summary>
         [TestMethod]
         public void Sort_Recursive_WithDuplicateValues()
         {

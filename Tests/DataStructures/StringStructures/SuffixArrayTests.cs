@@ -23,9 +23,15 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.StringStructures
 {
+    /// <summary>
+    /// Tests methods in <see cref="SuffixArray"/> class.
+    /// </summary>
     [TestClass]
     public class SuffixArrayTests
     {
+        /// <summary>
+        /// Tests the correctness of Build operation.
+        /// </summary>
         [TestMethod]
         public void SortSuffixes()
         {

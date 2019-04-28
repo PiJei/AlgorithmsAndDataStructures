@@ -27,6 +27,9 @@ namespace CSFundamentalsTests.Algorithms.Sort
 {
     public partial class BubbleSortTests
     {
+        /// <summary>
+        /// Tests the stability of Bubble sort algorithm.
+        /// </summary>
         [TestMethod]
         public void IsStable()
         {

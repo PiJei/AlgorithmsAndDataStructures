@@ -27,6 +27,9 @@ namespace CSFundamentalsTests.Algorithms.Sort
 {
     public partial class SelectionSortTests
     {
+        /// <summary>
+        /// Tests the stability of Selection sort algorithm. 
+        /// </summary>
         [TestMethod]
         public void IsStable()
         {

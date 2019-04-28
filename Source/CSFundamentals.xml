@@ -820,14 +820,14 @@
         </member>
         <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.Insert(System.Collections.Generic.KeyValuePair{`0,`1},System.Int32)">
             <summary>
-            This method is for inserting a new value into heap.
+            Inserts a new value into heap.
             </summary>
             <param name="keyValue">Specifies the key-value to be inserted into the heap.</param>
             <param name="heapArrayLength">Specifies the length of the heap array. </param>
         </member>
         <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryRemoveRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)">
             <summary>
-            This method is for removing the root of the heap. In a MinHeap and MinMaxHeap this is the min, and in a MaxHeap and MaxMinHeap this is the max. 
+            Removes the root of the heap. In a MinHeap and MinMaxHeap this is the min, and in a MaxHeap and MaxMinHeap this is the max. 
             </summary>
             <param name="keyValue">Specifies the key-value of the root.</param>
             <param name="heapArrayLength">Specifies the length of the heap array. </param>
@@ -835,7 +835,7 @@
         </member>
         <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryFindRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)">
             <summary>
-            This method is for finding the root of the heap, without removing it. 
+            Finds the root of the heap, without removing it. 
             </summary>
             <param name="keyValue">Specifies the key-value of the root.</param>
             <param name="heapArrayLength">Specifies the length of the heap array. </param>
@@ -843,14 +843,14 @@
         </member>
         <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BubbleDown_Recursively(System.Int32,System.Int32)">
             <summary>
-            This method implements the bubble down/trickle down operation using recursion.
+            Implements the bubble down/trickle down operation using recursion.
             </summary>
             <param name="rootIndex">Specifies the index of the root element, the element for which the trickle down should be performed.</param>
             <param name="heapArrayLength">Specifies the length of the heap array. </param>
         </member>
         <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BubbleDown_Iteratively(System.Int32,System.Int32)">
             <summary>
-            This method implements the bubble down/trickle down operation using iteration.
+            Implements the bubble down/trickle down operation using iteration.
             </summary>
             <param name="rootIndex">Specifies the index of the root element, the element for which the trickle down should be performed.</param>
             <param name="heapArrayLength">Specifies the length of the heap array. </param>

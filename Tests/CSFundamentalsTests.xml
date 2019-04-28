@@ -4,9 +4,39 @@
         <name>CSFundamentalsTests</name>
     </assembly>
     <members>
+        <member name="T:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.GraphTraversal.BFS"/> class. 
+            </summary>
+        </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Initialize">
             <summary>
             Initializes/Resets variables before executing each unit test in this class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Iterative_StartFromA">
+            <summary>
+            Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.A"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Iterative_StartFromE">
+            <summary>
+            Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.E"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Recursive_StartFromA">
+            <summary>
+            Tests the correctness of BFS recursive version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.A"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Recursive_StartFromE">
+            <summary>
+            Tests the correctness of BFS recursive version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.E"/>.
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.GraphTraversal.DFS"/> class. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Initialize">
@@ -14,14 +44,265 @@
             Initializes/Resets variables before executing each unit test in this class. 
             </summary>
         </member>
+        <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Iterative_StartFromA">
+            <summary>
+            Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.A"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Iterative_StartFromE">
+            <summary>
+            Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.E"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Recursive_StartFromA">
+            <summary>
+            Tests the correctness of BFS recursive version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.A"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Recursive_StartFromE">
+            <summary>
+            Tests the correctness of BFS recursive version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.E"/>.
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.GraphTraversal.DijkstraTests">
+            <summary>
+            Tests methods in <see cref="T:System.Collections.Generic.Dictionary`2"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DijkstraTests.GetShortestDistancesFromRoot">
+            <summary>
+            Tests the correctness of shortest distance computation 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Search.BinarySearchTests">
+            <summary>
+            Tests the methods in <see cref="T:CSFundamentals.Algorithms.Search.BinarySearch"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.BinarySearchTests.Search_DistinctElements">
+            <summary>
+            Tests the correctness of binary search algorithm on an array with distinct elements. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.BinarySearchTests.Search_DuplicateElements">
+            <summary>
+            Tests the correctness of binary search algorithm on an array with duplicate elements. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.BinarySearchTests.Search_NonExistingElements">
+            <summary>
+            Tests the correctness of binary search algorithm when the key does not exist in the array. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Search.ExponentialSearchTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Search.ExponentialSearch"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.ExponentialSearchTests.Search_DistinctElements">
+            <summary>
+            Tests the correctness of Exponential search algorithm on an array with distinct elements. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.ExponentialSearchTests.Search_DuplicateElements">
+            <summary>
+            Tests the correctness of Exponential search algorithm on an array with duplicate elements. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.ExponentialSearchTests.Search_NotExistingElements">
+            <summary>
+            Tests the correctness of Exponential search algorithm when the key does not exist in the array. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests">
+            <summary>
+            Tests methods in <see cref="!:= FibonacciSearch"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_DistinctElements">
+            <summary>
+            Tests the correctness of Fibonacci search algorithm on an array with distinct elements. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_DuplicateElements">
+            <summary>
+            Tests the correctness of Fibonacci search algorithm on an array with duplicate elements. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_NonExistingElements">
+            <summary>
+            Tests the correctness of Fibonacci search algorithm when the key does not exist in the array. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.GetSmallestFibonacciBiggerThanNumber">
+            <summary>
+            Tests computing the smallest Fibonacci number that is bigger than a specific number. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Search.HashTableSearchTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Search.HashTableSearch"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.HashTableSearchTests.Search">
+            <summary>
+            Tests the correctness of search algorithm. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Search.InterpolationSearchTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Search.InterpolationSearch"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.InterpolationSearchTests.Search_DistinctElements">
+            <summary>
+            Tests the correctness of Interpolation search algorithm on an array with distinct elements. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.InterpolationSearchTests.Search_DuplicateElements">
+            <summary>
+            Tests the correctness of Interpolation search algorithm on an array with duplicate elements. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.InterpolationSearchTests.Search_NonExistingElements">
+            <summary>
+            Tests the correctness of Interpolation search algorithm when the key does not exist in the array. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.InterpolationSearchTests.GetStartIndex">
+            <summary>
+            Tests the correctness of computing the index at which to start search when using Interpolation algorithm. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Search.JumpSearchTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Search.JumpSearch"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.JumpSearchTests.Search_DistinctElements">
+            <summary>
+            Tests the correctness of Jump search algorithm on an array with distinct elements. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.JumpSearchTests.Search_DuplicateElements">
+            <summary>
+            Tests the correctness of Jump search algorithm on an array with duplicate elements. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.JumpSearchTests.Search_NotExistingElements">
+            <summary>
+            Tests the correctness of Jump search algorithm when the key does not exist in the array. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Search.LinearSearchTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Search.LinearSearch"/> class. 
+            </summary>
+        </member>
         <member name="F:CSFundamentalsTests.Algorithms.Search.LinearSearchTests._values">
             <summary>
             A random array of integers (not sorted), and containing duplicates
             </summary>
         </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition">
+            <summary>
+            Tests the correctness of Linear search algorithm on an array with distinct elements. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_DuplicateElements_ExpectsToGetTheIndexOfTheFirstOccurrenceNoMatterHowManyTimesSearchIsPerformed">
+            <summary>
+            Tests the correctness of Linear search algorithm on an array with duplicate elements. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_NonExistingElements_ExpectsToGetMinusOne">
+            <summary>
+            Tests the correctness of Linear search algorithm when the key does not exist in the array. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Search.SearchTests">
+            <summary>
+            Implements test methods for search algorithms. 
+            </summary>
+        </member>
         <member name="F:CSFundamentalsTests.Algorithms.Search.SearchTests._values">
             <summary>
             Sorted array of elements. Note that binary search expects a sorted array. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.SearchTests.DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition(System.Func{System.Collections.Generic.List{System.Int32},System.Int32,System.Int32,System.Int32,System.Int32})">
+            <summary>
+            Tests the correctness of <paramref name="searchMethod"/> on an array with distinct elements. 
+            </summary>
+            <param name="searchMethod">The search method that is being tested. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.SearchTests.DuplicateElements_ExpectsToGetTheIndexOfOneOfTheDupliatesNoMatterHowManyTimeSearchIsPerformed(System.Func{System.Collections.Generic.List{System.Int32},System.Int32,System.Int32,System.Int32,System.Int32})">
+            <summary>
+            Tests the correctness of <paramref name="searchMethod"/> on an array with duplicate elements. 
+            </summary>
+            <param name="searchMethod">The search method that is being tested. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.SearchTests.NonExistingElements_ExpectsToGetMinusOne(System.Func{System.Collections.Generic.List{System.Int32},System.Int32,System.Int32,System.Int32,System.Int32})">
+            <summary>
+            Tests the correctness of <paramref name="searchMethod"/> when the key does not exist in the array. 
+            </summary>
+            <param name="searchMethod">The search method that is being tested. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.SearchTests.DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition(System.Func{System.Collections.Generic.List{System.Int32},System.Int32,System.Int32})">
+            <summary>
+            Tests the correctness of <paramref name="searchMethod"/> on an array with distinct elements. 
+            </summary>
+            <param name="searchMethod">The search method that is being tested. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.SearchTests.DuplicateElements_ExpectsToGetTheIndexOfOneOfTheDupliatesNoMatterHowManyTimeSearchIsPerformed(System.Func{System.Collections.Generic.List{System.Int32},System.Int32,System.Int32})">
+            <summary>
+            Tests the correctness of <paramref name="searchMethod"/> on an array with duplicate elements. 
+            </summary>
+            <param name="searchMethod">The search method that is being tested. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.SearchTests.NonExistingElements_ExpectsToGetMinusOne(System.Func{System.Collections.Generic.List{System.Int32},System.Int32,System.Int32})">
+            <summary>
+            Tests the correctness of <paramref name="searchMethod"/> when the key does not exist in the array. 
+            </summary>
+            <param name="searchMethod">The search method that is being tested. </param>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Search.TernarySearchTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Search.TernarySearch"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.TernarySearchTests.Search_DistinctElements">
+            <summary>
+            Tests the correctness of Ternary search algorithm on an array with distinct elements. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.TernarySearchTests.Search_DuplicateElements">
+            <summary>
+            Tests the correctness of Ternary search algorithm on an array with duplicate elements. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.TernarySearchTests.Search_NonExistingElements">
+            <summary>
+            Tests the correctness of Ternary search algorithm when the key does not exist in the array. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Sort.BubbleSortTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Sort.BubbleSort"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.BubbleSortTests.Sort_Iterative_WithDifferentInputs">
+            <summary>
+            Tests the correctness of bubble sort iterative version. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.BubbleSortTests.IsStable">
+            <summary>
+            Tests the stability of Bubble sort algorithm.
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Sort.Constants">
+            <summary>
+            Is a collection of some constant values used in testing sort algorithms. 
             </summary>
         </member>
         <member name="F:CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithDistinctValues">
@@ -54,9 +335,328 @@
             Is an array of integers with duplicate values, such that the array is reversely sorted, meaning it is descending, whereas sort meant ascending. 
             </summary>
         </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Sort.HeapSortTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Sort.HeapSort"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.HeapSortTests.Sort_WithDistinctValues">
+            <summary>
+            Tests the correctness of Heap sort algorithm over an array with distinct values.  
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.HeapSortTests.Sort_WithDuplicateValues">
+            <summary>
+            Tests the correctness of Heap sort algorithm over an array with duplicate values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.HeapSortTests.Sort_WithSortedDistinctValues">
+            <summary>
+            Tests the correctness of Heap sort algorithm over a sorted array with distinct values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.HeapSortTests.Sort_WithSortedDuplicateValues">
+            <summary>
+            Tests the correctness of Heap sort algorithm over a sorted array with duplicate values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.HeapSortTests.Sort_WithReverselySortedDistinctValues">
+            <summary>
+            Tests the correctness of Heap sort algorithm over a reversely sorted array with distinct values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.HeapSortTests.Sort_WithRevereselySortedDuplicateValues">
+            <summary>
+            Tests the correctness of Heap sort algorithm over a reversely sorted array with duplicate values. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Sort.InsertionSortTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Sort.InsertionSort"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Iterative_V1_WithDifferentInputs">
+            <summary>
+            Tests the correctness of Insertion sort iterative version1. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Iterative_V2_WithDifferentInputs">
+            <summary>
+            Tests the correctness of Insertion sort iterative version2. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Recursive_WithDistinctValues">
+            <summary>
+            Tests the correctness of Insertion sort recursive version over an array with distinct values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Recursive_WithDuplicateValues">
+            <summary>
+            Tests the correctness of Insertion sort recursive version over an array with duplicate values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.IsStable">
+            <summary>
+            Tests the stability of Insertion sort algorithm. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Sort.MergeSortTests">
+            <summary>
+            Tests method in <see cref="T:CSFundamentals.Algorithms.Sort.MergeSort"/> class.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.MergeSort_Recursively_WithDistinctValues">
+            <summary>
+            Tests the correctness of Merge sort algorithm recursive version over an array with distinct values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.MergeSort_Recursively_WithDuplicateValues">
+            <summary>
+            Tests the correctness of Merge sort algorithm recursive version over an array with duplicate values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.MergeSort_Recursively_WithSortedDistinctValues">
+            <summary>
+            Tests the correctness of Merge sort algorithm recursive version over a sorted array with distinct values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.MergeSort_Recursively_WithSortedDuplicateValues">
+            <summary>
+            Tests the correctness of Merge sort algorithm recursive version over a sorted array with duplicate values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.MergeSort_Recursively_WithReverselySortedDistinctValues">
+            <summary>
+            Tests the correctness of Merge sort algorithm recursive version over a reversely sorted array with distinct values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.MergeSort_Recursively_WithReverselySortedDuplicateValues">
+            <summary>
+            Tests the correctness of Merge sort algorithm recursive version over a reversely sorted array with duplicate values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.Merge">
+            <summary>
+            Tests the correctness of Merge operation. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.IsStable">
+            <summary>
+            Tests the stability of Merge sort algorithm. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Sort.QuickSortTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Sort.QuickSort"/> class.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.QuickSortTests.QuickSort_Recursively_WithDistinctValues">
+            <summary>
+            Tests the correctness of Quick sort algorithm recursive version over an array with distinct values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.QuickSortTests.QuickSort_Recursively_WithDuplicateValues">
+            <summary>
+            Tests the correctness of Quick sort algorithm recursive version over an array with duplicate values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.QuickSortTests.QuickSort_Recursively_WithSortedDistinctValues">
+            <summary>
+            Tests the correctness of Quick sort algorithm recursive version over a sorted array with distinct values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.QuickSortTests.QuickSort_Recursively_WithSortedDuplicateValues">
+            <summary>
+            Tests the correctness of Quick sort algorithm recursive version over a sorted array with duplicate values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.QuickSortTests.QuickSort_Recursively_WithReverselySortedDistinctValues">
+            <summary>
+            Tests the correctness of Quick sort algorithm recursive version over a reversely sorted array with distinct values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.QuickSortTests.QuickSort_Recursively_WithReverselySortedDuplicateValues">
+            <summary>
+            Tests the correctness of Quick sort algorithm recursive version over a reversely sorted array with duplicate values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.QuickSortTests.IsStable">
+            <summary>
+            Tests the stability of Quick sort algorithm. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Sort.RadixSortTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Sort.RadixSort"/> class.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.RadixSortTests.Sort_Iterative_V1_WithDifferentInputs">
+            <summary>
+            Tests the correctness of Radix sort algorithm.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.RadixSortTests.IsStable">
+            <summary>
+            Tests the stability of Radix sort algorithm. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Sort.SelectionSortTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Sort.SelectionSort"/> class.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.SelectionSortTests.Sort_Iteratively_WithDifferentInputs">
+            <summary>
+            Tests the correctness of Selection sort algorithm.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.SelectionSortTests.IsStable">
+            <summary>
+            Tests the stability of Selection sort algorithm. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Sort.SortTests">
+            <summary>
+            Implements methods for testing sort algorithms over arrays with different properties. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.SortTests.TestSortMethodWithDifferentInputs(System.Action{System.Collections.Generic.List{System.Int32}})">
+            <summary>
+            Tests the correctness of <paramref name="sortMethod"/>.
+            </summary>
+            <param name="sortMethod">The sort method that is being tested. </param>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Sort.ElementTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.ElementTests.Equals">
+            <summary>
+            Tests the correctness of equality operation when comparing two objects of type Element. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.ElementTests.IsStable">
+            <summary>
+            Tests the correctness of detecting stability of an Element. An Element is stable in an array if its index before and after sorting the array is the same. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Sort.UtilsTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Sort.Utils"/> class. 
+            </summary>
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Sort.Utils"/> class.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.UtilsTests.Convert">
+            <summary>
+            Tests the correctness of converting a list of integers to a list of Elements. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.UtilsTests.IsMapStable">
+            <summary>
+            Tests the correctness of checking whether a dictionary is stable. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.UtilsTests.HashListToIndexes">
+            <summary>
+            Tests the correctness of hashing a list to indexes. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.UtilsTests.Swap">
+            <summary>
+            Tests the correctness of swap operation. 
+            </summary>
+        </member>
         <member name="M:CSFundamentalsTests.Algorithms.Sort.UtilsTests.IsSortedAscendingly(System.Collections.Generic.List{System.Int32})">
             <summary>
             Checks whether the given integer list is sorted in ascending order. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.UtilsTests.GetDigitsCount">
+            <summary>
+            Tests the correctness of computing number of digits in an integer. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.UtilsTests.GetNthDigitFromRight">
+            <summary>
+            Tests the correctness of computing the n(th) digit of a number from right. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Hashing.RollingHashTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Hashing.RollingHash"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Hashing.RollingHashTests.Hash">
+            <summary>
+            Tests the correctness of Hash method. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.PatternSearch.BoyerMooreSearchTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch"/> class.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.PatternSearch.BoyerMooreSearchTests.Search">
+            <summary>
+            Tests the correctness of pattern search algorithm. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.PatternSearch.BoyerMooreSearchTests.MapCharToLastIndex">
+            <summary>
+            Tests the correctness of mapping characters in a string to their last occurrence index. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.PatternSearch.KMPSearchTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.PatternSearch.KMPSearch"/> class.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.PatternSearch.KMPSearchTests.Search">
+            <summary>
+            Tests the correctness of pattern search algorithm.
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.PatternSearch.NaiveSearchTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.PatternSearch.NaiveSearch"/> class.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.PatternSearch.NaiveSearchTests.Search">
+            <summary>
+            Tests the correctness of pattern search algorithm. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.PatternSearch.RabinKarpSearchTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.PatternSearch.RabinKarpSearch"/> class.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.PatternSearch.RabinKarpSearchTests.Search">
+            <summary>
+            Tests the correctness of pattern search algorithm.
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.SubarraySearch.SubarraySearchTests">
+            <summary>
+            Tests methods in <see cref="N:CSFundamentalsTests.SubarraySearch"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.SubarraySearch.SubarraySearchTests.Search_NaiveContiguousSublist">
+            <summary>
+            Tests the correctness of checking whether a sublist exists continuously in another list. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.SubarraySearch.SubarraySearchTests.Search_UnContiguousSublist">
+            <summary>
+            Tests the correctness of checking whether a sublist exists in another list non-continuously. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.BinaryHeaps.API.BinaryHeapBaseTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2"/> class via <see cref="T:CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.BinaryHeapBaseTests.Initialize">
@@ -64,9 +664,169 @@
             Initializes/Resets variables before executing each unit test in this class. 
             </summary>
         </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.BinaryHeapBaseTests.TryFindIndexOfMinSmallerThanReference_IndexesInRange_ExpectsSuccessAndCorrectMinIndex">
+            <summary>
+            Tests the correctness of finding the minimum value among the given elements that is smaller than the given reference value. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.BinaryHeapBaseTests.TryFindIndexOfMinSmallerThanReference_IndexesInRangeAndReferenceMinInteger_ExpectsFailureAndMinIntegerAsIndex">
+            <summary>
+            Tests the correctness of finding the minimum value among the given elements that is smaller than the given reference value. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.BinaryHeapBaseTests.TryFindIndexOfMinSmallerThanReference_OutOfRangeIndexes_ExpectsFailureAndMinIntegerAsMinIndex">
+            <summary>
+            Tests the correctness of finding the minimum value among the given elements that is smaller than the given reference value. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.BinaryHeapBaseTests.TryFindIndexOfMinSmallerThanReference_ReferenceIsSmallest_ExpectsFailureAndMinIntegerAsMinIndex">
+            <summary>
+            Tests the correctness of finding the minimum value among the given elements that is smaller than the given reference value. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.BinaryHeapBaseTests.TryFindIndexOfMaxBiggerThanReference_IndexesInRange_ExpectsSuccessAndCorrectMaxIdex">
+            <summary>
+            Tests the correctness of finding the maximum value among the given elements that is bigger than the given reference value. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.BinaryHeapBaseTests.TryFindIndexOfMaxBiggerThanReference_ReferenceIsMaxInteger_ExpectsFailureAndMaxIntegerAsMaxIndex">
+            <summary>
+            Tests the correctness of finding the maximum value among the given elements that is bigger than the given reference value. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.BinaryHeapBaseTests.TryFindIndexOfMaxBiggerThanReference_OneIndexOutOfRange_ExpectsSuccessAndMaxIntegerAsMaxIndex">
+            <summary>
+            Tests the correctness of finding the maximum value among the given elements that is bigger than the given reference value. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.BinaryHeapBaseTests.TryFindIndexOfMaxBiggerThanReference_IndexesInRange_ExpectsSuccessAndCorrectMaxIndex">
+            <summary>
+            Tests the correctness of finding the maximum value among the given elements that is bigger than the given reference value. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2">
+            <summary>
+            Implements a mock heap to enable testing abstract class of <see cref="T:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2"/>.
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2.#ctor(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="array">An array of key-value pairs to be converted to a heap. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2.BubbleDown_Iteratively(System.Int32,System.Int32)">
+            <summary>
+            Implements the bubble down/trickle down operation using iteration.
+            </summary>
+            <param name="rootIndex">Specifies the index of the root element, the element for which the trickle down should be performed.</param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2.BubbleDown_Recursively(System.Int32,System.Int32)">
+            <summary>
+            Implements the bubble down/trickle down operation using recursion.
+            </summary>
+            <param name="rootIndex">Specifies the index of the root element, the element for which the trickle down should be performed.</param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2.BubbleUp_Iteratively(System.Int32,System.Int32)">
+            <summary>
+            Moves the value in the given index, up in the heap till its position is found. The position is defined such to respect heap ordering property.
+            </summary>
+            <param name="index">Specifies the index of the element that should be bubbled up.</param>
+            <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2.BuildHeap_Iteratively(System.Int32)">
+            <summary>
+            Note that passing the array size is not a must, as the class itself contains the array and has access to its size. However some algorithms such as HeapSort which rely on a heap to perform sorting, are better implemented, if we have the length of the array passed to these methods. 
+            </summary>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2.BuildHeap_Recursively(System.Int32)">
+            <summary>
+            Builds a heap using recursion, and does so in situ.
+            </summary>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2.Insert(System.Collections.Generic.KeyValuePair{`0,`1},System.Int32)">
+            <summary>
+            Inserts a new value into heap.
+            </summary>
+            <param name="keyValue">Specifies the key-value to be inserted into the heap.</param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2.TryFindRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)">
+            <summary>
+            Finds the root of the heap, without removing it. 
+            </summary>
+            <param name="keyValue">Specifies the key-value of the root.</param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+            <returns>True in case of success, and false in case of failure.</returns>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2.TryRemoveRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)">
+            <summary>
+            Removes the root of the heap. In a MinHeap and MinMaxHeap this is the min, and in a MaxHeap and MaxMinHeap this is the max. 
+            </summary>
+            <param name="keyValue">Specifies the key-value of the root.</param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+            <returns>True in case of success, and false otherwise.</returns>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap`2"/> class. 
+            </summary>
+        </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.Initialize">
             <summary>
             Initializes/Resets variables before executing each unit test in this class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.BuildHeap_Recursively">
+            <summary>
+            Tests the correctness of build operation when implemented recursively. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.BuildHeap_Itratively">
+            <summary>
+            Tests the correctness of Build operation when implemented iteratively. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectDescendingOrderInResults">
+            <summary>
+            Tests the correctness of removing root of the heap. Removes root several times until no member in tree remains.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMaxBinaryHeapAfterEachInsert">
+            <summary>
+            Tests the correctness of insert operation. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.HasMaxOrderPropertyForNode``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)">
+            <summary>
+            Checks whether the element at the given index follows heap properties. 
+            Checking the MaxHeap ordering (node relations) for the node at the given index, to make sure the correct relations between the node and its parent and children holds. 
+            </summary>
+            <typeparam name="TKey">Type of the keys stored in the heap. </typeparam>
+            <typeparam name="TValue">Type of the values stored in the heap. </typeparam>
+            <param name="heap">A max binary heap. </param>
+            <param name="nodeIndex">Index of a heap node in heap array. </param>
+            <returns></returns>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.HasMaxOrderPropertyForHeap``2(System.Int32,CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap{``0,``1})">
+            <summary>
+            Checks whether the heap is a proper Max heap. 
+            </summary>
+            <typeparam name="TKey">Type of the keys stored in the heap. </typeparam>
+            <typeparam name="TValue">Type of the values stored in the heap. </typeparam>
+            <param name="arraySize">Size of the heap array. </param>
+            <param name="heap">Is a Max binary heap. </param>
+            <returns>True if the heap is a proper Max binary heap, and false otherwise. </returns>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap`2"/> class. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.Initialize">
@@ -74,12 +834,88 @@
             Initializes/Resets variables before executing each unit test in this class. 
             </summary>
         </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapRecursive_1">
+            <summary>
+            Tests the correctness of Build operation recursive version. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapRecursive_2">
+            <summary>
+            Tests the correctness of Build operation recursive version. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapIterative_1">
+            <summary>
+            Tests the correctness of Build operation iterative version. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapIterative_2">
+            <summary>
+            Tests the correctness of Build operation iterative version. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.CompareEqualityOfRecursiveAndIterativeMinHeapConstruction">
+            <summary>
+            Tests the equality of the heaps built using recursive and iterative Build operations. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.TryRemoveMin_RemoveRootEqualToArrayLengthTimes_ExpectsAscendingOrderInResults">
+            <summary>
+            Tests the correctness of removing min node from a Min binary heap. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMinBinaryHeapAfterEachInsert">
+            <summary>
+            Tests the correctness of Insert operation when inserting several keys one after the other in the Min binary heap. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.GetNodeLevel">
+            <summary>
+            Tests the correctness of computing node levels in a Min binary heap. 
+            </summary>
+        </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.HasMinOrderProperty``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)">
             <summary>
+            Checks whether the given heap is a proper Min binary heap. 
             Checking the MinHeap ordering (node relations) for the node at the given index, to make sure the correct relations between the node and its parent and children holds. 
             </summary>
-            <param name="heap"></param>
-            <param name="nodeIndex"></param>
+            <param name="heap">A Min binary heap. </param>
+            <param name="nodeIndex">Is the index of a heap node in a heap array. </param>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2"/> class.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.BuildHeapRecursively_DistinctValues">
+            <summary>
+            Tests the correctness of Build operation recursive version, when inserting distinct values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.BuildHeapRecursively_DuplicateValues">
+            <summary>
+            Tests the correctness of Build operation, recursive version when inserting duplicate values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMinLevel``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)">
+            <summary>
+            Checks whether a node in a min level of a MinMax heap has proper properties. 
+            </summary>
+            <typeparam name="TKey">Type of the keys stored in the heap. </typeparam>
+            <typeparam name="TValue">Type of the values stored in the heap. </typeparam>
+            <param name="heap">Is a MinMax binary heap. </param>
+            <param name="index">Is the index of a node in a heap array and in a Min level.</param>
+            <returns>True if the node has proper properties, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMaxLevel``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)">
+            <summary>
+            Checks whether a node in a max level of a MinMax heap has proper properties. 
+            </summary>
+            <typeparam name="TKey">Type of the keys stored in the heap. </typeparam>
+            <typeparam name="TValue">Type of the values stored in the heap. </typeparam>
+            <param name="heap">Is a MinMax binary heap. </param>
+            <param name="index">Is the index of a node in a heap array and in a Max level.</param>
+            <returns>True if the node has proper properties, and false otherwise. </returns>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinarySearchTreeBaseTests.Initialize">
             <summary>
@@ -627,7 +1463,7 @@
         <member name="F:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests._tree">
             <summary>
             Is a B tree. 
-            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Initialize"/> method, see <see cref="!:Images\2-3-BTree.png"/> in current directory. 
+            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Initialize"/> method, see <a href="file:///C:\Users\Parisa\Documents\Interviews-2019\CSFundamentalAlgorithms\Tests\DataStructures\Trees\Nary\Images\2-3-BTree.png"/> <see cref="!:Images\2-3-BTree.png"/> in current directory. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Initialize">
@@ -852,10 +1688,130 @@
             Tests BTreeNode implementation by a 3-5 BTree Node.
             </summary>
         </member>
+        <member name="T:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils">
+            <summary>
+            Provides a collection of helper methods used by B-Tree tests. 
+            </summary>
+        </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.DFS``3(``0,System.Collections.Generic.List{``0})">
             <summary>
             TODO: How to make this to use the DFS I have in the algorithms? 
             </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeProperties``3(CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{``0,``1,``2},System.Int32,System.Int32,System.Int32,System.Func{``0,System.Boolean})">
+            <summary>
+            Checks whether the tree has B-Tree properties. 
+            </summary>
+            <typeparam name="TNode">Type of the tree nodes stored in the tree. </typeparam>
+            <typeparam name="TKey">Type of the keys stored in the tree. </typeparam>
+            <typeparam name="TValue">Type of the values stored in the tree. </typeparam>
+            <param name="tree">Is a B-Tree</param>
+            <param name="expectedTotalKeyCount">Is the expected number of keys (duplicate and distinct) in the tree. </param>
+            <param name="expectedDistinctKeyCount">Is the expected number of distinct keys in the tree. </param>
+            <param name="expectedNodeCount">Is the expected number of tree nodes. </param>
+            <param name="HasNodeProperties">Is the method used for checking properties. </param>
+            <returns>True if the tree has the expected properties. </returns>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeNodeProperties``3(``0)">
+            <summary>
+            Checks whether the node has BTree node properties. 
+            </summary>
+            <typeparam name="TNode">Type of tree node. </typeparam>
+            <typeparam name="TKey">Type of the key stored in the node. </typeparam>
+            <typeparam name="TValue">Type of the value stored in the node. </typeparam>
+            <param name="node">Is a B-Tree node. </param>
+            <returns>True if the node has expected properties, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBPlusTreeNodeProperties``2(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{``0,``1})">
+            <summary>
+            Checks whether the node has proper B+ Tree node properties. 
+            </summary>
+            <typeparam name="TKey">Type of the key stored in the node. </typeparam>
+            <typeparam name="TValue">Type of the value stored in the node. </typeparam>
+            <param name="node">Is a B+ Tree node. </param>
+            <returns>True if the node has expected properties, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeProperties(CSFundamentals.DataStructures.Trees.Nary.BTree{System.Int32,System.String},System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Checks whether tree has B Tree properties. 
+            </summary>
+            <param name="tree">Is a BTree node. </param>
+            <param name="expectedTotalKeyCount">Is the expected number of keys (duplicate and distinct) in the tree. </param>
+            <param name="expectedDistinctKeyCount">Is the expected number of distinct keys in the tree. </param>
+            <param name="expectedNodeCount">Is the expected number of nodes in the tree. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBPlusTreeProperties(CSFundamentals.DataStructures.Trees.Nary.BPlusTree{System.Int32,System.String},System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Checks whether the tree has B+ Tree properties. 
+            </summary>
+            <param name="tree">Is a B + tree. </param>
+            <param name="expectedTotalKeyCount">Is the expected number of keys (duplicate and distinct) in the tree. </param>
+            <param name="expectedDistinctKeyCount">Is the expected number of distinct keys in the tree. </param>
+            <param name="expectedNodeCount">Is the expected number of nodes in the tree. </param>
+        </member>
+        <member name="T:CSFundamentalsTests.StringStructures.LLPPSTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.DataStructures.StringStructures.LLPPS"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.StringStructures.LLPPSTests.Build_1">
+            <summary>
+            Tests the correctness of Build operation. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.StringStructures.LLPPSTests.Build_2">
+            <summary>
+            Tests the correctness of Build operation.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.StringStructures.LLPPSTests.Build_3">
+            <summary>
+            Tests the correctness of Build operation. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.StringStructures.StringSuffixTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.DataStructures.StringStructures.StringSuffix"/> class.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.StringStructures.StringSuffixTests.CompareTo">
+            <summary>
+            Tests the correctness of comparison operation. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.StringStructures.SuffixArrayTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.DataStructures.StringStructures.SuffixArray"/> class.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.StringStructures.SuffixArrayTests.SortSuffixes">
+            <summary>
+            Tests the correctness of Build operation.
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.StringStructures.SuffixTreeTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.DataStructures.StringStructures.SuffixTree"/> class.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.StringStructures.SuffixTreeTests.Build_ExpectsCorrectTree">
+            <summary>
+            Tests the correctness of Build operation. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.StringStructures.SuffixTreeTests.CheckSuffixTreeProperties(CSFundamentals.DataStructures.StringStructures.SuffixTreeNode,System.String)">
+            <summary>
+            Checks whether the tree rooted at <paramref name="root"/> has Suffix tree properties. 
+            </summary>
+            <param name="root"></param>
+            <param name="text"></param>
+        </member>
+        <member name="M:CSFundamentalsTests.StringStructures.SuffixTreeTests.GetNodes(CSFundamentals.DataStructures.StringStructures.SuffixTreeNode,System.Collections.Generic.List{CSFundamentals.DataStructures.StringStructures.SuffixTreeNode})">
+            <summary>
+            Gets a list of all the nodes in a suffix tree rooted at <paramref name="root"/>.
+            </summary>
+            <param name="root">The tree node at which suffix tree is rooted. </param>
+            <param name="nodes">A list of the nodes in the tree. </param>
         </member>
     </members>
 </doc>

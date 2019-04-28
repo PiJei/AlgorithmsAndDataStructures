@@ -44,14 +44,14 @@ namespace CSFundamentals.DataStructures.BinaryHeaps.API
         public abstract void BuildHeap_Recursively(int heapArrayLength);
 
         /// <summary>
-        /// This method is for inserting a new value into heap.
+        /// Inserts a new value into heap.
         /// </summary>
         /// <param name="keyValue">Specifies the key-value to be inserted into the heap.</param>
         /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         public abstract void Insert(KeyValuePair<TKey, TValue> keyValue, int heapArrayLength);
 
         /// <summary>
-        /// This method is for removing the root of the heap. In a MinHeap and MinMaxHeap this is the min, and in a MaxHeap and MaxMinHeap this is the max. 
+        /// Removes the root of the heap. In a MinHeap and MinMaxHeap this is the min, and in a MaxHeap and MaxMinHeap this is the max. 
         /// </summary>
         /// <param name="keyValue">Specifies the key-value of the root.</param>
         /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
@@ -59,7 +59,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps.API
         public abstract bool TryRemoveRoot(out KeyValuePair<TKey, TValue> keyValue, int heapArrayLength);
 
         /// <summary>
-        /// This method is for finding the root of the heap, without removing it. 
+        /// Finds the root of the heap, without removing it. 
         /// </summary>
         /// <param name="keyValue">Specifies the key-value of the root.</param>
         /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
@@ -67,14 +67,14 @@ namespace CSFundamentals.DataStructures.BinaryHeaps.API
         public abstract bool TryFindRoot(out KeyValuePair<TKey, TValue> keyValue, int heapArrayLength);
 
         /// <summary>
-        /// This method implements the bubble down/trickle down operation using recursion.
+        /// Implements the bubble down/trickle down operation using recursion.
         /// </summary>
         /// <param name="rootIndex">Specifies the index of the root element, the element for which the trickle down should be performed.</param>
         /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
         public abstract void BubbleDown_Recursively(int rootIndex, int heapArrayLength);
 
         /// <summary>
-        /// This method implements the bubble down/trickle down operation using iteration.
+        /// Implements the bubble down/trickle down operation using iteration.
         /// </summary>
         /// <param name="rootIndex">Specifies the index of the root element, the element for which the trickle down should be performed.</param>
         /// <param name="heapArrayLength">Specifies the length of the heap array. </param>

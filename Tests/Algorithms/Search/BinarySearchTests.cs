@@ -23,21 +23,33 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.Algorithms.Search
 {
+    /// <summary>
+    /// Tests the methods in <see cref="BinarySearch"/> class. 
+    /// </summary>
     [TestClass]
     public class BinarySearchTests
     {
+        /// <summary>
+        /// Tests the correctness of binary search algorithm on an array with distinct elements. 
+        /// </summary>
         [TestMethod]
         public void Search_DistinctElements()
         {
             SearchTests.DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition(BinarySearch.Search);
         }
 
+        /// <summary>
+        /// Tests the correctness of binary search algorithm on an array with duplicate elements. 
+        /// </summary>
         [TestMethod]
         public void Search_DuplicateElements()
         {
             SearchTests.DuplicateElements_ExpectsToGetTheIndexOfOneOfTheDupliatesNoMatterHowManyTimeSearchIsPerformed(BinarySearch.Search);
         }
 
+        /// <summary>
+        /// Tests the correctness of binary search algorithm when the key does not exist in the array. 
+        /// </summary>
         [TestMethod]
         public void Search_NonExistingElements()
         {

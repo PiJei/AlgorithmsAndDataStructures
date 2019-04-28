@@ -18,12 +18,15 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
-using System;
 using System.Collections.Generic;
+using CSFundamentals.DataStructures.BinaryHeaps.API;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.DataStructures.BinaryHeaps.API
 {
+    /// <summary>
+    /// Tests methods in <see cref="BinaryHeapBase{TKey, TValue}"/> class via <see cref="MockBinaryHeap{TKey, TValue}"/>.
+    /// </summary>
     [TestClass]
     public class BinaryHeapBaseTests
     {
@@ -50,6 +53,9 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps.API
             _heap = new MockBinaryHeap<int, string>(_keyValues);
         }
 
+        /// <summary>
+        /// Tests the correctness of finding the minimum value among the given elements that is smaller than the given reference value. 
+        /// </summary>
         [TestMethod]
         public void TryFindIndexOfMinSmallerThanReference_IndexesInRange_ExpectsSuccessAndCorrectMinIndex()
         {
@@ -58,6 +64,9 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps.API
             Assert.AreEqual(1, minValueIndex);
         }
 
+        /// <summary>
+        /// Tests the correctness of finding the minimum value among the given elements that is smaller than the given reference value. 
+        /// </summary>
         [TestMethod]
         public void TryFindIndexOfMinSmallerThanReference_IndexesInRangeAndReferenceMinInteger_ExpectsFailureAndMinIntegerAsIndex()
         {
@@ -66,6 +75,9 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps.API
             Assert.AreEqual(int.MinValue, minValueIndex);
         }
 
+        /// <summary>
+        /// Tests the correctness of finding the minimum value among the given elements that is smaller than the given reference value. 
+        /// </summary>
         [TestMethod]
         public void TryFindIndexOfMinSmallerThanReference_OutOfRangeIndexes_ExpectsFailureAndMinIntegerAsMinIndex()
         {
@@ -74,6 +86,9 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps.API
             Assert.AreEqual(int.MinValue, minValueIndex);
         }
 
+        /// <summary>
+        /// Tests the correctness of finding the minimum value among the given elements that is smaller than the given reference value. 
+        /// </summary>
         [TestMethod]
         public void TryFindIndexOfMinSmallerThanReference_ReferenceIsSmallest_ExpectsFailureAndMinIntegerAsMinIndex()
         {
@@ -82,6 +97,9 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps.API
             Assert.AreEqual(int.MinValue, minValueIndex);
         }
 
+        /// <summary>
+        /// Tests the correctness of finding the maximum value among the given elements that is bigger than the given reference value. 
+        /// </summary>
         [TestMethod]
         public void TryFindIndexOfMaxBiggerThanReference_IndexesInRange_ExpectsSuccessAndCorrectMaxIdex()
         {
@@ -90,6 +108,9 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps.API
             Assert.AreEqual(2, maxValueIndex);
         }
 
+        /// <summary>
+        /// Tests the correctness of finding the maximum value among the given elements that is bigger than the given reference value. 
+        /// </summary>
         [TestMethod]
         public void TryFindIndexOfMaxBiggerThanReference_ReferenceIsMaxInteger_ExpectsFailureAndMaxIntegerAsMaxIndex()
         {
@@ -98,6 +119,9 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps.API
             Assert.AreEqual(int.MaxValue, maxValueIndex);
         }
 
+        /// <summary>
+        /// Tests the correctness of finding the maximum value among the given elements that is bigger than the given reference value. 
+        /// </summary>
         [TestMethod]
         public void TryFindIndexOfMaxBiggerThanReference_OneIndexOutOfRange_ExpectsSuccessAndMaxIntegerAsMaxIndex()
         {
@@ -106,6 +130,9 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps.API
             Assert.AreEqual(1, maxValueIndex);
         }
 
+        /// <summary>
+        /// Tests the correctness of finding the maximum value among the given elements that is bigger than the given reference value. 
+        /// </summary>
         [TestMethod]
         public void TryFindIndexOfMaxBiggerThanReference_IndexesInRange_ExpectsSuccessAndCorrectMaxIndex()
         {

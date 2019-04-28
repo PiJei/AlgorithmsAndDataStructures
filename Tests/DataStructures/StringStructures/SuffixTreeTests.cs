@@ -26,11 +26,17 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.StringStructures
 {
+    /// <summary>
+    /// Tests methods in <see cref="SuffixTree"/> class.
+    /// </summary>
     [TestClass]
     public class SuffixTreeTests
     {
+        /// <summary>
+        /// Tests the correctness of Build operation. 
+        /// </summary>
         [TestMethod]
-        public void Test1()
+        public void Build_ExpectsCorrectTree()
         {
             string text = "banana";
             SuffixTreeNode root = SuffixTree.Build(text);
@@ -111,6 +117,11 @@ namespace CSFundamentalsTests.StringStructures
             Assert.AreEqual(0, rootChild3.Children.Count);
         }
 
+        /// <summary>
+        /// Checks whether the tree rooted at <paramref name="root"/> has Suffix tree properties. 
+        /// </summary>
+        /// <param name="root"></param>
+        /// <param name="text"></param>
         public void CheckSuffixTreeProperties(SuffixTreeNode root, string text)
         {
             var nodes = new List<SuffixTreeNode>();
@@ -155,6 +166,11 @@ namespace CSFundamentalsTests.StringStructures
             }
         }
 
+        /// <summary>
+        /// Gets a list of all the nodes in a suffix tree rooted at <paramref name="root"/>.
+        /// </summary>
+        /// <param name="root">The tree node at which suffix tree is rooted. </param>
+        /// <param name="nodes">A list of the nodes in the tree. </param>
         public void GetNodes(SuffixTreeNode root, List<SuffixTreeNode> nodes)
         {
             nodes.Add(root);

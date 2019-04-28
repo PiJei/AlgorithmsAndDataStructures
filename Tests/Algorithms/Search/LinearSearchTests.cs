@@ -24,6 +24,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.Algorithms.Search
 {
+    /// <summary>
+    /// Tests methods in <see cref="LinearSearch"/> class. 
+    /// </summary>
     [TestClass]
     public class LinearSearchTests
     {
@@ -34,6 +37,9 @@ namespace CSFundamentalsTests.Algorithms.Search
         private readonly static int _startIndex = 0;
         private readonly static int _endIndex = _values.Count - 1;
 
+        /// <summary>
+        /// Tests the correctness of Linear search algorithm on an array with distinct elements. 
+        /// </summary>
         [TestMethod]
         public void Search_DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition()
         {
@@ -46,6 +52,9 @@ namespace CSFundamentalsTests.Algorithms.Search
             Assert.AreEqual(6, LinearSearch.Search(_values, _startIndex, _endIndex, 45));
         }
 
+        /// <summary>
+        /// Tests the correctness of Linear search algorithm on an array with duplicate elements. 
+        /// </summary>
         [TestMethod]
         public void Search_DuplicateElements_ExpectsToGetTheIndexOfTheFirstOccurrenceNoMatterHowManyTimesSearchIsPerformed()
         {
@@ -53,6 +62,9 @@ namespace CSFundamentalsTests.Algorithms.Search
             Assert.AreEqual(4, LinearSearch.Search(_values, _startIndex, _endIndex, 3));
         }
 
+        /// <summary>
+        /// Tests the correctness of Linear search algorithm when the key does not exist in the array. 
+        /// </summary>
         [TestMethod]
         public void Search_NonExistingElements_ExpectsToGetMinusOne()
         {

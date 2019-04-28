@@ -24,9 +24,16 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.Algorithms.Sort
 {
+    /// <summary>
+    /// Implements methods for testing sort algorithms over arrays with different properties. 
+    /// </summary>
     [TestClass]
     public class SortTests
     {
+        /// <summary>
+        /// Tests the correctness of <paramref name="sortMethod"/>.
+        /// </summary>
+        /// <param name="sortMethod">The sort method that is being tested. </param>
         [TestMethod]
         public static void TestSortMethodWithDifferentInputs(Action<List<int>> sortMethod)
         {

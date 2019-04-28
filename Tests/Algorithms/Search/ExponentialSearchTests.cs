@@ -23,21 +23,33 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.Algorithms.Search
 {
+    /// <summary>
+    /// Tests methods in <see cref="ExponentialSearch"/> class. 
+    /// </summary>
     [TestClass]
     public class ExponentialSearchTests
     {
+        /// <summary>
+        /// Tests the correctness of Exponential search algorithm on an array with distinct elements. 
+        /// </summary>
         [TestMethod]
         public void Search_DistinctElements()
         {
             SearchTests.DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition(ExponentialSearch.Search);
         }
 
+        /// <summary>
+        /// Tests the correctness of Exponential search algorithm on an array with duplicate elements. 
+        /// </summary>
         [TestMethod]
         public void Search_DuplicateElements()
         {
             SearchTests.DuplicateElements_ExpectsToGetTheIndexOfOneOfTheDupliatesNoMatterHowManyTimeSearchIsPerformed(ExponentialSearch.Search);
         }
 
+        /// <summary>
+        /// Tests the correctness of Exponential search algorithm when the key does not exist in the array. 
+        /// </summary>
         [TestMethod]
         public void Search_NotExistingElements()
         {

@@ -24,9 +24,15 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.Algorithms.GraphTraversal
 {
+    /// <summary>
+    /// Tests methods in <see cref="Dictionary{TKey, TValue}"/> class. 
+    /// </summary>
     [TestClass]
     public class DijkstraTests
     {
+        /// <summary>
+        /// Tests the correctness of shortest distance computation 
+        /// </summary>
         [TestMethod]
         public void GetShortestDistancesFromRoot()
         {

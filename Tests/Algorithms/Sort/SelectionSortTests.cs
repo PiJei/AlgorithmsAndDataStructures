@@ -23,9 +23,15 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.Algorithms.Sort
 {
+    /// <summary>
+    /// Tests methods in <see cref="SelectionSort"/> class.
+    /// </summary>
     [TestClass]
     public partial class SelectionSortTests
     {
+        /// <summary>
+        /// Tests the correctness of Selection sort algorithm.
+        /// </summary>
         [TestMethod]
         public void Sort_Iteratively_WithDifferentInputs()
         {

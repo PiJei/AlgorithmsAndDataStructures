@@ -24,9 +24,15 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.StringStructures
 {
+    /// <summary>
+    /// Tests methods in <see cref="LLPPS"/> class. 
+    /// </summary>
     [TestClass]
     public class LLPPSTests
     {
+        /// <summary>
+        /// Tests the correctness of Build operation. 
+        /// </summary>
         [TestMethod]
         public void Build_1()
         {
@@ -43,6 +49,9 @@ namespace CSFundamentalsTests.StringStructures
             Assert.AreEqual(0, longestProperPrefixes1[9]);
         }
 
+        /// <summary>
+        /// Tests the correctness of Build operation.
+        /// </summary>
         [TestMethod]
         public void Build_2()
         {
@@ -55,6 +64,9 @@ namespace CSFundamentalsTests.StringStructures
             Assert.AreEqual(0, longestProperPrefixes1[5]);
         }
 
+        /// <summary>
+        /// Tests the correctness of Build operation. 
+        /// </summary>
         [TestMethod]
         public void Build_3()
         {

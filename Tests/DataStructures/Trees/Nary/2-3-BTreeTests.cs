@@ -33,7 +33,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
     {
         /// <summary>
         /// Is a B tree. 
-        /// To visualize this tree built as in <see cref="Initialize()"/> method, see <see cref="Images\2-3-BTree.png"/> in current directory. 
+        /// To visualize this tree built as in <see cref="Initialize()"/> method, see <a href="file:///C:\Users\Parisa\Documents\Interviews-2019\CSFundamentalAlgorithms\Tests\DataStructures\Trees\Nary\Images\2-3-BTree.png"/> <see cref="Images\2-3-BTree.png"/> in current directory. 
         /// </summary>
         private BTree<int, string> _tree = null;
 
