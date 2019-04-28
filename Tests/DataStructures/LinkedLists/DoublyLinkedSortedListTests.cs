@@ -24,9 +24,15 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.DataStructures.LinkedLists
 {
+    /// <summary>
+    /// Tests methods in <see cref="DoublyLinkedSortedList{TValue}"/> class. 
+    /// </summary>
     [TestClass]
     public class DoublyLinkedSortedListTests
     {
+        /// <summary>
+        /// Tests the correctness of Insert operation. 
+        /// </summary>
         [TestMethod]
         public void Insert_1()
         {
@@ -54,6 +60,9 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.IsTrue(IsSorted(list.Head()));
         }
 
+        /// <summary>
+        /// Tests the correctness of Insert operation. 
+        /// </summary>
         [TestMethod]
         public void Insert_2()
         {
@@ -71,6 +80,9 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.IsTrue(IsSorted(list.Head()));
         }
 
+        /// <summary>
+        /// Tests the correctness of Delete operation. 
+        /// </summary>
         [TestMethod]
         public void Delete()
         {
@@ -124,7 +136,13 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.IsTrue(IsSorted(list.Head()));
         }
 
-        public bool IsSorted<T>(DoublyLinkedNode<T> head) where T : IComparable<T>
+        /// <summary>
+        /// Checks whether the linked list that starts at <paramref name="head"/> is sorted. 
+        /// </summary>
+        /// <typeparam name="TValue">Type of the value stored in the list. </typeparam>
+        /// <param name="head">Head/starting node of the list.</param>
+        /// <returns>True if the list is sorted, and false otherwise. </returns>
+        public bool IsSorted<TValue>(DoublyLinkedNode<TValue> head) where TValue : IComparable<TValue>
         {
             var current = head;
 

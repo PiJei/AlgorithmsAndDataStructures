@@ -23,9 +23,15 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.DataStructures.LinkedLists
 {
+    /// <summary>
+    /// Tests methods in <see cref="DoublyLinkedNode{TValue}"/> class.
+    /// </summary>
     [TestClass]
     public class DoublyLinkedNodeTests
     {
+        /// <summary>
+        /// Tests the correctness of detecting whether a node is the head. 
+        /// </summary>
         [TestMethod]
         public void IsHead()
         {
@@ -37,6 +43,9 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.IsFalse(node.IsHead());
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node is the tail. 
+        /// </summary>
         [TestMethod]
         public void IsTail()
         {

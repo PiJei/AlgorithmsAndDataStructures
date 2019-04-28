@@ -19,13 +19,20 @@
  */
 #endregion
 using CSFundamentals.DataStructures.LinkedLists;
+using CSFundamentals.DataStructures.LinkedLists.API;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.DataStructures.LinkedLists.API
 {
+    /// <summary>
+    /// Tests methods in <see cref="LinkedListBase{TNode, TValue}"/> using <see cref="MockLinkedList{T1}"/> class. 
+    /// </summary>
     [TestClass]
     public class LinkedListBaseTests
     {
+        /// <summary>
+        /// Tests the correctness of computing the length of a linked list. 
+        /// </summary>
         [TestMethod]
         public void Length()
         {
@@ -49,6 +56,9 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists.API
             Assert.AreEqual(4, list.Count());
         }
 
+        /// <summary>
+        /// Tests the correctness of searching an empty list for a non existing key. Expects an exception to be thrown. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(NotFoundException))]
         public void Search_EmptyListAndNotExistingValue_ThrowsException()
@@ -57,6 +67,9 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists.API
             var result = list.Search(10);
         }
 
+        /// <summary>
+        /// Tests the correctness of searching a non empty list for a non existing key. Expects an exception to be thrown. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(NotFoundException))]
         public void Search_NonEmptyListAndNotExistingValue_ThrowsException()
@@ -65,6 +78,9 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists.API
             var result = list.Search(10);
         }
 
+        /// <summary>
+        /// Tests the correctness of search operation over a list for existing keys. 
+        /// </summary>
         [TestMethod]
         public void Search_Success()
         {

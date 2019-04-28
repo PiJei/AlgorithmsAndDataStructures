@@ -23,9 +23,15 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.DataStructures.LinkedLists
 {
+    /// <summary>
+    /// Tests methods in <see cref="SinglyLinkedList{TValue}"/> class. 
+    /// </summary>
     [TestClass]
     public class SinglyLinkedListTests
     {
+        /// <summary>
+        /// Tests the correctness of Insert operation. 
+        /// </summary>
         [TestMethod]
         public void Insert()
         {
@@ -51,6 +57,9 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.IsNotNull(list.Head().Next);
         }
 
+        /// <summary>
+        /// Tests the correctness of Delete operation. 
+        /// </summary>
         [TestMethod]
         public void Delete()
         {

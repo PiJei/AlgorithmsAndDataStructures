@@ -917,6 +917,127 @@
             <param name="index">Is the index of a node in a heap array and in a Max level.</param>
             <returns>True if the node has proper properties, and false otherwise. </returns>
         </member>
+        <member name="T:CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.DataStructures.LinkedLists.API.LinkedListBase`2"/> using <see cref="T:CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList`1"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Length">
+            <summary>
+            Tests the correctness of computing the length of a linked list. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Search_EmptyListAndNotExistingValue_ThrowsException">
+            <summary>
+            Tests the correctness of searching an empty list for a non existing key. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Search_NonEmptyListAndNotExistingValue_ThrowsException">
+            <summary>
+            Tests the correctness of searching a non empty list for a non existing key. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Search_Success">
+            <summary>
+            Tests the correctness of search operation over a list for existing keys. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList`1">
+            <summary>
+            Implements a mock for testing <see cref="T:CSFundamentals.DataStructures.LinkedLists.API.LinkedListBase`2"/> calss.
+            </summary>
+            <typeparam name="T1"></typeparam>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList`1.#ctor">
+            <summary>
+            Parameter-less constructor.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList`1.#ctor(CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedNode{`0})">
+            <summary>
+            Constructor. 
+            </summary>
+            <param name="head">Head/starting node of the list. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList`1.Delete(`0)">
+            <summary>
+            Deletes a node with the given value from the list. If no node with the given value exists, fails the operation and returns false.
+            </summary>
+            <param name="value">Is the value that is being searched for.</param>
+            <returns>True in case of success, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList`1.Insert(`0)">
+            <summary>
+            Inserts a new value in the list.
+            </summary>
+            <param name="newValue">Is the value of the new node. </param>
+            <returns>True in case of success.</returns>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedListTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedList`1"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedListTests.InsertAfter_EmptyListAndInsertAfterNotExistingValue_ThrowsException">
+            <summary>
+            Tests the correctness of InsertAfter operation over an empty list. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedListTests.InsertAfter_NotEmptyListAndInsertAfterNotExistingValue_ThrowsException">
+            <summary>
+            Tests the correctness of InsertAfter operation over a non empty list to insert after a non existing key. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedListTests.InsertAfter_Success_1">
+            <summary>
+            Tests the correctness of InsertAfter operation over a non empty list and inserting after an existing key. Expects success. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedListTests.InsertAfter_Success_2">
+            <summary>
+            Tests the correctness of InsertAfter operation over a non empty list and inserting after an existing key. Expects success. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedListTests.InsertBefore_EmptyListInsertBeforeNotExistingValue_ThrowsException">
+            <summary>
+            Tests the correctness of InsertBefore operation over an empty list and inserting after a non existing key. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedListTests.InsertBefore_NotEmptyListInsertBeforeNotExistingValue_ThrowsException">
+            <summary>
+            Tests the correctness of InsertBefore operation over a non empty list and inserting after a non existing key. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedListTests.InsertBefore_Success_1">
+            <summary>
+            Tests the correctness of InsertBefore operation over a non empty list and inserting after an existing key. Expects success.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedListTests.InsertBefore_Success_2">
+            <summary>
+            Tests the correctness of InsertBefore operation over a non empty list and inserting after an existing key. Expects success.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedListTests.Append">
+            <summary>
+            Tests the correctness of Append operation.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedListTests.Prepend">
+            <summary>
+            Tests the correctness of Pre-pend operation. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedListTests.Delete">
+            <summary>
+            Tests the correctness of Delete operation. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedListTests.Append_Prepend">
+            <summary>
+            Tests the correctness of Append and Prepend operations one after each other. 
+            </summary>
+        </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinarySearchTreeBaseTests.Initialize">
             <summary>
             Initializes/Resets variables before executing each unit test in this class. 
@@ -1528,6 +1649,146 @@
         <member name="T:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests">
             <summary>
             Tests BTreeNode implementation by a 2-3 BTree Node.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Constructor_CheckingDegrees">
+            <summary>
+            Tests the correctness of constructor in computing minimum and maximum branching degrees and minimum and maximum number of keys in a BTree node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsLeaf_ChildLessNode_ExpectsTrue">
+            <summary>
+            Tests the correctness of detecting whether a node is leaf over a child less node. Expects true. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsLeaf_NodeHasOneChild_ExpectsFalse">
+            <summary>
+            Tests the correctness of detecting whether a node is leaf over a node with one child. Expects false. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsRoot_NodeHasNoParent_ExpectsTrue">
+            <summary>
+            Tests the correctness of detecting whether a node is root over a node with no parent. Expects true. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsRoot_NodeHasParent_ExpectsFalse">
+            <summary>
+            Tests the correctness of detecting whether a node is root over a node with a parent. Expects false. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.GetMinKey_NodeHasKeys_FindsMinCorrectly">
+            <summary>
+            Tests the correctness of finding min key in a node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.GetMaxKey_NodeHasKeys_FindsMaxCorrectly">
+            <summary>
+            Tests the correctness of finding max key in a node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_OtherIsNull_ExpectsBigger">
+            <summary>
+            Tests the correctness of comparing a BTree node to a null node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_TwoEmptyNodes_ExpectsEqual">
+            <summary>
+            Tests the correctness of comparing two empty nodes (have no keys). 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_NonEmptyToEmpty_ExpectsNonEmptyToBeBigger">
+            <summary>
+            Tests the correctness of comparing a non empty node to an empty node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_TwoNodesEachWithOneKey_ExpectsNodeWithSmallerKeyToBeSmaller">
+            <summary>
+            Tests the correctness of comparing two nodes each with one key. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_TwoNodesWithEqualMinKeyAndDifferentMaxKey_ExpectsEqual">
+            <summary>
+            Tests the correctness of comparing two nodes that have the same min key but different max keys. Expects equality. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertKey_SeveralKeys_ExpectsAscendingOrderAmongKeys">
+            <summary>
+            Tests the correctness of inserting several distinct keys in the BTree node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertKey_Duplicates_ExpectsOnlyOneKey">
+            <summary>
+            Tests the correctness of inserting several keys some with duplicates in a BTree node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertChild_SeveralChildren_ExpectsAscendingOrderAmongChildrenBasedOnTheirKeyRange">
+            <summary>
+            Tests the correctness of inserting several children in a node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertChild_Duplicates_ThrowsException">
+            <summary>
+            Tests the correctness of inserting duplicate children in a node. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_EmptyNode_ExpectsNullForTheNewNode">
+            <summary>
+            Tests the correctness of splitting an empty node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsMinFull_ExpectsNullForTheNewNode">
+            <summary>
+            Tests the correctness of splitting a minFull node. Expects the split operation not to be executed. Note that in this implementation Split operation is only permitted on an overFlown node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsFull_ExpectsNullForTheNewNode">
+            <summary>
+            Tests the correctness of splitting a full node. Expects the split operation not to be executed. Note that in this implementation Split operation is only permitted on an overFlown node.  
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsOverFlownAndHasNoChildren_ExpectsSuccessfulSplitForKeys">
+            <summary>
+            Tests the correctness of splitting an overFlown node. Expects a successful split. Note that in this implementation Split operation is only permitted on an overFlown node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsOverFlownAndHasChildren_ExpectsSuccessfulSplitForKeysAndChildren">
+            <summary>
+            Tests the correctness of splitting an overFlown node with children. Expects a successful split of keys and children. Note that in this implementation Split operation is only permitted on an overFlown node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_EmptyNode_ExpectsFalse">
+            <summary>
+            Tests the correctness of detecting whether a node is overFlown over an empty node. Expects false. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_MinFullNode_ExpectsFalse">
+            <summary>
+            Tests the correctness of detecting whether a node is overFlown over minFull node. Expects false. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_FullNode_ExpectsFalse">
+            <summary>
+            Tests the correctness of detecting whether a node is overFlown over a full node. Expects false. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_OverFlownNode_ExpectsTrue">
+            <summary>
+            Tests the correctness of detecting whether a node is overFlown over an overFlown node. Expects false. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.KeyValueToMoveUp_EmptyNode_ThrowsException">
+            <summary>
+            Tests the correctness of finding the key to move up to parent as part of a split operation over an empty node. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.KeyValueToMoveUp_MinFullNode_ThrowsException">
+            <summary>
+            Tests the correctness of finding the key to move up to parent as part of a split operation over a minFull node. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.KeyValueToMoveUp_NodeIsMinOneFull_ExpectsLastKeyInTheNode">
+            <summary>
+            Tests the correctness of finding the key to move up to parent as part of a split operation over an minOneFull node. Expects the right answer.
             </summary>
         </member>
         <member name="T:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests">

@@ -21,10 +21,14 @@
 using System;
 using System.Collections.Generic;
 using CSFundamentals.DataStructures.Trees.Binary.API;
+using CSFundamentals.DataStructures.Trees.Binary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
 {
+    /// <summary>
+    /// Tests methods in <see cref="BinaryTreeNode{TNode, TKey, TValue}"/> class. 
+    /// </summary>
     [TestClass]
     public class BinarySearchTreeBaseTests
     {
@@ -77,6 +81,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
             _root = A;
         }
 
+        /// <summary>
+        /// Tests the correctness of rotate left operation. 
+        /// </summary>
         [TestMethod]
         public void RotateLeft()
         {
@@ -144,6 +151,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
             Assert.IsTrue(G.RightChild == null);
         }
 
+        /// <summary>
+        /// Tests the correctness of rotate right operation. 
+        /// </summary>
         [TestMethod]
         public void RotateRight()
         {
@@ -211,6 +221,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
             Assert.IsTrue(G.RightChild == null);
         }
 
+        /// <summary>
+        /// Tests the correctness of search operation. 
+        /// </summary>
         [TestMethod]
         public void SearchBST_Success()
         {
@@ -223,6 +236,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
             Assert.AreEqual("str3", _tree.Search(_root, 40).Value, ignoreCase: false);
         }
 
+        /// <summary>
+        /// Tests the correctness of search operation when looking for a non existing key. 
+        /// </summary>
         [TestMethod]
         public void SearchBST_Failure()
         {
@@ -230,6 +246,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
             Assert.IsNull(_tree.Search(null, 30));
         }
 
+        /// <summary>
+        /// Tests the correctness of Update operation.
+        /// </summary>
         [TestMethod]
         public void UpdateBST_Success()
         {
@@ -238,6 +257,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
             Assert.IsTrue(_tree.Update(_root, 70, "string6"));
         }
 
+        /// <summary>
+        /// Testing the correctness of Update operation when root is null or the key does not exist in the tree. 
+        /// </summary>
         [TestMethod]
         public void UpdateBST_Failue()
         {

@@ -23,9 +23,15 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.DataStructures.LinkedLists
 {
+    /// <summary>
+    /// Tests methods in <see cref="Utils"/> class. 
+    /// </summary>
     [TestClass]
     public class UtilsTests
     {
+        /// <summary>
+        /// Tests the correctness of DeepCopy operation. 
+        /// </summary>
         [TestMethod]
         public void DeepCopy()
         {
@@ -52,19 +58,35 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.AreEqual("Ted", aliceCopy.Parent.Name, ignoreCase: false);
         }
 
+        /// <summary>
+        /// Is an example class for testing <see cref="Utils.DeepCopy{T}(T)"/> operation. 
+        /// </summary>
         public class Person
         {
+            /// <summary>
+            /// Name of the person. 
+            /// </summary>
             public string Name { get; set; }
+
+            /// <summary>
+            /// Object storing the parent information of this person.
+            /// </summary>
             public Person Parent { get; set; }
 
+            /// <summary>
+            /// Constructor
+            /// </summary>
+            /// <param name="name">Name of the person. </param>
             public Person(string name)
             {
                 Name = name;
             }
 
+            /// <summary>
+            /// Parameter-less constructor needed for serializing and deserailizing. 
+            /// </summary>
             public Person()
             {
-
             }
         }
     }
