@@ -25,6 +25,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.DataStructures.Trees.Binary
 {
+    /// <summary>
+    /// Tests methods of <see cref="BinarySearchTreeBase{TKey, TValue}"/> class. 
+    /// </summary>
     [TestClass]
     public class BinarySearchTreeTests
     {
@@ -55,6 +58,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             HasBinarySearchTreeProperties(_tree, _root, 10);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting the root node. 
+        /// </summary>
         [TestMethod]
         public void Delete_Root_ExpectsReplacementByImmediateSuccessorKey42()
         {
@@ -64,6 +70,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             Assert.AreEqual(42, _root.Key);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting a node with 2 children. 
+        /// </summary>
         [TestMethod]
         public void Delete_NodeWith2Children_ExpectsReplacementWithImmediateSuccessorKey50()
         {
@@ -72,6 +81,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             Assert.AreEqual(80, _root.RightChild.Key);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting a node with no children. 
+        /// </summary>
         [TestMethod]
         public void Delete_NodeWithNoChildren()
         {
@@ -79,6 +91,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             HasBinarySearchTreeProperties(_tree, _root, 9);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting a node with one child. 
+        /// </summary>
         [TestMethod]
         public void Delete_NodeWithOneChildren_ExpectsReplacementByLeftChild()
         {
@@ -87,6 +102,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         }
 
         /// <summary>
+        /// Tests the correctness of delete operation when deleting all the keys in the tree one after the other in a random order. 
         /// For a step by step transition of the BST while deleting these keys, see <see cref="images\bst-delete-stepBystep.png"/>.
         /// </summary>
         [TestMethod]
@@ -125,6 +141,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             HasBinarySearchTreeProperties(_tree, _root, 0);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting a non existing key from the tree. 
+        /// </summary>
         [TestMethod]
         public void Delete_NotExistingKey_ExpectsNoAlternationInTree()
         {
@@ -135,6 +154,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             HasBinarySearchTreeProperties(_tree, _root, 10);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete min key operation
+        /// </summary>
         [TestMethod]
         public void DeleteMin_InEntireTree_ExpectsToDelete10AndHave20AsNewMin()
         {
@@ -144,6 +166,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             Assert.AreEqual(20, minNode.Key);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete min key operation
+        /// </summary>
         [TestMethod]
         public void DeleteMin_InRightSubtreeOfRoot_ExpectsToDelete42AndHave45AsMinAtTheEnd()
         {
@@ -153,6 +178,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             Assert.AreEqual(45, minNode.Key);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete max key operation
+        /// </summary>
         [TestMethod]
         public void DeleteMax_InEntireTree_ExpectsToDelete80AndHave50AsNewMax()
         {
@@ -162,6 +190,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             Assert.AreEqual(50, maxNode.Key);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete max key operation
+        /// </summary>
         [TestMethod]
         public void DeleteMax_InLeftSubtreeOfRoot_ExpectsToDelete35AndHave30AsMinAtTheEnd()
         {
@@ -171,6 +202,12 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             Assert.AreEqual(30, maxNode.Key);
         }
 
+        /// <summary>
+        /// Checks whether the tree is a proper binary search tree. 
+        /// </summary>
+        /// <param name="tree">A binary search tree. </param>
+        /// <param name="root">The root node of the tree. </param>
+        /// <param name="expectedTotalKeyCount">Expected total number of keys in the tree. </param>
         public void HasBinarySearchTreeProperties(BinarySearchTreeBase<int, string> tree, BinarySearchTreeNode<int, string> root, int expectedTotalKeyCount)
         {
             Assert.IsTrue(BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty<BinarySearchTreeNode<int, string>, int, string>(root));

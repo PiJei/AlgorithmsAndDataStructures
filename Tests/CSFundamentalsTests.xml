@@ -127,6 +127,7 @@
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion">
             <summary>
+            Tests the correctness of insert operation.
             For a step by step transition of the AVL tree while inserting these keys, see <see cref="!:images\avl-bst-insert-stepByStep.png"/>.
             </summary>
         </member>
@@ -227,6 +228,11 @@
             <param name="nodes">List of all the nodes in the tree. </param>
             <returns>True if the nodes all have expected balance factors, and false otherwise. </returns>
         </member>
+        <member name="T:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests">
+            <summary>
+            Tests methods of <see cref="T:CSFundamentals.DataStructures.Trees.Binary.BinarySearchTreeBase`2"/> class. 
+            </summary>
+        </member>
         <member name="F:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests._tree">
             <summary>
             Is a binary search tree (aka. BST). 
@@ -243,9 +249,78 @@
             For a step by step transition of the BST while inserting these keys, see <see cref="!:images\bst-insert-stepBystep.png"/>.
             </summary>
         </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Delete_Root_ExpectsReplacementByImmediateSuccessorKey42">
+            <summary>
+            Tests the correctness of delete operation when deleting the root node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Delete_NodeWith2Children_ExpectsReplacementWithImmediateSuccessorKey50">
+            <summary>
+            Tests the correctness of delete operation when deleting a node with 2 children. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Delete_NodeWithNoChildren">
+            <summary>
+            Tests the correctness of delete operation when deleting a node with no children. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Delete_NodeWithOneChildren_ExpectsReplacementByLeftChild">
+            <summary>
+            Tests the correctness of delete operation when deleting a node with one child. 
+            </summary>
+        </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Delete_MultipleNodesConsecutively_ExpectsCorrectBinarySearchTreeAfterEachStep">
             <summary>
+            Tests the correctness of delete operation when deleting all the keys in the tree one after the other in a random order. 
             For a step by step transition of the BST while deleting these keys, see <see cref="!:images\bst-delete-stepBystep.png"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Delete_NotExistingKey_ExpectsNoAlternationInTree">
+            <summary>
+            Tests the correctness of delete operation when deleting a non existing key from the tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.DeleteMin_InEntireTree_ExpectsToDelete10AndHave20AsNewMin">
+            <summary>
+            Tests the correctness of delete min key operation
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.DeleteMin_InRightSubtreeOfRoot_ExpectsToDelete42AndHave45AsMinAtTheEnd">
+            <summary>
+            Tests the correctness of delete min key operation
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.DeleteMax_InEntireTree_ExpectsToDelete80AndHave50AsNewMax">
+            <summary>
+            Tests the correctness of delete max key operation
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.DeleteMax_InLeftSubtreeOfRoot_ExpectsToDelete35AndHave30AsMinAtTheEnd">
+            <summary>
+            Tests the correctness of delete max key operation
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.HasBinarySearchTreeProperties(CSFundamentals.DataStructures.Trees.Binary.BinarySearchTreeBase{System.Int32,System.String},CSFundamentals.DataStructures.Trees.Binary.BinarySearchTreeNode{System.Int32,System.String},System.Int32)">
+            <summary>
+            Checks whether the tree is a proper binary search tree. 
+            </summary>
+            <param name="tree">A binary search tree. </param>
+            <param name="root">The root node of the tree. </param>
+            <param name="expectedTotalKeyCount">Expected total number of keys in the tree. </param>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeNodeTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeNodeTests.FlipColor">
+            <summary>
+            Tests the correctness of flipping a node's color. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests">
+            <summary>
+            Tests methods of <see cref="T:CSFundamentals.DataStructures.Trees.Binary.RedBlackTree`2"/> class.
             </summary>
         </member>
         <member name="F:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests._tree">
@@ -259,14 +334,106 @@
             Initializes/Resets variables before executing each unit test in this class. 
             </summary>
         </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Build_ExpectsCorrectRedBlackTree">
+            <summary>
+            Tests the correctness of Build operation
+            </summary>
+        </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion">
             <summary>
+            Tests the correctness of insert operation when inserting several keys one after the other. 
             For a step by step transition of the RedBlack tree while inserting these keys, see <see cref="!:images\redblack-bst-insert-stepByStep.png"/>.
             </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedNodeWithTWoChildren_ExpectsToBeRepalcedBy50WhichIsBlackWithARedRightChild">
+            <summary>
+            Tests the correctness of delete operation when deleting a red node with 2 children. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedNodeWithTwoChildren_ExpectsToBeReplacedBy35AndIsSubjectToLastCaseBlackSiblingWithLeftRedChild">
+            <summary>
+            Tests the correctness of delete operation when deleting a red node with 2 children. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackNodeWithOneRedRightChild_ReplaceWithTheRightRedChildWith80AsKeyAndColorItBlack">
+            <summary>
+            Tests the correctness of delete operation when deleting a black node with one right child. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackNodeWithOneRedLeftChild_RepalceWithLeftRedChildWith10AsKeyAndColorItBlack">
+            <summary>
+            Tests the correctness of delete operation when deleting a black node with one red left child. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_Root_ExpectsToBeReplacedBy47WhichIsARedLeafAndHasSimpleDeletion">
+            <summary>
+            Tests the correctness of delete operation when deleting the root of the tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackLeafNode_BlackSiblingWithARedLeftChild_ExpectsRightRotate">
+            <summary>
+            Tests the correctness of delete operation when deleting a black leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackNodeWithLeftRedChild_ReplaceWithLeftChildAs42AndColorItBlack">
+            <summary>
+            Tests the correctness of delete operation when deleting a black node with a left red child. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedLeafNode_ExpectsSimpleDelete">
+            <summary>
+            Tests the correctness of delete operation when deleting a red leaf node.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_MultipleKyesConsecutively_ExpectsCorrectTreeAfterEachStep">
+            <summary>
+            Tests the correctness of delete operation when deleting all the keys in the tree one after the other in a random order. 
+            For a step by step transition of the BST while deleting these keys, see <see cref="!:images\redblack-bst-delete-stepBystep.png"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsRed_DefaultColor_ExpectsTrue">
+            <summary>
+            Tests the default color of a RedBlack tree node upon creation.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsRed_ColoredBlack_ExpectsFalse">
+            <summary>
+            Tests whether a black node is red. Expects false. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsBlack_DefaultColor_ExpectsFalse">
+            <summary>
+            Tests whether a node is black upon creation. Expects false. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsBlack_ColoredBlack_ExpectsTrue">
+            <summary>
+            Tests whether a black node is black. Expects true. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.UpdateParentWithNullingChild">
+            <summary>
+            Tests the correctness of nullifying children of a node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.HasRedBlackTreeProperties``2(CSFundamentals.DataStructures.Trees.Binary.RedBlackTree{``0,``1},CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode{``0,``1},System.Int32)">
+            <summary>
+            Checks whether a tree has a RedBlack tree properties. 
+            </summary>
+            <typeparam name="TKey">Type of the keys stored in a tree. </typeparam>
+            <typeparam name="TValue">Type of the values stored in a tree. </typeparam>
+            <param name="tree">A RedBlack tree. </param>
+            <param name="root">Root of a RedBlack tree. </param>
+            <param name="expectedNodeCount">Is the expected number of nodes in a tree. </param>
         </member>
         <member name="T:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_4_BTreeNodeTests">
             <summary>
             Tests BTreeNode implementation by a 2-3-4 BTree Node.
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests">
+            <summary>
+            Tests the implementation of B+ Tree with a maximum branching factor of 3. 
             </summary>
         </member>
         <member name="F:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests._tree">
@@ -280,14 +447,171 @@
             Initializes/Resets variables before executing each unit test in this class. 
             </summary>
         </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Build_ExpectsACorrectBPlusTree">
+            <summary>
+            Tests the correctness of Build operation
+            </summary>
+        </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Insert_SeveralKeys_ExpectsTreeToIncreaseInLevelsAfewTimes">
             <summary>
+            Tests the correctness of insert operation.
             For a step by step transition of this 2-3 B + Tree while inserting these keys, see <see cref="!:images\2-3-BPlus-Tree-insert-stepBystep.png"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Search_ForAllExistingKeysInTree_ExpectsSuccess">
+            <summary>
+            Tests the correctness of search operation by looking for all the existing keys in the tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Search_NotExistingKey_ThrowsException">
+            <summary>
+            Tests the correctness of search operation by looking for non existing keys in the tree. Expects exceptions to be thrown.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.FindLeafToInsertKey_NewKeySmallerThanAllKeysInTree_ExpectsTheSparseLeafNodeContainingSmallestKey">
+            <summary>
+            Tests the correctness of finding a leaf node for inserting a new key. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.FindLeafToInsertKey_NewKeyBiggerThanAllKeysInTree_ExpectsTheSparseLeafNodeContainingBiggestKey">
+            <summary>
+            Tests the correctness of finding a leaf node for inserting a new key. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.FindLeafToInsertKey_NewKey_ExpectsSuccess">
+            <summary>
+            Tests the correctness of finding a leaf node for inserting a new key. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.FindLeafToInsertKey_DuplicateKey_ThrowsException">
+            <summary>
+            Tests the correctness of finding a leaf node for inserting a duplicate key. Expects an exception to be thrown.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheBiggestKeyInLeftSubTree_ExpectsRightRotateAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting max key in the left subtree of the root. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheBiggestKeyInLeftSubTreeOfTheLeftSubtreeOfRoot_ExpectsSimpleDeleteAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_AKeyFromFullLeaf_ExpectsSimpleDeleteAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting a key from a full leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheBiggestKeyInLeftMostLeafOnLeftSubtree_ExpectsSimpleDeleteAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheBiggestKeyInAFullLeafNodeOfLeftSubtree_ExpectsSimpleDeleteToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting max key from a full leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheOnlyKeyInLeaf_ExpectsLeftRotationAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheBiggestKeyInFullLeaf_ExpectsSimpleDeleteAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting max key in a full leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheSmallestKeyInFullLeaf_ExpectsSimpleDeleteAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting min key in a full leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheSmallestKeyInAFullLeafNode_ExpectsSimpleDeleteAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting min key in a full leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheSmallestKeyInAFullLeaf_ExpectsSimpleDeleteAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting min key in a full leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheSmallestKeyInFullLeafWith2Siblings_ExpectsSimpleDeleteAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting a key from a full leaf node with 2 siblings. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheBiggestKeyInFullLeafNode_ExpectsSimpleDeleteAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting max key in a full leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_SmallestKeyInAFullLeaf_ExpectsSimpleDeleteAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting min key in a full leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheOnlyKeyInLeafNode_ExpectsLeftRotationAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheSmallestKeyInAFullLeafNodeOfRightSubtree_ExpectsSimpleDeleteAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the min key in a full leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheOnlyKeyInLeafNode_ExpectsRightRotationAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_AllNodesInRandomOrder1_ExpectsProperBtreeAfterEachDelete">
             <summary>
+            Tests the correctness of delete operation by deleting all the keys in the tree one after the other in a random order. 
             For a step by step transition of this 2-3 B + Tree while deleting these keys, see <see cref="!:images\2-3-BPlus-Tree-delete-stepBystep.png"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_AllNodesInRandomOrder2_ExpectsProperBtreeAfterEachDelete">
+            <summary>
+            Tests the correctness of delete operation by deleting all the keys in the tree one after the other in a random order. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheOnlyKeyInTree_ExpectsNoNodeAndNoKeyAfter">
+            <summary>
+            Tests the correctness of delete operation when there is only one key-value pair in the tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_BiggestKeyInTheOnlyLeafNodeOfTree_ExpectsToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when there is only one full node in the tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_NonExistingKey_ExpectsFailure">
+            <summary>
+            Tests the correctness of delete operation when deleting a non existing key in the tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheKeyInFullLeafNode_ExpectsSimpleDeleteAndReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting a key from a full leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheOnlyKeyInLeafNode_ExpectsToTriggerLeftRotateAndReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_KeyInFullLeaf_ExpectsToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting a key from a full leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheOnlyKeyInLeafNodeWithMinOneFullSibling_ExpectsToTriggerLeftRotate">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node with a minOneFull sibling.
             </summary>
         </member>
         <member name="T:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests">
@@ -311,14 +635,216 @@
             Initializes/Resets variables before executing each unit test in this class. 
             </summary>
         </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Build_ExpectsACorrectBTree">
+            <summary>
+            Tests the correctness of Build operation
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.GetMaxCapacity_ForATreeWithOneToFiveLevels_ExpectsNumbersAsIndicatedInAsserts">
+            <summary>
+            Tests the correctness of computing maximum capacity of a B tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.FindLeafToInsertKey_NewKeySmallerThanAllKeysInTree_ExpectsTheSparseLeafNodeContainingSmallestKey">
+            <summary>
+            Tests the correctness of finding a leaf node to insert a key that is smaller than the current minimum key in the tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.FindLeafToInsertKey_NewKeyBiggerThanAllKeysInTree_ExpectsTheSparseLeafNodeContainingBiggestKey">
+            <summary>
+            Tests the correctness of finding a leaf node to insert a key that is bigger than the current maximum key in the tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.FindLeafToInsertKey_NewKey_ExpectsSuccess">
+            <summary>
+            Tests the correctness of finding a leaf node to insert a key. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.FindLeafToInsertKey_DuplicateKey_ThrowsException">
+            <summary>
+            Tests the correctness of finding a leaf node  to insert a duplicate key. Expects exception. 
+            </summary>
+        </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Insert_SeveralKeys_ExpectsTreeToIncreaseInLevelsAfewTimes">
             <summary>
+            Tests the correctness of insert operation by inserting several keys one after the other. 
             For a step by step transition of this 2-3 BTree while inserting these keys, see <see cref="!:images\2-3-BTree-insert-stepBystep.png"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.InOrderTraversal_StartingFromRoot_ExpectsAscendingOrder">
+            <summary>
+            Tests the correctness of in-order traversal over the tree. Expects a sorted list of key-value pairs. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Search_ForAllExistingKeysInTree_ExpectsSuccess">
+            <summary>
+            Tests the correctness of search operation by looking for all the existing keys in the tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Search_NotExistingKey_ThrowsException">
+            <summary>
+            Tests the correctness of search operation by looking for a non existing key in the tree. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_Root_ExpectsToReduceBy4NodesAnd1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the root node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_TheOnlyKeyOfLeftChildOfRoot_ExpectsToReduceBy4NodesAnd1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in an internal node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_TheOnlyKeyOfRightChildOfRoot_ExpectsToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in an internal node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_TheOnlyKeyInParentNodeOfLeftMostLeavesOnLeftSubtree_ExpectsToReduceBy4NodesAnd1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in an internal node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_TheOnlyKeyInParentNodeOfRightMostLeavesOnLeftSubtree_ExpectsToReduceBy4NodesAnd1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in an internal node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_TheOnlyKeyInParentNodeOfLeftMostLeavesOnRightSubtree_ExpectsToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in an internal node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_TheOnlyKeyInParentNodeOfRightMostLeavesOnRightSubtree_ExpectsToReduceBy4NodesAnd1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in an internal node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_TheSmallestKeyInTreeLeafNode_ExpectsToReduceBy4NodesAnd1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node/also the min key in the tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_ThirdSmallestKeyInTreeLeafNode_ExpectsToReduceBy4NodesAnd1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_SmallestKeyInRightSubtreeOfLeftSubtreeLeafNode_ExpectsToReduceBy4NodesAnd1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_BiggestKeyInLeftSubtreeLeafNode_ExpectsToReduceBy4NodesAnd1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_SmallestKeyInRightSubtreeLeafNode_ExpectsToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_SmallestKeyInAFullLeaf_ExpectsToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the min key in a full leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_BiggestKeyInAFullLeaf_ExpectsToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the max key in a full leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_ThirdBiggestKeyInTreeLeafNode_ExpectsToReduceBy4NodesAnd1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_BiggestKeyInTreeLeafNode_ExpectsToReduceBy4NodesAnd1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_AllNodesInRandomOrder1_ExpectsProperBtreeAfterEachDelete">
             <summary>
+            Tests the correctness of delete operation when deleting all the keys in the tree one after the other in a random order.
             For a step by step transition of this 2-3 BTree while deleting these keys, see <see cref="!:images\2-3-BTree-delete-stepBystep.png"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_AllNodesInRandomOrder2_ExpectsProperBtreeAfterEachDelete">
+            <summary>
+            Tests the correctness of delete operation when deleting all the keys in the tree one after the other in a random order.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_TheOnlyKeyInTree_ExpectsNoNodeAndNoKeyAfter">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in the tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_BiggestKeyInTheOnlyNodeOfTree_ExpectsToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the max key in the only node of the tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_NonExistingKey_ExpectsFailure">
+            <summary>
+            Tests the correctness of delete operation when deleting a non existing key from the tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_TheOnlyKeyInInternalNode_ExpectsToTriggerJoinAndReduceBy2NodesAnd1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in an internal node.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_TheOnlyKeyInLeafNode_ExpectsToTriggerJoinByRightSiblingAndReduceBy2NodesAnd1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_TheOnlyKeyInLeafNode_ExpectsToTriggerJoinByLeftSiblingAndReduceBy2NodesAnd1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_KeyInFullLeaf_ExpectsToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting a key in a full a leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_TheOnlyKeyInLeafNodeWithMinOneFullSibling_ExpectsToTriggerLeftRotate">
+            <summary>
+            Tests the correctness of delete operation when deleting a key in a full a leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_DeleteTheOnlyKeyInInternalNode_ExpectsToTriggerLeafDeleteAndLeftRotate">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in an internal node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_TheOnlyKeyInLeafWithFullParentAndMinOneFullSibling_ExpectsLeftRotateAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node with a minOneFull sibling.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_TheOnlyKeyInLeaf_ExpectsToTriggerJoinAndLeftRotateOnANodeWithChildren">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.RotateLeft_EmptyNodeWithMinOneFullSibling_ExpectsChildrenToBeRotated">
+            <summary>
+            Tests the correctness of left rotation. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.RotateRight_EmptyNodeWithMinOneFullLeftSibling_ExpectsChildrenToBeRotated">
+            <summary>
+            Tests the correctness of right rotation. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.GetMaxNode_OnAllSubTreesInTree_ExpectsCorrectValuesForMaxKeyInSubtree">
+            <summary>
+            Tests the correctness of finding the node with the max key in the (sub)tree rooted at several different nodes. 
             </summary>
         </member>
         <member name="T:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests">
