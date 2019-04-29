@@ -27,6 +27,9 @@ namespace CSFundamentalsTests.Algorithms.Sort
 {
     public partial class InsertionSortTests
     {
+        /// <summary>
+        /// Tests the stability of Insertion sort algorithm. 
+        /// </summary>
         [TestMethod]
         public void IsStable()
         {

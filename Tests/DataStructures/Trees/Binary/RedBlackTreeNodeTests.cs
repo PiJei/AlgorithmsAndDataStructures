@@ -23,9 +23,15 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.DataStructures.Trees.Binary
 {
+    /// <summary>
+    /// Tests methods in <see cref="RedBlackTreeNode{TKey, TValue}"/> class. 
+    /// </summary>
     [TestClass]
     public class RedBlackTreeNodeTests
     {
+        /// <summary>
+        /// Tests the correctness of flipping a node's color. 
+        /// </summary>
         [TestMethod]
         public void FlipColor()
         {

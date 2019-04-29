@@ -26,9 +26,15 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 {
+    /// <summary>
+    /// Tests methods in <see cref="MinMaxBinaryHeap{TKey, TValue}"/> class.
+    /// </summary>
     [TestClass]
     public class MinMaxBinaryHeapTests
     {
+        /// <summary>
+        /// Tests the correctness of Build operation recursive version, when inserting distinct values. 
+        /// </summary>
         [TestMethod]
         public void BuildHeapRecursively_DistinctValues()
         {
@@ -70,6 +76,9 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
             Assert.IsFalse(heap.IsMinLevel(heap.GetNodeLevel(keyValues.IndexOf(I))));
         }
 
+        /// <summary>
+        /// Tests the correctness of Build operation, recursive version when inserting duplicate values. 
+        /// </summary>
         [TestMethod]
         public void BuildHeapRecursively_DuplicateValues()
         {
@@ -106,6 +115,14 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
             }
         }
 
+        /// <summary>
+        /// Checks whether a node in a min level of a MinMax heap has proper properties. 
+        /// </summary>
+        /// <typeparam name="TKey">Type of the keys stored in the heap. </typeparam>
+        /// <typeparam name="TValue">Type of the values stored in the heap. </typeparam>
+        /// <param name="heap">Is a MinMax binary heap. </param>
+        /// <param name="index">Is the index of a node in a heap array and in a Min level.</param>
+        /// <returns>True if the node has proper properties, and false otherwise. </returns>
         public static bool HasMinMaxOrderPropertyForMinLevel<TKey, TValue>(BinaryHeapBase<TKey, TValue> heap, int index) where TKey : IComparable<TKey>
         {
             int leftChildIndex = heap.GetLeftChildIndexInHeapArray(index);
@@ -127,6 +144,14 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
             return true;
         }
 
+        /// <summary>
+        /// Checks whether a node in a max level of a MinMax heap has proper properties. 
+        /// </summary>
+        /// <typeparam name="TKey">Type of the keys stored in the heap. </typeparam>
+        /// <typeparam name="TValue">Type of the values stored in the heap. </typeparam>
+        /// <param name="heap">Is a MinMax binary heap. </param>
+        /// <param name="index">Is the index of a node in a heap array and in a Max level.</param>
+        /// <returns>True if the node has proper properties, and false otherwise. </returns>
         public static bool HasMinMaxOrderPropertyForMaxLevel<TKey, TValue>(BinaryHeapBase<TKey, TValue> heap, int index) where TKey : IComparable<TKey>
         {
             int leftChildIndex = heap.GetLeftChildIndexInHeapArray(index);

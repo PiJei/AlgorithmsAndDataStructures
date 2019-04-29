@@ -24,6 +24,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.Algorithms.GraphTraversal
 {
+    /// <summary>
+    /// Tests methods in <see cref="BFS"/> class. 
+    /// </summary>
     [TestClass]
     public class BfsTests
     {
@@ -35,8 +38,11 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
         private GraphNode<int> F = new GraphNode<int>(11);
         private GraphNode<int> G = new GraphNode<int>(5);
 
+        /// <summary>
+        /// Initializes/Resets variables before executing each unit test in this class. 
+        /// </summary>
         [TestInitialize]
-        public void Init()
+        public void Initialize()
         {
             A.Adjacents.Add(new GraphEdge<int>(B, 0));
             A.Adjacents.Add(new GraphEdge<int>(C, 0));
@@ -58,17 +64,9 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
             E.Adjacents.Add(new GraphEdge<int>(B, 0));
         }
 
-        public void ResetGraph() // It seems that this step is unnecessary. Even though the same instance is used across all the test methods. 
-        {
-            A.IsInserted = false;
-            B.IsInserted = false;
-            C.IsInserted = false;
-            D.IsInserted = false;
-            E.IsInserted = false;
-            F.IsInserted = false;
-            G.IsInserted = false;
-        }
-
+        /// <summary>
+        /// Tests the correctness of BFS iterative version, when starting from node <see cref="A"/>.
+        /// </summary>
         [TestMethod]
         public void Iterative_StartFromA()
         {
@@ -81,9 +79,11 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
             Assert.AreEqual(3, bfsOrdering[4].Value);
             Assert.AreEqual(11, bfsOrdering[5].Value);
             Assert.AreEqual(5, bfsOrdering[6].Value);
-            ResetGraph();
         }
 
+        /// <summary>
+        /// Tests the correctness of BFS iterative version, when starting from node <see cref="E"/>.
+        /// </summary>
         [TestMethod]
         public void Iterative_StartFromE()
         {
@@ -97,10 +97,11 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
             Assert.AreEqual(6, bfsOrdering[4].Value);
             Assert.AreEqual(20, bfsOrdering[5].Value);
             Assert.AreEqual(5, bfsOrdering[6].Value);
-
-            ResetGraph();
         }
 
+        /// <summary>
+        /// Tests the correctness of BFS recursive version, when starting from node <see cref="A"/>.
+        /// </summary>
         [TestMethod]
         public void Recursive_StartFromA()
         {
@@ -119,10 +120,11 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
             Assert.AreEqual(3, bfsOrdering[4].Value);
             Assert.AreEqual(11, bfsOrdering[5].Value);
             Assert.AreEqual(5, bfsOrdering[6].Value);
-
-            ResetGraph();
         }
 
+        /// <summary>
+        /// Tests the correctness of BFS recursive version, when starting from node <see cref="E"/>.
+        /// </summary>
         [TestMethod]
         public void Recursive_StartFromE()
         {
@@ -141,8 +143,6 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
             Assert.AreEqual(6, bfsOrdering[4].Value);
             Assert.AreEqual(20, bfsOrdering[5].Value);
             Assert.AreEqual(5, bfsOrdering[6].Value);
-
-            ResetGraph();
         }
     }
 }

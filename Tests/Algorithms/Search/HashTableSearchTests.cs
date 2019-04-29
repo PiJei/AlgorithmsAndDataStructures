@@ -27,9 +27,15 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.Algorithms.Search
 {
+    /// <summary>
+    /// Tests methods in <see cref="HashTableSearch"/> class. 
+    /// </summary>
     [TestClass]
     public class HashTableSearchTests
     {
+        /// <summary>
+        /// Tests the correctness of search algorithm. 
+        /// </summary>
         [TestMethod]
         public void Search()
         {

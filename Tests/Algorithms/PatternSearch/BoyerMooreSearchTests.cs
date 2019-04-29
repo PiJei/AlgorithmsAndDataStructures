@@ -25,9 +25,15 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.PatternSearch
 {
+    /// <summary>
+    /// Tests methods in <see cref="BoyerMooreSearch"/> class.
+    /// </summary>
     [TestClass]
     public class BoyerMooreSearchTests
     {
+        /// <summary>
+        /// Tests the correctness of pattern search algorithm. 
+        /// </summary>
         [TestMethod]
         public void Search()
         {
@@ -42,6 +48,9 @@ namespace CSFundamentalsTests.PatternSearch
             Assert.AreEqual(0, BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly("aaabbbdaacbb", "kjh").Count);
         }
 
+        /// <summary>
+        /// Tests the correctness of mapping characters in a string to their last occurrence index. 
+        /// </summary>
         [TestMethod]
         public void MapCharToLastIndex()
         {

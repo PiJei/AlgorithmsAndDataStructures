@@ -25,9 +25,15 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.PatternSearch
 {
+    /// <summary>
+    /// Tests methods in <see cref="KMPSearch"/> class.
+    /// </summary>
     [TestClass]
     public class KMPSearchTests
     {
+        /// <summary>
+        /// Tests the correctness of pattern search algorithm.
+        /// </summary>
         [TestMethod]
         public void Search()
         {

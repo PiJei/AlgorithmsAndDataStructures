@@ -29,23 +29,32 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.DataStructures.Trees.Binary
 {
+    /// <summary>
+    /// Tests methods of <see cref="RedBlackTree{TKey, TValue}"/> class.
+    /// </summary>
     [TestClass]
     public class RedBlackTreeTests
     {
         /// <summary>
         /// Is a RedBlack tree (A form of balanced BST). 
-        /// To visualize this tree built as in <see cref="Init()"/> method, please <see cref="images\redblack-bst.png"/> in current directory. 
+        /// To visualize this tree built as in <see cref="Initialize()"/> method, see <see cref="images\redblack-bst.png"/> in current directory. 
         /// </summary>
         private RedBlackTree<int, string> _tree;
         private RedBlackTreeNode<int, string> _root;
 
+        /// <summary>
+        /// Initializes/Resets variables before executing each unit test in this class. 
+        /// </summary>
         [TestInitialize]
-        public void Init()
+        public void Initialize()
         {
             _tree = new RedBlackTree<int, string>();
             _root = _tree.Build(Constants.KeyValues);
         }
 
+        /// <summary>
+        /// Tests the correctness of Build operation
+        /// </summary>
         [TestMethod]
         public void Build_ExpectsCorrectRedBlackTree()
         {
@@ -53,7 +62,8 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         }
 
         /// <summary>
-        /// For a step by step transition of the RedBlack tree while inserting these keys, please <see cref="images\redblack-bst-insert-stepByStep.png"/>.
+        /// Tests the correctness of insert operation when inserting several keys one after the other. 
+        /// For a step by step transition of the RedBlack tree while inserting these keys, see <see cref="images\redblack-bst-insert-stepByStep.png"/>.
         /// </summary>
         [TestMethod]
         public void Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion()
@@ -102,6 +112,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             HasRedBlackTreeProperties(tree, root, 10);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting a red node with 2 children. 
+        /// </summary>
         [TestMethod]
         public void Delete_RedNodeWithTWoChildren_ExpectsToBeRepalcedBy50WhichIsBlackWithARedRightChild()
         {
@@ -109,6 +122,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             HasRedBlackTreeProperties(_tree, _root, 9);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting a red node with 2 children. 
+        /// </summary>
         [TestMethod]
         public void Delete_RedNodeWithTwoChildren_ExpectsToBeReplacedBy35AndIsSubjectToLastCaseBlackSiblingWithLeftRedChild()
         {
@@ -116,6 +132,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             HasRedBlackTreeProperties(_tree, _root, 9);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting a black node with one right child. 
+        /// </summary>
         [TestMethod]
         public void Delete_BlackNodeWithOneRedRightChild_ReplaceWithTheRightRedChildWith80AsKeyAndColorItBlack()
         {
@@ -123,6 +142,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             HasRedBlackTreeProperties(_tree, _root, 9);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting a black node with one red left child. 
+        /// </summary>
         [TestMethod]
         public void Delete_BlackNodeWithOneRedLeftChild_RepalceWithLeftRedChildWith10AsKeyAndColorItBlack()
         {
@@ -130,6 +152,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             HasRedBlackTreeProperties(_tree, _root, 9);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting the root of the tree. 
+        /// </summary>
         [TestMethod]
         public void Delete_Root_ExpectsToBeReplacedBy47WhichIsARedLeafAndHasSimpleDeletion()
         {
@@ -138,6 +163,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             Assert.AreEqual(42, _root.Key);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting a black leaf node. 
+        /// </summary>
         [TestMethod]
         public void Delete_BlackLeafNode_BlackSiblingWithARedLeftChild_ExpectsRightRotate()
         {
@@ -145,6 +173,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             HasRedBlackTreeProperties(_tree, _root, 9);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting a black node with a left red child. 
+        /// </summary>
         [TestMethod]
         public void Delete_BlackNodeWithLeftRedChild_ReplaceWithLeftChildAs42AndColorItBlack()
         {
@@ -152,6 +183,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             HasRedBlackTreeProperties(_tree, _root, 9);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting a red leaf node.
+        /// </summary>
         [TestMethod]
         public void Delete_RedLeafNode_ExpectsSimpleDelete()
         {
@@ -159,6 +193,10 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             HasRedBlackTreeProperties(_tree, _root, 9);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting all the keys in the tree one after the other in a random order. 
+        /// For a step by step transition of the BST while deleting these keys, see <see cref="images\redblack-bst-delete-stepBystep.png"/>.
+        /// </summary>
         [TestMethod]
         public void Delete_MultipleKyesConsecutively_ExpectsCorrectTreeAfterEachStep()
         {
@@ -193,6 +231,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             HasRedBlackTreeProperties(_tree, _root, 0);
         }
 
+        /// <summary>
+        /// Tests the default color of a RedBlack tree node upon creation.
+        /// </summary>
         [TestMethod]
         public void IsRed_DefaultColor_ExpectsTrue()
         {
@@ -202,6 +243,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             Assert.IsFalse(_tree.IsRed(node1));
         }
 
+        /// <summary>
+        /// Tests whether a black node is red. Expects false. 
+        /// </summary>
         [TestMethod]
         public void IsRed_ColoredBlack_ExpectsFalse()
         {
@@ -212,6 +256,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             Assert.IsFalse(_tree.IsRed(node1));
         }
 
+        /// <summary>
+        /// Tests whether a node is black upon creation. Expects false. 
+        /// </summary>
         [TestMethod]
         public void IsBlack_DefaultColor_ExpectsFalse()
         {
@@ -219,6 +266,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             Assert.IsFalse(_tree.IsBlack(node1));
         }
 
+        /// <summary>
+        /// Tests whether a black node is black. Expects true. 
+        /// </summary>
         [TestMethod]
         public void IsBlack_ColoredBlack_ExpectsTrue()
         {
@@ -229,6 +279,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             Assert.IsTrue(_tree.IsBlack(node1));
         }
 
+        /// <summary>
+        /// Tests the correctness of nullifying children of a node. 
+        /// </summary>
         [TestMethod]
         public void UpdateParentWithNullingChild()
         {
@@ -258,6 +311,14 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
             Assert.IsNotNull(node1.RightChild);
         }
 
+        /// <summary>
+        /// Checks whether a tree has a RedBlack tree properties. 
+        /// </summary>
+        /// <typeparam name="TKey">Type of the keys stored in a tree. </typeparam>
+        /// <typeparam name="TValue">Type of the values stored in a tree. </typeparam>
+        /// <param name="tree">A RedBlack tree. </param>
+        /// <param name="root">Root of a RedBlack tree. </param>
+        /// <param name="expectedNodeCount">Is the expected number of nodes in a tree. </param>
         public static void HasRedBlackTreeProperties<TKey, TValue>(RedBlackTree<TKey, TValue> tree, RedBlackTreeNode<TKey, TValue> root, int expectedNodeCount) where TKey : IComparable<TKey>, IEquatable<TKey>
         {
             var inOrderTraversal = new List<RedBlackTreeNode<TKey, TValue>>();

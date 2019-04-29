@@ -24,9 +24,17 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.DataStructures.LinkedLists.API
 {
+    /// <summary>
+    /// Implements a mock class for testing <see cref="LinkedNode{TNode, TValue}"/>.
+    /// </summary>
+    /// <typeparam name="T1"></typeparam>
     [TestClass]
     public class MockLinkedNode<T1> : LinkedNode<MockLinkedNode<T1>, T1> where T1 : IComparable<T1>
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="value">Value to be stored in the node. </param>
         public MockLinkedNode(T1 value) : base(value) { }
     }
 }

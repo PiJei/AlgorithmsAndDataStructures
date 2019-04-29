@@ -23,21 +23,33 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 // TODO: Binary search and Ternary searches are very similar, can I just pass a function to them instead?
 namespace CSFundamentalsTests.Algorithms.Search
 {
+    /// <summary>
+    /// Tests methods in <see cref="TernarySearch"/> class. 
+    /// </summary>
     [TestClass]
     public class TernarySearchTests
     {
+        /// <summary>
+        /// Tests the correctness of Ternary search algorithm on an array with distinct elements. 
+        /// </summary>
         [TestMethod]
         public void Search_DistinctElements()
         {
             SearchTests.DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition(TernarySearch.Search);
         }
 
+        /// <summary>
+        /// Tests the correctness of Ternary search algorithm on an array with duplicate elements. 
+        /// </summary>
         [TestMethod]
         public void Search_DuplicateElements()
         {
             SearchTests.DuplicateElements_ExpectsToGetTheIndexOfOneOfTheDupliatesNoMatterHowManyTimeSearchIsPerformed(TernarySearch.Search);
         }
 
+        /// <summary>
+        /// Tests the correctness of Ternary search algorithm when the key does not exist in the array. 
+        /// </summary>
         [TestMethod]
         public void Search_NonExistingElements()
         {

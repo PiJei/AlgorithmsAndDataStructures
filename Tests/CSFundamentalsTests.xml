@@ -4,14 +4,305 @@
         <name>CSFundamentalsTests</name>
     </assembly>
     <members>
+        <member name="T:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.GraphTraversal.BFS"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Initialize">
+            <summary>
+            Initializes/Resets variables before executing each unit test in this class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Iterative_StartFromA">
+            <summary>
+            Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.A"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Iterative_StartFromE">
+            <summary>
+            Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.E"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Recursive_StartFromA">
+            <summary>
+            Tests the correctness of BFS recursive version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.A"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Recursive_StartFromE">
+            <summary>
+            Tests the correctness of BFS recursive version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.E"/>.
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.GraphTraversal.DFS"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Initialize">
+            <summary>
+            Initializes/Resets variables before executing each unit test in this class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Iterative_StartFromA">
+            <summary>
+            Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.A"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Iterative_StartFromE">
+            <summary>
+            Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.E"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Recursive_StartFromA">
+            <summary>
+            Tests the correctness of BFS recursive version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.A"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Recursive_StartFromE">
+            <summary>
+            Tests the correctness of BFS recursive version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.E"/>.
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.GraphTraversal.DijkstraTests">
+            <summary>
+            Tests methods in <see cref="T:System.Collections.Generic.Dictionary`2"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DijkstraTests.GetShortestDistancesFromRoot">
+            <summary>
+            Tests the correctness of shortest distance computation 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Search.BinarySearchTests">
+            <summary>
+            Tests the methods in <see cref="T:CSFundamentals.Algorithms.Search.BinarySearch"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.BinarySearchTests.Search_DistinctElements">
+            <summary>
+            Tests the correctness of binary search algorithm on an array with distinct elements. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.BinarySearchTests.Search_DuplicateElements">
+            <summary>
+            Tests the correctness of binary search algorithm on an array with duplicate elements. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.BinarySearchTests.Search_NonExistingElements">
+            <summary>
+            Tests the correctness of binary search algorithm when the key does not exist in the array. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Search.ExponentialSearchTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Search.ExponentialSearch"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.ExponentialSearchTests.Search_DistinctElements">
+            <summary>
+            Tests the correctness of Exponential search algorithm on an array with distinct elements. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.ExponentialSearchTests.Search_DuplicateElements">
+            <summary>
+            Tests the correctness of Exponential search algorithm on an array with duplicate elements. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.ExponentialSearchTests.Search_NotExistingElements">
+            <summary>
+            Tests the correctness of Exponential search algorithm when the key does not exist in the array. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests">
+            <summary>
+            Tests methods in <see cref="!:= FibonacciSearch"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_DistinctElements">
+            <summary>
+            Tests the correctness of Fibonacci search algorithm on an array with distinct elements. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_DuplicateElements">
+            <summary>
+            Tests the correctness of Fibonacci search algorithm on an array with duplicate elements. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_NonExistingElements">
+            <summary>
+            Tests the correctness of Fibonacci search algorithm when the key does not exist in the array. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.GetSmallestFibonacciBiggerThanNumber">
+            <summary>
+            Tests computing the smallest Fibonacci number that is bigger than a specific number. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Search.HashTableSearchTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Search.HashTableSearch"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.HashTableSearchTests.Search">
+            <summary>
+            Tests the correctness of search algorithm. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Search.InterpolationSearchTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Search.InterpolationSearch"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.InterpolationSearchTests.Search_DistinctElements">
+            <summary>
+            Tests the correctness of Interpolation search algorithm on an array with distinct elements. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.InterpolationSearchTests.Search_DuplicateElements">
+            <summary>
+            Tests the correctness of Interpolation search algorithm on an array with duplicate elements. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.InterpolationSearchTests.Search_NonExistingElements">
+            <summary>
+            Tests the correctness of Interpolation search algorithm when the key does not exist in the array. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.InterpolationSearchTests.GetStartIndex">
+            <summary>
+            Tests the correctness of computing the index at which to start search when using Interpolation algorithm. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Search.JumpSearchTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Search.JumpSearch"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.JumpSearchTests.Search_DistinctElements">
+            <summary>
+            Tests the correctness of Jump search algorithm on an array with distinct elements. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.JumpSearchTests.Search_DuplicateElements">
+            <summary>
+            Tests the correctness of Jump search algorithm on an array with duplicate elements. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.JumpSearchTests.Search_NotExistingElements">
+            <summary>
+            Tests the correctness of Jump search algorithm when the key does not exist in the array. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Search.LinearSearchTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Search.LinearSearch"/> class. 
+            </summary>
+        </member>
         <member name="F:CSFundamentalsTests.Algorithms.Search.LinearSearchTests._values">
             <summary>
             A random array of integers (not sorted), and containing duplicates
             </summary>
         </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition">
+            <summary>
+            Tests the correctness of Linear search algorithm on an array with distinct elements. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_DuplicateElements_ExpectsToGetTheIndexOfTheFirstOccurrenceNoMatterHowManyTimesSearchIsPerformed">
+            <summary>
+            Tests the correctness of Linear search algorithm on an array with duplicate elements. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_NonExistingElements_ExpectsToGetMinusOne">
+            <summary>
+            Tests the correctness of Linear search algorithm when the key does not exist in the array. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Search.SearchTests">
+            <summary>
+            Implements test methods for search algorithms. 
+            </summary>
+        </member>
         <member name="F:CSFundamentalsTests.Algorithms.Search.SearchTests._values">
             <summary>
             Sorted array of elements. Note that binary search expects a sorted array. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.SearchTests.DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition(System.Func{System.Collections.Generic.List{System.Int32},System.Int32,System.Int32,System.Int32,System.Int32})">
+            <summary>
+            Tests the correctness of <paramref name="searchMethod"/> on an array with distinct elements. 
+            </summary>
+            <param name="searchMethod">The search method that is being tested. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.SearchTests.DuplicateElements_ExpectsToGetTheIndexOfOneOfTheDupliatesNoMatterHowManyTimeSearchIsPerformed(System.Func{System.Collections.Generic.List{System.Int32},System.Int32,System.Int32,System.Int32,System.Int32})">
+            <summary>
+            Tests the correctness of <paramref name="searchMethod"/> on an array with duplicate elements. 
+            </summary>
+            <param name="searchMethod">The search method that is being tested. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.SearchTests.NonExistingElements_ExpectsToGetMinusOne(System.Func{System.Collections.Generic.List{System.Int32},System.Int32,System.Int32,System.Int32,System.Int32})">
+            <summary>
+            Tests the correctness of <paramref name="searchMethod"/> when the key does not exist in the array. 
+            </summary>
+            <param name="searchMethod">The search method that is being tested. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.SearchTests.DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition(System.Func{System.Collections.Generic.List{System.Int32},System.Int32,System.Int32})">
+            <summary>
+            Tests the correctness of <paramref name="searchMethod"/> on an array with distinct elements. 
+            </summary>
+            <param name="searchMethod">The search method that is being tested. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.SearchTests.DuplicateElements_ExpectsToGetTheIndexOfOneOfTheDupliatesNoMatterHowManyTimeSearchIsPerformed(System.Func{System.Collections.Generic.List{System.Int32},System.Int32,System.Int32})">
+            <summary>
+            Tests the correctness of <paramref name="searchMethod"/> on an array with duplicate elements. 
+            </summary>
+            <param name="searchMethod">The search method that is being tested. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.SearchTests.NonExistingElements_ExpectsToGetMinusOne(System.Func{System.Collections.Generic.List{System.Int32},System.Int32,System.Int32})">
+            <summary>
+            Tests the correctness of <paramref name="searchMethod"/> when the key does not exist in the array. 
+            </summary>
+            <param name="searchMethod">The search method that is being tested. </param>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Search.TernarySearchTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Search.TernarySearch"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.TernarySearchTests.Search_DistinctElements">
+            <summary>
+            Tests the correctness of Ternary search algorithm on an array with distinct elements. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.TernarySearchTests.Search_DuplicateElements">
+            <summary>
+            Tests the correctness of Ternary search algorithm on an array with duplicate elements. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.TernarySearchTests.Search_NonExistingElements">
+            <summary>
+            Tests the correctness of Ternary search algorithm when the key does not exist in the array. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Sort.BubbleSortTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Sort.BubbleSort"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.BubbleSortTests.Sort_Iterative_WithDifferentInputs">
+            <summary>
+            Tests the correctness of bubble sort iterative version. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.BubbleSortTests.IsStable">
+            <summary>
+            Tests the stability of Bubble sort algorithm.
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Sort.Constants">
+            <summary>
+            Is a collection of some constant values used in testing sort algorithms. 
             </summary>
         </member>
         <member name="F:CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithDistinctValues">
@@ -44,25 +335,1039 @@
             Is an array of integers with duplicate values, such that the array is reversely sorted, meaning it is descending, whereas sort meant ascending. 
             </summary>
         </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Sort.HeapSortTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Sort.HeapSort"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.HeapSortTests.Sort_WithDistinctValues">
+            <summary>
+            Tests the correctness of Heap sort algorithm over an array with distinct values.  
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.HeapSortTests.Sort_WithDuplicateValues">
+            <summary>
+            Tests the correctness of Heap sort algorithm over an array with duplicate values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.HeapSortTests.Sort_WithSortedDistinctValues">
+            <summary>
+            Tests the correctness of Heap sort algorithm over a sorted array with distinct values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.HeapSortTests.Sort_WithSortedDuplicateValues">
+            <summary>
+            Tests the correctness of Heap sort algorithm over a sorted array with duplicate values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.HeapSortTests.Sort_WithReverselySortedDistinctValues">
+            <summary>
+            Tests the correctness of Heap sort algorithm over a reversely sorted array with distinct values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.HeapSortTests.Sort_WithRevereselySortedDuplicateValues">
+            <summary>
+            Tests the correctness of Heap sort algorithm over a reversely sorted array with duplicate values. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Sort.InsertionSortTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Sort.InsertionSort"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Iterative_V1_WithDifferentInputs">
+            <summary>
+            Tests the correctness of Insertion sort iterative version1. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Iterative_V2_WithDifferentInputs">
+            <summary>
+            Tests the correctness of Insertion sort iterative version2. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Recursive_WithDistinctValues">
+            <summary>
+            Tests the correctness of Insertion sort recursive version over an array with distinct values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Recursive_WithDuplicateValues">
+            <summary>
+            Tests the correctness of Insertion sort recursive version over an array with duplicate values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.IsStable">
+            <summary>
+            Tests the stability of Insertion sort algorithm. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Sort.MergeSortTests">
+            <summary>
+            Tests method in <see cref="T:CSFundamentals.Algorithms.Sort.MergeSort"/> class.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.MergeSort_Recursively_WithDistinctValues">
+            <summary>
+            Tests the correctness of Merge sort algorithm recursive version over an array with distinct values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.MergeSort_Recursively_WithDuplicateValues">
+            <summary>
+            Tests the correctness of Merge sort algorithm recursive version over an array with duplicate values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.MergeSort_Recursively_WithSortedDistinctValues">
+            <summary>
+            Tests the correctness of Merge sort algorithm recursive version over a sorted array with distinct values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.MergeSort_Recursively_WithSortedDuplicateValues">
+            <summary>
+            Tests the correctness of Merge sort algorithm recursive version over a sorted array with duplicate values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.MergeSort_Recursively_WithReverselySortedDistinctValues">
+            <summary>
+            Tests the correctness of Merge sort algorithm recursive version over a reversely sorted array with distinct values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.MergeSort_Recursively_WithReverselySortedDuplicateValues">
+            <summary>
+            Tests the correctness of Merge sort algorithm recursive version over a reversely sorted array with duplicate values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.Merge">
+            <summary>
+            Tests the correctness of Merge operation. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.IsStable">
+            <summary>
+            Tests the stability of Merge sort algorithm. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Sort.QuickSortTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Sort.QuickSort"/> class.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.QuickSortTests.QuickSort_Recursively_WithDistinctValues">
+            <summary>
+            Tests the correctness of Quick sort algorithm recursive version over an array with distinct values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.QuickSortTests.QuickSort_Recursively_WithDuplicateValues">
+            <summary>
+            Tests the correctness of Quick sort algorithm recursive version over an array with duplicate values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.QuickSortTests.QuickSort_Recursively_WithSortedDistinctValues">
+            <summary>
+            Tests the correctness of Quick sort algorithm recursive version over a sorted array with distinct values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.QuickSortTests.QuickSort_Recursively_WithSortedDuplicateValues">
+            <summary>
+            Tests the correctness of Quick sort algorithm recursive version over a sorted array with duplicate values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.QuickSortTests.QuickSort_Recursively_WithReverselySortedDistinctValues">
+            <summary>
+            Tests the correctness of Quick sort algorithm recursive version over a reversely sorted array with distinct values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.QuickSortTests.QuickSort_Recursively_WithReverselySortedDuplicateValues">
+            <summary>
+            Tests the correctness of Quick sort algorithm recursive version over a reversely sorted array with duplicate values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.QuickSortTests.IsStable">
+            <summary>
+            Tests the stability of Quick sort algorithm. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Sort.RadixSortTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Sort.RadixSort"/> class.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.RadixSortTests.Sort_Iterative_V1_WithDifferentInputs">
+            <summary>
+            Tests the correctness of Radix sort algorithm.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.RadixSortTests.IsStable">
+            <summary>
+            Tests the stability of Radix sort algorithm. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Sort.SelectionSortTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Sort.SelectionSort"/> class.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.SelectionSortTests.Sort_Iteratively_WithDifferentInputs">
+            <summary>
+            Tests the correctness of Selection sort algorithm.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.SelectionSortTests.IsStable">
+            <summary>
+            Tests the stability of Selection sort algorithm. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Sort.SortTests">
+            <summary>
+            Implements methods for testing sort algorithms over arrays with different properties. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.SortTests.TestSortMethodWithDifferentInputs(System.Action{System.Collections.Generic.List{System.Int32}})">
+            <summary>
+            Tests the correctness of <paramref name="sortMethod"/>.
+            </summary>
+            <param name="sortMethod">The sort method that is being tested. </param>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Sort.ElementTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.ElementTests.Equals">
+            <summary>
+            Tests the correctness of equality operation when comparing two objects of type Element. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.ElementTests.IsStable">
+            <summary>
+            Tests the correctness of detecting stability of an Element. An Element is stable in an array if its index before and after sorting the array is the same. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Algorithms.Sort.UtilsTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Sort.Utils"/> class. 
+            </summary>
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Sort.Utils"/> class.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.UtilsTests.Convert">
+            <summary>
+            Tests the correctness of converting a list of integers to a list of Elements. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.UtilsTests.IsMapStable">
+            <summary>
+            Tests the correctness of checking whether a dictionary is stable. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.UtilsTests.HashListToIndexes">
+            <summary>
+            Tests the correctness of hashing a list to indexes. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.UtilsTests.Swap">
+            <summary>
+            Tests the correctness of swap operation. 
+            </summary>
+        </member>
         <member name="M:CSFundamentalsTests.Algorithms.Sort.UtilsTests.IsSortedAscendingly(System.Collections.Generic.List{System.Int32})">
             <summary>
             Checks whether the given integer list is sorted in ascending order. 
             </summary>
         </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.UtilsTests.GetDigitsCount">
+            <summary>
+            Tests the correctness of computing number of digits in an integer. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.UtilsTests.GetNthDigitFromRight">
+            <summary>
+            Tests the correctness of computing the n(th) digit of a number from right. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.Hashing.RollingHashTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.Hashing.RollingHash"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Hashing.RollingHashTests.Hash">
+            <summary>
+            Tests the correctness of Hash method. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.PatternSearch.BoyerMooreSearchTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch"/> class.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.PatternSearch.BoyerMooreSearchTests.Search">
+            <summary>
+            Tests the correctness of pattern search algorithm. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.PatternSearch.BoyerMooreSearchTests.MapCharToLastIndex">
+            <summary>
+            Tests the correctness of mapping characters in a string to their last occurrence index. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.PatternSearch.KMPSearchTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.PatternSearch.KMPSearch"/> class.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.PatternSearch.KMPSearchTests.Search">
+            <summary>
+            Tests the correctness of pattern search algorithm.
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.PatternSearch.NaiveSearchTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.PatternSearch.NaiveSearch"/> class.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.PatternSearch.NaiveSearchTests.Search">
+            <summary>
+            Tests the correctness of pattern search algorithm. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.PatternSearch.RabinKarpSearchTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.Algorithms.PatternSearch.RabinKarpSearch"/> class.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.PatternSearch.RabinKarpSearchTests.Search">
+            <summary>
+            Tests the correctness of pattern search algorithm.
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.SubarraySearch.SubarraySearchTests">
+            <summary>
+            Tests methods in <see cref="N:CSFundamentalsTests.SubarraySearch"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.SubarraySearch.SubarraySearchTests.Search_NaiveContiguousSublist">
+            <summary>
+            Tests the correctness of checking whether a sublist exists continuously in another list. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.SubarraySearch.SubarraySearchTests.Search_UnContiguousSublist">
+            <summary>
+            Tests the correctness of checking whether a sublist exists in another list non-continuously. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.BinaryHeaps.API.BinaryHeapBaseTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2"/> class via <see cref="T:CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.BinaryHeapBaseTests.Initialize">
+            <summary>
+            Initializes/Resets variables before executing each unit test in this class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.BinaryHeapBaseTests.TryFindIndexOfMinSmallerThanReference_IndexesInRange_ExpectsSuccessAndCorrectMinIndex">
+            <summary>
+            Tests the correctness of finding the minimum value among the given elements that is smaller than the given reference value. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.BinaryHeapBaseTests.TryFindIndexOfMinSmallerThanReference_IndexesInRangeAndReferenceMinInteger_ExpectsFailureAndMinIntegerAsIndex">
+            <summary>
+            Tests the correctness of finding the minimum value among the given elements that is smaller than the given reference value. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.BinaryHeapBaseTests.TryFindIndexOfMinSmallerThanReference_OutOfRangeIndexes_ExpectsFailureAndMinIntegerAsMinIndex">
+            <summary>
+            Tests the correctness of finding the minimum value among the given elements that is smaller than the given reference value. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.BinaryHeapBaseTests.TryFindIndexOfMinSmallerThanReference_ReferenceIsSmallest_ExpectsFailureAndMinIntegerAsMinIndex">
+            <summary>
+            Tests the correctness of finding the minimum value among the given elements that is smaller than the given reference value. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.BinaryHeapBaseTests.TryFindIndexOfMaxBiggerThanReference_IndexesInRange_ExpectsSuccessAndCorrectMaxIdex">
+            <summary>
+            Tests the correctness of finding the maximum value among the given elements that is bigger than the given reference value. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.BinaryHeapBaseTests.TryFindIndexOfMaxBiggerThanReference_ReferenceIsMaxInteger_ExpectsFailureAndMaxIntegerAsMaxIndex">
+            <summary>
+            Tests the correctness of finding the maximum value among the given elements that is bigger than the given reference value. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.BinaryHeapBaseTests.TryFindIndexOfMaxBiggerThanReference_OneIndexOutOfRange_ExpectsSuccessAndMaxIntegerAsMaxIndex">
+            <summary>
+            Tests the correctness of finding the maximum value among the given elements that is bigger than the given reference value. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.BinaryHeapBaseTests.TryFindIndexOfMaxBiggerThanReference_IndexesInRange_ExpectsSuccessAndCorrectMaxIndex">
+            <summary>
+            Tests the correctness of finding the maximum value among the given elements that is bigger than the given reference value. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2">
+            <summary>
+            Implements a mock heap to enable testing abstract class of <see cref="T:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2"/>.
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2.#ctor(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="array">An array of key-value pairs to be converted to a heap. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2.BubbleDown_Iteratively(System.Int32,System.Int32)">
+            <summary>
+            Implements the bubble down/trickle down operation using iteration.
+            </summary>
+            <param name="rootIndex">Specifies the index of the root element, the element for which the trickle down should be performed.</param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2.BubbleDown_Recursively(System.Int32,System.Int32)">
+            <summary>
+            Implements the bubble down/trickle down operation using recursion.
+            </summary>
+            <param name="rootIndex">Specifies the index of the root element, the element for which the trickle down should be performed.</param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2.BubbleUp_Iteratively(System.Int32,System.Int32)">
+            <summary>
+            Moves the value in the given index, up in the heap till its position is found. The position is defined such to respect heap ordering property.
+            </summary>
+            <param name="index">Specifies the index of the element that should be bubbled up.</param>
+            <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2.BuildHeap_Iteratively(System.Int32)">
+            <summary>
+            Note that passing the array size is not a must, as the class itself contains the array and has access to its size. However some algorithms such as HeapSort which rely on a heap to perform sorting, are better implemented, if we have the length of the array passed to these methods. 
+            </summary>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2.BuildHeap_Recursively(System.Int32)">
+            <summary>
+            Builds a heap using recursion, and does so in situ.
+            </summary>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2.Insert(System.Collections.Generic.KeyValuePair{`0,`1},System.Int32)">
+            <summary>
+            Inserts a new value into heap.
+            </summary>
+            <param name="keyValue">Specifies the key-value to be inserted into the heap.</param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2.TryFindRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)">
+            <summary>
+            Finds the root of the heap, without removing it. 
+            </summary>
+            <param name="keyValue">Specifies the key-value of the root.</param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+            <returns>True in case of success, and false in case of failure.</returns>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2.TryRemoveRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)">
+            <summary>
+            Removes the root of the heap. In a MinHeap and MinMaxHeap this is the min, and in a MaxHeap and MaxMinHeap this is the max. 
+            </summary>
+            <param name="keyValue">Specifies the key-value of the root.</param>
+            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+            <returns>True in case of success, and false otherwise.</returns>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap`2"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.Initialize">
+            <summary>
+            Initializes/Resets variables before executing each unit test in this class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.BuildHeap_Recursively">
+            <summary>
+            Tests the correctness of build operation when implemented recursively. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.BuildHeap_Itratively">
+            <summary>
+            Tests the correctness of Build operation when implemented iteratively. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectDescendingOrderInResults">
+            <summary>
+            Tests the correctness of removing root of the heap. Removes root several times until no member in tree remains.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMaxBinaryHeapAfterEachInsert">
+            <summary>
+            Tests the correctness of insert operation. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.HasMaxOrderPropertyForNode``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)">
+            <summary>
+            Checks whether the element at the given index follows heap properties. 
+            Checking the MaxHeap ordering (node relations) for the node at the given index, to make sure the correct relations between the node and its parent and children holds. 
+            </summary>
+            <typeparam name="TKey">Type of the keys stored in the heap. </typeparam>
+            <typeparam name="TValue">Type of the values stored in the heap. </typeparam>
+            <param name="heap">A max binary heap. </param>
+            <param name="nodeIndex">Index of a heap node in heap array. </param>
+            <returns></returns>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.HasMaxOrderPropertyForHeap``2(System.Int32,CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap{``0,``1})">
+            <summary>
+            Checks whether the heap is a proper Max heap. 
+            </summary>
+            <typeparam name="TKey">Type of the keys stored in the heap. </typeparam>
+            <typeparam name="TValue">Type of the values stored in the heap. </typeparam>
+            <param name="arraySize">Size of the heap array. </param>
+            <param name="heap">Is a Max binary heap. </param>
+            <returns>True if the heap is a proper Max binary heap, and false otherwise. </returns>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap`2"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.Initialize">
+            <summary>
+            Initializes/Resets variables before executing each unit test in this class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapRecursive_1">
+            <summary>
+            Tests the correctness of Build operation recursive version. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapRecursive_2">
+            <summary>
+            Tests the correctness of Build operation recursive version. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapIterative_1">
+            <summary>
+            Tests the correctness of Build operation iterative version. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapIterative_2">
+            <summary>
+            Tests the correctness of Build operation iterative version. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.CompareEqualityOfRecursiveAndIterativeMinHeapConstruction">
+            <summary>
+            Tests the equality of the heaps built using recursive and iterative Build operations. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.TryRemoveMin_RemoveRootEqualToArrayLengthTimes_ExpectsAscendingOrderInResults">
+            <summary>
+            Tests the correctness of removing min node from a Min binary heap. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMinBinaryHeapAfterEachInsert">
+            <summary>
+            Tests the correctness of Insert operation when inserting several keys one after the other in the Min binary heap. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.GetNodeLevel">
+            <summary>
+            Tests the correctness of computing node levels in a Min binary heap. 
+            </summary>
+        </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.HasMinOrderProperty``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)">
             <summary>
+            Checks whether the given heap is a proper Min binary heap. 
             Checking the MinHeap ordering (node relations) for the node at the given index, to make sure the correct relations between the node and its parent and children holds. 
             </summary>
-            <param name="heap"></param>
-            <param name="nodeIndex"></param>
+            <param name="heap">A Min binary heap. </param>
+            <param name="nodeIndex">Is the index of a heap node in a heap array. </param>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2"/> class.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.BuildHeapRecursively_DistinctValues">
+            <summary>
+            Tests the correctness of Build operation recursive version, when inserting distinct values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.BuildHeapRecursively_DuplicateValues">
+            <summary>
+            Tests the correctness of Build operation, recursive version when inserting duplicate values. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMinLevel``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)">
+            <summary>
+            Checks whether a node in a min level of a MinMax heap has proper properties. 
+            </summary>
+            <typeparam name="TKey">Type of the keys stored in the heap. </typeparam>
+            <typeparam name="TValue">Type of the values stored in the heap. </typeparam>
+            <param name="heap">Is a MinMax binary heap. </param>
+            <param name="index">Is the index of a node in a heap array and in a Min level.</param>
+            <returns>True if the node has proper properties, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMaxLevel``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)">
+            <summary>
+            Checks whether a node in a max level of a MinMax heap has proper properties. 
+            </summary>
+            <typeparam name="TKey">Type of the keys stored in the heap. </typeparam>
+            <typeparam name="TValue">Type of the values stored in the heap. </typeparam>
+            <param name="heap">Is a MinMax binary heap. </param>
+            <param name="index">Is the index of a node in a heap array and in a Max level.</param>
+            <returns>True if the node has proper properties, and false otherwise. </returns>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.DataStructures.LinkedLists.API.LinkedListBase`2"/> using <see cref="T:CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList`1"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Length">
+            <summary>
+            Tests the correctness of computing the length of a linked list. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Search_EmptyListAndNotExistingValue_ThrowsException">
+            <summary>
+            Tests the correctness of searching an empty list for a non existing key. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Search_NonEmptyListAndNotExistingValue_ThrowsException">
+            <summary>
+            Tests the correctness of searching a non empty list for a non existing key. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Search_Success">
+            <summary>
+            Tests the correctness of search operation over a list for existing keys. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList`1">
+            <summary>
+            Implements a mock for testing <see cref="T:CSFundamentals.DataStructures.LinkedLists.API.LinkedListBase`2"/> calss.
+            </summary>
+            <typeparam name="T1"></typeparam>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList`1.#ctor">
+            <summary>
+            Parameter-less constructor.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList`1.#ctor(CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedNode{`0})">
+            <summary>
+            Constructor. 
+            </summary>
+            <param name="head">Head/starting node of the list. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList`1.Delete(`0)">
+            <summary>
+            Deletes a node with the given value from the list. If no node with the given value exists, fails the operation and returns false.
+            </summary>
+            <param name="value">Is the value that is being searched for.</param>
+            <returns>True in case of success, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList`1.Insert(`0)">
+            <summary>
+            Inserts a new value in the list.
+            </summary>
+            <param name="newValue">Is the value of the new node. </param>
+            <returns>True in case of success.</returns>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedNode`1">
+            <summary>
+            Implements a mock class for testing <see cref="T:CSFundamentals.DataStructures.LinkedLists.API.LinkedNode`2"/>.
+            </summary>
+            <typeparam name="T1"></typeparam>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedNode`1.#ctor(`0)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="value">Value to be stored in the node. </param>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedListTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedList`1"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedListTests.InsertAfter_EmptyListAndInsertAfterNotExistingValue_ThrowsException">
+            <summary>
+            Tests the correctness of InsertAfter operation over an empty list. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedListTests.InsertAfter_NotEmptyListAndInsertAfterNotExistingValue_ThrowsException">
+            <summary>
+            Tests the correctness of InsertAfter operation over a non empty list to insert after a non existing key. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedListTests.InsertAfter_Success_1">
+            <summary>
+            Tests the correctness of InsertAfter operation over a non empty list and inserting after an existing key. Expects success. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedListTests.InsertAfter_Success_2">
+            <summary>
+            Tests the correctness of InsertAfter operation over a non empty list and inserting after an existing key. Expects success. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedListTests.InsertBefore_EmptyListInsertBeforeNotExistingValue_ThrowsException">
+            <summary>
+            Tests the correctness of InsertBefore operation over an empty list and inserting after a non existing key. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedListTests.InsertBefore_NotEmptyListInsertBeforeNotExistingValue_ThrowsException">
+            <summary>
+            Tests the correctness of InsertBefore operation over a non empty list and inserting after a non existing key. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedListTests.InsertBefore_Success_1">
+            <summary>
+            Tests the correctness of InsertBefore operation over a non empty list and inserting after an existing key. Expects success.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedListTests.InsertBefore_Success_2">
+            <summary>
+            Tests the correctness of InsertBefore operation over a non empty list and inserting after an existing key. Expects success.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedListTests.Append">
+            <summary>
+            Tests the correctness of Append operation.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedListTests.Prepend">
+            <summary>
+            Tests the correctness of Pre-pend operation. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedListTests.Delete">
+            <summary>
+            Tests the correctness of Delete operation. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedListTests.Append_Prepend">
+            <summary>
+            Tests the correctness of Append and Prepend operations one after each other. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedNodeTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode`1"/> class.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedNodeTests.IsHead">
+            <summary>
+            Tests the correctness of detecting whether a node is the head. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedNodeTests.IsTail">
+            <summary>
+            Tests the correctness of detecting whether a node is the tail. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedSortedList`1"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.Insert_1">
+            <summary>
+            Tests the correctness of Insert operation. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.Insert_2">
+            <summary>
+            Tests the correctness of Insert operation. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.Delete">
+            <summary>
+            Tests the correctness of Delete operation. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.IsSorted``1(CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode{``0})">
+            <summary>
+            Checks whether the linked list that starts at <paramref name="head"/> is sorted. 
+            </summary>
+            <typeparam name="TValue">Type of the value stored in the list. </typeparam>
+            <param name="head">Head/starting node of the list.</param>
+            <returns>True if the list is sorted, and false otherwise. </returns>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.LinkedLists.SinglyLinkedListTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.DataStructures.LinkedLists.SinglyLinkedList`1"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.SinglyLinkedListTests.Insert">
+            <summary>
+            Tests the correctness of Insert operation. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.SinglyLinkedListTests.Delete">
+            <summary>
+            Tests the correctness of Delete operation. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.LinkedLists.UtilsTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.DataStructures.LinkedLists.Utils"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.UtilsTests.DeepCopy">
+            <summary>
+            Tests the correctness of DeepCopy operation. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.LinkedLists.UtilsTests.Person">
+            <summary>
+            Is an example class for testing <see cref="M:CSFundamentals.DataStructures.LinkedLists.Utils.DeepCopy``1(``0)"/> operation. 
+            </summary>
+        </member>
+        <member name="P:CSFundamentalsTests.DataStructures.LinkedLists.UtilsTests.Person.Name">
+            <summary>
+            Name of the person. 
+            </summary>
+        </member>
+        <member name="P:CSFundamentalsTests.DataStructures.LinkedLists.UtilsTests.Person.Parent">
+            <summary>
+            Object storing the parent information of this person.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.UtilsTests.Person.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name">Name of the person. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.UtilsTests.Person.#ctor">
+            <summary>
+            Parameter-less constructor needed for serializing and deserailizing. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinarySearchTreeBaseTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinarySearchTreeBaseTests.Initialize">
+            <summary>
+            Initializes/Resets variables before executing each unit test in this class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinarySearchTreeBaseTests.RotateLeft">
+            <summary>
+            Tests the correctness of rotate left operation. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinarySearchTreeBaseTests.RotateRight">
+            <summary>
+            Tests the correctness of rotate right operation. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinarySearchTreeBaseTests.SearchBST_Success">
+            <summary>
+            Tests the correctness of search operation. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinarySearchTreeBaseTests.SearchBST_Failure">
+            <summary>
+            Tests the correctness of search operation when looking for a non existing key. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinarySearchTreeBaseTests.UpdateBST_Success">
+            <summary>
+            Tests the correctness of Update operation.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinarySearchTreeBaseTests.UpdateBST_Failue">
+            <summary>
+            Testing the correctness of Update operation when root is null or the key does not exist in the tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinarySearchTreeBaseTests.FindMinBST_Success">
+            <summary>
+            Tests the correctness of finding minimum key in a binary search tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinarySearchTreeBaseTests.FindMinBST_NodeIsNull_ThrowsException">
+            <summary>
+            Tests the correctness of finding minimum key in an empty node. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinarySearchTreeBaseTests.FindMaxBST_Success">
+            <summary>
+            Tests the correctness of finding the maximum key in a binary search tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinarySearchTreeBaseTests.FindMaxBST_NodeIsNull_ThrowsException">
+            <summary>
+            Tests the correctness of finding the maximum key in a binary search tree rooted in a null node. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinarySearchTreeBaseTests.InsertBST_WithoutBalancing">
+            <summary>
+            Tests the correctness of Insert operation in a binary search tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinarySearchTreeBaseTests.InOrderTraversal">
+            <summary>
+            Tests the correctness of in-order traversal. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinarySearchTreeBaseTests.GetAllPathToNullLeaves">
+            <summary>
+            Tests the correctness of getting all the paths to all the leaf nodes in the tree. 
+            </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinarySearchTreeBaseTests.HasBinarySearchTreeOrderProperty``3(``0)">
             <summary>
             Given the root of a binary search tree, checks whether the binary search tree properties hold.
             </summary>
+            <typeparam name="TNode">Type of the nodes in the tree. </typeparam>
             <typeparam name="TKey">Specifies the type of the keys in tree. </typeparam>
             <typeparam name="TValue">Specifies the type of the values in tree nodes. </typeparam>
             <param name="root">Is the root of a binary search tree. </param>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3"/> using <see cref="T:CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode`2"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.Initialize">
+            <summary>
+            Initializes/Resets variables before executing each unit test in this class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsLeftChild_Failure">
+            <summary>
+            Tests the correctness of detecting whether a node is the left child of its parent, when it is not. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsLeftChild_Success">
+            <summary>
+            Tests the correctness of detecting whether a node is the left child of its parent, when it is. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsRightChild_Success">
+            <summary>
+            Tests the correctness of detecting whether a node is the right child of its parent, when it is. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsRightChild_Failure">
+            <summary>
+            Tests the correctness of detecting whether a node is the right child of its parent, when it is not. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsRoot">
+            <summary>
+            Tests the correctness of detecting whether a node is root. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetSibling">
+            <summary>
+            Tests the correctness of getting a node's sibling. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetUncle">
+            <summary>
+            Tests the correctness of getting a node's uncle. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetGrandParent">
+            <summary>
+            Tests the correctness of getting a node's grand parent.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsLeaf">
+            <summary>
+            Tests the correctness of detecting whether a node is a leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.FormsLine">
+            <summary>
+            Tests the correctness of detecting whether a node forms a line with its parent and grand parent. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.FormsTriangle">
+            <summary>
+            Tests the correctness of detecting whether a node forms a triangle with its parent and grand parent. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsComplete">
+            <summary>
+            Tests the correctness of detecting whether a node is complete (meaning have left and right children).
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetChildren">
+            <summary>
+            Tests the correctness of getting the list of children of a node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetGrandChildren">
+            <summary>
+            Tests the correctness of getting the list of a grand children of a node. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase`2">
+            <summary>
+            Implements a mock class to enable testing <see cref="T:CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase`3"/>.
+            </summary>
+            <typeparam name="TKey">Type of the keys stored in the tree. </typeparam>
+            <typeparam name="TValue">Type of the values stored in the tree. </typeparam>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase`2.Build(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}})">
+            <summary>
+            Builds the tree to include the given nodes.
+            </summary>
+            <param name="keyValues">Is a list of key-value pairs to be inserted in the tree.</param>
+            <returns>Root of the tree.</returns>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase`2.Delete(CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode{`0,`1},`0)">
+            <summary>
+            Deletes a node with the given key from th tree.
+            </summary>
+            <param name="root">Current root of the tree, or the node at which delete operation should be started. </param>
+            <param name="key">Specifies the key of the node to be deleted. </param>
+            <returns>New root of the tree (might or might not change during the operation).</returns>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase`2.FindMax(CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode{`0,`1})">
+            <summary>
+            Finds the maximum key in the (sub)tree rooted at <paramref name="root"/> node. 
+            </summary>
+            <param name="root">Is the node at which (sub)tree is rooted. </param>
+            <returns>The node containing the maximum key. </returns>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase`2.FindMin(CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode{`0,`1})">
+            <summary>
+            Finds the minimum key in the (sub)tree rooted at <paramref name="root"/> node. 
+            </summary>
+            <param name="root">Is the node at which (sub)tree is rooted. </param>
+            <returns>The node containing the minimum key. </returns>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase`2.Insert(CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode{`0,`1},CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode{`0,`1})">
+            <summary>
+            Inserts a new node in the tree
+            </summary>
+            <param name="root">Current root of the tree, or the node at which insert operation should be started.</param>
+            <param name="newNode">New node to be inserted in the tree. </param>
+            <returns>New root of the tree (might or might not change during operation).</returns>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase`2.Search(CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode{`0,`1},`0)">
+            <summary>
+            Searches for the given key in the tree. 
+            </summary>
+            <param name="root">Current root of the tree, or the node at which search operation should be started. </param>
+            <param name="key">Specifies the key to be searched. </param>
+            <returns>Returns the tree node that contains key. </returns>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase`2.Update(CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode{`0,`1},`0,`1)">
+            <summary>
+            Updates the tree node of the specified key with the new given value. 
+            </summary>
+            <param name="root">Current root of the tree, or the node at which update operation should be started.</param>
+            <param name="key">Specifies the key of the node whose value should be updated.</param>
+            <param name="value">Specifies the new value. </param>
+            <returns>true in case of success and false otherwise.</returns>
         </member>
         <member name="T:CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode`2">
             <summary>
@@ -74,73 +1379,696 @@
             <typeparam name="TKey">Specifies the type of the keys in a tree.</typeparam>
             <typeparam name="TValue">Specifies type of the values in a tree.</typeparam>
         </member>
-        <member name="F:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests._tree">
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode`2.#ctor">
             <summary>
-            Is an AVL tree (A form of balanced BST). 
-            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Init"/> method, please <see cref="!:images\avl-bst.png"/> in current directory. 
+            Parameter-less constructor. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode`2.#ctor(`0,`1)">
+            <summary>
+            Constructor. 
+            </summary>
+            <param name="key">Type of the key stored in the node. </param>
+            <param name="value">Type of the value stored in the node. </param>
+        </member>
+        <member name="P:CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode`2.LeftChild">
+            <summary>
+            Is a reference to the left child of the current node. 
+            </summary>
+        </member>
+        <member name="P:CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode`2.RightChild">
+            <summary>
+            Is a reference to the right child of the current node. 
+            </summary>
+        </member>
+        <member name="P:CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode`2.Parent">
+            <summary>
+            Is a reference to the parent of the current node. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests">
+            <summary>
+            Tests methods of <see cref="T:CSFundamentals.DataStructures.Trees.Binary.AVLTree`2"/> class. 
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests._tree" -->
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Initialize">
+            <summary>
+            Initializes/Resets variables before executing each unit test in this class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Build_ExpectsACorrectAVLTree">
+            <summary>
+            Tests the correctness of Build operation
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion">
             <summary>
-            For a step by step transition of the AVL tree while inserting these keys, please <see cref="!:images\avl-bst-insert-stepByStep.png"/>.
+            Tests the correctness of insert operation.
+            For a step by step transition of the AVL tree while inserting these keys, see <see cref="!:images\avl-bst-insert-stepByStep.png"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Delete_NonExistingKey_ExpectsNoAlternationToTree">
+            <summary>
+            Tests deleting a non existing key, and expects the tree to be the same before and after the operation. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Delete_NodeWith2Children_ExpectsLineAndRotateRight">
+            <summary>
+            Tests delete operation on a node with 2 children, and expects right rotate to be triggered during the operation.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Delete_RootNodeNodeWith2Children_ExpectsReplacementWithSuccessorAndSimpleLeafNodeDeletion">
+            <summary>
+            Tests deleting the root node which has 2 children. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Delete_NodeWith2Children_ExpectsReplacementWithMinInSubtreeAndSimpleLeafNodeDeletion">
+            <summary>
+            Tests deleting a node with 2 children, expects simple deletion of the replacement leaf node.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Delete_NodeWithNoChildren_ExpectsSimpleDeletion">
+            <summary>
+            Tests deletion of a leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Delete_NodeWithNoChildren_ExpectsLineAndRightRotation">
+            <summary>
+            Tests deletion of a leaf node and expects right rotation to be triggered during the operation. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Delete_NodeWithNoChildren_ExpectsSimpleLeafDeletion">
+            <summary>
+            Tests deletion of a leaf node
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Delete_NodeWithNoChildrenAndMaxKey_ExpectsSimpleLeafDeletion">
+            <summary>
+            Tests deletion of the max key in the tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Delete_NodeWith1Children_ExpectsReplacementWithMinInSubtreeAndSimpleLeafDeletion">
+            <summary>
+            Tests deletion of the min key in the tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Delete_NodeWith1Children_ExpectsReplacementWithRightChild">
+            <summary>
+            Tests deletion of a node with only one right child. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Delete_MultipleKeysConsecutively_ExpectsCorrectTreeAfterEachDeletion_RandomOrder1">
             <summary>
-            For a step by step transition of the AVL tree while deleting these keys, please <see cref="!:images\avl-bst-delete-stepBystep.png"/>.
+            Deletes all the keys in the tree in a random order in several sequential operations. 
+            For a step by step transition of the AVL tree while deleting these keys, see <see cref="!:images\avl-bst-delete-stepBystep.png"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Delete_MultipleKeysConsecutively_ExpectsCorrectTreeAfterEachDeletion_RandomOrder2">
+            <summary>
+            Deletes all the keys in the tree in a random order in several sequential operations. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.GetHeight_ForSeveralNodesInSampleTree_ExpectsCorrectHeights">
+            <summary>
+            Tests computing height of the (sub)tree rooted at the chosen nodes.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.GetBalanceFactor_ForSeveralNodesInSampleTree_ExpectsCorrectValues">
+            <summary>
+            Tests computing balance factor for nodes in the tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Balance">
+            <summary>
+            Tests balance internal method. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.HasAVLTreeProperties``2(CSFundamentals.DataStructures.Trees.Binary.AVLTree{``0,``1},CSFundamentals.DataStructures.Trees.Binary.AVLTreeNode{``0,``1},System.Int32)">
+            <summary>
+            Checks whether the given tree has AVL tree properties
+            </summary>
+            <typeparam name="TKey">Type of the keys stored in the tree. </typeparam>
+            <typeparam name="TValue">Type of the values stored in the tree. </typeparam>
+            <param name="tree">An AVL tree</param>
+            <param name="root">Root of the AVL tree</param>
+            <param name="expectedNodeCount">Specifies the expected number of tree nodes in the tree. </param>
+            <returns>True if the tree has AVL tree properties and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.HasExpectedBalanceFactor``2(CSFundamentals.DataStructures.Trees.Binary.AVLTree{``0,``1},System.Collections.Generic.List{CSFundamentals.DataStructures.Trees.Binary.AVLTreeNode{``0,``1}})">
+            <summary>
+            Checks whether all the nodes in the AVL tree have expected balance factors between -1 and 1. 
+            </summary>
+            <typeparam name="TKey">Type of the keys stored in the tree. </typeparam>
+            <typeparam name="TValue">Type of the values stored in the tree. </typeparam>
+            <param name="tree">An AVL tree</param>
+            <param name="nodes">List of all the nodes in the tree. </param>
+            <returns>True if the nodes all have expected balance factors, and false otherwise. </returns>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests">
+            <summary>
+            Tests methods of <see cref="T:CSFundamentals.DataStructures.Trees.Binary.BinarySearchTreeBase`2"/> class. 
             </summary>
         </member>
         <member name="F:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests._tree">
             <summary>
             Is a binary search tree (aka. BST). 
-            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Init"/> method, please <see cref="!:images\bst.png"/> in current directory. 
+            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Initialize"/> method, see <see cref="!:images\bst.png"/> in current directory. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Initialize">
+            <summary>
+            Initializes/Resets variables before executing each unit test in this class. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Build_ExpectsCorrectBinaryTree">
             <summary>
-            For a step by step transition of the BST while inserting these keys, please <see cref="!:images\bst-insert-stepBystep.png"/>.
+            For a step by step transition of the BST while inserting these keys, see <see cref="!:images\bst-insert-stepBystep.png"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Delete_Root_ExpectsReplacementByImmediateSuccessorKey42">
+            <summary>
+            Tests the correctness of delete operation when deleting the root node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Delete_NodeWith2Children_ExpectsReplacementWithImmediateSuccessorKey50">
+            <summary>
+            Tests the correctness of delete operation when deleting a node with 2 children. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Delete_NodeWithNoChildren">
+            <summary>
+            Tests the correctness of delete operation when deleting a node with no children. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Delete_NodeWithOneChildren_ExpectsReplacementByLeftChild">
+            <summary>
+            Tests the correctness of delete operation when deleting a node with one child. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Delete_MultipleNodesConsecutively_ExpectsCorrectBinarySearchTreeAfterEachStep">
             <summary>
-            For a step by step transition of the BST while deleting these keys, please <see cref="!:images\bst-delete-stepBystep.png"/>.
+            Tests the correctness of delete operation when deleting all the keys in the tree one after the other in a random order. 
+            For a step by step transition of the BST while deleting these keys, see <see cref="!:images\bst-delete-stepBystep.png"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Delete_NotExistingKey_ExpectsNoAlternationInTree">
+            <summary>
+            Tests the correctness of delete operation when deleting a non existing key from the tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.DeleteMin_InEntireTree_ExpectsToDelete10AndHave20AsNewMin">
+            <summary>
+            Tests the correctness of delete min key operation
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.DeleteMin_InRightSubtreeOfRoot_ExpectsToDelete42AndHave45AsMinAtTheEnd">
+            <summary>
+            Tests the correctness of delete min key operation
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.DeleteMax_InEntireTree_ExpectsToDelete80AndHave50AsNewMax">
+            <summary>
+            Tests the correctness of delete max key operation
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.DeleteMax_InLeftSubtreeOfRoot_ExpectsToDelete35AndHave30AsMinAtTheEnd">
+            <summary>
+            Tests the correctness of delete max key operation
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.HasBinarySearchTreeProperties(CSFundamentals.DataStructures.Trees.Binary.BinarySearchTreeBase{System.Int32,System.String},CSFundamentals.DataStructures.Trees.Binary.BinarySearchTreeNode{System.Int32,System.String},System.Int32)">
+            <summary>
+            Checks whether the tree is a proper binary search tree. 
+            </summary>
+            <param name="tree">A binary search tree. </param>
+            <param name="root">The root node of the tree. </param>
+            <param name="expectedTotalKeyCount">Expected total number of keys in the tree. </param>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.Trees.Binary.Constants">
+            <summary>
+            A collection of constants used in testing binary tree implementation. 
+            </summary>
+        </member>
+        <member name="F:CSFundamentalsTests.DataStructures.Trees.Binary.Constants.KeyValues">
+            <summary>
+            A set of key-value pairs to be inserted in trees.
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeNodeTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeNodeTests.FlipColor">
+            <summary>
+            Tests the correctness of flipping a node's color. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests">
+            <summary>
+            Tests methods of <see cref="T:CSFundamentals.DataStructures.Trees.Binary.RedBlackTree`2"/> class.
             </summary>
         </member>
         <member name="F:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests._tree">
             <summary>
             Is a RedBlack tree (A form of balanced BST). 
-            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Init"/> method, please <see cref="!:images\redblack-bst.png"/> in current directory. 
+            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Initialize"/> method, see <see cref="!:images\redblack-bst.png"/> in current directory. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Initialize">
+            <summary>
+            Initializes/Resets variables before executing each unit test in this class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Build_ExpectsCorrectRedBlackTree">
+            <summary>
+            Tests the correctness of Build operation
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion">
             <summary>
-            For a step by step transition of the RedBlack tree while inserting these keys, please <see cref="!:images\redblack-bst-insert-stepByStep.png"/>.
+            Tests the correctness of insert operation when inserting several keys one after the other. 
+            For a step by step transition of the RedBlack tree while inserting these keys, see <see cref="!:images\redblack-bst-insert-stepByStep.png"/>.
             </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedNodeWithTWoChildren_ExpectsToBeRepalcedBy50WhichIsBlackWithARedRightChild">
+            <summary>
+            Tests the correctness of delete operation when deleting a red node with 2 children. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedNodeWithTwoChildren_ExpectsToBeReplacedBy35AndIsSubjectToLastCaseBlackSiblingWithLeftRedChild">
+            <summary>
+            Tests the correctness of delete operation when deleting a red node with 2 children. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackNodeWithOneRedRightChild_ReplaceWithTheRightRedChildWith80AsKeyAndColorItBlack">
+            <summary>
+            Tests the correctness of delete operation when deleting a black node with one right child. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackNodeWithOneRedLeftChild_RepalceWithLeftRedChildWith10AsKeyAndColorItBlack">
+            <summary>
+            Tests the correctness of delete operation when deleting a black node with one red left child. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_Root_ExpectsToBeReplacedBy47WhichIsARedLeafAndHasSimpleDeletion">
+            <summary>
+            Tests the correctness of delete operation when deleting the root of the tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackLeafNode_BlackSiblingWithARedLeftChild_ExpectsRightRotate">
+            <summary>
+            Tests the correctness of delete operation when deleting a black leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackNodeWithLeftRedChild_ReplaceWithLeftChildAs42AndColorItBlack">
+            <summary>
+            Tests the correctness of delete operation when deleting a black node with a left red child. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedLeafNode_ExpectsSimpleDelete">
+            <summary>
+            Tests the correctness of delete operation when deleting a red leaf node.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_MultipleKyesConsecutively_ExpectsCorrectTreeAfterEachStep">
+            <summary>
+            Tests the correctness of delete operation when deleting all the keys in the tree one after the other in a random order. 
+            For a step by step transition of the BST while deleting these keys, see <see cref="!:images\redblack-bst-delete-stepBystep.png"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsRed_DefaultColor_ExpectsTrue">
+            <summary>
+            Tests the default color of a RedBlack tree node upon creation.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsRed_ColoredBlack_ExpectsFalse">
+            <summary>
+            Tests whether a black node is red. Expects false. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsBlack_DefaultColor_ExpectsFalse">
+            <summary>
+            Tests whether a node is black upon creation. Expects false. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsBlack_ColoredBlack_ExpectsTrue">
+            <summary>
+            Tests whether a black node is black. Expects true. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.UpdateParentWithNullingChild">
+            <summary>
+            Tests the correctness of nullifying children of a node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.HasRedBlackTreeProperties``2(CSFundamentals.DataStructures.Trees.Binary.RedBlackTree{``0,``1},CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode{``0,``1},System.Int32)">
+            <summary>
+            Checks whether a tree has a RedBlack tree properties. 
+            </summary>
+            <typeparam name="TKey">Type of the keys stored in a tree. </typeparam>
+            <typeparam name="TValue">Type of the values stored in a tree. </typeparam>
+            <param name="tree">A RedBlack tree. </param>
+            <param name="root">Root of a RedBlack tree. </param>
+            <param name="expectedNodeCount">Is the expected number of nodes in a tree. </param>
         </member>
         <member name="T:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_4_BTreeNodeTests">
             <summary>
             Tests BTreeNode implementation by a 2-3-4 BTree Node.
             </summary>
         </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_4_BTreeNodeTests.Constructor_CheckingDegrees">
+            <summary>
+            Tests the correctness of constructor. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests">
+            <summary>
+            Tests the implementation of B+ Tree with a maximum branching factor of 3. 
+            </summary>
+        </member>
         <member name="F:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests._tree">
             <summary>
             Is a B+ tree. 
-            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Init"/> method, please <see cref="!:images\2-3-BPlus-Tree.png"/> in current directory. 
+            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Initialize"/> method, see <see cref="!:images\2-3-BPlus-Tree.png"/> in current directory. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Initialize">
+            <summary>
+            Initializes/Resets variables before executing each unit test in this class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Build_ExpectsACorrectBPlusTree">
+            <summary>
+            Tests the correctness of Build operation
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Insert_SeveralKeys_ExpectsTreeToIncreaseInLevelsAfewTimes">
             <summary>
-            For a step by step transition of this 2-3 B + Tree while inserting these keys, please <see cref="!:images\2-3-BPlus-Tree-insert-stepBystep.png"/>.
+            Tests the correctness of insert operation.
+            For a step by step transition of this 2-3 B + Tree while inserting these keys, see <see cref="!:images\2-3-BPlus-Tree-insert-stepBystep.png"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Search_ForAllExistingKeysInTree_ExpectsSuccess">
+            <summary>
+            Tests the correctness of search operation by looking for all the existing keys in the tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Search_NotExistingKey_ThrowsException">
+            <summary>
+            Tests the correctness of search operation by looking for non existing keys in the tree. Expects exceptions to be thrown.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.FindLeafToInsertKey_NewKeySmallerThanAllKeysInTree_ExpectsTheSparseLeafNodeContainingSmallestKey">
+            <summary>
+            Tests the correctness of finding a leaf node for inserting a new key. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.FindLeafToInsertKey_NewKeyBiggerThanAllKeysInTree_ExpectsTheSparseLeafNodeContainingBiggestKey">
+            <summary>
+            Tests the correctness of finding a leaf node for inserting a new key. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.FindLeafToInsertKey_NewKey_ExpectsSuccess">
+            <summary>
+            Tests the correctness of finding a leaf node for inserting a new key. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.FindLeafToInsertKey_DuplicateKey_ThrowsException">
+            <summary>
+            Tests the correctness of finding a leaf node for inserting a duplicate key. Expects an exception to be thrown.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheBiggestKeyInLeftSubTree_ExpectsRightRotateAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting max key in the left subtree of the root. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheBiggestKeyInLeftSubTreeOfTheLeftSubtreeOfRoot_ExpectsSimpleDeleteAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_AKeyFromFullLeaf_ExpectsSimpleDeleteAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting a key from a full leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheBiggestKeyInLeftMostLeafOnLeftSubtree_ExpectsSimpleDeleteAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheBiggestKeyInAFullLeafNodeOfLeftSubtree_ExpectsSimpleDeleteToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting max key from a full leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheOnlyKeyInLeaf_ExpectsLeftRotationAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheBiggestKeyInFullLeaf_ExpectsSimpleDeleteAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting max key in a full leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheSmallestKeyInFullLeaf_ExpectsSimpleDeleteAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting min key in a full leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheSmallestKeyInAFullLeafNode_ExpectsSimpleDeleteAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting min key in a full leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheSmallestKeyInAFullLeaf_ExpectsSimpleDeleteAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting min key in a full leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheSmallestKeyInFullLeafWith2Siblings_ExpectsSimpleDeleteAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting a key from a full leaf node with 2 siblings. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheBiggestKeyInFullLeafNode_ExpectsSimpleDeleteAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting max key in a full leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_SmallestKeyInAFullLeaf_ExpectsSimpleDeleteAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting min key in a full leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheOnlyKeyInLeafNode_ExpectsLeftRotationAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheSmallestKeyInAFullLeafNodeOfRightSubtree_ExpectsSimpleDeleteAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the min key in a full leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheOnlyKeyInLeafNode_ExpectsRightRotationAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_AllNodesInRandomOrder1_ExpectsProperBtreeAfterEachDelete">
             <summary>
-            For a step by step transition of this 2-3 B + Tree while deleting these keys, please <see cref="!:images\2-3-BPlus-Tree-delete-stepBystep.png"/>.
+            Tests the correctness of delete operation by deleting all the keys in the tree one after the other in a random order. 
+            For a step by step transition of this 2-3 B + Tree while deleting these keys, see <see cref="!:images\2-3-BPlus-Tree-delete-stepBystep.png"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_AllNodesInRandomOrder2_ExpectsProperBtreeAfterEachDelete">
+            <summary>
+            Tests the correctness of delete operation by deleting all the keys in the tree one after the other in a random order. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheOnlyKeyInTree_ExpectsNoNodeAndNoKeyAfter">
+            <summary>
+            Tests the correctness of delete operation when there is only one key-value pair in the tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_BiggestKeyInTheOnlyLeafNodeOfTree_ExpectsToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when there is only one full node in the tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_NonExistingKey_ExpectsFailure">
+            <summary>
+            Tests the correctness of delete operation when deleting a non existing key in the tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheKeyInFullLeafNode_ExpectsSimpleDeleteAndReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting a key from a full leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheOnlyKeyInLeafNode_ExpectsToTriggerLeftRotateAndReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_KeyInFullLeaf_ExpectsToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting a key from a full leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_TheOnlyKeyInLeafNodeWithMinOneFullSibling_ExpectsToTriggerLeftRotate">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node with a minOneFull sibling.
             </summary>
         </member>
         <member name="T:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests">
             <summary>
             Tests BTreeNode implementation by a 2-3 BTree Node.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Constructor_CheckingDegrees">
+            <summary>
+            Tests the correctness of constructor in computing minimum and maximum branching degrees and minimum and maximum number of keys in a BTree node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsLeaf_ChildLessNode_ExpectsTrue">
+            <summary>
+            Tests the correctness of detecting whether a node is leaf over a child less node. Expects true. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsLeaf_NodeHasOneChild_ExpectsFalse">
+            <summary>
+            Tests the correctness of detecting whether a node is leaf over a node with one child. Expects false. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsRoot_NodeHasNoParent_ExpectsTrue">
+            <summary>
+            Tests the correctness of detecting whether a node is root over a node with no parent. Expects true. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsRoot_NodeHasParent_ExpectsFalse">
+            <summary>
+            Tests the correctness of detecting whether a node is root over a node with a parent. Expects false. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.GetMinKey_NodeHasKeys_FindsMinCorrectly">
+            <summary>
+            Tests the correctness of finding min key in a node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.GetMaxKey_NodeHasKeys_FindsMaxCorrectly">
+            <summary>
+            Tests the correctness of finding max key in a node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_OtherIsNull_ExpectsBigger">
+            <summary>
+            Tests the correctness of comparing a BTree node to a null node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_TwoEmptyNodes_ExpectsEqual">
+            <summary>
+            Tests the correctness of comparing two empty nodes (have no keys). 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_NonEmptyToEmpty_ExpectsNonEmptyToBeBigger">
+            <summary>
+            Tests the correctness of comparing a non empty node to an empty node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_TwoNodesEachWithOneKey_ExpectsNodeWithSmallerKeyToBeSmaller">
+            <summary>
+            Tests the correctness of comparing two nodes each with one key. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_TwoNodesWithEqualMinKeyAndDifferentMaxKey_ExpectsEqual">
+            <summary>
+            Tests the correctness of comparing two nodes that have the same min key but different max keys. Expects equality. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertKey_SeveralKeys_ExpectsAscendingOrderAmongKeys">
+            <summary>
+            Tests the correctness of inserting several distinct keys in the BTree node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertKey_Duplicates_ExpectsOnlyOneKey">
+            <summary>
+            Tests the correctness of inserting several keys some with duplicates in a BTree node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertChild_SeveralChildren_ExpectsAscendingOrderAmongChildrenBasedOnTheirKeyRange">
+            <summary>
+            Tests the correctness of inserting several children in a node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertChild_Duplicates_ThrowsException">
+            <summary>
+            Tests the correctness of inserting duplicate children in a node. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_EmptyNode_ExpectsNullForTheNewNode">
+            <summary>
+            Tests the correctness of splitting an empty node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsMinFull_ExpectsNullForTheNewNode">
+            <summary>
+            Tests the correctness of splitting a minFull node. Expects the split operation not to be executed. Note that in this implementation Split operation is only permitted on an overFlown node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsFull_ExpectsNullForTheNewNode">
+            <summary>
+            Tests the correctness of splitting a full node. Expects the split operation not to be executed. Note that in this implementation Split operation is only permitted on an overFlown node.  
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsOverFlownAndHasNoChildren_ExpectsSuccessfulSplitForKeys">
+            <summary>
+            Tests the correctness of splitting an overFlown node. Expects a successful split. Note that in this implementation Split operation is only permitted on an overFlown node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsOverFlownAndHasChildren_ExpectsSuccessfulSplitForKeysAndChildren">
+            <summary>
+            Tests the correctness of splitting an overFlown node with children. Expects a successful split of keys and children. Note that in this implementation Split operation is only permitted on an overFlown node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_EmptyNode_ExpectsFalse">
+            <summary>
+            Tests the correctness of detecting whether a node is overFlown over an empty node. Expects false. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_MinFullNode_ExpectsFalse">
+            <summary>
+            Tests the correctness of detecting whether a node is overFlown over minFull node. Expects false. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_FullNode_ExpectsFalse">
+            <summary>
+            Tests the correctness of detecting whether a node is overFlown over a full node. Expects false. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_OverFlownNode_ExpectsTrue">
+            <summary>
+            Tests the correctness of detecting whether a node is overFlown over an overFlown node. Expects false. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.KeyValueToMoveUp_EmptyNode_ThrowsException">
+            <summary>
+            Tests the correctness of finding the key to move up to parent as part of a split operation over an empty node. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.KeyValueToMoveUp_MinFullNode_ThrowsException">
+            <summary>
+            Tests the correctness of finding the key to move up to parent as part of a split operation over a minFull node. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.KeyValueToMoveUp_NodeIsMinOneFull_ExpectsLastKeyInTheNode">
+            <summary>
+            Tests the correctness of finding the key to move up to parent as part of a split operation over an minOneFull node. Expects the right answer.
             </summary>
         </member>
         <member name="T:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests">
@@ -151,17 +2079,224 @@
         <member name="F:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests._tree">
             <summary>
             Is a B tree. 
-            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Init"/> method, please <see cref="!:Images\2-3-BTree.png"/> in current directory. 
+            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Initialize"/> method, see <a href="file:///C:\Users\Parisa\Documents\Interviews-2019\CSFundamentalAlgorithms\Tests\DataStructures\Trees\Nary\Images\2-3-BTree.png"/> <see cref="!:Images\2-3-BTree.png"/> in current directory. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Initialize">
+            <summary>
+            Initializes/Resets variables before executing each unit test in this class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Build_ExpectsACorrectBTree">
+            <summary>
+            Tests the correctness of Build operation
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.GetMaxCapacity_ForATreeWithOneToFiveLevels_ExpectsNumbersAsIndicatedInAsserts">
+            <summary>
+            Tests the correctness of computing maximum capacity of a B tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.FindLeafToInsertKey_NewKeySmallerThanAllKeysInTree_ExpectsTheSparseLeafNodeContainingSmallestKey">
+            <summary>
+            Tests the correctness of finding a leaf node to insert a key that is smaller than the current minimum key in the tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.FindLeafToInsertKey_NewKeyBiggerThanAllKeysInTree_ExpectsTheSparseLeafNodeContainingBiggestKey">
+            <summary>
+            Tests the correctness of finding a leaf node to insert a key that is bigger than the current maximum key in the tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.FindLeafToInsertKey_NewKey_ExpectsSuccess">
+            <summary>
+            Tests the correctness of finding a leaf node to insert a key. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.FindLeafToInsertKey_DuplicateKey_ThrowsException">
+            <summary>
+            Tests the correctness of finding a leaf node  to insert a duplicate key. Expects exception. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Insert_SeveralKeys_ExpectsTreeToIncreaseInLevelsAfewTimes">
             <summary>
-            For a step by step transition of this 2-3 BTree while inserting these keys, please <see cref="!:images\2-3-BTree-insert-stepBystep.png"/>.
+            Tests the correctness of insert operation by inserting several keys one after the other. 
+            For a step by step transition of this 2-3 BTree while inserting these keys, see <see cref="!:images\2-3-BTree-insert-stepBystep.png"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.InOrderTraversal_StartingFromRoot_ExpectsAscendingOrder">
+            <summary>
+            Tests the correctness of in-order traversal over the tree. Expects a sorted list of key-value pairs. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Search_ForAllExistingKeysInTree_ExpectsSuccess">
+            <summary>
+            Tests the correctness of search operation by looking for all the existing keys in the tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Search_NotExistingKey_ThrowsException">
+            <summary>
+            Tests the correctness of search operation by looking for a non existing key in the tree. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_Root_ExpectsToReduceBy4NodesAnd1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the root node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_TheOnlyKeyOfLeftChildOfRoot_ExpectsToReduceBy4NodesAnd1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in an internal node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_TheOnlyKeyOfRightChildOfRoot_ExpectsToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in an internal node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_TheOnlyKeyInParentNodeOfLeftMostLeavesOnLeftSubtree_ExpectsToReduceBy4NodesAnd1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in an internal node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_TheOnlyKeyInParentNodeOfRightMostLeavesOnLeftSubtree_ExpectsToReduceBy4NodesAnd1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in an internal node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_TheOnlyKeyInParentNodeOfLeftMostLeavesOnRightSubtree_ExpectsToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in an internal node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_TheOnlyKeyInParentNodeOfRightMostLeavesOnRightSubtree_ExpectsToReduceBy4NodesAnd1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in an internal node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_TheSmallestKeyInTreeLeafNode_ExpectsToReduceBy4NodesAnd1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node/also the min key in the tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_ThirdSmallestKeyInTreeLeafNode_ExpectsToReduceBy4NodesAnd1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_SmallestKeyInRightSubtreeOfLeftSubtreeLeafNode_ExpectsToReduceBy4NodesAnd1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_BiggestKeyInLeftSubtreeLeafNode_ExpectsToReduceBy4NodesAnd1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_SmallestKeyInRightSubtreeLeafNode_ExpectsToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_SmallestKeyInAFullLeaf_ExpectsToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the min key in a full leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_BiggestKeyInAFullLeaf_ExpectsToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the max key in a full leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_ThirdBiggestKeyInTreeLeafNode_ExpectsToReduceBy4NodesAnd1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_BiggestKeyInTreeLeafNode_ExpectsToReduceBy4NodesAnd1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_AllNodesInRandomOrder1_ExpectsProperBtreeAfterEachDelete">
             <summary>
-            For a step by step transition of this 2-3 BTree while deleting these keys, please <see cref="!:images\2-3-BTree-delete-stepBystep.png"/>.
+            Tests the correctness of delete operation when deleting all the keys in the tree one after the other in a random order.
+            For a step by step transition of this 2-3 BTree while deleting these keys, see <see cref="!:images\2-3-BTree-delete-stepBystep.png"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_AllNodesInRandomOrder2_ExpectsProperBtreeAfterEachDelete">
+            <summary>
+            Tests the correctness of delete operation when deleting all the keys in the tree one after the other in a random order.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_TheOnlyKeyInTree_ExpectsNoNodeAndNoKeyAfter">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in the tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_BiggestKeyInTheOnlyNodeOfTree_ExpectsToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the max key in the only node of the tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_NonExistingKey_ExpectsFailure">
+            <summary>
+            Tests the correctness of delete operation when deleting a non existing key from the tree. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_TheOnlyKeyInInternalNode_ExpectsToTriggerJoinAndReduceBy2NodesAnd1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in an internal node.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_TheOnlyKeyInLeafNode_ExpectsToTriggerJoinByRightSiblingAndReduceBy2NodesAnd1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_TheOnlyKeyInLeafNode_ExpectsToTriggerJoinByLeftSiblingAndReduceBy2NodesAnd1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_KeyInFullLeaf_ExpectsToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting a key in a full a leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_TheOnlyKeyInLeafNodeWithMinOneFullSibling_ExpectsToTriggerLeftRotate">
+            <summary>
+            Tests the correctness of delete operation when deleting a key in a full a leaf node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_DeleteTheOnlyKeyInInternalNode_ExpectsToTriggerLeafDeleteAndLeftRotate">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in an internal node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_TheOnlyKeyInLeafWithFullParentAndMinOneFullSibling_ExpectsLeftRotateAndToReduceBy1Key">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node with a minOneFull sibling.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_TheOnlyKeyInLeaf_ExpectsToTriggerJoinAndLeftRotateOnANodeWithChildren">
+            <summary>
+            Tests the correctness of delete operation when deleting the only key in a leaf node.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.RotateLeft_EmptyNodeWithMinOneFullSibling_ExpectsChildrenToBeRotated">
+            <summary>
+            Tests the correctness of left rotation. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.RotateRight_EmptyNodeWithMinOneFullLeftSibling_ExpectsChildrenToBeRotated">
+            <summary>
+            Tests the correctness of right rotation. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.GetMaxNode_OnAllSubTreesInTree_ExpectsCorrectValuesForMaxKeyInSubtree">
+            <summary>
+            Tests the correctness of finding the node with the max key in the (sub)tree rooted at several different nodes. 
             </summary>
         </member>
         <member name="T:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests">
@@ -169,10 +2304,400 @@
             Tests BTreeNode implementation by a 3-5 BTree Node.
             </summary>
         </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetMaxKey_EmptyNode_ThrowsException">
+            <summary>
+            Tests the correctness of getting max key in an empty B Tree node. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetMinKey_EmptyNode_ThrowsException">
+            <summary>
+            Tests the correctness of getting min key in an empty B Tree node. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsUnderFlown_EmptyNode_ExpectsTrue">
+            <summary>
+            Tests the correctness of detecting whether an empty node is UnderFlown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsUnderFlown_NodeHasLessThanMinKeys_ExpectsTrue">
+            <summary>
+            Tests the correctness of detecting whether a node with less than MinKeys is underFlown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsUnderFlown_NodeMinKeys_ExpectsFalse">
+            <summary>
+            Tests the correctness of detecting whether a node with MinKeys is underFlown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsUnderFlown_NodeHasMinKeysPlusOne_ExpectsFalse">
+            <summary>
+            Tests the correctness of detecting whether a minOneFull node is underFlown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.KeyValueToMoveUp_NodeIsFullAndHasMoreThanMinKeyPlusOneKeys_ExpectsFailure">
+            <summary>
+            Tests the correctness of getting the key to move up as part of split operation. The node is full and thus expects an exception to be thrown. Note that only when the node has MinKeys+1 keys this operation is successful. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsFull_EmptyNode_ExpectsFalse">
+            <summary>
+            Tests the correctness of detecting whether an empty node is full. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsFull_NodeWithLessThanMaxKeys_ExpectsFalse">
+            <summary>
+            Tests the correctness of detecting whether a node with less than MaxKeys is full. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsFull_NodeWithMaxKeys_ExpectsTrue">
+            <summary>
+            Tests the correctness of detecting whether a node with MaxKeys is full.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsFull_NodeWithMoreThanMaxKeys_ExpectsFalse">
+            <summary>
+            Tests the correctness of detecting whether a node with more than MaxKeys is full. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetIndexAtParentChildren_ParentIsNull_ThrowsException">
+            <summary>
+            Tests the correctness of finding the index of the current node in its parent's _children array. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetIndexAtParentChildren_EmptyNode_ThrowsException">
+            <summary>
+            Tests the correctness of finding the index of an empty node in its parent's _children array. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetIndexAtParentChildren_NodeIsNotAChildAtParent_ThrowsException">
+            <summary>
+            Tests the correctness of finding the index of an empty node in a random node's _children array. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetIndexAtParentChildren_ParentHasNodeAsFirstChild_Expects0AsIndex">
+            <summary>
+            Tests the correctness of finding the index of a non-empty node in its parent's _children array. Expects 0 as the index. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.HasLeftSibling_NodeIsOnlyChildOfParent_ExpectsFalse">
+            <summary>
+            Tests the correctness of finding out whether the node has a left sibling when it is the only child of the parent. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.HasLeftSibling_ParentHas3Children_ExpectsTrueForTwoRightMostChildrenAndFalseForTheLeftMostChild">
+            <summary>
+            Tests the correctness of finding out whether the 3 children of a node have a left sibling.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.HasRightSibling_NodeIsOnlyChildOfParent_ExpectsFalse">
+            <summary>
+            Tests the correctness of finding out whether the node has a right sibling when it is the only child of the parent. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.HasRightSibling_ParentHas3Children_ExpectsTrueForTwoLeftMostChildrenAndFalseForTheRightMostChild">
+            <summary>
+            Tests the correctness of finding out whether the 3 children of a node have a right sibling.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetLeftSibling_ParentHas3Children_ExpectsNonNullForTwoRightMostChildrenAndNullForLeftMostChild">
+            <summary>
+            Tests the correctness of retrieving left siblings of the 3 children of a node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetRightSibling_ParentHas3Children_ExpectsNonNullForTwoLeftMostChildrenAndNullForRightMostChild">
+            <summary>
+            Tests the correctness of retrieving right siblings of the 3 children of a node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinFull_EmptyNode_ExpectsFalse">
+            <summary>
+            Tests the correctness of detecting whether an empty node has MinKeys.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinFull_NodeHasLessThanMinKeys_ExpectsFalse">
+            <summary>
+            Tests the correctness of detecting whether a node with less than MinKeys has MinKeys.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinFull_NodeHasExactlyMinKeys_ExpectsTrue">
+            <summary>
+            Tests the correctness of detecting whether a node with MinKeys has MinKeys.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinFull_NodeHasMoreThanMinKeys_ExpectsFalse">
+            <summary>
+            Tests the correctness of detecting whether a node with more than MinKeys has MinKeys.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinOneFull_EmptyNode_ExpectsFalse">
+            <summary>
+            Tests the correctness of detecting whether an empty node has MinKeys+1 keys. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinOneFull_NodeHasLessThanMinKeysPlusOne_ExpectsFalse">
+            <summary>
+            Tests the correctness of detecting whether a node with less than MinKeys+1 has MinKeys+1 keys. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinOneFull_NodeIsMinFull_ExpectsFalse">
+            <summary>
+            Tests the correctness of detecting whether a node with MinKeys has MinKeys+1 keys. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinOneFull_NodeHasExactlyMinKeysPlusOne_ExpectsTrue">
+            <summary>
+            Tests the correctness of detecting whether a node with MinKeys+1 has MinKeys+1 keys. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinOneFull_NodeHasMoreThanMinKeysPlusOne_ExpectsFalse">
+            <summary>
+            Tests the correctness of detecting whether a node with more than MinKeys+1 has MinKeys+1 keys. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsEmpty_EmptyNode_ExpectsTrue">
+            <summary>
+            Tests the correctness of detecting whether an empty node is empty. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsEmpty_NodeHasAtLeastOneKey_ExpectsFalse">
+            <summary>
+            Tests the correctness of detecting whether a node with one key is empty. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveKey_EmptyNode_ThrowsException">
+            <summary>
+            Tests the correctness of removing key from an empty node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveKey_NotExistingKey_ThrowsException">
+            <summary>
+            Tests the correctness of removing a non existing key from a node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveKey_ByKey_ExistingKeys_ExpectsSuccess">
+            <summary>
+            Tests the correctness of removing an existing key from a node. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveKey_ByIndex_IndexOutOfRange_ThrowsException">
+            <summary>
+            Tests the correctness of removing a key by an index that is out of range. Expects an exception to be thrown.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveKey_ByIndex_InRangeIndexes_ExpectsSuccess">
+            <summary>
+            Tests the correctness of removing a key by an in range index. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveChild_ByIndex_ChildLessNode_ThrowsException">
+            <summary>
+            Tests the correctness of removing a child from a node that has no children. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveChild_ByIndex_IndexOutOfRange_ThrowsException">
+            <summary>
+            Tests the correctness of removing a child when index is out of range. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveChild_ByIndex_InRangeIndexes_ExpectsSuccess">
+            <summary>
+            Tests the correctness of removing a child when index is in range. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveChild_ByKey_EmptyNodeEmptyChild_ThrowsException">
+            <summary>
+            Tests the correctness of removing a an empty child from an empty node. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveChild_ByKey_EmptyChild_ThrowsException">
+            <summary>
+            Tests the correctness of removing an empty child. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveChild_ByKey_ExistingKeys_ExpectsSuccess">
+            <summary>
+            Tests the correctness of removing an existing child. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetKeyValue_EmptyNode_ThrowsException">
+            <summary>
+            Tests the correctness of getting a key-value pair from an empty node. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetKeyValue_IndexOutOfRange_ThrowsException">
+            <summary>
+            Tests the correctness of getting a key-value pair when index is out of range. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetKeyValue_InRangeIndexes_ExpectsSuccess">
+            <summary>
+            Tests the correctness of getting a key-value pair when index is in range. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetKey_EmptyNode_ThrowsException">
+            <summary>
+            Tests the correctness of getting key from an empty node. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetKey_InRangeIndexes_ExpectsSuccess">
+            <summary>
+            Tests the correctness of getting an in range key. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetKeyIndex_EmptyNode_ThrowsException">
+            <summary>
+            Tests the correctness of getting the key index in an empty node. Expects an exception  to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetKeyIndex_ExistingKey_ExpectsSuccess">
+            <summary>
+            Tests the correctness of getting the key index of an existing key. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetChild_EmptyNode_ThrowsException">
+            <summary>
+            Tests the correctness of getting a child from an empty node. Expects an exception to be thrown.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetChild_InRangeIndexes_ExpectsSuccess">
+            <summary>
+            Tests the correctness of getting a child when the index is in range.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetChildIndex_EmptyNodeEmptyChild_ThrowsException">
+            <summary>
+            Tests the correctness of getting a child index when the node is empty and child is empty as well. Expects an exception to be thrown. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetChildIndex_ExistingKeys_ExpectsSuccess">
+            <summary>
+            Tests the correctness of getting an existing child index. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils">
+            <summary>
+            Provides a collection of helper methods used by B-Tree tests. 
+            </summary>
+        </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.DFS``3(``0,System.Collections.Generic.List{``0})">
             <summary>
             TODO: How to make this to use the DFS I have in the algorithms? 
             </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeProperties``3(CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{``0,``1,``2},System.Int32,System.Int32,System.Int32,System.Func{``0,System.Boolean})">
+            <summary>
+            Checks whether the tree has B-Tree properties. 
+            </summary>
+            <typeparam name="TNode">Type of the tree nodes stored in the tree. </typeparam>
+            <typeparam name="TKey">Type of the keys stored in the tree. </typeparam>
+            <typeparam name="TValue">Type of the values stored in the tree. </typeparam>
+            <param name="tree">Is a B-Tree</param>
+            <param name="expectedTotalKeyCount">Is the expected number of keys (duplicate and distinct) in the tree. </param>
+            <param name="expectedDistinctKeyCount">Is the expected number of distinct keys in the tree. </param>
+            <param name="expectedNodeCount">Is the expected number of tree nodes. </param>
+            <param name="HasNodeProperties">Is the method used for checking properties. </param>
+            <returns>True if the tree has the expected properties. </returns>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeNodeProperties``3(``0)">
+            <summary>
+            Checks whether the node has BTree node properties. 
+            </summary>
+            <typeparam name="TNode">Type of tree node. </typeparam>
+            <typeparam name="TKey">Type of the key stored in the node. </typeparam>
+            <typeparam name="TValue">Type of the value stored in the node. </typeparam>
+            <param name="node">Is a B-Tree node. </param>
+            <returns>True if the node has expected properties, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBPlusTreeNodeProperties``2(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{``0,``1})">
+            <summary>
+            Checks whether the node has proper B+ Tree node properties. 
+            </summary>
+            <typeparam name="TKey">Type of the key stored in the node. </typeparam>
+            <typeparam name="TValue">Type of the value stored in the node. </typeparam>
+            <param name="node">Is a B+ Tree node. </param>
+            <returns>True if the node has expected properties, and false otherwise. </returns>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeProperties(CSFundamentals.DataStructures.Trees.Nary.BTree{System.Int32,System.String},System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Checks whether tree has B Tree properties. 
+            </summary>
+            <param name="tree">Is a BTree node. </param>
+            <param name="expectedTotalKeyCount">Is the expected number of keys (duplicate and distinct) in the tree. </param>
+            <param name="expectedDistinctKeyCount">Is the expected number of distinct keys in the tree. </param>
+            <param name="expectedNodeCount">Is the expected number of nodes in the tree. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBPlusTreeProperties(CSFundamentals.DataStructures.Trees.Nary.BPlusTree{System.Int32,System.String},System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Checks whether the tree has B+ Tree properties. 
+            </summary>
+            <param name="tree">Is a B + tree. </param>
+            <param name="expectedTotalKeyCount">Is the expected number of keys (duplicate and distinct) in the tree. </param>
+            <param name="expectedDistinctKeyCount">Is the expected number of distinct keys in the tree. </param>
+            <param name="expectedNodeCount">Is the expected number of nodes in the tree. </param>
+        </member>
+        <member name="T:CSFundamentalsTests.StringStructures.LLPPSTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.DataStructures.StringStructures.LLPPS"/> class. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.StringStructures.LLPPSTests.Build_1">
+            <summary>
+            Tests the correctness of Build operation. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.StringStructures.LLPPSTests.Build_2">
+            <summary>
+            Tests the correctness of Build operation.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.StringStructures.LLPPSTests.Build_3">
+            <summary>
+            Tests the correctness of Build operation. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.StringStructures.StringSuffixTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.DataStructures.StringStructures.StringSuffix"/> class.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.StringStructures.StringSuffixTests.CompareTo">
+            <summary>
+            Tests the correctness of comparison operation. 
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.StringStructures.SuffixArrayTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.DataStructures.StringStructures.SuffixArray"/> class.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.StringStructures.SuffixArrayTests.SortSuffixes">
+            <summary>
+            Tests the correctness of Build operation.
+            </summary>
+        </member>
+        <member name="T:CSFundamentalsTests.StringStructures.SuffixTreeTests">
+            <summary>
+            Tests methods in <see cref="T:CSFundamentals.DataStructures.StringStructures.SuffixTree"/> class.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.StringStructures.SuffixTreeTests.Build_ExpectsCorrectTree">
+            <summary>
+            Tests the correctness of Build operation. 
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.StringStructures.SuffixTreeTests.CheckSuffixTreeProperties(CSFundamentals.DataStructures.StringStructures.SuffixTreeNode,System.String)">
+            <summary>
+            Checks whether the tree rooted at <paramref name="root"/> has Suffix tree properties. 
+            </summary>
+            <param name="root"></param>
+            <param name="text"></param>
+        </member>
+        <member name="M:CSFundamentalsTests.StringStructures.SuffixTreeTests.GetNodes(CSFundamentals.DataStructures.StringStructures.SuffixTreeNode,System.Collections.Generic.List{CSFundamentals.DataStructures.StringStructures.SuffixTreeNode})">
+            <summary>
+            Gets a list of all the nodes in a suffix tree rooted at <paramref name="root"/>.
+            </summary>
+            <param name="root">The tree node at which suffix tree is rooted. </param>
+            <param name="nodes">A list of the nodes in the tree. </param>
         </member>
     </members>
 </doc>

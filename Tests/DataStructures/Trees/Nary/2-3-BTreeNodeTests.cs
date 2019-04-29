@@ -31,6 +31,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
     [TestClass]
     public class _2_3_BTreeNodeTests
     {
+        /// <summary>
+        /// Tests the correctness of constructor in computing minimum and maximum branching degrees and minimum and maximum number of keys in a BTree node. 
+        /// </summary>
         [TestMethod]
         public void Constructor_CheckingDegrees()
         {
@@ -41,6 +44,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual(2, node.MaxKeys);
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node is leaf over a child less node. Expects true. 
+        /// </summary>
         [TestMethod]
         public void IsLeaf_ChildLessNode_ExpectsTrue()
         {
@@ -48,6 +54,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsTrue(node.IsLeaf());
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node is leaf over a node with one child. Expects false. 
+        /// </summary>
         [TestMethod]
         public void IsLeaf_NodeHasOneChild_ExpectsFalse()
         {
@@ -57,6 +66,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsFalse(node1.IsLeaf());
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node is root over a node with no parent. Expects true. 
+        /// </summary>
         [TestMethod]
         public void IsRoot_NodeHasNoParent_ExpectsTrue()
         {
@@ -64,6 +76,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsTrue(node.IsRoot());
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node is root over a node with a parent. Expects false. 
+        /// </summary>
         [TestMethod]
         public void IsRoot_NodeHasParent_ExpectsFalse()
         {
@@ -73,6 +88,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsFalse(node2.IsRoot());
         }
 
+        /// <summary>
+        /// Tests the correctness of finding min key in a node. 
+        /// </summary>
         [TestMethod]
         public void GetMinKey_NodeHasKeys_FindsMinCorrectly()
         {
@@ -87,6 +105,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual("A", node.GetMinKey().Value, ignoreCase: false);
         }
 
+        /// <summary>
+        /// Tests the correctness of finding max key in a node. 
+        /// </summary>
         [TestMethod]
         public void GetMaxKey_NodeHasKeys_FindsMaxCorrectly()
         {
@@ -101,6 +122,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual("C", node1.GetMaxKey().Value, ignoreCase: false);
         }
 
+        /// <summary>
+        /// Tests the correctness of comparing a BTree node to a null node. 
+        /// </summary>
         [TestMethod]
         public void Compare_OtherIsNull_ExpectsBigger()
         {
@@ -108,6 +132,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual(1, node.CompareTo(null));
         }
 
+        /// <summary>
+        /// Tests the correctness of comparing two empty nodes (have no keys). 
+        /// </summary>
         [TestMethod]
         public void Compare_TwoEmptyNodes_ExpectsEqual()
         {
@@ -116,6 +143,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual(0, node1.CompareTo(node2));
         }
 
+        /// <summary>
+        /// Tests the correctness of comparing a non empty node to an empty node. 
+        /// </summary>
         [TestMethod]
         public void Compare_NonEmptyToEmpty_ExpectsNonEmptyToBeBigger()
         {
@@ -125,6 +155,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual(1, node1.CompareTo(node2));
         }
 
+        /// <summary>
+        /// Tests the correctness of comparing two nodes each with one key. 
+        /// </summary>
         [TestMethod]
         public void Compare_TwoNodesEachWithOneKey_ExpectsNodeWithSmallerKeyToBeSmaller()
         {
@@ -135,6 +168,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual(-1, node1.CompareTo(node2));
         }
 
+        /// <summary>
+        /// Tests the correctness of comparing two nodes that have the same min key but different max keys. Expects equality. 
+        /// </summary>
         [TestMethod]
         public void Compare_TwoNodesWithEqualMinKeyAndDifferentMaxKey_ExpectsEqual()
         {
@@ -148,6 +184,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual(0, node1.CompareTo(node2));
         }
 
+        /// <summary>
+        /// Tests the correctness of inserting several distinct keys in the BTree node. 
+        /// </summary>
         [TestMethod]
         public void InsertKey_SeveralKeys_ExpectsAscendingOrderAmongKeys()
         {
@@ -162,6 +201,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual(2, node1.GetKeyIndex(100));
         }
 
+        /// <summary>
+        /// Tests the correctness of inserting several keys some with duplicates in a BTree node. 
+        /// </summary>
         [TestMethod]
         public void InsertKey_Duplicates_ExpectsOnlyOneKey()
         {
@@ -174,6 +216,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual(1, node.KeyCount);
         }
 
+        /// <summary>
+        /// Tests the correctness of inserting several children in a node. 
+        /// </summary>
         [TestMethod]
         public void InsertChild_SeveralChildren_ExpectsAscendingOrderAmongChildrenBasedOnTheirKeyRange()
         {
@@ -201,6 +246,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual(1, node1.GetChildIndex(child2));
         }
 
+        /// <summary>
+        /// Tests the correctness of inserting duplicate children in a node. Expects an exception to be thrown. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void InsertChild_Duplicates_ThrowsException()
@@ -219,6 +267,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             node1.InsertChild(child1);
         }
 
+        /// <summary>
+        /// Tests the correctness of splitting an empty node. 
+        /// </summary>
         [TestMethod]
         public void Split_EmptyNode_ExpectsNullForTheNewNode()
         {
@@ -229,6 +280,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsNull(newNode);
         }
 
+        /// <summary>
+        /// Tests the correctness of splitting a minFull node. Expects the split operation not to be executed. Note that in this implementation Split operation is only permitted on an overFlown node. 
+        /// </summary>
         [TestMethod]
         public void Split_NodeIsMinFull_ExpectsNullForTheNewNode()
         {
@@ -245,6 +299,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsNull(newNode);
         }
 
+        /// <summary>
+        /// Tests the correctness of splitting a full node. Expects the split operation not to be executed. Note that in this implementation Split operation is only permitted on an overFlown node.  
+        /// </summary>
         [TestMethod]
         public void Split_NodeIsFull_ExpectsNullForTheNewNode()
         {
@@ -257,6 +314,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsNull(newNode);
         }
 
+        /// <summary>
+        /// Tests the correctness of splitting an overFlown node. Expects a successful split. Note that in this implementation Split operation is only permitted on an overFlown node. 
+        /// </summary>
         [TestMethod]
         public void Split_NodeIsOverFlownAndHasNoChildren_ExpectsSuccessfulSplitForKeys()
         {
@@ -274,6 +334,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual(1, newNode.KeyCount);
         }
 
+        /// <summary>
+        /// Tests the correctness of splitting an overFlown node with children. Expects a successful split of keys and children. Note that in this implementation Split operation is only permitted on an overFlown node. 
+        /// </summary>
         [TestMethod]
         public void Split_NodeIsOverFlownAndHasChildren_ExpectsSuccessfulSplitForKeysAndChildren()
         {
@@ -304,6 +367,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsTrue(BTreeTestsUtils.HasBTreeNodeProperties<BTreeNode<int, string>, int, string>(newNode));
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node is overFlown over an empty node. Expects false. 
+        /// </summary>
         [TestMethod]
         public void IsOverFlown_EmptyNode_ExpectsFalse()
         {
@@ -313,6 +379,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsFalse(node.IsOverFlown());
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node is overFlown over minFull node. Expects false. 
+        /// </summary>
         [TestMethod]
         public void IsOverFlown_MinFullNode_ExpectsFalse()
         {
@@ -324,6 +393,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsFalse(node.IsOverFlown());
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node is overFlown over a full node. Expects false. 
+        /// </summary>
         [TestMethod]
         public void IsOverFlown_FullNode_ExpectsFalse()
         {
@@ -336,6 +408,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsFalse(node.IsOverFlown());
         }
 
+        /// <summary>
+        /// Tests the correctness of detecting whether a node is overFlown over an overFlown node. Expects false. 
+        /// </summary>
         [TestMethod]
         public void IsOverFlown_OverFlownNode_ExpectsTrue()
         {
@@ -349,6 +424,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsTrue(node.IsOverFlown());
         }
 
+        /// <summary>
+        /// Tests the correctness of finding the key to move up to parent as part of a split operation over an empty node. Expects an exception to be thrown. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void KeyValueToMoveUp_EmptyNode_ThrowsException()
@@ -361,6 +439,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             KeyValuePair<int, string> keyValue = node.KeyValueToMoveUp();
         }
 
+        /// <summary>
+        /// Tests the correctness of finding the key to move up to parent as part of a split operation over a minFull node. Expects an exception to be thrown. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void KeyValueToMoveUp_MinFullNode_ThrowsException()
@@ -374,6 +455,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             KeyValuePair<int, string> keyValue = node.KeyValueToMoveUp();
         }
 
+        /// <summary>
+        /// Tests the correctness of finding the key to move up to parent as part of a split operation over an minOneFull node. Expects the right answer.
+        /// </summary>
         [TestMethod]
         public void KeyValueToMoveUp_NodeIsMinOneFull_ExpectsLastKeyInTheNode()
         {

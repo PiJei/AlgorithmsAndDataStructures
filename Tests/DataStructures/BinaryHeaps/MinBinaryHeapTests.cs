@@ -26,6 +26,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 {
+    /// <summary>
+    /// Tests methods in <see cref="MinBinaryHeap{TKey, TValue}"/> class. 
+    /// </summary>
     [TestClass]
     public class MinBinaryHeapTests
     {
@@ -39,8 +42,11 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         private MinBinaryHeap<int, string> _heap3 = null;
         private MinBinaryHeap<int, string> _heap4 = null;
 
+        /// <summary>
+        /// Initializes/Resets variables before executing each unit test in this class. 
+        /// </summary>
         [TestInitialize]
-        public void Init()
+        public void Initialize()
         {
             _heap1 = new MinBinaryHeap<int, string>(arrayHeap1IterativelyBuilt);
             _heap1.BuildHeap_Iteratively(_heap1.HeapArray.Count);
@@ -55,6 +61,9 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
             _heap4.BuildHeap_Recursively(_heap4.HeapArray.Count);
         }
 
+        /// <summary>
+        /// Tests the correctness of Build operation recursive version. 
+        /// </summary>
         [TestMethod]
         public void BuildHeapRecursive_1()
         {
@@ -66,6 +75,9 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
             }
         }
 
+        /// <summary>
+        /// Tests the correctness of Build operation recursive version. 
+        /// </summary>
         [TestMethod]
         public void BuildHeapRecursive_2()
         {
@@ -77,6 +89,9 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
             }
         }
 
+        /// <summary>
+        /// Tests the correctness of Build operation iterative version. 
+        /// </summary>
         [TestMethod]
         public void BuildHeapIterative_1()
         {
@@ -88,6 +103,9 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
             }
         }
 
+        /// <summary>
+        /// Tests the correctness of Build operation iterative version. 
+        /// </summary>
         [TestMethod]
         public void BuildHeapIterative_2()
         {
@@ -100,6 +118,9 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         }
 
         //Expect the two versions, recursive and iterative, to construct the same heaps. 
+        /// <summary>
+        /// Tests the equality of the heaps built using recursive and iterative Build operations. 
+        /// </summary>
         [TestMethod]
         public void CompareEqualityOfRecursiveAndIterativeMinHeapConstruction()
         {
@@ -114,6 +135,9 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
             }
         }
 
+        /// <summary>
+        /// Tests the correctness of removing min node from a Min binary heap. 
+        /// </summary>
         [TestMethod]
         public void TryRemoveMin_RemoveRootEqualToArrayLengthTimes_ExpectsAscendingOrderInResults()
         {
@@ -169,6 +193,9 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
             Assert.AreEqual(202, min9.Key);
         }
 
+        /// <summary>
+        /// Tests the correctness of Insert operation when inserting several keys one after the other in the Min binary heap. 
+        /// </summary>
         [TestMethod]
         public void Insert_SeveralValues_ExpectCorrectMinBinaryHeapAfterEachInsert()
         {
@@ -241,6 +268,9 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
             }
         }
 
+        /// <summary>
+        /// Tests the correctness of computing node levels in a Min binary heap. 
+        /// </summary>
         [TestMethod]
         public void GetNodeLevel()
         {
@@ -287,10 +317,11 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         }
 
         /// <summary>
+        /// Checks whether the given heap is a proper Min binary heap. 
         /// Checking the MinHeap ordering (node relations) for the node at the given index, to make sure the correct relations between the node and its parent and children holds. 
         /// </summary>
-        /// <param name="heap"></param>
-        /// <param name="nodeIndex"></param>
+        /// <param name="heap">A Min binary heap. </param>
+        /// <param name="nodeIndex">Is the index of a heap node in a heap array. </param>
         public static bool HasMinOrderProperty<TKey, TValue>(BinaryHeapBase<TKey, TValue> heap, int nodeIndex) where TKey : IComparable<TKey>
         {
             int leftChildIndex = heap.GetLeftChildIndexInHeapArray(nodeIndex);

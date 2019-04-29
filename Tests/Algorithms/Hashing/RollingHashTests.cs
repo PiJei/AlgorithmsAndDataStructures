@@ -23,12 +23,18 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.Hashing
 {
+    /// <summary>
+    /// Tests methods in <see cref="RollingHash"/> class. 
+    /// </summary>
     [TestClass]
     public class RollingHashTests
     {
         private const int NumCharactersInAlphabet = 256;
         private const int Prime = 101;
 
+        /// <summary>
+        /// Tests the correctness of Hash method. 
+        /// </summary>
         [TestMethod]
         public void Hash()
         {

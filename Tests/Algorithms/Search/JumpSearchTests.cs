@@ -23,21 +23,33 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.Algorithms.Search
 {
+    /// <summary>
+    /// Tests methods in <see cref="JumpSearch"/> class. 
+    /// </summary>
     [TestClass]
     public class JumpSearchTests
     {
+        /// <summary>
+        /// Tests the correctness of Jump search algorithm on an array with distinct elements. 
+        /// </summary>
         [TestMethod]
         public void Search_DistinctElements()
         {
             SearchTests.DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition(JumpSearch.Search);
         }
 
+        /// <summary>
+        /// Tests the correctness of Jump search algorithm on an array with duplicate elements. 
+        /// </summary>
         [TestMethod]
         public void Search_DuplicateElements()
         {
             SearchTests.DuplicateElements_ExpectsToGetTheIndexOfOneOfTheDupliatesNoMatterHowManyTimeSearchIsPerformed(JumpSearch.Search);
         }
 
+        /// <summary>
+        /// Tests the correctness of Jump search algorithm when the key does not exist in the array. 
+        /// </summary>
         [TestMethod]
         public void Search_NotExistingElements()
         {

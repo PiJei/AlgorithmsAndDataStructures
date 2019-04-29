@@ -27,6 +27,9 @@ namespace CSFundamentalsTests.Algorithms.Sort
 {
     public partial class MergeSortTests
     {
+        /// <summary>
+        /// Tests the stability of Merge sort algorithm. 
+        /// </summary>
         [TestMethod]
         public void IsStable()
         {

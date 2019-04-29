@@ -23,9 +23,15 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.DataStructures.LinkedLists
 {
+    /// <summary>
+    /// Tests methods in <see cref="DoublyLinkedList{TValue}"/> class. 
+    /// </summary>
     [TestClass]
     public class DoublyLinkedListTests
     {
+        /// <summary>
+        /// Tests the correctness of InsertAfter operation over an empty list. Expects an exception to be thrown. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(NotFoundException))]
         public void InsertAfter_EmptyListAndInsertAfterNotExistingValue_ThrowsException()
@@ -35,6 +41,9 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.IsFalse(list.InsertAfter(1, 2));
         }
 
+        /// <summary>
+        /// Tests the correctness of InsertAfter operation over a non empty list to insert after a non existing key. Expects an exception to be thrown. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(NotFoundException))]
         public void InsertAfter_NotEmptyListAndInsertAfterNotExistingValue_ThrowsException()
@@ -44,6 +53,9 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.IsFalse(list.InsertAfter(1, 2));
         }
 
+        /// <summary>
+        /// Tests the correctness of InsertAfter operation over a non empty list and inserting after an existing key. Expects success. 
+        /// </summary>
         [TestMethod]
         public void InsertAfter_Success_1()
         {
@@ -65,6 +77,9 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.IsNotNull(list.Tail().Previous);
         }
 
+        /// <summary>
+        /// Tests the correctness of InsertAfter operation over a non empty list and inserting after an existing key. Expects success. 
+        /// </summary>
         [TestMethod]
         public void InsertAfter_Success_2()
         {
@@ -83,6 +98,9 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.IsNotNull(list.Tail().Previous);
         }
 
+        /// <summary>
+        /// Tests the correctness of InsertBefore operation over an empty list and inserting after a non existing key. Expects an exception to be thrown. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(NotFoundException))]
         public void InsertBefore_EmptyListInsertBeforeNotExistingValue_ThrowsException()
@@ -92,6 +110,9 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.IsFalse(list.InsertBefore(1, 2));
         }
 
+        /// <summary>
+        /// Tests the correctness of InsertBefore operation over a non empty list and inserting after a non existing key. Expects an exception to be thrown. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(NotFoundException))]
         public void InsertBefore_NotEmptyListInsertBeforeNotExistingValue_ThrowsException()
@@ -101,6 +122,9 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.IsFalse(list.InsertBefore(1, 2));
         }
 
+        /// <summary>
+        /// Tests the correctness of InsertBefore operation over a non empty list and inserting after an existing key. Expects success.
+        /// </summary>
         [TestMethod]
         public void InsertBefore_Success_1()
         {
@@ -122,6 +146,9 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.IsNotNull(list.Tail().Previous);
         }
 
+        /// <summary>
+        /// Tests the correctness of InsertBefore operation over a non empty list and inserting after an existing key. Expects success.
+        /// </summary>
         [TestMethod]
         public void InsertBefore_Success_2()
         {
@@ -147,6 +174,9 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.AreEqual(0, list.Tail().Previous.Value);
         }
 
+        /// <summary>
+        /// Tests the correctness of Append operation.
+        /// </summary>
         [TestMethod]
         public void Append()
         {
@@ -181,6 +211,9 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.AreEqual(12, list.Tail().Previous.Value);
         }
 
+        /// <summary>
+        /// Tests the correctness of Pre-pend operation. 
+        /// </summary>
         [TestMethod]
         public void Prepend()
         {
@@ -215,6 +248,9 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.AreEqual(12, list.Tail().Previous.Value);
         }
 
+        /// <summary>
+        /// Tests the correctness of Delete operation. 
+        /// </summary>
         [TestMethod]
         public void Delete()
         {
@@ -251,6 +287,9 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists
             Assert.AreEqual(1, list.Tail().Value);
         }
 
+        /// <summary>
+        /// Tests the correctness of Append and Prepend operations one after each other. 
+        /// </summary>
         [TestMethod]
         public void Append_Prepend()
         {

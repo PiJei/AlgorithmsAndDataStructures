@@ -24,9 +24,15 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.Algorithms.Sort
 {
+    /// <summary>
+    /// Tests methods in <see cref="QuickSort"/> class.
+    /// </summary>
     [TestClass]
     public partial class QuickSortTests
     {
+        /// <summary>
+        /// Tests the correctness of Quick sort algorithm recursive version over an array with distinct values. 
+        /// </summary>
         [TestMethod]
         public void QuickSort_Recursively_WithDistinctValues()
         {
@@ -35,6 +41,9 @@ namespace CSFundamentalsTests.Algorithms.Sort
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
+        /// <summary>
+        /// Tests the correctness of Quick sort algorithm recursive version over an array with duplicate values. 
+        /// </summary>
         [TestMethod]
         public void QuickSort_Recursively_WithDuplicateValues()
         {
@@ -43,6 +52,9 @@ namespace CSFundamentalsTests.Algorithms.Sort
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
+        /// <summary>
+        /// Tests the correctness of Quick sort algorithm recursive version over a sorted array with distinct values. 
+        /// </summary>
         [TestMethod]
         public void QuickSort_Recursively_WithSortedDistinctValues()
         {
@@ -51,6 +63,9 @@ namespace CSFundamentalsTests.Algorithms.Sort
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
+        /// <summary>
+        /// Tests the correctness of Quick sort algorithm recursive version over a sorted array with duplicate values. 
+        /// </summary>
         [TestMethod]
         public void QuickSort_Recursively_WithSortedDuplicateValues()
         {
@@ -59,6 +74,9 @@ namespace CSFundamentalsTests.Algorithms.Sort
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
+        /// <summary>
+        /// Tests the correctness of Quick sort algorithm recursive version over a reversely sorted array with distinct values. 
+        /// </summary>
         [TestMethod]
         public void QuickSort_Recursively_WithReverselySortedDistinctValues()
         {
@@ -67,6 +85,9 @@ namespace CSFundamentalsTests.Algorithms.Sort
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
+        /// <summary>
+        /// Tests the correctness of Quick sort algorithm recursive version over a reversely sorted array with duplicate values. 
+        /// </summary>
         [TestMethod]
         public void QuickSort_Recursively_WithReverselySortedDuplicateValues()
         {

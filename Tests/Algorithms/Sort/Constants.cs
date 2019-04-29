@@ -22,6 +22,9 @@ using System.Collections.Generic;
 
 namespace CSFundamentalsTests.Algorithms.Sort
 {
+    /// <summary>
+    /// Is a collection of some constant values used in testing sort algorithms. 
+    /// </summary>
     public class Constants
     {
         /// <summary>

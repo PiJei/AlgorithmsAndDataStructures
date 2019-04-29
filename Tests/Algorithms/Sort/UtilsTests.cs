@@ -26,6 +26,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.Algorithms.Sort
 {
+    /// <summary>
+    /// Tests methods in <see cref="Utils"/> class.
+    /// </summary>
     public partial class UtilsTests
     {
         /// <summary>
@@ -40,6 +43,9 @@ namespace CSFundamentalsTests.Algorithms.Sort
             return true;
         }
 
+        /// <summary>
+        /// Tests the correctness of computing number of digits in an integer. 
+        /// </summary>
         [TestMethod]
         public void GetDigitsCount()
         {
@@ -51,6 +57,9 @@ namespace CSFundamentalsTests.Algorithms.Sort
             Assert.AreEqual(2, Utils.GetDigitsCount(45));
         }
 
+        /// <summary>
+        /// Tests the correctness of computing the n(th) digit of a number from right. 
+        /// </summary>
         [TestMethod]
         public void GetNthDigitFromRight()
         {

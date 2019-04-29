@@ -23,11 +23,17 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.StringStructures
 {
+    /// <summary>
+    /// Tests methods in <see cref="StringSuffix"/> class.
+    /// </summary>
     [TestClass]
     public class StringSuffixTests
     {
+        /// <summary>
+        /// Tests the correctness of comparison operation. 
+        /// </summary>
         [TestMethod]
-        public void Comparison()
+        public void CompareTo()
         {
             var suffix1 = new StringSuffix(0, 'a', 'b');
             var suffix2 = new StringSuffix(0, 'a', 'b');

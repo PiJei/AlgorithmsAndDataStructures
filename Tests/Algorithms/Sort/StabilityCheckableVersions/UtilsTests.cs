@@ -25,9 +25,15 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.Algorithms.Sort
 {
+    /// <summary>
+    /// Tests methods in <see cref="Utils"/> class. 
+    /// </summary>
     [TestClass]
     public partial class UtilsTests
     {
+        /// <summary>
+        /// Tests the correctness of converting a list of integers to a list of Elements. 
+        /// </summary>
         [TestMethod]
         public void Convert()
         {
@@ -42,6 +48,9 @@ namespace CSFundamentalsTests.Algorithms.Sort
             }
         }
 
+        /// <summary>
+        /// Tests the correctness of checking whether a dictionary is stable. 
+        /// </summary>
         [TestMethod]
         public void IsMapStable()
         {
@@ -64,6 +73,9 @@ namespace CSFundamentalsTests.Algorithms.Sort
             Assert.IsTrue(Utils.IsMapStable(map));
         }
 
+        /// <summary>
+        /// Tests the correctness of hashing a list to indexes. 
+        /// </summary>
         [TestMethod]
         public void HashListToIndexes()
         {
@@ -96,6 +108,9 @@ namespace CSFundamentalsTests.Algorithms.Sort
             Assert.AreEqual(4, map1[element5][0].FirstArrayIndex);
         }
 
+        /// <summary>
+        /// Tests the correctness of swap operation. 
+        /// </summary>
         [TestMethod]
         public void Swap()
         {

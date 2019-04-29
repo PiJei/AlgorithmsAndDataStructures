@@ -24,11 +24,17 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSFundamentalsTests.Algorithms.Sort
 {
+    /// <summary>
+    /// Tests methods in <see cref="HeapSort"/> class. 
+    /// </summary>
     [TestClass]
     public class HeapSortTests
     {
+        /// <summary>
+        /// Tests the correctness of Heap sort algorithm over an array with distinct values.  
+        /// </summary>
         [TestMethod]
-        public void Sort_WithDifferentInputs()
+        public void Sort_WithDistinctValues()
         {
             // TODO: HeapSort signature is not the same as others, ... 
             // SortTests.TestSortMethodWithDifferentInputs(HeapSort.Sort);
@@ -37,6 +43,9 @@ namespace CSFundamentalsTests.Algorithms.Sort
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
+        /// <summary>
+        /// Tests the correctness of Heap sort algorithm over an array with duplicate values. 
+        /// </summary>
         [TestMethod]
         public void Sort_WithDuplicateValues()
         {
@@ -45,6 +54,9 @@ namespace CSFundamentalsTests.Algorithms.Sort
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
+        /// <summary>
+        /// Tests the correctness of Heap sort algorithm over a sorted array with distinct values. 
+        /// </summary>
         [TestMethod]
         public void Sort_WithSortedDistinctValues()
         {
@@ -53,6 +65,9 @@ namespace CSFundamentalsTests.Algorithms.Sort
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
+        /// <summary>
+        /// Tests the correctness of Heap sort algorithm over a sorted array with duplicate values. 
+        /// </summary>
         [TestMethod]
         public void Sort_WithSortedDuplicateValues()
         {
@@ -61,6 +76,9 @@ namespace CSFundamentalsTests.Algorithms.Sort
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
+        /// <summary>
+        /// Tests the correctness of Heap sort algorithm over a reversely sorted array with distinct values. 
+        /// </summary>
         [TestMethod]
         public void Sort_WithReverselySortedDistinctValues()
         {
@@ -69,6 +87,9 @@ namespace CSFundamentalsTests.Algorithms.Sort
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
+        /// <summary>
+        /// Tests the correctness of Heap sort algorithm over a reversely sorted array with duplicate values. 
+        /// </summary>
         [TestMethod]
         public void Sort_WithRevereselySortedDuplicateValues()
         {

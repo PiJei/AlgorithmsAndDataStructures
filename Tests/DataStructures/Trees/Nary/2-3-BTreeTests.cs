@@ -33,12 +33,15 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
     {
         /// <summary>
         /// Is a B tree. 
-        /// To visualize this tree built as in <see cref="Init()"/> method, please <see cref="Images\2-3-BTree.png"/> in current directory. 
+        /// To visualize this tree built as in <see cref="Initialize()"/> method, see <a href="file:///C:\Users\Parisa\Documents\Interviews-2019\CSFundamentalAlgorithms\Tests\DataStructures\Trees\Nary\Images\2-3-BTree.png"/> <see cref="Images\2-3-BTree.png"/> in current directory. 
         /// </summary>
         private BTree<int, string> _tree = null;
 
+        /// <summary>
+        /// Initializes/Resets variables before executing each unit test in this class. 
+        /// </summary>
         [TestInitialize]
-        public void Init()
+        public void Initialize()
         {
             _tree = new BTree<int, string>(3);
             var keyValues = new Dictionary<int, string>
@@ -63,12 +66,18 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             _tree.Build(keyValues);
         }
 
+        /// <summary>
+        /// Tests the correctness of Build operation
+        /// </summary>
         [TestMethod]
         public void Build_ExpectsACorrectBTree()
         {
             BTreeTestsUtils.HasBTreeProperties(_tree, 16, 16, 15);
         }
 
+        /// <summary>
+        /// Tests the correctness of computing maximum capacity of a B tree. 
+        /// </summary>
         [TestMethod]
         public void GetMaxCapacity_ForATreeWithOneToFiveLevels_ExpectsNumbersAsIndicatedInAsserts()
         {
@@ -79,6 +88,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual(242, _tree.GetMaxCapacity(levelCount: 5));
         }
 
+        /// <summary>
+        /// Tests the correctness of finding a leaf node to insert a key that is smaller than the current minimum key in the tree. 
+        /// </summary>
         [TestMethod]
         public void FindLeafToInsertKey_NewKeySmallerThanAllKeysInTree_ExpectsTheSparseLeafNodeContainingSmallestKey()
         {
@@ -88,6 +100,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual(10, leaf.GetKey(0));
         }
 
+        /// <summary>
+        /// Tests the correctness of finding a leaf node to insert a key that is bigger than the current maximum key in the tree. 
+        /// </summary>
         [TestMethod]
         public void FindLeafToInsertKey_NewKeyBiggerThanAllKeysInTree_ExpectsTheSparseLeafNodeContainingBiggestKey()
         {
@@ -97,6 +112,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual(600, leaf.GetKey(0));
         }
 
+        /// <summary>
+        /// Tests the correctness of finding a leaf node to insert a key. 
+        /// </summary>
         [TestMethod]
         public void FindLeafToInsertKey_NewKey_ExpectsSuccess()
         {
@@ -106,6 +124,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual(60, leaf.GetKey(0));
         }
 
+        /// <summary>
+        /// Tests the correctness of finding a leaf node  to insert a duplicate key. Expects exception. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void FindLeafToInsertKey_DuplicateKey_ThrowsException()
@@ -114,7 +135,8 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         }
 
         /// <summary>
-        /// For a step by step transition of this 2-3 BTree while inserting these keys, please <see cref="images\2-3-BTree-insert-stepBystep.png"/>.
+        /// Tests the correctness of insert operation by inserting several keys one after the other. 
+        /// For a step by step transition of this 2-3 BTree while inserting these keys, see <see cref="images\2-3-BTree-insert-stepBystep.png"/>.
         /// </summary>
         [TestMethod]
         public void Insert_SeveralKeys_ExpectsTreeToIncreaseInLevelsAfewTimes()
@@ -175,6 +197,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.AreEqual("C", tree.Root.GetKeyValue(0).Value, ignoreCase: true);
         }
 
+        /// <summary>
+        /// Tests the correctness of in-order traversal over the tree. Expects a sorted list of key-value pairs. 
+        /// </summary>
         [TestMethod]
         public void InOrderTraversal_StartingFromRoot_ExpectsAscendingOrder()
         {
@@ -187,6 +212,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             }
         }
 
+        /// <summary>
+        /// Tests the correctness of search operation by looking for all the existing keys in the tree. 
+        /// </summary>
         [TestMethod]
         public void Search_ForAllExistingKeysInTree_ExpectsSuccess()
         {
@@ -239,6 +267,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             Assert.IsTrue(node16.KeyCount == 1);
         }
 
+        /// <summary>
+        /// Tests the correctness of search operation by looking for a non existing key in the tree. Expects an exception to be thrown. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(KeyNotFoundException))]
         public void Search_NotExistingKey_ThrowsException()
@@ -246,6 +277,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             var node1 = _tree.Search(_tree.Root, 5);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting the root node. 
+        /// </summary>
         [TestMethod]
         public void Delete_Root_ExpectsToReduceBy4NodesAnd1Key()
         {
@@ -254,6 +288,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(_tree, 15, 15, 11);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting the only key in an internal node. 
+        /// </summary>
         [TestMethod]
         public void Delete_TheOnlyKeyOfLeftChildOfRoot_ExpectsToReduceBy4NodesAnd1Key()
         {
@@ -261,6 +298,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(_tree, 15, 15, 11);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting the only key in an internal node. 
+        /// </summary>
         [TestMethod]
         public void Delete_TheOnlyKeyOfRightChildOfRoot_ExpectsToReduceBy1Key()
         {
@@ -268,6 +308,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(_tree, 15, 15, 15);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting the only key in an internal node. 
+        /// </summary>
         [TestMethod]
         public void Delete_TheOnlyKeyInParentNodeOfLeftMostLeavesOnLeftSubtree_ExpectsToReduceBy4NodesAnd1Key()
         {
@@ -275,6 +318,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(_tree, 15, 15, 11);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting the only key in an internal node. 
+        /// </summary>
         [TestMethod]
         public void Delete_TheOnlyKeyInParentNodeOfRightMostLeavesOnLeftSubtree_ExpectsToReduceBy4NodesAnd1Key()
         {
@@ -282,6 +328,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(_tree, 15, 15, 11);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting the only key in an internal node. 
+        /// </summary>
         [TestMethod]
         public void Delete_TheOnlyKeyInParentNodeOfLeftMostLeavesOnRightSubtree_ExpectsToReduceBy1Key()
         {
@@ -289,6 +338,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(_tree, 15, 15, 15);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting the only key in an internal node. 
+        /// </summary>
         [TestMethod]
         public void Delete_TheOnlyKeyInParentNodeOfRightMostLeavesOnRightSubtree_ExpectsToReduceBy4NodesAnd1Key()
         {
@@ -296,6 +348,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(_tree, 15, 15, 11);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting the only key in a leaf node/also the min key in the tree. 
+        /// </summary>
         [TestMethod]
         public void Delete_TheSmallestKeyInTreeLeafNode_ExpectsToReduceBy4NodesAnd1Key()
         {
@@ -303,6 +358,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(_tree, 15, 15, 11);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting the only key in a leaf node. 
+        /// </summary>
         [TestMethod]
         public void Delete_ThirdSmallestKeyInTreeLeafNode_ExpectsToReduceBy4NodesAnd1Key()
         {
@@ -310,6 +368,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(_tree, 15, 15, 11);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting the only key in a leaf node. 
+        /// </summary>
         [TestMethod]
         public void Delete_SmallestKeyInRightSubtreeOfLeftSubtreeLeafNode_ExpectsToReduceBy4NodesAnd1Key()
         {
@@ -317,6 +378,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(_tree, 15, 15, 11);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting the only key in a leaf node. 
+        /// </summary>
         [TestMethod]
         public void Delete_BiggestKeyInLeftSubtreeLeafNode_ExpectsToReduceBy4NodesAnd1Key()
         {
@@ -324,6 +388,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(_tree, 15, 15, 11);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting the only key in a leaf node. 
+        /// </summary>
         [TestMethod]
         public void Delete_SmallestKeyInRightSubtreeLeafNode_ExpectsToReduceBy1Key()
         {
@@ -331,6 +398,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(_tree, 15, 15, 15);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting the min key in a full leaf node. 
+        /// </summary>
         [TestMethod]
         public void Delete_SmallestKeyInAFullLeaf_ExpectsToReduceBy1Key()
         {
@@ -338,6 +408,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(_tree, 15, 15, 15);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting the max key in a full leaf node. 
+        /// </summary>
         [TestMethod]
         public void Delete_BiggestKeyInAFullLeaf_ExpectsToReduceBy1Key()
         {
@@ -345,6 +418,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(_tree, 15, 15, 15);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting the only key in a leaf node. 
+        /// </summary>
         [TestMethod]
         public void Delete_ThirdBiggestKeyInTreeLeafNode_ExpectsToReduceBy4NodesAnd1Key()
         {
@@ -352,6 +428,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(_tree, 15, 15, 11);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting the only key in a leaf node. 
+        /// </summary>
         [TestMethod]
         public void Delete_BiggestKeyInTreeLeafNode_ExpectsToReduceBy4NodesAnd1Key()
         {
@@ -360,7 +439,8 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
         }
 
         /// <summary>
-        /// For a step by step transition of this 2-3 BTree while deleting these keys, please <see cref="images\2-3-BTree-delete-stepBystep.png"/>.
+        /// Tests the correctness of delete operation when deleting all the keys in the tree one after the other in a random order.
+        /// For a step by step transition of this 2-3 BTree while deleting these keys, see <see cref="images\2-3-BTree-delete-stepBystep.png"/>.
         /// </summary>
         [TestMethod]
         public void Delete_AllNodesInRandomOrder1_ExpectsProperBtreeAfterEachDelete()
@@ -414,6 +494,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(_tree, 0, 0, 0);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting all the keys in the tree one after the other in a random order.
+        /// </summary>
         [TestMethod]
         public void Delete_AllNodesInRandomOrder2_ExpectsProperBtreeAfterEachDelete()
         {
@@ -466,6 +549,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(_tree, 0, 0, 0);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting the only key in the tree. 
+        /// </summary>
         [TestMethod]
         public void Delete_TheOnlyKeyInTree_ExpectsNoNodeAndNoKeyAfter()
         {
@@ -478,6 +564,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(tree, 0, 0, 0);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting the max key in the only node of the tree. 
+        /// </summary>
         [TestMethod]
         public void Delete_BiggestKeyInTheOnlyNodeOfTree_ExpectsToReduceBy1Key()
         {
@@ -491,6 +580,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(tree, 1, 1, 1);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting a non existing key from the tree. 
+        /// </summary>
         [TestMethod]
         public void Delete_NonExistingKey_ExpectsFailure()
         {
@@ -504,6 +596,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(tree, 2, 2, 1);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting the only key in an internal node.
+        /// </summary>
         [TestMethod]
         public void Delete_TheOnlyKeyInInternalNode_ExpectsToTriggerJoinAndReduceBy2NodesAnd1Key()
         {
@@ -517,6 +612,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(tree, 2, 2, 1);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting the only key in a leaf node. 
+        /// </summary>
         [TestMethod]
         public void Delete_TheOnlyKeyInLeafNode_ExpectsToTriggerJoinByRightSiblingAndReduceBy2NodesAnd1Key()
         {
@@ -530,6 +628,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(tree, 2, 2, 1);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting the only key in a leaf node. 
+        /// </summary>
         [TestMethod]
         public void Delete_TheOnlyKeyInLeafNode_ExpectsToTriggerJoinByLeftSiblingAndReduceBy2NodesAnd1Key()
         {
@@ -543,6 +644,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(tree, 2, 2, 1);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting a key in a full a leaf node. 
+        /// </summary>
         [TestMethod]
         public void Delete_KeyInFullLeaf_ExpectsToReduceBy1Key()
         {
@@ -557,6 +661,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(tree, 3, 3, 3);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting a key in a full a leaf node. 
+        /// </summary>
         [TestMethod]
         public void Delete_TheOnlyKeyInLeafNodeWithMinOneFullSibling_ExpectsToTriggerLeftRotate()
         {
@@ -571,6 +678,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(tree, 3, 3, 3);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting the only key in an internal node. 
+        /// </summary>
         [TestMethod]
         public void Delete_DeleteTheOnlyKeyInInternalNode_ExpectsToTriggerLeafDeleteAndLeftRotate()
         {
@@ -585,6 +695,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(tree, 3, 3, 3);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting the only key in a leaf node with a minOneFull sibling.
+        /// </summary>
         [TestMethod]
         public void Delete_TheOnlyKeyInLeafWithFullParentAndMinOneFullSibling_ExpectsLeftRotateAndToReduceBy1Key()
         {
@@ -610,6 +723,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(tree, 6, 6, 4);
         }
 
+        /// <summary>
+        /// Tests the correctness of delete operation when deleting the only key in a leaf node.
+        /// </summary>
         [TestMethod]
         public void Delete_TheOnlyKeyInLeaf_ExpectsToTriggerJoinAndLeftRotateOnANodeWithChildren()
         {
@@ -657,6 +773,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(tree, 8, 8, 7);
         }
 
+        /// <summary>
+        /// Tests the correctness of left rotation. 
+        /// </summary>
         [TestMethod]
         public void RotateLeft_EmptyNodeWithMinOneFullSibling_ExpectsChildrenToBeRotated()
         {
@@ -696,6 +815,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(tree, 7, 7, 7);
         }
 
+        /// <summary>
+        /// Tests the correctness of right rotation. 
+        /// </summary>
         [TestMethod]
         public void RotateRight_EmptyNodeWithMinOneFullLeftSibling_ExpectsChildrenToBeRotated()
         {
@@ -740,6 +862,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
             BTreeTestsUtils.HasBTreeProperties(tree, 7, 7, 7);
         }
 
+        /// <summary>
+        /// Tests the correctness of finding the node with the max key in the (sub)tree rooted at several different nodes. 
+        /// </summary>
         [TestMethod]
         public void GetMaxNode_OnAllSubTreesInTree_ExpectsCorrectValuesForMaxKeyInSubtree()
         {
