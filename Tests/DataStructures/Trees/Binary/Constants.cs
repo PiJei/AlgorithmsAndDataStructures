@@ -21,8 +21,14 @@
 using System.Collections.Generic;
 namespace CSFundamentalsTests.DataStructures.Trees.Binary
 {
+    /// <summary>
+    /// A collection of constants used in testing binary tree implementation. 
+    /// </summary>
     public class Constants
     {
+        /// <summary>
+        /// A set of key-value pairs to be inserted in trees.
+        /// </summary>
         public static readonly List<KeyValuePair<int, string>> KeyValues = new List<KeyValuePair<int, string>>
             {
                 new KeyValuePair<int, string>(40, "E"),
