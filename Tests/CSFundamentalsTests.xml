@@ -1605,6 +1605,16 @@
             <param name="root">The root node of the tree. </param>
             <param name="expectedTotalKeyCount">Expected total number of keys in the tree. </param>
         </member>
+        <member name="T:CSFundamentalsTests.DataStructures.Trees.Binary.Constants">
+            <summary>
+            A collection of constants used in testing binary tree implementation. 
+            </summary>
+        </member>
+        <member name="F:CSFundamentalsTests.DataStructures.Trees.Binary.Constants.KeyValues">
+            <summary>
+            A set of key-value pairs to be inserted in trees.
+            </summary>
+        </member>
         <member name="T:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeNodeTests">
             <summary>
             Tests methods in <see cref="T:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2"/> class. 
