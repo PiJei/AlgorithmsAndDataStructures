@@ -36,6 +36,7 @@ items:
       <AttributeUsage(AttributeTargets.Class Or AttributeTargets.Method, AllowMultiple:=True)>
 
       Public Class DataStructureAttribute
+
           Inherits Attribute
   inheritance:
   - System.Object

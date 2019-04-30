@@ -46,6 +46,7 @@ items:
       <DataStructure("AVLTree")>
 
       Public Class AVLTree(Of TKey As IComparable(Of TKey), TValue)
+
           Inherits BinarySearchTreeBase(Of AVLTreeNode(Of TKey, TValue), TKey, TValue)
   inheritance:
   - System.Object

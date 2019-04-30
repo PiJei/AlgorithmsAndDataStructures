@@ -1,0 +1,964 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests
+  commentId: T:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests
+  id: MinBinaryHeapTests
+  parent: CSFundamentalsTests.DataStructures.BinaryHeaps
+  children:
+  - CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapIterative_1
+  - CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapIterative_2
+  - CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapRecursive_1
+  - CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapRecursive_2
+  - CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.CompareEqualityOfRecursiveAndIterativeMinHeapConstruction
+  - CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.GetNodeLevel
+  - CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.HasMinOrderProperty``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)
+  - CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.Initialize
+  - CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMinBinaryHeapAfterEachInsert
+  - CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.TryRemoveMin_RemoveRootEqualToArrayLengthTimes_ExpectsAscendingOrderInResults
+  langs:
+  - csharp
+  - vb
+  name: MinBinaryHeapTests
+  nameWithType: MinBinaryHeapTests
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests
+  type: Class
+  source:
+    remote:
+      path: Tests/DataStructures/BinaryHeaps/MinBinaryHeapTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: MinBinaryHeapTests
+    path: ../DataStructures/BinaryHeaps/MinBinaryHeapTests.cs
+    startLine: 31
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.BinaryHeaps
+  summary: "\nTests methods in <xref href=\"CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap%602\" data-throw-if-not-resolved=\"false\"></xref> class. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestClass]
+
+      public class MinBinaryHeapTests
+    content.vb: >-
+      <TestClass>
+
+      Public Class MinBinaryHeapTests
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.Initialize
+  commentId: M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.Initialize
+  id: Initialize
+  parent: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests
+  langs:
+  - csharp
+  - vb
+  name: Initialize()
+  nameWithType: MinBinaryHeapTests.Initialize()
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.Initialize()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/BinaryHeaps/MinBinaryHeapTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Initialize
+    path: ../DataStructures/BinaryHeaps/MinBinaryHeapTests.cs
+    startLine: 47
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.BinaryHeaps
+  summary: "\nInitializes/Resets variables before executing each unit test in this class. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestInitialize]
+
+      public void Initialize()
+    content.vb: >-
+      <TestInitialize>
+
+      Public Sub Initialize
+  overload: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.Initialize*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapRecursive_1
+  commentId: M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapRecursive_1
+  id: BuildHeapRecursive_1
+  parent: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests
+  langs:
+  - csharp
+  - vb
+  name: BuildHeapRecursive_1()
+  nameWithType: MinBinaryHeapTests.BuildHeapRecursive_1()
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapRecursive_1()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/BinaryHeaps/MinBinaryHeapTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: BuildHeapRecursive_1
+    path: ../DataStructures/BinaryHeaps/MinBinaryHeapTests.cs
+    startLine: 66
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.BinaryHeaps
+  summary: "\nTests the correctness of Build operation recursive version. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void BuildHeapRecursive_1()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub BuildHeapRecursive_1
+  overload: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapRecursive_1*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapRecursive_2
+  commentId: M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapRecursive_2
+  id: BuildHeapRecursive_2
+  parent: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests
+  langs:
+  - csharp
+  - vb
+  name: BuildHeapRecursive_2()
+  nameWithType: MinBinaryHeapTests.BuildHeapRecursive_2()
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapRecursive_2()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/BinaryHeaps/MinBinaryHeapTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: BuildHeapRecursive_2
+    path: ../DataStructures/BinaryHeaps/MinBinaryHeapTests.cs
+    startLine: 80
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.BinaryHeaps
+  summary: "\nTests the correctness of Build operation recursive version. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void BuildHeapRecursive_2()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub BuildHeapRecursive_2
+  overload: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapRecursive_2*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapIterative_1
+  commentId: M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapIterative_1
+  id: BuildHeapIterative_1
+  parent: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests
+  langs:
+  - csharp
+  - vb
+  name: BuildHeapIterative_1()
+  nameWithType: MinBinaryHeapTests.BuildHeapIterative_1()
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapIterative_1()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/BinaryHeaps/MinBinaryHeapTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: BuildHeapIterative_1
+    path: ../DataStructures/BinaryHeaps/MinBinaryHeapTests.cs
+    startLine: 94
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.BinaryHeaps
+  summary: "\nTests the correctness of Build operation iterative version. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void BuildHeapIterative_1()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub BuildHeapIterative_1
+  overload: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapIterative_1*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapIterative_2
+  commentId: M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapIterative_2
+  id: BuildHeapIterative_2
+  parent: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests
+  langs:
+  - csharp
+  - vb
+  name: BuildHeapIterative_2()
+  nameWithType: MinBinaryHeapTests.BuildHeapIterative_2()
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapIterative_2()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/BinaryHeaps/MinBinaryHeapTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: BuildHeapIterative_2
+    path: ../DataStructures/BinaryHeaps/MinBinaryHeapTests.cs
+    startLine: 108
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.BinaryHeaps
+  summary: "\nTests the correctness of Build operation iterative version. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void BuildHeapIterative_2()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub BuildHeapIterative_2
+  overload: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapIterative_2*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.CompareEqualityOfRecursiveAndIterativeMinHeapConstruction
+  commentId: M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.CompareEqualityOfRecursiveAndIterativeMinHeapConstruction
+  id: CompareEqualityOfRecursiveAndIterativeMinHeapConstruction
+  parent: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests
+  langs:
+  - csharp
+  - vb
+  name: CompareEqualityOfRecursiveAndIterativeMinHeapConstruction()
+  nameWithType: MinBinaryHeapTests.CompareEqualityOfRecursiveAndIterativeMinHeapConstruction()
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.CompareEqualityOfRecursiveAndIterativeMinHeapConstruction()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/BinaryHeaps/MinBinaryHeapTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: CompareEqualityOfRecursiveAndIterativeMinHeapConstruction
+    path: ../DataStructures/BinaryHeaps/MinBinaryHeapTests.cs
+    startLine: 123
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.BinaryHeaps
+  summary: "\nTests the equality of the heaps built using recursive and iterative Build operations. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void CompareEqualityOfRecursiveAndIterativeMinHeapConstruction()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub CompareEqualityOfRecursiveAndIterativeMinHeapConstruction
+  overload: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.CompareEqualityOfRecursiveAndIterativeMinHeapConstruction*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.TryRemoveMin_RemoveRootEqualToArrayLengthTimes_ExpectsAscendingOrderInResults
+  commentId: M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.TryRemoveMin_RemoveRootEqualToArrayLengthTimes_ExpectsAscendingOrderInResults
+  id: TryRemoveMin_RemoveRootEqualToArrayLengthTimes_ExpectsAscendingOrderInResults
+  parent: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests
+  langs:
+  - csharp
+  - vb
+  name: TryRemoveMin_RemoveRootEqualToArrayLengthTimes_ExpectsAscendingOrderInResults()
+  nameWithType: MinBinaryHeapTests.TryRemoveMin_RemoveRootEqualToArrayLengthTimes_ExpectsAscendingOrderInResults()
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.TryRemoveMin_RemoveRootEqualToArrayLengthTimes_ExpectsAscendingOrderInResults()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/BinaryHeaps/MinBinaryHeapTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: TryRemoveMin_RemoveRootEqualToArrayLengthTimes_ExpectsAscendingOrderInResults
+    path: ../DataStructures/BinaryHeaps/MinBinaryHeapTests.cs
+    startLine: 140
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.BinaryHeaps
+  summary: "\nTests the correctness of removing min node from a Min binary heap. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void TryRemoveMin_RemoveRootEqualToArrayLengthTimes_ExpectsAscendingOrderInResults()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub TryRemoveMin_RemoveRootEqualToArrayLengthTimes_ExpectsAscendingOrderInResults
+  overload: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.TryRemoveMin_RemoveRootEqualToArrayLengthTimes_ExpectsAscendingOrderInResults*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMinBinaryHeapAfterEachInsert
+  commentId: M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMinBinaryHeapAfterEachInsert
+  id: Insert_SeveralValues_ExpectCorrectMinBinaryHeapAfterEachInsert
+  parent: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests
+  langs:
+  - csharp
+  - vb
+  name: Insert_SeveralValues_ExpectCorrectMinBinaryHeapAfterEachInsert()
+  nameWithType: MinBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMinBinaryHeapAfterEachInsert()
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMinBinaryHeapAfterEachInsert()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/BinaryHeaps/MinBinaryHeapTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Insert_SeveralValues_ExpectCorrectMinBinaryHeapAfterEachInsert
+    path: ../DataStructures/BinaryHeaps/MinBinaryHeapTests.cs
+    startLine: 198
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.BinaryHeaps
+  summary: "\nTests the correctness of Insert operation when inserting several keys one after the other in the Min binary heap. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Insert_SeveralValues_ExpectCorrectMinBinaryHeapAfterEachInsert()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Insert_SeveralValues_ExpectCorrectMinBinaryHeapAfterEachInsert
+  overload: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMinBinaryHeapAfterEachInsert*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.GetNodeLevel
+  commentId: M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.GetNodeLevel
+  id: GetNodeLevel
+  parent: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests
+  langs:
+  - csharp
+  - vb
+  name: GetNodeLevel()
+  nameWithType: MinBinaryHeapTests.GetNodeLevel()
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.GetNodeLevel()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/BinaryHeaps/MinBinaryHeapTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: GetNodeLevel
+    path: ../DataStructures/BinaryHeaps/MinBinaryHeapTests.cs
+    startLine: 273
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.BinaryHeaps
+  summary: "\nTests the correctness of computing node levels in a Min binary heap. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void GetNodeLevel()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub GetNodeLevel
+  overload: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.GetNodeLevel*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.HasMinOrderProperty``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)
+  commentId: M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.HasMinOrderProperty``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)
+  id: HasMinOrderProperty``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)
+  parent: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests
+  langs:
+  - csharp
+  - vb
+  name: HasMinOrderProperty<TKey, TValue>(BinaryHeapBase<TKey, TValue>, Int32)
+  nameWithType: MinBinaryHeapTests.HasMinOrderProperty<TKey, TValue>(BinaryHeapBase<TKey, TValue>, Int32)
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.HasMinOrderProperty<TKey, TValue>(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/BinaryHeaps/MinBinaryHeapTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: HasMinOrderProperty
+    path: ../DataStructures/BinaryHeaps/MinBinaryHeapTests.cs
+    startLine: 324
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.BinaryHeaps
+  summary: "\nChecks whether the given heap is a proper Min binary heap. \nChecking the MinHeap ordering (node relations) for the node at the given index, to make sure the correct relations between the node and its parent and children holds. \n"
+  example: []
+  syntax:
+    content: >-
+      public static bool HasMinOrderProperty<TKey, TValue>(BinaryHeapBase<TKey, TValue> heap, int nodeIndex)
+
+          where TKey : IComparable<TKey>
+    parameters:
+    - id: heap
+      type: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{{TKey},{TValue}}
+      description: 'A Min binary heap. '
+    - id: nodeIndex
+      type: System.Int32
+      description: 'Is the index of a heap node in a heap array. '
+    typeParameters:
+    - id: TKey
+    - id: TValue
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function HasMinOrderProperty(Of TKey As IComparable(Of TKey), TValue)(heap As BinaryHeapBase(Of TKey, TValue), nodeIndex As Integer) As Boolean
+  overload: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.HasMinOrderProperty*
+  nameWithType.vb: MinBinaryHeapTests.HasMinOrderProperty(Of TKey, TValue)(BinaryHeapBase(Of TKey, TValue), Int32)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.HasMinOrderProperty(Of TKey, TValue)(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue), System.Int32)
+  name.vb: HasMinOrderProperty(Of TKey, TValue)(BinaryHeapBase(Of TKey, TValue), Int32)
+references:
+- uid: CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap`2
+  commentId: T:CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap`2
+  isExternal: true
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps
+  commentId: N:CSFundamentalsTests.DataStructures.BinaryHeaps
+  name: CSFundamentalsTests.DataStructures.BinaryHeaps
+  nameWithType: CSFundamentalsTests.DataStructures.BinaryHeaps
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.Initialize*
+  commentId: Overload:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.Initialize
+  name: Initialize
+  nameWithType: MinBinaryHeapTests.Initialize
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.Initialize
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapRecursive_1*
+  commentId: Overload:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapRecursive_1
+  name: BuildHeapRecursive_1
+  nameWithType: MinBinaryHeapTests.BuildHeapRecursive_1
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapRecursive_1
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapRecursive_2*
+  commentId: Overload:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapRecursive_2
+  name: BuildHeapRecursive_2
+  nameWithType: MinBinaryHeapTests.BuildHeapRecursive_2
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapRecursive_2
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapIterative_1*
+  commentId: Overload:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapIterative_1
+  name: BuildHeapIterative_1
+  nameWithType: MinBinaryHeapTests.BuildHeapIterative_1
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapIterative_1
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapIterative_2*
+  commentId: Overload:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapIterative_2
+  name: BuildHeapIterative_2
+  nameWithType: MinBinaryHeapTests.BuildHeapIterative_2
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapIterative_2
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.CompareEqualityOfRecursiveAndIterativeMinHeapConstruction*
+  commentId: Overload:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.CompareEqualityOfRecursiveAndIterativeMinHeapConstruction
+  name: CompareEqualityOfRecursiveAndIterativeMinHeapConstruction
+  nameWithType: MinBinaryHeapTests.CompareEqualityOfRecursiveAndIterativeMinHeapConstruction
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.CompareEqualityOfRecursiveAndIterativeMinHeapConstruction
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.TryRemoveMin_RemoveRootEqualToArrayLengthTimes_ExpectsAscendingOrderInResults*
+  commentId: Overload:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.TryRemoveMin_RemoveRootEqualToArrayLengthTimes_ExpectsAscendingOrderInResults
+  name: TryRemoveMin_RemoveRootEqualToArrayLengthTimes_ExpectsAscendingOrderInResults
+  nameWithType: MinBinaryHeapTests.TryRemoveMin_RemoveRootEqualToArrayLengthTimes_ExpectsAscendingOrderInResults
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.TryRemoveMin_RemoveRootEqualToArrayLengthTimes_ExpectsAscendingOrderInResults
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMinBinaryHeapAfterEachInsert*
+  commentId: Overload:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMinBinaryHeapAfterEachInsert
+  name: Insert_SeveralValues_ExpectCorrectMinBinaryHeapAfterEachInsert
+  nameWithType: MinBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMinBinaryHeapAfterEachInsert
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMinBinaryHeapAfterEachInsert
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.GetNodeLevel*
+  commentId: Overload:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.GetNodeLevel
+  name: GetNodeLevel
+  nameWithType: MinBinaryHeapTests.GetNodeLevel
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.GetNodeLevel
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.HasMinOrderProperty*
+  commentId: Overload:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.HasMinOrderProperty
+  name: HasMinOrderProperty
+  nameWithType: MinBinaryHeapTests.HasMinOrderProperty
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.HasMinOrderProperty
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{{TKey},{TValue}}
+  commentId: T:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1}
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API
+  definition: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  name: BinaryHeapBase<TKey, TValue>
+  nameWithType: BinaryHeapBase<TKey, TValue>
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue)
+  name.vb: BinaryHeapBase(Of TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+    name: BinaryHeapBase
+    nameWithType: BinaryHeapBase
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+    name: BinaryHeapBase
+    nameWithType: BinaryHeapBase
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  commentId: T:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  name: BinaryHeapBase<TKey, TValue>
+  nameWithType: BinaryHeapBase<TKey, TValue>
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue)
+  name.vb: BinaryHeapBase(Of TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+    name: BinaryHeapBase
+    nameWithType: BinaryHeapBase
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+    name: BinaryHeapBase
+    nameWithType: BinaryHeapBase
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API
+  commentId: N:CSFundamentals.DataStructures.BinaryHeaps.API
+  name: CSFundamentals.DataStructures.BinaryHeaps.API
+  nameWithType: CSFundamentals.DataStructures.BinaryHeaps.API
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API

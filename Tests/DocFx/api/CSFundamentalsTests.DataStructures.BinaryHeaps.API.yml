@@ -1,0 +1,71 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.API
+  commentId: N:CSFundamentalsTests.DataStructures.BinaryHeaps.API
+  id: CSFundamentalsTests.DataStructures.BinaryHeaps.API
+  children:
+  - CSFundamentalsTests.DataStructures.BinaryHeaps.API.BinaryHeapBaseTests
+  - CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2
+  langs:
+  - csharp
+  - vb
+  name: CSFundamentalsTests.DataStructures.BinaryHeaps.API
+  nameWithType: CSFundamentalsTests.DataStructures.BinaryHeaps.API
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.API
+  type: Namespace
+  assemblies:
+  - CSFundamentalsTests
+references:
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.API.BinaryHeapBaseTests
+  commentId: T:CSFundamentalsTests.DataStructures.BinaryHeaps.API.BinaryHeapBaseTests
+  name: BinaryHeapBaseTests
+  nameWithType: BinaryHeapBaseTests
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.API.BinaryHeapBaseTests
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2
+  commentId: T:CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2
+  name: MockBinaryHeap<TKey, TValue>
+  nameWithType: MockBinaryHeap<TKey, TValue>
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap<TKey, TValue>
+  nameWithType.vb: MockBinaryHeap(Of TKey, TValue)
+  fullName.vb: CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap(Of TKey, TValue)
+  name.vb: MockBinaryHeap(Of TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2
+    name: MockBinaryHeap
+    nameWithType: MockBinaryHeap
+    fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2
+    name: MockBinaryHeap
+    nameWithType: MockBinaryHeap
+    fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )

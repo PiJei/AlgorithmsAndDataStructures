@@ -1,0 +1,453 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentalsTests.Algorithms.Sort.ElementTests
+  commentId: T:CSFundamentalsTests.Algorithms.Sort.ElementTests
+  id: ElementTests
+  parent: CSFundamentalsTests.Algorithms.Sort
+  children:
+  - CSFundamentalsTests.Algorithms.Sort.ElementTests.Equals
+  - CSFundamentalsTests.Algorithms.Sort.ElementTests.IsStable
+  langs:
+  - csharp
+  - vb
+  name: ElementTests
+  nameWithType: ElementTests
+  fullName: CSFundamentalsTests.Algorithms.Sort.ElementTests
+  type: Class
+  source:
+    remote:
+      path: Tests/Algorithms/Sort/StabilityCheckableVersions/ElementTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: ElementTests
+    path: ../Algorithms/Sort/StabilityCheckableVersions/ElementTests.cs
+    startLine: 28
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.Algorithms.Sort
+  summary: "\nTests methods in <xref href=\"CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element\" data-throw-if-not-resolved=\"false\"></xref> class. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestClass]
+
+      public class ElementTests
+    content.vb: >-
+      <TestClass>
+
+      Public Class ElementTests
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CSFundamentalsTests.Algorithms.Sort.ElementTests.Equals
+  commentId: M:CSFundamentalsTests.Algorithms.Sort.ElementTests.Equals
+  id: Equals
+  parent: CSFundamentalsTests.Algorithms.Sort.ElementTests
+  langs:
+  - csharp
+  - vb
+  name: Equals()
+  nameWithType: ElementTests.Equals()
+  fullName: CSFundamentalsTests.Algorithms.Sort.ElementTests.Equals()
+  type: Method
+  source:
+    remote:
+      path: Tests/Algorithms/Sort/StabilityCheckableVersions/ElementTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Equals
+    path: ../Algorithms/Sort/StabilityCheckableVersions/ElementTests.cs
+    startLine: 34
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.Algorithms.Sort
+  summary: "\nTests the correctness of equality operation when comparing two objects of type Element. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Equals()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Equals
+  overload: CSFundamentalsTests.Algorithms.Sort.ElementTests.Equals*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.Algorithms.Sort.ElementTests.IsStable
+  commentId: M:CSFundamentalsTests.Algorithms.Sort.ElementTests.IsStable
+  id: IsStable
+  parent: CSFundamentalsTests.Algorithms.Sort.ElementTests
+  langs:
+  - csharp
+  - vb
+  name: IsStable()
+  nameWithType: ElementTests.IsStable()
+  fullName: CSFundamentalsTests.Algorithms.Sort.ElementTests.IsStable()
+  type: Method
+  source:
+    remote:
+      path: Tests/Algorithms/Sort/StabilityCheckableVersions/ElementTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: IsStable
+    path: ../Algorithms/Sort/StabilityCheckableVersions/ElementTests.cs
+    startLine: 47
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.Algorithms.Sort
+  summary: "\nTests the correctness of detecting stability of an Element. An Element is stable in an array if its index before and after sorting the array is the same. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void IsStable()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub IsStable
+  overload: CSFundamentalsTests.Algorithms.Sort.ElementTests.IsStable*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+  commentId: T:CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+  isExternal: true
+- uid: CSFundamentalsTests.Algorithms.Sort
+  commentId: N:CSFundamentalsTests.Algorithms.Sort
+  name: CSFundamentalsTests.Algorithms.Sort
+  nameWithType: CSFundamentalsTests.Algorithms.Sort
+  fullName: CSFundamentalsTests.Algorithms.Sort
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CSFundamentalsTests.Algorithms.Sort.ElementTests.Equals*
+  commentId: Overload:CSFundamentalsTests.Algorithms.Sort.ElementTests.Equals
+  name: Equals
+  nameWithType: ElementTests.Equals
+  fullName: CSFundamentalsTests.Algorithms.Sort.ElementTests.Equals
+- uid: CSFundamentalsTests.Algorithms.Sort.ElementTests.IsStable*
+  commentId: Overload:CSFundamentalsTests.Algorithms.Sort.ElementTests.IsStable
+  name: IsStable
+  nameWithType: ElementTests.IsStable
+  fullName: CSFundamentalsTests.Algorithms.Sort.ElementTests.IsStable

@@ -82,6 +82,7 @@ items:
       [TimeComplexity(Case.Average, "O(1)")]
 
       public static List<int> Search<T>(List<T> list, T key)
+
           where T : IComparable<T>
     parameters:
     - id: list

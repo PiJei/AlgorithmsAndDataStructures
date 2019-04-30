@@ -51,6 +51,7 @@ items:
       description: 'Is the type of the values stored in the heap. '
     content.vb: >-
       Public MustInherit Class BinaryHeapBase(Of TKey As IComparable(Of TKey), TValue)
+
           Implements IBinaryHeap(Of TKey, TValue)
   inheritance:
   - System.Object

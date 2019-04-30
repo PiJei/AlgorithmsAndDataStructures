@@ -1,0 +1,34 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentalsTests.Algorithms.GraphTraversal
+  commentId: N:CSFundamentalsTests.Algorithms.GraphTraversal
+  id: CSFundamentalsTests.Algorithms.GraphTraversal
+  children:
+  - CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests
+  - CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests
+  - CSFundamentalsTests.Algorithms.GraphTraversal.DijkstraTests
+  langs:
+  - csharp
+  - vb
+  name: CSFundamentalsTests.Algorithms.GraphTraversal
+  nameWithType: CSFundamentalsTests.Algorithms.GraphTraversal
+  fullName: CSFundamentalsTests.Algorithms.GraphTraversal
+  type: Namespace
+  assemblies:
+  - CSFundamentalsTests
+references:
+- uid: CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests
+  commentId: T:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests
+  name: BfsTests
+  nameWithType: BfsTests
+  fullName: CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests
+- uid: CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests
+  commentId: T:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests
+  name: DfsTests
+  nameWithType: DfsTests
+  fullName: CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests
+- uid: CSFundamentalsTests.Algorithms.GraphTraversal.DijkstraTests
+  commentId: T:CSFundamentalsTests.Algorithms.GraphTraversal.DijkstraTests
+  name: DijkstraTests
+  nameWithType: DijkstraTests
+  fullName: CSFundamentalsTests.Algorithms.GraphTraversal.DijkstraTests

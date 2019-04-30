@@ -1,0 +1,34 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps
+  commentId: N:CSFundamentalsTests.DataStructures.BinaryHeaps
+  id: CSFundamentalsTests.DataStructures.BinaryHeaps
+  children:
+  - CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests
+  - CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests
+  - CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests
+  langs:
+  - csharp
+  - vb
+  name: CSFundamentalsTests.DataStructures.BinaryHeaps
+  nameWithType: CSFundamentalsTests.DataStructures.BinaryHeaps
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps
+  type: Namespace
+  assemblies:
+  - CSFundamentalsTests
+references:
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests
+  commentId: T:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests
+  name: MaxBinaryHeapTests
+  nameWithType: MaxBinaryHeapTests
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests
+  commentId: T:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests
+  name: MinBinaryHeapTests
+  nameWithType: MinBinaryHeapTests
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests
+  commentId: T:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests
+  name: MinMaxBinaryHeapTests
+  nameWithType: MinMaxBinaryHeapTests
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests

@@ -39,7 +39,9 @@ items:
       description: 'Type of the value stored in the tree. '
     content.vb: >-
       Public Class BinarySearchTreeNode(Of TKey As IComparable(Of TKey), TValue)
+
           Inherits BinaryTreeNode(Of BinarySearchTreeNode(Of TKey, TValue), TKey, TValue)
+
           Implements IBinaryTreeNode(Of BinarySearchTreeNode(Of TKey, TValue), TKey, TValue), IComparable(Of BinarySearchTreeNode(Of TKey, TValue))
   inheritance:
   - System.Object

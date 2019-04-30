@@ -42,6 +42,7 @@ items:
     content: 'public class StringSuffix : IEquatable<StringSuffix>, IComparable<StringSuffix>'
     content.vb: >-
       Public Class StringSuffix
+
           Implements IEquatable(Of StringSuffix), IComparable(Of StringSuffix)
   inheritance:
   - System.Object

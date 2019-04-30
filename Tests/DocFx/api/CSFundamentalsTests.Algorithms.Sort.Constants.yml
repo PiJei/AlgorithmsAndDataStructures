@@ -1,0 +1,661 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentalsTests.Algorithms.Sort.Constants
+  commentId: T:CSFundamentalsTests.Algorithms.Sort.Constants
+  id: Constants
+  parent: CSFundamentalsTests.Algorithms.Sort
+  children:
+  - CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithDistinctValues
+  - CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithDuplicateValues
+  - CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithReverselySortedDistinctValues
+  - CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithReverselySortedDuplicateValues
+  - CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithSortedDistinctValues
+  - CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithSortedDuplicateValues
+  langs:
+  - csharp
+  - vb
+  name: Constants
+  nameWithType: Constants
+  fullName: CSFundamentalsTests.Algorithms.Sort.Constants
+  type: Class
+  source:
+    remote:
+      path: Tests/Algorithms/Sort/Constants.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Constants
+    path: ../Algorithms/Sort/Constants.cs
+    startLine: 27
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.Algorithms.Sort
+  summary: "\nIs a collection of some constant values used in testing sort algorithms. \n"
+  example: []
+  syntax:
+    content: public class Constants
+    content.vb: Public Class Constants
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithDistinctValues
+  commentId: F:CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithDistinctValues
+  id: ArrayWithDistinctValues
+  parent: CSFundamentalsTests.Algorithms.Sort.Constants
+  langs:
+  - csharp
+  - vb
+  name: ArrayWithDistinctValues
+  nameWithType: Constants.ArrayWithDistinctValues
+  fullName: CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithDistinctValues
+  type: Field
+  source:
+    remote:
+      path: Tests/Algorithms/Sort/Constants.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: ArrayWithDistinctValues
+    path: ../Algorithms/Sort/Constants.cs
+    startLine: 32
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.Algorithms.Sort
+  summary: "\nIs an array of integers with only distinct values. \n"
+  example: []
+  syntax:
+    content: public static readonly List<int> ArrayWithDistinctValues
+    return:
+      type: System.Collections.Generic.List{System.Int32}
+    content.vb: Public Shared ReadOnly ArrayWithDistinctValues As List(Of Integer)
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithDuplicateValues
+  commentId: F:CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithDuplicateValues
+  id: ArrayWithDuplicateValues
+  parent: CSFundamentalsTests.Algorithms.Sort.Constants
+  langs:
+  - csharp
+  - vb
+  name: ArrayWithDuplicateValues
+  nameWithType: Constants.ArrayWithDuplicateValues
+  fullName: CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithDuplicateValues
+  type: Field
+  source:
+    remote:
+      path: Tests/Algorithms/Sort/Constants.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: ArrayWithDuplicateValues
+    path: ../Algorithms/Sort/Constants.cs
+    startLine: 37
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.Algorithms.Sort
+  summary: "\nIs an array of integers with several duplicate values. \n"
+  example: []
+  syntax:
+    content: public static readonly List<int> ArrayWithDuplicateValues
+    return:
+      type: System.Collections.Generic.List{System.Int32}
+    content.vb: Public Shared ReadOnly ArrayWithDuplicateValues As List(Of Integer)
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithSortedDistinctValues
+  commentId: F:CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithSortedDistinctValues
+  id: ArrayWithSortedDistinctValues
+  parent: CSFundamentalsTests.Algorithms.Sort.Constants
+  langs:
+  - csharp
+  - vb
+  name: ArrayWithSortedDistinctValues
+  nameWithType: Constants.ArrayWithSortedDistinctValues
+  fullName: CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithSortedDistinctValues
+  type: Field
+  source:
+    remote:
+      path: Tests/Algorithms/Sort/Constants.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: ArrayWithSortedDistinctValues
+    path: ../Algorithms/Sort/Constants.cs
+    startLine: 42
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.Algorithms.Sort
+  summary: "\nIs an array of integers with distinct values, such that the array is already sorted ascending. \n"
+  example: []
+  syntax:
+    content: public static readonly List<int> ArrayWithSortedDistinctValues
+    return:
+      type: System.Collections.Generic.List{System.Int32}
+    content.vb: Public Shared ReadOnly ArrayWithSortedDistinctValues As List(Of Integer)
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithSortedDuplicateValues
+  commentId: F:CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithSortedDuplicateValues
+  id: ArrayWithSortedDuplicateValues
+  parent: CSFundamentalsTests.Algorithms.Sort.Constants
+  langs:
+  - csharp
+  - vb
+  name: ArrayWithSortedDuplicateValues
+  nameWithType: Constants.ArrayWithSortedDuplicateValues
+  fullName: CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithSortedDuplicateValues
+  type: Field
+  source:
+    remote:
+      path: Tests/Algorithms/Sort/Constants.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: ArrayWithSortedDuplicateValues
+    path: ../Algorithms/Sort/Constants.cs
+    startLine: 47
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.Algorithms.Sort
+  summary: "\nIs an array of integers with duplicate values, such that the array is already sorted ascending. \n"
+  example: []
+  syntax:
+    content: public static readonly List<int> ArrayWithSortedDuplicateValues
+    return:
+      type: System.Collections.Generic.List{System.Int32}
+    content.vb: Public Shared ReadOnly ArrayWithSortedDuplicateValues As List(Of Integer)
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithReverselySortedDistinctValues
+  commentId: F:CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithReverselySortedDistinctValues
+  id: ArrayWithReverselySortedDistinctValues
+  parent: CSFundamentalsTests.Algorithms.Sort.Constants
+  langs:
+  - csharp
+  - vb
+  name: ArrayWithReverselySortedDistinctValues
+  nameWithType: Constants.ArrayWithReverselySortedDistinctValues
+  fullName: CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithReverselySortedDistinctValues
+  type: Field
+  source:
+    remote:
+      path: Tests/Algorithms/Sort/Constants.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: ArrayWithReverselySortedDistinctValues
+    path: ../Algorithms/Sort/Constants.cs
+    startLine: 52
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.Algorithms.Sort
+  summary: "\nIs an array of integers with distinct values, such that the array is reversely sorted, meaning it is descending, whereas sort meant ascending.  \n"
+  example: []
+  syntax:
+    content: public static readonly List<int> ArrayWithReverselySortedDistinctValues
+    return:
+      type: System.Collections.Generic.List{System.Int32}
+    content.vb: Public Shared ReadOnly ArrayWithReverselySortedDistinctValues As List(Of Integer)
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithReverselySortedDuplicateValues
+  commentId: F:CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithReverselySortedDuplicateValues
+  id: ArrayWithReverselySortedDuplicateValues
+  parent: CSFundamentalsTests.Algorithms.Sort.Constants
+  langs:
+  - csharp
+  - vb
+  name: ArrayWithReverselySortedDuplicateValues
+  nameWithType: Constants.ArrayWithReverselySortedDuplicateValues
+  fullName: CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithReverselySortedDuplicateValues
+  type: Field
+  source:
+    remote:
+      path: Tests/Algorithms/Sort/Constants.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: ArrayWithReverselySortedDuplicateValues
+    path: ../Algorithms/Sort/Constants.cs
+    startLine: 57
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.Algorithms.Sort
+  summary: "\nIs an array of integers with duplicate values, such that the array is reversely sorted, meaning it is descending, whereas sort meant ascending. \n"
+  example: []
+  syntax:
+    content: public static readonly List<int> ArrayWithReverselySortedDuplicateValues
+    return:
+      type: System.Collections.Generic.List{System.Int32}
+    content.vb: Public Shared ReadOnly ArrayWithReverselySortedDuplicateValues As List(Of Integer)
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+references:
+- uid: CSFundamentalsTests.Algorithms.Sort
+  commentId: N:CSFundamentalsTests.Algorithms.Sort
+  name: CSFundamentalsTests.Algorithms.Sort
+  nameWithType: CSFundamentalsTests.Algorithms.Sort
+  fullName: CSFundamentalsTests.Algorithms.Sort
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections.Generic.List{System.Int32}
+  commentId: T:System.Collections.Generic.List{System.Int32}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Int32>
+  nameWithType: List<Int32>
+  fullName: System.Collections.Generic.List<System.Int32>
+  nameWithType.vb: List(Of Int32)
+  fullName.vb: System.Collections.Generic.List(Of System.Int32)
+  name.vb: List(Of Int32)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic

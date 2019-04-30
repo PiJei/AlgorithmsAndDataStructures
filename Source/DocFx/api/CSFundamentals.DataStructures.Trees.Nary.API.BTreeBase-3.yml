@@ -44,6 +44,7 @@ items:
   syntax:
     content: >-
       public abstract class BTreeBase<TNode, TKey, TValue>
+
           where TNode : IBTreeNode<TNode, TKey, TValue>, IComparable<TNode> where TKey : IComparable<TKey>
     typeParameters:
     - id: TNode

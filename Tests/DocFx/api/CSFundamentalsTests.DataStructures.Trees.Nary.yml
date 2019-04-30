@@ -1,0 +1,52 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary
+  commentId: N:CSFundamentalsTests.DataStructures.Trees.Nary
+  id: CSFundamentalsTests.DataStructures.Trees.Nary
+  children:
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_4_BTreeNodeTests
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests
+  - CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests
+  - CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils
+  langs:
+  - csharp
+  - vb
+  name: CSFundamentalsTests.DataStructures.Trees.Nary
+  nameWithType: CSFundamentalsTests.DataStructures.Trees.Nary
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary
+  type: Namespace
+  assemblies:
+  - CSFundamentalsTests
+references:
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_4_BTreeNodeTests
+  commentId: T:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_4_BTreeNodeTests
+  name: _2_3_4_BTreeNodeTests
+  nameWithType: _2_3_4_BTreeNodeTests
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_4_BTreeNodeTests
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests
+  commentId: T:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests
+  name: _2_3_BPlusTreeTests
+  nameWithType: _2_3_BPlusTreeTests
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  commentId: T:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  name: _2_3_BTreeNodeTests
+  nameWithType: _2_3_BTreeNodeTests
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests
+  commentId: T:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests
+  name: _2_3_BTreeTests
+  nameWithType: _2_3_BTreeTests
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests
+  commentId: T:CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests
+  name: _3_5_BTreeNodeTests
+  nameWithType: _3_5_BTreeNodeTests
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils
+  commentId: T:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils
+  name: BTreeTestsUtils
+  nameWithType: BTreeTestsUtils
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils

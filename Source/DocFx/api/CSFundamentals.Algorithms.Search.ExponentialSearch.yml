@@ -82,6 +82,7 @@ items:
       [TimeComplexity(Case.Average, "O(log(i)), i is the index of the key in the array.")]
 
       public static int Search<T>(List<T> sortedList, T key)
+
           where T : IComparable<T>
     parameters:
     - id: sortedList

@@ -40,6 +40,7 @@ items:
       description: 'Is the type of the value stored in the node. '
     content.vb: >-
       Public Class GraphNode(Of TValue)
+
           Implements IComparable(Of GraphNode(Of TValue))
   inheritance:
   - System.Object

@@ -1,0 +1,70 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentalsTests.Algorithms.Search
+  commentId: N:CSFundamentalsTests.Algorithms.Search
+  id: CSFundamentalsTests.Algorithms.Search
+  children:
+  - CSFundamentalsTests.Algorithms.Search.BinarySearchTests
+  - CSFundamentalsTests.Algorithms.Search.ExponentialSearchTests
+  - CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests
+  - CSFundamentalsTests.Algorithms.Search.HashTableSearchTests
+  - CSFundamentalsTests.Algorithms.Search.InterpolationSearchTests
+  - CSFundamentalsTests.Algorithms.Search.JumpSearchTests
+  - CSFundamentalsTests.Algorithms.Search.LinearSearchTests
+  - CSFundamentalsTests.Algorithms.Search.SearchTests
+  - CSFundamentalsTests.Algorithms.Search.TernarySearchTests
+  langs:
+  - csharp
+  - vb
+  name: CSFundamentalsTests.Algorithms.Search
+  nameWithType: CSFundamentalsTests.Algorithms.Search
+  fullName: CSFundamentalsTests.Algorithms.Search
+  type: Namespace
+  assemblies:
+  - CSFundamentalsTests
+references:
+- uid: CSFundamentalsTests.Algorithms.Search.BinarySearchTests
+  commentId: T:CSFundamentalsTests.Algorithms.Search.BinarySearchTests
+  name: BinarySearchTests
+  nameWithType: BinarySearchTests
+  fullName: CSFundamentalsTests.Algorithms.Search.BinarySearchTests
+- uid: CSFundamentalsTests.Algorithms.Search.ExponentialSearchTests
+  commentId: T:CSFundamentalsTests.Algorithms.Search.ExponentialSearchTests
+  name: ExponentialSearchTests
+  nameWithType: ExponentialSearchTests
+  fullName: CSFundamentalsTests.Algorithms.Search.ExponentialSearchTests
+- uid: CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests
+  commentId: T:CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests
+  name: FibonacciSearchTests
+  nameWithType: FibonacciSearchTests
+  fullName: CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests
+- uid: CSFundamentalsTests.Algorithms.Search.HashTableSearchTests
+  commentId: T:CSFundamentalsTests.Algorithms.Search.HashTableSearchTests
+  name: HashTableSearchTests
+  nameWithType: HashTableSearchTests
+  fullName: CSFundamentalsTests.Algorithms.Search.HashTableSearchTests
+- uid: CSFundamentalsTests.Algorithms.Search.InterpolationSearchTests
+  commentId: T:CSFundamentalsTests.Algorithms.Search.InterpolationSearchTests
+  name: InterpolationSearchTests
+  nameWithType: InterpolationSearchTests
+  fullName: CSFundamentalsTests.Algorithms.Search.InterpolationSearchTests
+- uid: CSFundamentalsTests.Algorithms.Search.JumpSearchTests
+  commentId: T:CSFundamentalsTests.Algorithms.Search.JumpSearchTests
+  name: JumpSearchTests
+  nameWithType: JumpSearchTests
+  fullName: CSFundamentalsTests.Algorithms.Search.JumpSearchTests
+- uid: CSFundamentalsTests.Algorithms.Search.LinearSearchTests
+  commentId: T:CSFundamentalsTests.Algorithms.Search.LinearSearchTests
+  name: LinearSearchTests
+  nameWithType: LinearSearchTests
+  fullName: CSFundamentalsTests.Algorithms.Search.LinearSearchTests
+- uid: CSFundamentalsTests.Algorithms.Search.SearchTests
+  commentId: T:CSFundamentalsTests.Algorithms.Search.SearchTests
+  name: SearchTests
+  nameWithType: SearchTests
+  fullName: CSFundamentalsTests.Algorithms.Search.SearchTests
+- uid: CSFundamentalsTests.Algorithms.Search.TernarySearchTests
+  commentId: T:CSFundamentalsTests.Algorithms.Search.TernarySearchTests
+  name: TernarySearchTests
+  nameWithType: TernarySearchTests
+  fullName: CSFundamentalsTests.Algorithms.Search.TernarySearchTests

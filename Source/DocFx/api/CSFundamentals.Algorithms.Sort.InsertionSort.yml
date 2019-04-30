@@ -85,6 +85,7 @@ items:
       [TimeComplexity(Case.Average, "O(n²)")]
 
       public static void Sort_Iterative_V1<T>(List<T> list)
+
           where T : IComparable<T>
     parameters:
     - id: list
@@ -185,6 +186,7 @@ items:
   syntax:
     content: >-
       public static void Sort_Iterative_V2<T>(List<T> list)
+
           where T : IComparable<T>
     parameters:
     - id: list
@@ -230,6 +232,7 @@ items:
   syntax:
     content: >-
       public static void Sort_Recursive<T>(List<T> list, int n)
+
           where T : IComparable<T>
     parameters:
     - id: list

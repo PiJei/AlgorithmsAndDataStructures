@@ -1,0 +1,692 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests
+  commentId: T:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests
+  id: MinMaxBinaryHeapTests
+  parent: CSFundamentalsTests.DataStructures.BinaryHeaps
+  children:
+  - CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.BuildHeapRecursively_DistinctValues
+  - CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.BuildHeapRecursively_DuplicateValues
+  - CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMaxLevel``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)
+  - CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMinLevel``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: MinMaxBinaryHeapTests
+  nameWithType: MinMaxBinaryHeapTests
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests
+  type: Class
+  source:
+    remote:
+      path: Tests/DataStructures/BinaryHeaps/MinMaxBinaryHeapTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: MinMaxBinaryHeapTests
+    path: ../DataStructures/BinaryHeaps/MinMaxBinaryHeapTests.cs
+    startLine: 31
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.BinaryHeaps
+  summary: "\nTests methods in <xref href=\"CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap%602\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: >-
+      [TestClass]
+
+      public class MinMaxBinaryHeapTests
+    content.vb: >-
+      <TestClass>
+
+      Public Class MinMaxBinaryHeapTests
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.BuildHeapRecursively_DistinctValues
+  commentId: M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.BuildHeapRecursively_DistinctValues
+  id: BuildHeapRecursively_DistinctValues
+  parent: CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests
+  langs:
+  - csharp
+  - vb
+  name: BuildHeapRecursively_DistinctValues()
+  nameWithType: MinMaxBinaryHeapTests.BuildHeapRecursively_DistinctValues()
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.BuildHeapRecursively_DistinctValues()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/BinaryHeaps/MinMaxBinaryHeapTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: BuildHeapRecursively_DistinctValues
+    path: ../DataStructures/BinaryHeaps/MinMaxBinaryHeapTests.cs
+    startLine: 37
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.BinaryHeaps
+  summary: "\nTests the correctness of Build operation recursive version, when inserting distinct values. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void BuildHeapRecursively_DistinctValues()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub BuildHeapRecursively_DistinctValues
+  overload: CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.BuildHeapRecursively_DistinctValues*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.BuildHeapRecursively_DuplicateValues
+  commentId: M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.BuildHeapRecursively_DuplicateValues
+  id: BuildHeapRecursively_DuplicateValues
+  parent: CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests
+  langs:
+  - csharp
+  - vb
+  name: BuildHeapRecursively_DuplicateValues()
+  nameWithType: MinMaxBinaryHeapTests.BuildHeapRecursively_DuplicateValues()
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.BuildHeapRecursively_DuplicateValues()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/BinaryHeaps/MinMaxBinaryHeapTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: BuildHeapRecursively_DuplicateValues
+    path: ../DataStructures/BinaryHeaps/MinMaxBinaryHeapTests.cs
+    startLine: 81
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.BinaryHeaps
+  summary: "\nTests the correctness of Build operation, recursive version when inserting duplicate values. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void BuildHeapRecursively_DuplicateValues()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub BuildHeapRecursively_DuplicateValues
+  overload: CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.BuildHeapRecursively_DuplicateValues*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMinLevel``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)
+  commentId: M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMinLevel``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)
+  id: HasMinMaxOrderPropertyForMinLevel``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)
+  parent: CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests
+  langs:
+  - csharp
+  - vb
+  name: HasMinMaxOrderPropertyForMinLevel<TKey, TValue>(BinaryHeapBase<TKey, TValue>, Int32)
+  nameWithType: MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMinLevel<TKey, TValue>(BinaryHeapBase<TKey, TValue>, Int32)
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMinLevel<TKey, TValue>(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/BinaryHeaps/MinMaxBinaryHeapTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: HasMinMaxOrderPropertyForMinLevel
+    path: ../DataStructures/BinaryHeaps/MinMaxBinaryHeapTests.cs
+    startLine: 125
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.BinaryHeaps
+  summary: "\nChecks whether a node in a min level of a MinMax heap has proper properties. \n"
+  example: []
+  syntax:
+    content: >-
+      public static bool HasMinMaxOrderPropertyForMinLevel<TKey, TValue>(BinaryHeapBase<TKey, TValue> heap, int index)
+
+          where TKey : IComparable<TKey>
+    parameters:
+    - id: heap
+      type: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{{TKey},{TValue}}
+      description: 'Is a MinMax binary heap. '
+    - id: index
+      type: System.Int32
+      description: Is the index of a node in a heap array and in a Min level.
+    typeParameters:
+    - id: TKey
+      description: 'Type of the keys stored in the heap. '
+    - id: TValue
+      description: 'Type of the values stored in the heap. '
+    return:
+      type: System.Boolean
+      description: 'True if the node has proper properties, and false otherwise. '
+    content.vb: Public Shared Function HasMinMaxOrderPropertyForMinLevel(Of TKey As IComparable(Of TKey), TValue)(heap As BinaryHeapBase(Of TKey, TValue), index As Integer) As Boolean
+  overload: CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMinLevel*
+  nameWithType.vb: MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMinLevel(Of TKey, TValue)(BinaryHeapBase(Of TKey, TValue), Int32)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMinLevel(Of TKey, TValue)(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue), System.Int32)
+  name.vb: HasMinMaxOrderPropertyForMinLevel(Of TKey, TValue)(BinaryHeapBase(Of TKey, TValue), Int32)
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMaxLevel``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)
+  commentId: M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMaxLevel``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)
+  id: HasMinMaxOrderPropertyForMaxLevel``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)
+  parent: CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests
+  langs:
+  - csharp
+  - vb
+  name: HasMinMaxOrderPropertyForMaxLevel<TKey, TValue>(BinaryHeapBase<TKey, TValue>, Int32)
+  nameWithType: MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMaxLevel<TKey, TValue>(BinaryHeapBase<TKey, TValue>, Int32)
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMaxLevel<TKey, TValue>(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/BinaryHeaps/MinMaxBinaryHeapTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: HasMinMaxOrderPropertyForMaxLevel
+    path: ../DataStructures/BinaryHeaps/MinMaxBinaryHeapTests.cs
+    startLine: 154
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.BinaryHeaps
+  summary: "\nChecks whether a node in a max level of a MinMax heap has proper properties. \n"
+  example: []
+  syntax:
+    content: >-
+      public static bool HasMinMaxOrderPropertyForMaxLevel<TKey, TValue>(BinaryHeapBase<TKey, TValue> heap, int index)
+
+          where TKey : IComparable<TKey>
+    parameters:
+    - id: heap
+      type: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{{TKey},{TValue}}
+      description: 'Is a MinMax binary heap. '
+    - id: index
+      type: System.Int32
+      description: Is the index of a node in a heap array and in a Max level.
+    typeParameters:
+    - id: TKey
+      description: 'Type of the keys stored in the heap. '
+    - id: TValue
+      description: 'Type of the values stored in the heap. '
+    return:
+      type: System.Boolean
+      description: 'True if the node has proper properties, and false otherwise. '
+    content.vb: Public Shared Function HasMinMaxOrderPropertyForMaxLevel(Of TKey As IComparable(Of TKey), TValue)(heap As BinaryHeapBase(Of TKey, TValue), index As Integer) As Boolean
+  overload: CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMaxLevel*
+  nameWithType.vb: MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMaxLevel(Of TKey, TValue)(BinaryHeapBase(Of TKey, TValue), Int32)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMaxLevel(Of TKey, TValue)(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue), System.Int32)
+  name.vb: HasMinMaxOrderPropertyForMaxLevel(Of TKey, TValue)(BinaryHeapBase(Of TKey, TValue), Int32)
+references:
+- uid: CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2
+  commentId: T:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2
+  isExternal: true
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps
+  commentId: N:CSFundamentalsTests.DataStructures.BinaryHeaps
+  name: CSFundamentalsTests.DataStructures.BinaryHeaps
+  nameWithType: CSFundamentalsTests.DataStructures.BinaryHeaps
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.BuildHeapRecursively_DistinctValues*
+  commentId: Overload:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.BuildHeapRecursively_DistinctValues
+  name: BuildHeapRecursively_DistinctValues
+  nameWithType: MinMaxBinaryHeapTests.BuildHeapRecursively_DistinctValues
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.BuildHeapRecursively_DistinctValues
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.BuildHeapRecursively_DuplicateValues*
+  commentId: Overload:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.BuildHeapRecursively_DuplicateValues
+  name: BuildHeapRecursively_DuplicateValues
+  nameWithType: MinMaxBinaryHeapTests.BuildHeapRecursively_DuplicateValues
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.BuildHeapRecursively_DuplicateValues
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMinLevel*
+  commentId: Overload:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMinLevel
+  name: HasMinMaxOrderPropertyForMinLevel
+  nameWithType: MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMinLevel
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMinLevel
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{{TKey},{TValue}}
+  commentId: T:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1}
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API
+  definition: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  name: BinaryHeapBase<TKey, TValue>
+  nameWithType: BinaryHeapBase<TKey, TValue>
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue)
+  name.vb: BinaryHeapBase(Of TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+    name: BinaryHeapBase
+    nameWithType: BinaryHeapBase
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+    name: BinaryHeapBase
+    nameWithType: BinaryHeapBase
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  commentId: T:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  name: BinaryHeapBase<TKey, TValue>
+  nameWithType: BinaryHeapBase<TKey, TValue>
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue)
+  name.vb: BinaryHeapBase(Of TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+    name: BinaryHeapBase
+    nameWithType: BinaryHeapBase
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+    name: BinaryHeapBase
+    nameWithType: BinaryHeapBase
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API
+  commentId: N:CSFundamentals.DataStructures.BinaryHeaps.API
+  name: CSFundamentals.DataStructures.BinaryHeaps.API
+  nameWithType: CSFundamentals.DataStructures.BinaryHeaps.API
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMaxLevel*
+  commentId: Overload:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMaxLevel
+  name: HasMinMaxOrderPropertyForMaxLevel
+  nameWithType: MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMaxLevel
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMaxLevel

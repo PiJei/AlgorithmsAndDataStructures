@@ -1,0 +1,603 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentalsTests.StringStructures.SuffixTreeTests
+  commentId: T:CSFundamentalsTests.StringStructures.SuffixTreeTests
+  id: SuffixTreeTests
+  parent: CSFundamentalsTests.StringStructures
+  children:
+  - CSFundamentalsTests.StringStructures.SuffixTreeTests.Build_ExpectsCorrectTree
+  - CSFundamentalsTests.StringStructures.SuffixTreeTests.CheckSuffixTreeProperties(CSFundamentals.DataStructures.StringStructures.SuffixTreeNode,System.String)
+  - CSFundamentalsTests.StringStructures.SuffixTreeTests.GetNodes(CSFundamentals.DataStructures.StringStructures.SuffixTreeNode,System.Collections.Generic.List{CSFundamentals.DataStructures.StringStructures.SuffixTreeNode})
+  langs:
+  - csharp
+  - vb
+  name: SuffixTreeTests
+  nameWithType: SuffixTreeTests
+  fullName: CSFundamentalsTests.StringStructures.SuffixTreeTests
+  type: Class
+  source:
+    remote:
+      path: Tests/DataStructures/StringStructures/SuffixTreeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: SuffixTreeTests
+    path: ../DataStructures/StringStructures/SuffixTreeTests.cs
+    startLine: 31
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.StringStructures
+  summary: "\nTests methods in <xref href=\"CSFundamentals.DataStructures.StringStructures.SuffixTree\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: >-
+      [TestClass]
+
+      public class SuffixTreeTests
+    content.vb: >-
+      <TestClass>
+
+      Public Class SuffixTreeTests
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CSFundamentalsTests.StringStructures.SuffixTreeTests.Build_ExpectsCorrectTree
+  commentId: M:CSFundamentalsTests.StringStructures.SuffixTreeTests.Build_ExpectsCorrectTree
+  id: Build_ExpectsCorrectTree
+  parent: CSFundamentalsTests.StringStructures.SuffixTreeTests
+  langs:
+  - csharp
+  - vb
+  name: Build_ExpectsCorrectTree()
+  nameWithType: SuffixTreeTests.Build_ExpectsCorrectTree()
+  fullName: CSFundamentalsTests.StringStructures.SuffixTreeTests.Build_ExpectsCorrectTree()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/StringStructures/SuffixTreeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Build_ExpectsCorrectTree
+    path: ../DataStructures/StringStructures/SuffixTreeTests.cs
+    startLine: 37
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.StringStructures
+  summary: "\nTests the correctness of Build operation. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Build_ExpectsCorrectTree()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Build_ExpectsCorrectTree
+  overload: CSFundamentalsTests.StringStructures.SuffixTreeTests.Build_ExpectsCorrectTree*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.StringStructures.SuffixTreeTests.CheckSuffixTreeProperties(CSFundamentals.DataStructures.StringStructures.SuffixTreeNode,System.String)
+  commentId: M:CSFundamentalsTests.StringStructures.SuffixTreeTests.CheckSuffixTreeProperties(CSFundamentals.DataStructures.StringStructures.SuffixTreeNode,System.String)
+  id: CheckSuffixTreeProperties(CSFundamentals.DataStructures.StringStructures.SuffixTreeNode,System.String)
+  parent: CSFundamentalsTests.StringStructures.SuffixTreeTests
+  langs:
+  - csharp
+  - vb
+  name: CheckSuffixTreeProperties(SuffixTreeNode, String)
+  nameWithType: SuffixTreeTests.CheckSuffixTreeProperties(SuffixTreeNode, String)
+  fullName: CSFundamentalsTests.StringStructures.SuffixTreeTests.CheckSuffixTreeProperties(CSFundamentals.DataStructures.StringStructures.SuffixTreeNode, System.String)
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/StringStructures/SuffixTreeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: CheckSuffixTreeProperties
+    path: ../DataStructures/StringStructures/SuffixTreeTests.cs
+    startLine: 124
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.StringStructures
+  summary: "\nChecks whether the tree rooted at <code data-dev-comment-type=\"paramref\" class=\"paramref\">root</code> has Suffix tree properties. \n"
+  example: []
+  syntax:
+    content: public void CheckSuffixTreeProperties(SuffixTreeNode root, string text)
+    parameters:
+    - id: root
+      type: CSFundamentals.DataStructures.StringStructures.SuffixTreeNode
+      description: ''
+    - id: text
+      type: System.String
+      description: ''
+    content.vb: Public Sub CheckSuffixTreeProperties(root As SuffixTreeNode, text As String)
+  overload: CSFundamentalsTests.StringStructures.SuffixTreeTests.CheckSuffixTreeProperties*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.StringStructures.SuffixTreeTests.GetNodes(CSFundamentals.DataStructures.StringStructures.SuffixTreeNode,System.Collections.Generic.List{CSFundamentals.DataStructures.StringStructures.SuffixTreeNode})
+  commentId: M:CSFundamentalsTests.StringStructures.SuffixTreeTests.GetNodes(CSFundamentals.DataStructures.StringStructures.SuffixTreeNode,System.Collections.Generic.List{CSFundamentals.DataStructures.StringStructures.SuffixTreeNode})
+  id: GetNodes(CSFundamentals.DataStructures.StringStructures.SuffixTreeNode,System.Collections.Generic.List{CSFundamentals.DataStructures.StringStructures.SuffixTreeNode})
+  parent: CSFundamentalsTests.StringStructures.SuffixTreeTests
+  langs:
+  - csharp
+  - vb
+  name: GetNodes(SuffixTreeNode, List<SuffixTreeNode>)
+  nameWithType: SuffixTreeTests.GetNodes(SuffixTreeNode, List<SuffixTreeNode>)
+  fullName: CSFundamentalsTests.StringStructures.SuffixTreeTests.GetNodes(CSFundamentals.DataStructures.StringStructures.SuffixTreeNode, System.Collections.Generic.List<CSFundamentals.DataStructures.StringStructures.SuffixTreeNode>)
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/StringStructures/SuffixTreeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: GetNodes
+    path: ../DataStructures/StringStructures/SuffixTreeTests.cs
+    startLine: 173
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.StringStructures
+  summary: "\nGets a list of all the nodes in a suffix tree rooted at <code data-dev-comment-type=\"paramref\" class=\"paramref\">root</code>.\n"
+  example: []
+  syntax:
+    content: public void GetNodes(SuffixTreeNode root, List<SuffixTreeNode> nodes)
+    parameters:
+    - id: root
+      type: CSFundamentals.DataStructures.StringStructures.SuffixTreeNode
+      description: 'The tree node at which suffix tree is rooted. '
+    - id: nodes
+      type: System.Collections.Generic.List{CSFundamentals.DataStructures.StringStructures.SuffixTreeNode}
+      description: 'A list of the nodes in the tree. '
+    content.vb: Public Sub GetNodes(root As SuffixTreeNode, nodes As List(Of SuffixTreeNode))
+  overload: CSFundamentalsTests.StringStructures.SuffixTreeTests.GetNodes*
+  nameWithType.vb: SuffixTreeTests.GetNodes(SuffixTreeNode, List(Of SuffixTreeNode))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CSFundamentalsTests.StringStructures.SuffixTreeTests.GetNodes(CSFundamentals.DataStructures.StringStructures.SuffixTreeNode, System.Collections.Generic.List(Of CSFundamentals.DataStructures.StringStructures.SuffixTreeNode))
+  name.vb: GetNodes(SuffixTreeNode, List(Of SuffixTreeNode))
+references:
+- uid: CSFundamentals.DataStructures.StringStructures.SuffixTree
+  commentId: T:CSFundamentals.DataStructures.StringStructures.SuffixTree
+  isExternal: true
+- uid: CSFundamentalsTests.StringStructures
+  commentId: N:CSFundamentalsTests.StringStructures
+  name: CSFundamentalsTests.StringStructures
+  nameWithType: CSFundamentalsTests.StringStructures
+  fullName: CSFundamentalsTests.StringStructures
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CSFundamentalsTests.StringStructures.SuffixTreeTests.Build_ExpectsCorrectTree*
+  commentId: Overload:CSFundamentalsTests.StringStructures.SuffixTreeTests.Build_ExpectsCorrectTree
+  name: Build_ExpectsCorrectTree
+  nameWithType: SuffixTreeTests.Build_ExpectsCorrectTree
+  fullName: CSFundamentalsTests.StringStructures.SuffixTreeTests.Build_ExpectsCorrectTree
+- uid: CSFundamentalsTests.StringStructures.SuffixTreeTests.CheckSuffixTreeProperties*
+  commentId: Overload:CSFundamentalsTests.StringStructures.SuffixTreeTests.CheckSuffixTreeProperties
+  name: CheckSuffixTreeProperties
+  nameWithType: SuffixTreeTests.CheckSuffixTreeProperties
+  fullName: CSFundamentalsTests.StringStructures.SuffixTreeTests.CheckSuffixTreeProperties
+- uid: CSFundamentals.DataStructures.StringStructures.SuffixTreeNode
+  commentId: T:CSFundamentals.DataStructures.StringStructures.SuffixTreeNode
+  parent: CSFundamentals.DataStructures.StringStructures
+  name: SuffixTreeNode
+  nameWithType: SuffixTreeNode
+  fullName: CSFundamentals.DataStructures.StringStructures.SuffixTreeNode
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CSFundamentals.DataStructures.StringStructures
+  commentId: N:CSFundamentals.DataStructures.StringStructures
+  name: CSFundamentals.DataStructures.StringStructures
+  nameWithType: CSFundamentals.DataStructures.StringStructures
+  fullName: CSFundamentals.DataStructures.StringStructures
+- uid: CSFundamentalsTests.StringStructures.SuffixTreeTests.GetNodes*
+  commentId: Overload:CSFundamentalsTests.StringStructures.SuffixTreeTests.GetNodes
+  name: GetNodes
+  nameWithType: SuffixTreeTests.GetNodes
+  fullName: CSFundamentalsTests.StringStructures.SuffixTreeTests.GetNodes
+- uid: System.Collections.Generic.List{CSFundamentals.DataStructures.StringStructures.SuffixTreeNode}
+  commentId: T:System.Collections.Generic.List{CSFundamentals.DataStructures.StringStructures.SuffixTreeNode}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<SuffixTreeNode>
+  nameWithType: List<SuffixTreeNode>
+  fullName: System.Collections.Generic.List<CSFundamentals.DataStructures.StringStructures.SuffixTreeNode>
+  nameWithType.vb: List(Of SuffixTreeNode)
+  fullName.vb: System.Collections.Generic.List(Of CSFundamentals.DataStructures.StringStructures.SuffixTreeNode)
+  name.vb: List(Of SuffixTreeNode)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CSFundamentals.DataStructures.StringStructures.SuffixTreeNode
+    name: SuffixTreeNode
+    nameWithType: SuffixTreeNode
+    fullName: CSFundamentals.DataStructures.StringStructures.SuffixTreeNode
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CSFundamentals.DataStructures.StringStructures.SuffixTreeNode
+    name: SuffixTreeNode
+    nameWithType: SuffixTreeNode
+    fullName: CSFundamentals.DataStructures.StringStructures.SuffixTreeNode
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic

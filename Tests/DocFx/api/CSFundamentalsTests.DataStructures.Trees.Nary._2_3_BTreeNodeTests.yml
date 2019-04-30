@@ -1,0 +1,1725 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  commentId: T:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  id: _2_3_BTreeNodeTests
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary
+  children:
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_NonEmptyToEmpty_ExpectsNonEmptyToBeBigger
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_OtherIsNull_ExpectsBigger
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_TwoEmptyNodes_ExpectsEqual
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_TwoNodesEachWithOneKey_ExpectsNodeWithSmallerKeyToBeSmaller
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_TwoNodesWithEqualMinKeyAndDifferentMaxKey_ExpectsEqual
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Constructor_CheckingDegrees
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.GetMaxKey_NodeHasKeys_FindsMaxCorrectly
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.GetMinKey_NodeHasKeys_FindsMinCorrectly
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertChild_Duplicates_ThrowsException
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertChild_SeveralChildren_ExpectsAscendingOrderAmongChildrenBasedOnTheirKeyRange
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertKey_Duplicates_ExpectsOnlyOneKey
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertKey_SeveralKeys_ExpectsAscendingOrderAmongKeys
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsLeaf_ChildLessNode_ExpectsTrue
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsLeaf_NodeHasOneChild_ExpectsFalse
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_EmptyNode_ExpectsFalse
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_FullNode_ExpectsFalse
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_MinFullNode_ExpectsFalse
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_OverFlownNode_ExpectsTrue
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsRoot_NodeHasNoParent_ExpectsTrue
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsRoot_NodeHasParent_ExpectsFalse
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.KeyValueToMoveUp_EmptyNode_ThrowsException
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.KeyValueToMoveUp_MinFullNode_ThrowsException
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.KeyValueToMoveUp_NodeIsMinOneFull_ExpectsLastKeyInTheNode
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_EmptyNode_ExpectsNullForTheNewNode
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsFull_ExpectsNullForTheNewNode
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsMinFull_ExpectsNullForTheNewNode
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsOverFlownAndHasChildren_ExpectsSuccessfulSplitForKeysAndChildren
+  - CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsOverFlownAndHasNoChildren_ExpectsSuccessfulSplitForKeys
+  langs:
+  - csharp
+  - vb
+  name: _2_3_BTreeNodeTests
+  nameWithType: _2_3_BTreeNodeTests
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  type: Class
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: _2_3_BTreeNodeTests
+    path: ../DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+    startLine: 30
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nTests BTreeNode implementation by a 2-3 BTree Node.\n"
+  example: []
+  syntax:
+    content: >-
+      [TestClass]
+
+      public class _2_3_BTreeNodeTests
+    content.vb: >-
+      <TestClass>
+
+      Public Class _2_3_BTreeNodeTests
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Constructor_CheckingDegrees
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Constructor_CheckingDegrees
+  id: Constructor_CheckingDegrees
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: Constructor_CheckingDegrees()
+  nameWithType: _2_3_BTreeNodeTests.Constructor_CheckingDegrees()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Constructor_CheckingDegrees()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Constructor_CheckingDegrees
+    path: ../DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+    startLine: 36
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nTests the correctness of constructor in computing minimum and maximum branching degrees and minimum and maximum number of keys in a BTree node. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Constructor_CheckingDegrees()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Constructor_CheckingDegrees
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Constructor_CheckingDegrees*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsLeaf_ChildLessNode_ExpectsTrue
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsLeaf_ChildLessNode_ExpectsTrue
+  id: IsLeaf_ChildLessNode_ExpectsTrue
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: IsLeaf_ChildLessNode_ExpectsTrue()
+  nameWithType: _2_3_BTreeNodeTests.IsLeaf_ChildLessNode_ExpectsTrue()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsLeaf_ChildLessNode_ExpectsTrue()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: IsLeaf_ChildLessNode_ExpectsTrue
+    path: ../DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+    startLine: 49
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nTests the correctness of detecting whether a node is leaf over a child less node. Expects true. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void IsLeaf_ChildLessNode_ExpectsTrue()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub IsLeaf_ChildLessNode_ExpectsTrue
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsLeaf_ChildLessNode_ExpectsTrue*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsLeaf_NodeHasOneChild_ExpectsFalse
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsLeaf_NodeHasOneChild_ExpectsFalse
+  id: IsLeaf_NodeHasOneChild_ExpectsFalse
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: IsLeaf_NodeHasOneChild_ExpectsFalse()
+  nameWithType: _2_3_BTreeNodeTests.IsLeaf_NodeHasOneChild_ExpectsFalse()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsLeaf_NodeHasOneChild_ExpectsFalse()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: IsLeaf_NodeHasOneChild_ExpectsFalse
+    path: ../DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+    startLine: 59
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nTests the correctness of detecting whether a node is leaf over a node with one child. Expects false. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void IsLeaf_NodeHasOneChild_ExpectsFalse()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub IsLeaf_NodeHasOneChild_ExpectsFalse
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsLeaf_NodeHasOneChild_ExpectsFalse*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsRoot_NodeHasNoParent_ExpectsTrue
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsRoot_NodeHasNoParent_ExpectsTrue
+  id: IsRoot_NodeHasNoParent_ExpectsTrue
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: IsRoot_NodeHasNoParent_ExpectsTrue()
+  nameWithType: _2_3_BTreeNodeTests.IsRoot_NodeHasNoParent_ExpectsTrue()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsRoot_NodeHasNoParent_ExpectsTrue()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: IsRoot_NodeHasNoParent_ExpectsTrue
+    path: ../DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+    startLine: 71
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nTests the correctness of detecting whether a node is root over a node with no parent. Expects true. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void IsRoot_NodeHasNoParent_ExpectsTrue()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub IsRoot_NodeHasNoParent_ExpectsTrue
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsRoot_NodeHasNoParent_ExpectsTrue*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsRoot_NodeHasParent_ExpectsFalse
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsRoot_NodeHasParent_ExpectsFalse
+  id: IsRoot_NodeHasParent_ExpectsFalse
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: IsRoot_NodeHasParent_ExpectsFalse()
+  nameWithType: _2_3_BTreeNodeTests.IsRoot_NodeHasParent_ExpectsFalse()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsRoot_NodeHasParent_ExpectsFalse()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: IsRoot_NodeHasParent_ExpectsFalse
+    path: ../DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+    startLine: 81
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nTests the correctness of detecting whether a node is root over a node with a parent. Expects false. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void IsRoot_NodeHasParent_ExpectsFalse()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub IsRoot_NodeHasParent_ExpectsFalse
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsRoot_NodeHasParent_ExpectsFalse*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.GetMinKey_NodeHasKeys_FindsMinCorrectly
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.GetMinKey_NodeHasKeys_FindsMinCorrectly
+  id: GetMinKey_NodeHasKeys_FindsMinCorrectly
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: GetMinKey_NodeHasKeys_FindsMinCorrectly()
+  nameWithType: _2_3_BTreeNodeTests.GetMinKey_NodeHasKeys_FindsMinCorrectly()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.GetMinKey_NodeHasKeys_FindsMinCorrectly()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: GetMinKey_NodeHasKeys_FindsMinCorrectly
+    path: ../DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+    startLine: 93
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nTests the correctness of finding min key in a node. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void GetMinKey_NodeHasKeys_FindsMinCorrectly()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub GetMinKey_NodeHasKeys_FindsMinCorrectly
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.GetMinKey_NodeHasKeys_FindsMinCorrectly*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.GetMaxKey_NodeHasKeys_FindsMaxCorrectly
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.GetMaxKey_NodeHasKeys_FindsMaxCorrectly
+  id: GetMaxKey_NodeHasKeys_FindsMaxCorrectly
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: GetMaxKey_NodeHasKeys_FindsMaxCorrectly()
+  nameWithType: _2_3_BTreeNodeTests.GetMaxKey_NodeHasKeys_FindsMaxCorrectly()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.GetMaxKey_NodeHasKeys_FindsMaxCorrectly()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: GetMaxKey_NodeHasKeys_FindsMaxCorrectly
+    path: ../DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+    startLine: 110
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nTests the correctness of finding max key in a node. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void GetMaxKey_NodeHasKeys_FindsMaxCorrectly()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub GetMaxKey_NodeHasKeys_FindsMaxCorrectly
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.GetMaxKey_NodeHasKeys_FindsMaxCorrectly*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_OtherIsNull_ExpectsBigger
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_OtherIsNull_ExpectsBigger
+  id: Compare_OtherIsNull_ExpectsBigger
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: Compare_OtherIsNull_ExpectsBigger()
+  nameWithType: _2_3_BTreeNodeTests.Compare_OtherIsNull_ExpectsBigger()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_OtherIsNull_ExpectsBigger()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Compare_OtherIsNull_ExpectsBigger
+    path: ../DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+    startLine: 127
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nTests the correctness of comparing a BTree node to a null node. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Compare_OtherIsNull_ExpectsBigger()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Compare_OtherIsNull_ExpectsBigger
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_OtherIsNull_ExpectsBigger*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_TwoEmptyNodes_ExpectsEqual
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_TwoEmptyNodes_ExpectsEqual
+  id: Compare_TwoEmptyNodes_ExpectsEqual
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: Compare_TwoEmptyNodes_ExpectsEqual()
+  nameWithType: _2_3_BTreeNodeTests.Compare_TwoEmptyNodes_ExpectsEqual()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_TwoEmptyNodes_ExpectsEqual()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Compare_TwoEmptyNodes_ExpectsEqual
+    path: ../DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+    startLine: 137
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nTests the correctness of comparing two empty nodes (have no keys). \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Compare_TwoEmptyNodes_ExpectsEqual()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Compare_TwoEmptyNodes_ExpectsEqual
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_TwoEmptyNodes_ExpectsEqual*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_NonEmptyToEmpty_ExpectsNonEmptyToBeBigger
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_NonEmptyToEmpty_ExpectsNonEmptyToBeBigger
+  id: Compare_NonEmptyToEmpty_ExpectsNonEmptyToBeBigger
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: Compare_NonEmptyToEmpty_ExpectsNonEmptyToBeBigger()
+  nameWithType: _2_3_BTreeNodeTests.Compare_NonEmptyToEmpty_ExpectsNonEmptyToBeBigger()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_NonEmptyToEmpty_ExpectsNonEmptyToBeBigger()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Compare_NonEmptyToEmpty_ExpectsNonEmptyToBeBigger
+    path: ../DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+    startLine: 148
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nTests the correctness of comparing a non empty node to an empty node. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Compare_NonEmptyToEmpty_ExpectsNonEmptyToBeBigger()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Compare_NonEmptyToEmpty_ExpectsNonEmptyToBeBigger
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_NonEmptyToEmpty_ExpectsNonEmptyToBeBigger*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_TwoNodesEachWithOneKey_ExpectsNodeWithSmallerKeyToBeSmaller
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_TwoNodesEachWithOneKey_ExpectsNodeWithSmallerKeyToBeSmaller
+  id: Compare_TwoNodesEachWithOneKey_ExpectsNodeWithSmallerKeyToBeSmaller
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: Compare_TwoNodesEachWithOneKey_ExpectsNodeWithSmallerKeyToBeSmaller()
+  nameWithType: _2_3_BTreeNodeTests.Compare_TwoNodesEachWithOneKey_ExpectsNodeWithSmallerKeyToBeSmaller()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_TwoNodesEachWithOneKey_ExpectsNodeWithSmallerKeyToBeSmaller()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Compare_TwoNodesEachWithOneKey_ExpectsNodeWithSmallerKeyToBeSmaller
+    path: ../DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+    startLine: 160
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nTests the correctness of comparing two nodes each with one key. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Compare_TwoNodesEachWithOneKey_ExpectsNodeWithSmallerKeyToBeSmaller()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Compare_TwoNodesEachWithOneKey_ExpectsNodeWithSmallerKeyToBeSmaller
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_TwoNodesEachWithOneKey_ExpectsNodeWithSmallerKeyToBeSmaller*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_TwoNodesWithEqualMinKeyAndDifferentMaxKey_ExpectsEqual
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_TwoNodesWithEqualMinKeyAndDifferentMaxKey_ExpectsEqual
+  id: Compare_TwoNodesWithEqualMinKeyAndDifferentMaxKey_ExpectsEqual
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: Compare_TwoNodesWithEqualMinKeyAndDifferentMaxKey_ExpectsEqual()
+  nameWithType: _2_3_BTreeNodeTests.Compare_TwoNodesWithEqualMinKeyAndDifferentMaxKey_ExpectsEqual()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_TwoNodesWithEqualMinKeyAndDifferentMaxKey_ExpectsEqual()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Compare_TwoNodesWithEqualMinKeyAndDifferentMaxKey_ExpectsEqual
+    path: ../DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+    startLine: 173
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nTests the correctness of comparing two nodes that have the same min key but different max keys. Expects equality. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Compare_TwoNodesWithEqualMinKeyAndDifferentMaxKey_ExpectsEqual()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Compare_TwoNodesWithEqualMinKeyAndDifferentMaxKey_ExpectsEqual
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_TwoNodesWithEqualMinKeyAndDifferentMaxKey_ExpectsEqual*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertKey_SeveralKeys_ExpectsAscendingOrderAmongKeys
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertKey_SeveralKeys_ExpectsAscendingOrderAmongKeys
+  id: InsertKey_SeveralKeys_ExpectsAscendingOrderAmongKeys
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: InsertKey_SeveralKeys_ExpectsAscendingOrderAmongKeys()
+  nameWithType: _2_3_BTreeNodeTests.InsertKey_SeveralKeys_ExpectsAscendingOrderAmongKeys()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertKey_SeveralKeys_ExpectsAscendingOrderAmongKeys()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: InsertKey_SeveralKeys_ExpectsAscendingOrderAmongKeys
+    path: ../DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+    startLine: 189
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nTests the correctness of inserting several distinct keys in the BTree node. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void InsertKey_SeveralKeys_ExpectsAscendingOrderAmongKeys()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub InsertKey_SeveralKeys_ExpectsAscendingOrderAmongKeys
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertKey_SeveralKeys_ExpectsAscendingOrderAmongKeys*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertKey_Duplicates_ExpectsOnlyOneKey
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertKey_Duplicates_ExpectsOnlyOneKey
+  id: InsertKey_Duplicates_ExpectsOnlyOneKey
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: InsertKey_Duplicates_ExpectsOnlyOneKey()
+  nameWithType: _2_3_BTreeNodeTests.InsertKey_Duplicates_ExpectsOnlyOneKey()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertKey_Duplicates_ExpectsOnlyOneKey()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: InsertKey_Duplicates_ExpectsOnlyOneKey
+    path: ../DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+    startLine: 206
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nTests the correctness of inserting several keys some with duplicates in a BTree node. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void InsertKey_Duplicates_ExpectsOnlyOneKey()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub InsertKey_Duplicates_ExpectsOnlyOneKey
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertKey_Duplicates_ExpectsOnlyOneKey*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertChild_SeveralChildren_ExpectsAscendingOrderAmongChildrenBasedOnTheirKeyRange
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertChild_SeveralChildren_ExpectsAscendingOrderAmongChildrenBasedOnTheirKeyRange
+  id: InsertChild_SeveralChildren_ExpectsAscendingOrderAmongChildrenBasedOnTheirKeyRange
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: InsertChild_SeveralChildren_ExpectsAscendingOrderAmongChildrenBasedOnTheirKeyRange()
+  nameWithType: _2_3_BTreeNodeTests.InsertChild_SeveralChildren_ExpectsAscendingOrderAmongChildrenBasedOnTheirKeyRange()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertChild_SeveralChildren_ExpectsAscendingOrderAmongChildrenBasedOnTheirKeyRange()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: InsertChild_SeveralChildren_ExpectsAscendingOrderAmongChildrenBasedOnTheirKeyRange
+    path: ../DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+    startLine: 221
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nTests the correctness of inserting several children in a node. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void InsertChild_SeveralChildren_ExpectsAscendingOrderAmongChildrenBasedOnTheirKeyRange()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub InsertChild_SeveralChildren_ExpectsAscendingOrderAmongChildrenBasedOnTheirKeyRange
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertChild_SeveralChildren_ExpectsAscendingOrderAmongChildrenBasedOnTheirKeyRange*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertChild_Duplicates_ThrowsException
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertChild_Duplicates_ThrowsException
+  id: InsertChild_Duplicates_ThrowsException
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: InsertChild_Duplicates_ThrowsException()
+  nameWithType: _2_3_BTreeNodeTests.InsertChild_Duplicates_ThrowsException()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertChild_Duplicates_ThrowsException()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: InsertChild_Duplicates_ThrowsException
+    path: ../DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+    startLine: 251
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nTests the correctness of inserting duplicate children in a node. Expects an exception to be thrown. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      [ExpectedException(typeof(ArgumentException))]
+
+      public void InsertChild_Duplicates_ThrowsException()
+    content.vb: >-
+      <TestMethod>
+
+      <ExpectedException(GetType(ArgumentException))>
+
+      Public Sub InsertChild_Duplicates_ThrowsException
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertChild_Duplicates_ThrowsException*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.ExpectedExceptionAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.ExpectedExceptionAttribute.#ctor(System.Type)
+    arguments:
+    - type: System.Type
+      value: System.ArgumentException
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_EmptyNode_ExpectsNullForTheNewNode
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_EmptyNode_ExpectsNullForTheNewNode
+  id: Split_EmptyNode_ExpectsNullForTheNewNode
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: Split_EmptyNode_ExpectsNullForTheNewNode()
+  nameWithType: _2_3_BTreeNodeTests.Split_EmptyNode_ExpectsNullForTheNewNode()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_EmptyNode_ExpectsNullForTheNewNode()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Split_EmptyNode_ExpectsNullForTheNewNode
+    path: ../DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+    startLine: 272
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nTests the correctness of splitting an empty node. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Split_EmptyNode_ExpectsNullForTheNewNode()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Split_EmptyNode_ExpectsNullForTheNewNode
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_EmptyNode_ExpectsNullForTheNewNode*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsMinFull_ExpectsNullForTheNewNode
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsMinFull_ExpectsNullForTheNewNode
+  id: Split_NodeIsMinFull_ExpectsNullForTheNewNode
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: Split_NodeIsMinFull_ExpectsNullForTheNewNode()
+  nameWithType: _2_3_BTreeNodeTests.Split_NodeIsMinFull_ExpectsNullForTheNewNode()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsMinFull_ExpectsNullForTheNewNode()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Split_NodeIsMinFull_ExpectsNullForTheNewNode
+    path: ../DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+    startLine: 285
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nTests the correctness of splitting a minFull node. Expects the split operation not to be executed. Note that in this implementation Split operation is only permitted on an overFlown node. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Split_NodeIsMinFull_ExpectsNullForTheNewNode()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Split_NodeIsMinFull_ExpectsNullForTheNewNode
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsMinFull_ExpectsNullForTheNewNode*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsFull_ExpectsNullForTheNewNode
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsFull_ExpectsNullForTheNewNode
+  id: Split_NodeIsFull_ExpectsNullForTheNewNode
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: Split_NodeIsFull_ExpectsNullForTheNewNode()
+  nameWithType: _2_3_BTreeNodeTests.Split_NodeIsFull_ExpectsNullForTheNewNode()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsFull_ExpectsNullForTheNewNode()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Split_NodeIsFull_ExpectsNullForTheNewNode
+    path: ../DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+    startLine: 304
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nTests the correctness of splitting a full node. Expects the split operation not to be executed. Note that in this implementation Split operation is only permitted on an overFlown node.  \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Split_NodeIsFull_ExpectsNullForTheNewNode()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Split_NodeIsFull_ExpectsNullForTheNewNode
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsFull_ExpectsNullForTheNewNode*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsOverFlownAndHasNoChildren_ExpectsSuccessfulSplitForKeys
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsOverFlownAndHasNoChildren_ExpectsSuccessfulSplitForKeys
+  id: Split_NodeIsOverFlownAndHasNoChildren_ExpectsSuccessfulSplitForKeys
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: Split_NodeIsOverFlownAndHasNoChildren_ExpectsSuccessfulSplitForKeys()
+  nameWithType: _2_3_BTreeNodeTests.Split_NodeIsOverFlownAndHasNoChildren_ExpectsSuccessfulSplitForKeys()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsOverFlownAndHasNoChildren_ExpectsSuccessfulSplitForKeys()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Split_NodeIsOverFlownAndHasNoChildren_ExpectsSuccessfulSplitForKeys
+    path: ../DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+    startLine: 319
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nTests the correctness of splitting an overFlown node. Expects a successful split. Note that in this implementation Split operation is only permitted on an overFlown node. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Split_NodeIsOverFlownAndHasNoChildren_ExpectsSuccessfulSplitForKeys()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Split_NodeIsOverFlownAndHasNoChildren_ExpectsSuccessfulSplitForKeys
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsOverFlownAndHasNoChildren_ExpectsSuccessfulSplitForKeys*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsOverFlownAndHasChildren_ExpectsSuccessfulSplitForKeysAndChildren
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsOverFlownAndHasChildren_ExpectsSuccessfulSplitForKeysAndChildren
+  id: Split_NodeIsOverFlownAndHasChildren_ExpectsSuccessfulSplitForKeysAndChildren
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: Split_NodeIsOverFlownAndHasChildren_ExpectsSuccessfulSplitForKeysAndChildren()
+  nameWithType: _2_3_BTreeNodeTests.Split_NodeIsOverFlownAndHasChildren_ExpectsSuccessfulSplitForKeysAndChildren()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsOverFlownAndHasChildren_ExpectsSuccessfulSplitForKeysAndChildren()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Split_NodeIsOverFlownAndHasChildren_ExpectsSuccessfulSplitForKeysAndChildren
+    path: ../DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+    startLine: 339
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nTests the correctness of splitting an overFlown node with children. Expects a successful split of keys and children. Note that in this implementation Split operation is only permitted on an overFlown node. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Split_NodeIsOverFlownAndHasChildren_ExpectsSuccessfulSplitForKeysAndChildren()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Split_NodeIsOverFlownAndHasChildren_ExpectsSuccessfulSplitForKeysAndChildren
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsOverFlownAndHasChildren_ExpectsSuccessfulSplitForKeysAndChildren*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_EmptyNode_ExpectsFalse
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_EmptyNode_ExpectsFalse
+  id: IsOverFlown_EmptyNode_ExpectsFalse
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: IsOverFlown_EmptyNode_ExpectsFalse()
+  nameWithType: _2_3_BTreeNodeTests.IsOverFlown_EmptyNode_ExpectsFalse()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_EmptyNode_ExpectsFalse()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: IsOverFlown_EmptyNode_ExpectsFalse
+    path: ../DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+    startLine: 372
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nTests the correctness of detecting whether a node is overFlown over an empty node. Expects false. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void IsOverFlown_EmptyNode_ExpectsFalse()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub IsOverFlown_EmptyNode_ExpectsFalse
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_EmptyNode_ExpectsFalse*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_MinFullNode_ExpectsFalse
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_MinFullNode_ExpectsFalse
+  id: IsOverFlown_MinFullNode_ExpectsFalse
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: IsOverFlown_MinFullNode_ExpectsFalse()
+  nameWithType: _2_3_BTreeNodeTests.IsOverFlown_MinFullNode_ExpectsFalse()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_MinFullNode_ExpectsFalse()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: IsOverFlown_MinFullNode_ExpectsFalse
+    path: ../DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+    startLine: 384
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nTests the correctness of detecting whether a node is overFlown over minFull node. Expects false. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void IsOverFlown_MinFullNode_ExpectsFalse()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub IsOverFlown_MinFullNode_ExpectsFalse
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_MinFullNode_ExpectsFalse*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_FullNode_ExpectsFalse
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_FullNode_ExpectsFalse
+  id: IsOverFlown_FullNode_ExpectsFalse
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: IsOverFlown_FullNode_ExpectsFalse()
+  nameWithType: _2_3_BTreeNodeTests.IsOverFlown_FullNode_ExpectsFalse()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_FullNode_ExpectsFalse()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: IsOverFlown_FullNode_ExpectsFalse
+    path: ../DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+    startLine: 398
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nTests the correctness of detecting whether a node is overFlown over a full node. Expects false. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void IsOverFlown_FullNode_ExpectsFalse()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub IsOverFlown_FullNode_ExpectsFalse
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_FullNode_ExpectsFalse*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_OverFlownNode_ExpectsTrue
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_OverFlownNode_ExpectsTrue
+  id: IsOverFlown_OverFlownNode_ExpectsTrue
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: IsOverFlown_OverFlownNode_ExpectsTrue()
+  nameWithType: _2_3_BTreeNodeTests.IsOverFlown_OverFlownNode_ExpectsTrue()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_OverFlownNode_ExpectsTrue()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: IsOverFlown_OverFlownNode_ExpectsTrue
+    path: ../DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+    startLine: 413
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nTests the correctness of detecting whether a node is overFlown over an overFlown node. Expects false. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void IsOverFlown_OverFlownNode_ExpectsTrue()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub IsOverFlown_OverFlownNode_ExpectsTrue
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_OverFlownNode_ExpectsTrue*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.KeyValueToMoveUp_EmptyNode_ThrowsException
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.KeyValueToMoveUp_EmptyNode_ThrowsException
+  id: KeyValueToMoveUp_EmptyNode_ThrowsException
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: KeyValueToMoveUp_EmptyNode_ThrowsException()
+  nameWithType: _2_3_BTreeNodeTests.KeyValueToMoveUp_EmptyNode_ThrowsException()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.KeyValueToMoveUp_EmptyNode_ThrowsException()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: KeyValueToMoveUp_EmptyNode_ThrowsException
+    path: ../DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+    startLine: 429
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nTests the correctness of finding the key to move up to parent as part of a split operation over an empty node. Expects an exception to be thrown. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      [ExpectedException(typeof(ArgumentException))]
+
+      public void KeyValueToMoveUp_EmptyNode_ThrowsException()
+    content.vb: >-
+      <TestMethod>
+
+      <ExpectedException(GetType(ArgumentException))>
+
+      Public Sub KeyValueToMoveUp_EmptyNode_ThrowsException
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.KeyValueToMoveUp_EmptyNode_ThrowsException*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.ExpectedExceptionAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.ExpectedExceptionAttribute.#ctor(System.Type)
+    arguments:
+    - type: System.Type
+      value: System.ArgumentException
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.KeyValueToMoveUp_MinFullNode_ThrowsException
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.KeyValueToMoveUp_MinFullNode_ThrowsException
+  id: KeyValueToMoveUp_MinFullNode_ThrowsException
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: KeyValueToMoveUp_MinFullNode_ThrowsException()
+  nameWithType: _2_3_BTreeNodeTests.KeyValueToMoveUp_MinFullNode_ThrowsException()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.KeyValueToMoveUp_MinFullNode_ThrowsException()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: KeyValueToMoveUp_MinFullNode_ThrowsException
+    path: ../DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+    startLine: 444
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nTests the correctness of finding the key to move up to parent as part of a split operation over a minFull node. Expects an exception to be thrown. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      [ExpectedException(typeof(ArgumentException))]
+
+      public void KeyValueToMoveUp_MinFullNode_ThrowsException()
+    content.vb: >-
+      <TestMethod>
+
+      <ExpectedException(GetType(ArgumentException))>
+
+      Public Sub KeyValueToMoveUp_MinFullNode_ThrowsException
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.KeyValueToMoveUp_MinFullNode_ThrowsException*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.ExpectedExceptionAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.ExpectedExceptionAttribute.#ctor(System.Type)
+    arguments:
+    - type: System.Type
+      value: System.ArgumentException
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.KeyValueToMoveUp_NodeIsMinOneFull_ExpectsLastKeyInTheNode
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.KeyValueToMoveUp_NodeIsMinOneFull_ExpectsLastKeyInTheNode
+  id: KeyValueToMoveUp_NodeIsMinOneFull_ExpectsLastKeyInTheNode
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: KeyValueToMoveUp_NodeIsMinOneFull_ExpectsLastKeyInTheNode()
+  nameWithType: _2_3_BTreeNodeTests.KeyValueToMoveUp_NodeIsMinOneFull_ExpectsLastKeyInTheNode()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.KeyValueToMoveUp_NodeIsMinOneFull_ExpectsLastKeyInTheNode()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: KeyValueToMoveUp_NodeIsMinOneFull_ExpectsLastKeyInTheNode
+    path: ../DataStructures/Trees/Nary/2-3-BTreeNodeTests.cs
+    startLine: 460
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nTests the correctness of finding the key to move up to parent as part of a split operation over an minOneFull node. Expects the right answer.\n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void KeyValueToMoveUp_NodeIsMinOneFull_ExpectsLastKeyInTheNode()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub KeyValueToMoveUp_NodeIsMinOneFull_ExpectsLastKeyInTheNode
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.KeyValueToMoveUp_NodeIsMinOneFull_ExpectsLastKeyInTheNode*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary
+  commentId: N:CSFundamentalsTests.DataStructures.Trees.Nary
+  name: CSFundamentalsTests.DataStructures.Trees.Nary
+  nameWithType: CSFundamentalsTests.DataStructures.Trees.Nary
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Constructor_CheckingDegrees*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Constructor_CheckingDegrees
+  name: Constructor_CheckingDegrees
+  nameWithType: _2_3_BTreeNodeTests.Constructor_CheckingDegrees
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Constructor_CheckingDegrees
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsLeaf_ChildLessNode_ExpectsTrue*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsLeaf_ChildLessNode_ExpectsTrue
+  name: IsLeaf_ChildLessNode_ExpectsTrue
+  nameWithType: _2_3_BTreeNodeTests.IsLeaf_ChildLessNode_ExpectsTrue
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsLeaf_ChildLessNode_ExpectsTrue
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsLeaf_NodeHasOneChild_ExpectsFalse*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsLeaf_NodeHasOneChild_ExpectsFalse
+  name: IsLeaf_NodeHasOneChild_ExpectsFalse
+  nameWithType: _2_3_BTreeNodeTests.IsLeaf_NodeHasOneChild_ExpectsFalse
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsLeaf_NodeHasOneChild_ExpectsFalse
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsRoot_NodeHasNoParent_ExpectsTrue*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsRoot_NodeHasNoParent_ExpectsTrue
+  name: IsRoot_NodeHasNoParent_ExpectsTrue
+  nameWithType: _2_3_BTreeNodeTests.IsRoot_NodeHasNoParent_ExpectsTrue
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsRoot_NodeHasNoParent_ExpectsTrue
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsRoot_NodeHasParent_ExpectsFalse*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsRoot_NodeHasParent_ExpectsFalse
+  name: IsRoot_NodeHasParent_ExpectsFalse
+  nameWithType: _2_3_BTreeNodeTests.IsRoot_NodeHasParent_ExpectsFalse
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsRoot_NodeHasParent_ExpectsFalse
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.GetMinKey_NodeHasKeys_FindsMinCorrectly*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.GetMinKey_NodeHasKeys_FindsMinCorrectly
+  name: GetMinKey_NodeHasKeys_FindsMinCorrectly
+  nameWithType: _2_3_BTreeNodeTests.GetMinKey_NodeHasKeys_FindsMinCorrectly
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.GetMinKey_NodeHasKeys_FindsMinCorrectly
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.GetMaxKey_NodeHasKeys_FindsMaxCorrectly*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.GetMaxKey_NodeHasKeys_FindsMaxCorrectly
+  name: GetMaxKey_NodeHasKeys_FindsMaxCorrectly
+  nameWithType: _2_3_BTreeNodeTests.GetMaxKey_NodeHasKeys_FindsMaxCorrectly
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.GetMaxKey_NodeHasKeys_FindsMaxCorrectly
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_OtherIsNull_ExpectsBigger*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_OtherIsNull_ExpectsBigger
+  name: Compare_OtherIsNull_ExpectsBigger
+  nameWithType: _2_3_BTreeNodeTests.Compare_OtherIsNull_ExpectsBigger
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_OtherIsNull_ExpectsBigger
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_TwoEmptyNodes_ExpectsEqual*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_TwoEmptyNodes_ExpectsEqual
+  name: Compare_TwoEmptyNodes_ExpectsEqual
+  nameWithType: _2_3_BTreeNodeTests.Compare_TwoEmptyNodes_ExpectsEqual
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_TwoEmptyNodes_ExpectsEqual
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_NonEmptyToEmpty_ExpectsNonEmptyToBeBigger*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_NonEmptyToEmpty_ExpectsNonEmptyToBeBigger
+  name: Compare_NonEmptyToEmpty_ExpectsNonEmptyToBeBigger
+  nameWithType: _2_3_BTreeNodeTests.Compare_NonEmptyToEmpty_ExpectsNonEmptyToBeBigger
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_NonEmptyToEmpty_ExpectsNonEmptyToBeBigger
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_TwoNodesEachWithOneKey_ExpectsNodeWithSmallerKeyToBeSmaller*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_TwoNodesEachWithOneKey_ExpectsNodeWithSmallerKeyToBeSmaller
+  name: Compare_TwoNodesEachWithOneKey_ExpectsNodeWithSmallerKeyToBeSmaller
+  nameWithType: _2_3_BTreeNodeTests.Compare_TwoNodesEachWithOneKey_ExpectsNodeWithSmallerKeyToBeSmaller
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_TwoNodesEachWithOneKey_ExpectsNodeWithSmallerKeyToBeSmaller
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_TwoNodesWithEqualMinKeyAndDifferentMaxKey_ExpectsEqual*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_TwoNodesWithEqualMinKeyAndDifferentMaxKey_ExpectsEqual
+  name: Compare_TwoNodesWithEqualMinKeyAndDifferentMaxKey_ExpectsEqual
+  nameWithType: _2_3_BTreeNodeTests.Compare_TwoNodesWithEqualMinKeyAndDifferentMaxKey_ExpectsEqual
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Compare_TwoNodesWithEqualMinKeyAndDifferentMaxKey_ExpectsEqual
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertKey_SeveralKeys_ExpectsAscendingOrderAmongKeys*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertKey_SeveralKeys_ExpectsAscendingOrderAmongKeys
+  name: InsertKey_SeveralKeys_ExpectsAscendingOrderAmongKeys
+  nameWithType: _2_3_BTreeNodeTests.InsertKey_SeveralKeys_ExpectsAscendingOrderAmongKeys
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertKey_SeveralKeys_ExpectsAscendingOrderAmongKeys
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertKey_Duplicates_ExpectsOnlyOneKey*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertKey_Duplicates_ExpectsOnlyOneKey
+  name: InsertKey_Duplicates_ExpectsOnlyOneKey
+  nameWithType: _2_3_BTreeNodeTests.InsertKey_Duplicates_ExpectsOnlyOneKey
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertKey_Duplicates_ExpectsOnlyOneKey
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertChild_SeveralChildren_ExpectsAscendingOrderAmongChildrenBasedOnTheirKeyRange*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertChild_SeveralChildren_ExpectsAscendingOrderAmongChildrenBasedOnTheirKeyRange
+  name: InsertChild_SeveralChildren_ExpectsAscendingOrderAmongChildrenBasedOnTheirKeyRange
+  nameWithType: _2_3_BTreeNodeTests.InsertChild_SeveralChildren_ExpectsAscendingOrderAmongChildrenBasedOnTheirKeyRange
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertChild_SeveralChildren_ExpectsAscendingOrderAmongChildrenBasedOnTheirKeyRange
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertChild_Duplicates_ThrowsException*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertChild_Duplicates_ThrowsException
+  name: InsertChild_Duplicates_ThrowsException
+  nameWithType: _2_3_BTreeNodeTests.InsertChild_Duplicates_ThrowsException
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.InsertChild_Duplicates_ThrowsException
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_EmptyNode_ExpectsNullForTheNewNode*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_EmptyNode_ExpectsNullForTheNewNode
+  name: Split_EmptyNode_ExpectsNullForTheNewNode
+  nameWithType: _2_3_BTreeNodeTests.Split_EmptyNode_ExpectsNullForTheNewNode
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_EmptyNode_ExpectsNullForTheNewNode
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsMinFull_ExpectsNullForTheNewNode*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsMinFull_ExpectsNullForTheNewNode
+  name: Split_NodeIsMinFull_ExpectsNullForTheNewNode
+  nameWithType: _2_3_BTreeNodeTests.Split_NodeIsMinFull_ExpectsNullForTheNewNode
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsMinFull_ExpectsNullForTheNewNode
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsFull_ExpectsNullForTheNewNode*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsFull_ExpectsNullForTheNewNode
+  name: Split_NodeIsFull_ExpectsNullForTheNewNode
+  nameWithType: _2_3_BTreeNodeTests.Split_NodeIsFull_ExpectsNullForTheNewNode
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsFull_ExpectsNullForTheNewNode
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsOverFlownAndHasNoChildren_ExpectsSuccessfulSplitForKeys*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsOverFlownAndHasNoChildren_ExpectsSuccessfulSplitForKeys
+  name: Split_NodeIsOverFlownAndHasNoChildren_ExpectsSuccessfulSplitForKeys
+  nameWithType: _2_3_BTreeNodeTests.Split_NodeIsOverFlownAndHasNoChildren_ExpectsSuccessfulSplitForKeys
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsOverFlownAndHasNoChildren_ExpectsSuccessfulSplitForKeys
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsOverFlownAndHasChildren_ExpectsSuccessfulSplitForKeysAndChildren*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsOverFlownAndHasChildren_ExpectsSuccessfulSplitForKeysAndChildren
+  name: Split_NodeIsOverFlownAndHasChildren_ExpectsSuccessfulSplitForKeysAndChildren
+  nameWithType: _2_3_BTreeNodeTests.Split_NodeIsOverFlownAndHasChildren_ExpectsSuccessfulSplitForKeysAndChildren
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.Split_NodeIsOverFlownAndHasChildren_ExpectsSuccessfulSplitForKeysAndChildren
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_EmptyNode_ExpectsFalse*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_EmptyNode_ExpectsFalse
+  name: IsOverFlown_EmptyNode_ExpectsFalse
+  nameWithType: _2_3_BTreeNodeTests.IsOverFlown_EmptyNode_ExpectsFalse
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_EmptyNode_ExpectsFalse
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_MinFullNode_ExpectsFalse*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_MinFullNode_ExpectsFalse
+  name: IsOverFlown_MinFullNode_ExpectsFalse
+  nameWithType: _2_3_BTreeNodeTests.IsOverFlown_MinFullNode_ExpectsFalse
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_MinFullNode_ExpectsFalse
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_FullNode_ExpectsFalse*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_FullNode_ExpectsFalse
+  name: IsOverFlown_FullNode_ExpectsFalse
+  nameWithType: _2_3_BTreeNodeTests.IsOverFlown_FullNode_ExpectsFalse
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_FullNode_ExpectsFalse
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_OverFlownNode_ExpectsTrue*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_OverFlownNode_ExpectsTrue
+  name: IsOverFlown_OverFlownNode_ExpectsTrue
+  nameWithType: _2_3_BTreeNodeTests.IsOverFlown_OverFlownNode_ExpectsTrue
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.IsOverFlown_OverFlownNode_ExpectsTrue
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.KeyValueToMoveUp_EmptyNode_ThrowsException*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.KeyValueToMoveUp_EmptyNode_ThrowsException
+  name: KeyValueToMoveUp_EmptyNode_ThrowsException
+  nameWithType: _2_3_BTreeNodeTests.KeyValueToMoveUp_EmptyNode_ThrowsException
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.KeyValueToMoveUp_EmptyNode_ThrowsException
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.KeyValueToMoveUp_MinFullNode_ThrowsException*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.KeyValueToMoveUp_MinFullNode_ThrowsException
+  name: KeyValueToMoveUp_MinFullNode_ThrowsException
+  nameWithType: _2_3_BTreeNodeTests.KeyValueToMoveUp_MinFullNode_ThrowsException
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.KeyValueToMoveUp_MinFullNode_ThrowsException
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.KeyValueToMoveUp_NodeIsMinOneFull_ExpectsLastKeyInTheNode*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.KeyValueToMoveUp_NodeIsMinOneFull_ExpectsLastKeyInTheNode
+  name: KeyValueToMoveUp_NodeIsMinOneFull_ExpectsLastKeyInTheNode
+  nameWithType: _2_3_BTreeNodeTests.KeyValueToMoveUp_NodeIsMinOneFull_ExpectsLastKeyInTheNode
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeNodeTests.KeyValueToMoveUp_NodeIsMinOneFull_ExpectsLastKeyInTheNode

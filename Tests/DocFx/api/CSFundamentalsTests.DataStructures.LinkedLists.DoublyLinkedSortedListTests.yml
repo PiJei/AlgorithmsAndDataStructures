@@ -1,0 +1,641 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests
+  commentId: T:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests
+  id: DoublyLinkedSortedListTests
+  parent: CSFundamentalsTests.DataStructures.LinkedLists
+  children:
+  - CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.Delete
+  - CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.Insert_1
+  - CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.Insert_2
+  - CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.IsSorted``1(CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode{``0})
+  langs:
+  - csharp
+  - vb
+  name: DoublyLinkedSortedListTests
+  nameWithType: DoublyLinkedSortedListTests
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests
+  type: Class
+  source:
+    remote:
+      path: Tests/DataStructures/LinkedLists/DoublyLinkedSortedListTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: DoublyLinkedSortedListTests
+    path: ../DataStructures/LinkedLists/DoublyLinkedSortedListTests.cs
+    startLine: 29
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.LinkedLists
+  summary: "\nTests methods in <xref href=\"CSFundamentals.DataStructures.LinkedLists.DoublyLinkedSortedList%601\" data-throw-if-not-resolved=\"false\"></xref> class. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestClass]
+
+      public class DoublyLinkedSortedListTests
+    content.vb: >-
+      <TestClass>
+
+      Public Class DoublyLinkedSortedListTests
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.Insert_1
+  commentId: M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.Insert_1
+  id: Insert_1
+  parent: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests
+  langs:
+  - csharp
+  - vb
+  name: Insert_1()
+  nameWithType: DoublyLinkedSortedListTests.Insert_1()
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.Insert_1()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/LinkedLists/DoublyLinkedSortedListTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Insert_1
+    path: ../DataStructures/LinkedLists/DoublyLinkedSortedListTests.cs
+    startLine: 35
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.LinkedLists
+  summary: "\nTests the correctness of Insert operation. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Insert_1()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Insert_1
+  overload: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.Insert_1*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.Insert_2
+  commentId: M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.Insert_2
+  id: Insert_2
+  parent: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests
+  langs:
+  - csharp
+  - vb
+  name: Insert_2()
+  nameWithType: DoublyLinkedSortedListTests.Insert_2()
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.Insert_2()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/LinkedLists/DoublyLinkedSortedListTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Insert_2
+    path: ../DataStructures/LinkedLists/DoublyLinkedSortedListTests.cs
+    startLine: 65
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.LinkedLists
+  summary: "\nTests the correctness of Insert operation. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Insert_2()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Insert_2
+  overload: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.Insert_2*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.Delete
+  commentId: M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.Delete
+  id: Delete
+  parent: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests
+  langs:
+  - csharp
+  - vb
+  name: Delete()
+  nameWithType: DoublyLinkedSortedListTests.Delete()
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.Delete()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/LinkedLists/DoublyLinkedSortedListTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Delete
+    path: ../DataStructures/LinkedLists/DoublyLinkedSortedListTests.cs
+    startLine: 85
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.LinkedLists
+  summary: "\nTests the correctness of Delete operation. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Delete()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Delete
+  overload: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.Delete*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.IsSorted``1(CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode{``0})
+  commentId: M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.IsSorted``1(CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode{``0})
+  id: IsSorted``1(CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode{``0})
+  parent: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests
+  langs:
+  - csharp
+  - vb
+  name: IsSorted<TValue>(DoublyLinkedNode<TValue>)
+  nameWithType: DoublyLinkedSortedListTests.IsSorted<TValue>(DoublyLinkedNode<TValue>)
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.IsSorted<TValue>(CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode<TValue>)
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/LinkedLists/DoublyLinkedSortedListTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: IsSorted
+    path: ../DataStructures/LinkedLists/DoublyLinkedSortedListTests.cs
+    startLine: 144
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.LinkedLists
+  summary: "\nChecks whether the linked list that starts at <code data-dev-comment-type=\"paramref\" class=\"paramref\">head</code> is sorted. \n"
+  example: []
+  syntax:
+    content: >-
+      public bool IsSorted<TValue>(DoublyLinkedNode<TValue> head)
+
+          where TValue : IComparable<TValue>
+    parameters:
+    - id: head
+      type: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode{{TValue}}
+      description: Head/starting node of the list.
+    typeParameters:
+    - id: TValue
+      description: 'Type of the value stored in the list. '
+    return:
+      type: System.Boolean
+      description: 'True if the list is sorted, and false otherwise. '
+    content.vb: Public Function IsSorted(Of TValue As IComparable(Of TValue))(head As DoublyLinkedNode(Of TValue)) As Boolean
+  overload: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.IsSorted*
+  nameWithType.vb: DoublyLinkedSortedListTests.IsSorted(Of TValue)(DoublyLinkedNode(Of TValue))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.IsSorted(Of TValue)(CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode(Of TValue))
+  name.vb: IsSorted(Of TValue)(DoublyLinkedNode(Of TValue))
+references:
+- uid: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedSortedList`1
+  commentId: T:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedSortedList`1
+  isExternal: true
+- uid: CSFundamentalsTests.DataStructures.LinkedLists
+  commentId: N:CSFundamentalsTests.DataStructures.LinkedLists
+  name: CSFundamentalsTests.DataStructures.LinkedLists
+  nameWithType: CSFundamentalsTests.DataStructures.LinkedLists
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.Insert_1*
+  commentId: Overload:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.Insert_1
+  name: Insert_1
+  nameWithType: DoublyLinkedSortedListTests.Insert_1
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.Insert_1
+- uid: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.Insert_2*
+  commentId: Overload:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.Insert_2
+  name: Insert_2
+  nameWithType: DoublyLinkedSortedListTests.Insert_2
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.Insert_2
+- uid: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.Delete*
+  commentId: Overload:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.Delete
+  name: Delete
+  nameWithType: DoublyLinkedSortedListTests.Delete
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.Delete
+- uid: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.IsSorted*
+  commentId: Overload:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.IsSorted
+  name: IsSorted
+  nameWithType: DoublyLinkedSortedListTests.IsSorted
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedSortedListTests.IsSorted
+- uid: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode{{TValue}}
+  commentId: T:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode{``0}
+  parent: CSFundamentals.DataStructures.LinkedLists
+  definition: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode`1
+  name: DoublyLinkedNode<TValue>
+  nameWithType: DoublyLinkedNode<TValue>
+  fullName: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode<TValue>
+  nameWithType.vb: DoublyLinkedNode(Of TValue)
+  fullName.vb: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode(Of TValue)
+  name.vb: DoublyLinkedNode(Of TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode`1
+    name: DoublyLinkedNode
+    nameWithType: DoublyLinkedNode
+    fullName: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode`1
+    name: DoublyLinkedNode
+    nameWithType: DoublyLinkedNode
+    fullName: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode`1
+  commentId: T:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode`1
+  name: DoublyLinkedNode<TValue>
+  nameWithType: DoublyLinkedNode<TValue>
+  fullName: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode<TValue>
+  nameWithType.vb: DoublyLinkedNode(Of TValue)
+  fullName.vb: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode(Of TValue)
+  name.vb: DoublyLinkedNode(Of TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode`1
+    name: DoublyLinkedNode
+    nameWithType: DoublyLinkedNode
+    fullName: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode`1
+    name: DoublyLinkedNode
+    nameWithType: DoublyLinkedNode
+    fullName: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.LinkedLists
+  commentId: N:CSFundamentals.DataStructures.LinkedLists
+  name: CSFundamentals.DataStructures.LinkedLists
+  nameWithType: CSFundamentals.DataStructures.LinkedLists
+  fullName: CSFundamentals.DataStructures.LinkedLists

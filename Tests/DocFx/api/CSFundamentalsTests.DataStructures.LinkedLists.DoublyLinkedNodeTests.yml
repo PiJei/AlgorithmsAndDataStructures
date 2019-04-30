@@ -1,0 +1,486 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedNodeTests
+  commentId: T:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedNodeTests
+  id: DoublyLinkedNodeTests
+  parent: CSFundamentalsTests.DataStructures.LinkedLists
+  children:
+  - CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedNodeTests.IsHead
+  - CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedNodeTests.IsTail
+  langs:
+  - csharp
+  - vb
+  name: DoublyLinkedNodeTests
+  nameWithType: DoublyLinkedNodeTests
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedNodeTests
+  type: Class
+  source:
+    remote:
+      path: Tests/DataStructures/LinkedLists/DoublyLinkedNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: DoublyLinkedNodeTests
+    path: ../DataStructures/LinkedLists/DoublyLinkedNodeTests.cs
+    startLine: 28
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.LinkedLists
+  summary: "\nTests methods in <xref href=\"CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode%601\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: >-
+      [TestClass]
+
+      public class DoublyLinkedNodeTests
+    content.vb: >-
+      <TestClass>
+
+      Public Class DoublyLinkedNodeTests
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedNodeTests.IsHead
+  commentId: M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedNodeTests.IsHead
+  id: IsHead
+  parent: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedNodeTests
+  langs:
+  - csharp
+  - vb
+  name: IsHead()
+  nameWithType: DoublyLinkedNodeTests.IsHead()
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedNodeTests.IsHead()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/LinkedLists/DoublyLinkedNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: IsHead
+    path: ../DataStructures/LinkedLists/DoublyLinkedNodeTests.cs
+    startLine: 34
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.LinkedLists
+  summary: "\nTests the correctness of detecting whether a node is the head. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void IsHead()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub IsHead
+  overload: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedNodeTests.IsHead*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedNodeTests.IsTail
+  commentId: M:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedNodeTests.IsTail
+  id: IsTail
+  parent: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedNodeTests
+  langs:
+  - csharp
+  - vb
+  name: IsTail()
+  nameWithType: DoublyLinkedNodeTests.IsTail()
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedNodeTests.IsTail()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/LinkedLists/DoublyLinkedNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: IsTail
+    path: ../DataStructures/LinkedLists/DoublyLinkedNodeTests.cs
+    startLine: 48
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.LinkedLists
+  summary: "\nTests the correctness of detecting whether a node is the tail. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void IsTail()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub IsTail
+  overload: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedNodeTests.IsTail*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode`1
+  commentId: T:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode`1
+  name: DoublyLinkedNode<TValue>
+  nameWithType: DoublyLinkedNode<TValue>
+  fullName: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode<TValue>
+  nameWithType.vb: DoublyLinkedNode(Of TValue)
+  fullName.vb: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode(Of TValue)
+  name.vb: DoublyLinkedNode(Of TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode`1
+    name: DoublyLinkedNode
+    nameWithType: DoublyLinkedNode
+    fullName: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode`1
+    name: DoublyLinkedNode
+    nameWithType: DoublyLinkedNode
+    fullName: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentalsTests.DataStructures.LinkedLists
+  commentId: N:CSFundamentalsTests.DataStructures.LinkedLists
+  name: CSFundamentalsTests.DataStructures.LinkedLists
+  nameWithType: CSFundamentalsTests.DataStructures.LinkedLists
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedNodeTests.IsHead*
+  commentId: Overload:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedNodeTests.IsHead
+  name: IsHead
+  nameWithType: DoublyLinkedNodeTests.IsHead
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedNodeTests.IsHead
+- uid: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedNodeTests.IsTail*
+  commentId: Overload:CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedNodeTests.IsTail
+  name: IsTail
+  nameWithType: DoublyLinkedNodeTests.IsTail
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists.DoublyLinkedNodeTests.IsTail

@@ -1,0 +1,22 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentalsTests.SubarraySearch
+  commentId: N:CSFundamentalsTests.SubarraySearch
+  id: CSFundamentalsTests.SubarraySearch
+  children:
+  - CSFundamentalsTests.SubarraySearch.SubarraySearchTests
+  langs:
+  - csharp
+  - vb
+  name: CSFundamentalsTests.SubarraySearch
+  nameWithType: CSFundamentalsTests.SubarraySearch
+  fullName: CSFundamentalsTests.SubarraySearch
+  type: Namespace
+  assemblies:
+  - CSFundamentalsTests
+references:
+- uid: CSFundamentalsTests.SubarraySearch.SubarraySearchTests
+  commentId: T:CSFundamentalsTests.SubarraySearch.SubarraySearchTests
+  name: SubarraySearchTests
+  nameWithType: SubarraySearchTests
+  fullName: CSFundamentalsTests.SubarraySearch.SubarraySearchTests

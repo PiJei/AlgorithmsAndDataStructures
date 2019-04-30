@@ -401,6 +401,7 @@ items:
   syntax:
     content: >-
       public static T GetMaxElement<T>(List<T> list)
+
           where T : IComparable<T>
     parameters:
     - id: list

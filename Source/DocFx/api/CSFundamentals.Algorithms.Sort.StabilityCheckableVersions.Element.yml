@@ -39,6 +39,7 @@ items:
     content: 'public class Element : IEquatable<Element>, IComparable<Element>'
     content.vb: >-
       Public Class Element
+
           Implements IEquatable(Of Element), IComparable(Of Element)
   inheritance:
   - System.Object

@@ -1,0 +1,648 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests
+  commentId: T:CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests
+  id: LinkedListBaseTests
+  parent: CSFundamentalsTests.DataStructures.LinkedLists.API
+  children:
+  - CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Length
+  - CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Search_EmptyListAndNotExistingValue_ThrowsException
+  - CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Search_NonEmptyListAndNotExistingValue_ThrowsException
+  - CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Search_Success
+  langs:
+  - csharp
+  - vb
+  name: LinkedListBaseTests
+  nameWithType: LinkedListBaseTests
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests
+  type: Class
+  source:
+    remote:
+      path: Tests/DataStructures/LinkedLists/API/LinkedListBaseTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: LinkedListBaseTests
+    path: ../DataStructures/LinkedLists/API/LinkedListBaseTests.cs
+    startLine: 29
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.LinkedLists.API
+  summary: "\nTests methods in <xref href=\"CSFundamentals.DataStructures.LinkedLists.API.LinkedListBase%602\" data-throw-if-not-resolved=\"false\"></xref> using <xref href=\"CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList%601\" data-throw-if-not-resolved=\"false\"></xref> class. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestClass]
+
+      public class LinkedListBaseTests
+    content.vb: >-
+      <TestClass>
+
+      Public Class LinkedListBaseTests
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Length
+  commentId: M:CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Length
+  id: Length
+  parent: CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests
+  langs:
+  - csharp
+  - vb
+  name: Length()
+  nameWithType: LinkedListBaseTests.Length()
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Length()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/LinkedLists/API/LinkedListBaseTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Length
+    path: ../DataStructures/LinkedLists/API/LinkedListBaseTests.cs
+    startLine: 35
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.LinkedLists.API
+  summary: "\nTests the correctness of computing the length of a linked list. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Length()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Length
+  overload: CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Length*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Search_EmptyListAndNotExistingValue_ThrowsException
+  commentId: M:CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Search_EmptyListAndNotExistingValue_ThrowsException
+  id: Search_EmptyListAndNotExistingValue_ThrowsException
+  parent: CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests
+  langs:
+  - csharp
+  - vb
+  name: Search_EmptyListAndNotExistingValue_ThrowsException()
+  nameWithType: LinkedListBaseTests.Search_EmptyListAndNotExistingValue_ThrowsException()
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Search_EmptyListAndNotExistingValue_ThrowsException()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/LinkedLists/API/LinkedListBaseTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Search_EmptyListAndNotExistingValue_ThrowsException
+    path: ../DataStructures/LinkedLists/API/LinkedListBaseTests.cs
+    startLine: 61
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.LinkedLists.API
+  summary: "\nTests the correctness of searching an empty list for a non existing key. Expects an exception to be thrown. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      [ExpectedException(typeof(NotFoundException))]
+
+      public void Search_EmptyListAndNotExistingValue_ThrowsException()
+    content.vb: >-
+      <TestMethod>
+
+      <ExpectedException(GetType(NotFoundException))>
+
+      Public Sub Search_EmptyListAndNotExistingValue_ThrowsException
+  overload: CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Search_EmptyListAndNotExistingValue_ThrowsException*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.ExpectedExceptionAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.ExpectedExceptionAttribute.#ctor(System.Type)
+    arguments:
+    - type: System.Type
+      value: CSFundamentals.DataStructures.LinkedLists.NotFoundException
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Search_NonEmptyListAndNotExistingValue_ThrowsException
+  commentId: M:CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Search_NonEmptyListAndNotExistingValue_ThrowsException
+  id: Search_NonEmptyListAndNotExistingValue_ThrowsException
+  parent: CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests
+  langs:
+  - csharp
+  - vb
+  name: Search_NonEmptyListAndNotExistingValue_ThrowsException()
+  nameWithType: LinkedListBaseTests.Search_NonEmptyListAndNotExistingValue_ThrowsException()
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Search_NonEmptyListAndNotExistingValue_ThrowsException()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/LinkedLists/API/LinkedListBaseTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Search_NonEmptyListAndNotExistingValue_ThrowsException
+    path: ../DataStructures/LinkedLists/API/LinkedListBaseTests.cs
+    startLine: 72
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.LinkedLists.API
+  summary: "\nTests the correctness of searching a non empty list for a non existing key. Expects an exception to be thrown. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      [ExpectedException(typeof(NotFoundException))]
+
+      public void Search_NonEmptyListAndNotExistingValue_ThrowsException()
+    content.vb: >-
+      <TestMethod>
+
+      <ExpectedException(GetType(NotFoundException))>
+
+      Public Sub Search_NonEmptyListAndNotExistingValue_ThrowsException
+  overload: CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Search_NonEmptyListAndNotExistingValue_ThrowsException*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.ExpectedExceptionAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.ExpectedExceptionAttribute.#ctor(System.Type)
+    arguments:
+    - type: System.Type
+      value: CSFundamentals.DataStructures.LinkedLists.NotFoundException
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Search_Success
+  commentId: M:CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Search_Success
+  id: Search_Success
+  parent: CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests
+  langs:
+  - csharp
+  - vb
+  name: Search_Success()
+  nameWithType: LinkedListBaseTests.Search_Success()
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Search_Success()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/LinkedLists/API/LinkedListBaseTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Search_Success
+    path: ../DataStructures/LinkedLists/API/LinkedListBaseTests.cs
+    startLine: 83
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.LinkedLists.API
+  summary: "\nTests the correctness of search operation over a list for existing keys. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Search_Success()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Search_Success
+  overload: CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Search_Success*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: CSFundamentals.DataStructures.LinkedLists.API.LinkedListBase`2
+  commentId: T:CSFundamentals.DataStructures.LinkedLists.API.LinkedListBase`2
+  name: LinkedListBase<TNode, TValue>
+  nameWithType: LinkedListBase<TNode, TValue>
+  fullName: CSFundamentals.DataStructures.LinkedLists.API.LinkedListBase<TNode, TValue>
+  nameWithType.vb: LinkedListBase(Of TNode, TValue)
+  fullName.vb: CSFundamentals.DataStructures.LinkedLists.API.LinkedListBase(Of TNode, TValue)
+  name.vb: LinkedListBase(Of TNode, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.LinkedLists.API.LinkedListBase`2
+    name: LinkedListBase
+    nameWithType: LinkedListBase
+    fullName: CSFundamentals.DataStructures.LinkedLists.API.LinkedListBase
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.LinkedLists.API.LinkedListBase`2
+    name: LinkedListBase
+    nameWithType: LinkedListBase
+    fullName: CSFundamentals.DataStructures.LinkedLists.API.LinkedListBase
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList`1
+  commentId: T:CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList`1
+  name: MockLinkedList<T1>
+  nameWithType: MockLinkedList<T1>
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList<T1>
+  nameWithType.vb: MockLinkedList(Of T1)
+  fullName.vb: CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList(Of T1)
+  name.vb: MockLinkedList(Of T1)
+  spec.csharp:
+  - uid: CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList`1
+    name: MockLinkedList
+    nameWithType: MockLinkedList
+    fullName: CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList`1
+    name: MockLinkedList
+    nameWithType: MockLinkedList
+    fullName: CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentalsTests.DataStructures.LinkedLists.API
+  commentId: N:CSFundamentalsTests.DataStructures.LinkedLists.API
+  name: CSFundamentalsTests.DataStructures.LinkedLists.API
+  nameWithType: CSFundamentalsTests.DataStructures.LinkedLists.API
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists.API
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Length*
+  commentId: Overload:CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Length
+  name: Length
+  nameWithType: LinkedListBaseTests.Length
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Length
+- uid: CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Search_EmptyListAndNotExistingValue_ThrowsException*
+  commentId: Overload:CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Search_EmptyListAndNotExistingValue_ThrowsException
+  name: Search_EmptyListAndNotExistingValue_ThrowsException
+  nameWithType: LinkedListBaseTests.Search_EmptyListAndNotExistingValue_ThrowsException
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Search_EmptyListAndNotExistingValue_ThrowsException
+- uid: CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Search_NonEmptyListAndNotExistingValue_ThrowsException*
+  commentId: Overload:CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Search_NonEmptyListAndNotExistingValue_ThrowsException
+  name: Search_NonEmptyListAndNotExistingValue_ThrowsException
+  nameWithType: LinkedListBaseTests.Search_NonEmptyListAndNotExistingValue_ThrowsException
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Search_NonEmptyListAndNotExistingValue_ThrowsException
+- uid: CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Search_Success*
+  commentId: Overload:CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Search_Success
+  name: Search_Success
+  nameWithType: LinkedListBaseTests.Search_Success
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests.Search_Success

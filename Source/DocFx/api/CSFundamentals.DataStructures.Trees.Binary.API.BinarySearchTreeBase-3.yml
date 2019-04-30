@@ -42,7 +42,9 @@ items:
   syntax:
     content: >-
       public abstract class BinarySearchTreeBase<TNode, TKey, TValue>
+
           where TNode : IBinaryTreeNode<TNode, TKey, TValue>, new()
+
           where TKey : IComparable<TKey>
     typeParameters:
     - id: TNode

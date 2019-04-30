@@ -1,0 +1,40 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentalsTests.PatternSearch
+  commentId: N:CSFundamentalsTests.PatternSearch
+  id: CSFundamentalsTests.PatternSearch
+  children:
+  - CSFundamentalsTests.PatternSearch.BoyerMooreSearchTests
+  - CSFundamentalsTests.PatternSearch.KMPSearchTests
+  - CSFundamentalsTests.PatternSearch.NaiveSearchTests
+  - CSFundamentalsTests.PatternSearch.RabinKarpSearchTests
+  langs:
+  - csharp
+  - vb
+  name: CSFundamentalsTests.PatternSearch
+  nameWithType: CSFundamentalsTests.PatternSearch
+  fullName: CSFundamentalsTests.PatternSearch
+  type: Namespace
+  assemblies:
+  - CSFundamentalsTests
+references:
+- uid: CSFundamentalsTests.PatternSearch.BoyerMooreSearchTests
+  commentId: T:CSFundamentalsTests.PatternSearch.BoyerMooreSearchTests
+  name: BoyerMooreSearchTests
+  nameWithType: BoyerMooreSearchTests
+  fullName: CSFundamentalsTests.PatternSearch.BoyerMooreSearchTests
+- uid: CSFundamentalsTests.PatternSearch.KMPSearchTests
+  commentId: T:CSFundamentalsTests.PatternSearch.KMPSearchTests
+  name: KMPSearchTests
+  nameWithType: KMPSearchTests
+  fullName: CSFundamentalsTests.PatternSearch.KMPSearchTests
+- uid: CSFundamentalsTests.PatternSearch.NaiveSearchTests
+  commentId: T:CSFundamentalsTests.PatternSearch.NaiveSearchTests
+  name: NaiveSearchTests
+  nameWithType: NaiveSearchTests
+  fullName: CSFundamentalsTests.PatternSearch.NaiveSearchTests
+- uid: CSFundamentalsTests.PatternSearch.RabinKarpSearchTests
+  commentId: T:CSFundamentalsTests.PatternSearch.RabinKarpSearchTests
+  name: RabinKarpSearchTests
+  nameWithType: RabinKarpSearchTests
+  fullName: CSFundamentalsTests.PatternSearch.RabinKarpSearchTests

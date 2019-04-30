@@ -54,7 +54,9 @@ items:
       <DataStructure("MinMaxBinaryHeap")>
 
       Public Class MinMaxBinaryHeap(Of TKey As IComparable(Of TKey), TValue)
+
           Inherits BinaryHeapBase(Of TKey, TValue)
+
           Implements IBinaryHeap(Of TKey, TValue)
   inheritance:
   - System.Object

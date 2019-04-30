@@ -1,0 +1,549 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests
+  commentId: T:CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests
+  id: FibonacciSearchTests
+  parent: CSFundamentalsTests.Algorithms.Search
+  children:
+  - CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.GetSmallestFibonacciBiggerThanNumber
+  - CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_DistinctElements
+  - CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_DuplicateElements
+  - CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_NonExistingElements
+  langs:
+  - csharp
+  - vb
+  name: FibonacciSearchTests
+  nameWithType: FibonacciSearchTests
+  fullName: CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests
+  type: Class
+  source:
+    remote:
+      path: Tests/Algorithms/Search/FibonacciSearchTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: FibonacciSearchTests
+    path: ../Algorithms/Search/FibonacciSearchTests.cs
+    startLine: 28
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.Algorithms.Search
+  summary: "\nTests methods in <xref href=\"CSFundamentals.Algorithms.Search.FibonacciSearch\" data-throw-if-not-resolved=\"false\"></xref> class. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestClass]
+
+      public class FibonacciSearchTests
+    content.vb: >-
+      <TestClass>
+
+      Public Class FibonacciSearchTests
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_DistinctElements
+  commentId: M:CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_DistinctElements
+  id: Search_DistinctElements
+  parent: CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests
+  langs:
+  - csharp
+  - vb
+  name: Search_DistinctElements()
+  nameWithType: FibonacciSearchTests.Search_DistinctElements()
+  fullName: CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_DistinctElements()
+  type: Method
+  source:
+    remote:
+      path: Tests/Algorithms/Search/FibonacciSearchTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Search_DistinctElements
+    path: ../Algorithms/Search/FibonacciSearchTests.cs
+    startLine: 34
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.Algorithms.Search
+  summary: "\nTests the correctness of Fibonacci search algorithm on an array with distinct elements. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Search_DistinctElements()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Search_DistinctElements
+  overload: CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_DistinctElements*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_DuplicateElements
+  commentId: M:CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_DuplicateElements
+  id: Search_DuplicateElements
+  parent: CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests
+  langs:
+  - csharp
+  - vb
+  name: Search_DuplicateElements()
+  nameWithType: FibonacciSearchTests.Search_DuplicateElements()
+  fullName: CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_DuplicateElements()
+  type: Method
+  source:
+    remote:
+      path: Tests/Algorithms/Search/FibonacciSearchTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Search_DuplicateElements
+    path: ../Algorithms/Search/FibonacciSearchTests.cs
+    startLine: 43
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.Algorithms.Search
+  summary: "\nTests the correctness of Fibonacci search algorithm on an array with duplicate elements. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Search_DuplicateElements()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Search_DuplicateElements
+  overload: CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_DuplicateElements*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_NonExistingElements
+  commentId: M:CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_NonExistingElements
+  id: Search_NonExistingElements
+  parent: CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests
+  langs:
+  - csharp
+  - vb
+  name: Search_NonExistingElements()
+  nameWithType: FibonacciSearchTests.Search_NonExistingElements()
+  fullName: CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_NonExistingElements()
+  type: Method
+  source:
+    remote:
+      path: Tests/Algorithms/Search/FibonacciSearchTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Search_NonExistingElements
+    path: ../Algorithms/Search/FibonacciSearchTests.cs
+    startLine: 52
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.Algorithms.Search
+  summary: "\nTests the correctness of Fibonacci search algorithm when the key does not exist in the array. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Search_NonExistingElements()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Search_NonExistingElements
+  overload: CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_NonExistingElements*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.GetSmallestFibonacciBiggerThanNumber
+  commentId: M:CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.GetSmallestFibonacciBiggerThanNumber
+  id: GetSmallestFibonacciBiggerThanNumber
+  parent: CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests
+  langs:
+  - csharp
+  - vb
+  name: GetSmallestFibonacciBiggerThanNumber()
+  nameWithType: FibonacciSearchTests.GetSmallestFibonacciBiggerThanNumber()
+  fullName: CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.GetSmallestFibonacciBiggerThanNumber()
+  type: Method
+  source:
+    remote:
+      path: Tests/Algorithms/Search/FibonacciSearchTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: GetSmallestFibonacciBiggerThanNumber
+    path: ../Algorithms/Search/FibonacciSearchTests.cs
+    startLine: 61
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.Algorithms.Search
+  summary: "\nTests computing the smallest Fibonacci number that is bigger than a specific number. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void GetSmallestFibonacciBiggerThanNumber()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub GetSmallestFibonacciBiggerThanNumber
+  overload: CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.GetSmallestFibonacciBiggerThanNumber*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: CSFundamentals.Algorithms.Search.FibonacciSearch
+  commentId: T:CSFundamentals.Algorithms.Search.FibonacciSearch
+  isExternal: true
+- uid: CSFundamentalsTests.Algorithms.Search
+  commentId: N:CSFundamentalsTests.Algorithms.Search
+  name: CSFundamentalsTests.Algorithms.Search
+  nameWithType: CSFundamentalsTests.Algorithms.Search
+  fullName: CSFundamentalsTests.Algorithms.Search
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_DistinctElements*
+  commentId: Overload:CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_DistinctElements
+  name: Search_DistinctElements
+  nameWithType: FibonacciSearchTests.Search_DistinctElements
+  fullName: CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_DistinctElements
+- uid: CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_DuplicateElements*
+  commentId: Overload:CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_DuplicateElements
+  name: Search_DuplicateElements
+  nameWithType: FibonacciSearchTests.Search_DuplicateElements
+  fullName: CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_DuplicateElements
+- uid: CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_NonExistingElements*
+  commentId: Overload:CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_NonExistingElements
+  name: Search_NonExistingElements
+  nameWithType: FibonacciSearchTests.Search_NonExistingElements
+  fullName: CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_NonExistingElements
+- uid: CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.GetSmallestFibonacciBiggerThanNumber*
+  commentId: Overload:CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.GetSmallestFibonacciBiggerThanNumber
+  name: GetSmallestFibonacciBiggerThanNumber
+  nameWithType: FibonacciSearchTests.GetSmallestFibonacciBiggerThanNumber
+  fullName: CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.GetSmallestFibonacciBiggerThanNumber

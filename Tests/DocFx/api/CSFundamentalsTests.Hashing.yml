@@ -1,0 +1,22 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentalsTests.Hashing
+  commentId: N:CSFundamentalsTests.Hashing
+  id: CSFundamentalsTests.Hashing
+  children:
+  - CSFundamentalsTests.Hashing.RollingHashTests
+  langs:
+  - csharp
+  - vb
+  name: CSFundamentalsTests.Hashing
+  nameWithType: CSFundamentalsTests.Hashing
+  fullName: CSFundamentalsTests.Hashing
+  type: Namespace
+  assemblies:
+  - CSFundamentalsTests
+references:
+- uid: CSFundamentalsTests.Hashing.RollingHashTests
+  commentId: T:CSFundamentalsTests.Hashing.RollingHashTests
+  name: RollingHashTests
+  nameWithType: RollingHashTests
+  fullName: CSFundamentalsTests.Hashing.RollingHashTests

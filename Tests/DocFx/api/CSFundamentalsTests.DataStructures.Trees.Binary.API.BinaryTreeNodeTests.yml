@@ -1,0 +1,1183 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests
+  commentId: T:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests
+  id: BinaryTreeNodeTests
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.API
+  children:
+  - CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.FormsLine
+  - CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.FormsTriangle
+  - CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetChildren
+  - CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetGrandChildren
+  - CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetGrandParent
+  - CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetSibling
+  - CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetUncle
+  - CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.Initialize
+  - CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsComplete
+  - CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsLeaf
+  - CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsLeftChild_Failure
+  - CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsLeftChild_Success
+  - CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsRightChild_Failure
+  - CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsRightChild_Success
+  - CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsRoot
+  langs:
+  - csharp
+  - vb
+  name: BinaryTreeNodeTests
+  nameWithType: BinaryTreeNodeTests
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests
+  type: Class
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: BinaryTreeNodeTests
+    path: ../DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+    startLine: 31
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary.API
+  summary: "\nTests methods in <xref href=\"CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode%603\" data-throw-if-not-resolved=\"false\"></xref> using <xref href=\"CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode%602\" data-throw-if-not-resolved=\"false\"></xref> class. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestClass]
+
+      public class BinaryTreeNodeTests
+    content.vb: >-
+      <TestClass>
+
+      Public Class BinaryTreeNodeTests
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.Initialize
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.Initialize
+  id: Initialize
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: Initialize()
+  nameWithType: BinaryTreeNodeTests.Initialize()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.Initialize()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Initialize
+    path: ../DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+    startLine: 39
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary.API
+  summary: "\nInitializes/Resets variables before executing each unit test in this class. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestInitialize]
+
+      public void Initialize()
+    content.vb: >-
+      <TestInitialize>
+
+      Public Sub Initialize
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.Initialize*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsLeftChild_Failure
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsLeftChild_Failure
+  id: IsLeftChild_Failure
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: IsLeftChild_Failure()
+  nameWithType: BinaryTreeNodeTests.IsLeftChild_Failure()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsLeftChild_Failure()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: IsLeftChild_Failure
+    path: ../DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+    startLine: 84
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary.API
+  summary: "\nTests the correctness of detecting whether a node is the left child of its parent, when it is not. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void IsLeftChild_Failure()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub IsLeftChild_Failure
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsLeftChild_Failure*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsLeftChild_Success
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsLeftChild_Success
+  id: IsLeftChild_Success
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: IsLeftChild_Success()
+  nameWithType: BinaryTreeNodeTests.IsLeftChild_Success()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsLeftChild_Success()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: IsLeftChild_Success
+    path: ../DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+    startLine: 111
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary.API
+  summary: "\nTests the correctness of detecting whether a node is the left child of its parent, when it is. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void IsLeftChild_Success()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub IsLeftChild_Success
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsLeftChild_Success*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsRightChild_Success
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsRightChild_Success
+  id: IsRightChild_Success
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: IsRightChild_Success()
+  nameWithType: BinaryTreeNodeTests.IsRightChild_Success()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsRightChild_Success()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: IsRightChild_Success
+    path: ../DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+    startLine: 137
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary.API
+  summary: "\nTests the correctness of detecting whether a node is the right child of its parent, when it is. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void IsRightChild_Success()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub IsRightChild_Success
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsRightChild_Success*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsRightChild_Failure
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsRightChild_Failure
+  id: IsRightChild_Failure
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: IsRightChild_Failure()
+  nameWithType: BinaryTreeNodeTests.IsRightChild_Failure()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsRightChild_Failure()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: IsRightChild_Failure
+    path: ../DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+    startLine: 163
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary.API
+  summary: "\nTests the correctness of detecting whether a node is the right child of its parent, when it is not. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void IsRightChild_Failure()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub IsRightChild_Failure
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsRightChild_Failure*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsRoot
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsRoot
+  id: IsRoot
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: IsRoot()
+  nameWithType: BinaryTreeNodeTests.IsRoot()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsRoot()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: IsRoot
+    path: ../DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+    startLine: 190
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary.API
+  summary: "\nTests the correctness of detecting whether a node is root. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void IsRoot()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub IsRoot
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsRoot*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetSibling
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetSibling
+  id: GetSibling
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: GetSibling()
+  nameWithType: BinaryTreeNodeTests.GetSibling()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetSibling()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: GetSibling
+    path: ../DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+    startLine: 217
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary.API
+  summary: "\nTests the correctness of getting a node&apos;s sibling. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void GetSibling()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub GetSibling
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetSibling*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetUncle
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetUncle
+  id: GetUncle
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: GetUncle()
+  nameWithType: BinaryTreeNodeTests.GetUncle()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetUncle()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: GetUncle
+    path: ../DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+    startLine: 250
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary.API
+  summary: "\nTests the correctness of getting a node&apos;s uncle. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void GetUncle()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub GetUncle
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetUncle*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetGrandParent
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetGrandParent
+  id: GetGrandParent
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: GetGrandParent()
+  nameWithType: BinaryTreeNodeTests.GetGrandParent()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetGrandParent()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: GetGrandParent
+    path: ../DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+    startLine: 283
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary.API
+  summary: "\nTests the correctness of getting a node&apos;s grand parent.\n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void GetGrandParent()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub GetGrandParent
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetGrandParent*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsLeaf
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsLeaf
+  id: IsLeaf
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: IsLeaf()
+  nameWithType: BinaryTreeNodeTests.IsLeaf()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsLeaf()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: IsLeaf
+    path: ../DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+    startLine: 334
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary.API
+  summary: "\nTests the correctness of detecting whether a node is a leaf node. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void IsLeaf()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub IsLeaf
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsLeaf*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.FormsLine
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.FormsLine
+  id: FormsLine
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: FormsLine()
+  nameWithType: BinaryTreeNodeTests.FormsLine()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.FormsLine()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: FormsLine
+    path: ../DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+    startLine: 373
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary.API
+  summary: "\nTests the correctness of detecting whether a node forms a line with its parent and grand parent. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void FormsLine()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub FormsLine
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.FormsLine*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.FormsTriangle
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.FormsTriangle
+  id: FormsTriangle
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: FormsTriangle()
+  nameWithType: BinaryTreeNodeTests.FormsTriangle()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.FormsTriangle()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: FormsTriangle
+    path: ../DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+    startLine: 430
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary.API
+  summary: "\nTests the correctness of detecting whether a node forms a triangle with its parent and grand parent. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void FormsTriangle()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub FormsTriangle
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.FormsTriangle*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsComplete
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsComplete
+  id: IsComplete
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: IsComplete()
+  nameWithType: BinaryTreeNodeTests.IsComplete()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsComplete()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: IsComplete
+    path: ../DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+    startLine: 487
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary.API
+  summary: "\nTests the correctness of detecting whether a node is complete (meaning have left and right children).\n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void IsComplete()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub IsComplete
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsComplete*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetChildren
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetChildren
+  id: GetChildren
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: GetChildren()
+  nameWithType: BinaryTreeNodeTests.GetChildren()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetChildren()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: GetChildren
+    path: ../DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+    startLine: 508
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary.API
+  summary: "\nTests the correctness of getting the list of children of a node. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void GetChildren()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub GetChildren
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetChildren*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetGrandChildren
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetGrandChildren
+  id: GetGrandChildren
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests
+  langs:
+  - csharp
+  - vb
+  name: GetGrandChildren()
+  nameWithType: BinaryTreeNodeTests.GetGrandChildren()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetGrandChildren()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: GetGrandChildren
+    path: ../DataStructures/Trees/Binary/API/BinaryTreeNodeTests.cs
+    startLine: 542
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary.API
+  summary: "\nTests the correctness of getting the list of a grand children of a node. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void GetGrandChildren()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub GetGrandChildren
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetGrandChildren*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3
+  commentId: T:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3
+  name: BinaryTreeNode<TNode, TKey, TValue>
+  nameWithType: BinaryTreeNode<TNode, TKey, TValue>
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>
+  nameWithType.vb: BinaryTreeNode(Of TNode, TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue)
+  name.vb: BinaryTreeNode(Of TNode, TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3
+    name: BinaryTreeNode
+    nameWithType: BinaryTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3
+    name: BinaryTreeNode
+    nameWithType: BinaryTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode`2
+  commentId: T:CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode`2
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.API
+  name: MockBinaryTreeNode<TKey, TValue>
+  nameWithType: MockBinaryTreeNode<TKey, TValue>
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode<TKey, TValue>
+  nameWithType.vb: MockBinaryTreeNode(Of TKey, TValue)
+  fullName.vb: CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode(Of TKey, TValue)
+  name.vb: MockBinaryTreeNode(Of TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode`2
+    name: MockBinaryTreeNode
+    nameWithType: MockBinaryTreeNode
+    fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode`2
+    name: MockBinaryTreeNode
+    nameWithType: MockBinaryTreeNode
+    fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API
+  commentId: N:CSFundamentalsTests.DataStructures.Trees.Binary.API
+  name: CSFundamentalsTests.DataStructures.Trees.Binary.API
+  nameWithType: CSFundamentalsTests.DataStructures.Trees.Binary.API
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.Initialize*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.Initialize
+  name: Initialize
+  nameWithType: BinaryTreeNodeTests.Initialize
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.Initialize
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsLeftChild_Failure*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsLeftChild_Failure
+  name: IsLeftChild_Failure
+  nameWithType: BinaryTreeNodeTests.IsLeftChild_Failure
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsLeftChild_Failure
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsLeftChild_Success*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsLeftChild_Success
+  name: IsLeftChild_Success
+  nameWithType: BinaryTreeNodeTests.IsLeftChild_Success
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsLeftChild_Success
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsRightChild_Success*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsRightChild_Success
+  name: IsRightChild_Success
+  nameWithType: BinaryTreeNodeTests.IsRightChild_Success
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsRightChild_Success
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsRightChild_Failure*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsRightChild_Failure
+  name: IsRightChild_Failure
+  nameWithType: BinaryTreeNodeTests.IsRightChild_Failure
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsRightChild_Failure
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsRoot*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsRoot
+  name: IsRoot
+  nameWithType: BinaryTreeNodeTests.IsRoot
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsRoot
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetSibling*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetSibling
+  name: GetSibling
+  nameWithType: BinaryTreeNodeTests.GetSibling
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetSibling
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetUncle*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetUncle
+  name: GetUncle
+  nameWithType: BinaryTreeNodeTests.GetUncle
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetUncle
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetGrandParent*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetGrandParent
+  name: GetGrandParent
+  nameWithType: BinaryTreeNodeTests.GetGrandParent
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetGrandParent
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsLeaf*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsLeaf
+  name: IsLeaf
+  nameWithType: BinaryTreeNodeTests.IsLeaf
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsLeaf
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.FormsLine*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.FormsLine
+  name: FormsLine
+  nameWithType: BinaryTreeNodeTests.FormsLine
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.FormsLine
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.FormsTriangle*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.FormsTriangle
+  name: FormsTriangle
+  nameWithType: BinaryTreeNodeTests.FormsTriangle
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.FormsTriangle
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsComplete*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsComplete
+  name: IsComplete
+  nameWithType: BinaryTreeNodeTests.IsComplete
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.IsComplete
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetChildren*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetChildren
+  name: GetChildren
+  nameWithType: BinaryTreeNodeTests.GetChildren
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetChildren
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetGrandChildren*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetGrandChildren
+  name: GetGrandChildren
+  nameWithType: BinaryTreeNodeTests.GetGrandChildren
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests.GetGrandChildren

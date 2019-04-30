@@ -1,0 +1,46 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary
+  commentId: N:CSFundamentalsTests.DataStructures.Trees.Binary
+  id: CSFundamentalsTests.DataStructures.Trees.Binary
+  children:
+  - CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests
+  - CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests
+  - CSFundamentalsTests.DataStructures.Trees.Binary.Constants
+  - CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeNodeTests
+  - CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests
+  langs:
+  - csharp
+  - vb
+  name: CSFundamentalsTests.DataStructures.Trees.Binary
+  nameWithType: CSFundamentalsTests.DataStructures.Trees.Binary
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary
+  type: Namespace
+  assemblies:
+  - CSFundamentalsTests
+references:
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests
+  commentId: T:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests
+  name: AVLTreeTests
+  nameWithType: AVLTreeTests
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests
+  commentId: T:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests
+  name: BinarySearchTreeTests
+  nameWithType: BinarySearchTreeTests
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.Constants
+  commentId: T:CSFundamentalsTests.DataStructures.Trees.Binary.Constants
+  name: Constants
+  nameWithType: Constants
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.Constants
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeNodeTests
+  commentId: T:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeNodeTests
+  name: RedBlackTreeNodeTests
+  nameWithType: RedBlackTreeNodeTests
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeNodeTests
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests
+  commentId: T:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests
+  name: RedBlackTreeTests
+  nameWithType: RedBlackTreeTests
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests

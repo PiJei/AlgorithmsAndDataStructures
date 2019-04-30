@@ -39,7 +39,9 @@ items:
       description: 'Type of the value stored in the node. '
     content.vb: >-
       Public Class AVLTreeNode(Of TKey As IComparable(Of TKey), TValue)
+
           Inherits BinaryTreeNode(Of AVLTreeNode(Of TKey, TValue), TKey, TValue)
+
           Implements IBinaryTreeNode(Of AVLTreeNode(Of TKey, TValue), TKey, TValue), IComparable(Of AVLTreeNode(Of TKey, TValue))
   inheritance:
   - System.Object

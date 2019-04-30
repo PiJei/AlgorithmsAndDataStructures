@@ -38,6 +38,7 @@ items:
       <AttributeUsage(AttributeTargets.Class Or AttributeTargets.Method, AllowMultiple:=True)>
 
       Public Class TimeComplexityAttribute
+
           Inherits Attribute
   inheritance:
   - System.Object

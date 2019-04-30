@@ -1,0 +1,501 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentalsTests.Algorithms.Search.LinearSearchTests
+  commentId: T:CSFundamentalsTests.Algorithms.Search.LinearSearchTests
+  id: LinearSearchTests
+  parent: CSFundamentalsTests.Algorithms.Search
+  children:
+  - CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition
+  - CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_DuplicateElements_ExpectsToGetTheIndexOfTheFirstOccurrenceNoMatterHowManyTimesSearchIsPerformed
+  - CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_NonExistingElements_ExpectsToGetMinusOne
+  langs:
+  - csharp
+  - vb
+  name: LinearSearchTests
+  nameWithType: LinearSearchTests
+  fullName: CSFundamentalsTests.Algorithms.Search.LinearSearchTests
+  type: Class
+  source:
+    remote:
+      path: Tests/Algorithms/Search/LinearSearchTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: LinearSearchTests
+    path: ../Algorithms/Search/LinearSearchTests.cs
+    startLine: 29
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.Algorithms.Search
+  summary: "\nTests methods in <xref href=\"CSFundamentals.Algorithms.Search.LinearSearch\" data-throw-if-not-resolved=\"false\"></xref> class. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestClass]
+
+      public class LinearSearchTests
+    content.vb: >-
+      <TestClass>
+
+      Public Class LinearSearchTests
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition
+  commentId: M:CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition
+  id: Search_DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition
+  parent: CSFundamentalsTests.Algorithms.Search.LinearSearchTests
+  langs:
+  - csharp
+  - vb
+  name: Search_DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition()
+  nameWithType: LinearSearchTests.Search_DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition()
+  fullName: CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition()
+  type: Method
+  source:
+    remote:
+      path: Tests/Algorithms/Search/LinearSearchTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Search_DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition
+    path: ../Algorithms/Search/LinearSearchTests.cs
+    startLine: 42
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.Algorithms.Search
+  summary: "\nTests the correctness of Linear search algorithm on an array with distinct elements. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Search_DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Search_DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition
+  overload: CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_DuplicateElements_ExpectsToGetTheIndexOfTheFirstOccurrenceNoMatterHowManyTimesSearchIsPerformed
+  commentId: M:CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_DuplicateElements_ExpectsToGetTheIndexOfTheFirstOccurrenceNoMatterHowManyTimesSearchIsPerformed
+  id: Search_DuplicateElements_ExpectsToGetTheIndexOfTheFirstOccurrenceNoMatterHowManyTimesSearchIsPerformed
+  parent: CSFundamentalsTests.Algorithms.Search.LinearSearchTests
+  langs:
+  - csharp
+  - vb
+  name: Search_DuplicateElements_ExpectsToGetTheIndexOfTheFirstOccurrenceNoMatterHowManyTimesSearchIsPerformed()
+  nameWithType: LinearSearchTests.Search_DuplicateElements_ExpectsToGetTheIndexOfTheFirstOccurrenceNoMatterHowManyTimesSearchIsPerformed()
+  fullName: CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_DuplicateElements_ExpectsToGetTheIndexOfTheFirstOccurrenceNoMatterHowManyTimesSearchIsPerformed()
+  type: Method
+  source:
+    remote:
+      path: Tests/Algorithms/Search/LinearSearchTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Search_DuplicateElements_ExpectsToGetTheIndexOfTheFirstOccurrenceNoMatterHowManyTimesSearchIsPerformed
+    path: ../Algorithms/Search/LinearSearchTests.cs
+    startLine: 57
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.Algorithms.Search
+  summary: "\nTests the correctness of Linear search algorithm on an array with duplicate elements. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Search_DuplicateElements_ExpectsToGetTheIndexOfTheFirstOccurrenceNoMatterHowManyTimesSearchIsPerformed()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Search_DuplicateElements_ExpectsToGetTheIndexOfTheFirstOccurrenceNoMatterHowManyTimesSearchIsPerformed
+  overload: CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_DuplicateElements_ExpectsToGetTheIndexOfTheFirstOccurrenceNoMatterHowManyTimesSearchIsPerformed*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_NonExistingElements_ExpectsToGetMinusOne
+  commentId: M:CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_NonExistingElements_ExpectsToGetMinusOne
+  id: Search_NonExistingElements_ExpectsToGetMinusOne
+  parent: CSFundamentalsTests.Algorithms.Search.LinearSearchTests
+  langs:
+  - csharp
+  - vb
+  name: Search_NonExistingElements_ExpectsToGetMinusOne()
+  nameWithType: LinearSearchTests.Search_NonExistingElements_ExpectsToGetMinusOne()
+  fullName: CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_NonExistingElements_ExpectsToGetMinusOne()
+  type: Method
+  source:
+    remote:
+      path: Tests/Algorithms/Search/LinearSearchTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Search_NonExistingElements_ExpectsToGetMinusOne
+    path: ../Algorithms/Search/LinearSearchTests.cs
+    startLine: 67
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.Algorithms.Search
+  summary: "\nTests the correctness of Linear search algorithm when the key does not exist in the array. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Search_NonExistingElements_ExpectsToGetMinusOne()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Search_NonExistingElements_ExpectsToGetMinusOne
+  overload: CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_NonExistingElements_ExpectsToGetMinusOne*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: CSFundamentals.Algorithms.Search.LinearSearch
+  commentId: T:CSFundamentals.Algorithms.Search.LinearSearch
+  isExternal: true
+- uid: CSFundamentalsTests.Algorithms.Search
+  commentId: N:CSFundamentalsTests.Algorithms.Search
+  name: CSFundamentalsTests.Algorithms.Search
+  nameWithType: CSFundamentalsTests.Algorithms.Search
+  fullName: CSFundamentalsTests.Algorithms.Search
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition*
+  commentId: Overload:CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition
+  name: Search_DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition
+  nameWithType: LinearSearchTests.Search_DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition
+  fullName: CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition
+- uid: CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_DuplicateElements_ExpectsToGetTheIndexOfTheFirstOccurrenceNoMatterHowManyTimesSearchIsPerformed*
+  commentId: Overload:CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_DuplicateElements_ExpectsToGetTheIndexOfTheFirstOccurrenceNoMatterHowManyTimesSearchIsPerformed
+  name: Search_DuplicateElements_ExpectsToGetTheIndexOfTheFirstOccurrenceNoMatterHowManyTimesSearchIsPerformed
+  nameWithType: LinearSearchTests.Search_DuplicateElements_ExpectsToGetTheIndexOfTheFirstOccurrenceNoMatterHowManyTimesSearchIsPerformed
+  fullName: CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_DuplicateElements_ExpectsToGetTheIndexOfTheFirstOccurrenceNoMatterHowManyTimesSearchIsPerformed
+- uid: CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_NonExistingElements_ExpectsToGetMinusOne*
+  commentId: Overload:CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_NonExistingElements_ExpectsToGetMinusOne
+  name: Search_NonExistingElements_ExpectsToGetMinusOne
+  nameWithType: LinearSearchTests.Search_NonExistingElements_ExpectsToGetMinusOne
+  fullName: CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_NonExistingElements_ExpectsToGetMinusOne

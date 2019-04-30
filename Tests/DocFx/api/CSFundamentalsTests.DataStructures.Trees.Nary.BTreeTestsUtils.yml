@@ -1,0 +1,1355 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils
+  commentId: T:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils
+  id: BTreeTestsUtils
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary
+  children:
+  - CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.DFS``3(``0,System.Collections.Generic.List{``0})
+  - CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBPlusTreeNodeProperties``2(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{``0,``1})
+  - CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBPlusTreeProperties(CSFundamentals.DataStructures.Trees.Nary.BPlusTree{System.Int32,System.String},System.Int32,System.Int32,System.Int32)
+  - CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeNodeProperties``3(``0)
+  - CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeProperties(CSFundamentals.DataStructures.Trees.Nary.BTree{System.Int32,System.String},System.Int32,System.Int32,System.Int32)
+  - CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeProperties``3(CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{``0,``1,``2},System.Int32,System.Int32,System.Int32,System.Func{``0,System.Boolean})
+  langs:
+  - csharp
+  - vb
+  name: BTreeTestsUtils
+  nameWithType: BTreeTestsUtils
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils
+  type: Class
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/BTreeTestsUtils.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: BTreeTestsUtils
+    path: ../DataStructures/Trees/Nary/BTreeTestsUtils.cs
+    startLine: 32
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nProvides a collection of helper methods used by B-Tree tests. \n"
+  example: []
+  syntax:
+    content: public static class BTreeTestsUtils
+    content.vb: Public Module BTreeTestsUtils
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.DFS``3(``0,System.Collections.Generic.List{``0})
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.DFS``3(``0,System.Collections.Generic.List{``0})
+  id: DFS``3(``0,System.Collections.Generic.List{``0})
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils
+  langs:
+  - csharp
+  - vb
+  name: DFS<TNode, TKey, TValue>(TNode, List<TNode>)
+  nameWithType: BTreeTestsUtils.DFS<TNode, TKey, TValue>(TNode, List<TNode>)
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.DFS<TNode, TKey, TValue>(TNode, System.Collections.Generic.List<TNode>)
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/BTreeTestsUtils.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: DFS
+    path: ../DataStructures/Trees/Nary/BTreeTestsUtils.cs
+    startLine: 37
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nTODO: How to make this to use the DFS I have in the algorithms? \n"
+  example: []
+  syntax:
+    content: >-
+      public static void DFS<TNode, TKey, TValue>(TNode node, List<TNode> nodes)
+
+          where TNode : IBTreeNode<TNode, TKey, TValue>, IComparable<TNode> where TKey : IComparable<TKey>
+    parameters:
+    - id: node
+      type: '{TNode}'
+    - id: nodes
+      type: System.Collections.Generic.List{{TNode}}
+    typeParameters:
+    - id: TNode
+    - id: TKey
+    - id: TValue
+    content.vb: Public Shared Sub DFS(Of TNode As {IBTreeNode(Of TNode, TKey, TValue), IComparable(Of TNode)}, TKey As IComparable(Of TKey), TValue)(node As TNode, nodes As List(Of TNode))
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.DFS*
+  nameWithType.vb: BTreeTestsUtils.DFS(Of TNode, TKey, TValue)(TNode, List(Of TNode))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.DFS(Of TNode, TKey, TValue)(TNode, System.Collections.Generic.List(Of TNode))
+  name.vb: DFS(Of TNode, TKey, TValue)(TNode, List(Of TNode))
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeProperties``3(CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{``0,``1,``2},System.Int32,System.Int32,System.Int32,System.Func{``0,System.Boolean})
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeProperties``3(CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{``0,``1,``2},System.Int32,System.Int32,System.Int32,System.Func{``0,System.Boolean})
+  id: HasBTreeProperties``3(CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{``0,``1,``2},System.Int32,System.Int32,System.Int32,System.Func{``0,System.Boolean})
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils
+  langs:
+  - csharp
+  - vb
+  name: HasBTreeProperties<TNode, TKey, TValue>(BTreeBase<TNode, TKey, TValue>, Int32, Int32, Int32, Func<TNode, Boolean>)
+  nameWithType: BTreeTestsUtils.HasBTreeProperties<TNode, TKey, TValue>(BTreeBase<TNode, TKey, TValue>, Int32, Int32, Int32, Func<TNode, Boolean>)
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeProperties<TNode, TKey, TValue>(CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>, System.Int32, System.Int32, System.Int32, System.Func<TNode, System.Boolean>)
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/BTreeTestsUtils.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: HasBTreeProperties
+    path: ../DataStructures/Trees/Nary/BTreeTestsUtils.cs
+    startLine: 61
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nChecks whether the tree has B-Tree properties. \n"
+  example: []
+  syntax:
+    content: >-
+      public static bool HasBTreeProperties<TNode, TKey, TValue>(BTreeBase<TNode, TKey, TValue> tree, int expectedTotalKeyCount, int expectedDistinctKeyCount, int expectedNodeCount, Func<TNode, bool> HasNodeProperties)
+
+          where TNode : IBTreeNode<TNode, TKey, TValue>, IComparable<TNode> where TKey : IComparable<TKey>
+    parameters:
+    - id: tree
+      type: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{{TNode},{TKey},{TValue}}
+      description: Is a B-Tree
+    - id: expectedTotalKeyCount
+      type: System.Int32
+      description: 'Is the expected number of keys (duplicate and distinct) in the tree. '
+    - id: expectedDistinctKeyCount
+      type: System.Int32
+      description: 'Is the expected number of distinct keys in the tree. '
+    - id: expectedNodeCount
+      type: System.Int32
+      description: 'Is the expected number of tree nodes. '
+    - id: HasNodeProperties
+      type: System.Func{{TNode},System.Boolean}
+      description: 'Is the method used for checking properties. '
+    typeParameters:
+    - id: TNode
+      description: 'Type of the tree nodes stored in the tree. '
+    - id: TKey
+      description: 'Type of the keys stored in the tree. '
+    - id: TValue
+      description: 'Type of the values stored in the tree. '
+    return:
+      type: System.Boolean
+      description: 'True if the tree has the expected properties. '
+    content.vb: Public Shared Function HasBTreeProperties(Of TNode As {IBTreeNode(Of TNode, TKey, TValue), IComparable(Of TNode)}, TKey As IComparable(Of TKey), TValue)(tree As BTreeBase(Of TNode, TKey, TValue), expectedTotalKeyCount As Integer, expectedDistinctKeyCount As Integer, expectedNodeCount As Integer, HasNodeProperties As Func(Of TNode, Boolean)) As Boolean
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeProperties*
+  nameWithType.vb: BTreeTestsUtils.HasBTreeProperties(Of TNode, TKey, TValue)(BTreeBase(Of TNode, TKey, TValue), Int32, Int32, Int32, Func(Of TNode, Boolean))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeProperties(Of TNode, TKey, TValue)(CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue), System.Int32, System.Int32, System.Int32, System.Func(Of TNode, System.Boolean))
+  name.vb: HasBTreeProperties(Of TNode, TKey, TValue)(BTreeBase(Of TNode, TKey, TValue), Int32, Int32, Int32, Func(Of TNode, Boolean))
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeNodeProperties``3(``0)
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeNodeProperties``3(``0)
+  id: HasBTreeNodeProperties``3(``0)
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils
+  langs:
+  - csharp
+  - vb
+  name: HasBTreeNodeProperties<TNode, TKey, TValue>(TNode)
+  nameWithType: BTreeTestsUtils.HasBTreeNodeProperties<TNode, TKey, TValue>(TNode)
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeNodeProperties<TNode, TKey, TValue>(TNode)
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/BTreeTestsUtils.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: HasBTreeNodeProperties
+    path: ../DataStructures/Trees/Nary/BTreeTestsUtils.cs
+    startLine: 104
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nChecks whether the node has BTree node properties. \n"
+  example: []
+  syntax:
+    content: >-
+      public static bool HasBTreeNodeProperties<TNode, TKey, TValue>(TNode node)
+
+          where TNode : IBTreeNode<TNode, TKey, TValue>, IComparable<TNode> where TKey : IComparable<TKey>
+    parameters:
+    - id: node
+      type: '{TNode}'
+      description: 'Is a B-Tree node. '
+    typeParameters:
+    - id: TNode
+      description: 'Type of tree node. '
+    - id: TKey
+      description: 'Type of the key stored in the node. '
+    - id: TValue
+      description: 'Type of the value stored in the node. '
+    return:
+      type: System.Boolean
+      description: 'True if the node has expected properties, and false otherwise. '
+    content.vb: Public Shared Function HasBTreeNodeProperties(Of TNode As {IBTreeNode(Of TNode, TKey, TValue), IComparable(Of TNode)}, TKey As IComparable(Of TKey), TValue)(node As TNode) As Boolean
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeNodeProperties*
+  nameWithType.vb: BTreeTestsUtils.HasBTreeNodeProperties(Of TNode, TKey, TValue)(TNode)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeNodeProperties(Of TNode, TKey, TValue)(TNode)
+  name.vb: HasBTreeNodeProperties(Of TNode, TKey, TValue)(TNode)
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBPlusTreeNodeProperties``2(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{``0,``1})
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBPlusTreeNodeProperties``2(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{``0,``1})
+  id: HasBPlusTreeNodeProperties``2(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{``0,``1})
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils
+  langs:
+  - csharp
+  - vb
+  name: HasBPlusTreeNodeProperties<TKey, TValue>(BPlusTreeNode<TKey, TValue>)
+  nameWithType: BTreeTestsUtils.HasBPlusTreeNodeProperties<TKey, TValue>(BPlusTreeNode<TKey, TValue>)
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBPlusTreeNodeProperties<TKey, TValue>(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>)
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/BTreeTestsUtils.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: HasBPlusTreeNodeProperties
+    path: ../DataStructures/Trees/Nary/BTreeTestsUtils.cs
+    startLine: 180
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nChecks whether the node has proper B+ Tree node properties. \n"
+  example: []
+  syntax:
+    content: >-
+      public static bool HasBPlusTreeNodeProperties<TKey, TValue>(BPlusTreeNode<TKey, TValue> node)
+
+          where TKey : IComparable<TKey>
+    parameters:
+    - id: node
+      type: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}}
+      description: 'Is a B+ Tree node. '
+    typeParameters:
+    - id: TKey
+      description: 'Type of the key stored in the node. '
+    - id: TValue
+      description: 'Type of the value stored in the node. '
+    return:
+      type: System.Boolean
+      description: 'True if the node has expected properties, and false otherwise. '
+    content.vb: Public Shared Function HasBPlusTreeNodeProperties(Of TKey As IComparable(Of TKey), TValue)(node As BPlusTreeNode(Of TKey, TValue)) As Boolean
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBPlusTreeNodeProperties*
+  nameWithType.vb: BTreeTestsUtils.HasBPlusTreeNodeProperties(Of TKey, TValue)(BPlusTreeNode(Of TKey, TValue))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBPlusTreeNodeProperties(Of TKey, TValue)(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue))
+  name.vb: HasBPlusTreeNodeProperties(Of TKey, TValue)(BPlusTreeNode(Of TKey, TValue))
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeProperties(CSFundamentals.DataStructures.Trees.Nary.BTree{System.Int32,System.String},System.Int32,System.Int32,System.Int32)
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeProperties(CSFundamentals.DataStructures.Trees.Nary.BTree{System.Int32,System.String},System.Int32,System.Int32,System.Int32)
+  id: HasBTreeProperties(CSFundamentals.DataStructures.Trees.Nary.BTree{System.Int32,System.String},System.Int32,System.Int32,System.Int32)
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils
+  langs:
+  - csharp
+  - vb
+  name: HasBTreeProperties(BTree<Int32, String>, Int32, Int32, Int32)
+  nameWithType: BTreeTestsUtils.HasBTreeProperties(BTree<Int32, String>, Int32, Int32, Int32)
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeProperties(CSFundamentals.DataStructures.Trees.Nary.BTree<System.Int32, System.String>, System.Int32, System.Int32, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/BTreeTestsUtils.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: HasBTreeProperties
+    path: ../DataStructures/Trees/Nary/BTreeTestsUtils.cs
+    startLine: 259
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nChecks whether tree has B Tree properties. \n"
+  example: []
+  syntax:
+    content: public static void HasBTreeProperties(BTree<int, string> tree, int expectedTotalKeyCount, int expectedDistinctKeyCount, int expectedNodeCount)
+    parameters:
+    - id: tree
+      type: CSFundamentals.DataStructures.Trees.Nary.BTree{System.Int32,System.String}
+      description: 'Is a BTree node. '
+    - id: expectedTotalKeyCount
+      type: System.Int32
+      description: 'Is the expected number of keys (duplicate and distinct) in the tree. '
+    - id: expectedDistinctKeyCount
+      type: System.Int32
+      description: 'Is the expected number of distinct keys in the tree. '
+    - id: expectedNodeCount
+      type: System.Int32
+      description: 'Is the expected number of nodes in the tree. '
+    content.vb: Public Shared Sub HasBTreeProperties(tree As BTree(Of Integer, String), expectedTotalKeyCount As Integer, expectedDistinctKeyCount As Integer, expectedNodeCount As Integer)
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeProperties*
+  nameWithType.vb: BTreeTestsUtils.HasBTreeProperties(BTree(Of Int32, String), Int32, Int32, Int32)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeProperties(CSFundamentals.DataStructures.Trees.Nary.BTree(Of System.Int32, System.String), System.Int32, System.Int32, System.Int32)
+  name.vb: HasBTreeProperties(BTree(Of Int32, String), Int32, Int32, Int32)
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBPlusTreeProperties(CSFundamentals.DataStructures.Trees.Nary.BPlusTree{System.Int32,System.String},System.Int32,System.Int32,System.Int32)
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBPlusTreeProperties(CSFundamentals.DataStructures.Trees.Nary.BPlusTree{System.Int32,System.String},System.Int32,System.Int32,System.Int32)
+  id: HasBPlusTreeProperties(CSFundamentals.DataStructures.Trees.Nary.BPlusTree{System.Int32,System.String},System.Int32,System.Int32,System.Int32)
+  parent: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils
+  langs:
+  - csharp
+  - vb
+  name: HasBPlusTreeProperties(BPlusTree<Int32, String>, Int32, Int32, Int32)
+  nameWithType: BTreeTestsUtils.HasBPlusTreeProperties(BPlusTree<Int32, String>, Int32, Int32, Int32)
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBPlusTreeProperties(CSFundamentals.DataStructures.Trees.Nary.BPlusTree<System.Int32, System.String>, System.Int32, System.Int32, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Nary/BTreeTestsUtils.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: HasBPlusTreeProperties
+    path: ../DataStructures/Trees/Nary/BTreeTestsUtils.cs
+    startLine: 271
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Nary
+  summary: "\nChecks whether the tree has B+ Tree properties. \n"
+  example: []
+  syntax:
+    content: public static void HasBPlusTreeProperties(BPlusTree<int, string> tree, int expectedTotalKeyCount, int expectedDistinctKeyCount, int expectedNodeCount)
+    parameters:
+    - id: tree
+      type: CSFundamentals.DataStructures.Trees.Nary.BPlusTree{System.Int32,System.String}
+      description: 'Is a B + tree. '
+    - id: expectedTotalKeyCount
+      type: System.Int32
+      description: 'Is the expected number of keys (duplicate and distinct) in the tree. '
+    - id: expectedDistinctKeyCount
+      type: System.Int32
+      description: 'Is the expected number of distinct keys in the tree. '
+    - id: expectedNodeCount
+      type: System.Int32
+      description: 'Is the expected number of nodes in the tree. '
+    content.vb: Public Shared Sub HasBPlusTreeProperties(tree As BPlusTree(Of Integer, String), expectedTotalKeyCount As Integer, expectedDistinctKeyCount As Integer, expectedNodeCount As Integer)
+  overload: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBPlusTreeProperties*
+  nameWithType.vb: BTreeTestsUtils.HasBPlusTreeProperties(BPlusTree(Of Int32, String), Int32, Int32, Int32)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBPlusTreeProperties(CSFundamentals.DataStructures.Trees.Nary.BPlusTree(Of System.Int32, System.String), System.Int32, System.Int32, System.Int32)
+  name.vb: HasBPlusTreeProperties(BPlusTree(Of Int32, String), Int32, Int32, Int32)
+references:
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary
+  commentId: N:CSFundamentalsTests.DataStructures.Trees.Nary
+  name: CSFundamentalsTests.DataStructures.Trees.Nary
+  nameWithType: CSFundamentalsTests.DataStructures.Trees.Nary
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.DFS*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.DFS
+  name: DFS
+  nameWithType: BTreeTestsUtils.DFS
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.DFS
+- uid: '{TNode}'
+  commentId: '!:TNode'
+  definition: TNode
+  name: TNode
+  nameWithType: TNode
+  fullName: TNode
+- uid: System.Collections.Generic.List{{TNode}}
+  commentId: T:System.Collections.Generic.List{``0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<TNode>
+  nameWithType: List<TNode>
+  fullName: System.Collections.Generic.List<TNode>
+  nameWithType.vb: List(Of TNode)
+  fullName.vb: System.Collections.Generic.List(Of TNode)
+  name.vb: List(Of TNode)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TNode
+  name: TNode
+  nameWithType: TNode
+  fullName: TNode
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeProperties*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeProperties
+  name: HasBTreeProperties
+  nameWithType: BTreeTestsUtils.HasBTreeProperties
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeProperties
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{{TNode},{TKey},{TValue}}
+  commentId: T:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{``0,``1,``2}
+  parent: CSFundamentals.DataStructures.Trees.Nary.API
+  definition: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3
+  name: BTreeBase<TNode, TKey, TValue>
+  nameWithType: BTreeBase<TNode, TKey, TValue>
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>
+  nameWithType.vb: BTreeBase(Of TNode, TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue)
+  name.vb: BTreeBase(Of TNode, TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3
+    name: BTreeBase
+    nameWithType: BTreeBase
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3
+    name: BTreeBase
+    nameWithType: BTreeBase
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Func{{TNode},System.Boolean}
+  commentId: T:System.Func{``0,System.Boolean}
+  parent: System
+  definition: System.Func`2
+  name: Func<TNode, Boolean>
+  nameWithType: Func<TNode, Boolean>
+  fullName: System.Func<TNode, System.Boolean>
+  nameWithType.vb: Func(Of TNode, Boolean)
+  fullName.vb: System.Func(Of TNode, System.Boolean)
+  name.vb: Func(Of TNode, Boolean)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3
+  commentId: T:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3
+  name: BTreeBase<TNode, TKey, TValue>
+  nameWithType: BTreeBase<TNode, TKey, TValue>
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>
+  nameWithType.vb: BTreeBase(Of TNode, TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue)
+  name.vb: BTreeBase(Of TNode, TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3
+    name: BTreeBase
+    nameWithType: BTreeBase
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3
+    name: BTreeBase
+    nameWithType: BTreeBase
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.API
+  commentId: N:CSFundamentals.DataStructures.Trees.Nary.API
+  name: CSFundamentals.DataStructures.Trees.Nary.API
+  nameWithType: CSFundamentals.DataStructures.Trees.Nary.API
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeNodeProperties*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeNodeProperties
+  name: HasBTreeNodeProperties
+  nameWithType: BTreeTestsUtils.HasBTreeNodeProperties
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeNodeProperties
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBPlusTreeNodeProperties*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBPlusTreeNodeProperties
+  name: HasBPlusTreeNodeProperties
+  nameWithType: BTreeTestsUtils.HasBPlusTreeNodeProperties
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBPlusTreeNodeProperties
+- uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}}
+  commentId: T:CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{``0,``1}
+  parent: CSFundamentals.DataStructures.Trees.Nary
+  definition: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+  name: BPlusTreeNode<TKey, TValue>
+  nameWithType: BPlusTreeNode<TKey, TValue>
+  fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>
+  nameWithType.vb: BPlusTreeNode(Of TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue)
+  name.vb: BPlusTreeNode(Of TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+  commentId: T:CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+  name: BPlusTreeNode<TKey, TValue>
+  nameWithType: BPlusTreeNode<TKey, TValue>
+  fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>
+  nameWithType.vb: BPlusTreeNode(Of TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue)
+  name.vb: BPlusTreeNode(Of TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary
+  commentId: N:CSFundamentals.DataStructures.Trees.Nary
+  name: CSFundamentals.DataStructures.Trees.Nary
+  nameWithType: CSFundamentals.DataStructures.Trees.Nary
+  fullName: CSFundamentals.DataStructures.Trees.Nary
+- uid: CSFundamentals.DataStructures.Trees.Nary.BTree{System.Int32,System.String}
+  commentId: T:CSFundamentals.DataStructures.Trees.Nary.BTree{System.Int32,System.String}
+  parent: CSFundamentals.DataStructures.Trees.Nary
+  definition: CSFundamentals.DataStructures.Trees.Nary.BTree`2
+  name: BTree<Int32, String>
+  nameWithType: BTree<Int32, String>
+  fullName: CSFundamentals.DataStructures.Trees.Nary.BTree<System.Int32, System.String>
+  nameWithType.vb: BTree(Of Int32, String)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.BTree(Of System.Int32, System.String)
+  name.vb: BTree(Of Int32, String)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BTree`2
+    name: BTree
+    nameWithType: BTree
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BTree
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BTree`2
+    name: BTree
+    nameWithType: BTree
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BTree
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.BTree`2
+  commentId: T:CSFundamentals.DataStructures.Trees.Nary.BTree`2
+  name: BTree<TKey, TValue>
+  nameWithType: BTree<TKey, TValue>
+  fullName: CSFundamentals.DataStructures.Trees.Nary.BTree<TKey, TValue>
+  nameWithType.vb: BTree(Of TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.BTree(Of TKey, TValue)
+  name.vb: BTree(Of TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BTree`2
+    name: BTree
+    nameWithType: BTree
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BTree
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BTree`2
+    name: BTree
+    nameWithType: BTree
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BTree
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBPlusTreeProperties*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBPlusTreeProperties
+  name: HasBPlusTreeProperties
+  nameWithType: BTreeTestsUtils.HasBPlusTreeProperties
+  fullName: CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBPlusTreeProperties
+- uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTree{System.Int32,System.String}
+  commentId: T:CSFundamentals.DataStructures.Trees.Nary.BPlusTree{System.Int32,System.String}
+  parent: CSFundamentals.DataStructures.Trees.Nary
+  definition: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2
+  name: BPlusTree<Int32, String>
+  nameWithType: BPlusTree<Int32, String>
+  fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTree<System.Int32, System.String>
+  nameWithType.vb: BPlusTree(Of Int32, String)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.BPlusTree(Of System.Int32, System.String)
+  name.vb: BPlusTree(Of Int32, String)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2
+    name: BPlusTree
+    nameWithType: BPlusTree
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTree
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2
+    name: BPlusTree
+    nameWithType: BPlusTree
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTree
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2
+  commentId: T:CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2
+  name: BPlusTree<TKey, TValue>
+  nameWithType: BPlusTree<TKey, TValue>
+  fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTree<TKey, TValue>
+  nameWithType.vb: BPlusTree(Of TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.BPlusTree(Of TKey, TValue)
+  name.vb: BPlusTree(Of TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2
+    name: BPlusTree
+    nameWithType: BPlusTree
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTree
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2
+    name: BPlusTree
+    nameWithType: BPlusTree
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTree
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )

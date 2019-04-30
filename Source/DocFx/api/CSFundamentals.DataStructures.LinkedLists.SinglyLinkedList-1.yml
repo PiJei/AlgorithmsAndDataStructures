@@ -36,6 +36,7 @@ items:
       description: Type of the values stored in the list.
     content.vb: >-
       Public Class SinglyLinkedList(Of TValue As IComparable(Of TValue))
+
           Inherits LinkedListBase(Of SinglyLinkedNode(Of TValue), TValue)
   inheritance:
   - System.Object

@@ -1,0 +1,96 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentalsTests.DataStructures.LinkedLists.API
+  commentId: N:CSFundamentalsTests.DataStructures.LinkedLists.API
+  id: CSFundamentalsTests.DataStructures.LinkedLists.API
+  children:
+  - CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests
+  - CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList`1
+  - CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedNode`1
+  langs:
+  - csharp
+  - vb
+  name: CSFundamentalsTests.DataStructures.LinkedLists.API
+  nameWithType: CSFundamentalsTests.DataStructures.LinkedLists.API
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists.API
+  type: Namespace
+  assemblies:
+  - CSFundamentalsTests
+references:
+- uid: CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests
+  commentId: T:CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests
+  name: LinkedListBaseTests
+  nameWithType: LinkedListBaseTests
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests
+- uid: CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList`1
+  commentId: T:CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList`1
+  name: MockLinkedList<T1>
+  nameWithType: MockLinkedList<T1>
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList<T1>
+  nameWithType.vb: MockLinkedList(Of T1)
+  fullName.vb: CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList(Of T1)
+  name.vb: MockLinkedList(Of T1)
+  spec.csharp:
+  - uid: CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList`1
+    name: MockLinkedList
+    nameWithType: MockLinkedList
+    fullName: CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList`1
+    name: MockLinkedList
+    nameWithType: MockLinkedList
+    fullName: CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedNode`1
+  commentId: T:CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedNode`1
+  name: MockLinkedNode<T1>
+  nameWithType: MockLinkedNode<T1>
+  fullName: CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedNode<T1>
+  nameWithType.vb: MockLinkedNode(Of T1)
+  fullName.vb: CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedNode(Of T1)
+  name.vb: MockLinkedNode(Of T1)
+  spec.csharp:
+  - uid: CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedNode`1
+    name: MockLinkedNode
+    nameWithType: MockLinkedNode
+    fullName: CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedNode`1
+    name: MockLinkedNode
+    nameWithType: MockLinkedNode
+    fullName: CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: )
+    nameWithType: )
+    fullName: )

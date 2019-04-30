@@ -30,7 +30,9 @@ items:
     content: 'public class NotFoundException : Exception, ISerializable'
     content.vb: >-
       Public Class NotFoundException
+
           Inherits Exception
+
           Implements ISerializable
   inheritance:
   - System.Object

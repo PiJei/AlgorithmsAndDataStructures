@@ -38,6 +38,7 @@ items:
       <Serializable>
 
       Public Class SinglyLinkedNode(Of TValue As IComparable(Of TValue))
+
           Inherits LinkedNode(Of SinglyLinkedNode(Of TValue), TValue)
   inheritance:
   - System.Object

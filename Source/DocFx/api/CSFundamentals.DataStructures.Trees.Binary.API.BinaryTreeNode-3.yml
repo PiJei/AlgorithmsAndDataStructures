@@ -58,6 +58,7 @@ items:
       description: 'Type of the value stored in the node. '
     content.vb: >-
       Public MustInherit Class BinaryTreeNode(Of TNode As IBinaryTreeNode(Of TNode, TKey, TValue), TKey As IComparable(Of TKey), TValue)
+
           Implements IBinaryTreeNode(Of TNode, TKey, TValue), IComparable(Of TNode)
   inheritance:
   - System.Object

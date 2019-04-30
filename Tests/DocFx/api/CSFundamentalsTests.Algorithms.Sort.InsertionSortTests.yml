@@ -1,0 +1,597 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests
+  commentId: T:CSFundamentalsTests.Algorithms.Sort.InsertionSortTests
+  id: InsertionSortTests
+  parent: CSFundamentalsTests.Algorithms.Sort
+  children:
+  - CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.IsStable
+  - CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Iterative_V1_WithDifferentInputs
+  - CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Iterative_V2_WithDifferentInputs
+  - CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Recursive_WithDistinctValues
+  - CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Recursive_WithDuplicateValues
+  langs:
+  - csharp
+  - vb
+  name: InsertionSortTests
+  nameWithType: InsertionSortTests
+  fullName: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests
+  type: Class
+  source:
+    remote:
+      path: Tests/Algorithms/Sort/StabilityCheckableVersions/InsertionSortTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: InsertionSortTests
+    path: ../Algorithms/Sort/StabilityCheckableVersions/InsertionSortTests.cs
+    startLine: 27
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.Algorithms.Sort
+  summary: "\nTests methods in <xref href=\"CSFundamentals.Algorithms.Sort.InsertionSort\" data-throw-if-not-resolved=\"false\"></xref> class. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestClass]
+
+      public class InsertionSortTests
+    content.vb: >-
+      <TestClass>
+
+      Public Class InsertionSortTests
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Iterative_V1_WithDifferentInputs
+  commentId: M:CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Iterative_V1_WithDifferentInputs
+  id: Sort_Iterative_V1_WithDifferentInputs
+  parent: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests
+  langs:
+  - csharp
+  - vb
+  name: Sort_Iterative_V1_WithDifferentInputs()
+  nameWithType: InsertionSortTests.Sort_Iterative_V1_WithDifferentInputs()
+  fullName: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Iterative_V1_WithDifferentInputs()
+  type: Method
+  source:
+    remote:
+      path: Tests/Algorithms/Sort/InsertionSortTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Sort_Iterative_V1_WithDifferentInputs
+    path: ../Algorithms/Sort/InsertionSortTests.cs
+    startLine: 35
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.Algorithms.Sort
+  summary: "\nTests the correctness of Insertion sort iterative version1. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Sort_Iterative_V1_WithDifferentInputs()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Sort_Iterative_V1_WithDifferentInputs
+  overload: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Iterative_V1_WithDifferentInputs*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Iterative_V2_WithDifferentInputs
+  commentId: M:CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Iterative_V2_WithDifferentInputs
+  id: Sort_Iterative_V2_WithDifferentInputs
+  parent: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests
+  langs:
+  - csharp
+  - vb
+  name: Sort_Iterative_V2_WithDifferentInputs()
+  nameWithType: InsertionSortTests.Sort_Iterative_V2_WithDifferentInputs()
+  fullName: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Iterative_V2_WithDifferentInputs()
+  type: Method
+  source:
+    remote:
+      path: Tests/Algorithms/Sort/InsertionSortTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Sort_Iterative_V2_WithDifferentInputs
+    path: ../Algorithms/Sort/InsertionSortTests.cs
+    startLine: 44
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.Algorithms.Sort
+  summary: "\nTests the correctness of Insertion sort iterative version2. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Sort_Iterative_V2_WithDifferentInputs()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Sort_Iterative_V2_WithDifferentInputs
+  overload: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Iterative_V2_WithDifferentInputs*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Recursive_WithDistinctValues
+  commentId: M:CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Recursive_WithDistinctValues
+  id: Sort_Recursive_WithDistinctValues
+  parent: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests
+  langs:
+  - csharp
+  - vb
+  name: Sort_Recursive_WithDistinctValues()
+  nameWithType: InsertionSortTests.Sort_Recursive_WithDistinctValues()
+  fullName: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Recursive_WithDistinctValues()
+  type: Method
+  source:
+    remote:
+      path: Tests/Algorithms/Sort/InsertionSortTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Sort_Recursive_WithDistinctValues
+    path: ../Algorithms/Sort/InsertionSortTests.cs
+    startLine: 54
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.Algorithms.Sort
+  summary: "\nTests the correctness of Insertion sort recursive version over an array with distinct values. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Sort_Recursive_WithDistinctValues()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Sort_Recursive_WithDistinctValues
+  overload: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Recursive_WithDistinctValues*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Recursive_WithDuplicateValues
+  commentId: M:CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Recursive_WithDuplicateValues
+  id: Sort_Recursive_WithDuplicateValues
+  parent: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests
+  langs:
+  - csharp
+  - vb
+  name: Sort_Recursive_WithDuplicateValues()
+  nameWithType: InsertionSortTests.Sort_Recursive_WithDuplicateValues()
+  fullName: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Recursive_WithDuplicateValues()
+  type: Method
+  source:
+    remote:
+      path: Tests/Algorithms/Sort/InsertionSortTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Sort_Recursive_WithDuplicateValues
+    path: ../Algorithms/Sort/InsertionSortTests.cs
+    startLine: 65
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.Algorithms.Sort
+  summary: "\nTests the correctness of Insertion sort recursive version over an array with duplicate values. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Sort_Recursive_WithDuplicateValues()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Sort_Recursive_WithDuplicateValues
+  overload: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Recursive_WithDuplicateValues*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.IsStable
+  commentId: M:CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.IsStable
+  id: IsStable
+  parent: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests
+  langs:
+  - csharp
+  - vb
+  name: IsStable()
+  nameWithType: InsertionSortTests.IsStable()
+  fullName: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.IsStable()
+  type: Method
+  source:
+    remote:
+      path: Tests/Algorithms/Sort/StabilityCheckableVersions/InsertionSortTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: IsStable
+    path: ../Algorithms/Sort/StabilityCheckableVersions/InsertionSortTests.cs
+    startLine: 32
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.Algorithms.Sort
+  summary: "\nTests the stability of Insertion sort algorithm. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void IsStable()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub IsStable
+  overload: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.IsStable*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: CSFundamentals.Algorithms.Sort.InsertionSort
+  commentId: T:CSFundamentals.Algorithms.Sort.InsertionSort
+  isExternal: true
+- uid: CSFundamentalsTests.Algorithms.Sort
+  commentId: N:CSFundamentalsTests.Algorithms.Sort
+  name: CSFundamentalsTests.Algorithms.Sort
+  nameWithType: CSFundamentalsTests.Algorithms.Sort
+  fullName: CSFundamentalsTests.Algorithms.Sort
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Iterative_V1_WithDifferentInputs*
+  commentId: Overload:CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Iterative_V1_WithDifferentInputs
+  name: Sort_Iterative_V1_WithDifferentInputs
+  nameWithType: InsertionSortTests.Sort_Iterative_V1_WithDifferentInputs
+  fullName: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Iterative_V1_WithDifferentInputs
+- uid: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Iterative_V2_WithDifferentInputs*
+  commentId: Overload:CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Iterative_V2_WithDifferentInputs
+  name: Sort_Iterative_V2_WithDifferentInputs
+  nameWithType: InsertionSortTests.Sort_Iterative_V2_WithDifferentInputs
+  fullName: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Iterative_V2_WithDifferentInputs
+- uid: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Recursive_WithDistinctValues*
+  commentId: Overload:CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Recursive_WithDistinctValues
+  name: Sort_Recursive_WithDistinctValues
+  nameWithType: InsertionSortTests.Sort_Recursive_WithDistinctValues
+  fullName: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Recursive_WithDistinctValues
+- uid: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Recursive_WithDuplicateValues*
+  commentId: Overload:CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Recursive_WithDuplicateValues
+  name: Sort_Recursive_WithDuplicateValues
+  nameWithType: InsertionSortTests.Sort_Recursive_WithDuplicateValues
+  fullName: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Recursive_WithDuplicateValues
+- uid: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.IsStable*
+  commentId: Overload:CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.IsStable
+  name: IsStable
+  nameWithType: InsertionSortTests.IsStable
+  fullName: CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.IsStable

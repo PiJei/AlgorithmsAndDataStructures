@@ -1,0 +1,936 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests
+  commentId: T:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests
+  id: MaxBinaryHeapTests
+  parent: CSFundamentalsTests.DataStructures.BinaryHeaps
+  children:
+  - CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.BuildHeap_Itratively
+  - CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.BuildHeap_Recursively
+  - CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.HasMaxOrderPropertyForHeap``2(System.Int32,CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap{``0,``1})
+  - CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.HasMaxOrderPropertyForNode``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)
+  - CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.Initialize
+  - CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMaxBinaryHeapAfterEachInsert
+  - CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectDescendingOrderInResults
+  langs:
+  - csharp
+  - vb
+  name: MaxBinaryHeapTests
+  nameWithType: MaxBinaryHeapTests
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests
+  type: Class
+  source:
+    remote:
+      path: Tests/DataStructures/BinaryHeaps/MaxBinaryHeapTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: MaxBinaryHeapTests
+    path: ../DataStructures/BinaryHeaps/MaxBinaryHeapTests.cs
+    startLine: 31
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.BinaryHeaps
+  summary: "\nTests methods in <xref href=\"CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap%602\" data-throw-if-not-resolved=\"false\"></xref> class. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestClass]
+
+      public class MaxBinaryHeapTests
+    content.vb: >-
+      <TestClass>
+
+      Public Class MaxBinaryHeapTests
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.Initialize
+  commentId: M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.Initialize
+  id: Initialize
+  parent: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests
+  langs:
+  - csharp
+  - vb
+  name: Initialize()
+  nameWithType: MaxBinaryHeapTests.Initialize()
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.Initialize()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/BinaryHeaps/MaxBinaryHeapTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Initialize
+    path: ../DataStructures/BinaryHeaps/MaxBinaryHeapTests.cs
+    startLine: 49
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.BinaryHeaps
+  summary: "\nInitializes/Resets variables before executing each unit test in this class. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestInitialize]
+
+      public void Initialize()
+    content.vb: >-
+      <TestInitialize>
+
+      Public Sub Initialize
+  overload: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.Initialize*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.BuildHeap_Recursively
+  commentId: M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.BuildHeap_Recursively
+  id: BuildHeap_Recursively
+  parent: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests
+  langs:
+  - csharp
+  - vb
+  name: BuildHeap_Recursively()
+  nameWithType: MaxBinaryHeapTests.BuildHeap_Recursively()
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.BuildHeap_Recursively()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/BinaryHeaps/MaxBinaryHeapTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: BuildHeap_Recursively
+    path: ../DataStructures/BinaryHeaps/MaxBinaryHeapTests.cs
+    startLine: 58
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.BinaryHeaps
+  summary: "\nTests the correctness of build operation when implemented recursively. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void BuildHeap_Recursively()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub BuildHeap_Recursively
+  overload: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.BuildHeap_Recursively*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.BuildHeap_Itratively
+  commentId: M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.BuildHeap_Itratively
+  id: BuildHeap_Itratively
+  parent: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests
+  langs:
+  - csharp
+  - vb
+  name: BuildHeap_Itratively()
+  nameWithType: MaxBinaryHeapTests.BuildHeap_Itratively()
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.BuildHeap_Itratively()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/BinaryHeaps/MaxBinaryHeapTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: BuildHeap_Itratively
+    path: ../DataStructures/BinaryHeaps/MaxBinaryHeapTests.cs
+    startLine: 71
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.BinaryHeaps
+  summary: "\nTests the correctness of Build operation when implemented iteratively. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void BuildHeap_Itratively()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub BuildHeap_Itratively
+  overload: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.BuildHeap_Itratively*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectDescendingOrderInResults
+  commentId: M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectDescendingOrderInResults
+  id: TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectDescendingOrderInResults
+  parent: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests
+  langs:
+  - csharp
+  - vb
+  name: TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectDescendingOrderInResults()
+  nameWithType: MaxBinaryHeapTests.TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectDescendingOrderInResults()
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectDescendingOrderInResults()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/BinaryHeaps/MaxBinaryHeapTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectDescendingOrderInResults
+    path: ../DataStructures/BinaryHeaps/MaxBinaryHeapTests.cs
+    startLine: 84
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.BinaryHeaps
+  summary: "\nTests the correctness of removing root of the heap. Removes root several times until no member in tree remains.\n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectDescendingOrderInResults()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectDescendingOrderInResults
+  overload: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectDescendingOrderInResults*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMaxBinaryHeapAfterEachInsert
+  commentId: M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMaxBinaryHeapAfterEachInsert
+  id: Insert_SeveralValues_ExpectCorrectMaxBinaryHeapAfterEachInsert
+  parent: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests
+  langs:
+  - csharp
+  - vb
+  name: Insert_SeveralValues_ExpectCorrectMaxBinaryHeapAfterEachInsert()
+  nameWithType: MaxBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMaxBinaryHeapAfterEachInsert()
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMaxBinaryHeapAfterEachInsert()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/BinaryHeaps/MaxBinaryHeapTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Insert_SeveralValues_ExpectCorrectMaxBinaryHeapAfterEachInsert
+    path: ../DataStructures/BinaryHeaps/MaxBinaryHeapTests.cs
+    startLine: 130
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.BinaryHeaps
+  summary: "\nTests the correctness of insert operation. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Insert_SeveralValues_ExpectCorrectMaxBinaryHeapAfterEachInsert()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Insert_SeveralValues_ExpectCorrectMaxBinaryHeapAfterEachInsert
+  overload: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMaxBinaryHeapAfterEachInsert*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.HasMaxOrderPropertyForNode``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)
+  commentId: M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.HasMaxOrderPropertyForNode``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)
+  id: HasMaxOrderPropertyForNode``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)
+  parent: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests
+  langs:
+  - csharp
+  - vb
+  name: HasMaxOrderPropertyForNode<TKey, TValue>(BinaryHeapBase<TKey, TValue>, Int32)
+  nameWithType: MaxBinaryHeapTests.HasMaxOrderPropertyForNode<TKey, TValue>(BinaryHeapBase<TKey, TValue>, Int32)
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.HasMaxOrderPropertyForNode<TKey, TValue>(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/BinaryHeaps/MaxBinaryHeapTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: HasMaxOrderPropertyForNode
+    path: ../DataStructures/BinaryHeaps/MaxBinaryHeapTests.cs
+    startLine: 172
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.BinaryHeaps
+  summary: "\nChecks whether the element at the given index follows heap properties. \nChecking the MaxHeap ordering (node relations) for the node at the given index, to make sure the correct relations between the node and its parent and children holds. \n"
+  example: []
+  syntax:
+    content: >-
+      public static bool HasMaxOrderPropertyForNode<TKey, TValue>(BinaryHeapBase<TKey, TValue> heap, int nodeIndex)
+
+          where TKey : IComparable<TKey>
+    parameters:
+    - id: heap
+      type: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{{TKey},{TValue}}
+      description: 'A max binary heap. '
+    - id: nodeIndex
+      type: System.Int32
+      description: 'Index of a heap node in heap array. '
+    typeParameters:
+    - id: TKey
+      description: 'Type of the keys stored in the heap. '
+    - id: TValue
+      description: 'Type of the values stored in the heap. '
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Public Shared Function HasMaxOrderPropertyForNode(Of TKey As IComparable(Of TKey), TValue)(heap As BinaryHeapBase(Of TKey, TValue), nodeIndex As Integer) As Boolean
+  overload: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.HasMaxOrderPropertyForNode*
+  nameWithType.vb: MaxBinaryHeapTests.HasMaxOrderPropertyForNode(Of TKey, TValue)(BinaryHeapBase(Of TKey, TValue), Int32)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.HasMaxOrderPropertyForNode(Of TKey, TValue)(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue), System.Int32)
+  name.vb: HasMaxOrderPropertyForNode(Of TKey, TValue)(BinaryHeapBase(Of TKey, TValue), Int32)
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.HasMaxOrderPropertyForHeap``2(System.Int32,CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap{``0,``1})
+  commentId: M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.HasMaxOrderPropertyForHeap``2(System.Int32,CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap{``0,``1})
+  id: HasMaxOrderPropertyForHeap``2(System.Int32,CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap{``0,``1})
+  parent: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests
+  langs:
+  - csharp
+  - vb
+  name: HasMaxOrderPropertyForHeap<TKey, TValue>(Int32, MaxBinaryHeap<TKey, TValue>)
+  nameWithType: MaxBinaryHeapTests.HasMaxOrderPropertyForHeap<TKey, TValue>(Int32, MaxBinaryHeap<TKey, TValue>)
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.HasMaxOrderPropertyForHeap<TKey, TValue>(System.Int32, CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap<TKey, TValue>)
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/BinaryHeaps/MaxBinaryHeapTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: HasMaxOrderPropertyForHeap
+    path: ../DataStructures/BinaryHeaps/MaxBinaryHeapTests.cs
+    startLine: 201
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.BinaryHeaps
+  summary: "\nChecks whether the heap is a proper Max heap. \n"
+  example: []
+  syntax:
+    content: >-
+      public static bool HasMaxOrderPropertyForHeap<TKey, TValue>(int arraySize, MaxBinaryHeap<TKey, TValue> heap)
+
+          where TKey : IComparable<TKey>
+    parameters:
+    - id: arraySize
+      type: System.Int32
+      description: 'Size of the heap array. '
+    - id: heap
+      type: CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap{{TKey},{TValue}}
+      description: 'Is a Max binary heap. '
+    typeParameters:
+    - id: TKey
+      description: 'Type of the keys stored in the heap. '
+    - id: TValue
+      description: 'Type of the values stored in the heap. '
+    return:
+      type: System.Boolean
+      description: 'True if the heap is a proper Max binary heap, and false otherwise. '
+    content.vb: Public Shared Function HasMaxOrderPropertyForHeap(Of TKey As IComparable(Of TKey), TValue)(arraySize As Integer, heap As MaxBinaryHeap(Of TKey, TValue)) As Boolean
+  overload: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.HasMaxOrderPropertyForHeap*
+  nameWithType.vb: MaxBinaryHeapTests.HasMaxOrderPropertyForHeap(Of TKey, TValue)(Int32, MaxBinaryHeap(Of TKey, TValue))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.HasMaxOrderPropertyForHeap(Of TKey, TValue)(System.Int32, CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap(Of TKey, TValue))
+  name.vb: HasMaxOrderPropertyForHeap(Of TKey, TValue)(Int32, MaxBinaryHeap(Of TKey, TValue))
+references:
+- uid: CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap`2
+  commentId: T:CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap`2
+  name: MaxBinaryHeap<TKey, TValue>
+  nameWithType: MaxBinaryHeap<TKey, TValue>
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap<TKey, TValue>
+  nameWithType.vb: MaxBinaryHeap(Of TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap(Of TKey, TValue)
+  name.vb: MaxBinaryHeap(Of TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap`2
+    name: MaxBinaryHeap
+    nameWithType: MaxBinaryHeap
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap`2
+    name: MaxBinaryHeap
+    nameWithType: MaxBinaryHeap
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps
+  commentId: N:CSFundamentalsTests.DataStructures.BinaryHeaps
+  name: CSFundamentalsTests.DataStructures.BinaryHeaps
+  nameWithType: CSFundamentalsTests.DataStructures.BinaryHeaps
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.Initialize*
+  commentId: Overload:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.Initialize
+  name: Initialize
+  nameWithType: MaxBinaryHeapTests.Initialize
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.Initialize
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.BuildHeap_Recursively*
+  commentId: Overload:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.BuildHeap_Recursively
+  name: BuildHeap_Recursively
+  nameWithType: MaxBinaryHeapTests.BuildHeap_Recursively
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.BuildHeap_Recursively
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.BuildHeap_Itratively*
+  commentId: Overload:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.BuildHeap_Itratively
+  name: BuildHeap_Itratively
+  nameWithType: MaxBinaryHeapTests.BuildHeap_Itratively
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.BuildHeap_Itratively
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectDescendingOrderInResults*
+  commentId: Overload:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectDescendingOrderInResults
+  name: TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectDescendingOrderInResults
+  nameWithType: MaxBinaryHeapTests.TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectDescendingOrderInResults
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectDescendingOrderInResults
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMaxBinaryHeapAfterEachInsert*
+  commentId: Overload:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMaxBinaryHeapAfterEachInsert
+  name: Insert_SeveralValues_ExpectCorrectMaxBinaryHeapAfterEachInsert
+  nameWithType: MaxBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMaxBinaryHeapAfterEachInsert
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMaxBinaryHeapAfterEachInsert
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.HasMaxOrderPropertyForNode*
+  commentId: Overload:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.HasMaxOrderPropertyForNode
+  name: HasMaxOrderPropertyForNode
+  nameWithType: MaxBinaryHeapTests.HasMaxOrderPropertyForNode
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.HasMaxOrderPropertyForNode
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{{TKey},{TValue}}
+  commentId: T:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1}
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API
+  definition: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  name: BinaryHeapBase<TKey, TValue>
+  nameWithType: BinaryHeapBase<TKey, TValue>
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue)
+  name.vb: BinaryHeapBase(Of TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+    name: BinaryHeapBase
+    nameWithType: BinaryHeapBase
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+    name: BinaryHeapBase
+    nameWithType: BinaryHeapBase
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  commentId: T:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  name: BinaryHeapBase<TKey, TValue>
+  nameWithType: BinaryHeapBase<TKey, TValue>
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue)
+  name.vb: BinaryHeapBase(Of TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+    name: BinaryHeapBase
+    nameWithType: BinaryHeapBase
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+    name: BinaryHeapBase
+    nameWithType: BinaryHeapBase
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API
+  commentId: N:CSFundamentals.DataStructures.BinaryHeaps.API
+  name: CSFundamentals.DataStructures.BinaryHeaps.API
+  nameWithType: CSFundamentals.DataStructures.BinaryHeaps.API
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API
+- uid: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.HasMaxOrderPropertyForHeap*
+  commentId: Overload:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.HasMaxOrderPropertyForHeap
+  name: HasMaxOrderPropertyForHeap
+  nameWithType: MaxBinaryHeapTests.HasMaxOrderPropertyForHeap
+  fullName: CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.HasMaxOrderPropertyForHeap
+- uid: CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap{{TKey},{TValue}}
+  commentId: T:CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap{``0,``1}
+  parent: CSFundamentals.DataStructures.BinaryHeaps
+  definition: CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap`2
+  name: MaxBinaryHeap<TKey, TValue>
+  nameWithType: MaxBinaryHeap<TKey, TValue>
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap<TKey, TValue>
+  nameWithType.vb: MaxBinaryHeap(Of TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap(Of TKey, TValue)
+  name.vb: MaxBinaryHeap(Of TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap`2
+    name: MaxBinaryHeap
+    nameWithType: MaxBinaryHeap
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap`2
+    name: MaxBinaryHeap
+    nameWithType: MaxBinaryHeap
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.BinaryHeaps
+  commentId: N:CSFundamentals.DataStructures.BinaryHeaps
+  name: CSFundamentals.DataStructures.BinaryHeaps
+  nameWithType: CSFundamentals.DataStructures.BinaryHeaps
+  fullName: CSFundamentals.DataStructures.BinaryHeaps

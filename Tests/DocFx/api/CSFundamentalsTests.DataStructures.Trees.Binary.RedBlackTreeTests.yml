@@ -1,0 +1,1439 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests
+  commentId: T:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests
+  id: RedBlackTreeTests
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary
+  children:
+  - CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Build_ExpectsCorrectRedBlackTree
+  - CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackLeafNode_BlackSiblingWithARedLeftChild_ExpectsRightRotate
+  - CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackNodeWithLeftRedChild_ReplaceWithLeftChildAs42AndColorItBlack
+  - CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackNodeWithOneRedLeftChild_RepalceWithLeftRedChildWith10AsKeyAndColorItBlack
+  - CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackNodeWithOneRedRightChild_ReplaceWithTheRightRedChildWith80AsKeyAndColorItBlack
+  - CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_MultipleKyesConsecutively_ExpectsCorrectTreeAfterEachStep
+  - CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedLeafNode_ExpectsSimpleDelete
+  - CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedNodeWithTWoChildren_ExpectsToBeRepalcedBy50WhichIsBlackWithARedRightChild
+  - CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedNodeWithTwoChildren_ExpectsToBeReplacedBy35AndIsSubjectToLastCaseBlackSiblingWithLeftRedChild
+  - CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_Root_ExpectsToBeReplacedBy47WhichIsARedLeafAndHasSimpleDeletion
+  - CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.HasRedBlackTreeProperties``2(CSFundamentals.DataStructures.Trees.Binary.RedBlackTree{``0,``1},CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode{``0,``1},System.Int32)
+  - CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Initialize
+  - CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion
+  - CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsBlack_ColoredBlack_ExpectsTrue
+  - CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsBlack_DefaultColor_ExpectsFalse
+  - CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsRed_ColoredBlack_ExpectsFalse
+  - CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsRed_DefaultColor_ExpectsTrue
+  - CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.UpdateParentWithNullingChild
+  langs:
+  - csharp
+  - vb
+  name: RedBlackTreeTests
+  nameWithType: RedBlackTreeTests
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests
+  type: Class
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/RedBlackTreeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: RedBlackTreeTests
+    path: ../DataStructures/Trees/Binary/RedBlackTreeTests.cs
+    startLine: 34
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary
+  summary: "\nTests methods of <xref href=\"CSFundamentals.DataStructures.Trees.Binary.RedBlackTree%602\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: >-
+      [TestClass]
+
+      public class RedBlackTreeTests
+    content.vb: >-
+      <TestClass>
+
+      Public Class RedBlackTreeTests
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Initialize
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Initialize
+  id: Initialize
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests
+  langs:
+  - csharp
+  - vb
+  name: Initialize()
+  nameWithType: RedBlackTreeTests.Initialize()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Initialize()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/RedBlackTreeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Initialize
+    path: ../DataStructures/Trees/Binary/RedBlackTreeTests.cs
+    startLine: 47
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary
+  summary: "\nInitializes/Resets variables before executing each unit test in this class. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestInitialize]
+
+      public void Initialize()
+    content.vb: >-
+      <TestInitialize>
+
+      Public Sub Initialize
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Initialize*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Build_ExpectsCorrectRedBlackTree
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Build_ExpectsCorrectRedBlackTree
+  id: Build_ExpectsCorrectRedBlackTree
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests
+  langs:
+  - csharp
+  - vb
+  name: Build_ExpectsCorrectRedBlackTree()
+  nameWithType: RedBlackTreeTests.Build_ExpectsCorrectRedBlackTree()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Build_ExpectsCorrectRedBlackTree()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/RedBlackTreeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Build_ExpectsCorrectRedBlackTree
+    path: ../DataStructures/Trees/Binary/RedBlackTreeTests.cs
+    startLine: 57
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary
+  summary: "\nTests the correctness of Build operation\n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Build_ExpectsCorrectRedBlackTree()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Build_ExpectsCorrectRedBlackTree
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Build_ExpectsCorrectRedBlackTree*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion
+  id: Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests
+  langs:
+  - csharp
+  - vb
+  name: Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion()
+  nameWithType: RedBlackTreeTests.Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/RedBlackTreeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion
+    path: ../DataStructures/Trees/Binary/RedBlackTreeTests.cs
+    startLine: 67
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary
+  summary: "\nTests the correctness of insert operation when inserting several keys one after the other. \nFor a step by step transition of the RedBlack tree while inserting these keys, see &quot;images\\redblack-bst-insert-stepByStep.png&quot;.\n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedNodeWithTWoChildren_ExpectsToBeRepalcedBy50WhichIsBlackWithARedRightChild
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedNodeWithTWoChildren_ExpectsToBeRepalcedBy50WhichIsBlackWithARedRightChild
+  id: Delete_RedNodeWithTWoChildren_ExpectsToBeRepalcedBy50WhichIsBlackWithARedRightChild
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests
+  langs:
+  - csharp
+  - vb
+  name: Delete_RedNodeWithTWoChildren_ExpectsToBeRepalcedBy50WhichIsBlackWithARedRightChild()
+  nameWithType: RedBlackTreeTests.Delete_RedNodeWithTWoChildren_ExpectsToBeRepalcedBy50WhichIsBlackWithARedRightChild()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedNodeWithTWoChildren_ExpectsToBeRepalcedBy50WhichIsBlackWithARedRightChild()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/RedBlackTreeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Delete_RedNodeWithTWoChildren_ExpectsToBeRepalcedBy50WhichIsBlackWithARedRightChild
+    path: ../DataStructures/Trees/Binary/RedBlackTreeTests.cs
+    startLine: 117
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary
+  summary: "\nTests the correctness of delete operation when deleting a red node with 2 children. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Delete_RedNodeWithTWoChildren_ExpectsToBeRepalcedBy50WhichIsBlackWithARedRightChild()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Delete_RedNodeWithTWoChildren_ExpectsToBeRepalcedBy50WhichIsBlackWithARedRightChild
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedNodeWithTWoChildren_ExpectsToBeRepalcedBy50WhichIsBlackWithARedRightChild*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedNodeWithTwoChildren_ExpectsToBeReplacedBy35AndIsSubjectToLastCaseBlackSiblingWithLeftRedChild
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedNodeWithTwoChildren_ExpectsToBeReplacedBy35AndIsSubjectToLastCaseBlackSiblingWithLeftRedChild
+  id: Delete_RedNodeWithTwoChildren_ExpectsToBeReplacedBy35AndIsSubjectToLastCaseBlackSiblingWithLeftRedChild
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests
+  langs:
+  - csharp
+  - vb
+  name: Delete_RedNodeWithTwoChildren_ExpectsToBeReplacedBy35AndIsSubjectToLastCaseBlackSiblingWithLeftRedChild()
+  nameWithType: RedBlackTreeTests.Delete_RedNodeWithTwoChildren_ExpectsToBeReplacedBy35AndIsSubjectToLastCaseBlackSiblingWithLeftRedChild()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedNodeWithTwoChildren_ExpectsToBeReplacedBy35AndIsSubjectToLastCaseBlackSiblingWithLeftRedChild()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/RedBlackTreeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Delete_RedNodeWithTwoChildren_ExpectsToBeReplacedBy35AndIsSubjectToLastCaseBlackSiblingWithLeftRedChild
+    path: ../DataStructures/Trees/Binary/RedBlackTreeTests.cs
+    startLine: 127
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary
+  summary: "\nTests the correctness of delete operation when deleting a red node with 2 children. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Delete_RedNodeWithTwoChildren_ExpectsToBeReplacedBy35AndIsSubjectToLastCaseBlackSiblingWithLeftRedChild()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Delete_RedNodeWithTwoChildren_ExpectsToBeReplacedBy35AndIsSubjectToLastCaseBlackSiblingWithLeftRedChild
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedNodeWithTwoChildren_ExpectsToBeReplacedBy35AndIsSubjectToLastCaseBlackSiblingWithLeftRedChild*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackNodeWithOneRedRightChild_ReplaceWithTheRightRedChildWith80AsKeyAndColorItBlack
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackNodeWithOneRedRightChild_ReplaceWithTheRightRedChildWith80AsKeyAndColorItBlack
+  id: Delete_BlackNodeWithOneRedRightChild_ReplaceWithTheRightRedChildWith80AsKeyAndColorItBlack
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests
+  langs:
+  - csharp
+  - vb
+  name: Delete_BlackNodeWithOneRedRightChild_ReplaceWithTheRightRedChildWith80AsKeyAndColorItBlack()
+  nameWithType: RedBlackTreeTests.Delete_BlackNodeWithOneRedRightChild_ReplaceWithTheRightRedChildWith80AsKeyAndColorItBlack()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackNodeWithOneRedRightChild_ReplaceWithTheRightRedChildWith80AsKeyAndColorItBlack()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/RedBlackTreeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Delete_BlackNodeWithOneRedRightChild_ReplaceWithTheRightRedChildWith80AsKeyAndColorItBlack
+    path: ../DataStructures/Trees/Binary/RedBlackTreeTests.cs
+    startLine: 137
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary
+  summary: "\nTests the correctness of delete operation when deleting a black node with one right child. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Delete_BlackNodeWithOneRedRightChild_ReplaceWithTheRightRedChildWith80AsKeyAndColorItBlack()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Delete_BlackNodeWithOneRedRightChild_ReplaceWithTheRightRedChildWith80AsKeyAndColorItBlack
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackNodeWithOneRedRightChild_ReplaceWithTheRightRedChildWith80AsKeyAndColorItBlack*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackNodeWithOneRedLeftChild_RepalceWithLeftRedChildWith10AsKeyAndColorItBlack
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackNodeWithOneRedLeftChild_RepalceWithLeftRedChildWith10AsKeyAndColorItBlack
+  id: Delete_BlackNodeWithOneRedLeftChild_RepalceWithLeftRedChildWith10AsKeyAndColorItBlack
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests
+  langs:
+  - csharp
+  - vb
+  name: Delete_BlackNodeWithOneRedLeftChild_RepalceWithLeftRedChildWith10AsKeyAndColorItBlack()
+  nameWithType: RedBlackTreeTests.Delete_BlackNodeWithOneRedLeftChild_RepalceWithLeftRedChildWith10AsKeyAndColorItBlack()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackNodeWithOneRedLeftChild_RepalceWithLeftRedChildWith10AsKeyAndColorItBlack()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/RedBlackTreeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Delete_BlackNodeWithOneRedLeftChild_RepalceWithLeftRedChildWith10AsKeyAndColorItBlack
+    path: ../DataStructures/Trees/Binary/RedBlackTreeTests.cs
+    startLine: 147
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary
+  summary: "\nTests the correctness of delete operation when deleting a black node with one red left child. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Delete_BlackNodeWithOneRedLeftChild_RepalceWithLeftRedChildWith10AsKeyAndColorItBlack()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Delete_BlackNodeWithOneRedLeftChild_RepalceWithLeftRedChildWith10AsKeyAndColorItBlack
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackNodeWithOneRedLeftChild_RepalceWithLeftRedChildWith10AsKeyAndColorItBlack*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_Root_ExpectsToBeReplacedBy47WhichIsARedLeafAndHasSimpleDeletion
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_Root_ExpectsToBeReplacedBy47WhichIsARedLeafAndHasSimpleDeletion
+  id: Delete_Root_ExpectsToBeReplacedBy47WhichIsARedLeafAndHasSimpleDeletion
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests
+  langs:
+  - csharp
+  - vb
+  name: Delete_Root_ExpectsToBeReplacedBy47WhichIsARedLeafAndHasSimpleDeletion()
+  nameWithType: RedBlackTreeTests.Delete_Root_ExpectsToBeReplacedBy47WhichIsARedLeafAndHasSimpleDeletion()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_Root_ExpectsToBeReplacedBy47WhichIsARedLeafAndHasSimpleDeletion()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/RedBlackTreeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Delete_Root_ExpectsToBeReplacedBy47WhichIsARedLeafAndHasSimpleDeletion
+    path: ../DataStructures/Trees/Binary/RedBlackTreeTests.cs
+    startLine: 157
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary
+  summary: "\nTests the correctness of delete operation when deleting the root of the tree. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Delete_Root_ExpectsToBeReplacedBy47WhichIsARedLeafAndHasSimpleDeletion()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Delete_Root_ExpectsToBeReplacedBy47WhichIsARedLeafAndHasSimpleDeletion
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_Root_ExpectsToBeReplacedBy47WhichIsARedLeafAndHasSimpleDeletion*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackLeafNode_BlackSiblingWithARedLeftChild_ExpectsRightRotate
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackLeafNode_BlackSiblingWithARedLeftChild_ExpectsRightRotate
+  id: Delete_BlackLeafNode_BlackSiblingWithARedLeftChild_ExpectsRightRotate
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests
+  langs:
+  - csharp
+  - vb
+  name: Delete_BlackLeafNode_BlackSiblingWithARedLeftChild_ExpectsRightRotate()
+  nameWithType: RedBlackTreeTests.Delete_BlackLeafNode_BlackSiblingWithARedLeftChild_ExpectsRightRotate()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackLeafNode_BlackSiblingWithARedLeftChild_ExpectsRightRotate()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/RedBlackTreeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Delete_BlackLeafNode_BlackSiblingWithARedLeftChild_ExpectsRightRotate
+    path: ../DataStructures/Trees/Binary/RedBlackTreeTests.cs
+    startLine: 168
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary
+  summary: "\nTests the correctness of delete operation when deleting a black leaf node. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Delete_BlackLeafNode_BlackSiblingWithARedLeftChild_ExpectsRightRotate()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Delete_BlackLeafNode_BlackSiblingWithARedLeftChild_ExpectsRightRotate
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackLeafNode_BlackSiblingWithARedLeftChild_ExpectsRightRotate*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackNodeWithLeftRedChild_ReplaceWithLeftChildAs42AndColorItBlack
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackNodeWithLeftRedChild_ReplaceWithLeftChildAs42AndColorItBlack
+  id: Delete_BlackNodeWithLeftRedChild_ReplaceWithLeftChildAs42AndColorItBlack
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests
+  langs:
+  - csharp
+  - vb
+  name: Delete_BlackNodeWithLeftRedChild_ReplaceWithLeftChildAs42AndColorItBlack()
+  nameWithType: RedBlackTreeTests.Delete_BlackNodeWithLeftRedChild_ReplaceWithLeftChildAs42AndColorItBlack()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackNodeWithLeftRedChild_ReplaceWithLeftChildAs42AndColorItBlack()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/RedBlackTreeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Delete_BlackNodeWithLeftRedChild_ReplaceWithLeftChildAs42AndColorItBlack
+    path: ../DataStructures/Trees/Binary/RedBlackTreeTests.cs
+    startLine: 178
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary
+  summary: "\nTests the correctness of delete operation when deleting a black node with a left red child. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Delete_BlackNodeWithLeftRedChild_ReplaceWithLeftChildAs42AndColorItBlack()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Delete_BlackNodeWithLeftRedChild_ReplaceWithLeftChildAs42AndColorItBlack
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackNodeWithLeftRedChild_ReplaceWithLeftChildAs42AndColorItBlack*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedLeafNode_ExpectsSimpleDelete
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedLeafNode_ExpectsSimpleDelete
+  id: Delete_RedLeafNode_ExpectsSimpleDelete
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests
+  langs:
+  - csharp
+  - vb
+  name: Delete_RedLeafNode_ExpectsSimpleDelete()
+  nameWithType: RedBlackTreeTests.Delete_RedLeafNode_ExpectsSimpleDelete()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedLeafNode_ExpectsSimpleDelete()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/RedBlackTreeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Delete_RedLeafNode_ExpectsSimpleDelete
+    path: ../DataStructures/Trees/Binary/RedBlackTreeTests.cs
+    startLine: 188
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary
+  summary: "\nTests the correctness of delete operation when deleting a red leaf node.\n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Delete_RedLeafNode_ExpectsSimpleDelete()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Delete_RedLeafNode_ExpectsSimpleDelete
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedLeafNode_ExpectsSimpleDelete*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_MultipleKyesConsecutively_ExpectsCorrectTreeAfterEachStep
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_MultipleKyesConsecutively_ExpectsCorrectTreeAfterEachStep
+  id: Delete_MultipleKyesConsecutively_ExpectsCorrectTreeAfterEachStep
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests
+  langs:
+  - csharp
+  - vb
+  name: Delete_MultipleKyesConsecutively_ExpectsCorrectTreeAfterEachStep()
+  nameWithType: RedBlackTreeTests.Delete_MultipleKyesConsecutively_ExpectsCorrectTreeAfterEachStep()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_MultipleKyesConsecutively_ExpectsCorrectTreeAfterEachStep()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/RedBlackTreeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Delete_MultipleKyesConsecutively_ExpectsCorrectTreeAfterEachStep
+    path: ../DataStructures/Trees/Binary/RedBlackTreeTests.cs
+    startLine: 199
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary
+  summary: "\nTests the correctness of delete operation when deleting all the keys in the tree one after the other in a random order. \nFor a step by step transition of the BST while deleting these keys, see &quot;images\\redblack-bst-delete-stepBystep.png&quot;.\n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void Delete_MultipleKyesConsecutively_ExpectsCorrectTreeAfterEachStep()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub Delete_MultipleKyesConsecutively_ExpectsCorrectTreeAfterEachStep
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_MultipleKyesConsecutively_ExpectsCorrectTreeAfterEachStep*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsRed_DefaultColor_ExpectsTrue
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsRed_DefaultColor_ExpectsTrue
+  id: IsRed_DefaultColor_ExpectsTrue
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests
+  langs:
+  - csharp
+  - vb
+  name: IsRed_DefaultColor_ExpectsTrue()
+  nameWithType: RedBlackTreeTests.IsRed_DefaultColor_ExpectsTrue()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsRed_DefaultColor_ExpectsTrue()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/RedBlackTreeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: IsRed_DefaultColor_ExpectsTrue
+    path: ../DataStructures/Trees/Binary/RedBlackTreeTests.cs
+    startLine: 236
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary
+  summary: "\nTests the default color of a RedBlack tree node upon creation.\n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void IsRed_DefaultColor_ExpectsTrue()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub IsRed_DefaultColor_ExpectsTrue
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsRed_DefaultColor_ExpectsTrue*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsRed_ColoredBlack_ExpectsFalse
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsRed_ColoredBlack_ExpectsFalse
+  id: IsRed_ColoredBlack_ExpectsFalse
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests
+  langs:
+  - csharp
+  - vb
+  name: IsRed_ColoredBlack_ExpectsFalse()
+  nameWithType: RedBlackTreeTests.IsRed_ColoredBlack_ExpectsFalse()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsRed_ColoredBlack_ExpectsFalse()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/RedBlackTreeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: IsRed_ColoredBlack_ExpectsFalse
+    path: ../DataStructures/Trees/Binary/RedBlackTreeTests.cs
+    startLine: 248
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary
+  summary: "\nTests whether a black node is red. Expects false. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void IsRed_ColoredBlack_ExpectsFalse()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub IsRed_ColoredBlack_ExpectsFalse
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsRed_ColoredBlack_ExpectsFalse*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsBlack_DefaultColor_ExpectsFalse
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsBlack_DefaultColor_ExpectsFalse
+  id: IsBlack_DefaultColor_ExpectsFalse
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests
+  langs:
+  - csharp
+  - vb
+  name: IsBlack_DefaultColor_ExpectsFalse()
+  nameWithType: RedBlackTreeTests.IsBlack_DefaultColor_ExpectsFalse()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsBlack_DefaultColor_ExpectsFalse()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/RedBlackTreeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: IsBlack_DefaultColor_ExpectsFalse
+    path: ../DataStructures/Trees/Binary/RedBlackTreeTests.cs
+    startLine: 261
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary
+  summary: "\nTests whether a node is black upon creation. Expects false. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void IsBlack_DefaultColor_ExpectsFalse()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub IsBlack_DefaultColor_ExpectsFalse
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsBlack_DefaultColor_ExpectsFalse*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsBlack_ColoredBlack_ExpectsTrue
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsBlack_ColoredBlack_ExpectsTrue
+  id: IsBlack_ColoredBlack_ExpectsTrue
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests
+  langs:
+  - csharp
+  - vb
+  name: IsBlack_ColoredBlack_ExpectsTrue()
+  nameWithType: RedBlackTreeTests.IsBlack_ColoredBlack_ExpectsTrue()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsBlack_ColoredBlack_ExpectsTrue()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/RedBlackTreeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: IsBlack_ColoredBlack_ExpectsTrue
+    path: ../DataStructures/Trees/Binary/RedBlackTreeTests.cs
+    startLine: 271
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary
+  summary: "\nTests whether a black node is black. Expects true. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void IsBlack_ColoredBlack_ExpectsTrue()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub IsBlack_ColoredBlack_ExpectsTrue
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsBlack_ColoredBlack_ExpectsTrue*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.UpdateParentWithNullingChild
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.UpdateParentWithNullingChild
+  id: UpdateParentWithNullingChild
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests
+  langs:
+  - csharp
+  - vb
+  name: UpdateParentWithNullingChild()
+  nameWithType: RedBlackTreeTests.UpdateParentWithNullingChild()
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.UpdateParentWithNullingChild()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/RedBlackTreeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: UpdateParentWithNullingChild
+    path: ../DataStructures/Trees/Binary/RedBlackTreeTests.cs
+    startLine: 284
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary
+  summary: "\nTests the correctness of nullifying children of a node. \n"
+  example: []
+  syntax:
+    content: >-
+      [TestMethod]
+
+      public void UpdateParentWithNullingChild()
+    content.vb: >-
+      <TestMethod>
+
+      Public Sub UpdateParentWithNullingChild
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.UpdateParentWithNullingChild*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.HasRedBlackTreeProperties``2(CSFundamentals.DataStructures.Trees.Binary.RedBlackTree{``0,``1},CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode{``0,``1},System.Int32)
+  commentId: M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.HasRedBlackTreeProperties``2(CSFundamentals.DataStructures.Trees.Binary.RedBlackTree{``0,``1},CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode{``0,``1},System.Int32)
+  id: HasRedBlackTreeProperties``2(CSFundamentals.DataStructures.Trees.Binary.RedBlackTree{``0,``1},CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode{``0,``1},System.Int32)
+  parent: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests
+  langs:
+  - csharp
+  - vb
+  name: HasRedBlackTreeProperties<TKey, TValue>(RedBlackTree<TKey, TValue>, RedBlackTreeNode<TKey, TValue>, Int32)
+  nameWithType: RedBlackTreeTests.HasRedBlackTreeProperties<TKey, TValue>(RedBlackTree<TKey, TValue>, RedBlackTreeNode<TKey, TValue>, Int32)
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.HasRedBlackTreeProperties<TKey, TValue>(CSFundamentals.DataStructures.Trees.Binary.RedBlackTree<TKey, TValue>, CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Tests/DataStructures/Trees/Binary/RedBlackTreeTests.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: HasRedBlackTreeProperties
+    path: ../DataStructures/Trees/Binary/RedBlackTreeTests.cs
+    startLine: 321
+  assemblies:
+  - CSFundamentalsTests
+  namespace: CSFundamentalsTests.DataStructures.Trees.Binary
+  summary: "\nChecks whether a tree has a RedBlack tree properties. \n"
+  example: []
+  syntax:
+    content: >-
+      public static void HasRedBlackTreeProperties<TKey, TValue>(RedBlackTree<TKey, TValue> tree, RedBlackTreeNode<TKey, TValue> root, int expectedNodeCount)
+
+          where TKey : IComparable<TKey>, IEquatable<TKey>
+    parameters:
+    - id: tree
+      type: CSFundamentals.DataStructures.Trees.Binary.RedBlackTree{{TKey},{TValue}}
+      description: 'A RedBlack tree. '
+    - id: root
+      type: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode{{TKey},{TValue}}
+      description: 'Root of a RedBlack tree. '
+    - id: expectedNodeCount
+      type: System.Int32
+      description: 'Is the expected number of nodes in a tree. '
+    typeParameters:
+    - id: TKey
+      description: 'Type of the keys stored in a tree. '
+    - id: TValue
+      description: 'Type of the values stored in a tree. '
+    content.vb: Public Shared Sub HasRedBlackTreeProperties(Of TKey As {IComparable(Of TKey), IEquatable(Of TKey)}, TValue)(tree As RedBlackTree(Of TKey, TValue), root As RedBlackTreeNode(Of TKey, TValue), expectedNodeCount As Integer)
+  overload: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.HasRedBlackTreeProperties*
+  nameWithType.vb: RedBlackTreeTests.HasRedBlackTreeProperties(Of TKey, TValue)(RedBlackTree(Of TKey, TValue), RedBlackTreeNode(Of TKey, TValue), Int32)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.HasRedBlackTreeProperties(Of TKey, TValue)(CSFundamentals.DataStructures.Trees.Binary.RedBlackTree(Of TKey, TValue), CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), System.Int32)
+  name.vb: HasRedBlackTreeProperties(Of TKey, TValue)(RedBlackTree(Of TKey, TValue), RedBlackTreeNode(Of TKey, TValue), Int32)
+references:
+- uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTree`2
+  commentId: T:CSFundamentals.DataStructures.Trees.Binary.RedBlackTree`2
+  name: RedBlackTree<TKey, TValue>
+  nameWithType: RedBlackTree<TKey, TValue>
+  fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTree<TKey, TValue>
+  nameWithType.vb: RedBlackTree(Of TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.RedBlackTree(Of TKey, TValue)
+  name.vb: RedBlackTree(Of TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTree`2
+    name: RedBlackTree
+    nameWithType: RedBlackTree
+    fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTree
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTree`2
+    name: RedBlackTree
+    nameWithType: RedBlackTree
+    fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTree
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary
+  commentId: N:CSFundamentalsTests.DataStructures.Trees.Binary
+  name: CSFundamentalsTests.DataStructures.Trees.Binary
+  nameWithType: CSFundamentalsTests.DataStructures.Trees.Binary
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Initialize*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Initialize
+  name: Initialize
+  nameWithType: RedBlackTreeTests.Initialize
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Initialize
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Build_ExpectsCorrectRedBlackTree*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Build_ExpectsCorrectRedBlackTree
+  name: Build_ExpectsCorrectRedBlackTree
+  nameWithType: RedBlackTreeTests.Build_ExpectsCorrectRedBlackTree
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Build_ExpectsCorrectRedBlackTree
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion
+  name: Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion
+  nameWithType: RedBlackTreeTests.Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedNodeWithTWoChildren_ExpectsToBeRepalcedBy50WhichIsBlackWithARedRightChild*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedNodeWithTWoChildren_ExpectsToBeRepalcedBy50WhichIsBlackWithARedRightChild
+  name: Delete_RedNodeWithTWoChildren_ExpectsToBeRepalcedBy50WhichIsBlackWithARedRightChild
+  nameWithType: RedBlackTreeTests.Delete_RedNodeWithTWoChildren_ExpectsToBeRepalcedBy50WhichIsBlackWithARedRightChild
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedNodeWithTWoChildren_ExpectsToBeRepalcedBy50WhichIsBlackWithARedRightChild
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedNodeWithTwoChildren_ExpectsToBeReplacedBy35AndIsSubjectToLastCaseBlackSiblingWithLeftRedChild*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedNodeWithTwoChildren_ExpectsToBeReplacedBy35AndIsSubjectToLastCaseBlackSiblingWithLeftRedChild
+  name: Delete_RedNodeWithTwoChildren_ExpectsToBeReplacedBy35AndIsSubjectToLastCaseBlackSiblingWithLeftRedChild
+  nameWithType: RedBlackTreeTests.Delete_RedNodeWithTwoChildren_ExpectsToBeReplacedBy35AndIsSubjectToLastCaseBlackSiblingWithLeftRedChild
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedNodeWithTwoChildren_ExpectsToBeReplacedBy35AndIsSubjectToLastCaseBlackSiblingWithLeftRedChild
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackNodeWithOneRedRightChild_ReplaceWithTheRightRedChildWith80AsKeyAndColorItBlack*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackNodeWithOneRedRightChild_ReplaceWithTheRightRedChildWith80AsKeyAndColorItBlack
+  name: Delete_BlackNodeWithOneRedRightChild_ReplaceWithTheRightRedChildWith80AsKeyAndColorItBlack
+  nameWithType: RedBlackTreeTests.Delete_BlackNodeWithOneRedRightChild_ReplaceWithTheRightRedChildWith80AsKeyAndColorItBlack
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackNodeWithOneRedRightChild_ReplaceWithTheRightRedChildWith80AsKeyAndColorItBlack
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackNodeWithOneRedLeftChild_RepalceWithLeftRedChildWith10AsKeyAndColorItBlack*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackNodeWithOneRedLeftChild_RepalceWithLeftRedChildWith10AsKeyAndColorItBlack
+  name: Delete_BlackNodeWithOneRedLeftChild_RepalceWithLeftRedChildWith10AsKeyAndColorItBlack
+  nameWithType: RedBlackTreeTests.Delete_BlackNodeWithOneRedLeftChild_RepalceWithLeftRedChildWith10AsKeyAndColorItBlack
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackNodeWithOneRedLeftChild_RepalceWithLeftRedChildWith10AsKeyAndColorItBlack
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_Root_ExpectsToBeReplacedBy47WhichIsARedLeafAndHasSimpleDeletion*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_Root_ExpectsToBeReplacedBy47WhichIsARedLeafAndHasSimpleDeletion
+  name: Delete_Root_ExpectsToBeReplacedBy47WhichIsARedLeafAndHasSimpleDeletion
+  nameWithType: RedBlackTreeTests.Delete_Root_ExpectsToBeReplacedBy47WhichIsARedLeafAndHasSimpleDeletion
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_Root_ExpectsToBeReplacedBy47WhichIsARedLeafAndHasSimpleDeletion
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackLeafNode_BlackSiblingWithARedLeftChild_ExpectsRightRotate*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackLeafNode_BlackSiblingWithARedLeftChild_ExpectsRightRotate
+  name: Delete_BlackLeafNode_BlackSiblingWithARedLeftChild_ExpectsRightRotate
+  nameWithType: RedBlackTreeTests.Delete_BlackLeafNode_BlackSiblingWithARedLeftChild_ExpectsRightRotate
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackLeafNode_BlackSiblingWithARedLeftChild_ExpectsRightRotate
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackNodeWithLeftRedChild_ReplaceWithLeftChildAs42AndColorItBlack*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackNodeWithLeftRedChild_ReplaceWithLeftChildAs42AndColorItBlack
+  name: Delete_BlackNodeWithLeftRedChild_ReplaceWithLeftChildAs42AndColorItBlack
+  nameWithType: RedBlackTreeTests.Delete_BlackNodeWithLeftRedChild_ReplaceWithLeftChildAs42AndColorItBlack
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_BlackNodeWithLeftRedChild_ReplaceWithLeftChildAs42AndColorItBlack
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedLeafNode_ExpectsSimpleDelete*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedLeafNode_ExpectsSimpleDelete
+  name: Delete_RedLeafNode_ExpectsSimpleDelete
+  nameWithType: RedBlackTreeTests.Delete_RedLeafNode_ExpectsSimpleDelete
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedLeafNode_ExpectsSimpleDelete
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_MultipleKyesConsecutively_ExpectsCorrectTreeAfterEachStep*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_MultipleKyesConsecutively_ExpectsCorrectTreeAfterEachStep
+  name: Delete_MultipleKyesConsecutively_ExpectsCorrectTreeAfterEachStep
+  nameWithType: RedBlackTreeTests.Delete_MultipleKyesConsecutively_ExpectsCorrectTreeAfterEachStep
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_MultipleKyesConsecutively_ExpectsCorrectTreeAfterEachStep
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsRed_DefaultColor_ExpectsTrue*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsRed_DefaultColor_ExpectsTrue
+  name: IsRed_DefaultColor_ExpectsTrue
+  nameWithType: RedBlackTreeTests.IsRed_DefaultColor_ExpectsTrue
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsRed_DefaultColor_ExpectsTrue
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsRed_ColoredBlack_ExpectsFalse*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsRed_ColoredBlack_ExpectsFalse
+  name: IsRed_ColoredBlack_ExpectsFalse
+  nameWithType: RedBlackTreeTests.IsRed_ColoredBlack_ExpectsFalse
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsRed_ColoredBlack_ExpectsFalse
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsBlack_DefaultColor_ExpectsFalse*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsBlack_DefaultColor_ExpectsFalse
+  name: IsBlack_DefaultColor_ExpectsFalse
+  nameWithType: RedBlackTreeTests.IsBlack_DefaultColor_ExpectsFalse
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsBlack_DefaultColor_ExpectsFalse
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsBlack_ColoredBlack_ExpectsTrue*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsBlack_ColoredBlack_ExpectsTrue
+  name: IsBlack_ColoredBlack_ExpectsTrue
+  nameWithType: RedBlackTreeTests.IsBlack_ColoredBlack_ExpectsTrue
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsBlack_ColoredBlack_ExpectsTrue
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.UpdateParentWithNullingChild*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.UpdateParentWithNullingChild
+  name: UpdateParentWithNullingChild
+  nameWithType: RedBlackTreeTests.UpdateParentWithNullingChild
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.UpdateParentWithNullingChild
+- uid: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.HasRedBlackTreeProperties*
+  commentId: Overload:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.HasRedBlackTreeProperties
+  name: HasRedBlackTreeProperties
+  nameWithType: RedBlackTreeTests.HasRedBlackTreeProperties
+  fullName: CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.HasRedBlackTreeProperties
+- uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTree{{TKey},{TValue}}
+  commentId: T:CSFundamentals.DataStructures.Trees.Binary.RedBlackTree{``0,``1}
+  parent: CSFundamentals.DataStructures.Trees.Binary
+  definition: CSFundamentals.DataStructures.Trees.Binary.RedBlackTree`2
+  name: RedBlackTree<TKey, TValue>
+  nameWithType: RedBlackTree<TKey, TValue>
+  fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTree<TKey, TValue>
+  nameWithType.vb: RedBlackTree(Of TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.RedBlackTree(Of TKey, TValue)
+  name.vb: RedBlackTree(Of TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTree`2
+    name: RedBlackTree
+    nameWithType: RedBlackTree
+    fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTree
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTree`2
+    name: RedBlackTree
+    nameWithType: RedBlackTree
+    fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTree
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode{{TKey},{TValue}}
+  commentId: T:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode{``0,``1}
+  parent: CSFundamentals.DataStructures.Trees.Binary
+  definition: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+  name: RedBlackTreeNode<TKey, TValue>
+  nameWithType: RedBlackTreeNode<TKey, TValue>
+  fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>
+  nameWithType.vb: RedBlackTreeNode(Of TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue)
+  name.vb: RedBlackTreeNode(Of TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+    name: RedBlackTreeNode
+    nameWithType: RedBlackTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+    name: RedBlackTreeNode
+    nameWithType: RedBlackTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CSFundamentals.DataStructures.Trees.Binary
+  commentId: N:CSFundamentals.DataStructures.Trees.Binary
+  name: CSFundamentals.DataStructures.Trees.Binary
+  nameWithType: CSFundamentals.DataStructures.Trees.Binary
+  fullName: CSFundamentals.DataStructures.Trees.Binary
+- uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+  commentId: T:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+  name: RedBlackTreeNode<TKey, TValue>
+  nameWithType: RedBlackTreeNode<TKey, TValue>
+  fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>
+  nameWithType.vb: RedBlackTreeNode(Of TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue)
+  name.vb: RedBlackTreeNode(Of TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+    name: RedBlackTreeNode
+    nameWithType: RedBlackTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+    name: RedBlackTreeNode
+    nameWithType: RedBlackTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
