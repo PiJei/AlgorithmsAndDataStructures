@@ -9,7 +9,7 @@
           "src": "../"
         }
       ],
-      "dest": "DocFx/api",
+      "dest": "/DocFx/api",
       "disableGitFeatures": false,
       "disableDefaultFilter": false
     }
