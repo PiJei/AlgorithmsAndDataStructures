@@ -74,7 +74,6 @@ items:
   syntax:
     content: >-
       public abstract class BTreeNodeBase<TNode, TKey, TValue> : IBTreeNode<TNode, TKey, TValue>, IComparable<TNode> where TNode : IBTreeNode<TNode, TKey, TValue>, new()
-
           where TKey : IComparable<TKey>
     typeParameters:
     - id: TNode
@@ -85,7 +84,6 @@ items:
       description: 'Type of the value stored in the B-Tree node. '
     content.vb: >-
       Public MustInherit Class BTreeNodeBase(Of TNode As {IBTreeNode(Of TNode, TKey, TValue), New}, TKey As IComparable(Of TKey), TValue)
-
           Implements IBTreeNode(Of TNode, TKey, TValue), IComparable(Of TNode)
   inheritance:
   - System.Object

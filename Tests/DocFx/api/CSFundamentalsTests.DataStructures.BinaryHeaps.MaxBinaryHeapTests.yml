@@ -298,7 +298,6 @@ items:
   syntax:
     content: >-
       public static bool HasMaxOrderPropertyForNode<TKey, TValue>(BinaryHeapBase<TKey, TValue> heap, int nodeIndex)
-
           where TKey : IComparable<TKey>
     parameters:
     - id: heap
@@ -353,7 +352,6 @@ items:
   syntax:
     content: >-
       public static bool HasMaxOrderPropertyForHeap<TKey, TValue>(int arraySize, MaxBinaryHeap<TKey, TValue> heap)
-
           where TKey : IComparable<TKey>
     parameters:
     - id: arraySize

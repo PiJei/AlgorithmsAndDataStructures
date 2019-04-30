@@ -46,7 +46,6 @@ items:
       <DataStructure("BinarySearchTree (aka BST)")>
 
       Public Class BinarySearchTreeBase(Of TKey As IComparable(Of TKey), TValue)
-
           Inherits BinarySearchTreeBase(Of BinarySearchTreeNode(Of TKey, TValue), TKey, TValue)
   inheritance:
   - System.Object

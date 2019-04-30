@@ -40,7 +40,6 @@ items:
       <Serializable>
 
       Public Class DoublyLinkedNode(Of TValue As IComparable(Of TValue))
-
           Inherits LinkedNode(Of DoublyLinkedNode(Of TValue), TValue)
   inheritance:
   - System.Object

@@ -41,7 +41,6 @@ items:
       description: 'Type of the values stored in the tree. '
     content.vb: >-
       Public Class MockBinarySearchTreeBase(Of TKey As IComparable(Of TKey), TValue)
-
           Inherits BinarySearchTreeBase(Of MockBinaryTreeNode(Of TKey, TValue), TKey, TValue)
   inheritance:
   - System.Object

@@ -39,7 +39,6 @@ items:
       <AttributeUsage(AttributeTargets.Method, AllowMultiple:=True)>
 
       Public Class AlgorithmAttribute
-
           Inherits Attribute
   inheritance:
   - System.Object

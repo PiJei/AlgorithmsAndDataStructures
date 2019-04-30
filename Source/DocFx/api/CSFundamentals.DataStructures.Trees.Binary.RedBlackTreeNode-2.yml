@@ -41,9 +41,7 @@ items:
       description: ''
     content.vb: >-
       Public Class RedBlackTreeNode(Of TKey As IComparable(Of TKey), TValue)
-
           Inherits BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue)
-
           Implements IBinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue), IComparable(Of RedBlackTreeNode(Of TKey, TValue))
   inheritance:
   - System.Object

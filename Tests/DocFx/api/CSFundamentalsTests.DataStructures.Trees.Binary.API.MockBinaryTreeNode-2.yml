@@ -39,9 +39,7 @@ items:
       description: Specifies type of the values in a tree.
     content.vb: >-
       Public Class MockBinaryTreeNode(Of TKey As IComparable(Of TKey), TValue)
-
           Inherits BinaryTreeNode(Of MockBinaryTreeNode(Of TKey, TValue), TKey, TValue)
-
           Implements IBinaryTreeNode(Of MockBinaryTreeNode(Of TKey, TValue), TKey, TValue), IComparable(Of MockBinaryTreeNode(Of TKey, TValue))
   inheritance:
   - System.Object

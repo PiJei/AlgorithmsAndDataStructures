@@ -169,7 +169,6 @@ items:
   syntax:
     content: >-
       public static bool HasMinMaxOrderPropertyForMinLevel<TKey, TValue>(BinaryHeapBase<TKey, TValue> heap, int index)
-
           where TKey : IComparable<TKey>
     parameters:
     - id: heap
@@ -224,7 +223,6 @@ items:
   syntax:
     content: >-
       public static bool HasMinMaxOrderPropertyForMaxLevel<TKey, TValue>(BinaryHeapBase<TKey, TValue> heap, int index)
-
           where TKey : IComparable<TKey>
     parameters:
     - id: heap

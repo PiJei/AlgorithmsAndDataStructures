@@ -30,9 +30,7 @@ items:
     content: 'public class TreeNodeRelationException : Exception, ISerializable'
     content.vb: >-
       Public Class TreeNodeRelationException
-
           Inherits Exception
-
           Implements ISerializable
   inheritance:
   - System.Object

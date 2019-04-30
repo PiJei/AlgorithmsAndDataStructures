@@ -67,7 +67,6 @@ items:
       description: 'Type of the value stored in the node. '
     content.vb: >-
       Public Interface IBTreeNode(Of TNode, TKey As IComparable(Of TKey), TValue)
-
           Inherits IComparable(Of TNode)
   inheritedMembers:
   - System.IComparable{{TNode}}.CompareTo({TNode})

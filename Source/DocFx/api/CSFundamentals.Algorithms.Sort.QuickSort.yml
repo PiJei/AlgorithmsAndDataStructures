@@ -87,7 +87,6 @@ items:
       [TimeComplexity(Case.Average, "O(nLog(n))")]
 
       public static void Sort_Recursively<T>(List<T> list, int startIndex, int endIndex)
-
           where T : IComparable<T>
     parameters:
     - id: list
@@ -238,7 +237,6 @@ items:
   syntax:
     content: >-
       public static void Sort_Iteratively<T>(List<T> list, int startIndex, int endIndex)
-
           where T : IComparable<T>
     parameters:
     - id: list

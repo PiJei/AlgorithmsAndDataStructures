@@ -813,7 +813,6 @@ items:
   syntax:
     content: >-
       public static void HasRedBlackTreeProperties<TKey, TValue>(RedBlackTree<TKey, TValue> tree, RedBlackTreeNode<TKey, TValue> root, int expectedNodeCount)
-
           where TKey : IComparable<TKey>, IEquatable<TKey>
     parameters:
     - id: tree

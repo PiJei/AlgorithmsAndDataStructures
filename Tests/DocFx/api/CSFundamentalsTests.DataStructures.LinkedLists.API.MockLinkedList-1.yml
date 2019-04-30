@@ -41,7 +41,6 @@ items:
       <TestClass>
 
       Public Class MockLinkedList(Of T1 As IComparable(Of T1))
-
           Inherits LinkedListBase(Of MockLinkedNode(Of T1), T1)
   inheritance:
   - System.Object

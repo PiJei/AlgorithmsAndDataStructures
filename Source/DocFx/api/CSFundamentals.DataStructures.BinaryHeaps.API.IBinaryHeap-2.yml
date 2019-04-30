@@ -40,7 +40,6 @@ items:
   syntax:
     content: >-
       public interface IBinaryHeap<TKey, TValue>
-
           where TKey : IComparable<TKey>
     typeParameters:
     - id: TKey

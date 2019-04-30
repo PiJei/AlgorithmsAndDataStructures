@@ -46,7 +46,6 @@ items:
       <DataStructure("B+ Tree")>
 
       Public Class BPlusTree(Of TKey As IComparable(Of TKey), TValue)
-
           Inherits BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue)
   inheritance:
   - System.Object

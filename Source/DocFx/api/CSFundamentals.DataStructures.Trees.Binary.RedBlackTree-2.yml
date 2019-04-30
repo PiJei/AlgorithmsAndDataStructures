@@ -47,7 +47,6 @@ items:
       <DataStructure("RedBlackTree")>
 
       Public Class RedBlackTree(Of TKey As IComparable(Of TKey), TValue)
-
           Inherits BinarySearchTreeBase(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue)
   inheritance:
   - System.Object

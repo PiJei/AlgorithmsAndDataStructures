@@ -37,7 +37,6 @@ items:
       <AttributeUsage(AttributeTargets.Class Or AttributeTargets.Method, AllowMultiple:=False)>
 
       Public Class SpaceComplexityAttribute
-
           Inherits Attribute
   inheritance:
   - System.Object

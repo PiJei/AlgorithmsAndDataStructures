@@ -10,7 +10,7 @@
     <DocumentationFile>CSFundamentalsTests.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
-    <LogFile>DocFx\log.txt</LogFile>
+    <LogFile>$(MSBuildProjectDirectory)\DocFx\log.txt</LogFile>
     <LogLevel>Warning</LogLevel>
 	<DocfxConfigFile Condition=" '$(DocfxConfigFile)' == '' ">$(MSBuildProjectDirectory)\DocFx\docfx.json</DocfxConfigFile>
   </PropertyGroup>

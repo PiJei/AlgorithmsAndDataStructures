@@ -43,7 +43,6 @@ items:
       description: 'Is the type of the keys in the list. '
     content.vb: >-
       Public Class DoublyLinkedList(Of TValue As IComparable(Of TValue))
-
           Inherits LinkedListBase(Of DoublyLinkedNode(Of TValue), TValue)
   inheritance:
   - System.Object

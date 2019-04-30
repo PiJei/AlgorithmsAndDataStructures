@@ -469,7 +469,6 @@ items:
   syntax:
     content: >-
       public static bool HasMinOrderProperty<TKey, TValue>(BinaryHeapBase<TKey, TValue> heap, int nodeIndex)
-
           where TKey : IComparable<TKey>
     parameters:
     - id: heap

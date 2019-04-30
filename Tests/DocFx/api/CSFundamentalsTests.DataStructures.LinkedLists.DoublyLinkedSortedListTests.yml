@@ -211,7 +211,6 @@ items:
   syntax:
     content: >-
       public bool IsSorted<TValue>(DoublyLinkedNode<TValue> head)
-
           where TValue : IComparable<TValue>
     parameters:
     - id: head

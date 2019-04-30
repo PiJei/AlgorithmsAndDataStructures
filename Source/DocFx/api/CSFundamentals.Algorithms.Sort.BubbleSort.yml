@@ -84,7 +84,6 @@ items:
       [TimeComplexity(Case.Average, "O(n²)")]
 
       public static void Sort_Iterative<T>(List<T> list)
-
           where T : IComparable<T>
     parameters:
     - id: list

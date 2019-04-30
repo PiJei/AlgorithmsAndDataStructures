@@ -45,7 +45,6 @@ items:
       description: 'Is the type of the values in the tree nodes. '
     content.vb: >-
       Public Interface IBinaryTreeNode(Of TNode, TKey As IComparable(Of TKey), TValue)
-
           Inherits IComparable(Of TNode)
   inheritedMembers:
   - System.IComparable{{TNode}}.CompareTo({TNode})

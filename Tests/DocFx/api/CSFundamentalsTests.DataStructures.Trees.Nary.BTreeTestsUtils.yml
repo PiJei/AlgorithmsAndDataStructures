@@ -78,7 +78,6 @@ items:
   syntax:
     content: >-
       public static void DFS<TNode, TKey, TValue>(TNode node, List<TNode> nodes)
-
           where TNode : IBTreeNode<TNode, TKey, TValue>, IComparable<TNode> where TKey : IComparable<TKey>
     parameters:
     - id: node
@@ -127,7 +126,6 @@ items:
   syntax:
     content: >-
       public static bool HasBTreeProperties<TNode, TKey, TValue>(BTreeBase<TNode, TKey, TValue> tree, int expectedTotalKeyCount, int expectedDistinctKeyCount, int expectedNodeCount, Func<TNode, bool> HasNodeProperties)
-
           where TNode : IBTreeNode<TNode, TKey, TValue>, IComparable<TNode> where TKey : IComparable<TKey>
     parameters:
     - id: tree
@@ -193,7 +191,6 @@ items:
   syntax:
     content: >-
       public static bool HasBTreeNodeProperties<TNode, TKey, TValue>(TNode node)
-
           where TNode : IBTreeNode<TNode, TKey, TValue>, IComparable<TNode> where TKey : IComparable<TKey>
     parameters:
     - id: node
@@ -247,7 +244,6 @@ items:
   syntax:
     content: >-
       public static bool HasBPlusTreeNodeProperties<TKey, TValue>(BPlusTreeNode<TKey, TValue> node)
-
           where TKey : IComparable<TKey>
     parameters:
     - id: node

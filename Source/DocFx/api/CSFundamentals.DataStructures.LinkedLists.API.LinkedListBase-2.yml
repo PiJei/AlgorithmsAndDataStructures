@@ -34,7 +34,6 @@ items:
   syntax:
     content: >-
       public abstract class LinkedListBase<TNode, TValue>
-
           where TNode : LinkedNode<TNode, TValue> where TValue : IComparable<TValue>
     typeParameters:
     - id: TNode

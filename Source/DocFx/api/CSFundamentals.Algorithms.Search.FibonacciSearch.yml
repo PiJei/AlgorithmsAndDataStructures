@@ -75,7 +75,6 @@ items:
       [Algorithm(AlgorithmType.Search, "FibonacciSearch", Assumptions = "Array is sorted with an ascending order.")]
 
       public static int Search<T>(List<T> sortedList, T key)
-
           where T : IComparable<T>
     parameters:
     - id: sortedList

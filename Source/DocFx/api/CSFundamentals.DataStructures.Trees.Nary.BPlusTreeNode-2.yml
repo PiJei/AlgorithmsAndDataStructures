@@ -44,9 +44,7 @@ items:
       description: 'Type of the values in the tree. '
     content.vb: >-
       Public Class BPlusTreeNode(Of TKey As IComparable(Of TKey), TValue)
-
           Inherits BTreeNodeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue)
-
           Implements IBTreeNode(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue), IComparable(Of BPlusTreeNode(Of TKey, TValue))
   inheritance:
   - System.Object

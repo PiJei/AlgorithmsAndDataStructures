@@ -702,7 +702,6 @@ items:
   syntax:
     content: >-
       public static bool HasBinarySearchTreeOrderProperty<TNode, TKey, TValue>(TNode root)
-
           where TNode : IBinaryTreeNode<TNode, TKey, TValue> where TKey : IComparable<TKey>, IEquatable<TKey>
     parameters:
     - id: root

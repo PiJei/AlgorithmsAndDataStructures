@@ -82,7 +82,6 @@ items:
       [TimeComplexity(Case.Average, "O(nLog(n))")]
 
       public static List<T> Sort<T>(List<T> list)
-
           where T : IComparable<T>
     parameters:
     - id: list

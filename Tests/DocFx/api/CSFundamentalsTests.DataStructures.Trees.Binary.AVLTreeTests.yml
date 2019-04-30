@@ -857,7 +857,6 @@ items:
   syntax:
     content: >-
       public bool HasAVLTreeProperties<TKey, TValue>(AVLTree<TKey, TValue> tree, AVLTreeNode<TKey, TValue> root, int expectedNodeCount)
-
           where TKey : IComparable<TKey>, IEquatable<TKey>
     parameters:
     - id: tree
@@ -913,7 +912,6 @@ items:
   syntax:
     content: >-
       public bool HasExpectedBalanceFactor<TKey, TValue>(AVLTree<TKey, TValue> tree, List<AVLTreeNode<TKey, TValue>> nodes)
-
           where TKey : IComparable<TKey>, IEquatable<TKey>
     parameters:
     - id: tree
