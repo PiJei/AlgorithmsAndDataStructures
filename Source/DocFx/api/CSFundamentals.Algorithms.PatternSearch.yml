@@ -1,0 +1,40 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentals.Algorithms.PatternSearch
+  commentId: N:CSFundamentals.Algorithms.PatternSearch
+  id: CSFundamentals.Algorithms.PatternSearch
+  children:
+  - CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch
+  - CSFundamentals.Algorithms.PatternSearch.KMPSearch
+  - CSFundamentals.Algorithms.PatternSearch.NaiveSearch
+  - CSFundamentals.Algorithms.PatternSearch.RabinKarpSearch
+  langs:
+  - csharp
+  - vb
+  name: CSFundamentals.Algorithms.PatternSearch
+  nameWithType: CSFundamentals.Algorithms.PatternSearch
+  fullName: CSFundamentals.Algorithms.PatternSearch
+  type: Namespace
+  assemblies:
+  - CSFundamentals
+references:
+- uid: CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch
+  commentId: T:CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch
+  name: BoyerMooreSearch
+  nameWithType: BoyerMooreSearch
+  fullName: CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch
+- uid: CSFundamentals.Algorithms.PatternSearch.KMPSearch
+  commentId: T:CSFundamentals.Algorithms.PatternSearch.KMPSearch
+  name: KMPSearch
+  nameWithType: KMPSearch
+  fullName: CSFundamentals.Algorithms.PatternSearch.KMPSearch
+- uid: CSFundamentals.Algorithms.PatternSearch.NaiveSearch
+  commentId: T:CSFundamentals.Algorithms.PatternSearch.NaiveSearch
+  name: NaiveSearch
+  nameWithType: NaiveSearch
+  fullName: CSFundamentals.Algorithms.PatternSearch.NaiveSearch
+- uid: CSFundamentals.Algorithms.PatternSearch.RabinKarpSearch
+  commentId: T:CSFundamentals.Algorithms.PatternSearch.RabinKarpSearch
+  name: RabinKarpSearch
+  nameWithType: RabinKarpSearch
+  fullName: CSFundamentals.Algorithms.PatternSearch.RabinKarpSearch

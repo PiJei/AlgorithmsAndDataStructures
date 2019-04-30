@@ -1,0 +1,2230 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+  commentId: T:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+  id: RedBlackTreeNode`2
+  parent: CSFundamentals.DataStructures.Trees.Binary
+  children:
+  - CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.#ctor
+  - CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.#ctor(`0,`1,CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor)
+  - CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.Color
+  - CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.FlipColor
+  - CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.LeftChild
+  - CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.Parent
+  - CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.RightChild
+  langs:
+  - csharp
+  - vb
+  name: RedBlackTreeNode<TKey, TValue>
+  nameWithType: RedBlackTreeNode<TKey, TValue>
+  fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>
+  type: Class
+  source:
+    remote:
+      path: Source/DataStructures/Trees/Binary/RedBlackTreeNode.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: RedBlackTreeNode
+    path: ../DataStructures/Trees/Binary/RedBlackTreeNode.cs
+    startLine: 30
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.Trees.Binary
+  summary: "\nImplements a RedBlack tree node.\n"
+  example: []
+  syntax:
+    content: 'public class RedBlackTreeNode<TKey, TValue> : BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>, IBinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>, IComparable<RedBlackTreeNode<TKey, TValue>> where TKey : IComparable<TKey>'
+    typeParameters:
+    - id: TKey
+      description: ''
+    - id: TValue
+      description: ''
+    content.vb: >-
+      Public Class RedBlackTreeNode(Of TKey As IComparable(Of TKey), TValue)
+          Inherits BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue)
+          Implements IBinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue), IComparable(Of RedBlackTreeNode(Of TKey, TValue))
+  inheritance:
+  - System.Object
+  - CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}
+  implements:
+  - CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}
+  - System.IComparable{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2}
+  inheritedMembers:
+  - CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.IsNill
+  - CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.Key
+  - CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.Value
+  - CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.LeftChild
+  - CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.RightChild
+  - CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.Parent
+  - CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.IsLeaf
+  - CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.IsLeftChild
+  - CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.IsRightChild
+  - CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.IsRoot
+  - CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.GetUncle
+  - CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.GetSibling
+  - CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.GetGrandParent
+  - CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.FormsLine
+  - CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.FormsTriangle
+  - CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.CompareTo(CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode{{TKey},{TValue}})
+  - CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.IsComplete
+  - CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.GetChildren
+  - CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.GetGrandChildren
+  - CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.Equals(CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode{{TKey},{TValue}})
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  nameWithType.vb: RedBlackTreeNode(Of TKey, TValue)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue)
+  name.vb: RedBlackTreeNode(Of TKey, TValue)
+- uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.Color
+  commentId: P:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.Color
+  id: Color
+  parent: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+  langs:
+  - csharp
+  - vb
+  name: Color
+  nameWithType: RedBlackTreeNode<TKey, TValue>.Color
+  fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>.Color
+  type: Property
+  source:
+    remote:
+      path: Source/DataStructures/Trees/Binary/RedBlackTreeNode.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Color
+    path: ../DataStructures/Trees/Binary/RedBlackTreeNode.cs
+    startLine: 37
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.Trees.Binary
+  summary: "\nIs the color of the node. \n"
+  example: []
+  syntax:
+    content: public RedBlackTreeNodeColor Color { get; set; }
+    parameters: []
+    return:
+      type: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor
+    content.vb: Public Property Color As RedBlackTreeNodeColor
+  overload: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.Color*
+  nameWithType.vb: RedBlackTreeNode(Of TKey, TValue).Color
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue).Color
+- uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.LeftChild
+  commentId: P:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.LeftChild
+  id: LeftChild
+  parent: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+  langs:
+  - csharp
+  - vb
+  name: LeftChild
+  nameWithType: RedBlackTreeNode<TKey, TValue>.LeftChild
+  fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>.LeftChild
+  type: Property
+  source:
+    remote:
+      path: Source/DataStructures/Trees/Binary/RedBlackTreeNode.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: LeftChild
+    path: ../DataStructures/Trees/Binary/RedBlackTreeNode.cs
+    startLine: 42
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.Trees.Binary
+  summary: "\nIs a reference to the left child of the current node. \n"
+  example: []
+  syntax:
+    content: public override RedBlackTreeNode<TKey, TValue> LeftChild { get; set; }
+    parameters: []
+    return:
+      type: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+    content.vb: Public Overrides Property LeftChild As RedBlackTreeNode(Of TKey, TValue)
+  overridden: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.LeftChild
+  overload: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.LeftChild*
+  nameWithType.vb: RedBlackTreeNode(Of TKey, TValue).LeftChild
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue).LeftChild
+- uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.RightChild
+  commentId: P:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.RightChild
+  id: RightChild
+  parent: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+  langs:
+  - csharp
+  - vb
+  name: RightChild
+  nameWithType: RedBlackTreeNode<TKey, TValue>.RightChild
+  fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>.RightChild
+  type: Property
+  source:
+    remote:
+      path: Source/DataStructures/Trees/Binary/RedBlackTreeNode.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: RightChild
+    path: ../DataStructures/Trees/Binary/RedBlackTreeNode.cs
+    startLine: 47
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.Trees.Binary
+  summary: "\nIs a reference to the right child of the current node.\n"
+  example: []
+  syntax:
+    content: public override RedBlackTreeNode<TKey, TValue> RightChild { get; set; }
+    parameters: []
+    return:
+      type: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+    content.vb: Public Overrides Property RightChild As RedBlackTreeNode(Of TKey, TValue)
+  overridden: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.RightChild
+  overload: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.RightChild*
+  nameWithType.vb: RedBlackTreeNode(Of TKey, TValue).RightChild
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue).RightChild
+- uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.Parent
+  commentId: P:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.Parent
+  id: Parent
+  parent: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+  langs:
+  - csharp
+  - vb
+  name: Parent
+  nameWithType: RedBlackTreeNode<TKey, TValue>.Parent
+  fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>.Parent
+  type: Property
+  source:
+    remote:
+      path: Source/DataStructures/Trees/Binary/RedBlackTreeNode.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Parent
+    path: ../DataStructures/Trees/Binary/RedBlackTreeNode.cs
+    startLine: 52
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.Trees.Binary
+  summary: "\nIs a reference to the parent of the current node.\n"
+  example: []
+  syntax:
+    content: public override RedBlackTreeNode<TKey, TValue> Parent { get; set; }
+    parameters: []
+    return:
+      type: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+    content.vb: Public Overrides Property Parent As RedBlackTreeNode(Of TKey, TValue)
+  overridden: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.Parent
+  overload: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.Parent*
+  nameWithType.vb: RedBlackTreeNode(Of TKey, TValue).Parent
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue).Parent
+- uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.#ctor
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.#ctor
+  id: '#ctor'
+  parent: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+  langs:
+  - csharp
+  - vb
+  name: RedBlackTreeNode()
+  nameWithType: RedBlackTreeNode<TKey, TValue>.RedBlackTreeNode()
+  fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>.RedBlackTreeNode()
+  type: Constructor
+  source:
+    remote:
+      path: Source/DataStructures/Trees/Binary/RedBlackTreeNode.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: .ctor
+    path: ../DataStructures/Trees/Binary/RedBlackTreeNode.cs
+    startLine: 57
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.Trees.Binary
+  summary: "\nParameter-less constructor. \n"
+  example: []
+  syntax:
+    content: public RedBlackTreeNode()
+    content.vb: Public Sub New
+  overload: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.#ctor*
+  nameWithType.vb: RedBlackTreeNode(Of TKey, TValue).RedBlackTreeNode()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue).RedBlackTreeNode()
+- uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.#ctor(`0,`1,CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor)
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.#ctor(`0,`1,CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor)
+  id: '#ctor(`0,`1,CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor)'
+  parent: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+  langs:
+  - csharp
+  - vb
+  name: RedBlackTreeNode(TKey, TValue, RedBlackTreeNodeColor)
+  nameWithType: RedBlackTreeNode<TKey, TValue>.RedBlackTreeNode(TKey, TValue, RedBlackTreeNodeColor)
+  fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>.RedBlackTreeNode(TKey, TValue, CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor)
+  type: Constructor
+  source:
+    remote:
+      path: Source/DataStructures/Trees/Binary/RedBlackTreeNode.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: .ctor
+    path: ../DataStructures/Trees/Binary/RedBlackTreeNode.cs
+    startLine: 68
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.Trees.Binary
+  summary: "\nConstructor. \n"
+  example: []
+  syntax:
+    content: public RedBlackTreeNode(TKey key, TValue value, RedBlackTreeNodeColor color = RedBlackTreeNodeColor.Red)
+    parameters:
+    - id: key
+      type: '{TKey}'
+      description: 'Is the key to be stored in the node. '
+    - id: value
+      type: '{TValue}'
+      description: 'Is the value to be stored in the node. '
+    - id: color
+      type: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor
+      description: 'Is the color of the node, default is red. '
+    content.vb: Public Sub New(key As TKey, value As TValue, color As RedBlackTreeNodeColor = RedBlackTreeNodeColor.Red)
+  overload: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.#ctor*
+  nameWithType.vb: RedBlackTreeNode(Of TKey, TValue).RedBlackTreeNode(TKey, TValue, RedBlackTreeNodeColor)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue).RedBlackTreeNode(TKey, TValue, CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor)
+- uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.FlipColor
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.FlipColor
+  id: FlipColor
+  parent: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+  langs:
+  - csharp
+  - vb
+  name: FlipColor()
+  nameWithType: RedBlackTreeNode<TKey, TValue>.FlipColor()
+  fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>.FlipColor()
+  type: Method
+  source:
+    remote:
+      path: Source/DataStructures/Trees/Binary/RedBlackTreeNode.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: FlipColor
+    path: ../DataStructures/Trees/Binary/RedBlackTreeNode.cs
+    startLine: 76
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.Trees.Binary
+  summary: "\nFlips the current color of the node between red and black. \n"
+  example: []
+  syntax:
+    content: public void FlipColor()
+    content.vb: Public Sub FlipColor
+  overload: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.FlipColor*
+  nameWithType.vb: RedBlackTreeNode(Of TKey, TValue).FlipColor()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue).FlipColor()
+references:
+- uid: CSFundamentals.DataStructures.Trees.Binary
+  commentId: N:CSFundamentals.DataStructures.Trees.Binary
+  name: CSFundamentals.DataStructures.Trees.Binary
+  nameWithType: CSFundamentals.DataStructures.Trees.Binary
+  fullName: CSFundamentals.DataStructures.Trees.Binary
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}
+  commentId: T:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,`0,`1}
+  parent: CSFundamentals.DataStructures.Trees.Binary.API
+  definition: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3
+  name: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>
+  nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>
+  nameWithType.vb: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue)
+  name.vb: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3
+    name: BinaryTreeNode
+    nameWithType: BinaryTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+    name: RedBlackTreeNode
+    nameWithType: RedBlackTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3
+    name: BinaryTreeNode
+    nameWithType: BinaryTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+    name: RedBlackTreeNode
+    nameWithType: RedBlackTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}
+  commentId: T:CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,`0,`1}
+  parent: CSFundamentals.DataStructures.Trees.Binary.API
+  definition: CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode`3
+  name: IBinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>
+  nameWithType: IBinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>
+  nameWithType.vb: IBinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue)
+  name.vb: IBinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode`3
+    name: IBinaryTreeNode
+    nameWithType: IBinaryTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+    name: RedBlackTreeNode
+    nameWithType: RedBlackTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode`3
+    name: IBinaryTreeNode
+    nameWithType: IBinaryTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+    name: RedBlackTreeNode
+    nameWithType: RedBlackTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IComparable{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2}
+  commentId: T:System.IComparable{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2}
+  parent: System
+  definition: System.IComparable`1
+  name: IComparable<RedBlackTreeNode<TKey, TValue>>
+  nameWithType: IComparable<RedBlackTreeNode<TKey, TValue>>
+  fullName: System.IComparable<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>>
+  nameWithType.vb: IComparable(Of RedBlackTreeNode(Of TKey, TValue))
+  fullName.vb: System.IComparable(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue))
+  name.vb: IComparable(Of RedBlackTreeNode(Of TKey, TValue))
+  spec.csharp:
+  - uid: System.IComparable`1
+    name: IComparable
+    nameWithType: IComparable
+    fullName: System.IComparable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+    name: RedBlackTreeNode
+    nameWithType: RedBlackTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IComparable`1
+    name: IComparable
+    nameWithType: IComparable
+    fullName: System.IComparable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+    name: RedBlackTreeNode
+    nameWithType: RedBlackTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.IsNill
+  commentId: P:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,`0,`1}.IsNill
+  parent: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsNill
+  name: IsNill
+  nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.IsNill
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.IsNill
+  nameWithType.vb: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).IsNill
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).IsNill
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.Key
+  commentId: P:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,`0,`1}.Key
+  parent: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.Key
+  name: Key
+  nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.Key
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.Key
+  nameWithType.vb: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).Key
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).Key
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.Value
+  commentId: P:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,`0,`1}.Value
+  parent: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.Value
+  name: Value
+  nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.Value
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.Value
+  nameWithType.vb: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).Value
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).Value
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.LeftChild
+  commentId: P:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,`0,`1}.LeftChild
+  parent: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.LeftChild
+  name: LeftChild
+  nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.LeftChild
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.LeftChild
+  nameWithType.vb: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).LeftChild
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).LeftChild
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.RightChild
+  commentId: P:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,`0,`1}.RightChild
+  parent: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.RightChild
+  name: RightChild
+  nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.RightChild
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.RightChild
+  nameWithType.vb: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).RightChild
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).RightChild
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.Parent
+  commentId: P:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,`0,`1}.Parent
+  parent: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.Parent
+  name: Parent
+  nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.Parent
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.Parent
+  nameWithType.vb: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).Parent
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).Parent
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.IsLeaf
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,`0,`1}.IsLeaf
+  parent: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsLeaf
+  name: IsLeaf()
+  nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.IsLeaf()
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.IsLeaf()
+  nameWithType.vb: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).IsLeaf()
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).IsLeaf()
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsLeaf
+    name: IsLeaf
+    nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.IsLeaf
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.IsLeaf
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsLeaf
+    name: IsLeaf
+    nameWithType: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).IsLeaf
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).IsLeaf
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.IsLeftChild
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,`0,`1}.IsLeftChild
+  parent: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsLeftChild
+  name: IsLeftChild()
+  nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.IsLeftChild()
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.IsLeftChild()
+  nameWithType.vb: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).IsLeftChild()
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).IsLeftChild()
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsLeftChild
+    name: IsLeftChild
+    nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.IsLeftChild
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.IsLeftChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsLeftChild
+    name: IsLeftChild
+    nameWithType: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).IsLeftChild
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).IsLeftChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.IsRightChild
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,`0,`1}.IsRightChild
+  parent: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsRightChild
+  name: IsRightChild()
+  nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.IsRightChild()
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.IsRightChild()
+  nameWithType.vb: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).IsRightChild()
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).IsRightChild()
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsRightChild
+    name: IsRightChild
+    nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.IsRightChild
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.IsRightChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsRightChild
+    name: IsRightChild
+    nameWithType: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).IsRightChild
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).IsRightChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.IsRoot
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,`0,`1}.IsRoot
+  parent: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsRoot
+  name: IsRoot()
+  nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.IsRoot()
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.IsRoot()
+  nameWithType.vb: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).IsRoot()
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).IsRoot()
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsRoot
+    name: IsRoot
+    nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.IsRoot
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.IsRoot
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsRoot
+    name: IsRoot
+    nameWithType: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).IsRoot
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).IsRoot
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.GetUncle
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,`0,`1}.GetUncle
+  parent: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetUncle
+  name: GetUncle()
+  nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.GetUncle()
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.GetUncle()
+  nameWithType.vb: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).GetUncle()
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).GetUncle()
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetUncle
+    name: GetUncle
+    nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.GetUncle
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.GetUncle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetUncle
+    name: GetUncle
+    nameWithType: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).GetUncle
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).GetUncle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.GetSibling
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,`0,`1}.GetSibling
+  parent: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetSibling
+  name: GetSibling()
+  nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.GetSibling()
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.GetSibling()
+  nameWithType.vb: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).GetSibling()
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).GetSibling()
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetSibling
+    name: GetSibling
+    nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.GetSibling
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.GetSibling
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetSibling
+    name: GetSibling
+    nameWithType: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).GetSibling
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).GetSibling
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.GetGrandParent
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,`0,`1}.GetGrandParent
+  parent: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetGrandParent
+  name: GetGrandParent()
+  nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.GetGrandParent()
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.GetGrandParent()
+  nameWithType.vb: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).GetGrandParent()
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).GetGrandParent()
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetGrandParent
+    name: GetGrandParent
+    nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.GetGrandParent
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.GetGrandParent
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetGrandParent
+    name: GetGrandParent
+    nameWithType: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).GetGrandParent
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).GetGrandParent
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.FormsLine
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,`0,`1}.FormsLine
+  parent: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.FormsLine
+  name: FormsLine()
+  nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.FormsLine()
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.FormsLine()
+  nameWithType.vb: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).FormsLine()
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).FormsLine()
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.FormsLine
+    name: FormsLine
+    nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.FormsLine
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.FormsLine
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.FormsLine
+    name: FormsLine
+    nameWithType: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).FormsLine
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).FormsLine
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.FormsTriangle
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,`0,`1}.FormsTriangle
+  parent: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.FormsTriangle
+  name: FormsTriangle()
+  nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.FormsTriangle()
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.FormsTriangle()
+  nameWithType.vb: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).FormsTriangle()
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).FormsTriangle()
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.FormsTriangle
+    name: FormsTriangle
+    nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.FormsTriangle
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.FormsTriangle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.FormsTriangle
+    name: FormsTriangle
+    nameWithType: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).FormsTriangle
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).FormsTriangle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.CompareTo(CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode{{TKey},{TValue}})
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,`0,`1}.CompareTo(CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode{`0,`1})
+  parent: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.CompareTo(`0)
+  name: CompareTo(RedBlackTreeNode<TKey, TValue>)
+  nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.CompareTo(RedBlackTreeNode<TKey, TValue>)
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.CompareTo(CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>)
+  nameWithType.vb: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).CompareTo(RedBlackTreeNode(Of TKey, TValue))
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).CompareTo(CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue))
+  name.vb: CompareTo(RedBlackTreeNode(Of TKey, TValue))
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.CompareTo(`0)
+    name: CompareTo
+    nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.CompareTo
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.CompareTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+    name: RedBlackTreeNode
+    nameWithType: RedBlackTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.CompareTo(`0)
+    name: CompareTo
+    nameWithType: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).CompareTo
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).CompareTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+    name: RedBlackTreeNode
+    nameWithType: RedBlackTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.IsComplete
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,`0,`1}.IsComplete
+  parent: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsComplete
+  name: IsComplete()
+  nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.IsComplete()
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.IsComplete()
+  nameWithType.vb: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).IsComplete()
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).IsComplete()
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsComplete
+    name: IsComplete
+    nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.IsComplete
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.IsComplete
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsComplete
+    name: IsComplete
+    nameWithType: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).IsComplete
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).IsComplete
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.GetChildren
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,`0,`1}.GetChildren
+  parent: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetChildren
+  name: GetChildren()
+  nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.GetChildren()
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.GetChildren()
+  nameWithType.vb: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).GetChildren()
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).GetChildren()
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetChildren
+    name: GetChildren
+    nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.GetChildren
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.GetChildren
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetChildren
+    name: GetChildren
+    nameWithType: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).GetChildren
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).GetChildren
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.GetGrandChildren
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,`0,`1}.GetGrandChildren
+  parent: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetGrandChildren
+  name: GetGrandChildren()
+  nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.GetGrandChildren()
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.GetGrandChildren()
+  nameWithType.vb: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).GetGrandChildren()
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).GetGrandChildren()
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetGrandChildren
+    name: GetGrandChildren
+    nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.GetGrandChildren
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.GetGrandChildren
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetGrandChildren
+    name: GetGrandChildren
+    nameWithType: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).GetGrandChildren
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).GetGrandChildren
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}.Equals(CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode{{TKey},{TValue}})
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,`0,`1}.Equals(CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode{`0,`1})
+  parent: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode{CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2,{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.Equals(`0)
+  name: Equals(RedBlackTreeNode<TKey, TValue>)
+  nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.Equals(RedBlackTreeNode<TKey, TValue>)
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.Equals(CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>)
+  nameWithType.vb: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).Equals(RedBlackTreeNode(Of TKey, TValue))
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).Equals(CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue))
+  name.vb: Equals(RedBlackTreeNode(Of TKey, TValue))
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.Equals(`0)
+    name: Equals
+    nameWithType: BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>.Equals
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>, TKey, TValue>.Equals
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+    name: RedBlackTreeNode
+    nameWithType: RedBlackTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.Equals(`0)
+    name: Equals
+    nameWithType: BinaryTreeNode(Of RedBlackTreeNode(Of TKey, TValue), TKey, TValue).Equals
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue), TKey, TValue).Equals
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+    name: RedBlackTreeNode
+    nameWithType: RedBlackTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3
+  commentId: T:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3
+  name: BinaryTreeNode<TNode, TKey, TValue>
+  nameWithType: BinaryTreeNode<TNode, TKey, TValue>
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>
+  nameWithType.vb: BinaryTreeNode(Of TNode, TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue)
+  name.vb: BinaryTreeNode(Of TNode, TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3
+    name: BinaryTreeNode
+    nameWithType: BinaryTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3
+    name: BinaryTreeNode
+    nameWithType: BinaryTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API
+  commentId: N:CSFundamentals.DataStructures.Trees.Binary.API
+  name: CSFundamentals.DataStructures.Trees.Binary.API
+  nameWithType: CSFundamentals.DataStructures.Trees.Binary.API
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode`3
+  commentId: T:CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode`3
+  name: IBinaryTreeNode<TNode, TKey, TValue>
+  nameWithType: IBinaryTreeNode<TNode, TKey, TValue>
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode<TNode, TKey, TValue>
+  nameWithType.vb: IBinaryTreeNode(Of TNode, TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode(Of TNode, TKey, TValue)
+  name.vb: IBinaryTreeNode(Of TNode, TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode`3
+    name: IBinaryTreeNode
+    nameWithType: IBinaryTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode`3
+    name: IBinaryTreeNode
+    nameWithType: IBinaryTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IComparable`1
+  commentId: T:System.IComparable`1
+  isExternal: true
+  name: IComparable<T>
+  nameWithType: IComparable<T>
+  fullName: System.IComparable<T>
+  nameWithType.vb: IComparable(Of T)
+  fullName.vb: System.IComparable(Of T)
+  name.vb: IComparable(Of T)
+  spec.csharp:
+  - uid: System.IComparable`1
+    name: IComparable
+    nameWithType: IComparable
+    fullName: System.IComparable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IComparable`1
+    name: IComparable
+    nameWithType: IComparable
+    fullName: System.IComparable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsNill
+  commentId: P:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsNill
+  name: IsNill
+  nameWithType: BinaryTreeNode<TNode, TKey, TValue>.IsNill
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.IsNill
+  nameWithType.vb: BinaryTreeNode(Of TNode, TKey, TValue).IsNill
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).IsNill
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.Key
+  commentId: P:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.Key
+  name: Key
+  nameWithType: BinaryTreeNode<TNode, TKey, TValue>.Key
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.Key
+  nameWithType.vb: BinaryTreeNode(Of TNode, TKey, TValue).Key
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).Key
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.Value
+  commentId: P:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.Value
+  name: Value
+  nameWithType: BinaryTreeNode<TNode, TKey, TValue>.Value
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.Value
+  nameWithType.vb: BinaryTreeNode(Of TNode, TKey, TValue).Value
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).Value
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.LeftChild
+  commentId: P:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.LeftChild
+  name: LeftChild
+  nameWithType: BinaryTreeNode<TNode, TKey, TValue>.LeftChild
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.LeftChild
+  nameWithType.vb: BinaryTreeNode(Of TNode, TKey, TValue).LeftChild
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).LeftChild
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.RightChild
+  commentId: P:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.RightChild
+  name: RightChild
+  nameWithType: BinaryTreeNode<TNode, TKey, TValue>.RightChild
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.RightChild
+  nameWithType.vb: BinaryTreeNode(Of TNode, TKey, TValue).RightChild
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).RightChild
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.Parent
+  commentId: P:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.Parent
+  name: Parent
+  nameWithType: BinaryTreeNode<TNode, TKey, TValue>.Parent
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.Parent
+  nameWithType.vb: BinaryTreeNode(Of TNode, TKey, TValue).Parent
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).Parent
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsLeaf
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsLeaf
+  name: IsLeaf()
+  nameWithType: BinaryTreeNode<TNode, TKey, TValue>.IsLeaf()
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.IsLeaf()
+  nameWithType.vb: BinaryTreeNode(Of TNode, TKey, TValue).IsLeaf()
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).IsLeaf()
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsLeaf
+    name: IsLeaf
+    nameWithType: BinaryTreeNode<TNode, TKey, TValue>.IsLeaf
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.IsLeaf
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsLeaf
+    name: IsLeaf
+    nameWithType: BinaryTreeNode(Of TNode, TKey, TValue).IsLeaf
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).IsLeaf
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsLeftChild
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsLeftChild
+  name: IsLeftChild()
+  nameWithType: BinaryTreeNode<TNode, TKey, TValue>.IsLeftChild()
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.IsLeftChild()
+  nameWithType.vb: BinaryTreeNode(Of TNode, TKey, TValue).IsLeftChild()
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).IsLeftChild()
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsLeftChild
+    name: IsLeftChild
+    nameWithType: BinaryTreeNode<TNode, TKey, TValue>.IsLeftChild
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.IsLeftChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsLeftChild
+    name: IsLeftChild
+    nameWithType: BinaryTreeNode(Of TNode, TKey, TValue).IsLeftChild
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).IsLeftChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsRightChild
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsRightChild
+  name: IsRightChild()
+  nameWithType: BinaryTreeNode<TNode, TKey, TValue>.IsRightChild()
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.IsRightChild()
+  nameWithType.vb: BinaryTreeNode(Of TNode, TKey, TValue).IsRightChild()
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).IsRightChild()
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsRightChild
+    name: IsRightChild
+    nameWithType: BinaryTreeNode<TNode, TKey, TValue>.IsRightChild
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.IsRightChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsRightChild
+    name: IsRightChild
+    nameWithType: BinaryTreeNode(Of TNode, TKey, TValue).IsRightChild
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).IsRightChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsRoot
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsRoot
+  name: IsRoot()
+  nameWithType: BinaryTreeNode<TNode, TKey, TValue>.IsRoot()
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.IsRoot()
+  nameWithType.vb: BinaryTreeNode(Of TNode, TKey, TValue).IsRoot()
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).IsRoot()
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsRoot
+    name: IsRoot
+    nameWithType: BinaryTreeNode<TNode, TKey, TValue>.IsRoot
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.IsRoot
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsRoot
+    name: IsRoot
+    nameWithType: BinaryTreeNode(Of TNode, TKey, TValue).IsRoot
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).IsRoot
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetUncle
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetUncle
+  name: GetUncle()
+  nameWithType: BinaryTreeNode<TNode, TKey, TValue>.GetUncle()
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.GetUncle()
+  nameWithType.vb: BinaryTreeNode(Of TNode, TKey, TValue).GetUncle()
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).GetUncle()
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetUncle
+    name: GetUncle
+    nameWithType: BinaryTreeNode<TNode, TKey, TValue>.GetUncle
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.GetUncle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetUncle
+    name: GetUncle
+    nameWithType: BinaryTreeNode(Of TNode, TKey, TValue).GetUncle
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).GetUncle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetSibling
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetSibling
+  name: GetSibling()
+  nameWithType: BinaryTreeNode<TNode, TKey, TValue>.GetSibling()
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.GetSibling()
+  nameWithType.vb: BinaryTreeNode(Of TNode, TKey, TValue).GetSibling()
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).GetSibling()
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetSibling
+    name: GetSibling
+    nameWithType: BinaryTreeNode<TNode, TKey, TValue>.GetSibling
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.GetSibling
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetSibling
+    name: GetSibling
+    nameWithType: BinaryTreeNode(Of TNode, TKey, TValue).GetSibling
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).GetSibling
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetGrandParent
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetGrandParent
+  name: GetGrandParent()
+  nameWithType: BinaryTreeNode<TNode, TKey, TValue>.GetGrandParent()
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.GetGrandParent()
+  nameWithType.vb: BinaryTreeNode(Of TNode, TKey, TValue).GetGrandParent()
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).GetGrandParent()
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetGrandParent
+    name: GetGrandParent
+    nameWithType: BinaryTreeNode<TNode, TKey, TValue>.GetGrandParent
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.GetGrandParent
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetGrandParent
+    name: GetGrandParent
+    nameWithType: BinaryTreeNode(Of TNode, TKey, TValue).GetGrandParent
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).GetGrandParent
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.FormsLine
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.FormsLine
+  name: FormsLine()
+  nameWithType: BinaryTreeNode<TNode, TKey, TValue>.FormsLine()
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.FormsLine()
+  nameWithType.vb: BinaryTreeNode(Of TNode, TKey, TValue).FormsLine()
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).FormsLine()
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.FormsLine
+    name: FormsLine
+    nameWithType: BinaryTreeNode<TNode, TKey, TValue>.FormsLine
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.FormsLine
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.FormsLine
+    name: FormsLine
+    nameWithType: BinaryTreeNode(Of TNode, TKey, TValue).FormsLine
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).FormsLine
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.FormsTriangle
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.FormsTriangle
+  name: FormsTriangle()
+  nameWithType: BinaryTreeNode<TNode, TKey, TValue>.FormsTriangle()
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.FormsTriangle()
+  nameWithType.vb: BinaryTreeNode(Of TNode, TKey, TValue).FormsTriangle()
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).FormsTriangle()
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.FormsTriangle
+    name: FormsTriangle
+    nameWithType: BinaryTreeNode<TNode, TKey, TValue>.FormsTriangle
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.FormsTriangle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.FormsTriangle
+    name: FormsTriangle
+    nameWithType: BinaryTreeNode(Of TNode, TKey, TValue).FormsTriangle
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).FormsTriangle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.CompareTo(`0)
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.CompareTo(`0)
+  name: CompareTo(TNode)
+  nameWithType: BinaryTreeNode<TNode, TKey, TValue>.CompareTo(TNode)
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.CompareTo(TNode)
+  nameWithType.vb: BinaryTreeNode(Of TNode, TKey, TValue).CompareTo(TNode)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).CompareTo(TNode)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.CompareTo(`0)
+    name: CompareTo
+    nameWithType: BinaryTreeNode<TNode, TKey, TValue>.CompareTo
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.CompareTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.CompareTo(`0)
+    name: CompareTo
+    nameWithType: BinaryTreeNode(Of TNode, TKey, TValue).CompareTo
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).CompareTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsComplete
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsComplete
+  name: IsComplete()
+  nameWithType: BinaryTreeNode<TNode, TKey, TValue>.IsComplete()
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.IsComplete()
+  nameWithType.vb: BinaryTreeNode(Of TNode, TKey, TValue).IsComplete()
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).IsComplete()
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsComplete
+    name: IsComplete
+    nameWithType: BinaryTreeNode<TNode, TKey, TValue>.IsComplete
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.IsComplete
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsComplete
+    name: IsComplete
+    nameWithType: BinaryTreeNode(Of TNode, TKey, TValue).IsComplete
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).IsComplete
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetChildren
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetChildren
+  name: GetChildren()
+  nameWithType: BinaryTreeNode<TNode, TKey, TValue>.GetChildren()
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.GetChildren()
+  nameWithType.vb: BinaryTreeNode(Of TNode, TKey, TValue).GetChildren()
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).GetChildren()
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetChildren
+    name: GetChildren
+    nameWithType: BinaryTreeNode<TNode, TKey, TValue>.GetChildren
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.GetChildren
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetChildren
+    name: GetChildren
+    nameWithType: BinaryTreeNode(Of TNode, TKey, TValue).GetChildren
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).GetChildren
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetGrandChildren
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetGrandChildren
+  name: GetGrandChildren()
+  nameWithType: BinaryTreeNode<TNode, TKey, TValue>.GetGrandChildren()
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.GetGrandChildren()
+  nameWithType.vb: BinaryTreeNode(Of TNode, TKey, TValue).GetGrandChildren()
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).GetGrandChildren()
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetGrandChildren
+    name: GetGrandChildren
+    nameWithType: BinaryTreeNode<TNode, TKey, TValue>.GetGrandChildren
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.GetGrandChildren
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetGrandChildren
+    name: GetGrandChildren
+    nameWithType: BinaryTreeNode(Of TNode, TKey, TValue).GetGrandChildren
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).GetGrandChildren
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.Equals(`0)
+  commentId: M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.Equals(`0)
+  name: Equals(TNode)
+  nameWithType: BinaryTreeNode<TNode, TKey, TValue>.Equals(TNode)
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.Equals(TNode)
+  nameWithType.vb: BinaryTreeNode(Of TNode, TKey, TValue).Equals(TNode)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).Equals(TNode)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.Equals(`0)
+    name: Equals
+    nameWithType: BinaryTreeNode<TNode, TKey, TValue>.Equals
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>.Equals
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.Equals(`0)
+    name: Equals
+    nameWithType: BinaryTreeNode(Of TNode, TKey, TValue).Equals
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue).Equals
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.Color*
+  commentId: Overload:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.Color
+  name: Color
+  nameWithType: RedBlackTreeNode<TKey, TValue>.Color
+  fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>.Color
+  nameWithType.vb: RedBlackTreeNode(Of TKey, TValue).Color
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue).Color
+- uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor
+  commentId: T:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor
+  parent: CSFundamentals.DataStructures.Trees.Binary
+  name: RedBlackTreeNodeColor
+  nameWithType: RedBlackTreeNodeColor
+  fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor
+- uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.LeftChild*
+  commentId: Overload:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.LeftChild
+  name: LeftChild
+  nameWithType: RedBlackTreeNode<TKey, TValue>.LeftChild
+  fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>.LeftChild
+  nameWithType.vb: RedBlackTreeNode(Of TKey, TValue).LeftChild
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue).LeftChild
+- uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+  commentId: T:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+  parent: CSFundamentals.DataStructures.Trees.Binary
+  name: RedBlackTreeNode<TKey, TValue>
+  nameWithType: RedBlackTreeNode<TKey, TValue>
+  fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>
+  nameWithType.vb: RedBlackTreeNode(Of TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue)
+  name.vb: RedBlackTreeNode(Of TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+    name: RedBlackTreeNode
+    nameWithType: RedBlackTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2
+    name: RedBlackTreeNode
+    nameWithType: RedBlackTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.RightChild*
+  commentId: Overload:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.RightChild
+  name: RightChild
+  nameWithType: RedBlackTreeNode<TKey, TValue>.RightChild
+  fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>.RightChild
+  nameWithType.vb: RedBlackTreeNode(Of TKey, TValue).RightChild
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue).RightChild
+- uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.Parent*
+  commentId: Overload:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.Parent
+  name: Parent
+  nameWithType: RedBlackTreeNode<TKey, TValue>.Parent
+  fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>.Parent
+  nameWithType.vb: RedBlackTreeNode(Of TKey, TValue).Parent
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue).Parent
+- uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.#ctor*
+  commentId: Overload:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.#ctor
+  name: RedBlackTreeNode
+  nameWithType: RedBlackTreeNode<TKey, TValue>.RedBlackTreeNode
+  fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>.RedBlackTreeNode
+  nameWithType.vb: RedBlackTreeNode(Of TKey, TValue).RedBlackTreeNode
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue).RedBlackTreeNode
+- uid: '{TKey}'
+  commentId: '!:TKey'
+  definition: TKey
+  name: TKey
+  nameWithType: TKey
+  fullName: TKey
+- uid: '{TValue}'
+  commentId: '!:TValue'
+  definition: TValue
+  name: TValue
+  nameWithType: TValue
+  fullName: TValue
+- uid: TKey
+  name: TKey
+  nameWithType: TKey
+  fullName: TKey
+- uid: TValue
+  name: TValue
+  nameWithType: TValue
+  fullName: TValue
+- uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.FlipColor*
+  commentId: Overload:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.FlipColor
+  name: FlipColor
+  nameWithType: RedBlackTreeNode<TKey, TValue>.FlipColor
+  fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode<TKey, TValue>.FlipColor
+  nameWithType.vb: RedBlackTreeNode(Of TKey, TValue).FlipColor
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode(Of TKey, TValue).FlipColor

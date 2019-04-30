@@ -1,0 +1,219 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentals.DataStructures.LinkedLists
+  commentId: N:CSFundamentals.DataStructures.LinkedLists
+  id: CSFundamentals.DataStructures.LinkedLists
+  children:
+  - CSFundamentals.DataStructures.LinkedLists.DoublyLinkedList`1
+  - CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode`1
+  - CSFundamentals.DataStructures.LinkedLists.DoublyLinkedSortedList`1
+  - CSFundamentals.DataStructures.LinkedLists.NotFoundException
+  - CSFundamentals.DataStructures.LinkedLists.SinglyLinkedList`1
+  - CSFundamentals.DataStructures.LinkedLists.SinglyLinkedNode`1
+  - CSFundamentals.DataStructures.LinkedLists.Utils
+  langs:
+  - csharp
+  - vb
+  name: CSFundamentals.DataStructures.LinkedLists
+  nameWithType: CSFundamentals.DataStructures.LinkedLists
+  fullName: CSFundamentals.DataStructures.LinkedLists
+  type: Namespace
+  assemblies:
+  - CSFundamentals
+references:
+- uid: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedList`1
+  commentId: T:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedList`1
+  name: DoublyLinkedList<TValue>
+  nameWithType: DoublyLinkedList<TValue>
+  fullName: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedList<TValue>
+  nameWithType.vb: DoublyLinkedList(Of TValue)
+  fullName.vb: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedList(Of TValue)
+  name.vb: DoublyLinkedList(Of TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedList`1
+    name: DoublyLinkedList
+    nameWithType: DoublyLinkedList
+    fullName: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedList
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedList`1
+    name: DoublyLinkedList
+    nameWithType: DoublyLinkedList
+    fullName: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedList
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode`1
+  commentId: T:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode`1
+  parent: CSFundamentals.DataStructures.LinkedLists
+  name: DoublyLinkedNode<TValue>
+  nameWithType: DoublyLinkedNode<TValue>
+  fullName: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode<TValue>
+  nameWithType.vb: DoublyLinkedNode(Of TValue)
+  fullName.vb: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode(Of TValue)
+  name.vb: DoublyLinkedNode(Of TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode`1
+    name: DoublyLinkedNode
+    nameWithType: DoublyLinkedNode
+    fullName: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode`1
+    name: DoublyLinkedNode
+    nameWithType: DoublyLinkedNode
+    fullName: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedSortedList`1
+  commentId: T:CSFundamentals.DataStructures.LinkedLists.DoublyLinkedSortedList`1
+  name: DoublyLinkedSortedList<TValue>
+  nameWithType: DoublyLinkedSortedList<TValue>
+  fullName: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedSortedList<TValue>
+  nameWithType.vb: DoublyLinkedSortedList(Of TValue)
+  fullName.vb: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedSortedList(Of TValue)
+  name.vb: DoublyLinkedSortedList(Of TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedSortedList`1
+    name: DoublyLinkedSortedList
+    nameWithType: DoublyLinkedSortedList
+    fullName: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedSortedList
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedSortedList`1
+    name: DoublyLinkedSortedList
+    nameWithType: DoublyLinkedSortedList
+    fullName: CSFundamentals.DataStructures.LinkedLists.DoublyLinkedSortedList
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.LinkedLists.NotFoundException
+  commentId: T:CSFundamentals.DataStructures.LinkedLists.NotFoundException
+  name: NotFoundException
+  nameWithType: NotFoundException
+  fullName: CSFundamentals.DataStructures.LinkedLists.NotFoundException
+- uid: CSFundamentals.DataStructures.LinkedLists.SinglyLinkedList`1
+  commentId: T:CSFundamentals.DataStructures.LinkedLists.SinglyLinkedList`1
+  name: SinglyLinkedList<TValue>
+  nameWithType: SinglyLinkedList<TValue>
+  fullName: CSFundamentals.DataStructures.LinkedLists.SinglyLinkedList<TValue>
+  nameWithType.vb: SinglyLinkedList(Of TValue)
+  fullName.vb: CSFundamentals.DataStructures.LinkedLists.SinglyLinkedList(Of TValue)
+  name.vb: SinglyLinkedList(Of TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.LinkedLists.SinglyLinkedList`1
+    name: SinglyLinkedList
+    nameWithType: SinglyLinkedList
+    fullName: CSFundamentals.DataStructures.LinkedLists.SinglyLinkedList
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.LinkedLists.SinglyLinkedList`1
+    name: SinglyLinkedList
+    nameWithType: SinglyLinkedList
+    fullName: CSFundamentals.DataStructures.LinkedLists.SinglyLinkedList
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.LinkedLists.SinglyLinkedNode`1
+  commentId: T:CSFundamentals.DataStructures.LinkedLists.SinglyLinkedNode`1
+  name: SinglyLinkedNode<TValue>
+  nameWithType: SinglyLinkedNode<TValue>
+  fullName: CSFundamentals.DataStructures.LinkedLists.SinglyLinkedNode<TValue>
+  nameWithType.vb: SinglyLinkedNode(Of TValue)
+  fullName.vb: CSFundamentals.DataStructures.LinkedLists.SinglyLinkedNode(Of TValue)
+  name.vb: SinglyLinkedNode(Of TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.LinkedLists.SinglyLinkedNode`1
+    name: SinglyLinkedNode
+    nameWithType: SinglyLinkedNode
+    fullName: CSFundamentals.DataStructures.LinkedLists.SinglyLinkedNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.LinkedLists.SinglyLinkedNode`1
+    name: SinglyLinkedNode
+    nameWithType: SinglyLinkedNode
+    fullName: CSFundamentals.DataStructures.LinkedLists.SinglyLinkedNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.LinkedLists.Utils
+  commentId: T:CSFundamentals.DataStructures.LinkedLists.Utils
+  name: Utils
+  nameWithType: Utils
+  fullName: CSFundamentals.DataStructures.LinkedLists.Utils
+- uid: CSFundamentals.DataStructures.LinkedLists
+  commentId: N:CSFundamentals.DataStructures.LinkedLists
+  name: CSFundamentals.DataStructures.LinkedLists
+  nameWithType: CSFundamentals.DataStructures.LinkedLists
+  fullName: CSFundamentals.DataStructures.LinkedLists

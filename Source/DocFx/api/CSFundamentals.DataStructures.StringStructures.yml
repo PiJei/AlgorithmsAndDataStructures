@@ -1,0 +1,53 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentals.DataStructures.StringStructures
+  commentId: N:CSFundamentals.DataStructures.StringStructures
+  id: CSFundamentals.DataStructures.StringStructures
+  children:
+  - CSFundamentals.DataStructures.StringStructures.LLPPS
+  - CSFundamentals.DataStructures.StringStructures.StringSuffix
+  - CSFundamentals.DataStructures.StringStructures.SuffixArray
+  - CSFundamentals.DataStructures.StringStructures.SuffixTree
+  - CSFundamentals.DataStructures.StringStructures.SuffixTreeNode
+  langs:
+  - csharp
+  - vb
+  name: CSFundamentals.DataStructures.StringStructures
+  nameWithType: CSFundamentals.DataStructures.StringStructures
+  fullName: CSFundamentals.DataStructures.StringStructures
+  type: Namespace
+  assemblies:
+  - CSFundamentals
+references:
+- uid: CSFundamentals.DataStructures.StringStructures.LLPPS
+  commentId: T:CSFundamentals.DataStructures.StringStructures.LLPPS
+  name: LLPPS
+  nameWithType: LLPPS
+  fullName: CSFundamentals.DataStructures.StringStructures.LLPPS
+- uid: CSFundamentals.DataStructures.StringStructures.StringSuffix
+  commentId: T:CSFundamentals.DataStructures.StringStructures.StringSuffix
+  parent: CSFundamentals.DataStructures.StringStructures
+  name: StringSuffix
+  nameWithType: StringSuffix
+  fullName: CSFundamentals.DataStructures.StringStructures.StringSuffix
+- uid: CSFundamentals.DataStructures.StringStructures.SuffixArray
+  commentId: T:CSFundamentals.DataStructures.StringStructures.SuffixArray
+  name: SuffixArray
+  nameWithType: SuffixArray
+  fullName: CSFundamentals.DataStructures.StringStructures.SuffixArray
+- uid: CSFundamentals.DataStructures.StringStructures.SuffixTree
+  commentId: T:CSFundamentals.DataStructures.StringStructures.SuffixTree
+  name: SuffixTree
+  nameWithType: SuffixTree
+  fullName: CSFundamentals.DataStructures.StringStructures.SuffixTree
+- uid: CSFundamentals.DataStructures.StringStructures.SuffixTreeNode
+  commentId: T:CSFundamentals.DataStructures.StringStructures.SuffixTreeNode
+  parent: CSFundamentals.DataStructures.StringStructures
+  name: SuffixTreeNode
+  nameWithType: SuffixTreeNode
+  fullName: CSFundamentals.DataStructures.StringStructures.SuffixTreeNode
+- uid: CSFundamentals.DataStructures.StringStructures
+  commentId: N:CSFundamentals.DataStructures.StringStructures
+  name: CSFundamentals.DataStructures.StringStructures
+  nameWithType: CSFundamentals.DataStructures.StringStructures
+  fullName: CSFundamentals.DataStructures.StringStructures

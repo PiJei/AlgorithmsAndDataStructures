@@ -9,7 +9,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>CSFundamentalsTests.xml</DocumentationFile>
   </PropertyGroup>
-
+  
   <ItemGroup>
     <None Remove="DataStructures\Trees\Binary\Images\avl-bst-delete-stepBystep.png" />
     <None Remove="DataStructures\Trees\Binary\Images\avl-bst-insert-stepByStep.png" />
@@ -47,6 +47,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="docfx.console" Version="2.42.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.2.0" />
     <PackageReference Include="MSTest.TestFramework" Version="1.2.0" />

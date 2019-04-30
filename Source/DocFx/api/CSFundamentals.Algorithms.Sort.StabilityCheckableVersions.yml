@@ -1,0 +1,28 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions
+  commentId: N:CSFundamentals.Algorithms.Sort.StabilityCheckableVersions
+  id: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions
+  children:
+  - CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+  langs:
+  - csharp
+  - vb
+  name: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions
+  nameWithType: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions
+  fullName: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions
+  type: Namespace
+  assemblies:
+  - CSFundamentals
+references:
+- uid: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+  commentId: T:CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+  parent: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions
+  name: Element
+  nameWithType: Element
+  fullName: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+- uid: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions
+  commentId: N:CSFundamentals.Algorithms.Sort.StabilityCheckableVersions
+  name: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions
+  nameWithType: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions
+  fullName: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions

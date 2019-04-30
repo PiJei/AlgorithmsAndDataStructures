@@ -1,0 +1,163 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentals.DataStructures.BinaryHeaps
+  commentId: N:CSFundamentals.DataStructures.BinaryHeaps
+  id: CSFundamentals.DataStructures.BinaryHeaps
+  children:
+  - CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap`2
+  - CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap`2
+  - CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2
+  langs:
+  - csharp
+  - vb
+  name: CSFundamentals.DataStructures.BinaryHeaps
+  nameWithType: CSFundamentals.DataStructures.BinaryHeaps
+  fullName: CSFundamentals.DataStructures.BinaryHeaps
+  type: Namespace
+  assemblies:
+  - CSFundamentals
+references:
+- uid: CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap`2
+  commentId: T:CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap`2
+  name: MaxBinaryHeap<TKey, TValue>
+  nameWithType: MaxBinaryHeap<TKey, TValue>
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap<TKey, TValue>
+  nameWithType.vb: MaxBinaryHeap(Of TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap(Of TKey, TValue)
+  name.vb: MaxBinaryHeap(Of TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap`2
+    name: MaxBinaryHeap
+    nameWithType: MaxBinaryHeap
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap`2
+    name: MaxBinaryHeap
+    nameWithType: MaxBinaryHeap
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap`2
+  commentId: T:CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap`2
+  name: MinBinaryHeap<TKey, TValue>
+  nameWithType: MinBinaryHeap<TKey, TValue>
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap<TKey, TValue>
+  nameWithType.vb: MinBinaryHeap(Of TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap(Of TKey, TValue)
+  name.vb: MinBinaryHeap(Of TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap`2
+    name: MinBinaryHeap
+    nameWithType: MinBinaryHeap
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap`2
+    name: MinBinaryHeap
+    nameWithType: MinBinaryHeap
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2
+  commentId: T:CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2
+  name: MinMaxBinaryHeap<TKey, TValue>
+  nameWithType: MinMaxBinaryHeap<TKey, TValue>
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap<TKey, TValue>
+  nameWithType.vb: MinMaxBinaryHeap(Of TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap(Of TKey, TValue)
+  name.vb: MinMaxBinaryHeap(Of TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2
+    name: MinMaxBinaryHeap
+    nameWithType: MinMaxBinaryHeap
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2
+    name: MinMaxBinaryHeap
+    nameWithType: MinMaxBinaryHeap
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )

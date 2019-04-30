@@ -1,0 +1,899 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentals.Algorithms.Sort.MergeSort
+  commentId: T:CSFundamentals.Algorithms.Sort.MergeSort
+  id: MergeSort
+  parent: CSFundamentals.Algorithms.Sort
+  children:
+  - CSFundamentals.Algorithms.Sort.MergeSort.Merge(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element},System.Int32,System.Int32,System.Int32)
+  - CSFundamentals.Algorithms.Sort.MergeSort.Merge``1(System.Collections.Generic.List{``0},System.Int32,System.Int32,System.Int32)
+  - CSFundamentals.Algorithms.Sort.MergeSort.MergeSort_Recursively_Wrapper(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})
+  - CSFundamentals.Algorithms.Sort.MergeSort.Sort_Iteratively(System.Collections.Generic.List{System.Int32},System.Int32,System.Int32)
+  - CSFundamentals.Algorithms.Sort.MergeSort.Sort_Recursively(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element},System.Int32,System.Int32)
+  - CSFundamentals.Algorithms.Sort.MergeSort.Sort_Recursively``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: MergeSort
+  nameWithType: MergeSort
+  fullName: CSFundamentals.Algorithms.Sort.MergeSort
+  type: Class
+  source:
+    remote:
+      path: Source/Algorithms/Sort/StabilityCheckableVersions/MergeSort.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: MergeSort
+    path: ../Algorithms/Sort/StabilityCheckableVersions/MergeSort.cs
+    startLine: 25
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.Sort
+  summary: "\nImplements Merge sort algorithm. \n"
+  example: []
+  syntax:
+    content: public class MergeSort
+    content.vb: Public Class MergeSort
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CSFundamentals.Algorithms.Sort.MergeSort.Sort_Recursively``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)
+  commentId: M:CSFundamentals.Algorithms.Sort.MergeSort.Sort_Recursively``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)
+  id: Sort_Recursively``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)
+  parent: CSFundamentals.Algorithms.Sort.MergeSort
+  langs:
+  - csharp
+  - vb
+  name: Sort_Recursively<T>(List<T>, Int32, Int32)
+  nameWithType: MergeSort.Sort_Recursively<T>(List<T>, Int32, Int32)
+  fullName: CSFundamentals.Algorithms.Sort.MergeSort.Sort_Recursively<T>(System.Collections.Generic.List<T>, System.Int32, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Source/Algorithms/Sort/MergeSort.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Sort_Recursively
+    path: ../Algorithms/Sort/MergeSort.cs
+    startLine: 39
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.Sort
+  summary: "\nImplements merge sort recursively. \n"
+  example: []
+  syntax:
+    content: >-
+      [Algorithm(AlgorithmType.Sort, "MergeSort")]
+
+      [SpaceComplexity("O(n)", false, InPlace = false)]
+
+      [TimeComplexity(Case.Best, "O(nLog(n))")]
+
+      [TimeComplexity(Case.Worst, "O(nLog(n))")]
+
+      [TimeComplexity(Case.Average, "O(nLog(n))")]
+
+      public static void Sort_Recursively<T>(List<T> list, int startIndex, int endIndex)
+          where T : IComparable<T>
+    parameters:
+    - id: list
+      type: System.Collections.Generic.List{{T}}
+      description: 'Specifies the list of values (of type T, e.g., int) to be sorted. '
+    - id: startIndex
+      type: System.Int32
+      description: 'Specifies the lower index in the array, inclusive. '
+    - id: endIndex
+      type: System.Int32
+      description: 'Specifies the higher index in the array, inclusive. '
+    typeParameters:
+    - id: T
+    content.vb: >-
+      <Algorithm(AlgorithmType.Sort, "MergeSort")>
+
+      <SpaceComplexity("O(n)", False, InPlace:=False)>
+
+      <TimeComplexity( Case.Best, "O(nLog(n))")>
+
+      <TimeComplexity( Case.Worst, "O(nLog(n))")>
+
+      <TimeComplexity( Case.Average, "O(nLog(n))")>
+
+      Public Shared Sub Sort_Recursively(Of T As IComparable(Of T))(list As List(Of T), startIndex As Integer, endIndex As Integer)
+  overload: CSFundamentals.Algorithms.Sort.MergeSort.Sort_Recursively*
+  attributes:
+  - type: CSFundamentals.Decoration.AlgorithmAttribute
+    ctor: CSFundamentals.Decoration.AlgorithmAttribute.#ctor(CSFundamentals.Decoration.AlgorithmType,System.String)
+    arguments:
+    - type: CSFundamentals.Decoration.AlgorithmType
+      value: 1
+    - type: System.String
+      value: MergeSort
+  - type: CSFundamentals.Decoration.SpaceComplexityAttribute
+    ctor: CSFundamentals.Decoration.SpaceComplexityAttribute.#ctor(System.String,System.Boolean)
+    arguments:
+    - type: System.String
+      value: O(n)
+    - type: System.Boolean
+      value: false
+    namedArguments:
+    - name: InPlace
+      type: System.Boolean
+      value: false
+  - type: CSFundamentals.Decoration.TimeComplexityAttribute
+    ctor: CSFundamentals.Decoration.TimeComplexityAttribute.#ctor(CSFundamentals.Decoration.Case,System.String)
+    arguments:
+    - type: CSFundamentals.Decoration.Case
+      value: 1
+    - type: System.String
+      value: O(nLog(n))
+  - type: CSFundamentals.Decoration.TimeComplexityAttribute
+    ctor: CSFundamentals.Decoration.TimeComplexityAttribute.#ctor(CSFundamentals.Decoration.Case,System.String)
+    arguments:
+    - type: CSFundamentals.Decoration.Case
+      value: 2
+    - type: System.String
+      value: O(nLog(n))
+  - type: CSFundamentals.Decoration.TimeComplexityAttribute
+    ctor: CSFundamentals.Decoration.TimeComplexityAttribute.#ctor(CSFundamentals.Decoration.Case,System.String)
+    arguments:
+    - type: CSFundamentals.Decoration.Case
+      value: 0
+    - type: System.String
+      value: O(nLog(n))
+  nameWithType.vb: MergeSort.Sort_Recursively(Of T)(List(Of T), Int32, Int32)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentals.Algorithms.Sort.MergeSort.Sort_Recursively(Of T)(System.Collections.Generic.List(Of T), System.Int32, System.Int32)
+  name.vb: Sort_Recursively(Of T)(List(Of T), Int32, Int32)
+- uid: CSFundamentals.Algorithms.Sort.MergeSort.Merge``1(System.Collections.Generic.List{``0},System.Int32,System.Int32,System.Int32)
+  commentId: M:CSFundamentals.Algorithms.Sort.MergeSort.Merge``1(System.Collections.Generic.List{``0},System.Int32,System.Int32,System.Int32)
+  id: Merge``1(System.Collections.Generic.List{``0},System.Int32,System.Int32,System.Int32)
+  parent: CSFundamentals.Algorithms.Sort.MergeSort
+  langs:
+  - csharp
+  - vb
+  name: Merge<T>(List<T>, Int32, Int32, Int32)
+  nameWithType: MergeSort.Merge<T>(List<T>, Int32, Int32, Int32)
+  fullName: CSFundamentals.Algorithms.Sort.MergeSort.Merge<T>(System.Collections.Generic.List<T>, System.Int32, System.Int32, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Source/Algorithms/Sort/MergeSort.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Merge
+    path: ../Algorithms/Sort/MergeSort.cs
+    startLine: 62
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.Sort
+  summary: "\nMerges two sub arrays [startIndex, middleIndex], [middleIndex+1, endIndex] such to end up with a sorted list. \n"
+  example: []
+  syntax:
+    content: >-
+      public static void Merge<T>(List<T> list, int startIndex, int middleIndex, int endIndex)
+          where T : IComparable<T>
+    parameters:
+    - id: list
+      type: System.Collections.Generic.List{{T}}
+      description: 'Specifies the list of values (of type T, e.g., int) to be sorted. '
+    - id: startIndex
+      type: System.Int32
+      description: 'Specifies the lower index in the array, inclusive. '
+    - id: middleIndex
+      type: System.Int32
+      description: 'Specifies the middle index of the array. '
+    - id: endIndex
+      type: System.Int32
+      description: 'Specifies the higher index in the array, inclusive. '
+    typeParameters:
+    - id: T
+    content.vb: Public Shared Sub Merge(Of T As IComparable(Of T))(list As List(Of T), startIndex As Integer, middleIndex As Integer, endIndex As Integer)
+  overload: CSFundamentals.Algorithms.Sort.MergeSort.Merge*
+  nameWithType.vb: MergeSort.Merge(Of T)(List(Of T), Int32, Int32, Int32)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentals.Algorithms.Sort.MergeSort.Merge(Of T)(System.Collections.Generic.List(Of T), System.Int32, System.Int32, System.Int32)
+  name.vb: Merge(Of T)(List(Of T), Int32, Int32, Int32)
+- uid: CSFundamentals.Algorithms.Sort.MergeSort.Sort_Iteratively(System.Collections.Generic.List{System.Int32},System.Int32,System.Int32)
+  commentId: M:CSFundamentals.Algorithms.Sort.MergeSort.Sort_Iteratively(System.Collections.Generic.List{System.Int32},System.Int32,System.Int32)
+  id: Sort_Iteratively(System.Collections.Generic.List{System.Int32},System.Int32,System.Int32)
+  parent: CSFundamentals.Algorithms.Sort.MergeSort
+  langs:
+  - csharp
+  - vb
+  name: Sort_Iteratively(List<Int32>, Int32, Int32)
+  nameWithType: MergeSort.Sort_Iteratively(List<Int32>, Int32, Int32)
+  fullName: CSFundamentals.Algorithms.Sort.MergeSort.Sort_Iteratively(System.Collections.Generic.List<System.Int32>, System.Int32, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Source/Algorithms/Sort/MergeSort.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Sort_Iteratively
+    path: ../Algorithms/Sort/MergeSort.cs
+    startLine: 120
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.Sort
+  summary: "\nProvides an iterative version for MergeSort. \n"
+  example: []
+  syntax:
+    content: public static void Sort_Iteratively(List<int> list, int startIndex, int endIndex)
+    parameters:
+    - id: list
+      type: System.Collections.Generic.List{System.Int32}
+      description: ''
+    - id: startIndex
+      type: System.Int32
+      description: ''
+    - id: endIndex
+      type: System.Int32
+      description: ''
+    content.vb: Public Shared Sub Sort_Iteratively(list As List(Of Integer), startIndex As Integer, endIndex As Integer)
+  overload: CSFundamentals.Algorithms.Sort.MergeSort.Sort_Iteratively*
+  nameWithType.vb: MergeSort.Sort_Iteratively(List(Of Int32), Int32, Int32)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentals.Algorithms.Sort.MergeSort.Sort_Iteratively(System.Collections.Generic.List(Of System.Int32), System.Int32, System.Int32)
+  name.vb: Sort_Iteratively(List(Of Int32), Int32, Int32)
+- uid: CSFundamentals.Algorithms.Sort.MergeSort.Sort_Recursively(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element},System.Int32,System.Int32)
+  commentId: M:CSFundamentals.Algorithms.Sort.MergeSort.Sort_Recursively(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element},System.Int32,System.Int32)
+  id: Sort_Recursively(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element},System.Int32,System.Int32)
+  parent: CSFundamentals.Algorithms.Sort.MergeSort
+  langs:
+  - csharp
+  - vb
+  name: Sort_Recursively(List<Element>, Int32, Int32)
+  nameWithType: MergeSort.Sort_Recursively(List<Element>, Int32, Int32)
+  fullName: CSFundamentals.Algorithms.Sort.MergeSort.Sort_Recursively(System.Collections.Generic.List<CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element>, System.Int32, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Source/Algorithms/Sort/StabilityCheckableVersions/MergeSort.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Sort_Recursively
+    path: ../Algorithms/Sort/StabilityCheckableVersions/MergeSort.cs
+    startLine: 33
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.Sort
+  summary: "\nImplements a basic version of merge sort recursively. \n"
+  example: []
+  syntax:
+    content: public static void Sort_Recursively(List<Element> list, int startIndex, int endIndex)
+    parameters:
+    - id: list
+      type: System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}
+      description: 'Specifies the list of integer values to be sorted. '
+    - id: startIndex
+      type: System.Int32
+      description: 'Specifies the lower index in the array, inclusive. '
+    - id: endIndex
+      type: System.Int32
+      description: 'Specifies the higher index in the array, inclusive. '
+    content.vb: Public Shared Sub Sort_Recursively(list As List(Of Element), startIndex As Integer, endIndex As Integer)
+  overload: CSFundamentals.Algorithms.Sort.MergeSort.Sort_Recursively*
+  nameWithType.vb: MergeSort.Sort_Recursively(List(Of Element), Int32, Int32)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentals.Algorithms.Sort.MergeSort.Sort_Recursively(System.Collections.Generic.List(Of CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element), System.Int32, System.Int32)
+  name.vb: Sort_Recursively(List(Of Element), Int32, Int32)
+- uid: CSFundamentals.Algorithms.Sort.MergeSort.Merge(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element},System.Int32,System.Int32,System.Int32)
+  commentId: M:CSFundamentals.Algorithms.Sort.MergeSort.Merge(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element},System.Int32,System.Int32,System.Int32)
+  id: Merge(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element},System.Int32,System.Int32,System.Int32)
+  parent: CSFundamentals.Algorithms.Sort.MergeSort
+  langs:
+  - csharp
+  - vb
+  name: Merge(List<Element>, Int32, Int32, Int32)
+  nameWithType: MergeSort.Merge(List<Element>, Int32, Int32, Int32)
+  fullName: CSFundamentals.Algorithms.Sort.MergeSort.Merge(System.Collections.Generic.List<CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element>, System.Int32, System.Int32, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Source/Algorithms/Sort/StabilityCheckableVersions/MergeSort.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Merge
+    path: ../Algorithms/Sort/StabilityCheckableVersions/MergeSort.cs
+    startLine: 51
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.Sort
+  summary: "\nMerges two sub arrays [startIndex, middleIndex], [middleIndex+1, endIndex] such to end up with a sorted list. \n"
+  example: []
+  syntax:
+    content: public static void Merge(List<Element> values, int startIndex, int middleIndex, int endIndex)
+    parameters:
+    - id: values
+      type: System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}
+      description: 'Specifies the list of integer values to be sorted. '
+    - id: startIndex
+      type: System.Int32
+      description: 'Specifies the lower index in the array, inclusive. '
+    - id: middleIndex
+      type: System.Int32
+      description: 'Specifies the middle index of the array. '
+    - id: endIndex
+      type: System.Int32
+      description: 'Specifies the higher index in the array, inclusive. '
+    content.vb: Public Shared Sub Merge(values As List(Of Element), startIndex As Integer, middleIndex As Integer, endIndex As Integer)
+  overload: CSFundamentals.Algorithms.Sort.MergeSort.Merge*
+  nameWithType.vb: MergeSort.Merge(List(Of Element), Int32, Int32, Int32)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentals.Algorithms.Sort.MergeSort.Merge(System.Collections.Generic.List(Of CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element), System.Int32, System.Int32, System.Int32)
+  name.vb: Merge(List(Of Element), Int32, Int32, Int32)
+- uid: CSFundamentals.Algorithms.Sort.MergeSort.MergeSort_Recursively_Wrapper(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})
+  commentId: M:CSFundamentals.Algorithms.Sort.MergeSort.MergeSort_Recursively_Wrapper(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})
+  id: MergeSort_Recursively_Wrapper(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})
+  parent: CSFundamentals.Algorithms.Sort.MergeSort
+  langs:
+  - csharp
+  - vb
+  name: MergeSort_Recursively_Wrapper(List<Element>)
+  nameWithType: MergeSort.MergeSort_Recursively_Wrapper(List<Element>)
+  fullName: CSFundamentals.Algorithms.Sort.MergeSort.MergeSort_Recursively_Wrapper(System.Collections.Generic.List<CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element>)
+  type: Method
+  source:
+    remote:
+      path: Source/Algorithms/Sort/StabilityCheckableVersions/MergeSort.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: MergeSort_Recursively_Wrapper
+    path: ../Algorithms/Sort/StabilityCheckableVersions/MergeSort.cs
+    startLine: 117
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.Sort
+  summary: "\nThis is to be able to call MergeSort sort methods with only the list that needs to be sorted, and independent of the indexes. \nThis is needed for methods that receive other sort methods as parameters, and would ideally like to have similar signature for all the methods that are passed as parameters, \nIn sort methods the signature is: void SortMethod(List{int} values); \n"
+  example: []
+  syntax:
+    content: public static void MergeSort_Recursively_Wrapper(List<Element> values)
+    parameters:
+    - id: values
+      type: System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}
+      description: 'Specifies the list of integers to be sorted. '
+    content.vb: Public Shared Sub MergeSort_Recursively_Wrapper(values As List(Of Element))
+  overload: CSFundamentals.Algorithms.Sort.MergeSort.MergeSort_Recursively_Wrapper*
+  nameWithType.vb: MergeSort.MergeSort_Recursively_Wrapper(List(Of Element))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentals.Algorithms.Sort.MergeSort.MergeSort_Recursively_Wrapper(System.Collections.Generic.List(Of CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element))
+  name.vb: MergeSort_Recursively_Wrapper(List(Of Element))
+references:
+- uid: CSFundamentals.Algorithms.Sort
+  commentId: N:CSFundamentals.Algorithms.Sort
+  name: CSFundamentals.Algorithms.Sort
+  nameWithType: CSFundamentals.Algorithms.Sort
+  fullName: CSFundamentals.Algorithms.Sort
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CSFundamentals.Algorithms.Sort.MergeSort.Sort_Recursively*
+  commentId: Overload:CSFundamentals.Algorithms.Sort.MergeSort.Sort_Recursively
+  name: Sort_Recursively
+  nameWithType: MergeSort.Sort_Recursively
+  fullName: CSFundamentals.Algorithms.Sort.MergeSort.Sort_Recursively
+- uid: System.Collections.Generic.List{{T}}
+  commentId: T:System.Collections.Generic.List{``0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: CSFundamentals.Algorithms.Sort.MergeSort.Merge*
+  commentId: Overload:CSFundamentals.Algorithms.Sort.MergeSort.Merge
+  name: Merge
+  nameWithType: MergeSort.Merge
+  fullName: CSFundamentals.Algorithms.Sort.MergeSort.Merge
+- uid: CSFundamentals.Algorithms.Sort.MergeSort.Sort_Iteratively*
+  commentId: Overload:CSFundamentals.Algorithms.Sort.MergeSort.Sort_Iteratively
+  name: Sort_Iteratively
+  nameWithType: MergeSort.Sort_Iteratively
+  fullName: CSFundamentals.Algorithms.Sort.MergeSort.Sort_Iteratively
+- uid: System.Collections.Generic.List{System.Int32}
+  commentId: T:System.Collections.Generic.List{System.Int32}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Int32>
+  nameWithType: List<Int32>
+  fullName: System.Collections.Generic.List<System.Int32>
+  nameWithType.vb: List(Of Int32)
+  fullName.vb: System.Collections.Generic.List(Of System.Int32)
+  name.vb: List(Of Int32)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}
+  commentId: T:System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Element>
+  nameWithType: List<Element>
+  fullName: System.Collections.Generic.List<CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element>
+  nameWithType.vb: List(Of Element)
+  fullName.vb: System.Collections.Generic.List(Of CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element)
+  name.vb: List(Of Element)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+    name: Element
+    nameWithType: Element
+    fullName: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+    name: Element
+    nameWithType: Element
+    fullName: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.Algorithms.Sort.MergeSort.MergeSort_Recursively_Wrapper*
+  commentId: Overload:CSFundamentals.Algorithms.Sort.MergeSort.MergeSort_Recursively_Wrapper
+  name: MergeSort_Recursively_Wrapper
+  nameWithType: MergeSort.MergeSort_Recursively_Wrapper
+  fullName: CSFundamentals.Algorithms.Sort.MergeSort.MergeSort_Recursively_Wrapper

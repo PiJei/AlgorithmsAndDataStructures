@@ -1,0 +1,741 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentals.Algorithms.Sort.InsertionSort
+  commentId: T:CSFundamentals.Algorithms.Sort.InsertionSort
+  id: InsertionSort
+  parent: CSFundamentals.Algorithms.Sort
+  children:
+  - CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Iterative_V1``1(System.Collections.Generic.List{``0})
+  - CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Iterative_V2(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})
+  - CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Iterative_V2``1(System.Collections.Generic.List{``0})
+  - CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Recursive``1(System.Collections.Generic.List{``0},System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: InsertionSort
+  nameWithType: InsertionSort
+  fullName: CSFundamentals.Algorithms.Sort.InsertionSort
+  type: Class
+  source:
+    remote:
+      path: Source/Algorithms/Sort/StabilityCheckableVersions/InsertionSort.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: InsertionSort
+    path: ../Algorithms/Sort/StabilityCheckableVersions/InsertionSort.cs
+    startLine: 25
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.Sort
+  summary: "\nThis class contains 3 different implementations of Insertion Sort. The sort is called insertion, as at each iteration, it finds the correct position of an element, and &quot;inserts&quot; it in that position. \n"
+  example: []
+  syntax:
+    content: public class InsertionSort
+    content.vb: Public Class InsertionSort
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Iterative_V1``1(System.Collections.Generic.List{``0})
+  commentId: M:CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Iterative_V1``1(System.Collections.Generic.List{``0})
+  id: Sort_Iterative_V1``1(System.Collections.Generic.List{``0})
+  parent: CSFundamentals.Algorithms.Sort.InsertionSort
+  langs:
+  - csharp
+  - vb
+  name: Sort_Iterative_V1<T>(List<T>)
+  nameWithType: InsertionSort.Sort_Iterative_V1<T>(List<T>)
+  fullName: CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Iterative_V1<T>(System.Collections.Generic.List<T>)
+  type: Method
+  source:
+    remote:
+      path: Source/Algorithms/Sort/InsertionSort.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Sort_Iterative_V1
+    path: ../Algorithms/Sort/InsertionSort.cs
+    startLine: 35
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.Sort
+  summary: "\nImplements insertion sort iteratively, and in-situ, using many Swaps.\n"
+  example: []
+  syntax:
+    content: >-
+      [Algorithm(AlgorithmType.Sort, "InsertionSort")]
+
+      [SpaceComplexity("O(1)", false, InPlace = true)]
+
+      [TimeComplexity(Case.Best, "O(n)", When = "Input array is already sorted.")]
+
+      [TimeComplexity(Case.Worst, "O(n²)")]
+
+      [TimeComplexity(Case.Average, "O(n²)")]
+
+      public static void Sort_Iterative_V1<T>(List<T> list)
+          where T : IComparable<T>
+    parameters:
+    - id: list
+      type: System.Collections.Generic.List{{T}}
+      description: 'Specifies the list of values (of type T, e.g., int) to be sorted. '
+    typeParameters:
+    - id: T
+    content.vb: >-
+      <Algorithm(AlgorithmType.Sort, "InsertionSort")>
+
+      <SpaceComplexity("O(1)", False, InPlace:=True)>
+
+      <TimeComplexity( Case.Best, "O(n)", When:="Input array is already sorted.")>
+
+      <TimeComplexity( Case.Worst, "O(n²)")>
+
+      <TimeComplexity( Case.Average, "O(n²)")>
+
+      Public Shared Sub Sort_Iterative_V1(Of T As IComparable(Of T))(list As List(Of T))
+  overload: CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Iterative_V1*
+  attributes:
+  - type: CSFundamentals.Decoration.AlgorithmAttribute
+    ctor: CSFundamentals.Decoration.AlgorithmAttribute.#ctor(CSFundamentals.Decoration.AlgorithmType,System.String)
+    arguments:
+    - type: CSFundamentals.Decoration.AlgorithmType
+      value: 1
+    - type: System.String
+      value: InsertionSort
+  - type: CSFundamentals.Decoration.SpaceComplexityAttribute
+    ctor: CSFundamentals.Decoration.SpaceComplexityAttribute.#ctor(System.String,System.Boolean)
+    arguments:
+    - type: System.String
+      value: O(1)
+    - type: System.Boolean
+      value: false
+    namedArguments:
+    - name: InPlace
+      type: System.Boolean
+      value: true
+  - type: CSFundamentals.Decoration.TimeComplexityAttribute
+    ctor: CSFundamentals.Decoration.TimeComplexityAttribute.#ctor(CSFundamentals.Decoration.Case,System.String)
+    arguments:
+    - type: CSFundamentals.Decoration.Case
+      value: 1
+    - type: System.String
+      value: O(n)
+    namedArguments:
+    - name: When
+      type: System.String
+      value: Input array is already sorted.
+  - type: CSFundamentals.Decoration.TimeComplexityAttribute
+    ctor: CSFundamentals.Decoration.TimeComplexityAttribute.#ctor(CSFundamentals.Decoration.Case,System.String)
+    arguments:
+    - type: CSFundamentals.Decoration.Case
+      value: 2
+    - type: System.String
+      value: O(n²)
+  - type: CSFundamentals.Decoration.TimeComplexityAttribute
+    ctor: CSFundamentals.Decoration.TimeComplexityAttribute.#ctor(CSFundamentals.Decoration.Case,System.String)
+    arguments:
+    - type: CSFundamentals.Decoration.Case
+      value: 0
+    - type: System.String
+      value: O(n²)
+  nameWithType.vb: InsertionSort.Sort_Iterative_V1(Of T)(List(Of T))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Iterative_V1(Of T)(System.Collections.Generic.List(Of T))
+  name.vb: Sort_Iterative_V1(Of T)(List(Of T))
+- uid: CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Iterative_V2``1(System.Collections.Generic.List{``0})
+  commentId: M:CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Iterative_V2``1(System.Collections.Generic.List{``0})
+  id: Sort_Iterative_V2``1(System.Collections.Generic.List{``0})
+  parent: CSFundamentals.Algorithms.Sort.InsertionSort
+  langs:
+  - csharp
+  - vb
+  name: Sort_Iterative_V2<T>(List<T>)
+  nameWithType: InsertionSort.Sort_Iterative_V2<T>(List<T>)
+  fullName: CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Iterative_V2<T>(System.Collections.Generic.List<T>)
+  type: Method
+  source:
+    remote:
+      path: Source/Algorithms/Sort/InsertionSort.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Sort_Iterative_V2
+    path: ../Algorithms/Sort/InsertionSort.cs
+    startLine: 57
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.Sort
+  summary: "\nImplements insertion sort iteratively, and in-situ, using only one swap per element.\n"
+  example: []
+  syntax:
+    content: >-
+      public static void Sort_Iterative_V2<T>(List<T> list)
+          where T : IComparable<T>
+    parameters:
+    - id: list
+      type: System.Collections.Generic.List{{T}}
+      description: 'Specifies the list of values (of type T, e.g., int) to be sorted. '
+    typeParameters:
+    - id: T
+    content.vb: Public Shared Sub Sort_Iterative_V2(Of T As IComparable(Of T))(list As List(Of T))
+  overload: CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Iterative_V2*
+  nameWithType.vb: InsertionSort.Sort_Iterative_V2(Of T)(List(Of T))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Iterative_V2(Of T)(System.Collections.Generic.List(Of T))
+  name.vb: Sort_Iterative_V2(Of T)(List(Of T))
+- uid: CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Recursive``1(System.Collections.Generic.List{``0},System.Int32)
+  commentId: M:CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Recursive``1(System.Collections.Generic.List{``0},System.Int32)
+  id: Sort_Recursive``1(System.Collections.Generic.List{``0},System.Int32)
+  parent: CSFundamentals.Algorithms.Sort.InsertionSort
+  langs:
+  - csharp
+  - vb
+  name: Sort_Recursive<T>(List<T>, Int32)
+  nameWithType: InsertionSort.Sort_Recursive<T>(List<T>, Int32)
+  fullName: CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Recursive<T>(System.Collections.Generic.List<T>, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Source/Algorithms/Sort/InsertionSort.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Sort_Recursive
+    path: ../Algorithms/Sort/InsertionSort.cs
+    startLine: 80
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.Sort
+  summary: "\nImplements insertion sort recursively. Initial call shall be Sort_Recursive(values, values.Count-1);\n"
+  example: []
+  syntax:
+    content: >-
+      public static void Sort_Recursive<T>(List<T> list, int n)
+          where T : IComparable<T>
+    parameters:
+    - id: list
+      type: System.Collections.Generic.List{{T}}
+      description: 'Specifies the list of values (of type T, e.g., int) to be sorted. '
+    - id: n
+      type: System.Int32
+      description: 'Is the last inclusive index of the <code data-dev-comment-type="paramref" class="paramref">list</code>. '
+    typeParameters:
+    - id: T
+    content.vb: Public Shared Sub Sort_Recursive(Of T As IComparable(Of T))(list As List(Of T), n As Integer)
+  overload: CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Recursive*
+  nameWithType.vb: InsertionSort.Sort_Recursive(Of T)(List(Of T), Int32)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Recursive(Of T)(System.Collections.Generic.List(Of T), System.Int32)
+  name.vb: Sort_Recursive(Of T)(List(Of T), Int32)
+- uid: CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Iterative_V2(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})
+  commentId: M:CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Iterative_V2(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})
+  id: Sort_Iterative_V2(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})
+  parent: CSFundamentals.Algorithms.Sort.InsertionSort
+  langs:
+  - csharp
+  - vb
+  name: Sort_Iterative_V2(List<Element>)
+  nameWithType: InsertionSort.Sort_Iterative_V2(List<Element>)
+  fullName: CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Iterative_V2(System.Collections.Generic.List<CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element>)
+  type: Method
+  source:
+    remote:
+      path: Source/Algorithms/Sort/StabilityCheckableVersions/InsertionSort.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Sort_Iterative_V2
+    path: ../Algorithms/Sort/StabilityCheckableVersions/InsertionSort.cs
+    startLine: 31
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.Sort
+  summary: "\nImplements an iterative version of Insertion sort. \n"
+  example: []
+  syntax:
+    content: public static void Sort_Iterative_V2(List<Element> list)
+    parameters:
+    - id: list
+      type: System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}
+      description: ''
+    content.vb: Public Shared Sub Sort_Iterative_V2(list As List(Of Element))
+  overload: CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Iterative_V2*
+  nameWithType.vb: InsertionSort.Sort_Iterative_V2(List(Of Element))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Iterative_V2(System.Collections.Generic.List(Of CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element))
+  name.vb: Sort_Iterative_V2(List(Of Element))
+references:
+- uid: CSFundamentals.Algorithms.Sort
+  commentId: N:CSFundamentals.Algorithms.Sort
+  name: CSFundamentals.Algorithms.Sort
+  nameWithType: CSFundamentals.Algorithms.Sort
+  fullName: CSFundamentals.Algorithms.Sort
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Iterative_V1*
+  commentId: Overload:CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Iterative_V1
+  name: Sort_Iterative_V1
+  nameWithType: InsertionSort.Sort_Iterative_V1
+  fullName: CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Iterative_V1
+- uid: System.Collections.Generic.List{{T}}
+  commentId: T:System.Collections.Generic.List{``0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Iterative_V2*
+  commentId: Overload:CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Iterative_V2
+  name: Sort_Iterative_V2
+  nameWithType: InsertionSort.Sort_Iterative_V2
+  fullName: CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Iterative_V2
+- uid: CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Recursive*
+  commentId: Overload:CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Recursive
+  name: Sort_Recursive
+  nameWithType: InsertionSort.Sort_Recursive
+  fullName: CSFundamentals.Algorithms.Sort.InsertionSort.Sort_Recursive
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}
+  commentId: T:System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Element>
+  nameWithType: List<Element>
+  fullName: System.Collections.Generic.List<CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element>
+  nameWithType.vb: List(Of Element)
+  fullName.vb: System.Collections.Generic.List(Of CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element)
+  name.vb: List(Of Element)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+    name: Element
+    nameWithType: Element
+    fullName: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+    name: Element
+    nameWithType: Element
+    fullName: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+  - name: )
+    nameWithType: )
+    fullName: )

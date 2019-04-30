@@ -1,0 +1,536 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentals.Algorithms.Hashing.RollingHash
+  commentId: T:CSFundamentals.Algorithms.Hashing.RollingHash
+  id: RollingHash
+  parent: CSFundamentals.Algorithms.Hashing
+  children:
+  - CSFundamentals.Algorithms.Hashing.RollingHash.ComputeHashConstantForRollingHash(System.Int32,System.Int32,System.Int32)
+  - CSFundamentals.Algorithms.Hashing.RollingHash.GetHash(System.String,System.Int32,System.Int32)
+  - CSFundamentals.Algorithms.Hashing.RollingHash.GetHashRollingForward(System.Int32,System.Char,System.Char,System.Int32,System.Int32,System.Int32,System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: RollingHash
+  nameWithType: RollingHash
+  fullName: CSFundamentals.Algorithms.Hashing.RollingHash
+  type: Class
+  source:
+    remote:
+      path: Source/Algorithms/Hashing/RollingHash.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: RollingHash
+    path: ../Algorithms/Hashing/RollingHash.cs
+    startLine: 25
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.Hashing
+  summary: "\nImplements a rolling hash algorithm. In this sort of hashing the new hash value of a string can be calculated incrementally by rolling over to new characters, similar to moving a window over the string and decrementing the characters that fall out of the window. \n"
+  example: []
+  syntax:
+    content: public class RollingHash
+    content.vb: Public Class RollingHash
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CSFundamentals.Algorithms.Hashing.RollingHash.GetHashRollingForward(System.Int32,System.Char,System.Char,System.Int32,System.Int32,System.Int32,System.Int32)
+  commentId: M:CSFundamentals.Algorithms.Hashing.RollingHash.GetHashRollingForward(System.Int32,System.Char,System.Char,System.Int32,System.Int32,System.Int32,System.Int32)
+  id: GetHashRollingForward(System.Int32,System.Char,System.Char,System.Int32,System.Int32,System.Int32,System.Int32)
+  parent: CSFundamentals.Algorithms.Hashing.RollingHash
+  langs:
+  - csharp
+  - vb
+  name: GetHashRollingForward(Int32, Char, Char, Int32, Int32, Int32, Int32)
+  nameWithType: RollingHash.GetHashRollingForward(Int32, Char, Char, Int32, Int32, Int32, Int32)
+  fullName: CSFundamentals.Algorithms.Hashing.RollingHash.GetHashRollingForward(System.Int32, System.Char, System.Char, System.Int32, System.Int32, System.Int32, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Source/Algorithms/Hashing/RollingHash.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: GetHashRollingForward
+    path: ../Algorithms/Hashing/RollingHash.cs
+    startLine: 39
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.Hashing
+  summary: "\nImplements a rolling hash function. \nA use-case is Rabin-Karp search algorithm. \n"
+  example: []
+  syntax:
+    content: public static int GetHashRollingForward(int previousHashValue, char oldCharToLeft, char newCharToRight, int rollingWindowLength, int hashConstant, int prime, int numCharsInAlphabet)
+    parameters:
+    - id: previousHashValue
+      type: System.Int32
+      description: Specifies the previous hash value, using which the new hash value will be computed.
+    - id: oldCharToLeft
+      type: System.Char
+      description: 'Specifies the character that will be omitted from the hash, and thus the rolling window. '
+    - id: newCharToRight
+      type: System.Char
+      description: 'Specifies the new character that will be included in the hash and thus in the rolling window. '
+    - id: rollingWindowLength
+      type: System.Int32
+      description: 'Specifies the size of the rolling window. '
+    - id: hashConstant
+      type: System.Int32
+      description: Specifies the hash constant that is computed using ComputeHashConstantForRollingHash() method
+    - id: prime
+      type: System.Int32
+      description: Specifies a prime number for the modulo operation in the hash function.
+    - id: numCharsInAlphabet
+      type: System.Int32
+      description: 'Specifies the number of characters in alphabet needed by the hash function in the multiplication operation. '
+    return:
+      type: System.Int32
+      description: 'The hash value. '
+    content.vb: Public Shared Function GetHashRollingForward(previousHashValue As Integer, oldCharToLeft As Char, newCharToRight As Char, rollingWindowLength As Integer, hashConstant As Integer, prime As Integer, numCharsInAlphabet As Integer) As Integer
+  overload: CSFundamentals.Algorithms.Hashing.RollingHash.GetHashRollingForward*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CSFundamentals.Algorithms.Hashing.RollingHash.ComputeHashConstantForRollingHash(System.Int32,System.Int32,System.Int32)
+  commentId: M:CSFundamentals.Algorithms.Hashing.RollingHash.ComputeHashConstantForRollingHash(System.Int32,System.Int32,System.Int32)
+  id: ComputeHashConstantForRollingHash(System.Int32,System.Int32,System.Int32)
+  parent: CSFundamentals.Algorithms.Hashing.RollingHash
+  langs:
+  - csharp
+  - vb
+  name: ComputeHashConstantForRollingHash(Int32, Int32, Int32)
+  nameWithType: RollingHash.ComputeHashConstantForRollingHash(Int32, Int32, Int32)
+  fullName: CSFundamentals.Algorithms.Hashing.RollingHash.ComputeHashConstantForRollingHash(System.Int32, System.Int32, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Source/Algorithms/Hashing/RollingHash.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: ComputeHashConstantForRollingHash
+    path: ../Algorithms/Hashing/RollingHash.cs
+    startLine: 53
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.Hashing
+  summary: "\nComputes the hash constant needed for the rolling hash. \n"
+  example: []
+  syntax:
+    content: public static int ComputeHashConstantForRollingHash(int rollingWindowLength, int prime, int numCharsInAlphabet)
+    parameters:
+    - id: rollingWindowLength
+      type: System.Int32
+      description: 'Specifies the size of the rolling window. '
+    - id: prime
+      type: System.Int32
+      description: Specifies a prime number for the modulo operation
+    - id: numCharsInAlphabet
+      type: System.Int32
+      description: 'Specifies the number of characters in alphabet for the multiply operation. '
+    return:
+      type: System.Int32
+      description: 'Hashing constant based on the given prime number, window size, and numCharsInAlphabet. '
+    content.vb: Public Shared Function ComputeHashConstantForRollingHash(rollingWindowLength As Integer, prime As Integer, numCharsInAlphabet As Integer) As Integer
+  overload: CSFundamentals.Algorithms.Hashing.RollingHash.ComputeHashConstantForRollingHash*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CSFundamentals.Algorithms.Hashing.RollingHash.GetHash(System.String,System.Int32,System.Int32)
+  commentId: M:CSFundamentals.Algorithms.Hashing.RollingHash.GetHash(System.String,System.Int32,System.Int32)
+  id: GetHash(System.String,System.Int32,System.Int32)
+  parent: CSFundamentals.Algorithms.Hashing.RollingHash
+  langs:
+  - csharp
+  - vb
+  name: GetHash(String, Int32, Int32)
+  nameWithType: RollingHash.GetHash(String, Int32, Int32)
+  fullName: CSFundamentals.Algorithms.Hashing.RollingHash.GetHash(System.String, System.Int32, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Source/Algorithms/Hashing/RollingHash.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: GetHash
+    path: ../Algorithms/Hashing/RollingHash.cs
+    startLine: 70
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.Hashing
+  summary: "\nComputes hash value for string <code data-dev-comment-type=\"paramref\" class=\"paramref\">s</code>.\n"
+  example: []
+  syntax:
+    content: public static int GetHash(string s, int prime, int numCharsInAlphabet)
+    parameters:
+    - id: s
+      type: System.String
+      description: 'Specifies a string. '
+    - id: prime
+      type: System.Int32
+      description: Specifies a prime number for the modulo operation
+    - id: numCharsInAlphabet
+      type: System.Int32
+      description: 'Specifies the number of characters in alphabet for the multiply operation. '
+    return:
+      type: System.Int32
+      description: 'Hash value of the string. '
+    content.vb: Public Shared Function GetHash(s As String, prime As Integer, numCharsInAlphabet As Integer) As Integer
+  overload: CSFundamentals.Algorithms.Hashing.RollingHash.GetHash*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: CSFundamentals.Algorithms.Hashing
+  commentId: N:CSFundamentals.Algorithms.Hashing
+  name: CSFundamentals.Algorithms.Hashing
+  nameWithType: CSFundamentals.Algorithms.Hashing
+  fullName: CSFundamentals.Algorithms.Hashing
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CSFundamentals.Algorithms.Hashing.RollingHash.GetHashRollingForward*
+  commentId: Overload:CSFundamentals.Algorithms.Hashing.RollingHash.GetHashRollingForward
+  name: GetHashRollingForward
+  nameWithType: RollingHash.GetHashRollingForward
+  fullName: CSFundamentals.Algorithms.Hashing.RollingHash.GetHashRollingForward
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Char
+  commentId: T:System.Char
+  parent: System
+  isExternal: true
+  name: Char
+  nameWithType: Char
+  fullName: System.Char
+- uid: CSFundamentals.Algorithms.Hashing.RollingHash.ComputeHashConstantForRollingHash*
+  commentId: Overload:CSFundamentals.Algorithms.Hashing.RollingHash.ComputeHashConstantForRollingHash
+  name: ComputeHashConstantForRollingHash
+  nameWithType: RollingHash.ComputeHashConstantForRollingHash
+  fullName: CSFundamentals.Algorithms.Hashing.RollingHash.ComputeHashConstantForRollingHash
+- uid: CSFundamentals.Algorithms.Hashing.RollingHash.GetHash*
+  commentId: Overload:CSFundamentals.Algorithms.Hashing.RollingHash.GetHash
+  name: GetHash
+  nameWithType: RollingHash.GetHash
+  fullName: CSFundamentals.Algorithms.Hashing.RollingHash.GetHash
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String

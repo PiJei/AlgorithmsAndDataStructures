@@ -1,0 +1,3226 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2
+  commentId: T:CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2
+  id: BPlusTree`2
+  parent: CSFundamentals.DataStructures.Trees.Nary
+  children:
+  - CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.#ctor(System.Int32)
+  - CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.Delete(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0)
+  - CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.FindLeafToInsertKey(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0)
+  - CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.GetSortedKeyValues(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1})
+  - CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.InsertInLeaf(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},System.Collections.Generic.KeyValuePair{`0,`1})
+  - CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.ReBalance(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},System.Int32,System.Int32)
+  - CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.Search(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0)
+  langs:
+  - csharp
+  - vb
+  name: BPlusTree<TKey, TValue>
+  nameWithType: BPlusTree<TKey, TValue>
+  fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTree<TKey, TValue>
+  type: Class
+  source:
+    remote:
+      path: Source/DataStructures/Trees/Nary/BPlusTree.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: BPlusTree
+    path: ../DataStructures/Trees/Nary/BPlusTree.cs
+    startLine: 35
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.Trees.Nary
+  summary: "\nImplements a B+ Tree. \n"
+  example: []
+  syntax:
+    content: >-
+      [DataStructure("B+ Tree")]
+
+      public class BPlusTree<TKey, TValue> : BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue> where TKey : IComparable<TKey>
+    typeParameters:
+    - id: TKey
+      description: 'Type of the keys stored in the tree. '
+    - id: TValue
+      description: 'Type of the values stored in the tree. '
+    content.vb: >-
+      <DataStructure("B+ Tree")>
+
+      Public Class BPlusTree(Of TKey As IComparable(Of TKey), TValue)
+          Inherits BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue)
+  inheritance:
+  - System.Object
+  - CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}
+  inheritedMembers:
+  - CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.Root
+  - CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.MaxBranchingDegree
+  - CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.Build(System.Collections.Generic.Dictionary{{TKey},{TValue}})
+  - CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.Insert(System.Collections.Generic.KeyValuePair{{TKey},{TValue}})
+  - CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.Delete({TKey})
+  - CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.InsertInLeaf(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},System.Collections.Generic.KeyValuePair{{TKey},{TValue}})
+  - CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.Delete(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey})
+  - CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.GetSortedKeyValues(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}})
+  - CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.FindLeafToInsertKey(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey})
+  - CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.Search(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey})
+  - CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.GetMaxNode(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}})
+  - CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.GetMinNode(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}})
+  - CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.RotateLeft(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},System.Int32)
+  - CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.RotateRight(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},System.Int32)
+  - CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.Join(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}})
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: CSFundamentals.Decoration.DataStructureAttribute
+    ctor: CSFundamentals.Decoration.DataStructureAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: B+ Tree
+  nameWithType.vb: BPlusTree(Of TKey, TValue)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.BPlusTree(Of TKey, TValue)
+  name.vb: BPlusTree(Of TKey, TValue)
+- uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.#ctor(System.Int32)
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.#ctor(System.Int32)
+  id: '#ctor(System.Int32)'
+  parent: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2
+  langs:
+  - csharp
+  - vb
+  name: BPlusTree(Int32)
+  nameWithType: BPlusTree<TKey, TValue>.BPlusTree(Int32)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTree<TKey, TValue>.BPlusTree(System.Int32)
+  type: Constructor
+  source:
+    remote:
+      path: Source/DataStructures/Trees/Nary/BPlusTree.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: .ctor
+    path: ../DataStructures/Trees/Nary/BPlusTree.cs
+    startLine: 44
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.Trees.Nary
+  summary: "\nConstructor. \n"
+  example: []
+  syntax:
+    content: public BPlusTree(int maxBranchingDegree)
+    parameters:
+    - id: maxBranchingDegree
+      type: System.Int32
+      description: 'Maximum branching degree of the tree or the maximum number of children a node can have. '
+    content.vb: Public Sub New(maxBranchingDegree As Integer)
+  overload: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.#ctor*
+  nameWithType.vb: BPlusTree(Of TKey, TValue).BPlusTree(Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.BPlusTree(Of TKey, TValue).BPlusTree(System.Int32)
+- uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.Delete(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0)
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.Delete(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0)
+  id: Delete(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0)
+  parent: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2
+  langs:
+  - csharp
+  - vb
+  name: Delete(BPlusTreeNode<TKey, TValue>, TKey)
+  nameWithType: BPlusTree<TKey, TValue>.Delete(BPlusTreeNode<TKey, TValue>, TKey)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTree<TKey, TValue>.Delete(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey)
+  type: Method
+  source:
+    remote:
+      path: Source/DataStructures/Trees/Nary/BPlusTree.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Delete
+    path: ../DataStructures/Trees/Nary/BPlusTree.cs
+    startLine: 55
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.Trees.Nary
+  summary: "\nDeletes the given key from the given node \n"
+  example: []
+  syntax:
+    content: public override bool Delete(BPlusTreeNode<TKey, TValue> node, TKey key)
+    parameters:
+    - id: node
+      type: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}}
+      description: 'The node to delete the key from. '
+    - id: key
+      type: '{TKey}'
+      description: 'The key to be deleted from the node. '
+    return:
+      type: System.Boolean
+      description: 'True in case of success, and false otherwise. '
+    content.vb: Public Overrides Function Delete(node As BPlusTreeNode(Of TKey, TValue), key As TKey) As Boolean
+  overridden: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.Delete(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey})
+  overload: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.Delete*
+  nameWithType.vb: BPlusTree(Of TKey, TValue).Delete(BPlusTreeNode(Of TKey, TValue), TKey)
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.BPlusTree(Of TKey, TValue).Delete(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey)
+  name.vb: Delete(BPlusTreeNode(Of TKey, TValue), TKey)
+- uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.ReBalance(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},System.Int32,System.Int32)
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.ReBalance(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},System.Int32,System.Int32)
+  id: ReBalance(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},System.Int32,System.Int32)
+  parent: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2
+  langs:
+  - csharp
+  - vb
+  name: ReBalance(BPlusTreeNode<TKey, TValue>, BPlusTreeNode<TKey, TValue>, BPlusTreeNode<TKey, TValue>, Int32, Int32)
+  nameWithType: BPlusTree<TKey, TValue>.ReBalance(BPlusTreeNode<TKey, TValue>, BPlusTreeNode<TKey, TValue>, BPlusTreeNode<TKey, TValue>, Int32, Int32)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTree<TKey, TValue>.ReBalance(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, System.Int32, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Source/DataStructures/Trees/Nary/BPlusTree.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: ReBalance
+    path: ../DataStructures/Trees/Nary/BPlusTree.cs
+    startLine: 90
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.Trees.Nary
+  summary: "\nRe-balances the tree to restore back its properties. This method is called when node is underFlown, and thus must be fixed. \n"
+  example: []
+  syntax:
+    content: >-
+      [TimeComplexity(Case.Best, "O(1)", When = "There is no need to re-balance, or re-balance does not propagate to upper layers.")]
+
+      [TimeComplexity(Case.Worst, "O(Log(n))")]
+
+      [TimeComplexity(Case.Average, "O(Log(n))")]
+
+      public void ReBalance(BPlusTreeNode<TKey, TValue> node, BPlusTreeNode<TKey, TValue> leftSibling, BPlusTreeNode<TKey, TValue> rightSibling, int separatorWithLeftSiblingIndex, int separatorWithRightSiblingIndex)
+    parameters:
+    - id: node
+      type: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}}
+      description: 'Specifies an underFlown node. '
+    - id: leftSibling
+      type: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}}
+      description: 'Is the left sibling of the underFlown node. '
+    - id: rightSibling
+      type: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}}
+      description: 'Is the right sibling of the underFlown node. '
+    - id: separatorWithLeftSiblingIndex
+      type: System.Int32
+      description: 'Is the index of the key in parent that separates node from its left sibling. '
+    - id: separatorWithRightSiblingIndex
+      type: System.Int32
+      description: 'Is the index of the key in parent that separates node from its right sibling. '
+    content.vb: >-
+      <TimeComplexity( Case.Best, "O(1)", When:="There is no need to re-balance, or re-balance does not propagate to upper layers.")>
+
+      <TimeComplexity( Case.Worst, "O(Log(n))")>
+
+      <TimeComplexity( Case.Average, "O(Log(n))")>
+
+      Public Sub ReBalance(node As BPlusTreeNode(Of TKey, TValue), leftSibling As BPlusTreeNode(Of TKey, TValue), rightSibling As BPlusTreeNode(Of TKey, TValue), separatorWithLeftSiblingIndex As Integer, separatorWithRightSiblingIndex As Integer)
+  overload: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.ReBalance*
+  attributes:
+  - type: CSFundamentals.Decoration.TimeComplexityAttribute
+    ctor: CSFundamentals.Decoration.TimeComplexityAttribute.#ctor(CSFundamentals.Decoration.Case,System.String)
+    arguments:
+    - type: CSFundamentals.Decoration.Case
+      value: 1
+    - type: System.String
+      value: O(1)
+    namedArguments:
+    - name: When
+      type: System.String
+      value: There is no need to re-balance, or re-balance does not propagate to upper layers.
+  - type: CSFundamentals.Decoration.TimeComplexityAttribute
+    ctor: CSFundamentals.Decoration.TimeComplexityAttribute.#ctor(CSFundamentals.Decoration.Case,System.String)
+    arguments:
+    - type: CSFundamentals.Decoration.Case
+      value: 2
+    - type: System.String
+      value: O(Log(n))
+  - type: CSFundamentals.Decoration.TimeComplexityAttribute
+    ctor: CSFundamentals.Decoration.TimeComplexityAttribute.#ctor(CSFundamentals.Decoration.Case,System.String)
+    arguments:
+    - type: CSFundamentals.Decoration.Case
+      value: 0
+    - type: System.String
+      value: O(Log(n))
+  nameWithType.vb: BPlusTree(Of TKey, TValue).ReBalance(BPlusTreeNode(Of TKey, TValue), BPlusTreeNode(Of TKey, TValue), BPlusTreeNode(Of TKey, TValue), Int32, Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.BPlusTree(Of TKey, TValue).ReBalance(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), System.Int32, System.Int32)
+  name.vb: ReBalance(BPlusTreeNode(Of TKey, TValue), BPlusTreeNode(Of TKey, TValue), BPlusTreeNode(Of TKey, TValue), Int32, Int32)
+- uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.InsertInLeaf(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},System.Collections.Generic.KeyValuePair{`0,`1})
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.InsertInLeaf(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},System.Collections.Generic.KeyValuePair{`0,`1})
+  id: InsertInLeaf(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},System.Collections.Generic.KeyValuePair{`0,`1})
+  parent: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2
+  langs:
+  - csharp
+  - vb
+  name: InsertInLeaf(BPlusTreeNode<TKey, TValue>, KeyValuePair<TKey, TValue>)
+  nameWithType: BPlusTree<TKey, TValue>.InsertInLeaf(BPlusTreeNode<TKey, TValue>, KeyValuePair<TKey, TValue>)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTree<TKey, TValue>.InsertInLeaf(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, System.Collections.Generic.KeyValuePair<TKey, TValue>)
+  type: Method
+  source:
+    remote:
+      path: Source/DataStructures/Trees/Nary/BPlusTree.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: InsertInLeaf
+    path: ../DataStructures/Trees/Nary/BPlusTree.cs
+    startLine: 270
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.Trees.Nary
+  summary: "\nInserts the given key-value pair in the given leaf node. \n"
+  example: []
+  syntax:
+    content: public override BPlusTreeNode<TKey, TValue> InsertInLeaf(BPlusTreeNode<TKey, TValue> leaf, KeyValuePair<TKey, TValue> keyValue)
+    parameters:
+    - id: leaf
+      type: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}}
+      description: 'A leaf node in the tree. '
+    - id: keyValue
+      type: System.Collections.Generic.KeyValuePair{{TKey},{TValue}}
+      description: 'A key-value pair to be inserted in the tree. '
+    return:
+      type: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}}
+      description: 'Root of the tree. '
+    content.vb: Public Overrides Function InsertInLeaf(leaf As BPlusTreeNode(Of TKey, TValue), keyValue As KeyValuePair(Of TKey, TValue)) As BPlusTreeNode(Of TKey, TValue)
+  overridden: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.InsertInLeaf(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},System.Collections.Generic.KeyValuePair{{TKey},{TValue}})
+  overload: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.InsertInLeaf*
+  nameWithType.vb: BPlusTree(Of TKey, TValue).InsertInLeaf(BPlusTreeNode(Of TKey, TValue), KeyValuePair(Of TKey, TValue))
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.BPlusTree(Of TKey, TValue).InsertInLeaf(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), System.Collections.Generic.KeyValuePair(Of TKey, TValue))
+  name.vb: InsertInLeaf(BPlusTreeNode(Of TKey, TValue), KeyValuePair(Of TKey, TValue))
+- uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.GetSortedKeyValues(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1})
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.GetSortedKeyValues(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1})
+  id: GetSortedKeyValues(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1})
+  parent: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2
+  langs:
+  - csharp
+  - vb
+  name: GetSortedKeyValues(BPlusTreeNode<TKey, TValue>)
+  nameWithType: BPlusTree<TKey, TValue>.GetSortedKeyValues(BPlusTreeNode<TKey, TValue>)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTree<TKey, TValue>.GetSortedKeyValues(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>)
+  type: Method
+  source:
+    remote:
+      path: Source/DataStructures/Trees/Nary/BPlusTree.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: GetSortedKeyValues
+    path: ../DataStructures/Trees/Nary/BPlusTree.cs
+    startLine: 358
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.Trees.Nary
+  summary: "\nTraverses the doubly linked list at the level of leaves and returns the list of all the key-values in leaves in a sorted order (sorted by key)\n"
+  example: []
+  syntax:
+    content: public override List<KeyValuePair<TKey, TValue>> GetSortedKeyValues(BPlusTreeNode<TKey, TValue> node)
+    parameters:
+    - id: node
+      type: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}}
+    return:
+      type: System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}
+      description: ''
+    content.vb: Public Overrides Function GetSortedKeyValues(node As BPlusTreeNode(Of TKey, TValue)) As List(Of KeyValuePair(Of TKey, TValue))
+  overridden: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.GetSortedKeyValues(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}})
+  overload: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.GetSortedKeyValues*
+  nameWithType.vb: BPlusTree(Of TKey, TValue).GetSortedKeyValues(BPlusTreeNode(Of TKey, TValue))
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.BPlusTree(Of TKey, TValue).GetSortedKeyValues(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue))
+  name.vb: GetSortedKeyValues(BPlusTreeNode(Of TKey, TValue))
+- uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.FindLeafToInsertKey(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0)
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.FindLeafToInsertKey(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0)
+  id: FindLeafToInsertKey(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0)
+  parent: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2
+  langs:
+  - csharp
+  - vb
+  name: FindLeafToInsertKey(BPlusTreeNode<TKey, TValue>, TKey)
+  nameWithType: BPlusTree<TKey, TValue>.FindLeafToInsertKey(BPlusTreeNode<TKey, TValue>, TKey)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTree<TKey, TValue>.FindLeafToInsertKey(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey)
+  type: Method
+  source:
+    remote:
+      path: Source/DataStructures/Trees/Nary/BPlusTree.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: FindLeafToInsertKey
+    path: ../DataStructures/Trees/Nary/BPlusTree.cs
+    startLine: 377
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.Trees.Nary
+  summary: "\nStarting from the given root, recursively traverses tree top-down to find the proper leaf node, at which <code data-dev-comment-type=\"paramref\" class=\"paramref\">key</code> can be inserted. \n"
+  example: []
+  syntax:
+    content: >-
+      [TimeComplexity(Case.Best, "O(1)", When = "There is no node in the tree or only one node.")]
+
+      [TimeComplexity(Case.Worst, "O(Log(n))")]
+
+      [TimeComplexity(Case.Average, "O(Log(n))")]
+
+      public override BPlusTreeNode<TKey, TValue> FindLeafToInsertKey(BPlusTreeNode<TKey, TValue> root, TKey key)
+    parameters:
+    - id: root
+      type: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}}
+      description: Is the top-most node at which search for the leaf starts.
+    - id: key
+      type: '{TKey}'
+      description: 'Is the key for which a container leaf is being searched. '
+    return:
+      type: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}}
+      description: 'Leaf node to insert the key. '
+    content.vb: >-
+      <TimeComplexity( Case.Best, "O(1)", When:="There is no node in the tree or only one node.")>
+
+      <TimeComplexity( Case.Worst, "O(Log(n))")>
+
+      <TimeComplexity( Case.Average, "O(Log(n))")>
+
+      Public Overrides Function FindLeafToInsertKey(root As BPlusTreeNode(Of TKey, TValue), key As TKey) As BPlusTreeNode(Of TKey, TValue)
+  overridden: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.FindLeafToInsertKey(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey})
+  overload: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.FindLeafToInsertKey*
+  attributes:
+  - type: CSFundamentals.Decoration.TimeComplexityAttribute
+    ctor: CSFundamentals.Decoration.TimeComplexityAttribute.#ctor(CSFundamentals.Decoration.Case,System.String)
+    arguments:
+    - type: CSFundamentals.Decoration.Case
+      value: 1
+    - type: System.String
+      value: O(1)
+    namedArguments:
+    - name: When
+      type: System.String
+      value: There is no node in the tree or only one node.
+  - type: CSFundamentals.Decoration.TimeComplexityAttribute
+    ctor: CSFundamentals.Decoration.TimeComplexityAttribute.#ctor(CSFundamentals.Decoration.Case,System.String)
+    arguments:
+    - type: CSFundamentals.Decoration.Case
+      value: 2
+    - type: System.String
+      value: O(Log(n))
+  - type: CSFundamentals.Decoration.TimeComplexityAttribute
+    ctor: CSFundamentals.Decoration.TimeComplexityAttribute.#ctor(CSFundamentals.Decoration.Case,System.String)
+    arguments:
+    - type: CSFundamentals.Decoration.Case
+      value: 0
+    - type: System.String
+      value: O(Log(n))
+  nameWithType.vb: BPlusTree(Of TKey, TValue).FindLeafToInsertKey(BPlusTreeNode(Of TKey, TValue), TKey)
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.BPlusTree(Of TKey, TValue).FindLeafToInsertKey(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey)
+  name.vb: FindLeafToInsertKey(BPlusTreeNode(Of TKey, TValue), TKey)
+- uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.Search(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0)
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.Search(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0)
+  id: Search(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0)
+  parent: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2
+  langs:
+  - csharp
+  - vb
+  name: Search(BPlusTreeNode<TKey, TValue>, TKey)
+  nameWithType: BPlusTree<TKey, TValue>.Search(BPlusTreeNode<TKey, TValue>, TKey)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTree<TKey, TValue>.Search(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey)
+  type: Method
+  source:
+    remote:
+      path: Source/DataStructures/Trees/Nary/BPlusTree.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Search
+    path: ../DataStructures/Trees/Nary/BPlusTree.cs
+    startLine: 417
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.Trees.Nary
+  summary: "\nSearchers the given key in leaf nodes of the (sub)tree rooted at node <code data-dev-comment-type=\"paramref\" class=\"paramref\">root</code>.\n"
+  example: []
+  syntax:
+    content: >-
+      [TimeComplexity(Case.Best, "O(1)", When = "Key is the first item of the first node to visit.")]
+
+      [TimeComplexity(Case.Worst, "O(LogD Log(n)Base(D))")]
+
+      [TimeComplexity(Case.Average, "O(Log(d) Log(n)Base(d))")]
+
+      public override BPlusTreeNode<TKey, TValue> Search(BPlusTreeNode<TKey, TValue> root, TKey key)
+    parameters:
+    - id: root
+      type: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}}
+      description: 'The root of the (sub) tree at which search starts. '
+    - id: key
+      type: '{TKey}'
+      description: Is the key to search for.
+    return:
+      type: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}}
+      description: 'The leaf node containing the key if it exists. Otherwise throws an exception. '
+    content.vb: >-
+      <TimeComplexity( Case.Best, "O(1)", When:="Key is the first item of the first node to visit.")>
+
+      <TimeComplexity( Case.Worst, "O(LogD Log(n)Base(D))")>
+
+      <TimeComplexity( Case.Average, "O(Log(d) Log(n)Base(d))")>
+
+      Public Overrides Function Search(root As BPlusTreeNode(Of TKey, TValue), key As TKey) As BPlusTreeNode(Of TKey, TValue)
+  overridden: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.Search(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey})
+  overload: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.Search*
+  attributes:
+  - type: CSFundamentals.Decoration.TimeComplexityAttribute
+    ctor: CSFundamentals.Decoration.TimeComplexityAttribute.#ctor(CSFundamentals.Decoration.Case,System.String)
+    arguments:
+    - type: CSFundamentals.Decoration.Case
+      value: 1
+    - type: System.String
+      value: O(1)
+    namedArguments:
+    - name: When
+      type: System.String
+      value: Key is the first item of the first node to visit.
+  - type: CSFundamentals.Decoration.TimeComplexityAttribute
+    ctor: CSFundamentals.Decoration.TimeComplexityAttribute.#ctor(CSFundamentals.Decoration.Case,System.String)
+    arguments:
+    - type: CSFundamentals.Decoration.Case
+      value: 2
+    - type: System.String
+      value: O(LogD Log(n)Base(D))
+  - type: CSFundamentals.Decoration.TimeComplexityAttribute
+    ctor: CSFundamentals.Decoration.TimeComplexityAttribute.#ctor(CSFundamentals.Decoration.Case,System.String)
+    arguments:
+    - type: CSFundamentals.Decoration.Case
+      value: 0
+    - type: System.String
+      value: O(Log(d) Log(n)Base(d))
+  nameWithType.vb: BPlusTree(Of TKey, TValue).Search(BPlusTreeNode(Of TKey, TValue), TKey)
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.BPlusTree(Of TKey, TValue).Search(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey)
+  name.vb: Search(BPlusTreeNode(Of TKey, TValue), TKey)
+references:
+- uid: CSFundamentals.DataStructures.Trees.Nary
+  commentId: N:CSFundamentals.DataStructures.Trees.Nary
+  name: CSFundamentals.DataStructures.Trees.Nary
+  nameWithType: CSFundamentals.DataStructures.Trees.Nary
+  fullName: CSFundamentals.DataStructures.Trees.Nary
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}
+  commentId: T:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0,`1}
+  parent: CSFundamentals.DataStructures.Trees.Nary.API
+  definition: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3
+  name: BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>
+  nameWithType: BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey, TValue>
+  nameWithType.vb: BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey, TValue)
+  name.vb: BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3
+    name: BTreeBase
+    nameWithType: BTreeBase
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3
+    name: BTreeBase
+    nameWithType: BTreeBase
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.Root
+  commentId: F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0,`1}.Root
+  parent: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Root
+  name: Root
+  nameWithType: BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>.Root
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey, TValue>.Root
+  nameWithType.vb: BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue).Root
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey, TValue).Root
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.MaxBranchingDegree
+  commentId: P:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0,`1}.MaxBranchingDegree
+  parent: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.MaxBranchingDegree
+  name: MaxBranchingDegree
+  nameWithType: BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>.MaxBranchingDegree
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey, TValue>.MaxBranchingDegree
+  nameWithType.vb: BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue).MaxBranchingDegree
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey, TValue).MaxBranchingDegree
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.Build(System.Collections.Generic.Dictionary{{TKey},{TValue}})
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0,`1}.Build(System.Collections.Generic.Dictionary{`0,`1})
+  parent: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Build(System.Collections.Generic.Dictionary{`1,`2})
+  name: Build(Dictionary<TKey, TValue>)
+  nameWithType: BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>.Build(Dictionary<TKey, TValue>)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey, TValue>.Build(System.Collections.Generic.Dictionary<TKey, TValue>)
+  nameWithType.vb: BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue).Build(Dictionary(Of TKey, TValue))
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey, TValue).Build(System.Collections.Generic.Dictionary(Of TKey, TValue))
+  name.vb: Build(Dictionary(Of TKey, TValue))
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Build(System.Collections.Generic.Dictionary{`1,`2})
+    name: Build
+    nameWithType: BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>.Build
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey, TValue>.Build
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Build(System.Collections.Generic.Dictionary{`1,`2})
+    name: Build
+    nameWithType: BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue).Build
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey, TValue).Build
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.Insert(System.Collections.Generic.KeyValuePair{{TKey},{TValue}})
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0,`1}.Insert(System.Collections.Generic.KeyValuePair{`0,`1})
+  parent: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Insert(System.Collections.Generic.KeyValuePair{`1,`2})
+  name: Insert(KeyValuePair<TKey, TValue>)
+  nameWithType: BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>.Insert(KeyValuePair<TKey, TValue>)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey, TValue>.Insert(System.Collections.Generic.KeyValuePair<TKey, TValue>)
+  nameWithType.vb: BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue).Insert(KeyValuePair(Of TKey, TValue))
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey, TValue).Insert(System.Collections.Generic.KeyValuePair(Of TKey, TValue))
+  name.vb: Insert(KeyValuePair(Of TKey, TValue))
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Insert(System.Collections.Generic.KeyValuePair{`1,`2})
+    name: Insert
+    nameWithType: BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>.Insert
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey, TValue>.Insert
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Insert(System.Collections.Generic.KeyValuePair{`1,`2})
+    name: Insert
+    nameWithType: BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue).Insert
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey, TValue).Insert
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.Delete({TKey})
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0,`1}.Delete(`0)
+  parent: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Delete(`1)
+  name: Delete(TKey)
+  nameWithType: BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>.Delete(TKey)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey, TValue>.Delete(TKey)
+  nameWithType.vb: BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue).Delete(TKey)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey, TValue).Delete(TKey)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Delete(`1)
+    name: Delete
+    nameWithType: BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>.Delete
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey, TValue>.Delete
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Delete(`1)
+    name: Delete
+    nameWithType: BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue).Delete
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey, TValue).Delete
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.InsertInLeaf(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},System.Collections.Generic.KeyValuePair{{TKey},{TValue}})
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0,`1}.InsertInLeaf(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},System.Collections.Generic.KeyValuePair{`0,`1})
+  parent: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.InsertInLeaf(`0,System.Collections.Generic.KeyValuePair{`1,`2})
+  name: InsertInLeaf(BPlusTreeNode<TKey, TValue>, KeyValuePair<TKey, TValue>)
+  nameWithType: BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>.InsertInLeaf(BPlusTreeNode<TKey, TValue>, KeyValuePair<TKey, TValue>)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey, TValue>.InsertInLeaf(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, System.Collections.Generic.KeyValuePair<TKey, TValue>)
+  nameWithType.vb: BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue).InsertInLeaf(BPlusTreeNode(Of TKey, TValue), KeyValuePair(Of TKey, TValue))
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey, TValue).InsertInLeaf(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), System.Collections.Generic.KeyValuePair(Of TKey, TValue))
+  name.vb: InsertInLeaf(BPlusTreeNode(Of TKey, TValue), KeyValuePair(Of TKey, TValue))
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.InsertInLeaf(`0,System.Collections.Generic.KeyValuePair{`1,`2})
+    name: InsertInLeaf
+    nameWithType: BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>.InsertInLeaf
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey, TValue>.InsertInLeaf
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.InsertInLeaf(`0,System.Collections.Generic.KeyValuePair{`1,`2})
+    name: InsertInLeaf
+    nameWithType: BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue).InsertInLeaf
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey, TValue).InsertInLeaf
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.Delete(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey})
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0,`1}.Delete(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0)
+  parent: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Delete(`0,`1)
+  name: Delete(BPlusTreeNode<TKey, TValue>, TKey)
+  nameWithType: BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>.Delete(BPlusTreeNode<TKey, TValue>, TKey)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey, TValue>.Delete(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey)
+  nameWithType.vb: BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue).Delete(BPlusTreeNode(Of TKey, TValue), TKey)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey, TValue).Delete(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey)
+  name.vb: Delete(BPlusTreeNode(Of TKey, TValue), TKey)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Delete(`0,`1)
+    name: Delete
+    nameWithType: BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>.Delete
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey, TValue>.Delete
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Delete(`0,`1)
+    name: Delete
+    nameWithType: BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue).Delete
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey, TValue).Delete
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.GetSortedKeyValues(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}})
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0,`1}.GetSortedKeyValues(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1})
+  parent: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.GetSortedKeyValues(`0)
+  name: GetSortedKeyValues(BPlusTreeNode<TKey, TValue>)
+  nameWithType: BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>.GetSortedKeyValues(BPlusTreeNode<TKey, TValue>)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey, TValue>.GetSortedKeyValues(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>)
+  nameWithType.vb: BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue).GetSortedKeyValues(BPlusTreeNode(Of TKey, TValue))
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey, TValue).GetSortedKeyValues(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue))
+  name.vb: GetSortedKeyValues(BPlusTreeNode(Of TKey, TValue))
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.GetSortedKeyValues(`0)
+    name: GetSortedKeyValues
+    nameWithType: BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>.GetSortedKeyValues
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey, TValue>.GetSortedKeyValues
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.GetSortedKeyValues(`0)
+    name: GetSortedKeyValues
+    nameWithType: BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue).GetSortedKeyValues
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey, TValue).GetSortedKeyValues
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.FindLeafToInsertKey(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey})
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0,`1}.FindLeafToInsertKey(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0)
+  parent: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.FindLeafToInsertKey(`0,`1)
+  name: FindLeafToInsertKey(BPlusTreeNode<TKey, TValue>, TKey)
+  nameWithType: BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>.FindLeafToInsertKey(BPlusTreeNode<TKey, TValue>, TKey)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey, TValue>.FindLeafToInsertKey(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey)
+  nameWithType.vb: BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue).FindLeafToInsertKey(BPlusTreeNode(Of TKey, TValue), TKey)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey, TValue).FindLeafToInsertKey(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey)
+  name.vb: FindLeafToInsertKey(BPlusTreeNode(Of TKey, TValue), TKey)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.FindLeafToInsertKey(`0,`1)
+    name: FindLeafToInsertKey
+    nameWithType: BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>.FindLeafToInsertKey
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey, TValue>.FindLeafToInsertKey
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.FindLeafToInsertKey(`0,`1)
+    name: FindLeafToInsertKey
+    nameWithType: BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue).FindLeafToInsertKey
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey, TValue).FindLeafToInsertKey
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.Search(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey})
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0,`1}.Search(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0)
+  parent: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Search(`0,`1)
+  name: Search(BPlusTreeNode<TKey, TValue>, TKey)
+  nameWithType: BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>.Search(BPlusTreeNode<TKey, TValue>, TKey)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey, TValue>.Search(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey)
+  nameWithType.vb: BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue).Search(BPlusTreeNode(Of TKey, TValue), TKey)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey, TValue).Search(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey)
+  name.vb: Search(BPlusTreeNode(Of TKey, TValue), TKey)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Search(`0,`1)
+    name: Search
+    nameWithType: BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>.Search
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey, TValue>.Search
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Search(`0,`1)
+    name: Search
+    nameWithType: BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue).Search
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey, TValue).Search
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.GetMaxNode(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}})
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0,`1}.GetMaxNode(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1})
+  parent: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.GetMaxNode(`0)
+  name: GetMaxNode(BPlusTreeNode<TKey, TValue>)
+  nameWithType: BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>.GetMaxNode(BPlusTreeNode<TKey, TValue>)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey, TValue>.GetMaxNode(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>)
+  nameWithType.vb: BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue).GetMaxNode(BPlusTreeNode(Of TKey, TValue))
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey, TValue).GetMaxNode(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue))
+  name.vb: GetMaxNode(BPlusTreeNode(Of TKey, TValue))
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.GetMaxNode(`0)
+    name: GetMaxNode
+    nameWithType: BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>.GetMaxNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey, TValue>.GetMaxNode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.GetMaxNode(`0)
+    name: GetMaxNode
+    nameWithType: BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue).GetMaxNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey, TValue).GetMaxNode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.GetMinNode(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}})
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0,`1}.GetMinNode(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1})
+  parent: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.GetMinNode(`0)
+  name: GetMinNode(BPlusTreeNode<TKey, TValue>)
+  nameWithType: BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>.GetMinNode(BPlusTreeNode<TKey, TValue>)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey, TValue>.GetMinNode(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>)
+  nameWithType.vb: BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue).GetMinNode(BPlusTreeNode(Of TKey, TValue))
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey, TValue).GetMinNode(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue))
+  name.vb: GetMinNode(BPlusTreeNode(Of TKey, TValue))
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.GetMinNode(`0)
+    name: GetMinNode
+    nameWithType: BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>.GetMinNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey, TValue>.GetMinNode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.GetMinNode(`0)
+    name: GetMinNode
+    nameWithType: BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue).GetMinNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey, TValue).GetMinNode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.RotateLeft(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},System.Int32)
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0,`1}.RotateLeft(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},System.Int32)
+  parent: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.RotateLeft(`0,`0,System.Int32)
+  name: RotateLeft(BPlusTreeNode<TKey, TValue>, BPlusTreeNode<TKey, TValue>, Int32)
+  nameWithType: BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>.RotateLeft(BPlusTreeNode<TKey, TValue>, BPlusTreeNode<TKey, TValue>, Int32)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey, TValue>.RotateLeft(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, System.Int32)
+  nameWithType.vb: BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue).RotateLeft(BPlusTreeNode(Of TKey, TValue), BPlusTreeNode(Of TKey, TValue), Int32)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey, TValue).RotateLeft(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), System.Int32)
+  name.vb: RotateLeft(BPlusTreeNode(Of TKey, TValue), BPlusTreeNode(Of TKey, TValue), Int32)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.RotateLeft(`0,`0,System.Int32)
+    name: RotateLeft
+    nameWithType: BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>.RotateLeft
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey, TValue>.RotateLeft
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.RotateLeft(`0,`0,System.Int32)
+    name: RotateLeft
+    nameWithType: BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue).RotateLeft
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey, TValue).RotateLeft
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.RotateRight(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},System.Int32)
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0,`1}.RotateRight(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},System.Int32)
+  parent: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.RotateRight(`0,`0,System.Int32)
+  name: RotateRight(BPlusTreeNode<TKey, TValue>, BPlusTreeNode<TKey, TValue>, Int32)
+  nameWithType: BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>.RotateRight(BPlusTreeNode<TKey, TValue>, BPlusTreeNode<TKey, TValue>, Int32)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey, TValue>.RotateRight(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, System.Int32)
+  nameWithType.vb: BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue).RotateRight(BPlusTreeNode(Of TKey, TValue), BPlusTreeNode(Of TKey, TValue), Int32)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey, TValue).RotateRight(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), System.Int32)
+  name.vb: RotateRight(BPlusTreeNode(Of TKey, TValue), BPlusTreeNode(Of TKey, TValue), Int32)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.RotateRight(`0,`0,System.Int32)
+    name: RotateRight
+    nameWithType: BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>.RotateRight
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey, TValue>.RotateRight
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.RotateRight(`0,`0,System.Int32)
+    name: RotateRight
+    nameWithType: BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue).RotateRight
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey, TValue).RotateRight
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}.Join(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}})
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},`0,`1}.Join(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1},CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1})
+  parent: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase{CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}},{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Join(`0,`0)
+  name: Join(BPlusTreeNode<TKey, TValue>, BPlusTreeNode<TKey, TValue>)
+  nameWithType: BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>.Join(BPlusTreeNode<TKey, TValue>, BPlusTreeNode<TKey, TValue>)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey, TValue>.Join(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>)
+  nameWithType.vb: BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue).Join(BPlusTreeNode(Of TKey, TValue), BPlusTreeNode(Of TKey, TValue))
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey, TValue).Join(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue))
+  name.vb: Join(BPlusTreeNode(Of TKey, TValue), BPlusTreeNode(Of TKey, TValue))
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Join(`0,`0)
+    name: Join
+    nameWithType: BTreeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>.Join
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>, TKey, TValue>.Join
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Join(`0,`0)
+    name: Join
+    nameWithType: BTreeBase(Of BPlusTreeNode(Of TKey, TValue), TKey, TValue).Join
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue), TKey, TValue).Join
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3
+  commentId: T:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3
+  name: BTreeBase<TNode, TKey, TValue>
+  nameWithType: BTreeBase<TNode, TKey, TValue>
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>
+  nameWithType.vb: BTreeBase(Of TNode, TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue)
+  name.vb: BTreeBase(Of TNode, TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3
+    name: BTreeBase
+    nameWithType: BTreeBase
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3
+    name: BTreeBase
+    nameWithType: BTreeBase
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.API
+  commentId: N:CSFundamentals.DataStructures.Trees.Nary.API
+  name: CSFundamentals.DataStructures.Trees.Nary.API
+  nameWithType: CSFundamentals.DataStructures.Trees.Nary.API
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Root
+  commentId: F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Root
+  name: Root
+  nameWithType: BTreeBase<TNode, TKey, TValue>.Root
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>.Root
+  nameWithType.vb: BTreeBase(Of TNode, TKey, TValue).Root
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue).Root
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.MaxBranchingDegree
+  commentId: P:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.MaxBranchingDegree
+  name: MaxBranchingDegree
+  nameWithType: BTreeBase<TNode, TKey, TValue>.MaxBranchingDegree
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>.MaxBranchingDegree
+  nameWithType.vb: BTreeBase(Of TNode, TKey, TValue).MaxBranchingDegree
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue).MaxBranchingDegree
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Build(System.Collections.Generic.Dictionary{`1,`2})
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Build(System.Collections.Generic.Dictionary{`1,`2})
+  isExternal: true
+  name: Build(Dictionary<TKey, TValue>)
+  nameWithType: BTreeBase<TNode, TKey, TValue>.Build(Dictionary<TKey, TValue>)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>.Build(System.Collections.Generic.Dictionary<TKey, TValue>)
+  nameWithType.vb: BTreeBase(Of TNode, TKey, TValue).Build(Dictionary(Of TKey, TValue))
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue).Build(System.Collections.Generic.Dictionary(Of TKey, TValue))
+  name.vb: Build(Dictionary(Of TKey, TValue))
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Build(System.Collections.Generic.Dictionary{`1,`2})
+    name: Build
+    nameWithType: BTreeBase<TNode, TKey, TValue>.Build
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>.Build
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Build(System.Collections.Generic.Dictionary{`1,`2})
+    name: Build
+    nameWithType: BTreeBase(Of TNode, TKey, TValue).Build
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue).Build
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Insert(System.Collections.Generic.KeyValuePair{`1,`2})
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Insert(System.Collections.Generic.KeyValuePair{`1,`2})
+  isExternal: true
+  name: Insert(KeyValuePair<TKey, TValue>)
+  nameWithType: BTreeBase<TNode, TKey, TValue>.Insert(KeyValuePair<TKey, TValue>)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>.Insert(System.Collections.Generic.KeyValuePair<TKey, TValue>)
+  nameWithType.vb: BTreeBase(Of TNode, TKey, TValue).Insert(KeyValuePair(Of TKey, TValue))
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue).Insert(System.Collections.Generic.KeyValuePair(Of TKey, TValue))
+  name.vb: Insert(KeyValuePair(Of TKey, TValue))
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Insert(System.Collections.Generic.KeyValuePair{`1,`2})
+    name: Insert
+    nameWithType: BTreeBase<TNode, TKey, TValue>.Insert
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>.Insert
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Insert(System.Collections.Generic.KeyValuePair{`1,`2})
+    name: Insert
+    nameWithType: BTreeBase(Of TNode, TKey, TValue).Insert
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue).Insert
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Delete(`1)
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Delete(`1)
+  name: Delete(TKey)
+  nameWithType: BTreeBase<TNode, TKey, TValue>.Delete(TKey)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>.Delete(TKey)
+  nameWithType.vb: BTreeBase(Of TNode, TKey, TValue).Delete(TKey)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue).Delete(TKey)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Delete(`1)
+    name: Delete
+    nameWithType: BTreeBase<TNode, TKey, TValue>.Delete
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>.Delete
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Delete(`1)
+    name: Delete
+    nameWithType: BTreeBase(Of TNode, TKey, TValue).Delete
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue).Delete
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.InsertInLeaf(`0,System.Collections.Generic.KeyValuePair{`1,`2})
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.InsertInLeaf(`0,System.Collections.Generic.KeyValuePair{`1,`2})
+  isExternal: true
+  name: InsertInLeaf(TNode, KeyValuePair<TKey, TValue>)
+  nameWithType: BTreeBase<TNode, TKey, TValue>.InsertInLeaf(TNode, KeyValuePair<TKey, TValue>)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>.InsertInLeaf(TNode, System.Collections.Generic.KeyValuePair<TKey, TValue>)
+  nameWithType.vb: BTreeBase(Of TNode, TKey, TValue).InsertInLeaf(TNode, KeyValuePair(Of TKey, TValue))
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue).InsertInLeaf(TNode, System.Collections.Generic.KeyValuePair(Of TKey, TValue))
+  name.vb: InsertInLeaf(TNode, KeyValuePair(Of TKey, TValue))
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.InsertInLeaf(`0,System.Collections.Generic.KeyValuePair{`1,`2})
+    name: InsertInLeaf
+    nameWithType: BTreeBase<TNode, TKey, TValue>.InsertInLeaf
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>.InsertInLeaf
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.InsertInLeaf(`0,System.Collections.Generic.KeyValuePair{`1,`2})
+    name: InsertInLeaf
+    nameWithType: BTreeBase(Of TNode, TKey, TValue).InsertInLeaf
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue).InsertInLeaf
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Delete(`0,`1)
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Delete(`0,`1)
+  name: Delete(TNode, TKey)
+  nameWithType: BTreeBase<TNode, TKey, TValue>.Delete(TNode, TKey)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>.Delete(TNode, TKey)
+  nameWithType.vb: BTreeBase(Of TNode, TKey, TValue).Delete(TNode, TKey)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue).Delete(TNode, TKey)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Delete(`0,`1)
+    name: Delete
+    nameWithType: BTreeBase<TNode, TKey, TValue>.Delete
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>.Delete
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Delete(`0,`1)
+    name: Delete
+    nameWithType: BTreeBase(Of TNode, TKey, TValue).Delete
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue).Delete
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.GetSortedKeyValues(`0)
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.GetSortedKeyValues(`0)
+  name: GetSortedKeyValues(TNode)
+  nameWithType: BTreeBase<TNode, TKey, TValue>.GetSortedKeyValues(TNode)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>.GetSortedKeyValues(TNode)
+  nameWithType.vb: BTreeBase(Of TNode, TKey, TValue).GetSortedKeyValues(TNode)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue).GetSortedKeyValues(TNode)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.GetSortedKeyValues(`0)
+    name: GetSortedKeyValues
+    nameWithType: BTreeBase<TNode, TKey, TValue>.GetSortedKeyValues
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>.GetSortedKeyValues
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.GetSortedKeyValues(`0)
+    name: GetSortedKeyValues
+    nameWithType: BTreeBase(Of TNode, TKey, TValue).GetSortedKeyValues
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue).GetSortedKeyValues
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.FindLeafToInsertKey(`0,`1)
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.FindLeafToInsertKey(`0,`1)
+  name: FindLeafToInsertKey(TNode, TKey)
+  nameWithType: BTreeBase<TNode, TKey, TValue>.FindLeafToInsertKey(TNode, TKey)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>.FindLeafToInsertKey(TNode, TKey)
+  nameWithType.vb: BTreeBase(Of TNode, TKey, TValue).FindLeafToInsertKey(TNode, TKey)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue).FindLeafToInsertKey(TNode, TKey)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.FindLeafToInsertKey(`0,`1)
+    name: FindLeafToInsertKey
+    nameWithType: BTreeBase<TNode, TKey, TValue>.FindLeafToInsertKey
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>.FindLeafToInsertKey
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.FindLeafToInsertKey(`0,`1)
+    name: FindLeafToInsertKey
+    nameWithType: BTreeBase(Of TNode, TKey, TValue).FindLeafToInsertKey
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue).FindLeafToInsertKey
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Search(`0,`1)
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Search(`0,`1)
+  name: Search(TNode, TKey)
+  nameWithType: BTreeBase<TNode, TKey, TValue>.Search(TNode, TKey)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>.Search(TNode, TKey)
+  nameWithType.vb: BTreeBase(Of TNode, TKey, TValue).Search(TNode, TKey)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue).Search(TNode, TKey)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Search(`0,`1)
+    name: Search
+    nameWithType: BTreeBase<TNode, TKey, TValue>.Search
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>.Search
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Search(`0,`1)
+    name: Search
+    nameWithType: BTreeBase(Of TNode, TKey, TValue).Search
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue).Search
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.GetMaxNode(`0)
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.GetMaxNode(`0)
+  name: GetMaxNode(TNode)
+  nameWithType: BTreeBase<TNode, TKey, TValue>.GetMaxNode(TNode)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>.GetMaxNode(TNode)
+  nameWithType.vb: BTreeBase(Of TNode, TKey, TValue).GetMaxNode(TNode)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue).GetMaxNode(TNode)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.GetMaxNode(`0)
+    name: GetMaxNode
+    nameWithType: BTreeBase<TNode, TKey, TValue>.GetMaxNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>.GetMaxNode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.GetMaxNode(`0)
+    name: GetMaxNode
+    nameWithType: BTreeBase(Of TNode, TKey, TValue).GetMaxNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue).GetMaxNode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.GetMinNode(`0)
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.GetMinNode(`0)
+  name: GetMinNode(TNode)
+  nameWithType: BTreeBase<TNode, TKey, TValue>.GetMinNode(TNode)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>.GetMinNode(TNode)
+  nameWithType.vb: BTreeBase(Of TNode, TKey, TValue).GetMinNode(TNode)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue).GetMinNode(TNode)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.GetMinNode(`0)
+    name: GetMinNode
+    nameWithType: BTreeBase<TNode, TKey, TValue>.GetMinNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>.GetMinNode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.GetMinNode(`0)
+    name: GetMinNode
+    nameWithType: BTreeBase(Of TNode, TKey, TValue).GetMinNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue).GetMinNode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.RotateLeft(`0,`0,System.Int32)
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.RotateLeft(`0,`0,System.Int32)
+  isExternal: true
+  name: RotateLeft(TNode, TNode, Int32)
+  nameWithType: BTreeBase<TNode, TKey, TValue>.RotateLeft(TNode, TNode, Int32)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>.RotateLeft(TNode, TNode, System.Int32)
+  nameWithType.vb: BTreeBase(Of TNode, TKey, TValue).RotateLeft(TNode, TNode, Int32)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue).RotateLeft(TNode, TNode, System.Int32)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.RotateLeft(`0,`0,System.Int32)
+    name: RotateLeft
+    nameWithType: BTreeBase<TNode, TKey, TValue>.RotateLeft
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>.RotateLeft
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.RotateLeft(`0,`0,System.Int32)
+    name: RotateLeft
+    nameWithType: BTreeBase(Of TNode, TKey, TValue).RotateLeft
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue).RotateLeft
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.RotateRight(`0,`0,System.Int32)
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.RotateRight(`0,`0,System.Int32)
+  isExternal: true
+  name: RotateRight(TNode, TNode, Int32)
+  nameWithType: BTreeBase<TNode, TKey, TValue>.RotateRight(TNode, TNode, Int32)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>.RotateRight(TNode, TNode, System.Int32)
+  nameWithType.vb: BTreeBase(Of TNode, TKey, TValue).RotateRight(TNode, TNode, Int32)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue).RotateRight(TNode, TNode, System.Int32)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.RotateRight(`0,`0,System.Int32)
+    name: RotateRight
+    nameWithType: BTreeBase<TNode, TKey, TValue>.RotateRight
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>.RotateRight
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.RotateRight(`0,`0,System.Int32)
+    name: RotateRight
+    nameWithType: BTreeBase(Of TNode, TKey, TValue).RotateRight
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue).RotateRight
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Join(`0,`0)
+  commentId: M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Join(`0,`0)
+  name: Join(TNode, TNode)
+  nameWithType: BTreeBase<TNode, TKey, TValue>.Join(TNode, TNode)
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>.Join(TNode, TNode)
+  nameWithType.vb: BTreeBase(Of TNode, TKey, TValue).Join(TNode, TNode)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue).Join(TNode, TNode)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Join(`0,`0)
+    name: Join
+    nameWithType: BTreeBase<TNode, TKey, TValue>.Join
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>.Join
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Join(`0,`0)
+    name: Join
+    nameWithType: BTreeBase(Of TNode, TKey, TValue).Join
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue).Join
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.#ctor*
+  commentId: Overload:CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.#ctor
+  name: BPlusTree
+  nameWithType: BPlusTree<TKey, TValue>.BPlusTree
+  fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTree<TKey, TValue>.BPlusTree
+  nameWithType.vb: BPlusTree(Of TKey, TValue).BPlusTree
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.BPlusTree(Of TKey, TValue).BPlusTree
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.Delete*
+  commentId: Overload:CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.Delete
+  name: Delete
+  nameWithType: BPlusTree<TKey, TValue>.Delete
+  fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTree<TKey, TValue>.Delete
+  nameWithType.vb: BPlusTree(Of TKey, TValue).Delete
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.BPlusTree(Of TKey, TValue).Delete
+- uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{{TKey},{TValue}}
+  commentId: T:CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1}
+  parent: CSFundamentals.DataStructures.Trees.Nary
+  definition: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+  name: BPlusTreeNode<TKey, TValue>
+  nameWithType: BPlusTreeNode<TKey, TValue>
+  fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>
+  nameWithType.vb: BPlusTreeNode(Of TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue)
+  name.vb: BPlusTreeNode(Of TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: '{TKey}'
+  commentId: '!:TKey'
+  definition: TKey
+  name: TKey
+  nameWithType: TKey
+  fullName: TKey
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+  commentId: T:CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+  parent: CSFundamentals.DataStructures.Trees.Nary
+  name: BPlusTreeNode<TKey, TValue>
+  nameWithType: BPlusTreeNode<TKey, TValue>
+  fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode<TKey, TValue>
+  nameWithType.vb: BPlusTreeNode(Of TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode(Of TKey, TValue)
+  name.vb: BPlusTreeNode(Of TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2
+    name: BPlusTreeNode
+    nameWithType: BPlusTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TKey
+  name: TKey
+  nameWithType: TKey
+  fullName: TKey
+- uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.ReBalance*
+  commentId: Overload:CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.ReBalance
+  name: ReBalance
+  nameWithType: BPlusTree<TKey, TValue>.ReBalance
+  fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTree<TKey, TValue>.ReBalance
+  nameWithType.vb: BPlusTree(Of TKey, TValue).ReBalance
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.BPlusTree(Of TKey, TValue).ReBalance
+- uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.InsertInLeaf*
+  commentId: Overload:CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.InsertInLeaf
+  name: InsertInLeaf
+  nameWithType: BPlusTree<TKey, TValue>.InsertInLeaf
+  fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTree<TKey, TValue>.InsertInLeaf
+  nameWithType.vb: BPlusTree(Of TKey, TValue).InsertInLeaf
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.BPlusTree(Of TKey, TValue).InsertInLeaf
+- uid: System.Collections.Generic.KeyValuePair{{TKey},{TValue}}
+  commentId: T:System.Collections.Generic.KeyValuePair{`0,`1}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.KeyValuePair`2
+  name: KeyValuePair<TKey, TValue>
+  nameWithType: KeyValuePair<TKey, TValue>
+  fullName: System.Collections.Generic.KeyValuePair<TKey, TValue>
+  nameWithType.vb: KeyValuePair(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.KeyValuePair(Of TKey, TValue)
+  name.vb: KeyValuePair(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.KeyValuePair`2
+  commentId: T:System.Collections.Generic.KeyValuePair`2
+  isExternal: true
+  name: KeyValuePair<TKey, TValue>
+  nameWithType: KeyValuePair<TKey, TValue>
+  fullName: System.Collections.Generic.KeyValuePair<TKey, TValue>
+  nameWithType.vb: KeyValuePair(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.KeyValuePair(Of TKey, TValue)
+  name.vb: KeyValuePair(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.GetSortedKeyValues*
+  commentId: Overload:CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.GetSortedKeyValues
+  name: GetSortedKeyValues
+  nameWithType: BPlusTree<TKey, TValue>.GetSortedKeyValues
+  fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTree<TKey, TValue>.GetSortedKeyValues
+  nameWithType.vb: BPlusTree(Of TKey, TValue).GetSortedKeyValues
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.BPlusTree(Of TKey, TValue).GetSortedKeyValues
+- uid: System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}
+  commentId: T:System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<KeyValuePair<TKey, TValue>>
+  nameWithType: List<KeyValuePair<TKey, TValue>>
+  fullName: System.Collections.Generic.List<System.Collections.Generic.KeyValuePair<TKey, TValue>>
+  nameWithType.vb: List(Of KeyValuePair(Of TKey, TValue))
+  fullName.vb: System.Collections.Generic.List(Of System.Collections.Generic.KeyValuePair(Of TKey, TValue))
+  name.vb: List(Of KeyValuePair(Of TKey, TValue))
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.FindLeafToInsertKey*
+  commentId: Overload:CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.FindLeafToInsertKey
+  name: FindLeafToInsertKey
+  nameWithType: BPlusTree<TKey, TValue>.FindLeafToInsertKey
+  fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTree<TKey, TValue>.FindLeafToInsertKey
+  nameWithType.vb: BPlusTree(Of TKey, TValue).FindLeafToInsertKey
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.BPlusTree(Of TKey, TValue).FindLeafToInsertKey
+- uid: CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.Search*
+  commentId: Overload:CSFundamentals.DataStructures.Trees.Nary.BPlusTree`2.Search
+  name: Search
+  nameWithType: BPlusTree<TKey, TValue>.Search
+  fullName: CSFundamentals.DataStructures.Trees.Nary.BPlusTree<TKey, TValue>.Search
+  nameWithType.vb: BPlusTree(Of TKey, TValue).Search
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.BPlusTree(Of TKey, TValue).Search

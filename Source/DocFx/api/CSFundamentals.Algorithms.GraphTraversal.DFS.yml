@@ -1,0 +1,628 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentals.Algorithms.GraphTraversal.DFS
+  commentId: T:CSFundamentals.Algorithms.GraphTraversal.DFS
+  id: DFS
+  parent: CSFundamentals.Algorithms.GraphTraversal
+  children:
+  - CSFundamentals.Algorithms.GraphTraversal.DFS.DFS_Iterative``1(CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0})
+  - CSFundamentals.Algorithms.GraphTraversal.DFS.DFS_Recursive``1(CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0},System.Collections.Generic.List{CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0}})
+  langs:
+  - csharp
+  - vb
+  name: DFS
+  nameWithType: DFS
+  fullName: CSFundamentals.Algorithms.GraphTraversal.DFS
+  type: Class
+  source:
+    remote:
+      path: Source/Algorithms/GraphTraversal/dfs.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: DFS
+    path: ../Algorithms/GraphTraversal/dfs.cs
+    startLine: 27
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.GraphTraversal
+  summary: "\nImplements DFS: Depth First Search algorithm for graphs.\n"
+  example: []
+  syntax:
+    content: public class DFS
+    content.vb: Public Class DFS
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CSFundamentals.Algorithms.GraphTraversal.DFS.DFS_Iterative``1(CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0})
+  commentId: M:CSFundamentals.Algorithms.GraphTraversal.DFS.DFS_Iterative``1(CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0})
+  id: DFS_Iterative``1(CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0})
+  parent: CSFundamentals.Algorithms.GraphTraversal.DFS
+  langs:
+  - csharp
+  - vb
+  name: DFS_Iterative<TValue>(GraphNode<TValue>)
+  nameWithType: DFS.DFS_Iterative<TValue>(GraphNode<TValue>)
+  fullName: CSFundamentals.Algorithms.GraphTraversal.DFS.DFS_Iterative<TValue>(CSFundamentals.Algorithms.GraphTraversal.GraphNode<TValue>)
+  type: Method
+  source:
+    remote:
+      path: Source/Algorithms/GraphTraversal/dfs.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: DFS_Iterative
+    path: ../Algorithms/GraphTraversal/dfs.cs
+    startLine: 34
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.GraphTraversal
+  summary: "\nImplements an iterative, recursion-free version of Depth First Search algorithm for a graph (that can have cycles);\n"
+  example: []
+  syntax:
+    content: public static List<GraphNode<TValue>> DFS_Iterative<TValue>(GraphNode<TValue> root)
+    parameters:
+    - id: root
+      type: CSFundamentals.Algorithms.GraphTraversal.GraphNode{{TValue}}
+      description: 'Specifies a node in the graph from which the search starts. '
+    typeParameters:
+    - id: TValue
+    return:
+      type: System.Collections.Generic.List{CSFundamentals.Algorithms.GraphTraversal.GraphNode{{TValue}}}
+      description: a serialization of the graph, with a DFS ordering.
+    content.vb: Public Shared Function DFS_Iterative(Of TValue)(root As GraphNode(Of TValue)) As List(Of GraphNode(Of TValue))
+  overload: CSFundamentals.Algorithms.GraphTraversal.DFS.DFS_Iterative*
+  nameWithType.vb: DFS.DFS_Iterative(Of TValue)(GraphNode(Of TValue))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentals.Algorithms.GraphTraversal.DFS.DFS_Iterative(Of TValue)(CSFundamentals.Algorithms.GraphTraversal.GraphNode(Of TValue))
+  name.vb: DFS_Iterative(Of TValue)(GraphNode(Of TValue))
+- uid: CSFundamentals.Algorithms.GraphTraversal.DFS.DFS_Recursive``1(CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0},System.Collections.Generic.List{CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0}})
+  commentId: M:CSFundamentals.Algorithms.GraphTraversal.DFS.DFS_Recursive``1(CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0},System.Collections.Generic.List{CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0}})
+  id: DFS_Recursive``1(CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0},System.Collections.Generic.List{CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0}})
+  parent: CSFundamentals.Algorithms.GraphTraversal.DFS
+  langs:
+  - csharp
+  - vb
+  name: DFS_Recursive<TValue>(GraphNode<TValue>, List<GraphNode<TValue>>)
+  nameWithType: DFS.DFS_Recursive<TValue>(GraphNode<TValue>, List<GraphNode<TValue>>)
+  fullName: CSFundamentals.Algorithms.GraphTraversal.DFS.DFS_Recursive<TValue>(CSFundamentals.Algorithms.GraphTraversal.GraphNode<TValue>, System.Collections.Generic.List<CSFundamentals.Algorithms.GraphTraversal.GraphNode<TValue>>)
+  type: Method
+  source:
+    remote:
+      path: Source/Algorithms/GraphTraversal/dfs.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: DFS_Recursive
+    path: ../Algorithms/GraphTraversal/dfs.cs
+    startLine: 67
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.GraphTraversal
+  summary: "\nImplements a recursive version of DFS, for returning a DFS ordering of the nodes. \n"
+  example: []
+  syntax:
+    content: public static void DFS_Recursive<TValue>(GraphNode<TValue> root, List<GraphNode<TValue>> dfsOrdering)
+    parameters:
+    - id: root
+      type: CSFundamentals.Algorithms.GraphTraversal.GraphNode{{TValue}}
+      description: Specifies the node to start the search from.
+    - id: dfsOrdering
+      type: System.Collections.Generic.List{CSFundamentals.Algorithms.GraphTraversal.GraphNode{{TValue}}}
+      description: Contains a serialization of the graph, with a DFS ordering.
+    typeParameters:
+    - id: TValue
+    content.vb: Public Shared Sub DFS_Recursive(Of TValue)(root As GraphNode(Of TValue), dfsOrdering As List(Of GraphNode(Of TValue)))
+  overload: CSFundamentals.Algorithms.GraphTraversal.DFS.DFS_Recursive*
+  nameWithType.vb: DFS.DFS_Recursive(Of TValue)(GraphNode(Of TValue), List(Of GraphNode(Of TValue)))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentals.Algorithms.GraphTraversal.DFS.DFS_Recursive(Of TValue)(CSFundamentals.Algorithms.GraphTraversal.GraphNode(Of TValue), System.Collections.Generic.List(Of CSFundamentals.Algorithms.GraphTraversal.GraphNode(Of TValue)))
+  name.vb: DFS_Recursive(Of TValue)(GraphNode(Of TValue), List(Of GraphNode(Of TValue)))
+references:
+- uid: CSFundamentals.Algorithms.GraphTraversal
+  commentId: N:CSFundamentals.Algorithms.GraphTraversal
+  name: CSFundamentals.Algorithms.GraphTraversal
+  nameWithType: CSFundamentals.Algorithms.GraphTraversal
+  fullName: CSFundamentals.Algorithms.GraphTraversal
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CSFundamentals.Algorithms.GraphTraversal.DFS.DFS_Iterative*
+  commentId: Overload:CSFundamentals.Algorithms.GraphTraversal.DFS.DFS_Iterative
+  name: DFS_Iterative
+  nameWithType: DFS.DFS_Iterative
+  fullName: CSFundamentals.Algorithms.GraphTraversal.DFS.DFS_Iterative
+- uid: CSFundamentals.Algorithms.GraphTraversal.GraphNode{{TValue}}
+  commentId: T:CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0}
+  parent: CSFundamentals.Algorithms.GraphTraversal
+  definition: CSFundamentals.Algorithms.GraphTraversal.GraphNode`1
+  name: GraphNode<TValue>
+  nameWithType: GraphNode<TValue>
+  fullName: CSFundamentals.Algorithms.GraphTraversal.GraphNode<TValue>
+  nameWithType.vb: GraphNode(Of TValue)
+  fullName.vb: CSFundamentals.Algorithms.GraphTraversal.GraphNode(Of TValue)
+  name.vb: GraphNode(Of TValue)
+  spec.csharp:
+  - uid: CSFundamentals.Algorithms.GraphTraversal.GraphNode`1
+    name: GraphNode
+    nameWithType: GraphNode
+    fullName: CSFundamentals.Algorithms.GraphTraversal.GraphNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.Algorithms.GraphTraversal.GraphNode`1
+    name: GraphNode
+    nameWithType: GraphNode
+    fullName: CSFundamentals.Algorithms.GraphTraversal.GraphNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List{CSFundamentals.Algorithms.GraphTraversal.GraphNode{{TValue}}}
+  commentId: T:System.Collections.Generic.List{CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<GraphNode<TValue>>
+  nameWithType: List<GraphNode<TValue>>
+  fullName: System.Collections.Generic.List<CSFundamentals.Algorithms.GraphTraversal.GraphNode<TValue>>
+  nameWithType.vb: List(Of GraphNode(Of TValue))
+  fullName.vb: System.Collections.Generic.List(Of CSFundamentals.Algorithms.GraphTraversal.GraphNode(Of TValue))
+  name.vb: List(Of GraphNode(Of TValue))
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CSFundamentals.Algorithms.GraphTraversal.GraphNode`1
+    name: GraphNode
+    nameWithType: GraphNode
+    fullName: CSFundamentals.Algorithms.GraphTraversal.GraphNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CSFundamentals.Algorithms.GraphTraversal.GraphNode`1
+    name: GraphNode
+    nameWithType: GraphNode
+    fullName: CSFundamentals.Algorithms.GraphTraversal.GraphNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.Algorithms.GraphTraversal.GraphNode`1
+  commentId: T:CSFundamentals.Algorithms.GraphTraversal.GraphNode`1
+  parent: CSFundamentals.Algorithms.GraphTraversal
+  name: GraphNode<TValue>
+  nameWithType: GraphNode<TValue>
+  fullName: CSFundamentals.Algorithms.GraphTraversal.GraphNode<TValue>
+  nameWithType.vb: GraphNode(Of TValue)
+  fullName.vb: CSFundamentals.Algorithms.GraphTraversal.GraphNode(Of TValue)
+  name.vb: GraphNode(Of TValue)
+  spec.csharp:
+  - uid: CSFundamentals.Algorithms.GraphTraversal.GraphNode`1
+    name: GraphNode
+    nameWithType: GraphNode
+    fullName: CSFundamentals.Algorithms.GraphTraversal.GraphNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.Algorithms.GraphTraversal.GraphNode`1
+    name: GraphNode
+    nameWithType: GraphNode
+    fullName: CSFundamentals.Algorithms.GraphTraversal.GraphNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: CSFundamentals.Algorithms.GraphTraversal.DFS.DFS_Recursive*
+  commentId: Overload:CSFundamentals.Algorithms.GraphTraversal.DFS.DFS_Recursive
+  name: DFS_Recursive
+  nameWithType: DFS.DFS_Recursive
+  fullName: CSFundamentals.Algorithms.GraphTraversal.DFS.DFS_Recursive

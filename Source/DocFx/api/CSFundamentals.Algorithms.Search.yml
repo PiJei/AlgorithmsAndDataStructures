@@ -1,0 +1,76 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentals.Algorithms.Search
+  commentId: N:CSFundamentals.Algorithms.Search
+  id: CSFundamentals.Algorithms.Search
+  children:
+  - CSFundamentals.Algorithms.Search.BinarySearch
+  - CSFundamentals.Algorithms.Search.ExponentialSearch
+  - CSFundamentals.Algorithms.Search.FibonacciElement
+  - CSFundamentals.Algorithms.Search.FibonacciSearch
+  - CSFundamentals.Algorithms.Search.HashTableSearch
+  - CSFundamentals.Algorithms.Search.InterpolationSearch
+  - CSFundamentals.Algorithms.Search.JumpSearch
+  - CSFundamentals.Algorithms.Search.LinearSearch
+  - CSFundamentals.Algorithms.Search.TernarySearch
+  langs:
+  - csharp
+  - vb
+  name: CSFundamentals.Algorithms.Search
+  nameWithType: CSFundamentals.Algorithms.Search
+  fullName: CSFundamentals.Algorithms.Search
+  type: Namespace
+  assemblies:
+  - CSFundamentals
+references:
+- uid: CSFundamentals.Algorithms.Search.BinarySearch
+  commentId: T:CSFundamentals.Algorithms.Search.BinarySearch
+  name: BinarySearch
+  nameWithType: BinarySearch
+  fullName: CSFundamentals.Algorithms.Search.BinarySearch
+- uid: CSFundamentals.Algorithms.Search.ExponentialSearch
+  commentId: T:CSFundamentals.Algorithms.Search.ExponentialSearch
+  name: ExponentialSearch
+  nameWithType: ExponentialSearch
+  fullName: CSFundamentals.Algorithms.Search.ExponentialSearch
+- uid: CSFundamentals.Algorithms.Search.FibonacciSearch
+  commentId: T:CSFundamentals.Algorithms.Search.FibonacciSearch
+  name: FibonacciSearch
+  nameWithType: FibonacciSearch
+  fullName: CSFundamentals.Algorithms.Search.FibonacciSearch
+- uid: CSFundamentals.Algorithms.Search.FibonacciElement
+  commentId: T:CSFundamentals.Algorithms.Search.FibonacciElement
+  parent: CSFundamentals.Algorithms.Search
+  name: FibonacciElement
+  nameWithType: FibonacciElement
+  fullName: CSFundamentals.Algorithms.Search.FibonacciElement
+- uid: CSFundamentals.Algorithms.Search.HashTableSearch
+  commentId: T:CSFundamentals.Algorithms.Search.HashTableSearch
+  name: HashTableSearch
+  nameWithType: HashTableSearch
+  fullName: CSFundamentals.Algorithms.Search.HashTableSearch
+- uid: CSFundamentals.Algorithms.Search.InterpolationSearch
+  commentId: T:CSFundamentals.Algorithms.Search.InterpolationSearch
+  name: InterpolationSearch
+  nameWithType: InterpolationSearch
+  fullName: CSFundamentals.Algorithms.Search.InterpolationSearch
+- uid: CSFundamentals.Algorithms.Search.JumpSearch
+  commentId: T:CSFundamentals.Algorithms.Search.JumpSearch
+  name: JumpSearch
+  nameWithType: JumpSearch
+  fullName: CSFundamentals.Algorithms.Search.JumpSearch
+- uid: CSFundamentals.Algorithms.Search.LinearSearch
+  commentId: T:CSFundamentals.Algorithms.Search.LinearSearch
+  name: LinearSearch
+  nameWithType: LinearSearch
+  fullName: CSFundamentals.Algorithms.Search.LinearSearch
+- uid: CSFundamentals.Algorithms.Search.TernarySearch
+  commentId: T:CSFundamentals.Algorithms.Search.TernarySearch
+  name: TernarySearch
+  nameWithType: TernarySearch
+  fullName: CSFundamentals.Algorithms.Search.TernarySearch
+- uid: CSFundamentals.Algorithms.Search
+  commentId: N:CSFundamentals.Algorithms.Search
+  name: CSFundamentals.Algorithms.Search
+  nameWithType: CSFundamentals.Algorithms.Search
+  fullName: CSFundamentals.Algorithms.Search

@@ -1,0 +1,199 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentals.DataStructures.Trees.Nary.API
+  commentId: N:CSFundamentals.DataStructures.Trees.Nary.API
+  id: CSFundamentals.DataStructures.Trees.Nary.API
+  children:
+  - CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3
+  - CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3
+  - CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3
+  langs:
+  - csharp
+  - vb
+  name: CSFundamentals.DataStructures.Trees.Nary.API
+  nameWithType: CSFundamentals.DataStructures.Trees.Nary.API
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API
+  type: Namespace
+  assemblies:
+  - CSFundamentals
+references:
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3
+  commentId: T:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3
+  name: BTreeBase<TNode, TKey, TValue>
+  nameWithType: BTreeBase<TNode, TKey, TValue>
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase<TNode, TKey, TValue>
+  nameWithType.vb: BTreeBase(Of TNode, TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase(Of TNode, TKey, TValue)
+  name.vb: BTreeBase(Of TNode, TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3
+    name: BTreeBase
+    nameWithType: BTreeBase
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3
+    name: BTreeBase
+    nameWithType: BTreeBase
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3
+  commentId: T:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3
+  name: BTreeNodeBase<TNode, TKey, TValue>
+  nameWithType: BTreeNodeBase<TNode, TKey, TValue>
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase<TNode, TKey, TValue>
+  nameWithType.vb: BTreeNodeBase(Of TNode, TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase(Of TNode, TKey, TValue)
+  name.vb: BTreeNodeBase(Of TNode, TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3
+    name: BTreeNodeBase
+    nameWithType: BTreeNodeBase
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3
+    name: BTreeNodeBase
+    nameWithType: BTreeNodeBase
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3
+  commentId: T:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3
+  name: IBTreeNode<TNode, TKey, TValue>
+  nameWithType: IBTreeNode<TNode, TKey, TValue>
+  fullName: CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode<TNode, TKey, TValue>
+  nameWithType.vb: IBTreeNode(Of TNode, TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode(Of TNode, TKey, TValue)
+  name.vb: IBTreeNode(Of TNode, TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3
+    name: IBTreeNode
+    nameWithType: IBTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3
+    name: IBTreeNode
+    nameWithType: IBTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )

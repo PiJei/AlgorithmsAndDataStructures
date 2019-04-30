@@ -1,0 +1,223 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentals.Decoration.AlgorithmType
+  commentId: T:CSFundamentals.Decoration.AlgorithmType
+  id: AlgorithmType
+  parent: CSFundamentals.Decoration
+  children:
+  - CSFundamentals.Decoration.AlgorithmType.GraphRouteSearch
+  - CSFundamentals.Decoration.AlgorithmType.Hash
+  - CSFundamentals.Decoration.AlgorithmType.PatternSearch
+  - CSFundamentals.Decoration.AlgorithmType.Search
+  - CSFundamentals.Decoration.AlgorithmType.Sort
+  langs:
+  - csharp
+  - vb
+  name: AlgorithmType
+  nameWithType: AlgorithmType
+  fullName: CSFundamentals.Decoration.AlgorithmType
+  type: Enum
+  source:
+    remote:
+      path: Source/Decoration/AlgorithmAttribute.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: AlgorithmType
+    path: ../Decoration/AlgorithmAttribute.cs
+    startLine: 65
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Decoration
+  summary: "\nSpecifies algorithm categories. \n"
+  example: []
+  syntax:
+    content: public enum AlgorithmType
+    content.vb: Public Enum AlgorithmType
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: CSFundamentals.Decoration.AlgorithmType.Sort
+  commentId: F:CSFundamentals.Decoration.AlgorithmType.Sort
+  id: Sort
+  parent: CSFundamentals.Decoration.AlgorithmType
+  langs:
+  - csharp
+  - vb
+  name: Sort
+  nameWithType: AlgorithmType.Sort
+  fullName: CSFundamentals.Decoration.AlgorithmType.Sort
+  type: Field
+  source:
+    remote:
+      path: Source/Decoration/AlgorithmAttribute.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Sort
+    path: ../Decoration/AlgorithmAttribute.cs
+    startLine: 70
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Decoration
+  summary: "\nUsed for tagging sort algorithms. \n"
+  example: []
+  syntax:
+    content: Sort = 1
+    return:
+      type: CSFundamentals.Decoration.AlgorithmType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: CSFundamentals.Decoration.AlgorithmType.Search
+  commentId: F:CSFundamentals.Decoration.AlgorithmType.Search
+  id: Search
+  parent: CSFundamentals.Decoration.AlgorithmType
+  langs:
+  - csharp
+  - vb
+  name: Search
+  nameWithType: AlgorithmType.Search
+  fullName: CSFundamentals.Decoration.AlgorithmType.Search
+  type: Field
+  source:
+    remote:
+      path: Source/Decoration/AlgorithmAttribute.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Search
+    path: ../Decoration/AlgorithmAttribute.cs
+    startLine: 75
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Decoration
+  summary: "\nUsed for tagging search algorithms. \n"
+  example: []
+  syntax:
+    content: Search = 2
+    return:
+      type: CSFundamentals.Decoration.AlgorithmType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: CSFundamentals.Decoration.AlgorithmType.PatternSearch
+  commentId: F:CSFundamentals.Decoration.AlgorithmType.PatternSearch
+  id: PatternSearch
+  parent: CSFundamentals.Decoration.AlgorithmType
+  langs:
+  - csharp
+  - vb
+  name: PatternSearch
+  nameWithType: AlgorithmType.PatternSearch
+  fullName: CSFundamentals.Decoration.AlgorithmType.PatternSearch
+  type: Field
+  source:
+    remote:
+      path: Source/Decoration/AlgorithmAttribute.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: PatternSearch
+    path: ../Decoration/AlgorithmAttribute.cs
+    startLine: 80
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Decoration
+  summary: "\nUsed for tagging pattern search algorithms. \n"
+  example: []
+  syntax:
+    content: PatternSearch = 3
+    return:
+      type: CSFundamentals.Decoration.AlgorithmType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: CSFundamentals.Decoration.AlgorithmType.Hash
+  commentId: F:CSFundamentals.Decoration.AlgorithmType.Hash
+  id: Hash
+  parent: CSFundamentals.Decoration.AlgorithmType
+  langs:
+  - csharp
+  - vb
+  name: Hash
+  nameWithType: AlgorithmType.Hash
+  fullName: CSFundamentals.Decoration.AlgorithmType.Hash
+  type: Field
+  source:
+    remote:
+      path: Source/Decoration/AlgorithmAttribute.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Hash
+    path: ../Decoration/AlgorithmAttribute.cs
+    startLine: 85
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Decoration
+  summary: "\nUsed for tagging hashing algorithms. \n"
+  example: []
+  syntax:
+    content: Hash = 4
+    return:
+      type: CSFundamentals.Decoration.AlgorithmType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: CSFundamentals.Decoration.AlgorithmType.GraphRouteSearch
+  commentId: F:CSFundamentals.Decoration.AlgorithmType.GraphRouteSearch
+  id: GraphRouteSearch
+  parent: CSFundamentals.Decoration.AlgorithmType
+  langs:
+  - csharp
+  - vb
+  name: GraphRouteSearch
+  nameWithType: AlgorithmType.GraphRouteSearch
+  fullName: CSFundamentals.Decoration.AlgorithmType.GraphRouteSearch
+  type: Field
+  source:
+    remote:
+      path: Source/Decoration/AlgorithmAttribute.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: GraphRouteSearch
+    path: ../Decoration/AlgorithmAttribute.cs
+    startLine: 90
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Decoration
+  summary: "\nUsed for graph path/route search algorithms. \n"
+  example: []
+  syntax:
+    content: GraphRouteSearch = 5
+    return:
+      type: CSFundamentals.Decoration.AlgorithmType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: CSFundamentals.Decoration
+  commentId: N:CSFundamentals.Decoration
+  name: CSFundamentals.Decoration
+  nameWithType: CSFundamentals.Decoration
+  fullName: CSFundamentals.Decoration
+- uid: CSFundamentals.Decoration.AlgorithmType
+  commentId: T:CSFundamentals.Decoration.AlgorithmType
+  parent: CSFundamentals.Decoration
+  name: AlgorithmType
+  nameWithType: AlgorithmType
+  fullName: CSFundamentals.Decoration.AlgorithmType

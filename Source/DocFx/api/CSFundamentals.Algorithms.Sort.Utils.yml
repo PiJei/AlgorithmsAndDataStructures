@@ -1,0 +1,1285 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentals.Algorithms.Sort.Utils
+  commentId: T:CSFundamentals.Algorithms.Sort.Utils
+  id: Utils
+  parent: CSFundamentals.Algorithms.Sort
+  children:
+  - CSFundamentals.Algorithms.Sort.Utils.Convert(System.Collections.Generic.List{System.Int32})
+  - CSFundamentals.Algorithms.Sort.Utils.GetDigitsCount(System.Int32)
+  - CSFundamentals.Algorithms.Sort.Utils.GetMaxElement(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})
+  - CSFundamentals.Algorithms.Sort.Utils.GetMaxElement``1(System.Collections.Generic.List{``0})
+  - CSFundamentals.Algorithms.Sort.Utils.GetNthDigitFromRight(System.Int32,System.Int32)
+  - CSFundamentals.Algorithms.Sort.Utils.HashListToIndexes(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})
+  - CSFundamentals.Algorithms.Sort.Utils.IsMapStable(System.Collections.Generic.Dictionary{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element,System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}})
+  - CSFundamentals.Algorithms.Sort.Utils.IsSortMethodStable(System.Action{System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}},System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})
+  - CSFundamentals.Algorithms.Sort.Utils.Swap(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element},System.Int32,System.Int32)
+  - CSFundamentals.Algorithms.Sort.Utils.Swap``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: Utils
+  nameWithType: Utils
+  fullName: CSFundamentals.Algorithms.Sort.Utils
+  type: Class
+  source:
+    remote:
+      path: Source/Algorithms/Sort/Utils.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Utils
+    path: ../Algorithms/Sort/Utils.cs
+    startLine: 25
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.Sort
+  summary: "\nIs a collection of helper methods used by sort algorithms. \n"
+  example: []
+  syntax:
+    content: public class Utils
+    content.vb: Public Class Utils
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CSFundamentals.Algorithms.Sort.Utils.Convert(System.Collections.Generic.List{System.Int32})
+  commentId: M:CSFundamentals.Algorithms.Sort.Utils.Convert(System.Collections.Generic.List{System.Int32})
+  id: Convert(System.Collections.Generic.List{System.Int32})
+  parent: CSFundamentals.Algorithms.Sort.Utils
+  langs:
+  - csharp
+  - vb
+  name: Convert(List<Int32>)
+  nameWithType: Utils.Convert(List<Int32>)
+  fullName: CSFundamentals.Algorithms.Sort.Utils.Convert(System.Collections.Generic.List<System.Int32>)
+  type: Method
+  source:
+    remote:
+      path: Source/Algorithms/Sort/StabilityCheckableVersions/Utils.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Convert
+    path: ../Algorithms/Sort/StabilityCheckableVersions/Utils.cs
+    startLine: 37
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.Sort
+  summary: "\nConverts a list of integers to a list of Elements. \n"
+  example: []
+  syntax:
+    content: public static List<Element> Convert(List<int> list)
+    parameters:
+    - id: list
+      type: System.Collections.Generic.List{System.Int32}
+      description: 'Is a list of integers. '
+    return:
+      type: System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}
+      description: 'A list of Elements. '
+    content.vb: Public Shared Function Convert(list As List(Of Integer)) As List(Of Element)
+  overload: CSFundamentals.Algorithms.Sort.Utils.Convert*
+  nameWithType.vb: Utils.Convert(List(Of Int32))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentals.Algorithms.Sort.Utils.Convert(System.Collections.Generic.List(Of System.Int32))
+  name.vb: Convert(List(Of Int32))
+- uid: CSFundamentals.Algorithms.Sort.Utils.IsSortMethodStable(System.Action{System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}},System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})
+  commentId: M:CSFundamentals.Algorithms.Sort.Utils.IsSortMethodStable(System.Action{System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}},System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})
+  id: IsSortMethodStable(System.Action{System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}},System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})
+  parent: CSFundamentals.Algorithms.Sort.Utils
+  langs:
+  - csharp
+  - vb
+  name: IsSortMethodStable(Action<List<Element>>, List<Element>)
+  nameWithType: Utils.IsSortMethodStable(Action<List<Element>>, List<Element>)
+  fullName: CSFundamentals.Algorithms.Sort.Utils.IsSortMethodStable(System.Action<System.Collections.Generic.List<CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element>>, System.Collections.Generic.List<CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element>)
+  type: Method
+  source:
+    remote:
+      path: Source/Algorithms/Sort/StabilityCheckableVersions/Utils.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: IsSortMethodStable
+    path: ../Algorithms/Sort/StabilityCheckableVersions/Utils.cs
+    startLine: 55
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.Sort
+  summary: "\nDetects whether the given sort method is stable. A sort method is stable, if it preserves the ordering of duplicate values in the original array. \n"
+  example: []
+  syntax:
+    content: public static bool IsSortMethodStable(Action<List<Element>> sortMethod, List<Element> list)
+    parameters:
+    - id: sortMethod
+      type: System.Action{System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}}
+      description: 'Specifies the name of a method with the signature specified by the Action (void return type) '
+    - id: list
+      type: System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}
+      description: 'Is a list of Elements. '
+    return:
+      type: System.Boolean
+      description: 'True in case the method is stable, and false otherwise. '
+    content.vb: Public Shared Function IsSortMethodStable(sortMethod As Action(Of List(Of Element)), list As List(Of Element)) As Boolean
+  overload: CSFundamentals.Algorithms.Sort.Utils.IsSortMethodStable*
+  nameWithType.vb: Utils.IsSortMethodStable(Action(Of List(Of Element)), List(Of Element))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentals.Algorithms.Sort.Utils.IsSortMethodStable(System.Action(Of System.Collections.Generic.List(Of CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element)), System.Collections.Generic.List(Of CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element))
+  name.vb: IsSortMethodStable(Action(Of List(Of Element)), List(Of Element))
+- uid: CSFundamentals.Algorithms.Sort.Utils.HashListToIndexes(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})
+  commentId: M:CSFundamentals.Algorithms.Sort.Utils.HashListToIndexes(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})
+  id: HashListToIndexes(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})
+  parent: CSFundamentals.Algorithms.Sort.Utils
+  langs:
+  - csharp
+  - vb
+  name: HashListToIndexes(List<Element>)
+  nameWithType: Utils.HashListToIndexes(List<Element>)
+  fullName: CSFundamentals.Algorithms.Sort.Utils.HashListToIndexes(System.Collections.Generic.List<CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element>)
+  type: Method
+  source:
+    remote:
+      path: Source/Algorithms/Sort/StabilityCheckableVersions/Utils.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: HashListToIndexes
+    path: ../Algorithms/Sort/StabilityCheckableVersions/Utils.cs
+    startLine: 67
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.Sort
+  summary: "\nPer each value in the array, makes a list of their indexes in the array. \nNotice that the array may include duplicate values, thus a list of indexes rather than one index.\n"
+  example: []
+  syntax:
+    content: public static Dictionary<Element, List<Element>> HashListToIndexes(List<Element> values)
+    parameters:
+    - id: values
+      type: System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}
+      description: 'An array of integers. '
+    return:
+      type: System.Collections.Generic.Dictionary{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element,System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}}
+      description: 'A hash table/dictionary mapping each value to the list of its indexes in the array. '
+    content.vb: Public Shared Function HashListToIndexes(values As List(Of Element)) As Dictionary(Of Element, List(Of Element))
+  overload: CSFundamentals.Algorithms.Sort.Utils.HashListToIndexes*
+  nameWithType.vb: Utils.HashListToIndexes(List(Of Element))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentals.Algorithms.Sort.Utils.HashListToIndexes(System.Collections.Generic.List(Of CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element))
+  name.vb: HashListToIndexes(List(Of Element))
+- uid: CSFundamentals.Algorithms.Sort.Utils.IsMapStable(System.Collections.Generic.Dictionary{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element,System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}})
+  commentId: M:CSFundamentals.Algorithms.Sort.Utils.IsMapStable(System.Collections.Generic.Dictionary{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element,System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}})
+  id: IsMapStable(System.Collections.Generic.Dictionary{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element,System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}})
+  parent: CSFundamentals.Algorithms.Sort.Utils
+  langs:
+  - csharp
+  - vb
+  name: IsMapStable(Dictionary<Element, List<Element>>)
+  nameWithType: Utils.IsMapStable(Dictionary<Element, List<Element>>)
+  fullName: CSFundamentals.Algorithms.Sort.Utils.IsMapStable(System.Collections.Generic.Dictionary<CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element, System.Collections.Generic.List<CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element>>)
+  type: Method
+  source:
+    remote:
+      path: Source/Algorithms/Sort/StabilityCheckableVersions/Utils.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: IsMapStable
+    path: ../Algorithms/Sort/StabilityCheckableVersions/Utils.cs
+    startLine: 96
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.Sort
+  summary: "\nGiven the two dictionaries compares them to see if they are equal, in terms of the values per key. It is very important to compare the values (lists) in their original order and expect the same position for each element. \n"
+  example: []
+  syntax:
+    content: public static bool IsMapStable(Dictionary<Element, List<Element>> map)
+    parameters:
+    - id: map
+      type: System.Collections.Generic.Dictionary{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element,System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}}
+      description: 'Specifies a dictionary with one Element as the key and a list of Elements as the value per entry. '
+    return:
+      type: System.Boolean
+      description: 'True in case the maps are equal, false otherwise. '
+    content.vb: Public Shared Function IsMapStable(map As Dictionary(Of Element, List(Of Element))) As Boolean
+  overload: CSFundamentals.Algorithms.Sort.Utils.IsMapStable*
+  nameWithType.vb: Utils.IsMapStable(Dictionary(Of Element, List(Of Element)))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentals.Algorithms.Sort.Utils.IsMapStable(System.Collections.Generic.Dictionary(Of CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element, System.Collections.Generic.List(Of CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element)))
+  name.vb: IsMapStable(Dictionary(Of Element, List(Of Element)))
+- uid: CSFundamentals.Algorithms.Sort.Utils.Swap(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element},System.Int32,System.Int32)
+  commentId: M:CSFundamentals.Algorithms.Sort.Utils.Swap(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element},System.Int32,System.Int32)
+  id: Swap(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element},System.Int32,System.Int32)
+  parent: CSFundamentals.Algorithms.Sort.Utils
+  langs:
+  - csharp
+  - vb
+  name: Swap(List<Element>, Int32, Int32)
+  nameWithType: Utils.Swap(List<Element>, Int32, Int32)
+  fullName: CSFundamentals.Algorithms.Sort.Utils.Swap(System.Collections.Generic.List<CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element>, System.Int32, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Source/Algorithms/Sort/StabilityCheckableVersions/Utils.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Swap
+    path: ../Algorithms/Sort/StabilityCheckableVersions/Utils.cs
+    startLine: 121
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.Sort
+  summary: "\nSwaps values in indexes <code data-dev-comment-type=\"paramref\" class=\"paramref\">index1</code> and <code data-dev-comment-type=\"paramref\" class=\"paramref\">index2</code> in the <code data-dev-comment-type=\"paramref\" class=\"paramref\">list</code> array. \n"
+  example: []
+  syntax:
+    content: public static void Swap(List<Element> list, int index1, int index2)
+    parameters:
+    - id: list
+      type: System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}
+      description: 'Is a list of Elements. '
+    - id: index1
+      type: System.Int32
+      description: 'Is the first index. '
+    - id: index2
+      type: System.Int32
+      description: 'Is the second index. '
+    content.vb: Public Shared Sub Swap(list As List(Of Element), index1 As Integer, index2 As Integer)
+  overload: CSFundamentals.Algorithms.Sort.Utils.Swap*
+  nameWithType.vb: Utils.Swap(List(Of Element), Int32, Int32)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentals.Algorithms.Sort.Utils.Swap(System.Collections.Generic.List(Of CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element), System.Int32, System.Int32)
+  name.vb: Swap(List(Of Element), Int32, Int32)
+- uid: CSFundamentals.Algorithms.Sort.Utils.GetMaxElement(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})
+  commentId: M:CSFundamentals.Algorithms.Sort.Utils.GetMaxElement(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})
+  id: GetMaxElement(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})
+  parent: CSFundamentals.Algorithms.Sort.Utils
+  langs:
+  - csharp
+  - vb
+  name: GetMaxElement(List<Element>)
+  nameWithType: Utils.GetMaxElement(List<Element>)
+  fullName: CSFundamentals.Algorithms.Sort.Utils.GetMaxElement(System.Collections.Generic.List<CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element>)
+  type: Method
+  source:
+    remote:
+      path: Source/Algorithms/Sort/StabilityCheckableVersions/Utils.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: GetMaxElement
+    path: ../Algorithms/Sort/StabilityCheckableVersions/Utils.cs
+    startLine: 137
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.Sort
+  summary: "\nGets the max element in the array. Alternatively we could use Linq.Max operator. However using this version so that the time complexity is obvious.\n"
+  example: []
+  syntax:
+    content: public static Element GetMaxElement(List<Element> list)
+    parameters:
+    - id: list
+      type: System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}
+      description: 'Specifies a list of integers. '
+    return:
+      type: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+      description: 'maximum element in the array. '
+    content.vb: Public Shared Function GetMaxElement(list As List(Of Element)) As Element
+  overload: CSFundamentals.Algorithms.Sort.Utils.GetMaxElement*
+  nameWithType.vb: Utils.GetMaxElement(List(Of Element))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentals.Algorithms.Sort.Utils.GetMaxElement(System.Collections.Generic.List(Of CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element))
+  name.vb: GetMaxElement(List(Of Element))
+- uid: CSFundamentals.Algorithms.Sort.Utils.Swap``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)
+  commentId: M:CSFundamentals.Algorithms.Sort.Utils.Swap``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)
+  id: Swap``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)
+  parent: CSFundamentals.Algorithms.Sort.Utils
+  langs:
+  - csharp
+  - vb
+  name: Swap<T>(List<T>, Int32, Int32)
+  nameWithType: Utils.Swap<T>(List<T>, Int32, Int32)
+  fullName: CSFundamentals.Algorithms.Sort.Utils.Swap<T>(System.Collections.Generic.List<T>, System.Int32, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Source/Algorithms/Sort/Utils.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Swap
+    path: ../Algorithms/Sort/Utils.cs
+    startLine: 34
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.Sort
+  summary: "\nSwaps the values at given indexes of the array.\n"
+  example: []
+  syntax:
+    content: public static void Swap<T>(List<T> list, int index1, int index2)
+    parameters:
+    - id: list
+      type: System.Collections.Generic.List{{T}}
+      description: 'Is a list of values. '
+    - id: index1
+      type: System.Int32
+      description: First index.
+    - id: index2
+      type: System.Int32
+      description: Second index.
+    typeParameters:
+    - id: T
+      description: Is the type of elements in the array.
+    content.vb: Public Shared Sub Swap(Of T)(list As List(Of T), index1 As Integer, index2 As Integer)
+  overload: CSFundamentals.Algorithms.Sort.Utils.Swap*
+  nameWithType.vb: Utils.Swap(Of T)(List(Of T), Int32, Int32)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentals.Algorithms.Sort.Utils.Swap(Of T)(System.Collections.Generic.List(Of T), System.Int32, System.Int32)
+  name.vb: Swap(Of T)(List(Of T), Int32, Int32)
+- uid: CSFundamentals.Algorithms.Sort.Utils.GetMaxElement``1(System.Collections.Generic.List{``0})
+  commentId: M:CSFundamentals.Algorithms.Sort.Utils.GetMaxElement``1(System.Collections.Generic.List{``0})
+  id: GetMaxElement``1(System.Collections.Generic.List{``0})
+  parent: CSFundamentals.Algorithms.Sort.Utils
+  langs:
+  - csharp
+  - vb
+  name: GetMaxElement<T>(List<T>)
+  nameWithType: Utils.GetMaxElement<T>(List<T>)
+  fullName: CSFundamentals.Algorithms.Sort.Utils.GetMaxElement<T>(System.Collections.Generic.List<T>)
+  type: Method
+  source:
+    remote:
+      path: Source/Algorithms/Sort/Utils.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: GetMaxElement
+    path: ../Algorithms/Sort/Utils.cs
+    startLine: 46
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.Sort
+  summary: "\nGets the max element in the array. Alternatively we could use Linq.Max operator. However using this version so that the time complexity is obvious.\n"
+  example: []
+  syntax:
+    content: >-
+      public static T GetMaxElement<T>(List<T> list)
+          where T : IComparable<T>
+    parameters:
+    - id: list
+      type: System.Collections.Generic.List{{T}}
+      description: 'Specifies a list of values (of type T, e.g., int). '
+    typeParameters:
+    - id: T
+    return:
+      type: '{T}'
+      description: 'maximum element in the array. '
+    content.vb: Public Shared Function GetMaxElement(Of T As IComparable(Of T))(list As List(Of T)) As T
+  overload: CSFundamentals.Algorithms.Sort.Utils.GetMaxElement*
+  nameWithType.vb: Utils.GetMaxElement(Of T)(List(Of T))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CSFundamentals.Algorithms.Sort.Utils.GetMaxElement(Of T)(System.Collections.Generic.List(Of T))
+  name.vb: GetMaxElement(Of T)(List(Of T))
+- uid: CSFundamentals.Algorithms.Sort.Utils.GetDigitsCount(System.Int32)
+  commentId: M:CSFundamentals.Algorithms.Sort.Utils.GetDigitsCount(System.Int32)
+  id: GetDigitsCount(System.Int32)
+  parent: CSFundamentals.Algorithms.Sort.Utils
+  langs:
+  - csharp
+  - vb
+  name: GetDigitsCount(Int32)
+  nameWithType: Utils.GetDigitsCount(Int32)
+  fullName: CSFundamentals.Algorithms.Sort.Utils.GetDigitsCount(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Source/Algorithms/Sort/Utils.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: GetDigitsCount
+    path: ../Algorithms/Sort/Utils.cs
+    startLine: 67
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.Sort
+  summary: "\nComputes the number of digits in a number. \nAn alternative is : \ndigitsCount = (n == 0 ? 1 : Math.Floor(Math.Log10(Math.Abs(n)) + 1));\n"
+  example: []
+  syntax:
+    content: public static int GetDigitsCount(int number)
+    parameters:
+    - id: number
+      type: System.Int32
+      description: 'Specifies the integer for which we want to compute its digit count. '
+    return:
+      type: System.Int32
+      description: 'The number of digits in the given integer number. '
+    content.vb: Public Shared Function GetDigitsCount(number As Integer) As Integer
+  overload: CSFundamentals.Algorithms.Sort.Utils.GetDigitsCount*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CSFundamentals.Algorithms.Sort.Utils.GetNthDigitFromRight(System.Int32,System.Int32)
+  commentId: M:CSFundamentals.Algorithms.Sort.Utils.GetNthDigitFromRight(System.Int32,System.Int32)
+  id: GetNthDigitFromRight(System.Int32,System.Int32)
+  parent: CSFundamentals.Algorithms.Sort.Utils
+  langs:
+  - csharp
+  - vb
+  name: GetNthDigitFromRight(Int32, Int32)
+  nameWithType: Utils.GetNthDigitFromRight(Int32, Int32)
+  fullName: CSFundamentals.Algorithms.Sort.Utils.GetNthDigitFromRight(System.Int32, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Source/Algorithms/Sort/Utils.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: GetNthDigitFromRight
+    path: ../Algorithms/Sort/Utils.cs
+    startLine: 86
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.Sort
+  summary: "\nGets the i(th) = whichDigit of the given integer number. For example in number 145, second digit is 4, and the third is 1, and th first is 5. \n"
+  example: []
+  syntax:
+    content: public static int GetNthDigitFromRight(int number, int whichDigit)
+    parameters:
+    - id: number
+      type: System.Int32
+      description: ''
+    - id: whichDigit
+      type: System.Int32
+      description: ''
+    return:
+      type: System.Int32
+      description: 'The i(th) = whichDigit(th) digit from the right, or the least significant digit. '
+    content.vb: Public Shared Function GetNthDigitFromRight(number As Integer, whichDigit As Integer) As Integer
+  overload: CSFundamentals.Algorithms.Sort.Utils.GetNthDigitFromRight*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: CSFundamentals.Algorithms.Sort
+  commentId: N:CSFundamentals.Algorithms.Sort
+  name: CSFundamentals.Algorithms.Sort
+  nameWithType: CSFundamentals.Algorithms.Sort
+  fullName: CSFundamentals.Algorithms.Sort
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CSFundamentals.Algorithms.Sort.Utils.Convert*
+  commentId: Overload:CSFundamentals.Algorithms.Sort.Utils.Convert
+  name: Convert
+  nameWithType: Utils.Convert
+  fullName: CSFundamentals.Algorithms.Sort.Utils.Convert
+- uid: System.Collections.Generic.List{System.Int32}
+  commentId: T:System.Collections.Generic.List{System.Int32}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Int32>
+  nameWithType: List<Int32>
+  fullName: System.Collections.Generic.List<System.Int32>
+  nameWithType.vb: List(Of Int32)
+  fullName.vb: System.Collections.Generic.List(Of System.Int32)
+  name.vb: List(Of Int32)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}
+  commentId: T:System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Element>
+  nameWithType: List<Element>
+  fullName: System.Collections.Generic.List<CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element>
+  nameWithType.vb: List(Of Element)
+  fullName.vb: System.Collections.Generic.List(Of CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element)
+  name.vb: List(Of Element)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+    name: Element
+    nameWithType: Element
+    fullName: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+    name: Element
+    nameWithType: Element
+    fullName: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: CSFundamentals.Algorithms.Sort.Utils.IsSortMethodStable*
+  commentId: Overload:CSFundamentals.Algorithms.Sort.Utils.IsSortMethodStable
+  name: IsSortMethodStable
+  nameWithType: Utils.IsSortMethodStable
+  fullName: CSFundamentals.Algorithms.Sort.Utils.IsSortMethodStable
+- uid: System.Action{System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}}
+  commentId: T:System.Action{System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}}
+  parent: System
+  definition: System.Action`1
+  name: Action<List<Element>>
+  nameWithType: Action<List<Element>>
+  fullName: System.Action<System.Collections.Generic.List<CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element>>
+  nameWithType.vb: Action(Of List(Of Element))
+  fullName.vb: System.Action(Of System.Collections.Generic.List(Of CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element))
+  name.vb: Action(Of List(Of Element))
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+    name: Element
+    nameWithType: Element
+    fullName: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+    name: Element
+    nameWithType: Element
+    fullName: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.Algorithms.Sort.Utils.HashListToIndexes*
+  commentId: Overload:CSFundamentals.Algorithms.Sort.Utils.HashListToIndexes
+  name: HashListToIndexes
+  nameWithType: Utils.HashListToIndexes
+  fullName: CSFundamentals.Algorithms.Sort.Utils.HashListToIndexes
+- uid: System.Collections.Generic.Dictionary{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element,System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}}
+  commentId: T:System.Collections.Generic.Dictionary{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element,System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  name: Dictionary<Element, List<Element>>
+  nameWithType: Dictionary<Element, List<Element>>
+  fullName: System.Collections.Generic.Dictionary<CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element, System.Collections.Generic.List<CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element>>
+  nameWithType.vb: Dictionary(Of Element, List(Of Element))
+  fullName.vb: System.Collections.Generic.Dictionary(Of CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element, System.Collections.Generic.List(Of CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element))
+  name.vb: Dictionary(Of Element, List(Of Element))
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+    name: Element
+    nameWithType: Element
+    fullName: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+    name: Element
+    nameWithType: Element
+    fullName: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+    name: Element
+    nameWithType: Element
+    fullName: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+    name: Element
+    nameWithType: Element
+    fullName: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.Algorithms.Sort.Utils.IsMapStable*
+  commentId: Overload:CSFundamentals.Algorithms.Sort.Utils.IsMapStable
+  name: IsMapStable
+  nameWithType: Utils.IsMapStable
+  fullName: CSFundamentals.Algorithms.Sort.Utils.IsMapStable
+- uid: CSFundamentals.Algorithms.Sort.Utils.Swap*
+  commentId: Overload:CSFundamentals.Algorithms.Sort.Utils.Swap
+  name: Swap
+  nameWithType: Utils.Swap
+  fullName: CSFundamentals.Algorithms.Sort.Utils.Swap
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CSFundamentals.Algorithms.Sort.Utils.GetMaxElement*
+  commentId: Overload:CSFundamentals.Algorithms.Sort.Utils.GetMaxElement
+  name: GetMaxElement
+  nameWithType: Utils.GetMaxElement
+  fullName: CSFundamentals.Algorithms.Sort.Utils.GetMaxElement
+- uid: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+  commentId: T:CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+  parent: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions
+  name: Element
+  nameWithType: Element
+  fullName: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element
+- uid: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions
+  commentId: N:CSFundamentals.Algorithms.Sort.StabilityCheckableVersions
+  name: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions
+  nameWithType: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions
+  fullName: CSFundamentals.Algorithms.Sort.StabilityCheckableVersions
+- uid: System.Collections.Generic.List{{T}}
+  commentId: T:System.Collections.Generic.List{``0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: CSFundamentals.Algorithms.Sort.Utils.GetDigitsCount*
+  commentId: Overload:CSFundamentals.Algorithms.Sort.Utils.GetDigitsCount
+  name: GetDigitsCount
+  nameWithType: Utils.GetDigitsCount
+  fullName: CSFundamentals.Algorithms.Sort.Utils.GetDigitsCount
+- uid: CSFundamentals.Algorithms.Sort.Utils.GetNthDigitFromRight*
+  commentId: Overload:CSFundamentals.Algorithms.Sort.Utils.GetNthDigitFromRight
+  name: GetNthDigitFromRight
+  nameWithType: Utils.GetNthDigitFromRight
+  fullName: CSFundamentals.Algorithms.Sort.Utils.GetNthDigitFromRight

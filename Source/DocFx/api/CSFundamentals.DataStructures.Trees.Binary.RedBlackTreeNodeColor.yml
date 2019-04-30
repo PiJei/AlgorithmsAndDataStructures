@@ -1,0 +1,153 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor
+  commentId: T:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor
+  id: RedBlackTreeNodeColor
+  parent: CSFundamentals.DataStructures.Trees.Binary
+  children:
+  - CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor.Black
+  - CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor.Red
+  - CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor.Unknown
+  langs:
+  - csharp
+  - vb
+  name: RedBlackTreeNodeColor
+  nameWithType: RedBlackTreeNodeColor
+  fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor
+  type: Enum
+  source:
+    remote:
+      path: Source/DataStructures/Trees/Binary/RedBlackTreeNode.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: RedBlackTreeNodeColor
+    path: ../DataStructures/Trees/Binary/RedBlackTreeNode.cs
+    startLine: 92
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.Trees.Binary
+  summary: "\nRepresents the color of the RedBlack tree node. \n"
+  example: []
+  syntax:
+    content: public enum RedBlackTreeNodeColor
+    content.vb: Public Enum RedBlackTreeNodeColor
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor.Unknown
+  commentId: F:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor.Unknown
+  id: Unknown
+  parent: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor
+  langs:
+  - csharp
+  - vb
+  name: Unknown
+  nameWithType: RedBlackTreeNodeColor.Unknown
+  fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor.Unknown
+  type: Field
+  source:
+    remote:
+      path: Source/DataStructures/Trees/Binary/RedBlackTreeNode.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Unknown
+    path: ../DataStructures/Trees/Binary/RedBlackTreeNode.cs
+    startLine: 97
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.Trees.Binary
+  summary: "\nUnknown color. \n"
+  example: []
+  syntax:
+    content: Unknown = 0
+    return:
+      type: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor.Red
+  commentId: F:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor.Red
+  id: Red
+  parent: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor
+  langs:
+  - csharp
+  - vb
+  name: Red
+  nameWithType: RedBlackTreeNodeColor.Red
+  fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor.Red
+  type: Field
+  source:
+    remote:
+      path: Source/DataStructures/Trees/Binary/RedBlackTreeNode.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Red
+    path: ../DataStructures/Trees/Binary/RedBlackTreeNode.cs
+    startLine: 102
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.Trees.Binary
+  summary: "\nRed color.\n"
+  example: []
+  syntax:
+    content: Red = 1
+    return:
+      type: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor.Black
+  commentId: F:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor.Black
+  id: Black
+  parent: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor
+  langs:
+  - csharp
+  - vb
+  name: Black
+  nameWithType: RedBlackTreeNodeColor.Black
+  fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor.Black
+  type: Field
+  source:
+    remote:
+      path: Source/DataStructures/Trees/Binary/RedBlackTreeNode.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Black
+    path: ../DataStructures/Trees/Binary/RedBlackTreeNode.cs
+    startLine: 107
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.Trees.Binary
+  summary: "\nBlack color. \n"
+  example: []
+  syntax:
+    content: Black = 2
+    return:
+      type: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: CSFundamentals.DataStructures.Trees.Binary
+  commentId: N:CSFundamentals.DataStructures.Trees.Binary
+  name: CSFundamentals.DataStructures.Trees.Binary
+  nameWithType: CSFundamentals.DataStructures.Trees.Binary
+  fullName: CSFundamentals.DataStructures.Trees.Binary
+- uid: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor
+  commentId: T:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor
+  parent: CSFundamentals.DataStructures.Trees.Binary
+  name: RedBlackTreeNodeColor
+  nameWithType: RedBlackTreeNodeColor
+  fullName: CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNodeColor

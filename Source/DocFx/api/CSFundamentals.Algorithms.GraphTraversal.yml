@@ -1,0 +1,114 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentals.Algorithms.GraphTraversal
+  commentId: N:CSFundamentals.Algorithms.GraphTraversal
+  id: CSFundamentals.Algorithms.GraphTraversal
+  children:
+  - CSFundamentals.Algorithms.GraphTraversal.BFS
+  - CSFundamentals.Algorithms.GraphTraversal.DFS
+  - CSFundamentals.Algorithms.GraphTraversal.Dijkstra
+  - CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1
+  - CSFundamentals.Algorithms.GraphTraversal.GraphNode`1
+  langs:
+  - csharp
+  - vb
+  name: CSFundamentals.Algorithms.GraphTraversal
+  nameWithType: CSFundamentals.Algorithms.GraphTraversal
+  fullName: CSFundamentals.Algorithms.GraphTraversal
+  type: Namespace
+  assemblies:
+  - CSFundamentals
+references:
+- uid: CSFundamentals.Algorithms.GraphTraversal.BFS
+  commentId: T:CSFundamentals.Algorithms.GraphTraversal.BFS
+  name: BFS
+  nameWithType: BFS
+  fullName: CSFundamentals.Algorithms.GraphTraversal.BFS
+- uid: CSFundamentals.Algorithms.GraphTraversal.DFS
+  commentId: T:CSFundamentals.Algorithms.GraphTraversal.DFS
+  name: DFS
+  nameWithType: DFS
+  fullName: CSFundamentals.Algorithms.GraphTraversal.DFS
+- uid: CSFundamentals.Algorithms.GraphTraversal.Dijkstra
+  commentId: T:CSFundamentals.Algorithms.GraphTraversal.Dijkstra
+  name: Dijkstra
+  nameWithType: Dijkstra
+  fullName: CSFundamentals.Algorithms.GraphTraversal.Dijkstra
+- uid: CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1
+  commentId: T:CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1
+  name: GraphEdge<TValue>
+  nameWithType: GraphEdge<TValue>
+  fullName: CSFundamentals.Algorithms.GraphTraversal.GraphEdge<TValue>
+  nameWithType.vb: GraphEdge(Of TValue)
+  fullName.vb: CSFundamentals.Algorithms.GraphTraversal.GraphEdge(Of TValue)
+  name.vb: GraphEdge(Of TValue)
+  spec.csharp:
+  - uid: CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1
+    name: GraphEdge
+    nameWithType: GraphEdge
+    fullName: CSFundamentals.Algorithms.GraphTraversal.GraphEdge
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1
+    name: GraphEdge
+    nameWithType: GraphEdge
+    fullName: CSFundamentals.Algorithms.GraphTraversal.GraphEdge
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.Algorithms.GraphTraversal.GraphNode`1
+  commentId: T:CSFundamentals.Algorithms.GraphTraversal.GraphNode`1
+  parent: CSFundamentals.Algorithms.GraphTraversal
+  name: GraphNode<TValue>
+  nameWithType: GraphNode<TValue>
+  fullName: CSFundamentals.Algorithms.GraphTraversal.GraphNode<TValue>
+  nameWithType.vb: GraphNode(Of TValue)
+  fullName.vb: CSFundamentals.Algorithms.GraphTraversal.GraphNode(Of TValue)
+  name.vb: GraphNode(Of TValue)
+  spec.csharp:
+  - uid: CSFundamentals.Algorithms.GraphTraversal.GraphNode`1
+    name: GraphNode
+    nameWithType: GraphNode
+    fullName: CSFundamentals.Algorithms.GraphTraversal.GraphNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.Algorithms.GraphTraversal.GraphNode`1
+    name: GraphNode
+    nameWithType: GraphNode
+    fullName: CSFundamentals.Algorithms.GraphTraversal.GraphNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.Algorithms.GraphTraversal
+  commentId: N:CSFundamentals.Algorithms.GraphTraversal
+  name: CSFundamentals.Algorithms.GraphTraversal
+  nameWithType: CSFundamentals.Algorithms.GraphTraversal
+  fullName: CSFundamentals.Algorithms.GraphTraversal

@@ -7,8 +7,17 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>CSFundamentals.xml</DocumentationFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <LogFile>DocFx\log.txt</LogFile>
+    <LogLevel>Warning</LogLevel>
+	<DocfxConfigFile Condition=" '$(DocfxConfigFile)' == '' ">$(MSBuildProjectDirectory)\DocFx\docfx.json</DocfxConfigFile>
+  </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="docfx.console" Version="2.42.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
   </ItemGroup>
 

@@ -1,0 +1,575 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1
+  commentId: T:CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1
+  id: GraphEdge`1
+  parent: CSFundamentals.Algorithms.GraphTraversal
+  children:
+  - CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1.#ctor(CSFundamentals.Algorithms.GraphTraversal.GraphNode{`0},System.Int32)
+  - CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1.Node
+  - CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1.Weight
+  langs:
+  - csharp
+  - vb
+  name: GraphEdge<TValue>
+  nameWithType: GraphEdge<TValue>
+  fullName: CSFundamentals.Algorithms.GraphTraversal.GraphEdge<TValue>
+  type: Class
+  source:
+    remote:
+      path: Source/Algorithms/GraphTraversal/GraphEdge.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: GraphEdge
+    path: ../Algorithms/GraphTraversal/GraphEdge.cs
+    startLine: 25
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.GraphTraversal
+  summary: "\nRepresents an edge in a graph. \n"
+  example: []
+  syntax:
+    content: public class GraphEdge<TValue>
+    typeParameters:
+    - id: TValue
+    content.vb: Public Class GraphEdge(Of TValue)
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  nameWithType.vb: GraphEdge(Of TValue)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+  fullName.vb: CSFundamentals.Algorithms.GraphTraversal.GraphEdge(Of TValue)
+  name.vb: GraphEdge(Of TValue)
+- uid: CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1.Node
+  commentId: P:CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1.Node
+  id: Node
+  parent: CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1
+  langs:
+  - csharp
+  - vb
+  name: Node
+  nameWithType: GraphEdge<TValue>.Node
+  fullName: CSFundamentals.Algorithms.GraphTraversal.GraphEdge<TValue>.Node
+  type: Property
+  source:
+    remote:
+      path: Source/Algorithms/GraphTraversal/GraphEdge.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Node
+    path: ../Algorithms/GraphTraversal/GraphEdge.cs
+    startLine: 31
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.GraphTraversal
+  summary: "\nIs the GraphNode on the other side of the edge. \n"
+  example: []
+  syntax:
+    content: public GraphNode<TValue> Node { get; set; }
+    parameters: []
+    return:
+      type: CSFundamentals.Algorithms.GraphTraversal.GraphNode{{TValue}}
+    content.vb: Public Property Node As GraphNode(Of TValue)
+  overload: CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1.Node*
+  nameWithType.vb: GraphEdge(Of TValue).Node
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  fullName.vb: CSFundamentals.Algorithms.GraphTraversal.GraphEdge(Of TValue).Node
+- uid: CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1.Weight
+  commentId: P:CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1.Weight
+  id: Weight
+  parent: CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1
+  langs:
+  - csharp
+  - vb
+  name: Weight
+  nameWithType: GraphEdge<TValue>.Weight
+  fullName: CSFundamentals.Algorithms.GraphTraversal.GraphEdge<TValue>.Weight
+  type: Property
+  source:
+    remote:
+      path: Source/Algorithms/GraphTraversal/GraphEdge.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Weight
+    path: ../Algorithms/GraphTraversal/GraphEdge.cs
+    startLine: 36
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.GraphTraversal
+  summary: "\nRepresents an integer value for the weight for edge .\n"
+  example: []
+  syntax:
+    content: public int Weight { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Weight As Integer
+  overload: CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1.Weight*
+  nameWithType.vb: GraphEdge(Of TValue).Weight
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  fullName.vb: CSFundamentals.Algorithms.GraphTraversal.GraphEdge(Of TValue).Weight
+- uid: CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1.#ctor(CSFundamentals.Algorithms.GraphTraversal.GraphNode{`0},System.Int32)
+  commentId: M:CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1.#ctor(CSFundamentals.Algorithms.GraphTraversal.GraphNode{`0},System.Int32)
+  id: '#ctor(CSFundamentals.Algorithms.GraphTraversal.GraphNode{`0},System.Int32)'
+  parent: CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1
+  langs:
+  - csharp
+  - vb
+  name: GraphEdge(GraphNode<TValue>, Int32)
+  nameWithType: GraphEdge<TValue>.GraphEdge(GraphNode<TValue>, Int32)
+  fullName: CSFundamentals.Algorithms.GraphTraversal.GraphEdge<TValue>.GraphEdge(CSFundamentals.Algorithms.GraphTraversal.GraphNode<TValue>, System.Int32)
+  type: Constructor
+  source:
+    remote:
+      path: Source/Algorithms/GraphTraversal/GraphEdge.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: .ctor
+    path: ../Algorithms/GraphTraversal/GraphEdge.cs
+    startLine: 43
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.GraphTraversal
+  summary: "\nConstructor\n"
+  example: []
+  syntax:
+    content: public GraphEdge(GraphNode<TValue> node, int weight)
+    parameters:
+    - id: node
+      type: CSFundamentals.Algorithms.GraphTraversal.GraphNode{{TValue}}
+      description: 'Specifies the node at the end of an edge. '
+    - id: weight
+      type: System.Int32
+      description: 'Specifies weight on the edge. '
+    content.vb: Public Sub New(node As GraphNode(Of TValue), weight As Integer)
+  overload: CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1.#ctor*
+  nameWithType.vb: GraphEdge(Of TValue).GraphEdge(GraphNode(Of TValue), Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CSFundamentals.Algorithms.GraphTraversal.GraphEdge(Of TValue).GraphEdge(CSFundamentals.Algorithms.GraphTraversal.GraphNode(Of TValue), System.Int32)
+  name.vb: GraphEdge(GraphNode(Of TValue), Int32)
+references:
+- uid: CSFundamentals.Algorithms.GraphTraversal
+  commentId: N:CSFundamentals.Algorithms.GraphTraversal
+  name: CSFundamentals.Algorithms.GraphTraversal
+  nameWithType: CSFundamentals.Algorithms.GraphTraversal
+  fullName: CSFundamentals.Algorithms.GraphTraversal
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1.Node*
+  commentId: Overload:CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1.Node
+  name: Node
+  nameWithType: GraphEdge<TValue>.Node
+  fullName: CSFundamentals.Algorithms.GraphTraversal.GraphEdge<TValue>.Node
+  nameWithType.vb: GraphEdge(Of TValue).Node
+  fullName.vb: CSFundamentals.Algorithms.GraphTraversal.GraphEdge(Of TValue).Node
+- uid: CSFundamentals.Algorithms.GraphTraversal.GraphNode{{TValue}}
+  commentId: T:CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0}
+  parent: CSFundamentals.Algorithms.GraphTraversal
+  definition: CSFundamentals.Algorithms.GraphTraversal.GraphNode`1
+  name: GraphNode<TValue>
+  nameWithType: GraphNode<TValue>
+  fullName: CSFundamentals.Algorithms.GraphTraversal.GraphNode<TValue>
+  nameWithType.vb: GraphNode(Of TValue)
+  fullName.vb: CSFundamentals.Algorithms.GraphTraversal.GraphNode(Of TValue)
+  name.vb: GraphNode(Of TValue)
+  spec.csharp:
+  - uid: CSFundamentals.Algorithms.GraphTraversal.GraphNode`1
+    name: GraphNode
+    nameWithType: GraphNode
+    fullName: CSFundamentals.Algorithms.GraphTraversal.GraphNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.Algorithms.GraphTraversal.GraphNode`1
+    name: GraphNode
+    nameWithType: GraphNode
+    fullName: CSFundamentals.Algorithms.GraphTraversal.GraphNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.Algorithms.GraphTraversal.GraphNode`1
+  commentId: T:CSFundamentals.Algorithms.GraphTraversal.GraphNode`1
+  parent: CSFundamentals.Algorithms.GraphTraversal
+  name: GraphNode<TValue>
+  nameWithType: GraphNode<TValue>
+  fullName: CSFundamentals.Algorithms.GraphTraversal.GraphNode<TValue>
+  nameWithType.vb: GraphNode(Of TValue)
+  fullName.vb: CSFundamentals.Algorithms.GraphTraversal.GraphNode(Of TValue)
+  name.vb: GraphNode(Of TValue)
+  spec.csharp:
+  - uid: CSFundamentals.Algorithms.GraphTraversal.GraphNode`1
+    name: GraphNode
+    nameWithType: GraphNode
+    fullName: CSFundamentals.Algorithms.GraphTraversal.GraphNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.Algorithms.GraphTraversal.GraphNode`1
+    name: GraphNode
+    nameWithType: GraphNode
+    fullName: CSFundamentals.Algorithms.GraphTraversal.GraphNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1.Weight*
+  commentId: Overload:CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1.Weight
+  name: Weight
+  nameWithType: GraphEdge<TValue>.Weight
+  fullName: CSFundamentals.Algorithms.GraphTraversal.GraphEdge<TValue>.Weight
+  nameWithType.vb: GraphEdge(Of TValue).Weight
+  fullName.vb: CSFundamentals.Algorithms.GraphTraversal.GraphEdge(Of TValue).Weight
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1.#ctor*
+  commentId: Overload:CSFundamentals.Algorithms.GraphTraversal.GraphEdge`1.#ctor
+  name: GraphEdge
+  nameWithType: GraphEdge<TValue>.GraphEdge
+  fullName: CSFundamentals.Algorithms.GraphTraversal.GraphEdge<TValue>.GraphEdge
+  nameWithType.vb: GraphEdge(Of TValue).GraphEdge
+  fullName.vb: CSFundamentals.Algorithms.GraphTraversal.GraphEdge(Of TValue).GraphEdge

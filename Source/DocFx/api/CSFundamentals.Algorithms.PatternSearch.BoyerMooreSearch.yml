@@ -1,0 +1,661 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch
+  commentId: T:CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch
+  id: BoyerMooreSearch
+  parent: CSFundamentals.Algorithms.PatternSearch
+  children:
+  - CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch.MapCharToLastIndex(System.String)
+  - CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly(System.String,System.String)
+  langs:
+  - csharp
+  - vb
+  name: BoyerMooreSearch
+  nameWithType: BoyerMooreSearch
+  fullName: CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch
+  type: Class
+  source:
+    remote:
+      path: Source/Algorithms/PatternSearch/BoyerMooreSearch.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: BoyerMooreSearch
+    path: ../Algorithms/PatternSearch/BoyerMooreSearch.cs
+    startLine: 28
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.PatternSearch
+  summary: "\nImplements Boyer-More algorithm for searching a pattern string in a string. \n"
+  example: []
+  syntax:
+    content: public class BoyerMooreSearch
+    content.vb: Public Class BoyerMooreSearch
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly(System.String,System.String)
+  commentId: M:CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly(System.String,System.String)
+  id: Search_BasedOnBadCharacterShiftOnly(System.String,System.String)
+  parent: CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch
+  langs:
+  - csharp
+  - vb
+  name: Search_BasedOnBadCharacterShiftOnly(String, String)
+  nameWithType: BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly(String, String)
+  fullName: CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly(System.String, System.String)
+  type: Method
+  source:
+    remote:
+      path: Source/Algorithms/PatternSearch/BoyerMooreSearch.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Search_BasedOnBadCharacterShiftOnly
+    path: ../Algorithms/PatternSearch/BoyerMooreSearch.cs
+    startLine: 37
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.PatternSearch
+  summary: "\nImplements BoyerMoore search algorithm using only the bad character heuristic (in the main version  both bad character and good suffix are used to skip over <code data-dev-comment-type=\"paramref\" class=\"paramref\">text</code>.)\nThe idea is to do tail based search, and skip over indexes in <code data-dev-comment-type=\"paramref\" class=\"paramref\">text</code> to a proper tail, at which there is a chance of match. \n"
+  example: []
+  syntax:
+    content: >-
+      [Algorithm(AlgorithmType.PatternSearch, "BoyerMoore")]
+
+      public static List<int> Search_BasedOnBadCharacterShiftOnly(string text, string pattern)
+    parameters:
+    - id: text
+      type: System.String
+      description: The parent string in which we are searching for <code data-dev-comment-type="paramref" class="paramref">pattern</code>.
+    - id: pattern
+      type: System.String
+      description: The string we want to find in parent string (<code data-dev-comment-type="paramref" class="paramref">text</code>).
+    return:
+      type: System.Collections.Generic.List{System.Int32}
+      description: All the starting indexes in <code data-dev-comment-type="paramref" class="paramref">text</code> starting at which <code data-dev-comment-type="paramref" class="paramref">pattern</code> is found [in other words looks for all the occurrences of the <code data-dev-comment-type="paramref" class="paramref">pattern</code> in <code data-dev-comment-type="paramref" class="paramref">text</code>, and does not stop by finding the first one].
+    content.vb: >-
+      <Algorithm(AlgorithmType.PatternSearch, "BoyerMoore")>
+
+      Public Shared Function Search_BasedOnBadCharacterShiftOnly(text As String, pattern As String) As List(Of Integer)
+  overload: CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly*
+  attributes:
+  - type: CSFundamentals.Decoration.AlgorithmAttribute
+    ctor: CSFundamentals.Decoration.AlgorithmAttribute.#ctor(CSFundamentals.Decoration.AlgorithmType,System.String)
+    arguments:
+    - type: CSFundamentals.Decoration.AlgorithmType
+      value: 3
+    - type: System.String
+      value: BoyerMoore
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch.MapCharToLastIndex(System.String)
+  commentId: M:CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch.MapCharToLastIndex(System.String)
+  id: MapCharToLastIndex(System.String)
+  parent: CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch
+  langs:
+  - csharp
+  - vb
+  name: MapCharToLastIndex(String)
+  nameWithType: BoyerMooreSearch.MapCharToLastIndex(String)
+  fullName: CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch.MapCharToLastIndex(System.String)
+  type: Method
+  source:
+    remote:
+      path: Source/Algorithms/PatternSearch/BoyerMooreSearch.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: MapCharToLastIndex
+    path: ../Algorithms/PatternSearch/BoyerMooreSearch.cs
+    startLine: 105
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.Algorithms.PatternSearch
+  summary: "\nMaps every character in the given string to its last index in the string. \nAn example use is Boyer-Moore search algorithm for re-alignment of the pattern being searched for when a bad character is found in the string that is being searched in.\n"
+  example: []
+  syntax:
+    content: public static Dictionary<char, int> MapCharToLastIndex(string text)
+    parameters:
+    - id: text
+      type: System.String
+    return:
+      type: System.Collections.Generic.Dictionary{System.Char,System.Int32}
+      description: 'A mapping of all the characters in the given string to their last index in the string. '
+    content.vb: Public Shared Function MapCharToLastIndex(text As String) As Dictionary(Of Char, Integer)
+  overload: CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch.MapCharToLastIndex*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: CSFundamentals.Algorithms.PatternSearch
+  commentId: N:CSFundamentals.Algorithms.PatternSearch
+  name: CSFundamentals.Algorithms.PatternSearch
+  nameWithType: CSFundamentals.Algorithms.PatternSearch
+  fullName: CSFundamentals.Algorithms.PatternSearch
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly*
+  commentId: Overload:CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly
+  name: Search_BasedOnBadCharacterShiftOnly
+  nameWithType: BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly
+  fullName: CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch.Search_BasedOnBadCharacterShiftOnly
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Collections.Generic.List{System.Int32}
+  commentId: T:System.Collections.Generic.List{System.Int32}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Int32>
+  nameWithType: List<Int32>
+  fullName: System.Collections.Generic.List<System.Int32>
+  nameWithType.vb: List(Of Int32)
+  fullName.vb: System.Collections.Generic.List(Of System.Int32)
+  name.vb: List(Of Int32)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch.MapCharToLastIndex*
+  commentId: Overload:CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch.MapCharToLastIndex
+  name: MapCharToLastIndex
+  nameWithType: BoyerMooreSearch.MapCharToLastIndex
+  fullName: CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch.MapCharToLastIndex
+- uid: System.Collections.Generic.Dictionary{System.Char,System.Int32}
+  commentId: T:System.Collections.Generic.Dictionary{System.Char,System.Int32}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  name: Dictionary<Char, Int32>
+  nameWithType: Dictionary<Char, Int32>
+  fullName: System.Collections.Generic.Dictionary<System.Char, System.Int32>
+  nameWithType.vb: Dictionary(Of Char, Int32)
+  fullName.vb: System.Collections.Generic.Dictionary(Of System.Char, System.Int32)
+  name.vb: Dictionary(Of Char, Int32)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Char
+    name: Char
+    nameWithType: Char
+    fullName: System.Char
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Char
+    name: Char
+    nameWithType: Char
+    fullName: System.Char
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )

@@ -1,0 +1,2984 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  commentId: T:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  id: BinaryHeapBase`2
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API
+  children:
+  - CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.#ctor(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}})
+  - CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BubbleDown_Iteratively(System.Int32,System.Int32)
+  - CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BubbleDown_Recursively(System.Int32,System.Int32)
+  - CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BubbleUp_Iteratively(System.Int32,System.Int32)
+  - CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BuildHeap_Iteratively(System.Int32)
+  - CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BuildHeap_Recursively(System.Int32)
+  - CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.FindIndex(`0)
+  - CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.GetLeftChildIndexInHeapArray(System.Int32)
+  - CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.GetNodeLevel(System.Int32)
+  - CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.GetParentIndex(System.Int32)
+  - CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.GetRightChildIndexInHeapArray(System.Int32)
+  - CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.HeapArray
+  - CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.Insert(System.Collections.Generic.KeyValuePair{`0,`1},System.Int32)
+  - CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryFindIndexOfMaxBiggerThanReference(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}},System.Int32,System.Collections.Generic.List{System.Int32},`0,System.Int32@)
+  - CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryFindIndexOfMinSmallerThanReference(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}},System.Collections.Generic.List{System.Int32},`0,System.Int32@)
+  - CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryFindRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)
+  - CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryRemoveRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: BinaryHeapBase<TKey, TValue>
+  nameWithType: BinaryHeapBase<TKey, TValue>
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>
+  type: Class
+  source:
+    remote:
+      path: Source/DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: BinaryHeapBase
+    path: ../DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+    startLine: 31
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.BinaryHeaps.API
+  summary: "\nIs a base class for Binary heap. \n"
+  example: []
+  syntax:
+    content: 'public abstract class BinaryHeapBase<TKey, TValue> : IBinaryHeap<TKey, TValue> where TKey : IComparable<TKey>'
+    typeParameters:
+    - id: TKey
+      description: 'Is the type of the keys stored in the heap. '
+    - id: TValue
+      description: 'Is the type of the values stored in the heap. '
+    content.vb: >-
+      Public MustInherit Class BinaryHeapBase(Of TKey As IComparable(Of TKey), TValue)
+          Implements IBinaryHeap(Of TKey, TValue)
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - CSFundamentals.DataStructures.BinaryHeaps.MaxBinaryHeap`2
+  - CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap`2
+  - CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2
+  implements:
+  - CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue)
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue)
+  name.vb: BinaryHeapBase(Of TKey, TValue)
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BuildHeap_Iteratively(System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BuildHeap_Iteratively(System.Int32)
+  id: BuildHeap_Iteratively(System.Int32)
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  langs:
+  - csharp
+  - vb
+  name: BuildHeap_Iteratively(Int32)
+  nameWithType: BinaryHeapBase<TKey, TValue>.BuildHeap_Iteratively(Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.BuildHeap_Iteratively(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Source/DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: BuildHeap_Iteratively
+    path: ../DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+    startLine: 37
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.BinaryHeaps.API
+  summary: "\nNote that passing the array size is not a must, as the class itself contains the array and has access to its size. However some algorithms such as HeapSort which rely on a heap to perform sorting, are better implemented, if we have the length of the array passed to these methods. \n"
+  example: []
+  syntax:
+    content: public abstract void BuildHeap_Iteratively(int heapArrayLength)
+    parameters:
+    - id: heapArrayLength
+      type: System.Int32
+      description: 'Specifies the length of the heap array. '
+    content.vb: Public MustOverride Sub BuildHeap_Iteratively(heapArrayLength As Integer)
+  overload: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BuildHeap_Iteratively*
+  implements:
+  - CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}.BuildHeap_Iteratively(System.Int32)
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).BuildHeap_Iteratively(Int32)
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).BuildHeap_Iteratively(System.Int32)
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BuildHeap_Recursively(System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BuildHeap_Recursively(System.Int32)
+  id: BuildHeap_Recursively(System.Int32)
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  langs:
+  - csharp
+  - vb
+  name: BuildHeap_Recursively(Int32)
+  nameWithType: BinaryHeapBase<TKey, TValue>.BuildHeap_Recursively(Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.BuildHeap_Recursively(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Source/DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: BuildHeap_Recursively
+    path: ../DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+    startLine: 43
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.BinaryHeaps.API
+  summary: "\nBuilds a heap using recursion, and does so in situ.\n"
+  example: []
+  syntax:
+    content: public abstract void BuildHeap_Recursively(int heapArrayLength)
+    parameters:
+    - id: heapArrayLength
+      type: System.Int32
+      description: 'Specifies the length of the heap array. '
+    content.vb: Public MustOverride Sub BuildHeap_Recursively(heapArrayLength As Integer)
+  overload: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BuildHeap_Recursively*
+  implements:
+  - CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}.BuildHeap_Recursively(System.Int32)
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).BuildHeap_Recursively(Int32)
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).BuildHeap_Recursively(System.Int32)
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.Insert(System.Collections.Generic.KeyValuePair{`0,`1},System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.Insert(System.Collections.Generic.KeyValuePair{`0,`1},System.Int32)
+  id: Insert(System.Collections.Generic.KeyValuePair{`0,`1},System.Int32)
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  langs:
+  - csharp
+  - vb
+  name: Insert(KeyValuePair<TKey, TValue>, Int32)
+  nameWithType: BinaryHeapBase<TKey, TValue>.Insert(KeyValuePair<TKey, TValue>, Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.Insert(System.Collections.Generic.KeyValuePair<TKey, TValue>, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Source/DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: Insert
+    path: ../DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+    startLine: 50
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.BinaryHeaps.API
+  summary: "\nInserts a new value into heap.\n"
+  example: []
+  syntax:
+    content: public abstract void Insert(KeyValuePair<TKey, TValue> keyValue, int heapArrayLength)
+    parameters:
+    - id: keyValue
+      type: System.Collections.Generic.KeyValuePair{{TKey},{TValue}}
+      description: Specifies the key-value to be inserted into the heap.
+    - id: heapArrayLength
+      type: System.Int32
+      description: 'Specifies the length of the heap array. '
+    content.vb: Public MustOverride Sub Insert(keyValue As KeyValuePair(Of TKey, TValue), heapArrayLength As Integer)
+  overload: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.Insert*
+  implements:
+  - CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}.Insert(System.Collections.Generic.KeyValuePair{{TKey},{TValue}},System.Int32)
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).Insert(KeyValuePair(Of TKey, TValue), Int32)
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).Insert(System.Collections.Generic.KeyValuePair(Of TKey, TValue), System.Int32)
+  name.vb: Insert(KeyValuePair(Of TKey, TValue), Int32)
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryRemoveRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryRemoveRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)
+  id: TryRemoveRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  langs:
+  - csharp
+  - vb
+  name: TryRemoveRoot(out KeyValuePair<TKey, TValue>, Int32)
+  nameWithType: BinaryHeapBase<TKey, TValue>.TryRemoveRoot(out KeyValuePair<TKey, TValue>, Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.TryRemoveRoot(out System.Collections.Generic.KeyValuePair<TKey, TValue>, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Source/DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: TryRemoveRoot
+    path: ../DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+    startLine: 58
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.BinaryHeaps.API
+  summary: "\nRemoves the root of the heap. In a MinHeap and MinMaxHeap this is the min, and in a MaxHeap and MaxMinHeap this is the max. \n"
+  example: []
+  syntax:
+    content: public abstract bool TryRemoveRoot(out KeyValuePair<TKey, TValue> keyValue, int heapArrayLength)
+    parameters:
+    - id: keyValue
+      type: System.Collections.Generic.KeyValuePair{{TKey},{TValue}}
+      description: Specifies the key-value of the root.
+    - id: heapArrayLength
+      type: System.Int32
+      description: 'Specifies the length of the heap array. '
+    return:
+      type: System.Boolean
+      description: True in case of success, and false otherwise.
+    content.vb: Public MustOverride Function TryRemoveRoot(ByRef keyValue As KeyValuePair(Of TKey, TValue), heapArrayLength As Integer) As Boolean
+  overload: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryRemoveRoot*
+  implements:
+  - CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}.TryRemoveRoot(System.Collections.Generic.KeyValuePair{{TKey},{TValue}}@,System.Int32)
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).TryRemoveRoot(ByRef KeyValuePair(Of TKey, TValue), Int32)
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).TryRemoveRoot(ByRef System.Collections.Generic.KeyValuePair(Of TKey, TValue), System.Int32)
+  name.vb: TryRemoveRoot(ByRef KeyValuePair(Of TKey, TValue), Int32)
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryFindRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryFindRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)
+  id: TryFindRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  langs:
+  - csharp
+  - vb
+  name: TryFindRoot(out KeyValuePair<TKey, TValue>, Int32)
+  nameWithType: BinaryHeapBase<TKey, TValue>.TryFindRoot(out KeyValuePair<TKey, TValue>, Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.TryFindRoot(out System.Collections.Generic.KeyValuePair<TKey, TValue>, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Source/DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: TryFindRoot
+    path: ../DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+    startLine: 66
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.BinaryHeaps.API
+  summary: "\nFinds the root of the heap, without removing it. \n"
+  example: []
+  syntax:
+    content: public abstract bool TryFindRoot(out KeyValuePair<TKey, TValue> keyValue, int heapArrayLength)
+    parameters:
+    - id: keyValue
+      type: System.Collections.Generic.KeyValuePair{{TKey},{TValue}}
+      description: Specifies the key-value of the root.
+    - id: heapArrayLength
+      type: System.Int32
+      description: 'Specifies the length of the heap array. '
+    return:
+      type: System.Boolean
+      description: True in case of success, and false in case of failure.
+    content.vb: Public MustOverride Function TryFindRoot(ByRef keyValue As KeyValuePair(Of TKey, TValue), heapArrayLength As Integer) As Boolean
+  overload: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryFindRoot*
+  implements:
+  - CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}.TryFindRoot(System.Collections.Generic.KeyValuePair{{TKey},{TValue}}@,System.Int32)
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).TryFindRoot(ByRef KeyValuePair(Of TKey, TValue), Int32)
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).TryFindRoot(ByRef System.Collections.Generic.KeyValuePair(Of TKey, TValue), System.Int32)
+  name.vb: TryFindRoot(ByRef KeyValuePair(Of TKey, TValue), Int32)
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BubbleDown_Recursively(System.Int32,System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BubbleDown_Recursively(System.Int32,System.Int32)
+  id: BubbleDown_Recursively(System.Int32,System.Int32)
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  langs:
+  - csharp
+  - vb
+  name: BubbleDown_Recursively(Int32, Int32)
+  nameWithType: BinaryHeapBase<TKey, TValue>.BubbleDown_Recursively(Int32, Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.BubbleDown_Recursively(System.Int32, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Source/DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: BubbleDown_Recursively
+    path: ../DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+    startLine: 73
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.BinaryHeaps.API
+  summary: "\nImplements the bubble down/trickle down operation using recursion.\n"
+  example: []
+  syntax:
+    content: public abstract void BubbleDown_Recursively(int rootIndex, int heapArrayLength)
+    parameters:
+    - id: rootIndex
+      type: System.Int32
+      description: Specifies the index of the root element, the element for which the trickle down should be performed.
+    - id: heapArrayLength
+      type: System.Int32
+      description: 'Specifies the length of the heap array. '
+    content.vb: Public MustOverride Sub BubbleDown_Recursively(rootIndex As Integer, heapArrayLength As Integer)
+  overload: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BubbleDown_Recursively*
+  implements:
+  - CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}.BubbleDown_Recursively(System.Int32,System.Int32)
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).BubbleDown_Recursively(Int32, Int32)
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).BubbleDown_Recursively(System.Int32, System.Int32)
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BubbleDown_Iteratively(System.Int32,System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BubbleDown_Iteratively(System.Int32,System.Int32)
+  id: BubbleDown_Iteratively(System.Int32,System.Int32)
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  langs:
+  - csharp
+  - vb
+  name: BubbleDown_Iteratively(Int32, Int32)
+  nameWithType: BinaryHeapBase<TKey, TValue>.BubbleDown_Iteratively(Int32, Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.BubbleDown_Iteratively(System.Int32, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Source/DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: BubbleDown_Iteratively
+    path: ../DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+    startLine: 80
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.BinaryHeaps.API
+  summary: "\nImplements the bubble down/trickle down operation using iteration.\n"
+  example: []
+  syntax:
+    content: public abstract void BubbleDown_Iteratively(int rootIndex, int heapArrayLength)
+    parameters:
+    - id: rootIndex
+      type: System.Int32
+      description: Specifies the index of the root element, the element for which the trickle down should be performed.
+    - id: heapArrayLength
+      type: System.Int32
+      description: 'Specifies the length of the heap array. '
+    content.vb: Public MustOverride Sub BubbleDown_Iteratively(rootIndex As Integer, heapArrayLength As Integer)
+  overload: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BubbleDown_Iteratively*
+  implements:
+  - CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}.BubbleDown_Iteratively(System.Int32,System.Int32)
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).BubbleDown_Iteratively(Int32, Int32)
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).BubbleDown_Iteratively(System.Int32, System.Int32)
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BubbleUp_Iteratively(System.Int32,System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BubbleUp_Iteratively(System.Int32,System.Int32)
+  id: BubbleUp_Iteratively(System.Int32,System.Int32)
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  langs:
+  - csharp
+  - vb
+  name: BubbleUp_Iteratively(Int32, Int32)
+  nameWithType: BinaryHeapBase<TKey, TValue>.BubbleUp_Iteratively(Int32, Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.BubbleUp_Iteratively(System.Int32, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Source/DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: BubbleUp_Iteratively
+    path: ../DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+    startLine: 87
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.BinaryHeaps.API
+  summary: "\nMoves the value in the given index, up in the heap till its position is found. The position is defined such to respect heap ordering property.\n"
+  example: []
+  syntax:
+    content: public abstract void BubbleUp_Iteratively(int index, int heapArrayLength)
+    parameters:
+    - id: index
+      type: System.Int32
+      description: Specifies the index of the element that should be bubbled up.
+    - id: heapArrayLength
+      type: System.Int32
+      description: 'Specifies the length/size of the heap array. '
+    content.vb: Public MustOverride Sub BubbleUp_Iteratively(index As Integer, heapArrayLength As Integer)
+  overload: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BubbleUp_Iteratively*
+  implements:
+  - CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}.BubbleUp_Iteratively(System.Int32,System.Int32)
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).BubbleUp_Iteratively(Int32, Int32)
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).BubbleUp_Iteratively(System.Int32, System.Int32)
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.HeapArray
+  commentId: F:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.HeapArray
+  id: HeapArray
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  langs:
+  - csharp
+  - vb
+  name: HeapArray
+  nameWithType: BinaryHeapBase<TKey, TValue>.HeapArray
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.HeapArray
+  type: Field
+  source:
+    remote:
+      path: Source/DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: HeapArray
+    path: ../DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+    startLine: 92
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.BinaryHeaps.API
+  summary: "\nIs the array used to implement binary heap. \n"
+  example: []
+  syntax:
+    content: public List<KeyValuePair<TKey, TValue>> HeapArray
+    return:
+      type: System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}
+    content.vb: Public HeapArray As List(Of KeyValuePair(Of TKey, TValue))
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).HeapArray
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).HeapArray
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.#ctor(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}})
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.#ctor(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}})
+  id: '#ctor(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}})'
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  langs:
+  - csharp
+  - vb
+  name: BinaryHeapBase(List<KeyValuePair<TKey, TValue>>)
+  nameWithType: BinaryHeapBase<TKey, TValue>.BinaryHeapBase(List<KeyValuePair<TKey, TValue>>)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.BinaryHeapBase(System.Collections.Generic.List<System.Collections.Generic.KeyValuePair<TKey, TValue>>)
+  type: Constructor
+  source:
+    remote:
+      path: Source/DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: .ctor
+    path: ../DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+    startLine: 98
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.BinaryHeaps.API
+  summary: "\nConstructor\n"
+  example: []
+  syntax:
+    content: public BinaryHeapBase(List<KeyValuePair<TKey, TValue>> array)
+    parameters:
+    - id: array
+      type: System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}
+      description: 'The array containing all the key-values to be converted to a heap. '
+    content.vb: Public Sub New(array As List(Of KeyValuePair(Of TKey, TValue)))
+  overload: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.#ctor*
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).BinaryHeapBase(List(Of KeyValuePair(Of TKey, TValue)))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).BinaryHeapBase(System.Collections.Generic.List(Of System.Collections.Generic.KeyValuePair(Of TKey, TValue)))
+  name.vb: BinaryHeapBase(List(Of KeyValuePair(Of TKey, TValue)))
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.GetLeftChildIndexInHeapArray(System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.GetLeftChildIndexInHeapArray(System.Int32)
+  id: GetLeftChildIndexInHeapArray(System.Int32)
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  langs:
+  - csharp
+  - vb
+  name: GetLeftChildIndexInHeapArray(Int32)
+  nameWithType: BinaryHeapBase<TKey, TValue>.GetLeftChildIndexInHeapArray(Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.GetLeftChildIndexInHeapArray(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Source/DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: GetLeftChildIndexInHeapArray
+    path: ../DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+    startLine: 108
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.BinaryHeaps.API
+  summary: "\nGiven a node index in the heapArray, returns the expected index of its left child. \n"
+  example: []
+  syntax:
+    content: public int GetLeftChildIndexInHeapArray(int index)
+    parameters:
+    - id: index
+      type: System.Int32
+      description: 'The index of the node for which, left child index shall be found. '
+    return:
+      type: System.Int32
+      description: 'The index of the left child. '
+    content.vb: Public Function GetLeftChildIndexInHeapArray(index As Integer) As Integer
+  overload: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.GetLeftChildIndexInHeapArray*
+  implements:
+  - CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}.GetLeftChildIndexInHeapArray(System.Int32)
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).GetLeftChildIndexInHeapArray(Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).GetLeftChildIndexInHeapArray(System.Int32)
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.GetRightChildIndexInHeapArray(System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.GetRightChildIndexInHeapArray(System.Int32)
+  id: GetRightChildIndexInHeapArray(System.Int32)
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  langs:
+  - csharp
+  - vb
+  name: GetRightChildIndexInHeapArray(Int32)
+  nameWithType: BinaryHeapBase<TKey, TValue>.GetRightChildIndexInHeapArray(Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.GetRightChildIndexInHeapArray(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Source/DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: GetRightChildIndexInHeapArray
+    path: ../DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+    startLine: 118
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.BinaryHeaps.API
+  summary: "\nGiven a node index in the heapArray, returns the expected index of its right child. \n"
+  example: []
+  syntax:
+    content: public int GetRightChildIndexInHeapArray(int index)
+    parameters:
+    - id: index
+      type: System.Int32
+      description: 'The index of the node for which, right child index shall be found. '
+    return:
+      type: System.Int32
+      description: The index of the right child.
+    content.vb: Public Function GetRightChildIndexInHeapArray(index As Integer) As Integer
+  overload: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.GetRightChildIndexInHeapArray*
+  implements:
+  - CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}.GetRightChildIndexInHeapArray(System.Int32)
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).GetRightChildIndexInHeapArray(Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).GetRightChildIndexInHeapArray(System.Int32)
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.GetParentIndex(System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.GetParentIndex(System.Int32)
+  id: GetParentIndex(System.Int32)
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  langs:
+  - csharp
+  - vb
+  name: GetParentIndex(Int32)
+  nameWithType: BinaryHeapBase<TKey, TValue>.GetParentIndex(Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.GetParentIndex(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Source/DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: GetParentIndex
+    path: ../DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+    startLine: 128
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.BinaryHeaps.API
+  summary: "\nGiven a node index in the heapArray, returns the expected index of its parent. \n"
+  example: []
+  syntax:
+    content: public int GetParentIndex(int index)
+    parameters:
+    - id: index
+      type: System.Int32
+      description: 'The index of the node, for which parent index shall be found. '
+    return:
+      type: System.Int32
+      description: 'The index of the parent. '
+    content.vb: Public Function GetParentIndex(index As Integer) As Integer
+  overload: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.GetParentIndex*
+  implements:
+  - CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}.GetParentIndex(System.Int32)
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).GetParentIndex(Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).GetParentIndex(System.Int32)
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.GetNodeLevel(System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.GetNodeLevel(System.Int32)
+  id: GetNodeLevel(System.Int32)
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  langs:
+  - csharp
+  - vb
+  name: GetNodeLevel(Int32)
+  nameWithType: BinaryHeapBase<TKey, TValue>.GetNodeLevel(Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.GetNodeLevel(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Source/DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: GetNodeLevel
+    path: ../DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+    startLine: 139
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.BinaryHeaps.API
+  summary: "\nReturns the level of a node in the heap, given the node&apos;s index in the heap array.\n"
+  example: []
+  syntax:
+    content: public int GetNodeLevel(int index)
+    parameters:
+    - id: index
+      type: System.Int32
+      description: 'Specifies the index of a node in an array. '
+    return:
+      type: System.Int32
+      description: 'Returns the level of the node. '
+    content.vb: Public Function GetNodeLevel(index As Integer) As Integer
+  overload: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.GetNodeLevel*
+  implements:
+  - CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}.GetNodeLevel(System.Int32)
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).GetNodeLevel(Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).GetNodeLevel(System.Int32)
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryFindIndexOfMinSmallerThanReference(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}},System.Collections.Generic.List{System.Int32},`0,System.Int32@)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryFindIndexOfMinSmallerThanReference(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}},System.Collections.Generic.List{System.Int32},`0,System.Int32@)
+  id: TryFindIndexOfMinSmallerThanReference(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}},System.Collections.Generic.List{System.Int32},`0,System.Int32@)
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  langs:
+  - csharp
+  - vb
+  name: TryFindIndexOfMinSmallerThanReference(List<KeyValuePair<TKey, TValue>>, List<Int32>, TKey, out Int32)
+  nameWithType: BinaryHeapBase<TKey, TValue>.TryFindIndexOfMinSmallerThanReference(List<KeyValuePair<TKey, TValue>>, List<Int32>, TKey, out Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.TryFindIndexOfMinSmallerThanReference(System.Collections.Generic.List<System.Collections.Generic.KeyValuePair<TKey, TValue>>, System.Collections.Generic.List<System.Int32>, TKey, out System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Source/DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: TryFindIndexOfMinSmallerThanReference
+    path: ../DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+    startLine: 153
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.BinaryHeaps.API
+  summary: "\nFinds the minimum element in the array, among the given indexes, with respect to minValueReference, and returns the index of the min value. \n"
+  example: []
+  syntax:
+    content: public bool TryFindIndexOfMinSmallerThanReference(List<KeyValuePair<TKey, TValue>> list, List<int> indexes, TKey minKeyReference, out int minKeyIndex)
+    parameters:
+    - id: list
+      type: System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}
+      description: 'Specifies the list of values. '
+    - id: indexes
+      type: System.Collections.Generic.List{System.Int32}
+      description: 'Specifies the list of indexes among which we want to find the minimum value. '
+    - id: minKeyReference
+      type: '{TKey}'
+      description: 'Specifies the reference for the minimum value.  '
+    - id: minKeyIndex
+      type: System.Int32
+      description: 'Specifies the index of the minimum value among the specifies indexes. '
+    return:
+      type: System.Boolean
+      description: 'True in case of success, and false in case of failure. '
+    content.vb: Public Function TryFindIndexOfMinSmallerThanReference(list As List(Of KeyValuePair(Of TKey, TValue)), indexes As List(Of Integer), minKeyReference As TKey, ByRef minKeyIndex As Integer) As Boolean
+  overload: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryFindIndexOfMinSmallerThanReference*
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).TryFindIndexOfMinSmallerThanReference(List(Of KeyValuePair(Of TKey, TValue)), List(Of Int32), TKey, ByRef Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).TryFindIndexOfMinSmallerThanReference(System.Collections.Generic.List(Of System.Collections.Generic.KeyValuePair(Of TKey, TValue)), System.Collections.Generic.List(Of System.Int32), TKey, ByRef System.Int32)
+  name.vb: TryFindIndexOfMinSmallerThanReference(List(Of KeyValuePair(Of TKey, TValue)), List(Of Int32), TKey, ByRef Int32)
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryFindIndexOfMaxBiggerThanReference(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}},System.Int32,System.Collections.Generic.List{System.Int32},`0,System.Int32@)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryFindIndexOfMaxBiggerThanReference(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}},System.Int32,System.Collections.Generic.List{System.Int32},`0,System.Int32@)
+  id: TryFindIndexOfMaxBiggerThanReference(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}},System.Int32,System.Collections.Generic.List{System.Int32},`0,System.Int32@)
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  langs:
+  - csharp
+  - vb
+  name: TryFindIndexOfMaxBiggerThanReference(List<KeyValuePair<TKey, TValue>>, Int32, List<Int32>, TKey, out Int32)
+  nameWithType: BinaryHeapBase<TKey, TValue>.TryFindIndexOfMaxBiggerThanReference(List<KeyValuePair<TKey, TValue>>, Int32, List<Int32>, TKey, out Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.TryFindIndexOfMaxBiggerThanReference(System.Collections.Generic.List<System.Collections.Generic.KeyValuePair<TKey, TValue>>, System.Int32, System.Collections.Generic.List<System.Int32>, TKey, out System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Source/DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: TryFindIndexOfMaxBiggerThanReference
+    path: ../DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+    startLine: 188
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.BinaryHeaps.API
+  summary: "\nFinds the maximum element in the array, among the given indexes, with respect to maxValueReference, and returns the index of the max value. \n"
+  example: []
+  syntax:
+    content: public bool TryFindIndexOfMaxBiggerThanReference(List<KeyValuePair<TKey, TValue>> list, int listLength, List<int> indexes, TKey maxKeyReference, out int maxKeyIndex)
+    parameters:
+    - id: list
+      type: System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}
+      description: 'Specifies the list of values. '
+    - id: listLength
+      type: System.Int32
+      description: 'Specifies the length of values array, which based on the usage, might be less than values.Count. For example when called via Heap-Sort. '
+    - id: indexes
+      type: System.Collections.Generic.List{System.Int32}
+      description: 'Specifies the list of indexes among which we want to find the maximum value. '
+    - id: maxKeyReference
+      type: '{TKey}'
+      description: 'Specifies the reference for the maximum value.  '
+    - id: maxKeyIndex
+      type: System.Int32
+      description: 'Specifies the index of the maximum value among the specifies indexes. '
+    return:
+      type: System.Boolean
+      description: 'True in case of success, and false in case of failure. '
+    content.vb: Public Function TryFindIndexOfMaxBiggerThanReference(list As List(Of KeyValuePair(Of TKey, TValue)), listLength As Integer, indexes As List(Of Integer), maxKeyReference As TKey, ByRef maxKeyIndex As Integer) As Boolean
+  overload: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryFindIndexOfMaxBiggerThanReference*
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).TryFindIndexOfMaxBiggerThanReference(List(Of KeyValuePair(Of TKey, TValue)), Int32, List(Of Int32), TKey, ByRef Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).TryFindIndexOfMaxBiggerThanReference(System.Collections.Generic.List(Of System.Collections.Generic.KeyValuePair(Of TKey, TValue)), System.Int32, System.Collections.Generic.List(Of System.Int32), TKey, ByRef System.Int32)
+  name.vb: TryFindIndexOfMaxBiggerThanReference(List(Of KeyValuePair(Of TKey, TValue)), Int32, List(Of Int32), TKey, ByRef Int32)
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.FindIndex(`0)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.FindIndex(`0)
+  id: FindIndex(`0)
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  langs:
+  - csharp
+  - vb
+  name: FindIndex(TKey)
+  nameWithType: BinaryHeapBase<TKey, TValue>.FindIndex(TKey)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.FindIndex(TKey)
+  type: Method
+  source:
+    remote:
+      path: Source/DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+      branch: dev/pijei/AddingDocFx
+      repo: https://github.com/PiJei/CSFundamentalAlgorithms.git
+    id: FindIndex
+    path: ../DataStructures/BinaryHeaps/API/BinaryHeapBase.cs
+    startLine: 219
+  assemblies:
+  - CSFundamentals
+  namespace: CSFundamentals.DataStructures.BinaryHeaps.API
+  summary: "\nFind the index of a key in the heap array. \n"
+  example: []
+  syntax:
+    content: public int FindIndex(TKey key)
+    parameters:
+    - id: key
+      type: '{TKey}'
+      description: 'Is a key for which the index in the array must be found. '
+    return:
+      type: System.Int32
+      description: 'The array index of the <code data-dev-comment-type="paramref" class="paramref">key</code> if it exists and -1 otherwise. '
+    content.vb: Public Function FindIndex(key As TKey) As Integer
+  overload: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.FindIndex*
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).FindIndex(TKey)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).FindIndex(TKey)
+references:
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API
+  commentId: N:CSFundamentals.DataStructures.BinaryHeaps.API
+  name: CSFundamentals.DataStructures.BinaryHeaps.API
+  nameWithType: CSFundamentals.DataStructures.BinaryHeaps.API
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}
+  commentId: T:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{`0,`1}
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API
+  definition: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2
+  name: IBinaryHeap<TKey, TValue>
+  nameWithType: IBinaryHeap<TKey, TValue>
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>
+  nameWithType.vb: IBinaryHeap(Of TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue)
+  name.vb: IBinaryHeap(Of TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2
+    name: IBinaryHeap
+    nameWithType: IBinaryHeap
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2
+    name: IBinaryHeap
+    nameWithType: IBinaryHeap
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2
+  commentId: T:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2
+  name: IBinaryHeap<TKey, TValue>
+  nameWithType: IBinaryHeap<TKey, TValue>
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>
+  nameWithType.vb: IBinaryHeap(Of TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue)
+  name.vb: IBinaryHeap(Of TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2
+    name: IBinaryHeap
+    nameWithType: IBinaryHeap
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2
+    name: IBinaryHeap
+    nameWithType: IBinaryHeap
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BuildHeap_Iteratively*
+  commentId: Overload:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BuildHeap_Iteratively
+  name: BuildHeap_Iteratively
+  nameWithType: BinaryHeapBase<TKey, TValue>.BuildHeap_Iteratively
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.BuildHeap_Iteratively
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).BuildHeap_Iteratively
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).BuildHeap_Iteratively
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}.BuildHeap_Iteratively(System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{`0,`1}.BuildHeap_Iteratively(System.Int32)
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BuildHeap_Iteratively(System.Int32)
+  name: BuildHeap_Iteratively(Int32)
+  nameWithType: IBinaryHeap<TKey, TValue>.BuildHeap_Iteratively(Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.BuildHeap_Iteratively(System.Int32)
+  nameWithType.vb: IBinaryHeap(Of TKey, TValue).BuildHeap_Iteratively(Int32)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).BuildHeap_Iteratively(System.Int32)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BuildHeap_Iteratively(System.Int32)
+    name: BuildHeap_Iteratively
+    nameWithType: IBinaryHeap<TKey, TValue>.BuildHeap_Iteratively
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.BuildHeap_Iteratively
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BuildHeap_Iteratively(System.Int32)
+    name: BuildHeap_Iteratively
+    nameWithType: IBinaryHeap(Of TKey, TValue).BuildHeap_Iteratively
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).BuildHeap_Iteratively
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BuildHeap_Iteratively(System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BuildHeap_Iteratively(System.Int32)
+  isExternal: true
+  name: BuildHeap_Iteratively(Int32)
+  nameWithType: IBinaryHeap<TKey, TValue>.BuildHeap_Iteratively(Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.BuildHeap_Iteratively(System.Int32)
+  nameWithType.vb: IBinaryHeap(Of TKey, TValue).BuildHeap_Iteratively(Int32)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).BuildHeap_Iteratively(System.Int32)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BuildHeap_Iteratively(System.Int32)
+    name: BuildHeap_Iteratively
+    nameWithType: IBinaryHeap<TKey, TValue>.BuildHeap_Iteratively
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.BuildHeap_Iteratively
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BuildHeap_Iteratively(System.Int32)
+    name: BuildHeap_Iteratively
+    nameWithType: IBinaryHeap(Of TKey, TValue).BuildHeap_Iteratively
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).BuildHeap_Iteratively
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BuildHeap_Recursively*
+  commentId: Overload:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BuildHeap_Recursively
+  name: BuildHeap_Recursively
+  nameWithType: BinaryHeapBase<TKey, TValue>.BuildHeap_Recursively
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.BuildHeap_Recursively
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).BuildHeap_Recursively
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).BuildHeap_Recursively
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}.BuildHeap_Recursively(System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{`0,`1}.BuildHeap_Recursively(System.Int32)
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BuildHeap_Recursively(System.Int32)
+  name: BuildHeap_Recursively(Int32)
+  nameWithType: IBinaryHeap<TKey, TValue>.BuildHeap_Recursively(Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.BuildHeap_Recursively(System.Int32)
+  nameWithType.vb: IBinaryHeap(Of TKey, TValue).BuildHeap_Recursively(Int32)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).BuildHeap_Recursively(System.Int32)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BuildHeap_Recursively(System.Int32)
+    name: BuildHeap_Recursively
+    nameWithType: IBinaryHeap<TKey, TValue>.BuildHeap_Recursively
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.BuildHeap_Recursively
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BuildHeap_Recursively(System.Int32)
+    name: BuildHeap_Recursively
+    nameWithType: IBinaryHeap(Of TKey, TValue).BuildHeap_Recursively
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).BuildHeap_Recursively
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BuildHeap_Recursively(System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BuildHeap_Recursively(System.Int32)
+  isExternal: true
+  name: BuildHeap_Recursively(Int32)
+  nameWithType: IBinaryHeap<TKey, TValue>.BuildHeap_Recursively(Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.BuildHeap_Recursively(System.Int32)
+  nameWithType.vb: IBinaryHeap(Of TKey, TValue).BuildHeap_Recursively(Int32)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).BuildHeap_Recursively(System.Int32)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BuildHeap_Recursively(System.Int32)
+    name: BuildHeap_Recursively
+    nameWithType: IBinaryHeap<TKey, TValue>.BuildHeap_Recursively
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.BuildHeap_Recursively
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BuildHeap_Recursively(System.Int32)
+    name: BuildHeap_Recursively
+    nameWithType: IBinaryHeap(Of TKey, TValue).BuildHeap_Recursively
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).BuildHeap_Recursively
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.Insert*
+  commentId: Overload:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.Insert
+  name: Insert
+  nameWithType: BinaryHeapBase<TKey, TValue>.Insert
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.Insert
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).Insert
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).Insert
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}.Insert(System.Collections.Generic.KeyValuePair{{TKey},{TValue}},System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{`0,`1}.Insert(System.Collections.Generic.KeyValuePair{`0,`1},System.Int32)
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.Insert(System.Collections.Generic.KeyValuePair{`0,`1},System.Int32)
+  name: Insert(KeyValuePair<TKey, TValue>, Int32)
+  nameWithType: IBinaryHeap<TKey, TValue>.Insert(KeyValuePair<TKey, TValue>, Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.Insert(System.Collections.Generic.KeyValuePair<TKey, TValue>, System.Int32)
+  nameWithType.vb: IBinaryHeap(Of TKey, TValue).Insert(KeyValuePair(Of TKey, TValue), Int32)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).Insert(System.Collections.Generic.KeyValuePair(Of TKey, TValue), System.Int32)
+  name.vb: Insert(KeyValuePair(Of TKey, TValue), Int32)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.Insert(System.Collections.Generic.KeyValuePair{`0,`1},System.Int32)
+    name: Insert
+    nameWithType: IBinaryHeap<TKey, TValue>.Insert
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.Insert
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.Insert(System.Collections.Generic.KeyValuePair{`0,`1},System.Int32)
+    name: Insert
+    nameWithType: IBinaryHeap(Of TKey, TValue).Insert
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).Insert
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.KeyValuePair{{TKey},{TValue}}
+  commentId: T:System.Collections.Generic.KeyValuePair{`0,`1}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.KeyValuePair`2
+  name: KeyValuePair<TKey, TValue>
+  nameWithType: KeyValuePair<TKey, TValue>
+  fullName: System.Collections.Generic.KeyValuePair<TKey, TValue>
+  nameWithType.vb: KeyValuePair(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.KeyValuePair(Of TKey, TValue)
+  name.vb: KeyValuePair(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.Insert(System.Collections.Generic.KeyValuePair{`0,`1},System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.Insert(System.Collections.Generic.KeyValuePair{`0,`1},System.Int32)
+  isExternal: true
+  name: Insert(KeyValuePair<TKey, TValue>, Int32)
+  nameWithType: IBinaryHeap<TKey, TValue>.Insert(KeyValuePair<TKey, TValue>, Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.Insert(System.Collections.Generic.KeyValuePair<TKey, TValue>, System.Int32)
+  nameWithType.vb: IBinaryHeap(Of TKey, TValue).Insert(KeyValuePair(Of TKey, TValue), Int32)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).Insert(System.Collections.Generic.KeyValuePair(Of TKey, TValue), System.Int32)
+  name.vb: Insert(KeyValuePair(Of TKey, TValue), Int32)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.Insert(System.Collections.Generic.KeyValuePair{`0,`1},System.Int32)
+    name: Insert
+    nameWithType: IBinaryHeap<TKey, TValue>.Insert
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.Insert
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.Insert(System.Collections.Generic.KeyValuePair{`0,`1},System.Int32)
+    name: Insert
+    nameWithType: IBinaryHeap(Of TKey, TValue).Insert
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).Insert
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.KeyValuePair`2
+  commentId: T:System.Collections.Generic.KeyValuePair`2
+  isExternal: true
+  name: KeyValuePair<TKey, TValue>
+  nameWithType: KeyValuePair<TKey, TValue>
+  fullName: System.Collections.Generic.KeyValuePair<TKey, TValue>
+  nameWithType.vb: KeyValuePair(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.KeyValuePair(Of TKey, TValue)
+  name.vb: KeyValuePair(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryRemoveRoot*
+  commentId: Overload:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryRemoveRoot
+  name: TryRemoveRoot
+  nameWithType: BinaryHeapBase<TKey, TValue>.TryRemoveRoot
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.TryRemoveRoot
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).TryRemoveRoot
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).TryRemoveRoot
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}.TryRemoveRoot(System.Collections.Generic.KeyValuePair{{TKey},{TValue}}@,System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{`0,`1}.TryRemoveRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.TryRemoveRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)
+  name: TryRemoveRoot(KeyValuePair<TKey, TValue>, Int32)
+  nameWithType: IBinaryHeap<TKey, TValue>.TryRemoveRoot(KeyValuePair<TKey, TValue>, Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.TryRemoveRoot(System.Collections.Generic.KeyValuePair<TKey, TValue>, System.Int32)
+  nameWithType.vb: IBinaryHeap(Of TKey, TValue).TryRemoveRoot(KeyValuePair(Of TKey, TValue), Int32)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).TryRemoveRoot(System.Collections.Generic.KeyValuePair(Of TKey, TValue), System.Int32)
+  name.vb: TryRemoveRoot(KeyValuePair(Of TKey, TValue), Int32)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.TryRemoveRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)
+    name: TryRemoveRoot
+    nameWithType: IBinaryHeap<TKey, TValue>.TryRemoveRoot
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.TryRemoveRoot
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.TryRemoveRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)
+    name: TryRemoveRoot
+    nameWithType: IBinaryHeap(Of TKey, TValue).TryRemoveRoot
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).TryRemoveRoot
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.TryRemoveRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.TryRemoveRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)
+  isExternal: true
+  name: TryRemoveRoot(KeyValuePair<TKey, TValue>, Int32)
+  nameWithType: IBinaryHeap<TKey, TValue>.TryRemoveRoot(KeyValuePair<TKey, TValue>, Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.TryRemoveRoot(System.Collections.Generic.KeyValuePair<TKey, TValue>, System.Int32)
+  nameWithType.vb: IBinaryHeap(Of TKey, TValue).TryRemoveRoot(KeyValuePair(Of TKey, TValue), Int32)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).TryRemoveRoot(System.Collections.Generic.KeyValuePair(Of TKey, TValue), System.Int32)
+  name.vb: TryRemoveRoot(KeyValuePair(Of TKey, TValue), Int32)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.TryRemoveRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)
+    name: TryRemoveRoot
+    nameWithType: IBinaryHeap<TKey, TValue>.TryRemoveRoot
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.TryRemoveRoot
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.TryRemoveRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)
+    name: TryRemoveRoot
+    nameWithType: IBinaryHeap(Of TKey, TValue).TryRemoveRoot
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).TryRemoveRoot
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryFindRoot*
+  commentId: Overload:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryFindRoot
+  name: TryFindRoot
+  nameWithType: BinaryHeapBase<TKey, TValue>.TryFindRoot
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.TryFindRoot
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).TryFindRoot
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).TryFindRoot
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}.TryFindRoot(System.Collections.Generic.KeyValuePair{{TKey},{TValue}}@,System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{`0,`1}.TryFindRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.TryFindRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)
+  name: TryFindRoot(KeyValuePair<TKey, TValue>, Int32)
+  nameWithType: IBinaryHeap<TKey, TValue>.TryFindRoot(KeyValuePair<TKey, TValue>, Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.TryFindRoot(System.Collections.Generic.KeyValuePair<TKey, TValue>, System.Int32)
+  nameWithType.vb: IBinaryHeap(Of TKey, TValue).TryFindRoot(KeyValuePair(Of TKey, TValue), Int32)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).TryFindRoot(System.Collections.Generic.KeyValuePair(Of TKey, TValue), System.Int32)
+  name.vb: TryFindRoot(KeyValuePair(Of TKey, TValue), Int32)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.TryFindRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)
+    name: TryFindRoot
+    nameWithType: IBinaryHeap<TKey, TValue>.TryFindRoot
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.TryFindRoot
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.TryFindRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)
+    name: TryFindRoot
+    nameWithType: IBinaryHeap(Of TKey, TValue).TryFindRoot
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).TryFindRoot
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.TryFindRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.TryFindRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)
+  isExternal: true
+  name: TryFindRoot(KeyValuePair<TKey, TValue>, Int32)
+  nameWithType: IBinaryHeap<TKey, TValue>.TryFindRoot(KeyValuePair<TKey, TValue>, Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.TryFindRoot(System.Collections.Generic.KeyValuePair<TKey, TValue>, System.Int32)
+  nameWithType.vb: IBinaryHeap(Of TKey, TValue).TryFindRoot(KeyValuePair(Of TKey, TValue), Int32)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).TryFindRoot(System.Collections.Generic.KeyValuePair(Of TKey, TValue), System.Int32)
+  name.vb: TryFindRoot(KeyValuePair(Of TKey, TValue), Int32)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.TryFindRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)
+    name: TryFindRoot
+    nameWithType: IBinaryHeap<TKey, TValue>.TryFindRoot
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.TryFindRoot
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.TryFindRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)
+    name: TryFindRoot
+    nameWithType: IBinaryHeap(Of TKey, TValue).TryFindRoot
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).TryFindRoot
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BubbleDown_Recursively*
+  commentId: Overload:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BubbleDown_Recursively
+  name: BubbleDown_Recursively
+  nameWithType: BinaryHeapBase<TKey, TValue>.BubbleDown_Recursively
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.BubbleDown_Recursively
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).BubbleDown_Recursively
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).BubbleDown_Recursively
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}.BubbleDown_Recursively(System.Int32,System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{`0,`1}.BubbleDown_Recursively(System.Int32,System.Int32)
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BubbleDown_Recursively(System.Int32,System.Int32)
+  name: BubbleDown_Recursively(Int32, Int32)
+  nameWithType: IBinaryHeap<TKey, TValue>.BubbleDown_Recursively(Int32, Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.BubbleDown_Recursively(System.Int32, System.Int32)
+  nameWithType.vb: IBinaryHeap(Of TKey, TValue).BubbleDown_Recursively(Int32, Int32)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).BubbleDown_Recursively(System.Int32, System.Int32)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BubbleDown_Recursively(System.Int32,System.Int32)
+    name: BubbleDown_Recursively
+    nameWithType: IBinaryHeap<TKey, TValue>.BubbleDown_Recursively
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.BubbleDown_Recursively
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BubbleDown_Recursively(System.Int32,System.Int32)
+    name: BubbleDown_Recursively
+    nameWithType: IBinaryHeap(Of TKey, TValue).BubbleDown_Recursively
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).BubbleDown_Recursively
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BubbleDown_Recursively(System.Int32,System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BubbleDown_Recursively(System.Int32,System.Int32)
+  isExternal: true
+  name: BubbleDown_Recursively(Int32, Int32)
+  nameWithType: IBinaryHeap<TKey, TValue>.BubbleDown_Recursively(Int32, Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.BubbleDown_Recursively(System.Int32, System.Int32)
+  nameWithType.vb: IBinaryHeap(Of TKey, TValue).BubbleDown_Recursively(Int32, Int32)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).BubbleDown_Recursively(System.Int32, System.Int32)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BubbleDown_Recursively(System.Int32,System.Int32)
+    name: BubbleDown_Recursively
+    nameWithType: IBinaryHeap<TKey, TValue>.BubbleDown_Recursively
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.BubbleDown_Recursively
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BubbleDown_Recursively(System.Int32,System.Int32)
+    name: BubbleDown_Recursively
+    nameWithType: IBinaryHeap(Of TKey, TValue).BubbleDown_Recursively
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).BubbleDown_Recursively
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BubbleDown_Iteratively*
+  commentId: Overload:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BubbleDown_Iteratively
+  name: BubbleDown_Iteratively
+  nameWithType: BinaryHeapBase<TKey, TValue>.BubbleDown_Iteratively
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.BubbleDown_Iteratively
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).BubbleDown_Iteratively
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).BubbleDown_Iteratively
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}.BubbleDown_Iteratively(System.Int32,System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{`0,`1}.BubbleDown_Iteratively(System.Int32,System.Int32)
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BubbleDown_Iteratively(System.Int32,System.Int32)
+  name: BubbleDown_Iteratively(Int32, Int32)
+  nameWithType: IBinaryHeap<TKey, TValue>.BubbleDown_Iteratively(Int32, Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.BubbleDown_Iteratively(System.Int32, System.Int32)
+  nameWithType.vb: IBinaryHeap(Of TKey, TValue).BubbleDown_Iteratively(Int32, Int32)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).BubbleDown_Iteratively(System.Int32, System.Int32)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BubbleDown_Iteratively(System.Int32,System.Int32)
+    name: BubbleDown_Iteratively
+    nameWithType: IBinaryHeap<TKey, TValue>.BubbleDown_Iteratively
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.BubbleDown_Iteratively
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BubbleDown_Iteratively(System.Int32,System.Int32)
+    name: BubbleDown_Iteratively
+    nameWithType: IBinaryHeap(Of TKey, TValue).BubbleDown_Iteratively
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).BubbleDown_Iteratively
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BubbleDown_Iteratively(System.Int32,System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BubbleDown_Iteratively(System.Int32,System.Int32)
+  isExternal: true
+  name: BubbleDown_Iteratively(Int32, Int32)
+  nameWithType: IBinaryHeap<TKey, TValue>.BubbleDown_Iteratively(Int32, Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.BubbleDown_Iteratively(System.Int32, System.Int32)
+  nameWithType.vb: IBinaryHeap(Of TKey, TValue).BubbleDown_Iteratively(Int32, Int32)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).BubbleDown_Iteratively(System.Int32, System.Int32)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BubbleDown_Iteratively(System.Int32,System.Int32)
+    name: BubbleDown_Iteratively
+    nameWithType: IBinaryHeap<TKey, TValue>.BubbleDown_Iteratively
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.BubbleDown_Iteratively
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BubbleDown_Iteratively(System.Int32,System.Int32)
+    name: BubbleDown_Iteratively
+    nameWithType: IBinaryHeap(Of TKey, TValue).BubbleDown_Iteratively
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).BubbleDown_Iteratively
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BubbleUp_Iteratively*
+  commentId: Overload:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BubbleUp_Iteratively
+  name: BubbleUp_Iteratively
+  nameWithType: BinaryHeapBase<TKey, TValue>.BubbleUp_Iteratively
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.BubbleUp_Iteratively
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).BubbleUp_Iteratively
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).BubbleUp_Iteratively
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}.BubbleUp_Iteratively(System.Int32,System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{`0,`1}.BubbleUp_Iteratively(System.Int32,System.Int32)
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BubbleUp_Iteratively(System.Int32,System.Int32)
+  name: BubbleUp_Iteratively(Int32, Int32)
+  nameWithType: IBinaryHeap<TKey, TValue>.BubbleUp_Iteratively(Int32, Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.BubbleUp_Iteratively(System.Int32, System.Int32)
+  nameWithType.vb: IBinaryHeap(Of TKey, TValue).BubbleUp_Iteratively(Int32, Int32)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).BubbleUp_Iteratively(System.Int32, System.Int32)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BubbleUp_Iteratively(System.Int32,System.Int32)
+    name: BubbleUp_Iteratively
+    nameWithType: IBinaryHeap<TKey, TValue>.BubbleUp_Iteratively
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.BubbleUp_Iteratively
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BubbleUp_Iteratively(System.Int32,System.Int32)
+    name: BubbleUp_Iteratively
+    nameWithType: IBinaryHeap(Of TKey, TValue).BubbleUp_Iteratively
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).BubbleUp_Iteratively
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BubbleUp_Iteratively(System.Int32,System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BubbleUp_Iteratively(System.Int32,System.Int32)
+  isExternal: true
+  name: BubbleUp_Iteratively(Int32, Int32)
+  nameWithType: IBinaryHeap<TKey, TValue>.BubbleUp_Iteratively(Int32, Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.BubbleUp_Iteratively(System.Int32, System.Int32)
+  nameWithType.vb: IBinaryHeap(Of TKey, TValue).BubbleUp_Iteratively(Int32, Int32)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).BubbleUp_Iteratively(System.Int32, System.Int32)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BubbleUp_Iteratively(System.Int32,System.Int32)
+    name: BubbleUp_Iteratively
+    nameWithType: IBinaryHeap<TKey, TValue>.BubbleUp_Iteratively
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.BubbleUp_Iteratively
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BubbleUp_Iteratively(System.Int32,System.Int32)
+    name: BubbleUp_Iteratively
+    nameWithType: IBinaryHeap(Of TKey, TValue).BubbleUp_Iteratively
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).BubbleUp_Iteratively
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}
+  commentId: T:System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<KeyValuePair<TKey, TValue>>
+  nameWithType: List<KeyValuePair<TKey, TValue>>
+  fullName: System.Collections.Generic.List<System.Collections.Generic.KeyValuePair<TKey, TValue>>
+  nameWithType.vb: List(Of KeyValuePair(Of TKey, TValue))
+  fullName.vb: System.Collections.Generic.List(Of System.Collections.Generic.KeyValuePair(Of TKey, TValue))
+  name.vb: List(Of KeyValuePair(Of TKey, TValue))
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.#ctor*
+  commentId: Overload:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.#ctor
+  name: BinaryHeapBase
+  nameWithType: BinaryHeapBase<TKey, TValue>.BinaryHeapBase
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.BinaryHeapBase
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).BinaryHeapBase
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).BinaryHeapBase
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.GetLeftChildIndexInHeapArray*
+  commentId: Overload:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.GetLeftChildIndexInHeapArray
+  name: GetLeftChildIndexInHeapArray
+  nameWithType: BinaryHeapBase<TKey, TValue>.GetLeftChildIndexInHeapArray
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.GetLeftChildIndexInHeapArray
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).GetLeftChildIndexInHeapArray
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).GetLeftChildIndexInHeapArray
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}.GetLeftChildIndexInHeapArray(System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{`0,`1}.GetLeftChildIndexInHeapArray(System.Int32)
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetLeftChildIndexInHeapArray(System.Int32)
+  name: GetLeftChildIndexInHeapArray(Int32)
+  nameWithType: IBinaryHeap<TKey, TValue>.GetLeftChildIndexInHeapArray(Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.GetLeftChildIndexInHeapArray(System.Int32)
+  nameWithType.vb: IBinaryHeap(Of TKey, TValue).GetLeftChildIndexInHeapArray(Int32)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).GetLeftChildIndexInHeapArray(System.Int32)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetLeftChildIndexInHeapArray(System.Int32)
+    name: GetLeftChildIndexInHeapArray
+    nameWithType: IBinaryHeap<TKey, TValue>.GetLeftChildIndexInHeapArray
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.GetLeftChildIndexInHeapArray
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetLeftChildIndexInHeapArray(System.Int32)
+    name: GetLeftChildIndexInHeapArray
+    nameWithType: IBinaryHeap(Of TKey, TValue).GetLeftChildIndexInHeapArray
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).GetLeftChildIndexInHeapArray
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetLeftChildIndexInHeapArray(System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetLeftChildIndexInHeapArray(System.Int32)
+  isExternal: true
+  name: GetLeftChildIndexInHeapArray(Int32)
+  nameWithType: IBinaryHeap<TKey, TValue>.GetLeftChildIndexInHeapArray(Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.GetLeftChildIndexInHeapArray(System.Int32)
+  nameWithType.vb: IBinaryHeap(Of TKey, TValue).GetLeftChildIndexInHeapArray(Int32)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).GetLeftChildIndexInHeapArray(System.Int32)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetLeftChildIndexInHeapArray(System.Int32)
+    name: GetLeftChildIndexInHeapArray
+    nameWithType: IBinaryHeap<TKey, TValue>.GetLeftChildIndexInHeapArray
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.GetLeftChildIndexInHeapArray
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetLeftChildIndexInHeapArray(System.Int32)
+    name: GetLeftChildIndexInHeapArray
+    nameWithType: IBinaryHeap(Of TKey, TValue).GetLeftChildIndexInHeapArray
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).GetLeftChildIndexInHeapArray
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.GetRightChildIndexInHeapArray*
+  commentId: Overload:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.GetRightChildIndexInHeapArray
+  name: GetRightChildIndexInHeapArray
+  nameWithType: BinaryHeapBase<TKey, TValue>.GetRightChildIndexInHeapArray
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.GetRightChildIndexInHeapArray
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).GetRightChildIndexInHeapArray
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).GetRightChildIndexInHeapArray
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}.GetRightChildIndexInHeapArray(System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{`0,`1}.GetRightChildIndexInHeapArray(System.Int32)
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetRightChildIndexInHeapArray(System.Int32)
+  name: GetRightChildIndexInHeapArray(Int32)
+  nameWithType: IBinaryHeap<TKey, TValue>.GetRightChildIndexInHeapArray(Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.GetRightChildIndexInHeapArray(System.Int32)
+  nameWithType.vb: IBinaryHeap(Of TKey, TValue).GetRightChildIndexInHeapArray(Int32)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).GetRightChildIndexInHeapArray(System.Int32)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetRightChildIndexInHeapArray(System.Int32)
+    name: GetRightChildIndexInHeapArray
+    nameWithType: IBinaryHeap<TKey, TValue>.GetRightChildIndexInHeapArray
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.GetRightChildIndexInHeapArray
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetRightChildIndexInHeapArray(System.Int32)
+    name: GetRightChildIndexInHeapArray
+    nameWithType: IBinaryHeap(Of TKey, TValue).GetRightChildIndexInHeapArray
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).GetRightChildIndexInHeapArray
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetRightChildIndexInHeapArray(System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetRightChildIndexInHeapArray(System.Int32)
+  isExternal: true
+  name: GetRightChildIndexInHeapArray(Int32)
+  nameWithType: IBinaryHeap<TKey, TValue>.GetRightChildIndexInHeapArray(Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.GetRightChildIndexInHeapArray(System.Int32)
+  nameWithType.vb: IBinaryHeap(Of TKey, TValue).GetRightChildIndexInHeapArray(Int32)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).GetRightChildIndexInHeapArray(System.Int32)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetRightChildIndexInHeapArray(System.Int32)
+    name: GetRightChildIndexInHeapArray
+    nameWithType: IBinaryHeap<TKey, TValue>.GetRightChildIndexInHeapArray
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.GetRightChildIndexInHeapArray
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetRightChildIndexInHeapArray(System.Int32)
+    name: GetRightChildIndexInHeapArray
+    nameWithType: IBinaryHeap(Of TKey, TValue).GetRightChildIndexInHeapArray
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).GetRightChildIndexInHeapArray
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.GetParentIndex*
+  commentId: Overload:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.GetParentIndex
+  name: GetParentIndex
+  nameWithType: BinaryHeapBase<TKey, TValue>.GetParentIndex
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.GetParentIndex
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).GetParentIndex
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).GetParentIndex
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}.GetParentIndex(System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{`0,`1}.GetParentIndex(System.Int32)
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetParentIndex(System.Int32)
+  name: GetParentIndex(Int32)
+  nameWithType: IBinaryHeap<TKey, TValue>.GetParentIndex(Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.GetParentIndex(System.Int32)
+  nameWithType.vb: IBinaryHeap(Of TKey, TValue).GetParentIndex(Int32)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).GetParentIndex(System.Int32)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetParentIndex(System.Int32)
+    name: GetParentIndex
+    nameWithType: IBinaryHeap<TKey, TValue>.GetParentIndex
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.GetParentIndex
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetParentIndex(System.Int32)
+    name: GetParentIndex
+    nameWithType: IBinaryHeap(Of TKey, TValue).GetParentIndex
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).GetParentIndex
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetParentIndex(System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetParentIndex(System.Int32)
+  isExternal: true
+  name: GetParentIndex(Int32)
+  nameWithType: IBinaryHeap<TKey, TValue>.GetParentIndex(Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.GetParentIndex(System.Int32)
+  nameWithType.vb: IBinaryHeap(Of TKey, TValue).GetParentIndex(Int32)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).GetParentIndex(System.Int32)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetParentIndex(System.Int32)
+    name: GetParentIndex
+    nameWithType: IBinaryHeap<TKey, TValue>.GetParentIndex
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.GetParentIndex
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetParentIndex(System.Int32)
+    name: GetParentIndex
+    nameWithType: IBinaryHeap(Of TKey, TValue).GetParentIndex
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).GetParentIndex
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.GetNodeLevel*
+  commentId: Overload:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.GetNodeLevel
+  name: GetNodeLevel
+  nameWithType: BinaryHeapBase<TKey, TValue>.GetNodeLevel
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.GetNodeLevel
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).GetNodeLevel
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).GetNodeLevel
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}.GetNodeLevel(System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{`0,`1}.GetNodeLevel(System.Int32)
+  parent: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap{{TKey},{TValue}}
+  definition: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetNodeLevel(System.Int32)
+  name: GetNodeLevel(Int32)
+  nameWithType: IBinaryHeap<TKey, TValue>.GetNodeLevel(Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.GetNodeLevel(System.Int32)
+  nameWithType.vb: IBinaryHeap(Of TKey, TValue).GetNodeLevel(Int32)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).GetNodeLevel(System.Int32)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetNodeLevel(System.Int32)
+    name: GetNodeLevel
+    nameWithType: IBinaryHeap<TKey, TValue>.GetNodeLevel
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.GetNodeLevel
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetNodeLevel(System.Int32)
+    name: GetNodeLevel
+    nameWithType: IBinaryHeap(Of TKey, TValue).GetNodeLevel
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).GetNodeLevel
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetNodeLevel(System.Int32)
+  commentId: M:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetNodeLevel(System.Int32)
+  isExternal: true
+  name: GetNodeLevel(Int32)
+  nameWithType: IBinaryHeap<TKey, TValue>.GetNodeLevel(Int32)
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.GetNodeLevel(System.Int32)
+  nameWithType.vb: IBinaryHeap(Of TKey, TValue).GetNodeLevel(Int32)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).GetNodeLevel(System.Int32)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetNodeLevel(System.Int32)
+    name: GetNodeLevel
+    nameWithType: IBinaryHeap<TKey, TValue>.GetNodeLevel
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>.GetNodeLevel
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetNodeLevel(System.Int32)
+    name: GetNodeLevel
+    nameWithType: IBinaryHeap(Of TKey, TValue).GetNodeLevel
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue).GetNodeLevel
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryFindIndexOfMinSmallerThanReference*
+  commentId: Overload:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryFindIndexOfMinSmallerThanReference
+  name: TryFindIndexOfMinSmallerThanReference
+  nameWithType: BinaryHeapBase<TKey, TValue>.TryFindIndexOfMinSmallerThanReference
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.TryFindIndexOfMinSmallerThanReference
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).TryFindIndexOfMinSmallerThanReference
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).TryFindIndexOfMinSmallerThanReference
+- uid: System.Collections.Generic.List{System.Int32}
+  commentId: T:System.Collections.Generic.List{System.Int32}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Int32>
+  nameWithType: List<Int32>
+  fullName: System.Collections.Generic.List<System.Int32>
+  nameWithType.vb: List(Of Int32)
+  fullName.vb: System.Collections.Generic.List(Of System.Int32)
+  name.vb: List(Of Int32)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: '{TKey}'
+  commentId: '!:TKey'
+  definition: TKey
+  name: TKey
+  nameWithType: TKey
+  fullName: TKey
+- uid: TKey
+  name: TKey
+  nameWithType: TKey
+  fullName: TKey
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryFindIndexOfMaxBiggerThanReference*
+  commentId: Overload:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.TryFindIndexOfMaxBiggerThanReference
+  name: TryFindIndexOfMaxBiggerThanReference
+  nameWithType: BinaryHeapBase<TKey, TValue>.TryFindIndexOfMaxBiggerThanReference
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.TryFindIndexOfMaxBiggerThanReference
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).TryFindIndexOfMaxBiggerThanReference
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).TryFindIndexOfMaxBiggerThanReference
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.FindIndex*
+  commentId: Overload:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.FindIndex
+  name: FindIndex
+  nameWithType: BinaryHeapBase<TKey, TValue>.FindIndex
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>.FindIndex
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue).FindIndex
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue).FindIndex

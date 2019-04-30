@@ -1,0 +1,114 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API
+  commentId: N:CSFundamentals.DataStructures.BinaryHeaps.API
+  id: CSFundamentals.DataStructures.BinaryHeaps.API
+  children:
+  - CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  - CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2
+  langs:
+  - csharp
+  - vb
+  name: CSFundamentals.DataStructures.BinaryHeaps.API
+  nameWithType: CSFundamentals.DataStructures.BinaryHeaps.API
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API
+  type: Namespace
+  assemblies:
+  - CSFundamentals
+references:
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  commentId: T:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+  name: BinaryHeapBase<TKey, TValue>
+  nameWithType: BinaryHeapBase<TKey, TValue>
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase<TKey, TValue>
+  nameWithType.vb: BinaryHeapBase(Of TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase(Of TKey, TValue)
+  name.vb: BinaryHeapBase(Of TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+    name: BinaryHeapBase
+    nameWithType: BinaryHeapBase
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2
+    name: BinaryHeapBase
+    nameWithType: BinaryHeapBase
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2
+  commentId: T:CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2
+  name: IBinaryHeap<TKey, TValue>
+  nameWithType: IBinaryHeap<TKey, TValue>
+  fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap<TKey, TValue>
+  nameWithType.vb: IBinaryHeap(Of TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap(Of TKey, TValue)
+  name.vb: IBinaryHeap(Of TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2
+    name: IBinaryHeap
+    nameWithType: IBinaryHeap
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2
+    name: IBinaryHeap
+    nameWithType: IBinaryHeap
+    fullName: CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )

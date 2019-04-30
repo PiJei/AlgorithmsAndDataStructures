@@ -1,0 +1,199 @@
+### YamlMime:ManagedReference
+items:
+- uid: CSFundamentals.DataStructures.Trees.Binary.API
+  commentId: N:CSFundamentals.DataStructures.Trees.Binary.API
+  id: CSFundamentals.DataStructures.Trees.Binary.API
+  children:
+  - CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase`3
+  - CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3
+  - CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode`3
+  langs:
+  - csharp
+  - vb
+  name: CSFundamentals.DataStructures.Trees.Binary.API
+  nameWithType: CSFundamentals.DataStructures.Trees.Binary.API
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API
+  type: Namespace
+  assemblies:
+  - CSFundamentals
+references:
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase`3
+  commentId: T:CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase`3
+  name: BinarySearchTreeBase<TNode, TKey, TValue>
+  nameWithType: BinarySearchTreeBase<TNode, TKey, TValue>
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase<TNode, TKey, TValue>
+  nameWithType.vb: BinarySearchTreeBase(Of TNode, TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase(Of TNode, TKey, TValue)
+  name.vb: BinarySearchTreeBase(Of TNode, TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase`3
+    name: BinarySearchTreeBase
+    nameWithType: BinarySearchTreeBase
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase`3
+    name: BinarySearchTreeBase
+    nameWithType: BinarySearchTreeBase
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3
+  commentId: T:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3
+  name: BinaryTreeNode<TNode, TKey, TValue>
+  nameWithType: BinaryTreeNode<TNode, TKey, TValue>
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode<TNode, TKey, TValue>
+  nameWithType.vb: BinaryTreeNode(Of TNode, TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode(Of TNode, TKey, TValue)
+  name.vb: BinaryTreeNode(Of TNode, TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3
+    name: BinaryTreeNode
+    nameWithType: BinaryTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3
+    name: BinaryTreeNode
+    nameWithType: BinaryTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode`3
+  commentId: T:CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode`3
+  name: IBinaryTreeNode<TNode, TKey, TValue>
+  nameWithType: IBinaryTreeNode<TNode, TKey, TValue>
+  fullName: CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode<TNode, TKey, TValue>
+  nameWithType.vb: IBinaryTreeNode(Of TNode, TKey, TValue)
+  fullName.vb: CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode(Of TNode, TKey, TValue)
+  name.vb: IBinaryTreeNode(Of TNode, TKey, TValue)
+  spec.csharp:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode`3
+    name: IBinaryTreeNode
+    nameWithType: IBinaryTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode`3
+    name: IBinaryTreeNode
+    nameWithType: IBinaryTreeNode
+    fullName: CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TNode
+    nameWithType: TNode
+    fullName: TNode
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
