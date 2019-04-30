@@ -8,7 +8,8 @@
     <DocumentationFile>CSFundamentals.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
-
+    <LogFile>$(MSBuildProjectDirectory)\DocFx\log.txt</LogFile>
+    <LogLevel>Warning</LogLevel>
 	<DocfxConfigFile Condition=" '$(DocfxConfigFile)' == '' ">$(MSBuildProjectDirectory)\DocFx\docfx.json</DocfxConfigFile>
   </PropertyGroup>
 
