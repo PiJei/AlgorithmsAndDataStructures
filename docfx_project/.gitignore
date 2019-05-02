@@ -6,5 +6,4 @@
 /**/packages/
 /**/bin/
 /**/obj/
-/**/log.txt
-/**/_site/
+_site

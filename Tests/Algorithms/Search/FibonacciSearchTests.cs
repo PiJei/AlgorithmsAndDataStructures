@@ -24,7 +24,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CSFundamentalsTests.Algorithms.Search
 {
     /// <summary>
-    /// Tests methods in <see cref="= FibonacciSearch"/> class. 
+    /// Tests methods in <see cref=" FibonacciSearch"/> class. 
     /// </summary>
     [TestClass]
     public class FibonacciSearchTests
