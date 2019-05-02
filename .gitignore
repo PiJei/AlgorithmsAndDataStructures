@@ -3,3 +3,10 @@
 */obj
 */.vs
 .vs
+
+/**/DROP/
+/**/TEMP/
+/**/packages/
+/**/bin/
+/**/obj/
+/**/_site
