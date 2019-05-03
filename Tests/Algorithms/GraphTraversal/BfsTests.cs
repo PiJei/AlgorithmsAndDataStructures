@@ -40,6 +40,7 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
 
         /// <summary>
         /// Initializes/Resets variables before executing each unit test in this class. 
+        /// To visualize the graph see images/Graph-BFS-DFS.png
         /// </summary>
         [TestInitialize]
         public void Initialize()
