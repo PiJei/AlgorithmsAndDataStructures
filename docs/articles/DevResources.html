@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Coding Protocol </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Coding Protocol ">
+    <meta name="generator" content="docfx 2.42.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h2 id="coding-protocol">Coding Protocol</h2>
+
+<ol>
+<li><p>Before starting to code, make sure the task is tracked on <a href="https://github.com/PiJei/CSFundamentalAlgorithms/issues">Issues</a> or <a href="https://github.com/PiJei/CSFundamentalAlgorithms/projects/1#column-5181891">Kanban board</a>.</p>
+<ul>
+<li><p>For minor changes navigate to the <a href="https://github.com/PiJei/CSFundamentalAlgorithms/issues">Issues</a> tab, and check to see whether the issue you want to address is already listed. If not list it and assign it to yourself.</p>
+</li>
+<li><p>For implementing new algorithms or data structures navigate to the <a href="https://github.com/PiJei/CSFundamentalAlgorithms/projects/1#column-5181891">Kanban board</a>, and check to see whether the feature you want to implement is listed under any of the columns. If not add it under <a href="https://github.com/PiJei/CSFundamentalAlgorithms/projects/1#column-5181891">ToDo column</a>, and assign it to yourself. Once the implementation is complete and the feature is merged in with the master branch add it to the <a href="https://github.com/PiJei/CSFundamentalAlgorithms/wiki/Content">Content page</a>.</p>
+</li>
+<li><p>Other than that you can also pick existing items in the <a href="https://github.com/PiJei/CSFundamentalAlgorithms/issues">Issues</a> or <a href="https://github.com/PiJei/CSFundamentalAlgorithms/projects/1#column-5181891">ToDo column</a> in the <a href="https://github.com/PiJei/CSFundamentalAlgorithms/projects/1#column-5181891">Kanban board</a>, or add new items.</p>
+</li>
+</ul>
+</li>
+<li><p>When the work item is documented and tracked:</p>
+<ol>
+<li><p>On your local machine, clone this repository:</p>
+<pre><code> git clone https://github.com/PiJei/CSFundamentalAlgorithms.git
+</code></pre>
+</li>
+<li><p>Create a new local branch:</p>
+<pre><code> git checkout -b dev/{username}/{feature}. 
+</code></pre>
+</li>
+</ol>
+<p><em>Be aware that direct pushes to the master branch are prevented by default.</em></p>
+<ol>
+<li><p>When your implementation is complete and it is ready for a code review push your local branch to the repository:</p>
+<pre><code> git push --set-upstream origin dev/{username}/{feature}. 
+</code></pre>
+</li>
+<li><p>Navigate to your branch via GitHub API and create a pull request.</p>
+</li>
+<li><p>Once your pull request is reviewed/approved and you have addressed all the comments, squash and merge it with the master branch.</p>
+</li>
+</ol>
+</li>
+</ol>
+<h1 id="coding-guidelines">Coding guidelines</h1>
+<ul>
+<li><p>Coding standards for this repository are moderated via <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/master/.editorconfig">.editorconfig</a> file at the root directory.</p>
+</li>
+<li><p>Our recommended IDE is <a href="https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2019">Visual Studio latest version (2019 as of this writing)</a>.</p>
+</li>
+<li><p>Every *<strong>.cs</strong> file should start with the License Header. If using Visual Studio, install <a href="https://marketplace.visualstudio.com/items?itemName=StefanWenig.LicenseHeaderManager">License Header Manager</a>. For guidelines on how to use this extension see <a href="https://github.com/rubicon-oss/LicenseHeaderManager/wiki">here</a>.</p>
+</li>
+<li><p>To name unit test follow standards <a href="https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices">here</a>, or briefly follow this pattern: {Name of the method being tested}_{What is being tested}_{Expected behavior}.</p>
+</li>
+<li><p>For other naming conventions follow <a href="https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/general-naming-conventions">Microsoft General Naming Conventions</a>.</p>
+</li>
+<li><p>Make sure to provide XML documentation for all the methods and their parameters using <a href="https://docs.microsoft.com/en-us/dotnet/csharp/codedoc">XML documentation features</a>. The repository also uses <a href="https://dotnet.github.io/docfx/">DocFx</a> for generating readable documentation. Install DocFx, and run <code>docfx .\docfx_project\docfx.json --serve .\docfx_project\_site\</code> , to visit the site locally, navigate to <code>http://localhost:8080</code>.</p>
+</li>
+<li><p>Any new algorithm and data structure implementation should be decorated with time and space complexity attributes, and should be completely tested by adding unit tests.</p>
+</li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/master/docfx_project/articles/DevResources.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
