@@ -1,0 +1,615 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class MockBinarySearchTreeBase&lt;TKey, TValue&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class MockBinarySearchTreeBase&lt;TKey, TValue&gt;
+   ">
+    <meta name="generator" content="docfx 2.42.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase`2">
+  
+  
+  <h1 id="CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinarySearchTreeBase_2" data-uid="CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase`2" class="text-break">Class MockBinarySearchTreeBase&lt;TKey, TValue&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Implements a mock class to enable testing <a class="xref" href="CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase-3.html">BinarySearchTreeBase&lt;TNode, TKey, TValue&gt;</a>.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase-3.html">BinarySearchTreeBase</a>&lt;<a class="xref" href="CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode-2.html">MockBinaryTreeNode</a>&lt;TKey, TValue&gt;, TKey, TValue&gt;</div>
+    <div class="level2"><span class="xref">MockBinarySearchTreeBase&lt;TKey, TValue&gt;</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase-3.html#CSFundamentals_DataStructures_Trees_Binary_API_BinarySearchTreeBase_3__root">BinarySearchTreeBase&lt;MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;._root</a>
+    </div>
+    <div>
+      <a class="xref" href="CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase-3.html#CSFundamentals_DataStructures_Trees_Binary_API_BinarySearchTreeBase_3_Build_System_Collections_Generic_List_System_Collections_Generic_KeyValuePair__1__2___">BinarySearchTreeBase&lt;MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.Build(List&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase-3.html#CSFundamentals_DataStructures_Trees_Binary_API_BinarySearchTreeBase_3_Insert__0__0_">BinarySearchTreeBase&lt;MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.Insert(MockBinaryTreeNode&lt;TKey, TValue&gt;, MockBinaryTreeNode&lt;TKey, TValue&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase-3.html#CSFundamentals_DataStructures_Trees_Binary_API_BinarySearchTreeBase_3_Delete__0__1_">BinarySearchTreeBase&lt;MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.Delete(MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey)</a>
+    </div>
+    <div>
+      <a class="xref" href="CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase-3.html#CSFundamentals_DataStructures_Trees_Binary_API_BinarySearchTreeBase_3_Search__0__1_">BinarySearchTreeBase&lt;MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.Search(MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey)</a>
+    </div>
+    <div>
+      <a class="xref" href="CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase-3.html#CSFundamentals_DataStructures_Trees_Binary_API_BinarySearchTreeBase_3_Update__0__1__2_">BinarySearchTreeBase&lt;MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.Update(MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey, TValue)</a>
+    </div>
+    <div>
+      <a class="xref" href="CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase-3.html#CSFundamentals_DataStructures_Trees_Binary_API_BinarySearchTreeBase_3_FindMin__0_">BinarySearchTreeBase&lt;MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.FindMin(MockBinaryTreeNode&lt;TKey, TValue&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase-3.html#CSFundamentals_DataStructures_Trees_Binary_API_BinarySearchTreeBase_3_FindMax__0_">BinarySearchTreeBase&lt;MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.FindMax(MockBinaryTreeNode&lt;TKey, TValue&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase-3.html#CSFundamentals_DataStructures_Trees_Binary_API_BinarySearchTreeBase_3_RotateLeft__0_">BinarySearchTreeBase&lt;MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.RotateLeft(MockBinaryTreeNode&lt;TKey, TValue&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase-3.html#CSFundamentals_DataStructures_Trees_Binary_API_BinarySearchTreeBase_3_RotateRight__0_">BinarySearchTreeBase&lt;MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.RotateRight(MockBinaryTreeNode&lt;TKey, TValue&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase-3.html#CSFundamentals_DataStructures_Trees_Binary_API_BinarySearchTreeBase_3_DeleteMin__0_">BinarySearchTreeBase&lt;MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.DeleteMin(MockBinaryTreeNode&lt;TKey, TValue&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase-3.html#CSFundamentals_DataStructures_Trees_Binary_API_BinarySearchTreeBase_3_DeleteMax__0_">BinarySearchTreeBase&lt;MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.DeleteMax(MockBinaryTreeNode&lt;TKey, TValue&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase-3.html#CSFundamentals_DataStructures_Trees_Binary_API_BinarySearchTreeBase_3_GetAllPathToLeaves__0_">BinarySearchTreeBase&lt;MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.GetAllPathToLeaves(MockBinaryTreeNode&lt;TKey, TValue&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase-3.html#CSFundamentals_DataStructures_Trees_Binary_API_BinarySearchTreeBase_3_InOrderTraversal__0_System_Collections_Generic_List__0__">BinarySearchTreeBase&lt;MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.InOrderTraversal(MockBinaryTreeNode&lt;TKey, TValue&gt;, List&lt;MockBinaryTreeNode&lt;TKey, TValue&gt;&gt;)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CSFundamentalsTests.DataStructures.Trees.Binary.API.html">CSFundamentalsTests.DataStructures.Trees.Binary.API</a></h6>
+  <h6><strong>Assembly</strong>: CSFundamentalsTests.dll</h6>
+  <h5 id="CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinarySearchTreeBase_2_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class MockBinarySearchTreeBase&lt;TKey, TValue&gt; : BinarySearchTreeBase&lt;MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt; where TKey : IComparable&lt;TKey&gt;</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TKey</span></td>
+        <td><p>Type of the keys stored in the tree.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TValue</span></td>
+        <td><p>Type of the values stored in the tree.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinarySearchTreeBase_2_Build_System_Collections_Generic_List_System_Collections_Generic_KeyValuePair__0__1___.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase%602.Build(System.Collections.Generic.List%7BSystem.Collections.Generic.KeyValuePair%7B%600%2C%601%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Binary/API/MockBinarySearchTreeBase.cs/#L39">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinarySearchTreeBase_2_Build_" data-uid="CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase`2.Build*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinarySearchTreeBase_2_Build_System_Collections_Generic_List_System_Collections_Generic_KeyValuePair__0__1___" data-uid="CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase`2.Build(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}})">Build(List&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Builds the tree to include the given nodes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override MockBinaryTreeNode&lt;TKey, TValue&gt; Build(List&lt;KeyValuePair&lt;TKey, TValue&gt;&gt; keyValues)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;&gt;</td>
+        <td><span class="parametername">keyValues</span></td>
+        <td><p>Is a list of key-value pairs to be inserted in the tree.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode-2.html">MockBinaryTreeNode</a>&lt;TKey, TValue&gt;</td>
+        <td><p>Root of the tree.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase&lt;CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.Build(System.Collections.Generic.List&lt;System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt;&gt;)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinarySearchTreeBase_2_Delete_CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinaryTreeNode__0__1___0_.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase%602.Delete(CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode%7B%600%2C%601%7D%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Binary/API/MockBinarySearchTreeBase.cs/#L50">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinarySearchTreeBase_2_Delete_" data-uid="CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase`2.Delete*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinarySearchTreeBase_2_Delete_CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinaryTreeNode__0__1___0_" data-uid="CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase`2.Delete(CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode{`0,`1},`0)">Delete(MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey)</h4>
+  <div class="markdown level1 summary"><p>Deletes a node with the given key from th tree.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override MockBinaryTreeNode&lt;TKey, TValue&gt; Delete(MockBinaryTreeNode&lt;TKey, TValue&gt; root, TKey key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode-2.html">MockBinaryTreeNode</a>&lt;TKey, TValue&gt;</td>
+        <td><span class="parametername">root</span></td>
+        <td><p>Current root of the tree, or the node at which delete operation should be started.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>Specifies the key of the node to be deleted.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode-2.html">MockBinaryTreeNode</a>&lt;TKey, TValue&gt;</td>
+        <td><p>New root of the tree (might or might not change during the operation).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase&lt;CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.Delete(CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinarySearchTreeBase_2_FindMax_CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinaryTreeNode__0__1__.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase%602.FindMax(CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode%7B%600%2C%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Binary/API/MockBinarySearchTreeBase.cs/#L60">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinarySearchTreeBase_2_FindMax_" data-uid="CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase`2.FindMax*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinarySearchTreeBase_2_FindMax_CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinaryTreeNode__0__1__" data-uid="CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase`2.FindMax(CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode{`0,`1})">FindMax(MockBinaryTreeNode&lt;TKey, TValue&gt;)</h4>
+  <div class="markdown level1 summary"><p>Finds the maximum key in the (sub)tree rooted at <code data-dev-comment-type="paramref" class="paramref">root</code> node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override MockBinaryTreeNode&lt;TKey, TValue&gt; FindMax(MockBinaryTreeNode&lt;TKey, TValue&gt; root)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode-2.html">MockBinaryTreeNode</a>&lt;TKey, TValue&gt;</td>
+        <td><span class="parametername">root</span></td>
+        <td><p>Is the node at which (sub)tree is rooted.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode-2.html">MockBinaryTreeNode</a>&lt;TKey, TValue&gt;</td>
+        <td><p>The node containing the maximum key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase&lt;CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.FindMax(CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode&lt;TKey, TValue&gt;)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinarySearchTreeBase_2_FindMin_CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinaryTreeNode__0__1__.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase%602.FindMin(CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode%7B%600%2C%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Binary/API/MockBinarySearchTreeBase.cs/#L70">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinarySearchTreeBase_2_FindMin_" data-uid="CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase`2.FindMin*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinarySearchTreeBase_2_FindMin_CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinaryTreeNode__0__1__" data-uid="CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase`2.FindMin(CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode{`0,`1})">FindMin(MockBinaryTreeNode&lt;TKey, TValue&gt;)</h4>
+  <div class="markdown level1 summary"><p>Finds the minimum key in the (sub)tree rooted at <code data-dev-comment-type="paramref" class="paramref">root</code> node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override MockBinaryTreeNode&lt;TKey, TValue&gt; FindMin(MockBinaryTreeNode&lt;TKey, TValue&gt; root)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode-2.html">MockBinaryTreeNode</a>&lt;TKey, TValue&gt;</td>
+        <td><span class="parametername">root</span></td>
+        <td><p>Is the node at which (sub)tree is rooted.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode-2.html">MockBinaryTreeNode</a>&lt;TKey, TValue&gt;</td>
+        <td><p>The node containing the minimum key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase&lt;CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.FindMin(CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode&lt;TKey, TValue&gt;)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinarySearchTreeBase_2_Insert_CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinaryTreeNode__0__1__CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinaryTreeNode__0__1__.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase%602.Insert(CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode%7B%600%2C%601%7D%2CCSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode%7B%600%2C%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Binary/API/MockBinarySearchTreeBase.cs/#L81">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinarySearchTreeBase_2_Insert_" data-uid="CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase`2.Insert*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinarySearchTreeBase_2_Insert_CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinaryTreeNode__0__1__CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinaryTreeNode__0__1__" data-uid="CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase`2.Insert(CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode{`0,`1},CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode{`0,`1})">Insert(MockBinaryTreeNode&lt;TKey, TValue&gt;, MockBinaryTreeNode&lt;TKey, TValue&gt;)</h4>
+  <div class="markdown level1 summary"><p>Inserts a new node in the tree</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override MockBinaryTreeNode&lt;TKey, TValue&gt; Insert(MockBinaryTreeNode&lt;TKey, TValue&gt; root, MockBinaryTreeNode&lt;TKey, TValue&gt; newNode)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode-2.html">MockBinaryTreeNode</a>&lt;TKey, TValue&gt;</td>
+        <td><span class="parametername">root</span></td>
+        <td><p>Current root of the tree, or the node at which insert operation should be started.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode-2.html">MockBinaryTreeNode</a>&lt;TKey, TValue&gt;</td>
+        <td><span class="parametername">newNode</span></td>
+        <td><p>New node to be inserted in the tree.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode-2.html">MockBinaryTreeNode</a>&lt;TKey, TValue&gt;</td>
+        <td><p>New root of the tree (might or might not change during operation).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase&lt;CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.Insert(CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode&lt;TKey, TValue&gt;, CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode&lt;TKey, TValue&gt;)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinarySearchTreeBase_2_Search_CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinaryTreeNode__0__1___0_.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase%602.Search(CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode%7B%600%2C%601%7D%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Binary/API/MockBinarySearchTreeBase.cs/#L92">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinarySearchTreeBase_2_Search_" data-uid="CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase`2.Search*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinarySearchTreeBase_2_Search_CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinaryTreeNode__0__1___0_" data-uid="CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase`2.Search(CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode{`0,`1},`0)">Search(MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey)</h4>
+  <div class="markdown level1 summary"><p>Searches for the given key in the tree.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override MockBinaryTreeNode&lt;TKey, TValue&gt; Search(MockBinaryTreeNode&lt;TKey, TValue&gt; root, TKey key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode-2.html">MockBinaryTreeNode</a>&lt;TKey, TValue&gt;</td>
+        <td><span class="parametername">root</span></td>
+        <td><p>Current root of the tree, or the node at which search operation should be started.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>Specifies the key to be searched.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode-2.html">MockBinaryTreeNode</a>&lt;TKey, TValue&gt;</td>
+        <td><p>Returns the tree node that contains key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase&lt;CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.Search(CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinarySearchTreeBase_2_Update_CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinaryTreeNode__0__1___0__1_.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase%602.Update(CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode%7B%600%2C%601%7D%2C%600%2C%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Binary/API/MockBinarySearchTreeBase.cs/#L104">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinarySearchTreeBase_2_Update_" data-uid="CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase`2.Update*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinarySearchTreeBase_2_Update_CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinaryTreeNode__0__1___0__1_" data-uid="CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase`2.Update(CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode{`0,`1},`0,`1)">Update(MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey, TValue)</h4>
+  <div class="markdown level1 summary"><p>Updates the tree node of the specified key with the new given value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Update(MockBinaryTreeNode&lt;TKey, TValue&gt; root, TKey key, TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode-2.html">MockBinaryTreeNode</a>&lt;TKey, TValue&gt;</td>
+        <td><span class="parametername">root</span></td>
+        <td><p>Current root of the tree, or the node at which update operation should be started.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>Specifies the key of the node whose value should be updated.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>Specifies the new value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true in case of success and false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase&lt;CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.Update(CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode&lt;TKey, TValue&gt;, TKey, TValue)</span></div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Binary_API_MockBinarySearchTreeBase_2.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Binary/API/MockBinarySearchTreeBase.cs/#L32" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

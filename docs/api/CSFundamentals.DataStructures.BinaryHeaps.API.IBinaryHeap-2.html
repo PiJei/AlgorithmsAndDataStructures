@@ -1,0 +1,691 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IBinaryHeap&lt;TKey, TValue&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IBinaryHeap&lt;TKey, TValue&gt;
+   ">
+    <meta name="generator" content="docfx 2.42.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2">
+  
+  
+  <h1 id="CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2" data-uid="CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2" class="text-break">Interface IBinaryHeap&lt;TKey, TValue&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Provides interface definition for a binary heap.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CSFundamentals.DataStructures.BinaryHeaps.API.html">CSFundamentals.DataStructures.BinaryHeaps.API</a></h6>
+  <h6><strong>Assembly</strong>: CSFundamentals.dll</h6>
+  <h5 id="CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IBinaryHeap&lt;TKey, TValue&gt;
+
+    where TKey : IComparable&lt;TKey&gt;</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TKey</span></td>
+        <td><p>Is the type of the keys, based on which priorities in a priority queue are defined.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TValue</span></td>
+        <td><p>Is the type of the values stored with keys.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_BubbleDown_Iteratively_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap%602.BubbleDown_Iteratively(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/API/IBinaryHeap.cs/#L80">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_BubbleDown_Iteratively_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BubbleDown_Iteratively*"></a>
+  <h4 id="CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_BubbleDown_Iteratively_System_Int32_System_Int32_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BubbleDown_Iteratively(System.Int32,System.Int32)">BubbleDown_Iteratively(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>This method implements the bubble down/trickle down operation using iteration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void BubbleDown_Iteratively(int rootIndex, int heapArrayLength)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">rootIndex</span></td>
+        <td><p>Specifies the index of the root element, the element for which the trickle down should be performed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">heapArrayLength</span></td>
+        <td><p>Specifies the length of the heap array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_BubbleDown_Recursively_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap%602.BubbleDown_Recursively(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/API/IBinaryHeap.cs/#L73">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_BubbleDown_Recursively_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BubbleDown_Recursively*"></a>
+  <h4 id="CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_BubbleDown_Recursively_System_Int32_System_Int32_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BubbleDown_Recursively(System.Int32,System.Int32)">BubbleDown_Recursively(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>This method implements the bubble down/trickle down operation using recursion.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void BubbleDown_Recursively(int rootIndex, int heapArrayLength)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">rootIndex</span></td>
+        <td><p>Specifies the index of the root element, the element for which the trickle down should be performed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">heapArrayLength</span></td>
+        <td><p>Specifies the length of the heap array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_BubbleUp_Iteratively_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap%602.BubbleUp_Iteratively(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/API/IBinaryHeap.cs/#L87">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_BubbleUp_Iteratively_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BubbleUp_Iteratively*"></a>
+  <h4 id="CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_BubbleUp_Iteratively_System_Int32_System_Int32_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BubbleUp_Iteratively(System.Int32,System.Int32)">BubbleUp_Iteratively(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Moves the value in the given index, up in the heap till its position is found. The position is defined such to respect heap ordering property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void BubbleUp_Iteratively(int index, int heapArrayLength)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>Specifies the index of the element that should be bubbled up.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">heapArrayLength</span></td>
+        <td><p>Specifies the length/size of the heap array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_BuildHeap_Iteratively_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap%602.BuildHeap_Iteratively(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/API/IBinaryHeap.cs/#L43">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_BuildHeap_Iteratively_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BuildHeap_Iteratively*"></a>
+  <h4 id="CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_BuildHeap_Iteratively_System_Int32_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BuildHeap_Iteratively(System.Int32)">BuildHeap_Iteratively(Int32)</h4>
+  <div class="markdown level1 summary"><p>Builds a heap iteratively, and does so in situ.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void BuildHeap_Iteratively(int heapArrayLength)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">heapArrayLength</span></td>
+        <td><p>Specifies the length of the heap array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_BuildHeap_Recursively_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap%602.BuildHeap_Recursively(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/API/IBinaryHeap.cs/#L37">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_BuildHeap_Recursively_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BuildHeap_Recursively*"></a>
+  <h4 id="CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_BuildHeap_Recursively_System_Int32_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.BuildHeap_Recursively(System.Int32)">BuildHeap_Recursively(Int32)</h4>
+  <div class="markdown level1 summary"><p>Builds a heap using recursion, and does so in situ.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void BuildHeap_Recursively(int heapArrayLength)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">heapArrayLength</span></td>
+        <td><p>Specifies the length of the heap array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_GetLeftChildIndexInHeapArray_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap%602.GetLeftChildIndexInHeapArray(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/API/IBinaryHeap.cs/#L94">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_GetLeftChildIndexInHeapArray_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetLeftChildIndexInHeapArray*"></a>
+  <h4 id="CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_GetLeftChildIndexInHeapArray_System_Int32_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetLeftChildIndexInHeapArray(System.Int32)">GetLeftChildIndexInHeapArray(Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns the index of the left child for the given index in a heap array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int GetLeftChildIndexInHeapArray(int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>Specifies the index of a node in an array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The index of the left child.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_GetNodeLevel_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap%602.GetNodeLevel(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/API/IBinaryHeap.cs/#L115">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_GetNodeLevel_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetNodeLevel*"></a>
+  <h4 id="CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_GetNodeLevel_System_Int32_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetNodeLevel(System.Int32)">GetNodeLevel(Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns the level of a node in the heap, given the node's index in the heap array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int GetNodeLevel(int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>Specifies the index of a node in an array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>Returns the level of the node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_GetParentIndex_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap%602.GetParentIndex(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/API/IBinaryHeap.cs/#L108">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_GetParentIndex_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetParentIndex*"></a>
+  <h4 id="CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_GetParentIndex_System_Int32_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetParentIndex(System.Int32)">GetParentIndex(Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns the index of the parent for the given index in a heap array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int GetParentIndex(int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>Specifies the index of a node in an array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The index of the parent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_GetRightChildIndexInHeapArray_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap%602.GetRightChildIndexInHeapArray(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/API/IBinaryHeap.cs/#L101">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_GetRightChildIndexInHeapArray_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetRightChildIndexInHeapArray*"></a>
+  <h4 id="CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_GetRightChildIndexInHeapArray_System_Int32_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.GetRightChildIndexInHeapArray(System.Int32)">GetRightChildIndexInHeapArray(Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns the index of the right child for the given index in a heap array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int GetRightChildIndexInHeapArray(int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>Specifies the index of a node in an array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The index of the right child.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_Insert_System_Collections_Generic_KeyValuePair__0__1__System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap%602.Insert(System.Collections.Generic.KeyValuePair%7B%600%2C%601%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/API/IBinaryHeap.cs/#L50">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_Insert_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.Insert*"></a>
+  <h4 id="CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_Insert_System_Collections_Generic_KeyValuePair__0__1__System_Int32_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.Insert(System.Collections.Generic.KeyValuePair{`0,`1},System.Int32)">Insert(KeyValuePair&lt;TKey, TValue&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>This method is for inserting a new value into heap.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Insert(KeyValuePair&lt;TKey, TValue&gt; keyValue, int heapArrayLength)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;</td>
+        <td><span class="parametername">keyValue</span></td>
+        <td><p>Specifies the key-value to be inserted into the heap.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">heapArrayLength</span></td>
+        <td><p>Specifies the length of the heap array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_TryFindRoot_System_Collections_Generic_KeyValuePair__0__1___System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap%602.TryFindRoot(System.Collections.Generic.KeyValuePair%7B%600%2C%601%7D%40%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/API/IBinaryHeap.cs/#L66">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_TryFindRoot_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.TryFindRoot*"></a>
+  <h4 id="CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_TryFindRoot_System_Collections_Generic_KeyValuePair__0__1___System_Int32_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.TryFindRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)">TryFindRoot(out KeyValuePair&lt;TKey, TValue&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>This method is for finding the root of the heap, without removing it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool TryFindRoot(out KeyValuePair&lt;TKey, TValue&gt; keyValue, int heapArrayLength)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;</td>
+        <td><span class="parametername">keyValue</span></td>
+        <td><p>Specifies the key-value of the root.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">heapArrayLength</span></td>
+        <td><p>Specifies the length of the heap array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True in case of success, and false in case of failure.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_TryRemoveRoot_System_Collections_Generic_KeyValuePair__0__1___System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap%602.TryRemoveRoot(System.Collections.Generic.KeyValuePair%7B%600%2C%601%7D%40%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/API/IBinaryHeap.cs/#L58">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_TryRemoveRoot_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.TryRemoveRoot*"></a>
+  <h4 id="CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2_TryRemoveRoot_System_Collections_Generic_KeyValuePair__0__1___System_Int32_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap`2.TryRemoveRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)">TryRemoveRoot(out KeyValuePair&lt;TKey, TValue&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>This method is for removing the root of the heap. In a MinHeap and MinMaxHeap this is the min, and in a MaxHeap and MaxMinHeap this is the max.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool TryRemoveRoot(out KeyValuePair&lt;TKey, TValue&gt; keyValue, int heapArrayLength)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;</td>
+        <td><span class="parametername">keyValue</span></td>
+        <td><p>Specifies the key-value of the root.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">heapArrayLength</span></td>
+        <td><p>Specifies the length of the heap array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True in case of success, and false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_API_IBinaryHeap_2.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/API/IBinaryHeap.cs/#L31" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

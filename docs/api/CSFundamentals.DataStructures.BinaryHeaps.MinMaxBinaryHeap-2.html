@@ -1,0 +1,902 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class MinMaxBinaryHeap&lt;TKey, TValue&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class MinMaxBinaryHeap&lt;TKey, TValue&gt;
+   ">
+    <meta name="generator" content="docfx 2.42.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2">
+  
+  
+  <h1 id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2" class="text-break">Class MinMaxBinaryHeap&lt;TKey, TValue&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Implements a MinMaxBinaryHeap and its main operations. Notice that a MaxMinHeapBinaryHeap can be implemented in a very similar way.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase-2.html">BinaryHeapBase</a>&lt;TKey, TValue&gt;</div>
+    <div class="level2"><span class="xref">MinMaxBinaryHeap&lt;TKey, TValue&gt;</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap-2.html">IBinaryHeap</a>&lt;TKey, TValue&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase-2.html#CSFundamentals_DataStructures_BinaryHeaps_API_BinaryHeapBase_2_BuildHeap_Iteratively_System_Int32_">BinaryHeapBase&lt;TKey, TValue&gt;.BuildHeap_Iteratively(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase-2.html#CSFundamentals_DataStructures_BinaryHeaps_API_BinaryHeapBase_2_BuildHeap_Recursively_System_Int32_">BinaryHeapBase&lt;TKey, TValue&gt;.BuildHeap_Recursively(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase-2.html#CSFundamentals_DataStructures_BinaryHeaps_API_BinaryHeapBase_2_Insert_System_Collections_Generic_KeyValuePair__0__1__System_Int32_">BinaryHeapBase&lt;TKey, TValue&gt;.Insert(KeyValuePair&lt;TKey, TValue&gt;, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase-2.html#CSFundamentals_DataStructures_BinaryHeaps_API_BinaryHeapBase_2_TryRemoveRoot_System_Collections_Generic_KeyValuePair__0__1___System_Int32_">BinaryHeapBase&lt;TKey, TValue&gt;.TryRemoveRoot(KeyValuePair&lt;TKey, TValue&gt;, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase-2.html#CSFundamentals_DataStructures_BinaryHeaps_API_BinaryHeapBase_2_TryFindRoot_System_Collections_Generic_KeyValuePair__0__1___System_Int32_">BinaryHeapBase&lt;TKey, TValue&gt;.TryFindRoot(KeyValuePair&lt;TKey, TValue&gt;, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase-2.html#CSFundamentals_DataStructures_BinaryHeaps_API_BinaryHeapBase_2_BubbleDown_Recursively_System_Int32_System_Int32_">BinaryHeapBase&lt;TKey, TValue&gt;.BubbleDown_Recursively(Int32, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase-2.html#CSFundamentals_DataStructures_BinaryHeaps_API_BinaryHeapBase_2_BubbleDown_Iteratively_System_Int32_System_Int32_">BinaryHeapBase&lt;TKey, TValue&gt;.BubbleDown_Iteratively(Int32, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase-2.html#CSFundamentals_DataStructures_BinaryHeaps_API_BinaryHeapBase_2_BubbleUp_Iteratively_System_Int32_System_Int32_">BinaryHeapBase&lt;TKey, TValue&gt;.BubbleUp_Iteratively(Int32, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase-2.html#CSFundamentals_DataStructures_BinaryHeaps_API_BinaryHeapBase_2_HeapArray">BinaryHeapBase&lt;TKey, TValue&gt;.HeapArray</a>
+    </div>
+    <div>
+      <a class="xref" href="CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase-2.html#CSFundamentals_DataStructures_BinaryHeaps_API_BinaryHeapBase_2_GetLeftChildIndexInHeapArray_System_Int32_">BinaryHeapBase&lt;TKey, TValue&gt;.GetLeftChildIndexInHeapArray(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase-2.html#CSFundamentals_DataStructures_BinaryHeaps_API_BinaryHeapBase_2_GetRightChildIndexInHeapArray_System_Int32_">BinaryHeapBase&lt;TKey, TValue&gt;.GetRightChildIndexInHeapArray(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase-2.html#CSFundamentals_DataStructures_BinaryHeaps_API_BinaryHeapBase_2_GetParentIndex_System_Int32_">BinaryHeapBase&lt;TKey, TValue&gt;.GetParentIndex(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase-2.html#CSFundamentals_DataStructures_BinaryHeaps_API_BinaryHeapBase_2_GetNodeLevel_System_Int32_">BinaryHeapBase&lt;TKey, TValue&gt;.GetNodeLevel(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase-2.html#CSFundamentals_DataStructures_BinaryHeaps_API_BinaryHeapBase_2_TryFindIndexOfMinSmallerThanReference_System_Collections_Generic_List_System_Collections_Generic_KeyValuePair__0__1___System_Collections_Generic_List_System_Int32___0_System_Int32__">BinaryHeapBase&lt;TKey, TValue&gt;.TryFindIndexOfMinSmallerThanReference(List&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;, List&lt;Int32&gt;, TKey, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase-2.html#CSFundamentals_DataStructures_BinaryHeaps_API_BinaryHeapBase_2_TryFindIndexOfMaxBiggerThanReference_System_Collections_Generic_List_System_Collections_Generic_KeyValuePair__0__1___System_Int32_System_Collections_Generic_List_System_Int32___0_System_Int32__">BinaryHeapBase&lt;TKey, TValue&gt;.TryFindIndexOfMaxBiggerThanReference(List&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;, Int32, List&lt;Int32&gt;, TKey, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase-2.html#CSFundamentals_DataStructures_BinaryHeaps_API_BinaryHeapBase_2_FindIndex__0_">BinaryHeapBase&lt;TKey, TValue&gt;.FindIndex(TKey)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CSFundamentals.DataStructures.BinaryHeaps.html">CSFundamentals.DataStructures.BinaryHeaps</a></h6>
+  <h6><strong>Assembly</strong>: CSFundamentals.dll</h6>
+  <h5 id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[DataStructure(&quot;MinMaxBinaryHeap&quot;)]
+public class MinMaxBinaryHeap&lt;TKey, TValue&gt; : BinaryHeapBase&lt;TKey, TValue&gt;, IBinaryHeap&lt;TKey, TValue&gt; where TKey : IComparable&lt;TKey&gt;</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TKey</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2__ctor_System_Collections_Generic_List_System_Collections_Generic_KeyValuePair__0__1___.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap%602.%23ctor(System.Collections.Generic.List%7BSystem.Collections.Generic.KeyValuePair%7B%600%2C%601%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/MinMaxBinaryHeap.cs/#L41">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2__ctor_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.#ctor*"></a>
+  <h4 id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2__ctor_System_Collections_Generic_List_System_Collections_Generic_KeyValuePair__0__1___" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.#ctor(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}})">MinMaxBinaryHeap(List&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Constructor</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MinMaxBinaryHeap(List&lt;KeyValuePair&lt;TKey, TValue&gt;&gt; array)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;&gt;</td>
+        <td><span class="parametername">array</span></td>
+        <td><p>An array containing key-value pairs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_BubbleDown_Iteratively_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap%602.BubbleDown_Iteratively(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/MinMaxBinaryHeap.cs/#L336">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_BubbleDown_Iteratively_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BubbleDown_Iteratively*"></a>
+  <h4 id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_BubbleDown_Iteratively_System_Int32_System_Int32_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BubbleDown_Iteratively(System.Int32,System.Int32)">BubbleDown_Iteratively(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>TODO</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void BubbleDown_Iteratively(int rootIndex, int heapArrayLength)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">rootIndex</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">heapArrayLength</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase&lt;TKey, TValue&gt;.BubbleDown_Iteratively(System.Int32, System.Int32)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_BubbleDown_Recursively_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap%602.BubbleDown_Recursively(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/MinMaxBinaryHeap.cs/#L196">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_BubbleDown_Recursively_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BubbleDown_Recursively*"></a>
+  <h4 id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_BubbleDown_Recursively_System_Int32_System_Int32_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BubbleDown_Recursively(System.Int32,System.Int32)">BubbleDown_Recursively(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Recursively bubbles down/trickles down the given rootIndex.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void BubbleDown_Recursively(int rootIndex, int heapArrayLength)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">rootIndex</span></td>
+        <td><p>Specifies the index of the node for which bubble down starts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">heapArrayLength</span></td>
+        <td><p>Specifies the length of the heap array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase&lt;TKey, TValue&gt;.BubbleDown_Recursively(System.Int32, System.Int32)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_BubbleDownMax_Recursively_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap%602.BubbleDownMax_Recursively(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/MinMaxBinaryHeap.cs/#L254">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_BubbleDownMax_Recursively_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BubbleDownMax_Recursively*"></a>
+  <h4 id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_BubbleDownMax_Recursively_System_Int32_System_Int32_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BubbleDownMax_Recursively(System.Int32,System.Int32)">BubbleDownMax_Recursively(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Bubbles/trickles down the node at the given index, which is on a max/even level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void BubbleDownMax_Recursively(int rootIndex, int heapArrayLength)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">rootIndex</span></td>
+        <td><p>Specifies the index of the node at a max level, from which bubble down starts recursively.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">heapArrayLength</span></td>
+        <td><p>Specifies the length of the heap array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_BubbleDownMin_Recursively_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap%602.BubbleDownMin_Recursively(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/MinMaxBinaryHeap.cs/#L214">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_BubbleDownMin_Recursively_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BubbleDownMin_Recursively*"></a>
+  <h4 id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_BubbleDownMin_Recursively_System_Int32_System_Int32_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BubbleDownMin_Recursively(System.Int32,System.Int32)">BubbleDownMin_Recursively(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Bubbles/trickles down the node at the given index, which is on a min/even level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void BubbleDownMin_Recursively(int rootIndex, int heapArrayLength)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">rootIndex</span></td>
+        <td><p>Specifies the index of a node at a min level, from which bubble down starts recursively.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">heapArrayLength</span></td>
+        <td><p>Specifies the length of the heap array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_BubbleUp_Iteratively_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap%602.BubbleUp_Iteratively(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/MinMaxBinaryHeap.cs/#L346">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_BubbleUp_Iteratively_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BubbleUp_Iteratively*"></a>
+  <h4 id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_BubbleUp_Iteratively_System_Int32_System_Int32_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BubbleUp_Iteratively(System.Int32,System.Int32)">BubbleUp_Iteratively(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>TODO</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void BubbleUp_Iteratively(int index, int heapArrayLength)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">heapArrayLength</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase&lt;TKey, TValue&gt;.BubbleUp_Iteratively(System.Int32, System.Int32)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_BubbleUp_Recursively_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap%602.BubbleUp_Recursively(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/MinMaxBinaryHeap.cs/#L74">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_BubbleUp_Recursively_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BubbleUp_Recursively*"></a>
+  <h4 id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_BubbleUp_Recursively_System_Int32_System_Int32_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BubbleUp_Recursively(System.Int32,System.Int32)">BubbleUp_Recursively(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Bubbles up the node at the given index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void BubbleUp_Recursively(int index, int heapArrayLength)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>Specifies the index of a node in the heap array.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">heapArrayLength</span></td>
+        <td><p>Specifies the length of the heap array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_BubbleUpMax_Recursively_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap%602.BubbleUpMax_Recursively(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/MinMaxBinaryHeap.cs/#L132">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_BubbleUpMax_Recursively_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BubbleUpMax_Recursively*"></a>
+  <h4 id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_BubbleUpMax_Recursively_System_Int32_System_Int32_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BubbleUpMax_Recursively(System.Int32,System.Int32)">BubbleUpMax_Recursively(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Bubbles up the node at the given index which is assumed to be on a max/odd level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void BubbleUpMax_Recursively(int index, int heapArrayLength)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>Specifies the index of a node in the heap array.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">heapArrayLength</span></td>
+        <td><p>Specifies the length of the heap array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_BubbleUpMin_Recursively_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap%602.BubbleUpMin_Recursively(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/MinMaxBinaryHeap.cs/#L113">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_BubbleUpMin_Recursively_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BubbleUpMin_Recursively*"></a>
+  <h4 id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_BubbleUpMin_Recursively_System_Int32_System_Int32_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BubbleUpMin_Recursively(System.Int32,System.Int32)">BubbleUpMin_Recursively(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Bubbles up the node at the given index which is assumed to be on a min/even level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void BubbleUpMin_Recursively(int index, int heapArrayLength)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>Specifies the index of a node in the heap array.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">heapArrayLength</span></td>
+        <td><p>Specifies the length of the heap array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_BuildHeap_Iteratively_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap%602.BuildHeap_Iteratively(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/MinMaxBinaryHeap.cs/#L326">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_BuildHeap_Iteratively_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BuildHeap_Iteratively*"></a>
+  <h4 id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_BuildHeap_Iteratively_System_Int32_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BuildHeap_Iteratively(System.Int32)">BuildHeap_Iteratively(Int32)</h4>
+  <div class="markdown level1 summary"><p>TODO</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void BuildHeap_Iteratively(int heapArrayLength)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">heapArrayLength</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase&lt;TKey, TValue&gt;.BuildHeap_Iteratively(System.Int32)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_BuildHeap_Recursively_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap%602.BuildHeap_Recursively(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/MinMaxBinaryHeap.cs/#L49">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_BuildHeap_Recursively_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BuildHeap_Recursively*"></a>
+  <h4 id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_BuildHeap_Recursively_System_Int32_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.BuildHeap_Recursively(System.Int32)">BuildHeap_Recursively(Int32)</h4>
+  <div class="markdown level1 summary"><p>Builds an in-place MinMax heap on the given array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void BuildHeap_Recursively(int heapArrayLength)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">heapArrayLength</span></td>
+        <td><p>Specifies the length of the heap array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase&lt;TKey, TValue&gt;.BuildHeap_Recursively(System.Int32)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_Insert_System_Collections_Generic_KeyValuePair__0__1__System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap%602.Insert(System.Collections.Generic.KeyValuePair%7B%600%2C%601%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/MinMaxBinaryHeap.cs/#L62">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_Insert_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.Insert*"></a>
+  <h4 id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_Insert_System_Collections_Generic_KeyValuePair__0__1__System_Int32_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.Insert(System.Collections.Generic.KeyValuePair{`0,`1},System.Int32)">Insert(KeyValuePair&lt;TKey, TValue&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Inserts a new value into the Min Heap.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Insert(KeyValuePair&lt;TKey, TValue&gt; keyValue, int heapArrayLength)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;</td>
+        <td><span class="parametername">keyValue</span></td>
+        <td><p>Specifies the new key-value pair to be inserted in the tree.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">heapArrayLength</span></td>
+        <td><p>Specifies the length of the heap array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase&lt;TKey, TValue&gt;.Insert(System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt;, System.Int32)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_IsMinLevel_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap%602.IsMinLevel(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/MinMaxBinaryHeap.cs/#L289">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_IsMinLevel_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.IsMinLevel*"></a>
+  <h4 id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_IsMinLevel_System_Int32_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.IsMinLevel(System.Int32)">IsMinLevel(Int32)</h4>
+  <div class="markdown level1 summary"><p>Given a node level in a MinMax heap, returns true if that node is on an even level, meaning on a Min level. and false otherwise/</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsMinLevel(int level)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">level</span></td>
+        <td><p>Specifies the level of a node in a MinMax heap.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True in case of success, and false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_TryFindMax.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap%602.TryFindMax%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/MinMaxBinaryHeap.cs/#L362">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_TryFindMax_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.TryFindMax*"></a>
+  <h4 id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_TryFindMax" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.TryFindMax">TryFindMax()</h4>
+  <div class="markdown level1 summary"><p>TODO</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void TryFindMax()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_TryFindRoot_System_Collections_Generic_KeyValuePair__0__1___System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap%602.TryFindRoot(System.Collections.Generic.KeyValuePair%7B%600%2C%601%7D%40%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/MinMaxBinaryHeap.cs/#L180">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_TryFindRoot_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.TryFindRoot*"></a>
+  <h4 id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_TryFindRoot_System_Collections_Generic_KeyValuePair__0__1___System_Int32_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.TryFindRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)">TryFindRoot(out KeyValuePair&lt;TKey, TValue&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>This method is for finding the root of the heap, without removing it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool TryFindRoot(out KeyValuePair&lt;TKey, TValue&gt; keyValue, int heapArrayLength)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;</td>
+        <td><span class="parametername">keyValue</span></td>
+        <td><p>Specifies the key-value of the root.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">heapArrayLength</span></td>
+        <td><p>Specifies the length of the heap array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True in case of success, and false in case of failure.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase&lt;TKey, TValue&gt;.TryFindRoot(System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt;, System.Int32)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_TryRemoveMax.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap%602.TryRemoveMax%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/MinMaxBinaryHeap.cs/#L354">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_TryRemoveMax_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.TryRemoveMax*"></a>
+  <h4 id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_TryRemoveMax" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.TryRemoveMax">TryRemoveMax()</h4>
+  <div class="markdown level1 summary"><p>TODO</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void TryRemoveMax()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_TryRemoveRoot_System_Collections_Generic_KeyValuePair__0__1___System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap%602.TryRemoveRoot(System.Collections.Generic.KeyValuePair%7B%600%2C%601%7D%40%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/MinMaxBinaryHeap.cs/#L152">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_TryRemoveRoot_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.TryRemoveRoot*"></a>
+  <h4 id="CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2_TryRemoveRoot_System_Collections_Generic_KeyValuePair__0__1___System_Int32_" data-uid="CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap`2.TryRemoveRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)">TryRemoveRoot(out KeyValuePair&lt;TKey, TValue&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Removes the min element from the heap.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool TryRemoveRoot(out KeyValuePair&lt;TKey, TValue&gt; keyValue, int heapArrayLength)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;</td>
+        <td><span class="parametername">keyValue</span></td>
+        <td><p>If the operation is successful, contains the minimum element in the array.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">heapArrayLength</span></td>
+        <td><p>Specifies the length of the heap array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase&lt;TKey, TValue&gt;.TryRemoveRoot(System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt;, System.Int32)</span></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap-2.html">IBinaryHeap&lt;TKey, TValue&gt;</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_BinaryHeaps_MinMaxBinaryHeap_2.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.BinaryHeaps.MinMaxBinaryHeap%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/BinaryHeaps/MinMaxBinaryHeap.cs/#L34" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

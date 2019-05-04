@@ -1,0 +1,1095 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class _3_5_BTreeNodeTests
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class _3_5_BTreeNodeTests
+   ">
+    <meta name="generator" content="docfx 2.42.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests">
+  
+  
+  <h1 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests" class="text-break">Class _3_5_BTreeNodeTests
+  </h1>
+  <div class="markdown level0 summary"><p>Tests BTreeNode implementation by a 3-5 BTree Node.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">_3_5_BTreeNodeTests</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CSFundamentalsTests.DataStructures.Trees.Nary.html">CSFundamentalsTests.DataStructures.Trees.Nary</a></h6>
+  <h6><strong>Assembly</strong>: CSFundamentalsTests.dll</h6>
+  <h5 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestClass]
+public class _3_5_BTreeNodeTests</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetChild_EmptyNode_ThrowsException.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetChild_EmptyNode_ThrowsException%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L901">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetChild_EmptyNode_ThrowsException_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetChild_EmptyNode_ThrowsException*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetChild_EmptyNode_ThrowsException" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetChild_EmptyNode_ThrowsException">GetChild_EmptyNode_ThrowsException()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of getting a child from an empty node. Expects an exception to be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+[ExpectedException(typeof(IndexOutOfRangeException))]
+public void GetChild_EmptyNode_ThrowsException()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetChild_InRangeIndexes_ExpectsSuccess.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetChild_InRangeIndexes_ExpectsSuccess%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L915">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetChild_InRangeIndexes_ExpectsSuccess_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetChild_InRangeIndexes_ExpectsSuccess*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetChild_InRangeIndexes_ExpectsSuccess" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetChild_InRangeIndexes_ExpectsSuccess">GetChild_InRangeIndexes_ExpectsSuccess()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of getting a child when the index is in range.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void GetChild_InRangeIndexes_ExpectsSuccess()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetChildIndex_EmptyNodeEmptyChild_ThrowsException.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetChildIndex_EmptyNodeEmptyChild_ThrowsException%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L940">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetChildIndex_EmptyNodeEmptyChild_ThrowsException_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetChildIndex_EmptyNodeEmptyChild_ThrowsException*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetChildIndex_EmptyNodeEmptyChild_ThrowsException" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetChildIndex_EmptyNodeEmptyChild_ThrowsException">GetChildIndex_EmptyNodeEmptyChild_ThrowsException()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of getting a child index when the node is empty and child is empty as well. Expects an exception to be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+[ExpectedException(typeof(KeyNotFoundException))]
+public void GetChildIndex_EmptyNodeEmptyChild_ThrowsException()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetChildIndex_ExistingKeys_ExpectsSuccess.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetChildIndex_ExistingKeys_ExpectsSuccess%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L955">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetChildIndex_ExistingKeys_ExpectsSuccess_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetChildIndex_ExistingKeys_ExpectsSuccess*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetChildIndex_ExistingKeys_ExpectsSuccess" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetChildIndex_ExistingKeys_ExpectsSuccess">GetChildIndex_ExistingKeys_ExpectsSuccess()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of getting an existing child index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void GetChildIndex_ExistingKeys_ExpectsSuccess()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetIndexAtParentChildren_EmptyNode_ThrowsException.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetIndexAtParentChildren_EmptyNode_ThrowsException%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L220">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetIndexAtParentChildren_EmptyNode_ThrowsException_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetIndexAtParentChildren_EmptyNode_ThrowsException*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetIndexAtParentChildren_EmptyNode_ThrowsException" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetIndexAtParentChildren_EmptyNode_ThrowsException">GetIndexAtParentChildren_EmptyNode_ThrowsException()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of finding the index of an empty node in its parent's _children array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+[ExpectedException(typeof(KeyNotFoundException))]
+public void GetIndexAtParentChildren_EmptyNode_ThrowsException()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetIndexAtParentChildren_NodeIsNotAChildAtParent_ThrowsException.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetIndexAtParentChildren_NodeIsNotAChildAtParent_ThrowsException%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L232">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetIndexAtParentChildren_NodeIsNotAChildAtParent_ThrowsException_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetIndexAtParentChildren_NodeIsNotAChildAtParent_ThrowsException*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetIndexAtParentChildren_NodeIsNotAChildAtParent_ThrowsException" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetIndexAtParentChildren_NodeIsNotAChildAtParent_ThrowsException">GetIndexAtParentChildren_NodeIsNotAChildAtParent_ThrowsException()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of finding the index of an empty node in a random node's _children array. Expects an exception to be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+[ExpectedException(typeof(KeyNotFoundException))]
+public void GetIndexAtParentChildren_NodeIsNotAChildAtParent_ThrowsException()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetIndexAtParentChildren_ParentHasNodeAsFirstChild_Expects0AsIndex.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetIndexAtParentChildren_ParentHasNodeAsFirstChild_Expects0AsIndex%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L249">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetIndexAtParentChildren_ParentHasNodeAsFirstChild_Expects0AsIndex_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetIndexAtParentChildren_ParentHasNodeAsFirstChild_Expects0AsIndex*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetIndexAtParentChildren_ParentHasNodeAsFirstChild_Expects0AsIndex" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetIndexAtParentChildren_ParentHasNodeAsFirstChild_Expects0AsIndex">GetIndexAtParentChildren_ParentHasNodeAsFirstChild_Expects0AsIndex()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of finding the index of a non-empty node in its parent's _children array. Expects 0 as the index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void GetIndexAtParentChildren_ParentHasNodeAsFirstChild_Expects0AsIndex()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetIndexAtParentChildren_ParentIsNull_ThrowsException.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetIndexAtParentChildren_ParentIsNull_ThrowsException%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L209">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetIndexAtParentChildren_ParentIsNull_ThrowsException_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetIndexAtParentChildren_ParentIsNull_ThrowsException*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetIndexAtParentChildren_ParentIsNull_ThrowsException" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetIndexAtParentChildren_ParentIsNull_ThrowsException">GetIndexAtParentChildren_ParentIsNull_ThrowsException()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of finding the index of the current node in its parent's _children array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+[ExpectedException(typeof(ArgumentException))]
+public void GetIndexAtParentChildren_ParentIsNull_ThrowsException()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetKey_EmptyNode_ThrowsException.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetKey_EmptyNode_ThrowsException%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L817">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetKey_EmptyNode_ThrowsException_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetKey_EmptyNode_ThrowsException*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetKey_EmptyNode_ThrowsException" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetKey_EmptyNode_ThrowsException">GetKey_EmptyNode_ThrowsException()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of getting key from an empty node. Expects an exception to be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+[ExpectedException(typeof(IndexOutOfRangeException))]
+public void GetKey_EmptyNode_ThrowsException()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetKey_InRangeIndexes_ExpectsSuccess.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetKey_InRangeIndexes_ExpectsSuccess%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L831">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetKey_InRangeIndexes_ExpectsSuccess_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetKey_InRangeIndexes_ExpectsSuccess*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetKey_InRangeIndexes_ExpectsSuccess" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetKey_InRangeIndexes_ExpectsSuccess">GetKey_InRangeIndexes_ExpectsSuccess()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of getting an in range key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void GetKey_InRangeIndexes_ExpectsSuccess()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetKeyIndex_EmptyNode_ThrowsException.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetKeyIndex_EmptyNode_ThrowsException%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L859">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetKeyIndex_EmptyNode_ThrowsException_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetKeyIndex_EmptyNode_ThrowsException*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetKeyIndex_EmptyNode_ThrowsException" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetKeyIndex_EmptyNode_ThrowsException">GetKeyIndex_EmptyNode_ThrowsException()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of getting the key index in an empty node. Expects an exception  to be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+[ExpectedException(typeof(KeyNotFoundException))]
+public void GetKeyIndex_EmptyNode_ThrowsException()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetKeyIndex_ExistingKey_ExpectsSuccess.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetKeyIndex_ExistingKey_ExpectsSuccess%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L873">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetKeyIndex_ExistingKey_ExpectsSuccess_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetKeyIndex_ExistingKey_ExpectsSuccess*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetKeyIndex_ExistingKey_ExpectsSuccess" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetKeyIndex_ExistingKey_ExpectsSuccess">GetKeyIndex_ExistingKey_ExpectsSuccess()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of getting the key index of an existing key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void GetKeyIndex_ExistingKey_ExpectsSuccess()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetKeyValue_EmptyNode_ThrowsException.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetKeyValue_EmptyNode_ThrowsException%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L754">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetKeyValue_EmptyNode_ThrowsException_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetKeyValue_EmptyNode_ThrowsException*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetKeyValue_EmptyNode_ThrowsException" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetKeyValue_EmptyNode_ThrowsException">GetKeyValue_EmptyNode_ThrowsException()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of getting a key-value pair from an empty node. Expects an exception to be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+[ExpectedException(typeof(IndexOutOfRangeException))]
+public void GetKeyValue_EmptyNode_ThrowsException()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetKeyValue_IndexOutOfRange_ThrowsException.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetKeyValue_IndexOutOfRange_ThrowsException%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L769">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetKeyValue_IndexOutOfRange_ThrowsException_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetKeyValue_IndexOutOfRange_ThrowsException*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetKeyValue_IndexOutOfRange_ThrowsException" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetKeyValue_IndexOutOfRange_ThrowsException">GetKeyValue_IndexOutOfRange_ThrowsException()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of getting a key-value pair when index is out of range. Expects an exception to be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+[ExpectedException(typeof(IndexOutOfRangeException))]
+public void GetKeyValue_IndexOutOfRange_ThrowsException()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetKeyValue_InRangeIndexes_ExpectsSuccess.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetKeyValue_InRangeIndexes_ExpectsSuccess%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L786">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetKeyValue_InRangeIndexes_ExpectsSuccess_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetKeyValue_InRangeIndexes_ExpectsSuccess*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetKeyValue_InRangeIndexes_ExpectsSuccess" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetKeyValue_InRangeIndexes_ExpectsSuccess">GetKeyValue_InRangeIndexes_ExpectsSuccess()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of getting a key-value pair when index is in range.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void GetKeyValue_InRangeIndexes_ExpectsSuccess()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetLeftSibling_ParentHas3Children_ExpectsNonNullForTwoRightMostChildrenAndNullForLeftMostChild.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetLeftSibling_ParentHas3Children_ExpectsNonNullForTwoRightMostChildrenAndNullForLeftMostChild%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L330">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetLeftSibling_ParentHas3Children_ExpectsNonNullForTwoRightMostChildrenAndNullForLeftMostChild_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetLeftSibling_ParentHas3Children_ExpectsNonNullForTwoRightMostChildrenAndNullForLeftMostChild*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetLeftSibling_ParentHas3Children_ExpectsNonNullForTwoRightMostChildrenAndNullForLeftMostChild" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetLeftSibling_ParentHas3Children_ExpectsNonNullForTwoRightMostChildrenAndNullForLeftMostChild">GetLeftSibling_ParentHas3Children_ExpectsNonNullForTwoRightMostChildrenAndNullForLeftMostChild()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of retrieving left siblings of the 3 children of a node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void GetLeftSibling_ParentHas3Children_ExpectsNonNullForTwoRightMostChildrenAndNullForLeftMostChild()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetMaxKey_EmptyNode_ThrowsException.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetMaxKey_EmptyNode_ThrowsException%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L39">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetMaxKey_EmptyNode_ThrowsException_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetMaxKey_EmptyNode_ThrowsException*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetMaxKey_EmptyNode_ThrowsException" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetMaxKey_EmptyNode_ThrowsException">GetMaxKey_EmptyNode_ThrowsException()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of getting max key in an empty B Tree node. Expects an exception to be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+[ExpectedException(typeof(KeyNotFoundException))]
+public void GetMaxKey_EmptyNode_ThrowsException()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetMinKey_EmptyNode_ThrowsException.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetMinKey_EmptyNode_ThrowsException%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L53">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetMinKey_EmptyNode_ThrowsException_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetMinKey_EmptyNode_ThrowsException*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetMinKey_EmptyNode_ThrowsException" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetMinKey_EmptyNode_ThrowsException">GetMinKey_EmptyNode_ThrowsException()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of getting min key in an empty B Tree node. Expects an exception to be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+[ExpectedException(typeof(KeyNotFoundException))]
+public void GetMinKey_EmptyNode_ThrowsException()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetRightSibling_ParentHas3Children_ExpectsNonNullForTwoLeftMostChildrenAndNullForRightMostChild.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetRightSibling_ParentHas3Children_ExpectsNonNullForTwoLeftMostChildrenAndNullForRightMostChild%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L349">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetRightSibling_ParentHas3Children_ExpectsNonNullForTwoLeftMostChildrenAndNullForRightMostChild_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetRightSibling_ParentHas3Children_ExpectsNonNullForTwoLeftMostChildrenAndNullForRightMostChild*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_GetRightSibling_ParentHas3Children_ExpectsNonNullForTwoLeftMostChildrenAndNullForRightMostChild" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.GetRightSibling_ParentHas3Children_ExpectsNonNullForTwoLeftMostChildrenAndNullForRightMostChild">GetRightSibling_ParentHas3Children_ExpectsNonNullForTwoLeftMostChildrenAndNullForRightMostChild()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of retrieving right siblings of the 3 children of a node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void GetRightSibling_ParentHas3Children_ExpectsNonNullForTwoLeftMostChildrenAndNullForRightMostChild()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_HasLeftSibling_NodeIsOnlyChildOfParent_ExpectsFalse.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.HasLeftSibling_NodeIsOnlyChildOfParent_ExpectsFalse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L264">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_HasLeftSibling_NodeIsOnlyChildOfParent_ExpectsFalse_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.HasLeftSibling_NodeIsOnlyChildOfParent_ExpectsFalse*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_HasLeftSibling_NodeIsOnlyChildOfParent_ExpectsFalse" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.HasLeftSibling_NodeIsOnlyChildOfParent_ExpectsFalse">HasLeftSibling_NodeIsOnlyChildOfParent_ExpectsFalse()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of finding out whether the node has a left sibling when it is the only child of the parent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void HasLeftSibling_NodeIsOnlyChildOfParent_ExpectsFalse()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_HasLeftSibling_ParentHas3Children_ExpectsTrueForTwoRightMostChildrenAndFalseForTheLeftMostChild.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.HasLeftSibling_ParentHas3Children_ExpectsTrueForTwoRightMostChildrenAndFalseForTheLeftMostChild%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L278">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_HasLeftSibling_ParentHas3Children_ExpectsTrueForTwoRightMostChildrenAndFalseForTheLeftMostChild_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.HasLeftSibling_ParentHas3Children_ExpectsTrueForTwoRightMostChildrenAndFalseForTheLeftMostChild*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_HasLeftSibling_ParentHas3Children_ExpectsTrueForTwoRightMostChildrenAndFalseForTheLeftMostChild" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.HasLeftSibling_ParentHas3Children_ExpectsTrueForTwoRightMostChildrenAndFalseForTheLeftMostChild">HasLeftSibling_ParentHas3Children_ExpectsTrueForTwoRightMostChildrenAndFalseForTheLeftMostChild()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of finding out whether the 3 children of a node have a left sibling.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void HasLeftSibling_ParentHas3Children_ExpectsTrueForTwoRightMostChildrenAndFalseForTheLeftMostChild()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_HasRightSibling_NodeIsOnlyChildOfParent_ExpectsFalse.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.HasRightSibling_NodeIsOnlyChildOfParent_ExpectsFalse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L297">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_HasRightSibling_NodeIsOnlyChildOfParent_ExpectsFalse_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.HasRightSibling_NodeIsOnlyChildOfParent_ExpectsFalse*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_HasRightSibling_NodeIsOnlyChildOfParent_ExpectsFalse" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.HasRightSibling_NodeIsOnlyChildOfParent_ExpectsFalse">HasRightSibling_NodeIsOnlyChildOfParent_ExpectsFalse()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of finding out whether the node has a right sibling when it is the only child of the parent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void HasRightSibling_NodeIsOnlyChildOfParent_ExpectsFalse()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_HasRightSibling_ParentHas3Children_ExpectsTrueForTwoLeftMostChildrenAndFalseForTheRightMostChild.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.HasRightSibling_ParentHas3Children_ExpectsTrueForTwoLeftMostChildrenAndFalseForTheRightMostChild%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L311">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_HasRightSibling_ParentHas3Children_ExpectsTrueForTwoLeftMostChildrenAndFalseForTheRightMostChild_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.HasRightSibling_ParentHas3Children_ExpectsTrueForTwoLeftMostChildrenAndFalseForTheRightMostChild*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_HasRightSibling_ParentHas3Children_ExpectsTrueForTwoLeftMostChildrenAndFalseForTheRightMostChild" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.HasRightSibling_ParentHas3Children_ExpectsTrueForTwoLeftMostChildrenAndFalseForTheRightMostChild">HasRightSibling_ParentHas3Children_ExpectsTrueForTwoLeftMostChildrenAndFalseForTheRightMostChild()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of finding out whether the 3 children of a node have a right sibling.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void HasRightSibling_ParentHas3Children_ExpectsTrueForTwoLeftMostChildrenAndFalseForTheRightMostChild()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsEmpty_EmptyNode_ExpectsTrue.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsEmpty_EmptyNode_ExpectsTrue%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L500">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsEmpty_EmptyNode_ExpectsTrue_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsEmpty_EmptyNode_ExpectsTrue*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsEmpty_EmptyNode_ExpectsTrue" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsEmpty_EmptyNode_ExpectsTrue">IsEmpty_EmptyNode_ExpectsTrue()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of detecting whether an empty node is empty.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void IsEmpty_EmptyNode_ExpectsTrue()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsEmpty_NodeHasAtLeastOneKey_ExpectsFalse.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsEmpty_NodeHasAtLeastOneKey_ExpectsFalse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L513">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsEmpty_NodeHasAtLeastOneKey_ExpectsFalse_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsEmpty_NodeHasAtLeastOneKey_ExpectsFalse*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsEmpty_NodeHasAtLeastOneKey_ExpectsFalse" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsEmpty_NodeHasAtLeastOneKey_ExpectsFalse">IsEmpty_NodeHasAtLeastOneKey_ExpectsFalse()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of detecting whether a node with one key is empty.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void IsEmpty_NodeHasAtLeastOneKey_ExpectsFalse()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsFull_EmptyNode_ExpectsFalse.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsFull_EmptyNode_ExpectsFalse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L149">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsFull_EmptyNode_ExpectsFalse_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsFull_EmptyNode_ExpectsFalse*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsFull_EmptyNode_ExpectsFalse" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsFull_EmptyNode_ExpectsFalse">IsFull_EmptyNode_ExpectsFalse()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of detecting whether an empty node is full.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void IsFull_EmptyNode_ExpectsFalse()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsFull_NodeWithLessThanMaxKeys_ExpectsFalse.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsFull_NodeWithLessThanMaxKeys_ExpectsFalse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L160">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsFull_NodeWithLessThanMaxKeys_ExpectsFalse_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsFull_NodeWithLessThanMaxKeys_ExpectsFalse*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsFull_NodeWithLessThanMaxKeys_ExpectsFalse" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsFull_NodeWithLessThanMaxKeys_ExpectsFalse">IsFull_NodeWithLessThanMaxKeys_ExpectsFalse()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of detecting whether a node with less than MaxKeys is full.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void IsFull_NodeWithLessThanMaxKeys_ExpectsFalse()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsFull_NodeWithMaxKeys_ExpectsTrue.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsFull_NodeWithMaxKeys_ExpectsTrue%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L174">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsFull_NodeWithMaxKeys_ExpectsTrue_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsFull_NodeWithMaxKeys_ExpectsTrue*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsFull_NodeWithMaxKeys_ExpectsTrue" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsFull_NodeWithMaxKeys_ExpectsTrue">IsFull_NodeWithMaxKeys_ExpectsTrue()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of detecting whether a node with MaxKeys is full.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void IsFull_NodeWithMaxKeys_ExpectsTrue()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsFull_NodeWithMoreThanMaxKeys_ExpectsFalse.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsFull_NodeWithMoreThanMaxKeys_ExpectsFalse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L191">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsFull_NodeWithMoreThanMaxKeys_ExpectsFalse_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsFull_NodeWithMoreThanMaxKeys_ExpectsFalse*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsFull_NodeWithMoreThanMaxKeys_ExpectsFalse" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsFull_NodeWithMoreThanMaxKeys_ExpectsFalse">IsFull_NodeWithMoreThanMaxKeys_ExpectsFalse()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of detecting whether a node with more than MaxKeys is full.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void IsFull_NodeWithMoreThanMaxKeys_ExpectsFalse()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsMinFull_EmptyNode_ExpectsFalse.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinFull_EmptyNode_ExpectsFalse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L367">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsMinFull_EmptyNode_ExpectsFalse_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinFull_EmptyNode_ExpectsFalse*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsMinFull_EmptyNode_ExpectsFalse" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinFull_EmptyNode_ExpectsFalse">IsMinFull_EmptyNode_ExpectsFalse()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of detecting whether an empty node has MinKeys.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void IsMinFull_EmptyNode_ExpectsFalse()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsMinFull_NodeHasExactlyMinKeys_ExpectsTrue.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinFull_NodeHasExactlyMinKeys_ExpectsTrue%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L392">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsMinFull_NodeHasExactlyMinKeys_ExpectsTrue_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinFull_NodeHasExactlyMinKeys_ExpectsTrue*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsMinFull_NodeHasExactlyMinKeys_ExpectsTrue" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinFull_NodeHasExactlyMinKeys_ExpectsTrue">IsMinFull_NodeHasExactlyMinKeys_ExpectsTrue()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of detecting whether a node with MinKeys has MinKeys.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void IsMinFull_NodeHasExactlyMinKeys_ExpectsTrue()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsMinFull_NodeHasLessThanMinKeys_ExpectsFalse.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinFull_NodeHasLessThanMinKeys_ExpectsFalse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L379">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsMinFull_NodeHasLessThanMinKeys_ExpectsFalse_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinFull_NodeHasLessThanMinKeys_ExpectsFalse*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsMinFull_NodeHasLessThanMinKeys_ExpectsFalse" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinFull_NodeHasLessThanMinKeys_ExpectsFalse">IsMinFull_NodeHasLessThanMinKeys_ExpectsFalse()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of detecting whether a node with less than MinKeys has MinKeys.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void IsMinFull_NodeHasLessThanMinKeys_ExpectsFalse()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsMinFull_NodeHasMoreThanMinKeys_ExpectsFalse.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinFull_NodeHasMoreThanMinKeys_ExpectsFalse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L406">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsMinFull_NodeHasMoreThanMinKeys_ExpectsFalse_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinFull_NodeHasMoreThanMinKeys_ExpectsFalse*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsMinFull_NodeHasMoreThanMinKeys_ExpectsFalse" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinFull_NodeHasMoreThanMinKeys_ExpectsFalse">IsMinFull_NodeHasMoreThanMinKeys_ExpectsFalse()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of detecting whether a node with more than MinKeys has MinKeys.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void IsMinFull_NodeHasMoreThanMinKeys_ExpectsFalse()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsMinOneFull_EmptyNode_ExpectsFalse.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinOneFull_EmptyNode_ExpectsFalse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L421">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsMinOneFull_EmptyNode_ExpectsFalse_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinOneFull_EmptyNode_ExpectsFalse*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsMinOneFull_EmptyNode_ExpectsFalse" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinOneFull_EmptyNode_ExpectsFalse">IsMinOneFull_EmptyNode_ExpectsFalse()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of detecting whether an empty node has MinKeys+1 keys.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void IsMinOneFull_EmptyNode_ExpectsFalse()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsMinOneFull_NodeHasExactlyMinKeysPlusOne_ExpectsTrue.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinOneFull_NodeHasExactlyMinKeysPlusOne_ExpectsTrue%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L469">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsMinOneFull_NodeHasExactlyMinKeysPlusOne_ExpectsTrue_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinOneFull_NodeHasExactlyMinKeysPlusOne_ExpectsTrue*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsMinOneFull_NodeHasExactlyMinKeysPlusOne_ExpectsTrue" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinOneFull_NodeHasExactlyMinKeysPlusOne_ExpectsTrue">IsMinOneFull_NodeHasExactlyMinKeysPlusOne_ExpectsTrue()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of detecting whether a node with MinKeys+1 has MinKeys+1 keys.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void IsMinOneFull_NodeHasExactlyMinKeysPlusOne_ExpectsTrue()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsMinOneFull_NodeHasLessThanMinKeysPlusOne_ExpectsFalse.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinOneFull_NodeHasLessThanMinKeysPlusOne_ExpectsFalse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L433">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsMinOneFull_NodeHasLessThanMinKeysPlusOne_ExpectsFalse_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinOneFull_NodeHasLessThanMinKeysPlusOne_ExpectsFalse*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsMinOneFull_NodeHasLessThanMinKeysPlusOne_ExpectsFalse" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinOneFull_NodeHasLessThanMinKeysPlusOne_ExpectsFalse">IsMinOneFull_NodeHasLessThanMinKeysPlusOne_ExpectsFalse()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of detecting whether a node with less than MinKeys+1 has MinKeys+1 keys.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void IsMinOneFull_NodeHasLessThanMinKeysPlusOne_ExpectsFalse()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsMinOneFull_NodeHasMoreThanMinKeysPlusOne_ExpectsFalse.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinOneFull_NodeHasMoreThanMinKeysPlusOne_ExpectsFalse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L484">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsMinOneFull_NodeHasMoreThanMinKeysPlusOne_ExpectsFalse_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinOneFull_NodeHasMoreThanMinKeysPlusOne_ExpectsFalse*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsMinOneFull_NodeHasMoreThanMinKeysPlusOne_ExpectsFalse" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinOneFull_NodeHasMoreThanMinKeysPlusOne_ExpectsFalse">IsMinOneFull_NodeHasMoreThanMinKeysPlusOne_ExpectsFalse()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of detecting whether a node with more than MinKeys+1 has MinKeys+1 keys.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void IsMinOneFull_NodeHasMoreThanMinKeysPlusOne_ExpectsFalse()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsMinOneFull_NodeIsMinFull_ExpectsFalse.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinOneFull_NodeIsMinFull_ExpectsFalse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L446">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsMinOneFull_NodeIsMinFull_ExpectsFalse_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinOneFull_NodeIsMinFull_ExpectsFalse*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsMinOneFull_NodeIsMinFull_ExpectsFalse" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsMinOneFull_NodeIsMinFull_ExpectsFalse">IsMinOneFull_NodeIsMinFull_ExpectsFalse()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of detecting whether a node with MinKeys has MinKeys+1 keys.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void IsMinOneFull_NodeIsMinFull_ExpectsFalse()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsUnderFlown_EmptyNode_ExpectsTrue.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsUnderFlown_EmptyNode_ExpectsTrue%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L67">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsUnderFlown_EmptyNode_ExpectsTrue_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsUnderFlown_EmptyNode_ExpectsTrue*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsUnderFlown_EmptyNode_ExpectsTrue" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsUnderFlown_EmptyNode_ExpectsTrue">IsUnderFlown_EmptyNode_ExpectsTrue()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of detecting whether an empty node is UnderFlown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void IsUnderFlown_EmptyNode_ExpectsTrue()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsUnderFlown_NodeHasLessThanMinKeys_ExpectsTrue.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsUnderFlown_NodeHasLessThanMinKeys_ExpectsTrue%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L80">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsUnderFlown_NodeHasLessThanMinKeys_ExpectsTrue_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsUnderFlown_NodeHasLessThanMinKeys_ExpectsTrue*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsUnderFlown_NodeHasLessThanMinKeys_ExpectsTrue" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsUnderFlown_NodeHasLessThanMinKeys_ExpectsTrue">IsUnderFlown_NodeHasLessThanMinKeys_ExpectsTrue()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of detecting whether a node with less than MinKeys is underFlown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void IsUnderFlown_NodeHasLessThanMinKeys_ExpectsTrue()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsUnderFlown_NodeHasMinKeysPlusOne_ExpectsFalse.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsUnderFlown_NodeHasMinKeysPlusOne_ExpectsFalse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L112">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsUnderFlown_NodeHasMinKeysPlusOne_ExpectsFalse_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsUnderFlown_NodeHasMinKeysPlusOne_ExpectsFalse*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsUnderFlown_NodeHasMinKeysPlusOne_ExpectsFalse" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsUnderFlown_NodeHasMinKeysPlusOne_ExpectsFalse">IsUnderFlown_NodeHasMinKeysPlusOne_ExpectsFalse()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of detecting whether a minOneFull node is underFlown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void IsUnderFlown_NodeHasMinKeysPlusOne_ExpectsFalse()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsUnderFlown_NodeMinKeys_ExpectsFalse.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsUnderFlown_NodeMinKeys_ExpectsFalse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L95">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsUnderFlown_NodeMinKeys_ExpectsFalse_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsUnderFlown_NodeMinKeys_ExpectsFalse*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_IsUnderFlown_NodeMinKeys_ExpectsFalse" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.IsUnderFlown_NodeMinKeys_ExpectsFalse">IsUnderFlown_NodeMinKeys_ExpectsFalse()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of detecting whether a node with MinKeys is underFlown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void IsUnderFlown_NodeMinKeys_ExpectsFalse()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_KeyValueToMoveUp_NodeIsFullAndHasMoreThanMinKeyPlusOneKeys_ExpectsFailure.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.KeyValueToMoveUp_NodeIsFullAndHasMoreThanMinKeyPlusOneKeys_ExpectsFailure%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L130">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_KeyValueToMoveUp_NodeIsFullAndHasMoreThanMinKeyPlusOneKeys_ExpectsFailure_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.KeyValueToMoveUp_NodeIsFullAndHasMoreThanMinKeyPlusOneKeys_ExpectsFailure*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_KeyValueToMoveUp_NodeIsFullAndHasMoreThanMinKeyPlusOneKeys_ExpectsFailure" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.KeyValueToMoveUp_NodeIsFullAndHasMoreThanMinKeyPlusOneKeys_ExpectsFailure">KeyValueToMoveUp_NodeIsFullAndHasMoreThanMinKeyPlusOneKeys_ExpectsFailure()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of getting the key to move up as part of split operation. The node is full and thus expects an exception to be thrown. Note that only when the node has MinKeys+1 keys this operation is successful.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+[ExpectedException(typeof(ArgumentException))]
+public void KeyValueToMoveUp_NodeIsFullAndHasMoreThanMinKeyPlusOneKeys_ExpectsFailure()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveChild_ByIndex_ChildLessNode_ThrowsException.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveChild_ByIndex_ChildLessNode_ThrowsException%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L635">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveChild_ByIndex_ChildLessNode_ThrowsException_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveChild_ByIndex_ChildLessNode_ThrowsException*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveChild_ByIndex_ChildLessNode_ThrowsException" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveChild_ByIndex_ChildLessNode_ThrowsException">RemoveChild_ByIndex_ChildLessNode_ThrowsException()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of removing a child from a node that has no children. Expects an exception to be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+[ExpectedException(typeof(IndexOutOfRangeException))]
+public void RemoveChild_ByIndex_ChildLessNode_ThrowsException()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveChild_ByIndex_IndexOutOfRange_ThrowsException.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveChild_ByIndex_IndexOutOfRange_ThrowsException%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L650">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveChild_ByIndex_IndexOutOfRange_ThrowsException_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveChild_ByIndex_IndexOutOfRange_ThrowsException*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveChild_ByIndex_IndexOutOfRange_ThrowsException" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveChild_ByIndex_IndexOutOfRange_ThrowsException">RemoveChild_ByIndex_IndexOutOfRange_ThrowsException()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of removing a child when index is out of range. Expects an exception to be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+[ExpectedException(typeof(IndexOutOfRangeException))]
+public void RemoveChild_ByIndex_IndexOutOfRange_ThrowsException()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveChild_ByIndex_InRangeIndexes_ExpectsSuccess.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveChild_ByIndex_InRangeIndexes_ExpectsSuccess%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L666">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveChild_ByIndex_InRangeIndexes_ExpectsSuccess_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveChild_ByIndex_InRangeIndexes_ExpectsSuccess*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveChild_ByIndex_InRangeIndexes_ExpectsSuccess" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveChild_ByIndex_InRangeIndexes_ExpectsSuccess">RemoveChild_ByIndex_InRangeIndexes_ExpectsSuccess()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of removing a child when index is in range.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void RemoveChild_ByIndex_InRangeIndexes_ExpectsSuccess()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveChild_ByKey_EmptyChild_ThrowsException.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveChild_ByKey_EmptyChild_ThrowsException%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L707">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveChild_ByKey_EmptyChild_ThrowsException_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveChild_ByKey_EmptyChild_ThrowsException*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveChild_ByKey_EmptyChild_ThrowsException" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveChild_ByKey_EmptyChild_ThrowsException">RemoveChild_ByKey_EmptyChild_ThrowsException()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of removing an empty child. Expects an exception to be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+[ExpectedException(typeof(KeyNotFoundException))]
+public void RemoveChild_ByKey_EmptyChild_ThrowsException()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveChild_ByKey_EmptyNodeEmptyChild_ThrowsException.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveChild_ByKey_EmptyNodeEmptyChild_ThrowsException%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L692">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveChild_ByKey_EmptyNodeEmptyChild_ThrowsException_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveChild_ByKey_EmptyNodeEmptyChild_ThrowsException*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveChild_ByKey_EmptyNodeEmptyChild_ThrowsException" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveChild_ByKey_EmptyNodeEmptyChild_ThrowsException">RemoveChild_ByKey_EmptyNodeEmptyChild_ThrowsException()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of removing a an empty child from an empty node. Expects an exception to be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+[ExpectedException(typeof(KeyNotFoundException))]
+public void RemoveChild_ByKey_EmptyNodeEmptyChild_ThrowsException()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveChild_ByKey_ExistingKeys_ExpectsSuccess.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveChild_ByKey_ExistingKeys_ExpectsSuccess%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L723">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveChild_ByKey_ExistingKeys_ExpectsSuccess_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveChild_ByKey_ExistingKeys_ExpectsSuccess*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveChild_ByKey_ExistingKeys_ExpectsSuccess" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveChild_ByKey_ExistingKeys_ExpectsSuccess">RemoveChild_ByKey_ExistingKeys_ExpectsSuccess()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of removing an existing child.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void RemoveChild_ByKey_ExistingKeys_ExpectsSuccess()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveKey_ByIndex_IndexOutOfRange_ThrowsException.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveKey_ByIndex_IndexOutOfRange_ThrowsException%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L590">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveKey_ByIndex_IndexOutOfRange_ThrowsException_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveKey_ByIndex_IndexOutOfRange_ThrowsException*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveKey_ByIndex_IndexOutOfRange_ThrowsException" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveKey_ByIndex_IndexOutOfRange_ThrowsException">RemoveKey_ByIndex_IndexOutOfRange_ThrowsException()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of removing a key by an index that is out of range. Expects an exception to be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+[ExpectedException(typeof(IndexOutOfRangeException))]
+public void RemoveKey_ByIndex_IndexOutOfRange_ThrowsException()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveKey_ByIndex_InRangeIndexes_ExpectsSuccess.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveKey_ByIndex_InRangeIndexes_ExpectsSuccess%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L606">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveKey_ByIndex_InRangeIndexes_ExpectsSuccess_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveKey_ByIndex_InRangeIndexes_ExpectsSuccess*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveKey_ByIndex_InRangeIndexes_ExpectsSuccess" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveKey_ByIndex_InRangeIndexes_ExpectsSuccess">RemoveKey_ByIndex_InRangeIndexes_ExpectsSuccess()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of removing a key by an in range index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void RemoveKey_ByIndex_InRangeIndexes_ExpectsSuccess()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveKey_ByKey_ExistingKeys_ExpectsSuccess.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveKey_ByKey_ExistingKeys_ExpectsSuccess%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L561">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveKey_ByKey_ExistingKeys_ExpectsSuccess_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveKey_ByKey_ExistingKeys_ExpectsSuccess*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveKey_ByKey_ExistingKeys_ExpectsSuccess" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveKey_ByKey_ExistingKeys_ExpectsSuccess">RemoveKey_ByKey_ExistingKeys_ExpectsSuccess()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of removing an existing key from a node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+public void RemoveKey_ByKey_ExistingKeys_ExpectsSuccess()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveKey_EmptyNode_ThrowsException.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveKey_EmptyNode_ThrowsException%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L530">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveKey_EmptyNode_ThrowsException_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveKey_EmptyNode_ThrowsException*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveKey_EmptyNode_ThrowsException" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveKey_EmptyNode_ThrowsException">RemoveKey_EmptyNode_ThrowsException()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of removing key from an empty node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+[ExpectedException(typeof(KeyNotFoundException))]
+public void RemoveKey_EmptyNode_ThrowsException()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveKey_NotExistingKey_ThrowsException.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveKey_NotExistingKey_ThrowsException%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L545">View Source</a>
+  </span>
+  <a id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveKey_NotExistingKey_ThrowsException_" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveKey_NotExistingKey_ThrowsException*"></a>
+  <h4 id="CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests_RemoveKey_NotExistingKey_ThrowsException" data-uid="CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests.RemoveKey_NotExistingKey_ThrowsException">RemoveKey_NotExistingKey_ThrowsException()</h4>
+  <div class="markdown level1 summary"><p>Tests the correctness of removing a non existing key from a node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TestMethod]
+[ExpectedException(typeof(KeyNotFoundException))]
+public void RemoveKey_NotExistingKey_ThrowsException()</code></pre>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentalsTests_DataStructures_Trees_Nary__3_5_BTreeNodeTests.md&amp;value=---%0Auid%3A%20CSFundamentalsTests.DataStructures.Trees.Nary._3_5_BTreeNodeTests%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Tests/DataStructures/Trees/Nary/3-5-BTreeNodeTests.cs/#L33" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

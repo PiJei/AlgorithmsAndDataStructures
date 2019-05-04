@@ -1,0 +1,1784 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class BTreeNodeBase&lt;TNode, TKey, TValue&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class BTreeNodeBase&lt;TNode, TKey, TValue&gt;
+   ">
+    <meta name="generator" content="docfx 2.42.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3">
+  
+  
+  <h1 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3" class="text-break">Class BTreeNodeBase&lt;TNode, TKey, TValue&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Implements a base B-Tree node.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">BTreeNodeBase&lt;TNode, TKey, TValue&gt;</span></div>
+      <div class="level2"><a class="xref" href="CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode-2.html">BPlusTreeNode&lt;TKey, TValue&gt;</a></div>
+      <div class="level2"><a class="xref" href="CSFundamentals.DataStructures.Trees.Nary.BTreeNode-2.html">BTreeNode&lt;TKey, TValue&gt;</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode-3.html">IBTreeNode</a>&lt;TNode, TKey, TValue&gt;</div>
+    <div><span class="xref">System.IComparable</span>&lt;TNode&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CSFundamentals.DataStructures.Trees.Nary.API.html">CSFundamentals.DataStructures.Trees.Nary.API</a></h6>
+  <h6><strong>Assembly</strong>: CSFundamentals.dll</h6>
+  <h5 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class BTreeNodeBase&lt;TNode, TKey, TValue&gt; : IBTreeNode&lt;TNode, TKey, TValue&gt;, IComparable&lt;TNode&gt; where TNode : IBTreeNode&lt;TNode, TKey, TValue&gt;, new()
+
+    where TKey : IComparable&lt;TKey&gt;</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TNode</span></td>
+        <td><p>Type of B-Tree node.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TKey</span></td>
+        <td><p>Type of the key stored in the B-Tree node.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TValue</span></td>
+        <td><p>Type of the value stored in the B-Tree node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__ctor.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L82">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__ctor_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.#ctor*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__ctor" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.#ctor">BTreeNodeBase()</h4>
+  <div class="markdown level1 summary"><p>Parameter-less constructor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BTreeNodeBase()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__ctor_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.%23ctor(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L92">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__ctor_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.#ctor*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__ctor_System_Int32_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.#ctor(System.Int32)">BTreeNodeBase(Int32)</h4>
+  <div class="markdown level1 summary"><p>Constructor</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BTreeNodeBase(int maxBranchingDegree)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">maxBranchingDegree</span></td>
+        <td><p>Maximum branching factor or the maximum number of children the node can have.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__ctor_System_Int32_System_Collections_Generic_KeyValuePair__1__2__.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.%23ctor(System.Int32%2CSystem.Collections.Generic.KeyValuePair%7B%601%2C%602%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L102">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__ctor_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.#ctor*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__ctor_System_Int32_System_Collections_Generic_KeyValuePair__1__2__" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.#ctor(System.Int32,System.Collections.Generic.KeyValuePair{`1,`2})">BTreeNodeBase(Int32, KeyValuePair&lt;TKey, TValue&gt;)</h4>
+  <div class="markdown level1 summary"><p>Creates a node with 1 key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BTreeNodeBase(int maxBranchingDegree, KeyValuePair&lt;TKey, TValue&gt; keyValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">maxBranchingDegree</span></td>
+        <td><p>Is the maximum number of children the node can have.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;</td>
+        <td><span class="parametername">keyValue</span></td>
+        <td><p>Is a key-value pair to be inserted in the tree.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__ctor_System_Int32_System_Collections_Generic_List_System_Collections_Generic_KeyValuePair__1__2___System_Collections_Generic_List__0__.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.%23ctor(System.Int32%2CSystem.Collections.Generic.List%7BSystem.Collections.Generic.KeyValuePair%7B%601%2C%602%7D%7D%2CSystem.Collections.Generic.List%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L113">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__ctor_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.#ctor*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__ctor_System_Int32_System_Collections_Generic_List_System_Collections_Generic_KeyValuePair__1__2___System_Collections_Generic_List__0__" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.#ctor(System.Int32,System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`1,`2}},System.Collections.Generic.List{`0})">BTreeNodeBase(Int32, List&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;, List&lt;TNode&gt;)</h4>
+  <div class="markdown level1 summary"><p>Creates a node with a set of keys and children.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BTreeNodeBase(int maxBranchingDegree, List&lt;KeyValuePair&lt;TKey, TValue&gt;&gt; keyValues, List&lt;TNode&gt; children)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">maxBranchingDegree</span></td>
+        <td><p>Is the maximum number of children the node can have.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;&gt;</td>
+        <td><span class="parametername">keyValues</span></td>
+        <td><p>Is a set of key-value pairs to be inserted in the new node.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;TNode&gt;</td>
+        <td><span class="parametername">children</span></td>
+        <td><p>Is a set of children of the node. Expectancy is that the count of children is one bigger than the count of key-value pairs in the node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__children.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603._children%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L52">View Source</a>
+  </span>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__children" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._children">_children</h4>
+  <div class="markdown level1 summary"><p>Children of the current node.
+Contract: Keys of the child at index i are all smaller than key at index i of _keyValues
+Contract: Keys of the child at index i are all greater than key at index i-1 of _keyValues
+In otherWords for key at index i, left children are at index i of _children
+And right children are at index i+1 of _children.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected SortedList&lt;TNode, bool&gt; _children</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.SortedList</span>&lt;TNode, <span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__keyValues.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603._keyValues%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L43">View Source</a>
+  </span>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__keyValues" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._keyValues">_keyValues</h4>
+  <div class="markdown level1 summary"><p>A list of key-value pairs stored in this node.
+Notice that SortedList does not allow duplicates.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected SortedList&lt;TKey, TValue&gt; _keyValues</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.SortedList</span>&lt;TKey, TValue&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__parent.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603._parent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L57">View Source</a>
+  </span>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__parent" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._parent">_parent</h4>
+  <div class="markdown level1 summary"><p>Is the parent of the current node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected TNode _parent</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_ChildrenCount.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.ChildrenCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L139">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_ChildrenCount_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.ChildrenCount*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_ChildrenCount" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.ChildrenCount">ChildrenCount</h4>
+  <div class="markdown level1 summary"><p>Is the count of the children of the node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ChildrenCount { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_KeyCount.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.KeyCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L128">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_KeyCount_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.KeyCount*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_KeyCount" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.KeyCount">KeyCount</h4>
+  <div class="markdown level1 summary"><p>Is the count of key-value pairs in the node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int KeyCount { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_MaxBranchingDegree.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.MaxBranchingDegree%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L77">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_MaxBranchingDegree_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.MaxBranchingDegree*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_MaxBranchingDegree" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.MaxBranchingDegree">MaxBranchingDegree</h4>
+  <div class="markdown level1 summary"><p>Is the maximum number of branches/children a B-tree internal or root node can have. Leaf nodes contain 0 children.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaxBranchingDegree { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_MaxKeys.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.MaxKeys%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L67">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_MaxKeys_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.MaxKeys*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_MaxKeys" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.MaxKeys">MaxKeys</h4>
+  <div class="markdown level1 summary"><p>Is the maximum number of keys in a B-tree internal/leaf/root node. This is often 2 times the MinKeys.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaxKeys { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_MinBranchingDegree.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.MinBranchingDegree%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L72">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_MinBranchingDegree_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.MinBranchingDegree*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_MinBranchingDegree" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.MinBranchingDegree">MinBranchingDegree</h4>
+  <div class="markdown level1 summary"><p>Is the minimum number of branches/children a B-tree internal node can have.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MinBranchingDegree { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_MinKeys.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.MinKeys%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L62">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_MinKeys_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.MinKeys*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_MinKeys" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.MinKeys">MinKeys</h4>
+  <div class="markdown level1 summary"><p>Is the minimum number of keys in a B-tree internal/leaf node. (Notice that a root has no lower bound on the number of keys. Intuitively when the tree is just being built it might start with 1, and grow afterwards.)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MinKeys { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_Clear.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.Clear%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L150">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_Clear_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.Clear*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_Clear" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.Clear">Clear()</h4>
+  <div class="markdown level1 summary"><p>Removes all the keys from the node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Clear()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_CompareTo__0_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.CompareTo(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L528">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_CompareTo_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.CompareTo*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_CompareTo__0_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.CompareTo(`0)">CompareTo(TNode)</h4>
+  <div class="markdown level1 summary"><p>Compares current node to another node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CompareTo(TNode other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>A tree node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>0 if they are equal, 1 if the current node is bigger and -1 otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetChild_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.GetChild(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L420">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetChild_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetChild*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetChild_System_Int32_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetChild(System.Int32)">GetChild(Int32)</h4>
+  <div class="markdown level1 summary"><p>Gets (reads) the child at index <code data-dev-comment-type="paramref" class="paramref">index</code> of node's <a class="xref" href="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__children">_children</a> array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TNode GetChild(int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index of the child node wanted.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td><p>Child node at index <code data-dev-comment-type="paramref" class="paramref">index</code> of node's <a class="xref" href="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__children">_children</a> array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetChildIndex__0_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.GetChildIndex(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L430">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetChildIndex_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetChildIndex*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetChildIndex__0_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetChildIndex(`0)">GetChildIndex(TNode)</h4>
+  <div class="markdown level1 summary"><p>Looks for <code data-dev-comment-type="paramref" class="paramref">child</code> in node's <a class="xref" href="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__children">_children</a> array, and returns its index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetChildIndex(TNode child)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td><span class="parametername">child</span></td>
+        <td><p>Child whose index is wanted.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>Index of <code data-dev-comment-type="paramref" class="paramref">child</code> in node's <a class="xref" href="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__children">_children</a> array</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetIndexAtParentChildren.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.GetIndexAtParentChildren%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L241">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetIndexAtParentChildren_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetIndexAtParentChildren*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetIndexAtParentChildren" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetIndexAtParentChildren">GetIndexAtParentChildren()</h4>
+  <div class="markdown level1 summary"><p>Gets the index of the current node in its parent's <a class="xref" href="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__children">_children</a> list.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract int GetIndexAtParentChildren()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>Index at parent's <a class="xref" href="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__children">_children</a> list.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetKey_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.GetKey(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L400">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetKey_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetKey*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetKey_System_Int32_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetKey(System.Int32)">GetKey(Int32)</h4>
+  <div class="markdown level1 summary"><p>Gets (reads)the key of the key-value pair at index <code data-dev-comment-type="paramref" class="paramref">index</code> of node's <a class="xref" href="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__keyValues">_keyValues</a> array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TKey GetKey(int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index of the key-value pair whose key is wanted.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><p>Key at index <code data-dev-comment-type="paramref" class="paramref">index</code> of node's <a class="xref" href="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__keyValues">_keyValues</a> array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetKeyIndex__1_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.GetKeyIndex(%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L410">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetKeyIndex_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetKeyIndex*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetKeyIndex__1_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetKeyIndex(`1)">GetKeyIndex(TKey)</h4>
+  <div class="markdown level1 summary"><p>Gets the index of the key <code data-dev-comment-type="paramref" class="paramref">key</code> at node's <a class="xref" href="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__keyValues">_keyValues</a> array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetKeyIndex(TKey key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key to search for and return its index.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>Index of the key <code data-dev-comment-type="paramref" class="paramref">key</code> at node's <a class="xref" href="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__keyValues">_keyValues</a> array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetKeyValue_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.GetKeyValue(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L390">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetKeyValue_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetKeyValue*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetKeyValue_System_Int32_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetKeyValue(System.Int32)">GetKeyValue(Int32)</h4>
+  <div class="markdown level1 summary"><p>Gets (reads) the key-value pair at index <code data-dev-comment-type="paramref" class="paramref">index</code> of node's <a class="xref" href="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__keyValues">_keyValues</a> array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KeyValuePair&lt;TKey, TValue&gt; GetKeyValue(int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index of the key-value pair wanted.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;</td>
+        <td><p>Key-value pair located at index <code data-dev-comment-type="paramref" class="paramref">index</code> of node's <a class="xref" href="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__keyValues">_keyValues</a> array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetKeyValues.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.GetKeyValues%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L160">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetKeyValues_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetKeyValues*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetKeyValues" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetKeyValues">GetKeyValues()</h4>
+  <div class="markdown level1 summary"><p>Returns the list of key-value pairs stored in this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;KeyValuePair&lt;TKey, TValue&gt;&gt; GetKeyValues()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetLeftSibling.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.GetLeftSibling%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L277">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetLeftSibling_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetLeftSibling*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetLeftSibling" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetLeftSibling">GetLeftSibling()</h4>
+  <div class="markdown level1 summary"><p>Gets the node's left sibling node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TNode GetLeftSibling()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td><p>Node's left sibling node if it exists, and null otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetMaxKey.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.GetMaxKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L307">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetMaxKey_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetMaxKey*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetMaxKey" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetMaxKey">GetMaxKey()</h4>
+  <div class="markdown level1 summary"><p>Gets the key-value pair of the maximum key in the node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KeyValuePair&lt;TKey, TValue&gt; GetMaxKey()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;</td>
+        <td><p>Key-value pair of the maximum key in this node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetMinKey.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.GetMinKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L316">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetMinKey_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetMinKey*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetMinKey" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetMinKey">GetMinKey()</h4>
+  <div class="markdown level1 summary"><p>Gets the key-value pair of the minimum key in the node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KeyValuePair&lt;TKey, TValue&gt; GetMinKey()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;</td>
+        <td><p>Key-value pair of the minimum key in this node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetParent.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.GetParent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L461">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetParent_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetParent*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetParent" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetParent">GetParent()</h4>
+  <div class="markdown level1 summary"><p>Gets the parent node of the current node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TNode GetParent()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td><p>Parent node of the current node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetRightSibling.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.GetRightSibling%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L292">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetRightSibling_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetRightSibling*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetRightSibling" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetRightSibling">GetRightSibling()</h4>
+  <div class="markdown level1 summary"><p>Gets the node's right sibling node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TNode GetRightSibling()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td><p>Node's right sibling node if it exists and null otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_HasLeftSibling.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.HasLeftSibling%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L253">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_HasLeftSibling_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.HasLeftSibling*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_HasLeftSibling" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.HasLeftSibling">HasLeftSibling()</h4>
+  <div class="markdown level1 summary"><p>Checks whether the current node has a left sibling (a sibling to its left in the parent).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasLeftSibling()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True if the node has a left sibling, and false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_HasRightSibling.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.HasRightSibling%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L265">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_HasRightSibling_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.HasRightSibling*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_HasRightSibling" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.HasRightSibling">HasRightSibling()</h4>
+  <div class="markdown level1 summary"><p>Checks whether the current node has a right sibling (a sibling to its right in the parent).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasRightSibling()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True if the node has a right sibling, and false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_InsertChild__0_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.InsertChild(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L247">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_InsertChild_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.InsertChild*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_InsertChild__0_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.InsertChild(`0)">InsertChild(TNode)</h4>
+  <div class="markdown level1 summary"><p>Inserts a child in <a class="xref" href="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__children">_children</a> array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void InsertChild(TNode child)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td><span class="parametername">child</span></td>
+        <td><p>the new child to be inserted in <a class="xref" href="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__children">_children</a> array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_InsertKeyValue_System_Collections_Generic_KeyValuePair__1__2__.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.InsertKeyValue(System.Collections.Generic.KeyValuePair%7B%601%2C%602%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L439">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_InsertKeyValue_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.InsertKeyValue*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_InsertKeyValue_System_Collections_Generic_KeyValuePair__1__2__" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.InsertKeyValue(System.Collections.Generic.KeyValuePair{`1,`2})">InsertKeyValue(KeyValuePair&lt;TKey, TValue&gt;)</h4>
+  <div class="markdown level1 summary"><p>Inserts the given key-value pair in <a class="xref" href="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__keyValues">_keyValues</a> array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InsertKeyValue(KeyValuePair&lt;TKey, TValue&gt; keyVal)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;</td>
+        <td><span class="parametername">keyVal</span></td>
+        <td><p>the new key-value pair to be inserted in <a class="xref" href="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__keyValues">_keyValues</a> array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsEmpty.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.IsEmpty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L232">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsEmpty_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.IsEmpty*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsEmpty" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.IsEmpty">IsEmpty()</h4>
+  <div class="markdown level1 summary"><p>Checks whether a node is empty: meaning has no key-value pairs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsEmpty()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True if the node is free, and false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsFull.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.IsFull%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L187">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsFull_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.IsFull*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsFull" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.IsFull">IsFull()</h4>
+  <div class="markdown level1 summary"><p>Detects whether the node is full. A node is full, if it has MaxKeys keys.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsFull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>Truce if the node is full, and false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsLeaf.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.IsLeaf%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L169">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsLeaf_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.IsLeaf*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsLeaf" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.IsLeaf">IsLeaf()</h4>
+  <div class="markdown level1 summary"><p>Checks whether the current node is leaf. A node is leaf if it has no children.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsLeaf()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True if the current node is leaf, and false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsMinFull.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.IsMinFull%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L214">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsMinFull_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.IsMinFull*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsMinFull" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.IsMinFull">IsMinFull()</h4>
+  <div class="markdown level1 summary"><p>Checks whether a node is MinFull: meaning it has exactly MinKeys key-value pairs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsMinFull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True if case is MinFull, false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsMinOneFull.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.IsMinOneFull%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L223">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsMinOneFull_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.IsMinOneFull*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsMinOneFull" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.IsMinOneFull">IsMinOneFull()</h4>
+  <div class="markdown level1 summary"><p>Checks whether a node is MinOneFull: meaning it has exactly MinKeys+1 key-value pairs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsMinOneFull()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True if it is MinOneFull, false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsOverFlown.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.IsOverFlown%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L196">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsOverFlown_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.IsOverFlown*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsOverFlown" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.IsOverFlown">IsOverFlown()</h4>
+  <div class="markdown level1 summary"><p>Checks whether the node is overflown. A node is overflown, if its key count exceeds MaxKeys.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsOverFlown()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True if the node is overflown, and false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsRoot.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.IsRoot%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L178">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsRoot_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.IsRoot*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsRoot" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.IsRoot">IsRoot()</h4>
+  <div class="markdown level1 summary"><p>Checks whether the current node is root. A node is root if it has no parent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsRoot()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True if the current node is root, and false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsUnderFlown.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.IsUnderFlown%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L205">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsUnderFlown_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.IsUnderFlown*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsUnderFlown" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.IsUnderFlown">IsUnderFlown()</h4>
+  <div class="markdown level1 summary"><p>Checks whether the node is UnderFlown. A node is UnderFlown, if its key count falls lower than MinKeys.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsUnderFlown()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>Truce if the node is UnderFlown, and false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_KeyValueToMoveUp.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.KeyValueToMoveUp%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L513">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_KeyValueToMoveUp_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.KeyValueToMoveUp*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_KeyValueToMoveUp" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.KeyValueToMoveUp">KeyValueToMoveUp()</h4>
+  <div class="markdown level1 summary"><p>When a node is being split into two nodes, gets the key that shall be moved to the parent of this node.
+This operation is expected to only be called upon a node that is full. Yet to prevent issues, first checks for the key count.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KeyValuePair&lt;TKey, TValue&gt; KeyValueToMoveUp()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;</td>
+        <td><p>The key at the middle of the key-value pairs that shall be moved to the parent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_RemoveChild__0_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.RemoveChild(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L373">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_RemoveChild_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.RemoveChild*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_RemoveChild__0_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.RemoveChild(`0)">RemoveChild(TNode)</h4>
+  <div class="markdown level1 summary"><p>Removes child <code data-dev-comment-type="paramref" class="paramref">child</code> from the node's <a class="xref" href="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__children">_children</a> array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveChild(TNode child)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td><span class="parametername">child</span></td>
+        <td><p>Child to be removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_RemoveChildByIndex_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.RemoveChildByIndex(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L357">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_RemoveChildByIndex_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.RemoveChildByIndex*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_RemoveChildByIndex_System_Int32_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.RemoveChildByIndex(System.Int32)">RemoveChildByIndex(Int32)</h4>
+  <div class="markdown level1 summary"><p>Removes child at index <code data-dev-comment-type="paramref" class="paramref">index</code> from the node's <a class="xref" href="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__children">_children</a> array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveChildByIndex(int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The child index.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_RemoveKey__1_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.RemoveKey(%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L325">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_RemoveKey_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.RemoveKey*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_RemoveKey__1_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.RemoveKey(`1)">RemoveKey(TKey)</h4>
+  <div class="markdown level1 summary"><p>Removes key <code data-dev-comment-type="paramref" class="paramref">key</code> from the node's <a class="xref" href="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__keyValues">_keyValues</a> array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveKey(TKey key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>Is the key to be removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_RemoveKeyByIndex_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.RemoveKeyByIndex(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L341">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_RemoveKeyByIndex_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.RemoveKeyByIndex*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_RemoveKeyByIndex_System_Int32_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.RemoveKeyByIndex(System.Int32)">RemoveKeyByIndex(Int32)</h4>
+  <div class="markdown level1 summary"><p>Removes key at index <code data-dev-comment-type="paramref" class="paramref">index</code> from the node's <a class="xref" href="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__keyValues">_keyValues</a> array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveKeyByIndex(int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index of the key to be removed from the node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_SetParent__0_.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.SetParent(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L452">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_SetParent_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.SetParent*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_SetParent__0_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.SetParent(`0)">SetParent(TNode)</h4>
+  <div class="markdown level1 summary"><p>Sets the parent node of the current node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetParent(TNode parent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td><span class="parametername">parent</span></td>
+        <td><p>Parent node of the current node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_Split.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.Split%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L470">View Source</a>
+  </span>
+  <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_Split_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.Split*"></a>
+  <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_Split" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.Split">Split()</h4>
+  <div class="markdown level1 summary"><p>Splits this node to 2 nodes if it is overflown, such that each node has at least MinKeys keys.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TNode Split()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td><p>The new node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode-3.html">IBTreeNode&lt;TNode, TKey, TValue&gt;</a>
+  </div>
+  <div>
+      <span class="xref">System.IComparable&lt;T&gt;</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L33" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
