@@ -86,31 +86,31 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
 
             List<GraphNode<string>> distancesFromRoot = Dijkstra.GetShortestDistancesFromRoot(A);
 
-            Assert.AreEqual(0, distancesFromRoot[0].Value);
+            Assert.AreEqual("A", distancesFromRoot[0].Value);
             Assert.AreEqual(0, distancesFromRoot[0].DistanceFromRoot);
 
-            Assert.AreEqual(1, distancesFromRoot[1].Value);
+            Assert.AreEqual("B", distancesFromRoot[1].Value);
             Assert.AreEqual(4, distancesFromRoot[1].DistanceFromRoot);
 
-            Assert.AreEqual(7, distancesFromRoot[2].Value);
+            Assert.AreEqual("C", distancesFromRoot[2].Value);
             Assert.AreEqual(8, distancesFromRoot[2].DistanceFromRoot);
 
-            Assert.AreEqual(6, distancesFromRoot[3].Value);
+            Assert.AreEqual("F", distancesFromRoot[3].Value);
             Assert.AreEqual(9, distancesFromRoot[3].DistanceFromRoot);
 
-            Assert.AreEqual(5, distancesFromRoot[4].Value);
+            Assert.AreEqual("H", distancesFromRoot[4].Value);
             Assert.AreEqual(11, distancesFromRoot[4].DistanceFromRoot);
 
-            Assert.AreEqual(2, distancesFromRoot[5].Value);
+            Assert.AreEqual("D", distancesFromRoot[5].Value);
             Assert.AreEqual(12, distancesFromRoot[5].DistanceFromRoot);
 
-            Assert.AreEqual(8, distancesFromRoot[6].Value);
+            Assert.AreEqual("E", distancesFromRoot[6].Value);
             Assert.AreEqual(14, distancesFromRoot[6].DistanceFromRoot);
 
-            Assert.AreEqual(3, distancesFromRoot[7].Value);
+            Assert.AreEqual("G", distancesFromRoot[7].Value);
             Assert.AreEqual(19, distancesFromRoot[7].DistanceFromRoot);
 
-            Assert.AreEqual(4, distancesFromRoot[8].Value);
+            Assert.AreEqual("I", distancesFromRoot[8].Value);
             Assert.AreEqual(21, distancesFromRoot[8].DistanceFromRoot);
         }
     }
