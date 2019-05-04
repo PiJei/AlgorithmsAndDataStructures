@@ -12,16 +12,19 @@
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Initialize">
             <summary>
             Initializes/Resets variables before executing each unit test in this class. 
+            To visualize the graph see images/Graph-BFS-DFS.png
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Iterative_StartFromA">
             <summary>
             Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.A"/>.
+            To visualize the graph see images/BFS-Iterative-StartA.png
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Iterative_StartFromE">
             <summary>
             Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.E"/>.
+            To visualize the graph see images/BFS-Iterative-StartE.png
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Recursive_StartFromA">
@@ -42,16 +45,19 @@
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Initialize">
             <summary>
             Initializes/Resets variables before executing each unit test in this class. 
+            To visualize the graph see images/Graph-BFS-DFS.png
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Iterative_StartFromA">
             <summary>
             Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.A"/>.
+            To visualize the graph see images/DFS-Iterative-StartA.png
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Iterative_StartFromE">
             <summary>
             Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.E"/>.
+            To visualize the graph see images/DFS-Iterative-StartE.png
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Recursive_StartFromA">
@@ -72,6 +78,7 @@
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DijkstraTests.GetShortestDistancesFromRoot">
             <summary>
             Tests the correctness of shortest distance computation 
+            To visualize the graph see images/Dijkstra.png
             </summary>
         </member>
         <member name="T:CSFundamentalsTests.Algorithms.Search.BinarySearchTests">
