@@ -67,6 +67,7 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
 
         /// <summary>
         /// Tests the correctness of BFS iterative version, when starting from node <see cref="A"/>.
+        /// To visualize the graph see images/BFS-Iterative-StartA.png
         /// </summary>
         [TestMethod]
         public void Iterative_StartFromA()
@@ -84,6 +85,7 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
 
         /// <summary>
         /// Tests the correctness of BFS iterative version, when starting from node <see cref="E"/>.
+        /// To visualize the graph see images/BFS-Iterative-StartE.png
         /// </summary>
         [TestMethod]
         public void Iterative_StartFromE()
