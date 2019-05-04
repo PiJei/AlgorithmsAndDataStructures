@@ -44,12 +44,13 @@
           "apidoc/**.md"
         ],
         "exclude": [
-          "obj/**",
-          "_site/**"
-        ]
+          "docfx_project/obj/**",
+          "docs/**"
+        ],
+		"src":"../"
       }
     ],
-    "dest": "_site",
+    "dest": "../docs",
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
