@@ -32,7 +32,7 @@ namespace CSFundamentals.Algorithms.Sort
         /// <summary>
         /// Implements insertion sort iteratively, and in-situ, using many Swaps.
         /// </summary>
-        /// <param name="list">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
+        /// <param name="list">The list of values (of type T, e.g., int) to be sorted. </param>
         [Algorithm(AlgorithmType.Sort, "InsertionSort")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(n)", When = "Input array is already sorted.")]
@@ -54,7 +54,7 @@ namespace CSFundamentals.Algorithms.Sort
         /// <summary>
         /// Implements insertion sort iteratively, and in-situ, using only one swap per element.
         /// </summary>
-        /// <param name="list">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
+        /// <param name="list">The list of values (of type T, e.g., int) to be sorted. </param>
         public static void Sort_Iterative_V2<T>(List<T> list) where T : IComparable<T>
         {
             // In this version, we will overwrite the array location for element (i) by shifting each element to the right if bigger than (i) till finding its correct position
@@ -76,8 +76,8 @@ namespace CSFundamentals.Algorithms.Sort
         /// <summary>
         /// Implements insertion sort recursively. Initial call shall be Sort_Recursive(values, values.Count-1);
         /// </summary>
-        /// <param name="list">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
-        /// <param name="n"> Is the last inclusive index of the <paramref name="list"/>. </param>
+        /// <param name="list">The list of values (of type T, e.g., int) to be sorted. </param>
+        /// <param name="n">The last inclusive index of the <paramref name="list"/>. </param>
         public static void Sort_Recursive<T>(List<T> list, int n) where T : IComparable<T>
         {
             if (n >= 1) // Similar to iterative versions that we start from 1st element, and not the one at 0th, as always need to compare to the left. 

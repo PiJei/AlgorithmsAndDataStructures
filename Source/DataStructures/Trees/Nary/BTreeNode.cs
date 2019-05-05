@@ -29,8 +29,8 @@ namespace CSFundamentals.DataStructures.Trees.Nary
     /// <summary>
     /// Implements a B-Tree node. A B-tree node is an ordered sequence of K keys, and K+1 children.
     /// </summary>
-    /// <typeparam name="TKey">Is the type of the keys in the tree. </typeparam>
-    /// <typeparam name="TValue">Is the type of the values in the tree. </typeparam>
+    /// <typeparam name="TKey">The type of the keys in the tree. </typeparam>
+    /// <typeparam name="TValue">The type of the values in the tree. </typeparam>
     public class BTreeNode<TKey, TValue> :
         BTreeNodeBase<BTreeNode<TKey, TValue>, TKey, TValue>
         where TKey : IComparable<TKey>
@@ -45,7 +45,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         /// <summary>
         /// Creates a node with no keys. 
         /// </summary>
-        /// <param name="maxBranchingDegree">Is the maximum number of children the node can have. </param>
+        /// <param name="maxBranchingDegree">The maximum number of children the node can have. </param>
         public BTreeNode(int maxBranchingDegree) : base(maxBranchingDegree)
         {
         }
@@ -53,8 +53,8 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         /// <summary>
         /// Creates a node with 1 key. 
         /// </summary>
-        /// <param name="maxBranchingDegree">Is the maximum number of children the node can have. </param>
-        /// <param name="keyValue">Is a key-value pair to be inserted in the tree. </param>
+        /// <param name="maxBranchingDegree">The maximum number of children the node can have. </param>
+        /// <param name="keyValue">A key-value pair to be inserted in the tree. </param>
         public BTreeNode(int maxBranchingDegree, KeyValuePair<TKey, TValue> keyValue) : base(maxBranchingDegree, keyValue)
         {
         }
@@ -62,9 +62,9 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         /// <summary>
         /// Creates a node with a set of keys and children.
         /// </summary>
-        /// <param name="maxBranchingDegree">Is the maximum number of children the node can have. </param>
-        /// <param name="keyValues">Is a set of key-value pairs to be inserted in the new node. </param>
-        /// <param name="children">Is a set of children of the node. Expectancy is that the count of children is one bigger than the count of key-value pairs in the node. </param>
+        /// <param name="maxBranchingDegree">The maximum number of children the node can have. </param>
+        /// <param name="keyValues">A set of key-value pairs to be inserted in the new node. </param>
+        /// <param name="children">A set of children of the node. Expectancy is that the count of children is one bigger than the count of key-value pairs in the node. </param>
         public BTreeNode(int maxBranchingDegree, List<KeyValuePair<TKey, TValue>> keyValues, List<BTreeNode<TKey, TValue>> children) : base(maxBranchingDegree, keyValues, children)
         {
         }

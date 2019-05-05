@@ -36,9 +36,9 @@ namespace CSFundamentals.Algorithms.Search
         /// Notice that only works if the given array is sorted. 
         /// </summary>
         /// <param name="sortedList">A sorted list of any comparable type. </param>
-        /// <param name="startIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>
-        /// <param name="endIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
-        /// <param name="key">Specifies the value that is being searched for. </param>
+        /// <param name="startIndex">The lowest (left-most) index of the array - inclusive. </param>
+        /// <param name="endIndex">The highest (right-most) index of the array - inclusive. </param>
+        /// <param name="key">The value that is being searched for. </param>
         /// <returns>The index of the <paramref name="key"/> in the array, and -1 if it does not exist in the array. </returns>
         [Algorithm(AlgorithmType.Search, "TernarySearch", Assumptions = "Array is sorted with an ascending order.")]
         [SpaceComplexity("O(1)", InPlace = true)]

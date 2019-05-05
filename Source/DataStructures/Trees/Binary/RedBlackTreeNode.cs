@@ -63,9 +63,9 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         /// <summary>
         /// Constructor. 
         /// </summary>
-        /// <param name="key">Is the key to be stored in the node. </param>
-        /// <param name="value">Is the value to be stored in the node. </param>
-        /// <param name="color">Is the color of the node, default is red. </param>
+        /// <param name="key">The key to be stored in the node. </param>
+        /// <param name="value">The value to be stored in the node. </param>
+        /// <param name="color">The color of the node, default is red. </param>
         public RedBlackTreeNode(TKey key, TValue value, RedBlackTreeNodeColor color = RedBlackTreeNodeColor.Red) : base(key, value)
         {
             Color = color;

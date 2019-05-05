@@ -54,7 +54,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         /// <summary>
         /// Creates a node with no keys. 
         /// </summary>
-        /// <param name="maxBranchingDegree">Is the maximum number of children the node can have. </param>
+        /// <param name="maxBranchingDegree">The maximum number of children the node can have. </param>
         public BPlusTreeNode(int maxBranchingDegree) : base(maxBranchingDegree)
         {
         }
@@ -62,8 +62,8 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         /// <summary>
         /// Creates a node with 1 key. 
         /// </summary>
-        /// <param name="maxBranchingDegree">Is the maximum number of children the node can have. </param>
-        /// <param name="keyValue">Is a key-value pair to be inserted in the tree. </param>
+        /// <param name="maxBranchingDegree">The maximum number of children the node can have. </param>
+        /// <param name="keyValue">A key-value pair to be inserted in the tree. </param>
         public BPlusTreeNode(int maxBranchingDegree, KeyValuePair<TKey, TValue> keyValue) : base(maxBranchingDegree, keyValue)
         {
         }
@@ -71,9 +71,9 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         /// <summary>
         /// Creates a node with a set of keys and children.
         /// </summary>
-        /// <param name="maxBranchingDegree">Is the maximum number of children the node can have. </param>
-        /// <param name="keyValues">Is a set of key-value pairs to be inserted in the new node. </param>
-        /// <param name="children">Is a set of children of the node. Expectancy is that the count of children is one bigger than the count of key-value pairs in the node. </param>
+        /// <param name="maxBranchingDegree">The maximum number of children the node can have. </param>
+        /// <param name="keyValues">A set of key-value pairs to be inserted in the new node. </param>
+        /// <param name="children">A set of children of the node. Expectancy is that the count of children is one bigger than the count of key-value pairs in the node. </param>
         public BPlusTreeNode(int maxBranchingDegree, List<KeyValuePair<TKey, TValue>> keyValues, List<BPlusTreeNode<TKey, TValue>> children) : base(maxBranchingDegree, keyValues, children)
         {
         }

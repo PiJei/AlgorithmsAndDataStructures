@@ -83,11 +83,11 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         /// <summary>
         /// Re-balances the tree to restore back its properties. This method is called when node is underFlown, and thus must be fixed. 
         /// </summary>
-        /// <param name="node">Specifies an underFlown node. </param>
-        /// <param name="leftSibling">Is the left sibling of the underFlown node. </param>
-        /// <param name="rightSibling">Is the right sibling of the underFlown node. </param>
-        /// <param name="separatorWithLeftSiblingIndex">Is the index of the key in parent that separates node from its left sibling. </param>
-        /// <param name="separatorWithRightSiblingIndex">Is the index of the key in parent that separates node from its right sibling. </param>
+        /// <param name="node">An underFlown node. </param>
+        /// <param name="leftSibling">The left sibling of the underFlown node. </param>
+        /// <param name="rightSibling">The right sibling of the underFlown node. </param>
+        /// <param name="separatorWithLeftSiblingIndex">The index of the key in parent that separates node from its left sibling. </param>
+        /// <param name="separatorWithRightSiblingIndex">The index of the key in parent that separates node from its right sibling. </param>
         [TimeComplexity(Case.Best, "O(1)", When = "There is no need to re-balance, or re-balance does not propagate to upper layers.")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
@@ -169,9 +169,9 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         /// Rotates a key from the left sibling of the node via their parent to the node.
         /// The cost of this operation is at inserting keys and children, in right position (to preserve order), Which at worst is O(K), Where K is the maximum number of keys in a node, and thus is constant. 
         /// </summary>
-        /// <param name="node">Is the receiver of a new key. </param>
-        /// <param name="leftSibling">The node that lends a key to the process. This key moves to parent, and a key from parent moves to node.</param>
-        /// <param name="separatorIndex">Is the separator index of <paramref name="node"/> and <paramref name="leftSibling"/> nodes in their parent _keyValues array.</param>
+        /// <param name="node">The receiver of a new key. </param>
+        /// <param name="leftSibling">Node that lends a key to the process. This key moves to parent, and a key from parent moves to node.</param>
+        /// <param name="separatorIndex">Separator index of <paramref name="node"/> and <paramref name="leftSibling"/> nodes in their parent _keyValues array.</param>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(K)")] // Constant time as is independent of n: number of keys in tree. 
         [TimeComplexity(Case.Average, "O(K)")] // Constant time as is independent of n: number of keys in tree. 
@@ -198,7 +198,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         /// </summary>
         /// <param name="node">Is the receiver of a new key. </param>
         /// <param name="rightSibling">The node that lends a key to the process. This key moves to parent, and a key from parent moves to node. </param>
-        /// <param name="separatorIndex">Is the separator index of <paramref name="node"/> and <paramref name="rightSibling"/> nodes in their parent _keyValues array.</param>
+        /// <param name="separatorIndex">The separator index of <paramref name="node"/> and <paramref name="rightSibling"/> nodes in their parent _keyValues array.</param>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(K)")] // Constant time as is independent of n: number of keys in tree. 
         [TimeComplexity(Case.Average, "O(K)")] // Constant time as is independent of n: number of keys in tree. 
@@ -372,8 +372,8 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         /// <summary>
         /// Starting from the given root, recursively traverses tree top-down to find the proper leaf node, at which <paramref name="key"/> can be inserted. 
         /// </summary>
-        /// <param name="root">Is the top-most node at which search for the leaf starts.</param>
-        /// <param name="key">Is the key for which a container leaf is being searched. </param>
+        /// <param name="root">The top-most node at which search for the leaf starts.</param>
+        /// <param name="key">The key for which a container leaf is being searched. </param>
         /// <returns>Leaf node to insert the key. </returns>
         [TimeComplexity(Case.Best, "O(1)", When = "There is no node in the tree or only one node.")]
         [TimeComplexity(Case.Worst, "O(Log(n))")] // todo
@@ -413,7 +413,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         ///  Searchers the given key in leaf nodes of the (sub)tree rooted at node <paramref name="root"/>.
         /// </summary>
         /// <param name="root">The root of the (sub) tree at which search starts. </param>
-        /// <param name="key">Is the key to search for.</param>
+        /// <param name="key">The key to search for.</param>
         /// <returns>The leaf node containing the key if it exists. Otherwise throws an exception. </returns>
         [TimeComplexity(Case.Best, "O(1)", When = "Key is the first item of the first node to visit.")]
         [TimeComplexity(Case.Worst, "O(LogD Log(n)Base(D))")] // Each search with in a node uses binary-search which is Log(K) cost, and since it is constant is not included in this value. 

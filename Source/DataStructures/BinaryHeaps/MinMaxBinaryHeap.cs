@@ -45,7 +45,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <summary>
         /// Builds an in-place MinMax heap on the given array. 
         /// </summary>
-        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        /// <param name="heapArrayLength">The length of the heap array. </param>
         public override void BuildHeap_Recursively(int heapArrayLength)
         {
             for (int i = heapArrayLength / 2; i >= 0; i--)
@@ -57,8 +57,8 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <summary>
         /// Inserts a new value into the Min Heap. 
         /// </summary>
-        /// <param name="keyValue">Specifies the new key-value pair to be inserted in the tree.</param>
-        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        /// <param name="keyValue">The new key-value pair to be inserted in the tree.</param>
+        /// <param name="heapArrayLength">The length of the heap array. </param>
         public override void Insert(KeyValuePair<TKey, TValue> keyValue, int heapArrayLength)
         {
             HeapArray.Add(keyValue);
@@ -69,8 +69,8 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <summary>
         /// Bubbles up the node at the given index. 
         /// </summary>
-        /// <param name="index">Specifies the index of a node in the heap array.</param>
-        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        /// <param name="index">The index of a node in the heap array.</param>
+        /// <param name="heapArrayLength">The length of the heap array. </param>
         public void BubbleUp_Recursively(int index, int heapArrayLength)
         {
             int level = GetNodeLevel(index);
@@ -108,8 +108,8 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <summary>
         /// Bubbles up the node at the given index which is assumed to be on a min/even level. 
         /// </summary>
-        /// <param name="index">Specifies the index of a node in the heap array.</param>
-        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        /// <param name="index">The index of a node in the heap array.</param>
+        /// <param name="heapArrayLength">The length of the heap array. </param>
         public void BubbleUpMin_Recursively(int index, int heapArrayLength)
         {
             int parentIndex = GetParentIndex(index);
@@ -127,8 +127,8 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <summary>
         /// Bubbles up the node at the given index which is assumed to be on a max/odd level.
         /// </summary>
-        /// <param name="index">Specifies the index of a node in the heap array.</param>
-        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        /// <param name="index">The index of a node in the heap array.</param>
+        /// <param name="heapArrayLength">The length of the heap array. </param>
         public void BubbleUpMax_Recursively(int index, int heapArrayLength)
         {
             int parentIndex = GetParentIndex(index);
@@ -147,7 +147,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// Removes the min element from the heap.
         /// </summary>
         /// <param name="keyValue">If the operation is successful, contains the minimum element in the array.</param>
-        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        /// <param name="heapArrayLength">The length of the heap array. </param>
         /// <returns></returns>
         public override bool TryRemoveRoot(out KeyValuePair<TKey, TValue> keyValue, int heapArrayLength)
         {
@@ -174,8 +174,8 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <summary>
         /// This method is for finding the root of the heap, without removing it. 
         /// </summary>
-        /// <param name="keyValue">Specifies the key-value of the root.</param>
-        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        /// <param name="keyValue">The key-value of the root.</param>
+        /// <param name="heapArrayLength">The length of the heap array. </param>
         /// <returns>True in case of success, and false in case of failure.</returns>
         public override bool TryFindRoot(out KeyValuePair<TKey, TValue> keyValue, int heapArrayLength)
         {
@@ -191,8 +191,8 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <summary>
         /// Recursively bubbles down/trickles down the given rootIndex.
         /// </summary>
-        /// <param name="rootIndex">Specifies the index of the node for which bubble down starts. </param>
-        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        /// <param name="rootIndex">The index of the node for which bubble down starts. </param>
+        /// <param name="heapArrayLength">The length of the heap array. </param>
         public override void BubbleDown_Recursively(int rootIndex, int heapArrayLength)
         {
             int level = GetNodeLevel(rootIndex);
@@ -209,8 +209,8 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <summary>
         /// Bubbles/trickles down the node at the given index, which is on a min/even level. 
         /// </summary>
-        /// <param name="rootIndex">Specifies the index of a node at a min level, from which bubble down starts recursively.</param>
-        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        /// <param name="rootIndex">The index of a node at a min level, from which bubble down starts recursively.</param>
+        /// <param name="heapArrayLength">The length of the heap array. </param>
         public void BubbleDownMin_Recursively(int rootIndex, int heapArrayLength)
         {
             List<int> childrenIndexes = GetChildrenIndexes(new List<int> { rootIndex }, heapArrayLength);
@@ -249,8 +249,8 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <summary>
         /// Bubbles/trickles down the node at the given index, which is on a max/even level. 
         /// </summary>
-        /// <param name="rootIndex">Specifies the index of the node at a max level, from which bubble down starts recursively.</param>
-        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        /// <param name="rootIndex">The index of the node at a max level, from which bubble down starts recursively.</param>
+        /// <param name="heapArrayLength">The length of the heap array. </param>
         public void BubbleDownMax_Recursively(int rootIndex, int heapArrayLength)
         {
             List<int> childrenIndexes = GetChildrenIndexes(new List<int> { rootIndex }, heapArrayLength);
@@ -284,7 +284,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <summary>
         /// Given a node level in a MinMax heap, returns true if that node is on an even level, meaning on a Min level. and false otherwise/ 
         /// </summary>
-        /// <param name="level">Specifies the level of a node in a MinMax heap.</param>
+        /// <param name="level">The level of a node in a MinMax heap.</param>
         /// <returns>True in case of success, and false otherwise. </returns>
         public bool IsMinLevel(int level)
         {
@@ -295,8 +295,8 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <summary>
         /// Gets the list of indexes of all the children of all the given indexes. 
         /// </summary>
-        /// <param name="indexes">Specifies the indexes of the nodes for which their children's indexes shall be computed. </param>
-        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        /// <param name="indexes">The indexes of the nodes for which their children's indexes shall be computed. </param>
+        /// <param name="heapArrayLength">The length of the heap array. </param>
         /// <returns>List of all the children of all the indexes. </returns>
         private List<int> GetChildrenIndexes(List<int> indexes, int heapArrayLength)
         {

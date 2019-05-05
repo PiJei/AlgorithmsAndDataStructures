@@ -34,8 +34,8 @@ namespace CSFundamentals.Algorithms.Search
         /// <summary>
         /// Implements search using a hash table. 
         /// </summary>
-        /// <param name="list">Specifies a list of any comparable type.</param>
-        /// <param name="key">Specifies the value the method is searching for. </param>
+        /// <param name="list">A list of any comparable type.</param>
+        /// <param name="key">The value the method is searching for. </param>
         /// <returns>The list of all the indexes in the array that have <paramref name="key"/>. </returns>
         [Algorithm(AlgorithmType.Search, "HashTable")]
         [SpaceComplexity("O(n)", InPlace = false)]

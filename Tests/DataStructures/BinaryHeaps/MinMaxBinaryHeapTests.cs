@@ -120,8 +120,8 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         /// </summary>
         /// <typeparam name="TKey">Type of the keys stored in the heap. </typeparam>
         /// <typeparam name="TValue">Type of the values stored in the heap. </typeparam>
-        /// <param name="heap">Is a MinMax binary heap. </param>
-        /// <param name="index">Is the index of a node in a heap array and in a Min level.</param>
+        /// <param name="heap">A MinMax binary heap. </param>
+        /// <param name="index">The index of a node in a heap array and in a Min level.</param>
         /// <returns>True if the node has proper properties, and false otherwise. </returns>
         public static bool HasMinMaxOrderPropertyForMinLevel<TKey, TValue>(BinaryHeapBase<TKey, TValue> heap, int index) where TKey : IComparable<TKey>
         {
@@ -149,8 +149,8 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         /// </summary>
         /// <typeparam name="TKey">Type of the keys stored in the heap. </typeparam>
         /// <typeparam name="TValue">Type of the values stored in the heap. </typeparam>
-        /// <param name="heap">Is a MinMax binary heap. </param>
-        /// <param name="index">Is the index of a node in a heap array and in a Max level.</param>
+        /// <param name="heap">A MinMax binary heap. </param>
+        /// <param name="index">The index of a node in a heap array and in a Max level.</param>
         /// <returns>True if the node has proper properties, and false otherwise. </returns>
         public static bool HasMinMaxOrderPropertyForMaxLevel<TKey, TValue>(BinaryHeapBase<TKey, TValue> heap, int index) where TKey : IComparable<TKey>
         {

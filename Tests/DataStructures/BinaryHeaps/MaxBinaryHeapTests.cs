@@ -197,7 +197,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         /// <typeparam name="TKey">Type of the keys stored in the heap. </typeparam>
         /// <typeparam name="TValue">Type of the values stored in the heap. </typeparam>
         /// <param name="arraySize">Size of the heap array. </param>
-        /// <param name="heap">Is a Max binary heap. </param>
+        /// <param name="heap">A Max binary heap. </param>
         /// <returns>True if the heap is a proper Max binary heap, and false otherwise. </returns>
         public static bool HasMaxOrderPropertyForHeap<TKey, TValue>(int arraySize, MaxBinaryHeap<TKey, TValue> heap) where TKey : IComparable<TKey>
         {

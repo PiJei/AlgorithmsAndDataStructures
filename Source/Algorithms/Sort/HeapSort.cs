@@ -34,7 +34,7 @@ namespace CSFundamentals.Algorithms.Sort
         /// <summary>
         /// Sorts the elements in an array using heap sort algorithm into an ascending order. 
         /// </summary>
-        /// <param name="list">Specifies the list of values (of type T, e.g., int) to be sorted.</param>
+        /// <param name="list">The list of values (of type T, e.g., int) to be sorted.</param>
         [Algorithm(AlgorithmType.Sort, "HeapSort")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(nLog(n))")]

@@ -27,64 +27,64 @@ namespace CSFundamentals.DataStructures.BinaryHeaps.API
     /// <summary>
     /// Is a base class for Binary heap. 
     /// </summary>
-    /// <typeparam name="TKey">Is the type of the keys stored in the heap. </typeparam>
-    /// <typeparam name="TValue">Is the type of the values stored in the heap. </typeparam>
+    /// <typeparam name="TKey">The type of the keys stored in the heap. </typeparam>
+    /// <typeparam name="TValue">The type of the values stored in the heap. </typeparam>
     public abstract class BinaryHeapBase<TKey, TValue> : IBinaryHeap<TKey, TValue> where TKey : IComparable<TKey>
     {
         /// <summary>
         /// Note that passing the array size is not a must, as the class itself contains the array and has access to its size. However some algorithms such as HeapSort which rely on a heap to perform sorting, are better implemented, if we have the length of the array passed to these methods. 
         /// </summary>
-        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        /// <param name="heapArrayLength">The length of the heap array. </param>
         public abstract void BuildHeap_Iteratively(int heapArrayLength);
 
         /// <summary>
         /// Builds a heap using recursion, and does so in situ.
         /// </summary>
-        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        /// <param name="heapArrayLength">The length of the heap array. </param>
         public abstract void BuildHeap_Recursively(int heapArrayLength);
 
         /// <summary>
         /// Inserts a new value into heap.
         /// </summary>
-        /// <param name="keyValue">Specifies the key-value to be inserted into the heap.</param>
-        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        /// <param name="keyValue">The key-value to be inserted into the heap.</param>
+        /// <param name="heapArrayLength">The length of the heap array. </param>
         public abstract void Insert(KeyValuePair<TKey, TValue> keyValue, int heapArrayLength);
 
         /// <summary>
         /// Removes the root of the heap. In a MinHeap and MinMaxHeap this is the min, and in a MaxHeap and MaxMinHeap this is the max. 
         /// </summary>
-        /// <param name="keyValue">Specifies the key-value of the root.</param>
-        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        /// <param name="keyValue">The key-value of the root.</param>
+        /// <param name="heapArrayLength">The length of the heap array. </param>
         /// <returns>True in case of success, and false otherwise.</returns>
         public abstract bool TryRemoveRoot(out KeyValuePair<TKey, TValue> keyValue, int heapArrayLength);
 
         /// <summary>
         /// Finds the root of the heap, without removing it. 
         /// </summary>
-        /// <param name="keyValue">Specifies the key-value of the root.</param>
-        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        /// <param name="keyValue">The key-value of the root.</param>
+        /// <param name="heapArrayLength">The length of the heap array. </param>
         /// <returns>True in case of success, and false in case of failure.</returns>
         public abstract bool TryFindRoot(out KeyValuePair<TKey, TValue> keyValue, int heapArrayLength);
 
         /// <summary>
         /// Implements the bubble down/trickle down operation using recursion.
         /// </summary>
-        /// <param name="rootIndex">Specifies the index of the root element, the element for which the trickle down should be performed.</param>
-        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        /// <param name="rootIndex">The index of the root element, the element for which the trickle down should be performed.</param>
+        /// <param name="heapArrayLength">The length of the heap array. </param>
         public abstract void BubbleDown_Recursively(int rootIndex, int heapArrayLength);
 
         /// <summary>
         /// Implements the bubble down/trickle down operation using iteration.
         /// </summary>
-        /// <param name="rootIndex">Specifies the index of the root element, the element for which the trickle down should be performed.</param>
-        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        /// <param name="rootIndex">The index of the root element, the element for which the trickle down should be performed.</param>
+        /// <param name="heapArrayLength">The length of the heap array. </param>
         public abstract void BubbleDown_Iteratively(int rootIndex, int heapArrayLength);
 
         /// <summary>
         /// Moves the value in the given index, up in the heap till its position is found. The position is defined such to respect heap ordering property.
         /// </summary>
-        /// <param name="index">Specifies the index of the element that should be bubbled up.</param>
-        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        /// <param name="index">The index of the element that should be bubbled up.</param>
+        /// <param name="heapArrayLength">The length/size of the heap array. </param>
         public abstract void BubbleUp_Iteratively(int index, int heapArrayLength);
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps.API
         /// <summary>
         /// Returns the level of a node in the heap, given the node's index in the heap array.
         /// </summary>
-        /// <param name="index">Specifies the index of a node in an array. </param>
+        /// <param name="index">The index of a node in an array. </param>
         /// <returns>Returns the level of the node. </returns>
         public int GetNodeLevel(int index)
         {
@@ -146,10 +146,10 @@ namespace CSFundamentals.DataStructures.BinaryHeaps.API
         /// <summary>
         /// Finds the minimum element in the array, among the given indexes, with respect to minValueReference, and returns the index of the min value. 
         /// </summary>
-        /// <param name="list">Specifies the list of values. </param>
-        /// <param name="indexes">Specifies the list of indexes among which we want to find the minimum value. </param>
-        /// <param name="minKeyReference">Specifies the reference for the minimum value.  </param>
-        /// <param name="minKeyIndex">Specifies the index of the minimum value among the specifies indexes. </param>
+        /// <param name="list">The list of values. </param>
+        /// <param name="indexes">The list of indexes among which we want to find the minimum value. </param>
+        /// <param name="minKeyReference">The reference for the minimum value.  </param>
+        /// <param name="minKeyIndex">The index of the minimum value among the specifies indexes. </param>
         /// <returns>True in case of success, and false in case of failure. </returns>
         public bool TryFindIndexOfMinSmallerThanReference(List<KeyValuePair<TKey, TValue>> list, List<int> indexes, TKey minKeyReference, out int minKeyIndex)
         {
@@ -180,11 +180,11 @@ namespace CSFundamentals.DataStructures.BinaryHeaps.API
         /// <summary>
         /// Finds the maximum element in the array, among the given indexes, with respect to maxValueReference, and returns the index of the max value. 
         /// </summary>
-        /// <param name="list">Specifies the list of values. </param>
-        /// <param name="listLength">Specifies the length of values array, which based on the usage, might be less than values.Count. For example when called via Heap-Sort. </param>
-        /// <param name="indexes">Specifies the list of indexes among which we want to find the maximum value. </param>
-        /// <param name="maxKeyReference">Specifies the reference for the maximum value.  </param>
-        /// <param name="maxKeyIndex">Specifies the index of the maximum value among the specifies indexes. </param>
+        /// <param name="list">The list of values. </param>
+        /// <param name="listLength">The length of values array, which based on the usage, might be less than values.Count. For example when called via Heap-Sort. </param>
+        /// <param name="indexes">The list of indexes among which we want to find the maximum value. </param>
+        /// <param name="maxKeyReference">The reference for the maximum value.  </param>
+        /// <param name="maxKeyIndex">The index of the maximum value among the specifies indexes. </param>
         /// <returns>True in case of success, and false in case of failure. </returns>
         public bool TryFindIndexOfMaxBiggerThanReference(List<KeyValuePair<TKey, TValue>> list, int listLength, List<int> indexes, TKey maxKeyReference, out int maxKeyIndex)
         {
@@ -215,7 +215,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps.API
         /// <summary>
         /// Find the index of a key in the heap array. 
         /// </summary>
-        /// <param name="key">Is a key for which the index in the array must be found. </param>
+        /// <param name="key">A key for which the index in the array must be found. </param>
         /// <returns>The array index of the <paramref name="key"/> if it exists and -1 otherwise. </returns>
         public int FindIndex(TKey key)
         {

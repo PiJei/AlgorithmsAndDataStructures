@@ -32,7 +32,7 @@ namespace CSFundamentals.Algorithms.Sort
         /// <summary>
         /// Implements selection sort, which is in-situ and unstable, and at each step, the array would look as one sorted part, and one unsorted part. 
         /// </summary>
-        /// <param name="list">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
+        /// <param name="list">The list of values (of type T, e.g., int) to be sorted. </param>
         [Algorithm(AlgorithmType.Sort, "SelectionSort")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(n²)")]

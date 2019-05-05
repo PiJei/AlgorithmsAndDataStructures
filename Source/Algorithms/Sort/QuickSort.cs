@@ -35,9 +35,9 @@ namespace CSFundamentals.Algorithms.Sort
         /// <summary>
         /// Implements quick sort recursively. 
         /// </summary>
-        /// <param name="list">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
-        /// <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
-        /// <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
+        /// <param name="list">The list of values (of type T, e.g., int) to be sorted. </param>
+        /// <param name="startIndex">The lower index in the array, inclusive. </param>
+        /// <param name="endIndex">The higher index in the array, inclusive. </param>
         [Algorithm(AlgorithmType.Sort, "QuickSort")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(nLog(n))")]
@@ -57,9 +57,9 @@ namespace CSFundamentals.Algorithms.Sort
         /// <summary>
         /// Partitions the given array, with respect to the computed pivot, such that elements to the left of the pivot are smaller than the pivot, and elements to the right of the pivot are bigger than the pivot. 
         /// </summary>
-        /// <param name="list">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
-        /// <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
-        /// <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
+        /// <param name="list">The list of values (of type T, e.g., int) to be sorted. </param>
+        /// <param name="startIndex">The lower index in the array, inclusive. </param>
+        /// <param name="endIndex">The higher index in the array, inclusive. </param>
         /// <returns>The next partitioning index. </returns>
         internal static int PartitionArray<T>(List<T> list, int startIndex, int endIndex) where T : IComparable<T>
         {
@@ -95,8 +95,8 @@ namespace CSFundamentals.Algorithms.Sort
         /// <summary>
         /// This algorithm uses the middle element of the array as pivot. The algorithm can be replaced with other mechanisms as well. 
         /// </summary>
-        /// <param name="startIndex">Specifies the startIndex of an array.</param>
-        /// <param name="endIndex">Specifies the endIndex of an array. </param>
+        /// <param name="startIndex">The startIndex of an array.</param>
+        /// <param name="endIndex">The endIndex of an array. </param>
         /// <returns></returns>
         public static int GetPivotIndex(int startIndex, int endIndex)
         {

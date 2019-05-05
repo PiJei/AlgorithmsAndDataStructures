@@ -29,15 +29,15 @@ namespace CSFundamentals.DataStructures.Trees.Binary
     /// Implements a binary search tree, and its operations. In a binary search tree, each node's key is larger than its left child's key, and smaller than its right child's key.
     /// A binary Search Tree can be used as a key-value store. 
     /// </summary>
-    /// <typeparam name="TKey">Specifies the type of the key in tree nodes.</typeparam>
-    /// <typeparam name="TValue">Specifies the type of the value in tree nodes. </typeparam>
+    /// <typeparam name="TKey">The type of the key in tree nodes.</typeparam>
+    /// <typeparam name="TValue">The type of the value in tree nodes. </typeparam>
     [DataStructure("BinarySearchTree (aka BST)")]
     public class BinarySearchTreeBase<TKey, TValue> : BinarySearchTreeBase<BinarySearchTreeNode<TKey, TValue>, TKey, TValue> where TKey : IComparable<TKey>
     {
         /// <summary>
         /// Builds the tree to include the given nodes.
         /// </summary>
-        /// <param name="keyValues">Is a list of key-value pairs to be inserted in the tree.</param>
+        /// <param name="keyValues">A list of key-value pairs to be inserted in the tree.</param>
         /// <returns>Root of the tree.</returns>
         [TimeComplexity(Case.Best, "O(n)", When = "Every new node is inserted in the very first locations.")]
         [TimeComplexity(Case.Worst, "O(n²)", When = "Tree is unbalanced such that it is turned into a linked list.")]
@@ -67,7 +67,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         /// Deletes a node with the given key from th tree.
         /// </summary>
         /// <param name="root">Current root of the tree, or the node at which delete operation should be started. </param>
-        /// <param name="key">Specifies the key of the node to be deleted. </param>
+        /// <param name="key">The key of the node to be deleted. </param>
         /// <returns>New root of the tree (might or might not change during the operation).</returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(n)", When = "Tree is imbalanced such that it is like one sequential branch (linked list), every node except the leaf having exactly one child.")]
@@ -81,8 +81,8 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         /// <summary>
         /// Implements Search/Lookup/Find operation for a BinarySearchTree. 
         /// </summary>
-        /// <param name="root">Specifies the root of the tree.</param>
-        /// <param name="key">Specifies the key, the method should look for. </param>
+        /// <param name="root">The root of the tree.</param>
+        /// <param name="key">The key, the method should look for. </param>
         /// <returns>The tree node that has the key. </returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(n)", When = "Tree is imbalanced such that it is like one sequential branch (linked list), every node except the leaf having exactly one child.")]
@@ -96,9 +96,9 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         /// <summary>
         /// Implements Update operation for a BinarySearchTree.
         /// </summary>
-        /// <param name="root">Specifies the root of the tree.</param>
-        /// <param name="key">Specifies the key of the node for which the value should be updated. </param>
-        /// <param name="value">Specifies the new value for the given key. </param>
+        /// <param name="root">The root of the tree.</param>
+        /// <param name="key">The key of the node for which the value should be updated. </param>
+        /// <param name="value">The new value for the given key. </param>
         /// <returns>True in case of success, and false otherwise. </returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "o(n)")]
@@ -112,7 +112,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         /// <summary>
         /// Finds the minimum key in the (sub)tree rooted at <paramref name="root"/> node. 
         /// </summary>
-        /// <param name="root">Is the node at which (sub)tree is rooted. </param>
+        /// <param name="root">The node at which (sub)tree is rooted. </param>
         /// <returns>The node containing the minimum key. </returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(n)")]
@@ -126,7 +126,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         /// <summary>
         /// Finds the maximum key in the (sub)tree rooted at <paramref name="root"/> node. 
         /// </summary>
-        /// <param name="root">Is the node at which (sub)tree is rooted. </param>
+        /// <param name="root">The node at which (sub)tree is rooted. </param>
         /// <returns>The node containing the maximum key. </returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(n)")]

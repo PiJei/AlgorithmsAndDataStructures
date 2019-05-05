@@ -28,7 +28,7 @@ namespace CSFundamentals.Algorithms.Sort
         /// <summary>
         /// Implements Selection sort. 
         /// </summary>
-        /// <param name="list">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
+        /// <param name="list">The list of values (of type T, e.g., int) to be sorted. </param>
         public static void Sort_Iteratively(List<Element> list)
         {
             /*Notice that the loop does not have to repeat over the last element of the array, as by then the last element is already the largest element in the array.*/

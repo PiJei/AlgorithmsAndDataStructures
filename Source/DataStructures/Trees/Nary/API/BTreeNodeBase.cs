@@ -97,8 +97,8 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <summary>
         /// Creates a node with 1 key. 
         /// </summary>
-        /// <param name="maxBranchingDegree">Is the maximum number of children the node can have. </param>
-        /// <param name="keyValue">Is a key-value pair to be inserted in the tree. </param>
+        /// <param name="maxBranchingDegree">The maximum number of children the node can have. </param>
+        /// <param name="keyValue">A key-value pair to be inserted in the tree. </param>
         public BTreeNodeBase(int maxBranchingDegree, KeyValuePair<TKey, TValue> keyValue) : this(maxBranchingDegree)
         {
             InsertKeyValue(keyValue);
@@ -107,9 +107,9 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <summary>
         /// Creates a node with a set of keys and children.
         /// </summary>
-        /// <param name="maxBranchingDegree">Is the maximum number of children the node can have. </param>
-        /// <param name="keyValues">Is a set of key-value pairs to be inserted in the new node. </param>
-        /// <param name="children">Is a set of children of the node. Expectancy is that the count of children is one bigger than the count of key-value pairs in the node. </param>
+        /// <param name="maxBranchingDegree">The maximum number of children the node can have. </param>
+        /// <param name="keyValues">A set of key-value pairs to be inserted in the new node. </param>
+        /// <param name="children">A set of children of the node. Expectancy is that the count of children is one bigger than the count of key-value pairs in the node. </param>
         public BTreeNodeBase(int maxBranchingDegree, List<KeyValuePair<TKey, TValue>> keyValues, List<TNode> children) : this(maxBranchingDegree)
         {
             foreach (var keyVal in keyValues)
@@ -321,7 +321,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <summary>
         /// Removes key <paramref name="key"/> from the node's <see cref="_keyValues"/> array. 
         /// </summary>
-        /// <param name="key">Is the key to be removed.</param>
+        /// <param name="key">The key to be removed.</param>
         public void RemoveKey(TKey key)
         {
             if (_keyValues.ContainsKey(key))

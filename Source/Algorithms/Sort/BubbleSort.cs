@@ -32,7 +32,7 @@ namespace CSFundamentals.Algorithms.Sort
         /// <summary>
         /// Implements bubble sort iteratively, elements are bubbled down or up the array till they are at their final correct positions. 
         /// </summary>
-        /// <param name="list">Specifies the list of values (of type T, e.g., int) to be sorted.</param>
+        /// <param name="list">The list of values (of type T, e.g., int) to be sorted.</param>
         [Algorithm(AlgorithmType.Sort, "BubbleSort")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(n)", When = "Input array is already sorted.")]

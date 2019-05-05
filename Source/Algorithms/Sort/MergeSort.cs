@@ -34,9 +34,9 @@ namespace CSFundamentals.Algorithms.Sort
         /// <summary>
         /// Implements merge sort recursively. 
         /// </summary>
-        /// <param name="list">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
-        /// <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
-        /// <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
+        /// <param name="list">The list of values (of type T, e.g., int) to be sorted. </param>
+        /// <param name="startIndex">The lower index in the array, inclusive. </param>
+        /// <param name="endIndex">The higher index in the array, inclusive. </param>
         [Algorithm(AlgorithmType.Sort, "MergeSort")]
         [SpaceComplexity("O(n)", InPlace = false)]
         [TimeComplexity(Case.Best, "O(nLog(n))")]
@@ -56,10 +56,10 @@ namespace CSFundamentals.Algorithms.Sort
         /// <summary>
         /// Merges two sub arrays [startIndex, middleIndex], [middleIndex+1, endIndex] such to end up with a sorted list. 
         /// </summary>
-        /// <param name="list">Specifies the list of values (of type T, e.g., int) to be sorted. </param>
-        /// <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
-        /// <param name="middleIndex">Specifies the middle index of the array. </param>
-        /// <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
+        /// <param name="list">The list of values (of type T, e.g., int) to be sorted. </param>
+        /// <param name="startIndex">The lower index in the array, inclusive. </param>
+        /// <param name="middleIndex">The middle index of the array. </param>
+        /// <param name="endIndex">The higher index in the array, inclusive. </param>
         public static void Merge<T>(List<T> list, int startIndex, int middleIndex, int endIndex) where T : IComparable<T>
         {
             //Making a copy of the values

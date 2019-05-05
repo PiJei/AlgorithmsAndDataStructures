@@ -29,8 +29,8 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
     /// We need to test those methods without using any child class in production code. 
     /// Therefore this mock class is created. 
     /// </summary>
-    /// <typeparam name="TKey">Specifies the type of the keys in a tree.</typeparam>
-    /// <typeparam name="TValue">Specifies type of the values in a tree.</typeparam>
+    /// <typeparam name="TKey">The type of the keys in a tree.</typeparam>
+    /// <typeparam name="TValue">type of the values in a tree.</typeparam>
     public class MockBinaryTreeNode<TKey, TValue> : BinaryTreeNode<MockBinaryTreeNode<TKey, TValue>, TKey, TValue> where TKey : IComparable<TKey>
     {
         /// <summary>

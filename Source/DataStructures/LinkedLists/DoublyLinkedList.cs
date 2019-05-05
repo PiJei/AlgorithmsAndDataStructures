@@ -27,7 +27,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
     /// <summary>
     /// Implements a bi-directional/doubly linked list (aka. DLL). 
     /// </summary>
-    /// <typeparam name="TValue">Is the type of the keys in the list. </typeparam>
+    /// <typeparam name="TValue">The type of the keys in the list. </typeparam>
     public class DoublyLinkedList<TValue> : LinkedListBase<DoublyLinkedNode<TValue>, TValue> where TValue : IComparable<TValue>
     {
         /// <summary>
@@ -64,7 +64,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
         /// <summary>
         /// Inserts a new node at the beginning of the list, thus changing the head node.
         /// </summary>
-        /// <param name="newValue">Is the new value of the new node to be added as the head of the list. </param>
+        /// <param name="newValue">The new value of the new node to be added as the head of the list. </param>
         /// <returns>True in case of success.</returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(1)")]
@@ -235,7 +235,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
         /// <summary>
         /// Deletes a node from the list with the given value. If no node with the <paramref name="value"/> is found fails the operation and returns false.
         /// </summary>
-        /// <param name="value">Is the value of the node to be deleted. </param>
+        /// <param name="value">The value of the node to be deleted. </param>
         /// <returns>True in case the operation is successful, and false otherwise. </returns>
         [TimeComplexity(Case.Best, "O(1)", When = "The first node (Head) contains the value.")]
         [TimeComplexity(Case.Worst, "O(n)")]

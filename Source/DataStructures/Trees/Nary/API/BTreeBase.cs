@@ -48,7 +48,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <summary>
         /// Constructor.
         /// </summary>
-        /// <param name="maxBranchingDegree">Is the max branching degree or the max number of children a node in this tree can have. </param>
+        /// <param name="maxBranchingDegree">The max branching degree or the max number of children a node in this tree can have. </param>
         public BTreeBase(int maxBranchingDegree)
         {
             MaxBranchingDegree = maxBranchingDegree;
@@ -57,7 +57,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <summary>
         /// Given the set of key values, builds a b-tree by inserting all the key-value pairs. 
         /// </summary>
-        /// <param name="keyValues">Is the list of key values to be inserted in the tree. </param>
+        /// <param name="keyValues">The list of key values to be inserted in the tree. </param>
         /// <returns>Root of the tree. </returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(nLog(n))")]// todo: bases are incorrect
@@ -75,7 +75,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <summary>
         /// Inserts a new key-value pair in the tree and returns root of the tree. 
         /// </summary>
-        /// <param name="keyValue">Is the key-value pair to be inserted in the tree. </param>
+        /// <param name="keyValue">The key-value pair to be inserted in the tree. </param>
         /// <returns>Root of the tree. </returns>
         [TimeComplexity(Case.Best, "O(1)", When = "Fist key in the tree is inserted.")]
         [TimeComplexity(Case.Worst, "O(D Log(n)(base:D)")] // where D is max branching factor of the tree. 
@@ -140,7 +140,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <summary>
         /// Finds a leaf node to insert a new given key. 
         /// </summary>
-        /// <param name="root">Is the node at which the tree is rooted. </param>
+        /// <param name="root">The node at which the tree is rooted. </param>
         /// <param name="key">A new key to be inserted in the tree. </param>
         /// <returns>Leaf node to insert the key. </returns>
         public abstract TNode FindLeafToInsertKey(TNode root, TKey key);
@@ -189,7 +189,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// Rotates a key from the right sibling of the node via their parent to the node. 
         /// The cost of this operation is at inserting keys and children, in right position (to preserve order), Which at worst is O(K), Where K is the maximum number of keys in a node, and thus is constant. 
         /// </summary>
-        /// <param name="node">Is the receiver of a new key. </param>
+        /// <param name="node">The receiver of a new key. </param>
         /// <param name="rightSibling">The node that lends a key to the process. This key moves to parent, and a key from parent moves to node. </param>
         /// <param name="separatorIndex">The index of the key separating <paramref name="node"/> and <paramref name="rightSibling"/> in the parent children array. </param>
         [TimeComplexity(Case.Best, "O(1)")]
@@ -223,7 +223,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// Rotates a key from the left sibling of the node via their parent to the node.
         /// The cost of this operation is at inserting keys and children, in right position (to preserve order), Which at worst is O(K), Where K is the maximum number of keys in a node, and thus is constant. 
         /// </summary>
-        /// <param name="node">Is the receiver of a new key. </param>
+        /// <param name="node">The receiver of a new key. </param>
         /// <param name="leftSibling">The node that lends a key to the process. This key moves to parent, and a key from parent moves to node.</param>
         /// <param name="separatorIndex">The index of the key separating <paramref name="node"/> and <paramref name="leftSibling"/> in the parent children array. </param>
         [TimeComplexity(Case.Best, "O(1)")]

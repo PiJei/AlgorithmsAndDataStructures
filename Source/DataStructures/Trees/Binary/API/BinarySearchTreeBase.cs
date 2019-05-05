@@ -45,7 +45,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// <summary>
         /// Builds the tree to include the given nodes.
         /// </summary>
-        /// <param name="keyValues">Is a list of key-value pairs to be inserted in the tree.</param>
+        /// <param name="keyValues">A list of key-value pairs to be inserted in the tree.</param>
         /// <returns>Root of the tree.</returns>
         public abstract TNode Build(List<KeyValuePair<TKey,TValue>> keyValues);
 
@@ -61,7 +61,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// Deletes a node with the given key from th tree.
         /// </summary>
         /// <param name="root">Current root of the tree, or the node at which delete operation should be started. </param>
-        /// <param name="key">Specifies the key of the node to be deleted. </param>
+        /// <param name="key">The key of the node to be deleted. </param>
         /// <returns>New root of the tree (might or might not change during the operation).</returns>
         public abstract TNode Delete(TNode root, TKey key);
 
@@ -69,7 +69,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// Searches for the given key in the tree. 
         /// </summary>
         /// <param name="root">Current root of the tree, or the node at which search operation should be started. </param>
-        /// <param name="key">Specifies the key to be searched. </param>
+        /// <param name="key">The key to be searched. </param>
         /// <returns>Returns the tree node that contains key. </returns>
         public abstract TNode Search(TNode root, TKey key);
 
@@ -77,22 +77,22 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// Updates the tree node of the specified key with the new given value. 
         /// </summary>
         /// <param name="root">Current root of the tree, or the node at which update operation should be started.</param>
-        /// <param name="key">Specifies the key of the node whose value should be updated.</param>
-        /// <param name="value">Specifies the new value. </param>
+        /// <param name="key">The key of the node whose value should be updated.</param>
+        /// <param name="value">The new value. </param>
         /// <returns>true in case of success and false otherwise.</returns>
         public abstract bool Update(TNode root, TKey key, TValue value);
 
         /// <summary>
         /// Finds the minimum key in the (sub)tree rooted at <paramref name="root"/> node. 
         /// </summary>
-        /// <param name="root">Is the node at which (sub)tree is rooted. </param>
+        /// <param name="root">The node at which (sub)tree is rooted. </param>
         /// <returns>The node containing the minimum key. </returns>
         public abstract TNode FindMin(TNode root);
 
         /// <summary>
         /// Finds the maximum key in the (sub)tree rooted at <paramref name="root"/> node. 
         /// </summary>
-        /// <param name="root">Is the node at which (sub)tree is rooted. </param>
+        /// <param name="root">The node at which (sub)tree is rooted. </param>
         /// <returns>The node containing the maximum key. </returns>
         public abstract TNode FindMax(TNode root);
 
@@ -148,7 +148,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// <summary>
         /// Builds a binary search tree to include the given nodes.
         /// </summary>
-        /// <param name="keyValues">Is a list of key-value pairs to be inserted in the tree.</param>
+        /// <param name="keyValues">A list of key-value pairs to be inserted in the tree.</param>
         /// <returns>Root of the tree.</returns>
         internal TNode Build_BST(List<KeyValuePair<TKey, TValue>> keyValues)
         {
@@ -168,7 +168,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// Searches for the given key in a binary search tree. 
         /// </summary>
         /// <param name="root">Current root of the tree, or the node at which search operation should be started. </param>
-        /// <param name="key">Specifies the key to be searched. </param>
+        /// <param name="key">The key to be searched. </param>
         /// <returns>Returns the tree node that contains key. </returns>
         internal TNode Search_BST(TNode root, TKey key)
         {
@@ -194,8 +194,8 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// Updates the tree node of the specified key with the new given value. 
         /// </summary>
         /// <param name="root">Current root of the tree, or the node at which insert operation should be started.</param>
-        /// <param name="key">Specifies the key to be updated.</param>
-        /// <param name="value">Specifies the new value of the key.</param>
+        /// <param name="key">The key to be updated.</param>
+        /// <param name="value">The new value of the key.</param>
         /// <returns>True in case the operation was successful, and false otherwise. </returns>
         internal bool Update_BST(TNode root, TKey key, TValue value)
         {
@@ -253,7 +253,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// <summary>
         /// Finds the node with the smallest key in a binary search tree.
         /// </summary>
-        /// <param name="root">Is the node at which the search starts. </param>
+        /// <param name="root">The node at which the search starts. </param>
         /// <returns>The tree node with the smallest key. </returns>
         internal TNode FindMin_BST(TNode root)
         {
@@ -273,7 +273,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// <summary>
         /// Finds the node with the largest key in a binary search tree.
         /// </summary>
-        /// <param name="root">Is the node at which the search starts. </param>
+        /// <param name="root">The node at which the search starts. </param>
         /// <returns>The tree node with the largest key.</returns>
         internal TNode FindMax_BST(TNode root)
         {
@@ -294,7 +294,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// Rotates the tree to left at the given node, meaning that the current right child of the given node will be its new parent.
         /// Also notice that in rotation, keys or values of a node never change, only the relations change.
         /// </summary>
-        /// <param name="node">Is the node at which rotation happens.</param>
+        /// <param name="node">The node at which rotation happens.</param>
         [TimeComplexity(Case.Average, "O(1)")]
         public TNode RotateLeft(TNode node)
         {
@@ -341,7 +341,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// Rotates the tree to right at the given node. Meaning that the current left child of the given node will be its new parent.
         /// Also notice that in rotation, keys or values of a node never change, only the relations change.
         /// </summary>
-        /// <param name="node">Is the node at which rotation happens.</param>
+        /// <param name="node">The node at which rotation happens.</param>
         [TimeComplexity(Case.Average, "O(1)")]
         public TNode RotateRight(TNode node)
         {
@@ -408,7 +408,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// <summary>
         /// Computes all the paths from the given node to all of its leaves. A node is a leaf if it has no children.
         /// </summary>
-        /// <param name="startNode">Is the node at which computing all routes/paths to leaf nodes starts.</param>
+        /// <param name="startNode">The node at which computing all routes/paths to leaf nodes starts.</param>
         /// <returns>List of all the paths.</returns>
         public virtual List<List<TNode>> GetAllPathToLeaves(TNode startNode)
         {
@@ -445,8 +445,8 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// <summary>
         /// Traverses tree in order, and since this is a binary search tree, in order traversal returns a sorted list of keys.
         /// </summary>
-        /// <param name="root">Is the node at which in order traversal starts. </param>
-        /// <param name="inOrderSetOfNodes">Is the sorted list of nodes.</param>
+        /// <param name="root">The node at which in order traversal starts. </param>
+        /// <param name="inOrderSetOfNodes">The sorted list of nodes.</param>
         public void InOrderTraversal(TNode root, List<TNode> inOrderSetOfNodes)
         {
             if (root != null)

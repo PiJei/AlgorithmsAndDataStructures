@@ -37,7 +37,7 @@ namespace CSFundamentals.DataStructures.StringStructures
         /// <summary>
         /// Given a string, builds its suffix tree. 
         /// </summary>
-        /// <param name="text">Specifies the string for which the suffix tree is being built. </param>
+        /// <param name="text">The string for which the suffix tree is being built. </param>
         /// <returns>The root of the suffix tree. </returns>
         public static SuffixTreeNode Build(string text)
         {
@@ -66,9 +66,9 @@ namespace CSFundamentals.DataStructures.StringStructures
         /// <summary>
         /// Inserts the given suffix in the tree. Notice that the suffix is not necessarily inserted as a while. On the traversal of the tree, the intermediate nodes that have common prefixes with these suffix, make the suffix to break down. 
         /// </summary>
-        /// <param name="root">Specifies the root node of a suffix tree. </param>
-        /// <param name="suffix">Specifies the suffix string that should be inserted in the suffix tree. </param>
-        /// <param name="startIndex">Specifies the start index of the suffix in its container string. </param>
+        /// <param name="root">The root node of a suffix tree. </param>
+        /// <param name="suffix">The suffix string that should be inserted in the suffix tree. </param>
+        /// <param name="startIndex">The start index of the suffix in its container string. </param>
         public static void Insert(SuffixTreeNode root, string suffix, int startIndex)
         {
             SuffixTreeNode node = null;

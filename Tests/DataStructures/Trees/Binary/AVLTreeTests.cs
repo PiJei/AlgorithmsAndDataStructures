@@ -429,7 +429,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         /// <typeparam name="TValue">Type of the values stored in the tree. </typeparam>
         /// <param name="tree">An AVL tree</param>
         /// <param name="root">Root of the AVL tree</param>
-        /// <param name="expectedNodeCount">Specifies the expected number of tree nodes in the tree. </param>
+        /// <param name="expectedNodeCount">The expected number of tree nodes in the tree. </param>
         /// <returns>True if the tree has AVL tree properties and false otherwise. </returns>
         public bool HasAVLTreeProperties<TKey, TValue>(AVLTree<TKey, TValue> tree, AVLTreeNode<TKey, TValue> root, int expectedNodeCount) where TKey : IComparable<TKey>, IEquatable<TKey>
         {

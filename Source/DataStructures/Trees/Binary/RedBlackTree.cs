@@ -34,15 +34,15 @@ namespace CSFundamentals.DataStructures.Trees.Binary
     /// In this implementation, nulls are treated as black leaf nodes and not shown explicitly. 
     /// A red black tree can also be used as a key-value store.
     /// </summary>
-    /// <typeparam name="TKey">Specifies the type of the keys in red black tree.</typeparam>
-    /// <typeparam name="TValue">Specifies the type of the values in red black tree. </typeparam>
+    /// <typeparam name="TKey">The type of the keys in red black tree.</typeparam>
+    /// <typeparam name="TValue">The type of the values in red black tree. </typeparam>
     [DataStructure("RedBlackTree")]
     public class RedBlackTree<TKey, TValue> : BinarySearchTreeBase<RedBlackTreeNode<TKey, TValue>, TKey, TValue> where TKey : IComparable<TKey>
     {
         /// <summary>
         /// Builds the tree to include the given nodes.
         /// </summary>
-        /// <param name="keyValues">Is a list of key-value pairs to be inserted in the tree.</param>
+        /// <param name="keyValues">A list of key-value pairs to be inserted in the tree.</param>
         /// <returns>Root of the tree.</returns>
         [TimeComplexity(Case.Best, "O(n)", When = "Every new node is inserted in the very first locations.")]
         [TimeComplexity(Case.Worst, "O(nLog(n))")]
@@ -80,7 +80,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         /// Deletes a node with the given key from th tree.
         /// </summary>
         /// <param name="root">Current root of the tree, or the node at which delete operation should be started. </param>
-        /// <param name="key">Specifies the key of the node to be deleted. </param>
+        /// <param name="key">The key of the node to be deleted. </param>
         /// <returns>New root of the tree (might or might not change during the operation).</returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
@@ -127,7 +127,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         /// Searches for the given key in the tree. 
         /// </summary>
         /// <param name="root">Current root of the tree, or the node at which search operation should be started. </param>
-        /// <param name="key">Specifies the key to be searched. </param>
+        /// <param name="key">The key to be searched. </param>
         /// <returns>Returns the tree node that contains key. </returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
@@ -142,8 +142,8 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         /// Updates the tree node of the specified key with the new given value. 
         /// </summary>
         /// <param name="root">Current root of the tree, or the node at which update operation should be started.</param>
-        /// <param name="key">Specifies the key of the node whose value should be updated.</param>
-        /// <param name="value">Specifies the new value. </param>
+        /// <param name="key">The key of the node whose value should be updated.</param>
+        /// <param name="value">The new value. </param>
         /// <returns>true in case of success and false otherwise.</returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
@@ -157,7 +157,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         /// <summary>
         /// Finds the minimum key in the (sub)tree rooted at <paramref name="root"/> node. 
         /// </summary>
-        /// <param name="root">Is the node at which (sub)tree is rooted. </param>
+        /// <param name="root">The node at which (sub)tree is rooted. </param>
         /// <returns>The node containing the minimum key. </returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
@@ -171,7 +171,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         /// <summary>
         /// Finds the maximum key in the (sub)tree rooted at <paramref name="root"/> node. 
         /// </summary>
-        /// <param name="root">Is the node at which (sub)tree is rooted. </param>
+        /// <param name="root">The node at which (sub)tree is rooted. </param>
         /// <returns>The node containing the maximum key. </returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
@@ -383,7 +383,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         /// <summary>
         /// Checks whether the given node is red. 
         /// </summary>
-        /// <param name="node">Is a node in a red black tree. </param>
+        /// <param name="node">A node in a red black tree. </param>
         /// <returns>True in case node is red, and false otherwise. </returns>
         internal bool IsRed(RedBlackTreeNode<TKey, TValue> node)
         {
@@ -398,7 +398,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         /// <summary>
         /// Checks whether the given node is black. 
         /// </summary>
-        /// <param name="node">Is a node in a red black tree. </param>
+        /// <param name="node">A node in a red black tree. </param>
         /// <returns>True in case node is black, and false otherwise. </returns>
         internal bool IsBlack(RedBlackTreeNode<TKey, TValue> node)
         {
@@ -413,8 +413,8 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         /// <summary>
         /// Finds the given child node in the parent node, and if in fact a child of the parent replaces it with null. 
         /// </summary>
-        /// <param name="parent">Is a parent node. </param>
-        /// <param name="child">Is a child node of the given parent node. </param>
+        /// <param name="parent">A parent node. </param>
+        /// <param name="child">A child node of the given parent node. </param>
         internal void UpdateParentWithNullingChild(RedBlackTreeNode<TKey, TValue> parent, RedBlackTreeNode<TKey, TValue> child)
         {
             if (parent != null)
@@ -432,7 +432,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         /// <summary>
         /// Computes all the paths from the given node to all of its leaves. A node is a leaf if it has no children.
         /// </summary>
-        /// <param name="startNode">Is the node at which computing all routes/paths to leaf nodes starts.</param>
+        /// <param name="startNode">The node at which computing all routes/paths to leaf nodes starts.</param>
         /// <returns>List of all the paths.</returns>
         public override List<List<RedBlackTreeNode<TKey, TValue>>> GetAllPathToLeaves(RedBlackTreeNode<TKey, TValue> startNode)
         {

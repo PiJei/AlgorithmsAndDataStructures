@@ -318,7 +318,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         /// <typeparam name="TValue">Type of the values stored in a tree. </typeparam>
         /// <param name="tree">A RedBlack tree. </param>
         /// <param name="root">Root of a RedBlack tree. </param>
-        /// <param name="expectedNodeCount">Is the expected number of nodes in a tree. </param>
+        /// <param name="expectedNodeCount">The expected number of nodes in a tree. </param>
         public static void HasRedBlackTreeProperties<TKey, TValue>(RedBlackTree<TKey, TValue> tree, RedBlackTreeNode<TKey, TValue> root, int expectedNodeCount) where TKey : IComparable<TKey>, IEquatable<TKey>
         {
             var inOrderTraversal = new List<RedBlackTreeNode<TKey, TValue>>();

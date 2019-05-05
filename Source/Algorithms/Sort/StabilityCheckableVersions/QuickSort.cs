@@ -44,9 +44,9 @@ namespace CSFundamentals.Algorithms.Sort
         /// <summary>
         /// Partitions the given array, with respect to the computed pivot, such that elements to the left of the pivot are smaller than the pivot, and elements to the right of the pivot are bigger than the pivot. 
         /// </summary>
-        /// <param name="values">Specifies the list of integer values to be sorted. </param>
-        /// <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
-        /// <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
+        /// <param name="values">The list of integer values to be sorted. </param>
+        /// <param name="startIndex">The lower index in the array, inclusive. </param>
+        /// <param name="endIndex">The higher index in the array, inclusive. </param>
         /// <returns>The next partitioning index. </returns>
         public static int PartitionArray_StabilityCheckableVersion(List<Element> values, int startIndex, int endIndex)
         {
@@ -86,7 +86,7 @@ namespace CSFundamentals.Algorithms.Sort
         /// This is needed for methods that receive other sort methods as parameters, and would ideally like to have similar signature for all the methods that are passed as parameters, 
         /// In sort methods the signature is: void SortMethod(List{int} values); 
         /// </summary>
-        /// <param name="values">Specifies the list of integers to be sorted. </param>
+        /// <param name="values">The list of integers to be sorted. </param>
         public static void Wrapper(List<Element> values)
         {
             Sort_Recursively(values, 0, values.Count - 1);

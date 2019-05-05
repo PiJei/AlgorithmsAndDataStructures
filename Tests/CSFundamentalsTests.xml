@@ -728,56 +728,56 @@
             <summary>
             Implements the bubble down/trickle down operation using iteration.
             </summary>
-            <param name="rootIndex">Specifies the index of the root element, the element for which the trickle down should be performed.</param>
-            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+            <param name="rootIndex">The index of the root element, the element for which the trickle down should be performed.</param>
+            <param name="heapArrayLength">The length of the heap array. </param>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2.BubbleDown_Recursively(System.Int32,System.Int32)">
             <summary>
             Implements the bubble down/trickle down operation using recursion.
             </summary>
-            <param name="rootIndex">Specifies the index of the root element, the element for which the trickle down should be performed.</param>
-            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+            <param name="rootIndex">The index of the root element, the element for which the trickle down should be performed.</param>
+            <param name="heapArrayLength">The length of the heap array. </param>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2.BubbleUp_Iteratively(System.Int32,System.Int32)">
             <summary>
             Moves the value in the given index, up in the heap till its position is found. The position is defined such to respect heap ordering property.
             </summary>
-            <param name="index">Specifies the index of the element that should be bubbled up.</param>
-            <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+            <param name="index">The index of the element that should be bubbled up.</param>
+            <param name="heapArrayLength">The length/size of the heap array. </param>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2.BuildHeap_Iteratively(System.Int32)">
             <summary>
             Note that passing the array size is not a must, as the class itself contains the array and has access to its size. However some algorithms such as HeapSort which rely on a heap to perform sorting, are better implemented, if we have the length of the array passed to these methods. 
             </summary>
-            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+            <param name="heapArrayLength">The length of the heap array. </param>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2.BuildHeap_Recursively(System.Int32)">
             <summary>
             Builds a heap using recursion, and does so in situ.
             </summary>
-            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+            <param name="heapArrayLength">The length of the heap array. </param>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2.Insert(System.Collections.Generic.KeyValuePair{`0,`1},System.Int32)">
             <summary>
             Inserts a new value into heap.
             </summary>
-            <param name="keyValue">Specifies the key-value to be inserted into the heap.</param>
-            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+            <param name="keyValue">The key-value to be inserted into the heap.</param>
+            <param name="heapArrayLength">The length of the heap array. </param>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2.TryFindRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)">
             <summary>
             Finds the root of the heap, without removing it. 
             </summary>
-            <param name="keyValue">Specifies the key-value of the root.</param>
-            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+            <param name="keyValue">The key-value of the root.</param>
+            <param name="heapArrayLength">The length of the heap array. </param>
             <returns>True in case of success, and false in case of failure.</returns>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.API.MockBinaryHeap`2.TryRemoveRoot(System.Collections.Generic.KeyValuePair{`0,`1}@,System.Int32)">
             <summary>
             Removes the root of the heap. In a MinHeap and MinMaxHeap this is the min, and in a MaxHeap and MaxMinHeap this is the max. 
             </summary>
-            <param name="keyValue">Specifies the key-value of the root.</param>
-            <param name="heapArrayLength">Specifies the length of the heap array. </param>
+            <param name="keyValue">The key-value of the root.</param>
+            <param name="heapArrayLength">The length of the heap array. </param>
             <returns>True in case of success, and false otherwise.</returns>
         </member>
         <member name="T:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests">
@@ -828,7 +828,7 @@
             <typeparam name="TKey">Type of the keys stored in the heap. </typeparam>
             <typeparam name="TValue">Type of the values stored in the heap. </typeparam>
             <param name="arraySize">Size of the heap array. </param>
-            <param name="heap">Is a Max binary heap. </param>
+            <param name="heap">A Max binary heap. </param>
             <returns>True if the heap is a proper Max binary heap, and false otherwise. </returns>
         </member>
         <member name="T:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests">
@@ -887,7 +887,7 @@
             Checking the MinHeap ordering (node relations) for the node at the given index, to make sure the correct relations between the node and its parent and children holds. 
             </summary>
             <param name="heap">A Min binary heap. </param>
-            <param name="nodeIndex">Is the index of a heap node in a heap array. </param>
+            <param name="nodeIndex">The index of a heap node in a heap array. </param>
         </member>
         <member name="T:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests">
             <summary>
@@ -910,8 +910,8 @@
             </summary>
             <typeparam name="TKey">Type of the keys stored in the heap. </typeparam>
             <typeparam name="TValue">Type of the values stored in the heap. </typeparam>
-            <param name="heap">Is a MinMax binary heap. </param>
-            <param name="index">Is the index of a node in a heap array and in a Min level.</param>
+            <param name="heap">A MinMax binary heap. </param>
+            <param name="index">The index of a node in a heap array and in a Min level.</param>
             <returns>True if the node has proper properties, and false otherwise. </returns>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMaxLevel``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)">
@@ -920,8 +920,8 @@
             </summary>
             <typeparam name="TKey">Type of the keys stored in the heap. </typeparam>
             <typeparam name="TValue">Type of the values stored in the heap. </typeparam>
-            <param name="heap">Is a MinMax binary heap. </param>
-            <param name="index">Is the index of a node in a heap array and in a Max level.</param>
+            <param name="heap">A MinMax binary heap. </param>
+            <param name="index">The index of a node in a heap array and in a Max level.</param>
             <returns>True if the node has proper properties, and false otherwise. </returns>
         </member>
         <member name="T:CSFundamentalsTests.DataStructures.LinkedLists.API.LinkedListBaseTests">
@@ -970,14 +970,14 @@
             <summary>
             Deletes a node with the given value from the list. If no node with the given value exists, fails the operation and returns false.
             </summary>
-            <param name="value">Is the value that is being searched for.</param>
+            <param name="value">The value that is being searched for.</param>
             <returns>True in case of success, and false otherwise. </returns>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList`1.Insert(`0)">
             <summary>
             Inserts a new value in the list.
             </summary>
-            <param name="newValue">Is the value of the new node. </param>
+            <param name="newValue">The value of the new node. </param>
             <returns>True in case of success.</returns>
         </member>
         <member name="T:CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedNode`1">
@@ -1231,9 +1231,9 @@
             Given the root of a binary search tree, checks whether the binary search tree properties hold.
             </summary>
             <typeparam name="TNode">Type of the nodes in the tree. </typeparam>
-            <typeparam name="TKey">Specifies the type of the keys in tree. </typeparam>
-            <typeparam name="TValue">Specifies the type of the values in tree nodes. </typeparam>
-            <param name="root">Is the root of a binary search tree. </param>
+            <typeparam name="TKey">The type of the keys in tree. </typeparam>
+            <typeparam name="TValue">The type of the values in tree nodes. </typeparam>
+            <param name="root">The root of a binary search tree. </param>
         </member>
         <member name="T:CSFundamentalsTests.DataStructures.Trees.Binary.API.BinaryTreeNodeTests">
             <summary>
@@ -1326,7 +1326,7 @@
             <summary>
             Builds the tree to include the given nodes.
             </summary>
-            <param name="keyValues">Is a list of key-value pairs to be inserted in the tree.</param>
+            <param name="keyValues">A list of key-value pairs to be inserted in the tree.</param>
             <returns>Root of the tree.</returns>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase`2.Delete(CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode{`0,`1},`0)">
@@ -1334,21 +1334,21 @@
             Deletes a node with the given key from th tree.
             </summary>
             <param name="root">Current root of the tree, or the node at which delete operation should be started. </param>
-            <param name="key">Specifies the key of the node to be deleted. </param>
+            <param name="key">The key of the node to be deleted. </param>
             <returns>New root of the tree (might or might not change during the operation).</returns>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase`2.FindMax(CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode{`0,`1})">
             <summary>
             Finds the maximum key in the (sub)tree rooted at <paramref name="root"/> node. 
             </summary>
-            <param name="root">Is the node at which (sub)tree is rooted. </param>
+            <param name="root">The node at which (sub)tree is rooted. </param>
             <returns>The node containing the maximum key. </returns>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase`2.FindMin(CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode{`0,`1})">
             <summary>
             Finds the minimum key in the (sub)tree rooted at <paramref name="root"/> node. 
             </summary>
-            <param name="root">Is the node at which (sub)tree is rooted. </param>
+            <param name="root">The node at which (sub)tree is rooted. </param>
             <returns>The node containing the minimum key. </returns>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase`2.Insert(CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode{`0,`1},CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode{`0,`1})">
@@ -1364,7 +1364,7 @@
             Searches for the given key in the tree. 
             </summary>
             <param name="root">Current root of the tree, or the node at which search operation should be started. </param>
-            <param name="key">Specifies the key to be searched. </param>
+            <param name="key">The key to be searched. </param>
             <returns>Returns the tree node that contains key. </returns>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinarySearchTreeBase`2.Update(CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode{`0,`1},`0,`1)">
@@ -1372,8 +1372,8 @@
             Updates the tree node of the specified key with the new given value. 
             </summary>
             <param name="root">Current root of the tree, or the node at which update operation should be started.</param>
-            <param name="key">Specifies the key of the node whose value should be updated.</param>
-            <param name="value">Specifies the new value. </param>
+            <param name="key">The key of the node whose value should be updated.</param>
+            <param name="value">The new value. </param>
             <returns>true in case of success and false otherwise.</returns>
         </member>
         <member name="T:CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode`2">
@@ -1383,8 +1383,8 @@
             We need to test those methods without using any child class in production code. 
             Therefore this mock class is created. 
             </summary>
-            <typeparam name="TKey">Specifies the type of the keys in a tree.</typeparam>
-            <typeparam name="TValue">Specifies type of the values in a tree.</typeparam>
+            <typeparam name="TKey">The type of the keys in a tree.</typeparam>
+            <typeparam name="TValue">type of the values in a tree.</typeparam>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode`2.#ctor">
             <summary>
@@ -1524,7 +1524,7 @@
             <typeparam name="TValue">Type of the values stored in the tree. </typeparam>
             <param name="tree">An AVL tree</param>
             <param name="root">Root of the AVL tree</param>
-            <param name="expectedNodeCount">Specifies the expected number of tree nodes in the tree. </param>
+            <param name="expectedNodeCount">The expected number of tree nodes in the tree. </param>
             <returns>True if the tree has AVL tree properties and false otherwise. </returns>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.HasExpectedBalanceFactor``2(CSFundamentals.DataStructures.Trees.Binary.AVLTree{``0,``1},System.Collections.Generic.List{CSFundamentals.DataStructures.Trees.Binary.AVLTreeNode{``0,``1}})">
@@ -1743,7 +1743,7 @@
             <typeparam name="TValue">Type of the values stored in a tree. </typeparam>
             <param name="tree">A RedBlack tree. </param>
             <param name="root">Root of a RedBlack tree. </param>
-            <param name="expectedNodeCount">Is the expected number of nodes in a tree. </param>
+            <param name="expectedNodeCount">The expected number of nodes in a tree. </param>
         </member>
         <member name="T:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_4_BTreeNodeTests">
             <summary>
@@ -2603,11 +2603,11 @@
             <typeparam name="TNode">Type of the tree nodes stored in the tree. </typeparam>
             <typeparam name="TKey">Type of the keys stored in the tree. </typeparam>
             <typeparam name="TValue">Type of the values stored in the tree. </typeparam>
-            <param name="tree">Is a B-Tree</param>
-            <param name="expectedTotalKeyCount">Is the expected number of keys (duplicate and distinct) in the tree. </param>
-            <param name="expectedDistinctKeyCount">Is the expected number of distinct keys in the tree. </param>
-            <param name="expectedNodeCount">Is the expected number of tree nodes. </param>
-            <param name="HasNodeProperties">Is the method used for checking properties. </param>
+            <param name="tree">A B-Tree</param>
+            <param name="expectedTotalKeyCount">The expected number of keys (duplicate and distinct) in the tree. </param>
+            <param name="expectedDistinctKeyCount">The expected number of distinct keys in the tree. </param>
+            <param name="expectedNodeCount">The expected number of tree nodes. </param>
+            <param name="HasNodeProperties">The method used for checking properties. </param>
             <returns>True if the tree has the expected properties. </returns>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeNodeProperties``3(``0)">
@@ -2617,7 +2617,7 @@
             <typeparam name="TNode">Type of tree node. </typeparam>
             <typeparam name="TKey">Type of the key stored in the node. </typeparam>
             <typeparam name="TValue">Type of the value stored in the node. </typeparam>
-            <param name="node">Is a B-Tree node. </param>
+            <param name="node">A B-Tree node. </param>
             <returns>True if the node has expected properties, and false otherwise. </returns>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBPlusTreeNodeProperties``2(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{``0,``1})">
@@ -2626,26 +2626,26 @@
             </summary>
             <typeparam name="TKey">Type of the key stored in the node. </typeparam>
             <typeparam name="TValue">Type of the value stored in the node. </typeparam>
-            <param name="node">Is a B+ Tree node. </param>
+            <param name="node">A B+ Tree node. </param>
             <returns>True if the node has expected properties, and false otherwise. </returns>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeProperties(CSFundamentals.DataStructures.Trees.Nary.BTree{System.Int32,System.String},System.Int32,System.Int32,System.Int32)">
             <summary>
             Checks whether tree has B Tree properties. 
             </summary>
-            <param name="tree">Is a BTree node. </param>
-            <param name="expectedTotalKeyCount">Is the expected number of keys (duplicate and distinct) in the tree. </param>
-            <param name="expectedDistinctKeyCount">Is the expected number of distinct keys in the tree. </param>
-            <param name="expectedNodeCount">Is the expected number of nodes in the tree. </param>
+            <param name="tree">A BTree node. </param>
+            <param name="expectedTotalKeyCount">The expected number of keys (duplicate and distinct) in the tree. </param>
+            <param name="expectedDistinctKeyCount">The expected number of distinct keys in the tree. </param>
+            <param name="expectedNodeCount">The expected number of nodes in the tree. </param>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBPlusTreeProperties(CSFundamentals.DataStructures.Trees.Nary.BPlusTree{System.Int32,System.String},System.Int32,System.Int32,System.Int32)">
             <summary>
             Checks whether the tree has B+ Tree properties. 
             </summary>
-            <param name="tree">Is a B + tree. </param>
-            <param name="expectedTotalKeyCount">Is the expected number of keys (duplicate and distinct) in the tree. </param>
-            <param name="expectedDistinctKeyCount">Is the expected number of distinct keys in the tree. </param>
-            <param name="expectedNodeCount">Is the expected number of nodes in the tree. </param>
+            <param name="tree">A B + tree. </param>
+            <param name="expectedTotalKeyCount">The expected number of keys (duplicate and distinct) in the tree. </param>
+            <param name="expectedDistinctKeyCount">The expected number of distinct keys in the tree. </param>
+            <param name="expectedNodeCount">The expected number of nodes in the tree. </param>
         </member>
         <member name="T:CSFundamentalsTests.StringStructures.LLPPSTests">
             <summary>

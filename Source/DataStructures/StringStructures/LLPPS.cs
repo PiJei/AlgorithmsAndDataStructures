@@ -37,7 +37,7 @@ namespace CSFundamentals.DataStructures.StringStructures
         /// A proper prefix of a string is any prefix that is not equal to the string itself. for example for string = kmp: '', k, km are 3 proper prefixes. Note that they all start at index 0 
         /// A suffix of a string is any suffix. For example for string kmp: p, mp, kmp, '' are 4 suffixes. All end at index 2 . m is not a suffix. 
         /// </summary>
-        /// <param name="text">Specifies the string for which we want to compute its longest proper prefixes that are also suffixes. </param>
+        /// <param name="text">The string for which we want to compute its longest proper prefixes that are also suffixes. </param>
         /// <returns> An array of longest proper prefixes</returns>
         public static List<int> Build(string text)
         {
