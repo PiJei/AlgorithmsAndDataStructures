@@ -73,7 +73,7 @@
   
   <h1 id="CSFundamentals_Algorithms_PatternSearch_NaiveSearch" data-uid="CSFundamentals.Algorithms.PatternSearch.NaiveSearch" class="text-break">Class NaiveSearch
   </h1>
-  <div class="markdown level0 summary"><p>Implements a naive simple algorithm for searching a pattern string in a string.</p>
+  <div class="markdown level0 summary"><p>Implements a naive (i.e. inefficient) algorithm for searching a (pattern) string in another string.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -118,12 +118,12 @@
     <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/EnhancingDocumentation/apiSpec/new?filename=CSFundamentals_Algorithms_PatternSearch_NaiveSearch_Search_System_String_System_String_.md&amp;value=---%0Auid%3A%20CSFundamentals.Algorithms.PatternSearch.NaiveSearch.Search(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/EnhancingDocumentation/Source/Algorithms/PatternSearch/NaiveSearch.cs/#L36">View Source</a>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/EnhancingDocumentation/Source/Algorithms/PatternSearch/NaiveSearch.cs/#L37">View Source</a>
   </span>
   <a id="CSFundamentals_Algorithms_PatternSearch_NaiveSearch_Search_" data-uid="CSFundamentals.Algorithms.PatternSearch.NaiveSearch.Search*"></a>
   <h4 id="CSFundamentals_Algorithms_PatternSearch_NaiveSearch_Search_System_String_System_String_" data-uid="CSFundamentals.Algorithms.PatternSearch.NaiveSearch.Search(System.String,System.String)">Search(String, String)</h4>
   <div class="markdown level1 summary"><p>Implements a naive, brute force algorithm for finding <code data-dev-comment-type="paramref" class="paramref">pattern</code> in <code data-dev-comment-type="paramref" class="paramref">text</code>.
-Note: Any optimization over this algorithm, can try to reduce either the size of the outer loop or the inner loop.</p>
+Note: Any optimization over this algorithm, can try to reduce the length of the outer or inner loop.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -144,13 +144,13 @@ public static int Search(string text, string pattern)</code></pre>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">text</span></td>
-        <td><p>The string in which we are searching for <code data-dev-comment-type="paramref" class="paramref">pattern</code>.</p>
+        <td><p>The string in which <code data-dev-comment-type="paramref" class="paramref">pattern</code> is searched for.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">pattern</span></td>
-        <td><p>The string we want to find in <code data-dev-comment-type="paramref" class="paramref">text</code>.</p>
+        <td><p>The string that is being searched in (<code data-dev-comment-type="paramref" class="paramref">text</code>).</p>
 </td>
       </tr>
     </tbody>
@@ -166,7 +166,8 @@ public static int Search(string text, string pattern)</code></pre>
     <tbody>
       <tr>
         <td><span class="xref">System.Int32</span></td>
-        <td></td>
+        <td><p>The first index in <code data-dev-comment-type="paramref" class="paramref">text</code> starting from which a match for <code data-dev-comment-type="paramref" class="paramref">pattern</code> is found.</p>
+</td>
       </tr>
     </tbody>
   </table>

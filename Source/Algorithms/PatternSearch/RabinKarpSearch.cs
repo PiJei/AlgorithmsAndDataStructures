@@ -24,7 +24,7 @@ using CSFundamentals.Decoration;
 namespace CSFundamentals.Algorithms.PatternSearch
 {
     /// <summary>
-    /// Implements Rabin-Karp algorithm for searching a pattern string in a string. 
+    /// Implements Rabin-Karp algorithm for searching a (pattern) string in another string. 
     /// </summary>
     public class RabinKarpSearch
     {
@@ -32,12 +32,11 @@ namespace CSFundamentals.Algorithms.PatternSearch
         private const int PrimeNumber = 101;
 
         /// <summary>
-        /// Implements RabinKarp search algorithm, which is an improvement on NaiveSearch, using hashing.
-        /// Hashing plays a crucial role in optimizing search time. Rolling hash methods are preferred, and the ones with the minimum collision. 
+        /// Implements RabinKarp search algorithm using <see cref="RollingHash"/> concept. 
         /// </summary>
-        /// <param name= "text">The string in which we are searching for <paramref name="pattern"/>.</param>
-        /// <param name= "pattern">The string we want to find in <paramref name="text"/>.</param>
-        /// <returns>The starting index in <paramref name="text"/> starting at which <paramref name="pattern"/> is found.</returns>
+        /// <param name= "text">The string in which <paramref name="pattern"/> is searched for.</param>
+        /// <param name= "pattern">The string that is being searched in (<paramref name="text"/>).</param>
+        /// <returns>All the indexes in <paramref name="text"/> starting from which a match for <paramref name="pattern"/> is found.</returns>
         [Algorithm(AlgorithmType.PatternSearch, "RabinKarp")]
         public static int Search(string text, string pattern)
         {

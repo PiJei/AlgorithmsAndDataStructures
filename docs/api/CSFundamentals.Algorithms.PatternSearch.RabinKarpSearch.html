@@ -73,7 +73,7 @@
   
   <h1 id="CSFundamentals_Algorithms_PatternSearch_RabinKarpSearch" data-uid="CSFundamentals.Algorithms.PatternSearch.RabinKarpSearch" class="text-break">Class RabinKarpSearch
   </h1>
-  <div class="markdown level0 summary"><p>Implements Rabin-Karp algorithm for searching a pattern string in a string.</p>
+  <div class="markdown level0 summary"><p>Implements Rabin-Karp algorithm for searching a (pattern) string in another string.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -118,12 +118,11 @@
     <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/EnhancingDocumentation/apiSpec/new?filename=CSFundamentals_Algorithms_PatternSearch_RabinKarpSearch_Search_System_String_System_String_.md&amp;value=---%0Auid%3A%20CSFundamentals.Algorithms.PatternSearch.RabinKarpSearch.Search(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/EnhancingDocumentation/Source/Algorithms/PatternSearch/RabinKarpSearch.cs/#L41">View Source</a>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/EnhancingDocumentation/Source/Algorithms/PatternSearch/RabinKarpSearch.cs/#L40">View Source</a>
   </span>
   <a id="CSFundamentals_Algorithms_PatternSearch_RabinKarpSearch_Search_" data-uid="CSFundamentals.Algorithms.PatternSearch.RabinKarpSearch.Search*"></a>
   <h4 id="CSFundamentals_Algorithms_PatternSearch_RabinKarpSearch_Search_System_String_System_String_" data-uid="CSFundamentals.Algorithms.PatternSearch.RabinKarpSearch.Search(System.String,System.String)">Search(String, String)</h4>
-  <div class="markdown level1 summary"><p>Implements RabinKarp search algorithm, which is an improvement on NaiveSearch, using hashing.
-Hashing plays a crucial role in optimizing search time. Rolling hash methods are preferred, and the ones with the minimum collision.</p>
+  <div class="markdown level1 summary"><p>Implements RabinKarp search algorithm using <a class="xref" href="CSFundamentals.Algorithms.Hashing.RollingHash.html">RollingHash</a> concept.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -144,13 +143,13 @@ public static int Search(string text, string pattern)</code></pre>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">text</span></td>
-        <td><p>The string in which we are searching for <code data-dev-comment-type="paramref" class="paramref">pattern</code>.</p>
+        <td><p>The string in which <code data-dev-comment-type="paramref" class="paramref">pattern</code> is searched for.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">pattern</span></td>
-        <td><p>The string we want to find in <code data-dev-comment-type="paramref" class="paramref">text</code>.</p>
+        <td><p>The string that is being searched in (<code data-dev-comment-type="paramref" class="paramref">text</code>).</p>
 </td>
       </tr>
     </tbody>
@@ -166,7 +165,7 @@ public static int Search(string text, string pattern)</code></pre>
     <tbody>
       <tr>
         <td><span class="xref">System.Int32</span></td>
-        <td><p>The starting index in <code data-dev-comment-type="paramref" class="paramref">text</code> starting at which <code data-dev-comment-type="paramref" class="paramref">pattern</code> is found.</p>
+        <td><p>All the indexes in <code data-dev-comment-type="paramref" class="paramref">text</code> starting from which a match for <code data-dev-comment-type="paramref" class="paramref">pattern</code> is found.</p>
 </td>
       </tr>
     </tbody>

@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.PatternSearch.BoyerMooreSearch.html",
-          "hash": "CnIvWFEfF/e4VTEa56OYjA=="
+          "hash": "UwF0wWV+ZZOC/OCnkpGgFg=="
         }
       },
       "is_incremental": true,
@@ -117,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.PatternSearch.KMPSearch.html",
-          "hash": "gXDlId0jrWBFN6oKYRRL1g=="
+          "hash": "9j7ixUmzqhj7wEEI1MNnZg=="
         }
       },
       "is_incremental": true,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.PatternSearch.NaiveSearch.html",
-          "hash": "1Ag1gVF9pFqg/JPdXsFzLg=="
+          "hash": "iQdkruSMGZ0UPxyGmGue6g=="
         }
       },
       "is_incremental": true,
@@ -141,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.PatternSearch.RabinKarpSearch.html",
-          "hash": "mBA6dgj9Q083m+vY6rP2Lw=="
+          "hash": "e6m3je/C3YCh7hOedCF7SA=="
         }
       },
       "is_incremental": true,
@@ -153,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.PatternSearch.html",
-          "hash": "UaGScRMhfR2k/hXydivHIw=="
+          "hash": "iwAOtM8Cqt7xbhimX2n4rA=="
         }
       },
       "is_incremental": true,

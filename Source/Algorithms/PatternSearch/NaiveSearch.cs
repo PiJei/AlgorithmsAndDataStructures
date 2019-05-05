@@ -23,16 +23,17 @@ using CSFundamentals.Decoration;
 namespace CSFundamentals.Algorithms.PatternSearch
 {
     /// <summary>
-    /// Implements a naive simple algorithm for searching a pattern string in a string. 
+    /// Implements a naive (i.e. inefficient) algorithm for searching a (pattern) string in another string. 
     /// </summary>
     public class NaiveSearch
     {
         /// <summary>
         /// Implements a naive, brute force algorithm for finding <paramref name="pattern"/> in <paramref name="text"/>.
-        /// Note: Any optimization over this algorithm, can try to reduce either the size of the outer loop or the inner loop.
+        /// Note: Any optimization over this algorithm, can try to reduce the length of the outer or inner loop.
         /// </summary>
-        /// <param name="text">The string in which we are searching for <paramref name="pattern"/>.</param>
-        /// <param name="pattern">The string we want to find in <paramref name="text"/>.</param>
+        /// <param name= "text">The string in which <paramref name="pattern"/> is searched for.</param>
+        /// <param name= "pattern">The string that is being searched in (<paramref name="text"/>).</param>
+        /// <returns>The first index in <paramref name="text"/> starting from which a match for <paramref name="pattern"/> is found.</returns>
         [Algorithm(AlgorithmType.PatternSearch, "Naive")]
         public static int Search(string text, string pattern)
         {

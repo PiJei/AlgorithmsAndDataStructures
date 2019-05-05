@@ -19,24 +19,30 @@
  */
 #endregion
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using CSFundamentals.Decoration;
+
+[assembly: InternalsVisibleTo("CSFundamentalAlgorithmsTests")]
 
 namespace CSFundamentals.Algorithms.PatternSearch
 {
     /// <summary>
-    /// Implements Boyer-More algorithm for searching a pattern string in a string. 
+    /// Implements Boyer-More algorithm for searching a (pattern) string in another string. 
     /// </summary>
     public class BoyerMooreSearch
     {
         /// <summary>
-        /// Implements BoyerMoore search algorithm using only the bad character heuristic (in the main version  both bad character and good suffix are used to skip over <paramref name="text"/>.)
-        /// The idea is to do tail based search, and skip over indexes in <paramref name="text"/> to a proper tail, at which there is a chance of match. 
+        /// Implements BoyerMoore search algorithm to search for all the occurrences of <paramref name="pattern"/> in <paramref name="text"/>.
+        /// The idea is to only use the bad character heuristic, to do tail based search, and skip over indexes in <paramref name="text"/> to a proper tail, at which there is a chance of match. 
         /// </summary>
-        /// <param name= "text">The parent string in which we are searching for <paramref name="pattern"/>.</param>
-        /// <param name= "pattern">The string we want to find in parent string (<paramref name="text"/>).</param>
-        /// <returns>All the starting indexes in <paramref name="text"/> starting at which <paramref name="pattern"/> is found [in other words looks for all the occurrences of the <paramref name="pattern"/> in <paramref name="text"/>, and does not stop by finding the first one].</returns>
+        /// <remarks>
+        /// In other versions both bad character heuristic and good suffix are used to skip over <paramref name="text"/>.
+        /// </remarks>
+        /// <param name= "text">The string in which <paramref name="pattern"/> is searched for.</param>
+        /// <param name= "pattern">The string that is being searched in (<paramref name="text"/>).</param>
+        /// <returns>All the indexes in <paramref name="text"/> starting from which a match for <paramref name="pattern"/> is found.</returns>
         [Algorithm(AlgorithmType.PatternSearch, "BoyerMoore")]
-        public static List<int> Search_BasedOnBadCharacterShiftOnly(string text, string pattern)
+        public static List<int> Search(string text, string pattern)
         {
             var indexes = new List<int>();
 
@@ -61,7 +67,7 @@ namespace CSFundamentals.Algorithms.PatternSearch
                 if (j < 0) /* this means a match is found. */
                 {
                     /*At this point i has gone backward such that it is set to the (matched-index - 1), so adjust it to point to matched-index. */
-                    i = i + 1;
+                    i += 1;
 
                     /* Store i, as one of the answers, starting from which a match for pattern is found. */
                     indexes.Add(i);
@@ -79,7 +85,7 @@ namespace CSFundamentals.Algorithms.PatternSearch
                         int lastIndexOfNextCharInPattern = patternMap.ContainsKey(nextUnVisitedCharOnText) ? patternMap[nextUnVisitedCharOnText] : -1;
 
                         /* Shift i further by length of pattern, as the search is tail based. */
-                        i = i + ((m - 1) - lastIndexOfNextCharInPattern);
+                        i += ((m - 1) - lastIndexOfNextCharInPattern);
                     }
                     else
                     {
@@ -91,7 +97,7 @@ namespace CSFundamentals.Algorithms.PatternSearch
                     // text[i] is the bad character.
                     char badChar = text[i];
                     int lastIndexOfBadCharInPattern = patternMap.ContainsKey(badChar) ? patternMap[badChar] : -1;
-                    i = i + ((m - 1) - lastIndexOfBadCharInPattern); /* Notice that the text[i] in the next round will be compared to pattern[m-1], that is why we need to slide i by this much to point to tail of the pattern in text. */
+                    i += ((m - 1) - lastIndexOfBadCharInPattern); /* Notice that the text[i] in the next round will be compared to pattern[m-1], that is why we need to slide i by this much to point to tail of the pattern in text. */
                 }
             }
 
@@ -99,11 +105,12 @@ namespace CSFundamentals.Algorithms.PatternSearch
         }
 
         /// <summary>
-        /// Maps every character in the given string to its last index in the string. 
-        /// An example use is Boyer-Moore search algorithm for re-alignment of the pattern being searched for when a bad character is found in the string that is being searched in.
+        /// Maps every character in <paramref name="text"/> to the last index it appears at. 
+        /// An example use-case is <see cref="BoyerMooreSearch"/> algorithm.
         /// </summary>
-        /// <returns>A mapping of all the characters in the given string to their last index in the string. </returns>
-        public static Dictionary<char, int> MapCharToLastIndex(string text)
+        /// <param name= "text">A string value.</param>
+        /// <returns>A mapping of all the characters in <paramref name="text"/> to their last index. </returns>
+        internal static Dictionary<char, int> MapCharToLastIndex(string text)
         {
             var indexes = new Dictionary<char, int>();
 

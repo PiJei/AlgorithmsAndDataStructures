@@ -25,18 +25,19 @@ using CSFundamentals.Decoration;
 namespace CSFundamentals.Algorithms.PatternSearch
 {
     /// <summary>
-    /// Implements Knuth-Morris-Pratt algorithm for searching a pattern string in a string. 
+    /// Implements Knuth-Morris-Pratt algorithm for searching a (pattern) string in another string. 
     /// </summary>
     public class KMPSearch
     {
         /// <summary>
-        /// Implements KMP search = Knuth-Morris-Pratt algorithm for searching <paramref name="pattern"/> in <paramref name="text"/>, using proper prefixes, and preprocessing of the <paramref name="pattern"/>.
-        /// The idea: while searching for <paramref name="pattern"/> in <paramref name="text"/>, we already 'have seen' some characters in <paramref name="text"/>, so shall not re-check if they match with parts of the <paramref name="pattern"/>.
-        /// When compared to Naive algorithm, whereas at each internal iteration, we reset j to zero, here we do not always reset j to zero, the value j gets set to, depends on its prefixes. 
+        /// Implements Knuth-Morris-Pratt algorithm to search for all the occurrences of <paramref name="pattern"/> in <paramref name="text"/>.
+        /// Uses proper prefixes, and requires preprocessing of <paramref name="pattern"/>.
+        /// The idea while searching for <paramref name="pattern"/> in <paramref name="text"/>, is that the algorithm has already 'seen' some characters in <paramref name="text"/>, so it should not check again whether those characters match substrings of <paramref name="pattern"/>.
+        /// Compared to <see cref="NaiveSearch"/>, where at each internal iteration, j (iterator over <paramref name="pattern"/>) is reset to zero, here j is not reset to zero always. The value j is set to, depends on its prefixes. 
         /// </summary>
-        /// <param name= "text">The string in which we are searching for <paramref name="pattern"/>.</param>
-        /// <param name= "pattern">The string we want to find in <paramref name="text"/>.</param>
-        /// <returns>All the starting indexes in <paramref name="text"/> starting at which <paramref name="pattern"/> is found [in other words looks for all the occurrences of <paramref name="pattern"/> in <paramref name="text"/>, and does not stop by finding the first one].</returns>
+        /// <param name= "text">The string in which <paramref name="pattern"/> is searched for.</param>
+        /// <param name= "pattern">The string that is being searched in (<paramref name="text"/>).</param>
+        /// <returns>All the indexes in <paramref name="text"/> starting from which a match for <paramref name="pattern"/> is found.</returns>
         [Algorithm(AlgorithmType.PatternSearch, "KMP-KnuthMorrisPratt")]
         public static List<int> Search(string text, string pattern)
         {
