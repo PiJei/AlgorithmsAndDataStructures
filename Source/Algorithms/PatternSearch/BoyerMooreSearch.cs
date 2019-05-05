@@ -51,13 +51,13 @@ namespace CSFundamentals.Algorithms.PatternSearch
             int m = pattern.Length;
 
             /* Preprocessing step for pattern */
-            Dictionary<char, int> patternMap = MapCharToLastIndex(pattern); /* Last index is needed, because otherwise if shifted the pattern along the text to right a lot (with the first index) we could miss some potential matches. */
+            Dictionary<char, int> patternMap = MapCharToLastIndex(pattern); /* Last index is needed, because otherwise if shifted the pattern along the text to right a lot (with the first index) some potential matches could be missed. */
 
             int i = m - 1;  /* Is the index over text. Setting to (m-1) because BoyerMoore is tail-based search. */
 
             while (i < n) /* Since this is a tail-based search, i can even be (n-1), hence the loop condition.*/
             {
-                int j = m - 1; /* Starting index over pattern, notice that we match the string backwards.*/
+                int j = m - 1; /* Starting index over pattern, notice that the algorithm matches the string backwards.*/
                 while (j >= 0 && i >= 0 && text[i] == pattern[j]) /* Continue moving backward on pattern and text as long as the characters match.*/
                 {
                     j--;
@@ -78,10 +78,10 @@ namespace CSFundamentals.Algorithms.PatternSearch
                     /* Shift i forward. */
                     i = indexOfNextUnVisitedCharOnText;
 
-                    /* See if index i can be shifted forward even more, meaning we can skip some characters over text. */
+                    /* See if index i can be shifted forward even more, meaning the algorithm can skip some characters over text. */
                     if (i < n) /* Get the next unseen character in text*/
                     {
-                        char nextUnVisitedCharOnText = text[i]; /* This can also be a bad character, if it does not exist in the map, and we should skip it. */
+                        char nextUnVisitedCharOnText = text[i]; /* This can also be a bad character, if it does not exist in the map, and should be skipped. */
                         int lastIndexOfNextCharInPattern = patternMap.ContainsKey(nextUnVisitedCharOnText) ? patternMap[nextUnVisitedCharOnText] : -1;
 
                         /* Shift i further by length of pattern, as the search is tail based. */
@@ -97,7 +97,7 @@ namespace CSFundamentals.Algorithms.PatternSearch
                     // text[i] is the bad character.
                     char badChar = text[i];
                     int lastIndexOfBadCharInPattern = patternMap.ContainsKey(badChar) ? patternMap[badChar] : -1;
-                    i += ((m - 1) - lastIndexOfBadCharInPattern); /* Notice that the text[i] in the next round will be compared to pattern[m-1], that is why we need to slide i by this much to point to tail of the pattern in text. */
+                    i += ((m - 1) - lastIndexOfBadCharInPattern); /* Notice that the text[i] in the next round will be compared to pattern[m-1], that is why i should be slided by this much to point to tail of the pattern in text. */
                 }
             }
 
