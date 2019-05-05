@@ -18,26 +18,27 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
+using CSFundamentals.Algorithms.PatternSearch;
 namespace CSFundamentals.Algorithms.Hashing
 {
     /// <summary>
-    /// Implements a rolling hash algorithm. In this sort of hashing the new hash value of a string can be calculated incrementally by rolling over to new characters, similar to moving a window over the string and decrementing the characters that fall out of the window. 
+    /// Implements a rolling hash algorithm. 
+    /// <para>In this form of hashing the new hash value of a string is calculated incrementally by rolling over a window of a fixed size over the string to include new characters and drop previous ones. </para>
     /// </summary>
     public class RollingHash
     {
         /// <summary>
-        /// Implements a rolling hash function. 
-        /// A use-case is Rabin-Karp search algorithm. 
+        /// Rolling hash. For a use-case <see cref="RabinKarpSearch"/>
         /// </summary>
-        /// <param name="previousHashValue">Specifies the previous hash value, using which the new hash value will be computed.</param>
-        /// <param name="oldCharToLeft">Specifies the character that will be omitted from the hash, and thus the rolling window. </param>
-        /// <param name="newCharToRight">Specifies the new character that will be included in the hash and thus in the rolling window. </param>
-        /// <param name="rollingWindowLength">Specifies the size of the rolling window. </param>
-        /// <param name="hashConstant">Specifies the hash constant that is computed using ComputeHashConstantForRollingHash() method</param>
-        /// <param name="prime">Specifies a prime number for the modulo operation in the hash function.</param>
-        /// <param name="numCharsInAlphabet">Specifies the number of characters in alphabet needed by the hash function in the multiplication operation. </param>
-        /// <returns>The hash value. </returns>
-        public static int GetHashRollingForward(int previousHashValue, char oldCharToLeft, char newCharToRight, int rollingWindowLength, int hashConstant, int prime, int numCharsInAlphabet)
+        /// <param name="previousHashValue">The previous hash value, using which the new hash value will be computed.</param>
+        /// <param name="oldCharToLeft">The character that will be dropped out of rolling hash window and hash value. </param>
+        /// <param name="newCharToRight">The new character that will be included in the hash window and hash value. </param>
+        /// <param name="rollingWindowLength">The length of the rolling window, measured in characters. </param>
+        /// <param name="hashConstant">Hash constant that is computed using <see cref="ComputeHashConstantForRollingHash(int, int, int)"/>. </param>
+        /// <param name="prime">A prime number for the modulo operation in the hash function.</param>
+        /// <param name="numCharsInAlphabet">The number of characters in alphabet used by the multiply operation. </param>
+        /// <returns>The new hash value. </returns>
+        public static int GenerateRollingHash(int previousHashValue, char oldCharToLeft, char newCharToRight, int rollingWindowLength, int hashConstant, int prime, int numCharsInAlphabet)
         {
             int rolledHashValue = ((previousHashValue - oldCharToLeft * hashConstant) * numCharsInAlphabet + newCharToRight) % prime;
 
@@ -45,12 +46,12 @@ namespace CSFundamentals.Algorithms.Hashing
         }
 
         /// <summary>
-        /// Computes the hash constant needed for the rolling hash. 
+        /// Computes the hash constant needed by <see cref="GenerateRollingHash(int, char, char, int, int, int, int)"/>.
         /// </summary>
-        /// <param name="rollingWindowLength">Specifies the size of the rolling window. </param>
-        /// <param name="prime">Specifies a prime number for the modulo operation</param>
-        /// <param name="numCharsInAlphabet">Specifies the number of characters in alphabet for the multiply operation. </param>
-        /// <returns>Hashing constant based on the given prime number, window size, and numCharsInAlphabet. </returns>
+        /// <param name="rollingWindowLength">The length of the rolling window. </param>
+        /// <param name="prime">A prime number for the modulo operation. </param>
+        /// <param name="numCharsInAlphabet">The number of characters in alphabet used by the multiply operation. </param>
+        /// <returns>Hashing constant computed based on the given prime number, window length, and number of characters in the alphabet. </returns>
         public static int ComputeHashConstantForRollingHash(int rollingWindowLength, int prime, int numCharsInAlphabet)
         {
             int hashConstant = 1;
@@ -62,18 +63,18 @@ namespace CSFundamentals.Algorithms.Hashing
         }
 
         /// <summary>
-        /// Computes hash value for string <paramref name="s"/>.
+        /// Computes hash value for string <paramref name="text"/>.
         /// </summary>
-        /// <param name="s">Specifies a string. </param>
-        /// <param name="prime">Specifies a prime number for the modulo operation</param>
-        /// <param name="numCharsInAlphabet">Specifies the number of characters in alphabet for the multiply operation. </param>
+        /// <param name="text">A string value. </param>
+        /// <param name="prime">A prime number for the modulo operation. </param>
+        /// <param name="numCharsInAlphabet">The number of characters in alphabet used by the multiply operation. </param>
         /// <returns>Hash value of the string. </returns>
-        public static int GetHash(string s, int prime, int numCharsInAlphabet)
+        public static int GetHash(string text, int prime, int numCharsInAlphabet)
         {
             int hash = 0;
-            for (int i = 0; i < s.Length; i++)
+            for (int i = 0; i < text.Length; i++)
             {
-                hash = (hash * numCharsInAlphabet + s[i]) % prime; /* The modulo is for the numbers to fit in an integer.*/
+                hash = (hash * numCharsInAlphabet + text[i]) % prime; /* The modulo is for making the numbers to fit in an integer.*/
             }
             return hash;
         }

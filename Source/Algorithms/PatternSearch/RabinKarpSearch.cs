@@ -68,7 +68,7 @@ namespace CSFundamentals.Algorithms.PatternSearch
                 if (i < n - m)
                 {
                     patternInText = text.Substring(i + 1, m); /* a substring in text, size of pattern, starting at index i;*/
-                    patternInTextHash = RollingHash.GetHashRollingForward(patternInTextHash, text[i], text[i + m], m, hashConstant, PrimeNumber, NumCharacters); /* O(1) with a rolling hash, otherwise: O(pattern.Length) */
+                    patternInTextHash = RollingHash.GenerateRollingHash(patternInTextHash, text[i], text[i + m], m, hashConstant, PrimeNumber, NumCharacters); /* O(1) with a rolling hash, otherwise: O(pattern.Length) */
                 }
                 else
                 {

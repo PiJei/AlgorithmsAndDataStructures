@@ -73,7 +73,8 @@
   
   <h1 id="CSFundamentals_Algorithms_Hashing_RollingHash" data-uid="CSFundamentals.Algorithms.Hashing.RollingHash" class="text-break">Class RollingHash
   </h1>
-  <div class="markdown level0 summary"><p>Implements a rolling hash algorithm. In this sort of hashing the new hash value of a string can be calculated incrementally by rolling over to new characters, similar to moving a window over the string and decrementing the characters that fall out of the window.</p>
+  <div class="markdown level0 summary"><p>Implements a rolling hash algorithm.</p>
+<p>In this form of hashing the new hash value of a string is calculated incrementally by rolling over a window of a fixed size over the string to include new characters and drop previous ones. </p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -118,11 +119,11 @@
     <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/EnhancingDocumentation/apiSpec/new?filename=CSFundamentals_Algorithms_Hashing_RollingHash_ComputeHashConstantForRollingHash_System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.Algorithms.Hashing.RollingHash.ComputeHashConstantForRollingHash(System.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/EnhancingDocumentation/Source/Algorithms/Hashing/RollingHash.cs/#L54">View Source</a>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/EnhancingDocumentation/Source/Algorithms/Hashing/RollingHash.cs/#L55">View Source</a>
   </span>
   <a id="CSFundamentals_Algorithms_Hashing_RollingHash_ComputeHashConstantForRollingHash_" data-uid="CSFundamentals.Algorithms.Hashing.RollingHash.ComputeHashConstantForRollingHash*"></a>
   <h4 id="CSFundamentals_Algorithms_Hashing_RollingHash_ComputeHashConstantForRollingHash_System_Int32_System_Int32_System_Int32_" data-uid="CSFundamentals.Algorithms.Hashing.RollingHash.ComputeHashConstantForRollingHash(System.Int32,System.Int32,System.Int32)">ComputeHashConstantForRollingHash(Int32, Int32, Int32)</h4>
-  <div class="markdown level1 summary"><p>Computes the hash constant needed for the rolling hash.</p>
+  <div class="markdown level1 summary"><p>Computes the hash constant needed by <a class="xref" href="CSFundamentals.Algorithms.Hashing.RollingHash.html#CSFundamentals_Algorithms_Hashing_RollingHash_GenerateRollingHash_System_Int32_System_Char_System_Char_System_Int32_System_Int32_System_Int32_System_Int32_">GenerateRollingHash(Int32, Char, Char, Int32, Int32, Int32, Int32)</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -142,19 +143,19 @@
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">rollingWindowLength</span></td>
-        <td><p>Specifies the size of the rolling window.</p>
+        <td><p>The length of the rolling window.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">prime</span></td>
-        <td><p>Specifies a prime number for the modulo operation</p>
+        <td><p>A prime number for the modulo operation.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">numCharsInAlphabet</span></td>
-        <td><p>Specifies the number of characters in alphabet for the multiply operation.</p>
+        <td><p>The number of characters in alphabet used by the multiply operation.</p>
 </td>
       </tr>
     </tbody>
@@ -170,7 +171,93 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Int32</span></td>
-        <td><p>Hashing constant based on the given prime number, window size, and numCharsInAlphabet.</p>
+        <td><p>Hashing constant computed based on the given prime number, window length, and number of characters in the alphabet.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/EnhancingDocumentation/apiSpec/new?filename=CSFundamentals_Algorithms_Hashing_RollingHash_GenerateRollingHash_System_Int32_System_Char_System_Char_System_Int32_System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.Algorithms.Hashing.RollingHash.GenerateRollingHash(System.Int32%2CSystem.Char%2CSystem.Char%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/EnhancingDocumentation/Source/Algorithms/Hashing/RollingHash.cs/#L41">View Source</a>
+  </span>
+  <a id="CSFundamentals_Algorithms_Hashing_RollingHash_GenerateRollingHash_" data-uid="CSFundamentals.Algorithms.Hashing.RollingHash.GenerateRollingHash*"></a>
+  <h4 id="CSFundamentals_Algorithms_Hashing_RollingHash_GenerateRollingHash_System_Int32_System_Char_System_Char_System_Int32_System_Int32_System_Int32_System_Int32_" data-uid="CSFundamentals.Algorithms.Hashing.RollingHash.GenerateRollingHash(System.Int32,System.Char,System.Char,System.Int32,System.Int32,System.Int32,System.Int32)">GenerateRollingHash(Int32, Char, Char, Int32, Int32, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Rolling hash. For a use-case <a class="xref" href="CSFundamentals.Algorithms.PatternSearch.RabinKarpSearch.html">RabinKarpSearch</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int GenerateRollingHash(int previousHashValue, char oldCharToLeft, char newCharToRight, int rollingWindowLength, int hashConstant, int prime, int numCharsInAlphabet)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">previousHashValue</span></td>
+        <td><p>The previous hash value, using which the new hash value will be computed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">oldCharToLeft</span></td>
+        <td><p>The character that will be dropped out of rolling hash window and hash value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">newCharToRight</span></td>
+        <td><p>The new character that will be included in the hash window and hash value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">rollingWindowLength</span></td>
+        <td><p>The length of the rolling window, measured in characters.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">hashConstant</span></td>
+        <td><p>Hash constant that is computed using <a class="xref" href="CSFundamentals.Algorithms.Hashing.RollingHash.html#CSFundamentals_Algorithms_Hashing_RollingHash_ComputeHashConstantForRollingHash_System_Int32_System_Int32_System_Int32_">ComputeHashConstantForRollingHash(Int32, Int32, Int32)</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">prime</span></td>
+        <td><p>A prime number for the modulo operation in the hash function.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">numCharsInAlphabet</span></td>
+        <td><p>The number of characters in alphabet used by the multiply operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The new hash value.</p>
 </td>
       </tr>
     </tbody>
@@ -180,16 +267,16 @@
     <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/EnhancingDocumentation/apiSpec/new?filename=CSFundamentals_Algorithms_Hashing_RollingHash_GetHash_System_String_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.Algorithms.Hashing.RollingHash.GetHash(System.String%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/EnhancingDocumentation/Source/Algorithms/Hashing/RollingHash.cs/#L71">View Source</a>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/EnhancingDocumentation/Source/Algorithms/Hashing/RollingHash.cs/#L72">View Source</a>
   </span>
   <a id="CSFundamentals_Algorithms_Hashing_RollingHash_GetHash_" data-uid="CSFundamentals.Algorithms.Hashing.RollingHash.GetHash*"></a>
   <h4 id="CSFundamentals_Algorithms_Hashing_RollingHash_GetHash_System_String_System_Int32_System_Int32_" data-uid="CSFundamentals.Algorithms.Hashing.RollingHash.GetHash(System.String,System.Int32,System.Int32)">GetHash(String, Int32, Int32)</h4>
-  <div class="markdown level1 summary"><p>Computes hash value for string <code data-dev-comment-type="paramref" class="paramref">s</code>.</p>
+  <div class="markdown level1 summary"><p>Computes hash value for string <code data-dev-comment-type="paramref" class="paramref">text</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int GetHash(string s, int prime, int numCharsInAlphabet)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int GetHash(string text, int prime, int numCharsInAlphabet)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -203,20 +290,20 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">s</span></td>
-        <td><p>Specifies a string.</p>
+        <td><span class="parametername">text</span></td>
+        <td><p>A string value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">prime</span></td>
-        <td><p>Specifies a prime number for the modulo operation</p>
+        <td><p>A prime number for the modulo operation.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">numCharsInAlphabet</span></td>
-        <td><p>Specifies the number of characters in alphabet for the multiply operation.</p>
+        <td><p>The number of characters in alphabet used by the multiply operation.</p>
 </td>
       </tr>
     </tbody>
@@ -237,93 +324,6 @@
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/EnhancingDocumentation/apiSpec/new?filename=CSFundamentals_Algorithms_Hashing_RollingHash_GetHashRollingForward_System_Int32_System_Char_System_Char_System_Int32_System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.Algorithms.Hashing.RollingHash.GetHashRollingForward(System.Int32%2CSystem.Char%2CSystem.Char%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/EnhancingDocumentation/Source/Algorithms/Hashing/RollingHash.cs/#L40">View Source</a>
-  </span>
-  <a id="CSFundamentals_Algorithms_Hashing_RollingHash_GetHashRollingForward_" data-uid="CSFundamentals.Algorithms.Hashing.RollingHash.GetHashRollingForward*"></a>
-  <h4 id="CSFundamentals_Algorithms_Hashing_RollingHash_GetHashRollingForward_System_Int32_System_Char_System_Char_System_Int32_System_Int32_System_Int32_System_Int32_" data-uid="CSFundamentals.Algorithms.Hashing.RollingHash.GetHashRollingForward(System.Int32,System.Char,System.Char,System.Int32,System.Int32,System.Int32,System.Int32)">GetHashRollingForward(Int32, Char, Char, Int32, Int32, Int32, Int32)</h4>
-  <div class="markdown level1 summary"><p>Implements a rolling hash function.
-A use-case is Rabin-Karp search algorithm.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int GetHashRollingForward(int previousHashValue, char oldCharToLeft, char newCharToRight, int rollingWindowLength, int hashConstant, int prime, int numCharsInAlphabet)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td><span class="parametername">previousHashValue</span></td>
-        <td><p>Specifies the previous hash value, using which the new hash value will be computed.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">oldCharToLeft</span></td>
-        <td><p>Specifies the character that will be omitted from the hash, and thus the rolling window.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">newCharToRight</span></td>
-        <td><p>Specifies the new character that will be included in the hash and thus in the rolling window.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td><span class="parametername">rollingWindowLength</span></td>
-        <td><p>Specifies the size of the rolling window.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td><span class="parametername">hashConstant</span></td>
-        <td><p>Specifies the hash constant that is computed using ComputeHashConstantForRollingHash() method</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td><span class="parametername">prime</span></td>
-        <td><p>Specifies a prime number for the modulo operation in the hash function.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td><span class="parametername">numCharsInAlphabet</span></td>
-        <td><p>Specifies the number of characters in alphabet needed by the hash function in the multiplication operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td><p>The hash value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
 </article>
           </div>
           
@@ -335,7 +335,7 @@ A use-case is Rabin-Karp search algorithm.</p>
                     <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/EnhancingDocumentation/apiSpec/new?filename=CSFundamentals_Algorithms_Hashing_RollingHash.md&amp;value=---%0Auid%3A%20CSFundamentals.Algorithms.Hashing.RollingHash%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/EnhancingDocumentation/Source/Algorithms/Hashing/RollingHash.cs/#L26" class="contribution-link">View Source</a>
+                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/EnhancingDocumentation/Source/Algorithms/Hashing/RollingHash.cs/#L28" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

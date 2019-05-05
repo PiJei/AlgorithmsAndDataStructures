@@ -49,7 +49,7 @@ namespace CSFundamentalsTests.Hashing
             int hashConstant = RollingHash.ComputeHashConstantForRollingHash(3, Prime, NumCharactersInAlphabet);
 
             // Assuming we are rolling the hash window over string s above. 
-            Assert.AreEqual(31, RollingHash.GetHashRollingForward(90, 'a', 'd', 3, hashConstant, Prime, NumCharactersInAlphabet));
+            Assert.AreEqual(31, RollingHash.GenerateRollingHash(90, 'a', 'd', 3, hashConstant, Prime, NumCharactersInAlphabet));
         }
     }
 }
