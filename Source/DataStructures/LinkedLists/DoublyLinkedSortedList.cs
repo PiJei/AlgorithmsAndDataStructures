@@ -150,6 +150,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
         /// <summary>
         /// Searches for the specified <paramref name="value"/>. 
         /// </summary>
+        /// <exception cref="NotFoundException"> Throws if <paramref name="value"/> does not exist in the list. </exception>
         /// <param name="value">The value of the node that is being searched for.</param>
         /// <returns>The node containing <paramref name="value"/>, and if no node is found throws an exception. </returns>
         [TimeComplexity(Case.Best, "O(1)", When = "The value is at head position.")]

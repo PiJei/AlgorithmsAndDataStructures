@@ -94,6 +94,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         /// <summary>
         /// Gets the index of the current node in its parent's _children array. 
         /// </summary>
+        /// <exception cref="ArgumentException">Throws if parent is null. </exception>
         /// <returns>index of the current node in its parent's _children array. </returns>
         public override int GetIndexAtParentChildren()
         {

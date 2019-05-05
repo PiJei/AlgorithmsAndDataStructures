@@ -253,6 +253,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// <summary>
         /// Finds the node with the smallest key in a binary search tree.
         /// </summary>
+        /// <exception cref="ArgumentNullException"> Throws if <paramref name="root"/> is null. </exception>
         /// <param name="root">The node at which the search starts. </param>
         /// <returns>The tree node with the smallest key. </returns>
         internal TNode FindMin_BST(TNode root)
@@ -273,6 +274,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// <summary>
         /// Finds the node with the largest key in a binary search tree.
         /// </summary>
+        /// <exception cref="ArgumentNullException"> Throws if <paramref name="root"/> is null. </exception>
         /// <param name="root">The node at which the search starts. </param>
         /// <returns>The tree node with the largest key.</returns>
         internal TNode FindMax_BST(TNode root)
@@ -294,6 +296,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// Rotates the tree to left at the given node, meaning that the current right child of the given node will be its new parent.
         /// Also notice that in rotation, keys or values of a node never change, only the relations change.
         /// </summary>
+        /// <exception cref="ArgumentNullException"> Throws if <paramref name="node"/> or its right child is null. </exception>
         /// <param name="node">The node at which rotation happens.</param>
         [TimeComplexity(Case.Average, "O(1)")]
         public TNode RotateLeft(TNode node)
@@ -305,7 +308,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
 
             if (node.RightChild == null)
             {
-                throw new Exception("While rotating left, the new parent can not be null.");
+                throw new ArgumentNullException("While rotating left, the new parent can not be null.");
             }
 
             var nodeParent = node.Parent;
@@ -341,6 +344,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// Rotates the tree to right at the given node. Meaning that the current left child of the given node will be its new parent.
         /// Also notice that in rotation, keys or values of a node never change, only the relations change.
         /// </summary>
+        /// <exception cref="ArgumentNullException"> Throws if <paramref name="node"/> or its left child is null. </exception>
         /// <param name="node">The node at which rotation happens.</param>
         [TimeComplexity(Case.Average, "O(1)")]
         public TNode RotateRight(TNode node)

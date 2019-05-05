@@ -372,6 +372,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         /// <summary>
         /// Starting from the given root, recursively traverses tree top-down to find the proper leaf node, at which <paramref name="key"/> can be inserted. 
         /// </summary>
+        /// <exception cref="ArgumentException">Throws if <paramref name="key"/> already exists in the tree. </exception>
         /// <param name="root">The top-most node at which search for the leaf starts.</param>
         /// <param name="key">The key for which a container leaf is being searched. </param>
         /// <returns>Leaf node to insert the key. </returns>
@@ -412,6 +413,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         /// <summary>
         ///  Searchers the given key in leaf nodes of the (sub)tree rooted at node <paramref name="root"/>.
         /// </summary>
+        /// <exception cref="KeyNotFoundException">Throws if <paramref name="key"/> does not exist in the tree. </exception>
         /// <param name="root">The root of the (sub) tree at which search starts. </param>
         /// <param name="key">The key to search for.</param>
         /// <returns>The leaf node containing the key if it exists. Otherwise throws an exception. </returns>

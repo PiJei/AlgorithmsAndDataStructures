@@ -62,6 +62,7 @@ namespace CSFundamentals.DataStructures.LinkedLists.API
         /// <summary>
         /// Searches for the specified <paramref name="value"/>. Since there is no assumption about the order of the values in the list, starts from the Head node and performs a linear search.
         /// </summary>
+        /// <exception cref="NotFoundException"> Throws if <paramref name="value"/> does not exist in the list. </exception>
         /// <param name="value">The value of the node that is being searched for.</param>
         /// <returns>The node containing <paramref name="value"/>, and if no node is found throws an exception. </returns>
         [TimeComplexity(Case.Best, "O(1)", When = "The first node (Head) contains the value.")]

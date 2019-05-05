@@ -1328,6 +1328,7 @@
             <summary>
             Searches for the specified <paramref name="value"/>. Since there is no assumption about the order of the values in the list, starts from the Head node and performs a linear search.
             </summary>
+            <exception cref="T:CSFundamentals.DataStructures.LinkedLists.NotFoundException"> Throws if <paramref name="value"/> does not exist in the list. </exception>
             <param name="value">The value of the node that is being searched for.</param>
             <returns>The node containing <paramref name="value"/>, and if no node is found throws an exception. </returns>
         </member>
@@ -1511,6 +1512,7 @@
             <summary>
             Searches for the specified <paramref name="value"/>. 
             </summary>
+            <exception cref="T:CSFundamentals.DataStructures.LinkedLists.NotFoundException"> Throws if <paramref name="value"/> does not exist in the list. </exception>
             <param name="value">The value of the node that is being searched for.</param>
             <returns>The node containing <paramref name="value"/>, and if no node is found throws an exception. </returns>
         </member>
@@ -1872,6 +1874,7 @@
             <summary>
             Finds the node with the smallest key in a binary search tree.
             </summary>
+            <exception cref="T:System.ArgumentNullException"> Throws if <paramref name="root"/> is null. </exception>
             <param name="root">The node at which the search starts. </param>
             <returns>The tree node with the smallest key. </returns>
         </member>
@@ -1879,6 +1882,7 @@
             <summary>
             Finds the node with the largest key in a binary search tree.
             </summary>
+            <exception cref="T:System.ArgumentNullException"> Throws if <paramref name="root"/> is null. </exception>
             <param name="root">The node at which the search starts. </param>
             <returns>The tree node with the largest key.</returns>
         </member>
@@ -1887,6 +1891,7 @@
             Rotates the tree to left at the given node, meaning that the current right child of the given node will be its new parent.
             Also notice that in rotation, keys or values of a node never change, only the relations change.
             </summary>
+            <exception cref="T:System.ArgumentNullException"> Throws if <paramref name="node"/> or its right child is null. </exception>
             <param name="node">The node at which rotation happens.</param>
         </member>
         <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase`3.RotateRight(`0)">
@@ -1894,6 +1899,7 @@
             Rotates the tree to right at the given node. Meaning that the current left child of the given node will be its new parent.
             Also notice that in rotation, keys or values of a node never change, only the relations change.
             </summary>
+            <exception cref="T:System.ArgumentNullException"> Throws if <paramref name="node"/> or its left child is null. </exception>
             <param name="node">The node at which rotation happens.</param>
         </member>
         <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase`3.DeleteMin(`0)">
@@ -2805,42 +2811,49 @@
             <summary>
             Gets the key-value pair of the maximum key in the node.
             </summary>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException"> Throws if <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._keyValues"/> is empty. </exception>
             <returns>Key-value pair of the maximum key in this node. </returns>
         </member>
         <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetMinKey">
             <summary>
             Gets the key-value pair of the minimum key in the node. 
             </summary>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException"> Throws if <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._keyValues"/> is empty. </exception>
             <returns>Key-value pair of the minimum key in this node. </returns>
         </member>
         <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.RemoveKey(`1)">
             <summary>
             Removes key <paramref name="key"/> from the node's <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._keyValues"/> array. 
             </summary>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException"> Throws if <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._keyValues"/> does not contain <paramref name="key"/>. </exception>
             <param name="key">The key to be removed.</param>
         </member>
         <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.RemoveKeyByIndex(System.Int32)">
             <summary>
             Removes key at index <paramref name="index"/> from the node's <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._keyValues"/> array. 
             </summary>
+            <exception cref="T:System.IndexOutOfRangeException"> Throws if <paramref name="index"/> is >= <see cref="P:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.KeyCount"/>. </exception>
             <param name="index">The index of the key to be removed from the node. </param>
         </member>
         <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.RemoveChildByIndex(System.Int32)">
             <summary>
             Removes child at index <paramref name="index"/> from the node's <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._children"/> array.
             </summary>
+            <exception cref="T:System.IndexOutOfRangeException"> Throws if <paramref name="index"/> is >= <see cref="P:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.ChildrenCount"/>. </exception>
             <param name="index">The child index. </param>
         </member>
         <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.RemoveChild(`0)">
             <summary>
             Removes child <paramref name="child"/> from the node's <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._children"/> array.
             </summary>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException"> Throws if <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._children"/> does not contain <paramref name="child"/>. </exception>
             <param name="child">Child to be removed. </param>
         </member>
         <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.GetKeyValue(System.Int32)">
             <summary>
             Gets (reads) the key-value pair at index <paramref name="index"/> of node's <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._keyValues"/> array. 
             </summary>
+            <exception cref="T:System.IndexOutOfRangeException">Throws if <paramref name="index"/> >= <see cref="P:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.KeyCount"/>. </exception>
             <param name="index">The index of the key-value pair wanted. </param>
             <returns>Key-value pair located at index <paramref name="index"/> of node's <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._keyValues"/> array. </returns>
         </member>
@@ -2855,6 +2868,7 @@
             <summary>
             Gets the index of the key <paramref name="key"/> at node's <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._keyValues"/> array. 
             </summary>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException">Throws if <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._keyValues"/> does not contain <paramref name="key"/>. </exception>
             <param name="key">The key to search for and return its index.</param>
             <returns>Index of the key <paramref name="key"/> at node's <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._keyValues"/> array. </returns>
         </member>
@@ -2862,6 +2876,7 @@
             <summary>
             Gets (reads) the child at index <paramref name="index"/> of node's <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._children"/> array.
             </summary>
+            <exception cref="T:System.IndexOutOfRangeException">Throws if <paramref name="index"/> >= <see cref="P:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.ChildrenCount"/>. </exception>
             <param name="index">The index of the child node wanted. </param>
             <returns>Child node at index <paramref name="index"/> of node's <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._children"/> array.</returns>
         </member>
@@ -2869,6 +2884,7 @@
             <summary>
             Looks for <paramref name="child"/> in node's <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._children"/> array, and returns its index.
             </summary>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException">Throws if <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._children"/> does not contain <paramref name="child"/>. </exception>
             <param name="child">Child whose index is wanted. </param>
             <returns>Index of <paramref name="child"/> in node's <see cref="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._children"/> array</returns>
         </member>
@@ -2901,6 +2917,7 @@
             When a node is being split into two nodes, gets the key that shall be moved to the parent of this node.
             This operation is expected to only be called upon a node that is full. Yet to prevent issues, first checks for the key count. 
             </summary>
+            <exception cref="T:System.ArgumentException">Throws if this method is called on a node that is not MinOneFull. </exception>
             <returns>The key at the middle of the key-value pairs that shall be moved to the parent. </returns>
         </member>
         <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.CompareTo(`0)">
@@ -3176,6 +3193,7 @@
             <summary>
             Starting from the given root, recursively traverses tree top-down to find the proper leaf node, at which <paramref name="key"/> can be inserted. 
             </summary>
+            <exception cref="T:System.ArgumentException">Throws if <paramref name="key"/> already exists in the tree. </exception>
             <param name="root">The top-most node at which search for the leaf starts.</param>
             <param name="key">The key for which a container leaf is being searched. </param>
             <returns>Leaf node to insert the key. </returns>
@@ -3184,6 +3202,7 @@
             <summary>
              Searchers the given key in leaf nodes of the (sub)tree rooted at node <paramref name="root"/>.
             </summary>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException">Throws if <paramref name="key"/> does not exist in the tree. </exception>
             <param name="root">The root of the (sub) tree at which search starts. </param>
             <param name="key">The key to search for.</param>
             <returns>The leaf node containing the key if it exists. Otherwise throws an exception. </returns>
@@ -3241,6 +3260,7 @@
             <summary>
             Gets the index of the current node in its parent's _children array. 
             </summary>
+            <exception cref="T:System.ArgumentException">Throws if parent is null. </exception>
             <returns>index of the current node in its parent's _children array. </returns>
         </member>
         <member name="M:CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2.InsertChild(CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode{`0,`1})">
@@ -3317,6 +3337,7 @@
             <summary>
             Starting from the given root, recursively traverses tree top-down to find the proper leaf node, at which <paramref name="key"/> can be inserted. 
             </summary>
+            <exception cref="T:System.ArgumentException">Throws if <paramref name="key"/> already exists in the tree. </exception>
             <param name="root">The top-most node at which search for the leaf starts.</param>
             <param name="key">The key for which a container leaf is being searched. </param>
             <returns>Leaf node to insert the key. </returns>
@@ -3325,6 +3346,7 @@
             <summary>
              Searchers the given key in (sub)tree rooted at node <paramref name="root"/>.
             </summary>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException">Throws if <paramref name="key"/> does not exist in the tree. </exception>
             <param name="root">The root of the (sub) tree at which search starts. </param>
             <param name="key">The key to search for.</param>
             <returns>The node containing the key if it exists. Otherwise throws an exception. </returns>
@@ -3373,6 +3395,7 @@
             <summary>
             Gets the index of the current node in its parent's _children list.
             </summary>
+            <exception cref="T:System.ArgumentException">Throws if parent is null. </exception>
             <returns>Index at parent's _children list.</returns>
         </member>
         <member name="M:CSFundamentals.DataStructures.Trees.Nary.BTreeNode`2.InsertChild(CSFundamentals.DataStructures.Trees.Nary.BTreeNode{`0,`1})">

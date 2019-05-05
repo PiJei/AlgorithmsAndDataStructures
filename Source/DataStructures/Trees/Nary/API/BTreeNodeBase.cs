@@ -303,6 +303,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <summary>
         /// Gets the key-value pair of the maximum key in the node.
         /// </summary>
+        /// <exception cref="KeyNotFoundException"> Throws if <see cref="_keyValues"/> is empty. </exception>
         /// <returns>Key-value pair of the maximum key in this node. </returns>
         public KeyValuePair<TKey, TValue> GetMaxKey()
         {
@@ -312,6 +313,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <summary>
         /// Gets the key-value pair of the minimum key in the node. 
         /// </summary>
+        /// <exception cref="KeyNotFoundException"> Throws if <see cref="_keyValues"/> is empty. </exception>
         /// <returns>Key-value pair of the minimum key in this node. </returns>
         public KeyValuePair<TKey, TValue> GetMinKey()
         {
@@ -321,6 +323,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <summary>
         /// Removes key <paramref name="key"/> from the node's <see cref="_keyValues"/> array. 
         /// </summary>
+        /// <exception cref="KeyNotFoundException"> Throws if <see cref="_keyValues"/> does not contain <paramref name="key"/>. </exception>
         /// <param name="key">The key to be removed.</param>
         public void RemoveKey(TKey key)
         {
@@ -337,6 +340,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <summary>
         /// Removes key at index <paramref name="index"/> from the node's <see cref="_keyValues"/> array. 
         /// </summary>
+        /// <exception cref="IndexOutOfRangeException"> Throws if <paramref name="index"/> is >= <see cref="KeyCount"/>. </exception>
         /// <param name="index">The index of the key to be removed from the node. </param>
         public void RemoveKeyByIndex(int index)
         {
@@ -353,10 +357,11 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <summary>
         /// Removes child at index <paramref name="index"/> from the node's <see cref="_children"/> array.
         /// </summary>
+        /// <exception cref="IndexOutOfRangeException"> Throws if <paramref name="index"/> is >= <see cref="ChildrenCount"/>. </exception>
         /// <param name="index">The child index. </param>
         public void RemoveChildByIndex(int index)
         {
-            if (index < _children.Count)
+            if (index < ChildrenCount)
             {
                 _children.RemoveAt(index);
             }
@@ -369,6 +374,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <summary>
         /// Removes child <paramref name="child"/> from the node's <see cref="_children"/> array.
         /// </summary>
+        /// <exception cref="KeyNotFoundException"> Throws if <see cref="_children"/> does not contain <paramref name="child"/>. </exception>
         /// <param name="child">Child to be removed. </param>
         public void RemoveChild(TNode child)
         {
@@ -385,6 +391,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <summary>
         /// Gets (reads) the key-value pair at index <paramref name="index"/> of node's <see cref="_keyValues"/> array. 
         /// </summary>
+        /// <exception cref="IndexOutOfRangeException">Throws if <paramref name="index"/> >= <see cref="KeyCount"/>. </exception>
         /// <param name="index">The index of the key-value pair wanted. </param>
         /// <returns>Key-value pair located at index <paramref name="index"/> of node's <see cref="_keyValues"/> array. </returns>
         public KeyValuePair<TKey, TValue> GetKeyValue(int index)
@@ -405,6 +412,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <summary>
         /// Gets the index of the key <paramref name="key"/> at node's <see cref="_keyValues"/> array. 
         /// </summary>
+        /// <exception cref="KeyNotFoundException">Throws if <see cref="_keyValues"/> does not contain <paramref name="key"/>. </exception>
         /// <param name="key">The key to search for and return its index.</param>
         /// <returns>Index of the key <paramref name="key"/> at node's <see cref="_keyValues"/> array. </returns>
         public int GetKeyIndex(TKey key)
@@ -415,6 +423,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <summary>
         /// Gets (reads) the child at index <paramref name="index"/> of node's <see cref="_children"/> array.
         /// </summary>
+        /// <exception cref="IndexOutOfRangeException">Throws if <paramref name="index"/> >= <see cref="ChildrenCount"/>. </exception>
         /// <param name="index">The index of the child node wanted. </param>
         /// <returns>Child node at index <paramref name="index"/> of node's <see cref="_children"/> array.</returns>
         public TNode GetChild(int index)
@@ -425,6 +434,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <summary>
         /// Looks for <paramref name="child"/> in node's <see cref="_children"/> array, and returns its index.
         /// </summary>
+        /// <exception cref="KeyNotFoundException">Throws if <see cref="_children"/> does not contain <paramref name="child"/>. </exception>
         /// <param name="child">Child whose index is wanted. </param>
         /// <returns>Index of <paramref name="child"/> in node's <see cref="_children"/> array</returns>
         public int GetChildIndex(TNode child)
@@ -509,6 +519,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// When a node is being split into two nodes, gets the key that shall be moved to the parent of this node.
         /// This operation is expected to only be called upon a node that is full. Yet to prevent issues, first checks for the key count. 
         /// </summary>
+        /// <exception cref="ArgumentException">Throws if this method is called on a node that is not MinOneFull. </exception>
         /// <returns>The key at the middle of the key-value pairs that shall be moved to the parent. </returns>
         public KeyValuePair<TKey, TValue> KeyValueToMoveUp()
         {
