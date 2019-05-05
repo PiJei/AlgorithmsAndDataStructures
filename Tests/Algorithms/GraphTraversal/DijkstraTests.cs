@@ -87,31 +87,31 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
             List<GraphNode<string>> distancesFromRoot = Dijkstra.GetShortestDistancesFromRoot(A);
 
             Assert.AreEqual("A", distancesFromRoot[0].Value);
-            Assert.AreEqual(0, distancesFromRoot[0].DistanceFromRoot);
+            Assert.AreEqual(0, distancesFromRoot[0].DistanceFromStartNode);
 
             Assert.AreEqual("B", distancesFromRoot[1].Value);
-            Assert.AreEqual(4, distancesFromRoot[1].DistanceFromRoot);
+            Assert.AreEqual(4, distancesFromRoot[1].DistanceFromStartNode);
 
             Assert.AreEqual("C", distancesFromRoot[2].Value);
-            Assert.AreEqual(8, distancesFromRoot[2].DistanceFromRoot);
+            Assert.AreEqual(8, distancesFromRoot[2].DistanceFromStartNode);
 
             Assert.AreEqual("F", distancesFromRoot[3].Value);
-            Assert.AreEqual(9, distancesFromRoot[3].DistanceFromRoot);
+            Assert.AreEqual(9, distancesFromRoot[3].DistanceFromStartNode);
 
             Assert.AreEqual("H", distancesFromRoot[4].Value);
-            Assert.AreEqual(11, distancesFromRoot[4].DistanceFromRoot);
+            Assert.AreEqual(11, distancesFromRoot[4].DistanceFromStartNode);
 
             Assert.AreEqual("D", distancesFromRoot[5].Value);
-            Assert.AreEqual(12, distancesFromRoot[5].DistanceFromRoot);
+            Assert.AreEqual(12, distancesFromRoot[5].DistanceFromStartNode);
 
             Assert.AreEqual("E", distancesFromRoot[6].Value);
-            Assert.AreEqual(14, distancesFromRoot[6].DistanceFromRoot);
+            Assert.AreEqual(14, distancesFromRoot[6].DistanceFromStartNode);
 
             Assert.AreEqual("G", distancesFromRoot[7].Value);
-            Assert.AreEqual(19, distancesFromRoot[7].DistanceFromRoot);
+            Assert.AreEqual(19, distancesFromRoot[7].DistanceFromStartNode);
 
             Assert.AreEqual("I", distancesFromRoot[8].Value);
-            Assert.AreEqual(21, distancesFromRoot[8].DistanceFromRoot);
+            Assert.AreEqual(21, distancesFromRoot[8].DistanceFromStartNode);
         }
     }
 }

@@ -40,9 +40,9 @@ namespace CSFundamentals.Algorithms.GraphTraversal
         public List<GraphEdge<TValue>> Adjacents { get; set; } = new List<GraphEdge<TValue>>();
 
         /// <summary>
-        /// Is the distance of this node from a node deemed as root (unlike trees graphs do not have a designated root)
+        /// Is the distance of this node from a node at which traversal of the graph containing current node starts.
         /// </summary>
-        public int DistanceFromRoot { get; set; } = 0;
+        public int DistanceFromStartNode { get; set; } = 0;
 
         /// <summary>
         /// Determines whether this node, in a particular instance of a traversal algorithm has been already visited : inserted in the queue/stack. 
@@ -75,17 +75,17 @@ namespace CSFundamentals.Algorithms.GraphTraversal
                 return 0;
             }
 
-            if (DistanceFromRoot < other.DistanceFromRoot)
+            if (DistanceFromStartNode < other.DistanceFromStartNode)
             {
                 return -1;
             }
 
-            if (DistanceFromRoot == other.DistanceFromRoot)
+            if (DistanceFromStartNode == other.DistanceFromStartNode)
             {
                 return 0;
             }
 
-            if (DistanceFromRoot > other.DistanceFromRoot)
+            if (DistanceFromStartNode > other.DistanceFromStartNode)
             {
                 return 1;
             }

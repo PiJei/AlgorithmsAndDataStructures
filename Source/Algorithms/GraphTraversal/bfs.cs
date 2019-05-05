@@ -20,7 +20,7 @@
 #endregion
 
 // TODO: Specify time and space complexity for BFS and DFS. 
-// TODO: In recursive versions of BFS and DFS also compute distance from root. 
+// TODO: In recursive versions of BFS and DFS also compute distance from startNode. 
 using System.Collections.Generic;
 
 namespace CSFundamentals.Algorithms.GraphTraversal
@@ -37,15 +37,15 @@ namespace CSFundamentals.Algorithms.GraphTraversal
         /// A graph can have many BFS orderings. Each ordering depends on (i) the start node, and (ii) the order by which each node's adjacent nodes are visited. 
         /// </remarks>
         /// <typeparam name="TValue">Type of the values stored in graph nodes.</typeparam>
-        /// <param name="root">A node in the graph from which traversal starts. </param>
+        /// <param name="startNode">A node in the graph from which traversal starts. </param>
         /// <returns>A sequence of all graph nodes, put into a BFS ordering.</returns>
-        public static List<GraphNode<TValue>> BFS_Iterative<TValue>(GraphNode<TValue> root) /* Root is the node from which the search starts.*/
+        public static List<GraphNode<TValue>> BFS_Iterative<TValue>(GraphNode<TValue> startNode) /* Start node is the node from which the search starts.*/
         {
             var queue = new Queue<GraphNode<TValue>>();
 
-            root.IsInserted = true;
-            root.DistanceFromRoot = 0;
-            queue.Enqueue(root);
+            startNode.IsInserted = true;
+            startNode.DistanceFromStartNode = 0;
+            queue.Enqueue(startNode);
 
             /* Stores a BFS ordering of the nodes. */
             var bfsOrdering = new List<GraphNode<TValue>>();
@@ -61,7 +61,7 @@ namespace CSFundamentals.Algorithms.GraphTraversal
                     if (!edge.Node.IsInserted) /* To prevent endless recursion in case graph has cycles. */
                     {
                         edge.Node.IsInserted = true;
-                        edge.Node.DistanceFromRoot = node.DistanceFromRoot + 1;
+                        edge.Node.DistanceFromStartNode = node.DistanceFromStartNode + 1;
                         queue.Enqueue(edge.Node);
                     }
                 }
