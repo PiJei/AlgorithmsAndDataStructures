@@ -23,7 +23,7 @@
 namespace CSFundamentals.Algorithms.GraphTraversal
 {
     /// <summary>
-    /// A generic graph edge. 
+    /// A generic graph edge. For sample use-cases <see cref="DFS"/>, <see cref="BFS"/>, <see cref="Dijkstra"/>.
     /// </summary>
     public class GraphEdge<TValue>
     {

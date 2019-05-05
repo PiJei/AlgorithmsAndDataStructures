@@ -24,7 +24,7 @@ using System.Collections.Generic;
 namespace CSFundamentals.Algorithms.GraphTraversal
 {
     /// <summary>
-    /// A generic graph node. 
+    /// A generic graph node. For sample use-cases <see cref="DFS"/>, <see cref="BFS"/>, <see cref="Dijkstra"/>.
     /// </summary>
     /// <typeparam name="TValue">The type of the value stored in the node. </typeparam>
     public class GraphNode<TValue> : IComparable<GraphNode<TValue>>
