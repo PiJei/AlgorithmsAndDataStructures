@@ -36,16 +36,16 @@ namespace CSFundamentals.Algorithms.Search
         /// Notice that only works if the given array is sorted. 
         /// </summary>
         /// <param name="sortedList">A sorted list of any comparable type. </param>
+        /// <param name="key">The value that is being searched for. </param>
         /// <param name="startIndex">The lowest (left-most) index of the array - inclusive. </param>
         /// <param name="endIndex">The highest (right-most) index of the array - inclusive. </param>
-        /// <param name="key">The value that is being searched for. </param>
         /// <returns>The index of the <paramref name="key"/> in the array, and -1 if it does not exist in the array. </returns>
         [Algorithm(AlgorithmType.Search, "TernarySearch", Assumptions = "Array is sorted with an ascending order.")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(log3(n))")]
         [TimeComplexity(Case.Average, "")] // TODO
-        public static int Search<T>(List<T> sortedList, int startIndex, int endIndex, T key) where T : IComparable
+        public static int Search<T>(List<T> sortedList, T key, int startIndex, int endIndex) where T : IComparable
         {
             if (startIndex > endIndex)
             {
@@ -77,17 +77,17 @@ namespace CSFundamentals.Algorithms.Search
 
             if (key.CompareTo(middleValue1) < 0)
             {
-                return Search(sortedList, startIndex, middleIndex1 - 1, key);
+                return Search(sortedList, key, startIndex, middleIndex1 - 1);
             }
 
             if (key.CompareTo(middleValue1) > 0 && key.CompareTo(middleValue2) < 0)
             {
-                return Search(sortedList, middleIndex1 + 1, middleIndex2 - 1, key);
+                return Search(sortedList, key, middleIndex1 + 1, middleIndex2 - 1);
             }
 
             if (key.CompareTo(middleValue2) > 0)
             {
-                return Search(sortedList, middleIndex2 + 1, endIndex, key);
+                return Search(sortedList, key, middleIndex2 + 1, endIndex);
             }
 
             return -1;

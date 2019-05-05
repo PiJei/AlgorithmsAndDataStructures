@@ -35,16 +35,16 @@ namespace CSFundamentals.Algorithms.Search
         /// Notice that only works if the given array is sorted. 
         /// </summary>
         /// <param name="sortedList">A sorted list of any comparable type that are also uniformly distributed. </param>
+        /// <param name="key">The value that is being searched for. </param>
         /// <param name="startIndex">The lowest (left-most) index of the array - inclusive. </param>
         /// <param name="endIndex">The highest (right-most) index of the array - inclusive. </param>
-        /// <param name="key">The value that is being searched for. </param>
         /// <returns>The index of the <paramref name="key"/> in the array, and -1 if it does not exist in the array. </returns>
         [Algorithm(AlgorithmType.Search, "InterpolationSearch", Assumptions = "Array is sorted with an ascending order, and elements are driven from a uniform distribution.")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(n)")]
         [TimeComplexity(Case.Average, "O(Log(Log(n)))")]
-        public static int Search<T>(List<T> sortedList, int startIndex, int endIndex, T key) where T : IComparable<T>
+        public static int Search<T>(List<T> sortedList, T key, int startIndex, int endIndex) where T : IComparable<T>
         {
             if (startIndex > endIndex)
             {
@@ -72,12 +72,12 @@ namespace CSFundamentals.Algorithms.Search
 
             if (key.CompareTo(searchStartValue) < 0)
             {
-                return Search(sortedList, startIndex, searchStartIndex - 1, key);
+                return Search(sortedList, key, startIndex, searchStartIndex - 1);
             }
 
             if (key.CompareTo(searchStartValue) > 0)
             {
-                return Search(sortedList, searchStartIndex + 1, endIndex, key);
+                return Search(sortedList, key, searchStartIndex + 1, endIndex);
             }
 
             return -1;

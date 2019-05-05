@@ -72,7 +72,7 @@ namespace CSFundamentals.Algorithms.Search
             {
                 return -1;
             }
-            return LinearSearch.Search(sortedList, linearSearchStartIndex, nextIndex, key);
+            return LinearSearch.Search(sortedList, key, linearSearchStartIndex, nextIndex);
         }
 
         // TODO: Write a recursive version as well. 

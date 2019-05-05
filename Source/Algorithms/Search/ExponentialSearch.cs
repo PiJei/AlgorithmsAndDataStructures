@@ -62,7 +62,7 @@ namespace CSFundamentals.Algorithms.Search
             }
 
             /* The range at which the key is expected to be is thus [nextIndex/2, nextIndex] - perform a binary search in this range. */
-            return BinarySearch.Search(sortedList, nextIndex / 2, Math.Min(nextIndex, sortedList.Count - 1), key);
+            return BinarySearch.Search(sortedList, key, nextIndex / 2, Math.Min(nextIndex, sortedList.Count - 1));
         }
     }
 }
