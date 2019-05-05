@@ -24,29 +24,21 @@ using System.Collections.Generic;
 namespace CSFundamentals.Algorithms.GraphTraversal
 {
     /// <summary>
-    /// Implements a generic graph node. 
+    /// A generic graph node. 
     /// </summary>
-    /// <typeparam name="TValue">Is the type of the value stored in the node. </typeparam>
+    /// <typeparam name="TValue">The type of the value stored in the node. </typeparam>
     public class GraphNode<TValue> : IComparable<GraphNode<TValue>>
     {
-        /// <summary>
-        /// The value stored in the node. 
-        /// </summary>
+        /// <value> The value stored in the node. </value>
         public TValue Value { get; set; }
 
-        /// <summary>
-        /// The list of all the adjacent nodes of this node. It means all the nodes that are connected to this node by a direct edge.
-        /// </summary>
+        /// <value> The list of all the adjacent nodes of this node. These are the nodes that are connected to this node by a direct edge. </value>
         public List<GraphEdge<TValue>> Adjacents { get; set; } = new List<GraphEdge<TValue>>();
 
-        /// <summary>
-        /// Is the distance of this node from a node at which traversal of the graph containing current node starts.
-        /// </summary>
+        /// <value> The distance of this node from a node at which traversal of the graph containing current node starts. Used in <see cref="BFS"/>, and <see cref="DFS"/>. </value>
         public int DistanceFromStartNode { get; set; } = 0;
 
-        /// <summary>
-        /// Determines whether this node, in a particular instance of a traversal algorithm has been already visited : inserted in the queue/stack. 
-        /// </summary>
+        /// <value> Determines whether this node, in a particular instance of a traversal algorithm has been already visited : inserted in the queue/stack. </value>
         public bool IsInserted { get; set; }
 
         /// <summary>
@@ -62,7 +54,7 @@ namespace CSFundamentals.Algorithms.GraphTraversal
         /// Compares this node to another node of type GraphNode.
         /// </summary>
         /// <param name="other">A graph node</param>
-        /// <returns></returns>
+        /// <returns>0 if equal, 1 if current node is bigger than <paramref name="other"/>, and -1 otherwise. </returns>
         public int CompareTo(GraphNode<TValue> other)
         {
             if (other == null)
@@ -94,12 +86,12 @@ namespace CSFundamentals.Algorithms.GraphTraversal
         }
 
         /// <summary>
-        /// Specifies the minimum value for GraphNode type. 
+        /// The minimum value for GraphNode type. 
         /// </summary>
         public static readonly GraphNode<TValue> MinValue = new GraphNode<TValue>(default(TValue));
 
         /// <summary>
-        /// Specifies the maximum value for GraphNode type.
+        /// The maximum value for GraphNode type.
         /// </summary>
         public static readonly GraphNode<TValue> MaxValue = new GraphNode<TValue>(default(TValue));
     }
