@@ -19,21 +19,26 @@
  */
 #endregion
 
-// TODO: Specify time and space complexity for bfs and dfs. 
+// TODO: Specify time and space complexity for BFS and DFS. 
+// TODO: In recursive versions of BFS and DFS also compute distance from root. 
 using System.Collections.Generic;
 
 namespace CSFundamentals.Algorithms.GraphTraversal
 {
     /// <summary>
-    /// Implements BFS: Breadth First Search algorithm for graphs.
+    /// Implements Breadth First Search algorithm for graph traversal.
     /// </summary>
     public class BFS
     {
         /// <summary>
-        /// Implements an iterative, recursion-free version of Breadth First Search algorithm for a graph (that can have cycles);
+        /// An iterative version of Breadth First Search algorithm for traversing a graph that might have cycles.
         /// </summary>
-        /// <param name="root">Specifies a node in the graph from which the search starts. </param>
-        /// <returns>a serialization of the graph, with a BFS ordering.</returns>
+        /// <remarks>
+        /// A graph can have many BFS orderings. Each ordering depends on (a) the start node, and (b) the order by which each node's adjacent nodes are visited. 
+        /// </remarks>
+        /// <typeparam name="TValue">Type of the values stored in graph nodes.</typeparam>
+        /// <param name="root">A node in the graph from which traversal starts. </param>
+        /// <returns>A sequence of all graph nodes, put into a BFS ordering.</returns>
         public static List<GraphNode<TValue>> BFS_Iterative<TValue>(GraphNode<TValue> root) /* Root is the node from which the search starts.*/
         {
             var queue = new Queue<GraphNode<TValue>>();
@@ -42,7 +47,7 @@ namespace CSFundamentals.Algorithms.GraphTraversal
             root.DistanceFromRoot = 0;
             queue.Enqueue(root);
 
-            /* To store a BFS ordering of the nodes, starting from root. */
+            /* Stores a BFS ordering of the nodes. */
             var bfsOrdering = new List<GraphNode<TValue>>();
 
             while (queue.Count > 0) /* While queue is not empty.*/
@@ -65,10 +70,15 @@ namespace CSFundamentals.Algorithms.GraphTraversal
             return bfsOrdering;
         }
 
-
         /// <summary>
-        /// Is the recursive version of BFS_Iterative algorithm. Expects the queue to already have the root node in it. 
+        /// A recursive version of Breadth First Search algorithm for traversing a graph that might have cycles.
+        /// <remarks>
+        /// A graph can have many BFS orderings. Each ordering depends on (a) the start node, and (b) the order by which each node's adjacent nodes are visited. 
+        /// </remarks>
         /// </summary>
+        /// <typeparam name="TValue">Type of the values stored in graph nodes.</typeparam>
+        /// <param name="queue">A queue structure for implementing recursion. The queue is expected to have the start node enqueued in it. </param>
+        /// <param name="bfsOrdering">A sequence of all graph nodes, put into a BFS ordering.</param>
         public static void BFS_Recursive<TValue>(Queue<GraphNode<TValue>> queue, List<GraphNode<TValue>> bfsOrdering)
         {
             if (queue.Count == 0)
@@ -91,4 +101,3 @@ namespace CSFundamentals.Algorithms.GraphTraversal
         }
     }
 }
-// TODO: In recursive versions of bfs and dfs also compute distance from root. 
