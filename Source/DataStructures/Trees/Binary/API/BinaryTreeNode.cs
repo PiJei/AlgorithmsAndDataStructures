@@ -35,19 +35,13 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         where TNode : IBinaryTreeNode<TNode, TKey, TValue>
         where TKey : IComparable<TKey>
     {
-        /// <summary>
-        /// Specifies whether the node is a sentinel node. 
-        /// </summary>
+        /// <value> Specifies whether the node is a sentinel node. </value>
         public bool IsNill { get; set; }
 
-        /// <summary>
-        /// Is the key stored in the node. 
-        /// </summary>
+        /// <value>Key stored in this node.</value>
         public TKey Key { get; set; }
 
-        /// <summary>
-        /// Is the value stored in the node. 
-        /// </summary>
+        /// <value> Value stored in this node. </value>
         public TValue Value { get; set; }
 
         /// <summary>
@@ -166,12 +160,12 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         {
             if (Parent == null)
             {
-                return default(TNode);
+                return default;
             }
 
             if (Parent.Parent == null)
             {
-                return default(TNode);
+                return default;
             }
 
             if (Parent.Parent.LeftChild != null && Parent.Parent.LeftChild.CompareTo(Parent) == 0)
@@ -182,7 +176,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
             {
                 return Parent.Parent.LeftChild;
             }
-            return default(TNode);
+            return default;
         }
 
         /// <summary>
@@ -193,7 +187,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         {
             if (Parent == null)
             {
-                return default(TNode);
+                return default;
             }
 
             if (Parent.LeftChild != null && Parent.LeftChild.Key.CompareTo(Key) == 0)
@@ -212,12 +206,12 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         {
             if (Parent == null)
             {
-                return default(TNode);
+                return default;
             }
 
             if (Parent.Parent == null)
             {
-                return default(TNode);
+                return default;
             }
 
             return Parent.Parent;

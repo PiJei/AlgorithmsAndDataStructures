@@ -34,37 +34,22 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         where TKey : IComparable<TKey>
     {
         // TODO: Used by red black trees move to red black trees
-        /// <summary>
-        /// If set means the node contains no key-values, left or right children.
-        /// </summary>
+        /// <value>If set means the node contains no key-values, no left and no right children. </value>
         bool IsNill { get; set; }
 
-        /// <summary>
-        /// Is the key in a tree node. 
-        /// </summary>
+        /// <value>Key in this tree node. </value>
         TKey Key { get; set; }
 
-        /// <summary>
-        /// Is the value (information) stored in a tree node. 
-        /// </summary> 
-        /// <remarks>
-        /// This can be converted to a list of values alternatively, to handle duplicate keys. 
-        /// </remarks>
+        /// <value>Value (information) stored in this tree node (This can be converted to a list to store multiple values per key). </value> 
         TValue Value { get; set; }
 
-        /// <summary>
-        /// Is the left child of the node. 
-        /// </summary>
+        /// <value>Left child of this node. </value>
         TNode LeftChild { get; set; }
 
-        /// <summary>
-        /// Is the right child of the node. 
-        /// </summary>
+        /// <value>Right child of the node. </value>
         TNode RightChild { get; set; }
 
-        /// <summary>
-        /// Is the parent of the node.
-        /// </summary>
+        /// <value> Parent of this node.</value>
         TNode Parent { get; set; }
 
         /// <summary>

@@ -32,24 +32,16 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         BinaryTreeNode<RedBlackTreeNode<TKey, TValue>, TKey, TValue>
         where TKey : IComparable<TKey>
     {
-        /// <summary>
-        /// Is the color of the node. 
-        /// </summary>
+        /// <value>The color of the node. </value>
         public RedBlackTreeNodeColor Color { get; set; }
 
-        /// <summary>
-        /// Is a reference to the left child of the current node. 
-        /// </summary>
+        /// <value> A reference to the left child of the current node. </value>
         public override RedBlackTreeNode<TKey, TValue> LeftChild { get; set; }
 
-        /// <summary>
-        /// Is a reference to the right child of the current node.
-        /// </summary>
+        /// <value>A reference to the right child of the current node.</value>
         public override RedBlackTreeNode<TKey, TValue> RightChild { get; set; }
 
-        /// <summary>
-        /// Is a reference to the parent of the current node.
-        /// </summary>
+        /// <value>A reference to the parent of the current node.</value>
         public override RedBlackTreeNode<TKey, TValue> Parent { get; set; }
 
         /// <summary>

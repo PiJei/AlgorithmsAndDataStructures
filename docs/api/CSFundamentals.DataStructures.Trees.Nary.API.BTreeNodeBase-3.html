@@ -293,12 +293,7 @@
     <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/EnhancingDocumentation/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L52">View Source</a>
   </span>
   <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__children" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._children">_children</h4>
-  <div class="markdown level1 summary"><p>Children of the current node.
-Contract: Keys of the child at index i are all smaller than key at index i of _keyValues
-Contract: Keys of the child at index i are all greater than key at index i-1 of _keyValues
-In otherWords for key at index i, left children are at index i of _children
-And right children are at index i+1 of _children.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -315,7 +310,12 @@ And right children are at index i+1 of _children.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Collections.Generic.SortedList</span>&lt;TNode, <span class="xref">System.Boolean</span>&gt;</td>
-        <td></td>
+        <td><p>Children of the current node.
+Contract: Keys of the child at index i are all smaller than key at index i of _keyValues
+Contract: Keys of the child at index i are all greater than key at index i-1 of _keyValues
+In otherWords for key at index i, left children are at index i of _children
+And right children are at index i+1 of _children.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -327,9 +327,7 @@ And right children are at index i+1 of _children.</p>
     <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/EnhancingDocumentation/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L43">View Source</a>
   </span>
   <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__keyValues" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._keyValues">_keyValues</h4>
-  <div class="markdown level1 summary"><p>A list of key-value pairs stored in this node.
-Notice that SortedList does not allow duplicates.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -346,7 +344,9 @@ Notice that SortedList does not allow duplicates.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Collections.Generic.SortedList</span>&lt;TKey, TValue&gt;</td>
-        <td></td>
+        <td><p>A list of key-value pairs stored in this node.
+Notice that SortedList does not allow duplicates.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -358,8 +358,7 @@ Notice that SortedList does not allow duplicates.</p>
     <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/EnhancingDocumentation/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L57">View Source</a>
   </span>
   <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3__parent" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._parent">_parent</h4>
-  <div class="markdown level1 summary"><p>Is the parent of the current node.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -376,7 +375,8 @@ Notice that SortedList does not allow duplicates.</p>
     <tbody>
       <tr>
         <td><span class="xref">TNode</span></td>
-        <td></td>
+        <td><p>Is the parent of the current node.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -449,12 +449,11 @@ Notice that SortedList does not allow duplicates.</p>
     <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/EnhancingDocumentation/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_MaxBranchingDegree.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.MaxBranchingDegree%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/EnhancingDocumentation/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L77">View Source</a>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/EnhancingDocumentation/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L62">View Source</a>
   </span>
   <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_MaxBranchingDegree_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.MaxBranchingDegree*"></a>
   <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_MaxBranchingDegree" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.MaxBranchingDegree">MaxBranchingDegree</h4>
-  <div class="markdown level1 summary"><p>Is the maximum number of branches/children a B-tree internal or root node can have. Leaf nodes contain 0 children.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -471,7 +470,8 @@ Notice that SortedList does not allow duplicates.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Int32</span></td>
-        <td></td>
+        <td><p>Is the maximum number of branches/children a B-tree internal or root node can have. Leaf nodes contain 0 children.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -480,7 +480,7 @@ Notice that SortedList does not allow duplicates.</p>
     <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/EnhancingDocumentation/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_MaxKeys.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.MaxKeys%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/EnhancingDocumentation/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L67">View Source</a>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/EnhancingDocumentation/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L72">View Source</a>
   </span>
   <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_MaxKeys_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.MaxKeys*"></a>
   <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_MaxKeys" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.MaxKeys">MaxKeys</h4>
@@ -511,7 +511,7 @@ Notice that SortedList does not allow duplicates.</p>
     <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/EnhancingDocumentation/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_MinBranchingDegree.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.MinBranchingDegree%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/EnhancingDocumentation/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L72">View Source</a>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/EnhancingDocumentation/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L77">View Source</a>
   </span>
   <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_MinBranchingDegree_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.MinBranchingDegree*"></a>
   <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_MinBranchingDegree" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.MinBranchingDegree">MinBranchingDegree</h4>
@@ -542,7 +542,7 @@ Notice that SortedList does not allow duplicates.</p>
     <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/EnhancingDocumentation/apiSpec/new?filename=CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_MinKeys.md&amp;value=---%0Auid%3A%20CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase%603.MinKeys%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/EnhancingDocumentation/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L62">View Source</a>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/EnhancingDocumentation/Source/DataStructures/Trees/Nary/API/BTreeNodeBase.cs/#L67">View Source</a>
   </span>
   <a id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_MinKeys_" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.MinKeys*"></a>
   <h4 id="CSFundamentals_DataStructures_Trees_Nary_API_BTreeNodeBase_3_MinKeys" data-uid="CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.MinKeys">MinKeys</h4>

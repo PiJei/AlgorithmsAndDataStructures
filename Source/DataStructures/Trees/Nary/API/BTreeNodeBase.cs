@@ -36,25 +36,30 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         where TNode : IBTreeNode<TNode, TKey, TValue>, new()
         where TKey : IComparable<TKey>
     {
-        /// <summary>
+        /// <value>
         /// A list of key-value pairs stored in this node. 
         /// Notice that SortedList does not allow duplicates. 
-        /// </summary>
+        /// </value>
         protected SortedList<TKey, TValue> _keyValues;
 
-        /// <summary>
+        /// <value>
         /// Children of the current node. 
         /// Contract: Keys of the child at index i are all smaller than key at index i of _keyValues
         /// Contract: Keys of the child at index i are all greater than key at index i-1 of _keyValues
         /// In otherWords for key at index i, left children are at index i of _children
         /// And right children are at index i+1 of _children. 
-        /// </summary>
+        /// </value>
         protected SortedList<TNode, bool> _children;
 
-        /// <summary>
+        /// <value>
         /// Is the parent of the current node.
-        /// </summary>
+        /// </value>
         protected TNode _parent;
+
+        /// <value>
+        /// Is the maximum number of branches/children a B-tree internal or root node can have. Leaf nodes contain 0 children. 
+        /// </value>
+        public int MaxBranchingDegree { get; set; }
 
         /// <summary>
         /// Is the minimum number of keys in a B-tree internal/leaf node. (Notice that a root has no lower bound on the number of keys. Intuitively when the tree is just being built it might start with 1, and grow afterwards.)
@@ -70,11 +75,6 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// Is the minimum number of branches/children a B-tree internal node can have. 
         /// </summary>
         public int MinBranchingDegree => Convert.ToInt32(Math.Ceiling(Math.Round(MaxBranchingDegree / (double)2, MidpointRounding.AwayFromZero)));
-
-        /// <summary>
-        /// Is the maximum number of branches/children a B-tree internal or root node can have. Leaf nodes contain 0 children. 
-        /// </summary>
-        public int MaxBranchingDegree { get; set; }
 
         /// <summary>
         /// Parameter-less constructor.
@@ -279,7 +279,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
             int selfIndex = GetIndexAtParentChildren();
             if (selfIndex == 0)
             {
-                return default(TNode);
+                return default;
             }
             int leftSiblingIndex = selfIndex - 1;
             return _parent.GetChild(leftSiblingIndex);
@@ -294,7 +294,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
             int selfIndex = GetIndexAtParentChildren();
             if (selfIndex == _parent.ChildrenCount - 1)
             {
-                return default(TNode);
+                return default;
             }
             int rightSiblingIndex = selfIndex + 1;
             return _parent.GetChild(rightSiblingIndex);
@@ -512,7 +512,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
                 return newNode;
             }
 
-            return default(TNode);
+            return default;
         }
 
         /// <summary>

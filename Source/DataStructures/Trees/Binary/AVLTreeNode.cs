@@ -32,19 +32,13 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         BinaryTreeNode<AVLTreeNode<TKey, TValue>, TKey, TValue>
         where TKey : IComparable<TKey>
     {
-        /// <summary>
-        /// Is a reference to the left child of the current node. 
-        /// </summary>
+        /// <value>A reference to the left child of the current node. </value>
         public override AVLTreeNode<TKey, TValue> LeftChild { get; set; }
 
-        /// <summary>
-        /// Is a reference to the right child of the current node. 
-        /// </summary>
+        /// <value>A reference to the right child of the current node. </value>
         public override AVLTreeNode<TKey, TValue> RightChild { get; set; }
 
-        /// <summary>
-        /// Is a reference to the parent of the current node. 
-        /// </summary>
+        /// <value>A reference to the parent of the current node. </value>
         public override AVLTreeNode<TKey, TValue> Parent { get; set; }
 
         /// <summary>

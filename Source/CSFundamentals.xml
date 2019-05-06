@@ -817,6 +817,15 @@
             <typeparam name="TKey">The type of the keys stored in the heap. </typeparam>
             <typeparam name="TValue">The type of the values stored in the heap. </typeparam>
         </member>
+        <member name="F:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.HeapArray">
+            <value> Is the array used to implement binary heap. </value>
+        </member>
+        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.#ctor(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="array">The array containing all the key-values to be converted to a heap. </param>
+        </member>
         <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.BuildHeap_Iteratively(System.Int32)">
             <summary>
             Note that passing the array size is not a must, as the class itself contains the array and has access to its size. However some algorithms such as HeapSort which rely on a heap to perform sorting, are better implemented, if we have the length of the array passed to these methods. 
@@ -872,17 +881,6 @@
             </summary>
             <param name="index">The index of the element that should be bubbled up.</param>
             <param name="heapArrayLength">The length/size of the heap array. </param>
-        </member>
-        <member name="F:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.HeapArray">
-            <summary>
-            Is the array used to implement binary heap. 
-            </summary>
-        </member>
-        <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.#ctor(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}})">
-            <summary>
-            Constructor
-            </summary>
-            <param name="array">The array containing all the key-values to be converted to a heap. </param>
         </member>
         <member name="M:CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase`2.GetLeftChildIndexInHeapArray(System.Int32)">
             <summary>
@@ -1346,14 +1344,10 @@
             <typeparam name="TValue">Type of the values stored in the linked list. </typeparam>
         </member>
         <member name="P:CSFundamentals.DataStructures.LinkedLists.API.LinkedNode`2.Value">
-            <summary>
-            Is the value stored in the node. 
-            </summary>
+            <value>Is the value stored in the node. </value>
         </member>
         <member name="P:CSFundamentals.DataStructures.LinkedLists.API.LinkedNode`2.Next">
-            <summary>
-            Is a reference to the next immediate node in the list. 
-            </summary>
+            <value>Is a reference to the next immediate node in the list. </value>
         </member>
         <member name="M:CSFundamentals.DataStructures.LinkedLists.API.LinkedNode`2.#ctor(`1)">
             <summary>
@@ -1939,19 +1933,13 @@
             <typeparam name="TValue">Type of the value stored in the node. </typeparam>
         </member>
         <member name="P:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsNill">
-            <summary>
-            Specifies whether the node is a sentinel node. 
-            </summary>
+            <value> Specifies whether the node is a sentinel node. </value>
         </member>
         <member name="P:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.Key">
-            <summary>
-            Is the key stored in the node. 
-            </summary>
+            <value>Key stored in this node.</value>
         </member>
         <member name="P:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.Value">
-            <summary>
-            Is the value stored in the node. 
-            </summary>
+            <value> Value stored in this node. </value>
         </member>
         <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.BinaryTreeNode`3.#ctor">
             <summary>
@@ -2075,37 +2063,22 @@
             <typeparam name="TValue">The type of the values in the tree nodes. </typeparam>
         </member>
         <member name="P:CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode`3.IsNill">
-            <summary>
-            If set means the node contains no key-values, left or right children.
-            </summary>
+            <value>If set means the node contains no key-values, no left and no right children. </value>
         </member>
         <member name="P:CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode`3.Key">
-            <summary>
-            Is the key in a tree node. 
-            </summary>
+            <value>Key in this tree node. </value>
         </member>
         <member name="P:CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode`3.Value">
-            <summary>
-            Is the value (information) stored in a tree node. 
-            </summary> 
-            <remarks>
-            This can be converted to a list of values alternatively, to handle duplicate keys. 
-            </remarks>
+            <value>Value (information) stored in this tree node (This can be converted to a list to store multiple values per key). </value> 
         </member>
         <member name="P:CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode`3.LeftChild">
-            <summary>
-            Is the left child of the node. 
-            </summary>
+            <value>Left child of this node. </value>
         </member>
         <member name="P:CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode`3.RightChild">
-            <summary>
-            Is the right child of the node. 
-            </summary>
+            <value>Right child of the node. </value>
         </member>
         <member name="P:CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode`3.Parent">
-            <summary>
-            Is the parent of the node.
-            </summary>
+            <value> Parent of this node.</value>
         </member>
         <member name="M:CSFundamentals.DataStructures.Trees.Binary.API.IBinaryTreeNode`3.IsLeftChild">
             <summary>
@@ -2215,19 +2188,13 @@
             <typeparam name="TValue">Type of the value stored in the node. </typeparam>
         </member>
         <member name="P:CSFundamentals.DataStructures.Trees.Binary.AVLTreeNode`2.LeftChild">
-            <summary>
-            Is a reference to the left child of the current node. 
-            </summary>
+            <value>A reference to the left child of the current node. </value>
         </member>
         <member name="P:CSFundamentals.DataStructures.Trees.Binary.AVLTreeNode`2.RightChild">
-            <summary>
-            Is a reference to the right child of the current node. 
-            </summary>
+            <value>A reference to the right child of the current node. </value>
         </member>
         <member name="P:CSFundamentals.DataStructures.Trees.Binary.AVLTreeNode`2.Parent">
-            <summary>
-            Is a reference to the parent of the current node. 
-            </summary>
+            <value>A reference to the parent of the current node. </value>
         </member>
         <member name="M:CSFundamentals.DataStructures.Trees.Binary.AVLTreeNode`2.#ctor">
             <summary>
@@ -2436,24 +2403,16 @@
             <typeparam name="TValue"></typeparam>
         </member>
         <member name="P:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.Color">
-            <summary>
-            Is the color of the node. 
-            </summary>
+            <value>The color of the node. </value>
         </member>
         <member name="P:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.LeftChild">
-            <summary>
-            Is a reference to the left child of the current node. 
-            </summary>
+            <value> A reference to the left child of the current node. </value>
         </member>
         <member name="P:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.RightChild">
-            <summary>
-            Is a reference to the right child of the current node.
-            </summary>
+            <value>A reference to the right child of the current node.</value>
         </member>
         <member name="P:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.Parent">
-            <summary>
-            Is a reference to the parent of the current node.
-            </summary>
+            <value>A reference to the parent of the current node.</value>
         </member>
         <member name="M:CSFundamentals.DataStructures.Trees.Binary.RedBlackTreeNode`2.#ctor">
             <summary>
@@ -2512,15 +2471,11 @@
             <typeparam name="TKey">Type of the keys stored in the tree. </typeparam>
             <typeparam name="TValue">Type of the values stored in the tree. </typeparam>
         </member>
-        <member name="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Root">
-            <summary>
-            Is the root of the tree. 
-            </summary>
+        <member name="P:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.Root">
+            <value>The root of the tree. </value>
         </member>
         <member name="P:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.MaxBranchingDegree">
-            <summary>
-            Is the maximum number of children for a non-leaf node in this B-Tree. 
-            </summary>
+            <value>The maximum number of children for a non-leaf node in this B-Tree.</value>
         </member>
         <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase`3.#ctor(System.Int32)">
             <summary>
@@ -2637,24 +2592,29 @@
             <typeparam name="TValue">Type of the value stored in the B-Tree node. </typeparam>
         </member>
         <member name="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._keyValues">
-            <summary>
+            <value>
             A list of key-value pairs stored in this node. 
             Notice that SortedList does not allow duplicates. 
-            </summary>
+            </value>
         </member>
         <member name="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._children">
-            <summary>
+            <value>
             Children of the current node. 
             Contract: Keys of the child at index i are all smaller than key at index i of _keyValues
             Contract: Keys of the child at index i are all greater than key at index i-1 of _keyValues
             In otherWords for key at index i, left children are at index i of _children
             And right children are at index i+1 of _children. 
-            </summary>
+            </value>
         </member>
         <member name="F:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3._parent">
-            <summary>
+            <value>
             Is the parent of the current node.
-            </summary>
+            </value>
+        </member>
+        <member name="P:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.MaxBranchingDegree">
+            <value>
+            Is the maximum number of branches/children a B-tree internal or root node can have. Leaf nodes contain 0 children. 
+            </value>
         </member>
         <member name="P:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.MinKeys">
             <summary>
@@ -2669,11 +2629,6 @@
         <member name="P:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.MinBranchingDegree">
             <summary>
             Is the minimum number of branches/children a B-tree internal node can have. 
-            </summary>
-        </member>
-        <member name="P:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.MaxBranchingDegree">
-            <summary>
-            Is the maximum number of branches/children a B-tree internal or root node can have. Leaf nodes contain 0 children. 
             </summary>
         </member>
         <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase`3.#ctor">
@@ -2936,34 +2891,22 @@
             <typeparam name="TValue">Type of the value stored in the node. </typeparam>
         </member>
         <member name="P:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.MaxBranchingDegree">
-            <summary>
-            Maximum branching degree or maximum number of children the node can have. 
-            </summary>
+            <value>Maximum branching degree or maximum number of children the node can have.</value>
         </member>
         <member name="P:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.MinBranchingDegree">
-            <summary>
-            Minimum branching degree or the minimum number of children the node can have. 
-            </summary>
+            <value>Minimum branching degree or the minimum number of children the node can have. </value>
         </member>
         <member name="P:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.MaxKeys">
-            <summary>
-            Maximum number of keys that can be stored in a tree. 
-            </summary>
+            <value>Maximum number of keys that can be stored in a tree. </value>
         </member>
         <member name="P:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.MinKeys">
-            <summary>
-            Minimum number of keys that can be stored in a tree. 
-            </summary>
+            <value>Minimum number of keys that can be stored in a tree. </value>
         </member>
         <member name="P:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.KeyCount">
-            <summary>
-            Is the count of key-value pairs in the node. 
-            </summary>
+            <value>Is the count of key-value pairs in the node.</value>
         </member>
         <member name="P:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.ChildrenCount">
-            <summary>
-            Is the count of the children of the node. 
-            </summary>
+            <value>Is the count of the children of the node.  </value>
         </member>
         <member name="M:CSFundamentals.DataStructures.Trees.Nary.API.IBTreeNode`3.Clear">
             <summary>
@@ -3215,14 +3158,14 @@
             <typeparam name="TValue">Type of the values in the tree. </typeparam>
         </member>
         <member name="P:CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2.NextLeaf">
-            <summary>
+            <value>
             Only used by leaf nodes, and points to the leaf to its right (note that the right leaf may or may not be a sibling of the current leaf)
-            </summary>
+            </value>
         </member>
         <member name="P:CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2.PreviousLeaf">
-            <summary>
+            <value>
             Only used by leaf nodes, and points to the leaf to its left (note that the left leaf may or may not be a sibling of the current leaf)
-            </summary>
+            </value>
         </member>
         <member name="M:CSFundamentals.DataStructures.Trees.Nary.BPlusTreeNode`2.#ctor">
             <summary>

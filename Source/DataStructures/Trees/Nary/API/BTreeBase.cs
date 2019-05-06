@@ -35,14 +35,10 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         where TNode : IBTreeNode<TNode, TKey, TValue>, IComparable<TNode>
         where TKey : IComparable<TKey>
     {
-        /// <summary>
-        /// Is the root of the tree. 
-        /// </summary>
-        public TNode Root = default(TNode);
+        /// <value>The root of the tree. </value>
+        public TNode Root { get; set; } = default;
 
-        /// <summary>
-        /// Is the maximum number of children for a non-leaf node in this B-Tree. 
-        /// </summary>
+        /// <value>The maximum number of children for a non-leaf node in this B-Tree.</value>
         public int MaxBranchingDegree { get; private set; }
 
         /// <summary>
@@ -287,7 +283,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
 
             if (node.GetParent().IsEmpty() && node.GetParent().IsRoot()) /* Can happen if parent is root*/
             {
-                leftSibling.SetParent(default(TNode));
+                leftSibling.SetParent(default);
                 Root = leftSibling;
             }
 

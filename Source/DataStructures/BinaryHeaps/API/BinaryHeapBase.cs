@@ -31,6 +31,18 @@ namespace CSFundamentals.DataStructures.BinaryHeaps.API
     /// <typeparam name="TValue">The type of the values stored in the heap. </typeparam>
     public abstract class BinaryHeapBase<TKey, TValue> : IBinaryHeap<TKey, TValue> where TKey : IComparable<TKey>
     {
+        /// <value> Is the array used to implement binary heap. </value>
+        public List<KeyValuePair<TKey, TValue>> HeapArray;
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="array">The array containing all the key-values to be converted to a heap. </param>
+        public BinaryHeapBase(List<KeyValuePair<TKey, TValue>> array)
+        {
+            HeapArray = array;
+        }
+
         /// <summary>
         /// Note that passing the array size is not a must, as the class itself contains the array and has access to its size. However some algorithms such as HeapSort which rely on a heap to perform sorting, are better implemented, if we have the length of the array passed to these methods. 
         /// </summary>
@@ -86,21 +98,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps.API
         /// <param name="index">The index of the element that should be bubbled up.</param>
         /// <param name="heapArrayLength">The length/size of the heap array. </param>
         public abstract void BubbleUp_Iteratively(int index, int heapArrayLength);
-
-        /// <summary>
-        /// Is the array used to implement binary heap. 
-        /// </summary>
-        public List<KeyValuePair<TKey, TValue>> HeapArray;
-
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        /// <param name="array">The array containing all the key-values to be converted to a heap. </param>
-        public BinaryHeapBase(List<KeyValuePair<TKey, TValue>> array)
-        {
-            HeapArray = array;
-        }
-
+       
         /// <summary>
         /// Given a node index in the heapArray, returns the expected index of its left child. 
         /// </summary>

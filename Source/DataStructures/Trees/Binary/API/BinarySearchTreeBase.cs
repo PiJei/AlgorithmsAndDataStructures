@@ -40,7 +40,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
         /// <summary>
         /// Is the root of the binary search tree.
         /// </summary>
-        protected TNode _root { get; set; } = default(TNode);
+        protected TNode _root { get; set; } = default;
 
         /// <summary>
         /// Builds the tree to include the given nodes.
@@ -107,7 +107,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
             if (root == null) /* This is the case where there is no node in the tree, and newNode is the first one. */
             {
                 root = newNode;
-                root.Parent = default(TNode);
+                root.Parent = default;
                 return root;
             }
 
@@ -227,7 +227,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
             {
                 if (root.RightChild == null && root.LeftChild == null)
                 {
-                    return default(TNode);
+                    return default;
                 }
 
                 if (root.RightChild == null)

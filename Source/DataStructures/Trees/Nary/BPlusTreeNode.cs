@@ -34,14 +34,14 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         BTreeNodeBase<BPlusTreeNode<TKey, TValue>, TKey, TValue>
         where TKey : IComparable<TKey>
     {
-        /// <summary>
+        /// <value>
         /// Only used by leaf nodes, and points to the leaf to its right (note that the right leaf may or may not be a sibling of the current leaf)
-        /// </summary>
+        /// </value>
         public BPlusTreeNode<TKey, TValue> NextLeaf { get; set; } = null;
 
-        /// <summary>
+        /// <value>
         /// Only used by leaf nodes, and points to the leaf to its left (note that the left leaf may or may not be a sibling of the current leaf)
-        /// </summary>
+        /// </value>
         public BPlusTreeNode<TKey, TValue> PreviousLeaf { get; set; } = null;
 
         /// <summary>
