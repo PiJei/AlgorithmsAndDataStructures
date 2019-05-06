@@ -12,19 +12,19 @@
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Initialize">
             <summary>
             Initializes/Resets variables before executing each unit test in this class. 
-            To visualize the graph see images/Graph-BFS-DFS.png
+            To visualize the graph see <img src = "../Images/Graphs/Graph-BFS-DFS.png"/>
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Iterative_StartFromA">
             <summary>
             Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.A"/>.
-            To visualize the graph see images/BFS-Iterative-StartA.png
+            To visualize the graph see <img src = "../Images/Graphs/BFS-Iterative-StartA.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Iterative_StartFromE">
             <summary>
             Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.E"/>.
-            To visualize the graph see images/BFS-Iterative-StartE.png
+            To visualize the graph see <img src = "../Images/Graphs/BFS-Iterative-StartE.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Recursive_StartFromA">
@@ -45,19 +45,19 @@
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Initialize">
             <summary>
             Initializes/Resets variables before executing each unit test in this class. 
-            To visualize the graph see images/Graph-BFS-DFS.png
+            To visualize the graph see <img src = "../Images/Graphs/Graph-BFS-DFS.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Iterative_StartFromA">
             <summary>
             Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.A"/>.
-            To visualize the graph see images/DFS-Iterative-StartA.png
+            To visualize the graph see <img src = "../Images/Graphs/DFS-Iterative-StartA.png"/>. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Iterative_StartFromE">
             <summary>
             Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.E"/>.
-            To visualize the graph see images/DFS-Iterative-StartE.png
+            To visualize the graph see <img src = "../Images/Graphs/DFS-Iterative-StartE.png"/>. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Recursive_StartFromA">
@@ -77,8 +77,8 @@
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DijkstraTests.GetShortestDistancesFromRoot">
             <summary>
-            Tests the correctness of shortest distance computation 
-            To visualize the graph see images/Dijkstra.png
+            Tests the correctness of shortest distance computation. Root is node A. 
+            To visualize the graph see <img src = "../Images/Graphs/Disjkstra.png"/>.
             </summary>
         </member>
         <member name="T:CSFundamentalsTests.Algorithms.Search.BinarySearchTests">
@@ -1421,7 +1421,7 @@
         <member name="F:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests._tree">
             <summary>
             Is an AVL tree (A form of balanced BST). 
-            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Initialize"/> method, see "images/avl-bst.png" in current directory. 
+            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Initialize"/>, see <img src = "../Images/Trees/Binary/avl-bst.png"/>. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Initialize">
@@ -1437,7 +1437,7 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion">
             <summary>
             Tests the correctness of insert operation.
-            For a step by step transition of the AVL tree while inserting these keys, see "images\avl-bst-insert-stepByStep.png".
+            For a step by step transition of the AVL tree while inserting these keys, see <img src = "../Images/Trees/Binary/avl-bst-insert-stepByStep.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Delete_NonExistingKey_ExpectsNoAlternationToTree">
@@ -1493,7 +1493,7 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Delete_MultipleKeysConsecutively_ExpectsCorrectTreeAfterEachDeletion_RandomOrder1">
             <summary>
             Deletes all the keys in the tree in a random order in several sequential operations. 
-            For a step by step transition of the AVL tree while deleting these keys, see "images\avl-bst-delete-stepBystep.png".
+            For a step by step transition of the AVL tree while deleting these keys, see <img src = "../Images/Trees/Binary/avl-bst-delete-stepBystep.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Delete_MultipleKeysConsecutively_ExpectsCorrectTreeAfterEachDeletion_RandomOrder2">
@@ -1545,7 +1545,7 @@
         <member name="F:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests._tree">
             <summary>
             Is a binary search tree (aka. BST). 
-            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Initialize"/> method, see "images\bst.png" in current directory. 
+            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Initialize"/> method, see <img src = "../Images/Trees/Binary/bst.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Initialize">
@@ -1555,7 +1555,7 @@
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Build_ExpectsCorrectBinaryTree">
             <summary>
-            For a step by step transition of the BST while inserting these keys, see "images\bst-insert-stepBystep.png".
+            For a step by step transition of the BST while inserting these keys, see <img src = "../Images/Trees/Binary/bst-insert-stepBystep.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Delete_Root_ExpectsReplacementByImmediateSuccessorKey42">
@@ -1581,7 +1581,7 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Delete_MultipleNodesConsecutively_ExpectsCorrectBinarySearchTreeAfterEachStep">
             <summary>
             Tests the correctness of delete operation when deleting all the keys in the tree one after the other in a random order. 
-            For a step by step transition of the BST while deleting these keys, see "images\bst-delete-stepBystep.png".
+            For a step by step transition of the BST while deleting these keys, see <img src = "../Images/Trees/Binary/bst-delete-stepBystep.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Delete_NotExistingKey_ExpectsNoAlternationInTree">
@@ -1645,7 +1645,7 @@
         <member name="F:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests._tree">
             <summary>
             Is a RedBlack tree (A form of balanced BST). 
-            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Initialize"/> method, see "images\redblack-bst.png" in current directory. 
+            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Initialize"/> method, see <img src = "../Images/Trees/Binary/redblack-bst.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Initialize">
@@ -1661,7 +1661,7 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion">
             <summary>
             Tests the correctness of insert operation when inserting several keys one after the other. 
-            For a step by step transition of the RedBlack tree while inserting these keys, see "images\redblack-bst-insert-stepByStep.png".
+            For a step by step transition of the RedBlack tree while inserting these keys, see <img src = "../Images/Trees/Binary/redblack-bst-insert-stepByStep.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedNodeWithTWoChildren_ExpectsToBeRepalcedBy50WhichIsBlackWithARedRightChild">
@@ -1707,7 +1707,7 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_MultipleKyesConsecutively_ExpectsCorrectTreeAfterEachStep">
             <summary>
             Tests the correctness of delete operation when deleting all the keys in the tree one after the other in a random order. 
-            For a step by step transition of the BST while deleting these keys, see "images\redblack-bst-delete-stepBystep.png".
+            For a step by step transition of the BST while deleting these keys, see <img src = "../Images/Trees/Binary/redblack-bst-delete-stepBystep.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsRed_DefaultColor_ExpectsTrue">
@@ -1763,7 +1763,7 @@
         <member name="F:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests._tree">
             <summary>
             Is a B+ tree. 
-            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Initialize"/> method, see "images\2-3-BPlus-Tree.png" in current directory. 
+            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Initialize"/> method, see <img src = "../Images/Trees/Nary/2-3-BPlus-Tree.png"/>. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Initialize">
@@ -1779,7 +1779,7 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Insert_SeveralKeys_ExpectsTreeToIncreaseInLevelsAfewTimes">
             <summary>
             Tests the correctness of insert operation.
-            For a step by step transition of this 2-3 B + Tree while inserting these keys, see "images\2-3-BPlus-Tree-insert-stepBystep.png".
+            For a step by step transition of this 2-3 B + Tree while inserting these keys, see <img src = "../Images/Trees/Nary/2-3-BPlus-Tree-insert-stepBystep.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Search_ForAllExistingKeysInTree_ExpectsSuccess">
@@ -1895,7 +1895,7 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_AllNodesInRandomOrder1_ExpectsProperBtreeAfterEachDelete">
             <summary>
             Tests the correctness of delete operation by deleting all the keys in the tree one after the other in a random order. 
-            For a step by step transition of this 2-3 B + Tree while deleting these keys, see "images\2-3-BPlus-Tree-delete-stepBystep.png".
+            For a step by step transition of this 2-3 B + Tree while deleting these keys, see <img src = "../Images/Trees/Nary/2-3-BPlus-Tree-delete-stepBystep.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_AllNodesInRandomOrder2_ExpectsProperBtreeAfterEachDelete">
@@ -2091,7 +2091,7 @@
         <member name="F:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests._tree">
             <summary>
             Is a B tree. 
-            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Initialize"/> method, see <a href="file:///C:\Users\Parisa\Documents\Interviews-2019\CSFundamentalAlgorithms\Tests\DataStructures\Trees\Nary\Images\2-3-BTree.png"/> "Images\2-3-BTree.png" in current directory. 
+            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Initialize"/> method, see <img src = "../Images/Trees/Nary/2-3-BTree.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Initialize">
@@ -2132,7 +2132,7 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Insert_SeveralKeys_ExpectsTreeToIncreaseInLevelsAfewTimes">
             <summary>
             Tests the correctness of insert operation by inserting several keys one after the other. 
-            For a step by step transition of this 2-3 BTree while inserting these keys, see "images\2-3-BTree-insert-stepBystep.png".
+            For a step by step transition of this 2-3 BTree while inserting these keys, see <img src = "../Images/Trees/Nary/2-3-BTree-insert-stepBystep.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.InOrderTraversal_StartingFromRoot_ExpectsAscendingOrder">
@@ -2233,7 +2233,7 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_AllNodesInRandomOrder1_ExpectsProperBtreeAfterEachDelete">
             <summary>
             Tests the correctness of delete operation when deleting all the keys in the tree one after the other in a random order.
-            For a step by step transition of this 2-3 BTree while deleting these keys, see "images\2-3-BTree-delete-stepBystep.png".
+            For a step by step transition of this 2-3 BTree while deleting these keys, see <img src = "../Images/Trees/Nary/2-3-BTree-delete-stepBystep.png"/>. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_AllNodesInRandomOrder2_ExpectsProperBtreeAfterEachDelete">

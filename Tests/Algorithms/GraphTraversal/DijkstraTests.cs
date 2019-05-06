@@ -31,8 +31,8 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
     public class DijkstraTests
     {
         /// <summary>
-        /// Tests the correctness of shortest distance computation 
-        /// To visualize the graph see images/Dijkstra.png
+        /// Tests the correctness of shortest distance computation. Root is node A. 
+        /// To visualize the graph see <img src = "../Images/Graphs/Disjkstra.png"/>.
         /// </summary>
         [TestMethod]
         public void GetShortestDistancesFromRoot()

@@ -37,7 +37,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
     {
         /// <summary>
         /// Is a RedBlack tree (A form of balanced BST). 
-        /// To visualize this tree built as in <see cref="Initialize()"/> method, see "images\redblack-bst.png" in current directory. 
+        /// To visualize this tree built as in <see cref="Initialize()"/> method, see <img src = "../Images/Trees/Binary/redblack-bst.png"/>.
         /// </summary>
         private RedBlackTree<int, string> _tree;
         private RedBlackTreeNode<int, string> _root;
@@ -63,7 +63,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
 
         /// <summary>
         /// Tests the correctness of insert operation when inserting several keys one after the other. 
-        /// For a step by step transition of the RedBlack tree while inserting these keys, see "images\redblack-bst-insert-stepByStep.png".
+        /// For a step by step transition of the RedBlack tree while inserting these keys, see <img src = "../Images/Trees/Binary/redblack-bst-insert-stepByStep.png"/>.
         /// </summary>
         [TestMethod]
         public void Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion()
@@ -195,7 +195,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
 
         /// <summary>
         /// Tests the correctness of delete operation when deleting all the keys in the tree one after the other in a random order. 
-        /// For a step by step transition of the BST while deleting these keys, see "images\redblack-bst-delete-stepBystep.png".
+        /// For a step by step transition of the BST while deleting these keys, see <img src = "../Images/Trees/Binary/redblack-bst-delete-stepBystep.png"/>.
         /// </summary>
         [TestMethod]
         public void Delete_MultipleKyesConsecutively_ExpectsCorrectTreeAfterEachStep()

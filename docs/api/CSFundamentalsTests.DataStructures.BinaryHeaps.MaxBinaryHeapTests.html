@@ -163,6 +163,7 @@ public void BuildHeap_Recursively()</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool HasMaxOrderPropertyForHeap&lt;TKey, TValue&gt;(int arraySize, MaxBinaryHeap&lt;TKey, TValue&gt; heap)
+
     where TKey : IComparable&lt;TKey&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -242,6 +243,7 @@ Checking the MaxHeap ordering (node relations) for the node at the given index, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool HasMaxOrderPropertyForNode&lt;TKey, TValue&gt;(BinaryHeapBase&lt;TKey, TValue&gt; heap, int nodeIndex)
+
     where TKey : IComparable&lt;TKey&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>

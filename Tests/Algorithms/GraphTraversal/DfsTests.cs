@@ -40,7 +40,7 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
 
         /// <summary>
         /// Initializes/Resets variables before executing each unit test in this class. 
-        /// To visualize the graph see images/Graph-BFS-DFS.png
+        /// To visualize the graph see <img src = "../Images/Graphs/Graph-BFS-DFS.png"/>.
         /// </summary>
         [TestInitialize]
         public void Initialize()
@@ -67,7 +67,7 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
 
         /// <summary>
         /// Tests the correctness of BFS iterative version, when starting from node <see cref="A"/>.
-        /// To visualize the graph see images/DFS-Iterative-StartA.png
+        /// To visualize the graph see <img src = "../Images/Graphs/DFS-Iterative-StartA.png"/>. 
         /// </summary>
         [TestMethod]
         public void Iterative_StartFromA()
@@ -86,7 +86,7 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
 
         /// <summary>
         /// Tests the correctness of BFS iterative version, when starting from node <see cref="E"/>.
-        /// To visualize the graph see images/DFS-Iterative-StartE.png
+        /// To visualize the graph see <img src = "../Images/Graphs/DFS-Iterative-StartE.png"/>. 
         /// </summary>
         [TestMethod]
         public void Iterative_StartFromE()
