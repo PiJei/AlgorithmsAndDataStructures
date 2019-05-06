@@ -32,10 +32,40 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
     [TestClass]
     public class MinBinaryHeapTests
     {
-        private List<KeyValuePair<int, string>> arrayHeap1RecursivelyBuilt = new List<KeyValuePair<int, string>> { new KeyValuePair<int, string>(9, "A"), new KeyValuePair<int, string>(6, "B"), new KeyValuePair<int, string>(1, "C"), new KeyValuePair<int, string>(8, "D"), new KeyValuePair<int, string>(3, "E"), new KeyValuePair<int, string>(5, "F") };
-        private List<KeyValuePair<int, string>> arrayHeap1IterativelyBuilt = new List<KeyValuePair<int, string>> { new KeyValuePair<int, string>(9, "A"), new KeyValuePair<int, string>(6, "B"), new KeyValuePair<int, string>(1, "C"), new KeyValuePair<int, string>(8, "D"), new KeyValuePair<int, string>(3, "E"), new KeyValuePair<int, string>(5, "F") };
-        private List<KeyValuePair<int, string>> arrayHeap2RecursivelyBuilt = new List<KeyValuePair<int, string>> { new KeyValuePair<int, string>(150, "A"), new KeyValuePair<int, string>(70, "B"), new KeyValuePair<int, string>(202, "C"), new KeyValuePair<int, string>(34, "D"), new KeyValuePair<int, string>(42, "E"), new KeyValuePair<int, string>(1, "F"), new KeyValuePair<int, string>(3, "G"), new KeyValuePair<int, string>(10, "H"), new KeyValuePair<int, string>(21, "J") };
-        private List<KeyValuePair<int, string>> arrayHeap2IterativelyBuilt = new List<KeyValuePair<int, string>> { new KeyValuePair<int, string>(150, "A"), new KeyValuePair<int, string>(70, "B"), new KeyValuePair<int, string>(202, "C"), new KeyValuePair<int, string>(34, "D"), new KeyValuePair<int, string>(42, "E"), new KeyValuePair<int, string>(1, "F"), new KeyValuePair<int, string>(3, "G"), new KeyValuePair<int, string>(10, "H"), new KeyValuePair<int, string>(21, "J") };
+        private readonly List<KeyValuePair<int, string>> _arrayHeap1RecursivelyBuilt = new List<KeyValuePair<int, string>> {
+            new KeyValuePair<int, string>(9, "A"),
+            new KeyValuePair<int, string>(6, "B"),
+            new KeyValuePair<int, string>(1, "C"),
+            new KeyValuePair<int, string>(8, "D"),
+            new KeyValuePair<int, string>(3, "E"),
+            new KeyValuePair<int, string>(5, "F") };
+        private readonly List<KeyValuePair<int, string>> _arrayHeap1IterativelyBuilt = new List<KeyValuePair<int, string>> {
+            new KeyValuePair<int, string>(9, "A"),
+            new KeyValuePair<int, string>(6, "B"),
+            new KeyValuePair<int, string>(1, "C"),
+            new KeyValuePair<int, string>(8, "D"),
+            new KeyValuePair<int, string>(3, "E"),
+            new KeyValuePair<int, string>(5, "F") };
+        private readonly List<KeyValuePair<int, string>> _arrayHeap2RecursivelyBuilt = new List<KeyValuePair<int, string>> {
+            new KeyValuePair<int, string>(150, "A"),
+            new KeyValuePair<int, string>(70, "B"),
+            new KeyValuePair<int, string>(202, "C"),
+            new KeyValuePair<int, string>(34, "D"),
+            new KeyValuePair<int, string>(42, "E"),
+            new KeyValuePair<int, string>(1, "F"),
+            new KeyValuePair<int, string>(3, "G"),
+            new KeyValuePair<int, string>(10, "H"),
+            new KeyValuePair<int, string>(21, "J") };
+        private readonly List<KeyValuePair<int, string>> _arrayHeap2IterativelyBuilt = new List<KeyValuePair<int, string>> {
+            new KeyValuePair<int, string>(150, "A"),
+            new KeyValuePair<int, string>(70, "B"),
+            new KeyValuePair<int, string>(202, "C"),
+            new KeyValuePair<int, string>(34, "D"),
+            new KeyValuePair<int, string>(42, "E"),
+            new KeyValuePair<int, string>(1, "F"),
+            new KeyValuePair<int, string>(3, "G"),
+            new KeyValuePair<int, string>(10, "H"),
+            new KeyValuePair<int, string>(21, "J") };
 
         private MinBinaryHeap<int, string> _heap1 = null;
         private MinBinaryHeap<int, string> _heap2 = null;
@@ -48,16 +78,16 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         [TestInitialize]
         public void Initialize()
         {
-            _heap1 = new MinBinaryHeap<int, string>(arrayHeap1IterativelyBuilt);
+            _heap1 = new MinBinaryHeap<int, string>(_arrayHeap1IterativelyBuilt);
             _heap1.BuildHeap_Iteratively(_heap1.HeapArray.Count);
 
-            _heap2 = new MinBinaryHeap<int, string>(arrayHeap2IterativelyBuilt);
+            _heap2 = new MinBinaryHeap<int, string>(_arrayHeap2IterativelyBuilt);
             _heap2.BuildHeap_Iteratively(_heap2.HeapArray.Count);
 
-            _heap3 = new MinBinaryHeap<int, string>(arrayHeap1RecursivelyBuilt);
+            _heap3 = new MinBinaryHeap<int, string>(_arrayHeap1RecursivelyBuilt);
             _heap3.BuildHeap_Recursively(_heap3.HeapArray.Count);
 
-            _heap4 = new MinBinaryHeap<int, string>(arrayHeap2RecursivelyBuilt);
+            _heap4 = new MinBinaryHeap<int, string>(_arrayHeap2RecursivelyBuilt);
             _heap4.BuildHeap_Recursively(_heap4.HeapArray.Count);
         }
 
@@ -67,9 +97,9 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         [TestMethod]
         public void BuildHeapRecursive_1()
         {
-            Assert.AreEqual(6, arrayHeap1RecursivelyBuilt.Count);
+            Assert.AreEqual(6, _arrayHeap1RecursivelyBuilt.Count);
 
-            for (int i = 0; i < arrayHeap1RecursivelyBuilt.Count; i++)
+            for (int i = 0; i < _arrayHeap1RecursivelyBuilt.Count; i++)
             {
                 Assert.IsTrue(HasMinOrderProperty(_heap3, i));
             }
@@ -81,9 +111,9 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         [TestMethod]
         public void BuildHeapRecursive_2()
         {
-            Assert.AreEqual(9, arrayHeap2RecursivelyBuilt.Count);
+            Assert.AreEqual(9, _arrayHeap2RecursivelyBuilt.Count);
 
-            for (int i = 0; i < arrayHeap2RecursivelyBuilt.Count; i++)
+            for (int i = 0; i < _arrayHeap2RecursivelyBuilt.Count; i++)
             {
                 Assert.IsTrue(HasMinOrderProperty(_heap4, i));
             }
@@ -95,9 +125,9 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         [TestMethod]
         public void BuildHeapIterative_1()
         {
-            Assert.AreEqual(6, arrayHeap1IterativelyBuilt.Count);
+            Assert.AreEqual(6, _arrayHeap1IterativelyBuilt.Count);
 
-            for (int i = 0; i < arrayHeap1IterativelyBuilt.Count; i++)
+            for (int i = 0; i < _arrayHeap1IterativelyBuilt.Count; i++)
             {
                 Assert.IsTrue(HasMinOrderProperty(_heap1, i));
             }
@@ -109,9 +139,9 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         [TestMethod]
         public void BuildHeapIterative_2()
         {
-            Assert.AreEqual(9, arrayHeap2IterativelyBuilt.Count);
+            Assert.AreEqual(9, _arrayHeap2IterativelyBuilt.Count);
 
-            for (int i = 0; i < arrayHeap2IterativelyBuilt.Count; i++)
+            for (int i = 0; i < _arrayHeap2IterativelyBuilt.Count; i++)
             {
                 Assert.IsTrue(HasMinOrderProperty(_heap2, i));
             }
@@ -124,14 +154,14 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         [TestMethod]
         public void CompareEqualityOfRecursiveAndIterativeMinHeapConstruction()
         {
-            for (int i = 0; i < arrayHeap1IterativelyBuilt.Count; i++)
+            for (int i = 0; i < _arrayHeap1IterativelyBuilt.Count; i++)
             {
-                Assert.AreEqual(arrayHeap1IterativelyBuilt[i], arrayHeap1RecursivelyBuilt[i]);
+                Assert.AreEqual(_arrayHeap1IterativelyBuilt[i], _arrayHeap1RecursivelyBuilt[i]);
             }
 
-            for (int i = 0; i < arrayHeap2IterativelyBuilt.Count; i++)
+            for (int i = 0; i < _arrayHeap2IterativelyBuilt.Count; i++)
             {
-                Assert.AreEqual(arrayHeap2IterativelyBuilt[i], arrayHeap2RecursivelyBuilt[i]);
+                Assert.AreEqual(_arrayHeap2IterativelyBuilt[i], _arrayHeap2RecursivelyBuilt[i]);
             }
         }
 
