@@ -30,13 +30,13 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
     [TestClass]
     public class BfsTests
     {
-        private GraphNode<int> A = new GraphNode<int>(4);
-        private GraphNode<int> B = new GraphNode<int>(1);
-        private GraphNode<int> C = new GraphNode<int>(20);
-        private GraphNode<int> D = new GraphNode<int>(6);
-        private GraphNode<int> E = new GraphNode<int>(3);
-        private GraphNode<int> F = new GraphNode<int>(11);
-        private GraphNode<int> G = new GraphNode<int>(5);
+        private readonly GraphNode<string> _nodeA = new GraphNode<string>("A");
+        private readonly GraphNode<string> _nodeB = new GraphNode<string>("B");
+        private readonly GraphNode<string> _nodeC = new GraphNode<string>("C");
+        private readonly GraphNode<string> _nodeD = new GraphNode<string>("D");
+        private readonly GraphNode<string> _nodeE = new GraphNode<string>("E");
+        private readonly GraphNode<string> _nodeF = new GraphNode<string>("F");
+        private readonly GraphNode<string> _nodeG = new GraphNode<string>("G");
 
         /// <summary>
         /// Initializes/Resets variables before executing each unit test in this class. 
@@ -45,107 +45,108 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
         [TestInitialize]
         public void Initialize()
         {
-            A.Adjacents.Add(new GraphEdge<int>(B, 0));
-            A.Adjacents.Add(new GraphEdge<int>(C, 0));
-            A.Adjacents.Add(new GraphEdge<int>(D, 0));
+            _nodeA.Adjacents.Add(new GraphEdge<string>(_nodeB, 0));
+            _nodeA.Adjacents.Add(new GraphEdge<string>(_nodeC, 0));
+            _nodeA.Adjacents.Add(new GraphEdge<string>(_nodeD, 0));
 
-            B.Adjacents.Add(new GraphEdge<int>(E, 0));
-            B.Adjacents.Add(new GraphEdge<int>(F, 0));
-            B.Adjacents.Add(new GraphEdge<int>(A, 0));
+            _nodeB.Adjacents.Add(new GraphEdge<string>(_nodeE, 0));
+            _nodeB.Adjacents.Add(new GraphEdge<string>(_nodeF, 0));
+            _nodeB.Adjacents.Add(new GraphEdge<string>(_nodeA, 0));
 
-            C.Adjacents.Add(new GraphEdge<int>(G, 0));
-            C.Adjacents.Add(new GraphEdge<int>(A, 0));
+            _nodeC.Adjacents.Add(new GraphEdge<string>(_nodeG, 0));
+            _nodeC.Adjacents.Add(new GraphEdge<string>(_nodeA, 0));
 
-            D.Adjacents.Add(new GraphEdge<int>(F, 0));
-            D.Adjacents.Add(new GraphEdge<int>(A, 0));
+            _nodeD.Adjacents.Add(new GraphEdge<string>(_nodeF, 0));
+            _nodeD.Adjacents.Add(new GraphEdge<string>(_nodeA, 0));
 
-            F.Adjacents.Add(new GraphEdge<int>(D, 0));
-            F.Adjacents.Add(new GraphEdge<int>(B, 0));
+            _nodeF.Adjacents.Add(new GraphEdge<string>(_nodeD, 0));
+            _nodeF.Adjacents.Add(new GraphEdge<string>(_nodeB, 0));
 
-            E.Adjacents.Add(new GraphEdge<int>(B, 0));
+            _nodeE.Adjacents.Add(new GraphEdge<string>(_nodeB, 0));
         }
 
         /// <summary>
-        /// Tests the correctness of BFS iterative version, when starting from node <see cref="A"/>.
+        /// Tests the correctness of BFS iterative version, when starting from node <see cref="_nodeA"/>.
         /// To visualize the graph see <img src = "../Images/Graphs/BFS-Iterative-StartA.png"/>.
         /// </summary>
         [TestMethod]
         public void Iterative_StartFromA()
         {
-            List<GraphNode<int>> bfsOrdering = BFS.BFS_Iterative(A);
+            List<GraphNode<string>> bfsOrdering = BFS.BFS_Iterative(_nodeA);
             Assert.AreEqual(7, bfsOrdering.Count);
-            Assert.AreEqual(4, bfsOrdering[0].Value);
-            Assert.AreEqual(1, bfsOrdering[1].Value);
-            Assert.AreEqual(20, bfsOrdering[2].Value);
-            Assert.AreEqual(6, bfsOrdering[3].Value);
-            Assert.AreEqual(3, bfsOrdering[4].Value);
-            Assert.AreEqual(11, bfsOrdering[5].Value);
-            Assert.AreEqual(5, bfsOrdering[6].Value);
+
+            Assert.AreEqual("A", bfsOrdering[0].Value);
+            Assert.AreEqual("B", bfsOrdering[1].Value);
+            Assert.AreEqual("C", bfsOrdering[2].Value);
+            Assert.AreEqual("D", bfsOrdering[3].Value);
+            Assert.AreEqual("E", bfsOrdering[4].Value);
+            Assert.AreEqual("F", bfsOrdering[5].Value);
+            Assert.AreEqual("G", bfsOrdering[6].Value);
         }
 
         /// <summary>
-        /// Tests the correctness of BFS iterative version, when starting from node <see cref="E"/>.
+        /// Tests the correctness of BFS iterative version, when starting from node <see cref="_nodeE"/>.
         /// To visualize the graph see <img src = "../Images/Graphs/BFS-Iterative-StartE.png"/>.
         /// </summary>
         [TestMethod]
         public void Iterative_StartFromE()
         {
-            List<GraphNode<int>> bfsOrdering = BFS.BFS_Iterative(E);
+            List<GraphNode<string>> bfsOrdering = BFS.BFS_Iterative(_nodeE);
             Assert.AreEqual(7, bfsOrdering.Count);
 
-            Assert.AreEqual(3, bfsOrdering[0].Value);
-            Assert.AreEqual(1, bfsOrdering[1].Value);
-            Assert.AreEqual(11, bfsOrdering[2].Value);
-            Assert.AreEqual(4, bfsOrdering[3].Value);
-            Assert.AreEqual(6, bfsOrdering[4].Value);
-            Assert.AreEqual(20, bfsOrdering[5].Value);
-            Assert.AreEqual(5, bfsOrdering[6].Value);
+            Assert.AreEqual("E", bfsOrdering[0].Value);
+            Assert.AreEqual("B", bfsOrdering[1].Value);
+            Assert.AreEqual("F", bfsOrdering[2].Value);
+            Assert.AreEqual("A", bfsOrdering[3].Value);
+            Assert.AreEqual("C", bfsOrdering[4].Value);
+            Assert.AreEqual("D", bfsOrdering[5].Value);
+            Assert.AreEqual("G", bfsOrdering[6].Value);
         }
 
         /// <summary>
-        /// Tests the correctness of BFS recursive version, when starting from node <see cref="A"/>.
+        /// Tests the correctness of BFS recursive version, when starting from node <see cref="_nodeA"/>.
         /// </summary>
         [TestMethod]
         public void Recursive_StartFromA()
         {
-            var queue = new Queue<GraphNode<int>>();
-            A.IsInserted = true;
-            queue.Enqueue(A);
-            var bfsOrdering = new List<GraphNode<int>>();
+            var queue = new Queue<GraphNode<string>>();
+            _nodeA.IsInserted = true;
+            queue.Enqueue(_nodeA);
+            var bfsOrdering = new List<GraphNode<string>>();
             BFS.BFS_Recursive(queue, bfsOrdering);
 
             Assert.AreEqual(7, bfsOrdering.Count);
 
-            Assert.AreEqual(4, bfsOrdering[0].Value);
-            Assert.AreEqual(1, bfsOrdering[1].Value);
-            Assert.AreEqual(20, bfsOrdering[2].Value);
-            Assert.AreEqual(6, bfsOrdering[3].Value);
-            Assert.AreEqual(3, bfsOrdering[4].Value);
-            Assert.AreEqual(11, bfsOrdering[5].Value);
-            Assert.AreEqual(5, bfsOrdering[6].Value);
+            Assert.AreEqual("A", bfsOrdering[0].Value);
+            Assert.AreEqual("B", bfsOrdering[1].Value);
+            Assert.AreEqual("C", bfsOrdering[2].Value);
+            Assert.AreEqual("D", bfsOrdering[3].Value);
+            Assert.AreEqual("E", bfsOrdering[4].Value);
+            Assert.AreEqual("F", bfsOrdering[5].Value);
+            Assert.AreEqual("G", bfsOrdering[6].Value);
         }
 
         /// <summary>
-        /// Tests the correctness of BFS recursive version, when starting from node <see cref="E"/>.
+        /// Tests the correctness of BFS recursive version, when starting from node <see cref="_nodeE"/>.
         /// </summary>
         [TestMethod]
         public void Recursive_StartFromE()
         {
-            var queue = new Queue<GraphNode<int>>();
-            E.IsInserted = true;
-            queue.Enqueue(E);
-            var bfsOrdering = new List<GraphNode<int>>();
+            var queue = new Queue<GraphNode<string>>();
+            _nodeE.IsInserted = true;
+            queue.Enqueue(_nodeE);
+            var bfsOrdering = new List<GraphNode<string>>();
             BFS.BFS_Recursive(queue, bfsOrdering);
 
             Assert.AreEqual(7, bfsOrdering.Count);
 
-            Assert.AreEqual(3, bfsOrdering[0].Value);
-            Assert.AreEqual(1, bfsOrdering[1].Value);
-            Assert.AreEqual(11, bfsOrdering[2].Value);
-            Assert.AreEqual(4, bfsOrdering[3].Value);
-            Assert.AreEqual(6, bfsOrdering[4].Value);
-            Assert.AreEqual(20, bfsOrdering[5].Value);
-            Assert.AreEqual(5, bfsOrdering[6].Value);
+            Assert.AreEqual("E", bfsOrdering[0].Value);
+            Assert.AreEqual("B", bfsOrdering[1].Value);
+            Assert.AreEqual("F", bfsOrdering[2].Value);
+            Assert.AreEqual("A", bfsOrdering[3].Value);
+            Assert.AreEqual("D", bfsOrdering[4].Value);
+            Assert.AreEqual("C", bfsOrdering[5].Value);
+            Assert.AreEqual("G", bfsOrdering[6].Value);
         }
     }
 }

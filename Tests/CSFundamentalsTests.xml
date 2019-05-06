@@ -17,24 +17,24 @@
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Iterative_StartFromA">
             <summary>
-            Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.A"/>.
+            Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests._nodeA"/>.
             To visualize the graph see <img src = "../Images/Graphs/BFS-Iterative-StartA.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Iterative_StartFromE">
             <summary>
-            Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.E"/>.
+            Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests._nodeE"/>.
             To visualize the graph see <img src = "../Images/Graphs/BFS-Iterative-StartE.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Recursive_StartFromA">
             <summary>
-            Tests the correctness of BFS recursive version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.A"/>.
+            Tests the correctness of BFS recursive version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests._nodeA"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Recursive_StartFromE">
             <summary>
-            Tests the correctness of BFS recursive version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.E"/>.
+            Tests the correctness of BFS recursive version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests._nodeE"/>.
             </summary>
         </member>
         <member name="T:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests">
@@ -50,24 +50,24 @@
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Iterative_StartFromA">
             <summary>
-            Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.A"/>.
+            Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests._nodeA"/>.
             To visualize the graph see <img src = "../Images/Graphs/DFS-Iterative-StartA.png"/>. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Iterative_StartFromE">
             <summary>
-            Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.E"/>.
+            Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests._nodeE"/>.
             To visualize the graph see <img src = "../Images/Graphs/DFS-Iterative-StartE.png"/>. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Recursive_StartFromA">
             <summary>
-            Tests the correctness of BFS recursive version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.A"/>.
+            Tests the correctness of BFS recursive version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests._nodeA"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Recursive_StartFromE">
             <summary>
-            Tests the correctness of BFS recursive version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.E"/>.
+            Tests the correctness of BFS recursive version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests._nodeE"/>.
             </summary>
         </member>
         <member name="T:CSFundamentalsTests.Algorithms.GraphTraversal.DijkstraTests">
