@@ -50,7 +50,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists.API
         /// <summary>
         /// Deletes a node with the given value from the list. If no node with the given value exists, fails the operation and returns false.
         /// </summary>
-        /// <param name="value">Is the value that is being searched for.</param>
+        /// <param name="value">The value that is being searched for.</param>
         /// <returns>True in case of success, and false otherwise. </returns>
         public override bool Delete(T1 value)
         {
@@ -60,7 +60,7 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists.API
         /// <summary>
         /// Inserts a new value in the list.
         /// </summary>
-        /// <param name="newValue">Is the value of the new node. </param>
+        /// <param name="newValue">The value of the new node. </param>
         /// <returns>True in case of success.</returns>
         public override bool Insert(T1 newValue)
         {

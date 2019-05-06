@@ -30,14 +30,10 @@ namespace CSFundamentals.DataStructures.LinkedLists.API
     [Serializable]
     public class LinkedNode<TNode, TValue> where TNode : LinkedNode<TNode, TValue> where TValue : IComparable<TValue>
     {
-        /// <summary>
-        /// Is the value stored in the node. 
-        /// </summary>
+        /// <value>Is the value stored in the node. </value>
         public TValue Value { get; set; }
 
-        /// <summary>
-        /// Is a reference to the next immediate node in the list. 
-        /// </summary>
+        /// <value>Is a reference to the next immediate node in the list. </value>
         public TNode Next { get; set; }
 
         /// <summary>

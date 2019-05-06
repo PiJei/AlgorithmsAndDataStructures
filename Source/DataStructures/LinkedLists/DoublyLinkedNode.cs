@@ -26,7 +26,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
     /// <summary>
     /// Implements a node in a DoublyLinkedList. 
     /// </summary>
-    /// <typeparam name="TValue">Is the type of the values stored in a node.</typeparam>
+    /// <typeparam name="TValue">The type of the values stored in a node.</typeparam>
     [Serializable]
     public class DoublyLinkedNode<TValue> : LinkedNode<DoublyLinkedNode<TValue>, TValue> where TValue : IComparable<TValue>
     {

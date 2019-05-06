@@ -48,21 +48,22 @@ namespace CSFundamentals.DataStructures.LinkedLists.API
         /// <summary>
         /// Inserts a new value in the list.
         /// </summary>
-        /// <param name="newValue">Is the value of the new node. </param>
+        /// <param name="newValue">The value of the new node. </param>
         /// <returns>True in case of success.</returns>
         public abstract bool Insert(TValue newValue);
 
         /// <summary>
         /// Deletes a node with the given value from the list. If no node with the given value exists, fails the operation and returns false.
         /// </summary>
-        /// <param name="value">Is the value that is being searched for.</param>
+        /// <param name="value">The value that is being searched for.</param>
         /// <returns>True in case of success, and false otherwise. </returns>
         public abstract bool Delete(TValue value);
 
         /// <summary>
         /// Searches for the specified <paramref name="value"/>. Since there is no assumption about the order of the values in the list, starts from the Head node and performs a linear search.
         /// </summary>
-        /// <param name="value">Is the value of the node that is being searched for.</param>
+        /// <exception cref="NotFoundException"> Throws if <paramref name="value"/> does not exist in the list. </exception>
+        /// <param name="value">The value of the node that is being searched for.</param>
         /// <returns>The node containing <paramref name="value"/>, and if no node is found throws an exception. </returns>
         [TimeComplexity(Case.Best, "O(1)", When = "The first node (Head) contains the value.")]
         [TimeComplexity(Case.Worst, "O(n)")]

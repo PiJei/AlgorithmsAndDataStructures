@@ -112,7 +112,7 @@ namespace CSFundamentals.Algorithms.Sort.StabilityCheckableVersions
         /// <summary>
         /// this Less than other : return less than 0 , this == other return 0, this > other return > 0 
         /// </summary>
-        /// <param name="other"> Specifies an object of type Element. </param>
+        /// <param name="other">An object of type Element. </param>
         /// <returns></returns>
         public int CompareTo(Element other)
         {

@@ -35,7 +35,7 @@ namespace CSFundamentals.Algorithms.Search
         /// </summary>
         /// <typeparam name="T">Type of the values in the sorted list.</typeparam>
         /// <param name="sortedList">A sorted list of any comparable type. </param>
-        /// <param name="key">Specifies the value that is being searched for. </param>
+        /// <param name="key">The value that is being searched for. </param>
         /// <returns>The index of the <paramref name="key"/> in the array, and -1 if it does not exist in the array. </returns>
         [Algorithm(AlgorithmType.Search, "ExponentialSearch", Assumptions = "Array is sorted with an ascending order.")]
         [SpaceComplexity("O(1)", InPlace = true)]
@@ -62,7 +62,7 @@ namespace CSFundamentals.Algorithms.Search
             }
 
             /* The range at which the key is expected to be is thus [nextIndex/2, nextIndex] - perform a binary search in this range. */
-            return BinarySearch.Search(sortedList, nextIndex / 2, Math.Min(nextIndex, sortedList.Count - 1), key);
+            return BinarySearch.Search(sortedList, key, nextIndex / 2, Math.Min(nextIndex, sortedList.Count - 1));
         }
     }
 }

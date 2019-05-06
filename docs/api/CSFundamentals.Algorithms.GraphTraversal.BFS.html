@@ -73,7 +73,7 @@
   
   <h1 id="CSFundamentals_Algorithms_GraphTraversal_BFS" data-uid="CSFundamentals.Algorithms.GraphTraversal.BFS" class="text-break">Class BFS
   </h1>
-  <div class="markdown level0 summary"><p>Implements BFS: Breadth First Search algorithm for graphs.</p>
+  <div class="markdown level0 summary"><p>Implements Breadth First Search algorithm for graph traversal.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -115,19 +115,19 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_Algorithms_GraphTraversal_BFS_BFS_Iterative__1_CSFundamentals_Algorithms_GraphTraversal_GraphNode___0__.md&amp;value=---%0Auid%3A%20CSFundamentals.Algorithms.GraphTraversal.BFS.BFS_Iterative%60%601(CSFundamentals.Algorithms.GraphTraversal.GraphNode%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/EnhancingDocumentation/apiSpec/new?filename=CSFundamentals_Algorithms_GraphTraversal_BFS_BFS_Iterative__1_CSFundamentals_Algorithms_GraphTraversal_GraphNode___0__.md&amp;value=---%0Auid%3A%20CSFundamentals.Algorithms.GraphTraversal.BFS.BFS_Iterative%60%601(CSFundamentals.Algorithms.GraphTraversal.GraphNode%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/Algorithms/GraphTraversal/bfs.cs/#L37">View Source</a>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/EnhancingDocumentation/Source/Algorithms/GraphTraversal/bfs.cs/#L42">View Source</a>
   </span>
   <a id="CSFundamentals_Algorithms_GraphTraversal_BFS_BFS_Iterative_" data-uid="CSFundamentals.Algorithms.GraphTraversal.BFS.BFS_Iterative*"></a>
   <h4 id="CSFundamentals_Algorithms_GraphTraversal_BFS_BFS_Iterative__1_CSFundamentals_Algorithms_GraphTraversal_GraphNode___0__" data-uid="CSFundamentals.Algorithms.GraphTraversal.BFS.BFS_Iterative``1(CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0})">BFS_Iterative&lt;TValue&gt;(GraphNode&lt;TValue&gt;)</h4>
-  <div class="markdown level1 summary"><p>Implements an iterative, recursion-free version of Breadth First Search algorithm for a graph (that can have cycles);</p>
+  <div class="markdown level1 summary"><p>An iterative version of Breadth First Search algorithm for traversing a graph that might have cycles.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static List&lt;GraphNode&lt;TValue&gt;&gt; BFS_Iterative&lt;TValue&gt;(GraphNode&lt;TValue&gt; root)</code></pre>
+    <pre><code class="lang-csharp hljs">public static List&lt;GraphNode&lt;TValue&gt;&gt; BFS_Iterative&lt;TValue&gt;(GraphNode&lt;TValue&gt; startNode)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -141,8 +141,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="CSFundamentals.Algorithms.GraphTraversal.GraphNode-1.html">GraphNode</a>&lt;TValue&gt;</td>
-        <td><span class="parametername">root</span></td>
-        <td><p>Specifies a node in the graph from which the search starts.</p>
+        <td><span class="parametername">startNode</span></td>
+        <td><p>A node in the graph from which traversal starts.</p>
 </td>
       </tr>
     </tbody>
@@ -158,7 +158,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="CSFundamentals.Algorithms.GraphTraversal.GraphNode-1.html">GraphNode</a>&lt;TValue&gt;&gt;</td>
-        <td><p>a serialization of the graph, with a BFS ordering.</p>
+        <td><p>A sequence of all graph nodes, put into a BFS ordering.</p>
 </td>
       </tr>
     </tbody>
@@ -174,20 +174,27 @@
     <tbody>
       <tr>
         <td><span class="parametername">TValue</span></td>
-        <td></td>
+        <td><p>Type of the values stored in graph nodes.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="CSFundamentals_Algorithms_GraphTraversal_BFS_BFS_Iterative__1_CSFundamentals_Algorithms_GraphTraversal_GraphNode___0___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>A graph can have many BFS orderings. Each ordering depends on (i) the start node, and (ii) the order by which each node's adjacent nodes are visited.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_Algorithms_GraphTraversal_BFS_BFS_Recursive__1_System_Collections_Generic_Queue_CSFundamentals_Algorithms_GraphTraversal_GraphNode___0___System_Collections_Generic_List_CSFundamentals_Algorithms_GraphTraversal_GraphNode___0___.md&amp;value=---%0Auid%3A%20CSFundamentals.Algorithms.GraphTraversal.BFS.BFS_Recursive%60%601(System.Collections.Generic.Queue%7BCSFundamentals.Algorithms.GraphTraversal.GraphNode%7B%60%600%7D%7D%2CSystem.Collections.Generic.List%7BCSFundamentals.Algorithms.GraphTraversal.GraphNode%7B%60%600%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/EnhancingDocumentation/apiSpec/new?filename=CSFundamentals_Algorithms_GraphTraversal_BFS_BFS_Recursive__1_System_Collections_Generic_Queue_CSFundamentals_Algorithms_GraphTraversal_GraphNode___0___System_Collections_Generic_List_CSFundamentals_Algorithms_GraphTraversal_GraphNode___0___.md&amp;value=---%0Auid%3A%20CSFundamentals.Algorithms.GraphTraversal.BFS.BFS_Recursive%60%601(System.Collections.Generic.Queue%7BCSFundamentals.Algorithms.GraphTraversal.GraphNode%7B%60%600%7D%7D%2CSystem.Collections.Generic.List%7BCSFundamentals.Algorithms.GraphTraversal.GraphNode%7B%60%600%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/Algorithms/GraphTraversal/bfs.cs/#L72">View Source</a>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/EnhancingDocumentation/Source/Algorithms/GraphTraversal/bfs.cs/#L82">View Source</a>
   </span>
   <a id="CSFundamentals_Algorithms_GraphTraversal_BFS_BFS_Recursive_" data-uid="CSFundamentals.Algorithms.GraphTraversal.BFS.BFS_Recursive*"></a>
   <h4 id="CSFundamentals_Algorithms_GraphTraversal_BFS_BFS_Recursive__1_System_Collections_Generic_Queue_CSFundamentals_Algorithms_GraphTraversal_GraphNode___0___System_Collections_Generic_List_CSFundamentals_Algorithms_GraphTraversal_GraphNode___0___" data-uid="CSFundamentals.Algorithms.GraphTraversal.BFS.BFS_Recursive``1(System.Collections.Generic.Queue{CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0}},System.Collections.Generic.List{CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0}})">BFS_Recursive&lt;TValue&gt;(Queue&lt;GraphNode&lt;TValue&gt;&gt;, List&lt;GraphNode&lt;TValue&gt;&gt;)</h4>
-  <div class="markdown level1 summary"><p>Is the recursive version of BFS_Iterative algorithm. Expects the queue to already have the root node in it.</p>
+  <div class="markdown level1 summary"><p>A recursive version of Breadth First Search algorithm for traversing a graph that might have cycles.
+<remarks>
+A graph can have many BFS orderings. Each ordering depends on (i) the start node, and (ii) the order by which each node's adjacent nodes are visited.
+</remarks></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -207,12 +214,14 @@
       <tr>
         <td><span class="xref">System.Collections.Generic.Queue</span>&lt;<a class="xref" href="CSFundamentals.Algorithms.GraphTraversal.GraphNode-1.html">GraphNode</a>&lt;TValue&gt;&gt;</td>
         <td><span class="parametername">queue</span></td>
-        <td></td>
+        <td><p>A queue structure for tracking nodes. The queue is expected to have the start node enqueued in it.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="CSFundamentals.Algorithms.GraphTraversal.GraphNode-1.html">GraphNode</a>&lt;TValue&gt;&gt;</td>
         <td><span class="parametername">bfsOrdering</span></td>
-        <td></td>
+        <td><p>A sequence of all graph nodes, put into a BFS ordering.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -227,7 +236,8 @@
     <tbody>
       <tr>
         <td><span class="parametername">TValue</span></td>
-        <td></td>
+        <td><p>Type of the values stored in graph nodes.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -239,10 +249,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_Algorithms_GraphTraversal_BFS.md&amp;value=---%0Auid%3A%20CSFundamentals.Algorithms.GraphTraversal.BFS%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/EnhancingDocumentation/apiSpec/new?filename=CSFundamentals_Algorithms_GraphTraversal_BFS.md&amp;value=---%0Auid%3A%20CSFundamentals.Algorithms.GraphTraversal.BFS%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/Algorithms/GraphTraversal/bfs.cs/#L30" class="contribution-link">View Source</a>
+                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/EnhancingDocumentation/Source/Algorithms/GraphTraversal/bfs.cs/#L31" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

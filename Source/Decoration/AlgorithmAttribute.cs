@@ -29,7 +29,7 @@ namespace CSFundamentals.Decoration
     public class AlgorithmAttribute : Attribute
     {
         /// <summary>
-        /// Specifies the type of the algorithm. 
+        /// The type of the algorithm. 
         /// </summary>
         public AlgorithmType Type { get; private set; }
 

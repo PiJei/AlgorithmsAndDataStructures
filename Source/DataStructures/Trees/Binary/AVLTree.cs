@@ -31,8 +31,8 @@ namespace CSFundamentals.DataStructures.Trees.Binary
     /// Implements an AVL tree. An AVL tree is a self balancing Binary Search Tree.
     /// Notice the differences in time complexity at worst case for various operations, compared to a basic binary search tree. 
     /// </summary>
-    /// <typeparam name="TKey">Specifies the type of the keys in the tree. </typeparam>
-    /// <typeparam name="TValue">Specifies the type of the values in the tree. </typeparam>
+    /// <typeparam name="TKey">The type of the keys in the tree. </typeparam>
+    /// <typeparam name="TValue">The type of the values in the tree. </typeparam>
     [DataStructure("AVLTree")]
     public class AVLTree<TKey, TValue> : BinarySearchTreeBase<AVLTreeNode<TKey, TValue>, TKey, TValue> where TKey : IComparable<TKey>
     {
@@ -40,7 +40,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         /// <summary>
         /// Builds the tree to include the given nodes.
         /// </summary>
-        /// <param name="keyValues">Is a list of key-value pairs to be inserted in the tree.</param>
+        /// <param name="keyValues">A list of key-value pairs to be inserted in the tree.</param>
         /// <returns>Root of the tree.</returns>
         [TimeComplexity(Case.Best, "O(n)", When = "Every new node is inserted in the very first locations.")]
         [TimeComplexity(Case.Worst, "O(nLog(n))")]
@@ -55,7 +55,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         /// Deletes a node with the given key from th tree.
         /// </summary>
         /// <param name="root">Current root of the tree, or the node at which delete operation should be started. </param>
-        /// <param name="key">Specifies the key of the node to be deleted. </param>
+        /// <param name="key">The key of the node to be deleted. </param>
         /// <returns>New root of the tree (might or might not change during the operation).</returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
@@ -175,7 +175,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         /// Searches for the given key in the tree. 
         /// </summary>
         /// <param name="root">Current root of the tree, or the node at which search operation should be started. </param>
-        /// <param name="key">Specifies the key to be searched. </param>
+        /// <param name="key">The key to be searched. </param>
         /// <returns>Returns the tree node that contains key. </returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
@@ -190,8 +190,8 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         /// Updates the tree node of the specified key with the new given value. 
         /// </summary>
         /// <param name="root">Current root of the tree, or the node at which update operation should be started.</param>
-        /// <param name="key">Specifies the key of the node whose value should be updated.</param>
-        /// <param name="value">Specifies the new value. </param>
+        /// <param name="key">The key of the node whose value should be updated.</param>
+        /// <param name="value">The new value. </param>
         /// <returns>true in case of success and false otherwise.</returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
@@ -205,7 +205,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         /// <summary>
         /// Finds the minimum key in the (sub)tree rooted at <paramref name="root"/> node. 
         /// </summary>
-        /// <param name="root">Is the node at which (sub)tree is rooted. </param>
+        /// <param name="root">The node at which (sub)tree is rooted. </param>
         /// <returns>The node containing the minimum key. </returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
@@ -219,7 +219,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         /// <summary>
         /// Finds the maximum key in the (sub)tree rooted at <paramref name="root"/> node. 
         /// </summary>
-        /// <param name="root">Is the node at which (sub)tree is rooted. </param>
+        /// <param name="root">The node at which (sub)tree is rooted. </param>
         /// <returns>The node containing the maximum key. </returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
@@ -283,7 +283,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         /// <summary>
         /// Computes balance factor of a node. Which is the difference between the height of the left and right sub trees of the node.
         /// </summary>
-        /// <param name="node">Is the node for which balance is computed.</param>
+        /// <param name="node">The node for which balance is computed.</param>
         /// <returns>the balance factor of the node. </returns>
         internal int ComputeBalanceFactor(AVLTreeNode<TKey, TValue> node)
         {
@@ -293,7 +293,7 @@ namespace CSFundamentals.DataStructures.Trees.Binary
         /// <summary>
         /// Computes the height of the tree rooted at the given node. The height of a node is the maximum path length to its leaf nodes.
         /// </summary>
-        /// <param name="node">Is the node whose height is calculated.</param>
+        /// <param name="node">The node whose height is calculated.</param>
         /// <returns>The height of the tree rooted at the given node. </returns>
         internal int GetHeight(AVLTreeNode<TKey, TValue> node)
         {

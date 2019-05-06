@@ -23,24 +23,28 @@ using System.Collections.Generic;
 namespace CSFundamentals.Algorithms.GraphTraversal
 {
     /// <summary>
-    /// Implements DFS: Depth First Search algorithm for graphs.
+    /// Implements Depth First Search algorithm for graph traversal.
     /// </summary>
     public class DFS
     {
         /// <summary>
-        /// Implements an iterative, recursion-free version of Depth First Search algorithm for a graph (that can have cycles);
+        /// An iterative version of Depth First Search algorithm for traversing a graph that might have cycles.
         /// </summary>
-        /// <param name="root">Specifies a node in the graph from which the search starts. </param>
-        /// <returns>a serialization of the graph, with a DFS ordering.</returns>
-        public static List<GraphNode<TValue>> DFS_Iterative<TValue>(GraphNode<TValue> root)
+        /// <remarks>
+        /// A graph can have many DFS orderings. Each ordering depends on (i) the start node, and (ii) the order by which each node's adjacent nodes are visited. 
+        /// </remarks>
+        /// <typeparam name="TValue">Type of the values stored in graph nodes.</typeparam>
+        /// <param name="startNode">A node in the graph from which traversal starts. </param>
+        /// <returns>A sequence of all graph nodes, put into a DFS ordering.</returns>
+        public static List<GraphNode<TValue>> DFS_Iterative<TValue>(GraphNode<TValue> startNode)
         {
             var stack = new Stack<GraphNode<TValue>>();
 
-            root.IsInserted = true;
-            root.DistanceFromRoot = 0;
-            stack.Push(root);
+            startNode.IsInserted = true;
+            startNode.DistanceFromStartNode = 0;
+            stack.Push(startNode);
 
-            /* To store a DFS ordering of the nodes, starting from root. */
+            /* Stores a DFS ordering of the nodes. */
             var dfsOrdering = new List<GraphNode<TValue>>();
             while (stack.Count > 0) /* while stack is not empty. */
             {
@@ -51,7 +55,7 @@ namespace CSFundamentals.Algorithms.GraphTraversal
                     if (!edge.Node.IsInserted) /* Without this check, while loop could never terminate in case graph contains cycles.*/
                     {
                         edge.Node.IsInserted = true;
-                        edge.Node.DistanceFromRoot = nextNode.DistanceFromRoot + 1;
+                        edge.Node.DistanceFromStartNode = nextNode.DistanceFromStartNode + 1;
                         stack.Push(edge.Node);
                     }
                 }
@@ -61,16 +65,20 @@ namespace CSFundamentals.Algorithms.GraphTraversal
         }
 
         /// <summary>
-        /// Implements a recursive version of DFS, for returning a DFS ordering of the nodes. 
+        /// A recursive version of Depth First Search algorithm for traversing a graph that might have cycles.
         /// </summary>
-        /// <param name="root"> Specifies the node to start the search from.</param>
-        /// <param name="dfsOrdering">Contains a serialization of the graph, with a DFS ordering.</param>
-        public static void DFS_Recursive<TValue>(GraphNode<TValue> root, List<GraphNode<TValue>> dfsOrdering)
+        /// <remarks>
+        /// A graph can have many DFS orderings. Each ordering depends on (i) the start node, and (ii) the order by which each node's adjacent nodes are visited. 
+        /// </remarks>
+        /// <typeparam name="TValue">Type of the values stored in graph nodes.</typeparam>
+        /// <param name="startNode">A node in the graph from which traversal starts. </param>
+        /// <param name="dfsOrdering">A sequence of all graph nodes, put into a DFS ordering</param>
+        public static void DFS_Recursive<TValue>(GraphNode<TValue> startNode, List<GraphNode<TValue>> dfsOrdering)
         {
-            root.IsInserted = true;
-            dfsOrdering.Add(root);
+            startNode.IsInserted = true;
+            dfsOrdering.Add(startNode);
 
-            foreach (GraphEdge<TValue> edge in root.Adjacents)
+            foreach (GraphEdge<TValue> edge in startNode.Adjacents)
             {
                 if (!edge.Node.IsInserted)
                 {

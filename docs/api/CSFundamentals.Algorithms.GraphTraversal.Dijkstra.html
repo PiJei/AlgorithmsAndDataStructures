@@ -73,7 +73,7 @@
   
   <h1 id="CSFundamentals_Algorithms_GraphTraversal_Dijkstra" data-uid="CSFundamentals.Algorithms.GraphTraversal.Dijkstra" class="text-break">Class Dijkstra
   </h1>
-  <div class="markdown level0 summary"><p>Implements Dijkstra's algorithm for finding shortest paths from a given node to all other nodes in a graph.</p>
+  <div class="markdown level0 summary"><p>Implements Dijkstra's algorithm for finding shortest paths from a given node to all the other nodes in a graph.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -115,14 +115,14 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_Algorithms_GraphTraversal_Dijkstra_GetShortestDistancesFromRoot__1_CSFundamentals_Algorithms_GraphTraversal_GraphNode___0__.md&amp;value=---%0Auid%3A%20CSFundamentals.Algorithms.GraphTraversal.Dijkstra.GetShortestDistancesFromRoot%60%601(CSFundamentals.Algorithms.GraphTraversal.GraphNode%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/EnhancingDocumentation/apiSpec/new?filename=CSFundamentals_Algorithms_GraphTraversal_Dijkstra_GetShortestDistancesFromRoot__1_CSFundamentals_Algorithms_GraphTraversal_GraphNode___0__.md&amp;value=---%0Auid%3A%20CSFundamentals.Algorithms.GraphTraversal.Dijkstra.GetShortestDistancesFromRoot%60%601(CSFundamentals.Algorithms.GraphTraversal.GraphNode%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/Algorithms/GraphTraversal/Dijkstra.cs/#L38">View Source</a>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/EnhancingDocumentation/Source/Algorithms/GraphTraversal/Dijkstra.cs/#L38">View Source</a>
   </span>
   <a id="CSFundamentals_Algorithms_GraphTraversal_Dijkstra_GetShortestDistancesFromRoot_" data-uid="CSFundamentals.Algorithms.GraphTraversal.Dijkstra.GetShortestDistancesFromRoot*"></a>
   <h4 id="CSFundamentals_Algorithms_GraphTraversal_Dijkstra_GetShortestDistancesFromRoot__1_CSFundamentals_Algorithms_GraphTraversal_GraphNode___0__" data-uid="CSFundamentals.Algorithms.GraphTraversal.Dijkstra.GetShortestDistancesFromRoot``1(CSFundamentals.Algorithms.GraphTraversal.GraphNode{``0})">GetShortestDistancesFromRoot&lt;TValue&gt;(GraphNode&lt;TValue&gt;)</h4>
-  <div class="markdown level1 summary"><p>Implements Dijkstra's ShortestPath algorithm using MinBinaryHeap</p>
+  <div class="markdown level1 summary"><p>Implements Dijkstra's ShortestPath algorithm using <a class="xref" href="CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap-2.html">MinBinaryHeap&lt;TKey, TValue&gt;</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -130,7 +130,7 @@
     <pre><code class="lang-csharp hljs">[Algorithm(AlgorithmType.GraphRouteSearch, &quot;Dijkstra's shortest path&quot;, IsGreedy = true)]
 [SpaceComplexity(&quot;O(3V)&quot;, false, InPlace = false)]
 [TimeComplexity(Case.Average, &quot;O((E+V)Log(V))&quot;)]
-public static List&lt;GraphNode&lt;TValue&gt;&gt; GetShortestDistancesFromRoot&lt;TValue&gt;(GraphNode&lt;TValue&gt; root)</code></pre>
+public static List&lt;GraphNode&lt;TValue&gt;&gt; GetShortestDistancesFromRoot&lt;TValue&gt;(GraphNode&lt;TValue&gt; startNode)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -144,8 +144,8 @@ public static List&lt;GraphNode&lt;TValue&gt;&gt; GetShortestDistancesFromRoot&l
     <tbody>
       <tr>
         <td><a class="xref" href="CSFundamentals.Algorithms.GraphTraversal.GraphNode-1.html">GraphNode</a>&lt;TValue&gt;</td>
-        <td><span class="parametername">root</span></td>
-        <td><p>Specifies a node from which we want to compute shortest paths to all the other nodes in the graph.</p>
+        <td><span class="parametername">startNode</span></td>
+        <td><p>A node from which shortest paths to all the other nodes in the graph are computed.</p>
 </td>
       </tr>
     </tbody>
@@ -161,7 +161,7 @@ public static List&lt;GraphNode&lt;TValue&gt;&gt; GetShortestDistancesFromRoot&l
     <tbody>
       <tr>
         <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="CSFundamentals.Algorithms.GraphTraversal.GraphNode-1.html">GraphNode</a>&lt;TValue&gt;&gt;</td>
-        <td><p>All the nodes in the graph, in the order that they were visited with their shortest distance from the root computed.</p>
+        <td><p>All the nodes in the graph, in the order visited with their shortest distance computed from <code data-dev-comment-type="paramref" class="paramref">startNode</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -189,10 +189,10 @@ public static List&lt;GraphNode&lt;TValue&gt;&gt; GetShortestDistancesFromRoot&l
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_Algorithms_GraphTraversal_Dijkstra.md&amp;value=---%0Auid%3A%20CSFundamentals.Algorithms.GraphTraversal.Dijkstra%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/EnhancingDocumentation/apiSpec/new?filename=CSFundamentals_Algorithms_GraphTraversal_Dijkstra.md&amp;value=---%0Auid%3A%20CSFundamentals.Algorithms.GraphTraversal.Dijkstra%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/Algorithms/GraphTraversal/Dijkstra.cs/#L31" class="contribution-link">View Source</a>
+                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/EnhancingDocumentation/Source/Algorithms/GraphTraversal/Dijkstra.cs/#L31" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

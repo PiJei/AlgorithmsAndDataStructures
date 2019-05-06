@@ -56,8 +56,8 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         /// <summary>
         /// Inserts a new key-value pair in the tree and returns root of the tree. 
         /// </summary>
-        /// <param name="leafNode">Is a leaf node. </param>
-        /// <param name="keyValue">Is the key-value pair to be inserted in the tree. </param>
+        /// <param name="leafNode">A leaf node. </param>
+        /// <param name="keyValue">Key-value pair to be inserted in the tree. </param>
         /// <returns>Root of the tree. </returns>
         [TimeComplexity(Case.Best, "O(1)", When = "Fist key in the tree is inserted.")]
         [TimeComplexity(Case.Worst, "O(D Log(n)(base:D)")] // where D is max branching factor of the tree. 
@@ -129,11 +129,11 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         /// <summary>
         /// Re-balances the tree to restore back its properties. This method is called when node is underFlown, and thus must be fixed. 
         /// </summary>
-        /// <param name="node">Specifies an underFlown node. </param>
-        /// <param name="leftSibling">Is the left sibling of the underFlown node. </param>
-        /// <param name="rightSibling">Is the right sibling of the underFlown node. </param>
-        /// <param name="separatorWithLeftSiblingIndex">Is the index of the key in parent that separates node from its left sibling. </param>
-        /// <param name="separatorWithRightSiblingIndex">Is the index of the key in parent that separates node from its right sibling. </param>
+        /// <param name="node">An underFlown node. </param>
+        /// <param name="leftSibling">The left sibling of the underFlown node. </param>
+        /// <param name="rightSibling">The right sibling of the underFlown node. </param>
+        /// <param name="separatorWithLeftSiblingIndex">The index of the key in parent that separates node from its left sibling. </param>
+        /// <param name="separatorWithRightSiblingIndex">The index of the key in parent that separates node from its right sibling. </param>
         [TimeComplexity(Case.Best, "O(1)", When = "There is no need to re-balance, or re-balance does not propagate to upper layers.")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
@@ -248,8 +248,9 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         /// <summary>
         /// Starting from the given root, recursively traverses tree top-down to find the proper leaf node, at which <paramref name="key"/> can be inserted. 
         /// </summary>
-        /// <param name="root">Is the top-most node at which search for the leaf starts.</param>
-        /// <param name="key">Is the key for which a container leaf is being searched. </param>
+        /// <exception cref="ArgumentException">Throws if <paramref name="key"/> already exists in the tree. </exception>
+        /// <param name="root">The top-most node at which search for the leaf starts.</param>
+        /// <param name="key">The key for which a container leaf is being searched. </param>
         /// <returns>Leaf node to insert the key. </returns>
         [TimeComplexity(Case.Best, "O(1)", When = "There is no node in the tree or only one node.")]
         [TimeComplexity(Case.Worst, "O(Log(n))")] // todo
@@ -281,8 +282,9 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         /// <summary>
         ///  Searchers the given key in (sub)tree rooted at node <paramref name="root"/>.
         /// </summary>
+        /// <exception cref="KeyNotFoundException">Throws if <paramref name="key"/> does not exist in the tree. </exception>
         /// <param name="root">The root of the (sub) tree at which search starts. </param>
-        /// <param name="key">Is the key to search for.</param>
+        /// <param name="key">The key to search for.</param>
         /// <returns>The node containing the key if it exists. Otherwise throws an exception. </returns>
         [TimeComplexity(Case.Best, "O(1)", When = "Key is the first item of the first node to visit.")]
         [TimeComplexity(Case.Worst, "O(LogD Log(n)Base(D))")] // Each search with in a node uses binary-search which is Log(K) cost, and since it is constant is not included in this value. 
@@ -326,7 +328,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary
         /// <summary>
         /// Given number of levels in the tree, computes the maximum number of keys the tree can hold. 
         /// </summary>
-        /// <param name="levelCount">Is the number of levels in the tree. </param>
+        /// <param name="levelCount">The number of levels in the tree. </param>
         /// <returns>Maximum number of keys a tree with <paramref name="levelCount"/> levels can hold. </returns>
         public int GetMaxCapacity(int levelCount)
         {

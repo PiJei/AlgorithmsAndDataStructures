@@ -33,8 +33,8 @@ namespace CSFundamentals.Algorithms.Search
         /// Performs a jumpSearch on a list of integers to find the <paramref name="key"/>. 
         /// Notice that only works if the given array is sorted. 
         /// </summary>
-        /// <param name="sortedList">Specifies a sorted list of any comparable type.</param>
-        /// <param name="key">Specifies the value the method is searching for. </param>
+        /// <param name="sortedList">A sorted list of any comparable type.</param>
+        /// <param name="key">The value the method is searching for. </param>
         /// <returns>The index of the <paramref name="key"/> in the array, and -1 if it does not exist in the array. </returns>
         [Algorithm(AlgorithmType.Search, "JumpSearch", Assumptions = "Array is sorted with an ascending order.")]
         [SpaceComplexity("O(1)", InPlace = true)]
@@ -72,7 +72,7 @@ namespace CSFundamentals.Algorithms.Search
             {
                 return -1;
             }
-            return LinearSearch.Search(sortedList, linearSearchStartIndex, nextIndex, key);
+            return LinearSearch.Search(sortedList, key, linearSearchStartIndex, nextIndex);
         }
 
         // TODO: Write a recursive version as well. 

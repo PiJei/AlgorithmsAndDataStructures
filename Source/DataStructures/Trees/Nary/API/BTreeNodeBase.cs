@@ -36,25 +36,30 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         where TNode : IBTreeNode<TNode, TKey, TValue>, new()
         where TKey : IComparable<TKey>
     {
-        /// <summary>
+        /// <value>
         /// A list of key-value pairs stored in this node. 
         /// Notice that SortedList does not allow duplicates. 
-        /// </summary>
+        /// </value>
         protected SortedList<TKey, TValue> _keyValues;
 
-        /// <summary>
+        /// <value>
         /// Children of the current node. 
         /// Contract: Keys of the child at index i are all smaller than key at index i of _keyValues
         /// Contract: Keys of the child at index i are all greater than key at index i-1 of _keyValues
         /// In otherWords for key at index i, left children are at index i of _children
         /// And right children are at index i+1 of _children. 
-        /// </summary>
+        /// </value>
         protected SortedList<TNode, bool> _children;
 
-        /// <summary>
+        /// <value>
         /// Is the parent of the current node.
-        /// </summary>
+        /// </value>
         protected TNode _parent;
+
+        /// <value>
+        /// Is the maximum number of branches/children a B-tree internal or root node can have. Leaf nodes contain 0 children. 
+        /// </value>
+        public int MaxBranchingDegree { get; set; }
 
         /// <summary>
         /// Is the minimum number of keys in a B-tree internal/leaf node. (Notice that a root has no lower bound on the number of keys. Intuitively when the tree is just being built it might start with 1, and grow afterwards.)
@@ -70,11 +75,6 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// Is the minimum number of branches/children a B-tree internal node can have. 
         /// </summary>
         public int MinBranchingDegree => Convert.ToInt32(Math.Ceiling(Math.Round(MaxBranchingDegree / (double)2, MidpointRounding.AwayFromZero)));
-
-        /// <summary>
-        /// Is the maximum number of branches/children a B-tree internal or root node can have. Leaf nodes contain 0 children. 
-        /// </summary>
-        public int MaxBranchingDegree { get; set; }
 
         /// <summary>
         /// Parameter-less constructor.
@@ -97,8 +97,8 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <summary>
         /// Creates a node with 1 key. 
         /// </summary>
-        /// <param name="maxBranchingDegree">Is the maximum number of children the node can have. </param>
-        /// <param name="keyValue">Is a key-value pair to be inserted in the tree. </param>
+        /// <param name="maxBranchingDegree">The maximum number of children the node can have. </param>
+        /// <param name="keyValue">A key-value pair to be inserted in the tree. </param>
         public BTreeNodeBase(int maxBranchingDegree, KeyValuePair<TKey, TValue> keyValue) : this(maxBranchingDegree)
         {
             InsertKeyValue(keyValue);
@@ -107,9 +107,9 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <summary>
         /// Creates a node with a set of keys and children.
         /// </summary>
-        /// <param name="maxBranchingDegree">Is the maximum number of children the node can have. </param>
-        /// <param name="keyValues">Is a set of key-value pairs to be inserted in the new node. </param>
-        /// <param name="children">Is a set of children of the node. Expectancy is that the count of children is one bigger than the count of key-value pairs in the node. </param>
+        /// <param name="maxBranchingDegree">The maximum number of children the node can have. </param>
+        /// <param name="keyValues">A set of key-value pairs to be inserted in the new node. </param>
+        /// <param name="children">A set of children of the node. Expectancy is that the count of children is one bigger than the count of key-value pairs in the node. </param>
         public BTreeNodeBase(int maxBranchingDegree, List<KeyValuePair<TKey, TValue>> keyValues, List<TNode> children) : this(maxBranchingDegree)
         {
             foreach (var keyVal in keyValues)
@@ -279,7 +279,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
             int selfIndex = GetIndexAtParentChildren();
             if (selfIndex == 0)
             {
-                return default(TNode);
+                return default;
             }
             int leftSiblingIndex = selfIndex - 1;
             return _parent.GetChild(leftSiblingIndex);
@@ -294,7 +294,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
             int selfIndex = GetIndexAtParentChildren();
             if (selfIndex == _parent.ChildrenCount - 1)
             {
-                return default(TNode);
+                return default;
             }
             int rightSiblingIndex = selfIndex + 1;
             return _parent.GetChild(rightSiblingIndex);
@@ -303,6 +303,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <summary>
         /// Gets the key-value pair of the maximum key in the node.
         /// </summary>
+        /// <exception cref="KeyNotFoundException"> Throws if <see cref="_keyValues"/> is empty. </exception>
         /// <returns>Key-value pair of the maximum key in this node. </returns>
         public KeyValuePair<TKey, TValue> GetMaxKey()
         {
@@ -312,6 +313,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <summary>
         /// Gets the key-value pair of the minimum key in the node. 
         /// </summary>
+        /// <exception cref="KeyNotFoundException"> Throws if <see cref="_keyValues"/> is empty. </exception>
         /// <returns>Key-value pair of the minimum key in this node. </returns>
         public KeyValuePair<TKey, TValue> GetMinKey()
         {
@@ -321,7 +323,8 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <summary>
         /// Removes key <paramref name="key"/> from the node's <see cref="_keyValues"/> array. 
         /// </summary>
-        /// <param name="key">Is the key to be removed.</param>
+        /// <exception cref="KeyNotFoundException"> Throws if <see cref="_keyValues"/> does not contain <paramref name="key"/>. </exception>
+        /// <param name="key">The key to be removed.</param>
         public void RemoveKey(TKey key)
         {
             if (_keyValues.ContainsKey(key))
@@ -337,6 +340,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <summary>
         /// Removes key at index <paramref name="index"/> from the node's <see cref="_keyValues"/> array. 
         /// </summary>
+        /// <exception cref="IndexOutOfRangeException"> Throws if <paramref name="index"/> is >= <see cref="KeyCount"/>. </exception>
         /// <param name="index">The index of the key to be removed from the node. </param>
         public void RemoveKeyByIndex(int index)
         {
@@ -353,10 +357,11 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <summary>
         /// Removes child at index <paramref name="index"/> from the node's <see cref="_children"/> array.
         /// </summary>
+        /// <exception cref="IndexOutOfRangeException"> Throws if <paramref name="index"/> is >= <see cref="ChildrenCount"/>. </exception>
         /// <param name="index">The child index. </param>
         public void RemoveChildByIndex(int index)
         {
-            if (index < _children.Count)
+            if (index < ChildrenCount)
             {
                 _children.RemoveAt(index);
             }
@@ -369,6 +374,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <summary>
         /// Removes child <paramref name="child"/> from the node's <see cref="_children"/> array.
         /// </summary>
+        /// <exception cref="KeyNotFoundException"> Throws if <see cref="_children"/> does not contain <paramref name="child"/>. </exception>
         /// <param name="child">Child to be removed. </param>
         public void RemoveChild(TNode child)
         {
@@ -385,6 +391,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <summary>
         /// Gets (reads) the key-value pair at index <paramref name="index"/> of node's <see cref="_keyValues"/> array. 
         /// </summary>
+        /// <exception cref="IndexOutOfRangeException">Throws if <paramref name="index"/> >= <see cref="KeyCount"/>. </exception>
         /// <param name="index">The index of the key-value pair wanted. </param>
         /// <returns>Key-value pair located at index <paramref name="index"/> of node's <see cref="_keyValues"/> array. </returns>
         public KeyValuePair<TKey, TValue> GetKeyValue(int index)
@@ -405,6 +412,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <summary>
         /// Gets the index of the key <paramref name="key"/> at node's <see cref="_keyValues"/> array. 
         /// </summary>
+        /// <exception cref="KeyNotFoundException">Throws if <see cref="_keyValues"/> does not contain <paramref name="key"/>. </exception>
         /// <param name="key">The key to search for and return its index.</param>
         /// <returns>Index of the key <paramref name="key"/> at node's <see cref="_keyValues"/> array. </returns>
         public int GetKeyIndex(TKey key)
@@ -415,6 +423,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <summary>
         /// Gets (reads) the child at index <paramref name="index"/> of node's <see cref="_children"/> array.
         /// </summary>
+        /// <exception cref="IndexOutOfRangeException">Throws if <paramref name="index"/> >= <see cref="ChildrenCount"/>. </exception>
         /// <param name="index">The index of the child node wanted. </param>
         /// <returns>Child node at index <paramref name="index"/> of node's <see cref="_children"/> array.</returns>
         public TNode GetChild(int index)
@@ -425,6 +434,7 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         /// <summary>
         /// Looks for <paramref name="child"/> in node's <see cref="_children"/> array, and returns its index.
         /// </summary>
+        /// <exception cref="KeyNotFoundException">Throws if <see cref="_children"/> does not contain <paramref name="child"/>. </exception>
         /// <param name="child">Child whose index is wanted. </param>
         /// <returns>Index of <paramref name="child"/> in node's <see cref="_children"/> array</returns>
         public int GetChildIndex(TNode child)
@@ -502,13 +512,14 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
                 return newNode;
             }
 
-            return default(TNode);
+            return default;
         }
 
         /// <summary>
         /// When a node is being split into two nodes, gets the key that shall be moved to the parent of this node.
         /// This operation is expected to only be called upon a node that is full. Yet to prevent issues, first checks for the key count. 
         /// </summary>
+        /// <exception cref="ArgumentException">Throws if this method is called on a node that is not MinOneFull. </exception>
         /// <returns>The key at the middle of the key-value pairs that shall be moved to the parent. </returns>
         public KeyValuePair<TKey, TValue> KeyValueToMoveUp()
         {

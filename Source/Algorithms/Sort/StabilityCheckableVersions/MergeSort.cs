@@ -28,9 +28,9 @@ namespace CSFundamentals.Algorithms.Sort
         /// <summary>
         /// Implements a basic version of merge sort recursively. 
         /// </summary>
-        /// <param name="list">Specifies the list of integer values to be sorted. </param>
-        /// <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
-        /// <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
+        /// <param name="list">The list of integer values to be sorted. </param>
+        /// <param name="startIndex">The lower index in the array, inclusive. </param>
+        /// <param name="endIndex">The higher index in the array, inclusive. </param>
         public static void Sort_Recursively(List<Element> list, int startIndex, int endIndex)
         {
             if (startIndex < endIndex)
@@ -45,10 +45,10 @@ namespace CSFundamentals.Algorithms.Sort
         /// <summary>
         /// Merges two sub arrays [startIndex, middleIndex], [middleIndex+1, endIndex] such to end up with a sorted list. 
         /// </summary>
-        /// <param name="values">Specifies the list of integer values to be sorted. </param>
-        /// <param name="startIndex">Specifies the lower index in the array, inclusive. </param>
-        /// <param name="middleIndex">Specifies the middle index of the array. </param>
-        /// <param name="endIndex">Specifies the higher index in the array, inclusive. </param>
+        /// <param name="values">The list of integer values to be sorted. </param>
+        /// <param name="startIndex">The lower index in the array, inclusive. </param>
+        /// <param name="middleIndex">The middle index of the array. </param>
+        /// <param name="endIndex">The higher index in the array, inclusive. </param>
         public static void Merge(List<Element> values, int startIndex, int middleIndex, int endIndex)
         {
             //Making a copy of the values
@@ -114,7 +114,7 @@ namespace CSFundamentals.Algorithms.Sort
         /// This is needed for methods that receive other sort methods as parameters, and would ideally like to have similar signature for all the methods that are passed as parameters, 
         /// In sort methods the signature is: void SortMethod(List{int} values); 
         /// </summary>
-        /// <param name="values">Specifies the list of integers to be sorted. </param>
+        /// <param name="values">The list of integers to be sorted. </param>
         public static void MergeSort_Recursively_Wrapper(List<Element> values)
         {
             Sort_Recursively(values, 0, values.Count - 1);

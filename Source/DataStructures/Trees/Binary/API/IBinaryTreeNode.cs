@@ -26,45 +26,30 @@ namespace CSFundamentals.DataStructures.Trees.Binary.API
     /// <summary>
     /// Specifies an interface for nodes in any tree structure. 
     /// </summary>
-    /// <typeparam name="TNode">Is the type of the tree node. </typeparam>
-    /// <typeparam name="TKey">Is the type of the keys in the tree nodes. </typeparam>
-    /// <typeparam name="TValue">Is the type of the values in the tree nodes. </typeparam>
+    /// <typeparam name="TNode">The type of the tree node. </typeparam>
+    /// <typeparam name="TKey">The type of the keys in the tree nodes. </typeparam>
+    /// <typeparam name="TValue">The type of the values in the tree nodes. </typeparam>
     public interface IBinaryTreeNode<TNode, TKey, TValue> :
         IComparable<TNode>
         where TKey : IComparable<TKey>
     {
         // TODO: Used by red black trees move to red black trees
-        /// <summary>
-        /// If set means the node contains no key-values, left or right children.
-        /// </summary>
+        /// <value>If set means the node contains no key-values, no left and no right children. </value>
         bool IsNill { get; set; }
 
-        /// <summary>
-        /// Is the key in a tree node. 
-        /// </summary>
+        /// <value>Key in this tree node. </value>
         TKey Key { get; set; }
 
-        /// <summary>
-        /// Is the value (information) stored in a tree node. 
-        /// </summary> 
-        /// <remarks>
-        /// This can be converted to a list of values alternatively, to handle duplicate keys. 
-        /// </remarks>
+        /// <value>Value (information) stored in this tree node (This can be converted to a list to store multiple values per key). </value> 
         TValue Value { get; set; }
 
-        /// <summary>
-        /// Is the left child of the node. 
-        /// </summary>
+        /// <value>Left child of this node. </value>
         TNode LeftChild { get; set; }
 
-        /// <summary>
-        /// Is the right child of the node. 
-        /// </summary>
+        /// <value>Right child of the node. </value>
         TNode RightChild { get; set; }
 
-        /// <summary>
-        /// Is the parent of the node.
-        /// </summary>
+        /// <value> Parent of this node.</value>
         TNode Parent { get; set; }
 
         /// <summary>

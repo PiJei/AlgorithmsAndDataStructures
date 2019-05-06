@@ -321,7 +321,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         /// Checking the MinHeap ordering (node relations) for the node at the given index, to make sure the correct relations between the node and its parent and children holds. 
         /// </summary>
         /// <param name="heap">A Min binary heap. </param>
-        /// <param name="nodeIndex">Is the index of a heap node in a heap array. </param>
+        /// <param name="nodeIndex">The index of a heap node in a heap array. </param>
         public static bool HasMinOrderProperty<TKey, TValue>(BinaryHeapBase<TKey, TValue> heap, int nodeIndex) where TKey : IComparable<TKey>
         {
             int leftChildIndex = heap.GetLeftChildIndexInHeapArray(nodeIndex);

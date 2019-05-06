@@ -35,7 +35,7 @@ namespace CSFundamentals.Algorithms.Search
         /// </summary>
         /// <typeparam name="T">Type of the values in the sorted list.</typeparam>
         /// <param name="sortedList">A sorted list of any comparable type. </param>
-        /// <param name="key">Specifies the value that is being searched for. </param>
+        /// <param name="key">The value that is being searched for. </param>
         /// <returns>The index of the <paramref name="key"/> in the array, and -1 if it does not exist in the array. </returns>
         [Algorithm(AlgorithmType.Search, "FibonacciSearch", Assumptions = "Array is sorted with an ascending order.")]
         public static int Search<T>(List<T> sortedList, T key) where T : IComparable<T>

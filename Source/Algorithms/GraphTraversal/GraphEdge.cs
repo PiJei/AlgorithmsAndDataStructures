@@ -18,29 +18,26 @@
  * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
+
+// TODO: Should ideally have 2 nodes
 namespace CSFundamentals.Algorithms.GraphTraversal
 {
     /// <summary>
-    /// Represents an edge in a graph. 
+    /// A generic graph edge. For sample use-cases <see cref="DFS"/>, <see cref="BFS"/>, <see cref="Dijkstra"/>.
     /// </summary>
     public class GraphEdge<TValue>
     {
-        // TODO: Should ideally have 2 nodes
-        /// <summary>
-        /// Is the GraphNode on the other side of the edge. 
-        /// </summary>
+        /// <value> GraphNode at the other end of this edge. </value>
         public GraphNode<TValue> Node { get; set; }
 
-        /// <summary>
-        /// Represents an integer value for the weight for edge .
-        /// </summary>
+        /// <value> Weight of this edge. Used in <see cref="Dijkstra"/>.</value>
         public int Weight { get; set; }
 
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="node">Specifies the node at the end of an edge. </param>
-        /// <param name="weight">Specifies weight on the edge. </param>
+        /// <param name="node">The node at the end of this edge. </param>
+        /// <param name="weight">Weight of this edge. </param>
         public GraphEdge(GraphNode<TValue> node, int weight)
         {
             Node = node;

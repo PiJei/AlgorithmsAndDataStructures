@@ -28,8 +28,8 @@ namespace CSFundamentals.Algorithms.Sort
         /// <summary>
         /// Swaps the values at given indexes of the array.
         /// </summary>
-        /// <typeparam name="T">Is the type of elements in the array.</typeparam>
-        /// <param name="list">Is a list of values. </param>
+        /// <typeparam name="T">The type of elements in the array.</typeparam>
+        /// <param name="list">A list of values. </param>
         /// <param name="index1">First index.</param>
         /// <param name="index2">Second index.</param>
         public static void Swap<T>(List<T> list, int index1, int index2)
@@ -42,8 +42,8 @@ namespace CSFundamentals.Algorithms.Sort
         /// <summary>
         /// Gets the max element in the array. Alternatively we could use Linq.Max operator. However using this version so that the time complexity is obvious.
         /// </summary>
-        /// <param name="list">Specifies a list of values (of type T, e.g., int). </param>
-        /// <returns>maximum element in the array. </returns>
+        /// <param name="list">A list of values (of type T, e.g., int). </param>
+        /// <returns>Maximum element in the array. </returns>
         public static T GetMaxElement<T>(List<T> list) where T : IComparable<T>
         {
             /* This method assumes values has at least one member. Otherwise this will throw a null reference exception . */
@@ -63,7 +63,7 @@ namespace CSFundamentals.Algorithms.Sort
         /// An alternative is : 
         /// digitsCount = (n == 0 ? 1 : Math.Floor(Math.Log10(Math.Abs(n)) + 1));
         /// </summary>
-        /// <param name="number">Specifies the integer for which we want to compute its digit count. </param>
+        /// <param name="number">The integer for which we want to compute its digit count. </param>
         /// <returns>The number of digits in the given integer number. </returns>
         public static int GetDigitsCount(int number)
         {

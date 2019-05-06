@@ -46,11 +46,10 @@ namespace CSFundamentals.DataStructures.LinkedLists
             _head = head;
         }
 
-
         /// <summary>
         /// Deletes a node with the given value from the list. If no node with the given value exists, fails the operation and returns false.
         /// </summary>
-        /// <param name="value">Is the value that is being searched for.</param>
+        /// <param name="value">The value that is being searched for.</param>
         /// <returns>True in case of success, and false otherwise. </returns>
         public override bool Delete(TValue value)
         {
@@ -84,7 +83,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
         /// Inserts a new node in the beginning of the list. Insert in a singly linked list is the fastest when treated as a prepend, meaning adding to the beginning of the list. 
         /// Notice that the current implementation allows duplicates.
         /// </summary>
-        /// <param name="newValue">Is the value of the new node in the list.</param>
+        /// <param name="newValue">The value of the new node in the list.</param>
         /// <returns>True in case of success.</returns>
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(1)")]

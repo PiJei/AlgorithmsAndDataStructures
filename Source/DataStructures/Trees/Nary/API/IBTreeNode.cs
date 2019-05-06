@@ -33,34 +33,22 @@ namespace CSFundamentals.DataStructures.Trees.Nary.API
         IComparable<TNode>
         where TKey : IComparable<TKey>
     {
-        /// <summary>
-        /// Maximum branching degree or maximum number of children the node can have. 
-        /// </summary>
+        /// <value>Maximum branching degree or maximum number of children the node can have.</value>
         int MaxBranchingDegree { get; set; }
 
-        /// <summary>
-        /// Minimum branching degree or the minimum number of children the node can have. 
-        /// </summary>
+        /// <value>Minimum branching degree or the minimum number of children the node can have. </value>
         int MinBranchingDegree { get; }
 
-        /// <summary>
-        /// Maximum number of keys that can be stored in a tree. 
-        /// </summary>
+        /// <value>Maximum number of keys that can be stored in a tree. </value>
         int MaxKeys { get; }
 
-        /// <summary>
-        /// Minimum number of keys that can be stored in a tree. 
-        /// </summary>
+        /// <value>Minimum number of keys that can be stored in a tree. </value>
         int MinKeys { get; }
 
-        /// <summary>
-        /// Is the count of key-value pairs in the node. 
-        /// </summary>
+        /// <value>Is the count of key-value pairs in the node.</value>
         int KeyCount { get; }
 
-        /// <summary>
-        /// Is the count of the children of the node. 
-        /// </summary>
+        /// <value>Is the count of the children of the node.  </value>
         int ChildrenCount { get; }
 
         /// <summary>

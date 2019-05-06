@@ -27,7 +27,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
     /// <summary>
     /// Implements a doubly sorted linked list. 
     /// </summary>
-    /// <typeparam name="TValue">Is the type of the values stored in the linked list. </typeparam>
+    /// <typeparam name="TValue">The type of the values stored in the linked list. </typeparam>
     public class DoublyLinkedSortedList<TValue> : LinkedListBase<DoublyLinkedNode<TValue>, TValue> where TValue : IComparable<TValue>
     {
         /// <summary>
@@ -39,7 +39,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
         /// <summary>
         /// Deletes a node with the given value from the list. If no node with the given value exists, fails the operation and returns false.
         /// </summary>
-        /// <param name="value">Is the value that is being searched for.</param>
+        /// <param name="value">The value that is being searched for.</param>
         /// <returns>True in case of success, and false otherwise. </returns>
         [TimeComplexity(Case.Best, "O(1)", When = "The value is at head position.")]
         [TimeComplexity(Case.Worst, "O(n)")]
@@ -92,7 +92,7 @@ namespace CSFundamentals.DataStructures.LinkedLists
         /// <summary>
         /// Inserts a new node with <paramref name="newValue"/> as its value in its proper position in the sorted list. 
         /// </summary>
-        /// <param name="newValue">Is the value of the new node. </param>
+        /// <param name="newValue">The value of the new node. </param>
         /// <returns>True in case of success. </returns>
         [TimeComplexity(Case.Best, "O(1)", When = "Insert happens at the head position. ")]
         [TimeComplexity(Case.Worst, "O(n)")]
@@ -150,7 +150,8 @@ namespace CSFundamentals.DataStructures.LinkedLists
         /// <summary>
         /// Searches for the specified <paramref name="value"/>. 
         /// </summary>
-        /// <param name="value">Is the value of the node that is being searched for.</param>
+        /// <exception cref="NotFoundException"> Throws if <paramref name="value"/> does not exist in the list. </exception>
+        /// <param name="value">The value of the node that is being searched for.</param>
         /// <returns>The node containing <paramref name="value"/>, and if no node is found throws an exception. </returns>
         [TimeComplexity(Case.Best, "O(1)", When = "The value is at head position.")]
         [TimeComplexity(Case.Worst, "O(n)")]

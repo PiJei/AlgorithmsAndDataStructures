@@ -30,12 +30,12 @@ namespace CSFundamentals.Decoration
     public class TimeComplexityAttribute : Attribute
     {
         /// <summary>
-        /// Specifies the time complexity of the algorithms. 
+        /// The time complexity of the algorithms. 
         /// </summary>
         public string Complexity { get; private set; }
 
         /// <summary>
-        /// Specifies the case for time complexity, such as best, average, worst. 
+        /// The case for time complexity, such as best, average, worst. 
         /// </summary>
         public Case ExecutionCase { get; private set; }
 
@@ -48,7 +48,7 @@ namespace CSFundamentals.Decoration
         /// Constructor. 
         /// </summary>
         /// <param name="executionCase">Case such as best, average, worst</param>
-        /// <param name="complexity">Is the time complexity of the algorithm.</param>
+        /// <param name="complexity">The time complexity of the algorithm.</param>
         public TimeComplexityAttribute(Case executionCase, string complexity)
         {
             ExecutionCase = executionCase;

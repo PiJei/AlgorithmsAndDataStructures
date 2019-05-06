@@ -26,30 +26,30 @@ using CSFundamentals.Decoration;
 namespace CSFundamentals.Algorithms.GraphTraversal
 {
     /// <summary>
-    /// Implements Dijkstra's algorithm for finding shortest paths from a given node to all other nodes in a graph.
+    /// Implements Dijkstra's algorithm for finding shortest paths from a given node to all the other nodes in a graph.
     /// </summary>
     public class Dijkstra
     {
         /// <summary>
-        /// Implements Dijkstra's ShortestPath algorithm using MinBinaryHeap
+        /// Implements Dijkstra's ShortestPath algorithm using <see cref="MinBinaryHeap{TKey, TValue}"/>.
         /// </summary>
-        /// <param name="root">Specifies a node from which we want to compute shortest paths to all the other nodes in the graph. </param>
-        /// <returns>All the nodes in the graph, in the order that they were visited with their shortest distance from the root computed. </returns>
+        /// <param name="startNode">A node from which shortest paths to all the other nodes in the graph are computed. </param>
+        /// <returns>All the nodes in the graph, in the order visited with their shortest distance computed from <paramref name="startNode"/>. </returns>
         [Algorithm(AlgorithmType.GraphRouteSearch, "Dijkstra's shortest path", IsGreedy = true)]
         [SpaceComplexity("O(3V)", InPlace = false)]
         [TimeComplexity(Case.Average, "O((E+V)Log(V))")]
-        public static List<GraphNode<TValue>> GetShortestDistancesFromRoot<TValue>(GraphNode<TValue> root)
+        public static List<GraphNode<TValue>> GetShortestDistancesFromRoot<TValue>(GraphNode<TValue> startNode)
         {
-            //1- Get the list of all vertices in the graph .
-            List<GraphNode<TValue>> bfsOrdering = BFS.BFS_Iterative(root); /* Extra space usage O(V) for bfsOrdering. */
+            //1- Get the list of all vertexes in the graph .
+            List<GraphNode<TValue>> bfsOrdering = BFS.BFS_Iterative(startNode); /* Extra space usage O(V) for bfsOrdering. */
 
             //2- Set the distance of all the nodes from the root node to infinite. 
             foreach (GraphNode<TValue> node in bfsOrdering)
             {
-                node.DistanceFromRoot = int.MaxValue; // aka. Infinite. 
+                node.DistanceFromStartNode = int.MaxValue; // aka. Infinite. 
             }
             //3- Set the distance of the root node from the root node to zero. 
-            root.DistanceFromRoot = 0;
+            startNode.DistanceFromStartNode = 0;
 
             //4- Build a MinHeap over all the nodes in the array.
             var minHeap = new MinBinaryHeap<GraphNode<TValue>, TValue>(bfsOrdering.Select(o => new KeyValuePair<GraphNode<TValue>, TValue>(o, o.Value)).ToList()); /* Extra space usage O(V) for heapArray. */
@@ -65,9 +65,9 @@ namespace CSFundamentals.Algorithms.GraphTraversal
                     {
                         if (!shortestDistanceFromRoot.Contains(edge.Node))
                         {
-                            if (edge.Node.DistanceFromRoot > currentMinNode.Key.DistanceFromRoot + edge.Weight)
+                            if (edge.Node.DistanceFromStartNode > currentMinNode.Key.DistanceFromStartNode + edge.Weight)
                             {
-                                edge.Node.DistanceFromRoot = currentMinNode.Key.DistanceFromRoot + edge.Weight;
+                                edge.Node.DistanceFromStartNode = currentMinNode.Key.DistanceFromStartNode + edge.Weight;
                                 int index = minHeap.FindIndex(edge.Node); /* Can be O(1) if the index of each element is stored with the element. */
                                 if (index >= 0)
                                 {

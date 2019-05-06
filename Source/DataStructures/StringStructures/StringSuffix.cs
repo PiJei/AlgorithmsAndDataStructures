@@ -28,13 +28,13 @@ namespace CSFundamentals.DataStructures.StringStructures
     public class StringSuffix : IEquatable<StringSuffix>, IComparable<StringSuffix>
     {
         /// <summary>
-        /// Specifies the 0-based starting index of this suffix in the string
+        /// The 0-based starting index of this suffix in the string
         /// Notice that there is no need to store the end index, as it is always string.Length - 1, based on the suffix definition. 
         /// </summary>
         public int StartIndex { get; set; }
 
         /// <summary>
-        /// Specifies the rank for (starting char, second char) of the suffix. If second char does not exist, -1 rather than rank. 
+        /// The rank for (starting char, second char) of the suffix. If second char does not exist, -1 rather than rank. 
         /// Rank of a character is computing using: 'char'-'a'. 
         /// </summary>
         public int[] RankPair { get; set; } = new int[2];

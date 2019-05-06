@@ -391,9 +391,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
         /// Given the root of a binary search tree, checks whether the binary search tree properties hold.
         /// </summary>
         /// <typeparam name="TNode">Type of the nodes in the tree. </typeparam>
-        /// <typeparam name="TKey">Specifies the type of the keys in tree. </typeparam>
-        /// <typeparam name="TValue">Specifies the type of the values in tree nodes. </typeparam>
-        /// <param name="root">Is the root of a binary search tree. </param>
+        /// <typeparam name="TKey">The type of the keys in tree. </typeparam>
+        /// <typeparam name="TValue">The type of the values in tree nodes. </typeparam>
+        /// <param name="root">The root of a binary search tree. </param>
         public static bool HasBinarySearchTreeOrderProperty<TNode, TKey, TValue>(TNode root) where TNode : IBinaryTreeNode<TNode, TKey, TValue> where TKey : IComparable<TKey>, IEquatable<TKey>
         {
             if (root != null)

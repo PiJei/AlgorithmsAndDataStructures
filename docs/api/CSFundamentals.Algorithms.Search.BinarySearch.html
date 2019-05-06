@@ -115,13 +115,13 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_Algorithms_Search_BinarySearch_Search__1_System_Collections_Generic_List___0__System_Int32_System_Int32___0_.md&amp;value=---%0Auid%3A%20CSFundamentals.Algorithms.Search.BinarySearch.Search%60%601(System.Collections.Generic.List%7B%60%600%7D%2CSystem.Int32%2CSystem.Int32%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/EnhancingDocumentation/apiSpec/new?filename=CSFundamentals_Algorithms_Search_BinarySearch_Search__1_System_Collections_Generic_List___0____0_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.Algorithms.Search.BinarySearch.Search%60%601(System.Collections.Generic.List%7B%60%600%7D%2C%60%600%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/Algorithms/Search/BinarySearch.cs/#L40">View Source</a>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/EnhancingDocumentation/Source/Algorithms/Search/BinarySearch.cs/#L40">View Source</a>
   </span>
   <a id="CSFundamentals_Algorithms_Search_BinarySearch_Search_" data-uid="CSFundamentals.Algorithms.Search.BinarySearch.Search*"></a>
-  <h4 id="CSFundamentals_Algorithms_Search_BinarySearch_Search__1_System_Collections_Generic_List___0__System_Int32_System_Int32___0_" data-uid="CSFundamentals.Algorithms.Search.BinarySearch.Search``1(System.Collections.Generic.List{``0},System.Int32,System.Int32,``0)">Search&lt;T&gt;(List&lt;T&gt;, Int32, Int32, T)</h4>
+  <h4 id="CSFundamentals_Algorithms_Search_BinarySearch_Search__1_System_Collections_Generic_List___0____0_System_Int32_System_Int32_" data-uid="CSFundamentals.Algorithms.Search.BinarySearch.Search``1(System.Collections.Generic.List{``0},``0,System.Int32,System.Int32)">Search&lt;T&gt;(List&lt;T&gt;, T, Int32, Int32)</h4>
   <div class="markdown level1 summary"><p>Searches in a sorted list of any comparable type, and returns the index of the <code data-dev-comment-type="paramref" class="paramref">key</code> using binary search, and -1 if it is not found.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -132,7 +132,7 @@
 [TimeComplexity(Case.Best, &quot;O(1)&quot;)]
 [TimeComplexity(Case.Worst, &quot;O(Log(n))&quot;)]
 [TimeComplexity(Case.Average, &quot;O(Log(n))&quot;)]
-public static int Search&lt;T&gt;(List&lt;T&gt; sortedList, int startIndex, int endIndex, T key)
+public static int Search&lt;T&gt;(List&lt;T&gt; sortedList, T key, int startIndex, int endIndex)
 
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
@@ -153,21 +153,21 @@ public static int Search&lt;T&gt;(List&lt;T&gt; sortedList, int startIndex, int 
 </td>
       </tr>
       <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The value that is being searched for.</p>
+</td>
+      </tr>
+      <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">startIndex</span></td>
-        <td><p>Specifies the lowest (left-most) index of the array - inclusive.</p>
+        <td><p>The lowest (left-most) index of the array - inclusive.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">endIndex</span></td>
-        <td><p>Specifies the highest (right-most) index of the array - inclusive.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">T</span></td>
-        <td><span class="parametername">key</span></td>
-        <td><p>Specifies the value that is being searched for.</p>
+        <td><p>The highest (right-most) index of the array - inclusive.</p>
 </td>
       </tr>
     </tbody>
@@ -211,10 +211,10 @@ public static int Search&lt;T&gt;(List&lt;T&gt; sortedList, int startIndex, int 
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/DocFx-2/apiSpec/new?filename=CSFundamentals_Algorithms_Search_BinarySearch.md&amp;value=---%0Auid%3A%20CSFundamentals.Algorithms.Search.BinarySearch%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/EnhancingDocumentation/apiSpec/new?filename=CSFundamentals_Algorithms_Search_BinarySearch.md&amp;value=---%0Auid%3A%20CSFundamentals.Algorithms.Search.BinarySearch%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/DocFx-2/Source/Algorithms/Search/BinarySearch.cs/#L30" class="contribution-link">View Source</a>
+                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/EnhancingDocumentation/Source/Algorithms/Search/BinarySearch.cs/#L30" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

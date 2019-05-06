@@ -36,7 +36,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
 
         /// <summary>
         /// Is an AVL tree (A form of balanced BST). 
-        /// To visualize this tree built as in <see cref="Initialize()"/> method, see "images/avl-bst.png" in current directory. 
+        /// To visualize this tree built as in <see cref="Initialize()"/>, see <img src = "../Images/Trees/Binary/avl-bst.png"/>. 
         /// </summary>
         private AVLTree<int, string> _tree = null;
 
@@ -61,7 +61,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
 
         /// <summary>
         /// Tests the correctness of insert operation.
-        /// For a step by step transition of the AVL tree while inserting these keys, see "images\avl-bst-insert-stepByStep.png".
+        /// For a step by step transition of the AVL tree while inserting these keys, see <img src = "../Images/Trees/Binary/avl-bst-insert-stepByStep.png"/>.
         /// </summary>
         [TestMethod]
         public void Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion()
@@ -252,7 +252,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
 
         /// <summary>
         /// Deletes all the keys in the tree in a random order in several sequential operations. 
-        /// For a step by step transition of the AVL tree while deleting these keys, see "images\avl-bst-delete-stepBystep.png".
+        /// For a step by step transition of the AVL tree while deleting these keys, see <img src = "../Images/Trees/Binary/avl-bst-delete-stepBystep.png"/>.
         /// </summary>
         [TestMethod]
         public void Delete_MultipleKeysConsecutively_ExpectsCorrectTreeAfterEachDeletion_RandomOrder1()
@@ -429,7 +429,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         /// <typeparam name="TValue">Type of the values stored in the tree. </typeparam>
         /// <param name="tree">An AVL tree</param>
         /// <param name="root">Root of the AVL tree</param>
-        /// <param name="expectedNodeCount">Specifies the expected number of tree nodes in the tree. </param>
+        /// <param name="expectedNodeCount">The expected number of tree nodes in the tree. </param>
         /// <returns>True if the tree has AVL tree properties and false otherwise. </returns>
         public bool HasAVLTreeProperties<TKey, TValue>(AVLTree<TKey, TValue> tree, AVLTreeNode<TKey, TValue> root, int expectedNodeCount) where TKey : IComparable<TKey>, IEquatable<TKey>
         {

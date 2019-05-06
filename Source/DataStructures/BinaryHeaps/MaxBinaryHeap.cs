@@ -46,7 +46,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <summary>
         /// Builds an in-place max heap on the given array. 
         /// </summary>
-        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        /// <param name="heapArrayLength">The length of the heap array. </param>
         public override void BuildHeap_Recursively(int heapArrayLength)
         {
             for (int i = heapArrayLength / 2; i >= 0; i--)
@@ -58,7 +58,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <summary>
         /// Is the iterative version of BuildHeap_Recursively. Expect to see exact same results for these two methods. 
         /// </summary>
-        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        /// <param name="heapArrayLength">The length of the heap array. </param>
         public override void BuildHeap_Iteratively(int heapArrayLength)
         {
             for (int i = heapArrayLength / 2; i >= 0; i--)
@@ -70,8 +70,8 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// <summary>
         /// Inserts a new value into the Max Heap. 
         /// </summary>
-        /// <param name="value">Specifies the new value to be inserted in the tree.</param>
-        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        /// <param name="value">The new value to be inserted in the tree.</param>
+        /// <param name="heapArrayLength">The length/size of the heap array. </param>
         public override void Insert(KeyValuePair<TKey, TValue> value, int heapArrayLength)
         {
             HeapArray.Add(value);// means gets added to the end of the list. 
@@ -85,7 +85,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// 
         /// </summary>
         /// <param name="index"></param>
-        /// <param name="heapArrayLength">Specifies the length/size of the heap array. </param>
+        /// <param name="heapArrayLength">The length/size of the heap array. </param>
         public override void BubbleUp_Iteratively(int index, int heapArrayLength)
         {
             int parentIndex = GetParentIndex(index);
@@ -107,7 +107,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// Removes the max element from the heap.
         /// </summary>
         /// <param name="keyValue">If the operation is successful, contains the maximum element in the array.</param>
-        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        /// <param name="heapArrayLength">The length of the heap array. </param>
         /// <returns>True in case of success, and false otherwise</returns>
         public override bool TryRemoveRoot(out KeyValuePair<TKey, TValue> keyValue, int heapArrayLength)
         {
@@ -136,7 +136,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// 
         /// </summary>
         /// <param name="keyValue"></param>
-        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        /// <param name="heapArrayLength">The length of the heap array. </param>
         /// <returns></returns>
         public override bool TryFindRoot(out KeyValuePair<TKey, TValue> keyValue, int heapArrayLength)
         {
@@ -153,7 +153,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// 
         /// </summary>
         /// <param name="rootIndex"></param>
-        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        /// <param name="heapArrayLength">The length of the heap array. </param>
         public override void BubbleDown_Recursively(int rootIndex, int heapArrayLength)
         {
             int leftChildIndex = GetLeftChildIndexInHeapArray(rootIndex);
@@ -180,7 +180,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         /// 
         /// </summary>
         /// <param name="rootIndex"></param>
-        /// <param name="heapArrayLength">Specifies the length of the heap array. </param>
+        /// <param name="heapArrayLength">The length of the heap array. </param>
         public override void BubbleDown_Iteratively(int rootIndex, int heapArrayLength)
         {
             while (GetLeftChildIndexInHeapArray(rootIndex) < heapArrayLength)

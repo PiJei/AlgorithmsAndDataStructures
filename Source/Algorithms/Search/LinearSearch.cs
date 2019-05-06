@@ -33,17 +33,17 @@ namespace CSFundamentals.Algorithms.Search
         /// Searches for a given value in a list. 
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="list">Specifies a list of any comparable type.</param>
-        /// <param name="startIndex">Specifies the lowest (left-most) index of the array - inclusive. </param>
-        /// <param name="endIndex">Specifies the highest (right-most) index of the array - inclusive. </param>
-        /// <param name="key">Specifies the value the method is searching for. </param>
+        /// <param name="list">A list of any comparable type.</param>
+        /// <param name="key">The value the method is searching for. </param>
+        /// <param name="startIndex">The lowest (left-most) index of the array - inclusive. </param>
+        /// <param name="endIndex">The highest (right-most) index of the array - inclusive. </param>
         /// <returns></returns>
         [Algorithm(AlgorithmType.Search, "LinearSearch")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(n)")]
         [TimeComplexity(Case.Average, "O(n)")]
-        public static int Search<T>(List<T> list, int startIndex, int endIndex, T key) where T : IComparable<T>
+        public static int Search<T>(List<T> list, T key, int startIndex, int endIndex) where T : IComparable<T>
         {
             for (int i = startIndex; i <= endIndex; i++)
             {

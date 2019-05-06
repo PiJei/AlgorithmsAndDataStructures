@@ -43,13 +43,13 @@ namespace CSFundamentalsTests.Algorithms.Search
         [TestMethod]
         public void Search_DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition()
         {
-            Assert.AreEqual(0, LinearSearch.Search(_values, _startIndex, _endIndex, 4));
-            Assert.AreEqual(7, LinearSearch.Search(_values, _startIndex, _endIndex, 37));
-            Assert.AreEqual(3, LinearSearch.Search(_values, _startIndex, _endIndex, 100));
-            Assert.AreEqual(1, LinearSearch.Search(_values, _startIndex, _endIndex, 1));
-            Assert.AreEqual(2, LinearSearch.Search(_values, _startIndex, _endIndex, 9));
-            Assert.AreEqual(5, LinearSearch.Search(_values, _startIndex, _endIndex, 2));
-            Assert.AreEqual(6, LinearSearch.Search(_values, _startIndex, _endIndex, 45));
+            Assert.AreEqual(0, LinearSearch.Search(_values, 4, _startIndex, _endIndex));
+            Assert.AreEqual(7, LinearSearch.Search(_values, 37, _startIndex, _endIndex));
+            Assert.AreEqual(3, LinearSearch.Search(_values, 100, _startIndex, _endIndex));
+            Assert.AreEqual(1, LinearSearch.Search(_values, 1, _startIndex, _endIndex));
+            Assert.AreEqual(2, LinearSearch.Search(_values, 9, _startIndex, _endIndex));
+            Assert.AreEqual(5, LinearSearch.Search(_values, 2, _startIndex, _endIndex));
+            Assert.AreEqual(6, LinearSearch.Search(_values, 45, _startIndex, _endIndex));
         }
 
         /// <summary>
@@ -58,8 +58,8 @@ namespace CSFundamentalsTests.Algorithms.Search
         [TestMethod]
         public void Search_DuplicateElements_ExpectsToGetTheIndexOfTheFirstOccurrenceNoMatterHowManyTimesSearchIsPerformed()
         {
-            Assert.AreEqual(4, LinearSearch.Search(_values, _startIndex, _endIndex, 3));
-            Assert.AreEqual(4, LinearSearch.Search(_values, _startIndex, _endIndex, 3));
+            Assert.AreEqual(4, LinearSearch.Search(_values, 3, _startIndex, _endIndex));
+            Assert.AreEqual(4, LinearSearch.Search(_values, 3, _startIndex, _endIndex));
         }
 
         /// <summary>
@@ -68,9 +68,9 @@ namespace CSFundamentalsTests.Algorithms.Search
         [TestMethod]
         public void Search_NonExistingElements_ExpectsToGetMinusOne()
         {
-            Assert.AreEqual(-1, LinearSearch.Search(_values, _startIndex, _endIndex, 200));
-            Assert.AreEqual(-1, LinearSearch.Search(_values, _startIndex, _endIndex, 1550));
-            Assert.AreEqual(-1, LinearSearch.Search(_values, _startIndex, _endIndex, 8));
+            Assert.AreEqual(-1, LinearSearch.Search(_values, 200, _startIndex, _endIndex));
+            Assert.AreEqual(-1, LinearSearch.Search(_values, 1550, _startIndex, _endIndex));
+            Assert.AreEqual(-1, LinearSearch.Search(_values, 8, _startIndex, _endIndex));
         }
     }
 }

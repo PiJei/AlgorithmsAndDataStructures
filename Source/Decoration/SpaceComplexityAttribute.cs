@@ -31,7 +31,7 @@ namespace CSFundamentals.Decoration
     public class SpaceComplexityAttribute : Attribute
     {
         /// <summary>
-        /// Specifies the complexity of space / memory used in algorithm implementation. 
+        /// The complexity of space / memory used in algorithm implementation. 
         /// </summary>
         public string Complexity { get; private set; }
 

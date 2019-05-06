@@ -35,7 +35,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
 
         /// <summary>
         /// Is a binary search tree (aka. BST). 
-        /// To visualize this tree built as in <see cref="Initialize()"/> method, see "images\bst.png" in current directory. 
+        /// To visualize this tree built as in <see cref="Initialize()"/> method, see <img src = "../Images/Trees/Binary/bst.png"/>.
         /// </summary>
         private BinarySearchTreeBase<int, string> _tree;
 
@@ -50,7 +50,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
         }
 
         /// <summary>
-        /// For a step by step transition of the BST while inserting these keys, see "images\bst-insert-stepBystep.png".
+        /// For a step by step transition of the BST while inserting these keys, see <img src = "../Images/Trees/Binary/bst-insert-stepBystep.png"/>.
         /// </summary>
         [TestMethod]
         public void Build_ExpectsCorrectBinaryTree()
@@ -103,7 +103,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
 
         /// <summary>
         /// Tests the correctness of delete operation when deleting all the keys in the tree one after the other in a random order. 
-        /// For a step by step transition of the BST while deleting these keys, see "images\bst-delete-stepBystep.png".
+        /// For a step by step transition of the BST while deleting these keys, see <img src = "../Images/Trees/Binary/bst-delete-stepBystep.png"/>.
         /// </summary>
         [TestMethod]
         public void Delete_MultipleNodesConsecutively_ExpectsCorrectBinarySearchTreeAfterEachStep()
