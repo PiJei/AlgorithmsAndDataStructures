@@ -98,8 +98,8 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
             Assert.AreEqual("B", bfsOrdering[1].Value);
             Assert.AreEqual("F", bfsOrdering[2].Value);
             Assert.AreEqual("A", bfsOrdering[3].Value);
-            Assert.AreEqual("C", bfsOrdering[4].Value);
-            Assert.AreEqual("D", bfsOrdering[5].Value);
+            Assert.AreEqual("D", bfsOrdering[4].Value);
+            Assert.AreEqual("C", bfsOrdering[5].Value);
             Assert.AreEqual("G", bfsOrdering[6].Value);
         }
 
