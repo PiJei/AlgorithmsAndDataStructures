@@ -909,6 +909,7 @@
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.BuildHeapRecursively_DuplicateValues">
             <summary>
             Tests the correctness of Build operation, recursive version when inserting duplicate values. 
+            To visualize in-place MinMax Binary Heap building process see <img src = "../Images/Heaps/MinMaxHeap-Build-WithDuplicateKeys.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMinLevel``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)">
