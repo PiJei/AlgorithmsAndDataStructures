@@ -797,16 +797,19 @@
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.BuildHeap_Recursively">
             <summary>
             Tests the correctness of build operation when implemented recursively. 
+            To visualize in-place Max Binary Heap building process see <img src = "../Images/Heaps/MaxBinaryHeap-Build.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.BuildHeap_Itratively">
             <summary>
             Tests the correctness of Build operation when implemented iteratively. 
+            To visualize in-place Max Binary Heap building process see <img src = "../Images/Heaps/MaxBinaryHeap-Build.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectDescendingOrderInResults">
             <summary>
             Tests the correctness of removing root of the heap. Removes root several times until no member in tree remains.
+            To visualize the steps in this test method see <img src = "../Images/Heaps/MaxBinaryHeap-TryRemoveRoot.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMaxBinaryHeapAfterEachInsert">

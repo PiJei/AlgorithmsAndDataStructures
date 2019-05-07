@@ -64,7 +64,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 
         /// <summary>
         /// Tests the correctness of build operation when implemented recursively. 
-        /// To visualize in-place building process see <img src = "../Images/Graphs/MaxBinaryHeap-BuildRecursive.png"/>.
+        /// To visualize in-place Max Binary Heap building process see <img src = "../Images/Heaps/MaxBinaryHeap-Build.png"/>.
         /// </summary>
         [TestMethod]
         public void BuildHeap_Recursively()
@@ -78,6 +78,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 
         /// <summary>
         /// Tests the correctness of Build operation when implemented iteratively. 
+        /// To visualize in-place Max Binary Heap building process see <img src = "../Images/Heaps/MaxBinaryHeap-Build.png"/>.
         /// </summary>
         [TestMethod]
         public void BuildHeap_Itratively()
@@ -91,6 +92,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 
         /// <summary>
         /// Tests the correctness of removing root of the heap. Removes root several times until no member in tree remains.
+        /// To visualize the steps in this test method see <img src = "../Images/Heaps/MaxBinaryHeap-TryRemoveRoot.png"/>.
         /// </summary>
         [TestMethod]
         public void TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectDescendingOrderInResults()
@@ -137,6 +139,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 
         /// <summary>
         /// Tests the correctness of insert operation. 
+        /// To visualize the steps in this test method see <img src = "../Images/Heaps/MaxBinaryHeap-Insert.png"/>.
         /// </summary>
         [TestMethod]
         public void Insert_SeveralValues_ExpectCorrectMaxBinaryHeapAfterEachInsert()
