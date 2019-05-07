@@ -32,7 +32,6 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
     [TestClass]
     public class MinBinaryHeapTests
     {
-
         private readonly KeyValuePair<int, string> _nodeA = new KeyValuePair<int, string>(150, "A");
         private readonly KeyValuePair<int, string> _nodeB = new KeyValuePair<int, string>(70, "B");
         private readonly KeyValuePair<int, string> _nodeC = new KeyValuePair<int, string>(202, "C");

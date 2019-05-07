@@ -94,6 +94,53 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         }
 
         /// <summary>
+        /// Tests the correctness of Insert operation when inserting several keys one after the other in the MinMaxBinary binary heap. 
+        /// To visualize the steps in this test method see <img src = "../Images/Heaps/MinMaxBinaryHeap-Insert.png"/>.
+        /// </summary>
+        [TestMethod]
+        public void Insert_SeveralValues_ExpectCorrectMinMaxBinaryHeapAfterEachInsert()
+        {
+            var values = new List<KeyValuePair<int, string>>();
+            var heap = new MinMaxBinaryHeap<int, string>(values);
+
+            heap.Insert(new KeyValuePair<int, string>(70, "A"), heap.HeapArray.Count);
+            Assert.AreEqual(1, heap.HeapArray.Count);
+            Assert.IsTrue(HasMinMaxHeapProperty(heap, 1));
+
+            heap.Insert(new KeyValuePair<int, string>(21, "B"), heap.HeapArray.Count);
+            Assert.AreEqual(2, heap.HeapArray.Count);
+            Assert.IsTrue(HasMinMaxHeapProperty(heap, 2));
+
+            heap.Insert(new KeyValuePair<int, string>(220, "C"), heap.HeapArray.Count);
+            Assert.AreEqual(3, heap.HeapArray.Count);
+            Assert.IsTrue(HasMinMaxHeapProperty(heap, 3));
+
+            heap.Insert(new KeyValuePair<int, string>(10, "D"), heap.HeapArray.Count);
+            Assert.AreEqual(4, heap.HeapArray.Count);
+            Assert.IsTrue(HasMinMaxHeapProperty(heap, 4));
+
+            heap.Insert(new KeyValuePair<int, string>(50, "E"), heap.HeapArray.Count);
+            Assert.AreEqual(5, heap.HeapArray.Count);
+            Assert.IsTrue(HasMinMaxHeapProperty(heap, 5));
+
+            heap.Insert(new KeyValuePair<int, string>(34, "F"), heap.HeapArray.Count);
+            Assert.AreEqual(6, heap.HeapArray.Count);
+            Assert.IsTrue(HasMinMaxHeapProperty(heap, 6));
+
+            heap.Insert(new KeyValuePair<int, string>(300, "G"), heap.HeapArray.Count);
+            Assert.AreEqual(7, heap.HeapArray.Count);
+            Assert.IsTrue(HasMinMaxHeapProperty(heap, 7));
+
+            heap.Insert(new KeyValuePair<int, string>(150, "H"), heap.HeapArray.Count);
+            Assert.AreEqual(8, heap.HeapArray.Count);
+            Assert.IsTrue(HasMinMaxHeapProperty(heap, 8));
+
+            heap.Insert(new KeyValuePair<int, string>(2, "I"), heap.HeapArray.Count);
+            Assert.AreEqual(9, heap.HeapArray.Count);
+            Assert.IsTrue(HasMinMaxHeapProperty(heap, 9));
+        }
+
+        /// <summary>
         /// Checks whether a node in a min level of a MinMax heap has proper properties. 
         /// </summary>
         /// <typeparam name="TKey">Type of the keys stored in the heap. </typeparam>

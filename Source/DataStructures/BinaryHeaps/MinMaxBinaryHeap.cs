@@ -133,7 +133,7 @@ namespace CSFundamentals.DataStructures.BinaryHeaps
         {
             int parentIndex = GetParentIndex(index);
             int grandParentIndex = GetParentIndex(parentIndex);
-            if (grandParentIndex >= 0 && grandParentIndex < heapArrayLength)
+            if (grandParentIndex >= 0 && grandParentIndex != parentIndex && grandParentIndex < heapArrayLength)
             {
                 if (HeapArray[index].Key.CompareTo(HeapArray[grandParentIndex].Key) > 0)
                 {
