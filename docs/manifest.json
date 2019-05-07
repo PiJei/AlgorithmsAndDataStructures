@@ -444,7 +444,7 @@
           "hash": "2C8gC+1ApX87f1n7rSMdAA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -468,7 +468,7 @@
           "hash": "VrfVrs4vtidWsUsCwj4DOw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -528,7 +528,7 @@
           "hash": "0CI4FZHEP69wgb+lS8B1wA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -540,7 +540,7 @@
           "hash": "R6F1Fb7X0rupN1pmH68GUQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -552,7 +552,7 @@
           "hash": "n4ED35ulZfYm+Vo56RPhSg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -732,7 +732,7 @@
           "hash": "rFbOJ3ab25h2/9QR7uNPpA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -744,7 +744,7 @@
           "hash": "ieAfxy/wjLyfhXED3ll9sQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -768,7 +768,7 @@
           "hash": "4Oy+v4tbPgnxw9GwOpsaHQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1392,7 +1392,7 @@
           "hash": "5snwjGyywtq2YRPoArG3LQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1404,7 +1404,7 @@
           "hash": "2+OqBdAHGdRyjAQFpdakEg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1416,7 +1416,7 @@
           "hash": "eVOSpdKlSIRsW4bP5Jt5eQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1428,7 +1428,7 @@
           "hash": "acjLHaz4YkHKclcDx8WSLQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1437,10 +1437,10 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.html",
-          "hash": "tbzPjRzQXDea8cHIAgOnIA=="
+          "hash": "bRIj+HKVYYU1m74Tah2Jmw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1449,7 +1449,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.html",
-          "hash": "3FSwRlUZZLQM3lAfGsgDQA=="
+          "hash": "wnvPtqjF+pm6vnd3Npbe3w=="
         }
       },
       "is_incremental": false,
@@ -1476,7 +1476,7 @@
           "hash": "JC2OF8gMHKFOB9yQoJbrsw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1488,7 +1488,7 @@
           "hash": "eaapZlKX+JotrU8muY5E8g=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1500,7 +1500,7 @@
           "hash": "z91gkmCxBF3W88mCKI90Pw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1512,7 +1512,7 @@
           "hash": "fj3ontSq+Tokh99Ay0pV6w=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1548,7 +1548,7 @@
           "hash": "lDQdJMLbrG9m7Dm4TrcRCg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1596,7 +1596,7 @@
           "hash": "Ot8A0o+OdP37gYrLW3Lh6Q=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1608,7 +1608,7 @@
           "hash": "KZMzr559AjobByvUAYkp/Q=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1620,7 +1620,7 @@
           "hash": "RBNqXHE1KCE99PeSL4isGw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1632,7 +1632,7 @@
           "hash": "PCExZHjW6l6+iakdNxGAYg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1644,7 +1644,7 @@
           "hash": "LguCiB/JASiKCtPpo7c1aA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1656,7 +1656,7 @@
           "hash": "dbSRxUjFDSLwCGxfGLuRuw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1668,7 +1668,7 @@
           "hash": "JpWClD/JulP2+siEn+0kaA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1716,7 +1716,7 @@
           "hash": "mcw4f++c025ap6M5U+F9Zg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1728,7 +1728,7 @@
           "hash": "TTkA8jp+rdPeBSGO9lY+pQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1740,7 +1740,7 @@
           "hash": "2rej36wL1R8Pjn0zKCcISg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1812,7 +1812,7 @@
           "hash": "afGXED4jusqV/7imtZz7qw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -2212,6 +2212,50 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/Heaps/MinBinaryHeap-Build.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Heaps/MinBinaryHeap-Build.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Heaps/MinBinaryHeap-Insert.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "images/Heaps/MinBinaryHeap-Insert.PNG"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Heaps/MinBinaryHeap-TryRemoveRoot.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "images/Heaps/MinBinaryHeap-TryRemoveRoot.PNG"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Heaps/MinMaxHeap-Build.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "images/Heaps/MinMaxHeap-Build.PNG"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/Trees/Binary/avl-bst-delete-stepBystep.png",
       "output": {
         "resource": {
@@ -2409,16 +2453,16 @@
         "skipped_file_count": 0
       },
       "processors": {
-        "ResourceDocumentProcessor": {
+        "TocDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "TocDocumentProcessor": {
+        "ResourceDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
           "total_file_count": 0,
           "skipped_file_count": 0
@@ -2433,7 +2477,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 165,
-          "skipped_file_count": 152
+          "skipped_file_count": 164
         }
       }
     },

@@ -24,6 +24,7 @@ using CSFundamentals.DataStructures.BinaryHeaps;
 using CSFundamentals.DataStructures.BinaryHeaps.API;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+//TODO: Test insert and delete operations, ... 
 namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 {
     /// <summary>
@@ -38,46 +39,35 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         [TestMethod]
         public void BuildHeapRecursively_DistinctValues()
         {
-            var A = new KeyValuePair<int, string>(70, "A");
-            var B = new KeyValuePair<int, string>(21, "B");
-            var C = new KeyValuePair<int, string>(220, "C");
-            var D = new KeyValuePair<int, string>(10, "D");
-            var E = new KeyValuePair<int, string>(1, "E");
-            var F = new KeyValuePair<int, string>(34, "F");
-            var G = new KeyValuePair<int, string>(3, "G");
-            var H = new KeyValuePair<int, string>(150, "H");
-            var I = new KeyValuePair<int, string>(85, "I");
-            var keyValues = new List<KeyValuePair<int, string>> { A, B, C, D, E, F, G, H, I };
+            var nodeA = new KeyValuePair<int, string>(70, "A");
+            var nodeB = new KeyValuePair<int, string>(21, "B");
+            var nodeC = new KeyValuePair<int, string>(220, "C");
+            var nodeD = new KeyValuePair<int, string>(10, "D");
+            var nodeE = new KeyValuePair<int, string>(50, "E");
+            var nodeF = new KeyValuePair<int, string>(34, "F");
+            var nodeG = new KeyValuePair<int, string>(300, "G");
+            var nodeH = new KeyValuePair<int, string>(150, "H");
+            var nodeI = new KeyValuePair<int, string>(2, "I");
+            var keyValues = new List<KeyValuePair<int, string>> { nodeA, nodeB, nodeC, nodeD, nodeE, nodeF, nodeG, nodeH, nodeI };
 
             var heap = new MinMaxBinaryHeap<int, string>(keyValues);
             heap.BuildHeap_Recursively(heap.HeapArray.Count);
+            Assert.IsTrue(HasMinMaxHeapProperty(heap, keyValues.Count));
 
-            for (int i = 0; i < keyValues.Count; i++)
-            {
-                int level = heap.GetNodeLevel(i);
-                if (heap.IsMinLevel(level))
-                {
-                    Assert.IsTrue(HasMinMaxOrderPropertyForMinLevel(heap, i));
-                }
-                else
-                {
-                    Assert.IsTrue(HasMinMaxOrderPropertyForMaxLevel(heap, i));
-                }
-            }
-
-            Assert.IsTrue(heap.IsMinLevel(heap.GetNodeLevel(keyValues.IndexOf(A))));
-            Assert.IsFalse(heap.IsMinLevel(heap.GetNodeLevel(keyValues.IndexOf(B))));
-            Assert.IsFalse(heap.IsMinLevel(heap.GetNodeLevel(keyValues.IndexOf(C))));
-            Assert.IsTrue(heap.IsMinLevel(heap.GetNodeLevel(keyValues.IndexOf(D))));
-            Assert.IsTrue(heap.IsMinLevel(heap.GetNodeLevel(keyValues.IndexOf(E))));
-            Assert.IsTrue(heap.IsMinLevel(heap.GetNodeLevel(keyValues.IndexOf(F))));
-            Assert.IsTrue(heap.IsMinLevel(heap.GetNodeLevel(keyValues.IndexOf(G))));
-            Assert.IsFalse(heap.IsMinLevel(heap.GetNodeLevel(keyValues.IndexOf(H))));
-            Assert.IsFalse(heap.IsMinLevel(heap.GetNodeLevel(keyValues.IndexOf(I))));
+            Assert.IsFalse(heap.IsMinLevel(heap.GetNodeLevel(keyValues.IndexOf(nodeA))));
+            Assert.IsFalse(heap.IsMinLevel(heap.GetNodeLevel(keyValues.IndexOf(nodeB))));
+            Assert.IsTrue(heap.IsMinLevel(heap.GetNodeLevel(keyValues.IndexOf(nodeC))));
+            Assert.IsTrue(heap.IsMinLevel(heap.GetNodeLevel(keyValues.IndexOf(nodeD))));
+            Assert.IsTrue(heap.IsMinLevel(heap.GetNodeLevel(keyValues.IndexOf(nodeE))));
+            Assert.IsTrue(heap.IsMinLevel(heap.GetNodeLevel(keyValues.IndexOf(nodeF))));
+            Assert.IsFalse(heap.IsMinLevel(heap.GetNodeLevel(keyValues.IndexOf(nodeG))));
+            Assert.IsFalse(heap.IsMinLevel(heap.GetNodeLevel(keyValues.IndexOf(nodeH))));
+            Assert.IsTrue(heap.IsMinLevel(heap.GetNodeLevel(keyValues.IndexOf(nodeI))));
         }
 
         /// <summary>
         /// Tests the correctness of Build operation, recursive version when inserting duplicate values. 
+        /// To visualize in-place MinMax Binary Heap building process see <img src = "../Images/Heaps/MinMaxHeap-Build.png"/>.
         /// </summary>
         [TestMethod]
         public void BuildHeapRecursively_DuplicateValues()
@@ -100,19 +90,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 
             var heap = new MinMaxBinaryHeap<int, string>(keyValues);
             heap.BuildHeap_Recursively(heap.HeapArray.Count);
-
-            for (int i = 0; i < keyValues.Count; i++)
-            {
-                int level = heap.GetNodeLevel(i);
-                if (heap.IsMinLevel(level))
-                {
-                    Assert.IsTrue(HasMinMaxOrderPropertyForMinLevel(heap, i));
-                }
-                else
-                {
-                    Assert.IsTrue(HasMinMaxOrderPropertyForMaxLevel(heap, i));
-                }
-            }
+            Assert.IsTrue(HasMinMaxHeapProperty(heap, keyValues.Count));
         }
 
         /// <summary>
@@ -169,6 +147,23 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
             if (parentIndex >= 0 && parentIndex < heap.HeapArray.Count)
             {
                 Assert.IsTrue(heap.HeapArray[index].Key.CompareTo(heap.HeapArray[parentIndex].Key) >= 0);
+            }
+            return true;
+        }
+
+        public static bool HasMinMaxHeapProperty<TKey, TValue>(MinMaxBinaryHeap<TKey, TValue> heap, int expectedKeyCount) where TKey : IComparable<TKey>
+        {
+            for (int i = 0; i < expectedKeyCount; i++)
+            {
+                int level = heap.GetNodeLevel(i);
+                if (heap.IsMinLevel(level))
+                {
+                    Assert.IsTrue(HasMinMaxOrderPropertyForMinLevel(heap, i));
+                }
+                else
+                {
+                    Assert.IsTrue(HasMinMaxOrderPropertyForMaxLevel(heap, i));
+                }
             }
             return true;
         }
