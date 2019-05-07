@@ -815,6 +815,7 @@
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMaxBinaryHeapAfterEachInsert">
             <summary>
             Tests the correctness of insert operation. 
+            To visualize the steps in this test method see <img src = "../Images/Heaps/MaxBinaryHeap-Insert.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.HasMaxOrderPropertyForNode``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)">
@@ -848,32 +849,17 @@
             Initializes/Resets variables before executing each unit test in this class. 
             </summary>
         </member>
-        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapRecursive_1">
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeap_Recursively">
             <summary>
             Tests the correctness of Build operation recursive version. 
             </summary>
         </member>
-        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapRecursive_2">
-            <summary>
-            Tests the correctness of Build operation recursive version. 
-            </summary>
-        </member>
-        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapIterative_1">
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeap_Iteratively">
             <summary>
             Tests the correctness of Build operation iterative version. 
             </summary>
         </member>
-        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapIterative_2">
-            <summary>
-            Tests the correctness of Build operation iterative version. 
-            </summary>
-        </member>
-        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.CompareEqualityOfRecursiveAndIterativeMinHeapConstruction">
-            <summary>
-            Tests the equality of the heaps built using recursive and iterative Build operations. 
-            </summary>
-        </member>
-        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.TryRemoveMin_RemoveRootEqualToArrayLengthTimes_ExpectsAscendingOrderInResults">
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectsAscendingOrderInResults">
             <summary>
             Tests the correctness of removing min node from a Min binary heap. 
             </summary>
@@ -888,13 +874,23 @@
             Tests the correctness of computing node levels in a Min binary heap. 
             </summary>
         </member>
-        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.HasMinOrderProperty``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)">
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.HasMinOrderPropertyForNode``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)">
             <summary>
             Checks whether the given heap is a proper Min binary heap. 
             Checking the MinHeap ordering (node relations) for the node at the given index, to make sure the correct relations between the node and its parent and children holds. 
             </summary>
             <param name="heap">A Min binary heap. </param>
             <param name="nodeIndex">The index of a heap node in a heap array. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.HasMinOrderPropertyForHeap``2(System.Int32,CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap{``0,``1})">
+            <summary>
+            Checks whether the heap is a proper Min heap. 
+            </summary>
+            <typeparam name="TKey">Type of the keys stored in the heap. </typeparam>
+            <typeparam name="TValue">Type of the values stored in the heap. </typeparam>
+            <param name="arraySize">Size of the heap array. </param>
+            <param name="heap">A Min binary heap. </param>
+            <returns>True if the heap is a proper Min binary heap, and false otherwise. </returns>
         </member>
         <member name="T:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests">
             <summary>
