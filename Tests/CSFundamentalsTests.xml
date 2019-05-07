@@ -852,21 +852,25 @@
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeap_Recursively">
             <summary>
             Tests the correctness of Build operation recursive version. 
+            To visualize in-place Min Binary Heap building process see <img src = "../Images/Heaps/MinBinaryHeap-Build.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeap_Iteratively">
             <summary>
-            Tests the correctness of Build operation iterative version. 
+            Tests the correctness of Build operation iterative version.
+            To visualize in-place Min Binary Heap building process see <img src = "../Images/Heaps/MinBinaryHeap-Build.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectsAscendingOrderInResults">
             <summary>
             Tests the correctness of removing min node from a Min binary heap. 
+            To visualize the steps in this test method see <img src = "../Images/Heaps/MinBinaryHeap-TryRemoveRoot.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMinBinaryHeapAfterEachInsert">
             <summary>
             Tests the correctness of Insert operation when inserting several keys one after the other in the Min binary heap. 
+            To visualize the steps in this test method see <img src = "../Images/Heaps/MinBinaryHeap-Insert.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.GetNodeLevel">

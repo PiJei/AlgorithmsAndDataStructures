@@ -92,6 +92,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 
         /// <summary>
         /// Tests the correctness of removing min node from a Min binary heap. 
+        /// To visualize the steps in this test method see <img src = "../Images/Heaps/MinBinaryHeap-TryRemoveRoot.png"/>.
         /// </summary>
         [TestMethod]
         public void TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectsAscendingOrderInResults()
@@ -150,6 +151,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 
         /// <summary>
         /// Tests the correctness of Insert operation when inserting several keys one after the other in the Min binary heap. 
+        /// To visualize the steps in this test method see <img src = "../Images/Heaps/MinBinaryHeap-Insert.png"/>.
         /// </summary>
         [TestMethod]
         public void Insert_SeveralValues_ExpectCorrectMinBinaryHeapAfterEachInsert()
