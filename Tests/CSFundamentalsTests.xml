@@ -18,23 +18,25 @@
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Iterative_StartFromA">
             <summary>
             Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests._nodeA"/>.
-            To visualize the graph see <img src = "../Images/Graphs/BFS-Iterative-StartA.png"/>.
+            To visualize the graph traversal steps see <img src = "../Images/Graphs/BFS-Iterative-StartA.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Iterative_StartFromE">
             <summary>
             Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests._nodeE"/>.
-            To visualize the graph see <img src = "../Images/Graphs/BFS-Iterative-StartE.png"/>.
+            To visualize the graph traversal steps see <img src = "../Images/Graphs/BFS-Iterative-StartE.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Recursive_StartFromA">
             <summary>
             Tests the correctness of BFS recursive version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests._nodeA"/>.
+            To visualize the graph traversal steps see <img src = "../Images/Graphs/BFS-Recursive-StartA.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Recursive_StartFromE">
             <summary>
             Tests the correctness of BFS recursive version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests._nodeE"/>.
+            To visualize the graph traversal steps see <img src = "../Images/Graphs/BFS-Recursive-StartE.png"/>.
             </summary>
         </member>
         <member name="T:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests">
@@ -51,23 +53,25 @@
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Iterative_StartFromA">
             <summary>
             Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests._nodeA"/>.
-            To visualize the graph see <img src = "../Images/Graphs/DFS-Iterative-StartA.png"/>. 
+            To visualize the graph traversal steps see <img src = "../Images/Graphs/DFS-Iterative-StartA.png"/>. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Iterative_StartFromE">
             <summary>
             Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests._nodeE"/>.
-            To visualize the graph see <img src = "../Images/Graphs/DFS-Iterative-StartE.png"/>. 
+            To visualize the graph traversal steps see <img src = "../Images/Graphs/DFS-Iterative-StartE.png"/>. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Recursive_StartFromA">
             <summary>
             Tests the correctness of BFS recursive version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests._nodeA"/>.
+            To visualize the graph traversal steps see <img src = "../Images/Graphs/DFS-Recursive-StartA.png"/>. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Recursive_StartFromE">
             <summary>
             Tests the correctness of BFS recursive version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests._nodeE"/>.
+            To visualize the graph traversal steps see <img src = "../Images/Graphs/DFS-Recursive-StartE.png"/>. 
             </summary>
         </member>
         <member name="T:CSFundamentalsTests.Algorithms.GraphTraversal.DijkstraTests">
@@ -793,21 +797,25 @@
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.BuildHeap_Recursively">
             <summary>
             Tests the correctness of build operation when implemented recursively. 
+            To visualize in-place Max Binary Heap building process see <img src = "../Images/Heaps/MaxBinaryHeap-Build.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.BuildHeap_Itratively">
             <summary>
             Tests the correctness of Build operation when implemented iteratively. 
+            To visualize in-place Max Binary Heap building process see <img src = "../Images/Heaps/MaxBinaryHeap-Build.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectDescendingOrderInResults">
             <summary>
             Tests the correctness of removing root of the heap. Removes root several times until no member in tree remains.
+            To visualize the steps in this test method see <img src = "../Images/Heaps/MaxBinaryHeap-TryRemoveRoot.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMaxBinaryHeapAfterEachInsert">
             <summary>
             Tests the correctness of insert operation. 
+            To visualize the steps in this test method see <img src = "../Images/Heaps/MaxBinaryHeap-Insert.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.HasMaxOrderPropertyForNode``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)">
@@ -841,39 +849,28 @@
             Initializes/Resets variables before executing each unit test in this class. 
             </summary>
         </member>
-        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapRecursive_1">
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeap_Recursively">
             <summary>
             Tests the correctness of Build operation recursive version. 
+            To visualize in-place Min Binary Heap building process see <img src = "../Images/Heaps/MinBinaryHeap-Build.png"/>.
             </summary>
         </member>
-        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapRecursive_2">
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeap_Iteratively">
             <summary>
-            Tests the correctness of Build operation recursive version. 
+            Tests the correctness of Build operation iterative version.
+            To visualize in-place Min Binary Heap building process see <img src = "../Images/Heaps/MinBinaryHeap-Build.png"/>.
             </summary>
         </member>
-        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapIterative_1">
-            <summary>
-            Tests the correctness of Build operation iterative version. 
-            </summary>
-        </member>
-        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeapIterative_2">
-            <summary>
-            Tests the correctness of Build operation iterative version. 
-            </summary>
-        </member>
-        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.CompareEqualityOfRecursiveAndIterativeMinHeapConstruction">
-            <summary>
-            Tests the equality of the heaps built using recursive and iterative Build operations. 
-            </summary>
-        </member>
-        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.TryRemoveMin_RemoveRootEqualToArrayLengthTimes_ExpectsAscendingOrderInResults">
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectsAscendingOrderInResults">
             <summary>
             Tests the correctness of removing min node from a Min binary heap. 
+            To visualize the steps in this test method see <img src = "../Images/Heaps/MinBinaryHeap-TryRemoveRoot.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMinBinaryHeapAfterEachInsert">
             <summary>
             Tests the correctness of Insert operation when inserting several keys one after the other in the Min binary heap. 
+            To visualize the steps in this test method see <img src = "../Images/Heaps/MinBinaryHeap-Insert.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.GetNodeLevel">
@@ -881,13 +878,23 @@
             Tests the correctness of computing node levels in a Min binary heap. 
             </summary>
         </member>
-        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.HasMinOrderProperty``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)">
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.HasMinOrderPropertyForNode``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)">
             <summary>
             Checks whether the given heap is a proper Min binary heap. 
             Checking the MinHeap ordering (node relations) for the node at the given index, to make sure the correct relations between the node and its parent and children holds. 
             </summary>
             <param name="heap">A Min binary heap. </param>
             <param name="nodeIndex">The index of a heap node in a heap array. </param>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.HasMinOrderPropertyForHeap``2(System.Int32,CSFundamentals.DataStructures.BinaryHeaps.MinBinaryHeap{``0,``1})">
+            <summary>
+            Checks whether the heap is a proper Min heap. 
+            </summary>
+            <typeparam name="TKey">Type of the keys stored in the heap. </typeparam>
+            <typeparam name="TValue">Type of the values stored in the heap. </typeparam>
+            <param name="arraySize">Size of the heap array. </param>
+            <param name="heap">A Min binary heap. </param>
+            <returns>True if the heap is a proper Min binary heap, and false otherwise. </returns>
         </member>
         <member name="T:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests">
             <summary>
@@ -902,6 +909,19 @@
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.BuildHeapRecursively_DuplicateValues">
             <summary>
             Tests the correctness of Build operation, recursive version when inserting duplicate values. 
+            To visualize in-place MinMax Binary Heap building process see <img src = "../Images/Heaps/MinMaxHeap-Build-WithDuplicateKeys.png"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMinMaxBinaryHeapAfterEachInsert">
+            <summary>
+            Tests the correctness of Insert operation when inserting several keys one after the other in the MinMaxBinary binary heap. 
+            To visualize the steps in this test method see <img src = "../Images/Heaps/MinMaxBinaryHeap-Insert.png"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectDescendingOrderInResults">
+            <summary>
+            Tests the correctness of removing root of the heap. Removes root several times until no member in tree remains.
+            To visualize the steps in this test method see <img src = "../Images/Heaps/MinMaxBinaryHeap-TryRemoveRoot.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMinLevel``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)">
