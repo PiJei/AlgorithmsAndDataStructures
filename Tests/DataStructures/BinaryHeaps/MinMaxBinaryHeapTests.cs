@@ -146,7 +146,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         /// To visualize the steps in this test method see <img src = "../Images/Heaps/MinMaxBinaryHeap-TryRemoveRoot.png"/>.
         /// </summary>
         [TestMethod]
-        public void TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectDescendingOrderInResults()
+        public void TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectAscendingOrderInResults()
         {
             var nodeA = new KeyValuePair<int, string>(70, "A");
             var nodeB = new KeyValuePair<int, string>(21, "B");
