@@ -35,6 +35,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
     {
         /// <summary>
         /// Tests the correctness of Build operation recursive version, when inserting distinct values. 
+        /// To visualize in-place MinMax Binary Heap building process see <img src = "../Images/Heaps/MinMaxBinaryHeap-Build.png"/>.
         /// </summary>
         [TestMethod]
         public void BuildHeapRecursively_DistinctValues()
@@ -67,7 +68,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 
         /// <summary>
         /// Tests the correctness of Build operation, recursive version when inserting duplicate values. 
-        /// To visualize in-place MinMax Binary Heap building process see <img src = "../Images/Heaps/MinMaxHeap-Build-WithDuplicateKeys.png"/>.
+        /// To visualize in-place MinMax Binary Heap building process see <img src = "../Images/Heaps/MinMaxBinaryHeap-Build-WithDuplicateKeys.png"/>.
         /// </summary>
         [TestMethod]
         public void BuildHeapRecursively_DuplicateValues()
