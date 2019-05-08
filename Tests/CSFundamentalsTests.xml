@@ -918,6 +918,12 @@
             To visualize the steps in this test method see <img src = "../Images/Heaps/MinMaxBinaryHeap-Insert.png"/>.
             </summary>
         </member>
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectDescendingOrderInResults">
+            <summary>
+            Tests the correctness of removing root of the heap. Removes root several times until no member in tree remains.
+            To visualize the steps in this test method see <img src = "../Images/Heaps/MinMaxBinaryHeap-TryRemoveRoot.png"/>.
+            </summary>
+        </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMinLevel``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)">
             <summary>
             Checks whether a node in a min level of a MinMax heap has proper properties. 

@@ -141,6 +141,65 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
         }
 
         /// <summary>
+        /// Tests the correctness of removing root of the heap. Removes root several times until no member in tree remains.
+        /// To visualize the steps in this test method see <img src = "../Images/Heaps/MinMaxBinaryHeap-TryRemoveRoot.png"/>.
+        /// </summary>
+        [TestMethod]
+        public void TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectDescendingOrderInResults()
+        {
+            var nodeA = new KeyValuePair<int, string>(70, "A");
+            var nodeB = new KeyValuePair<int, string>(21, "B");
+            var nodeC = new KeyValuePair<int, string>(220, "C");
+            var nodeD = new KeyValuePair<int, string>(10, "D");
+            var nodeE = new KeyValuePair<int, string>(50, "E");
+            var nodeF = new KeyValuePair<int, string>(34, "F");
+            var nodeG = new KeyValuePair<int, string>(300, "G");
+            var nodeH = new KeyValuePair<int, string>(150, "H");
+            var nodeI = new KeyValuePair<int, string>(2, "I");
+            var keyValues = new List<KeyValuePair<int, string>> { nodeA, nodeB, nodeC, nodeD, nodeE, nodeF, nodeG, nodeH, nodeI };
+
+            var heap = new MinMaxBinaryHeap<int, string>(keyValues);
+            heap.BuildHeap_Recursively(heap.HeapArray.Count);
+            Assert.IsTrue(HasMinMaxHeapProperty(heap, 9));
+
+            Assert.IsTrue(heap.TryRemoveRoot(out KeyValuePair<int, string> value1, heap.HeapArray.Count));
+            Assert.AreEqual(2, value1.Key);
+            Assert.IsTrue(HasMinMaxHeapProperty(heap, 8));
+
+            Assert.IsTrue(heap.TryRemoveRoot(out KeyValuePair<int, string> maxValue2, heap.HeapArray.Count));
+            Assert.AreEqual(10, maxValue2.Key);
+            Assert.IsTrue(HasMinMaxHeapProperty(heap, 7));
+
+            Assert.IsTrue(heap.TryRemoveRoot(out KeyValuePair<int, string> maxValue3, heap.HeapArray.Count));
+            Assert.AreEqual(21, maxValue3.Key);
+            Assert.IsTrue(HasMinMaxHeapProperty(heap, 6));
+
+            Assert.IsTrue(heap.TryRemoveRoot(out KeyValuePair<int, string> maxValue4, heap.HeapArray.Count));
+            Assert.AreEqual(34, maxValue4.Key);
+            Assert.IsTrue(HasMinMaxHeapProperty(heap, 5));
+
+            Assert.IsTrue(heap.TryRemoveRoot(out KeyValuePair<int, string> maxValue5, heap.HeapArray.Count));
+            Assert.AreEqual(50, maxValue5.Key);
+            Assert.IsTrue(HasMinMaxHeapProperty(heap, 4));
+
+            Assert.IsTrue(heap.TryRemoveRoot(out KeyValuePair<int, string> maxValue6, heap.HeapArray.Count));
+            Assert.AreEqual(70, maxValue6.Key);
+            Assert.IsTrue(HasMinMaxHeapProperty(heap, 3));
+
+            Assert.IsTrue(heap.TryRemoveRoot(out KeyValuePair<int, string> maxValue7, heap.HeapArray.Count));
+            Assert.AreEqual(150, maxValue7.Key);
+            Assert.IsTrue(HasMinMaxHeapProperty(heap, 2));
+
+            Assert.IsTrue(heap.TryRemoveRoot(out KeyValuePair<int, string> maxValue8, heap.HeapArray.Count));
+            Assert.AreEqual(220, maxValue8.Key);
+            Assert.IsTrue(HasMinMaxHeapProperty(heap, 0));
+
+            Assert.IsTrue(heap.TryRemoveRoot(out KeyValuePair<int, string> maxValue9, heap.HeapArray.Count));
+            Assert.AreEqual(300, maxValue9.Key);
+            Assert.IsTrue(HasMinMaxHeapProperty(heap, 0));
+        }
+
+        /// <summary>
         /// Checks whether a node in a min level of a MinMax heap has proper properties. 
         /// </summary>
         /// <typeparam name="TKey">Type of the keys stored in the heap. </typeparam>
