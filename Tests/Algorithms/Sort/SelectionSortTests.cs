@@ -35,7 +35,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         [TestMethod]
         public void Sort_Iteratively_WithDifferentInputs()
         {
-            SortTests.TestSortMethodWithDifferentInputs(SelectionSort.Sort_Iteratively);
+            SortTests.TestSortMethodWithDifferentInputs(SelectionSort.Sort);
         }
     }
 }

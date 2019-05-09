@@ -33,9 +33,9 @@ namespace CSFundamentalsTests.Algorithms.Sort
         /// Tests the correctness of Radix sort algorithm.
         /// </summary>
         [TestMethod]
-        public void Sort_Iterative_V1_WithDifferentInputs()
+        public void Sort_WithDifferentInputs()
         {
-            SortTests.TestSortMethodWithDifferentInputs(RadixSort.Sort_Iterative_V1);
+            SortTests.TestSortMethodWithDifferentInputs(RadixSort.Sort);
         }
     }
 }

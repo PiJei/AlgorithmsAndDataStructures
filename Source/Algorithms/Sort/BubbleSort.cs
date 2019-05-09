@@ -38,7 +38,7 @@ namespace CSFundamentals.Algorithms.Sort
         [TimeComplexity(Case.Best, "O(n)", When = "Input array is already sorted.")]
         [TimeComplexity(Case.Worst, "O(n²)")]
         [TimeComplexity(Case.Average, "O(n²)")]
-        public static void Sort_Iterative<T>(List<T> list) where T : IComparable<T>
+        public static void Sort<T>(List<T> list) where T : IComparable<T>
         {
             /* Bubble sort iterates many times over an array, and stops iterating when no swap happens any more. */
             while (true)
@@ -59,13 +59,5 @@ namespace CSFundamentals.Algorithms.Sort
             }
         }
 
-        /// <summary>
-        /// Is the recursive version of Bubble sort.
-        /// </summary>
-        /// <param name="list"></param>
-        public static void Sort_Recursive(List<int> list)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

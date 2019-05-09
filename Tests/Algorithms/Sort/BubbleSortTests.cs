@@ -33,9 +33,9 @@ namespace CSFundamentalsTests.Algorithms.Sort
         /// Tests the correctness of bubble sort iterative version. 
         /// </summary>
         [TestMethod]
-        public void Sort_Iterative_WithDifferentInputs()
+        public void Sort_WithDifferentInputs()
         {
-            SortTests.TestSortMethodWithDifferentInputs(BubbleSort.Sort_Iterative);
+            SortTests.TestSortMethodWithDifferentInputs(BubbleSort.Sort);
         }
     }
 }

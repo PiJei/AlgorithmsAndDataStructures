@@ -35,7 +35,7 @@ namespace CSFundamentals.Algorithms.Sort
         [Algorithm(AlgorithmType.Sort, "RadixSort")]
         // TODO: Specify the time and space complexities
         // todo: explain why is not generic: due to get the max digits of
-        public static void Sort_Iterative_V1(List<int> list)
+        public static void Sort(List<int> list)
         {
             int maxElement = Utils.GetMaxElement(list);
             int digitsCountForMaxElement = Utils.GetDigitsCount(maxElement);
@@ -68,22 +68,6 @@ namespace CSFundamentals.Algorithms.Sort
                     }
                 }
             }
-        }
-
-        /// <summary>
-        /// Implements Radix Sort based on count sort.
-        /// </summary>
-        public static void Sort_Iterative_V2(List<int> list)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Implements a recursive version of Radix Sort. 
-        /// </summary>
-        public static void Sort_Recursive(List<int> list)
-        {
-            throw new NotImplementedException();
         }
     }
 }

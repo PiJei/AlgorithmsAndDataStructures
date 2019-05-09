@@ -34,10 +34,10 @@ namespace CSFundamentalsTests.Algorithms.Sort
         /// Tests the correctness of Merge sort algorithm recursive version over an array with distinct values. 
         /// </summary>
         [TestMethod]
-        public void MergeSort_Recursively_WithDistinctValues()
+        public void MergeSort_WithDistinctValues()
         {
             var values = new List<int>(Constants.ArrayWithDistinctValues);
-            MergeSort.Sort_Recursively(values, 0, values.Count - 1);
+            MergeSort.Sort(values, 0, values.Count - 1);
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
@@ -45,10 +45,10 @@ namespace CSFundamentalsTests.Algorithms.Sort
         /// Tests the correctness of Merge sort algorithm recursive version over an array with duplicate values. 
         /// </summary>
         [TestMethod]
-        public void MergeSort_Recursively_WithDuplicateValues()
+        public void MergeSort_WithDuplicateValues()
         {
             var values = new List<int>(Constants.ArrayWithDuplicateValues);
-            MergeSort.Sort_Recursively(values, 0, values.Count - 1);
+            MergeSort.Sort(values, 0, values.Count - 1);
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
@@ -56,10 +56,10 @@ namespace CSFundamentalsTests.Algorithms.Sort
         /// Tests the correctness of Merge sort algorithm recursive version over a sorted array with distinct values. 
         /// </summary>
         [TestMethod]
-        public void MergeSort_Recursively_WithSortedDistinctValues()
+        public void MergeSort_WithSortedDistinctValues()
         {
             var values = new List<int>(Constants.ArrayWithSortedDistinctValues);
-            MergeSort.Sort_Recursively(values, 0, values.Count - 1);
+            MergeSort.Sort(values, 0, values.Count - 1);
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
@@ -67,10 +67,10 @@ namespace CSFundamentalsTests.Algorithms.Sort
         /// Tests the correctness of Merge sort algorithm recursive version over a sorted array with duplicate values. 
         /// </summary>
         [TestMethod]
-        public void MergeSort_Recursively_WithSortedDuplicateValues()
+        public void MergeSort_WithSortedDuplicateValues()
         {
             var values = new List<int>(Constants.ArrayWithSortedDuplicateValues);
-            MergeSort.Sort_Recursively(values, 0, values.Count - 1);
+            MergeSort.Sort(values, 0, values.Count - 1);
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
@@ -78,10 +78,10 @@ namespace CSFundamentalsTests.Algorithms.Sort
         /// Tests the correctness of Merge sort algorithm recursive version over a reversely sorted array with distinct values. 
         /// </summary>
         [TestMethod]
-        public void MergeSort_Recursively_WithReverselySortedDistinctValues()
+        public void MergeSort_WithReverselySortedDistinctValues()
         {
             var values = new List<int>(Constants.ArrayWithReverselySortedDistinctValues);
-            MergeSort.Sort_Recursively(values, 0, values.Count - 1);
+            MergeSort.Sort(values, 0, values.Count - 1);
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
@@ -89,10 +89,10 @@ namespace CSFundamentalsTests.Algorithms.Sort
         /// Tests the correctness of Merge sort algorithm recursive version over a reversely sorted array with duplicate values. 
         /// </summary>
         [TestMethod]
-        public void MergeSort_Recursively_WithReverselySortedDuplicateValues()
+        public void MergeSort_WithReverselySortedDuplicateValues()
         {
             var values = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
-            MergeSort.Sort_Recursively(values, 0, values.Count - 1);
+            MergeSort.Sort(values, 0, values.Count - 1);
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 

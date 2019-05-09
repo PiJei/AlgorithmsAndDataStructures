@@ -38,7 +38,7 @@ namespace CSFundamentals.Algorithms.Sort
         [TimeComplexity(Case.Best, "O(n²)")]
         [TimeComplexity(Case.Worst, "O(n²)")]
         [TimeComplexity(Case.Average, "O(n²)")]
-        public static void Sort_Iteratively<T>(List<T> list) where T : IComparable<T>
+        public static void Sort<T>(List<T> list) where T : IComparable<T>
         {
             /*Notice that the loop does not have to repeat over the last element of the array, as by then the last element is already the largest element in the array.*/
             for (int i = 0; i < list.Count - 1; i++) /* Iteration i, determines the i-th smallest/min value. */

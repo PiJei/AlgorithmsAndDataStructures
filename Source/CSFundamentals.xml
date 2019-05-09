@@ -417,17 +417,11 @@
             Implements Bubble sort algorithm. 
             </summary>
         </member>
-        <member name="M:CSFundamentals.Algorithms.Sort.BubbleSort.Sort_Iterative``1(System.Collections.Generic.List{``0})">
+        <member name="M:CSFundamentals.Algorithms.Sort.BubbleSort.Sort``1(System.Collections.Generic.List{``0})">
             <summary>
             Implements bubble sort iteratively, elements are bubbled down or up the array till they are at their final correct positions. 
             </summary>
             <param name="list">The list of values (of type T, e.g., int) to be sorted.</param>
-        </member>
-        <member name="M:CSFundamentals.Algorithms.Sort.BubbleSort.Sort_Recursive(System.Collections.Generic.List{System.Int32})">
-            <summary>
-            Is the recursive version of Bubble sort.
-            </summary>
-            <param name="list"></param>
         </member>
         <member name="M:CSFundamentals.Algorithms.Sort.BubbleSort.Sort_Iterative(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})">
             <summary>
@@ -481,7 +475,7 @@
             Implements Merge sort algorithm. 
             </summary>
         </member>
-        <member name="M:CSFundamentals.Algorithms.Sort.MergeSort.Sort_Recursively``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)">
+        <member name="M:CSFundamentals.Algorithms.Sort.MergeSort.Sort``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)">
             <summary>
             Implements merge sort recursively. 
             </summary>
@@ -497,14 +491,6 @@
             <param name="startIndex">The lower index in the array, inclusive. </param>
             <param name="middleIndex">The middle index of the array. </param>
             <param name="endIndex">The higher index in the array, inclusive. </param>
-        </member>
-        <member name="M:CSFundamentals.Algorithms.Sort.MergeSort.Sort_Iteratively(System.Collections.Generic.List{System.Int32},System.Int32,System.Int32)">
-            <summary>
-            Provides an iterative version for MergeSort. 
-            </summary>
-            <param name="list"></param>
-            <param name="startIndex"></param>
-            <param name="endIndex"></param>
         </member>
         <member name="M:CSFundamentals.Algorithms.Sort.MergeSort.Sort_Recursively(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element},System.Int32,System.Int32)">
             <summary>
@@ -536,7 +522,7 @@
             Implements Quick sort algorithm. 
             </summary>
         </member>
-        <member name="M:CSFundamentals.Algorithms.Sort.QuickSort.Sort_Recursively``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)">
+        <member name="M:CSFundamentals.Algorithms.Sort.QuickSort.Sort``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)">
             <summary>
             Implements quick sort recursively. 
             </summary>
@@ -560,14 +546,6 @@
             <param name="startIndex">The startIndex of an array.</param>
             <param name="endIndex">The endIndex of an array. </param>
             <returns></returns>
-        </member>
-        <member name="M:CSFundamentals.Algorithms.Sort.QuickSort.Sort_Iteratively``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)">
-            <summary>
-            Provides an iterative version of QuickSort.
-            </summary>
-            <param name="list"></param>
-            <param name="startIndex"></param>
-            <param name="endIndex"></param>
         </member>
         <member name="M:CSFundamentals.Algorithms.Sort.QuickSort.Sort_Recursively(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element},System.Int32,System.Int32)">
             <summary>
@@ -599,19 +577,9 @@
             Implements Radix sort algorithm.
             </summary>
         </member>
-        <member name="M:CSFundamentals.Algorithms.Sort.RadixSort.Sort_Iterative_V1(System.Collections.Generic.List{System.Int32})">
+        <member name="M:CSFundamentals.Algorithms.Sort.RadixSort.Sort(System.Collections.Generic.List{System.Int32})">
             <summary>
             Implements Radix sort for base 10 (decimal integers) using queues. 
-            </summary>
-        </member>
-        <member name="M:CSFundamentals.Algorithms.Sort.RadixSort.Sort_Iterative_V2(System.Collections.Generic.List{System.Int32})">
-            <summary>
-            Implements Radix Sort based on count sort.
-            </summary>
-        </member>
-        <member name="M:CSFundamentals.Algorithms.Sort.RadixSort.Sort_Recursive(System.Collections.Generic.List{System.Int32})">
-            <summary>
-            Implements a recursive version of Radix Sort. 
             </summary>
         </member>
         <member name="M:CSFundamentals.Algorithms.Sort.RadixSort.Sort_Iterative_V1(System.Collections.Generic.List{CSFundamentals.Algorithms.Sort.StabilityCheckableVersions.Element})">
@@ -624,7 +592,7 @@
             Implements Selection sort algorithm. 
             </summary>
         </member>
-        <member name="M:CSFundamentals.Algorithms.Sort.SelectionSort.Sort_Iteratively``1(System.Collections.Generic.List{``0})">
+        <member name="M:CSFundamentals.Algorithms.Sort.SelectionSort.Sort``1(System.Collections.Generic.List{``0})">
             <summary>
             Implements selection sort, which is in-situ and unstable, and at each step, the array would look as one sorted part, and one unsorted part. 
             </summary>

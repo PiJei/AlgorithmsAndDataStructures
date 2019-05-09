@@ -49,7 +49,7 @@ namespace CSFundamentals.DataStructures.StringStructures
             }
 
             /* Sort suffixes using the first 2 characters. */
-            MergeSort.Sort_Recursively(suffixes, 0, suffixes.Count - 1);
+            MergeSort.Sort(suffixes, 0, suffixes.Count - 1);
 
             int[] indexes = new int[text.Length];
             /* Comparing suffixes based on the 4, 8, ... characters, ... */
@@ -91,7 +91,7 @@ namespace CSFundamentals.DataStructures.StringStructures
                     }
                 }
 
-                MergeSort.Sort_Recursively(suffixes, 0, suffixes.Count - 1);
+                MergeSort.Sort(suffixes, 0, suffixes.Count - 1);
             }
 
             int[] suffixArray = new int[text.Length];

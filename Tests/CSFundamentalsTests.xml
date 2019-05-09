@@ -301,7 +301,7 @@
             Tests methods in <see cref="T:CSFundamentals.Algorithms.Sort.BubbleSort"/> class. 
             </summary>
         </member>
-        <member name="M:CSFundamentalsTests.Algorithms.Sort.BubbleSortTests.Sort_Iterative_WithDifferentInputs">
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.BubbleSortTests.Sort_WithDifferentInputs">
             <summary>
             Tests the correctness of bubble sort iterative version. 
             </summary>
@@ -416,32 +416,32 @@
             Tests method in <see cref="T:CSFundamentals.Algorithms.Sort.MergeSort"/> class.
             </summary>
         </member>
-        <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.MergeSort_Recursively_WithDistinctValues">
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.MergeSort_WithDistinctValues">
             <summary>
             Tests the correctness of Merge sort algorithm recursive version over an array with distinct values. 
             </summary>
         </member>
-        <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.MergeSort_Recursively_WithDuplicateValues">
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.MergeSort_WithDuplicateValues">
             <summary>
             Tests the correctness of Merge sort algorithm recursive version over an array with duplicate values. 
             </summary>
         </member>
-        <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.MergeSort_Recursively_WithSortedDistinctValues">
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.MergeSort_WithSortedDistinctValues">
             <summary>
             Tests the correctness of Merge sort algorithm recursive version over a sorted array with distinct values. 
             </summary>
         </member>
-        <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.MergeSort_Recursively_WithSortedDuplicateValues">
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.MergeSort_WithSortedDuplicateValues">
             <summary>
             Tests the correctness of Merge sort algorithm recursive version over a sorted array with duplicate values. 
             </summary>
         </member>
-        <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.MergeSort_Recursively_WithReverselySortedDistinctValues">
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.MergeSort_WithReverselySortedDistinctValues">
             <summary>
             Tests the correctness of Merge sort algorithm recursive version over a reversely sorted array with distinct values. 
             </summary>
         </member>
-        <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.MergeSort_Recursively_WithReverselySortedDuplicateValues">
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.MergeSort_WithReverselySortedDuplicateValues">
             <summary>
             Tests the correctness of Merge sort algorithm recursive version over a reversely sorted array with duplicate values. 
             </summary>
@@ -461,32 +461,32 @@
             Tests methods in <see cref="T:CSFundamentals.Algorithms.Sort.QuickSort"/> class.
             </summary>
         </member>
-        <member name="M:CSFundamentalsTests.Algorithms.Sort.QuickSortTests.QuickSort_Recursively_WithDistinctValues">
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.QuickSortTests.QuickSort_WithDistinctValues">
             <summary>
             Tests the correctness of Quick sort algorithm recursive version over an array with distinct values. 
             </summary>
         </member>
-        <member name="M:CSFundamentalsTests.Algorithms.Sort.QuickSortTests.QuickSort_Recursively_WithDuplicateValues">
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.QuickSortTests.QuickSort_WithDuplicateValues">
             <summary>
             Tests the correctness of Quick sort algorithm recursive version over an array with duplicate values. 
             </summary>
         </member>
-        <member name="M:CSFundamentalsTests.Algorithms.Sort.QuickSortTests.QuickSort_Recursively_WithSortedDistinctValues">
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.QuickSortTests.QuickSort_WithSortedDistinctValues">
             <summary>
             Tests the correctness of Quick sort algorithm recursive version over a sorted array with distinct values. 
             </summary>
         </member>
-        <member name="M:CSFundamentalsTests.Algorithms.Sort.QuickSortTests.QuickSort_Recursively_WithSortedDuplicateValues">
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.QuickSortTests.QuickSort_WithSortedDuplicateValues">
             <summary>
             Tests the correctness of Quick sort algorithm recursive version over a sorted array with duplicate values. 
             </summary>
         </member>
-        <member name="M:CSFundamentalsTests.Algorithms.Sort.QuickSortTests.QuickSort_Recursively_WithReverselySortedDistinctValues">
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.QuickSortTests.QuickSort_WithReverselySortedDistinctValues">
             <summary>
             Tests the correctness of Quick sort algorithm recursive version over a reversely sorted array with distinct values. 
             </summary>
         </member>
-        <member name="M:CSFundamentalsTests.Algorithms.Sort.QuickSortTests.QuickSort_Recursively_WithReverselySortedDuplicateValues">
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.QuickSortTests.QuickSort_WithReverselySortedDuplicateValues">
             <summary>
             Tests the correctness of Quick sort algorithm recursive version over a reversely sorted array with duplicate values. 
             </summary>
@@ -501,7 +501,7 @@
             Tests methods in <see cref="T:CSFundamentals.Algorithms.Sort.RadixSort"/> class.
             </summary>
         </member>
-        <member name="M:CSFundamentalsTests.Algorithms.Sort.RadixSortTests.Sort_Iterative_V1_WithDifferentInputs">
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.RadixSortTests.Sort_WithDifferentInputs">
             <summary>
             Tests the correctness of Radix sort algorithm.
             </summary>
@@ -904,12 +904,13 @@
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.BuildHeapRecursively_DistinctValues">
             <summary>
             Tests the correctness of Build operation recursive version, when inserting distinct values. 
+            To visualize in-place MinMax Binary Heap building process see <img src = "../Images/Heaps/MinMaxBinaryHeap-Build.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.BuildHeapRecursively_DuplicateValues">
             <summary>
             Tests the correctness of Build operation, recursive version when inserting duplicate values. 
-            To visualize in-place MinMax Binary Heap building process see <img src = "../Images/Heaps/MinMaxHeap-Build-WithDuplicateKeys.png"/>.
+            To visualize in-place MinMax Binary Heap building process see <img src = "../Images/Heaps/MinMaxBinaryHeap-Build-WithDuplicateKeys.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMinMaxBinaryHeapAfterEachInsert">
@@ -918,7 +919,7 @@
             To visualize the steps in this test method see <img src = "../Images/Heaps/MinMaxBinaryHeap-Insert.png"/>.
             </summary>
         </member>
-        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectDescendingOrderInResults">
+        <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectAscendingOrderInResults">
             <summary>
             Tests the correctness of removing root of the heap. Removes root several times until no member in tree remains.
             To visualize the steps in this test method see <img src = "../Images/Heaps/MinMaxBinaryHeap-TryRemoveRoot.png"/>.
