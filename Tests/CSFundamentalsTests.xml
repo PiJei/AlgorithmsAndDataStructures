@@ -464,6 +464,7 @@
         <member name="M:CSFundamentalsTests.Algorithms.Sort.QuickSortTests.QuickSort_WithDistinctValues">
             <summary>
             Tests the correctness of Quick sort algorithm recursive version over an array with distinct values. 
+            To visualize how the array is evolved while executing quick sort see <img src = "../Images/Sorts/QuickSort.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Sort.QuickSortTests.QuickSort_WithDuplicateValues">
