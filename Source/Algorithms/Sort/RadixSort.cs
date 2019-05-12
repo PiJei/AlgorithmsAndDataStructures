@@ -34,7 +34,7 @@ namespace CSFundamentals.Algorithms.Sort
         /// </summary>
         [Algorithm(AlgorithmType.Sort, "RadixSort")]
         // TODO: Specify the time and space complexities
-        // todo: explain why is not generic: due to get the max digits of
+        // TODO: explain why is not generic: due to get the max digits of
         public static void Sort(List<int> list)
         {
             int maxElement = Utils.GetMaxElement(list);

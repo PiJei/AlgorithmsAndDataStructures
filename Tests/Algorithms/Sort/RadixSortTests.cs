@@ -31,6 +31,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
     {
         /// <summary>
         /// Tests the correctness of Radix sort algorithm.
+        /// To visualize how the array evolves while executing Radix sort on <see cref="Constants.ArrayWithDistinctValues"/> see <img src = "../Images/Sorts/RadixSort.png"/>.
         /// </summary>
         [TestMethod]
         public void Sort_WithDifferentInputs()

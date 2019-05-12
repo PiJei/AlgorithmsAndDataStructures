@@ -63,26 +63,26 @@ namespace CSFundamentals.Algorithms.Sort
         /// Per each value in the array, makes a list of their indexes in the array. 
         /// Notice that the array may include duplicate values, thus a list of indexes rather than one index.
         /// </summary>
-        /// <param name="values">An array of integers. </param>
+        /// <param name="list">An array of integers. </param>
         /// <returns>A hash table/dictionary mapping each value to the list of its indexes in the array. </returns>
-        public static Dictionary<Element, List<Element>> HashListToIndexes(List<Element> values)
+        public static Dictionary<Element, List<Element>> HashListToIndexes(List<Element> list)
         {
-            /* Such that the keys in the dictionary are the values in the array, and the values in the dictionary are the list of indexes for each value in the array. */
+            /* Keys in the dictionary are the values in the array, and the values in the dictionary are the list of indexes for each value in the array. */
             var positions = new Dictionary<Element, List<Element>>();
-            if (values == null)
+            if (list == null)
             {
                 return positions;
             }
 
-            for (int index = 0; index < values.Count; index++)
+            for (int index = 0; index < list.Count; index++)
             {
-                if (positions.TryGetValue(values[index], out List<Element> indexes))
+                if (positions.TryGetValue(list[index], out _))
                 {
-                    positions[values[index]].Add(values[index]);
+                    positions[list[index]].Add(list[index]);
                 }
                 else
                 {
-                    positions.Add(values[index], new List<Element> { values[index] });
+                    positions.Add(list[index], new List<Element> { list[index] });
                 }
             }
             return positions;
