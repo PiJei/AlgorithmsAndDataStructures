@@ -41,6 +41,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
 
         /// <summary>
         /// Tests the correctness of Insertion sort iterative version2. 
+        /// To visualize how the array evolves while executing insertion sort on <see cref="Constants.ArrayWithDistinctValues"/> see <img src = "../Images/Sorts/InsertionSort-Part1.png"/>, <img src = "../Images/Sorts/InsertionSort-Part2.png"/>.
         /// </summary>
         [TestMethod]
         public void Sort_Iterative_V2_WithDifferentInputs()

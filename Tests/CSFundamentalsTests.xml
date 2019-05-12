@@ -299,6 +299,7 @@
         <member name="T:CSFundamentalsTests.Algorithms.Sort.BubbleSortTests">
             <summary>
             Tests methods in <see cref="T:CSFundamentals.Algorithms.Sort.BubbleSort"/> class. 
+            To visualize how the array evolves while executing bubble sort on <see cref="F:CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithDistinctValues"/> see <img src = "../Images/Sorts/BubbleSort-Part1.png"/>, <img src = "../Images/Sorts/BubbleSort-Part2.png"/>, <img src = "../Images/Sorts/BubbleSort-Part3.png"/>.  
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Sort.BubbleSortTests.Sort_WithDifferentInputs">
@@ -394,6 +395,7 @@
         <member name="M:CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Iterative_V2_WithDifferentInputs">
             <summary>
             Tests the correctness of Insertion sort iterative version2. 
+            To visualize how the array evolves while executing insertion sort on <see cref="F:CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithDistinctValues"/> see <img src = "../Images/Sorts/InsertionSort-Part1.png"/>, <img src = "../Images/Sorts/InsertionSort-Part2.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Recursive_WithDistinctValues">
@@ -419,6 +421,7 @@
         <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.MergeSort_WithDistinctValues">
             <summary>
             Tests the correctness of Merge sort algorithm recursive version over an array with distinct values. 
+            To visualize how the array is evolved while executing merge sort see <img src = "../Images/Sorts/MergeSort-Part1.png"/> and <img src = "../Images/Sorts/MergeSort-Part2.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.MergeSort_WithDuplicateValues">

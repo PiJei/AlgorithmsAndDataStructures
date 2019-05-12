@@ -129,7 +129,6 @@ This formula is such that if the <code data-dev-comment-type="paramref" class="p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static int GetStartIndex&lt;T&gt;(List&lt;T&gt; sortedList, int startIndex, int endIndex, T key)
-
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -221,7 +220,6 @@ Notice that only works if the given array is sorted.</p>
 [TimeComplexity(Case.Worst, &quot;O(n)&quot;)]
 [TimeComplexity(Case.Average, &quot;O(Log(Log(n)))&quot;)]
 public static int Search&lt;T&gt;(List&lt;T&gt; sortedList, T key, int startIndex, int endIndex)
-
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>

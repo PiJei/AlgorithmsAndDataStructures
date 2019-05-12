@@ -61,6 +61,8 @@ namespace CSFundamentals.Algorithms.Sort
             for (int i = 1; i < list.Count; i++)
             {
                 T arrayValueAtIndexI = list[i];
+
+                /* The correct index at which arrayValueAtIndexI should be placed for the array to be sorted at the end. */
                 int correctIndex = i;
 
                 for (int j = i - 1; j >= 0 && list[j].CompareTo(arrayValueAtIndexI) > 0; j--)

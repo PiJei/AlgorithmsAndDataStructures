@@ -44,7 +44,7 @@ namespace CSFundamentals.Algorithms.Sort
             for (int i = 0; i < list.Count - 1; i++) /* Iteration i, determines the i-th smallest/min value. */
             {
                 int minIndex = i;
-                for (int j = i; j < list.Count; j++) /* This loop finds an element in the unsorted part of the array that is smaller than the current value at index i. */
+                for (int j = i+1; j < list.Count; j++) /* This loop finds an element in the unsorted part of the array that is smaller than the current value at index i. */
                 {
                     if (list[j].CompareTo(list[minIndex]) < 0)
                     {
