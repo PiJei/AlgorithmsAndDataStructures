@@ -35,10 +35,10 @@ namespace CSFundamentalsTests.Algorithms.Sort
         {
             /* We need to find "a" list with duplicate values, such that shows Quick sort is not stable. 
                This does not mean that Quick sort is unstable for all arrays with duplicate values. */
-            var duplicateValues = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
-            List<Element> duplicateValuesElements = Utils.Convert(duplicateValues);
-            bool isStable = Utils.IsSortMethodStable(QuickSort.Wrapper, duplicateValuesElements);
-            Assert.IsFalse(isStable);
+            var duplicateValues2 = new List<int> { 4 , 2, 3, 4, 1, 1, 1};
+            List<Element> duplicateValuesElements2 = Utils.Convert(duplicateValues2);
+            bool isStable2 = Utils.IsSortMethodStable(QuickSort.Wrapper, duplicateValuesElements2);
+            Assert.IsFalse(isStable2);
         }
     }
 }

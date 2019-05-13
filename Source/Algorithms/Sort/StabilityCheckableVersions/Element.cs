@@ -51,6 +51,7 @@ namespace CSFundamentals.Algorithms.Sort.StabilityCheckableVersions
         {
             Value = value;
             FirstArrayIndex = firstArrayIndex;
+            LatestArrayIndex = firstArrayIndex;
         }
 
         /// <summary>

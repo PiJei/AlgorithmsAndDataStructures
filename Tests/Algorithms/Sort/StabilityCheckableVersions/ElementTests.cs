@@ -48,13 +48,13 @@ namespace CSFundamentalsTests.Algorithms.Sort
         [TestMethod]
         public void IsStable()
         {
-            var element1 = new Element(1, 0); // Element1: 1, 0, -1
-            var element2 = new Element(2, 0); // Element2: 2, 0, -1
+            var element1 = new Element(1, 0); // Element1: 1, 0, 0
+            var element2 = new Element(2, 0); // Element2: 2, 0, 0
 
             Assert.IsFalse(element1.IsStable(element2));
 
-            var element3 = new Element(1, 2); // Element3 : 1, 2, -1 
-            Assert.IsFalse(element1.IsStable(element3)); /* Expects false, as newIndex is not decided yet. */
+            var element3 = new Element(1, 2); // Element3 : 1, 2, 2 
+            Assert.IsTrue(element1.IsStable(element3)); /* Expects false, as newIndex is not decided yet. */
 
             element1.Move(5); // Element1: 1, 0, 5
             element3.Move(3); // Element3 : 1, 2, 3 
