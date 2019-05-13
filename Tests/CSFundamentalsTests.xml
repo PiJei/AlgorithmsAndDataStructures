@@ -355,6 +355,7 @@
         <member name="M:CSFundamentalsTests.Algorithms.Sort.HeapSortTests.Sort_WithDistinctValues">
             <summary>
             Tests the correctness of Heap sort algorithm over an array with distinct values.  
+            To visualize how the array evolves while executing Heap sort on <see cref="F:CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithDistinctValues"/> see <img src = "../Images/Sorts/HeapSort.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Sort.HeapSortTests.Sort_WithDuplicateValues">
@@ -508,6 +509,7 @@
         <member name="M:CSFundamentalsTests.Algorithms.Sort.RadixSortTests.Sort_WithDifferentInputs">
             <summary>
             Tests the correctness of Radix sort algorithm.
+            To visualize how the array evolves while executing Radix sort on <see cref="F:CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithDistinctValues"/> see <img src = "../Images/Sorts/RadixSort.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Sort.RadixSortTests.IsStable">
@@ -520,9 +522,10 @@
             Tests methods in <see cref="T:CSFundamentals.Algorithms.Sort.SelectionSort"/> class.
             </summary>
         </member>
-        <member name="M:CSFundamentalsTests.Algorithms.Sort.SelectionSortTests.Sort_Iteratively_WithDifferentInputs">
+        <member name="M:CSFundamentalsTests.Algorithms.Sort.SelectionSortTests.Sort_WithDifferentInputs">
             <summary>
             Tests the correctness of Selection sort algorithm.
+            To visualize how the array evolves while executing selection sort on <see cref="F:CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithDistinctValues"/> see <img src = "../Images/Sorts/SelectionSort.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Sort.SelectionSortTests.IsStable">

@@ -165,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Search.BinarySearch.html",
-          "hash": "J+rX8fkOiu3TIWZQQwjapQ=="
+          "hash": "B2JmJL2gTu0dz5yo7WNsSg=="
         }
       },
       "is_incremental": true,
@@ -177,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Search.ExponentialSearch.html",
-          "hash": "IZdTdOKfE3UHzIst9i17Ag=="
+          "hash": "E944JXCrzJM7NMrBcx4DIw=="
         }
       },
       "is_incremental": true,
@@ -201,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Search.FibonacciSearch.html",
-          "hash": "kIlKzMhvZuGBCbo3LpUSBA=="
+          "hash": "kAvs6EYvw3NVsn9h/2unqQ=="
         }
       },
       "is_incremental": true,
@@ -213,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Search.HashTableSearch.html",
-          "hash": "tSYILKc2FhkzY9DwL/unig=="
+          "hash": "5H99327he8NSuKZXxjS+dw=="
         }
       },
       "is_incremental": true,
@@ -225,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Search.InterpolationSearch.html",
-          "hash": "0fZ7k29dT0ukNRRTzy3m9A=="
+          "hash": "mnSjUbYmXDdGGqXaraHaZg=="
         }
       },
       "is_incremental": true,
@@ -237,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Search.JumpSearch.html",
-          "hash": "XtFn39+vAj8QLHYmkrHj3A=="
+          "hash": "UdnMr/C5jB1crHIkL1WlKw=="
         }
       },
       "is_incremental": true,
@@ -249,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Search.LinearSearch.html",
-          "hash": "q39nel3/6DAl95SIf4mtjw=="
+          "hash": "lxxPhVp9IMzQLuD441LSJw=="
         }
       },
       "is_incremental": true,
@@ -261,7 +261,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Search.TernarySearch.html",
-          "hash": "Ihb3+wyrchEjqJKkij2dnA=="
+          "hash": "1mrEPaO3OrWUck0v52vh4g=="
         }
       },
       "is_incremental": true,
@@ -285,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Sort.BubbleSort.html",
-          "hash": "qSGoV6hs6SOYINUAuIoG5g=="
+          "hash": "uHyfamswxP+tTCr+S+mfcg=="
         }
       },
       "is_incremental": true,
@@ -297,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Sort.HeapSort.html",
-          "hash": "KT3D6ekvkflgAR8oTRRy9w=="
+          "hash": "1y7/qz3gz25i0CT6SHCKPQ=="
         }
       },
       "is_incremental": true,
@@ -309,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Sort.InsertionSort.html",
-          "hash": "SWAP5yBtw8LuU/YLP1biqQ=="
+          "hash": "sKOzR7IcqvJlFU7Pai2JSQ=="
         }
       },
       "is_incremental": true,
@@ -321,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Sort.MergeSort.html",
-          "hash": "QzXz4rzqnREDn1ceWDR6ww=="
+          "hash": "R4Y2IxVzPMafzI0BP9iPgQ=="
         }
       },
       "is_incremental": true,
@@ -333,7 +333,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Sort.QuickSort.html",
-          "hash": "UkWAU5HgsspRdy3xQJJufw=="
+          "hash": "0DB4vp4FfDOQPXKt7YjeWQ=="
         }
       },
       "is_incremental": true,
@@ -357,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Sort.SelectionSort.html",
-          "hash": "SyvOLN6BBdIkIazk4Eo27w=="
+          "hash": "RfSIi9U8l2NrBWGi2WvWTg=="
         }
       },
       "is_incremental": true,
@@ -393,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Sort.Utils.html",
-          "hash": "oJgm5cZT5TxuOllU4ycj5g=="
+          "hash": "9kwG7AfF3nYlNmk8UKphXQ=="
         }
       },
       "is_incremental": true,
@@ -453,7 +453,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap-2.html",
-          "hash": "4DBfyAnRZnVfzxKKdW//dg=="
+          "hash": "p5v8FtOLYxLkcIO7L8RF2Q=="
         }
       },
       "is_incremental": true,
@@ -525,7 +525,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.DataStructures.LinkedLists.API.LinkedListBase-2.html",
-          "hash": "D9q7gIJXGXNS6/3Ca/EhnQ=="
+          "hash": "f8/qB7j/h2PD+saKEvkyPg=="
         }
       },
       "is_incremental": true,
@@ -537,7 +537,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.DataStructures.LinkedLists.API.LinkedNode-2.html",
-          "hash": "3WMYHyHU7CwAzlw/LhQMnQ=="
+          "hash": "Jqjz2sZ6ll/wT5cGVAO7xA=="
         }
       },
       "is_incremental": true,
@@ -729,7 +729,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase-3.html",
-          "hash": "rFM3aa/8dDbz24Dbps7C5Q=="
+          "hash": "r6LUak9VH1UqpMJ/GTT91w=="
         }
       },
       "is_incremental": true,
@@ -885,7 +885,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase-3.html",
-          "hash": "3XBUYBgNfvqDjDJTW69OtA=="
+          "hash": "X0V7IEYrV6WMQD3LsGIsjQ=="
         }
       },
       "is_incremental": true,
@@ -897,7 +897,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html",
-          "hash": "iJpGriU5bLBoZHIrUT580Q=="
+          "hash": "MXWyyG/kYwJKnpuV9nir+w=="
         }
       },
       "is_incremental": true,
@@ -1281,7 +1281,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentalsTests.Algorithms.Sort.HeapSortTests.html",
-          "hash": "w5n/cGL/o6IJqmyELxK/MQ=="
+          "hash": "6L7eTBaKOmU4CLYpf0CUng=="
         }
       },
       "is_incremental": true,
@@ -2322,6 +2322,17 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/Sorts/HeapSort.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Sorts/HeapSort.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/Sorts/InsertionSort-Part1.png",
       "output": {
         "resource": {
@@ -2596,13 +2607,6 @@
         "skipped_file_count": 0
       },
       "processors": {
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
@@ -2621,6 +2625,13 @@
           "incrementalPhase": "build",
           "total_file_count": 165,
           "skipped_file_count": 165
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
         }
       }
     },
