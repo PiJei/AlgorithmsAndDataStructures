@@ -31,11 +31,12 @@ namespace CSFundamentalsTests.Algorithms.Sort
     {
         /// <summary>
         /// Tests the correctness of Selection sort algorithm.
+        /// To visualize how the array evolves while executing selection sort on <see cref="Constants.ArrayWithDistinctValues"/> see <img src = "../Images/Sorts/SelectionSort.png"/>.
         /// </summary>
         [TestMethod]
-        public void Sort_Iteratively_WithDifferentInputs()
+        public void Sort_WithDifferentInputs()
         {
-            SortTests.TestSortMethodWithDifferentInputs(SelectionSort.Sort_Iteratively);
+            SortTests.TestSortMethodWithDifferentInputs(SelectionSort.Sort);
         }
     }
 }

@@ -34,6 +34,11 @@ namespace CSFundamentalsTests.Algorithms.Sort
         public void IsStable()
         {
             /* Insertion sort is stable, try to find an example which breaks this property.*/
+            /*
+            var duplicateValues0 = new List<int> { 4, 1 , 2, 1,  1 , 1, 1 };
+            List<Element> duplicateValuesElements0 = Utils.Convert(duplicateValues0);
+            bool isStable0 = Utils.IsSortMethodStable(InsertionSort.Sort_Iterative_V2, duplicateValuesElements0);
+            Assert.IsTrue(isStable0);
 
             var duplicateValues1 = new List<int> { 4, 3, 2, 4, 1 };
             List<Element> duplicateValuesElements1 = Utils.Convert(duplicateValues1);
@@ -44,7 +49,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
             List<Element> duplicateValuesElements2 = Utils.Convert(duplicateValues2);
             bool isStable2 = Utils.IsSortMethodStable(InsertionSort.Sort_Iterative_V2, duplicateValuesElements2);
             Assert.IsTrue(isStable2);
-
+            */
             var duplicateValues3 = new List<int>(Constants.ArrayWithSortedDuplicateValues);
             List<Element> duplicateValuesElements3 = Utils.Convert(duplicateValues3);
             bool isStable3 = Utils.IsSortMethodStable(InsertionSort.Sort_Iterative_V2, duplicateValuesElements3);

@@ -44,7 +44,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
             {
                 Assert.AreEqual(values[i], newValues[i].Value);
                 Assert.AreEqual(i, newValues[i].FirstArrayIndex);
-                Assert.AreEqual(-1, newValues[i].LatestArrayIndex);
+                Assert.AreEqual(i, newValues[i].LatestArrayIndex);
             }
         }
 

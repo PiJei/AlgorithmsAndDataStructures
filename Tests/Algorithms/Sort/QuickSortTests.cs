@@ -32,12 +32,13 @@ namespace CSFundamentalsTests.Algorithms.Sort
     {
         /// <summary>
         /// Tests the correctness of Quick sort algorithm recursive version over an array with distinct values. 
+        /// To visualize how the array is evolved while executing quick sort see <img src = "../Images/Sorts/QuickSort.png"/>.
         /// </summary>
         [TestMethod]
-        public void QuickSort_Recursively_WithDistinctValues()
+        public void QuickSort_WithDistinctValues()
         {
             var values = new List<int>(Constants.ArrayWithDistinctValues);
-            QuickSort.Sort_Recursively(values, 0, values.Count - 1);
+            QuickSort.Sort(values, 0, values.Count - 1);
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
@@ -45,10 +46,10 @@ namespace CSFundamentalsTests.Algorithms.Sort
         /// Tests the correctness of Quick sort algorithm recursive version over an array with duplicate values. 
         /// </summary>
         [TestMethod]
-        public void QuickSort_Recursively_WithDuplicateValues()
+        public void QuickSort_WithDuplicateValues()
         {
             var values = new List<int>(Constants.ArrayWithDuplicateValues);
-            QuickSort.Sort_Recursively(values, 0, values.Count - 1);
+            QuickSort.Sort(values, 0, values.Count - 1);
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
@@ -56,10 +57,10 @@ namespace CSFundamentalsTests.Algorithms.Sort
         /// Tests the correctness of Quick sort algorithm recursive version over a sorted array with distinct values. 
         /// </summary>
         [TestMethod]
-        public void QuickSort_Recursively_WithSortedDistinctValues()
+        public void QuickSort_WithSortedDistinctValues()
         {
             var values = new List<int>(Constants.ArrayWithSortedDistinctValues);
-            QuickSort.Sort_Recursively(values, 0, values.Count - 1);
+            QuickSort.Sort(values, 0, values.Count - 1);
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
@@ -67,10 +68,10 @@ namespace CSFundamentalsTests.Algorithms.Sort
         /// Tests the correctness of Quick sort algorithm recursive version over a sorted array with duplicate values. 
         /// </summary>
         [TestMethod]
-        public void QuickSort_Recursively_WithSortedDuplicateValues()
+        public void QuickSort_WithSortedDuplicateValues()
         {
             var values = new List<int>(Constants.ArrayWithSortedDuplicateValues);
-            QuickSort.Sort_Recursively(values, 0, values.Count - 1);
+            QuickSort.Sort(values, 0, values.Count - 1);
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
@@ -78,10 +79,10 @@ namespace CSFundamentalsTests.Algorithms.Sort
         /// Tests the correctness of Quick sort algorithm recursive version over a reversely sorted array with distinct values. 
         /// </summary>
         [TestMethod]
-        public void QuickSort_Recursively_WithReverselySortedDistinctValues()
+        public void QuickSort_WithReverselySortedDistinctValues()
         {
             var values = new List<int>(Constants.ArrayWithReverselySortedDistinctValues);
-            QuickSort.Sort_Recursively(values, 0, values.Count - 1);
+            QuickSort.Sort(values, 0, values.Count - 1);
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
 
@@ -89,10 +90,10 @@ namespace CSFundamentalsTests.Algorithms.Sort
         /// Tests the correctness of Quick sort algorithm recursive version over a reversely sorted array with duplicate values. 
         /// </summary>
         [TestMethod]
-        public void QuickSort_Recursively_WithReverselySortedDuplicateValues()
+        public void QuickSort_WithReverselySortedDuplicateValues()
         {
             var values = new List<int>(Constants.ArrayWithReverselySortedDuplicateValues);
-            QuickSort.Sort_Recursively(values, 0, values.Count - 1);
+            QuickSort.Sort(values, 0, values.Count - 1);
             Assert.IsTrue(UtilsTests.IsSortedAscendingly(values));
         }
     }

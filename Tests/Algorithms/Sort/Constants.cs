@@ -45,7 +45,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         /// <summary>
         /// Is an array of integers with duplicate values, such that the array is already sorted ascending. 
         /// </summary>
-        public static readonly List<int> ArrayWithSortedDuplicateValues = new List<int> { 1, 2, 3, 10, 12, 15, 21, 21, 46, 51, 56, 78, 100, 209 };
+        public static readonly List<int> ArrayWithSortedDuplicateValues = new List<int> { 1, 1, 2, 3, 10, 12, 15, 21, 46, 51, 56, 78, 78, 100, 209 };
 
         /// <summary>
         /// Is an array of integers with distinct values, such that the array is reversely sorted, meaning it is descending, whereas sort meant ascending.  
@@ -55,7 +55,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
         /// <summary>
         /// Is an array of integers with duplicate values, such that the array is reversely sorted, meaning it is descending, whereas sort meant ascending. 
         /// </summary>
-        public static readonly List<int> ArrayWithReverselySortedDuplicateValues = new List<int> { 209, 100, 78, 56, 51, 46, 21, 21, 15, 12, 10, 3, 2, 1, 1 };
+        public static readonly List<int> ArrayWithReverselySortedDuplicateValues = new List<int> { 209, 100, 78, 78, 56, 51, 46, 21, 15, 12, 10, 3, 2, 1, 1 };
 
         // TODO: Measure the timing for each case, ... 
     }

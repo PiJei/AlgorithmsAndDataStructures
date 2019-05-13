@@ -25,6 +25,7 @@ namespace CSFundamentalsTests.Algorithms.Sort
 {
     /// <summary>
     /// Tests methods in <see cref="BubbleSort"/> class. 
+    /// To visualize how the array evolves while executing bubble sort on <see cref="Constants.ArrayWithDistinctValues"/> see <img src = "../Images/Sorts/BubbleSort-Part1.png"/>, <img src = "../Images/Sorts/BubbleSort-Part2.png"/>, <img src = "../Images/Sorts/BubbleSort-Part3.png"/>.  
     /// </summary>
     [TestClass]
     public partial class BubbleSortTests
@@ -33,9 +34,9 @@ namespace CSFundamentalsTests.Algorithms.Sort
         /// Tests the correctness of bubble sort iterative version. 
         /// </summary>
         [TestMethod]
-        public void Sort_Iterative_WithDifferentInputs()
+        public void Sort_WithDifferentInputs()
         {
-            SortTests.TestSortMethodWithDifferentInputs(BubbleSort.Sort_Iterative);
+            SortTests.TestSortMethodWithDifferentInputs(BubbleSort.Sort);
         }
     }
 }

@@ -46,8 +46,8 @@ namespace CSFundamentals.Algorithms.Sort
             var maxHeap = new MaxBinaryHeap<T, T>(ToHeapArray(list));
             maxHeap.BuildHeap_Recursively(list.Count);
 
-            // 2- repeat the following 2 steps for all the elements in the array. 
-            for (int i = list.Count - 1; i >= 0; i--)
+            // 2- Starting from last element in the array, repeat the following two steps for all the elements in the array, except the first one. 
+            for (int i = list.Count - 1; i > 0; i--)
             {
                 /* Since the root element/node in a max heap is the maximum value in the array, putting it in the last position of the unsorted part of the array, determines its final position in an array that is eventually ordered ascending.*/
                 Utils.Swap(maxHeap.HeapArray, 0, i);

@@ -42,13 +42,13 @@ namespace CSFundamentals.Algorithms.Sort
         [TimeComplexity(Case.Best, "O(nLog(n))")]
         [TimeComplexity(Case.Worst, "O(nLog(n))")]
         [TimeComplexity(Case.Average, "O(nLog(n))")]
-        public static void Sort_Recursively<T>(List<T> list, int startIndex, int endIndex) where T : IComparable<T>
+        public static void Sort<T>(List<T> list, int startIndex, int endIndex) where T : IComparable<T>
         {
             if (startIndex < endIndex)
             {
                 int middleIndex = (startIndex + endIndex) / 2;
-                Sort_Recursively(list, startIndex, middleIndex);
-                Sort_Recursively(list, middleIndex + 1, endIndex);
+                Sort(list, startIndex, middleIndex);
+                Sort(list, middleIndex + 1, endIndex);
                 Merge(list, startIndex, middleIndex, endIndex);
             }
         }
@@ -110,17 +110,6 @@ namespace CSFundamentals.Algorithms.Sort
                 rightHalfCounter++;
                 mainArrayCounter++;
             }
-        }
-
-        /// <summary>
-        /// Provides an iterative version for MergeSort. 
-        /// </summary>
-        /// <param name="list"></param>
-        /// <param name="startIndex"></param>
-        /// <param name="endIndex"></param>
-        public static void Sort_Iteratively(List<int> list, int startIndex, int endIndex)
-        {
-            throw new NotImplementedException();
         }
     }
 }

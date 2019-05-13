@@ -43,13 +43,13 @@ namespace CSFundamentals.Algorithms.Sort
         [TimeComplexity(Case.Best, "O(nLog(n))")]
         [TimeComplexity(Case.Worst, "O(n²)", When = "Minimum or maximum element in the array is chosen as the pivot.")]
         [TimeComplexity(Case.Average, "O(nLog(n))")]
-        public static void Sort_Recursively<T>(List<T> list, int startIndex, int endIndex) where T : IComparable<T>
+        public static void Sort<T>(List<T> list, int startIndex, int endIndex) where T : IComparable<T>
         {
             if (startIndex < endIndex)
             {
                 int partitionIndex = PartitionArray(list, startIndex, endIndex);
-                Sort_Recursively(list, startIndex, partitionIndex);
-                Sort_Recursively(list, partitionIndex + 1, endIndex);
+                Sort(list, startIndex, partitionIndex);
+                Sort(list, partitionIndex + 1, endIndex);
             }
         }
 
@@ -85,8 +85,8 @@ namespace CSFundamentals.Algorithms.Sort
                 }
                 Utils.Swap(list, leftIndex, rightIndex);
 
-                /* The next two increments are needed, as otherwise there will be issues with duplicate values in the array.
-                 * Notice an alternative would be to remove these two increments, and make the loops do-while, in which case leftIndex = currentLeftIndex-1, and rightIndex = currentRightIndex+1 */
+                /* The next two operations are needed, as otherwise there will be issues with duplicate values in the array.
+                 * Notice an alternative would be to remove the next two operations, and make the loops do-while, in which case leftIndex = currentLeftIndex-1, and rightIndex = currentRightIndex+1 */
                 leftIndex++;
                 rightIndex--;
             }
@@ -101,17 +101,6 @@ namespace CSFundamentals.Algorithms.Sort
         public static int GetPivotIndex(int startIndex, int endIndex)
         {
             return (startIndex + endIndex) / 2;
-        }
-
-        /// <summary>
-        /// Provides an iterative version of QuickSort.
-        /// </summary>
-        /// <param name="list"></param>
-        /// <param name="startIndex"></param>
-        /// <param name="endIndex"></param>
-        public static void Sort_Iteratively<T>(List<T> list, int startIndex, int endIndex) where T : IComparable<T>
-        {
-            throw new NotImplementedException();
         }
     }
 }
