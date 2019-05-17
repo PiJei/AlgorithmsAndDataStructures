@@ -33,10 +33,10 @@ namespace CSFundamentalsTests.Algorithms.Search
         /// <summary>
         /// Sorted array of elements. Note that binary search expects a sorted array. 
         /// </summary>
-        private static readonly List<int> _values = new List<int> { 1, 1, 3, 10, 14, 25, 27, 34, 78, 90, 90, 120 };
+        public static readonly List<int> List = new List<int> { 1, 1, 3, 10, 14, 25, 27, 34, 78, 90, 90, 120 };
 
         private static readonly int _startIndex = 0;
-        private static readonly int _endIndex = _values.Count - 1;
+        private static readonly int _endIndex = List.Count - 1;
 
         /// <summary>
         /// Tests the correctness of <paramref name="searchMethod"/> on an array with distinct elements. 
@@ -44,14 +44,14 @@ namespace CSFundamentalsTests.Algorithms.Search
         /// <param name="searchMethod">The search method that is being tested. </param>
         public static void DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition(Func<List<int>, int, int, int, int> searchMethod)
         {
-            Assert.AreEqual(2, searchMethod(_values, 3, _startIndex, _endIndex));
-            Assert.AreEqual(3, searchMethod(_values, 10, _startIndex, _endIndex));
-            Assert.AreEqual(4, searchMethod(_values, 14, _startIndex, _endIndex));
-            Assert.AreEqual(5, searchMethod(_values, 25, _startIndex, _endIndex));
-            Assert.AreEqual(6, searchMethod(_values, 27, _startIndex, _endIndex));
-            Assert.AreEqual(7, searchMethod(_values, 34, _startIndex, _endIndex));
-            Assert.AreEqual(8, searchMethod(_values, 78, _startIndex, _endIndex));
-            Assert.AreEqual(11, searchMethod(_values, 120, _startIndex, _endIndex));
+            Assert.AreEqual(2, searchMethod(List, 3, _startIndex, _endIndex));
+            Assert.AreEqual(3, searchMethod(List, 10, _startIndex, _endIndex));
+            Assert.AreEqual(4, searchMethod(List, 14, _startIndex, _endIndex));
+            Assert.AreEqual(5, searchMethod(List, 25, _startIndex, _endIndex));
+            Assert.AreEqual(6, searchMethod(List, 27, _startIndex, _endIndex));
+            Assert.AreEqual(7, searchMethod(List, 34, _startIndex, _endIndex));
+            Assert.AreEqual(8, searchMethod(List, 78, _startIndex, _endIndex));
+            Assert.AreEqual(11, searchMethod(List, 120, _startIndex, _endIndex));
         }
 
         /// <summary>
@@ -60,10 +60,10 @@ namespace CSFundamentalsTests.Algorithms.Search
         /// <param name="searchMethod">The search method that is being tested. </param>
         public static void DuplicateElements_ExpectsToGetTheIndexOfOneOfTheDupliatesNoMatterHowManyTimeSearchIsPerformed(Func<List<int>, int, int, int, int> searchMethod)
         {
-            Assert.IsTrue(new List<int> { 0, 1 }.Contains(searchMethod(_values, 1, _startIndex, _endIndex)));
-            Assert.IsTrue(new List<int> { 0, 1 }.Contains(searchMethod(_values, 1, _startIndex, _endIndex)));
-            Assert.IsTrue(new List<int> { 9, 10 }.Contains(searchMethod(_values, 90, _startIndex, _endIndex)));
-            Assert.IsTrue(new List<int> { 9, 10 }.Contains(searchMethod(_values, 90, _startIndex, _endIndex)));
+            Assert.IsTrue(new List<int> { 0, 1 }.Contains(searchMethod(List, 1, _startIndex, _endIndex)));
+            Assert.IsTrue(new List<int> { 0, 1 }.Contains(searchMethod(List, 1, _startIndex, _endIndex)));
+            Assert.IsTrue(new List<int> { 9, 10 }.Contains(searchMethod(List, 90, _startIndex, _endIndex)));
+            Assert.IsTrue(new List<int> { 9, 10 }.Contains(searchMethod(List, 90, _startIndex, _endIndex)));
         }
 
         /// <summary>
@@ -72,9 +72,9 @@ namespace CSFundamentalsTests.Algorithms.Search
         /// <param name="searchMethod">The search method that is being tested. </param>
         public static void NonExistingElements_ExpectsToGetMinusOne(Func<List<int>, int, int, int, int> searchMethod)
         {
-            Assert.AreEqual(-1, searchMethod(_values, -20, _startIndex, _endIndex));
-            Assert.AreEqual(-1, searchMethod(_values, 15, _startIndex, _endIndex));
-            Assert.AreEqual(-1, searchMethod(_values, 456, _startIndex, _endIndex));
+            Assert.AreEqual(-1, searchMethod(List, -20, _startIndex, _endIndex));
+            Assert.AreEqual(-1, searchMethod(List, 15, _startIndex, _endIndex));
+            Assert.AreEqual(-1, searchMethod(List, 456, _startIndex, _endIndex));
         }
 
         /// <summary>
@@ -83,14 +83,14 @@ namespace CSFundamentalsTests.Algorithms.Search
         /// <param name="searchMethod">The search method that is being tested. </param>
         public static void DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition(Func<List<int>, int, int> searchMethod)
         {
-            Assert.AreEqual(2, searchMethod(_values, 3));
-            Assert.AreEqual(3, searchMethod(_values, 10));
-            Assert.AreEqual(4, searchMethod(_values, 14));
-            Assert.AreEqual(5, searchMethod(_values, 25));
-            Assert.AreEqual(6, searchMethod(_values, 27));
-            Assert.AreEqual(7, searchMethod(_values, 34));
-            Assert.AreEqual(8, searchMethod(_values, 78));
-            Assert.AreEqual(11, searchMethod(_values, 120));
+            Assert.AreEqual(2, searchMethod(List, 3));
+            Assert.AreEqual(3, searchMethod(List, 10));
+            Assert.AreEqual(4, searchMethod(List, 14));
+            Assert.AreEqual(5, searchMethod(List, 25));
+            Assert.AreEqual(6, searchMethod(List, 27));
+            Assert.AreEqual(7, searchMethod(List, 34));
+            Assert.AreEqual(8, searchMethod(List, 78));
+            Assert.AreEqual(11, searchMethod(List, 120));
         }
 
         /// <summary>
@@ -99,10 +99,10 @@ namespace CSFundamentalsTests.Algorithms.Search
         /// <param name="searchMethod">The search method that is being tested. </param>
         public static void DuplicateElements_ExpectsToGetTheIndexOfOneOfTheDupliatesNoMatterHowManyTimeSearchIsPerformed(Func<List<int>, int, int> searchMethod)
         {
-            Assert.IsTrue(new List<int> { 0, 1 }.Contains(searchMethod(_values, 1)));
-            Assert.IsTrue(new List<int> { 0, 1 }.Contains(searchMethod(_values, 1)));
-            Assert.IsTrue(new List<int> { 9, 10 }.Contains(searchMethod(_values, 90)));
-            Assert.IsTrue(new List<int> { 9, 10 }.Contains(searchMethod(_values, 90)));
+            Assert.IsTrue(new List<int> { 0, 1 }.Contains(searchMethod(List, 1)));
+            Assert.IsTrue(new List<int> { 0, 1 }.Contains(searchMethod(List, 1)));
+            Assert.IsTrue(new List<int> { 9, 10 }.Contains(searchMethod(List, 90)));
+            Assert.IsTrue(new List<int> { 9, 10 }.Contains(searchMethod(List, 90)));
         }
 
         /// <summary>
@@ -111,9 +111,9 @@ namespace CSFundamentalsTests.Algorithms.Search
         /// <param name="searchMethod">The search method that is being tested. </param>
         public static void NonExistingElements_ExpectsToGetMinusOne(Func<List<int>, int, int> searchMethod)
         {
-            Assert.AreEqual(-1, searchMethod(_values, -20));
-            Assert.AreEqual(-1, searchMethod(_values, 15));
-            Assert.AreEqual(-1, searchMethod(_values, 456));
+            Assert.AreEqual(-1, searchMethod(List, -20));
+            Assert.AreEqual(-1, searchMethod(List, 15));
+            Assert.AreEqual(-1, searchMethod(List, 456));
         }
     }
 }

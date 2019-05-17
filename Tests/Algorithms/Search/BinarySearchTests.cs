@@ -31,6 +31,7 @@ namespace CSFundamentalsTests.Algorithms.Search
     {
         /// <summary>
         /// Tests the correctness of binary search algorithm on an array with distinct elements. 
+        /// To visualize how Binary Search is done over <see cref="SearchTests.List"/> see <img src = "../Images/Search/BinarySearch.png"/>.
         /// </summary>
         [TestMethod]
         public void Search_DistinctElements()
