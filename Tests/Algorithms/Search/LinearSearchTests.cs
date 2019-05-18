@@ -39,7 +39,7 @@ namespace CSFundamentalsTests.Algorithms.Search
 
         /// <summary>
         /// Tests the correctness of Linear search algorithm on an array with distinct elements. 
-        /// To visualize step by step how Linear Search finds a distinct element (int value of 3) in <see cref="_list"/> see <img src = "../Images/Search/LinearSearch-Distinct.png"/>.
+        /// To visualize step by step how Linear Search finds a distinct element (int value of 3) in <see cref="_list"/> see: <img src = "../Images/Search/LinearSearch-Distinct.png"/>.
         /// </summary>
         [TestMethod]
         public void Search_DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition()
@@ -56,7 +56,7 @@ namespace CSFundamentalsTests.Algorithms.Search
 
         /// <summary>
         /// Tests the correctness of Linear search algorithm on an array with duplicate elements. 
-        /// To visualize step by step how Linear Search finds a duplicate element (int value of 90) in <see cref="_list"/> see <img src = "../Images/Search/LinearSearch-Duplicate.png"/>.
+        /// To visualize step by step how Linear Search finds a duplicate element (int value of 90) in <see cref="_list"/> see: <img src = "../Images/Search/LinearSearch-Duplicate.png"/>.
         /// </summary>
         [TestMethod]
         public void Search_DuplicateElements_ExpectsToGetTheIndexOfTheFirstOccurrenceNoMatterHowManyTimesSearchIsPerformed()
@@ -67,7 +67,7 @@ namespace CSFundamentalsTests.Algorithms.Search
 
         /// <summary>
         /// Tests the correctness of Linear search algorithm when the key does not exist in the array. 
-        /// To visualize step by step how Linear Search terminates without finding a missing element (int value of 15) in <see cref="_list"/> see <img src = "../Images/Search/LinearSearch-Missing.png"/>.
+        /// To visualize step by step how Linear Search terminates without finding a missing element (int value of 15) in <see cref="_list"/> see: <img src = "../Images/Search/LinearSearch-Missing.png"/>.
         /// </summary>
         [TestMethod]
         public void Search_NonExistingElements_ExpectsToGetMinusOne()

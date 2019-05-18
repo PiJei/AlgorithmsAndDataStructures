@@ -32,7 +32,7 @@ namespace CSFundamentalsTests.Algorithms.GraphTraversal
     {
         /// <summary>
         /// Tests the correctness of shortest distance computation. Root is node A. 
-        /// To visualize the graph see <img src = "../Images/Graphs/Disjkstra.png"/>.
+        /// To visualize the graph see: <img src = "../Images/Graphs/Disjkstra.png"/>.
         /// </summary>
         [TestMethod]
         public void GetShortestDistancesFromRoot()
