@@ -196,16 +196,19 @@
         <member name="M:CSFundamentalsTests.Algorithms.Search.JumpSearchTests.Search_DistinctElements">
             <summary>
             Tests the correctness of Jump search algorithm on an array with distinct elements. 
+            To visualize step by step how Jump Search finds a distinct element (int value of 3) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see: <img src = "../Images/Search/JumpSearch-Distinct.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.JumpSearchTests.Search_DuplicateElements">
             <summary>
             Tests the correctness of Jump search algorithm on an array with duplicate elements. 
+            To visualize step by step how Jump Search finds a duplicate element (int value of 90) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see: <img src = "../Images/Search/JumpSearch-Duplicate.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.JumpSearchTests.Search_NotExistingElements">
             <summary>
-            Tests the correctness of Jump search algorithm when the key does not exist in the array. 
+            Tests the correctness of Jump search algorithm when the key does not exist in the array.
+            To visualize step by step how Jump Search terminates without finding a missing element (int value of 15) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see: <img src = "../Images/Search/JumpSearch-Missing.png"/>.
             </summary>
         </member>
         <member name="T:CSFundamentalsTests.Algorithms.Search.LinearSearchTests">

@@ -58,7 +58,7 @@ namespace CSFundamentals.Algorithms.Search
             int nextIndex = 1; /* Ideally should start from index 0, however that would make the while loop indexing complex, thus treating index 0 differently, and then continuing with the rest. */
             while (nextIndex < sortedList.Count && sortedList[nextIndex].CompareTo(key) < 0) /* multiple the search step by 2, until encountering an element that is bigger than the key. */
             {
-                nextIndex = nextIndex * 2;
+                nextIndex *= 2;
             }
 
             /* The range at which the key is expected to be is thus [nextIndex/2, nextIndex] - perform a binary search in this range. */

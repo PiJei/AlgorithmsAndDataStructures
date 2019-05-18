@@ -1137,7 +1137,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentalsTests.Algorithms.Search.ExponentialSearchTests.html",
-          "hash": "h4pV7rqilyBzu9332QmqjA=="
+          "hash": "tRjOWAAUM0YrTF2YmgXnWA=="
         }
       },
       "is_incremental": true,
@@ -2322,6 +2322,39 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/Search/ExponentialSearch-Distinct.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Search/ExponentialSearch-Distinct.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Search/ExponentialSearch-Duplicate.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Search/ExponentialSearch-Duplicate.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Search/ExponentialSearch-Missing.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Search/ExponentialSearch-Missing.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/Search/JumpSearch-Distinct.png",
       "output": {
         "resource": {
@@ -2739,13 +2772,6 @@
         "skipped_file_count": 0
       },
       "processors": {
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
@@ -2764,6 +2790,13 @@
           "incrementalPhase": "build",
           "total_file_count": 165,
           "skipped_file_count": 165
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
         }
       }
     },
