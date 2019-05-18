@@ -59,8 +59,8 @@ namespace CSFundamentals.Algorithms.Search
             }
 
             /* Dividing array by ((endIndex - startIndex) / 3) size in to 3 sections. */
-            int oneThirdIndex = startIndex + (endIndex - startIndex) / 3;
-            int twoThirdIndex = oneThirdIndex + (endIndex - startIndex) / 3;
+            int oneThirdIndex = startIndex + (endIndex - startIndex) * 1 / 3;
+            int twoThirdIndex = startIndex + (endIndex - startIndex) * 2 / 3;
 
             T oneThirdValue = sortedList[oneThirdIndex];
             T twoThirdValue = sortedList[twoThirdIndex];

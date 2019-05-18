@@ -93,16 +93,19 @@
         <member name="M:CSFundamentalsTests.Algorithms.Search.BinarySearchTests.Search_DistinctElements">
             <summary>
             Tests the correctness of binary search algorithm on an array with distinct elements. 
+            To visualize step by step how Binary Search finds a distinct element (int value of 3) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see <img src = "../Images/Search/BinarySearch.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.BinarySearchTests.Search_DuplicateElements">
             <summary>
             Tests the correctness of binary search algorithm on an array with duplicate elements. 
+            To visualize step by step how Binary Search finds a duplicate element (int value of 90) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see <img src = "../Images/Search/BinarySearch.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.BinarySearchTests.Search_NonExistingElements">
             <summary>
             Tests the correctness of binary search algorithm when the key does not exist in the array. 
+            To visualize step by step how Binary Search terminates without finding a missing element (int value of 15) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see <img src = "../Images/Search/BinarySearch.png"/>.
             </summary>
         </member>
         <member name="T:CSFundamentalsTests.Algorithms.Search.ExponentialSearchTests">
@@ -235,7 +238,7 @@
             Implements test methods for search algorithms. 
             </summary>
         </member>
-        <member name="F:CSFundamentalsTests.Algorithms.Search.SearchTests._values">
+        <member name="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List">
             <summary>
             Sorted array of elements. Note that binary search expects a sorted array. 
             </summary>
