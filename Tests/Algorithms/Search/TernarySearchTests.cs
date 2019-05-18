@@ -31,7 +31,7 @@ namespace CSFundamentalsTests.Algorithms.Search
     {
         /// <summary>
         /// Tests the correctness of Ternary search algorithm on an array with distinct elements. 
-        /// To visualize step by step how Ternary Search finds a distinct element (int value of 3) in <see cref="SearchTests.List"/> see <img src = "../Images/Search/TernarySearch.png"/>.
+        /// To visualize step by step how Ternary Search finds a distinct element (int value of 3) in <see cref="SearchTests.List"/> see <img src = "../Images/Search/TernarySearch-Distinct.png"/>.
         /// </summary>
         [TestMethod]
         public void Search_DistinctElements()
@@ -41,7 +41,7 @@ namespace CSFundamentalsTests.Algorithms.Search
 
         /// <summary>
         /// Tests the correctness of Ternary search algorithm on an array with duplicate elements. 
-        /// To visualize step by step how Ternary Search finds a duplicate element (int value of 90) in <see cref="SearchTests.List"/> see <img src = "../Images/Search/TernarySearch.png"/>.
+        /// To visualize step by step how Ternary Search finds a duplicate element (int value of 90) in <see cref="SearchTests.List"/> see <img src = "../Images/Search/TernarySearch-Duplicate.png"/>.
         /// </summary>
         [TestMethod]
         public void Search_DuplicateElements()
@@ -51,7 +51,7 @@ namespace CSFundamentalsTests.Algorithms.Search
 
         /// <summary>
         /// Tests the correctness of Ternary search algorithm when the key does not exist in the array. 
-        /// To visualize step by step how Ternary Search terminates without finding a missing element (int value of 15) in <see cref="SearchTests.List"/> see <img src = "../Images/Search/TernarySearch.png"/>.
+        /// To visualize step by step how Ternary Search terminates without finding a missing element (int value of 15) in <see cref="SearchTests.List"/> see <img src = "../Images/Search/TernarySearch-Missing.png"/>.
         /// </summary>
         [TestMethod]
         public void Search_NonExistingElements()
