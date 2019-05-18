@@ -213,7 +213,7 @@
             Tests methods in <see cref="T:CSFundamentals.Algorithms.Search.LinearSearch"/> class. 
             </summary>
         </member>
-        <member name="F:CSFundamentalsTests.Algorithms.Search.LinearSearchTests._values">
+        <member name="F:CSFundamentalsTests.Algorithms.Search.LinearSearchTests._list">
             <summary>
             A random array of integers (not sorted), and containing duplicates
             </summary>
@@ -221,16 +221,19 @@
         <member name="M:CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition">
             <summary>
             Tests the correctness of Linear search algorithm on an array with distinct elements. 
+            To visualize step by step how Linear Search finds a distinct element (int value of 3) in <see cref="F:CSFundamentalsTests.Algorithms.Search.LinearSearchTests._list"/> see <img src = "../Images/Search/LinearSearch-Distinct.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_DuplicateElements_ExpectsToGetTheIndexOfTheFirstOccurrenceNoMatterHowManyTimesSearchIsPerformed">
             <summary>
             Tests the correctness of Linear search algorithm on an array with duplicate elements. 
+            To visualize step by step how Linear Search finds a duplicate element (int value of 90) in <see cref="F:CSFundamentalsTests.Algorithms.Search.LinearSearchTests._list"/> see <img src = "../Images/Search/LinearSearch-Duplicate.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_NonExistingElements_ExpectsToGetMinusOne">
             <summary>
             Tests the correctness of Linear search algorithm when the key does not exist in the array. 
+            To visualize step by step how Linear Search terminates without finding a missing element (int value of 15) in <see cref="F:CSFundamentalsTests.Algorithms.Search.LinearSearchTests._list"/> see <img src = "../Images/Search/LinearSearch-Missing.png"/>.
             </summary>
         </member>
         <member name="T:CSFundamentalsTests.Algorithms.Search.SearchTests">
