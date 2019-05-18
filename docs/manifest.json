@@ -1149,10 +1149,10 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.html",
-          "hash": "lphdKO55P3aU/CUxOjRrPw=="
+          "hash": "K9kKYadjMLzv3JKu8Q+ALQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -1236,7 +1236,7 @@
           "hash": "i9ODvLP0sjtIozJ/yA7FZA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -2355,6 +2355,39 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/Search/FibonacciSearch-Distinct.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Search/FibonacciSearch-Distinct.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Search/FibonacciSearch-Duplicate.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Search/FibonacciSearch-Duplicate.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Search/FibonacciSearch-Missing.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Search/FibonacciSearch-Missing.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/Search/JumpSearch-Distinct.png",
       "output": {
         "resource": {
@@ -2772,6 +2805,13 @@
         "skipped_file_count": 0
       },
       "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
@@ -2790,13 +2830,6 @@
           "incrementalPhase": "build",
           "total_file_count": 165,
           "skipped_file_count": 165
-        },
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
         }
       }
     },
