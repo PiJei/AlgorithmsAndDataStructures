@@ -225,10 +225,10 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Search.InterpolationSearch.html",
-          "hash": "iqPm/+ae+Wua0A9CAH7D3w=="
+          "hash": "2uOjsAU93pESKelhx9vc6g=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -276,7 +276,7 @@
           "hash": "CSWl7ExMAGxMcis464G1LA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -1152,7 +1152,7 @@
           "hash": "K9kKYadjMLzv3JKu8Q+ALQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1173,10 +1173,10 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentalsTests.Algorithms.Search.InterpolationSearchTests.html",
-          "hash": "R8TGl8AudQSZAwXlr1EAMw=="
+          "hash": "90MzDkCKumlLREYqfNNF/Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -2388,6 +2388,39 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/Search/InterpolationSearch-Distinct.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Search/InterpolationSearch-Distinct.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Search/InterpolationSearch-Duplicate.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Search/InterpolationSearch-Duplicate.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Search/InterpolationSearch-Missing.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Search/InterpolationSearch-Missing.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/Search/JumpSearch-Distinct.png",
       "output": {
         "resource": {
@@ -2805,13 +2838,6 @@
         "skipped_file_count": 0
       },
       "processors": {
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
@@ -2829,7 +2855,14 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 165,
-          "skipped_file_count": 165
+          "skipped_file_count": 163
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
         }
       }
     },

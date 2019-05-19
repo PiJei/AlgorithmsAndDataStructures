@@ -115,17 +115,20 @@
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.ExponentialSearchTests.Search_DistinctElements">
             <summary>
-            Tests the correctness of Exponential search algorithm on an array with distinct elements. 
+            Tests the correctness of Exponential search algorithm on an array with distinct elements.
+            To visualize step by step how Exponential Search finds a distinct element (int value of 3) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see: <img src = "../Images/Search/ExponentialSearch-Distinct.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.ExponentialSearchTests.Search_DuplicateElements">
             <summary>
             Tests the correctness of Exponential search algorithm on an array with duplicate elements. 
+            To visualize step by step how Exponential Search finds a duplicate element (int value of 90) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see: <img src = "../Images/Search/ExponentialSearch-Duplicate.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.ExponentialSearchTests.Search_NotExistingElements">
             <summary>
             Tests the correctness of Exponential search algorithm when the key does not exist in the array. 
+            To visualize step by step how Exponential Search terminates without finding a missing element (int value of 15) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see: <img src = "../Images/Search/ExponentialSearch-Missing.png"/>.
             </summary>
         </member>
         <member name="T:CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests">
@@ -136,16 +139,19 @@
         <member name="M:CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_DistinctElements">
             <summary>
             Tests the correctness of Fibonacci search algorithm on an array with distinct elements. 
+            To visualize step by step how Fibonacci Search finds a distinct element (int value of 3) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see: <img src = "../Images/Search/FibonacciSearch-Distinct.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_DuplicateElements">
             <summary>
             Tests the correctness of Fibonacci search algorithm on an array with duplicate elements. 
+            To visualize step by step how Fibonacci Search finds a duplicate element (int value of 90) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see: <img src = "../Images/Search/FibonacciSearch-Duplicate.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_NonExistingElements">
             <summary>
             Tests the correctness of Fibonacci search algorithm when the key does not exist in the array. 
+            To visualize step by step how Fibonacci Search terminates without finding a missing element (int value of 15) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see: <img src = "../Images/Search/FibonacciSearch-Missing.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.GetSmallestFibonacciBiggerThanNumber">
@@ -171,16 +177,19 @@
         <member name="M:CSFundamentalsTests.Algorithms.Search.InterpolationSearchTests.Search_DistinctElements">
             <summary>
             Tests the correctness of Interpolation search algorithm on an array with distinct elements. 
+            To visualize step by step how Interpolation Search finds a distinct element (int value of 3) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see: <img src = "../Images/Search/InterpolationSearch-Distinct.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.InterpolationSearchTests.Search_DuplicateElements">
             <summary>
             Tests the correctness of Interpolation search algorithm on an array with duplicate elements. 
+            To visualize step by step how Interpolation Search finds a duplicate element (int value of 90) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see: <img src = "../Images/Search/InterpolationSearch-Duplicate.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.InterpolationSearchTests.Search_NonExistingElements">
             <summary>
             Tests the correctness of Interpolation search algorithm when the key does not exist in the array. 
+            To visualize step by step how Interpolation Search terminates without finding a missing element (int value of 15) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see: <img src = "../Images/Search/InterpolationSearch-Missing.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.InterpolationSearchTests.GetStartIndex">

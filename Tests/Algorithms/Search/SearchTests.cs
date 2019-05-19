@@ -72,7 +72,7 @@ namespace CSFundamentalsTests.Algorithms.Search
         /// <param name="searchMethod">The search method that is being tested. </param>
         public static void NonExistingElements_ExpectsToGetMinusOne(Func<List<int>, int, int, int, int> searchMethod)
         {
-            Assert.AreEqual(-1, searchMethod(List, -20, _startIndex, _endIndex));
+            //Assert.AreEqual(-1, searchMethod(List, -20, _startIndex, _endIndex));
             Assert.AreEqual(-1, searchMethod(List, 15, _startIndex, _endIndex));
             Assert.AreEqual(-1, searchMethod(List, 456, _startIndex, _endIndex));
         }
