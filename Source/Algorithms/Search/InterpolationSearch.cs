@@ -21,6 +21,11 @@
 using System;
 using System.Collections.Generic;
 using CSFundamentals.Decoration;
+// TODO: Implement using binary search, ... where the location of the array is computed by a method, which I will pass here: 
+// also means that I can make a parent class for all the search algorithms, and enforce them to implement their own find the next search position
+// TODO: Implement iterative versions and recursive versions for each search algorithm.. 
+// TODO: Implement methods to count the number of elements each search algorithm checks before finding a value and measure it in average?
+// TODO: Not sure if this will work with types other than integer, because of conversion to dynamic... test with string for example. ... or any object, etc, .. 
 
 namespace CSFundamentals.Algorithms.Search
 {
@@ -57,7 +62,7 @@ namespace CSFundamentals.Algorithms.Search
                 return -1;
             }
 
-            int searchStartIndex = GetStartIndex(sortedList, startIndex, endIndex, key);
+            int searchStartIndex = GetStartIndex(sortedList, key, startIndex, endIndex);
             if (!(searchStartIndex >= startIndex && searchStartIndex <= endIndex))
             {
                 return -1;
@@ -84,28 +89,20 @@ namespace CSFundamentals.Algorithms.Search
         }
 
         /// <summary>
-        /// Computes an index to start the search from, Dependent on the value we are after. 
+        /// Computes an index to start the search from, dependent on the value of <paramref name="key"/>. 
         /// This formula is such that if the <paramref name="key"/> is closer to the value in the <paramref name="startIndex"/>, the search start point will be chosen closer to the <paramref name="startIndex"/>, and if the <paramref name="key"/> is closer to the value at <paramref name="endIndex"/>, the search start point will be chosen closer to the <paramref name="endIndex"/>.
         /// </summary>
         /// <param name="sortedList">A sorted list of any comparable type that are also uniformly distributed. </param>
+        /// <param name="key">The value that is being searched for. </param>
         /// <param name="startIndex">The lowest (left-most) index of the array - inclusive. </param>
         /// <param name="endIndex">The highest (right-most) index of the array - inclusive. </param>
-        /// <param name="key">The value that is being searched for. </param>
         /// <returns>The index in the array at which to start the search. </returns>
-        public static int GetStartIndex<T>(List<T> sortedList, int startIndex, int endIndex, T key) where T : IComparable<T>
+        public static int GetStartIndex<T>(List<T> sortedList, T key, int startIndex, int endIndex) where T : IComparable<T>
         {
             double distanceFromStartIndex = ((dynamic)key - (dynamic)sortedList[startIndex]) / (double)((dynamic)sortedList[endIndex] - (dynamic)sortedList[startIndex]);
-            distanceFromStartIndex = distanceFromStartIndex * (endIndex - startIndex);
+            distanceFromStartIndex *= (endIndex - startIndex);
             int index = (int)(startIndex + distanceFromStartIndex);
             return index;
         }
-
-        // TODO: Implement using binary search, ... where the location of the array is computed by a method, which I will pass here: 
-        // also means that I can make a parent class for all the search algorithms, and enforce them to implement their own find the next search position
-
-        // TODO: Implement iterative versions and recursive versions for each search algorithm.. 
-
-        // TODO: Implement methods to count the number of elements each search algorithm checks before finding a value and measure it in average?
-        // TODO: Not sure if this will work with types other than integer, because of conversion to dynamic... test with string for example. ... or any object, etc, .. 
     }
 }

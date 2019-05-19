@@ -33,44 +33,48 @@ namespace CSFundamentalsTests.Algorithms.Search
         /// <summary>
         /// A random array of integers (not sorted), and containing duplicates
         /// </summary>
-        private readonly static List<int> _values = new List<int> { 4, 1, 9, 100, 3, 2, 45, 37, 3 };
+        private readonly static List<int> _list = new List<int> { 27, 1, 120, 10, 3, 90, 25, 14, 1, 34, 90 , 78 };
         private readonly static int _startIndex = 0;
-        private readonly static int _endIndex = _values.Count - 1;
+        private readonly static int _endIndex = _list.Count - 1;
 
         /// <summary>
         /// Tests the correctness of Linear search algorithm on an array with distinct elements. 
+        /// To visualize step by step how Linear Search finds a distinct element (int value of 3) in <see cref="_list"/> see: <img src = "../Images/Search/LinearSearch-Distinct.png"/>.
         /// </summary>
         [TestMethod]
         public void Search_DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition()
         {
-            Assert.AreEqual(0, LinearSearch.Search(_values, 4, _startIndex, _endIndex));
-            Assert.AreEqual(7, LinearSearch.Search(_values, 37, _startIndex, _endIndex));
-            Assert.AreEqual(3, LinearSearch.Search(_values, 100, _startIndex, _endIndex));
-            Assert.AreEqual(1, LinearSearch.Search(_values, 1, _startIndex, _endIndex));
-            Assert.AreEqual(2, LinearSearch.Search(_values, 9, _startIndex, _endIndex));
-            Assert.AreEqual(5, LinearSearch.Search(_values, 2, _startIndex, _endIndex));
-            Assert.AreEqual(6, LinearSearch.Search(_values, 45, _startIndex, _endIndex));
+            Assert.AreEqual(4, LinearSearch.Search(_list, 3, _startIndex, _endIndex));
+            Assert.AreEqual(3, LinearSearch.Search(_list, 10, _startIndex, _endIndex));
+            Assert.AreEqual(7, LinearSearch.Search(_list, 14, _startIndex, _endIndex));
+            Assert.AreEqual(6, LinearSearch.Search(_list, 25, _startIndex, _endIndex));
+            Assert.AreEqual(0, LinearSearch.Search(_list, 27, _startIndex, _endIndex));
+            Assert.AreEqual(9, LinearSearch.Search(_list, 34, _startIndex, _endIndex));
+            Assert.AreEqual(11, LinearSearch.Search(_list, 78, _startIndex, _endIndex));
+            Assert.AreEqual(2, LinearSearch.Search(_list, 120, _startIndex, _endIndex));
         }
 
         /// <summary>
         /// Tests the correctness of Linear search algorithm on an array with duplicate elements. 
+        /// To visualize step by step how Linear Search finds a duplicate element (int value of 90) in <see cref="_list"/> see: <img src = "../Images/Search/LinearSearch-Duplicate.png"/>.
         /// </summary>
         [TestMethod]
         public void Search_DuplicateElements_ExpectsToGetTheIndexOfTheFirstOccurrenceNoMatterHowManyTimesSearchIsPerformed()
         {
-            Assert.AreEqual(4, LinearSearch.Search(_values, 3, _startIndex, _endIndex));
-            Assert.AreEqual(4, LinearSearch.Search(_values, 3, _startIndex, _endIndex));
+            Assert.AreEqual(1, LinearSearch.Search(_list, 1, _startIndex, _endIndex));
+            Assert.AreEqual(5, LinearSearch.Search(_list, 90, _startIndex, _endIndex));
         }
 
         /// <summary>
         /// Tests the correctness of Linear search algorithm when the key does not exist in the array. 
+        /// To visualize step by step how Linear Search terminates without finding a missing element (int value of 15) in <see cref="_list"/> see: <img src = "../Images/Search/LinearSearch-Missing.png"/>.
         /// </summary>
         [TestMethod]
         public void Search_NonExistingElements_ExpectsToGetMinusOne()
         {
-            Assert.AreEqual(-1, LinearSearch.Search(_values, 200, _startIndex, _endIndex));
-            Assert.AreEqual(-1, LinearSearch.Search(_values, 1550, _startIndex, _endIndex));
-            Assert.AreEqual(-1, LinearSearch.Search(_values, 8, _startIndex, _endIndex));
+            Assert.AreEqual(-1, LinearSearch.Search(_list, -20, _startIndex, _endIndex));
+            Assert.AreEqual(-1, LinearSearch.Search(_list, 15, _startIndex, _endIndex));
+            Assert.AreEqual(-1, LinearSearch.Search(_list, 456, _startIndex, _endIndex));
         }
     }
 }

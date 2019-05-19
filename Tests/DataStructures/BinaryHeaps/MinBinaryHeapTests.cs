@@ -63,7 +63,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 
         /// <summary>
         /// Tests the correctness of Build operation recursive version. 
-        /// To visualize in-place Min Binary Heap building process see <img src = "../Images/Heaps/MinBinaryHeap-Build.png"/>.
+        /// To visualize in-place Min Binary Heap building process see: <img src = "../Images/Heaps/MinBinaryHeap-Build.png"/>.
         /// </summary>
         [TestMethod]
         public void BuildHeap_Recursively()
@@ -77,7 +77,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 
         /// <summary>
         /// Tests the correctness of Build operation iterative version.
-        /// To visualize in-place Min Binary Heap building process see <img src = "../Images/Heaps/MinBinaryHeap-Build.png"/>.
+        /// To visualize in-place Min Binary Heap building process see: <img src = "../Images/Heaps/MinBinaryHeap-Build.png"/>.
         /// </summary>
         [TestMethod]
         public void BuildHeap_Iteratively()
@@ -91,7 +91,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 
         /// <summary>
         /// Tests the correctness of removing min node from a Min binary heap. 
-        /// To visualize the steps in this test method see <img src = "../Images/Heaps/MinBinaryHeap-TryRemoveRoot.png"/>.
+        /// To visualize the steps in this test method see: <img src = "../Images/Heaps/MinBinaryHeap-TryRemoveRoot.png"/>.
         /// </summary>
         [TestMethod]
         public void TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectsAscendingOrderInResults()
@@ -150,7 +150,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 
         /// <summary>
         /// Tests the correctness of Insert operation when inserting several keys one after the other in the Min binary heap. 
-        /// To visualize the steps in this test method see <img src = "../Images/Heaps/MinBinaryHeap-Insert.png"/>.
+        /// To visualize the steps in this test method see: <img src = "../Images/Heaps/MinBinaryHeap-Insert.png"/>.
         /// </summary>
         [TestMethod]
         public void Insert_SeveralValues_ExpectCorrectMinBinaryHeapAfterEachInsert()

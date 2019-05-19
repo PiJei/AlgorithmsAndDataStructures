@@ -35,7 +35,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
     {
         /// <summary>
         /// Tests the correctness of Build operation recursive version, when inserting distinct values. 
-        /// To visualize in-place MinMax Binary Heap building process see <img src = "../Images/Heaps/MinMaxBinaryHeap-Build.png"/>.
+        /// To visualize in-place MinMax Binary Heap building process see: <img src = "../Images/Heaps/MinMaxBinaryHeap-Build.png"/>.
         /// </summary>
         [TestMethod]
         public void BuildHeapRecursively_DistinctValues()
@@ -68,7 +68,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 
         /// <summary>
         /// Tests the correctness of Build operation, recursive version when inserting duplicate values. 
-        /// To visualize in-place MinMax Binary Heap building process see <img src = "../Images/Heaps/MinMaxBinaryHeap-Build-WithDuplicateKeys.png"/>.
+        /// To visualize in-place MinMax Binary Heap building process see: <img src = "../Images/Heaps/MinMaxBinaryHeap-Build-WithDuplicateKeys.png"/>.
         /// </summary>
         [TestMethod]
         public void BuildHeapRecursively_DuplicateValues()
@@ -96,7 +96,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 
         /// <summary>
         /// Tests the correctness of Insert operation when inserting several keys one after the other in the MinMaxBinary binary heap. 
-        /// To visualize the steps in this test method see <img src = "../Images/Heaps/MinMaxBinaryHeap-Insert.png"/>.
+        /// To visualize the steps in this test method see: <img src = "../Images/Heaps/MinMaxBinaryHeap-Insert.png"/>.
         /// </summary>
         [TestMethod]
         public void Insert_SeveralValues_ExpectCorrectMinMaxBinaryHeapAfterEachInsert()
@@ -143,7 +143,7 @@ namespace CSFundamentalsTests.DataStructures.BinaryHeaps
 
         /// <summary>
         /// Tests the correctness of removing root of the heap. Removes root several times until no member in tree remains.
-        /// To visualize the steps in this test method see <img src = "../Images/Heaps/MinMaxBinaryHeap-TryRemoveRoot.png"/>.
+        /// To visualize the steps in this test method see: <img src = "../Images/Heaps/MinMaxBinaryHeap-TryRemoveRoot.png"/>.
         /// </summary>
         [TestMethod]
         public void TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectAscendingOrderInResults()

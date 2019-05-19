@@ -115,20 +115,20 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/ImagesForSortAlgorithms/apiSpec/new?filename=CSFundamentals_Algorithms_Search_InterpolationSearch_GetStartIndex__1_System_Collections_Generic_List___0__System_Int32_System_Int32___0_.md&amp;value=---%0Auid%3A%20CSFundamentals.Algorithms.Search.InterpolationSearch.GetStartIndex%60%601(System.Collections.Generic.List%7B%60%600%7D%2CSystem.Int32%2CSystem.Int32%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/Search-AddingImages/apiSpec/new?filename=CSFundamentals_Algorithms_Search_InterpolationSearch_GetStartIndex__1_System_Collections_Generic_List___0____0_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.Algorithms.Search.InterpolationSearch.GetStartIndex%60%601(System.Collections.Generic.List%7B%60%600%7D%2C%60%600%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/ImagesForSortAlgorithms/Source/Algorithms/Search/InterpolationSearch.cs/#L95">View Source</a>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/Search-AddingImages/Source/Algorithms/Search/InterpolationSearch.cs/#L100">View Source</a>
   </span>
   <a id="CSFundamentals_Algorithms_Search_InterpolationSearch_GetStartIndex_" data-uid="CSFundamentals.Algorithms.Search.InterpolationSearch.GetStartIndex*"></a>
-  <h4 id="CSFundamentals_Algorithms_Search_InterpolationSearch_GetStartIndex__1_System_Collections_Generic_List___0__System_Int32_System_Int32___0_" data-uid="CSFundamentals.Algorithms.Search.InterpolationSearch.GetStartIndex``1(System.Collections.Generic.List{``0},System.Int32,System.Int32,``0)">GetStartIndex&lt;T&gt;(List&lt;T&gt;, Int32, Int32, T)</h4>
-  <div class="markdown level1 summary"><p>Computes an index to start the search from, Dependent on the value we are after.
+  <h4 id="CSFundamentals_Algorithms_Search_InterpolationSearch_GetStartIndex__1_System_Collections_Generic_List___0____0_System_Int32_System_Int32_" data-uid="CSFundamentals.Algorithms.Search.InterpolationSearch.GetStartIndex``1(System.Collections.Generic.List{``0},``0,System.Int32,System.Int32)">GetStartIndex&lt;T&gt;(List&lt;T&gt;, T, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Computes an index to start the search from, dependent on the value of <code data-dev-comment-type="paramref" class="paramref">key</code>.
 This formula is such that if the <code data-dev-comment-type="paramref" class="paramref">key</code> is closer to the value in the <code data-dev-comment-type="paramref" class="paramref">startIndex</code>, the search start point will be chosen closer to the <code data-dev-comment-type="paramref" class="paramref">startIndex</code>, and if the <code data-dev-comment-type="paramref" class="paramref">key</code> is closer to the value at <code data-dev-comment-type="paramref" class="paramref">endIndex</code>, the search start point will be chosen closer to the <code data-dev-comment-type="paramref" class="paramref">endIndex</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int GetStartIndex&lt;T&gt;(List&lt;T&gt; sortedList, int startIndex, int endIndex, T key)
+    <pre><code class="lang-csharp hljs">public static int GetStartIndex&lt;T&gt;(List&lt;T&gt; sortedList, T key, int startIndex, int endIndex)
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -148,6 +148,12 @@ This formula is such that if the <code data-dev-comment-type="paramref" class="p
 </td>
       </tr>
       <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The value that is being searched for.</p>
+</td>
+      </tr>
+      <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">startIndex</span></td>
         <td><p>The lowest (left-most) index of the array - inclusive.</p>
@@ -157,12 +163,6 @@ This formula is such that if the <code data-dev-comment-type="paramref" class="p
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">endIndex</span></td>
         <td><p>The highest (right-most) index of the array - inclusive.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">T</span></td>
-        <td><span class="parametername">key</span></td>
-        <td><p>The value that is being searched for.</p>
 </td>
       </tr>
     </tbody>
@@ -200,10 +200,10 @@ This formula is such that if the <code data-dev-comment-type="paramref" class="p
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/ImagesForSortAlgorithms/apiSpec/new?filename=CSFundamentals_Algorithms_Search_InterpolationSearch_Search__1_System_Collections_Generic_List___0____0_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.Algorithms.Search.InterpolationSearch.Search%60%601(System.Collections.Generic.List%7B%60%600%7D%2C%60%600%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/Search-AddingImages/apiSpec/new?filename=CSFundamentals_Algorithms_Search_InterpolationSearch_Search__1_System_Collections_Generic_List___0____0_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20CSFundamentals.Algorithms.Search.InterpolationSearch.Search%60%601(System.Collections.Generic.List%7B%60%600%7D%2C%60%600%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/ImagesForSortAlgorithms/Source/Algorithms/Search/InterpolationSearch.cs/#L42">View Source</a>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/Search-AddingImages/Source/Algorithms/Search/InterpolationSearch.cs/#L47">View Source</a>
   </span>
   <a id="CSFundamentals_Algorithms_Search_InterpolationSearch_Search_" data-uid="CSFundamentals.Algorithms.Search.InterpolationSearch.Search*"></a>
   <h4 id="CSFundamentals_Algorithms_Search_InterpolationSearch_Search__1_System_Collections_Generic_List___0____0_System_Int32_System_Int32_" data-uid="CSFundamentals.Algorithms.Search.InterpolationSearch.Search``1(System.Collections.Generic.List{``0},``0,System.Int32,System.Int32)">Search&lt;T&gt;(List&lt;T&gt;, T, Int32, Int32)</h4>
@@ -297,10 +297,10 @@ public static int Search&lt;T&gt;(List&lt;T&gt; sortedList, T key, int startInde
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/ImagesForSortAlgorithms/apiSpec/new?filename=CSFundamentals_Algorithms_Search_InterpolationSearch.md&amp;value=---%0Auid%3A%20CSFundamentals.Algorithms.Search.InterpolationSearch%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/Search-AddingImages/apiSpec/new?filename=CSFundamentals_Algorithms_Search_InterpolationSearch.md&amp;value=---%0Auid%3A%20CSFundamentals.Algorithms.Search.InterpolationSearch%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/ImagesForSortAlgorithms/Source/Algorithms/Search/InterpolationSearch.cs/#L30" class="contribution-link">View Source</a>
+                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/Search-AddingImages/Source/Algorithms/Search/InterpolationSearch.cs/#L35" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

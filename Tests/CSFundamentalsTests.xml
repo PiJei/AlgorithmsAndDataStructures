@@ -12,31 +12,31 @@
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Initialize">
             <summary>
             Initializes/Resets variables before executing each unit test in this class. 
-            To visualize the graph see <img src = "../Images/Graphs/Graph-BFS-DFS.png"/>
+            To visualize the graph see: <img src = "../Images/Graphs/Graph-BFS-DFS.png"/>
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Iterative_StartFromA">
             <summary>
             Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests._nodeA"/>.
-            To visualize the graph traversal steps see <img src = "../Images/Graphs/BFS-Iterative-StartA.png"/>.
+            To visualize the graph traversal steps see: <img src = "../Images/Graphs/BFS-Iterative-StartA.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Iterative_StartFromE">
             <summary>
             Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests._nodeE"/>.
-            To visualize the graph traversal steps see <img src = "../Images/Graphs/BFS-Iterative-StartE.png"/>.
+            To visualize the graph traversal steps see: <img src = "../Images/Graphs/BFS-Iterative-StartE.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Recursive_StartFromA">
             <summary>
             Tests the correctness of BFS recursive version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests._nodeA"/>.
-            To visualize the graph traversal steps see <img src = "../Images/Graphs/BFS-Recursive-StartA.png"/>.
+            To visualize the graph traversal steps see: <img src = "../Images/Graphs/BFS-Recursive-StartA.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests.Recursive_StartFromE">
             <summary>
             Tests the correctness of BFS recursive version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.BfsTests._nodeE"/>.
-            To visualize the graph traversal steps see <img src = "../Images/Graphs/BFS-Recursive-StartE.png"/>.
+            To visualize the graph traversal steps see: <img src = "../Images/Graphs/BFS-Recursive-StartE.png"/>.
             </summary>
         </member>
         <member name="T:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests">
@@ -47,31 +47,31 @@
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Initialize">
             <summary>
             Initializes/Resets variables before executing each unit test in this class. 
-            To visualize the graph see <img src = "../Images/Graphs/Graph-BFS-DFS.png"/>.
+            To visualize the graph see: <img src = "../Images/Graphs/Graph-BFS-DFS.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Iterative_StartFromA">
             <summary>
             Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests._nodeA"/>.
-            To visualize the graph traversal steps see <img src = "../Images/Graphs/DFS-Iterative-StartA.png"/>. 
+            To visualize the graph traversal steps see: <img src = "../Images/Graphs/DFS-Iterative-StartA.png"/>. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Iterative_StartFromE">
             <summary>
             Tests the correctness of BFS iterative version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests._nodeE"/>.
-            To visualize the graph traversal steps see <img src = "../Images/Graphs/DFS-Iterative-StartE.png"/>. 
+            To visualize the graph traversal steps see: <img src = "../Images/Graphs/DFS-Iterative-StartE.png"/>. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Recursive_StartFromA">
             <summary>
             Tests the correctness of BFS recursive version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests._nodeA"/>.
-            To visualize the graph traversal steps see <img src = "../Images/Graphs/DFS-Recursive-StartA.png"/>. 
+            To visualize the graph traversal steps see: <img src = "../Images/Graphs/DFS-Recursive-StartA.png"/>. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests.Recursive_StartFromE">
             <summary>
             Tests the correctness of BFS recursive version, when starting from node <see cref="F:CSFundamentalsTests.Algorithms.GraphTraversal.DfsTests._nodeE"/>.
-            To visualize the graph traversal steps see <img src = "../Images/Graphs/DFS-Recursive-StartE.png"/>. 
+            To visualize the graph traversal steps see: <img src = "../Images/Graphs/DFS-Recursive-StartE.png"/>. 
             </summary>
         </member>
         <member name="T:CSFundamentalsTests.Algorithms.GraphTraversal.DijkstraTests">
@@ -82,7 +82,7 @@
         <member name="M:CSFundamentalsTests.Algorithms.GraphTraversal.DijkstraTests.GetShortestDistancesFromRoot">
             <summary>
             Tests the correctness of shortest distance computation. Root is node A. 
-            To visualize the graph see <img src = "../Images/Graphs/Disjkstra.png"/>.
+            To visualize the graph see: <img src = "../Images/Graphs/Disjkstra.png"/>.
             </summary>
         </member>
         <member name="T:CSFundamentalsTests.Algorithms.Search.BinarySearchTests">
@@ -93,16 +93,19 @@
         <member name="M:CSFundamentalsTests.Algorithms.Search.BinarySearchTests.Search_DistinctElements">
             <summary>
             Tests the correctness of binary search algorithm on an array with distinct elements. 
+            To visualize step by step how Binary Search finds a distinct element (int value of 3) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see: <img src = "../Images/Search/BinarySearch-Distinct.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.BinarySearchTests.Search_DuplicateElements">
             <summary>
             Tests the correctness of binary search algorithm on an array with duplicate elements. 
+            To visualize step by step how Binary Search finds a duplicate element (int value of 90) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see: <img src = "../Images/Search/BinarySearch-Duplicate.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.BinarySearchTests.Search_NonExistingElements">
             <summary>
             Tests the correctness of binary search algorithm when the key does not exist in the array. 
+            To visualize step by step how Binary Search terminates without finding a missing element (int value of 15) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see: <img src = "../Images/Search/BinarySearch-Missing.png"/>.
             </summary>
         </member>
         <member name="T:CSFundamentalsTests.Algorithms.Search.ExponentialSearchTests">
@@ -112,17 +115,20 @@
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.ExponentialSearchTests.Search_DistinctElements">
             <summary>
-            Tests the correctness of Exponential search algorithm on an array with distinct elements. 
+            Tests the correctness of Exponential search algorithm on an array with distinct elements.
+            To visualize step by step how Exponential Search finds a distinct element (int value of 3) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see: <img src = "../Images/Search/ExponentialSearch-Distinct.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.ExponentialSearchTests.Search_DuplicateElements">
             <summary>
             Tests the correctness of Exponential search algorithm on an array with duplicate elements. 
+            To visualize step by step how Exponential Search finds a duplicate element (int value of 90) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see: <img src = "../Images/Search/ExponentialSearch-Duplicate.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.ExponentialSearchTests.Search_NotExistingElements">
             <summary>
             Tests the correctness of Exponential search algorithm when the key does not exist in the array. 
+            To visualize step by step how Exponential Search terminates without finding a missing element (int value of 15) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see: <img src = "../Images/Search/ExponentialSearch-Missing.png"/>.
             </summary>
         </member>
         <member name="T:CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests">
@@ -133,16 +139,19 @@
         <member name="M:CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_DistinctElements">
             <summary>
             Tests the correctness of Fibonacci search algorithm on an array with distinct elements. 
+            To visualize step by step how Fibonacci Search finds a distinct element (int value of 3) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see: <img src = "../Images/Search/FibonacciSearch-Distinct.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_DuplicateElements">
             <summary>
             Tests the correctness of Fibonacci search algorithm on an array with duplicate elements. 
+            To visualize step by step how Fibonacci Search finds a duplicate element (int value of 90) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see: <img src = "../Images/Search/FibonacciSearch-Duplicate.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.Search_NonExistingElements">
             <summary>
             Tests the correctness of Fibonacci search algorithm when the key does not exist in the array. 
+            To visualize step by step how Fibonacci Search terminates without finding a missing element (int value of 15) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see: <img src = "../Images/Search/FibonacciSearch-Missing.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.FibonacciSearchTests.GetSmallestFibonacciBiggerThanNumber">
@@ -168,16 +177,19 @@
         <member name="M:CSFundamentalsTests.Algorithms.Search.InterpolationSearchTests.Search_DistinctElements">
             <summary>
             Tests the correctness of Interpolation search algorithm on an array with distinct elements. 
+            To visualize step by step how Interpolation Search finds a distinct element (int value of 3) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see: <img src = "../Images/Search/InterpolationSearch-Distinct.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.InterpolationSearchTests.Search_DuplicateElements">
             <summary>
             Tests the correctness of Interpolation search algorithm on an array with duplicate elements. 
+            To visualize step by step how Interpolation Search finds a duplicate element (int value of 90) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see: <img src = "../Images/Search/InterpolationSearch-Duplicate.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.InterpolationSearchTests.Search_NonExistingElements">
             <summary>
             Tests the correctness of Interpolation search algorithm when the key does not exist in the array. 
+            To visualize step by step how Interpolation Search terminates without finding a missing element (int value of 15) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see: <img src = "../Images/Search/InterpolationSearch-Missing.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.InterpolationSearchTests.GetStartIndex">
@@ -193,16 +205,19 @@
         <member name="M:CSFundamentalsTests.Algorithms.Search.JumpSearchTests.Search_DistinctElements">
             <summary>
             Tests the correctness of Jump search algorithm on an array with distinct elements. 
+            To visualize step by step how Jump Search finds a distinct element (int value of 3) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see: <img src = "../Images/Search/JumpSearch-Distinct.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.JumpSearchTests.Search_DuplicateElements">
             <summary>
             Tests the correctness of Jump search algorithm on an array with duplicate elements. 
+            To visualize step by step how Jump Search finds a duplicate element (int value of 90) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see: <img src = "../Images/Search/JumpSearch-Duplicate.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.JumpSearchTests.Search_NotExistingElements">
             <summary>
-            Tests the correctness of Jump search algorithm when the key does not exist in the array. 
+            Tests the correctness of Jump search algorithm when the key does not exist in the array.
+            To visualize step by step how Jump Search terminates without finding a missing element (int value of 15) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see: <img src = "../Images/Search/JumpSearch-Missing.png"/>.
             </summary>
         </member>
         <member name="T:CSFundamentalsTests.Algorithms.Search.LinearSearchTests">
@@ -210,7 +225,7 @@
             Tests methods in <see cref="T:CSFundamentals.Algorithms.Search.LinearSearch"/> class. 
             </summary>
         </member>
-        <member name="F:CSFundamentalsTests.Algorithms.Search.LinearSearchTests._values">
+        <member name="F:CSFundamentalsTests.Algorithms.Search.LinearSearchTests._list">
             <summary>
             A random array of integers (not sorted), and containing duplicates
             </summary>
@@ -218,16 +233,19 @@
         <member name="M:CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition">
             <summary>
             Tests the correctness of Linear search algorithm on an array with distinct elements. 
+            To visualize step by step how Linear Search finds a distinct element (int value of 3) in <see cref="F:CSFundamentalsTests.Algorithms.Search.LinearSearchTests._list"/> see: <img src = "../Images/Search/LinearSearch-Distinct.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_DuplicateElements_ExpectsToGetTheIndexOfTheFirstOccurrenceNoMatterHowManyTimesSearchIsPerformed">
             <summary>
             Tests the correctness of Linear search algorithm on an array with duplicate elements. 
+            To visualize step by step how Linear Search finds a duplicate element (int value of 90) in <see cref="F:CSFundamentalsTests.Algorithms.Search.LinearSearchTests._list"/> see: <img src = "../Images/Search/LinearSearch-Duplicate.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.LinearSearchTests.Search_NonExistingElements_ExpectsToGetMinusOne">
             <summary>
             Tests the correctness of Linear search algorithm when the key does not exist in the array. 
+            To visualize step by step how Linear Search terminates without finding a missing element (int value of 15) in <see cref="F:CSFundamentalsTests.Algorithms.Search.LinearSearchTests._list"/> see: <img src = "../Images/Search/LinearSearch-Missing.png"/>.
             </summary>
         </member>
         <member name="T:CSFundamentalsTests.Algorithms.Search.SearchTests">
@@ -235,7 +253,7 @@
             Implements test methods for search algorithms. 
             </summary>
         </member>
-        <member name="F:CSFundamentalsTests.Algorithms.Search.SearchTests._values">
+        <member name="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List">
             <summary>
             Sorted array of elements. Note that binary search expects a sorted array. 
             </summary>
@@ -284,22 +302,25 @@
         <member name="M:CSFundamentalsTests.Algorithms.Search.TernarySearchTests.Search_DistinctElements">
             <summary>
             Tests the correctness of Ternary search algorithm on an array with distinct elements. 
+            To visualize step by step how Ternary Search finds a distinct element (int value of 3) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see: <img src = "../Images/Search/TernarySearch-Distinct.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.TernarySearchTests.Search_DuplicateElements">
             <summary>
             Tests the correctness of Ternary search algorithm on an array with duplicate elements. 
+            To visualize step by step how Ternary Search finds a duplicate element (int value of 90) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see: <img src = "../Images/Search/TernarySearch-Duplicate.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.TernarySearchTests.Search_NonExistingElements">
             <summary>
             Tests the correctness of Ternary search algorithm when the key does not exist in the array. 
+            To visualize step by step how Ternary Search terminates without finding a missing element (int value of 15) in <see cref="F:CSFundamentalsTests.Algorithms.Search.SearchTests.List"/> see: <img src = "../Images/Search/TernarySearch-Missing.png"/>.
             </summary>
         </member>
         <member name="T:CSFundamentalsTests.Algorithms.Sort.BubbleSortTests">
             <summary>
             Tests methods in <see cref="T:CSFundamentals.Algorithms.Sort.BubbleSort"/> class. 
-            To visualize how the array evolves while executing bubble sort on <see cref="F:CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithDistinctValues"/> see <img src = "../Images/Sorts/BubbleSort-Part1.png"/>, <img src = "../Images/Sorts/BubbleSort-Part2.png"/>, <img src = "../Images/Sorts/BubbleSort-Part3.png"/>.  
+            To visualize how the array evolves while executing bubble sort on <see cref="F:CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithDistinctValues"/> see: <img src = "../Images/Sorts/BubbleSort-Part1.png"/>, <img src = "../Images/Sorts/BubbleSort-Part2.png"/>, <img src = "../Images/Sorts/BubbleSort-Part3.png"/>.  
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Sort.BubbleSortTests.Sort_WithDifferentInputs">
@@ -355,7 +376,7 @@
         <member name="M:CSFundamentalsTests.Algorithms.Sort.HeapSortTests.Sort_WithDistinctValues">
             <summary>
             Tests the correctness of Heap sort algorithm over an array with distinct values.  
-            To visualize how the array evolves while executing Heap sort on <see cref="F:CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithDistinctValues"/> see <img src = "../Images/Sorts/HeapSort.png"/>.
+            To visualize how the array evolves while executing Heap sort on <see cref="F:CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithDistinctValues"/> see: <img src = "../Images/Sorts/HeapSort.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Sort.HeapSortTests.Sort_WithDuplicateValues">
@@ -396,7 +417,7 @@
         <member name="M:CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Iterative_V2_WithDifferentInputs">
             <summary>
             Tests the correctness of Insertion sort iterative version2. 
-            To visualize how the array evolves while executing insertion sort on <see cref="F:CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithDistinctValues"/> see <img src = "../Images/Sorts/InsertionSort-Part1.png"/>, <img src = "../Images/Sorts/InsertionSort-Part2.png"/>.
+            To visualize how the array evolves while executing insertion sort on <see cref="F:CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithDistinctValues"/> see: <img src = "../Images/Sorts/InsertionSort-Part1.png"/>, <img src = "../Images/Sorts/InsertionSort-Part2.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.Sort_Recursive_WithDistinctValues">
@@ -422,7 +443,7 @@
         <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.MergeSort_WithDistinctValues">
             <summary>
             Tests the correctness of Merge sort algorithm recursive version over an array with distinct values. 
-            To visualize how the array is evolved while executing merge sort see <img src = "../Images/Sorts/MergeSort-Part1.png"/> and <img src = "../Images/Sorts/MergeSort-Part2.png"/>.
+            To visualize how the array is evolved while executing merge sort see: <img src = "../Images/Sorts/MergeSort-Part1.png"/> and <img src = "../Images/Sorts/MergeSort-Part2.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.MergeSort_WithDuplicateValues">
@@ -468,7 +489,7 @@
         <member name="M:CSFundamentalsTests.Algorithms.Sort.QuickSortTests.QuickSort_WithDistinctValues">
             <summary>
             Tests the correctness of Quick sort algorithm recursive version over an array with distinct values. 
-            To visualize how the array is evolved while executing quick sort see <img src = "../Images/Sorts/QuickSort.png"/>.
+            To visualize how the array is evolved while executing quick sort see: <img src = "../Images/Sorts/QuickSort.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Sort.QuickSortTests.QuickSort_WithDuplicateValues">
@@ -509,7 +530,7 @@
         <member name="M:CSFundamentalsTests.Algorithms.Sort.RadixSortTests.Sort_WithDifferentInputs">
             <summary>
             Tests the correctness of Radix sort algorithm.
-            To visualize how the array evolves while executing Radix sort on <see cref="F:CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithDistinctValues"/> see <img src = "../Images/Sorts/RadixSort.png"/>.
+            To visualize how the array evolves while executing Radix sort on <see cref="F:CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithDistinctValues"/> see: <img src = "../Images/Sorts/RadixSort.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Sort.RadixSortTests.IsStable">
@@ -525,7 +546,7 @@
         <member name="M:CSFundamentalsTests.Algorithms.Sort.SelectionSortTests.Sort_WithDifferentInputs">
             <summary>
             Tests the correctness of Selection sort algorithm.
-            To visualize how the array evolves while executing selection sort on <see cref="F:CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithDistinctValues"/> see <img src = "../Images/Sorts/SelectionSort.png"/>.
+            To visualize how the array evolves while executing selection sort on <see cref="F:CSFundamentalsTests.Algorithms.Sort.Constants.ArrayWithDistinctValues"/> see: <img src = "../Images/Sorts/SelectionSort.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Sort.SelectionSortTests.IsStable">
@@ -804,25 +825,25 @@
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.BuildHeap_Recursively">
             <summary>
             Tests the correctness of build operation when implemented recursively. 
-            To visualize in-place Max Binary Heap building process see <img src = "../Images/Heaps/MaxBinaryHeap-Build.png"/>.
+            To visualize in-place Max Binary Heap building process see: <img src = "../Images/Heaps/MaxBinaryHeap-Build.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.BuildHeap_Itratively">
             <summary>
             Tests the correctness of Build operation when implemented iteratively. 
-            To visualize in-place Max Binary Heap building process see <img src = "../Images/Heaps/MaxBinaryHeap-Build.png"/>.
+            To visualize in-place Max Binary Heap building process see: <img src = "../Images/Heaps/MaxBinaryHeap-Build.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectDescendingOrderInResults">
             <summary>
             Tests the correctness of removing root of the heap. Removes root several times until no member in tree remains.
-            To visualize the steps in this test method see <img src = "../Images/Heaps/MaxBinaryHeap-TryRemoveRoot.png"/>.
+            To visualize the steps in this test method see: <img src = "../Images/Heaps/MaxBinaryHeap-TryRemoveRoot.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMaxBinaryHeapAfterEachInsert">
             <summary>
             Tests the correctness of insert operation. 
-            To visualize the steps in this test method see <img src = "../Images/Heaps/MaxBinaryHeap-Insert.png"/>.
+            To visualize the steps in this test method see: <img src = "../Images/Heaps/MaxBinaryHeap-Insert.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MaxBinaryHeapTests.HasMaxOrderPropertyForNode``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)">
@@ -859,25 +880,25 @@
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeap_Recursively">
             <summary>
             Tests the correctness of Build operation recursive version. 
-            To visualize in-place Min Binary Heap building process see <img src = "../Images/Heaps/MinBinaryHeap-Build.png"/>.
+            To visualize in-place Min Binary Heap building process see: <img src = "../Images/Heaps/MinBinaryHeap-Build.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.BuildHeap_Iteratively">
             <summary>
             Tests the correctness of Build operation iterative version.
-            To visualize in-place Min Binary Heap building process see <img src = "../Images/Heaps/MinBinaryHeap-Build.png"/>.
+            To visualize in-place Min Binary Heap building process see: <img src = "../Images/Heaps/MinBinaryHeap-Build.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectsAscendingOrderInResults">
             <summary>
             Tests the correctness of removing min node from a Min binary heap. 
-            To visualize the steps in this test method see <img src = "../Images/Heaps/MinBinaryHeap-TryRemoveRoot.png"/>.
+            To visualize the steps in this test method see: <img src = "../Images/Heaps/MinBinaryHeap-TryRemoveRoot.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMinBinaryHeapAfterEachInsert">
             <summary>
             Tests the correctness of Insert operation when inserting several keys one after the other in the Min binary heap. 
-            To visualize the steps in this test method see <img src = "../Images/Heaps/MinBinaryHeap-Insert.png"/>.
+            To visualize the steps in this test method see: <img src = "../Images/Heaps/MinBinaryHeap-Insert.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinBinaryHeapTests.GetNodeLevel">
@@ -911,25 +932,25 @@
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.BuildHeapRecursively_DistinctValues">
             <summary>
             Tests the correctness of Build operation recursive version, when inserting distinct values. 
-            To visualize in-place MinMax Binary Heap building process see <img src = "../Images/Heaps/MinMaxBinaryHeap-Build.png"/>.
+            To visualize in-place MinMax Binary Heap building process see: <img src = "../Images/Heaps/MinMaxBinaryHeap-Build.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.BuildHeapRecursively_DuplicateValues">
             <summary>
             Tests the correctness of Build operation, recursive version when inserting duplicate values. 
-            To visualize in-place MinMax Binary Heap building process see <img src = "../Images/Heaps/MinMaxBinaryHeap-Build-WithDuplicateKeys.png"/>.
+            To visualize in-place MinMax Binary Heap building process see: <img src = "../Images/Heaps/MinMaxBinaryHeap-Build-WithDuplicateKeys.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.Insert_SeveralValues_ExpectCorrectMinMaxBinaryHeapAfterEachInsert">
             <summary>
             Tests the correctness of Insert operation when inserting several keys one after the other in the MinMaxBinary binary heap. 
-            To visualize the steps in this test method see <img src = "../Images/Heaps/MinMaxBinaryHeap-Insert.png"/>.
+            To visualize the steps in this test method see: <img src = "../Images/Heaps/MinMaxBinaryHeap-Insert.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.TryRemoveRoot_RemoveRoot_SeveralTimes_ExpectAscendingOrderInResults">
             <summary>
             Tests the correctness of removing root of the heap. Removes root several times until no member in tree remains.
-            To visualize the steps in this test method see <img src = "../Images/Heaps/MinMaxBinaryHeap-TryRemoveRoot.png"/>.
+            To visualize the steps in this test method see: <img src = "../Images/Heaps/MinMaxBinaryHeap-TryRemoveRoot.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.BinaryHeaps.MinMaxBinaryHeapTests.HasMinMaxOrderPropertyForMinLevel``2(CSFundamentals.DataStructures.BinaryHeaps.API.BinaryHeapBase{``0,``1},System.Int32)">
@@ -1449,7 +1470,7 @@
         <member name="F:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests._tree">
             <summary>
             Is an AVL tree (A form of balanced BST). 
-            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Initialize"/>, see <img src = "../Images/Trees/Binary/avl-bst.png"/>. 
+            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Initialize"/>, see: <img src = "../Images/Trees/Binary/avl-bst.png"/>. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Initialize">
@@ -1465,7 +1486,7 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion">
             <summary>
             Tests the correctness of insert operation.
-            For a step by step transition of the AVL tree while inserting these keys, see <img src = "../Images/Trees/Binary/avl-bst-insert-stepByStep.png"/>.
+            For a step by step transition of the AVL tree while inserting these keys, see: <img src = "../Images/Trees/Binary/avl-bst-insert-stepByStep.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Delete_NonExistingKey_ExpectsNoAlternationToTree">
@@ -1521,7 +1542,7 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Delete_MultipleKeysConsecutively_ExpectsCorrectTreeAfterEachDeletion_RandomOrder1">
             <summary>
             Deletes all the keys in the tree in a random order in several sequential operations. 
-            For a step by step transition of the AVL tree while deleting these keys, see <img src = "../Images/Trees/Binary/avl-bst-delete-stepBystep.png"/>.
+            For a step by step transition of the AVL tree while deleting these keys, see: <img src = "../Images/Trees/Binary/avl-bst-delete-stepBystep.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Delete_MultipleKeysConsecutively_ExpectsCorrectTreeAfterEachDeletion_RandomOrder2">
@@ -1573,7 +1594,7 @@
         <member name="F:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests._tree">
             <summary>
             Is a binary search tree (aka. BST). 
-            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Initialize"/> method, see <img src = "../Images/Trees/Binary/bst.png"/>.
+            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Initialize"/> method, see: <img src = "../Images/Trees/Binary/bst.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Initialize">
@@ -1583,7 +1604,7 @@
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Build_ExpectsCorrectBinaryTree">
             <summary>
-            For a step by step transition of the BST while inserting these keys, see <img src = "../Images/Trees/Binary/bst-insert-stepBystep.png"/>.
+            For a step by step transition of the BST while inserting these keys, see: <img src = "../Images/Trees/Binary/bst-insert-stepBystep.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Delete_Root_ExpectsReplacementByImmediateSuccessorKey42">
@@ -1609,7 +1630,7 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Delete_MultipleNodesConsecutively_ExpectsCorrectBinarySearchTreeAfterEachStep">
             <summary>
             Tests the correctness of delete operation when deleting all the keys in the tree one after the other in a random order. 
-            For a step by step transition of the BST while deleting these keys, see <img src = "../Images/Trees/Binary/bst-delete-stepBystep.png"/>.
+            For a step by step transition of the BST while deleting these keys, see: <img src = "../Images/Trees/Binary/bst-delete-stepBystep.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Delete_NotExistingKey_ExpectsNoAlternationInTree">
@@ -1673,7 +1694,7 @@
         <member name="F:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests._tree">
             <summary>
             Is a RedBlack tree (A form of balanced BST). 
-            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Initialize"/> method, see <img src = "../Images/Trees/Binary/redblack-bst.png"/>.
+            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Initialize"/> method, see: <img src = "../Images/Trees/Binary/redblack-bst.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Initialize">
@@ -1689,7 +1710,7 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion">
             <summary>
             Tests the correctness of insert operation when inserting several keys one after the other. 
-            For a step by step transition of the RedBlack tree while inserting these keys, see <img src = "../Images/Trees/Binary/redblack-bst-insert-stepByStep.png"/>.
+            For a step by step transition of the RedBlack tree while inserting these keys, see: <img src = "../Images/Trees/Binary/redblack-bst-insert-stepByStep.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedNodeWithTWoChildren_ExpectsToBeRepalcedBy50WhichIsBlackWithARedRightChild">
@@ -1735,7 +1756,7 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_MultipleKyesConsecutively_ExpectsCorrectTreeAfterEachStep">
             <summary>
             Tests the correctness of delete operation when deleting all the keys in the tree one after the other in a random order. 
-            For a step by step transition of the BST while deleting these keys, see <img src = "../Images/Trees/Binary/redblack-bst-delete-stepBystep.png"/>.
+            For a step by step transition of the BST while deleting these keys, see: <img src = "../Images/Trees/Binary/redblack-bst-delete-stepBystep.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsRed_DefaultColor_ExpectsTrue">
@@ -1791,7 +1812,7 @@
         <member name="F:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests._tree">
             <summary>
             Is a B+ tree. 
-            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Initialize"/> method, see <img src = "../Images/Trees/Nary/2-3-BPlus-Tree.png"/>. 
+            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Initialize"/> method, see: <img src = "../Images/Trees/Nary/2-3-BPlus-Tree.png"/>. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Initialize">
@@ -1807,7 +1828,7 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Insert_SeveralKeys_ExpectsTreeToIncreaseInLevelsAfewTimes">
             <summary>
             Tests the correctness of insert operation.
-            For a step by step transition of this 2-3 B + Tree while inserting these keys, see <img src = "../Images/Trees/Nary/2-3-BPlus-Tree-insert-stepBystep.png"/>.
+            For a step by step transition of this 2-3 B + Tree while inserting these keys, see: <img src = "../Images/Trees/Nary/2-3-BPlus-Tree-insert-stepBystep.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Search_ForAllExistingKeysInTree_ExpectsSuccess">
@@ -1923,7 +1944,7 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_AllNodesInRandomOrder1_ExpectsProperBtreeAfterEachDelete">
             <summary>
             Tests the correctness of delete operation by deleting all the keys in the tree one after the other in a random order. 
-            For a step by step transition of this 2-3 B + Tree while deleting these keys, see <img src = "../Images/Trees/Nary/2-3-BPlus-Tree-delete-stepBystep.png"/>.
+            For a step by step transition of this 2-3 B + Tree while deleting these keys, see: <img src = "../Images/Trees/Nary/2-3-BPlus-Tree-delete-stepBystep.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_AllNodesInRandomOrder2_ExpectsProperBtreeAfterEachDelete">
@@ -2119,7 +2140,7 @@
         <member name="F:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests._tree">
             <summary>
             Is a B tree. 
-            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Initialize"/> method, see <img src = "../Images/Trees/Nary/2-3-BTree.png"/>.
+            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Initialize"/> method, see: <img src = "../Images/Trees/Nary/2-3-BTree.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Initialize">
@@ -2160,7 +2181,7 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Insert_SeveralKeys_ExpectsTreeToIncreaseInLevelsAfewTimes">
             <summary>
             Tests the correctness of insert operation by inserting several keys one after the other. 
-            For a step by step transition of this 2-3 BTree while inserting these keys, see <img src = "../Images/Trees/Nary/2-3-BTree-insert-stepBystep.png"/>.
+            For a step by step transition of this 2-3 BTree while inserting these keys, see: <img src = "../Images/Trees/Nary/2-3-BTree-insert-stepBystep.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.InOrderTraversal_StartingFromRoot_ExpectsAscendingOrder">
@@ -2261,7 +2282,7 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_AllNodesInRandomOrder1_ExpectsProperBtreeAfterEachDelete">
             <summary>
             Tests the correctness of delete operation when deleting all the keys in the tree one after the other in a random order.
-            For a step by step transition of this 2-3 BTree while deleting these keys, see <img src = "../Images/Trees/Nary/2-3-BTree-delete-stepBystep.png"/>. 
+            For a step by step transition of this 2-3 BTree while deleting these keys, see: <img src = "../Images/Trees/Nary/2-3-BTree-delete-stepBystep.png"/>. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_AllNodesInRandomOrder2_ExpectsProperBtreeAfterEachDelete">

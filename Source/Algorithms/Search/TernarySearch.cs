@@ -58,36 +58,36 @@ namespace CSFundamentals.Algorithms.Search
                 return -1;
             }
 
-            /* Dividing array by ((endIndex - startIndex) / 3) size in2o 3 sections. */
-            int middleIndex1 = startIndex + (endIndex - startIndex) / 3;
-            int middleIndex2 = middleIndex1 + (endIndex - startIndex) / 3;
+            /* Dividing array by ((endIndex - startIndex) / 3) size in to 3 sections. */
+            int oneThirdIndex = startIndex + (endIndex - startIndex) * 1 / 3;
+            int twoThirdIndex = startIndex + (endIndex - startIndex) * 2 / 3;
 
-            T middleValue1 = sortedList[middleIndex1];
-            T middleValue2 = sortedList[middleIndex2];
+            T oneThirdValue = sortedList[oneThirdIndex];
+            T twoThirdValue = sortedList[twoThirdIndex];
 
-            if (key.CompareTo(middleValue1) == 0)
+            if (key.CompareTo(oneThirdValue) == 0)
             {
-                return middleIndex1;
+                return oneThirdIndex;
             }
 
-            if (key.CompareTo(middleValue2) == 0)
+            if (key.CompareTo(twoThirdValue) == 0)
             {
-                return middleIndex2;
+                return twoThirdIndex;
             }
 
-            if (key.CompareTo(middleValue1) < 0)
+            if (key.CompareTo(oneThirdValue) < 0)
             {
-                return Search(sortedList, key, startIndex, middleIndex1 - 1);
+                return Search(sortedList, key, startIndex, oneThirdIndex - 1);
             }
 
-            if (key.CompareTo(middleValue1) > 0 && key.CompareTo(middleValue2) < 0)
+            if (key.CompareTo(oneThirdValue) > 0 && key.CompareTo(twoThirdValue) < 0)
             {
-                return Search(sortedList, key, middleIndex1 + 1, middleIndex2 - 1);
+                return Search(sortedList, key, oneThirdIndex + 1, twoThirdIndex - 1);
             }
 
-            if (key.CompareTo(middleValue2) > 0)
+            if (key.CompareTo(twoThirdValue) > 0)
             {
-                return Search(sortedList, key, middleIndex2 + 1, endIndex);
+                return Search(sortedList, key, twoThirdIndex + 1, endIndex);
             }
 
             return -1;
