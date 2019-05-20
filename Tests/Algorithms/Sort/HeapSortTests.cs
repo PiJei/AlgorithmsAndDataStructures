@@ -32,7 +32,14 @@ namespace CSFundamentalsTests.Algorithms.Sort
     {
         /// <summary>
         /// Tests the correctness of Heap sort algorithm over an array with distinct values.  
-        /// To visualize how the array evolves while executing Heap sort on <see cref="Constants.ArrayWithDistinctValues"/> see: <img src = "../Images/Sorts/HeapSort.png"/>.
+        /// To visualize how the array evolves while executing Heap sort on <see cref="Constants.ArrayWithDistinctValues"/> see:
+        /// <img src = "../Images/Sorts/HeapSort-Part1.png"/>, 
+        /// <img src = "../Images/Sorts/HeapSort-Part2.png"/>, 
+        /// <img src = "../Images/Sorts/HeapSort-Part3.png"/>, 
+        /// <img src = "../Images/Sorts/HeapSort-Part4.png"/>, 
+        /// <img src = "../Images/Sorts/HeapSort-Part5.png"/>, 
+        /// <img src = "../Images/Sorts/HeapSort-Part6.png"/>, 
+        /// <img src = "../Images/Sorts/HeapSort-Part7.png"/>.
         /// </summary>
         [TestMethod]
         public void Sort_WithDistinctValues()
