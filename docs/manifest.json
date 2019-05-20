@@ -1317,7 +1317,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentalsTests.Algorithms.Sort.QuickSortTests.html",
-          "hash": "xDyVDvtzUfjWh8NHNRytSQ=="
+          "hash": "LTGRDDNP+DlPV7sFdgoztw=="
         }
       },
       "is_incremental": true,
@@ -1344,7 +1344,7 @@
           "hash": "9dKTzNKf9HiIJPTabRvFeg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1380,7 +1380,7 @@
           "hash": "yR2vrJoBsb7qyoC6i6qF9Q=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -2762,10 +2762,54 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "images/Sorts/QuickSort.png",
+      "source_relative_path": "images/Sorts/QuickSort-Part1.png",
       "output": {
         "resource": {
-          "relative_path": "images/Sorts/QuickSort.png"
+          "relative_path": "images/Sorts/QuickSort-Part1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Sorts/QuickSort-Part2.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Sorts/QuickSort-Part2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Sorts/QuickSort-Part3.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Sorts/QuickSort-Part3.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Sorts/QuickSort-Part4.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Sorts/QuickSort-Part4.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Sorts/QuickSort-Part5.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Sorts/QuickSort-Part5.png"
         }
       },
       "is_incremental": false,
@@ -3083,17 +3127,17 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build",
-          "total_file_count": 165,
-          "skipped_file_count": 164
-        },
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 6,
           "skipped_file_count": 6
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 165,
+          "skipped_file_count": 165
         }
       }
     },

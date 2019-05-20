@@ -32,7 +32,12 @@ namespace CSFundamentalsTests.Algorithms.Sort
     {
         /// <summary>
         /// Tests the correctness of Quick sort algorithm recursive version over an array with distinct values. 
-        /// To visualize how the array is evolved while executing quick sort see: <img src = "../Images/Sorts/QuickSort.png"/>.
+        /// To visualize how the array is evolved while executing quick sort see: 
+        /// <img src = "../Images/Sorts/QuickSort-Part1.png"/>,
+        /// <img src = "../Images/Sorts/QuickSort-Part2.png"/>,
+        /// <img src = "../Images/Sorts/QuickSort-Part3.png"/>,
+        /// <img src = "../Images/Sorts/QuickSort-Part4.png"/>,
+        /// <img src = "../Images/Sorts/QuickSort-Part5.png"/>,
         /// </summary>
         [TestMethod]
         public void QuickSort_WithDistinctValues()
