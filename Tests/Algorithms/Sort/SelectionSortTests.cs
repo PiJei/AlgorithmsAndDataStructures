@@ -31,7 +31,13 @@ namespace CSFundamentalsTests.Algorithms.Sort
     {
         /// <summary>
         /// Tests the correctness of Selection sort algorithm.
-        /// To visualize how the array evolves while executing selection sort on <see cref="Constants.ArrayWithDistinctValues"/> see: <img src = "../Images/Sorts/SelectionSort.png"/>.
+        /// To visualize how the array evolves while executing selection sort on <see cref="Constants.ArrayWithDistinctValues"/> see: 
+        /// <img src = "../Images/Sorts/SelectionSort-Part1.png"/>,
+        /// <img src = "../Images/Sorts/SelectionSort-Part2.png"/>,
+        /// <img src = "../Images/Sorts/SelectionSort-Part3.png"/>,
+        /// <img src = "../Images/Sorts/SelectionSort-Part4.png"/>,
+        /// <img src = "../Images/Sorts/SelectionSort-Part5.png"/>,
+        /// <img src = "../Images/Sorts/SelectionSort-Part6.png"/>.
         /// </summary>
         [TestMethod]
         public void Sort_WithDifferentInputs()

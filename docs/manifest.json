@@ -165,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Search.BinarySearch.html",
-          "hash": "aHsys9X8FphhCLwjICnLkQ=="
+          "hash": "2El+TJlTs8HlSFAvlppEiQ=="
         }
       },
       "is_incremental": true,
@@ -177,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Search.ExponentialSearch.html",
-          "hash": "ffdZfqQXLow9H3euTIy1vQ=="
+          "hash": "cWjg9TyTpLpF353/XbTosg=="
         }
       },
       "is_incremental": true,
@@ -201,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Search.FibonacciSearch.html",
-          "hash": "6dIxbaVZ0Je8Mxq4+wTESA=="
+          "hash": "gxl2082NtFTN3NqTvzezcw=="
         }
       },
       "is_incremental": true,
@@ -213,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Search.HashTableSearch.html",
-          "hash": "Qop8zaKvWxgogr7qRGHFXw=="
+          "hash": "O798oA2W1OiRqe79eIu3vQ=="
         }
       },
       "is_incremental": true,
@@ -225,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Search.InterpolationSearch.html",
-          "hash": "jMELOSoE5EGhXs4TFDFyjQ=="
+          "hash": "uNqNE4x5Y6QDOwoKtrPZWg=="
         }
       },
       "is_incremental": true,
@@ -237,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Search.JumpSearch.html",
-          "hash": "DEPOxf3CGlov/2SJkO5fWA=="
+          "hash": "77wDInhVLAUS7Rhm69XrLg=="
         }
       },
       "is_incremental": true,
@@ -249,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Search.LinearSearch.html",
-          "hash": "vRu0oAtzuj/0DcIEg18qkw=="
+          "hash": "rxfpagb5RmUlGTPpgAhd+A=="
         }
       },
       "is_incremental": true,
@@ -261,7 +261,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Search.TernarySearch.html",
-          "hash": "wrJaKzzCD2Wpnlrsrm50Cw=="
+          "hash": "bReWg0Ia+vHDcHZBmkbtxg=="
         }
       },
       "is_incremental": true,
@@ -285,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Sort.BubbleSort.html",
-          "hash": "uvg5/N379OTSt9pc5FBvpg=="
+          "hash": "iF6lX3jVf8zQRWpoyesTzw=="
         }
       },
       "is_incremental": true,
@@ -297,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Sort.HeapSort.html",
-          "hash": "poQZGQ1Opb1brJJDtSXOWw=="
+          "hash": "hz91+tSP5AltAqyN6qwbtg=="
         }
       },
       "is_incremental": true,
@@ -309,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Sort.InsertionSort.html",
-          "hash": "ryA8ao22Q89BzT2WCPjXYQ=="
+          "hash": "Dm0jfwXkLF2BH7OBUdJOWQ=="
         }
       },
       "is_incremental": true,
@@ -321,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Sort.MergeSort.html",
-          "hash": "TawkaNuTaL+dVhrAsl0tsA=="
+          "hash": "5d7c0lXNpkOZ7FWUZy7/EA=="
         }
       },
       "is_incremental": true,
@@ -333,7 +333,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Sort.QuickSort.html",
-          "hash": "FHBEucxkVFP5dGKv7ddlxg=="
+          "hash": "j4iXkC5sa4n7/8iDeE9SLw=="
         }
       },
       "is_incremental": true,
@@ -357,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Sort.SelectionSort.html",
-          "hash": "JyaY7JVVbSACJ8iFs6q91g=="
+          "hash": "mo+NeydKJsWsPyDx2asXNQ=="
         }
       },
       "is_incremental": true,
@@ -393,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.Algorithms.Sort.Utils.html",
-          "hash": "pwDLE/BVp/507g2t8s7uqQ=="
+          "hash": "o0KP2HTwoXaFOW9SUBzKrw=="
         }
       },
       "is_incremental": true,
@@ -453,7 +453,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.DataStructures.BinaryHeaps.API.IBinaryHeap-2.html",
-          "hash": "sFj7S+ICC5DBQX10haVvOA=="
+          "hash": "BTjmTPivRotg4xmG17T7cw=="
         }
       },
       "is_incremental": true,
@@ -525,7 +525,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.DataStructures.LinkedLists.API.LinkedListBase-2.html",
-          "hash": "A4r7u4FvbbvUbuwUaiiR/w=="
+          "hash": "JxkXMKRo4sh7OBlQAfwXIA=="
         }
       },
       "is_incremental": true,
@@ -537,7 +537,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.DataStructures.LinkedLists.API.LinkedNode-2.html",
-          "hash": "UdojSUZcRBW0Ihk+U1xUZw=="
+          "hash": "2Th2IAZOlaXjqXeDE/Cw7A=="
         }
       },
       "is_incremental": true,
@@ -729,7 +729,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.DataStructures.Trees.Binary.API.BinarySearchTreeBase-3.html",
-          "hash": "4coyDmoQn686fDFcHt/ElQ=="
+          "hash": "ksOy1LU0p0FjtVB76OTZaQ=="
         }
       },
       "is_incremental": true,
@@ -885,7 +885,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.DataStructures.Trees.Nary.API.BTreeBase-3.html",
-          "hash": "dbZS4KIMoaZ5IjAplKAQ1Q=="
+          "hash": "MezmWtnmYvZsERYgddBoow=="
         }
       },
       "is_incremental": true,
@@ -897,7 +897,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentals.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html",
-          "hash": "piT8+QfV2GUeoQFhrauonQ=="
+          "hash": "0jGDI4o+hSP43QlJpSyOsw=="
         }
       },
       "is_incremental": true,
@@ -1245,7 +1245,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentalsTests.Algorithms.Sort.BubbleSortTests.html",
-          "hash": "RaV3XluAKkou7taKWJjbog=="
+          "hash": "jIzWj5Fx/GWEprAzvMTKTA=="
         }
       },
       "is_incremental": true,
@@ -1281,7 +1281,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentalsTests.Algorithms.Sort.HeapSortTests.html",
-          "hash": "xcMIC9ME1brFeOisdHhSCg=="
+          "hash": "AYpsklwJcsaP7rbde85KXQ=="
         }
       },
       "is_incremental": true,
@@ -1293,7 +1293,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentalsTests.Algorithms.Sort.InsertionSortTests.html",
-          "hash": "AfSK9wpbAzUc8PqGZrJMBg=="
+          "hash": "0rFIRs0AQlm3vjbem2LpQw=="
         }
       },
       "is_incremental": true,
@@ -1329,7 +1329,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentalsTests.Algorithms.Sort.RadixSortTests.html",
-          "hash": "xSxyeyYlV/+OiJLqYWspwQ=="
+          "hash": "UqW1n+XmPzUF9WQmUqL1GA=="
         }
       },
       "is_incremental": true,
@@ -1341,10 +1341,10 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentalsTests.Algorithms.Sort.SelectionSortTests.html",
-          "hash": "ay3d5Lh+UtrBVXK5PoeaEg=="
+          "hash": "9dKTzNKf9HiIJPTabRvFeg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -1377,10 +1377,10 @@
       "output": {
         ".html": {
           "relative_path": "api/CSFundamentalsTests.Algorithms.Sort.html",
-          "hash": "r7Cx+P/eD7AaWB8BssuPwg=="
+          "hash": "yR2vrJoBsb7qyoC6i6qF9Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -2553,6 +2553,94 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/Sorts/BubbleSort-Part4.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Sorts/BubbleSort-Part4.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Sorts/HeapSort-Part1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Sorts/HeapSort-Part1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Sorts/HeapSort-Part2.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Sorts/HeapSort-Part2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Sorts/HeapSort-Part3.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Sorts/HeapSort-Part3.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Sorts/HeapSort-Part4.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Sorts/HeapSort-Part4.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Sorts/HeapSort-Part5.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Sorts/HeapSort-Part5.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Sorts/HeapSort-Part6.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Sorts/HeapSort-Part6.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Sorts/HeapSort-Part7.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Sorts/HeapSort-Part7.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/Sorts/HeapSort.png",
       "output": {
         "resource": {
@@ -2579,6 +2667,72 @@
       "output": {
         "resource": {
           "relative_path": "images/Sorts/InsertionSort-Part2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Sorts/InsertionSort-Part3.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Sorts/InsertionSort-Part3.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Sorts/InsertionSort-Part4.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Sorts/InsertionSort-Part4.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Sorts/InsertionSort-Part5.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Sorts/InsertionSort-Part5.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Sorts/InsertionSort-Part6.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Sorts/InsertionSort-Part6.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Sorts/InsertionSort-Part7.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Sorts/InsertionSort-Part7.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Sorts/InsertionSort-Part8.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Sorts/InsertionSort-Part8.png"
         }
       },
       "is_incremental": false,
@@ -2619,10 +2773,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "images/Sorts/RadixSort.png",
+      "source_relative_path": "images/Sorts/RadixSort-Part1.png",
       "output": {
         "resource": {
-          "relative_path": "images/Sorts/RadixSort.png"
+          "relative_path": "images/Sorts/RadixSort-Part1.png"
         }
       },
       "is_incremental": false,
@@ -2630,10 +2784,87 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "images/Sorts/SelectionSort.png",
+      "source_relative_path": "images/Sorts/RadixSort-Part2.png",
       "output": {
         "resource": {
-          "relative_path": "images/Sorts/SelectionSort.png"
+          "relative_path": "images/Sorts/RadixSort-Part2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Sorts/RadixSort-Part3.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Sorts/RadixSort-Part3.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Sorts/SelectionSort-Part1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Sorts/SelectionSort-Part1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Sorts/SelectionSort-Part2.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Sorts/SelectionSort-Part2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Sorts/SelectionSort-Part3.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Sorts/SelectionSort-Part3.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Sorts/SelectionSort-Part4.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Sorts/SelectionSort-Part4.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Sorts/SelectionSort-Part5.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Sorts/SelectionSort-Part5.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Sorts/SelectionSort-Part6.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Sorts/SelectionSort-Part6.png"
         }
       },
       "is_incremental": false,
@@ -2856,7 +3087,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 165,
-          "skipped_file_count": 165
+          "skipped_file_count": 164
         },
         "ConceptualDocumentProcessor": {
           "can_incremental": true,

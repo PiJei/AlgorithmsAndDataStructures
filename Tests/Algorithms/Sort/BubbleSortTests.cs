@@ -25,7 +25,11 @@ namespace CSFundamentalsTests.Algorithms.Sort
 {
     /// <summary>
     /// Tests methods in <see cref="BubbleSort"/> class. 
-    /// To visualize how the array evolves while executing bubble sort on <see cref="Constants.ArrayWithDistinctValues"/> see: <img src = "../Images/Sorts/BubbleSort-Part1.png"/>, <img src = "../Images/Sorts/BubbleSort-Part2.png"/>, <img src = "../Images/Sorts/BubbleSort-Part3.png"/>.  
+    /// To visualize how the array evolves while executing bubble sort on <see cref="Constants.ArrayWithDistinctValues"/> see: 
+    /// <img src = "../Images/Sorts/BubbleSort-Part1.png"/>, 
+    /// <img src = "../Images/Sorts/BubbleSort-Part2.png"/>, 
+    /// <img src = "../Images/Sorts/BubbleSort-Part3.png"/>, 
+    /// <img src = "../Images/Sorts/BubbleSort-Part4.png"/>.  .  
     /// </summary>
     [TestClass]
     public partial class BubbleSortTests
