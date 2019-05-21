@@ -32,7 +32,12 @@ namespace CSFundamentalsTests.Algorithms.Sort
     {
         /// <summary>
         /// Tests the correctness of Merge sort algorithm recursive version over an array with distinct values. 
-        /// To visualize how the array is evolved while executing merge sort see: <img src = "../Images/Sorts/MergeSort-Part1.png"/> and <img src = "../Images/Sorts/MergeSort-Part2.png"/>.
+        /// To visualize how the array is evolved while executing merge sort see: 
+        /// <img src = "../Images/Sorts/MergeSort-Part1.png"/>,
+        /// <img src = "../Images/Sorts/MergeSort-Part2.png"/>,
+        /// <img src = "../Images/Sorts/MergeSort-Part3.png"/>,
+        /// <img src = "../Images/Sorts/MergeSort-Part4.png"/>,
+        /// <img src = "../Images/Sorts/MergeSort-Part5.png"/>,
         /// </summary>
         [TestMethod]
         public void MergeSort_WithDistinctValues()
