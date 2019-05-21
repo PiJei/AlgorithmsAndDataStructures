@@ -34,7 +34,6 @@ namespace CSFundamentalsTests.Algorithms.Sort
         /// Tests the correctness of <paramref name="sortMethod"/>.
         /// </summary>
         /// <param name="sortMethod">The sort method that is being tested. </param>
-        [TestMethod]
         public static void TestSortMethodWithDifferentInputs(Action<List<int>> sortMethod)
         {
             var values = new List<int>(Constants.ArrayWithDistinctValues);

@@ -25,10 +25,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CSFundamentalsTests.DataStructures.LinkedLists.API
 {
     /// <summary>
-    /// Implements a mock for testing <see cref="LinkedListBase{TNode, TValue}"/> calss.
+    /// Implements a mock for testing <see cref="LinkedListBase{TNode, TValue}"/> class.
     /// </summary>
     /// <typeparam name="T1"></typeparam>
-    [TestClass]
     public class MockLinkedList<T1> : LinkedListBase<MockLinkedNode<T1>, T1> where T1 : IComparable<T1>
     {
         /// <summary>
