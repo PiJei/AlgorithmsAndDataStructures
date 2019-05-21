@@ -37,7 +37,6 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
     {
         /// <summary>
         /// Is a RedBlack tree (A form of balanced BST). 
-        /// To visualize this tree built as in <see cref="Initialize()"/> method, see: <img src = "../Images/Trees/Binary/redblack-bst.png"/>.
         /// </summary>
         private RedBlackTree<int, string> _tree;
         private RedBlackTreeNode<int, string> _root;
@@ -54,6 +53,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
 
         /// <summary>
         /// Tests the correctness of Build operation
+        /// To visualize this tree see: <img src = "../Images/Trees/Binary/redblack-bst.png"/>.
         /// </summary>
         [TestMethod]
         public void Build_ExpectsCorrectRedBlackTree()
