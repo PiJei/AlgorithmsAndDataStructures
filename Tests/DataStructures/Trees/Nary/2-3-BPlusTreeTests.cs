@@ -33,7 +33,6 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
     {
         /// <summary>
         /// Is a B+ tree. 
-        /// To visualize this tree built as in <see cref="Initialize()"/> method, see: <img src = "../Images/Trees/Nary/2-3-BPlus-Tree.png"/>. 
         /// </summary>
         private BPlusTree<int, string> _tree = null;
 
@@ -68,6 +67,7 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
 
         /// <summary>
         /// Tests the correctness of Build operation
+        /// To visualize this tree see: <img src = "../Images/Trees/Nary/2-3-BPlus-Tree.png"/>. 
         /// </summary>
         [TestMethod]
         public void Build_ExpectsACorrectBPlusTree()
