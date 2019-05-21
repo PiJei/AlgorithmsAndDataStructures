@@ -462,7 +462,12 @@
         <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.MergeSort_WithDistinctValues">
             <summary>
             Tests the correctness of Merge sort algorithm recursive version over an array with distinct values. 
-            To visualize how the array is evolved while executing merge sort see: <img src = "../Images/Sorts/MergeSort-Part1.png"/> and <img src = "../Images/Sorts/MergeSort-Part2.png"/>.
+            To visualize how the array is evolved while executing merge sort see: 
+            <img src = "../Images/Sorts/MergeSort-Part1.png"/>,
+            <img src = "../Images/Sorts/MergeSort-Part2.png"/>,
+            <img src = "../Images/Sorts/MergeSort-Part3.png"/>,
+            <img src = "../Images/Sorts/MergeSort-Part4.png"/>,
+            <img src = "../Images/Sorts/MergeSort-Part5.png"/>,
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Sort.MergeSortTests.MergeSort_WithDuplicateValues">
@@ -1503,7 +1508,6 @@
         <member name="F:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests._tree">
             <summary>
             Is an AVL tree (A form of balanced BST). 
-            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Initialize"/>, see: <img src = "../Images/Trees/Binary/avl-bst.png"/>. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Initialize">
@@ -1514,6 +1518,7 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Build_ExpectsACorrectAVLTree">
             <summary>
             Tests the correctness of Build operation
+            To visualize this tree see: <img src = "../Images/Trees/Binary/avl-bst.png"/>. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion">
@@ -1727,7 +1732,6 @@
         <member name="F:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests._tree">
             <summary>
             Is a RedBlack tree (A form of balanced BST). 
-            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Initialize"/> method, see: <img src = "../Images/Trees/Binary/redblack-bst.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Initialize">
@@ -1738,6 +1742,7 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Build_ExpectsCorrectRedBlackTree">
             <summary>
             Tests the correctness of Build operation
+            To visualize this tree see: <img src = "../Images/Trees/Binary/redblack-bst.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion">
@@ -1845,7 +1850,6 @@
         <member name="F:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests._tree">
             <summary>
             Is a B+ tree. 
-            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Initialize"/> method, see: <img src = "../Images/Trees/Nary/2-3-BPlus-Tree.png"/>. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Initialize">
@@ -1856,6 +1860,7 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Build_ExpectsACorrectBPlusTree">
             <summary>
             Tests the correctness of Build operation
+            To visualize this tree see: <img src = "../Images/Trees/Nary/2-3-BPlus-Tree.png"/>. 
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Insert_SeveralKeys_ExpectsTreeToIncreaseInLevelsAfewTimes">
@@ -2173,7 +2178,6 @@
         <member name="F:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests._tree">
             <summary>
             Is a B tree. 
-            To visualize this tree built as in <see cref="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Initialize"/> method, see: <img src = "../Images/Trees/Nary/2-3-BTree.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Initialize">
@@ -2184,6 +2188,7 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Build_ExpectsACorrectBTree">
             <summary>
             Tests the correctness of Build operation
+            To visualize this tree see: <img src = "../Images/Trees/Nary/2-3-BTree.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.GetMaxCapacity_ForATreeWithOneToFiveLevels_ExpectsNumbersAsIndicatedInAsserts">
