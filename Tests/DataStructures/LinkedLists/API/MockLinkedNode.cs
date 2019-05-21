@@ -28,7 +28,6 @@ namespace CSFundamentalsTests.DataStructures.LinkedLists.API
     /// Implements a mock class for testing <see cref="LinkedNode{TNode, TValue}"/>.
     /// </summary>
     /// <typeparam name="T1"></typeparam>
-    [TestClass]
     public class MockLinkedNode<T1> : LinkedNode<MockLinkedNode<T1>, T1> where T1 : IComparable<T1>
     {
         /// <summary>
