@@ -77,7 +77,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
 
         /// <summary>
         /// Tests the correctness of insert operation.
-        /// For a step by step transition of this 2-3 B + Tree while inserting these keys, see: <img src = "../Images/Trees/Nary/2-3-BPlus-Tree-insert-stepBystep.png"/>.
+        /// For a step by step transition of this 2-3 B + Tree while inserting these keys, see: 
+        /// <img src = "../Images/Trees/Nary/2-3-BPlus-Tree-insert-Part1.png"/>,
+        /// <img src = "../Images/Trees/Nary/2-3-BPlus-Tree-insert-Part2.png"/>.
         /// </summary>
         [TestMethod]
         public void Insert_SeveralKeys_ExpectsTreeToIncreaseInLevelsAfewTimes()
