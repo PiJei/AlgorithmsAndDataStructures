@@ -34,14 +34,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="DataStructures\Trees\Binary\Images\avl-bst-delete-stepBystep.png" />
-    <EmbeddedResource Include="DataStructures\Trees\Binary\Images\avl-bst-insert-stepByStep.png" />
     <EmbeddedResource Include="DataStructures\Trees\Binary\Images\avl-bst.png" />
-    <EmbeddedResource Include="DataStructures\Trees\Binary\Images\bst-delete-stepBystep.png" />
-    <EmbeddedResource Include="DataStructures\Trees\Binary\Images\bst-insert-stepBystep.png" />
     <EmbeddedResource Include="DataStructures\Trees\Binary\Images\bst.png" />
-    <EmbeddedResource Include="DataStructures\Trees\Binary\Images\redblack-bst-delete-stepBystep.png" />
-    <EmbeddedResource Include="DataStructures\Trees\Binary\Images\redblack-bst-insert-stepBystep.png" />
     <EmbeddedResource Include="DataStructures\Trees\Binary\Images\redblack-bst.png" />
     <EmbeddedResource Include="DataStructures\Trees\Nary\Images\2-3-BPlus-Tree.png" />
     <EmbeddedResource Include="DataStructures\Trees\Nary\Images\2-3-BTree.png" />

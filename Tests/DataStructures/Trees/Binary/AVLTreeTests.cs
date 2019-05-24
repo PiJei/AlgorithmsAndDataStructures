@@ -61,7 +61,8 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
 
         /// <summary>
         /// Tests the correctness of insert operation.
-        /// For a step by step transition of the AVL tree while inserting these keys, see: <img src = "../Images/Trees/Binary/avl-bst-insert-stepByStep.png"/>.
+        /// For a step by step transition of the AVL tree while inserting these keys, see: 
+        /// <img src = "../Images/Trees/Binary/avl-bst-insert.png"/>.
         /// </summary>
         [TestMethod]
         public void Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion()
@@ -252,7 +253,8 @@ namespace CSFundamentalsTests.DataStructures.Trees.Binary
 
         /// <summary>
         /// Deletes all the keys in the tree in a random order in several sequential operations. 
-        /// For a step by step transition of the AVL tree while deleting these keys, see: <img src = "../Images/Trees/Binary/avl-bst-delete-stepBystep.png"/>.
+        /// For a step by step transition of the AVL tree while deleting these keys, see: 
+        /// <img src = "../Images/Trees/Binary/avl-bst-delete.png"/>.
         /// </summary>
         [TestMethod]
         public void Delete_MultipleKeysConsecutively_ExpectsCorrectTreeAfterEachDeletion_RandomOrder1()
