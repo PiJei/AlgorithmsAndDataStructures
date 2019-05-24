@@ -1038,7 +1038,7 @@
         </member>
         <member name="T:CSFundamentalsTests.DataStructures.LinkedLists.API.MockLinkedList`1">
             <summary>
-            Implements a mock for testing <see cref="T:CSFundamentals.DataStructures.LinkedLists.API.LinkedListBase`2"/> calss.
+            Implements a mock for testing <see cref="T:CSFundamentals.DataStructures.LinkedLists.API.LinkedListBase`2"/> class.
             </summary>
             <typeparam name="T1"></typeparam>
         </member>
@@ -1866,7 +1866,9 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Insert_SeveralKeys_ExpectsTreeToIncreaseInLevelsAfewTimes">
             <summary>
             Tests the correctness of insert operation.
-            For a step by step transition of this 2-3 B + Tree while inserting these keys, see: <img src = "../Images/Trees/Nary/2-3-BPlus-Tree-insert-stepBystep.png"/>.
+            For a step by step transition of this 2-3 B + Tree while inserting these keys, see: 
+            <img src = "../Images/Trees/Nary/2-3-BPlus-Tree-insert-Part1.png"/>,
+            <img src = "../Images/Trees/Nary/2-3-BPlus-Tree-insert-Part2.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Search_ForAllExistingKeysInTree_ExpectsSuccess">
@@ -1982,7 +1984,10 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_AllNodesInRandomOrder1_ExpectsProperBtreeAfterEachDelete">
             <summary>
             Tests the correctness of delete operation by deleting all the keys in the tree one after the other in a random order. 
-            For a step by step transition of this 2-3 B + Tree while deleting these keys, see: <img src = "../Images/Trees/Nary/2-3-BPlus-Tree-delete-stepBystep.png"/>.
+            For a step by step transition of this 2-3 B + Tree while deleting these keys, see: 
+            <img src = "../Images/Trees/Nary/2-3-BPlus-Tree-delete-Part1.png"/>,
+            <img src = "../Images/Trees/Nary/2-3-BPlus-Tree-delete-Part2.png"/>,
+            <img src = "../Images/Trees/Nary/2-3-BPlus-Tree-delete-Part3.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BPlusTreeTests.Delete_AllNodesInRandomOrder2_ExpectsProperBtreeAfterEachDelete">
@@ -2219,7 +2224,9 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Insert_SeveralKeys_ExpectsTreeToIncreaseInLevelsAfewTimes">
             <summary>
             Tests the correctness of insert operation by inserting several keys one after the other. 
-            For a step by step transition of this 2-3 BTree while inserting these keys, see: <img src = "../Images/Trees/Nary/2-3-BTree-insert-stepBystep.png"/>.
+            For a step by step transition of this 2-3 BTree while inserting these keys, see: 
+            <img src = "../Images/Trees/Nary/2-3-BTree-insert-Part1.png"/>,
+            <img src = "../Images/Trees/Nary/2-3-BTree-insert-Part2.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.InOrderTraversal_StartingFromRoot_ExpectsAscendingOrder">
@@ -2320,7 +2327,9 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_AllNodesInRandomOrder1_ExpectsProperBtreeAfterEachDelete">
             <summary>
             Tests the correctness of delete operation when deleting all the keys in the tree one after the other in a random order.
-            For a step by step transition of this 2-3 BTree while deleting these keys, see: <img src = "../Images/Trees/Nary/2-3-BTree-delete-stepBystep.png"/>. 
+            For a step by step transition of this 2-3 BTree while deleting these keys, see: 
+            <img src = "../Images/Trees/Nary/2-3-BTree-delete-Part1.png"/>,
+            <img src = "../Images/Trees/Nary/2-3-BTree-delete-Part2.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Nary._2_3_BTreeTests.Delete_AllNodesInRandomOrder2_ExpectsProperBtreeAfterEachDelete">

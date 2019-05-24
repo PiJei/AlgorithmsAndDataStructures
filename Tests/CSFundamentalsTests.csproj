@@ -43,11 +43,7 @@
     <EmbeddedResource Include="DataStructures\Trees\Binary\Images\redblack-bst-delete-stepBystep.png" />
     <EmbeddedResource Include="DataStructures\Trees\Binary\Images\redblack-bst-insert-stepBystep.png" />
     <EmbeddedResource Include="DataStructures\Trees\Binary\Images\redblack-bst.png" />
-    <EmbeddedResource Include="DataStructures\Trees\Nary\Images\2-3-BPlus-Tree-delete-stepBystep.png" />
-    <EmbeddedResource Include="DataStructures\Trees\Nary\Images\2-3-BPlus-Tree-insert-stepBystep.png" />
     <EmbeddedResource Include="DataStructures\Trees\Nary\Images\2-3-BPlus-Tree.png" />
-    <EmbeddedResource Include="DataStructures\Trees\Nary\Images\2-3-BTree-delete-stepBystep.png" />
-    <EmbeddedResource Include="DataStructures\Trees\Nary\Images\2-3-BTree-insert-stepBystep.png" />
     <EmbeddedResource Include="DataStructures\Trees\Nary\Images\2-3-BTree.png" />
   </ItemGroup>
 
