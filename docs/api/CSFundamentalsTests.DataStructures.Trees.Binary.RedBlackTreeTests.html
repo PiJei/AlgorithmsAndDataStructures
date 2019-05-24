@@ -301,6 +301,7 @@ public void Delete_Root_ExpectsToBeReplacedBy47WhichIsARedLeafAndHasSimpleDeleti
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void HasRedBlackTreeProperties&lt;TKey, TValue&gt;(RedBlackTree&lt;TKey, TValue&gt; tree, RedBlackTreeNode&lt;TKey, TValue&gt; root, int expectedNodeCount)
+
     where TKey : IComparable&lt;TKey&gt;, IEquatable&lt;TKey&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
