@@ -1524,7 +1524,8 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion">
             <summary>
             Tests the correctness of insert operation.
-            For a step by step transition of the AVL tree while inserting these keys, see: <img src = "../Images/Trees/Binary/avl-bst-insert-stepByStep.png"/>.
+            For a step by step transition of the AVL tree while inserting these keys, see: 
+            <img src = "../Images/Trees/Binary/avl-bst-insert.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Delete_NonExistingKey_ExpectsNoAlternationToTree">
@@ -1580,7 +1581,8 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Delete_MultipleKeysConsecutively_ExpectsCorrectTreeAfterEachDeletion_RandomOrder1">
             <summary>
             Deletes all the keys in the tree in a random order in several sequential operations. 
-            For a step by step transition of the AVL tree while deleting these keys, see: <img src = "../Images/Trees/Binary/avl-bst-delete-stepBystep.png"/>.
+            For a step by step transition of the AVL tree while deleting these keys, see: 
+            <img src = "../Images/Trees/Binary/avl-bst-delete.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.AVLTreeTests.Delete_MultipleKeysConsecutively_ExpectsCorrectTreeAfterEachDeletion_RandomOrder2">
@@ -1642,7 +1644,8 @@
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Build_ExpectsCorrectBinaryTree">
             <summary>
-            For a step by step transition of the BST while inserting these keys, see: <img src = "../Images/Trees/Binary/bst-insert-stepBystep.png"/>.
+            For a step by step transition of the BST while inserting these keys, see: 
+            <img src = "../Images/Trees/Binary/bst-insert.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Delete_Root_ExpectsReplacementByImmediateSuccessorKey42">
@@ -1668,7 +1671,8 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Delete_MultipleNodesConsecutively_ExpectsCorrectBinarySearchTreeAfterEachStep">
             <summary>
             Tests the correctness of delete operation when deleting all the keys in the tree one after the other in a random order. 
-            For a step by step transition of the BST while deleting these keys, see: <img src = "../Images/Trees/Binary/bst-delete-stepBystep.png"/>.
+            For a step by step transition of the BST while deleting these keys, see: 
+            <img src = "../Images/Trees/Binary/bst-delete.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.BinarySearchTreeTests.Delete_NotExistingKey_ExpectsNoAlternationInTree">
@@ -1748,7 +1752,8 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Insert_SeveralKeysConsecutively_ExpectsACorrectTreeAfterEachInsertion">
             <summary>
             Tests the correctness of insert operation when inserting several keys one after the other. 
-            For a step by step transition of the RedBlack tree while inserting these keys, see: <img src = "../Images/Trees/Binary/redblack-bst-insert-stepByStep.png"/>.
+            For a step by step transition of the RedBlack tree while inserting these keys, see: 
+            <img src = "../Images/Trees/Binary/redblack-bst-insert.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_RedNodeWithTWoChildren_ExpectsToBeRepalcedBy50WhichIsBlackWithARedRightChild">
@@ -1794,7 +1799,8 @@
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.Delete_MultipleKyesConsecutively_ExpectsCorrectTreeAfterEachStep">
             <summary>
             Tests the correctness of delete operation when deleting all the keys in the tree one after the other in a random order. 
-            For a step by step transition of the BST while deleting these keys, see: <img src = "../Images/Trees/Binary/redblack-bst-delete-stepBystep.png"/>.
+            For a step by step transition of the BST while deleting these keys, see: 
+            <img src = "../Images/Trees/Binary/redblack-bst-delete.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.DataStructures.Trees.Binary.RedBlackTreeTests.IsRed_DefaultColor_ExpectsTrue">
