@@ -136,7 +136,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
 
         /// <summary>
         /// Tests the correctness of insert operation by inserting several keys one after the other. 
-        /// For a step by step transition of this 2-3 BTree while inserting these keys, see: <img src = "../Images/Trees/Nary/2-3-BTree-insert-stepBystep.png"/>.
+        /// For a step by step transition of this 2-3 BTree while inserting these keys, see: 
+        /// <img src = "../Images/Trees/Nary/2-3-BTree-insert-Part1.png"/>,
+        /// <img src = "../Images/Trees/Nary/2-3-BTree-insert-Part2.png"/>.
         /// </summary>
         [TestMethod]
         public void Insert_SeveralKeys_ExpectsTreeToIncreaseInLevelsAfewTimes()
@@ -440,7 +442,9 @@ namespace CSFundamentalsTests.DataStructures.Trees.Nary
 
         /// <summary>
         /// Tests the correctness of delete operation when deleting all the keys in the tree one after the other in a random order.
-        /// For a step by step transition of this 2-3 BTree while deleting these keys, see: <img src = "../Images/Trees/Nary/2-3-BTree-delete-stepBystep.png"/>. 
+        /// For a step by step transition of this 2-3 BTree while deleting these keys, see: 
+        /// <img src = "../Images/Trees/Nary/2-3-BTree-delete-Part1.png"/>,
+        /// <img src = "../Images/Trees/Nary/2-3-BTree-delete-Part2.png"/>.
         /// </summary>
         [TestMethod]
         public void Delete_AllNodesInRandomOrder1_ExpectsProperBtreeAfterEachDelete()
