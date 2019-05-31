@@ -38,6 +38,10 @@ namespace CSFundamentals.Algorithms.Search
         /// <param name="key">The value that is being searched for. </param>
         /// <returns>The index of the <paramref name="key"/> in the array, and -1 if it does not exist in the array. </returns>
         [Algorithm(AlgorithmType.Search, "FibonacciSearch", Assumptions = "Array is sorted with an ascending order.")]
+        [SpaceComplexity("O(1)", InPlace = true)]
+        [TimeComplexity(Case.Best, "O(1)")]
+        [TimeComplexity(Case.Worst, "O(Log(n))")]
+        [TimeComplexity(Case.Average, "O(Log(n))")]
         public static int Search<T>(List<T> sortedList, T key) where T : IComparable<T>
         {
             /* If key is NOT in the range, terminate search. Since the input array is sorted this early check is feasible. */
