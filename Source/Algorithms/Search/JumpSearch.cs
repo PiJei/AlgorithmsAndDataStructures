@@ -67,12 +67,12 @@ namespace CSFundamentals.Algorithms.Search
                 return nextIndex;
             }
 
-            int linearSearchStartIndex = nextIndex - jumpStepLength; // Jump backward. 
+            int linearSearchStartIndex = nextIndex - jumpStepLength + 1; // Jump backward. 
             if (linearSearchStartIndex < 0)
             {
                 return -1;
             }
-            return LinearSearch.Search(sortedList, key, linearSearchStartIndex, nextIndex);
+            return LinearSearch.Search(sortedList, key, linearSearchStartIndex, nextIndex - 1);
         }
 
         // TODO: Write a recursive version as well. 
