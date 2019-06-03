@@ -61,8 +61,17 @@ namespace CSFundamentals.Algorithms.Search
                 nextIndex *= 2;
             }
 
-            /* The range at which the key is expected to be is thus [nextIndex/2, nextIndex] - perform a binary search in this range. */
-            return BinarySearch.Search(sortedList, key, nextIndex / 2, Math.Min(nextIndex, sortedList.Count - 1));
+            if (nextIndex >= sortedList.Count)
+            {
+                nextIndex = sortedList.Count - 1;
+            }
+            if (sortedList[nextIndex].CompareTo(key) == 0)
+            {
+                return nextIndex;
+            }
+
+            /* The range at which the key is expected to be is thus [(nextIndex/2)+1, nextIndex-1] - perform a binary search over this range. */
+            return BinarySearch.Search(sortedList, key, nextIndex / 2 + 1, nextIndex - 1);
         }
     }
 }

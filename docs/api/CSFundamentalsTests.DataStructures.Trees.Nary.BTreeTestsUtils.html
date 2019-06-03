@@ -128,7 +128,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void DFS&lt;TNode, TKey, TValue&gt;(TNode node, List&lt;TNode&gt; nodes)
-
     where TNode : IBTreeNode&lt;TNode, TKey, TValue&gt;, IComparable&lt;TNode&gt; where TKey : IComparable&lt;TKey&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -191,7 +190,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool HasBPlusTreeNodeProperties&lt;TKey, TValue&gt;(BPlusTreeNode&lt;TKey, TValue&gt; node)
-
     where TKey : IComparable&lt;TKey&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -316,7 +314,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool HasBTreeNodeProperties&lt;TNode, TKey, TValue&gt;(TNode node)
-
     where TNode : IBTreeNode&lt;TNode, TKey, TValue&gt;, IComparable&lt;TNode&gt; where TKey : IComparable&lt;TKey&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -446,7 +443,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool HasBTreeProperties&lt;TNode, TKey, TValue&gt;(BTreeBase&lt;TNode, TKey, TValue&gt; tree, int expectedTotalKeyCount, int expectedDistinctKeyCount, int expectedNodeCount, Func&lt;TNode, bool&gt; HasNodeProperties)
-
     where TNode : IBTreeNode&lt;TNode, TKey, TValue&gt;, IComparable&lt;TNode&gt; where TKey : IComparable&lt;TKey&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
