@@ -164,9 +164,22 @@
             Tests methods in <see cref="T:CSFundamentals.Algorithms.Search.HashTableSearch"/> class. 
             </summary>
         </member>
-        <member name="M:CSFundamentalsTests.Algorithms.Search.HashTableSearchTests.Search">
+        <member name="M:CSFundamentalsTests.Algorithms.Search.HashTableSearchTests.Search_DistinctElements_ExpectsToSuccessfullyGetTheIndexOfTheirPosition">
             <summary>
             Tests the correctness of search algorithm. 
+            </summary>
+            To visualize step by step how HashTable Search finds a distinct element (int value of 3) in <see cref="F:CSFundamentalsTests.Algorithms.Search.HashTableSearchTests._list"/> see: <img src = "../Images/Search/HashTableSearch-Distinct.png"/>.
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.HashTableSearchTests.Search_DuplicateElements_ExpectsToGetTheIndexOfTheFirstOccurrenceNoMatterHowManyTimesSearchIsPerformed">
+            <summary>
+            Tests the correctness of HashTable search algorithm on an array with duplicate elements. 
+            To visualize step by step how HashTable Search finds a duplicate element (int value of 90) in <see cref="F:CSFundamentalsTests.Algorithms.Search.HashTableSearchTests._list"/> see: <img src = "../Images/Search/HashTableSearch-Duplicate.png"/>.
+            </summary>
+        </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.HashTableSearchTests.Search_NonExistingElements_ExpectsToGetMinusOne">
+            <summary>
+            Tests the correctness of HashTable search algorithm when the key does not exist in the array. 
+            To visualize step by step how HashTable Search terminates without finding a missing element (int value of 15) in <see cref="F:CSFundamentalsTests.Algorithms.Search.HashTableSearchTests._list"/> see: <img src = "../Images/Search/HashTableSearch-Missing.png"/>.
             </summary>
         </member>
         <member name="M:CSFundamentalsTests.Algorithms.Search.HashTableSearchTests.ConvertList2HashTable_CheckingTheCorrectnesOfHashTable">
