@@ -53,7 +53,13 @@ namespace CSFundamentals.Algorithms.Search
             return new List<int> { };
         }
 
-        private static Dictionary<int, List<int>> ConvertList2HashTable<T>(List<T> list) where T : IComparable<T>
+        /// <summary>
+        /// Creates a hash table for the given list. The keys are hashes of the elements in the list and th
+        /// </summary>e value for each hash key is the list of indexes over the main list. 
+        /// <typeparam name="T">Type of the values stored in list.</typeparam>
+        /// <param name="list">A list of elements. </param>
+        /// <returns>A hash table of elements hashes to their indexes in the list.</returns>
+        public static Dictionary<int, List<int>> ConvertList2HashTable<T>(List<T> list) where T : IComparable<T>
         {
             var hashTable = new Dictionary<int, List<int>>();
             for (int i = 0; i < list.Count; i++)

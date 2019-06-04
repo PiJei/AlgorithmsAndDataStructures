@@ -169,6 +169,11 @@
             Tests the correctness of search algorithm. 
             </summary>
         </member>
+        <member name="M:CSFundamentalsTests.Algorithms.Search.HashTableSearchTests.ConvertList2HashTable_CheckingTheCorrectnesOfHashTable">
+            <summary>
+            Tests the correctness of the method that generates a hash table over a list. 
+            </summary>
+        </member>
         <member name="T:CSFundamentalsTests.Algorithms.Search.InterpolationSearchTests">
             <summary>
             Tests methods in <see cref="T:CSFundamentals.Algorithms.Search.InterpolationSearch"/> class. 
