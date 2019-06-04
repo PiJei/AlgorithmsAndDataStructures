@@ -22,8 +22,6 @@ using System;
 using System.Collections.Generic;
 using CSFundamentals.Decoration;
 
-// TODO: Re-implement with a better understanding of key values (int, string)
-// TODO: Make generic
 namespace CSFundamentals.Algorithms.Search
 {
     /// <summary>
