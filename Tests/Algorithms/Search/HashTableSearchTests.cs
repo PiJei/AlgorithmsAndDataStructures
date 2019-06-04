@@ -39,21 +39,21 @@ namespace CSFundamentalsTests.Algorithms.Search
         [TestMethod]
         public void Search()
         {
-            var values = new List<int> { 1, 3, 10, 14, 25, 27, 34, 78, 90, 90, 120 };
+            var list = new List<int> { 1, 1, 3, 10, 14, 25, 27, 34, 78, 90, 90, 120 };
 
-            Assert.IsTrue(new List<int> { 0 }.SequenceEqual(HashTableSearch.Search(values, 1)));
-            Assert.IsTrue(new List<int> { 1 }.SequenceEqual(HashTableSearch.Search(values, 3)));
-            Assert.IsTrue(new List<int> { 2 }.SequenceEqual(HashTableSearch.Search(values, 10)));
-            Assert.IsTrue(new List<int> { 3 }.SequenceEqual(HashTableSearch.Search(values, 14)));
-            Assert.IsTrue(new List<int> { 4 }.SequenceEqual(HashTableSearch.Search(values, 25)));
-            Assert.IsTrue(new List<int> { 5 }.SequenceEqual(HashTableSearch.Search(values, 27)));
-            Assert.IsTrue(new List<int> { 6 }.SequenceEqual(HashTableSearch.Search(values, 34)));
-            Assert.IsTrue(new List<int> { 7 }.SequenceEqual(HashTableSearch.Search(values, 78)));
-            Assert.IsTrue(new List<int> { 8, 9 }.SequenceEqual(HashTableSearch.Search(values, 90)));
-            Assert.IsTrue(new List<int> { 10 }.SequenceEqual(HashTableSearch.Search(values, 120)));
-            Assert.IsTrue(new List<int> { }.SequenceEqual(HashTableSearch.Search(values, 15)));
-            Assert.IsTrue(new List<int> { }.SequenceEqual(HashTableSearch.Search(values, -20)));
-            Assert.IsTrue(new List<int> { }.SequenceEqual(HashTableSearch.Search(values, 456)));
+            Assert.IsTrue(new List<int> { 0 , 1 }.SequenceEqual(HashTableSearch.Search(list, 1)));
+            Assert.IsTrue(new List<int> { 2 }.SequenceEqual(HashTableSearch.Search(list, 3)));
+            Assert.IsTrue(new List<int> { 3 }.SequenceEqual(HashTableSearch.Search(list, 10)));
+            Assert.IsTrue(new List<int> { 4 }.SequenceEqual(HashTableSearch.Search(list, 14)));
+            Assert.IsTrue(new List<int> { 5 }.SequenceEqual(HashTableSearch.Search(list, 25)));
+            Assert.IsTrue(new List<int> { 6 }.SequenceEqual(HashTableSearch.Search(list, 27)));
+            Assert.IsTrue(new List<int> { 7 }.SequenceEqual(HashTableSearch.Search(list, 34)));
+            Assert.IsTrue(new List<int> { 8 }.SequenceEqual(HashTableSearch.Search(list, 78)));
+            Assert.IsTrue(new List<int> { 9 , 10 }.SequenceEqual(HashTableSearch.Search(list, 90)));
+            Assert.IsTrue(new List<int> { 11 }.SequenceEqual(HashTableSearch.Search(list, 120)));
+            Assert.IsTrue(new List<int> { }.SequenceEqual(HashTableSearch.Search(list, 15)));
+            Assert.IsTrue(new List<int> { }.SequenceEqual(HashTableSearch.Search(list, -20)));
+            Assert.IsTrue(new List<int> { }.SequenceEqual(HashTableSearch.Search(list, 456)));
         }
     }
 }

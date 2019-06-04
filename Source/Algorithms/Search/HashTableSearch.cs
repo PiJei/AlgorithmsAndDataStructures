@@ -44,26 +44,28 @@ namespace CSFundamentals.Algorithms.Search
         [TimeComplexity(Case.Average, "O(1)")]
         public static List<int> Search<T>(List<T> list, T key) where T : IComparable<T>
         {
-            Dictionary<T, List<int>> hashTable = ConvertList2HashTable(list);
-            if (hashTable.ContainsKey(key)) //todo: sHOULD USE my own contains... 
+            Dictionary<int, List<int>> hashTable = ConvertList2HashTable(list);
+            int keyHash = key.GetHashCode();
+            if (hashTable.ContainsKey(keyHash))
             {
-                return hashTable[key];
+                return hashTable[keyHash];
             }
             return new List<int> { };
         }
 
-        private static Dictionary<T, List<int>> ConvertList2HashTable<T>(List<T> values) where T : IComparable<T>
+        private static Dictionary<int, List<int>> ConvertList2HashTable<T>(List<T> list) where T : IComparable<T>
         {
-            var hashTable = new Dictionary<T, List<int>>();
-            for (int i = 0; i < values.Count; i++)
+            var hashTable = new Dictionary<int, List<int>>();
+            for (int i = 0; i < list.Count; i++)
             {
-                if (!hashTable.ContainsKey(values[i]))
+                int hash = list[i].GetHashCode();
+                if (!hashTable.ContainsKey(hash))
                 {
-                    hashTable.Add(values[i], new List<int> { i });
+                    hashTable.Add(hash, new List<int> { i });
                 }
                 else
                 {
-                    hashTable[values[i]].Add(i);
+                    hashTable[hash].Add(i);
                 }
             }
             return hashTable;
