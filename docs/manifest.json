@@ -2013,10 +2013,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/AlgorithmsAndDataStructures.html",
-          "hash": "TC1S7RbMkvZFB2FQzgqpDA=="
+          "hash": "pyUDTzPpZfGpZy1BDxElvg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -2025,10 +2025,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/CodingGuidelines.html",
-          "hash": "+108F0KslV+yPTUmthcPHw=="
+          "hash": "+U67WKsjBq1sUCZeOvln1A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -3205,10 +3205,10 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "YEFpO3FfZe3FlKSXYucX7A=="
+          "hash": "y2ypfslMFnPFiYNjHy8drg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -3250,7 +3250,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 5,
-          "skipped_file_count": 5
+          "skipped_file_count": 2
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

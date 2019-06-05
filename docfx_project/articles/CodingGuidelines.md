@@ -39,3 +39,5 @@
 * Make sure to provide XML documentation for all the methods and their parameters using [XML documentation features](https://docs.microsoft.com/en-us/dotnet/csharp/codedoc). The repository also uses [DocFx](https://dotnet.github.io/docfx/) for generating readable documentation. Install DocFx, and run `docfx .\docfx_project\docfx.json --serve .\docfx_project\_site\` , to visit the site locally, navigate to `http://localhost:8080`. 
 
 * Any new algorithm and data structure implementation should be decorated with time and space complexity attributes, and should be completely tested by adding unit tests. 
+
+- Continuous integration (build and test) is enabled using [CircleCI](https://circleci.com/) tool.
