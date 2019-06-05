@@ -62,10 +62,11 @@ Traversal Algorithms:
 * Binary Min-Max Heap
 
 ### Trees
-#### Binary
+ Binary
 * Binary Search Tree (BST)
 * Red-Black Tree
 * AVL Tree
-#### Nary
+
+ Nary
 * B Tree
 * B+ Tree
