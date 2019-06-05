@@ -7,7 +7,7 @@ These algorithms and data structures are the basics behind *coding interview que
 - To contribute follow [coding guidelines](articles/CodingGuidelines.md).
 - To review code API see [API Documentation](api/CSFundamentals.Algorithms.GraphTraversal.yml).
 
-# **Main Features**
+## **Main Features**
 - Algorithms are decorated with **time and space complexity** attributes. 
 
 - For complex algorithms, for each unit test an **Images** folder is provided that shows the step by step execution of the algorithm.
@@ -24,14 +24,14 @@ These algorithms and data structures are the basics behind *coding interview que
 
 
 
-# **Disclaimer**
+## **Disclaimer**
 - The code is extensively tested, and is correct only to the best of the knowledge of the authors. Yet the authors take no responsibility in the correctness of the code. Please use at your own risk.  
 - The code, views, thoughts, and opinions expressed in this repository belong solely to the authors, and not necessarily to the author’s employer, organization, committee or other group or individual.
 
-# **References**
+## **References**
 - https://www.geeksforgeeks.org
 - https://www.wikipedia.org
 - https://stackoverflow.com/
 
-# **Contact**
+## **Contact**
 - Send questions to [PiJei](https://github.com/PiJei)
