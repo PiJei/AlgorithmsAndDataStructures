@@ -15,18 +15,18 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Linq;
-using CSFundamentals.Algorithms.Sort;
-using CSFundamentals.DataStructures.BinaryHeaps.API;
-using CSFundamentals.Decoration;
+using AlgorithmsAndDataStructures.Algorithms.Sort;
+using AlgorithmsAndDataStructures.DataStructures.BinaryHeaps.API;
+using AlgorithmsAndDataStructures.Decoration;
 
-namespace CSFundamentals.DataStructures.BinaryHeaps
+namespace AlgorithmsAndDataStructures.DataStructures.BinaryHeaps
 {
     /// <summary>
     /// Implements a MinMaxBinaryHeap and its main operations. Notice that a MaxMinHeapBinaryHeap can be implemented in a very similar way.

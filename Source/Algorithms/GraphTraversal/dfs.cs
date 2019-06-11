@@ -15,12 +15,12 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 using System.Collections.Generic;
 
-namespace CSFundamentals.Algorithms.GraphTraversal
+namespace AlgorithmsAndDataStructures.Algorithms.GraphTraversal
 {
     /// <summary>
     /// Implements Depth First Search algorithm for graph traversal.

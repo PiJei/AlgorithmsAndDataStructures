@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27421.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSFundamentals", "Source\CSFundamentals.csproj", "{76A3602A-2BA6-4FB1-BB81-28C2D3518C47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlgorithmsAndDataStructures", "Source\AlgorithmsAndDataStructures.csproj", "{76A3602A-2BA6-4FB1-BB81-28C2D3518C47}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSFundamentalsTests", "Tests\CSFundamentalsTests.csproj", "{5665D954-94FD-4666-8D92-6058696ACEAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlgorithmsAndDataStructuresTests", "Tests\AlgorithmsAndDataStructuresTests.csproj", "{5665D954-94FD-4666-8D92-6058696ACEAE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FBA73934-28C8-4EA5-8320-5C1FBDF6900F}"
 	ProjectSection(SolutionItems) = preProject

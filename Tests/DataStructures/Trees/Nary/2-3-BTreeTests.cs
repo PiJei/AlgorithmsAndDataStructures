@@ -15,15 +15,15 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 using System;
 using System.Collections.Generic;
-using CSFundamentals.DataStructures.Trees.Nary;
+using AlgorithmsAndDataStructures.DataStructures.Trees.Nary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 // TODO  Tests make them more exact to check the content of the nodes after rotation so that any change in implementation can expose mistakes
-namespace CSFundamentalsTests.DataStructures.Trees.Nary
+namespace AlgorithmsAndDataStructuresTests.DataStructures.Trees.Nary
 {
     /// <summary>
     /// Tests BTree implementation by a 2-3 B-Tree, where minimum number of children for a non-root tree is 2, and maximum number of children for any node is 3. 

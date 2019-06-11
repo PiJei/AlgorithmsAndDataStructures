@@ -1,11 +1,11 @@
-# Fundamental Algorithms and Data Structures in C#
+# Algorithms and Data Structures in C#
 This repository includes a comprehensive collection of well-known fundamental algorithms and data structures of computer science implemented in C#. 
 
 These algorithms and data structures are the basics behind *coding interview questions* and a deep understanding of their details is essential for passing these interviewes. 
 
 - For a list of algorithms and data structures implemented in this repository see [Algorithms and Data Structures](articles/AlgorithmsAndDataStructures.md).
 - To contribute follow [coding guidelines](articles/CodingGuidelines.md).
-- To review code API see [API Documentation](api/CSFundamentals.Algorithms.GraphTraversal.yml).
+- To review code API see [API Documentation](api/AlgorithmsAndDataStructures.Algorithms.GraphTraversal.yml).
 
 ## **Main Features**
 - Algorithms are decorated with **time and space complexity** attributes. 

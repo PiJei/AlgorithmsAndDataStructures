@@ -15,12 +15,12 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 
 // TODO: Should ideally have 2 nodes
-namespace CSFundamentals.Algorithms.GraphTraversal
+namespace AlgorithmsAndDataStructures.Algorithms.GraphTraversal
 {
     /// <summary>
     /// A generic graph edge. For sample use-cases <see cref="DFS"/>, <see cref="BFS"/>, <see cref="Dijkstra"/>.

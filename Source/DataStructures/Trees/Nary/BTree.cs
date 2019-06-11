@@ -15,7 +15,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 
@@ -23,16 +23,16 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using CSFundamentals.DataStructures.Trees.Nary.API;
-using CSFundamentals.Decoration;
+using AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API;
+using AlgorithmsAndDataStructures.Decoration;
 
-[assembly: InternalsVisibleTo("CSFundamentals")]
+[assembly: InternalsVisibleTo("AlgorithmsAndDataStructures")]
 
 // TODO: Should protect  fields from external manipulations, ... 
 // TODO: for search  could we use binary search implementation from search part of this lib?
 // TODO:  test with other (than 2-3) degrees of trees
 
-namespace CSFundamentals.DataStructures.Trees.Nary
+namespace AlgorithmsAndDataStructures.DataStructures.Trees.Nary
 {
     /// <summary>
     /// Implements a B-Tree. 

@@ -15,19 +15,19 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Runtime.CompilerServices;
-using CSFundamentals.DataStructures.Trees.Binary.API;
-using CSFundamentals.Decoration;
+using AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API;
+using AlgorithmsAndDataStructures.Decoration;
 
-[assembly: InternalsVisibleTo("CSFundamentalsTests")]
+[assembly: InternalsVisibleTo("AlgorithmsAndDataStructuresTests")]
 
-namespace CSFundamentals.DataStructures.Trees.Binary
+namespace AlgorithmsAndDataStructures.DataStructures.Trees.Binary
 {
     /// <summary>
     /// Implements a red black tree and its operations. A red-black tree is a self-balancing binary search tree.

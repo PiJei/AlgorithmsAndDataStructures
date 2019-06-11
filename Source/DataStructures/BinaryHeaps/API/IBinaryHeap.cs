@@ -15,13 +15,13 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 using System;
 using System.Collections.Generic;
 //TODO: search all the swap implementations and have only one! and put them in Utils/general of whole library
-namespace CSFundamentals.DataStructures.BinaryHeaps.API
+namespace AlgorithmsAndDataStructures.DataStructures.BinaryHeaps.API
 {
     /// <summary>
     /// Provides interface definition for a binary heap. 

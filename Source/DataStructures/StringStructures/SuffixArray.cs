@@ -15,16 +15,16 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 using System.Collections.Generic;
-using CSFundamentals.Algorithms.Sort;
-using CSFundamentals.Decoration;
+using AlgorithmsAndDataStructures.Algorithms.Sort;
+using AlgorithmsAndDataStructures.Decoration;
 
 // TODO: Add a linear-time implementation of suffix array. 
 
-namespace CSFundamentals.DataStructures.StringStructures
+namespace AlgorithmsAndDataStructures.DataStructures.StringStructures
 {
     /// <summary>
     /// Implements SuffixArray data structure. A suffix array of an string is an array of integers that contains the starting index of all suffixes of the string in alphabetically sorted order. 

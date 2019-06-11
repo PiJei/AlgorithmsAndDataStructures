@@ -15,12 +15,12 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 using System;
 
-namespace CSFundamentals.DataStructures.LinkedLists.API
+namespace AlgorithmsAndDataStructures.DataStructures.LinkedLists.API
 {
     /// <summary>
     /// Implements a node in a linked list. 

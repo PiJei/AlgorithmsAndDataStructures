@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>CSFundamentalsTests.xml</DocumentationFile>
+    <DocumentationFile>AlgorithmsAndDataStructuresTests.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <LogFile>$(MSBuildProjectDirectory)\DocFx\log.txt</LogFile>
@@ -48,7 +48,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Source\CSFundamentals.csproj" />
+    <ProjectReference Include="..\Source\AlgorithmsAndDataStructures.csproj" />
   </ItemGroup>
 
 </Project>

@@ -15,18 +15,18 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
-using CSFundamentals.DataStructures.Trees.Nary.API;
-using CSFundamentals.Decoration;
+using AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API;
+using AlgorithmsAndDataStructures.Decoration;
 
 // TODO: update summaries: they are copies of the B-Tree and have issues, 
 // TODO: capacity
-namespace CSFundamentals.DataStructures.Trees.Nary
+namespace AlgorithmsAndDataStructures.DataStructures.Trees.Nary
 {
     /// <summary>
     /// Implements a B+ Tree. 

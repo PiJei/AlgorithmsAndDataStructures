@@ -15,14 +15,14 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 using System.Collections.Generic;
-using CSFundamentals.DataStructures.StringStructures;
-using CSFundamentals.Decoration;
+using AlgorithmsAndDataStructures.DataStructures.StringStructures;
+using AlgorithmsAndDataStructures.Decoration;
 
-namespace CSFundamentals.Algorithms.PatternSearch
+namespace AlgorithmsAndDataStructures.Algorithms.PatternSearch
 {
     /// <summary>
     /// Implements Knuth-Morris-Pratt algorithm for searching a (pattern) string in another string. 

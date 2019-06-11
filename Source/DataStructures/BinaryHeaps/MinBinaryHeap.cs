@@ -15,17 +15,17 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using CSFundamentals.Algorithms.Sort;
-using CSFundamentals.DataStructures.BinaryHeaps.API;
-using CSFundamentals.Decoration;
+using AlgorithmsAndDataStructures.Algorithms.Sort;
+using AlgorithmsAndDataStructures.DataStructures.BinaryHeaps.API;
+using AlgorithmsAndDataStructures.Decoration;
 // TODO: Test all the methods with all the heaps: internals, and privates, ... 
-namespace CSFundamentals.DataStructures.BinaryHeaps
+namespace AlgorithmsAndDataStructures.DataStructures.BinaryHeaps
 {
     /// <summary>
     /// Implements a Min Binary Heap, and its main operations.
