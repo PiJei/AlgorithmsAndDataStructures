@@ -15,14 +15,14 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 using System;
-using CSFundamentals.Decoration;
+using AlgorithmsAndDataStructures.Decoration;
 //TODO: Should I have a build method as well?
 
-namespace CSFundamentals.DataStructures.LinkedLists.API
+namespace AlgorithmsAndDataStructures.DataStructures.LinkedLists.API
 {
     /// <summary>
     /// Is the abstract class for a Linked List

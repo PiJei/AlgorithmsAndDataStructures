@@ -15,12 +15,12 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 using System.Collections.Generic;
 
-namespace CSFundamentals.Algorithms.SubarraySearch
+namespace AlgorithmsAndDataStructures.Algorithms.SubarraySearch
 {
     /// <summary>
     /// Implements a simple naive algorithm for searching if a sublist exists in a list. 

@@ -15,13 +15,13 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
-using CSFundamentals.Algorithms.Sort;
+using AlgorithmsAndDataStructures.Algorithms.Sort;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSFundamentalsTests.Algorithms.Sort
+namespace AlgorithmsAndDataStructuresTests.Algorithms.Sort
 {
     /// <summary>
     /// Tests methods in <see cref="SelectionSort"/> class.

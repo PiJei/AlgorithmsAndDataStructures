@@ -15,14 +15,14 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 using System.Collections.Generic;
-using CSFundamentals.Algorithms.SubarraySearch;
+using AlgorithmsAndDataStructures.Algorithms.SubarraySearch;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSFundamentalsTests.SubarraySearch
+namespace AlgorithmsAndDataStructuresTests.SubarraySearch
 {
     /// <summary>
     /// Tests methods in <see cref="SubarraySearch"/> class. 

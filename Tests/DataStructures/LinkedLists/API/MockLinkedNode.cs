@@ -15,14 +15,14 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 using System;
-using CSFundamentals.DataStructures.LinkedLists.API;
+using AlgorithmsAndDataStructures.DataStructures.LinkedLists.API;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSFundamentalsTests.DataStructures.LinkedLists.API
+namespace AlgorithmsAndDataStructuresTests.DataStructures.LinkedLists.API
 {
     /// <summary>
     /// Implements a mock class for testing <see cref="LinkedNode{TNode, TValue}"/>.

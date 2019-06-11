@@ -15,13 +15,13 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
-using CSFundamentals.Algorithms.Search;
+using AlgorithmsAndDataStructures.Algorithms.Search;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSFundamentalsTests.Algorithms.Search
+namespace AlgorithmsAndDataStructuresTests.Algorithms.Search
 {
     /// <summary>
     /// Tests the methods in <see cref="BinarySearch"/> class. 

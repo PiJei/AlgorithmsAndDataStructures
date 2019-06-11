@@ -15,13 +15,13 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
-using CSFundamentals.DataStructures.Trees.Nary;
+using AlgorithmsAndDataStructures.DataStructures.Trees.Nary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSFundamentalsTests.DataStructures.Trees.Nary
+namespace AlgorithmsAndDataStructuresTests.DataStructures.Trees.Nary
 {
     /// <summary>
     /// Tests BTreeNode implementation by a 2-3-4 BTree Node.

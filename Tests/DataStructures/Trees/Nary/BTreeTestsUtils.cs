@@ -15,17 +15,17 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 using System;
 using System.Collections.Generic;
-using CSFundamentals.DataStructures.Trees.Nary;
-using CSFundamentals.DataStructures.Trees.Nary.API;
+using AlgorithmsAndDataStructures.DataStructures.Trees.Nary;
+using AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 // TODO: Compute levels and after each insert confirm it
-namespace CSFundamentalsTests.DataStructures.Trees.Nary
+namespace AlgorithmsAndDataStructuresTests.DataStructures.Trees.Nary
 {
     /// <summary>
     /// Provides a collection of helper methods used by B-Tree tests. 

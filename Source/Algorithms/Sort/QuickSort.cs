@@ -15,17 +15,17 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using CSFundamentals.Decoration;
+using AlgorithmsAndDataStructures.Decoration;
 
 [assembly: InternalsVisibleTo("CSFundamentalAlgorithmsTests")]
 
-namespace CSFundamentals.Algorithms.Sort
+namespace AlgorithmsAndDataStructures.Algorithms.Sort
 {
     /// <summary>
     /// Implements Quick sort algorithm. 

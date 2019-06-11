@@ -15,14 +15,14 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CSFundamentals.DataStructures.BinaryHeaps.API
+namespace AlgorithmsAndDataStructures.DataStructures.BinaryHeaps.API
 {
     /// <summary>
     /// Is a base class for Binary heap. 

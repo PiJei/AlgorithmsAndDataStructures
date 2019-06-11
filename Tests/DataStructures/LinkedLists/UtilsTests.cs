@@ -15,13 +15,13 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
-using CSFundamentals.DataStructures.LinkedLists;
+using AlgorithmsAndDataStructures.DataStructures.LinkedLists;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSFundamentalsTests.DataStructures.LinkedLists
+namespace AlgorithmsAndDataStructuresTests.DataStructures.LinkedLists
 {
     /// <summary>
     /// Tests methods in <see cref="Utils"/> class. 

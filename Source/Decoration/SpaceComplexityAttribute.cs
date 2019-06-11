@@ -15,14 +15,14 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 
 //TODO: Specify the time and space complexity of all the code in this project
 using System;
 
-namespace CSFundamentals.Decoration
+namespace AlgorithmsAndDataStructures.Decoration
 {
     /// <summary>
     /// Implements an attribute for decorating space complexity of algorithms. 

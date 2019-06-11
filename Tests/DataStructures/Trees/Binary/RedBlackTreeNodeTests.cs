@@ -15,13 +15,13 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
-using CSFundamentals.DataStructures.Trees.Binary;
+using AlgorithmsAndDataStructures.DataStructures.Trees.Binary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSFundamentalsTests.DataStructures.Trees.Binary
+namespace AlgorithmsAndDataStructuresTests.DataStructures.Trees.Binary
 {
     /// <summary>
     /// Tests methods in <see cref="RedBlackTreeNode{TKey, TValue}"/> class. 

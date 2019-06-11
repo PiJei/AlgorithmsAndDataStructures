@@ -15,7 +15,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 using System;
@@ -23,7 +23,7 @@ using System.Collections.Generic;
 using System.Text;
 
 // TODO Move proper tests here, ... base test, fakes, mocks, etc, ... 
-namespace CSFundamentalsTests.DataStructures.Trees.Nary.API
+namespace AlgorithmsAndDataStructuresTests.DataStructures.Trees.Nary.API
 {
     class Class1
     {

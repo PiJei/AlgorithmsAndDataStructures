@@ -15,13 +15,13 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 using System;
-using CSFundamentals.DataStructures.Trees.Binary.API;
+using AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API;
 
-namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
+namespace AlgorithmsAndDataStructuresTests.DataStructures.Trees.Binary.API
 {
     /// <summary>
     /// This class is only created for testing purposes. 

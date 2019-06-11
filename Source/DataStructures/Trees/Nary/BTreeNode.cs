@@ -15,16 +15,16 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 using System;
 using System.Collections.Generic;
-using CSFundamentals.DataStructures.Trees.Nary.API;
+using AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API;
 
 // TODO: somehow should not allow comparisons to nodes with other degrees, ... how can degree be considered, ...?
 
-namespace CSFundamentals.DataStructures.Trees.Nary
+namespace AlgorithmsAndDataStructures.DataStructures.Trees.Nary
 {
     /// <summary>
     /// Implements a B-Tree node. A B-tree node is an ordered sequence of K keys, and K+1 children.

@@ -15,16 +15,16 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using CSFundamentals.DataStructures.BinaryHeaps;
-using CSFundamentals.Decoration;
+using AlgorithmsAndDataStructures.DataStructures.BinaryHeaps;
+using AlgorithmsAndDataStructures.Decoration;
 // TODO: Dont like the fact that had to change the signature to return values, and convert arrays
-namespace CSFundamentals.Algorithms.Sort
+namespace AlgorithmsAndDataStructures.Algorithms.Sort
 {
     /// <summary>
     /// Implements Heap sort algorithm.

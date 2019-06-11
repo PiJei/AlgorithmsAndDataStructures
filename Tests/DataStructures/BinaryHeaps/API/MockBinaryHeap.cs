@@ -15,14 +15,14 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 using System;
 using System.Collections.Generic;
-using CSFundamentals.DataStructures.BinaryHeaps.API;
+using AlgorithmsAndDataStructures.DataStructures.BinaryHeaps.API;
 
-namespace CSFundamentalsTests.DataStructures.BinaryHeaps.API
+namespace AlgorithmsAndDataStructuresTests.DataStructures.BinaryHeaps.API
 {
     /// <summary>
     /// Implements a mock heap to enable testing abstract class of <see cref="BinaryHeapBase{TKey, TValue}"/>.

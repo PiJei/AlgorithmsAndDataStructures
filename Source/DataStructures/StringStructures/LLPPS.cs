@@ -15,14 +15,14 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 using System.Collections.Generic;
 using System.Linq;
-using CSFundamentals.Decoration;
+using AlgorithmsAndDataStructures.Decoration;
 
-namespace CSFundamentals.DataStructures.StringStructures
+namespace AlgorithmsAndDataStructures.DataStructures.StringStructures
 {
     /// <summary>
     /// Implements the length of the longest proper prefix of a string which is also a suffix. 

@@ -15,14 +15,14 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 using System;
 using System.Collections.Generic;
-using CSFundamentals.Decoration;
+using AlgorithmsAndDataStructures.Decoration;
 
-namespace CSFundamentals.Algorithms.Sort
+namespace AlgorithmsAndDataStructures.Algorithms.Sort
 {
     /// <summary>
     /// This class contains 3 different implementations of Insertion Sort. The sort is called insertion, as at each iteration, it finds the correct position of an element, and "inserts" it in that position. 

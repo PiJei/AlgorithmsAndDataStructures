@@ -15,16 +15,16 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 using System.Collections.Generic;
-using CSFundamentals.DataStructures.Trees.Binary.API;
+using AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 // TODO: Make tests in one test file to use the init and just it 
 
-namespace CSFundamentalsTests.DataStructures.Trees.Binary.API
+namespace AlgorithmsAndDataStructuresTests.DataStructures.Trees.Binary.API
 {
     /// <summary>
     /// Tests methods in <see cref="BinaryTreeNode{TNode, TKey, TValue}"/> using <see cref="MockBinaryTreeNode{TKey, TValue}"/> class. 

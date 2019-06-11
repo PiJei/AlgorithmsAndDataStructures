@@ -15,16 +15,16 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 using System;
 using System.Collections.Generic;
-using CSFundamentals.DataStructures.BinaryHeaps;
-using CSFundamentals.DataStructures.BinaryHeaps.API;
+using AlgorithmsAndDataStructures.DataStructures.BinaryHeaps;
+using AlgorithmsAndDataStructures.DataStructures.BinaryHeaps.API;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSFundamentalsTests.DataStructures.BinaryHeaps
+namespace AlgorithmsAndDataStructuresTests.DataStructures.BinaryHeaps
 {
     /// <summary>
     /// Tests methods in <see cref="MaxBinaryHeap{TKey, TValue}"/> class. 

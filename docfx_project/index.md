@@ -5,7 +5,7 @@ These algorithms and data structures are the basics behind *coding interview que
 
 - For a list of algorithms and data structures implemented in this repository see [Algorithms and Data Structures](articles/AlgorithmsAndDataStructures.md).
 - To contribute follow [coding guidelines](articles/CodingGuidelines.md).
-- To review code API see [API Documentation](api/CSFundamentals.Algorithms.GraphTraversal.yml).
+- To review code API see [API Documentation](api/AlgorithmsAndDataStructures.Algorithms.GraphTraversal.yml).
 
 ## **Main Features**
 - Algorithms are decorated with **time and space complexity** attributes. 

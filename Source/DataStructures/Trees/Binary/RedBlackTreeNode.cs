@@ -15,13 +15,13 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 using System;
-using CSFundamentals.DataStructures.Trees.Binary.API;
+using AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API;
 
-namespace CSFundamentals.DataStructures.Trees.Binary
+namespace AlgorithmsAndDataStructures.DataStructures.Trees.Binary
 {
     /// <summary>
     /// Implements a RedBlack tree node.

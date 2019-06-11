@@ -1,0 +1,541 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class BTreeNode&lt;TKey, TValue&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class BTreeNode&lt;TKey, TValue&gt;
+   ">
+    <meta name="generator" content="docfx 2.42.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode`2">
+  
+  
+  <h1 id="AlgorithmsAndDataStructures_DataStructures_Trees_Nary_BTreeNode_2" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode`2" class="text-break">Class BTreeNode&lt;TKey, TValue&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Implements a B-Tree node. A B-tree node is an ordered sequence of K keys, and K+1 children.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html">BTreeNodeBase</a>&lt;<a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode-2.html">BTreeNode</a>&lt;TKey, TValue&gt;, TKey, TValue&gt;</div>
+    <div class="level2"><span class="xref">BTreeNode&lt;TKey, TValue&gt;</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.IBTreeNode-3.html">IBTreeNode</a>&lt;<a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode-2.html">BTreeNode</a>&lt;TKey, TValue&gt;, TKey, TValue&gt;</div>
+    <div><span class="xref">System.IComparable</span>&lt;<a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode-2.html">BTreeNode</a>&lt;TKey, TValue&gt;&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3__keyValues">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;._keyValues</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3__children">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;._children</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3__parent">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;._parent</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_MaxBranchingDegree">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.MaxBranchingDegree</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_MinKeys">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.MinKeys</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_MaxKeys">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.MaxKeys</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_MinBranchingDegree">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.MinBranchingDegree</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_KeyCount">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.KeyCount</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_ChildrenCount">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.ChildrenCount</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_Clear">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.Clear()</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetKeyValues">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.GetKeyValues()</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsLeaf">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.IsLeaf()</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsRoot">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.IsRoot()</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsFull">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.IsFull()</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsOverFlown">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.IsOverFlown()</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsUnderFlown">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.IsUnderFlown()</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsMinFull">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.IsMinFull()</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsMinOneFull">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.IsMinOneFull()</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_IsEmpty">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.IsEmpty()</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetIndexAtParentChildren">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.GetIndexAtParentChildren()</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_InsertChild__0_">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.InsertChild(BTreeNode&lt;TKey, TValue&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_HasLeftSibling">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.HasLeftSibling()</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_HasRightSibling">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.HasRightSibling()</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetLeftSibling">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.GetLeftSibling()</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetRightSibling">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.GetRightSibling()</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetMaxKey">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.GetMaxKey()</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetMinKey">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.GetMinKey()</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_RemoveKey__1_">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.RemoveKey(TKey)</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_RemoveKeyByIndex_System_Int32_">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.RemoveKeyByIndex(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_RemoveChildByIndex_System_Int32_">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.RemoveChildByIndex(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_RemoveChild__0_">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.RemoveChild(BTreeNode&lt;TKey, TValue&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetKeyValue_System_Int32_">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.GetKeyValue(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetKey_System_Int32_">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.GetKey(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetKeyIndex__1_">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.GetKeyIndex(TKey)</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetChild_System_Int32_">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.GetChild(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetChildIndex__0_">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.GetChildIndex(BTreeNode&lt;TKey, TValue&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_InsertKeyValue_System_Collections_Generic_KeyValuePair__1__2__">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.InsertKeyValue(KeyValuePair&lt;TKey, TValue&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_SetParent__0_">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.SetParent(BTreeNode&lt;TKey, TValue&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_GetParent">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.GetParent()</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_Split">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.Split()</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_KeyValueToMoveUp">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.KeyValueToMoveUp()</a>
+    </div>
+    <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase-3.html#AlgorithmsAndDataStructures_DataStructures_Trees_Nary_API_BTreeNodeBase_3_CompareTo__0_">BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.CompareTo(BTreeNode&lt;TKey, TValue&gt;)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.html">AlgorithmsAndDataStructures.DataStructures.Trees.Nary</a></h6>
+  <h6><strong>Assembly</strong>: AlgorithmsAndDataStructures.dll</h6>
+  <h5 id="AlgorithmsAndDataStructures_DataStructures_Trees_Nary_BTreeNode_2_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class BTreeNode&lt;TKey, TValue&gt; : BTreeNodeBase&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;, IBTreeNode&lt;BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;, IComparable&lt;BTreeNode&lt;TKey, TValue&gt;&gt; where TKey : IComparable&lt;TKey&gt;</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TKey</span></td>
+        <td><p>The type of the keys in the tree.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TValue</span></td>
+        <td><p>The type of the values in the tree.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/RenamingRepo/apiSpec/new?filename=AlgorithmsAndDataStructures_DataStructures_Trees_Nary_BTreeNode_2__ctor.md&amp;value=---%0Auid%3A%20AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode%602.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/RenamingRepo/Source/DataStructures/Trees/Nary/BTreeNode.cs/#L41">View Source</a>
+  </span>
+  <a id="AlgorithmsAndDataStructures_DataStructures_Trees_Nary_BTreeNode_2__ctor_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode`2.#ctor*"></a>
+  <h4 id="AlgorithmsAndDataStructures_DataStructures_Trees_Nary_BTreeNode_2__ctor" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode`2.#ctor">BTreeNode()</h4>
+  <div class="markdown level1 summary"><p>Parameter-less constructor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BTreeNode()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/RenamingRepo/apiSpec/new?filename=AlgorithmsAndDataStructures_DataStructures_Trees_Nary_BTreeNode_2__ctor_System_Int32_.md&amp;value=---%0Auid%3A%20AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode%602.%23ctor(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/RenamingRepo/Source/DataStructures/Trees/Nary/BTreeNode.cs/#L49">View Source</a>
+  </span>
+  <a id="AlgorithmsAndDataStructures_DataStructures_Trees_Nary_BTreeNode_2__ctor_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode`2.#ctor*"></a>
+  <h4 id="AlgorithmsAndDataStructures_DataStructures_Trees_Nary_BTreeNode_2__ctor_System_Int32_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode`2.#ctor(System.Int32)">BTreeNode(Int32)</h4>
+  <div class="markdown level1 summary"><p>Creates a node with no keys.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BTreeNode(int maxBranchingDegree)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">maxBranchingDegree</span></td>
+        <td><p>The maximum number of children the node can have.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/RenamingRepo/apiSpec/new?filename=AlgorithmsAndDataStructures_DataStructures_Trees_Nary_BTreeNode_2__ctor_System_Int32_System_Collections_Generic_KeyValuePair__0__1__.md&amp;value=---%0Auid%3A%20AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode%602.%23ctor(System.Int32%2CSystem.Collections.Generic.KeyValuePair%7B%600%2C%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/RenamingRepo/Source/DataStructures/Trees/Nary/BTreeNode.cs/#L58">View Source</a>
+  </span>
+  <a id="AlgorithmsAndDataStructures_DataStructures_Trees_Nary_BTreeNode_2__ctor_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode`2.#ctor*"></a>
+  <h4 id="AlgorithmsAndDataStructures_DataStructures_Trees_Nary_BTreeNode_2__ctor_System_Int32_System_Collections_Generic_KeyValuePair__0__1__" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode`2.#ctor(System.Int32,System.Collections.Generic.KeyValuePair{`0,`1})">BTreeNode(Int32, KeyValuePair&lt;TKey, TValue&gt;)</h4>
+  <div class="markdown level1 summary"><p>Creates a node with 1 key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BTreeNode(int maxBranchingDegree, KeyValuePair&lt;TKey, TValue&gt; keyValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">maxBranchingDegree</span></td>
+        <td><p>The maximum number of children the node can have.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;</td>
+        <td><span class="parametername">keyValue</span></td>
+        <td><p>A key-value pair to be inserted in the tree.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/RenamingRepo/apiSpec/new?filename=AlgorithmsAndDataStructures_DataStructures_Trees_Nary_BTreeNode_2__ctor_System_Int32_System_Collections_Generic_List_System_Collections_Generic_KeyValuePair__0__1___System_Collections_Generic_List_AlgorithmsAndDataStructures_DataStructures_Trees_Nary_BTreeNode__0__1___.md&amp;value=---%0Auid%3A%20AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode%602.%23ctor(System.Int32%2CSystem.Collections.Generic.List%7BSystem.Collections.Generic.KeyValuePair%7B%600%2C%601%7D%7D%2CSystem.Collections.Generic.List%7BAlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode%7B%600%2C%601%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/RenamingRepo/Source/DataStructures/Trees/Nary/BTreeNode.cs/#L68">View Source</a>
+  </span>
+  <a id="AlgorithmsAndDataStructures_DataStructures_Trees_Nary_BTreeNode_2__ctor_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode`2.#ctor*"></a>
+  <h4 id="AlgorithmsAndDataStructures_DataStructures_Trees_Nary_BTreeNode_2__ctor_System_Int32_System_Collections_Generic_List_System_Collections_Generic_KeyValuePair__0__1___System_Collections_Generic_List_AlgorithmsAndDataStructures_DataStructures_Trees_Nary_BTreeNode__0__1___" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode`2.#ctor(System.Int32,System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`0,`1}},System.Collections.Generic.List{AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode{`0,`1}})">BTreeNode(Int32, List&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;, List&lt;BTreeNode&lt;TKey, TValue&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Creates a node with a set of keys and children.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BTreeNode(int maxBranchingDegree, List&lt;KeyValuePair&lt;TKey, TValue&gt;&gt; keyValues, List&lt;BTreeNode&lt;TKey, TValue&gt;&gt; children)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">maxBranchingDegree</span></td>
+        <td><p>The maximum number of children the node can have.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;&gt;</td>
+        <td><span class="parametername">keyValues</span></td>
+        <td><p>A set of key-value pairs to be inserted in the new node.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode-2.html">BTreeNode</a>&lt;TKey, TValue&gt;&gt;</td>
+        <td><span class="parametername">children</span></td>
+        <td><p>A set of children of the node. Expectancy is that the count of children is one bigger than the count of key-value pairs in the node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/RenamingRepo/apiSpec/new?filename=AlgorithmsAndDataStructures_DataStructures_Trees_Nary_BTreeNode_2_GetIndexAtParentChildren.md&amp;value=---%0Auid%3A%20AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode%602.GetIndexAtParentChildren%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/RenamingRepo/Source/DataStructures/Trees/Nary/BTreeNode.cs/#L78">View Source</a>
+  </span>
+  <a id="AlgorithmsAndDataStructures_DataStructures_Trees_Nary_BTreeNode_2_GetIndexAtParentChildren_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode`2.GetIndexAtParentChildren*"></a>
+  <h4 id="AlgorithmsAndDataStructures_DataStructures_Trees_Nary_BTreeNode_2_GetIndexAtParentChildren" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode`2.GetIndexAtParentChildren">GetIndexAtParentChildren()</h4>
+  <div class="markdown level1 summary"><p>Gets the index of the current node in its parent's _children list.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetIndexAtParentChildren()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>Index at parent's _children list.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase&lt;AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.GetIndexAtParentChildren()</span></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p>Throws if parent is null.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/RenamingRepo/apiSpec/new?filename=AlgorithmsAndDataStructures_DataStructures_Trees_Nary_BTreeNode_2_InsertChild_AlgorithmsAndDataStructures_DataStructures_Trees_Nary_BTreeNode__0__1__.md&amp;value=---%0Auid%3A%20AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode%602.InsertChild(AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode%7B%600%2C%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/RenamingRepo/Source/DataStructures/Trees/Nary/BTreeNode.cs/#L87">View Source</a>
+  </span>
+  <a id="AlgorithmsAndDataStructures_DataStructures_Trees_Nary_BTreeNode_2_InsertChild_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode`2.InsertChild*"></a>
+  <h4 id="AlgorithmsAndDataStructures_DataStructures_Trees_Nary_BTreeNode_2_InsertChild_AlgorithmsAndDataStructures_DataStructures_Trees_Nary_BTreeNode__0__1__" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode`2.InsertChild(AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode{`0,`1})">InsertChild(BTreeNode&lt;TKey, TValue&gt;)</h4>
+  <div class="markdown level1 summary"><p>Inserts a child in _children array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void InsertChild(BTreeNode&lt;TKey, TValue&gt; child)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode-2.html">BTreeNode</a>&lt;TKey, TValue&gt;</td>
+        <td><span class="parametername">child</span></td>
+        <td><p>the new child to be inserted in _children array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeNodeBase&lt;AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode&lt;TKey, TValue&gt;, TKey, TValue&gt;.InsertChild(AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode&lt;TKey, TValue&gt;)</span></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.IBTreeNode-3.html">IBTreeNode&lt;TNode, TKey, TValue&gt;</a>
+  </div>
+  <div>
+      <span class="xref">System.IComparable&lt;T&gt;</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/RenamingRepo/apiSpec/new?filename=AlgorithmsAndDataStructures_DataStructures_Trees_Nary_BTreeNode_2.md&amp;value=---%0Auid%3A%20AlgorithmsAndDataStructures.DataStructures.Trees.Nary.BTreeNode%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/RenamingRepo/Source/DataStructures/Trees/Nary/BTreeNode.cs/#L34" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

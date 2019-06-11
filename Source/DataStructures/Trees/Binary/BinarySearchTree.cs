@@ -15,15 +15,15 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 using System;
 using System.Collections.Generic;
-using CSFundamentals.DataStructures.Trees.Binary.API;
-using CSFundamentals.Decoration;
+using AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API;
+using AlgorithmsAndDataStructures.Decoration;
 
-namespace CSFundamentals.DataStructures.Trees.Binary
+namespace AlgorithmsAndDataStructures.DataStructures.Trees.Binary
 {
     /// <summary>
     /// Implements a binary search tree, and its operations. In a binary search tree, each node's key is larger than its left child's key, and smaller than its right child's key.

@@ -15,17 +15,17 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using CSFundamentals.Decoration;
+using AlgorithmsAndDataStructures.Decoration;
 
 [assembly: InternalsVisibleTo("CSFundamentalTests")]
 
-namespace CSFundamentals.DataStructures.Trees.Binary.API
+namespace AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API
 {
     /// <summary>
     /// Provides a base class for a binary search tree (aka. BST)

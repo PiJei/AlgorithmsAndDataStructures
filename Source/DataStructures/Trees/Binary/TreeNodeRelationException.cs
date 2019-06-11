@@ -15,12 +15,12 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with CSFundamentals.  If not, see <http://www.gnu.org/licenses/>.
+ * along with AlgorithmsAndDataStructures.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
 using System;
 // TODO: better the naming
-namespace CSFundamentals.DataStructures.Trees.Binary
+namespace AlgorithmsAndDataStructures.DataStructures.Trees.Binary
 {
     /// <summary>
     /// A customized exception for relation between tree nodes. 

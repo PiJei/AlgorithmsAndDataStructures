@@ -1,0 +1,929 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class BinaryTreeNode&lt;TNode, TKey, TValue&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class BinaryTreeNode&lt;TNode, TKey, TValue&gt;
+   ">
+    <meta name="generator" content="docfx 2.42.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3">
+  
+  
+  <h1 id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3" class="text-break">Class BinaryTreeNode&lt;TNode, TKey, TValue&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Implements a base binary tree node.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">BinaryTreeNode&lt;TNode, TKey, TValue&gt;</span></div>
+      <div class="level2"><a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.AVLTreeNode-2.html">AVLTreeNode&lt;TKey, TValue&gt;</a></div>
+      <div class="level2"><a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.BinarySearchTreeNode-2.html">BinarySearchTreeNode&lt;TKey, TValue&gt;</a></div>
+      <div class="level2"><a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.RedBlackTreeNode-2.html">RedBlackTreeNode&lt;TKey, TValue&gt;</a></div>
+      <div class="level2"><a class="xref" href="AlgorithmsAndDataStructuresTests.DataStructures.Trees.Binary.API.MockBinaryTreeNode-2.html">MockBinaryTreeNode&lt;TKey, TValue&gt;</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.IBinaryTreeNode-3.html">IBinaryTreeNode</a>&lt;TNode, TKey, TValue&gt;</div>
+    <div><span class="xref">System.IComparable</span>&lt;TNode&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.html">AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API</a></h6>
+  <h6><strong>Assembly</strong>: AlgorithmsAndDataStructures.dll</h6>
+  <h5 id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class BinaryTreeNode&lt;TNode, TKey, TValue&gt; : IBinaryTreeNode&lt;TNode, TKey, TValue&gt;, IComparable&lt;TNode&gt; where TNode : IBinaryTreeNode&lt;TNode, TKey, TValue&gt; where TKey : IComparable&lt;TKey&gt;</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TNode</span></td>
+        <td><p>Type of a binary tree node.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TKey</span></td>
+        <td><p>Type of the key stored in the node.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TValue</span></td>
+        <td><p>Type of the value stored in the node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/RenamingRepo/apiSpec/new?filename=AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3__ctor.md&amp;value=---%0Auid%3A%20AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode%603.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/RenamingRepo/Source/DataStructures/Trees/Binary/API/BinaryTreeNode.cs/#L50">View Source</a>
+  </span>
+  <a id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3__ctor_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.#ctor*"></a>
+  <h4 id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3__ctor" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.#ctor">BinaryTreeNode()</h4>
+  <div class="markdown level1 summary"><p>Parameter-less constructor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BinaryTreeNode()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/RenamingRepo/apiSpec/new?filename=AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3__ctor__1__2_.md&amp;value=---%0Auid%3A%20AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode%603.%23ctor(%601%2C%602)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/RenamingRepo/Source/DataStructures/Trees/Binary/API/BinaryTreeNode.cs/#L59">View Source</a>
+  </span>
+  <a id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3__ctor_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.#ctor*"></a>
+  <h4 id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3__ctor__1__2_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.#ctor(`1,`2)">BinaryTreeNode(TKey, TValue)</h4>
+  <div class="markdown level1 summary"><p>Constructor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BinaryTreeNode(TKey key, TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key to be stored in the node.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value to be stored in the node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/RenamingRepo/apiSpec/new?filename=AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_IsNill.md&amp;value=---%0Auid%3A%20AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode%603.IsNill%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/RenamingRepo/Source/DataStructures/Trees/Binary/API/BinaryTreeNode.cs/#L39">View Source</a>
+  </span>
+  <a id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_IsNill_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsNill*"></a>
+  <h4 id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_IsNill" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsNill">IsNill</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsNill { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>Specifies whether the node is a sentinel node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/RenamingRepo/apiSpec/new?filename=AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_Key.md&amp;value=---%0Auid%3A%20AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode%603.Key%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/RenamingRepo/Source/DataStructures/Trees/Binary/API/BinaryTreeNode.cs/#L42">View Source</a>
+  </span>
+  <a id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_Key_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.Key*"></a>
+  <h4 id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_Key" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.Key">Key</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TKey Key { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><p>Key stored in this node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/RenamingRepo/apiSpec/new?filename=AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_LeftChild.md&amp;value=---%0Auid%3A%20AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode%603.LeftChild%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/RenamingRepo/Source/DataStructures/Trees/Binary/API/BinaryTreeNode.cs/#L68">View Source</a>
+  </span>
+  <a id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_LeftChild_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.LeftChild*"></a>
+  <h4 id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_LeftChild" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.LeftChild">LeftChild</h4>
+  <div class="markdown level1 summary"><p>Is a reference to the left child of the current node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract TNode LeftChild { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/RenamingRepo/apiSpec/new?filename=AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_Parent.md&amp;value=---%0Auid%3A%20AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode%603.Parent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/RenamingRepo/Source/DataStructures/Trees/Binary/API/BinaryTreeNode.cs/#L78">View Source</a>
+  </span>
+  <a id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_Parent_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.Parent*"></a>
+  <h4 id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_Parent" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.Parent">Parent</h4>
+  <div class="markdown level1 summary"><p>Is a reference to the parent of the current node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract TNode Parent { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/RenamingRepo/apiSpec/new?filename=AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_RightChild.md&amp;value=---%0Auid%3A%20AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode%603.RightChild%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/RenamingRepo/Source/DataStructures/Trees/Binary/API/BinaryTreeNode.cs/#L73">View Source</a>
+  </span>
+  <a id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_RightChild_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.RightChild*"></a>
+  <h4 id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_RightChild" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.RightChild">RightChild</h4>
+  <div class="markdown level1 summary"><p>Is a reference to the right child of the current node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract TNode RightChild { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/RenamingRepo/apiSpec/new?filename=AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_Value.md&amp;value=---%0Auid%3A%20AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode%603.Value%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/RenamingRepo/Source/DataStructures/Trees/Binary/API/BinaryTreeNode.cs/#L45">View Source</a>
+  </span>
+  <a id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_Value_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.Value*"></a>
+  <h4 id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_Value" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.Value">Value</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TValue Value { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><p>Value stored in this node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/RenamingRepo/apiSpec/new?filename=AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_CompareTo__0_.md&amp;value=---%0Auid%3A%20AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode%603.CompareTo(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/RenamingRepo/Source/DataStructures/Trees/Binary/API/BinaryTreeNode.cs/#L273">View Source</a>
+  </span>
+  <a id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_CompareTo_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.CompareTo*"></a>
+  <h4 id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_CompareTo__0_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.CompareTo(`0)">CompareTo(TNode)</h4>
+  <div class="markdown level1 summary"><p>Compares current node to another node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CompareTo(TNode other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>A binary tree node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>0 if the current node is equal to the other node, 1 if the current node is bigger and -1 otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/RenamingRepo/apiSpec/new?filename=AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_Equals__0_.md&amp;value=---%0Auid%3A%20AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode%603.Equals(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/RenamingRepo/Source/DataStructures/Trees/Binary/API/BinaryTreeNode.cs/#L334">View Source</a>
+  </span>
+  <a id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_Equals_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.Equals*"></a>
+  <h4 id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_Equals__0_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.Equals(`0)">Equals(TNode)</h4>
+  <div class="markdown level1 summary"><p>Compares the current node to <code data-dev-comment-type="paramref" class="paramref">other</code> node for equality.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(TNode other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>A binary tree node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True if they are equal and false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/RenamingRepo/apiSpec/new?filename=AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_FormsLine.md&amp;value=---%0Auid%3A%20AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode%603.FormsLine%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/RenamingRepo/Source/DataStructures/Trees/Binary/API/BinaryTreeNode.cs/#L224">View Source</a>
+  </span>
+  <a id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_FormsLine_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.FormsLine*"></a>
+  <h4 id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_FormsLine" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.FormsLine">FormsLine()</h4>
+  <div class="markdown level1 summary"><p>Checks whether the node forms a line with its parent and grandparent.
+Notice a line needs exactly 3 nodes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool FormsLine()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/RenamingRepo/apiSpec/new?filename=AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_FormsTriangle.md&amp;value=---%0Auid%3A%20AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode%603.FormsTriangle%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/RenamingRepo/Source/DataStructures/Trees/Binary/API/BinaryTreeNode.cs/#L248">View Source</a>
+  </span>
+  <a id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_FormsTriangle_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.FormsTriangle*"></a>
+  <h4 id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_FormsTriangle" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.FormsTriangle">FormsTriangle()</h4>
+  <div class="markdown level1 summary"><p>Checks whether the node forms a triangle with its parent and grandparent.
+Notice a triangle needs exactly 3 nodes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool FormsTriangle()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/RenamingRepo/apiSpec/new?filename=AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_GetChildren.md&amp;value=---%0Auid%3A%20AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode%603.GetChildren%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/RenamingRepo/Source/DataStructures/Trees/Binary/API/BinaryTreeNode.cs/#L295">View Source</a>
+  </span>
+  <a id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_GetChildren_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetChildren*"></a>
+  <h4 id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_GetChildren" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetChildren">GetChildren()</h4>
+  <div class="markdown level1 summary"><p>Gets the immediate not-null children of the current node, the collection contains left and right children thus.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;TNode&gt; GetChildren()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;TNode&gt;</td>
+        <td><p>List of the immediate direct children of the current node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/RenamingRepo/apiSpec/new?filename=AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_GetGrandChildren.md&amp;value=---%0Auid%3A%20AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode%603.GetGrandChildren%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/RenamingRepo/Source/DataStructures/Trees/Binary/API/BinaryTreeNode.cs/#L313">View Source</a>
+  </span>
+  <a id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_GetGrandChildren_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetGrandChildren*"></a>
+  <h4 id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_GetGrandChildren" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetGrandChildren">GetGrandChildren()</h4>
+  <div class="markdown level1 summary"><p>Gets the immediate grand children of a node. This is the children of the children of the node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;TNode&gt; GetGrandChildren()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;TNode&gt;</td>
+        <td><p>The list of grand children of the node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/RenamingRepo/apiSpec/new?filename=AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_GetGrandParent.md&amp;value=---%0Auid%3A%20AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode%603.GetGrandParent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/RenamingRepo/Source/DataStructures/Trees/Binary/API/BinaryTreeNode.cs/#L205">View Source</a>
+  </span>
+  <a id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_GetGrandParent_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetGrandParent*"></a>
+  <h4 id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_GetGrandParent" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetGrandParent">GetGrandParent()</h4>
+  <div class="markdown level1 summary"><p>Gets the grandparent of the current node. GrandParent is the parent of the parent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TNode GetGrandParent()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td><p>Grand parent node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/RenamingRepo/apiSpec/new?filename=AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_GetSibling.md&amp;value=---%0Auid%3A%20AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode%603.GetSibling%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/RenamingRepo/Source/DataStructures/Trees/Binary/API/BinaryTreeNode.cs/#L186">View Source</a>
+  </span>
+  <a id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_GetSibling_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetSibling*"></a>
+  <h4 id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_GetSibling" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetSibling">GetSibling()</h4>
+  <div class="markdown level1 summary"><p>Gets the sibling of the current node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TNode GetSibling()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td><p>Sibling node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/RenamingRepo/apiSpec/new?filename=AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_GetUncle.md&amp;value=---%0Auid%3A%20AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode%603.GetUncle%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/RenamingRepo/Source/DataStructures/Trees/Binary/API/BinaryTreeNode.cs/#L159">View Source</a>
+  </span>
+  <a id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_GetUncle_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetUncle*"></a>
+  <h4 id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_GetUncle" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.GetUncle">GetUncle()</h4>
+  <div class="markdown level1 summary"><p>Gets the uncle of the current node. Uncle is the sibling of the parent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TNode GetUncle()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td><p>Uncle node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/RenamingRepo/apiSpec/new?filename=AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_IsComplete.md&amp;value=---%0Auid%3A%20AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode%603.IsComplete%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/RenamingRepo/Source/DataStructures/Trees/Binary/API/BinaryTreeNode.cs/#L282">View Source</a>
+  </span>
+  <a id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_IsComplete_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsComplete*"></a>
+  <h4 id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_IsComplete" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsComplete">IsComplete()</h4>
+  <div class="markdown level1 summary"><p>Checks whether the current node is complete. A binary tree node is complete if it has both left and right children.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsComplete()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True in case the current node is complete, and false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/RenamingRepo/apiSpec/new?filename=AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_IsLeaf.md&amp;value=---%0Auid%3A%20AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode%603.IsLeaf%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/RenamingRepo/Source/DataStructures/Trees/Binary/API/BinaryTreeNode.cs/#L84">View Source</a>
+  </span>
+  <a id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_IsLeaf_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsLeaf*"></a>
+  <h4 id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_IsLeaf" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsLeaf">IsLeaf()</h4>
+  <div class="markdown level1 summary"><p>Checks whether the current node is a leaf node. A node is leaf if it has no children.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsLeaf()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True if the current node is leaf, and false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/RenamingRepo/apiSpec/new?filename=AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_IsLeftChild.md&amp;value=---%0Auid%3A%20AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode%603.IsLeftChild%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/RenamingRepo/Source/DataStructures/Trees/Binary/API/BinaryTreeNode.cs/#L97">View Source</a>
+  </span>
+  <a id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_IsLeftChild_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsLeftChild*"></a>
+  <h4 id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_IsLeftChild" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsLeftChild">IsLeftChild()</h4>
+  <div class="markdown level1 summary"><p>Checks to see if the node is the left child of its parent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsLeftChild()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True in case the node is the left child of its parent, and false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/RenamingRepo/apiSpec/new?filename=AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_IsRightChild.md&amp;value=---%0Auid%3A%20AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode%603.IsRightChild%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/RenamingRepo/Source/DataStructures/Trees/Binary/API/BinaryTreeNode.cs/#L121">View Source</a>
+  </span>
+  <a id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_IsRightChild_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsRightChild*"></a>
+  <h4 id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_IsRightChild" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsRightChild">IsRightChild()</h4>
+  <div class="markdown level1 summary"><p>Checks to see if the node is the right child of its parent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsRightChild()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True in case the node is the right child of its parent, and false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/RenamingRepo/apiSpec/new?filename=AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_IsRoot.md&amp;value=---%0Auid%3A%20AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode%603.IsRoot%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/RenamingRepo/Source/DataStructures/Trees/Binary/API/BinaryTreeNode.cs/#L145">View Source</a>
+  </span>
+  <a id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_IsRoot_" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsRoot*"></a>
+  <h4 id="AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3_IsRoot" data-uid="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode`3.IsRoot">IsRoot()</h4>
+  <div class="markdown level1 summary"><p>Checks whether the current node is the root of the tree. A node is root if it has no parent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsRoot()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True in case the current node is the root, and false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.IBinaryTreeNode-3.html">IBinaryTreeNode&lt;TNode, TKey, TValue&gt;</a>
+  </div>
+  <div>
+      <span class="xref">System.IComparable&lt;T&gt;</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/new/dev/pijei/RenamingRepo/apiSpec/new?filename=AlgorithmsAndDataStructures_DataStructures_Trees_Binary_API_BinaryTreeNode_3.md&amp;value=---%0Auid%3A%20AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API.BinaryTreeNode%603%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/PiJei/CSFundamentalAlgorithms/blob/dev/pijei/RenamingRepo/Source/DataStructures/Trees/Binary/API/BinaryTreeNode.cs/#L32" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
