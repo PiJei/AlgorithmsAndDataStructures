@@ -1,4 +1,4 @@
-# Fundamental Algorithms and Data Structures in C#
+# Algorithms and Data Structures in C#
 This repository includes a comprehensive collection of well-known fundamental algorithms and data structures of computer science implemented in C#. 
 
 These algorithms and data structures are the basics behind *coding interview questions* and a deep understanding of their details is essential for passing these interviewes. 
