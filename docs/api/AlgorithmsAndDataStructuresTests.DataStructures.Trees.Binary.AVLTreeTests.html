@@ -404,6 +404,7 @@ public void GetHeight_ForSeveralNodesInSampleTree_ExpectsCorrectHeights()</code>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool HasAVLTreeProperties&lt;TKey, TValue&gt;(AVLTree&lt;TKey, TValue&gt; tree, AVLTreeNode&lt;TKey, TValue&gt; root, int expectedNodeCount)
+
     where TKey : IComparable&lt;TKey&gt;, IEquatable&lt;TKey&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -488,6 +489,7 @@ public void GetHeight_ForSeveralNodesInSampleTree_ExpectsCorrectHeights()</code>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool HasExpectedBalanceFactor&lt;TKey, TValue&gt;(AVLTree&lt;TKey, TValue&gt; tree, List&lt;AVLTreeNode&lt;TKey, TValue&gt;&gt; nodes)
+
     where TKey : IComparable&lt;TKey&gt;, IEquatable&lt;TKey&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
