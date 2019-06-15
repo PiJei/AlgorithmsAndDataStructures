@@ -10,7 +10,7 @@ These algorithms and data structures are the basics behind *coding interview que
 ## **Main Features**
 - Algorithms are decorated with **time and space complexity** attributes. 
 
-- For complex algorithms, for each unit test an **Images** folder is provided that shows the step by step execution of the algorithm.
+- For complex algorithms, for each unit test an **Images** folder is provided that shows the step by step execution of the algorithm. **Aftr all a picture is worth 1000 lines of code!**
 
 - This repository is paired with a [**Udemy Course**](https://www.udemy.com/instructor/course/2378432/) that teaches all the algorithms and data structures implemented here with animated operations over the same examples demonstrated via this repository's unit tests, and images. 
     
