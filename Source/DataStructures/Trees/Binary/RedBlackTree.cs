@@ -100,7 +100,7 @@ namespace AlgorithmsAndDataStructures.DataStructures.Trees.Binary
                 node.Key = rightChildMin.Key;
                 node.Value = rightChildMin.Value;
                 var parent = rightChildMin.Parent;
-                newRoot = Delete(rightChildMin); ;
+                newRoot = Delete(rightChildMin); 
                 UpdateParentWithNullingChild(parent, rightChildMin);
                 rightChildMin = null;
             }
