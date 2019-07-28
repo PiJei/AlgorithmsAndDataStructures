@@ -9,3 +9,4 @@ For a list of implemented algorithms and data structures see:
 
 To contibute to the code see: 
   - [Coding Guidelines](https://pijei.github.io/AlgorithmsAndDataStructures/articles/CodingGuidelines.html) 
+  - [Kanban board](https://github.com/PiJei/AlgorithmsAndDataStructures/projects/1)
