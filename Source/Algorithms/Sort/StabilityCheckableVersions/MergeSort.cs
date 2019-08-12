@@ -29,8 +29,8 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
         /// Implements a basic version of merge sort recursively. 
         /// </summary>
         /// <param name="list">The list of integer values to be sorted. </param>
-        /// <param name="startIndex">The lower index in the array, inclusive. </param>
-        /// <param name="endIndex">The higher index in the array, inclusive. </param>
+        /// <param name="startIndex">The lower index in the list, inclusive. </param>
+        /// <param name="endIndex">The higher index in the list, inclusive. </param>
         public static void Sort_Recursively(List<Element> list, int startIndex, int endIndex)
         {
             if (startIndex < endIndex)
@@ -43,81 +43,81 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
         }
 
         /// <summary>
-        /// Merges two sub arrays [startIndex, middleIndex], [middleIndex+1, endIndex] such to end up with a sorted list. 
+        /// Merges two sub list [startIndex, middleIndex], [middleIndex+1, endIndex] such to end up with a sorted list. 
         /// </summary>
-        /// <param name="values">The list of integer values to be sorted. </param>
-        /// <param name="startIndex">The lower index in the array, inclusive. </param>
-        /// <param name="middleIndex">The middle index of the array. </param>
-        /// <param name="endIndex">The higher index in the array, inclusive. </param>
-        public static void Merge(List<Element> values, int startIndex, int middleIndex, int endIndex)
+        /// <param name="list">The list of integer values to be sorted. </param>
+        /// <param name="startIndex">The lower index in the list, inclusive. </param>
+        /// <param name="middleIndex">The middle index of the list. </param>
+        /// <param name="endIndex">The higher index in the list, inclusive. </param>
+        public static void Merge(List<Element> list, int startIndex, int middleIndex, int endIndex)
         {
-            //Making a copy of the values
-            var valuesOriginal = new List<Element>(values.Count);
-            for (int i = 0; i < values.Count; i++)
+            //Making a copy of the list
+            var listCopy = new List<Element>(list.Count);
+            for (int i = 0; i < list.Count; i++)
             {
-                valuesOriginal.Add(new Element(values[i]));
+                listCopy.Add(new Element(list[i]));
             }
 
-            //Inclusive boundaries of the first sub-array
+            //Inclusive boundaries of the first sub-list
             int start1 = startIndex;
             int end1 = middleIndex;
 
-            //Inclusive boundaries of the second sub-array
+            //Inclusive boundaries of the second sub-list
             int start2 = middleIndex + 1;
             int end2 = endIndex;
 
-            // Pointer on the first (left) sub-array
-            int leftHalfCounter = start1;
+            // Pointer on the first (left) sub-list
+            int leftHalfPointer = start1;
 
-            // Pointer on the second (right) sub-array
-            int rightHalfCounter = start2;
+            // Pointer on the second (right) sub-list
+            int rightHalfPointer = start2;
 
-            // Pointer on the Values array.
-            int mainArrayCounter = start1;
+            // Pointer on the list.
+            int listPointer = start1;
 
-            while (leftHalfCounter <= end1 && rightHalfCounter <= end2)
+            while (leftHalfPointer <= end1 && rightHalfPointer <= end2)
             {
-                if (valuesOriginal[leftHalfCounter].Value <= valuesOriginal[rightHalfCounter].Value) /* Favors left half values over right half values when there are duplicates. */
+                if (listCopy[leftHalfPointer].Value <= listCopy[rightHalfPointer].Value) /* Favors left half values over right half values when there are duplicates. */
                 {
-                    valuesOriginal[leftHalfCounter].Move(mainArrayCounter);
-                    values[mainArrayCounter] = valuesOriginal[leftHalfCounter];
-                    leftHalfCounter++;
+                    listCopy[leftHalfPointer].Move(listPointer);
+                    list[listPointer] = listCopy[leftHalfPointer];
+                    leftHalfPointer++;
                 }
-                else if (valuesOriginal[leftHalfCounter].Value > valuesOriginal[rightHalfCounter].Value)
+                else if (listCopy[leftHalfPointer].Value > listCopy[rightHalfPointer].Value)
                 {
-                    valuesOriginal[rightHalfCounter].Move(mainArrayCounter);
-                    values[mainArrayCounter] = valuesOriginal[rightHalfCounter];
-                    rightHalfCounter++;
+                    listCopy[rightHalfPointer].Move(listPointer);
+                    list[listPointer] = listCopy[rightHalfPointer];
+                    rightHalfPointer++;
                 }
-                mainArrayCounter++;
+                listPointer++;
             }
 
-            while (leftHalfCounter <= end1)
+            while (leftHalfPointer <= end1)
             {
-                valuesOriginal[leftHalfCounter].Move(mainArrayCounter);
-                values[mainArrayCounter] = valuesOriginal[leftHalfCounter];
-                leftHalfCounter++;
-                mainArrayCounter++;
+                listCopy[leftHalfPointer].Move(listPointer);
+                list[listPointer] = listCopy[leftHalfPointer];
+                leftHalfPointer++;
+                listPointer++;
             }
 
-            while (rightHalfCounter <= end2)
+            while (rightHalfPointer <= end2)
             {
-                valuesOriginal[rightHalfCounter].Move(mainArrayCounter);
-                values[mainArrayCounter] = valuesOriginal[rightHalfCounter];
-                rightHalfCounter++;
-                mainArrayCounter++;
+                listCopy[rightHalfPointer].Move(listPointer);
+                list[listPointer] = listCopy[rightHalfPointer];
+                rightHalfPointer++;
+                listPointer++;
             }
         }
 
         /// <summary>
         /// This is to be able to call MergeSort sort methods with only the list that needs to be sorted, and independent of the indexes. 
         /// This is needed for methods that receive other sort methods as parameters, and would ideally like to have similar signature for all the methods that are passed as parameters, 
-        /// In sort methods the signature is: void SortMethod(List{int} values); 
+        /// In sort methods the signature is: void SortMethod(List{int} list); 
         /// </summary>
-        /// <param name="values">The list of integers to be sorted. </param>
-        public static void MergeSort_Recursively_Wrapper(List<Element> values)
+        /// <param name="list">The list of integers to be sorted. </param>
+        public static void MergeSort_Recursively_Wrapper(List<Element> list)
         {
-            Sort_Recursively(values, 0, values.Count - 1);
+            Sort_Recursively(list, 0, list.Count - 1);
         }
     }
 }

@@ -33,7 +33,7 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
             Element maxElement = Utils.GetMaxElement(list);
             int digitsCountForMaxElement = Utils.GetDigitsCount(maxElement.Value);
 
-            /* Creating an array of 10 queues. One queue per each possible digit in base 10 (decimal) numbers: (0, 1, 2, ..., 9)*/
+            /* Creating a list of 10 queues. One queue per each possible digit in base 10 (decimal) numbers: (0, 1, 2, ..., 9)*/
             var queues = new Queue<Element>[10];
             for (int j = 0; j < 10; j++)
             {
@@ -45,7 +45,7 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
                 /* Enqueue each number in the correct queue based on its (d)th least significant digit (right most). */
                 for (int i = 0; i < list.Count; i++)
                 {
-                    /* Get the d(th) least significant digit of element i in the array.  */
+                    /* Get the d(th) least significant digit of element i in the list.  */
                     int digit = Utils.GetNthDigitFromRight(list[i].Value, d);
                     queues[digit].Enqueue(list[i]);
                 }

@@ -52,7 +52,7 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
                 /* Enqueue each number in the correct queue based on its (d)th least significant digit (right most). */
                 for (int i = 0; i < list.Count; i++)
                 {
-                    /* Get the d(th) least significant digit of element i in the array.  */
+                    /* Get the d(th) least significant digit of element i in the list.  */
                     int digit = Utils.GetNthDigitFromRight(list[i], d);
                     queues[digit].Enqueue(list[i]);
                 }

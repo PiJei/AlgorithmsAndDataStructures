@@ -30,7 +30,7 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
     public partial class SelectionSort
     {
         /// <summary>
-        /// Implements selection sort, which is in-situ and unstable, and at each step, the array would look as one sorted part, and one unsorted part. 
+        /// Implements selection sort, which is in-situ and unstable, and at each step, the list would look as one sorted part, and one unsorted part. 
         /// </summary>
         /// <param name="list">The list of values (of type T, e.g., int) to be sorted. </param>
         [Algorithm(AlgorithmType.Sort, "SelectionSort")]
@@ -40,11 +40,11 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
         [TimeComplexity(Case.Average, "O(n²)")]
         public static void Sort<T>(List<T> list) where T : IComparable<T>
         {
-            /*Notice that the loop does not have to repeat over the last element of the array, as by then the last element is already the largest element in the array.*/
+            /*Notice that the loop does not have to repeat over the last element of the list, as by then the last element is already the largest element in the list.*/
             for (int i = 0; i < list.Count - 1; i++) /* Iteration i, determines the i-th smallest/min value. */
             {
                 int minIndex = i;
-                for (int j = i+1; j < list.Count; j++) /* This loop finds an element in the unsorted part of the array that is smaller than the current value at index i. */
+                for (int j = i+1; j < list.Count; j++) /* This loop finds an element in the unsorted part of the list that is smaller than the current value at index i. */
                 {
                     if (list[j].CompareTo(list[minIndex]) < 0)
                     {

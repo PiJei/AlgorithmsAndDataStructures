@@ -31,13 +31,13 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
         /// <param name="list"></param>
         public static void Sort_Iterative_V2(List<Element> list)
         {
-            // In this version, we will overwrite the array location for element (i) by shifting each element to the right if bigger than (i) till finding its correct position
+            // In this version, we will overwrite the list location for element (i) by shifting each element to the right if bigger than (i) till finding its correct position
             for (int i = 1; i < list.Count; i++)
             {
-                Element arrayValueAtIndexI = list[i];
+                Element listValueAtIndexI = list[i];
                 int correctIndex = i;
 
-                for (int j = i - 1; j >= 0 && list[j].Value > arrayValueAtIndexI.Value; j--)
+                for (int j = i - 1; j >= 0 && list[j].Value > listValueAtIndexI.Value; j--)
                 {
                     list[j].Move(j + 1);
                     list[j + 1] = list[j];
@@ -45,8 +45,8 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
                     correctIndex = j;
                 }
 
-                arrayValueAtIndexI.Move(correctIndex);
-                list[correctIndex] = arrayValueAtIndexI;
+                listValueAtIndexI.Move(correctIndex);
+                list[correctIndex] = listValueAtIndexI;
             }
         }
     }
