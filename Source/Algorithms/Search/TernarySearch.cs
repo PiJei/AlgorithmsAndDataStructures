@@ -25,22 +25,22 @@ using AlgorithmsAndDataStructures.Decoration;
 namespace AlgorithmsAndDataStructures.Algorithms.Search
 {
     /// <summary>
-    /// Implements Ternary search algorithm for finding a specific value in a sorted array.
+    /// Implements Ternary search algorithm for finding a specific value in a sorted list.
     /// </summary>
     public class TernarySearch
     {
         /// <summary>
         /// Implements ternary search recursively on a list of any comparable type. 
         /// This search is inspired by binary search (hence the naming, 3 versus 2).
-        /// The difference being that rather than dividing the array into 2 sections, divides it into 3 equal sections and performs the search inside each one of those separately.
-        /// Notice that only works if the given array is sorted. 
+        /// The difference being that rather than dividing the list into 2 sections, divides it into 3 equal sections and performs the search inside each one of those separately.
+        /// Notice that only works if the given list is sorted. 
         /// </summary>
         /// <param name="sortedList">A sorted list of any comparable type. </param>
         /// <param name="key">The value that is being searched for. </param>
-        /// <param name="startIndex">The lowest (left-most) index of the array - inclusive. </param>
-        /// <param name="endIndex">The highest (right-most) index of the array - inclusive. </param>
-        /// <returns>The index of the <paramref name="key"/> in the array, and -1 if it does not exist in the array. </returns>
-        [Algorithm(AlgorithmType.Search, "TernarySearch", Assumptions = "Array is sorted with an ascending order.")]
+        /// <param name="startIndex">The lowest (left-most) index of the list - inclusive. </param>
+        /// <param name="endIndex">The highest (right-most) index of the list - inclusive. </param>
+        /// <returns>The index of the <paramref name="key"/> in the list, and -1 if it does not exist in the list. </returns>
+        [Algorithm(AlgorithmType.Search, "TernarySearch", Assumptions = "List is sorted with an ascending order.")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(log3(n))")]
@@ -52,13 +52,13 @@ namespace AlgorithmsAndDataStructures.Algorithms.Search
                 return -1;
             }
 
-            /* If key is NOT in the range, terminate search. Since the input array is sorted this early check is feasible. */
+            /* If key is NOT in the range, terminate search. Since the input list is sorted this early check is feasible. */
             if (key.CompareTo(sortedList[startIndex]) < 0 || key.CompareTo(sortedList[endIndex]) > 0)
             {
                 return -1;
             }
 
-            /* Dividing array by ((endIndex - startIndex) / 3) size in to 3 sections. */
+            /* Dividing list by ((endIndex - startIndex) / 3) size in to 3 sections. */
             int oneThirdIndex = startIndex + (endIndex - startIndex) * 1 / 3;
             int twoThirdIndex = startIndex + (endIndex - startIndex) * 2 / 3;
 

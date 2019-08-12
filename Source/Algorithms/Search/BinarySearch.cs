@@ -25,7 +25,7 @@ using AlgorithmsAndDataStructures.Decoration;
 namespace AlgorithmsAndDataStructures.Algorithms.Search
 {
     /// <summary>
-    /// Implements Binary search algorithm for finding a specific value in a sorted array.
+    /// Implements Binary search algorithm for finding a specific value in a sorted list.
     /// </summary>
     public class BinarySearch
     {
@@ -34,10 +34,10 @@ namespace AlgorithmsAndDataStructures.Algorithms.Search
         /// </summary>
         /// <param name="sortedList">A sorted list of any comparable type. </param>
         /// <param name="key">The value that is being searched for. </param>
-        /// <param name="startIndex">The lowest (left-most) index of the array - inclusive. </param>
-        /// <param name="endIndex">The highest (right-most) index of the array - inclusive. </param>
-        /// <returns>The index of the <paramref name="key"/> in the array, and -1 if it is absent from the array. </returns>
-        [Algorithm(AlgorithmType.Search, "BinarySearch", Assumptions = "Array is sorted with an ascending order.")]
+        /// <param name="startIndex">The lowest (left-most) index of the list - inclusive. </param>
+        /// <param name="endIndex">The highest (right-most) index of the list - inclusive. </param>
+        /// <returns>The index of the <paramref name="key"/> in the list, and -1 if it is absent from the array. </returns>
+        [Algorithm(AlgorithmType.Search, "BinarySearch", Assumptions = "List is sorted with an ascending order.")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
@@ -49,7 +49,7 @@ namespace AlgorithmsAndDataStructures.Algorithms.Search
                 return -1;
             }
 
-            /* If key is NOT in the range, terminate search. Since the input array is sorted this early check is feasible. */
+            /* If key is NOT in the range, terminate search. Since the input list is sorted this early check is feasible. */
             if (key.CompareTo(sortedList[startIndex]) < 0 || key.CompareTo(sortedList[endIndex]) > 0)
             {
                 return -1;

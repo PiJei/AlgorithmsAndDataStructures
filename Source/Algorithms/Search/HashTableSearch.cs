@@ -25,7 +25,7 @@ using AlgorithmsAndDataStructures.Decoration;
 namespace AlgorithmsAndDataStructures.Algorithms.Search
 {
     /// <summary>
-    /// Implements search using a hash table. Search algorithm is for finding a specific value in an array.
+    /// Implements search using a hash table. Search algorithm is for finding a specific value in a list.
     /// </summary>
     public class HashTableSearch
     {
@@ -34,7 +34,7 @@ namespace AlgorithmsAndDataStructures.Algorithms.Search
         /// </summary>
         /// <param name="list">A list of any comparable type.</param>
         /// <param name="key">The value the method is searching for. </param>
-        /// <returns>The list of all the indexes in the array that have <paramref name="key"/>. </returns>
+        /// <returns>The list of all the indexes in the list that have <paramref name="key"/>. </returns>
         [Algorithm(AlgorithmType.Search, "HashTable")]
         [SpaceComplexity("O(n)", InPlace = false)]
         [TimeComplexity(Case.Best, "O(1)")]

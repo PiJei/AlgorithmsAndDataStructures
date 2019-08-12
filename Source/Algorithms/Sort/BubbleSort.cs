@@ -30,17 +30,17 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
     public partial class BubbleSort
     {
         /// <summary>
-        /// Implements bubble sort iteratively, elements are bubbled down or up the array till they are at their final correct positions. 
+        /// Implements bubble sort iteratively, elements are bubbled down or up the list till they are at their final correct positions. 
         /// </summary>
         /// <param name="list">The list of values (of type T, e.g., int) to be sorted.</param>
         [Algorithm(AlgorithmType.Sort, "BubbleSort")]
         [SpaceComplexity("O(1)", InPlace = true)]
-        [TimeComplexity(Case.Best, "O(n)", When = "Input array is already sorted.")]
+        [TimeComplexity(Case.Best, "O(n)", When = "Input list is already sorted.")]
         [TimeComplexity(Case.Worst, "O(n²)")]
         [TimeComplexity(Case.Average, "O(n²)")]
         public static void Sort<T>(List<T> list) where T : IComparable<T>
         {
-            /* Bubble sort iterates many times over an array, and stops iterating when no swap happens any more. */
+            /* Bubble sort iterates many times over a list, and stops iterating when no swap happens any more. */
             while (true)
             {
                 bool swapHappened = false;
@@ -52,7 +52,7 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
                         swapHappened = true;
                     }
                 }
-                if (!swapHappened) /* If no swap happened in this pass, then the array is sorted. Break out of the loop. */
+                if (!swapHappened) /* If no swap happened in this pass, then the list is sorted. Break out of the loop. */
                 {
                     break;
                 }

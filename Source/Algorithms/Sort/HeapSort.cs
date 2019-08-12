@@ -23,7 +23,7 @@ using System.Collections.Generic;
 using System.Linq;
 using AlgorithmsAndDataStructures.DataStructures.BinaryHeaps;
 using AlgorithmsAndDataStructures.Decoration;
-// TODO: Dont like the fact that had to change the signature to return values, and convert arrays
+// TODO: Don't like the fact that had to change the signature to return values, and convert list
 namespace AlgorithmsAndDataStructures.Algorithms.Sort
 {
     /// <summary>
@@ -32,7 +32,7 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
     public partial class HeapSort
     {
         /// <summary>
-        /// Sorts the elements in an array using heap sort algorithm into an ascending order. 
+        /// Sorts the elements in an list using heap sort algorithm into an ascending order. 
         /// </summary>
         /// <param name="list">The list of values (of type T, e.g., int) to be sorted.</param>
         [Algorithm(AlgorithmType.Sort, "HeapSort")]
@@ -42,29 +42,29 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
         [TimeComplexity(Case.Average, "O(nLog(n))")]
         public static List<T> Sort<T>(List<T> list) where T : IComparable<T>
         {
-            // 1- re-arrange elements in the array into a max heap. 
-            var maxHeap = new MaxBinaryHeap<T, T>(ToHeapArray(list));
+            // 1- re-arrange elements in the list into a max heap. 
+            var maxHeap = new MaxBinaryHeap<T, T>(ToHeapList(list));
             maxHeap.BuildHeap_Recursively(list.Count);
 
-            // 2- Starting from last element in the array, repeat the following two steps for all the elements in the array, except the first one. 
+            // 2- Starting from last element in the list, repeat the following two steps for all the elements in the list, except the first one. 
             for (int i = list.Count - 1; i > 0; i--)
             {
-                /* Since the root element/node in a max heap is the maximum value in the array, putting it in the last position of the unsorted part of the array, determines its final position in an array that is eventually ordered ascending.*/
+                /* Since the root element/node in a max heap is the maximum value in the list, putting it in the last position of the unsorted part of the array, determines its final position in an array that is eventually ordered ascending.*/
                 Utils.Swap(maxHeap.HeapArray, 0, i);
 
                 /* Since the new value in the root position of the heap (index :0) may not be in its correct position, heap-order-wise, then bubble it down, until it reaches its correct position.*/
                 maxHeap.BubbleDown_Recursively(0, i);
             }
 
-            return ToArray(maxHeap.HeapArray);
+            return ToList(maxHeap.HeapArray);
         }
 
-        private static List<KeyValuePair<T, T>> ToHeapArray<T>(List<T> list) where T : IComparable<T>
+        private static List<KeyValuePair<T, T>> ToHeapList<T>(List<T> list) where T : IComparable<T>
         {
             return list.Select(v => new KeyValuePair<T, T>(v, v)).ToList();
         }
 
-        private static List<T> ToArray<T>(List<KeyValuePair<T, T>> list) where T : IComparable<T>
+        private static List<T> ToList<T>(List<KeyValuePair<T, T>> list) where T : IComparable<T>
         {
             return list.Select(v => v.Key).ToList();
         }

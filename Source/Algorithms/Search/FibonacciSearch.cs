@@ -25,7 +25,7 @@ using AlgorithmsAndDataStructures.Decoration;
 namespace AlgorithmsAndDataStructures.Algorithms.Search
 {
     /// <summary>
-    /// Implements Fibonacci search algorithm for finding a specific value in a sorted array.
+    /// Implements Fibonacci search algorithm for finding a specific value in a sorted list.
     /// </summary>
     public class FibonacciSearch
     {
@@ -36,15 +36,15 @@ namespace AlgorithmsAndDataStructures.Algorithms.Search
         /// <typeparam name="T">Type of the values in the sorted list.</typeparam>
         /// <param name="sortedList">A sorted list of any comparable type. </param>
         /// <param name="key">The value that is being searched for. </param>
-        /// <returns>The index of the <paramref name="key"/> in the array, and -1 if it does not exist in the array. </returns>
-        [Algorithm(AlgorithmType.Search, "FibonacciSearch", Assumptions = "Array is sorted with an ascending order.")]
+        /// <returns>The index of the <paramref name="key"/> in the list, and -1 if it does not exist in the list. </returns>
+        [Algorithm(AlgorithmType.Search, "FibonacciSearch", Assumptions = "List is sorted with an ascending order.")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(Log(n))")]
         [TimeComplexity(Case.Average, "O(Log(n))")]
         public static int Search<T>(List<T> sortedList, T key) where T : IComparable<T>
         {
-            /* If key is NOT in the range, terminate search. Since the input array is sorted this early check is feasible. */
+            /* If key is NOT in the range, terminate search. Since the input list is sorted this early check is feasible. */
             if (key.CompareTo(sortedList[0]) < 0 || key.CompareTo(sortedList[sortedList.Count - 1]) > 0)
             {
                 return -1;
@@ -53,7 +53,7 @@ namespace AlgorithmsAndDataStructures.Algorithms.Search
             FibonacciElement fib = GetSmallestFibonacciBiggerThanNumber(sortedList.Count);
             int startIndex = -1;
 
-            /* Note that fib numbers indicate indexes in the array to look at, and not values. */
+            /* Note that fib numbers indicate indexes in the list to look at, and not values. */
             while (fib.FibN > 1) /*  meaning in the sequence {0, 1, 1, 2, 3, ...} the while loop will stop when fibN = 2, thus fibN2 can at least be 1 */
             {
                 /* First compare to the value at index FibN2 */

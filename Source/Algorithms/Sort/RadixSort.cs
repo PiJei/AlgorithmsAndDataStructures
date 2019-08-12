@@ -40,7 +40,7 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
             int maxElement = Utils.GetMaxElement(list);
             int digitsCountForMaxElement = Utils.GetDigitsCount(maxElement);
 
-            /* Creating an array of 10 queues. One queue per each possible digit in base 10 (decimal) numbers: (0, 1, 2, ..., 9)*/
+            /* Creating a list of 10 queues. One queue per each possible digit in base 10 (decimal) numbers: (0, 1, 2, ..., 9)*/
             var queues = new Queue<int>[10];
             for (int j = 0; j < 10; j++)
             {

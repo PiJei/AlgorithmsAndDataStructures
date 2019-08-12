@@ -36,18 +36,18 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
         /// Implements quick sort recursively. 
         /// </summary>
         /// <param name="list">The list of values (of type T, e.g., int) to be sorted. </param>
-        /// <param name="startIndex">The lower index in the array, inclusive. </param>
-        /// <param name="endIndex">The higher index in the array, inclusive. </param>
+        /// <param name="startIndex">The lower index in the list, inclusive. </param>
+        /// <param name="endIndex">The higher index in the list, inclusive. </param>
         [Algorithm(AlgorithmType.Sort, "QuickSort")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(nLog(n))")]
-        [TimeComplexity(Case.Worst, "O(n²)", When = "Minimum or maximum element in the array is chosen as the pivot.")]
+        [TimeComplexity(Case.Worst, "O(n²)", When = "Minimum or maximum element in the list is chosen as the pivot.")]
         [TimeComplexity(Case.Average, "O(nLog(n))")]
         public static void Sort<T>(List<T> list, int startIndex, int endIndex) where T : IComparable<T>
         {
             if (startIndex < endIndex)
             {
-                int partitionIndex = PartitionArray(list, startIndex, endIndex);
+                int partitionIndex = PartitionList(list, startIndex, endIndex);
                 Sort(list, startIndex, partitionIndex);
                 Sort(list, partitionIndex + 1, endIndex);
             }
@@ -55,13 +55,13 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
 
         //TODO: Write a unit test for this 
         /// <summary>
-        /// Partitions the given array, with respect to the computed pivot, such that elements to the left of the pivot are smaller than the pivot, and elements to the right of the pivot are bigger than the pivot. 
+        /// Partitions the given list, with respect to the computed pivot, such that elements to the left of the pivot are smaller than the pivot, and elements to the right of the pivot are bigger than the pivot. 
         /// </summary>
         /// <param name="list">The list of values (of type T, e.g., int) to be sorted. </param>
-        /// <param name="startIndex">The lower index in the array, inclusive. </param>
-        /// <param name="endIndex">The higher index in the array, inclusive. </param>
+        /// <param name="startIndex">The lower index in the list, inclusive. </param>
+        /// <param name="endIndex">The higher index in the list, inclusive. </param>
         /// <returns>The next partitioning index. </returns>
-        internal static int PartitionArray<T>(List<T> list, int startIndex, int endIndex) where T : IComparable<T>
+        internal static int PartitionList<T>(List<T> list, int startIndex, int endIndex) where T : IComparable<T>
         {
             int pivotIndex = GetPivotIndex(startIndex, endIndex);
             T pivotValue = list[pivotIndex];
@@ -85,7 +85,7 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
                 }
                 Utils.Swap(list, leftIndex, rightIndex);
 
-                /* The next two operations are needed, as otherwise there will be issues with duplicate values in the array.
+                /* The next two operations are needed, as otherwise there will be issues with duplicate values in the list.
                  * Notice an alternative would be to remove the next two operations, and make the loops do-while, in which case leftIndex = currentLeftIndex-1, and rightIndex = currentRightIndex+1 */
                 leftIndex++;
                 rightIndex--;
@@ -93,10 +93,10 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
         }
 
         /// <summary>
-        /// This algorithm uses the middle element of the array as pivot. The algorithm can be replaced with other mechanisms as well. 
+        /// This algorithm uses the middle element of the list as pivot. The algorithm can be replaced with other mechanisms as well. 
         /// </summary>
-        /// <param name="startIndex">The startIndex of an array.</param>
-        /// <param name="endIndex">The endIndex of an array. </param>
+        /// <param name="startIndex">The startIndex of a list.</param>
+        /// <param name="endIndex">The endIndex of a list. </param>
         /// <returns></returns>
         public static int GetPivotIndex(int startIndex, int endIndex)
         {
