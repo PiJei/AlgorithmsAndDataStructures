@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="14.0">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
