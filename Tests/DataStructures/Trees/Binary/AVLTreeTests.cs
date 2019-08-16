@@ -416,15 +416,6 @@ namespace AlgorithmsAndDataStructuresTests.DataStructures.Trees.Binary
         }
 
         /// <summary>
-        /// Tests balance internal method. 
-        /// </summary>
-        [TestMethod]
-        public void Balance()
-        {
-            // TODO 
-        }
-
-        /// <summary>
         /// Checks whether the given tree has AVL tree properties
         /// </summary>
         /// <typeparam name="TKey">Type of the keys stored in the tree. </typeparam>

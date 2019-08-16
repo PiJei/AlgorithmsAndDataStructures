@@ -74,7 +74,5 @@ namespace AlgorithmsAndDataStructures.Algorithms.Search
             }
             return LinearSearch.Search(sortedList, key, linearSearchStartIndex, nextIndex - 1);
         }
-
-        // TODO: Write a recursive version as well. 
     }
 }

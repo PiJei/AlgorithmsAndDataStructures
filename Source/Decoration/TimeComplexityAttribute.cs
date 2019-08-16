@@ -22,7 +22,6 @@ using System;
 
 namespace AlgorithmsAndDataStructures.Decoration
 {
-    //TODO: Very similar to space complexity, ideally unify
     /// <summary>
     /// Implements an attribute for decorating algorithms with time complexity. 
     /// </summary>

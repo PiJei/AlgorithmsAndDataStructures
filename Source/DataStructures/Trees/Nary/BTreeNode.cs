@@ -22,8 +22,6 @@ using System;
 using System.Collections.Generic;
 using AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API;
 
-// TODO: somehow should not allow comparisons to nodes with other degrees, ... how can degree be considered, ...?
-
 namespace AlgorithmsAndDataStructures.DataStructures.Trees.Nary
 {
     /// <summary>
@@ -69,7 +67,6 @@ namespace AlgorithmsAndDataStructures.DataStructures.Trees.Nary
         {
         }
 
-        // TODO: Rather than having this replace this with a call on parent node! meaning you wont need this! and can move up
         /// <summary>
         /// Gets the index of the current node in its parent's _children list.
         /// </summary>

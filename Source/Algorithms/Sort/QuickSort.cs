@@ -47,13 +47,12 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
         {
             if (startIndex < endIndex)
             {
-                int partitionIndex = PartitionArray(list, startIndex, endIndex);
+                int partitionIndex = PartitionList(list, startIndex, endIndex);
                 Sort(list, startIndex, partitionIndex);
                 Sort(list, partitionIndex + 1, endIndex);
             }
         }
 
-        //TODO: Write a unit test for this 
         /// <summary>
         /// Partitions the given array, with respect to the computed pivot, such that elements to the left of the pivot are smaller than the pivot, and elements to the right of the pivot are bigger than the pivot. 
         /// </summary>
@@ -61,7 +60,7 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
         /// <param name="startIndex">The lower index in the array, inclusive. </param>
         /// <param name="endIndex">The higher index in the array, inclusive. </param>
         /// <returns>The next partitioning index. </returns>
-        internal static int PartitionArray<T>(List<T> list, int startIndex, int endIndex) where T : IComparable<T>
+        internal static int PartitionList<T>(List<T> list, int startIndex, int endIndex) where T : IComparable<T>
         {
             int pivotIndex = GetPivotIndex(startIndex, endIndex);
             T pivotValue = list[pivotIndex];

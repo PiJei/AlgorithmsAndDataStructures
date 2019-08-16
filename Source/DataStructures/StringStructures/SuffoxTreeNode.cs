@@ -22,8 +22,6 @@ using System.Collections.Generic;
 
 namespace AlgorithmsAndDataStructures.DataStructures.StringStructures
 {
-
-    // TODO: Can the class be modified to be usable by DFS and BFS?
     // Contract: All the nodes except the root node contain a value for Suffix String. That value is the edge value from the parent of the node to this node. 
     // Contract: Intermediate nodes' startIndex is set to -1
     /// <summary>

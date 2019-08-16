@@ -21,7 +21,6 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-// TODO: Duplicate functions: how can I unify the signatures? ... 
 
 namespace AlgorithmsAndDataStructuresTests.Algorithms.Search
 {

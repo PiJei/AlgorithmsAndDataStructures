@@ -22,8 +22,6 @@ using System.Collections.Generic;
 using AlgorithmsAndDataStructures.Algorithms.Sort;
 using AlgorithmsAndDataStructures.Decoration;
 
-// TODO: Add a linear-time implementation of suffix array. 
-
 namespace AlgorithmsAndDataStructures.DataStructures.StringStructures
 {
     /// <summary>
@@ -34,7 +32,6 @@ namespace AlgorithmsAndDataStructures.DataStructures.StringStructures
     public class SuffixArray
     {
         /// <summary>
-        /// TODO: Provide an intuitive description for this algorithm. 
         /// </summary>
         /// <param name="text"></param>
         /// <returns></returns>

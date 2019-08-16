@@ -19,7 +19,6 @@
  */
 #endregion
 
-// TODO: Should ideally have 2 nodes
 namespace AlgorithmsAndDataStructures.Algorithms.GraphTraversal
 {
     /// <summary>

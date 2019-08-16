@@ -20,7 +20,7 @@
 #endregion
 using AlgorithmsAndDataStructures.Algorithms.Search;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-// TODO: Binary search and Ternary searches are very similar, can I just pass a function to them instead?
+
 namespace AlgorithmsAndDataStructuresTests.Algorithms.Search
 {
     /// <summary>

@@ -20,7 +20,6 @@
 #endregion
 using System;
 using AlgorithmsAndDataStructures.Decoration;
-//TODO: Should I have a build method as well?
 
 namespace AlgorithmsAndDataStructures.DataStructures.LinkedLists.API
 {

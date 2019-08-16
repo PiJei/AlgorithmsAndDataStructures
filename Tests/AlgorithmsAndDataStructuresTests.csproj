@@ -51,4 +51,8 @@
     <ProjectReference Include="..\Source\AlgorithmsAndDataStructures.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DataStructures\Trees\Nary\API\" />
+  </ItemGroup>
+
 </Project>

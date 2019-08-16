@@ -24,8 +24,6 @@ using System.Diagnostics.Contracts;
 using AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API;
 using AlgorithmsAndDataStructures.Decoration;
 
-// TODO: update summaries: they are copies of the B-Tree and have issues, 
-// TODO: capacity
 namespace AlgorithmsAndDataStructures.DataStructures.Trees.Nary
 {
     /// <summary>
@@ -46,7 +44,6 @@ namespace AlgorithmsAndDataStructures.DataStructures.Trees.Nary
         {
         }
 
-        // TODO: which parts are repeated code, and how can it be shared, ... 
         /// <summary>
         /// Deletes the given key from the given node 
         /// </summary>
@@ -377,8 +374,8 @@ namespace AlgorithmsAndDataStructures.DataStructures.Trees.Nary
         /// <param name="key">The key for which a container leaf is being searched. </param>
         /// <returns>Leaf node to insert the key. </returns>
         [TimeComplexity(Case.Best, "O(1)", When = "There is no node in the tree or only one node.")]
-        [TimeComplexity(Case.Worst, "O(Log(n))")] // todo
-        [TimeComplexity(Case.Average, "O(Log(n))")] // todo 
+        [TimeComplexity(Case.Worst, "O(Log(n))")] 
+        [TimeComplexity(Case.Average, "O(Log(n))")] 
         public override BPlusTreeNode<TKey, TValue> FindLeafToInsertKey(BPlusTreeNode<TKey, TValue> root, TKey key)
         {
             if (root == null || root.IsLeaf())

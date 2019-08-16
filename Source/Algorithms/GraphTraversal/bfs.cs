@@ -19,8 +19,6 @@
  */
 #endregion
 
-// TODO: Specify time and space complexity for BFS and DFS. 
-// TODO: In recursive versions of BFS and DFS also compute distance from startNode. 
 using System.Collections.Generic;
 
 namespace AlgorithmsAndDataStructures.Algorithms.GraphTraversal

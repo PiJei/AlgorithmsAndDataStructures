@@ -101,7 +101,6 @@ namespace AlgorithmsAndDataStructures.DataStructures.Trees.Nary
             return _parent != null ? _parent.GetChildIndex(this) : throw new ArgumentException($"Failed to get index of the node at its parent's children array. Parent is null.");
         }
 
-        // TODO: How could this method be moved to base class and redundant implementations dropped from b-tree variation
         /// <summary>
         /// Inserts a child in _children array.
         /// </summary>
@@ -113,7 +112,6 @@ namespace AlgorithmsAndDataStructures.DataStructures.Trees.Nary
             child.SetParent(this);
         }
 
-        // TODO: add test
         /// <summary>
         /// Checks whether the current node has any grand children. 
         /// </summary>

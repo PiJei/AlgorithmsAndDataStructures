@@ -24,7 +24,6 @@ using AlgorithmsAndDataStructures.DataStructures.Trees.Nary;
 using AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-// TODO: Compute levels and after each insert confirm it
 namespace AlgorithmsAndDataStructuresTests.DataStructures.Trees.Nary
 {
     /// <summary>
@@ -33,7 +32,6 @@ namespace AlgorithmsAndDataStructuresTests.DataStructures.Trees.Nary
     public static class BTreeTestsUtils
     {
         /// <summary>
-        /// TODO: How to make this to use the DFS I have in the algorithms? 
         /// </summary>
         public static void DFS<TNode, TKey, TValue>(TNode node, List<TNode> nodes) where TNode : IBTreeNode<TNode, TKey, TValue>, IComparable<TNode> where TKey : IComparable<TKey>
         {
@@ -89,8 +87,6 @@ namespace AlgorithmsAndDataStructuresTests.DataStructures.Trees.Nary
                     Assert.IsTrue(sortedKeys[i].Key.CompareTo(sortedKeys[i + 1].Key) < 0);
                 }
             }
-
-            /* TODO Check all the leave nodes are at the same level, or one level apart? */
 
             return true;
         }

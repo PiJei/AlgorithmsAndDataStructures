@@ -22,8 +22,6 @@ using System.Collections.Generic;
 using AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-// TODO: Make tests in one test file to use the init and just it 
-
 namespace AlgorithmsAndDataStructuresTests.DataStructures.Trees.Binary.API
 {
     /// <summary>

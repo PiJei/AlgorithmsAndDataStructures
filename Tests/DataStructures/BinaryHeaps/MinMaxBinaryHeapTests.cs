@@ -24,7 +24,6 @@ using AlgorithmsAndDataStructures.DataStructures.BinaryHeaps;
 using AlgorithmsAndDataStructures.DataStructures.BinaryHeaps.API;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-//TODO: Test insert and delete operations, ... 
 namespace AlgorithmsAndDataStructuresTests.DataStructures.BinaryHeaps
 {
     /// <summary>

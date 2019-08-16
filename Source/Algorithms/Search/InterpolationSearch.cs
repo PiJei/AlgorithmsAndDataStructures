@@ -21,11 +21,6 @@
 using System;
 using System.Collections.Generic;
 using AlgorithmsAndDataStructures.Decoration;
-// TODO: Implement using binary search, ... where the location of the array is computed by a method, which I will pass here: 
-// also means that I can make a parent class for all the search algorithms, and enforce them to implement their own find the next search position
-// TODO: Implement iterative versions and recursive versions for each search algorithm.. 
-// TODO: Implement methods to count the number of elements each search algorithm checks before finding a value and measure it in average?
-// TODO: Not sure if this will work with types other than integer, because of conversion to dynamic... test with string for example. ... or any object, etc, .. 
 
 namespace AlgorithmsAndDataStructures.Algorithms.Search
 {

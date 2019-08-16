@@ -22,8 +22,6 @@ using System;
 using System.Collections.Generic;
 using AlgorithmsAndDataStructures.Decoration;
 
-// TODO Make all sorting algorithms generic
-
 namespace AlgorithmsAndDataStructures.Algorithms.Sort
 {
     /// <summary>

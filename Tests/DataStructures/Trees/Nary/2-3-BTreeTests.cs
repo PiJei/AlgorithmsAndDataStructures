@@ -22,7 +22,7 @@ using System;
 using System.Collections.Generic;
 using AlgorithmsAndDataStructures.DataStructures.Trees.Nary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-// TODO  Tests make them more exact to check the content of the nodes after rotation so that any change in implementation can expose mistakes
+
 namespace AlgorithmsAndDataStructuresTests.DataStructures.Trees.Nary
 {
     /// <summary>

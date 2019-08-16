@@ -56,7 +56,5 @@ namespace AlgorithmsAndDataStructuresTests.Algorithms.Sort
         /// Is an array of integers with duplicate values, such that the array is reversely sorted, meaning it is descending, whereas sort meant ascending. 
         /// </summary>
         public static readonly List<int> ArrayWithReverselySortedDuplicateValues = new List<int> { 209, 100, 78, 78, 56, 51, 46, 21, 15, 12, 10, 3, 2, 1, 1 };
-
-        // TODO: Measure the timing for each case, ... 
     }
 }

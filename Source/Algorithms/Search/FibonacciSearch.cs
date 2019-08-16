@@ -29,7 +29,6 @@ namespace AlgorithmsAndDataStructures.Algorithms.Search
     /// </summary>
     public class FibonacciSearch
     {
-        // TODO: specify time and space complexity. 
         /// <summary>
         /// Implements Fibonacci search. 
         /// </summary>
@@ -102,7 +101,6 @@ namespace AlgorithmsAndDataStructures.Algorithms.Search
         }
     }
 
-    // todo: Come up with better naming for Fib1, Fib2, ... 
     /// <summary>
     /// Represents a Fibonacci number at index n, and the two Fibonacci numbers at two preceding indexes, which are necessary for calculating this element's value.  
     /// </summary>

@@ -57,7 +57,6 @@ namespace AlgorithmsAndDataStructuresTests.Algorithms.Sort
             SortTests.TestSortMethodWithDifferentInputs(InsertionSort.Sort_Iterative_V2);
         }
 
-        // TODO: How can I use the SortTests library to test this version as well?
         /// <summary>
         /// Tests the correctness of Insertion sort recursive version over an array with distinct values. 
         /// </summary>

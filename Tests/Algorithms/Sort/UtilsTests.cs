@@ -22,8 +22,6 @@ using System.Collections.Generic;
 using AlgorithmsAndDataStructures.Algorithms.Sort;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-// TODO: Rename this class, 
-
 namespace AlgorithmsAndDataStructuresTests.Algorithms.Sort
 {
     /// <summary>

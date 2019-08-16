@@ -20,7 +20,7 @@
 #endregion
 using System;
 using System.Collections.Generic;
-//TODO: search all the swap implementations and have only one! and put them in Utils/general of whole library
+
 namespace AlgorithmsAndDataStructures.DataStructures.BinaryHeaps.API
 {
     /// <summary>

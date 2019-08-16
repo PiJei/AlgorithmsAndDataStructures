@@ -24,7 +24,7 @@ using System.Linq;
 using AlgorithmsAndDataStructures.Algorithms.Sort;
 using AlgorithmsAndDataStructures.DataStructures.BinaryHeaps.API;
 using AlgorithmsAndDataStructures.Decoration;
-// TODO: Test all the methods with all the heaps: internals, and privates, ... 
+
 namespace AlgorithmsAndDataStructures.DataStructures.BinaryHeaps
 {
     /// <summary>
