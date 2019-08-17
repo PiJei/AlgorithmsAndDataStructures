@@ -318,5 +318,20 @@ namespace AlgorithmsAndDataStructures.DataStructures.BinaryHeaps
             }
             return childrenIndexes;
         }
+
+        public override void BuildHeap_Iteratively(int heapArrayLength)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void BubbleDown_Iteratively(int rootIndex, int heapArrayLength)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void BubbleUp_Iteratively(int index, int heapArrayLength)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

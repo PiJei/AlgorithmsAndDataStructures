@@ -1618,11 +1618,6 @@
             Tests computing balance factor for nodes in the tree. 
             </summary>
         </member>
-        <member name="M:AlgorithmsAndDataStructuresTests.DataStructures.Trees.Binary.AVLTreeTests.Balance">
-            <summary>
-            Tests balance internal method. 
-            </summary>
-        </member>
         <member name="M:AlgorithmsAndDataStructuresTests.DataStructures.Trees.Binary.AVLTreeTests.HasAVLTreeProperties``2(AlgorithmsAndDataStructures.DataStructures.Trees.Binary.AVLTree{``0,``1},AlgorithmsAndDataStructures.DataStructures.Trees.Binary.AVLTreeNode{``0,``1},System.Int32)">
             <summary>
             Checks whether the given tree has AVL tree properties
@@ -2713,7 +2708,6 @@
         </member>
         <member name="M:AlgorithmsAndDataStructuresTests.DataStructures.Trees.Nary.BTreeTestsUtils.DFS``3(``0,System.Collections.Generic.List{``0})">
             <summary>
-            TODO: How to make this to use the DFS I have in the algorithms? 
             </summary>
         </member>
         <member name="M:AlgorithmsAndDataStructuresTests.DataStructures.Trees.Nary.BTreeTestsUtils.HasBTreeProperties``3(AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API.BTreeBase{``0,``1,``2},System.Int32,System.Int32,System.Int32,System.Func{``0,System.Boolean})">
