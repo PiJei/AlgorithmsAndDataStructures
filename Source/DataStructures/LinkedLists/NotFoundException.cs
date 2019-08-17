@@ -22,7 +22,6 @@ using System;
 
 namespace AlgorithmsAndDataStructures.DataStructures.LinkedLists
 {
-    // TODO: Maybe I could use this with all the search methods, string search, etc, ...
     /// <summary>
     /// Defines a customized exception for cases where the value is not found in a search. 
     /// </summary>

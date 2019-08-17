@@ -319,49 +319,19 @@ namespace AlgorithmsAndDataStructures.DataStructures.BinaryHeaps
             return childrenIndexes;
         }
 
-        /// <summary>
-        /// TODO
-        /// </summary>
-        /// <param name="heapArrayLength"></param>
         public override void BuildHeap_Iteratively(int heapArrayLength)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
-        /// <summary>
-        /// TODO
-        /// </summary>
-        /// <param name="rootIndex"></param>
-        /// <param name="heapArrayLength"></param>
         public override void BubbleDown_Iteratively(int rootIndex, int heapArrayLength)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
-        /// <summary>
-        /// TODO
-        /// </summary>
-        /// <param name="index"></param>
-        /// <param name="heapArrayLength"></param>
         public override void BubbleUp_Iteratively(int index, int heapArrayLength)
         {
-            throw new System.NotImplementedException();
-        }
-
-        /// <summary>
-        /// TODO
-        /// </summary>
-        public void TryRemoveMax()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        /// <summary>
-        /// TODO
-        /// </summary>
-        public void TryFindMax()
-        {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }

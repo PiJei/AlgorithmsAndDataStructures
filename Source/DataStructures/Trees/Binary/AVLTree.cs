@@ -36,7 +36,6 @@ namespace AlgorithmsAndDataStructures.DataStructures.Trees.Binary
     [DataStructure("AVLTree")]
     public class AVLTree<TKey, TValue> : BinarySearchTreeBase<AVLTreeNode<TKey, TValue>, TKey, TValue> where TKey : IComparable<TKey>
     {
-        //TODO: Is o best true? I am suspicious, the input perhaps should be in a special order. 
         /// <summary>
         /// Builds the tree to include the given nodes.
         /// </summary>

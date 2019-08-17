@@ -35,7 +35,6 @@ namespace AlgorithmsAndDataStructures.DataStructures.LinkedLists
         /// </summary>
         private DoublyLinkedNode<TValue> _tail = null;
 
-        // TODO: Deletes do not support duplicates deletion, ... 
         /// <summary>
         /// Deletes a node with the given value from the list. If no node with the given value exists, fails the operation and returns false.
         /// </summary>

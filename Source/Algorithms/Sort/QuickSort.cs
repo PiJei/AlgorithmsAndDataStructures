@@ -53,7 +53,6 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
             }
         }
 
-        //TODO: Write a unit test for this 
         /// <summary>
         /// Partitions the given list, with respect to the computed pivot, such that elements to the left of the pivot are smaller than the pivot, and elements to the right of the pivot are bigger than the pivot. 
         /// </summary>

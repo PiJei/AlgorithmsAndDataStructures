@@ -182,7 +182,6 @@ namespace AlgorithmsAndDataStructures.DataStructures.Trees.Binary
             return FindMax_BST(root);
         }
 
-        //TODO: Test
         internal RedBlackTreeNode<TKey, TValue> Delete(RedBlackTreeNode<TKey, TValue> nodeToBeDeleted)
         {
             /* The nodeToBeDeleted has at most 1 non-null child. */
@@ -244,7 +243,6 @@ namespace AlgorithmsAndDataStructures.DataStructures.Trees.Binary
             return null;
         }
 
-        //TODO: Test
         internal RedBlackTreeNode<TKey, TValue> DeleteBlackLeafNode(RedBlackTreeNode<TKey, TValue> node)
         {
             if (node.Parent == null)

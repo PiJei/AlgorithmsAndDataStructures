@@ -22,8 +22,6 @@ using System.Collections.Generic;
 using AlgorithmsAndDataStructures.DataStructures.StringStructures;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-// TODO: Add more tests with other strings. 
-
 namespace AlgorithmsAndDataStructuresTests.StringStructures
 {
     /// <summary>

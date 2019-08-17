@@ -23,8 +23,6 @@ using System.Collections.Generic;
 using AlgorithmsAndDataStructures.DataStructures.Trees.Nary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-// TODO: Completely test all methods for each number of b-tree instance. 
-
 namespace AlgorithmsAndDataStructuresTests.DataStructures.Trees.Nary
 {
     /// <summary>

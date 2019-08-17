@@ -19,7 +19,7 @@
  */
 #endregion
 using System;
-// TODO: better the naming
+
 namespace AlgorithmsAndDataStructures.DataStructures.Trees.Binary
 {
     /// <summary>

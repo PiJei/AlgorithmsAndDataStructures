@@ -45,8 +45,6 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
             return newValues;
         }
 
-        // TODO: Correct the summaries of the next 3 methods
-
         /// <summary>
         /// Detects whether the given sort method is stable. A sort method is stable, if it preserves the ordering of duplicate values in the original list. 
         /// </summary>
@@ -88,7 +86,6 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
             return positions;
         }
 
-        // TODO: What is the better way to implement this method. 
         /// <summary>
         /// Given the two dictionaries compares them to see if they are equal, in terms of the values per key. It is very important to compare the values (lists) in their original order and expect the same position for each element. 
         /// </summary>

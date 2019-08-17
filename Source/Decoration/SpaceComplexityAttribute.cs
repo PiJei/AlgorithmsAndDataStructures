@@ -19,7 +19,6 @@
  */
 #endregion
 
-//TODO: Specify the time and space complexity of all the code in this project
 using System;
 
 namespace AlgorithmsAndDataStructures.Decoration

@@ -33,7 +33,6 @@ namespace AlgorithmsAndDataStructures.DataStructures.Trees.Binary.API
         IComparable<TNode>
         where TKey : IComparable<TKey>
     {
-        // TODO: Used by red black trees move to red black trees
         /// <value>If set means the node contains no key-values, no left and no right children. </value>
         bool IsNill { get; set; }
 

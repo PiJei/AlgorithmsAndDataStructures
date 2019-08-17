@@ -41,7 +41,6 @@ namespace AlgorithmsAndDataStructures.DataStructures.StringStructures
 
 
         /// <summary>
-        /// TODO
         /// </summary>
         /// <param name="startIndex"></param>
         /// <param name="firstChar"></param>

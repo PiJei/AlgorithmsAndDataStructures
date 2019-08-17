@@ -19,7 +19,6 @@
  */
 #endregion
 
-// TODO: Notations in complexities are not uniform. 
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -27,10 +26,6 @@ using AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API;
 using AlgorithmsAndDataStructures.Decoration;
 
 [assembly: InternalsVisibleTo("AlgorithmsAndDataStructures")]
-
-// TODO: Should protect  fields from external manipulations, ... 
-// TODO: for search  could we use binary search implementation from search part of this lib?
-// TODO:  test with other (than 2-3) degrees of trees
 
 namespace AlgorithmsAndDataStructures.DataStructures.Trees.Nary
 {
@@ -52,7 +47,6 @@ namespace AlgorithmsAndDataStructures.DataStructures.Trees.Nary
         {
         }
 
-        // TODO: In time complexities subscripts and superscripts do not look good.
         /// <summary>
         /// Inserts a new key-value pair in the tree and returns root of the tree. 
         /// </summary>
@@ -180,8 +174,8 @@ namespace AlgorithmsAndDataStructures.DataStructures.Trees.Nary
         /// </summary>
         /// <param name="node">The node to be split</param>
         [TimeComplexity(Case.Best, "O(1)", When = "Split does not propagate to upper levels.")]
-        [TimeComplexity(Case.Worst, "O(Log(n))")] // todo
-        [TimeComplexity(Case.Average, "O(Log(n)))")] // todo
+        [TimeComplexity(Case.Worst, "O(Log(n))")] 
+        [TimeComplexity(Case.Average, "O(Log(n)))")] 
         internal void Split_Repair(BTreeNode<TKey, TValue> node)
         {
             while (node.IsOverFlown())
@@ -218,7 +212,6 @@ namespace AlgorithmsAndDataStructures.DataStructures.Trees.Nary
             return sortedKeyValues;
         }
 
-        //TODO: What is complexity?
         /// <summary>
         /// Traverses tree in-order and generates list of keys sorted.
         /// </summary>
@@ -253,8 +246,8 @@ namespace AlgorithmsAndDataStructures.DataStructures.Trees.Nary
         /// <param name="key">The key for which a container leaf is being searched. </param>
         /// <returns>Leaf node to insert the key. </returns>
         [TimeComplexity(Case.Best, "O(1)", When = "There is no node in the tree or only one node.")]
-        [TimeComplexity(Case.Worst, "O(Log(n))")] // todo
-        [TimeComplexity(Case.Average, "O(Log(n))")] // todo 
+        [TimeComplexity(Case.Worst, "O(Log(n))")] 
+        [TimeComplexity(Case.Average, "O(Log(n))")] 
         public override BTreeNode<TKey, TValue> FindLeafToInsertKey(BTreeNode<TKey, TValue> root, TKey key)
         {
             if (root == null || root.IsLeaf())

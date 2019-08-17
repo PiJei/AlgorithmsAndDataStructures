@@ -25,8 +25,6 @@ using AlgorithmsAndDataStructures.DataStructures.Trees.Binary;
 using AlgorithmsAndDataStructuresTests.DataStructures.Trees.Binary.API;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-//TODO: Add more tests with bigger trees.
-
 namespace AlgorithmsAndDataStructuresTests.DataStructures.Trees.Binary
 {
     /// <summary>

@@ -56,8 +56,8 @@ namespace AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API
         /// <param name="keyValues">The list of key values to be inserted in the tree. </param>
         /// <returns>Root of the tree. </returns>
         [TimeComplexity(Case.Best, "O(1)")]
-        [TimeComplexity(Case.Worst, "O(nLog(n))")]// todo: bases are incorrect
-        [TimeComplexity(Case.Average, "O(n(Log(n))")] // todo
+        [TimeComplexity(Case.Worst, "O(nLog(n))")]
+        [TimeComplexity(Case.Average, "O(n(Log(n))")]
         public TNode Build(Dictionary<TKey, TValue> keyValues)
         {
             foreach (KeyValuePair<TKey, TValue> keyValue in keyValues)
@@ -67,7 +67,6 @@ namespace AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API
             return Root;
         }
 
-        // TODO: In time complexities subscripts and superscripts do not look good.
         /// <summary>
         /// Inserts a new key-value pair in the tree and returns root of the tree. 
         /// </summary>
@@ -155,8 +154,8 @@ namespace AlgorithmsAndDataStructures.DataStructures.Trees.Nary.API
         /// <param name="node">The node at which (sub)tree is rooted. </param>
         /// <returns>The node containing the maximum key of the (sub)tree rooted at <paramref name="node"/>. </returns>
         [TimeComplexity(Case.Best, "O(1)", When = "when node is leaf.")]
-        [TimeComplexity(Case.Worst, "O(Log(n))")] // todo base is wrong
-        [TimeComplexity(Case.Average, "O(Log(n))")]// todo: base is wrong, .. .
+        [TimeComplexity(Case.Worst, "O(Log(n))")] 
+        [TimeComplexity(Case.Average, "O(Log(n))")]
         public TNode GetMaxNode(TNode node)
         {
             if (node.IsLeaf())

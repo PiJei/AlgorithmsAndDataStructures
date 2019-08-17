@@ -44,7 +44,6 @@ namespace AlgorithmsAndDataStructures.Algorithms.Search
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(log3(n))")]
-        [TimeComplexity(Case.Average, "")] // TODO
         public static int Search<T>(List<T> sortedList, T key, int startIndex, int endIndex) where T : IComparable
         {
             if (startIndex > endIndex)

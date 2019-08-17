@@ -23,7 +23,7 @@ using System.Collections.Generic;
 using System.Linq;
 using AlgorithmsAndDataStructures.DataStructures.BinaryHeaps;
 using AlgorithmsAndDataStructures.Decoration;
-// TODO: Don't like the fact that had to change the signature to return values, and convert list
+
 namespace AlgorithmsAndDataStructures.Algorithms.Sort
 {
     /// <summary>

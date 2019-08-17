@@ -33,8 +33,6 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
         /// Implements Radix sort for base 10 (decimal integers) using queues. 
         /// </summary>
         [Algorithm(AlgorithmType.Sort, "RadixSort")]
-        // TODO: Specify the time and space complexities
-        // TODO: explain why is not generic: due to get the max digits of
         public static void Sort(List<int> list)
         {
             int maxElement = Utils.GetMaxElement(list);

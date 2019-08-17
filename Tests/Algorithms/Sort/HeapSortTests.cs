@@ -44,7 +44,6 @@ namespace AlgorithmsAndDataStructuresTests.Algorithms.Sort
         [TestMethod]
         public void Sort_WithDistinctValues()
         {
-            // TODO: HeapSort signature is not the same as others, ... 
             // SortTests.TestSortMethodWithDifferentInputs(HeapSort.Sort);
             var values = new List<int>(Constants.ArrayWithDistinctValues);
             values = HeapSort.Sort(values);
