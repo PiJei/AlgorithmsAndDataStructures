@@ -46,7 +46,7 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
         }
 
         /// <summary>
-        /// Detects whether the given sort method is stable. A sort method is stable, if it preserves the ordering of duplicate values in the original array. 
+        /// Detects whether the given sort method is stable. A sort method is stable, if it preserves the ordering of duplicate values in the original list. 
         /// </summary>
         /// <param name="sortMethod">The name of a method with the signature specified by the Action (void return type) </param>
         /// <param name="list">A list of Elements. </param>
@@ -58,14 +58,14 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
         }
 
         /// <summary>
-        /// Per each value in the array, makes a list of their indexes in the array. 
-        /// Notice that the array may include duplicate values, thus a list of indexes rather than one index.
+        /// Per each value in the list, makes a list of their indexes in the list. 
+        /// Notice that the list may include duplicate values, thus a list of indexes rather than one index.
         /// </summary>
-        /// <param name="list">An array of integers. </param>
-        /// <returns>A hash table/dictionary mapping each value to the list of its indexes in the array. </returns>
+        /// <param name="list">A list of integers. </param>
+        /// <returns>A hash table/dictionary mapping each value to the list of its indexes in the list. </returns>
         public static Dictionary<Element, List<Element>> HashListToIndexes(List<Element> list)
         {
-            /* Keys in the dictionary are the values in the array, and the values in the dictionary are the list of indexes for each value in the array. */
+            /* Keys in the dictionary are the values in the list, and the values in the dictionary are the list of indexes for each value in the list. */
             var positions = new Dictionary<Element, List<Element>>();
             if (list == null)
             {
@@ -111,7 +111,7 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
         }
 
         /// <summary>
-        /// Swaps values in indexes <paramref name="index1"/> and <paramref name="index2"/> in the <paramref name="list"/> array. 
+        /// Swaps values in indexes <paramref name="index1"/> and <paramref name="index2"/> in the <paramref name="list"/>. 
         /// </summary>
         /// <param name="list">A list of Elements. </param>
         /// <param name="index1">The first index. </param>
@@ -128,10 +128,10 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
         }
 
         /// <summary>
-        /// Gets the max element in the array. Alternatively we could use Linq.Max operator. However using this version so that the time complexity is obvious.
+        /// Gets the max element in the list. Alternatively we could use Linq.Max operator. However using this version so that the time complexity is obvious.
         /// </summary>
         /// <param name="list">A list of integers. </param>
-        /// <returns>Maximum element in the array. </returns>
+        /// <returns>Maximum element in the list. </returns>
         public static Element GetMaxElement(List<Element> list)
         {
             /* This method assumes values has at least one member. Otherwise this will throw a null reference exception . */

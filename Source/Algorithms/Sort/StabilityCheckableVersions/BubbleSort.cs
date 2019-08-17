@@ -26,12 +26,12 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
     public partial class BubbleSort
     {
         /// <summary>
-        /// Implements bubble sort iteratively, elements are bubbled down or up the array till they are at their final correct positions. 
+        /// Implements bubble sort iteratively, elements are bubbled down or up the list till they are at their final correct positions. 
         /// </summary>
         /// <param name="list"></param>
         public static void Sort_Iterative(List<Element> list)
         {
-            /* Bubble sort iterates many times over an array, and stops iterating when no swap happens any more. */
+            /* Bubble sort iterates many times over a list, and stops iterating when no swap happens any more. */
             while (true)
             {
                 bool swapHappened = false;
@@ -44,7 +44,7 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
                     }
                     list[i].Move(i);
                 }
-                if (!swapHappened) /* If no swap happened in this pass, then the array is sorted. break out of the loop. */
+                if (!swapHappened) /* If no swap happened in this pass, then the list is sorted. break out of the loop. */
                 {
                     break;
                 }

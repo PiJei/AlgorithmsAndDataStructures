@@ -35,8 +35,8 @@ namespace AlgorithmsAndDataStructures.Algorithms.Search
         /// <typeparam name="T"></typeparam>
         /// <param name="list">A list of any comparable type.</param>
         /// <param name="key">The value the method is searching for. </param>
-        /// <param name="startIndex">The lowest (left-most) index of the array - inclusive. </param>
-        /// <param name="endIndex">The highest (right-most) index of the array - inclusive. </param>
+        /// <param name="startIndex">The lowest (left-most) index of the list - inclusive. </param>
+        /// <param name="endIndex">The highest (right-most) index of the list - inclusive. </param>
         /// <returns></returns>
         [Algorithm(AlgorithmType.Search, "LinearSearch")]
         [SpaceComplexity("O(1)", InPlace = true)]

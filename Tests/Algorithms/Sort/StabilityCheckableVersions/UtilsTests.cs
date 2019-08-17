@@ -43,8 +43,8 @@ namespace AlgorithmsAndDataStructuresTests.Algorithms.Sort
             for (int i = 0; i < values.Count; i++)
             {
                 Assert.AreEqual(values[i], newValues[i].Value);
-                Assert.AreEqual(i, newValues[i].FirstArrayIndex);
-                Assert.AreEqual(i, newValues[i].LatestArrayIndex);
+                Assert.AreEqual(i, newValues[i].FirstListIndex);
+                Assert.AreEqual(i, newValues[i].LatestListIndex);
             }
         }
 
@@ -100,12 +100,12 @@ namespace AlgorithmsAndDataStructuresTests.Algorithms.Sort
 
             Assert.AreEqual(4, map1.Keys.Count);
             Assert.AreEqual(2, map1[element1].Count);
-            Assert.AreEqual(0, map1[element1][0].FirstArrayIndex);
-            Assert.AreEqual(3, map1[element1][1].FirstArrayIndex);
+            Assert.AreEqual(0, map1[element1][0].FirstListIndex);
+            Assert.AreEqual(3, map1[element1][1].FirstListIndex);
 
-            Assert.AreEqual(1, map1[element2][0].FirstArrayIndex);
-            Assert.AreEqual(2, map1[element3][0].FirstArrayIndex);
-            Assert.AreEqual(4, map1[element5][0].FirstArrayIndex);
+            Assert.AreEqual(1, map1[element2][0].FirstListIndex);
+            Assert.AreEqual(2, map1[element3][0].FirstListIndex);
+            Assert.AreEqual(4, map1[element5][0].FirstListIndex);
         }
 
         /// <summary>
@@ -127,22 +127,22 @@ namespace AlgorithmsAndDataStructuresTests.Algorithms.Sort
             Utils.Swap(values, 0, 2);
 
             Assert.AreEqual(10, values[2].Value);
-            Assert.AreEqual(0, values[2].FirstArrayIndex);
-            Assert.AreEqual(2, values[2].LatestArrayIndex);
+            Assert.AreEqual(0, values[2].FirstListIndex);
+            Assert.AreEqual(2, values[2].LatestListIndex);
 
             Assert.AreEqual(16, values[0].Value);
-            Assert.AreEqual(2, values[0].FirstArrayIndex);
-            Assert.AreEqual(0, values[0].LatestArrayIndex);
+            Assert.AreEqual(2, values[0].FirstListIndex);
+            Assert.AreEqual(0, values[0].LatestListIndex);
 
             Utils.Swap(values, 0, 3);
 
             Assert.AreEqual(3, values[0].Value);
-            Assert.AreEqual(3, values[0].FirstArrayIndex);
-            Assert.AreEqual(0, values[0].LatestArrayIndex);
+            Assert.AreEqual(3, values[0].FirstListIndex);
+            Assert.AreEqual(0, values[0].LatestListIndex);
 
             Assert.AreEqual(16, values[3].Value);
-            Assert.AreEqual(2, values[3].FirstArrayIndex);
-            Assert.AreEqual(3, values[3].LatestArrayIndex);
+            Assert.AreEqual(2, values[3].FirstListIndex);
+            Assert.AreEqual(3, values[3].LatestListIndex);
         }
     }
 }

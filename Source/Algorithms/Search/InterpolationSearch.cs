@@ -25,21 +25,21 @@ using AlgorithmsAndDataStructures.Decoration;
 namespace AlgorithmsAndDataStructures.Algorithms.Search
 {
     /// <summary>
-    /// Implements Interpolation search algorithm for finding a specific value in a sorted array.
+    /// Implements Interpolation search algorithm for finding a specific value in a sorted list.
     /// </summary>
     public class InterpolationSearch
     {
         /// <summary>
         /// Searches in a sorted list of any comparable type, where values have a uniform distribution. Interpolation search is an improvement over binary search, and has a very similar implementation, the only main difference is where (which index in the array) the search starts at.
-        /// The search is named interpolation, as it always has two main poles that it moves back and forth between them, these poles are the start index and the end index of the array. 
-        /// Notice that only works if the given array is sorted. 
+        /// The search is named interpolation, as it always has two main poles that it moves back and forth between them, these poles are the start index and the end index of the list. 
+        /// Notice that only works if the given list is sorted. 
         /// </summary>
         /// <param name="sortedList">A sorted list of any comparable type that are also uniformly distributed. </param>
         /// <param name="key">The value that is being searched for. </param>
-        /// <param name="startIndex">The lowest (left-most) index of the array - inclusive. </param>
-        /// <param name="endIndex">The highest (right-most) index of the array - inclusive. </param>
-        /// <returns>The index of the <paramref name="key"/> in the array, and -1 if it does not exist in the array. </returns>
-        [Algorithm(AlgorithmType.Search, "InterpolationSearch", Assumptions = "Array is sorted with an ascending order, and elements are driven from a uniform distribution.")]
+        /// <param name="startIndex">The lowest (left-most) index of the list - inclusive. </param>
+        /// <param name="endIndex">The highest (right-most) index of the list - inclusive. </param>
+        /// <returns>The index of the <paramref name="key"/> in the list, and -1 if it does not exist in the list. </returns>
+        [Algorithm(AlgorithmType.Search, "InterpolationSearch", Assumptions = "List is sorted with an ascending order, and elements are driven from a uniform distribution.")]
         [SpaceComplexity("O(1)", InPlace = true)]
         [TimeComplexity(Case.Best, "O(1)")]
         [TimeComplexity(Case.Worst, "O(n)")]
@@ -51,7 +51,7 @@ namespace AlgorithmsAndDataStructures.Algorithms.Search
                 return -1;
             }
 
-            /* If key is NOT in the range, terminate search. Since the input array is sorted this early check is feasible. */
+            /* If key is NOT in the range, terminate search. Since the input list is sorted this early check is feasible. */
             if (key.CompareTo(sortedList[startIndex]) < 0 || key.CompareTo(sortedList[endIndex]) > 0)
             {
                 return -1;
@@ -89,9 +89,9 @@ namespace AlgorithmsAndDataStructures.Algorithms.Search
         /// </summary>
         /// <param name="sortedList">A sorted list of any comparable type that are also uniformly distributed. </param>
         /// <param name="key">The value that is being searched for. </param>
-        /// <param name="startIndex">The lowest (left-most) index of the array - inclusive. </param>
-        /// <param name="endIndex">The highest (right-most) index of the array - inclusive. </param>
-        /// <returns>The index in the array at which to start the search. </returns>
+        /// <param name="startIndex">The lowest (left-most) index of the list - inclusive. </param>
+        /// <param name="endIndex">The highest (right-most) index of the list - inclusive. </param>
+        /// <returns>The index in the list at which to start the search. </returns>
         public static int GetStartIndex<T>(List<T> sortedList, T key, int startIndex, int endIndex) where T : IComparable<T>
         {
             double distanceFromStartIndex = ((dynamic)key - (dynamic)sortedList[startIndex]) / (double)((dynamic)sortedList[endIndex] - (dynamic)sortedList[startIndex]);

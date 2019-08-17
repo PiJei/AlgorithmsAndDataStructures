@@ -31,11 +31,11 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
         /// <param name="list">The list of values (of type T, e.g., int) to be sorted. </param>
         public static void Sort_Iteratively(List<Element> list)
         {
-            /*Notice that the loop does not have to repeat over the last element of the array, as by then the last element is already the largest element in the array.*/
+            /*Notice that the loop does not have to repeat over the last element of the list, as by then the last element is already the largest element in the list.*/
             for (int i = 0; i < list.Count - 1; i++) /* Iteration i, determines the i-th smallest/min value. */
             {
                 int minIndex = i;
-                for (int j = i; j < list.Count; j++) /* This loop finds an element in the unsorted part of the array that is smaller than the current value at index i. */
+                for (int j = i; j < list.Count; j++) /* This loop finds an element in the unsorted part of the list that is smaller than the current value at index i. */
                 {
                     if (list[j].Value < list[minIndex].Value)
                     {

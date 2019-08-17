@@ -33,8 +33,8 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
         /// Implements merge sort recursively. 
         /// </summary>
         /// <param name="list">The list of values (of type T, e.g., int) to be sorted. </param>
-        /// <param name="startIndex">The lower index in the array, inclusive. </param>
-        /// <param name="endIndex">The higher index in the array, inclusive. </param>
+        /// <param name="startIndex">The lower index in the list, inclusive. </param>
+        /// <param name="endIndex">The higher index in the list, inclusive. </param>
         [Algorithm(AlgorithmType.Sort, "MergeSort")]
         [SpaceComplexity("O(n)", InPlace = false)]
         [TimeComplexity(Case.Best, "O(nLog(n))")]
@@ -52,61 +52,61 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
         }
 
         /// <summary>
-        /// Merges two sub arrays [startIndex, middleIndex], [middleIndex+1, endIndex] such to end up with a sorted list. 
+        /// Merges two sub-lists [startIndex, middleIndex], [middleIndex+1, endIndex] such to end up with a sorted list. 
         /// </summary>
         /// <param name="list">The list of values (of type T, e.g., int) to be sorted. </param>
-        /// <param name="startIndex">The lower index in the array, inclusive. </param>
-        /// <param name="middleIndex">The middle index of the array. </param>
-        /// <param name="endIndex">The higher index in the array, inclusive. </param>
+        /// <param name="startIndex">The lower index in the list, inclusive. </param>
+        /// <param name="middleIndex">The middle index of the list. </param>
+        /// <param name="endIndex">The higher index in the list, inclusive. </param>
         public static void Merge<T>(List<T> list, int startIndex, int middleIndex, int endIndex) where T : IComparable<T>
         {
-            //Making a copy of the values
-            var valuesOriginal = new List<T>(list); /* This is where the extra space complexity of O(n) for merge sort comes from. */
+            //Making a copy of the list
+            var listCopy = new List<T>(list); /* This is where the extra space complexity of O(n) for merge sort comes from. */
 
-            //Inclusive boundaries of the first sub-array
+            //Inclusive boundaries of the first sub-list
             int start1 = startIndex;
             int end1 = middleIndex;
 
-            //Inclusive boundaries of the second sub-array
+            //Inclusive boundaries of the second sub-list
             int start2 = middleIndex + 1;
             int end2 = endIndex;
 
-            // Pointer on the first (left) sub-array
-            int leftHalfCounter = start1;
+            // Pointer on the first (left) sub-list
+            int leftHalfPointer = start1;
 
-            // Pointer on the second (right) sub-array
-            int rightHalfCounter = start2;
+            // Pointer on the second (right) sub-list
+            int rightHalfPointer = start2;
 
-            // Pointer on the Values array.
-            int mainArrayCounter = start1;
+            // Pointer on the main list
+            int listPointer = start1;
 
-            while (leftHalfCounter <= end1 && rightHalfCounter <= end2)
+            while (leftHalfPointer <= end1 && rightHalfPointer <= end2)
             {
-                if (valuesOriginal[leftHalfCounter].CompareTo(valuesOriginal[rightHalfCounter]) <= 0) /* Favors left half values over right half values when there are duplicates thus checking for equality as well. */
+                if (listCopy[leftHalfPointer].CompareTo(listCopy[rightHalfPointer]) <= 0) /* Favors left half values over right half values when there are duplicates thus checking for equality as well. */
                 {
-                    list[mainArrayCounter] = valuesOriginal[leftHalfCounter];
-                    leftHalfCounter++;
+                    list[listPointer] = listCopy[leftHalfPointer];
+                    leftHalfPointer++;
                 }
                 else
                 {
-                    list[mainArrayCounter] = valuesOriginal[rightHalfCounter];
-                    rightHalfCounter++;
+                    list[listPointer] = listCopy[rightHalfPointer];
+                    rightHalfPointer++;
                 }
-                mainArrayCounter++;
+                listPointer++;
             }
 
-            while (leftHalfCounter <= end1)
+            while (leftHalfPointer <= end1)
             {
-                list[mainArrayCounter] = valuesOriginal[leftHalfCounter];
-                leftHalfCounter++;
-                mainArrayCounter++;
+                list[listPointer] = listCopy[leftHalfPointer];
+                leftHalfPointer++;
+                listPointer++;
             }
 
-            while (rightHalfCounter <= end2)
+            while (rightHalfPointer <= end2)
             {
-                list[mainArrayCounter] = valuesOriginal[rightHalfCounter];
-                rightHalfCounter++;
-                mainArrayCounter++;
+                list[listPointer] = listCopy[rightHalfPointer];
+                rightHalfPointer++;
+                listPointer++;
             }
         }
     }

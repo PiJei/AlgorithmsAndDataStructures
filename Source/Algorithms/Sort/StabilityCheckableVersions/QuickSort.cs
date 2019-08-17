@@ -35,34 +35,34 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
         {
             if (startIndex < endIndex)
             {
-                int partitionIndex = PartitionArray_StabilityCheckableVersion(list, startIndex, endIndex);
+                int partitionIndex = PartitionList_StabilityCheckableVersion(list, startIndex, endIndex);
                 Sort_Recursively(list, startIndex, partitionIndex);
                 Sort_Recursively(list, partitionIndex + 1, endIndex);
             }
         }
 
         /// <summary>
-        /// Partitions the given array, with respect to the computed pivot, such that elements to the left of the pivot are smaller than the pivot, and elements to the right of the pivot are bigger than the pivot. 
+        /// Partitions the given list, with respect to the computed pivot, such that elements to the left of the pivot are smaller than the pivot, and elements to the right of the pivot are bigger than the pivot. 
         /// </summary>
-        /// <param name="values">The list of integer values to be sorted. </param>
-        /// <param name="startIndex">The lower index in the array, inclusive. </param>
-        /// <param name="endIndex">The higher index in the array, inclusive. </param>
+        /// <param name="list">The list of integer values to be sorted. </param>
+        /// <param name="startIndex">The lower index in the list, inclusive. </param>
+        /// <param name="endIndex">The higher index in the list, inclusive. </param>
         /// <returns>The next partitioning index. </returns>
-        public static int PartitionArray_StabilityCheckableVersion(List<Element> values, int startIndex, int endIndex)
+        public static int PartitionList_StabilityCheckableVersion(List<Element> list, int startIndex, int endIndex)
         {
             int pivotIndex = GetPivotIndex(startIndex, endIndex);
-            int pivotValue = values[pivotIndex].Value;
+            int pivotValue = list[pivotIndex].Value;
 
             int leftIndex = startIndex;
             int rightIndex = endIndex;
 
             while (true)
             {
-                while (leftIndex <= endIndex && values[leftIndex].Value < pivotValue)
+                while (leftIndex <= endIndex && list[leftIndex].Value < pivotValue)
                 {
                     leftIndex++;
                 }
-                while (rightIndex <= endIndex && values[rightIndex].Value > pivotValue)
+                while (rightIndex <= endIndex && list[rightIndex].Value > pivotValue)
                 {
                     rightIndex--;
                 }
@@ -71,9 +71,9 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
                     return rightIndex;
                 }
 
-                Utils.Swap(values, leftIndex, rightIndex);
+                Utils.Swap(list, leftIndex, rightIndex);
 
-                /* The next two increments are needed, as otherwise there will be issues with duplicate values in the array.
+                /* The next two increments are needed, as otherwise there will be issues with duplicate values in the list.
                  * Notice an alternative would be to remove these two increments, and make the loops do-while, in which case leftIndex = currentLeftIndex-1, and rightIndex = currentRightIndex+1 
                  */
                 leftIndex++;
@@ -84,12 +84,12 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
         /// <summary>
         /// This is to be able to call QuickSort sort methods with only the list that needs to be sorted, and independent of the indexes. 
         /// This is needed for methods that receive other sort methods as parameters, and would ideally like to have similar signature for all the methods that are passed as parameters, 
-        /// In sort methods the signature is: void SortMethod(List{int} values); 
+        /// In sort methods the signature is: void SortMethod(List{int} list); 
         /// </summary>
-        /// <param name="values">The list of integers to be sorted. </param>
-        public static void Wrapper(List<Element> values)
+        /// <param name="list">The list of integers to be sorted. </param>
+        public static void Wrapper(List<Element> list)
         {
-            Sort_Recursively(values, 0, values.Count - 1);
+            Sort_Recursively(list, 0, list.Count - 1);
         }
     }
 }

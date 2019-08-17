@@ -26,9 +26,9 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
     public partial class Utils
     {
         /// <summary>
-        /// Swaps the values at given indexes of the array.
+        /// Swaps the values at given indexes of the list.
         /// </summary>
-        /// <typeparam name="T">The type of elements in the array.</typeparam>
+        /// <typeparam name="T">The type of elements in the list.</typeparam>
         /// <param name="list">A list of values. </param>
         /// <param name="index1">First index.</param>
         /// <param name="index2">Second index.</param>
@@ -40,10 +40,10 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
         }
 
         /// <summary>
-        /// Gets the max element in the array. Alternatively we could use Linq.Max operator. However using this version so that the time complexity is obvious.
+        /// Gets the max element in the list. Alternatively we could use Linq.Max operator. However using this version so that the time complexity is obvious.
         /// </summary>
         /// <param name="list">A list of values (of type T, e.g., int). </param>
-        /// <returns>Maximum element in the array. </returns>
+        /// <returns>Maximum element in the list. </returns>
         public static T GetMaxElement<T>(List<T> list) where T : IComparable<T>
         {
             /* This method assumes values has at least one member. Otherwise this will throw a null reference exception . */

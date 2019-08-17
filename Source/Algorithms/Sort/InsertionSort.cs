@@ -35,7 +35,7 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
         /// <param name="list">The list of values (of type T, e.g., int) to be sorted. </param>
         [Algorithm(AlgorithmType.Sort, "InsertionSort")]
         [SpaceComplexity("O(1)", InPlace = true)]
-        [TimeComplexity(Case.Best, "O(n)", When = "Input array is already sorted.")]
+        [TimeComplexity(Case.Best, "O(n)", When = "Input list is already sorted.")]
         [TimeComplexity(Case.Worst, "O(n²)")]
         [TimeComplexity(Case.Average, "O(n²)")]
         public static void Sort_Iterative_V1<T>(List<T> list) where T : IComparable<T>
@@ -43,7 +43,7 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
             for (int i = 1; i < list.Count; i++)
             {
                 // At each iteration finding the correct position of element (i) and inserting it in the correct position. 
-                // Will do so by moving element i, to the left of the array until there is no element to the left of i that is bigger than i
+                // Will do so by moving element i, to the left of the list until there is no element to the left of i that is bigger than i
                 for (int j = i - 1; j >= 0 && list[j].CompareTo(list[j + 1]) > 0; j--) /* Having the second condition in the code, speeds up the algorithm, as it stops immediately as soon as reaching a point in th graph that element in [j-1] is no longer bigger than element in [j]*/
                 {
                     Utils.Swap(list, j, j + 1); // meaning that we are moving element at (i) to the left at each step.
@@ -57,21 +57,21 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort
         /// <param name="list">The list of values (of type T, e.g., int) to be sorted. </param>
         public static void Sort_Iterative_V2<T>(List<T> list) where T : IComparable<T>
         {
-            // In this version, we will overwrite the array location for element (i) by shifting each element to the right if bigger than (i) till finding its correct position
+            // In this version, we will overwrite the list location for element (i) by shifting each element to the right if bigger than (i) till finding its correct position
             for (int i = 1; i < list.Count; i++)
             {
-                T arrayValueAtIndexI = list[i];
+                T listValueAtIndexI = list[i];
 
-                /* The correct index at which arrayValueAtIndexI should be placed for the array to be sorted at the end. */
+                /* The correct index at which listValueAtIndexI should be placed for the list to be sorted at the end. */
                 int correctIndex = i;
 
-                for (int j = i - 1; j >= 0 && list[j].CompareTo(arrayValueAtIndexI) > 0; j--)
+                for (int j = i - 1; j >= 0 && list[j].CompareTo(listValueAtIndexI) > 0; j--)
                 {
                     list[j + 1] = list[j]; /* Notice that at first iteration j+1 = i, thus no values are over-written or lost. */
                     correctIndex = j;
                 }
 
-                list[correctIndex] = arrayValueAtIndexI;
+                list[correctIndex] = listValueAtIndexI;
             }
         }
 

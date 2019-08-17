@@ -35,23 +35,23 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort.StabilityCheckableVersions
         /// <summary>
         /// 
         /// </summary>
-        public int FirstArrayIndex { get; private set; }
+        public int FirstListIndex { get; private set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public int LatestArrayIndex { get; private set; } = -1;
+        public int LatestListIndex { get; private set; } = -1;
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="value"></param>
-        /// <param name="firstArrayIndex"></param>
-        public Element(int value, int firstArrayIndex)
+        /// <param name="firstListIndex"></param>
+        public Element(int value, int firstListIndex)
         {
             Value = value;
-            FirstArrayIndex = firstArrayIndex;
-            LatestArrayIndex = firstArrayIndex;
+            FirstListIndex = firstListIndex;
+            LatestListIndex = firstListIndex;
         }
 
         /// <summary>
@@ -61,8 +61,8 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort.StabilityCheckableVersions
         public Element(Element e)
         {
             Value = e.Value;
-            FirstArrayIndex = e.FirstArrayIndex;
-            LatestArrayIndex = e.LatestArrayIndex;
+            FirstListIndex = e.FirstListIndex;
+            LatestListIndex = e.LatestListIndex;
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort.StabilityCheckableVersions
         /// <param name="newIndex"></param>
         public void Move(int newIndex)
         {
-            LatestArrayIndex = newIndex;
+            LatestListIndex = newIndex;
         }
 
         /// <summary>
@@ -96,17 +96,17 @@ namespace AlgorithmsAndDataStructures.Algorithms.Sort.StabilityCheckableVersions
         }
 
         /// <summary>
-        /// Given two Elements, if the order between their new array index is the same order between their old array index, the element has been stable.
+        /// Given two Elements, if the order between their new list index is the same order between their old list index, the element has been stable.
         /// </summary>
         /// <param name="other"></param>
         /// <returns></returns>
         public bool IsStable(Element other)
         {
             if (!Equals(other)) { return false; }
-            if (LatestArrayIndex == -1 || other.LatestArrayIndex == -1) { return false; }
-            if (FirstArrayIndex == other.FirstArrayIndex) { return LatestArrayIndex == other.LatestArrayIndex; }
-            if (FirstArrayIndex < other.FirstArrayIndex) { return LatestArrayIndex < other.LatestArrayIndex; }
-            if (FirstArrayIndex > other.FirstArrayIndex) { return LatestArrayIndex > other.LatestArrayIndex; }
+            if (LatestListIndex == -1 || other.LatestListIndex == -1) { return false; }
+            if (FirstListIndex == other.FirstListIndex) { return LatestListIndex == other.LatestListIndex; }
+            if (FirstListIndex < other.FirstListIndex) { return LatestListIndex < other.LatestListIndex; }
+            if (FirstListIndex > other.FirstListIndex) { return LatestListIndex > other.LatestListIndex; }
             return false;
         }
 
