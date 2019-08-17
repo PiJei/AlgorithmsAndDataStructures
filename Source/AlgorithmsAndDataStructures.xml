@@ -236,7 +236,7 @@
         </member>
         <member name="T:AlgorithmsAndDataStructures.Algorithms.Search.BinarySearch">
             <summary>
-            Implements Binary search algorithm for finding a specific value in a sorted array.
+            Implements Binary search algorithm for finding a specific value in a sorted list.
             </summary>
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Search.BinarySearch.Search``1(System.Collections.Generic.List{``0},``0,System.Int32,System.Int32)">
@@ -245,28 +245,28 @@
             </summary>
             <param name="sortedList">A sorted list of any comparable type. </param>
             <param name="key">The value that is being searched for. </param>
-            <param name="startIndex">The lowest (left-most) index of the array - inclusive. </param>
-            <param name="endIndex">The highest (right-most) index of the array - inclusive. </param>
-            <returns>The index of the <paramref name="key"/> in the array, and -1 if it is absent from the array. </returns>
+            <param name="startIndex">The lowest (left-most) index of the list - inclusive. </param>
+            <param name="endIndex">The highest (right-most) index of the list - inclusive. </param>
+            <returns>The index of the <paramref name="key"/> in the list, and -1 if it is absent from the array. </returns>
         </member>
         <member name="T:AlgorithmsAndDataStructures.Algorithms.Search.ExponentialSearch">
             <summary>
-            Implements Exponential search algorithm for finding a specific value in a sorted array.
+            Implements Exponential search algorithm for finding a specific value in a sorted list.
             </summary>
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Search.ExponentialSearch.Search``1(System.Collections.Generic.List{``0},``0)">
             <summary>
             Implements exponential search, where the search step is a multiple of 2, hence the naming. 
-            Notice that only works if the given array is sorted. 
+            Notice that only works if the given list is sorted. 
             </summary>
             <typeparam name="T">Type of the values in the sorted list.</typeparam>
             <param name="sortedList">A sorted list of any comparable type. </param>
             <param name="key">The value that is being searched for. </param>
-            <returns>The index of the <paramref name="key"/> in the array, and -1 if it does not exist in the array. </returns>
+            <returns>The index of the <paramref name="key"/> in the list, and -1 if it does not exist in the list. </returns>
         </member>
         <member name="T:AlgorithmsAndDataStructures.Algorithms.Search.FibonacciSearch">
             <summary>
-            Implements Fibonacci search algorithm for finding a specific value in a sorted array.
+            Implements Fibonacci search algorithm for finding a specific value in a sorted list.
             </summary>
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Search.FibonacciSearch.Search``1(System.Collections.Generic.List{``0},``0)">
@@ -276,7 +276,7 @@
             <typeparam name="T">Type of the values in the sorted list.</typeparam>
             <param name="sortedList">A sorted list of any comparable type. </param>
             <param name="key">The value that is being searched for. </param>
-            <returns>The index of the <paramref name="key"/> in the array, and -1 if it does not exist in the array. </returns>
+            <returns>The index of the <paramref name="key"/> in the list, and -1 if it does not exist in the list. </returns>
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Search.FibonacciSearch.GetSmallestFibonacciBiggerThanNumber(System.Int32)">
             <summary>
@@ -325,7 +325,7 @@
         </member>
         <member name="T:AlgorithmsAndDataStructures.Algorithms.Search.HashTableSearch">
             <summary>
-            Implements search using a hash table. Search algorithm is for finding a specific value in an array.
+            Implements search using a hash table. Search algorithm is for finding a specific value in a list.
             </summary>
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Search.HashTableSearch.Search``1(System.Collections.Generic.List{``0},``0)">
@@ -334,7 +334,7 @@
             </summary>
             <param name="list">A list of any comparable type.</param>
             <param name="key">The value the method is searching for. </param>
-            <returns>The list of all the indexes in the array that have <paramref name="key"/>. </returns>
+            <returns>The list of all the indexes in the list that have <paramref name="key"/>. </returns>
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Search.HashTableSearch.ConvertList2HashTable``1(System.Collections.Generic.List{``0})">
             <summary>
@@ -346,20 +346,20 @@
         </member>
         <member name="T:AlgorithmsAndDataStructures.Algorithms.Search.InterpolationSearch">
             <summary>
-            Implements Interpolation search algorithm for finding a specific value in a sorted array.
+            Implements Interpolation search algorithm for finding a specific value in a sorted list.
             </summary>
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Search.InterpolationSearch.Search``1(System.Collections.Generic.List{``0},``0,System.Int32,System.Int32)">
             <summary>
             Searches in a sorted list of any comparable type, where values have a uniform distribution. Interpolation search is an improvement over binary search, and has a very similar implementation, the only main difference is where (which index in the array) the search starts at.
-            The search is named interpolation, as it always has two main poles that it moves back and forth between them, these poles are the start index and the end index of the array. 
-            Notice that only works if the given array is sorted. 
+            The search is named interpolation, as it always has two main poles that it moves back and forth between them, these poles are the start index and the end index of the list. 
+            Notice that only works if the given list is sorted. 
             </summary>
             <param name="sortedList">A sorted list of any comparable type that are also uniformly distributed. </param>
             <param name="key">The value that is being searched for. </param>
-            <param name="startIndex">The lowest (left-most) index of the array - inclusive. </param>
-            <param name="endIndex">The highest (right-most) index of the array - inclusive. </param>
-            <returns>The index of the <paramref name="key"/> in the array, and -1 if it does not exist in the array. </returns>
+            <param name="startIndex">The lowest (left-most) index of the list - inclusive. </param>
+            <param name="endIndex">The highest (right-most) index of the list - inclusive. </param>
+            <returns>The index of the <paramref name="key"/> in the list, and -1 if it does not exist in the list. </returns>
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Search.InterpolationSearch.GetStartIndex``1(System.Collections.Generic.List{``0},``0,System.Int32,System.Int32)">
             <summary>
@@ -368,23 +368,23 @@
             </summary>
             <param name="sortedList">A sorted list of any comparable type that are also uniformly distributed. </param>
             <param name="key">The value that is being searched for. </param>
-            <param name="startIndex">The lowest (left-most) index of the array - inclusive. </param>
-            <param name="endIndex">The highest (right-most) index of the array - inclusive. </param>
-            <returns>The index in the array at which to start the search. </returns>
+            <param name="startIndex">The lowest (left-most) index of the list - inclusive. </param>
+            <param name="endIndex">The highest (right-most) index of the list - inclusive. </param>
+            <returns>The index in the list at which to start the search. </returns>
         </member>
         <member name="T:AlgorithmsAndDataStructures.Algorithms.Search.JumpSearch">
             <summary>
-            Implements Jump search algorithm for finding a specific value in a sorted array.
+            Implements Jump search algorithm for finding a specific value in a sorted list.
             </summary>
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Search.JumpSearch.Search``1(System.Collections.Generic.List{``0},``0)">
             <summary>
             Performs a jumpSearch on a list of integers to find the <paramref name="key"/>. 
-            Notice that only works if the given array is sorted. 
+            Notice that only works if the given list is sorted. 
             </summary>
             <param name="sortedList">A sorted list of any comparable type.</param>
             <param name="key">The value the method is searching for. </param>
-            <returns>The index of the <paramref name="key"/> in the array, and -1 if it does not exist in the array. </returns>
+            <returns>The index of the <paramref name="key"/> in the list, and -1 if it does not exist in the list. </returns>
         </member>
         <member name="T:AlgorithmsAndDataStructures.Algorithms.Search.LinearSearch">
             <summary>
@@ -398,27 +398,27 @@
             <typeparam name="T"></typeparam>
             <param name="list">A list of any comparable type.</param>
             <param name="key">The value the method is searching for. </param>
-            <param name="startIndex">The lowest (left-most) index of the array - inclusive. </param>
-            <param name="endIndex">The highest (right-most) index of the array - inclusive. </param>
+            <param name="startIndex">The lowest (left-most) index of the list - inclusive. </param>
+            <param name="endIndex">The highest (right-most) index of the list - inclusive. </param>
             <returns></returns>
         </member>
         <member name="T:AlgorithmsAndDataStructures.Algorithms.Search.TernarySearch">
             <summary>
-            Implements Ternary search algorithm for finding a specific value in a sorted array.
+            Implements Ternary search algorithm for finding a specific value in a sorted list.
             </summary>
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Search.TernarySearch.Search``1(System.Collections.Generic.List{``0},``0,System.Int32,System.Int32)">
             <summary>
             Implements ternary search recursively on a list of any comparable type. 
             This search is inspired by binary search (hence the naming, 3 versus 2).
-            The difference being that rather than dividing the array into 2 sections, divides it into 3 equal sections and performs the search inside each one of those separately.
-            Notice that only works if the given array is sorted. 
+            The difference being that rather than dividing the list into 2 sections, divides it into 3 equal sections and performs the search inside each one of those separately.
+            Notice that only works if the given list is sorted. 
             </summary>
             <param name="sortedList">A sorted list of any comparable type. </param>
             <param name="key">The value that is being searched for. </param>
-            <param name="startIndex">The lowest (left-most) index of the array - inclusive. </param>
-            <param name="endIndex">The highest (right-most) index of the array - inclusive. </param>
-            <returns>The index of the <paramref name="key"/> in the array, and -1 if it does not exist in the array. </returns>
+            <param name="startIndex">The lowest (left-most) index of the list - inclusive. </param>
+            <param name="endIndex">The highest (right-most) index of the list - inclusive. </param>
+            <returns>The index of the <paramref name="key"/> in the list, and -1 if it does not exist in the list. </returns>
         </member>
         <member name="T:AlgorithmsAndDataStructures.Algorithms.Sort.BubbleSort">
             <summary>
@@ -427,13 +427,13 @@
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Sort.BubbleSort.Sort``1(System.Collections.Generic.List{``0})">
             <summary>
-            Implements bubble sort iteratively, elements are bubbled down or up the array till they are at their final correct positions. 
+            Implements bubble sort iteratively, elements are bubbled down or up the list till they are at their final correct positions. 
             </summary>
             <param name="list">The list of values (of type T, e.g., int) to be sorted.</param>
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Sort.BubbleSort.Sort_Iterative(System.Collections.Generic.List{AlgorithmsAndDataStructures.Algorithms.Sort.StabilityCheckableVersions.Element})">
             <summary>
-            Implements bubble sort iteratively, elements are bubbled down or up the array till they are at their final correct positions. 
+            Implements bubble sort iteratively, elements are bubbled down or up the list till they are at their final correct positions. 
             </summary>
             <param name="list"></param>
         </member>
@@ -444,7 +444,7 @@
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Sort.HeapSort.Sort``1(System.Collections.Generic.List{``0})">
             <summary>
-            Sorts the elements in an array using heap sort algorithm into an ascending order. 
+            Sorts the elements in an list using heap sort algorithm into an ascending order. 
             </summary>
             <param name="list">The list of values (of type T, e.g., int) to be sorted.</param>
         </member>
@@ -488,42 +488,42 @@
             Implements merge sort recursively. 
             </summary>
             <param name="list">The list of values (of type T, e.g., int) to be sorted. </param>
-            <param name="startIndex">The lower index in the array, inclusive. </param>
-            <param name="endIndex">The higher index in the array, inclusive. </param>
+            <param name="startIndex">The lower index in the list, inclusive. </param>
+            <param name="endIndex">The higher index in the list, inclusive. </param>
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Sort.MergeSort.Merge``1(System.Collections.Generic.List{``0},System.Int32,System.Int32,System.Int32)">
             <summary>
-            Merges two sub arrays [startIndex, middleIndex], [middleIndex+1, endIndex] such to end up with a sorted list. 
+            Merges two sub-lists [startIndex, middleIndex], [middleIndex+1, endIndex] such to end up with a sorted list. 
             </summary>
             <param name="list">The list of values (of type T, e.g., int) to be sorted. </param>
-            <param name="startIndex">The lower index in the array, inclusive. </param>
-            <param name="middleIndex">The middle index of the array. </param>
-            <param name="endIndex">The higher index in the array, inclusive. </param>
+            <param name="startIndex">The lower index in the list, inclusive. </param>
+            <param name="middleIndex">The middle index of the list. </param>
+            <param name="endIndex">The higher index in the list, inclusive. </param>
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Sort.MergeSort.Sort_Recursively(System.Collections.Generic.List{AlgorithmsAndDataStructures.Algorithms.Sort.StabilityCheckableVersions.Element},System.Int32,System.Int32)">
             <summary>
             Implements a basic version of merge sort recursively. 
             </summary>
             <param name="list">The list of integer values to be sorted. </param>
-            <param name="startIndex">The lower index in the array, inclusive. </param>
-            <param name="endIndex">The higher index in the array, inclusive. </param>
+            <param name="startIndex">The lower index in the list, inclusive. </param>
+            <param name="endIndex">The higher index in the list, inclusive. </param>
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Sort.MergeSort.Merge(System.Collections.Generic.List{AlgorithmsAndDataStructures.Algorithms.Sort.StabilityCheckableVersions.Element},System.Int32,System.Int32,System.Int32)">
             <summary>
-            Merges two sub arrays [startIndex, middleIndex], [middleIndex+1, endIndex] such to end up with a sorted list. 
+            Merges two sub list [startIndex, middleIndex], [middleIndex+1, endIndex] such to end up with a sorted list. 
             </summary>
-            <param name="values">The list of integer values to be sorted. </param>
-            <param name="startIndex">The lower index in the array, inclusive. </param>
-            <param name="middleIndex">The middle index of the array. </param>
-            <param name="endIndex">The higher index in the array, inclusive. </param>
+            <param name="list">The list of integer values to be sorted. </param>
+            <param name="startIndex">The lower index in the list, inclusive. </param>
+            <param name="middleIndex">The middle index of the list. </param>
+            <param name="endIndex">The higher index in the list, inclusive. </param>
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Sort.MergeSort.MergeSort_Recursively_Wrapper(System.Collections.Generic.List{AlgorithmsAndDataStructures.Algorithms.Sort.StabilityCheckableVersions.Element})">
             <summary>
             This is to be able to call MergeSort sort methods with only the list that needs to be sorted, and independent of the indexes. 
             This is needed for methods that receive other sort methods as parameters, and would ideally like to have similar signature for all the methods that are passed as parameters, 
-            In sort methods the signature is: void SortMethod(List{int} values); 
+            In sort methods the signature is: void SortMethod(List{int} list); 
             </summary>
-            <param name="values">The list of integers to be sorted. </param>
+            <param name="list">The list of integers to be sorted. </param>
         </member>
         <member name="T:AlgorithmsAndDataStructures.Algorithms.Sort.QuickSort">
             <summary>
@@ -535,24 +535,24 @@
             Implements quick sort recursively. 
             </summary>
             <param name="list">The list of values (of type T, e.g., int) to be sorted. </param>
-            <param name="startIndex">The lower index in the array, inclusive. </param>
-            <param name="endIndex">The higher index in the array, inclusive. </param>
+            <param name="startIndex">The lower index in the list, inclusive. </param>
+            <param name="endIndex">The higher index in the list, inclusive. </param>
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Sort.QuickSort.PartitionList``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)">
             <summary>
-            Partitions the given array, with respect to the computed pivot, such that elements to the left of the pivot are smaller than the pivot, and elements to the right of the pivot are bigger than the pivot. 
+            Partitions the given list, with respect to the computed pivot, such that elements to the left of the pivot are smaller than the pivot, and elements to the right of the pivot are bigger than the pivot. 
             </summary>
             <param name="list">The list of values (of type T, e.g., int) to be sorted. </param>
-            <param name="startIndex">The lower index in the array, inclusive. </param>
-            <param name="endIndex">The higher index in the array, inclusive. </param>
+            <param name="startIndex">The lower index in the list, inclusive. </param>
+            <param name="endIndex">The higher index in the list, inclusive. </param>
             <returns>The next partitioning index. </returns>
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Sort.QuickSort.GetPivotIndex(System.Int32,System.Int32)">
             <summary>
-            This algorithm uses the middle element of the array as pivot. The algorithm can be replaced with other mechanisms as well. 
+            This algorithm uses the middle element of the list as pivot. The algorithm can be replaced with other mechanisms as well. 
             </summary>
-            <param name="startIndex">The startIndex of an array.</param>
-            <param name="endIndex">The endIndex of an array. </param>
+            <param name="startIndex">The startIndex of a list.</param>
+            <param name="endIndex">The endIndex of a list. </param>
             <returns></returns>
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Sort.QuickSort.Sort_Recursively(System.Collections.Generic.List{AlgorithmsAndDataStructures.Algorithms.Sort.StabilityCheckableVersions.Element},System.Int32,System.Int32)">
@@ -563,22 +563,22 @@
             <param name="startIndex"></param>
             <param name="endIndex"></param>
         </member>
-        <member name="M:AlgorithmsAndDataStructures.Algorithms.Sort.QuickSort.PartitionArray_StabilityCheckableVersion(System.Collections.Generic.List{AlgorithmsAndDataStructures.Algorithms.Sort.StabilityCheckableVersions.Element},System.Int32,System.Int32)">
+        <member name="M:AlgorithmsAndDataStructures.Algorithms.Sort.QuickSort.PartitionList_StabilityCheckableVersion(System.Collections.Generic.List{AlgorithmsAndDataStructures.Algorithms.Sort.StabilityCheckableVersions.Element},System.Int32,System.Int32)">
             <summary>
-            Partitions the given array, with respect to the computed pivot, such that elements to the left of the pivot are smaller than the pivot, and elements to the right of the pivot are bigger than the pivot. 
+            Partitions the given list, with respect to the computed pivot, such that elements to the left of the pivot are smaller than the pivot, and elements to the right of the pivot are bigger than the pivot. 
             </summary>
-            <param name="values">The list of integer values to be sorted. </param>
-            <param name="startIndex">The lower index in the array, inclusive. </param>
-            <param name="endIndex">The higher index in the array, inclusive. </param>
+            <param name="list">The list of integer values to be sorted. </param>
+            <param name="startIndex">The lower index in the list, inclusive. </param>
+            <param name="endIndex">The higher index in the list, inclusive. </param>
             <returns>The next partitioning index. </returns>
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Sort.QuickSort.Wrapper(System.Collections.Generic.List{AlgorithmsAndDataStructures.Algorithms.Sort.StabilityCheckableVersions.Element})">
             <summary>
             This is to be able to call QuickSort sort methods with only the list that needs to be sorted, and independent of the indexes. 
             This is needed for methods that receive other sort methods as parameters, and would ideally like to have similar signature for all the methods that are passed as parameters, 
-            In sort methods the signature is: void SortMethod(List{int} values); 
+            In sort methods the signature is: void SortMethod(List{int} list); 
             </summary>
-            <param name="values">The list of integers to be sorted. </param>
+            <param name="list">The list of integers to be sorted. </param>
         </member>
         <member name="T:AlgorithmsAndDataStructures.Algorithms.Sort.RadixSort">
             <summary>
@@ -602,7 +602,7 @@
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Sort.SelectionSort.Sort``1(System.Collections.Generic.List{``0})">
             <summary>
-            Implements selection sort, which is in-situ and unstable, and at each step, the array would look as one sorted part, and one unsorted part. 
+            Implements selection sort, which is in-situ and unstable, and at each step, the list would look as one sorted part, and one unsorted part. 
             </summary>
             <param name="list">The list of values (of type T, e.g., int) to be sorted. </param>
         </member>
@@ -622,12 +622,12 @@
             Is the value stored in this object. 
             </summary>
         </member>
-        <member name="P:AlgorithmsAndDataStructures.Algorithms.Sort.StabilityCheckableVersions.Element.FirstArrayIndex">
+        <member name="P:AlgorithmsAndDataStructures.Algorithms.Sort.StabilityCheckableVersions.Element.FirstListIndex">
             <summary>
             
             </summary>
         </member>
-        <member name="P:AlgorithmsAndDataStructures.Algorithms.Sort.StabilityCheckableVersions.Element.LatestArrayIndex">
+        <member name="P:AlgorithmsAndDataStructures.Algorithms.Sort.StabilityCheckableVersions.Element.LatestListIndex">
             <summary>
             
             </summary>
@@ -637,7 +637,7 @@
             
             </summary>
             <param name="value"></param>
-            <param name="firstArrayIndex"></param>
+            <param name="firstListIndex"></param>
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Sort.StabilityCheckableVersions.Element.#ctor(AlgorithmsAndDataStructures.Algorithms.Sort.StabilityCheckableVersions.Element)">
             <summary>
@@ -666,7 +666,7 @@
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Sort.StabilityCheckableVersions.Element.IsStable(AlgorithmsAndDataStructures.Algorithms.Sort.StabilityCheckableVersions.Element)">
             <summary>
-            Given two Elements, if the order between their new array index is the same order between their old array index, the element has been stable.
+            Given two Elements, if the order between their new list index is the same order between their old list index, the element has been stable.
             </summary>
             <param name="other"></param>
             <returns></returns>
@@ -692,7 +692,7 @@
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Sort.Utils.IsSortMethodStable(System.Action{System.Collections.Generic.List{AlgorithmsAndDataStructures.Algorithms.Sort.StabilityCheckableVersions.Element}},System.Collections.Generic.List{AlgorithmsAndDataStructures.Algorithms.Sort.StabilityCheckableVersions.Element})">
             <summary>
-            Detects whether the given sort method is stable. A sort method is stable, if it preserves the ordering of duplicate values in the original array. 
+            Detects whether the given sort method is stable. A sort method is stable, if it preserves the ordering of duplicate values in the original list. 
             </summary>
             <param name="sortMethod">The name of a method with the signature specified by the Action (void return type) </param>
             <param name="list">A list of Elements. </param>
@@ -700,11 +700,11 @@
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Sort.Utils.HashListToIndexes(System.Collections.Generic.List{AlgorithmsAndDataStructures.Algorithms.Sort.StabilityCheckableVersions.Element})">
             <summary>
-            Per each value in the array, makes a list of their indexes in the array. 
-            Notice that the array may include duplicate values, thus a list of indexes rather than one index.
+            Per each value in the list, makes a list of their indexes in the list. 
+            Notice that the list may include duplicate values, thus a list of indexes rather than one index.
             </summary>
-            <param name="list">An array of integers. </param>
-            <returns>A hash table/dictionary mapping each value to the list of its indexes in the array. </returns>
+            <param name="list">A list of integers. </param>
+            <returns>A hash table/dictionary mapping each value to the list of its indexes in the list. </returns>
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Sort.Utils.IsMapStable(System.Collections.Generic.Dictionary{AlgorithmsAndDataStructures.Algorithms.Sort.StabilityCheckableVersions.Element,System.Collections.Generic.List{AlgorithmsAndDataStructures.Algorithms.Sort.StabilityCheckableVersions.Element}})">
             <summary>
@@ -715,7 +715,7 @@
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Sort.Utils.Swap(System.Collections.Generic.List{AlgorithmsAndDataStructures.Algorithms.Sort.StabilityCheckableVersions.Element},System.Int32,System.Int32)">
             <summary>
-            Swaps values in indexes <paramref name="index1"/> and <paramref name="index2"/> in the <paramref name="list"/> array. 
+            Swaps values in indexes <paramref name="index1"/> and <paramref name="index2"/> in the <paramref name="list"/>. 
             </summary>
             <param name="list">A list of Elements. </param>
             <param name="index1">The first index. </param>
@@ -723,26 +723,26 @@
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Sort.Utils.GetMaxElement(System.Collections.Generic.List{AlgorithmsAndDataStructures.Algorithms.Sort.StabilityCheckableVersions.Element})">
             <summary>
-            Gets the max element in the array. Alternatively we could use Linq.Max operator. However using this version so that the time complexity is obvious.
+            Gets the max element in the list. Alternatively we could use Linq.Max operator. However using this version so that the time complexity is obvious.
             </summary>
             <param name="list">A list of integers. </param>
-            <returns>Maximum element in the array. </returns>
+            <returns>Maximum element in the list. </returns>
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Sort.Utils.Swap``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)">
             <summary>
-            Swaps the values at given indexes of the array.
+            Swaps the values at given indexes of the list.
             </summary>
-            <typeparam name="T">The type of elements in the array.</typeparam>
+            <typeparam name="T">The type of elements in the list.</typeparam>
             <param name="list">A list of values. </param>
             <param name="index1">First index.</param>
             <param name="index2">Second index.</param>
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Sort.Utils.GetMaxElement``1(System.Collections.Generic.List{``0})">
             <summary>
-            Gets the max element in the array. Alternatively we could use Linq.Max operator. However using this version so that the time complexity is obvious.
+            Gets the max element in the list. Alternatively we could use Linq.Max operator. However using this version so that the time complexity is obvious.
             </summary>
             <param name="list">A list of values (of type T, e.g., int). </param>
-            <returns>Maximum element in the array. </returns>
+            <returns>Maximum element in the list. </returns>
         </member>
         <member name="M:AlgorithmsAndDataStructures.Algorithms.Sort.Utils.GetDigitsCount(System.Int32)">
             <summary>
