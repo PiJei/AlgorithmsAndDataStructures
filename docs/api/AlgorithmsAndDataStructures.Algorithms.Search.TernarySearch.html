@@ -73,7 +73,7 @@
   
   <h1 id="AlgorithmsAndDataStructures_Algorithms_Search_TernarySearch" data-uid="AlgorithmsAndDataStructures.Algorithms.Search.TernarySearch" class="text-break">Class TernarySearch
   </h1>
-  <div class="markdown level0 summary"><p>Implements Ternary search algorithm for finding a specific value in a sorted array.</p>
+  <div class="markdown level0 summary"><p>Implements Ternary search algorithm for finding a specific value in a sorted list.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -124,17 +124,16 @@
   <h4 id="AlgorithmsAndDataStructures_Algorithms_Search_TernarySearch_Search__1_System_Collections_Generic_List___0____0_System_Int32_System_Int32_" data-uid="AlgorithmsAndDataStructures.Algorithms.Search.TernarySearch.Search``1(System.Collections.Generic.List{``0},``0,System.Int32,System.Int32)">Search&lt;T&gt;(List&lt;T&gt;, T, Int32, Int32)</h4>
   <div class="markdown level1 summary"><p>Implements ternary search recursively on a list of any comparable type.
 This search is inspired by binary search (hence the naming, 3 versus 2).
-The difference being that rather than dividing the array into 2 sections, divides it into 3 equal sections and performs the search inside each one of those separately.
-Notice that only works if the given array is sorted.</p>
+The difference being that rather than dividing the list into 2 sections, divides it into 3 equal sections and performs the search inside each one of those separately.
+Notice that only works if the given list is sorted.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Algorithm(AlgorithmType.Search, &quot;TernarySearch&quot;, Assumptions = &quot;Array is sorted with an ascending order.&quot;)]
+    <pre><code class="lang-csharp hljs">[Algorithm(AlgorithmType.Search, &quot;TernarySearch&quot;, Assumptions = &quot;List is sorted with an ascending order.&quot;)]
 [SpaceComplexity(&quot;O(1)&quot;, false, InPlace = true)]
 [TimeComplexity(Case.Best, &quot;O(1)&quot;)]
 [TimeComplexity(Case.Worst, &quot;O(log3(n))&quot;)]
-[TimeComplexity(Case.Average, &quot;&quot;)]
 public static int Search&lt;T&gt;(List&lt;T&gt; sortedList, T key, int startIndex, int endIndex)
     where T : IComparable</code></pre>
   </div>
@@ -163,13 +162,13 @@ public static int Search&lt;T&gt;(List&lt;T&gt; sortedList, T key, int startInde
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">startIndex</span></td>
-        <td><p>The lowest (left-most) index of the array - inclusive.</p>
+        <td><p>The lowest (left-most) index of the list - inclusive.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">endIndex</span></td>
-        <td><p>The highest (right-most) index of the array - inclusive.</p>
+        <td><p>The highest (right-most) index of the list - inclusive.</p>
 </td>
       </tr>
     </tbody>
@@ -185,7 +184,7 @@ public static int Search&lt;T&gt;(List&lt;T&gt; sortedList, T key, int startInde
     <tbody>
       <tr>
         <td><span class="xref">System.Int32</span></td>
-        <td><p>The index of the <code data-dev-comment-type="paramref" class="paramref">key</code> in the array, and -1 if it does not exist in the array.</p>
+        <td><p>The index of the <code data-dev-comment-type="paramref" class="paramref">key</code> in the list, and -1 if it does not exist in the list.</p>
 </td>
       </tr>
     </tbody>

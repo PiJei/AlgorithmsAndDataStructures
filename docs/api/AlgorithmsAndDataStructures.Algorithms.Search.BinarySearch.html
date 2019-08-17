@@ -73,7 +73,7 @@
   
   <h1 id="AlgorithmsAndDataStructures_Algorithms_Search_BinarySearch" data-uid="AlgorithmsAndDataStructures.Algorithms.Search.BinarySearch" class="text-break">Class BinarySearch
   </h1>
-  <div class="markdown level0 summary"><p>Implements Binary search algorithm for finding a specific value in a sorted array.</p>
+  <div class="markdown level0 summary"><p>Implements Binary search algorithm for finding a specific value in a sorted list.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -127,7 +127,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Algorithm(AlgorithmType.Search, &quot;BinarySearch&quot;, Assumptions = &quot;Array is sorted with an ascending order.&quot;)]
+    <pre><code class="lang-csharp hljs">[Algorithm(AlgorithmType.Search, &quot;BinarySearch&quot;, Assumptions = &quot;List is sorted with an ascending order.&quot;)]
 [SpaceComplexity(&quot;O(1)&quot;, false, InPlace = true)]
 [TimeComplexity(Case.Best, &quot;O(1)&quot;)]
 [TimeComplexity(Case.Worst, &quot;O(Log(n))&quot;)]
@@ -160,13 +160,13 @@ public static int Search&lt;T&gt;(List&lt;T&gt; sortedList, T key, int startInde
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">startIndex</span></td>
-        <td><p>The lowest (left-most) index of the array - inclusive.</p>
+        <td><p>The lowest (left-most) index of the list - inclusive.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">endIndex</span></td>
-        <td><p>The highest (right-most) index of the array - inclusive.</p>
+        <td><p>The highest (right-most) index of the list - inclusive.</p>
 </td>
       </tr>
     </tbody>
@@ -182,7 +182,7 @@ public static int Search&lt;T&gt;(List&lt;T&gt; sortedList, T key, int startInde
     <tbody>
       <tr>
         <td><span class="xref">System.Int32</span></td>
-        <td><p>The index of the <code data-dev-comment-type="paramref" class="paramref">key</code> in the array, and -1 if it is absent from the array.</p>
+        <td><p>The index of the <code data-dev-comment-type="paramref" class="paramref">key</code> in the list, and -1 if it is absent from the array.</p>
 </td>
       </tr>
     </tbody>
