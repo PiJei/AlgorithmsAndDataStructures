@@ -1,2 +1,8 @@
+title: Algorithms and Data Structures in C#
+description: A comprehensive implementation of fundamental data structures and algorithms of computer science and engineering in C# programming language
+
 plugins:
+  - jekyll-sitemap
   - jekyll-seo-tag
+  
+  
